@@ -977,6 +977,55 @@ ol.gnotes li::before{content:counter(g);transform:none;width:18px;height:18px;to
 .tag.src.ext{background:color-mix(in srgb,var(--accent) 12%,var(--panel));color:var(--accent-ink)}
 .ed-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cc-act .cc-due{font-size:12.5px;color:var(--ink-soft);align-self:center;margin-right:4px}
+
+/* ---------- v12: admin ---------- */
+.ad-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.ad-head h2{margin:0;margin-right:auto}
+.ad-head > b{margin-right:auto;font-size:14px}
+.ad-head .btn{height:32px;font-size:12.5px}
+.ad-sub{font-size:12.5px;color:var(--ink-faint)}
+.ad-stats{grid-template-columns:repeat(auto-fit,minmax(118px,1fr))}
+.ad-stats .stat small{font-size:11.5px}
+.ad-chart{width:100%;height:auto;margin-top:8px;display:block}
+.ad-chart .ad-a,.ad-key .ad-a{fill:var(--accent);background:var(--accent)}
+.ad-chart .ad-s,.ad-key .ad-s{fill:var(--ok);background:var(--ok)}
+.ad-chart .ad-x{font:10px Inter,sans-serif;fill:var(--ink-faint);text-anchor:middle}
+.ad-chart text.ad-x:first-child{text-anchor:start}
+.ad-chart .ad-ax{stroke:var(--border)}
+.ad-key{font-size:12px;color:var(--ink-soft);display:flex;align-items:center;gap:6px}
+.ad-key i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-left:6px}
+.ad-doms{display:grid;gap:6px;margin-top:12px}
+.ad-doms small{font-size:12px;color:var(--ink-faint)}
+.ad-dom{display:grid;grid-template-columns:100px 1fr 40px;gap:8px;align-items:center;font-size:13px}
+.ad-dom i{height:7px;border-radius:4px;background:var(--panel-2);overflow:hidden;display:block}
+.ad-dom i b{display:block;height:100%;background:var(--c)}
+.ad-dom em{font-style:normal;font-weight:650;text-align:right}
+.ad-dom.d-diagnosis{--c:var(--dx)} .ad-dom.d-investigation{--c:var(--ix)} .ad-dom.d-management{--c:var(--mx)} .ad-dom.d-science{--c:var(--sci)}
+.ad-tools{display:flex;align-items:center;gap:10px;margin:4px 0 10px}
+.ad-tools input{flex:1;height:38px;border:1px solid var(--border);border-radius:8px;padding:0 10px;font:14px Inter,sans-serif;background:var(--panel);color:var(--ink)}
+.ad-tools span{font-size:12.5px;color:var(--ink-faint);white-space:nowrap}
+.ad-sheet th{cursor:pointer;user-select:none}
+.ad-sheet th.on{color:var(--ink)}
+.ad-sheet tbody tr[data-u]{cursor:pointer}
+.ad-sheet tbody tr[data-u]:hover td{background:var(--panel-2)}
+.ad-foot{font-size:12.5px;color:var(--ink-faint);margin:10px 2px}
+.modal.ad-modal{max-width:560px;max-height:88vh;overflow-y:auto}
+.ad-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px 14px;margin:10px 0}
+@media (max-width:480px){.ad-grid{grid-template-columns:1fr}}
+.ad-kv{display:flex;flex-direction:column;font-size:12px;color:var(--ink-faint);border-bottom:1px dashed var(--border);padding-bottom:5px}
+.ad-kv b{font-size:13.5px;color:var(--ink);font-weight:600}
+.ad-days{display:grid;grid-template-columns:repeat(30,1fr);gap:3px;margin:12px 0 6px}
+.ad-days i{aspect-ratio:1;border-radius:2px;background:var(--panel-2)}
+.ad-days i.l1{background:color-mix(in srgb,var(--ok) 35%,var(--panel-2))}
+.ad-days i.l2{background:color-mix(in srgb,var(--ok) 65%,var(--panel-2))}
+.ad-days i.l3{background:var(--ok)}
+.ad-ev{font-size:13px;margin-top:6px}
+.ad-ev summary{cursor:pointer;font-weight:600;color:var(--ink-soft)}
+.ad-ev div{padding:4px 0;border-bottom:1px solid var(--border)}
+.ad-ev span{color:var(--ink-faint);font-size:12px;margin-right:4px}
+.ad-acts{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ad-acts .btn{height:34px;font-size:12.5px}
+.btn.danger{color:var(--bad);border-color:color-mix(in srgb,var(--bad) 40%,var(--border))}
 </style>
 </head>
 <body>
@@ -998,6 +1047,7 @@ ol.gnotes li::before{content:counter(g);transform:none;width:18px;height:18px;to
       <button data-mode="practice" role="tab">Practice</button>
       <button data-mode="corr" role="tab">Corrections</button>
       <button data-mode="progress" role="tab">Progress</button>
+      <button data-mode="admin" role="tab" id="adminTab" class="hidden">Admin</button>
     </div>
     <div class="controls" id="controls">
       <div class="search">
@@ -1021,6 +1071,7 @@ ol.gnotes li::before{content:counter(g);transform:none;width:18px;height:18px;to
   <div id="learnList" class="hidden"></div>
   <div id="practiceView" class="hidden"></div>
   <div id="corrView" class="hidden"></div>
+  <div id="adminView" class="hidden"></div>
   <div class="empty" id="emptyMsg" hidden>No conditions match your search.</div>
   <footer class="note">Personal revision tool &middot; content drawn from Victor's own notes</footer>
 </div>
@@ -1131,6 +1182,18 @@ const Cloud = {
   },
 };
 window.__cloudTouch = () => Cloud.touch();
+function deviceName(){
+  const ua = navigator.userAgent;
+  const os = /iPhone/.test(ua) ? 'iPhone' : /iPad|Macintosh.*Mobile/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1) ? 'iPad'
+    : /Android/.test(ua) ? 'Android' : /Mac/.test(ua) ? 'Mac' : /Windows/.test(ua) ? 'Windows' : /CrOS/.test(ua) ? 'Chromebook' : /Linux/.test(ua) ? 'Linux' : 'Other';
+  const br = /Edg\//.test(ua) ? 'Edge' : /CriOS|Chrome\//.test(ua) ? 'Chrome' : /FxiOS|Firefox\//.test(ua) ? 'Firefox' : /Safari\//.test(ua) ? 'Safari' : 'Browser';
+  const app = matchMedia('(display-mode: standalone)').matches || navigator.standalone ? ' (home screen app)' : '';
+  return `${os} ${br}${app}`;
+}
+function logEvent(kind){
+  if(!SB || !Auth.user()) return;
+  try{ SB.rpc('log_event', {p_kind:kind, p_meta:{device:deviceName()}}).then(() => {}, () => {}); }catch(e){}
+}
 // upload straight away when the app is hidden or closed
 document.addEventListener('visibilitychange', () => { if(document.visibilityState === 'hidden' && Cloud.timer) Cloud.push(); });
 window.addEventListener('pagehide', () => { if(Cloud.timer) Cloud.push(); });
@@ -1200,7 +1263,7 @@ const Auth = {
     store.set('y3.session', {u});
   },
   async logOut(){
-    if(SB){ try{ await Cloud.push(); await SB.auth.signOut(); }catch(e){} }
+    if(SB){ try{ await Cloud.push(); await SB.rpc('log_event', {p_kind:'log_out', p_meta:{device:deviceName()}}); await SB.auth.signOut(); }catch(e){} }
     store.del('y3.session');
   },
 };
@@ -1443,12 +1506,14 @@ function setMode(m, save=true){
   $('#progressView').classList.toggle('hidden', m !== 'progress');
   if(m === 'progress') renderProgressView();
   if(m === 'bank') renderBankView();
-  $('#controls').classList.toggle('hidden', m === 'home');
+  $('#controls').classList.toggle('hidden', m === 'home' || m === 'admin');
   if(m === 'home') renderHome();
   if(m === 'blurt') renderBlurtView();
   $('#corrView').classList.toggle('hidden', m !== 'corr');
+  $('#adminView').classList.toggle('hidden', m !== 'admin');
+  if(m === 'admin') renderAdminView();
   countLine.classList.toggle('hidden', m !== 'notes' && m !== 'learn');
-  $('#controls').classList.toggle('hidden', m === 'home');
+  $('#controls').classList.toggle('hidden', m === 'home' || m === 'admin');
   if(m === 'learn') refreshLearn();
   applyFilter();
 }
@@ -1582,7 +1647,7 @@ function accountModal({welcome=false, onDone}={}){
     try{
       if(tab === 'up') await Auth.signUp($('#au', el).value, $('#ap', el).value);
       else await Auth.logIn($('#au', el).value, $('#ap', el).value);
-      m.close(); afterAuthChange();
+      m.close(); afterAuthChange(); logEvent('open');
       toast(tab === 'up' ? 'Account created. Progress will be saved.' : 'Welcome back, ' + Auth.user());
       if(tab === 'up') setTimeout(openShowcase, 350);
     }catch(err){
@@ -1594,6 +1659,7 @@ function accountModal({welcome=false, onDone}={}){
 }
 function afterAuthChange(){
   renderAccountBtn();
+  Admin.check();
   if(mode === 'learn') refreshLearn();
   cardEls.forEach(c => c._rebuild());
 }
@@ -3742,6 +3808,205 @@ function renderProgressView(){
   view.querySelectorAll('[data-tip]').forEach(b => b.onclick = () => { const [id, ...a] = b.dataset.tip.split('|'); doTip(id, a.join('|')); });
 }
 
+// ---------- admin (only shown to accounts with role = 'admin' in Supabase) ----------
+// Everything here comes from the admin_* functions in supabase/schema.sql, which check on the
+// server that the signed-in account is an admin. Hiding the tab is only for tidiness.
+const Admin = {
+  is: false, users: null, overview: null, sort: {k:'joined_at', dir:-1}, q: '', err: '',
+  async check(){
+    Admin.is = false;
+    if(SB && Auth.user()){
+      try{ const {data, error} = await SB.rpc('is_admin'); Admin.is = !error && data === true; }catch(e){}
+    }
+    $('#adminTab').classList.toggle('hidden', !Admin.is);
+    if(!Admin.is && mode === 'admin') setMode('home');
+    return Admin.is;
+  },
+  async load(){
+    Admin.err = '';
+    const [o, u] = await Promise.all([SB.rpc('admin_overview'), SB.rpc('admin_list_users')]);
+    if(o.error || u.error){
+      const m = (o.error || u.error).message || '';
+      Admin.err = /admin_overview|admin_list_users|function/i.test(m) && !/Admins only/i.test(m)
+        ? 'The admin functions are not in the database yet. Run supabase/schema.sql in the Supabase SQL Editor.'
+        : m || 'Could not load.';
+      return;
+    }
+    Admin.overview = o.data; Admin.users = u.data || [];
+  },
+};
+const ago = t => {
+  if(!t) return 'never';
+  const s = (Date.now() - new Date(t)) / 1000;
+  if(s < 90) return 'just now';
+  if(s < 3600) return Math.round(s / 60) + ' min ago';
+  if(s < 86400) return Math.round(s / 3600) + ' h ago';
+  if(s < 86400 * 30) return Math.round(s / 86400) + ' d ago';
+  return new Date(t).toLocaleDateString('en-GB', {day:'numeric', month:'short', year:'2-digit'});
+};
+const dayLbl = d => new Date(d).toLocaleDateString('en-GB', {day:'numeric', month:'short'});
+const pctOr = v => v == null ? '–' : Math.round(v) + '%';
+const ADMIN_COLS = [
+  ['username', 'Student'], ['joined_at', 'Joined'], ['last_seen_at', 'Last active'], ['active_days_7', 'Days (7d)'],
+  ['streak_days', 'Streak'], ['lessons_finished', 'Lessons'], ['answers_total', 'Answers'], ['answers_7d', 'This week'],
+  ['accuracy', 'Accuracy'], ['corrections_open', 'Open corr.'], ['srs_cards', 'SRS cards'], ['status', 'Status'],
+];
+
+function adminChart(daily){
+  const W = 640, H = 150, pad = 22, n = daily.length || 1, bw = (W - pad) / n;
+  const max = Math.max(1, ...daily.map(d => Math.max(d.active_students, d.sign_ups)));
+  const bars = daily.map((d, i) => {
+    const x = pad + i * bw, ha = (H - 30) * d.active_students / max, hs = (H - 30) * d.sign_ups / max;
+    return `<g><title>${dayLbl(d.day)}: ${d.active_students} active, ${d.sign_ups} joined, ${d.answers} answers</title>
+      <rect x="${x + bw * 0.08}" y="${H - 18 - ha}" width="${Math.max(1.5, bw * 0.46)}" height="${ha}" rx="2" class="ad-a"/>
+      <rect x="${x + bw * 0.56}" y="${H - 18 - hs}" width="${Math.max(1.5, bw * 0.3)}" height="${hs}" rx="2" class="ad-s"/>
+      ${i % 5 === 0 ? `<text x="${x + bw / 2}" y="${H - 4}" class="ad-x">${dayLbl(d.day)}</text>` : ''}</g>`;
+  }).join('');
+  return `<svg viewBox="0 0 ${W} ${H}" class="ad-chart" role="img" aria-label="Active students and sign-ups, last 30 days">
+    <text x="0" y="12" class="ad-x">${max}</text><line x1="${pad}" x2="${W}" y1="${H - 18}" y2="${H - 18}" class="ad-ax"/>${bars}</svg>`;
+}
+
+async function renderAdminView(force){
+  const view = $('#adminView');
+  if(!Admin.is){ view.innerHTML = ''; return; }
+  if(force || !Admin.users){
+    view.innerHTML = `<div class="learn-hero"><h2>Admin</h2><p>Loading students…</p></div>`;
+    await Admin.load();
+  }
+  if(Admin.err){ view.innerHTML = `<div class="learn-hero"><h2>Admin</h2><p class="err">${escapeHtml(Admin.err)}</p><button class="btn" id="adRetry">Try again</button></div>`; $('#adRetry').onclick = () => renderAdminView(true); return; }
+  const T = Admin.overview.totals || {}, daily = Admin.overview.daily || [], doms = Admin.overview.domains || {};
+  const term = Admin.q.trim().toLowerCase();
+  const {k, dir} = Admin.sort;
+  const rows = Admin.users
+    .filter(u => !term || [u.username, u.display_name, u.cohort, u.admin_note].some(x => String(x || '').toLowerCase().includes(term)))
+    .sort((a, b) => {
+      const x = a[k], y = b[k];
+      if(x == null && y == null) return 0; if(x == null) return 1; if(y == null) return -1;
+      return (typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y))) * dir;
+    });
+  const stat = (v, l) => `<div class="stat"><b>${v ?? '–'}</b><small>${l}</small></div>`;
+  view.innerHTML = `
+    <div class="learn-hero">
+      <div class="ad-head"><h2>Admin</h2><span class="ad-sub">Updated ${new Date().toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit'})}</span>
+        <button class="btn" id="adRefresh">Refresh</button><button class="btn" id="adCsv">Download CSV</button></div>
+      <div class="stats ad-stats">
+        ${stat(T.students, 'students')}${stat(T.joined_7d, 'joined this week')}${stat(T.active_today, 'active today')}
+        ${stat(T.active_7d, 'active this week')}${stat(T.active_30d, 'active this month')}${stat(T.answers_7d, 'answers this week')}
+        ${stat(T.avg_accuracy == null ? '–' : Math.round(T.avg_accuracy) + '%', 'average accuracy')}${stat(T.lessons_finished, 'lessons finished')}
+        ${stat(T.external_corrections, 'Passmed / Quesmed corrections')}
+      </div>
+    </div>
+    <div class="learn-hero">
+      <div class="ad-head"><b>Last 30 days</b><span class="ad-key"><i class="ad-a"></i>active students <i class="ad-s"></i>sign-ups</span></div>
+      ${adminChart(daily)}
+      ${Object.keys(doms).length ? `<div class="ad-doms">${['diagnosis', 'investigation', 'management', 'science'].filter(d => doms[d] != null).map(d => `
+        <div class="ad-dom d-${d}"><span>${d[0].toUpperCase() + d.slice(1)}</span><i><b style="width:${doms[d]}%"></b></i><em>${Math.round(doms[d])}%</em></div>`).join('')}
+        <small>Average accuracy by domain, across all students</small></div>` : ''}
+    </div>
+    <div class="ad-tools"><input type="search" id="adSearch" placeholder="Search students, cohorts or notes" value="${escapeHtml(Admin.q)}"><span>${rows.length} of ${Admin.users.length}</span></div>
+    <div class="sheet-wrap"><table class="sheet ad-sheet"><thead><tr>${ADMIN_COLS.map(([c, l]) => `<th data-k="${c}" class="${k === c ? 'on' : ''}">${l}${k === c ? (dir > 0 ? ' ↑' : ' ↓') : ''}</th>`).join('')}</tr></thead>
+      <tbody>${rows.map(u => `<tr data-u="${u.id}" class="${u.status === 'suspended' ? 'off' : ''}">
+        <td class="cn"><b>${escapeHtml(u.username)}${u.role === 'admin' ? ' <span class="tag src">admin</span>' : ''}</b>${u.display_name || u.cohort ? `<small>${escapeHtml([u.display_name, u.cohort].filter(Boolean).join(' · '))}</small>` : ''}</td>
+        <td title="${escapeHtml(new Date(u.joined_at).toLocaleString('en-GB'))}">${ago(u.joined_at)}</td>
+        <td>${ago(u.last_seen_at)}</td><td>${u.active_days_7}</td><td>${u.streak_days ? u.streak_days + ' d' : '–'}</td>
+        <td>${u.lessons_finished}<small> / ${u.lessons_started}</small></td><td>${u.answers_total}</td><td>${u.answers_7d}</td>
+        <td>${pctOr(u.accuracy)}</td><td>${u.corrections_open}</td><td>${u.srs_cards}</td>
+        <td>${u.status === 'suspended' ? '<span class="tag">suspended</span>' : '<span class="tag fixed">active</span>'}</td></tr>`).join('') || `<tr><td colspan="${ADMIN_COLS.length}">No students yet.</td></tr>`}</tbody></table></div>
+    <p class="ad-foot">Tap a student for their activity, or to reset a password, suspend or delete the account. The full data is also in Supabase: Table Editor, schema <b>admin</b>.</p>`;
+  $('#adRefresh').onclick = () => renderAdminView(true);
+  $('#adCsv').onclick = adminCsv;
+  const s = $('#adSearch');
+  s.oninput = () => { Admin.q = s.value; const p = s.selectionStart; renderAdminView(); const n = $('#adSearch'); n.focus(); n.setSelectionRange(p, p); };
+  view.querySelectorAll('th[data-k]').forEach(th => th.onclick = () => {
+    const c = th.dataset.k;
+    Admin.sort = {k:c, dir: Admin.sort.k === c ? -Admin.sort.dir : (c === 'username' ? 1 : -1)};
+    renderAdminView();
+  });
+  view.querySelectorAll('tr[data-u]').forEach(tr => tr.onclick = () => adminUserModal(tr.dataset.u));
+}
+
+function adminCsv(){
+  const cols = ['username', 'display_name', 'cohort', 'role', 'status', 'joined_at', 'last_sign_in_at', 'last_seen_at', 'sign_ins',
+    'active_days_7', 'active_days_30', 'streak_days', 'lessons_started', 'lessons_finished', 'conditions_ticked', 'conditions_studied',
+    'answers_total', 'answers_7d', 'accuracy', 'accuracy_7d', 'bank_answers', 'corrections_open', 'corrections_total',
+    'corrections_external', 'srs_cards', 'notes_read', 'notes_edited', 'save_kb', 'last_device', 'admin_note'];
+  const esc = v => { const s = v == null ? '' : typeof v === 'object' ? JSON.stringify(v) : String(v); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  const csv = [cols.join(','), ...Admin.users.map(u => cols.map(c => esc(u[c])).join(','))].join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'}));
+  a.download = `year3-students-${new Date().toISOString().slice(0, 10)}.csv`;
+  a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+}
+
+async function adminUserModal(id){
+  const m = modal(`<h2>Loading…</h2>`);
+  const {data, error} = await SB.rpc('admin_user_detail', {p_user:id});
+  const box = m.el.querySelector('.modal');
+  box.classList.add('ad-modal');
+  if(error || !data || !data.user){ box.innerHTML = `<h2>Could not load</h2><p class="err">${escapeHtml(error ? error.message : 'Not found')}</p><div class="row"><button class="btn" data-x="close">Close</button></div>`; box.querySelector('[data-x=close]').onclick = m.close; return; }
+  const u = data.user, me = u.username === Auth.user();
+  const doms = u.domain_accuracy || {};
+  const days = data.days || [], ev = data.events || [];
+  const row = (l, v) => `<div class="ad-kv"><span>${l}</span><b>${v}</b></div>`;
+  box.innerHTML = `
+    <h2>${escapeHtml(u.username)}</h2>
+    <p class="ad-sub">${u.status === 'suspended' ? '<span class="tag">suspended</span> ' : ''}${u.role === 'admin' ? '<span class="tag src">admin</span> ' : ''}Joined ${escapeHtml(new Date(u.joined_at).toLocaleString('en-GB'))}</p>
+    <div class="ad-grid">
+      ${row('Last active', ago(u.last_seen_at))}${row('Log ins', u.sign_ins)}${row('Active days (30d)', u.active_days_30)}${row('Streak', u.streak_days + ' d')}
+      ${row('Lessons finished', `${u.lessons_finished} of ${u.lessons_started} started`)}${row('Conditions studied', u.conditions_studied)}
+      ${row('Answers', `${u.answers_total} (${u.answers_7d} this week)`)}${row('Accuracy', `${pctOr(u.accuracy)} (${pctOr(u.accuracy_7d)} this week)`)}
+      ${row('Corrections', `${u.corrections_open} open of ${u.corrections_total}, ${u.corrections_external} from other banks`)}
+      ${row('Spaced repetition', `${u.srs_cards} cards`)}${row('Notes read / edited', `${u.notes_read} / ${u.notes_edited}`)}
+      ${row('Device', escapeHtml(u.last_device || '–'))}${row('Save size', u.save_kb + ' KB')}
+    </div>
+    ${Object.keys(doms).length ? `<div class="ad-doms">${['diagnosis', 'investigation', 'management', 'science'].filter(d => doms[d] != null).map(d => `
+      <div class="ad-dom d-${d}"><span>${d[0].toUpperCase() + d.slice(1)}</span><i><b style="width:${doms[d]}%"></b></i><em>${Math.round(doms[d])}%</em></div>`).join('')}</div>` : ''}
+    <div class="ad-days" title="Last 60 days">${Array.from({length:60}, (_, i) => {
+      const d = new Date(Date.now() - (59 - i) * 864e5).toLocaleDateString('en-CA', {timeZone:'Europe/London'});
+      const a = days.find(x => String(x.day).slice(0, 10) === d);
+      return `<i class="${a ? (a.answers >= 20 ? 'l3' : a.answers >= 5 ? 'l2' : 'l1') : ''}" title="${d}${a ? `: ${a.answers} answers, ${a.saves} saves` : ''}"></i>`;
+    }).join('')}</div>
+    <details class="ad-ev"><summary>Recent activity (${ev.length})</summary>${ev.map(e => `<div><span>${escapeHtml(new Date(e.created_at).toLocaleString('en-GB'))}</span> ${escapeHtml(e.kind.replace('_', ' '))}${e.meta && e.meta.device ? ` <small>${escapeHtml(e.meta.device)}</small>` : ''}</div>`).join('') || '<div>Nothing yet.</div>'}</details>
+    <div class="field" style="margin-top:10px"><label for="adNote">Private note</label><input id="adNote" maxlength="1000" value="${escapeHtml(u.admin_note || '')}" placeholder="Only admins see this"></div>
+    <div class="err" id="adErr"></div>
+    ${me ? '<p class="ad-sub">This is your own account, so status, role and deletion are locked.</p>' : `
+    <div class="ad-acts">
+      <button class="btn" data-a="pw">Reset password</button>
+      <button class="btn" data-a="status">${u.status === 'suspended' ? 'Reactivate' : 'Suspend'}</button>
+      <button class="btn" data-a="role">${u.role === 'admin' ? 'Remove admin' : 'Make admin'}</button>
+      <button class="btn danger" data-a="del">Delete account</button>
+    </div>`}
+    <div class="row"><button class="btn" data-x="close">Close</button><button class="btn primary" data-x="save">Save note</button></div>`;
+  const err = $('#adErr', box);
+  const run = async (fn, args, done) => {
+    err.textContent = '';
+    const {error} = await SB.rpc(fn, args);
+    if(error){ err.textContent = error.message; return false; }
+    toast(done); await renderAdminView(true); return true;
+  };
+  box.querySelector('[data-x=close]').onclick = m.close;
+  box.querySelector('[data-x=save]').onclick = async () => { if(await run('admin_set_note', {p_user:id, p_note:$('#adNote', box).value}, 'Note saved')) m.close(); };
+  box.querySelectorAll('[data-a]').forEach(b => b.onclick = async () => {
+    const a = b.dataset.a;
+    if(a === 'pw'){
+      const pw = prompt(`New password for ${u.username} (at least 6 characters). Tell them it in person.`);
+      if(pw != null && await run('admin_reset_password', {p_user:id, p_password:pw}, 'Password reset')) m.close();
+    } else if(a === 'status'){
+      const to = u.status === 'suspended' ? 'active' : 'suspended';
+      if((to === 'active' || confirm(`Suspend ${u.username}? They can still log in but nothing new will save.`)) && await run('admin_set_status', {p_user:id, p_status:to}, to === 'active' ? 'Reactivated' : 'Suspended')) m.close();
+    } else if(a === 'role'){
+      const to = u.role === 'admin' ? 'student' : 'admin';
+      if(confirm(to === 'admin' ? `Make ${u.username} an admin? They will see every student's data.` : `Remove admin from ${u.username}?`) && await run('admin_set_role', {p_user:id, p_role:to}, 'Role changed')) m.close();
+    } else if(a === 'del'){
+      const typed = prompt(`This permanently deletes ${u.username} and all their progress. Type their username to confirm.`);
+      if(typed != null){
+        if(typed.trim().toLowerCase() !== u.username){ err.textContent = 'Username did not match, so nothing was deleted.'; return; }
+        if(await run('admin_delete_user', {p_user:id}, 'Account deleted')) m.close();
+      }
+    }
+  });
+}
+
 // ---------- start ----------
 if(SB){
   SB.auth.getSession().then(({data}) => {
@@ -3750,6 +4015,8 @@ if(SB){
       const u = (sn.user.user_metadata && sn.user.user_metadata.username) || String(sn.user.email || '').split('@')[0];
       store.set('y3.session', {u}, true);
       renderAccountBtn();
+      Admin.check();
+      logEvent('open');
       Cloud.pull();
     } else if(Auth.user()){
       // signed in only on this device before cloud accounts existed: log in again to move it online
