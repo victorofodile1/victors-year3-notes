@@ -1,0 +1,397 @@
+{
+  "id": "obstructive-sleep-apnoea",
+  "patient": {
+    "name": "Kwame Asante",
+    "age": 52,
+    "sex": "M",
+    "setting": "GP surgery (routine appointment)",
+    "complaint": "Exhausted all day and nodding off at traffic lights; his wife says he snores and stops breathing",
+    "background": ["Minicab driver in Croydon", "BMI 36, collar size 18.5 inches", "Hypertension on amlodipine, still poorly controlled", "Drinks about 20 units of alcohol a week, mostly beer at night"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' or 'Which risk factor is most important?' with an obese snorer, witnessed apnoeas and daytime sleepiness. Central sleep apnoea is the classic distractor: apnoeas without loud snoring.",
+      "steps": [
+        {"type": "story", "points": ["Kwame, 52, minicab driver, BMI **36**.", "Tired all day; drinks six coffees to stay awake.", "Twice nodded off **waiting at traffic lights** this month.", "Wakes with a **headache** most mornings."], "vitals": {"BP": "158/96 mmHg", "HR": "78 bpm", "SpO2": "96%"}},
+        {"type": "story", "points": ["His wife: '**Loud snoring**, then he stops breathing, then a big snort.'", "She now sleeps in the spare room.", "Poor concentration at work; irritable."]},
+        {"type": "notes", "src": 0, "lead": "Kwame's pauses then snorts are his **upper airway collapsing** and reopening, again and again, all night."},
+        {"type": "notes", "src": 1, "lead": "Kwame has the biggest risk factor, **obesity (BMI 36)**, plus male sex, a thick neck and evening alcohol."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Kwame's BMI", "min": 15, "max": 45, "unit": "kg/m²", "bands": [[18.5, 25, "healthy", "ok"], [25, 30, "overweight", "warn"], [30, 45, "obese: main OSA risk", "bad"]], "value": 36, "label": "Kwame 36", "caption": "BMI ≥30 is the most important risk factor for OSA."}},
+        {"type": "notes", "src": 2, "lead": "Snoring, **witnessed apnoeas**, morning headache, sleepiness and hypertension: Kwame has the full picture, reported by his partner."},
+        {"type": "ask", "q": "Which single risk factor matters most for Kwame's condition?", "o": ["Alcohol intake", "Caffeine intake", "Male sex", "Obesity"], "a": 3, "r": "**Obesity (BMI ≥30)** is the most important risk factor. Alcohol worsens it; caffeine is a consequence of the sleepiness, not a cause."},
+        {"type": "notes", "src": 3, "lead": "Kwame's poorly controlled BP is a **cardiovascular** complication; nodding off in his cab is the **driving risk**."},
+        {"type": "compare", "title": "Obstructive vs central sleep apnoea", "head": ["Feature", "Obstructive (OSA)", "Central"], "rows": [["Problem", "Airway collapses", "Brain stops sending the breath signal"], ["Snoring", "**Loud**", "Absent or quiet"], ["Breathing effort in apnoea", "Present (chest heaves against a shut airway)", "Absent"], ["Typical patient", "Obese man, thick neck", "Heart failure, opioids, brainstem disease"]]},
+        {"type": "notes", "src": 4, "lead": "Kwame snores loudly, which points to **obstruction**. Pauses with no snoring would suggest **central** sleep apnoea."},
+        {"type": "trap", "text": "Caffeine, low mood and tiredness are effects, not causes. When asked for the **most important risk factor**, pick **obesity** over alcohol, sedatives or caffeine."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (polysomnography) or a question on the screening tools (STOP-BANG, Epworth) and what an Epworth score means.",
+      "steps": [
+        {"type": "story", "points": ["The GP screens first with two questionnaires.", "STOP-BANG: snoring, tired, observed apnoea, BP, BMI, age, neck, gender.", "Kwame scores **7 of 8**."]},
+        {"type": "notes", "src": 1, "lead": "Kwame's **STOP-BANG** is high and his **Epworth score is 17**: severe daytime sleepiness, so he is referred to the sleep clinic."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Epworth Sleepiness Score", "min": 0, "max": 24, "unit": "points", "bands": [[0, 10, "normal", "ok"], [10, 15, "mild to moderate", "warn"], [15, 24, "severe (16-24)", "bad"]], "value": 17, "label": "Kwame 17", "caption": "16 to 24 means severe excessive daytime sleepiness."}},
+        {"type": "ask", "q": "Which test confirms Kwame's diagnosis?", "o": ["Epworth Sleepiness Score", "Overnight polysomnography", "Spirometry", "STOP-BANG questionnaire"], "a": 1, "r": "Questionnaires only **screen**. **Polysomnography** is the gold-standard sleep study that confirms OSA."},
+        {"type": "notes", "src": 0, "lead": "Kwame has an overnight **polysomnography**: airflow, chest effort, oxygen saturation, EEG and heart rate are recorded while he sleeps."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Kwame's overnight oxygen saturation", "x": ["23:00", "00:00", "01:00", "02:00", "03:00", "04:00", "05:00"], "unit": "%", "series": [{"name": "SpO2", "values": [96, 84, 95, 81, 94, 83, 95]}], "caption": "Repeated dips with each apnoea, recovering with each arousal: the sawtooth of OSA."}},
+        {"type": "labs", "title": "Sleep study and bloods", "rows": [["Apnoea-hypopnoea index", "38 events/hour", "<5", "H"], ["Lowest SpO2", "78%", ">90%", "L"], ["Haemoglobin", "178 g/L", "130–170", "H"], ["Haematocrit", "0.53", "0.40–0.50", "H"]], "text": "AHI over 30 is severe OSA (standard cut-offs 5, 15, 30). The raised Hb is secondary polycythaemia."},
+        {"type": "pearl", "text": "**Screen** with STOP-BANG and Epworth; **confirm** with polysomnography. 'Diagnostic' or 'gold standard' in the lead-in means polysomnography."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?': CPAP for confirmed OSA with symptoms, a mandibular advancement device if mild to moderate and CPAP is not tolerated, and DVLA questions about when to notify.",
+      "steps": [
+        {"type": "story", "points": ["Severe OSA confirmed: AHI 38, Epworth 17.", "Kwame wants to keep working as a driver.", "He asks whether a diet alone will fix it."]},
+        {"type": "notes", "src": 0, "lead": "Kwame needs both: **weight loss** and less evening alcohol, plus **CPAP** every night as the first-line, gold-standard treatment."},
+        {"type": "ask", "q": "Kwame has severe symptomatic OSA. What is the most appropriate treatment?", "o": ["CPAP", "Mandibular advancement device", "Modafinil", "Upper airway surgery"], "a": 0, "r": "**CPAP** is first-line and gold standard. A mandibular device is second-line for mild to moderate OSA; surgery is third-line."},
+        {"type": "flow", "title": "OSA treatment ladder", "nodes": ["Lifestyle for all: weight loss, less alcohol, sleep hygiene", "First-line: CPAP every night", "Mild to moderate, cannot tolerate CPAP: mandibular advancement device", "Third-line: elective upper airway surgery (rare)"]},
+        {"type": "notes", "src": 1, "lead": "If Kwame had **mild to moderate** OSA and could not tolerate the mask, a **mandibular advancement device** would be next."},
+        {"type": "notes", "src": 2, "lead": "Surgery to the upper airway is **third-line** and rarely used; it is not the answer for Kwame now."},
+        {"type": "notes", "src": 3, "lead": "Kwame has confirmed **severe** OSA with excessive daytime sleepiness, so he must **stop driving and notify the DVLA** until CPAP controls his symptoms."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Kwame on CPAP", "x": ["Start", "1 month", "3 months", "6 months"], "unit": "points", "series": [{"name": "Epworth score", "values": [17, 11, 7, 5]}], "caption": "Sleepiness settles on CPAP; once controlled he can apply to drive again."}},
+        {"type": "trap", "text": "Mild OSA **without** daytime sleepiness is not a driving risk: no DVLA notification. Notify only for **moderate or severe** OSA **with** excessive sleepiness."},
+        {"type": "notes", "src": "guidelines", "lead": "Kwame's plan follows **NICE NG202** for treatment and the **DVLA** fitness to drive standards for his job."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: the mechanism of the airway collapse, why OSA causes polycythaemia or hypertension, and how CPAP works.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "When Kwame falls asleep his **pharyngeal dilator muscles relax**, and the fat around his neck lets the airway fold shut."},
+        {"type": "flow", "title": "One apnoea cycle", "nodes": ["Sleep: dilator muscle tone falls", "Pharynx collapses: apnoea", "Hypoxia and hypercapnia", "Brief arousal restores airway tone", "Back to sleep: cycle repeats"], "caption": "Dozens of cycles an hour fragment sleep."},
+        {"type": "notes", "src": 1, "lead": "Each of Kwame's 38 events an hour ends with an **arousal**, so he never gets deep, restoring sleep."},
+        {"type": "ask", "q": "Why is Kwame's haemoglobin 178 g/L?", "o": ["Haemoconcentration from alcohol", "Hypoxia-driven renal erythropoietin release", "JAK2 mutation in the marrow", "Reduced red cell breakdown"], "a": 1, "r": "Chronic intermittent **hypoxia** makes the kidneys release **erythropoietin**, causing **secondary** polycythaemia. JAK2 is primary (polycythaemia vera)."},
+        {"type": "notes", "src": 2, "lead": "Kwame's raised Hb and stubborn hypertension are both driven by **recurrent hypoxia**: EPO from the kidney, and sympathetic surges."},
+        {"type": "notes", "src": 3, "lead": "Kwame's CPAP mask blows a steady pressure that **splints his pharynx open** all through each breath."},
+        {"type": "pearl", "text": "OSA is a cause of **secondary polycythaemia** (high EPO) and **resistant hypertension**. Treating the OSA treats both."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "What is the most important risk factor for OSA?", "o": ["Alcohol", "Male sex", "Obesity (BMI ≥30)", "Smoking"], "a": 2, "r": "Obesity is the most important risk factor."},
+    {"d": "diagnosis", "q": "Who most often reports the witnessed apnoeas?", "o": ["A sleep technician", "The GP", "The partner", "The patient"], "a": 2, "r": "The patient is asleep; the partner reports the snoring and pauses."},
+    {"d": "diagnosis", "q": "Which feature suggests central rather than obstructive sleep apnoea?", "o": ["Apnoeas without loud snoring", "Large neck circumference", "Morning headache", "Obesity"], "a": 0, "r": "Central sleep apnoea is loss of drive: pauses without loud snoring."},
+    {"d": "investigation", "q": "What is the gold-standard diagnostic test for OSA?", "o": ["Epworth Sleepiness Score", "Overnight pulse oximetry", "Polysomnography", "STOP-BANG"], "a": 2, "r": "Polysomnography confirms OSA; the questionnaires only screen."},
+    {"d": "investigation", "q": "An Epworth score of 18 indicates what?", "o": ["Lower than normal sleepiness", "Mild excessive sleepiness", "Normal sleepiness", "Severe excessive sleepiness"], "a": 3, "r": "16 to 24 is severe excessive daytime sleepiness."},
+    {"d": "management", "q": "What is the first-line, gold-standard treatment for OSA?", "o": ["CPAP", "Mandibular advancement device", "Modafinil", "Uvulopalatopharyngoplasty"], "a": 0, "r": "CPAP is first-line and gold standard."},
+    {"d": "management", "q": "Mild to moderate OSA, cannot tolerate CPAP. What next?", "o": ["Bariatric surgery", "Mandibular advancement device", "Tonsillectomy", "Zopiclone"], "a": 1, "r": "A mandibular advancement device is second-line."},
+    {"d": "management", "q": "When must the DVLA be notified about OSA?", "o": ["Any snoring", "Any OSA diagnosis", "Mild OSA without sleepiness", "Moderate or severe OSA with excessive sleepiness"], "a": 3, "r": "Only confirmed moderate or severe OSA causing excessive daytime sleepiness."},
+    {"d": "science", "q": "How does OSA cause secondary polycythaemia?", "o": ["Bone marrow mutation", "Haemoconcentration", "Hypoxia stimulates renal EPO release", "Reduced splenic clearance"], "a": 2, "r": "Chronic hypoxia drives renal erythropoietin release."},
+    {"d": "science", "q": "How does CPAP work?", "o": ["Increases ventilatory drive", "Relaxes bronchial smooth muscle", "Splints the airway open with positive pressure", "Strengthens the diaphragm"], "a": 2, "r": "Positive pressure throughout the cycle splints the pharynx open."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is OSA and who gets it?", "tip": "Exam thinking: name the mechanism and the single most important risk factor.", "points": [
+        {"p": "Repeated upper airway collapse during sleep", "k": [["collapse", "obstruct", "closes"], ["airway", "pharyn", "throat"]], "why": "Collapse causes intermittent hypoxia and fragmented sleep."},
+        {"p": "Most important risk factor: obesity (BMI ≥30)", "k": [["obes", "bmi", "weight"]], "why": "Pick obesity over alcohol or caffeine when asked for the most important factor."},
+        {"p": "Also male sex, large neck, anatomical obstruction, alcohol or sedatives", "k": [["male", "men", "neck", "alcohol", "sedative", "tonsil"]], "why": "Alcohol and sedatives reduce pharyngeal muscle tone."}
+      ]},
+      {"d": "diagnosis", "q": "How does OSA classically present?", "tip": "Exam thinking: the partner's report is the giveaway.", "points": [
+        {"p": "Loud snoring", "k": [["snor"]], "why": "Loud snoring separates it from central sleep apnoea."},
+        {"p": "Witnessed apnoeas, often reported by the partner", "k": [["apnoea", "apnea", "pause", "stops breathing"]], "why": "Partners describe pauses then a snort or gasp."},
+        {"p": "Daytime sleepiness and poor concentration", "k": [["sleep", "somnol", "tired", "concentrat"]], "why": "Falling asleep while driving is the danger."},
+        {"p": "Morning headaches and hypertension", "k": [["headache", "hypertens", "blood pressure"]], "why": "Morning headache comes from overnight CO2 retention."}
+      ]},
+      {"d": "diagnosis", "q": "What complications does OSA cause?", "tip": "Exam thinking: heart, brain and the road.", "points": [
+        {"p": "Cardiovascular disease: hypertension, heart failure, stroke", "k": [["hypertens", "heart failure", "stroke", "cardiovascular"]], "why": "OSA is a cause of resistant hypertension."},
+        {"p": "Accidents from sleepiness, especially driving", "k": [["driv", "accident", "crash"]], "why": "This is why DVLA rules exist."},
+        {"p": "Secondary polycythaemia", "k": [["polycyth", "haemoglobin", "hb"]], "why": "From hypoxia-driven EPO release."}
+      ]},
+      {"d": "diagnosis", "q": "How do you tell OSA from central sleep apnoea?", "tip": "Exam thinking: the snoring decides.", "points": [
+        {"p": "Central: intermittent loss of ventilatory drive", "k": [["drive", "brain", "central"]], "why": "No signal to breathe, so no chest effort during the pause."},
+        {"p": "Central: apnoeas without loud snoring", "k": [["without snor", "no snor", "absent snor", "not snor", "quiet"]], "why": "Loud snoring points to obstruction."},
+        {"p": "Central: normal respiratory rate and typical daytime tests", "k": [["normal", "typical"]], "why": "Daytime findings do not distinguish it."}
+      ]},
+      {"d": "investigation", "q": "How is OSA screened for and confirmed?", "tip": "Exam thinking: screen with questionnaires, confirm with a sleep study.", "points": [
+        {"p": "Screen: STOP-BANG questionnaire", "k": [["stop-bang", "stop bang", "stopbang"]], "why": "Snoring, Tired, Observed, Pressure, BMI, Age, Neck, Gender."},
+        {"p": "Screen: Epworth Sleepiness Score", "k": [["epworth"]], "why": "Rates the chance of dozing in eight everyday situations."},
+        {"p": "Confirm: (nocturnal) polysomnography, the gold standard", "k": [["polysomnograph", "sleep study"]], "why": "'Diagnostic investigation' in the lead-in means polysomnography."}
+      ]},
+      {"d": "investigation", "q": "What are the Epworth Sleepiness Score bands?", "tip": "Exam thinking: know where severe starts.", "points": [
+        {"p": "0-5 lower than normal, 6-10 normal", "k": [["10", "ten"]], "why": "Up to 10 is normal daytime sleepiness."},
+        {"p": "11-12 mild, 13-15 moderate", "k": [["mild", "moderate"]], "why": "These are excessive daytime sleepiness."},
+        {"p": "16-24 severe", "k": [["16", "sixteen"], ["sever"]], "why": "Maximum score is 24."}
+      ]},
+      {"d": "management", "q": "What is the treatment ladder for OSA?", "tip": "Exam thinking: lifestyle for all, then CPAP, then a device, then surgery.", "points": [
+        {"p": "Weight loss (most important), less alcohol, sleep hygiene", "k": [["weight"]], "why": "Weight loss is the most important lifestyle measure."},
+        {"p": "First-line and gold standard: CPAP", "k": [["cpap", "continuous positive"]], "why": "Given every night via a mask."},
+        {"p": "Second-line: mandibular advancement device if mild to moderate and CPAP not tolerated", "k": [["mandibular", "jaw", "oral device", "splint"]], "why": "Pulls the jaw forward to open the airway."},
+        {"p": "Third-line: elective upper airway surgery, rarely used", "k": [["surg"]], "why": "Rarely the answer in an SBA."}
+      ]},
+      {"d": "management", "q": "When must a patient with OSA notify the DVLA?", "tip": "Exam thinking: two conditions must both be true.", "points": [
+        {"p": "Confirmed moderate or severe OSA", "k": [["moderate", "severe"]], "why": "Mild OSA alone does not need notification."},
+        {"p": "With excessive daytime sleepiness", "k": [["sleep", "somnol", "drows"]], "why": "Mild OSA without daytime sleepiness is not a driving risk."}
+      ]},
+      {"d": "science", "q": "Why does the airway collapse, and why are patients sleepy?", "tip": "Exam thinking: muscle tone, fat, arousal.", "points": [
+        {"p": "Loss of pharyngeal dilator muscle tone in sleep", "k": [["dilator", "muscle tone", "tone"]], "why": "Worse with alcohol and sedatives."},
+        {"p": "Excess pharyngeal fat or anatomical narrowing", "k": [["fat", "obes", "narrow", "anatom"]], "why": "Large neck circumference is the clinical clue."},
+        {"p": "Hypoxia or hypercapnia triggers arousal; repeated arousal fragments sleep", "k": [["arous", "wake", "fragment"]], "why": "Fragmented sleep causes daytime sleepiness."}
+      ]},
+      {"d": "science", "q": "Why does OSA cause polycythaemia and hypertension, and how does CPAP help?", "tip": "Exam thinking: hypoxia is the common driver.", "points": [
+        {"p": "Chronic hypoxia stimulates renal erythropoietin: secondary polycythaemia", "k": [["erythropoietin", "epo"]], "why": "Secondary, not polycythaemia vera."},
+        {"p": "Hypoxic pulmonary vasoconstriction and sympathetic activation: systemic and pulmonary hypertension", "k": [["sympathetic", "vasoconstrict"]], "why": "Long-term OSA can cause pulmonary hypertension."},
+        {"p": "CPAP splints the airway open with positive pressure through the cycle", "k": [["splint", "positive pressure", "holds open", "keeps open"]], "why": "It treats the obstruction, not breathing drive."}
+      ]}
+    ]
+  },
+  "glossary": {
+    "OSA": "Obstructive sleep apnoea: the upper airway repeatedly collapses during sleep, stopping airflow.",
+    "Apnoea": "A pause in airflow during sleep, usually defined as lasting at least 10 seconds.",
+    "Hypopnoea": "A partial reduction in airflow during sleep with a drop in oxygen saturation or an arousal.",
+    "AHI": "Apnoea-hypopnoea index: apnoeas plus hypopnoeas per hour of sleep; 5, 15 and 30 mark mild, moderate and severe.",
+    "Central sleep apnoea": "Pauses in breathing because the brain stops sending the signal to breathe, usually without loud snoring.",
+    "Witnessed apnoeas": "Pauses in breathing during sleep seen by a bed partner, often ending in a snort or gasp.",
+    "Polysomnography": "Overnight sleep study recording airflow, chest effort, oxygen saturation, EEG and heart rate; the gold standard for OSA.",
+    "STOP-BANG": "Screening questionnaire: Snoring, Tired, Observed apnoea, Pressure, BMI, Age, Neck size, Gender.",
+    "Epworth Sleepiness Score": "Questionnaire scoring the chance of dozing in eight situations, 0 to 24; 16 or more is severe.",
+    "Epworth": "Short for the Epworth Sleepiness Score, a 0 to 24 questionnaire on daytime sleepiness.",
+    "CPAP": "Continuous positive airway pressure: a mask delivering steady pressure that splints the airway open during sleep.",
+    "Mandibular advancement device": "A mouthguard-like splint that holds the lower jaw forward to widen the airway.",
+    "Pharyngeal dilator muscles": "Throat muscles, such as genioglossus, that hold the pharynx open; their tone falls during sleep.",
+    "Pharynx": "The throat behind the nose and mouth, the part of the airway that collapses in OSA.",
+    "Hypercapnia": "A raised carbon dioxide level in the blood from under-breathing.",
+    "Hypoxia": "Low oxygen delivery to the tissues.",
+    "Arousal": "A brief shift to lighter sleep or waking that restores airway muscle tone.",
+    "Sleep architecture": "The normal pattern of sleep stages through the night, broken up by repeated arousals in OSA.",
+    "Secondary polycythaemia": "A raised red cell count driven by a cause outside the marrow, such as hypoxia raising erythropoietin.",
+    "Erythropoietin": "A hormone from the kidney that stimulates the bone marrow to make red blood cells.",
+    "EPO": "Erythropoietin, the kidney hormone that drives red cell production.",
+    "Hypoxic pulmonary vasoconstriction": "Narrowing of lung arteries in response to low oxygen, which raises pulmonary artery pressure.",
+    "Pulmonary hypertension": "Raised blood pressure in the pulmonary arteries, which strains the right heart.",
+    "Resistant hypertension": "High blood pressure that stays uncontrolled despite three drugs; OSA is a recognised cause.",
+    "Haematocrit": "The fraction of blood volume made up of red cells; raised in polycythaemia.",
+    "DVLA": "Driver and Vehicle Licensing Agency, which must be told about conditions that affect safe driving.",
+    "Daytime sleepiness": "Falling asleep or struggling to stay awake in the day, the main driving risk in OSA.",
+    "Obesity hypoventilation syndrome": "Obesity with daytime hypercapnia from under-breathing; often coexists with OSA.",
+    "Neck circumference": "Collar size; above about 40 cm (16 inches) suggests a crowded airway and OSA risk.",
+    "Sleep hygiene": "Habits that support good sleep: regular hours, no alcohol or screens before bed, a dark quiet room.",
+    "Upper airway surgery": "Operations to widen the throat, such as removing tonsils or palate tissue; third-line and rarely used.",
+    "Modafinil": "A wakefulness-promoting drug; it does not treat the airway obstruction in OSA.",
+    "NICE NG202": "NICE guideline on obstructive sleep apnoea, obesity hypoventilation syndrome and COPD overlap."
+  },
+  "technique": [
+    {"d": "diagnosis",
+     "stem": "A 49 year old man has a 6 month history of tiredness. His wife says he snores loudly and sometimes stops breathing for several seconds before gasping. He wakes with headaches and falls asleep in meetings. His BMI is 34 kg/m² and collar size 46 cm. His pulse rate is 76 bpm and BP 154/92 mmHg.",
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Central sleep apnoea", "Narcolepsy", "Obesity hypoventilation syndrome", "Obstructive sleep apnoea", "Restless legs syndrome"],
+     "a": 3,
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis: a sleepy patient, so decide between the sleep disorders."},
+       {"t": "Pick out the clues", "clues": ["snores loudly", "stops breathing for several seconds before gasping", "wakes with headaches", "falls asleep in meetings", "BMI is 34", "collar size 46 cm"], "x": "Loud snoring plus witnessed apnoeas, morning headache, daytime sleepiness, obesity and a thick neck."},
+       {"t": "Make your own answer before looking", "x": "Obese man, snorer, partner-witnessed pauses: **obstructive sleep apnoea**."},
+       {"t": "Rule out the others", "elim": [[0, "Central sleep apnoea has pauses without loud snoring."], [1, "Narcolepsy causes sudden sleep attacks and cataplexy, not snoring with apnoeas."], [2, "Obesity hypoventilation needs daytime hypercapnia; the stem describes apnoeas and gasps."], [4, "Restless legs causes an urge to move the legs at night, not apnoeas."]]},
+       {"t": "Commit", "x": "**D. Obstructive sleep apnoea.** Rule: snoring + witnessed apnoeas + sleepiness + obesity = OSA."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 56 year old woman has loud snoring and daytime sleepiness. Her partner has seen her stop breathing during sleep. Her BMI is 38 kg/m². Her STOP-BANG score is 6 and her Epworth Sleepiness Score is 16. Her oxygen saturation is 95% breathing air.",
+     "q": "Which is the most appropriate diagnostic investigation?",
+     "o": ["Arterial blood gas", "Epworth Sleepiness Score", "Polysomnography", "Pulse oximetry at rest", "Spirometry"],
+     "a": 2,
+     "steps": [
+       {"t": "Read the question line first", "x": "'Diagnostic' means the test that confirms the condition: the gold standard."},
+       {"t": "Pick out the clues", "clues": ["loud snoring", "stop breathing during sleep", "STOP-BANG score is 6", "Epworth Sleepiness Score is 16"], "x": "Screening is already done and positive; the next step is confirmation."},
+       {"t": "Make your own answer before looking", "x": "OSA is confirmed by **overnight polysomnography**."},
+       {"t": "Rule out the others", "elim": [[0, "An ABG is for hypercapnia, not for diagnosing OSA."], [1, "The Epworth is a screening score and has already been done."], [3, "Resting daytime oximetry is normal in OSA; the dips happen in sleep."], [4, "Spirometry tests the lower airways for asthma or COPD."]]},
+       {"t": "Commit", "x": "**C. Polysomnography.** Rule: questionnaires screen, polysomnography confirms."}
+     ]},
+    {"d": "management",
+     "stem": "A 61 year old man has polysomnography showing severe obstructive sleep apnoea. His Epworth Sleepiness Score is 17. He has lost 4 kg with dietary advice and has stopped drinking alcohol in the evenings. He has no nasal obstruction. His pulse rate is 80 bpm and BP 146/90 mmHg.",
+     "q": "Which is the most appropriate management?",
+     "o": ["Bariatric surgery referral", "Continuous positive airway pressure", "Mandibular advancement device", "Modafinil", "Upper airway surgery"],
+     "a": 1,
+     "steps": [
+       {"t": "Read the question line first", "x": "Management of confirmed, symptomatic OSA."},
+       {"t": "Pick out the clues", "clues": ["severe obstructive sleep apnoea", "Epworth Sleepiness Score is 17", "lost 4 kg"], "x": "Severe disease with severe sleepiness; lifestyle measures already started."},
+       {"t": "Make your own answer before looking", "x": "Lifestyle continues, but the first-line, gold-standard treatment is **CPAP**."},
+       {"t": "Rule out the others", "elim": [[0, "Bariatric surgery is not the next step in OSA; CPAP treats it now."], [2, "A mandibular device is second-line, for mild to moderate OSA if CPAP fails."], [3, "Modafinil masks sleepiness but does not treat obstruction."], [4, "Upper airway surgery is third-line and rarely used."]]},
+       {"t": "Commit", "x": "**B. CPAP.** Rule: confirmed symptomatic OSA = CPAP plus weight loss."}
+     ]},
+    {"d": "science",
+     "stem": "A 58 year old man with untreated obstructive sleep apnoea has a routine blood test. He has never smoked and has no lung disease. His oxygen saturation is 95% breathing air while awake.",
+     "labs": [["Haemoglobin", "182 g/L", "130–170", "H"], ["Haematocrit", "0.55", "0.40–0.50", "H"], ["White cell count", "7.1 ×10⁹/L", "4.0–11.0", ""], ["Platelets", "260 ×10⁹/L", "150–400", ""]],
+     "q": "Which is the most likely mechanism of his blood result?",
+     "o": ["Bone marrow JAK2 mutation", "Haemoconcentration from dehydration", "Hypoxia-driven renal erythropoietin release", "Increased hepatic thrombopoietin", "Reduced red cell destruction in the spleen"],
+     "a": 2,
+     "steps": [
+       {"t": "Read the question line first", "x": "Mechanism of a raised haemoglobin in OSA."},
+       {"t": "Pick out the clues", "clues": ["untreated obstructive sleep apnoea", "never smoked", "routine blood test"], "x": "Raised Hb and haematocrit only; white cells and platelets normal; nocturnal hypoxia from OSA."},
+       {"t": "Make your own answer before looking", "x": "Chronic intermittent hypoxia stimulates **renal EPO**: secondary polycythaemia."},
+       {"t": "Rule out the others", "elim": [[0, "JAK2 causes polycythaemia vera, often with raised white cells and platelets."], [1, "Dehydration is relative polycythaemia; nothing suggests fluid loss."], [3, "Thrombopoietin drives platelets, which are normal."], [4, "Splenic changes do not explain an isolated raised Hb in OSA."]]},
+       {"t": "Commit", "x": "**C. Renal EPO release.** Rule: OSA causes secondary polycythaemia via hypoxia."}
+     ]}
+  ],
+  "practice": [
+    {"d": "diagnosis",
+     "stem": "A 47 year old man who works as a lorry driver has 4 months of daytime tiredness. He nearly fell asleep at the wheel last week. His partner says he snores very loudly and has long pauses in his breathing at night. His BMI is 35 kg/m². His pulse rate is 72 bpm and BP 150/94 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Central sleep apnoea", "Chronic fatigue syndrome", "Hypothyroidism", "Narcolepsy", "Obstructive sleep apnoea"],
+     "a": 4,
+     "e": "Loud snoring, witnessed apnoeas, sleepiness and obesity are OSA. Central sleep apnoea has pauses without loud snoring.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a sleepy, snoring man."},
+       {"t": "Pick out the clues", "clues": ["snores very loudly", "long pauses in his breathing", "nearly fell asleep at the wheel", "BMI is 35"], "x": "Snoring plus apnoeas plus sleepiness in an obese man."},
+       {"t": "Make your own answer before looking", "x": "**Obstructive sleep apnoea.**"},
+       {"t": "Rule out the others", "elim": [[0, "Central sleep apnoea lacks loud snoring."], [1, "Chronic fatigue does not cause witnessed apnoeas."], [2, "Hypothyroidism causes tiredness, but there is no cold intolerance or weight gain history and it does not explain apnoeas alone."], [3, "Narcolepsy causes sleep attacks and cataplexy, not snoring apnoeas."]]},
+       {"t": "Commit", "x": "**E. OSA.** The partner's story is the diagnosis."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 53 year old man has loud snoring, witnessed apnoeas and daytime sleepiness. He drinks 12 units of alcohol per week and stopped smoking 10 years ago. He has type 2 diabetes. His BMI is 39 kg/m².",
+     "labs": [], "visual": null,
+     "q": "Which is the most important risk factor for his condition?",
+     "o": ["Alcohol intake", "Ex-smoking", "Male sex", "Obesity", "Type 2 diabetes"],
+     "a": 3,
+     "e": "Obesity (BMI ≥30) is the most important risk factor for OSA. Male sex and alcohol contribute but matter less.",
+     "steps": [
+       {"t": "Read the question line first", "x": "'Most important risk factor' for OSA."},
+       {"t": "Pick out the clues", "clues": ["loud snoring", "witnessed apnoeas", "BMI is 39"], "x": "Classic OSA in a man with severe obesity."},
+       {"t": "Make your own answer before looking", "x": "The notes are clear: **obesity** is the most important risk factor."},
+       {"t": "Rule out the others", "elim": [[0, "Alcohol worsens OSA but is a lesser factor, and his intake is modest."], [1, "Smoking is not a key OSA risk factor."], [2, "Male sex is a risk factor but less important than obesity."], [4, "Diabetes is associated with OSA rather than its main cause."]]},
+       {"t": "Commit", "x": "**D. Obesity.** Always pick BMI ≥30 as the main driver."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 60 year old man with untreated obstructive sleep apnoea has a routine full blood count. He feels well apart from daytime sleepiness. His pulse rate is 74 bpm and BP 148/92 mmHg. His oxygen saturation is 96% breathing air while awake.",
+     "labs": [["White cell count", "6.8 ×10⁹/L", "4.0–11.0", ""], ["Platelets", "240 ×10⁹/L", "150–400", ""], ["MCV", "88 fL", "80–100", ""]],
+     "visual": null,
+     "q": "Which is the most likely additional finding on his full blood count?",
+     "o": ["Eosinophilia", "Leucopenia", "Microcytic anaemia", "Raised haematocrit", "Thrombocytopenia"],
+     "a": 3,
+     "e": "Chronic nocturnal hypoxia raises EPO, causing secondary polycythaemia with a raised Hb and haematocrit.",
+     "steps": [
+       {"t": "Read the question line first", "x": "A finding on FBC in OSA."},
+       {"t": "Pick out the clues", "clues": ["untreated obstructive sleep apnoea", "daytime sleepiness"], "x": "Untreated OSA means repeated nocturnal hypoxia."},
+       {"t": "Make your own answer before looking", "x": "Hypoxia raises EPO: **secondary polycythaemia** with high haematocrit."},
+       {"t": "Rule out the others", "elim": [[0, "Eosinophilia suggests allergy, asthma or parasites."], [1, "OSA does not lower white cells."], [2, "OSA raises, not lowers, haemoglobin; MCV is normal."], [4, "Platelets are normal and OSA does not reduce them."]]},
+       {"t": "Commit", "x": "**D. Raised haematocrit.** OSA is a cause of secondary polycythaemia."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 55 year old man has hypertension that remains uncontrolled despite amlodipine, ramipril and indapamide. He snores loudly, wakes unrefreshed with morning headaches and dozes in the afternoon. His BMI is 37 kg/m². His pulse rate is 78 bpm and BP 162/98 mmHg.",
+     "labs": [["Potassium", "4.3 mmol/L", "3.5–5.3", ""], ["Aldosterone:renin ratio", "Normal", "", ""], ["eGFR", "84 mL/min/1.73m²", ">60", ""], ["Plasma metanephrines", "Normal", "", ""]],
+     "visual": null,
+     "q": "Which is the most likely cause of his resistant hypertension?",
+     "o": ["Coarctation of the aorta", "Obstructive sleep apnoea", "Phaeochromocytoma", "Primary hyperaldosteronism", "Renal artery stenosis"],
+     "a": 1,
+     "e": "Snoring, unrefreshing sleep, morning headaches and obesity point to OSA, a common cause of resistant hypertension via sympathetic activation.",
+     "steps": [
+       {"t": "Read the question line first", "x": "The cause of hypertension uncontrolled on three drugs."},
+       {"t": "Pick out the clues", "clues": ["snores loudly", "morning headaches", "dozes in the afternoon", "BMI is 37", "uncontrolled despite amlodipine, ramipril and indapamide"], "x": "OSA symptoms; normal potassium, ratio, metanephrines and eGFR."},
+       {"t": "Make your own answer before looking", "x": "**OSA**: hypoxia drives sympathetic surges and hypertension."},
+       {"t": "Rule out the others", "elim": [[0, "Coarctation presents young with radio-femoral delay."], [2, "Metanephrines are normal and there are no paroxysms."], [3, "Normal potassium and aldosterone:renin ratio."], [4, "Normal eGFR and no flash oedema or bruit described."]]},
+       {"t": "Commit", "x": "**B. OSA.** Think OSA in any obese snorer with resistant hypertension."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 50 year old woman has daytime sleepiness and her husband reports loud snoring with pauses in her breathing. She has no breathlessness or chest pain. Her BMI is 33 kg/m². Her pulse rate is 70 bpm, BP 142/88 mmHg and oxygen saturation 97% breathing air.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely finding on examination?",
+     "o": ["Bibasal crackles", "Finger clubbing", "Large neck circumference", "Resting tremor", "Unilateral wheeze"],
+     "a": 2,
+     "e": "A large neck circumference reflects excess pharyngeal fat narrowing the airway, a key OSA risk factor and examination finding.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Examination finding in suspected OSA."},
+       {"t": "Pick out the clues", "clues": ["loud snoring with pauses", "daytime sleepiness", "BMI is 33"], "x": "OSA picture in an obese woman."},
+       {"t": "Make your own answer before looking", "x": "A **large neck circumference** (crowded pharynx)."},
+       {"t": "Rule out the others", "elim": [[0, "Bibasal crackles suggest heart failure or fibrosis; she has no breathlessness."], [1, "Clubbing points to lung cancer, fibrosis or bronchiectasis."], [3, "Resting tremor is Parkinson's disease."], [4, "Unilateral wheeze suggests a localised obstruction such as a tumour."]]},
+       {"t": "Commit", "x": "**C. Large neck circumference.** Neck size is in STOP-BANG for a reason."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 45 year old man with suspected obstructive sleep apnoea completes an Epworth Sleepiness Score in clinic. He says he would almost certainly doze when reading, watching TV, as a passenger and lying down in the afternoon, and often while talking or in traffic. His total score is 19.",
+     "labs": [], "visual": null,
+     "q": "Which best describes his daytime sleepiness?",
+     "o": ["Higher normal", "Lower than normal", "Mild excessive", "Moderate excessive", "Severe excessive"],
+     "a": 4,
+     "e": "Epworth 16 to 24 is severe excessive daytime sleepiness; 13 to 15 moderate; 11 to 12 mild; up to 10 normal.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Grade the sleepiness from the Epworth score."},
+       {"t": "Pick out the clues", "clues": ["total score is 19"], "x": "19 out of 24."},
+       {"t": "Make your own answer before looking", "x": "16 to 24 is **severe**."},
+       {"t": "Rule out the others", "elim": [[0, "Higher normal is 6 to 10."], [1, "Lower than normal is 0 to 5."], [2, "Mild is 11 to 12."], [3, "Moderate is 13 to 15."]]},
+       {"t": "Commit", "x": "**E. Severe excessive.** Learn the cut-off: 16."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 51 year old man has loud snoring, witnessed apnoeas and an Epworth Sleepiness Score of 15. His BMI is 36 kg/m². His pulse rate is 74 bpm and BP 146/90 mmHg. His thyroid function is normal.",
+     "labs": [["TSH", "2.1 mU/L", "0.3–4.2", ""], ["Haemoglobin", "168 g/L", "130–170", ""]],
+     "visual": null,
+     "q": "Which is the most appropriate diagnostic investigation?",
+     "o": ["Epworth Sleepiness Scale", "Overnight polysomnography", "Overnight pulse oximetry alone", "Spirometry", "Thyroid ultrasound"],
+     "a": 1,
+     "e": "Polysomnography is the gold standard that confirms OSA; the Epworth only screens and has been done.",
+     "steps": [
+       {"t": "Read the question line first", "x": "'Diagnostic': the confirmatory, gold-standard test."},
+       {"t": "Pick out the clues", "clues": ["loud snoring", "witnessed apnoeas", "Epworth Sleepiness Score of 15"], "x": "Screening already suggests OSA."},
+       {"t": "Make your own answer before looking", "x": "**Overnight polysomnography.**"},
+       {"t": "Rule out the others", "elim": [[0, "Already done; it screens, it does not diagnose."], [2, "Oximetry alone records saturation only, without airflow or effort, so it is not the gold standard."], [3, "Spirometry is for asthma or COPD."], [4, "Thyroid function is normal; ultrasound adds nothing."]]},
+       {"t": "Commit", "x": "**B. Polysomnography.**"}
+     ]},
+    {"d": "investigation",
+     "stem": "A 48 year old woman sees her GP because her partner complains about her snoring and says she stops breathing at night. She feels sleepy in the day. Her BMI is 34 kg/m² and her neck circumference is 42 cm.",
+     "labs": [], "visual": null,
+     "q": "Which is the most appropriate initial investigation?",
+     "o": ["Chest X-ray", "CT neck", "Polysomnography", "Spirometry", "STOP-BANG questionnaire"],
+     "a": 4,
+     "e": "First-line screening is the STOP-BANG questionnaire with the Epworth score; polysomnography then confirms.",
+     "steps": [
+       {"t": "Read the question line first", "x": "'Initial' investigation in primary care, not the diagnostic one."},
+       {"t": "Pick out the clues", "clues": ["sees her GP", "stops breathing at night", "neck circumference is 42 cm"], "x": "Suspected OSA at first presentation."},
+       {"t": "Make your own answer before looking", "x": "Screen first: **STOP-BANG** (and Epworth)."},
+       {"t": "Rule out the others", "elim": [[0, "A chest X-ray does not assess sleep apnoea."], [1, "CT neck is not part of routine OSA work-up."], [2, "Polysomnography is the diagnostic test after screening."], [3, "Spirometry tests lower airway disease."]]},
+       {"t": "Commit", "x": "**E. STOP-BANG.** 'Initial' = screen; 'diagnostic' = polysomnography."}
+     ]},
+    {"d": "management",
+     "stem": "A 57 year old man has polysomnography confirming moderate obstructive sleep apnoea. His Epworth Sleepiness Score is 14. He has started a weight loss programme. His pulse rate is 76 bpm and BP 144/88 mmHg.",
+     "labs": [["Apnoea-hypopnoea index", "24 events/hour", "<5", "H"], ["Lowest SpO2", "82%", ">90%", "L"]],
+     "visual": null,
+     "q": "Which is the most appropriate management?",
+     "o": ["Continuous positive airway pressure", "Mandibular advancement device", "Modafinil", "Uvulopalatopharyngoplasty", "Zopiclone at night"],
+     "a": 0,
+     "e": "CPAP is first-line and gold standard for symptomatic OSA, alongside weight loss. A mandibular device is for those who cannot tolerate CPAP.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Treatment of confirmed, symptomatic OSA."},
+       {"t": "Pick out the clues", "clues": ["moderate obstructive sleep apnoea", "Epworth Sleepiness Score is 14", "started a weight loss programme"], "x": "Symptomatic moderate OSA; lifestyle already under way; no CPAP trial yet."},
+       {"t": "Make your own answer before looking", "x": "**CPAP.**"},
+       {"t": "Rule out the others", "elim": [[1, "Second-line, only if CPAP is not tolerated."], [2, "Modafinil does not treat the obstruction."], [3, "Surgery is third-line and rarely used."], [4, "Sedatives worsen airway collapse."]]},
+       {"t": "Commit", "x": "**A. CPAP.**"}
+     ]},
+    {"d": "management",
+     "stem": "A 44 year old woman has mild to moderate obstructive sleep apnoea on polysomnography. She tried CPAP for 3 months but could not tolerate the mask despite support and mask changes. She is losing weight. Her pulse rate is 70 bpm and BP 132/84 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the next most appropriate step in management?",
+     "o": ["Bariatric surgery", "Mandibular advancement device", "Modafinil", "Tonsillectomy", "Upper airway surgery"],
+     "a": 1,
+     "e": "For mild to moderate OSA when CPAP is not tolerated, a mandibular advancement device is second-line. Upper airway surgery is third-line.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Next step after failed CPAP."},
+       {"t": "Pick out the clues", "clues": ["mild to moderate obstructive sleep apnoea", "could not tolerate the mask"], "x": "Exactly the second-line scenario in the notes."},
+       {"t": "Make your own answer before looking", "x": "**Mandibular advancement device.**"},
+       {"t": "Rule out the others", "elim": [[0, "Not the next step for OSA itself; lifestyle weight loss is already under way."], [2, "Modafinil treats sleepiness, not the airway."], [3, "Only for obstructing tonsils, which are not described."], [4, "Third-line and rarely used."]]},
+       {"t": "Commit", "x": "**B. Mandibular advancement device.**"}
+     ]},
+    {"d": "management",
+     "stem": "A 50 year old man who drives a car to work has polysomnography confirming severe obstructive sleep apnoea. He reports falling asleep while watching TV and as a passenger, with an Epworth Sleepiness Score of 18. He is starting CPAP. His pulse rate is 82 bpm and BP 150/92 mmHg.",
+     "labs": [["Apnoea-hypopnoea index", "41 events/hour", "<5", "H"]],
+     "visual": null,
+     "q": "Which is the most appropriate advice about driving?",
+     "o": ["Continue driving; the DVLA need not be told", "Drive only in daylight", "Inform only his insurer", "Stop driving and notify the DVLA", "Stop driving permanently"],
+     "a": 3,
+     "e": "Confirmed moderate or severe OSA with excessive daytime sleepiness must be notified to the DVLA, with no driving until symptoms are controlled.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Driving advice in OSA."},
+       {"t": "Pick out the clues", "clues": ["severe obstructive sleep apnoea", "Epworth Sleepiness Score of 18"], "x": "Both conditions met: confirmed severe OSA and excessive sleepiness."},
+       {"t": "Make your own answer before looking", "x": "**Stop driving and notify the DVLA.**"},
+       {"t": "Rule out the others", "elim": [[0, "Only mild OSA without sleepiness needs no notification."], [1, "Daylight-only driving is not a DVLA option for OSA."], [2, "The legal duty is to the DVLA, not just the insurer."], [4, "Driving can resume once CPAP controls his symptoms."]]},
+       {"t": "Commit", "x": "**D. Stop and notify the DVLA.**"}
+     ]},
+    {"d": "science",
+     "stem": "A 54 year old man has polysomnography showing repeated episodes of absent airflow with continued chest and abdominal respiratory effort, each ending in a brief arousal. His BMI is 38 kg/m². His pulse rate is 76 bpm and BP 148/90 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely mechanism of his apnoeas?",
+     "o": ["Bronchospasm of the small airways", "Diaphragmatic weakness", "Laryngeal oedema", "Loss of central ventilatory drive", "Loss of pharyngeal dilator muscle tone"],
+     "a": 4,
+     "e": "Absent airflow with continued effort is obstruction: the pharynx collapses as dilator tone falls in sleep, worsened by fat. Absent effort would mean central apnoea.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Mechanism of the apnoeas."},
+       {"t": "Pick out the clues", "clues": ["absent airflow with continued chest and abdominal respiratory effort", "brief arousal", "BMI is 38"], "x": "Effort continues, so the drive is intact and the airway is blocked."},
+       {"t": "Make your own answer before looking", "x": "**Loss of pharyngeal dilator muscle tone** in sleep, with fat narrowing the airway."},
+       {"t": "Rule out the others", "elim": [[0, "Bronchospasm causes wheeze, not cyclical sleep apnoeas."], [1, "Diaphragm weakness reduces effort; here effort is preserved."], [2, "Laryngeal oedema is acute and constant, not sleep-related."], [3, "Central loss of drive means no chest effort during apnoea."]]},
+       {"t": "Commit", "x": "**E. Loss of pharyngeal dilator tone.** Effort present = obstructive."}
+     ]}
+  ]
+}

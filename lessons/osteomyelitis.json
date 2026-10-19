@@ -1,0 +1,447 @@
+{
+  "id": "osteomyelitis",
+  "patient": {
+    "name": "Rajesh Patel",
+    "age": 58,
+    "sex": "M",
+    "setting": "Emergency Department",
+    "complaint": "Swollen, red right foot with a discharging ulcer and fever for 4 days",
+    "background": ["Type 2 diabetes for 15 years, HbA1c 82 mmol/mol", "Peripheral neuropathy", "Ulcer under the right big toe for 3 months", "Taxi driver from Harrow; no known drug allergies"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' or 'Which is the most likely causative organism?': bone pain and fever with a risk factor (diabetic foot ulcer, open fracture, IVDU, sickle cell). S. aureus overall; Salmonella in sickle cell.",
+      "steps": [
+        { "type": "story", "points": ["Rajesh, 58, diabetic: ulcer under his right big toe for **3 months**.", "Four days of a **swollen, red foot** and smelly discharge.", "Feverish and shivery; little pain because of neuropathy."], "vitals": { "T": "38.3°C", "HR": "104 bpm", "BP": "132/78 mmHg", "RR": "20 /min", "SpO2": "97% on air", "CBG": "18.4 mmol/L" } },
+        { "type": "notes", "src": 0, "lead": "Rajesh's ulcer has let bacteria into the bone and marrow beneath: **osteomyelitis**, most likely **Staphylococcus aureus**." },
+        { "type": "notes", "src": 1, "lead": "Rajesh has the classic risk factors: **diabetes**, a **chronic foot ulcer** and neuropathy that stopped him noticing it." },
+        { "type": "story", "points": ["2 cm ulcer over the **1st metatarsal head**.", "A sterile probe passes down and **touches bone**.", "Erythema and swelling over the forefoot.", "Reduced monofilament sensation; foot pulses palpable."] },
+        { "type": "notes", "src": 2, "lead": "Local bone tenderness, swelling, overlying erythema and **fever**: Rajesh's presentation fits, even though neuropathy blunts his pain." },
+        { "type": "ask", "q": "Rajesh's ulcer probes to bone and he has a fever. Which is the most likely diagnosis?", "o": ["Cellulitis", "Charcot neuroarthropathy", "Gout", "Osteomyelitis"], "a": 3, "r": "A diabetic ulcer that **probes to bone** with fever is **osteomyelitis** until proven otherwise. Cellulitis alone does not reach bone." },
+        { "type": "compare", "title": "Osteomyelitis in three settings", "head": ["Setting", "Usual route", "Typical site", "Classic organism"], "rows": [["Adult with diabetic ulcer or open fracture", "Direct or contiguous spread", "Foot, tibia", "**Staphylococcus aureus**"], ["Child", "Haematogenous", "Long bone **metaphysis**", "Staphylococcus aureus"], ["Sickle cell disease", "Haematogenous from gut", "Femoral or humeral head, long bones", "**Salmonella** species"], ["IV drug user", "Haematogenous", "Vertebrae", "Staphylococcus aureus"]] },
+        { "type": "notes", "src": 3, "lead": "Rajesh does not have sickle cell. If he did, a hot tender joint and fever would point to **Salmonella** osteomyelitis of the femoral or humeral head." },
+        { "type": "notes", "src": 4, "lead": "Rajesh is at risk of **sepsis**, bone destruction and **chronic osteomyelitis**. If a deep abscess forms, antibiotics alone will fail." },
+        { "type": "trap", "text": "Do not call a red foot with an ulcer 'just **cellulitis**'. If the ulcer **probes to bone** or the toe looks sausage-like, think osteomyelitis." },
+        { "type": "pearl", "text": "Neuropathic patients may have **little pain**. In a diabetic foot, fever, discharge and a raised CRP count for more than the pain score." }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' with MRI as the most sensitive early test, X-ray changes appearing later, and bone biopsy as the gold standard that guides antibiotics.",
+      "steps": [
+        { "type": "labs", "title": "Rajesh's bloods", "rows": [["CRP", "186 mg/L", "<5", "H"], ["ESR", "98 mm/h", "<20", "H"], ["WCC", "16.2 ×10⁹/L", "4.0–11.0", "H"], ["Glucose", "18.4 mmol/L", "4.0–7.8", "H"], ["Lactate", "2.4 mmol/L", "<2.0", "H"]], "text": "Blood cultures taken before antibiotics." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Rajesh's CRP", "min": 0, "max": 250, "unit": "mg/L", "bands": [[0, 5, "Normal", "ok"], [5, 50, "Mildly raised", "warn"], [50, 250, "Markedly raised", "bad"]], "value": 186, "label": "Rajesh 186", "caption": "A high CRP and ESR support infection and give a baseline to track treatment." } },
+        { "type": "notes", "src": 1, "lead": "Rajesh's first-line set is done: **CRP, ESR, WCC**, **blood cultures** and imaging." },
+        { "type": "story", "points": ["Foot X-ray on day 1: soft tissue swelling only.", "No cortical destruction or periosteal reaction yet.", "The registrar still suspects osteomyelitis."] },
+        { "type": "visual", "visual": { "kind": "scale", "title": "What imaging shows over time", "min": 0, "max": 28, "unit": "days of infection", "bands": [[0, 10, "X-ray often normal; MRI shows marrow oedema", "warn"], [10, 28, "X-ray: cortical destruction, periosteal reaction", "bad"]], "value": 4, "label": "Rajesh day 4", "caption": "A normal early X-ray does not exclude osteomyelitis." } },
+        { "type": "ask", "q": "Rajesh's X-ray is normal on day 4. Which is the best next imaging test?", "o": ["CT of the foot", "MRI of the foot", "Repeat X-ray in 2 weeks", "Ultrasound of the foot"], "a": 1, "r": "**MRI** is the most sensitive early test, showing **bone marrow oedema** and periosteal elevation before X-ray changes appear." },
+        { "type": "notes", "src": 2, "lead": "Rajesh's MRI shows **marrow oedema** in the 1st metatarsal head. X-ray changes would only appear later." },
+        { "type": "notes", "src": 0, "lead": "A **bone biopsy** of Rajesh's metatarsal head goes for histology and culture so his antibiotics can be **targeted**." },
+        { "type": "flow", "title": "Investigating suspected osteomyelitis", "nodes": ["Bloods: CRP, ESR, WCC", "Blood cultures", "X-ray (may be normal early)", "MRI: most sensitive early", "Bone biopsy: gold standard, guides antibiotics"] },
+        { "type": "trap", "text": "A **superficial ulcer swab** grows skin colonisers and can mislead. The organism that matters comes from **bone biopsy** or blood cultures." }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?': IV flucloxacillin plus rifampicin for at least 4 weeks, vancomycin for MRSA, clindamycin for penicillin allergy, and surgery for abscess or dead bone.",
+      "steps": [
+        { "type": "story", "points": ["HR 104, temperature 38.3°C, lactate 2.4.", "Rajesh meets criteria for **sepsis**.", "Cultures taken; IV fluids started."] },
+        { "type": "notes", "src": 2, "lead": "Rajesh is systemically unwell, so he is treated as **sepsis** first: cultures, fluids, lactate, and IV antibiotics without delay." },
+        { "type": "ask", "q": "Which is the most appropriate empirical antibiotic for Rajesh?", "o": ["IV ceftriaxone", "IV flucloxacillin and rifampicin", "Oral amoxicillin", "Oral flucloxacillin"], "a": 1, "r": "Empirical osteomyelitis cover is **IV flucloxacillin plus rifampicin** for S. aureus; oral agents alone are not enough initially." },
+        { "type": "notes", "src": 0, "lead": "Rajesh starts **IV flucloxacillin and rifampicin**. If biopsy grows **MRSA** he switches to **vancomycin**; with a severe penicillin allergy he would get **clindamycin**." },
+        { "type": "notes", "src": "guidelines", "lead": "Rajesh's empirical flucloxacillin and rifampicin regimen follows **local and national antimicrobial guidelines**." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Length of antibiotic course", "min": 0, "max": 12, "unit": "weeks", "bands": [[0, 4, "Too short", "bad"], [4, 6, "Standard: 4 to 6 weeks", "ok"], [6, 12, "Longer: chronic or complex", "warn"]], "value": 6, "label": "Rajesh 6 weeks", "caption": "IV for a minimum of 4 weeks in the notes, then tailored to complete 4 to 6 weeks." } },
+        { "type": "story", "points": ["Day 5: still febrile, pus still discharging.", "Forefoot remains tender despite flucloxacillin.", "Repeat MRI: **deep plantar abscess**."] },
+        { "type": "notes", "src": 1, "lead": "Rajesh's **deep abscess** needs **surgical drainage** and debridement; antibiotics cannot reach a walled-off pus collection." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Rajesh's CRP on treatment", "x": ["Day 0", "Day 5", "Day 7 (drained)", "Week 2", "Week 4", "Week 6"], "unit": "mg/L", "series": [{ "name": "CRP", "values": [186, 170, 140, 60, 18, 6] }], "caption": "CRP barely fell on antibiotics alone; it fell steadily once the abscess was drained." } },
+        { "type": "notes", "src": 3, "lead": "If Rajesh's infection became **chronic**, antibiotics would **wait for sensitivities** from bone samples, usually alongside surgery." },
+        { "type": "flow", "title": "Osteomyelitis management", "nodes": ["Systemically unwell → manage sepsis", "Cultures, then IV flucloxacillin + rifampicin", "MRSA → vancomycin; penicillin allergy → clindamycin", "Abscess or dead bone → surgical drainage / debridement", "Total course 4 to 6 weeks, IV then tailored"] },
+        { "type": "trap", "text": "Fusidic acid can replace rifampicin, but **rifampicin is never used alone**: resistance develops quickly. It is always a partner drug." }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why children get metaphyseal infection, why sickle cell links to Salmonella, why MRI beats X-ray early, and why sequestra need surgery.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Rajesh's infection came by **direct inoculation** from his ulcer. A child would more likely seed the **metaphysis** through the bloodstream." },
+        { "type": "flow", "title": "How bone infection becomes chronic", "nodes": ["S. aureus reaches bone", "Adhesins bind bone matrix", "Biofilm forms", "Pus raises pressure: bone ischaemia", "Dead bone: sequestrum", "New reactive bone: involucrum"] },
+        { "type": "notes", "src": 1, "lead": "S. aureus **biofilm** on Rajesh's bone shields bacteria from antibiotics and immune cells, which is why his course is weeks long." },
+        { "type": "notes", "src": 3, "lead": "Untreated, Rajesh could form a **sequestrum** walled in by **involucrum**: dead bone that antibiotics in the blood cannot reach, so it must be removed." },
+        { "type": "ask", "q": "Why did Rajesh's MRI show infection when his X-ray did not?", "o": ["MRI detects bacteria directly", "MRI detects marrow oedema before cortical loss", "X-ray cannot image the foot", "X-ray only shows soft tissue"], "a": 1, "r": "MRI picks up **bone marrow oedema** early; X-ray needs enough **cortical destruction** to show, which takes longer." },
+        { "type": "notes", "src": 4, "lead": "Marrow oedema in Rajesh's metatarsal appears long before the cortex is eroded enough for an X-ray to show it." },
+        { "type": "notes", "src": 2, "lead": "In sickle cell disease, gut **vaso-occlusion** lets **Salmonella** translocate into blood, and infarcted bone is fertile ground for it to seed." },
+        { "type": "pearl", "text": "Children's **metaphyses** have a rich blood supply with **sluggish flow** in looping vessels, so circulating bacteria settle there." }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which is the most common organism in osteomyelitis?", "o": ["Escherichia coli", "Pseudomonas aeruginosa", "Salmonella species", "Staphylococcus aureus"], "a": 3, "r": "**Staphylococcus aureus** is the commonest organism overall, including in children." },
+    { "d": "diagnosis", "q": "Which organism is characteristic of osteomyelitis in sickle cell disease?", "o": ["Haemophilus influenzae", "Salmonella species", "Streptococcus pyogenes", "Treponema pallidum"], "a": 1, "r": "**Salmonella** is the characteristic organism in sickle cell disease." },
+    { "d": "diagnosis", "q": "Which part of a long bone is most commonly affected in children?", "o": ["Diaphysis", "Epiphysis", "Metaphysis", "Periosteum only"], "a": 2, "r": "The **metaphysis**: rich blood supply and sluggish flow." },
+    { "d": "investigation", "q": "Which is the gold-standard investigation for osteomyelitis?", "o": ["Blood cultures", "Bone biopsy", "MRI", "X-ray"], "a": 1, "r": "**Bone biopsy** for histology and culture guides definitive antibiotics." },
+    { "d": "investigation", "q": "Which is the most sensitive early imaging test?", "o": ["CT", "MRI", "Ultrasound", "X-ray"], "a": 1, "r": "**MRI** shows bone marrow oedema and periosteal elevation early." },
+    { "d": "investigation", "q": "On X-ray, cortical destruction and periosteal reaction are...", "o": ["An early finding", "A later finding", "Never seen", "Diagnostic of tumour"], "a": 1, "r": "X-ray changes are a **later** finding; an early X-ray may be normal." },
+    { "d": "management", "q": "Which is the empirical antibiotic regimen for osteomyelitis?", "o": ["IV ceftriaxone alone", "IV flucloxacillin and rifampicin", "Oral amoxicillin", "Oral doxycycline"], "a": 1, "r": "**IV flucloxacillin + rifampicin** (fusidic acid can replace rifampicin), minimum 4 weeks." },
+    { "d": "management", "q": "Which antibiotic is used if MRSA is confirmed on biopsy?", "o": ["Clindamycin", "Flucloxacillin", "Meropenem", "Vancomycin"], "a": 3, "r": "**Vancomycin** for MRSA; clindamycin for severe penicillin allergy." },
+    { "d": "science", "q": "What is a sequestrum?", "o": ["A collection of pus under the periosteum", "Dead infected bone", "New reactive bone", "A sinus tract"], "a": 1, "r": "**Sequestrum** = dead bone; **involucrum** = new reactive bone around it." }
+  ],
+  "blurt": {
+    "prompts": [
+      { "d": "diagnosis", "q": "What is osteomyelitis, who gets it and which organism causes it?", "tip": "Exam thinking: spot the risk factor in the stem, then name the organism.", "points": [
+        { "p": "Infection of bone and bone marrow", "k": [["bone"], ["infect"]], "why": "Acute or chronic." },
+        { "p": "Staphylococcus aureus is the commonest organism (also in children)", "k": [["aureus", "staph"]], "why": "The default answer unless a special setting is given." },
+        { "p": "Risk factors: open fracture, penetrating injury, recent surgery, discharging sinus", "k": [["fracture", "surgery", "penetrat", "trauma", "sinus"]], "why": "Direct inoculation route." },
+        { "p": "Diabetes with foot ulcers, IV drug use, sickle cell disease", "k": [["diabet", "ulcer", "ivdu", "drug use", "sickle"]], "why": "IVDU favours vertebral osteomyelitis." }
+      ] },
+      { "d": "diagnosis", "q": "How does osteomyelitis present?", "tip": "Exam thinking: bone pain plus fever, worse at night.", "points": [
+        { "p": "Localised bone pain and tenderness, worse with activity and at night", "k": [["pain", "tender"]], "why": "Neuropathic diabetic feet may hurt little." },
+        { "p": "Fever, swelling, overlying erythema, reduced limb function", "k": [["fever", "pyrexi", "temperature"]], "why": "Children often present with a limp." },
+        { "p": "Raised CRP and ESR", "k": [["crp", "esr", "inflammatory marker"]], "why": "Also useful to track response." },
+        { "p": "Vertebral: tenderness to spinal percussion; neuro symptoms not typical", "k": [["vertebra", "spin"]], "why": "Neuro signs suggest epidural abscess." }
+      ] },
+      { "d": "diagnosis", "q": "What is special about osteomyelitis in sickle cell disease?", "tip": "Exam thinking: sickle cell + bone infection = Salmonella.", "points": [
+        { "p": "Salmonella species is the characteristic organism", "k": [["salmonella"]], "why": "Gut translocation after bowel infarction." },
+        { "p": "Femoral or humeral head affected; fever with a warm tender joint", "k": [["femoral", "humeral", "head"]], "why": "Can mimic a vaso-occlusive crisis." }
+      ] },
+      { "d": "diagnosis", "q": "What are the complications of osteomyelitis?", "tip": "Exam thinking: a diabetic foot not improving on flucloxacillin has an abscess.", "points": [
+        { "p": "Chronic osteomyelitis", "k": [["chronic"]], "why": "Sequestra and sinus tracts." },
+        { "p": "Sepsis", "k": [["sepsis", "septic"]], "why": "Manage sepsis first if systemically unwell." },
+        { "p": "Bone destruction and pathological fracture", "k": [["fracture", "destruction"]], "why": "Weakened bone breaks easily." },
+        { "p": "Diabetic foot deep abscess: persistent discharge despite flucloxacillin, needs surgical drainage", "k": [["abscess"], ["drain", "surg"]], "why": "Antibiotics cannot penetrate pus." }
+      ] },
+      { "d": "investigation", "q": "How do you investigate suspected osteomyelitis?", "tip": "Exam thinking: MRI is most sensitive early; biopsy is gold standard.", "points": [
+        { "p": "Bloods: CRP, ESR, WCC and blood cultures", "k": [["culture"], ["crp", "esr", "wcc", "white"]], "why": "Cultures before antibiotics." },
+        { "p": "MRI: most sensitive early, marrow oedema and periosteal elevation", "k": [["mri"]], "why": "Detects oedema before cortical loss." },
+        { "p": "X-ray: cortical destruction and periosteal reaction, a later finding", "k": [["x-ray", "xray", "radiograph"]], "why": "A normal early X-ray does not exclude it." },
+        { "p": "Ultrasound: subperiosteal collection over 4 mm suggests osteomyelitis", "k": [["ultrasound", "uss"]], "why": "Useful in children." },
+        { "p": "Bone biopsy for pathology and culture: gold standard", "k": [["biopsy"]], "why": "Guides definitive antibiotics." }
+      ] },
+      { "d": "management", "q": "What is the antibiotic treatment of osteomyelitis?", "tip": "Exam thinking: the stem may add MRSA or penicillin allergy to change the answer.", "points": [
+        { "p": "Empirical IV flucloxacillin plus rifampicin (or fusidic acid)", "k": [["flucloxacillin", "fluclox"]], "why": "Minimum 4 weeks IV." },
+        { "p": "Total course 4 to 6 weeks, IV then tailored", "k": [["4", "6", "four", "six"], ["week"]], "why": "Biofilms need a long course." },
+        { "p": "Vancomycin if MRSA", "k": [["vancomycin"]], "why": "Confirmed on biopsy." },
+        { "p": "Clindamycin for severe penicillin allergy", "k": [["clindamycin"]], "why": "Good bone penetration." },
+        { "p": "Chronic osteomyelitis: wait for sensitivities", "k": [["sensitivit"]], "why": "Target the organism from bone." }
+      ] },
+      { "d": "management", "q": "When is surgery or emergency care needed in osteomyelitis?", "tip": "Exam thinking: pus or dead bone means surgery.", "points": [
+        { "p": "Systemically unwell: manage sepsis", "k": [["sepsis"]], "why": "Cultures, fluids and IV antibiotics promptly." },
+        { "p": "Assess for surgical debridement; combined medical and surgical approach", "k": [["debride"]], "why": "Especially chronic disease with sequestra." },
+        { "p": "Deep abscess in a diabetic foot: surgical drainage", "k": [["drain"]], "why": "Antibiotics alone will fail." }
+      ] },
+      { "d": "science", "q": "How does bacteria reach bone, and why do children get metaphyseal infection?", "tip": "Exam thinking: haematogenous versus direct spread.", "points": [
+        { "p": "Haematogenous seeding to the metaphysis", "k": [["haematogenous", "hematogenous", "blood"]], "why": "Commonest route in children." },
+        { "p": "Metaphysis has rich blood supply with sluggish flow", "k": [["sluggish", "slow"]], "why": "Bacteria settle in looping vessels." },
+        { "p": "Direct inoculation: trauma, surgery, contiguous spread from an ulcer", "k": [["direct", "contiguous", "inocul"]], "why": "Commonest route in adults." }
+      ] },
+      { "d": "science", "q": "Why does osteomyelitis need long antibiotics, surgery, and why is MRI better early?", "tip": "Exam thinking: biofilm, sequestrum, marrow oedema.", "points": [
+        { "p": "S. aureus adhesins bind bone matrix and form biofilms", "k": [["biofilm"]], "why": "Impairs antibiotic penetration and immune clearance." },
+        { "p": "Sequestrum: dead infected bone", "k": [["sequestr"]], "why": "Bacteria sheltered from blood and antibiotics." },
+        { "p": "Involucrum: new reactive bone around it", "k": [["involucr"]], "why": "Walls off the dead bone." },
+        { "p": "MRI shows marrow oedema before cortical destruction appears on X-ray", "k": [["oedema", "edema"]], "why": "Why MRI is the early test." }
+      ] }
+    ]
+  },
+  "glossary": {
+    "Osteomyelitis": "Infection of bone and bone marrow.",
+    "Staphylococcus aureus": "A Gram-positive coccus in clusters; the commonest cause of osteomyelitis.",
+    "MRSA": "Meticillin-resistant Staphylococcus aureus, resistant to flucloxacillin; treated with vancomycin.",
+    "Salmonella": "Gram-negative gut bacteria; the characteristic cause of osteomyelitis in sickle cell disease.",
+    "Sickle cell disease": "Inherited haemoglobin disorder in which red cells sickle and block small vessels.",
+    "Vaso-occlusion": "Blockage of small blood vessels, as by sickled red cells, causing tissue infarction.",
+    "Metaphysis": "The flared part of a long bone between the shaft and the growth plate.",
+    "Diaphysis": "The shaft of a long bone.",
+    "Epiphysis": "The end of a long bone, beyond the growth plate.",
+    "Haematogenous": "Spread through the bloodstream.",
+    "Direct inoculation": "Bacteria introduced straight into tissue by injury, surgery or an adjacent ulcer.",
+    "Contiguous spread": "Infection spreading from neighbouring tissue, such as a foot ulcer into bone.",
+    "Open fracture": "A fracture where the bone communicates with the outside through a wound.",
+    "Sinus tract": "A channel from infected tissue to the skin surface that discharges pus.",
+    "Probe to bone": "Bedside test: a sterile probe touching bone through an ulcer strongly suggests osteomyelitis.",
+    "Peripheral neuropathy": "Nerve damage, often from diabetes, causing numbness so injuries go unnoticed.",
+    "Monofilament": "A thin nylon filament pressed on the foot to test protective sensation.",
+    "Charcot neuroarthropathy": "Destructive joint disease of the neuropathic foot, giving a warm, swollen, deformed foot.",
+    "Periosteum": "The tough membrane covering the outer surface of bone.",
+    "Periosteal reaction": "New bone laid down by lifted periosteum, seen on X-ray as a later sign.",
+    "Periosteal elevation": "Lifting of the periosteum by pus or oedema, seen early on MRI.",
+    "Bone marrow oedema": "Excess fluid in the marrow, an early MRI sign of osteomyelitis.",
+    "Cortical destruction": "Erosion of the hard outer bone layer, visible on X-ray later in infection.",
+    "Subperiosteal collection": "Fluid or pus trapped beneath the periosteum, visible on ultrasound.",
+    "Bone biopsy": "Sampling bone tissue for histology and culture; the gold standard in osteomyelitis.",
+    "Flucloxacillin": "A penicillin active against non-MRSA Staphylococcus aureus.",
+    "Rifampicin": "An antibiotic with good bone and biofilm penetration, always used with a partner drug.",
+    "Fusidic acid": "An anti-staphylococcal antibiotic that can replace rifampicin as a partner drug.",
+    "Vancomycin": "An IV glycopeptide antibiotic used for MRSA.",
+    "Clindamycin": "An antibiotic with good bone penetration, used in severe penicillin allergy.",
+    "Debridement": "Surgical removal of dead or infected tissue.",
+    "Biofilm": "A slimy layer of bacteria stuck to a surface, shielded from antibiotics and immune cells.",
+    "Adhesins": "Bacterial surface proteins that let bacteria stick to host tissues.",
+    "Sequestrum": "A fragment of dead, infected bone in chronic osteomyelitis.",
+    "Involucrum": "A sheath of new reactive bone that forms around a sequestrum.",
+    "Sepsis": "Life-threatening organ dysfunction caused by a dysregulated response to infection.",
+    "IVDU": "Intravenous drug use, a risk factor for vertebral osteomyelitis.",
+    "HbA1c": "Glycated haemoglobin, showing average blood glucose over about 3 months."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 65 year old man has a 2 week history of pain in his right shin. He had an open fracture of the right tibia fixed surgically 3 months ago. His temperature is 38.1°C, pulse rate 98 bpm and BP 134/80 mmHg. The skin over the scar is red and tender. Investigations: X-ray tibia: bony lesion consistent with osteomyelitis.",
+      "q": "Which is the most likely causative organism?",
+      "o": ["Escherichia coli", "Pseudomonas aeruginosa", "Salmonella species", "Staphylococcus aureus", "Streptococcus pyogenes"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "An organism question: check for a special setting such as sickle cell." },
+        { "t": "Pick out the clues", "clues": ["open fracture", "fixed surgically 3 months ago", "red and tender", "consistent with osteomyelitis"], "x": "Post-traumatic, post-surgical osteomyelitis; no sickle cell, no special host." },
+        { "t": "Make your own answer before looking", "x": "Default organism: **Staphylococcus aureus**." },
+        { "t": "Rule out the others", "elim": [[0, "E. coli is a urinary and neonatal organism, not the usual bone pathogen."], [1, "Pseudomonas is classic after a puncture through a trainer sole."], [2, "Salmonella is the sickle cell answer."], [4, "Strep pyogenes causes cellulitis more than osteomyelitis."]] },
+        { "t": "Commit", "x": "**D. Staphylococcus aureus.** Rule: osteomyelitis = S. aureus unless the stem says sickle cell." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 60 year old woman with type 2 diabetes has a 5 day history of a swollen, red left foot with a discharging ulcer over the 2nd metatarsal head. A probe passed through the ulcer touches bone. Her temperature is 37.9°C, pulse rate 96 bpm and BP 128/76 mmHg. An X-ray of the foot shows soft tissue swelling only.",
+      "labs": [["CRP", "142 mg/L", "<5", "H"], ["WCC", "14.1 ×10⁹/L", "4.0–11.0", "H"]],
+      "q": "Which is the most appropriate next investigation?",
+      "o": ["CT of the foot", "MRI of the foot", "Repeat X-ray in 2 weeks", "Ultrasound of the foot", "Wound swab"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Next investigation after a normal X-ray when osteomyelitis is suspected." },
+        { "t": "Pick out the clues", "clues": ["type 2 diabetes", "discharging ulcer", "touches bone", "soft tissue swelling only"], "x": "High suspicion of osteomyelitis; X-ray is still normal early." },
+        { "t": "Make your own answer before looking", "x": "**MRI**: the most sensitive early test." },
+        { "t": "Rule out the others", "elim": [[0, "CT is less sensitive than MRI for early marrow change."], [2, "Waiting 2 weeks delays diagnosis and treatment."], [3, "Ultrasound is used for subperiosteal collections, mainly in children."], [4, "Wound swabs grow colonisers, not the bone organism."]] },
+        { "t": "Commit", "x": "**B. MRI of the foot.** Rule: normal early X-ray + suspicion = MRI." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 45 year old man has acute osteomyelitis of the left tibia. He had anaphylaxis to penicillin as a child. His temperature is 38.0°C, pulse rate 92 bpm and BP 126/78 mmHg. Blood cultures are taken.",
+      "labs": [["CRP", "110 mg/L", "<5", "H"]],
+      "q": "Which is the most appropriate antibiotic?",
+      "o": ["Amoxicillin", "Benzylpenicillin", "Clindamycin", "Co-amoxiclav", "Flucloxacillin"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Antibiotic choice: look for an allergy or MRSA." },
+        { "t": "Pick out the clues", "clues": ["acute osteomyelitis", "anaphylaxis to penicillin"], "x": "Severe penicillin allergy rules out every penicillin." },
+        { "t": "Make your own answer before looking", "x": "**Clindamycin**." },
+        { "t": "Rule out the others", "elim": [[0, "Amoxicillin is a penicillin."], [1, "Benzylpenicillin is a penicillin."], [3, "Co-amoxiclav contains amoxicillin."], [4, "Flucloxacillin is a penicillin."]] },
+        { "t": "Commit", "x": "**C. Clindamycin.** Rule: severe penicillin allergy = clindamycin; MRSA = vancomycin." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 40 year old man has had a discharging sinus over his right tibia for 2 years since an open fracture. X-ray shows a dense fragment of dead bone surrounded by a shell of new bone. Despite several long courses of antibiotics the discharge persists.",
+      "q": "Which is the most likely reason antibiotics have failed?",
+      "o": ["Antibiotic resistance genes", "Avascular dead bone shields the bacteria", "Bone marrow hyperplasia", "Low bone mineral density", "Osteoblast failure"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism question: why does chronic osteomyelitis resist antibiotics?" },
+        { "t": "Pick out the clues", "clues": ["discharging sinus", "dense fragment of dead bone", "shell of new bone", "several long courses of antibiotics"], "x": "Sequestrum (dead bone) inside involucrum (new bone)." },
+        { "t": "Make your own answer before looking", "x": "The **sequestrum** has no blood supply, so antibiotics cannot reach the bacteria: surgery is needed." },
+        { "t": "Rule out the others", "elim": [[0, "Resistance is possible but does not explain the dead bone picture."], [2, "Marrow hyperplasia is a haematological finding, not this."], [3, "Low density is osteoporosis."], [4, "Osteoblasts are active: they made the involucrum."]] },
+        { "t": "Commit", "x": "**B. Avascular dead bone shields bacteria.** Rule: sequestrum = surgery." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 9 year old boy has a 3 day history of pain above his left knee and a limp. He has been feverish. His temperature is 38.6°C, pulse rate 118 bpm and BP 104/62 mmHg. There is marked tenderness over the distal femur just above the knee. The knee joint has a full range of passive movement without pain.",
+      "labs": [["CRP", "96 mg/L", "<5", "H"], ["WCC", "17.4 ×10⁹/L", "4.5–13.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute osteomyelitis", "Ewing's sarcoma", "Osteosarcoma", "Septic arthritis", "Transient synovitis"],
+      "a": 0,
+      "e": "Fever, raised markers and focal tenderness over the distal femoral metaphysis with a freely moving knee is acute osteomyelitis. Septic arthritis would make joint movement very painful.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of a febrile child with leg pain." },
+        { "t": "Pick out the clues", "clues": ["9 year old boy", "feverish", "tenderness over the distal femur", "full range of passive movement without pain"], "x": "Metaphyseal tenderness, fever, joint itself spared." },
+        { "t": "Make your own answer before looking", "x": "Haematogenous **acute osteomyelitis** of the metaphysis." },
+        { "t": "Rule out the others", "elim": [[1, "Ewing's is a more gradual course with night pain; fever this acute favours infection."], [2, "Osteosarcoma is a slow painful mass, not acute fever."], [3, "Septic arthritis makes any joint movement exquisitely painful."], [4, "Transient synovitis has low fever, normal markers and hip involvement."]] },
+        { "t": "Commit", "x": "**A. Acute osteomyelitis.** Rule: febrile child + metaphyseal tenderness + free joint = osteomyelitis." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 23 year old man with sickle cell disease has a 4 day history of pain in his right shin and fever. His temperature is 38.7°C, pulse rate 110 bpm and BP 118/70 mmHg. Investigations: X-ray tibia: bony lesion consistent with osteomyelitis.",
+      "labs": [["Haemoglobin", "78 g/L", "130–180", "L"], ["CRP", "134 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely causative organism?",
+      "o": ["Haemophilus influenzae", "Pseudomonas aeruginosa", "Salmonella species", "Streptococcus pyogenes", "Treponema pallidum"],
+      "a": 2,
+      "e": "Salmonella is the characteristic cause of osteomyelitis in sickle cell disease, because gut vaso-occlusion allows translocation into the blood.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Organism: look for a special host." },
+        { "t": "Pick out the clues", "clues": ["sickle cell disease", "consistent with osteomyelitis"], "x": "Sickle cell + osteomyelitis." },
+        { "t": "Make your own answer before looking", "x": "**Salmonella** species." },
+        { "t": "Rule out the others", "elim": [[0, "H. influenzae is a respiratory organism, rare in bone now."], [1, "Pseudomonas follows puncture wounds through footwear."], [3, "Strep pyogenes causes cellulitis and pharyngitis."], [4, "Treponema causes syphilis."]] },
+        { "t": "Commit", "x": "**C. Salmonella species.** Rule: sickle cell + bone infection = Salmonella." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 62 year old woman with type 2 diabetes and peripheral neuropathy has a 6 week history of an ulcer under her right great toe. The toe is now red, swollen and sausage-shaped. A sterile probe passed through the ulcer touches bone. Her temperature is 37.8°C, pulse rate 94 bpm and BP 140/84 mmHg.",
+      "labs": [["CRP", "118 mg/L", "<5", "H"], ["ESR", "86 mm/h", "<20", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Cellulitis", "Charcot neuroarthropathy", "Gout", "Neuropathic ulcer without bone involvement", "Osteomyelitis"],
+      "a": 4,
+      "e": "A diabetic ulcer that probes to bone with a sausage toe, fever and high ESR is osteomyelitis. Cellulitis does not reach bone.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of a diabetic foot problem." },
+        { "t": "Pick out the clues", "clues": ["type 2 diabetes", "6 week history of an ulcer", "sausage-shaped", "touches bone"], "x": "Chronic ulcer, sausage toe, positive probe to bone, raised ESR." },
+        { "t": "Make your own answer before looking", "x": "**Osteomyelitis** of the phalanx or metatarsal." },
+        { "t": "Rule out the others", "elim": [[0, "Cellulitis does not explain probe to bone."], [1, "Charcot gives a hot swollen deformed midfoot, often without an ulcer or fever."], [2, "Gout gives an acute hot joint, not a probe-to-bone ulcer."], [3, "Probe touching bone means bone is involved."]] },
+        { "t": "Commit", "x": "**E. Osteomyelitis.** Rule: diabetic ulcer probes to bone = osteomyelitis." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 34 year old man who injects heroin has a 3 week history of worsening low back pain, night sweats and fevers. His temperature is 38.2°C, pulse rate 102 bpm and BP 122/74 mmHg. There is marked tenderness on percussion over L3. Lower limb power, sensation and reflexes are normal.",
+      "labs": [["CRP", "124 mg/L", "<5", "H"], ["WCC", "13.8 ×10⁹/L", "4.0–11.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Ankylosing spondylitis", "Mechanical back pain", "Spinal metastases", "Vertebral osteomyelitis", "Vertebral wedge fracture"],
+      "a": 3,
+      "e": "Back pain with fever, raised markers and focal spinal percussion tenderness in an IV drug user is vertebral osteomyelitis. Neurological symptoms are not typical.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of back pain with red flags." },
+        { "t": "Pick out the clues", "clues": ["injects heroin", "night sweats and fevers", "tenderness on percussion over L3", "reflexes are normal"], "x": "IVDU, fever, focal spinal tenderness, no neuro deficit." },
+        { "t": "Make your own answer before looking", "x": "Haematogenous **vertebral osteomyelitis**." },
+        { "t": "Rule out the others", "elim": [[0, "AS is inflammatory back pain in young men without fever."], [1, "Mechanical pain does not cause fever and a CRP of 124."], [2, "Metastases need a primary and give no fever."], [4, "Wedge fractures are osteoporotic, after minor trauma."]] },
+        { "t": "Commit", "x": "**D. Vertebral osteomyelitis.** Rule: IVDU + fever + spinal tenderness = vertebral osteomyelitis." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 7 year old girl has a 2 day history of pain in her right shin and fever. An X-ray of the tibia is normal. Her temperature is 38.4°C, pulse rate 120 bpm and BP 100/60 mmHg. Osteomyelitis of the proximal tibial metaphysis is suspected and an MRI is performed.",
+      "labs": [["CRP", "88 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely finding on MRI?",
+      "o": ["Bone marrow oedema with periosteal elevation", "Chondrocalcinosis", "Lytic lesion with onion-skin periosteal reaction", "Normal appearance", "Soap bubble lytic lesion"],
+      "a": 0,
+      "e": "Early osteomyelitis shows bone marrow oedema and periosteal elevation on MRI before X-ray changes. Onion-skin is Ewing's; soap bubble is giant cell tumour.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Expected MRI finding in early osteomyelitis." },
+        { "t": "Pick out the clues", "clues": ["2 day history", "X-ray of the tibia is normal", "metaphysis"], "x": "Very early infection: X-ray is still normal." },
+        { "t": "Make your own answer before looking", "x": "**Bone marrow oedema** and periosteal elevation." },
+        { "t": "Rule out the others", "elim": [[1, "Chondrocalcinosis is pseudogout."], [2, "Onion-skin periosteal reaction is Ewing's sarcoma."], [3, "MRI is sensitive early, so it should be abnormal."], [4, "Soap bubble is a giant cell tumour."]] },
+        { "t": "Commit", "x": "**A. Marrow oedema with periosteal elevation.** Rule: MRI sees oedema before X-ray sees destruction." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 48 year old man had an open fracture of his left tibia 3 years ago. For the past year he has had intermittent discharge of pus from a small opening over the shin. His temperature is 37.3°C, pulse rate 80 bpm and BP 130/82 mmHg. X-ray shows a dense fragment of bone surrounded by new bone formation.",
+      "labs": [["CRP", "28 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute osteomyelitis", "Chronic osteomyelitis", "Ewing's sarcoma", "Non-union of the fracture", "Septic arthritis"],
+      "a": 1,
+      "e": "A discharging sinus years after an open fracture, with a sequestrum surrounded by involucrum, is chronic osteomyelitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of a long-standing problem after an open fracture." },
+        { "t": "Pick out the clues", "clues": ["open fracture", "3 years ago", "discharge of pus", "dense fragment of bone surrounded by new bone"], "x": "Sinus tract, sequestrum, involucrum, low-grade CRP." },
+        { "t": "Make your own answer before looking", "x": "**Chronic osteomyelitis**." },
+        { "t": "Rule out the others", "elim": [[0, "Acute osteomyelitis is days to weeks, with high fever."], [2, "Ewing's affects children and young adults, with onion-skin reaction."], [3, "Non-union causes movement at the fracture, not a sinus."], [4, "Septic arthritis involves a joint, not the shin."]] },
+        { "t": "Commit", "x": "**B. Chronic osteomyelitis.** Rule: sinus + sequestrum + involucrum = chronic." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 70 year old man has a 3 day history of severe pain in his right lower leg 2 weeks after a tibial plateau fracture was fixed. His temperature is 38.5°C, pulse rate 106 bpm, BP 124/76 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air. An X-ray shows the fixation in a good position with no bone changes.",
+      "labs": [["CRP", "164 mg/L", "<5", "H"], ["WCC", "15.6 ×10⁹/L", "4.0–11.0", "H"]],
+      "visual": null,
+      "q": "Which is the most sensitive investigation at this stage?",
+      "o": ["Blood cultures", "CT of the tibia", "MRI of the tibia", "Ultrasound of the leg", "X-ray in 2 weeks"],
+      "a": 2,
+      "e": "MRI is the most sensitive early investigation, showing marrow oedema before X-ray changes. Blood cultures are needed but do not localise the infection.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Most sensitive' at an early stage." },
+        { "t": "Pick out the clues", "clues": ["2 weeks after a tibial plateau fracture was fixed", "38.5°C", "no bone changes"], "x": "Post-operative bone infection suspected, early X-ray unremarkable." },
+        { "t": "Make your own answer before looking", "x": "**MRI**." },
+        { "t": "Rule out the others", "elim": [[0, "Blood cultures are important but are not imaging and may be negative."], [1, "CT is less sensitive for early marrow change."], [3, "Ultrasound is for subperiosteal collections, mainly in children."], [4, "Waiting delays diagnosis; X-ray change is a late sign."]] },
+        { "t": "Commit", "x": "**C. MRI of the tibia.** Rule: most sensitive early test = MRI." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 57 year old man with diabetes has osteomyelitis of the left 1st metatarsal confirmed on MRI. A superficial swab of his foot ulcer grew mixed skin flora. Blood cultures are negative. His temperature is 37.6°C, pulse rate 88 bpm and BP 136/80 mmHg.",
+      "labs": [["CRP", "92 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate investigation to guide definitive antibiotic treatment?",
+      "o": ["Bone biopsy for histology and culture", "CT of the foot", "Repeat blood cultures", "Repeat superficial wound swab", "Serum procalcitonin"],
+      "a": 0,
+      "e": "Bone biopsy for pathology and culture is the gold standard and identifies the organism to target. Superficial swabs grow colonisers.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The test that guides definitive antibiotics." },
+        { "t": "Pick out the clues", "clues": ["confirmed on MRI", "mixed skin flora", "Blood cultures are negative"], "x": "Diagnosis made, but no reliable organism yet." },
+        { "t": "Make your own answer before looking", "x": "**Bone biopsy** for culture." },
+        { "t": "Rule out the others", "elim": [[1, "CT shows anatomy, not the organism."], [2, "Cultures are already negative and often stay so."], [3, "Superficial swabs grow colonisers, not the bone organism."], [4, "Procalcitonin does not identify an organism."]] },
+        { "t": "Commit", "x": "**A. Bone biopsy.** Rule: gold standard and guides definitive antibiotics." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 52 year old woman has acute osteomyelitis of the right tibia after an open fracture. She has no drug allergies. Blood cultures and a bone biopsy have been taken. Her temperature is 38.2°C, pulse rate 98 bpm and BP 128/78 mmHg.",
+      "labs": [["CRP", "150 mg/L", "<5", "H"], ["WCC", "14.9 ×10⁹/L", "4.0–11.0", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate empirical antibiotic treatment?",
+      "o": ["IV ceftriaxone", "IV flucloxacillin and rifampicin", "IV vancomycin", "Oral amoxicillin", "Oral clarithromycin"],
+      "a": 1,
+      "e": "Empirical treatment is IV flucloxacillin plus rifampicin for at least 4 weeks. Vancomycin is reserved for confirmed MRSA.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Empirical antibiotics for osteomyelitis." },
+        { "t": "Pick out the clues", "clues": ["acute osteomyelitis", "no drug allergies", "bone biopsy have been taken"], "x": "Samples taken, no allergy, no MRSA known." },
+        { "t": "Make your own answer before looking", "x": "**IV flucloxacillin + rifampicin**." },
+        { "t": "Rule out the others", "elim": [[0, "Ceftriaxone is not the empirical choice for S. aureus bone infection."], [2, "Vancomycin is for confirmed MRSA."], [3, "Oral amoxicillin does not cover S. aureus reliably."], [4, "Oral clarithromycin is not adequate for bone infection."]] },
+        { "t": "Commit", "x": "**B. IV flucloxacillin and rifampicin.** Rule: empirical bone cover = fluclox + rifampicin." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 64 year old man with diabetes has osteomyelitis of the right foot. After 5 days of IV flucloxacillin he still has fever, a persistent purulent discharge and deep tenderness of the sole. His temperature is 38.3°C, pulse rate 104 bpm and BP 130/76 mmHg. MRI shows a deep plantar collection.",
+      "labs": [["CRP", "172 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate next step in management?",
+      "o": ["Add oral metronidazole", "Hyperbaric oxygen therapy", "Increase the flucloxacillin dose", "Surgical drainage and debridement", "Switch to oral clindamycin"],
+      "a": 3,
+      "e": "A deep abscess in a diabetic foot with persistent discharge despite flucloxacillin needs surgical drainage. Changing antibiotics will not clear walled-off pus.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step when antibiotics are failing." },
+        { "t": "Pick out the clues", "clues": ["After 5 days of IV flucloxacillin", "persistent purulent discharge", "deep plantar collection"], "x": "Failure of antibiotics because of an abscess." },
+        { "t": "Make your own answer before looking", "x": "**Surgical drainage**." },
+        { "t": "Rule out the others", "elim": [[0, "Adding anaerobic cover does not drain pus."], [1, "Hyperbaric oxygen is not standard and does not drain pus."], [2, "A higher dose cannot penetrate an abscess."], [4, "Changing antibiotic still leaves the collection."]] },
+        { "t": "Commit", "x": "**D. Surgical drainage and debridement.** Rule: pus that persists despite antibiotics = drain it." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 59 year old man is on IV flucloxacillin and rifampicin for osteomyelitis of the left tibia. Bone biopsy culture grows Staphylococcus aureus resistant to meticillin. His temperature is 37.9°C, pulse rate 90 bpm and BP 132/80 mmHg.",
+      "labs": [["CRP", "98 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate change to his antibiotics?",
+      "o": ["Clindamycin", "Co-amoxiclav", "Meropenem", "Oral flucloxacillin", "Vancomycin"],
+      "a": 4,
+      "e": "Meticillin-resistant S. aureus (MRSA) on bone biopsy is treated with vancomycin. Clindamycin is the choice in severe penicillin allergy.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Antibiotic change after the biopsy result." },
+        { "t": "Pick out the clues", "clues": ["Bone biopsy culture", "resistant to meticillin"], "x": "MRSA confirmed." },
+        { "t": "Make your own answer before looking", "x": "**Vancomycin**." },
+        { "t": "Rule out the others", "elim": [[0, "Clindamycin is for severe penicillin allergy, not the MRSA choice in the notes."], [1, "Co-amoxiclav does not cover MRSA."], [2, "Meropenem does not cover MRSA."], [3, "MRSA is resistant to flucloxacillin."]] },
+        { "t": "Commit", "x": "**E. Vancomycin.** Rule: MRSA on biopsy = vancomycin." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "An 8 year old boy has acute osteomyelitis of the distal femoral metaphysis with no history of trauma. Blood cultures grow Staphylococcus aureus. His temperature is 38.5°C, pulse rate 116 bpm and BP 102/64 mmHg.",
+      "labs": [["CRP", "104 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely reason the infection settled in the metaphysis?",
+      "o": ["Absent periosteum", "High osteoclast activity", "Lack of bone marrow", "Rich blood supply with sluggish flow", "Thin articular cartilage"],
+      "a": 3,
+      "e": "Haematogenous bacteria seed the metaphysis because it has a rich vascular supply with sluggish flow in looping vessels.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism: why the metaphysis?" },
+        { "t": "Pick out the clues", "clues": ["8 year old boy", "metaphysis", "no history of trauma", "Blood cultures grow Staphylococcus aureus"], "x": "Haematogenous spread in a child." },
+        { "t": "Make your own answer before looking", "x": "**Rich blood supply with sluggish flow** lets bacteria settle." },
+        { "t": "Rule out the others", "elim": [[0, "The metaphysis has periosteum."], [1, "Osteoclast activity does not trap bacteria."], [2, "The metaphysis contains marrow."], [4, "Articular cartilage is at the epiphysis, not the metaphysis."]] },
+        { "t": "Commit", "x": "**D. Rich blood supply with sluggish flow.** Rule: haematogenous seeding goes to the metaphysis." }
+      ]
+    }
+  ]
+}

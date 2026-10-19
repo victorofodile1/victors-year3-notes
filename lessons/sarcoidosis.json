@@ -1,0 +1,675 @@
+{
+ "id": "sarcoidosis",
+ "patient": {
+  "name": "Simone Campbell",
+  "age": 33,
+  "sex": "F",
+  "setting": "GP surgery, then respiratory clinic",
+  "complaint": "Dry cough, breathlessness and tiredness for 3 months, now a painful red eye",
+  "background": [
+   "Black Caribbean heritage; lives in Lewisham",
+   "Her aunt has sarcoidosis",
+   "Never smoked; works as a pharmacist",
+   "No regular medicines, no known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a young Afro-Caribbean adult, dry cough, bilateral hilar lymphadenopathy and an extra-pulmonary clue (erythema nodosum, uveitis, lupus pernio, parotid swelling, facial palsy, hypercalcaemia). Löfgren's syndrome is the classic acute form.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Simone, 33, never smoked.",
+      "Dry cough and breathless on stairs for 3 months.",
+      "Tired; lost 3 kg without trying.",
+      "Since Monday: **painful red left eye**, light hurts.",
+      "Her aunt has sarcoidosis."
+     ],
+     "vitals": {
+      "T": "37.2°C",
+      "HR": "86 bpm",
+      "BP": "118/74 mmHg",
+      "RR": "18 /min",
+      "SpO2": "96% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Simone has both risk factors: **Afro-Caribbean** heritage and a **family history**, at the typical age of 20 to 40."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A dry cough plus an inflamed eye in Simone suggests one **multisystem** granulomatous disease rather than two separate problems."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Left eye: red around the iris, small irregular pupil.",
+      "Tender red nodules on both shins.",
+      "Chest clear; no clubbing.",
+      "No joint swelling, no parotid swelling."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Simone has the lung features plus **uveitis** and **erythema nodosum**. Lupus pernio, parotid swelling or facial palsy would be other clues."
+    },
+    {
+     "type": "ask",
+     "q": "Which eye problem is typical of Simone's likely diagnosis?",
+     "o": ["Acute angle-closure glaucoma", "Anterior uveitis", "Conjunctivitis", "Retinal detachment"],
+     "a": 1,
+     "r": "**Anterior uveitis** (painful red eye, photophobia, small pupil) is the classic sarcoid eye finding."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Simone's eye is the **anterior uveitis**; her bloods will be checked for raised **ACE** and **calcium**."
+    },
+    {
+     "type": "compare",
+     "title": "Bilateral hilar lymphadenopathy: what else?",
+     "head": ["Feature", "Sarcoidosis", "TB", "Lymphoma"],
+     "rows": [
+      ["Hilar nodes", "**Bilateral**, symmetrical", "Usually unilateral", "Often asymmetrical"],
+      ["Patient", "20–40, Afro-Caribbean", "Travel, contacts, HIV", "Night sweats, itch"],
+      ["Clues", "EN, uveitis, high ACE, high Ca", "Fever, sweats, cavitation", "Lymph nodes elsewhere"],
+      ["Biopsy", "**Non-caseating** granulomas", "Caseating granulomas", "Reed-Sternberg cells (Hodgkin)"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Simone does not have fever and arthralgia, so not **Löfgren's**. Fever + BHL + erythema nodosum + polyarthralgia would be."
+    },
+    {
+     "type": "pearl",
+     "text": "**Lupus pernio** is a purple rash on the nose and cheeks in sarcoidosis, despite its name. It is not SLE."
+    },
+    {
+     "type": "trap",
+     "text": "Bilateral hilar lymphadenopathy is sarcoid until proven otherwise; **unilateral** hilar enlargement should make you think of malignancy or TB."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'most appropriate initial investigation' (chest X-ray: BHL), 'diagnostic investigation' (bronchoscopy with transbronchial biopsy: non-caseating granulomas), typical bloods (raised ACE, calcium, ESR) and Scadding staging.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "What is the first investigation for Simone's suspected sarcoidosis?",
+     "o": ["Bronchoscopy with biopsy", "Chest X-ray", "PET-CT", "Serum ACE"],
+     "a": 1,
+     "r": "The **chest X-ray** comes first: it shows bilateral hilar lymphadenopathy and stages the disease."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Simone's chest X-ray",
+      "findings": [
+       { "type": "hilar", "side": "both", "zone": "middle" }
+      ],
+      "caption": "Bilateral hilar lymphadenopathy with mid-zone reticulonodular infiltrates."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Simone's bloods",
+     "rows": [
+      ["Serum ACE", "112 U/L", "8–65", "H"],
+      ["Adjusted calcium", "2.84 mmol/L", "2.20–2.60", "H"],
+      ["PTH", "0.8 pmol/L", "1.6–7.2", "L"],
+      ["ESR", "46 mm/hr", "0–20", "H"],
+      ["Creatinine", "78 µmol/L", "45–90", ""]
+     ],
+     "text": "High ACE, high calcium with a **suppressed PTH**: granuloma-driven, not parathyroid."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Simone's first tests fit: **BHL with infiltrates** on X-ray, raised **ACE**, **calcium** and **ESR**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Scadding stage on chest X-ray",
+      "min": 0,
+      "max": 4,
+      "unit": "stage",
+      "bands": [
+       [0, 1.5, "0–1: normal or BHL alone", "ok"],
+       [1.5, 3.5, "2–3: infiltrates ± BHL", "warn"],
+       [3.5, 4, "4: fibrosis", "bad"]
+      ],
+      "value": 2,
+      "label": "Simone stage 2",
+      "caption": "BHL plus interstitial infiltrates is stage 2."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Simone is **Scadding stage 2**: BHL plus infiltrates. Her pulmonary function tests show a **restrictive** pattern, used to monitor her."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Simone's stage comes straight from the **Scadding system**: 0 normal, 1 BHL, 2 BHL + infiltrates, 3 infiltrates only, 4 fibrosis."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Simone has **bronchoscopy with transbronchial biopsy**, which shows **non-caseating granulomas** and confirms the diagnosis."
+    },
+    {
+     "type": "trap",
+     "text": "A raised ACE supports sarcoidosis but does not confirm it. **Biopsy** with non-caseating granulomas is the definitive test."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'most appropriate management': reassurance and monitoring for mild stage 1/2 disease; oral prednisolone for symptomatic stage 2/3, hypercalcaemia, uveitis, neurological or cardiac disease; azathioprine if steroids fail or are contraindicated.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Simone is stage 2, symptomatic, with uveitis and hypercalcaemia. What is first-line treatment?",
+     "o": ["Oral azathioprine", "Oral prednisolone", "Reassurance and monitoring", "Topical steroid cream"],
+     "a": 1,
+     "r": "Symptomatic stage 2 disease, uveitis and hypercalcaemia are all indications for **oral prednisolone**."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Simone has three steroid indications: **parenchymal disease**, **uveitis** and **hypercalcaemia**, so she starts **oral prednisolone**."
+    },
+    {
+     "type": "flow",
+     "title": "Who needs treatment?",
+     "nodes": [
+      "Stage 1/2, mild, no organ threat → reassure and monitor",
+      "Symptomatic stage 2/3, hypercalcaemia, eye, nerve or heart → oral prednisolone",
+      "Steroids fail or contraindicated → oral azathioprine",
+      "Cardiac involvement → methotrexate (per notes)",
+      "Severe/refractory → methotrexate + azathioprine"
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Simone on prednisolone",
+      "x": ["Start", "2 weeks", "6 weeks", "3 months"],
+      "unit": "",
+      "series": [
+       { "name": "Adjusted calcium (mmol/L)", "values": [2.84, 2.62, 2.45, 2.38] },
+       { "name": "FVC (L)", "values": [2.6, 2.8, 3.0, 3.1] }
+      ],
+      "caption": "Calcium normalises and lung function improves as granuloma activity is suppressed."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Simone's disease relapsed as steroids were reduced, or she could not take them, **oral azathioprine** would be next."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Simone has no palpitations or heart block. If she did, the notes give **methotrexate** for cardiac disease, and combination therapy for refractory disease."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Simone is followed in clinic with **lung function** and symptoms, watching for fibrosis, hypercalcaemia, heart and nerve involvement."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Simone is told that **severe breathlessness** would mean advanced lung involvement and needs **urgent assessment**."
+    },
+    {
+     "type": "pearl",
+     "text": "Asymptomatic stage 1 BHL found by chance often **resolves on its own**: reassure and monitor, no steroids."
+    },
+    {
+     "type": "trap",
+     "text": "Do not give oral steroids to everyone with sarcoid. Treat for **symptoms or organ threat** (lung, eye, calcium, nerve, heart)."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the biopsy description (non-caseating granulomas), why calcium rises (ectopic 1-alpha-hydroxylase), why hilar nodes are bilateral, why Löfgren's does well, and how it progresses to fibrosis.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Simone's biopsy shows tight clusters of **epithelioid macrophages** and **giant cells** with lymphocytes around them, and **no necrosis**."
+    },
+    {
+     "type": "ask",
+     "q": "Why is Simone's PTH low while her calcium is high?",
+     "o": ["Bone metastases", "Granulomas make active vitamin D", "Parathyroid adenoma", "PTHrP from a tumour"],
+     "a": 1,
+     "r": "Granuloma macrophages express **1-alpha-hydroxylase**, making calcitriol outside renal control; high calcium then suppresses PTH."
+    },
+    {
+     "type": "flow",
+     "title": "Why Simone's calcium is high",
+     "nodes": [
+      "Granuloma macrophages express 1-alpha-hydroxylase",
+      "25-OH vitamin D → 1,25-(OH)2 vitamin D (calcitriol)",
+      "No renal feedback control",
+      "More calcium absorbed from the gut",
+      "Hypercalcaemia; PTH suppressed"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Simone's raised **ACE** reflects her granuloma burden, and her high calcium comes from granuloma-made **active vitamin D**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Simone's hilar nodes are **bilateral** because granulomas infiltrate the mediastinal and hilar nodes on both sides."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Simone had **Löfgren's**, her outlook would be better: it is acute and usually resolves on its own."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Simone is treated partly to stop progression to **stage 4 fibrosis**; steroids damp down T cells and macrophages."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  { "d": "diagnosis", "q": "What is the hallmark histological feature of sarcoidosis?", "o": ["Caseating granulomas", "Non-caseating granulomas", "Reed-Sternberg cells", "Vasculitis"], "a": 1, "r": "**Non-caseating granulomas**. Caseating granulomas suggest TB." },
+  { "d": "diagnosis", "q": "Which group is most at risk of sarcoidosis?", "o": ["Afro-Caribbean adults aged 20–40", "Children under 5", "East Asian men over 70", "Smokers over 60"], "a": 0, "r": "**Afro-Caribbean** ethnicity, family history, age **20–40**." },
+  { "d": "diagnosis", "q": "Which four features make up Löfgren's syndrome?", "o": ["Fever, BHL, erythema nodosum, polyarthralgia", "Fever, rash, uveitis, parotitis", "Haemoptysis, clubbing, BHL, weight loss", "Uveitis, facial palsy, rash, fever"], "a": 0, "r": "**Fever, bilateral hilar lymphadenopathy, erythema nodosum and polyarthralgia**." },
+  { "d": "diagnosis", "q": "What is lupus pernio?", "o": ["Butterfly rash of SLE", "Purple facial rash of sarcoidosis", "Shin nodules", "TB of the skin"], "a": 1, "r": "A **purple rash** on the nose and cheeks in sarcoidosis." },
+  { "d": "investigation", "q": "What is the first-line investigation in suspected sarcoidosis?", "o": ["Bronchoscopy", "Chest X-ray", "HRCT", "Serum ACE"], "a": 1, "r": "**Chest X-ray**: BHL and pulmonary infiltrates." },
+  { "d": "investigation", "q": "Which Scadding stage is infiltrates without BHL?", "o": ["Stage 1", "Stage 2", "Stage 3", "Stage 4"], "a": 2, "r": "**Stage 3**. Stage 2 is BHL plus infiltrates; stage 4 is fibrosis." },
+  { "d": "investigation", "q": "Which test is definitive for sarcoidosis?", "o": ["Bronchoscopy with transbronchial biopsy", "Serum ACE", "Serum calcium", "Spirometry"], "a": 0, "r": "**Transbronchial biopsy** showing non-caseating granulomas." },
+  { "d": "management", "q": "What is first-line treatment for symptomatic stage 2/3 sarcoidosis?", "o": ["Inhaled steroid", "Oral azathioprine", "Oral prednisolone", "Reassurance"], "a": 2, "r": "**Oral corticosteroids** (prednisolone)." },
+  { "d": "management", "q": "What do the notes give if steroids fail or are contraindicated?", "o": ["Infliximab", "Oral azathioprine", "Pirfenidone", "Rituximab"], "a": 1, "r": "**Oral azathioprine**." },
+  { "d": "science", "q": "Why does sarcoidosis cause hypercalcaemia?", "o": ["Bone destruction", "Ectopic 1-alpha-hydroxylase in granulomas", "PTH excess", "PTHrP secretion"], "a": 1, "r": "Granuloma macrophages make **active vitamin D** outside renal control." }
+ ],
+ "blurt": {
+  "prompts": [
+   { "d": "diagnosis", "q": "What is sarcoidosis, and who gets it?", "tip": "Exam thinking: young Afro-Caribbean adult + BHL = sarcoid.", "points": [
+     { "p": "Multisystem inflammatory disease with non-caseating granulomas", "k": [["granulom"], ["non-caseating", "noncaseating", "non caseating", "non-necrotising"]], "why": "Caseating granulomas mean TB." },
+     { "p": "Mainly lungs and lymph nodes; also eye, nerves, heart, skin", "k": [["lung", "lymph", "hilar"]], "why": "Any organ can be involved." },
+     { "p": "Afro-Caribbean ethnicity and family history", "k": [["afro", "caribbean", "black", "family"]], "why": "Key risk factors." },
+     { "p": "Typically aged 20 to 40", "k": [["20", "40", "young"]], "why": "An older smoker with BHL needs cancer excluded." }
+   ] },
+   { "d": "diagnosis", "q": "What are the lung and extra-pulmonary features of sarcoidosis?", "tip": "Exam thinking: the extra-pulmonary clue gives the answer away.", "points": [
+     { "p": "Dry cough, breathlessness, fatigue, weight loss", "k": [["cough", "breathless", "dyspnoea", "sob"]], "why": "Chest often sounds clear." },
+     { "p": "Uveitis (painful red eye)", "k": [["uveitis"]], "why": "Anterior uveitis is classic." },
+     { "p": "Erythema nodosum and lupus pernio", "k": [["erythema nodosum", "lupus pernio", "nodosum", "pernio"]], "why": "Lupus pernio is purple, on the nose and cheeks." },
+     { "p": "LMN facial nerve palsy", "k": [["facial", "bell", "cn vii", "cn7"]], "why": "Bilateral facial palsy should make you think of sarcoid." },
+     { "p": "Bilateral parotid swelling and polyarthralgia", "k": [["parotid", "arthralgia", "joint"]], "why": "Granulomatous infiltration of the parotids." }
+   ] },
+   { "d": "diagnosis", "q": "What is Löfgren's syndrome, and what is its outlook?", "tip": "Exam thinking: four features, all needed.", "points": [
+     { "p": "Fever", "k": [["fever", "pyrexia"]], "why": "Acute onset." },
+     { "p": "Bilateral hilar lymphadenopathy", "k": [["hilar", "bhl"]], "why": "Stage 1 on CXR." },
+     { "p": "Erythema nodosum", "k": [["erythema nodosum", "nodosum"]], "why": "Painful red shin nodules." },
+     { "p": "Polyarthralgia", "k": [["arthralgia", "arthritis", "joint", "ankle"]], "why": "Often the ankles." },
+     { "p": "Good prognosis, high spontaneous resolution", "k": [["good", "resol", "self-limit", "spontaneous"]], "why": "Usually no steroids needed." }
+   ] },
+   { "d": "diagnosis", "q": "Which complications and blood abnormalities does sarcoidosis cause?", "tip": "Exam thinking: hypercalcaemia with low PTH and BHL = sarcoid.", "points": [
+     { "p": "Raised serum ACE", "k": [["ace"]], "why": "Reflects granuloma burden." },
+     { "p": "Hypercalcaemia", "k": [["calcium", "hypercalc"]], "why": "With a suppressed PTH." },
+     { "p": "Anterior uveitis", "k": [["uveitis"]], "why": "Needs steroids." },
+     { "p": "Pulmonary fibrosis (stage 4) and cardiac or neurological disease", "k": [["fibros", "cardiac", "heart", "neuro"]], "why": "Organ threat = treat." }
+   ] },
+   { "d": "investigation", "q": "What are the first-line investigations and what do they show?", "tip": "Exam thinking: CXR first, then bloods.", "points": [
+     { "p": "Chest X-ray: bilateral hilar lymphadenopathy ± infiltrates", "k": [["x-ray", "xray", "cxr"], ["hilar", "bhl"]], "why": "First-line." },
+     { "p": "Raised ACE", "k": [["ace"]], "why": "Supportive, not diagnostic." },
+     { "p": "Raised calcium", "k": [["calcium", "hypercalc"]], "why": "Granuloma vitamin D." },
+     { "p": "Raised ESR", "k": [["esr"]], "why": "Non-specific inflammation." }
+   ] },
+   { "d": "investigation", "q": "What confirms the diagnosis, and how is it staged and monitored?", "tip": "Exam thinking: biopsy confirms; Scadding stages.", "points": [
+     { "p": "Bronchoscopy with transbronchial biopsy (lung, node or skin)", "k": [["biopsy", "bronchoscop", "transbronchial"]], "why": "Definitive." },
+     { "p": "Shows non-caseating granulomas", "k": [["non-caseating", "noncaseating", "non caseating"]], "why": "Caseating would suggest TB." },
+     { "p": "Scadding staging on chest X-ray, 0 to 4", "k": [["scadding", "stage"]], "why": "0 normal, 1 BHL, 2 BHL + infiltrates, 3 infiltrates, 4 fibrosis." },
+     { "p": "Pulmonary function tests: restrictive pattern", "k": [["restrict"]], "why": "Used to monitor disease." }
+   ] },
+   { "d": "management", "q": "Who needs treatment for sarcoidosis, and with what?", "tip": "Exam thinking: mild = watch; symptoms or organ threat = steroids.", "points": [
+     { "p": "Mild stage 1/2: reassurance and monitoring", "k": [["reassur", "monitor", "observ", "watch"]], "why": "Often resolves spontaneously." },
+     { "p": "Symptomatic stage 2/3 or hypercalcaemia: oral prednisolone", "k": [["prednisolone", "steroid", "corticosteroid"]], "why": "First-line treatment." },
+     { "p": "Indications: lung parenchyma, uveitis, hypercalcaemia, neuro or cardiac", "k": [["uveitis", "calcium", "cardiac", "heart", "neuro", "parenchym"]], "why": "Organ-threatening disease." },
+     { "p": "Steroids fail or contraindicated: oral azathioprine", "k": [["azathioprine"]], "why": "Second-line." },
+     { "p": "Cardiac: methotrexate; refractory: methotrexate + azathioprine", "k": [["methotrexate"]], "why": "As given in the notes." }
+   ] },
+   { "d": "management", "q": "How is sarcoidosis followed up, and when is it urgent?", "tip": "Exam thinking: lung function tracks disease.", "points": [
+     { "p": "Monitor lung function and symptoms", "k": [["lung function", "pft", "spirometry", "monitor"]], "why": "Detects progression to fibrosis." },
+     { "p": "Watch for fibrosis, hypercalcaemia, respiratory failure, cardiac and neuro disease", "k": [["fibros", "calcium", "cardiac", "neuro", "respiratory failure"]], "why": "Long-term complications." },
+     { "p": "Severe breathlessness needs urgent assessment", "k": [["urgent", "emergency", "severe"]], "why": "Advanced lung involvement." }
+   ] },
+   { "d": "science", "q": "What is a sarcoid granuloma, and why does sarcoid cause hypercalcaemia?", "tip": "Exam thinking: 1-alpha-hydroxylase is the word they want.", "points": [
+     { "p": "Activated macrophages, epithelioid cells and giant cells, surrounded by lymphocytes", "k": [["macrophage", "epithelioid", "giant"]], "why": "No central necrosis." },
+     { "p": "Unclear antigenic trigger", "k": [["unknown", "unclear", "antigen", "trigger"]], "why": "Cause still not known." },
+     { "p": "Macrophages express 1-alpha-hydroxylase", "k": [["1-alpha", "1 alpha", "alpha-hydroxylase", "alpha hydroxylase", "1α"]], "why": "Outside renal control." },
+     { "p": "More active vitamin D, more gut calcium absorption", "k": [["vitamin d", "calcitriol"], ["absor", "gut", "intestin"]], "why": "PTH is suppressed." }
+   ] },
+   { "d": "science", "q": "Why is hilar lymphadenopathy bilateral, why does Löfgren's do well, and why can sarcoid cause fibrosis?", "tip": "Exam thinking: bilateral = sarcoid; unilateral = malignancy or infection.", "points": [
+     { "p": "Granulomatous infiltration of mediastinal and hilar nodes on both sides", "k": [["infiltrat", "granulom"], ["node", "lymph"]], "why": "Distinguishes it from unilateral malignancy or TB." },
+     { "p": "Löfgren's: acute immune-complex presentation that usually resolves", "k": [["resol", "good", "self-limit", "acute"]], "why": "Good prognosis." },
+     { "p": "Untreated progressive inflammation leads to irreversible fibrosis (stage 4)", "k": [["fibros", "stage 4"]], "why": "Irreversible." },
+     { "p": "Steroids suppress T cells and macrophages", "k": [["t cell", "t-cell", "macrophage", "suppress"]], "why": "Reduces organ damage." }
+   ] }
+  ]
+ },
+ "glossary": {
+  "Sarcoidosis": "Multisystem disease of non-caseating granulomas, mainly in the lungs and lymph nodes.",
+  "Granuloma": "A compact cluster of activated macrophages and other immune cells walling off an antigen.",
+  "Non-caseating": "Without central cheese-like necrosis; typical of sarcoid granulomas.",
+  "Caseating": "With central cheesy necrosis; typical of TB granulomas.",
+  "Epithelioid cells": "Activated macrophages that look like epithelial cells, forming granulomas.",
+  "Giant cells": "Large cells with many nuclei, formed by fused macrophages in granulomas.",
+  "BHL": "Bilateral hilar lymphadenopathy: enlarged lymph nodes at both lung roots.",
+  "Bilateral hilar lymphadenopathy": "Enlarged lymph nodes at both lung roots; the classic X-ray sign of sarcoidosis.",
+  "Hilar": "Relating to the lung root, where the bronchi, vessels and lymph nodes enter.",
+  "Löfgren's syndrome": "Acute sarcoidosis with fever, BHL, erythema nodosum and polyarthralgia; good prognosis.",
+  "Erythema nodosum": "Painful, red, raised nodules, usually on the shins.",
+  "Lupus pernio": "Purple, indurated rash on the nose and cheeks in sarcoidosis; not related to SLE.",
+  "Uveitis": "Inflammation of the uvea; anterior uveitis causes a painful red eye and photophobia.",
+  "Anterior uveitis": "Inflammation of the iris and ciliary body: painful red eye, photophobia, small pupil.",
+  "Photophobia": "Pain or discomfort from light.",
+  "Polyarthralgia": "Pain in several joints.",
+  "Parotid": "The large salivary gland in front of the ear.",
+  "LMN": "Lower motor neurone; an LMN facial palsy weakens the whole half of the face, forehead included.",
+  "ACE": "Angiotensin-converting enzyme; made by granulomas, so raised in active sarcoidosis.",
+  "Hypercalcaemia": "Raised blood calcium; causes thirst, polyuria, constipation and confusion.",
+  "PTH": "Parathyroid hormone; suppressed when calcium is raised by a non-parathyroid cause.",
+  "PTHrP": "Parathyroid hormone-related protein, made by some cancers to raise calcium.",
+  "1-alpha-hydroxylase": "Enzyme that converts vitamin D to its active form, calcitriol.",
+  "Calcitriol": "1,25-dihydroxyvitamin D, the active form that increases gut calcium absorption.",
+  "ESR": "Erythrocyte sedimentation rate; a non-specific marker of inflammation.",
+  "Scadding": "Chest X-ray staging of sarcoidosis from 0 (normal) to 4 (fibrosis).",
+  "Transbronchial biopsy": "Lung tissue sample taken through a bronchoscope.",
+  "Bronchoscopy": "Looking inside the airways with a flexible camera.",
+  "Restrictive pattern": "Spirometry with FEV1/FVC above 0.7 but low FEV1 and FVC.",
+  "TLCO": "Transfer factor for carbon monoxide: how well gas crosses into the blood.",
+  "Prednisolone": "Oral corticosteroid; first-line for symptomatic or organ-threatening sarcoidosis.",
+  "Azathioprine": "Immunosuppressant used when steroids fail or are contraindicated.",
+  "Methotrexate": "Antifolate immunosuppressant used as a steroid-sparing agent.",
+  "Cardiac sarcoidosis": "Granulomas in the heart causing heart block, arrhythmias or heart failure.",
+  "Reed-Sternberg cells": "Large abnormal B cells that define Hodgkin lymphoma.",
+  "Heerfordt syndrome": "Sarcoid with uveitis, parotid swelling, fever and facial nerve palsy."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old Black Caribbean man has a 2 month history of dry cough, breathlessness on exertion and tiredness. Last week he developed a painful red right eye with blurred vision and photophobia. His chest is clear on auscultation. His chest X-ray shows bilateral hilar lymphadenopathy.",
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Bronchogenic carcinoma", "Hodgkin lymphoma", "Sarcoidosis", "Systemic lupus erythematosus", "Tuberculosis"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "A diagnosis question: BHL in a young adult, plus a second-system clue." },
+    { "t": "Pick out the clues", "clues": ["29 year old Black Caribbean man", "dry cough", "painful red right eye", "photophobia", "bilateral hilar lymphadenopathy"], "x": "Young, Afro-Caribbean, dry cough, anterior uveitis, BHL." },
+    { "t": "Make your own answer before looking", "x": "**Sarcoidosis**." },
+    { "t": "Rule out the others", "elim": [[0, "Lung cancer is in older smokers, usually with a unilateral hilum."], [1, "Hodgkin gives night sweats, itch and asymmetrical nodes, not uveitis."], [3, "SLE gives rash, joint and kidney disease, not BHL."], [4, "TB gives fevers, sweats, weight loss and usually unilateral nodes."]] },
+    { "t": "Commit", "x": "**C. Sarcoidosis.** Rule: young Afro-Caribbean + BHL + uveitis = sarcoid." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 34 year old woman has a 3 month history of dry cough and breathlessness. She has tender red nodules on both shins. Her temperature is 37.3°C, pulse rate 84 bpm, BP 116/72 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air. Her GP suspects sarcoidosis.",
+   "q": "Which is the most appropriate initial investigation?",
+   "o": ["Bronchoscopy with transbronchial biopsy", "Chest X-ray", "HRCT chest", "Serum ACE", "Spirometry"],
+   "a": 1,
+   "steps": [
+    { "t": "Read the question line first", "x": "'Initial' investigation, not the definitive one." },
+    { "t": "Pick out the clues", "clues": ["dry cough and breathlessness", "tender red nodules on both shins", "suspects sarcoidosis"], "x": "Erythema nodosum and chest symptoms: suspected sarcoid." },
+    { "t": "Make your own answer before looking", "x": "**Chest X-ray**: BHL, infiltrates, and Scadding stage." },
+    { "t": "Rule out the others", "elim": [[0, "Biopsy is definitive but not the first test."], [2, "HRCT comes after the chest X-ray."], [3, "ACE supports but cannot confirm and is not the first test."], [4, "Spirometry monitors; it does not show BHL."]] },
+    { "t": "Commit", "x": "**B. Chest X-ray.** Rule: initial = CXR; definitive = biopsy." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 46 year old woman has stage 2 pulmonary sarcoidosis treated with oral prednisolone for 9 months. Each time the dose is reduced below 10 mg, her cough and breathlessness return. She has developed steroid-induced diabetes and a vertebral fragility fracture. Her FVC has fallen from 82% to 70% of predicted.",
+   "q": "Which is the most appropriate next step in management?",
+   "o": ["Increase the prednisolone dose", "Inhaled budesonide", "Oral azathioprine", "Reassurance and monitoring", "Stop all treatment"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "Next step when first-line treatment is failing." },
+    { "t": "Pick out the clues", "clues": ["Each time the dose is reduced", "steroid-induced diabetes", "vertebral fragility fracture", "FVC has fallen"], "x": "Steroid-dependent, steroid side effects, progressing disease." },
+    { "t": "Make your own answer before looking", "x": "Steroids failing and contraindicated: **oral azathioprine**." },
+    { "t": "Rule out the others", "elim": [[0, "More steroid worsens her diabetes and bones."], [1, "Inhaled steroids do not control parenchymal sarcoid."], [3, "Her disease is progressing."], [4, "Stopping would let it progress to fibrosis."]] },
+    { "t": "Commit", "x": "**C. Oral azathioprine.** Rule: steroids fail or contraindicated = azathioprine." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 31 year old woman has bilateral hilar lymphadenopathy, a dry cough and erythema nodosum. She has a bronchoscopy with transbronchial biopsy. Stains and cultures for acid-fast bacilli are negative and there are no atypical lymphocytes.",
+   "q": "Which is the most likely histological finding?",
+   "o": ["Caseating granulomas", "Non-caseating granulomas", "Reed-Sternberg cells", "Small round blue cells", "Squamous cell nests"],
+   "a": 1,
+   "steps": [
+    { "t": "Read the question line first", "x": "A histology question: make the diagnosis, then its tissue finding." },
+    { "t": "Pick out the clues", "clues": ["bilateral hilar lymphadenopathy", "erythema nodosum", "acid-fast bacilli are negative", "no atypical lymphocytes"], "x": "Sarcoid; TB and lymphoma made unlikely." },
+    { "t": "Make your own answer before looking", "x": "**Non-caseating granulomas**." },
+    { "t": "Rule out the others", "elim": [[0, "Caseating granulomas are TB; AFB negative."], [2, "Reed-Sternberg cells are Hodgkin lymphoma."], [3, "Small round blue cells suggest small cell carcinoma or lymphoma."], [4, "Squamous nests are squamous cell carcinoma."]] },
+    { "t": "Commit", "x": "**B. Non-caseating granulomas.**" }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old Black woman has had purple, raised, firm plaques on her nose and cheeks for 6 months. She also has a dry cough and breathlessness on hills. She has no joint pain, mouth ulcers or photosensitivity. Her chest X-ray shows bilateral hilar lymphadenopathy with reticulonodular shadowing.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Discoid lupus erythematosus", "Rosacea", "Sarcoidosis", "Systemic lupus erythematosus", "Tuberculosis"],
+   "a": 2,
+   "e": "Purple plaques on the nose and cheeks are lupus pernio, a sarcoid skin lesion; with BHL this is sarcoidosis. Despite the name, lupus pernio is not SLE.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: skin plus chest." },
+    { "t": "Pick out the clues", "clues": ["purple, raised, firm plaques on her nose and cheeks", "dry cough", "no joint pain, mouth ulcers or photosensitivity", "bilateral hilar lymphadenopathy"], "x": "Lupus pernio + BHL; SLE features absent." },
+    { "t": "Make your own answer before looking", "x": "**Sarcoidosis**." },
+    { "t": "Rule out the others", "elim": [[0, "Discoid lupus causes scarring plaques, not BHL."], [1, "Rosacea is flushing and pustules, not purple plaques with lung disease."], [3, "SLE has joint pain, ulcers, photosensitivity; none here."], [4, "No fevers, sweats or weight loss; BHL is bilateral."]] },
+    { "t": "Commit", "x": "**C. Sarcoidosis.** Rule: lupus pernio = sarcoid, not lupus." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old woman has a 1 week history of fever, painful swollen ankles and tender red lumps on both shins. Her temperature is 38.0°C, pulse rate 96 bpm, BP 118/70 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 98% breathing air. Her chest X-ray shows bilateral hilar lymphadenopathy.",
+   "labs": [["ESR", "58 mm/hr", "0–20", "H"], ["Serum ACE", "88 U/L", "8–65", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Behçet's disease", "Löfgren's syndrome", "Reactive arthritis", "Rheumatic fever", "Tuberculosis"],
+   "a": 1,
+   "e": "Fever, bilateral hilar lymphadenopathy, erythema nodosum and polyarthralgia is Löfgren's syndrome, the acute form of sarcoidosis with a good prognosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: count the features." },
+    { "t": "Pick out the clues", "clues": ["fever", "painful swollen ankles", "tender red lumps on both shins", "bilateral hilar lymphadenopathy"], "x": "Fever + polyarthralgia + erythema nodosum + BHL: all four." },
+    { "t": "Make your own answer before looking", "x": "**Löfgren's syndrome**." },
+    { "t": "Rule out the others", "elim": [[0, "Behçet's has oral and genital ulcers, not BHL."], [2, "Reactive arthritis follows GI or GU infection, with conjunctivitis and urethritis."], [3, "Rheumatic fever follows strep throat, with carditis."], [4, "TB rarely gives bilateral BHL with an acute arthropathy."]] },
+    { "t": "Commit", "x": "**B. Löfgren's syndrome.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 40 year old man has 2 months of thirst, passing more urine, constipation and a dry cough. His temperature is 36.9°C, pulse rate 80 bpm, BP 128/82 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 96% breathing air. His chest X-ray shows bilateral hilar lymphadenopathy.",
+   "labs": [["Adjusted calcium", "2.92 mmol/L", "2.20–2.60", "H"], ["PTH", "0.7 pmol/L", "1.6–7.2", "L"], ["Phosphate", "1.3 mmol/L", "0.8–1.5", ""], ["Serum ACE", "104 U/L", "8–65", "H"]],
+   "visual": null,
+   "q": "Which is the most likely cause of his hypercalcaemia?",
+   "o": ["Bony metastases from prostate cancer", "Multiple myeloma", "Primary hyperparathyroidism", "Sarcoidosis", "Squamous cell lung carcinoma"],
+   "a": 3,
+   "e": "Hypercalcaemia with a suppressed PTH, raised ACE and bilateral hilar lymphadenopathy in a 40 year old is sarcoidosis. Primary hyperparathyroidism would have a raised or inappropriately normal PTH.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Cause of hypercalcaemia: check the PTH first." },
+    { "t": "Pick out the clues", "clues": ["thirst, passing more urine, constipation", "dry cough", "bilateral hilar lymphadenopathy"], "x": "Labs: calcium high, PTH suppressed, ACE high. Symptomatic hypercalcaemia with BHL." },
+    { "t": "Make your own answer before looking", "x": "Non-PTH hypercalcaemia + BHL + ACE = **sarcoidosis**." },
+    { "t": "Rule out the others", "elim": [[0, "Prostate metastases are in older men, usually sclerotic."], [1, "Myeloma: older, renal failure, bone pain, no BHL."], [2, "PTH would be high or normal, not suppressed."], [4, "Squamous carcinoma (PTHrP) is in older smokers with a hilar mass."]] },
+    { "t": "Commit", "x": "**D. Sarcoidosis.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old woman with sarcoidosis has a 3 day history of a painful red left eye, blurred vision and pain when she looks at bright light. Her temperature is 36.8°C, pulse rate 78 bpm, BP 120/76 mmHg, respiratory rate 14 breaths per minute and oxygen saturation 98% breathing air. The redness is most marked around the iris and the left pupil is small.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on slit-lamp examination?",
+   "o": ["Anterior uveitis", "Central retinal artery occlusion", "Dendritic corneal ulcer", "Keratoconjunctivitis sicca", "Papilloedema"],
+   "a": 0,
+   "e": "A painful red eye with photophobia, circumcorneal redness and a small pupil in sarcoidosis is anterior uveitis, its classic eye complication.",
+   "steps": [
+    { "t": "Read the question line first", "x": "A finding question: the eye feature of sarcoid." },
+    { "t": "Pick out the clues", "clues": ["sarcoidosis", "painful red left eye", "pain when she looks at bright light", "around the iris", "pupil is small"], "x": "Painful, photophobic, ciliary flush, miosis." },
+    { "t": "Make your own answer before looking", "x": "**Anterior uveitis**." },
+    { "t": "Rule out the others", "elim": [[1, "CRAO is sudden painless loss of vision."], [2, "A dendritic ulcer is herpes simplex keratitis."], [3, "Dry eye is gritty, not photophobic with a small pupil."], [4, "Papilloedema is painless disc swelling."]] },
+    { "t": "Commit", "x": "**A. Anterior uveitis.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 30 year old woman has weakness of the left side of her face, including her forehead, that developed over 2 days. She has also noticed painless swelling in front of both ears, a dry mouth and a dry cough for 2 months. Her temperature is 37.4°C, pulse rate 82 bpm and BP 116/74 mmHg. Chest X-ray (see item resources).",
+   "labs": [],
+   "visual": { "kind": "cxr", "title": "Chest X-ray", "findings": [{ "type": "hilar", "side": "both", "zone": "middle" }], "caption": "Bilateral hilar lymphadenopathy." },
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Bell's palsy", "Lymphoma", "Mumps", "Sarcoidosis", "Sjögren's syndrome"],
+   "a": 3,
+   "e": "LMN facial palsy, bilateral parotid swelling, a dry cough and bilateral hilar lymphadenopathy is sarcoidosis. Bell's palsy would not explain the parotids or BHL.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: link the face, parotids and chest." },
+    { "t": "Pick out the clues", "clues": ["including her forehead", "swelling in front of both ears", "dry cough for 2 months", "see item resources"], "x": "LMN facial palsy + bilateral parotid swelling + cough; CXR shows BHL." },
+    { "t": "Make your own answer before looking", "x": "**Sarcoidosis**." },
+    { "t": "Rule out the others", "elim": [[0, "Bell's palsy is isolated; it does not explain parotids or BHL."], [1, "Lymphoma rarely gives a facial palsy with symmetrical parotids."], [2, "Mumps is acute, painful, febrile, without BHL."], [4, "Sjögren's gives dry eyes and mouth but not BHL or facial palsy."]] },
+    { "t": "Commit", "x": "**D. Sarcoidosis.** Rule: multisystem + BHL = sarcoid." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 36 year old man has stage 2 pulmonary sarcoidosis confirmed on transbronchial biopsy. He has a dry cough and breathlessness on exertion. His chest X-ray shows bilateral hilar lymphadenopathy with reticulonodular infiltrates. He has pulmonary function tests.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely result of his pulmonary function tests?",
+   "o": ["Normal spirometry and TLCO", "Obstruction with FEV1/FVC 0.55", "Obstruction with large reversibility after salbutamol", "Restriction with FEV1/FVC above 0.7 and reduced TLCO", "Restriction with raised TLCO"],
+   "a": 3,
+   "e": "Parenchymal sarcoidosis gives a restrictive pattern (ratio above 0.7, low volumes) with a reduced TLCO; PFTs are used to monitor it.",
+   "steps": [
+    { "t": "Read the question line first", "x": "A finding question: which lung function pattern." },
+    { "t": "Pick out the clues", "clues": ["stage 2 pulmonary sarcoidosis", "reticulonodular infiltrates", "breathlessness on exertion"], "x": "Interstitial (parenchymal) disease." },
+    { "t": "Make your own answer before looking", "x": "**Restrictive** with low TLCO." },
+    { "t": "Rule out the others", "elim": [[0, "Symptomatic infiltrates are unlikely to give normal tests."], [1, "A low ratio is obstruction (COPD)."], [2, "Large reversibility is asthma."], [4, "TLCO is reduced, not raised, in interstitial disease."]] },
+    { "t": "Commit", "x": "**D. Restriction with reduced TLCO.**" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 35 year old woman has a dry cough, erythema nodosum and bilateral hilar lymphadenopathy on chest X-ray. Her temperature is 37.1°C, pulse rate 80 bpm, BP 118/76 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 97% breathing air.",
+   "labs": [["Serum ACE", "96 U/L", "8–65", "H"], ["Adjusted calcium", "2.68 mmol/L", "2.20–2.60", "H"], ["ESR", "40 mm/hr", "0–20", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": ["Bronchoscopy with transbronchial biopsy", "HRCT chest", "Serum calcium repeated", "Serum vitamin D", "Tuberculin skin test"],
+   "a": 0,
+   "e": "Bronchoscopy with transbronchial biopsy showing non-caseating granulomas is definitive. A raised ACE and calcium support but do not confirm sarcoidosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Confirm' = definitive test." },
+    { "t": "Pick out the clues", "clues": ["erythema nodosum", "bilateral hilar lymphadenopathy"], "x": "Labs: raised ACE, calcium, ESR. Sarcoid is likely; tissue confirms it." },
+    { "t": "Make your own answer before looking", "x": "**Transbronchial biopsy**: non-caseating granulomas." },
+    { "t": "Rule out the others", "elim": [[1, "HRCT characterises but does not give tissue."], [2, "Repeating calcium adds nothing."], [3, "Vitamin D does not make the diagnosis."], [4, "A tuberculin test may help exclude TB but cannot confirm sarcoid."]] },
+    { "t": "Commit", "x": "**A. Bronchoscopy with transbronchial biopsy.**" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 44 year old man has had sarcoidosis for 6 years. He has increasing breathlessness. His new chest X-ray shows reticulonodular interstitial infiltrates in both lungs. The bilateral hilar lymphadenopathy seen on previous films has resolved, and there is no honeycombing or volume loss.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely Scadding stage?",
+   "o": ["Stage 0", "Stage 1", "Stage 2", "Stage 3", "Stage 4"],
+   "a": 3,
+   "e": "Interstitial infiltrates without bilateral hilar lymphadenopathy is Scadding stage 3. Stage 2 has both; stage 4 is fibrosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Staging on chest X-ray." },
+    { "t": "Pick out the clues", "clues": ["reticulonodular interstitial infiltrates", "hilar lymphadenopathy seen on previous films has resolved", "no honeycombing or volume loss"], "x": "Infiltrates yes, BHL no, fibrosis no." },
+    { "t": "Make your own answer before looking", "x": "**Stage 3**." },
+    { "t": "Rule out the others", "elim": [[0, "Stage 0 is a normal film."], [1, "Stage 1 is BHL alone."], [2, "Stage 2 is BHL plus infiltrates; the BHL has gone."], [4, "Stage 4 is fibrosis; none here."]] },
+    { "t": "Commit", "x": "**D. Stage 3.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 29 year old man has bilateral hilar lymphadenopathy found on a chest X-ray for a work medical. He has no symptoms. Examination is normal. Transbronchial biopsy shows non-caseating granulomas. His calcium, eye examination, ECG and lung function are all normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": ["Inhaled corticosteroid", "Methotrexate", "Oral azathioprine", "Oral prednisolone", "Reassurance and monitoring"],
+   "a": 4,
+   "e": "Asymptomatic stage 1 sarcoidosis with no organ involvement often resolves spontaneously, so reassurance and monitoring is appropriate. Steroids are for symptoms or organ threat.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Does this patient need treatment?" },
+    { "t": "Pick out the clues", "clues": ["no symptoms", "non-caseating granulomas", "calcium, eye examination, ECG and lung function are all normal"], "x": "Stage 1, asymptomatic, no organ threat." },
+    { "t": "Make your own answer before looking", "x": "**Reassure and monitor**." },
+    { "t": "Rule out the others", "elim": [[0, "Not a treatment for sarcoid lung disease."], [1, "Methotrexate is for cardiac or refractory disease."], [2, "Azathioprine is second-line after steroids."], [3, "No indication for steroids."]] },
+    { "t": "Commit", "x": "**E. Reassurance and monitoring.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 37 year old woman has sarcoidosis with worsening breathlessness. Chest X-ray shows bilateral hilar lymphadenopathy with interstitial infiltrates. Her temperature is 36.9°C, pulse rate 90 bpm, BP 122/78 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 94% breathing air.",
+   "labs": [["Adjusted calcium", "2.95 mmol/L", "2.20–2.60", "H"], ["FVC", "66% predicted", ">80%", "L"], ["Creatinine", "102 µmol/L", "45–90", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Inhaled budesonide", "Oral azathioprine", "Oral methotrexate", "Oral prednisolone", "Reassurance and review in 6 months"],
+   "a": 3,
+   "e": "Symptomatic stage 2 disease with hypercalcaemia needs first-line oral corticosteroids. Azathioprine is second-line; reassurance is only for mild disease.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management of symptomatic sarcoid." },
+    { "t": "Pick out the clues", "clues": ["worsening breathlessness", "hilar lymphadenopathy with interstitial infiltrates", "94% breathing air"], "x": "Stage 2, symptomatic; labs: calcium 2.95, low FVC, rising creatinine." },
+    { "t": "Make your own answer before looking", "x": "**Oral prednisolone**." },
+    { "t": "Rule out the others", "elim": [[0, "Inhaled steroids do not treat parenchymal sarcoid or calcium."], [1, "Azathioprine is second-line."], [2, "Methotrexate is for cardiac or refractory disease."], [4, "She has organ threat now."]] },
+    { "t": "Commit", "x": "**D. Oral prednisolone.** Rule: symptomatic or hypercalcaemia = steroids." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 41 year old man with stage 2 pulmonary sarcoidosis has responded to oral prednisolone, which is now being slowly reduced. He feels well. His calcium has returned to normal. He asks how his sarcoidosis will be followed up.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate way to monitor his disease?",
+   "o": ["No follow-up needed", "Pulmonary function tests and symptom review", "Repeat transbronchial biopsy every 6 months", "Serial PET-CT every month", "Serum ACE alone"],
+   "a": 1,
+   "e": "Sarcoidosis is monitored with lung function tests and symptoms, watching for relapse and fibrosis. ACE alone is not reliable; repeat biopsies are not needed.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Long-term monitoring." },
+    { "t": "Pick out the clues", "clues": ["stage 2 pulmonary sarcoidosis", "slowly reduced", "how his sarcoidosis will be followed up"], "x": "Risk of relapse as steroids taper; risk of fibrosis." },
+    { "t": "Make your own answer before looking", "x": "**Lung function and symptoms**." },
+    { "t": "Rule out the others", "elim": [[0, "Relapse on tapering is common."], [2, "Biopsy is diagnostic, not for routine monitoring."], [3, "Monthly PET-CT is excessive radiation."], [4, "ACE alone does not track lung function."]] },
+    { "t": "Commit", "x": "**B. Pulmonary function tests and symptoms.**" }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 35 year old woman with sarcoidosis has thirst, polyuria and constipation. She takes no supplements. Her PTH is suppressed and her 1,25-dihydroxyvitamin D level is raised despite a normal 25-hydroxyvitamin D level.",
+   "labs": [["Adjusted calcium", "2.88 mmol/L", "2.20–2.60", "H"], ["PTH", "0.6 pmol/L", "1.6–7.2", "L"], ["1,25-dihydroxyvitamin D", "210 pmol/L", "48–190", "H"]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her hypercalcaemia?",
+   "o": ["Ectopic 1-alpha-hydroxylase activity in granuloma macrophages", "Increased PTH secretion", "Osteolytic bone destruction", "PTHrP secretion by tumour cells", "Reduced renal calcium excretion from thiazides"],
+   "a": 0,
+   "e": "Granuloma macrophages express 1-alpha-hydroxylase, converting vitamin D to calcitriol outside renal control; gut calcium absorption rises and PTH is suppressed.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Mechanism of calcium rise." },
+    { "t": "Pick out the clues", "clues": ["sarcoidosis", "PTH is suppressed", "1,25-dihydroxyvitamin D level is raised", "normal 25-hydroxyvitamin D"], "x": "Excess conversion to active vitamin D, PTH-independent." },
+    { "t": "Make your own answer before looking", "x": "**Ectopic 1-alpha-hydroxylase** in granulomas." },
+    { "t": "Rule out the others", "elim": [[1, "PTH is suppressed."], [2, "No bone lesions; calcitriol is high."], [3, "PTHrP would not raise calcitriol."], [4, "She takes no thiazides."]] },
+    { "t": "Commit", "x": "**A. Ectopic 1-alpha-hydroxylase.**" }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2147 @@
+{
+ "id": "multiple-myeloma",
+ "patient": {
+  "name": "Winston Clarke",
+  "age": 71,
+  "sex": "M",
+  "setting": "GP surgery, then haematology ward",
+  "complaint": "Three months of back pain, tiredness and recurrent chest infections",
+  "background": [
+   "Jamaican heritage; retired postman in Brixton",
+   "Hypertension",
+   "Two chest infections this year",
+   "Takes over-the-counter ibuprofen for back pain"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' in an older patient with back pain, anaemia, high calcium and renal impairment (CRAB), often with a high ESR.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Winston, 71, retired postman from Brixton, Jamaican heritage.",
+      "Three months of **lower back pain**, worse at night.",
+      "Exhausted; two chest infections since the summer.",
+      "Constipated, thirsty and 'a bit muddled', says his wife."
+     ],
+     "vitals": {
+      "T": "37.2°C",
+      "HR": "92 bpm",
+      "BP": "132/78 mmHg",
+      "RR": "16 /min",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Winston is in his 70s and of **African-Caribbean** ethnicity, both risk factors. Ask about a known **MGUS**."
+    },
+    {
+     "type": "labs",
+     "title": "GP bloods",
+     "rows": [
+      [
+       "Haemoglobin",
+       "94 g/L",
+       "130–180",
+       "L"
+      ],
+      [
+       "MCV",
+       "89 fL",
+       "80–100",
+       ""
+      ],
+      [
+       "Adjusted calcium",
+       "2.86 mmol/L",
+       "2.20–2.60",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "168 µmol/L",
+       "60–110",
+       "H"
+      ],
+      [
+       "ESR",
+       "98 mm/h",
+       "<20",
+       "H"
+      ],
+      [
+       "CRP",
+       "6 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "Total protein",
+       "94 g/L",
+       "60–80",
+       "H"
+      ]
+     ],
+     "text": "Normocytic anaemia, high calcium, renal impairment and a very high **ESR with near-normal CRP**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "ESR",
+      "min": 0,
+      "max": 120,
+      "unit": "mm/h",
+      "bands": [
+       [
+        0,
+        20,
+        "normal",
+        "ok"
+       ],
+       [
+        20,
+        50,
+        "raised",
+        "warn"
+       ],
+       [
+        50,
+        120,
+        "very high",
+        "bad"
+       ]
+      ],
+      "value": 98,
+      "label": "Winston 98",
+      "caption": "ESR near 100 with a CRP of 6: paraprotein, not inflammation."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Winston has every letter of **CRAB**: calcium (thirst, constipation, confusion), renal, anaemia, bone pain. Plus **infections**."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "**CRAB** features are what make myeloma 'myeloma-defining' rather than a precursor: Winston's end-organ damage means he needs treatment."
+    },
+    {
+     "type": "ask",
+     "q": "Which single finding makes you most worried about myeloma in Winston?",
+     "o": [
+      "Back pain alone",
+      "High CRP",
+      "High ESR with a normal CRP",
+      "Low MCV"
+     ],
+     "a": 2,
+     "r": "A **raised ESR with normal CRP** reflects excess paraprotein; myeloma anaemia is **normocytic**, not microcytic."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Winston's marrow holds a clone of **plasma cells** making a monoclonal **IgG** paraprotein, eroding bone and clogging his kidneys."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Winston's risks now: **pathological fracture**, **cord compression**, hypercalcaemic crisis, renal failure and **infection**."
+    },
+    {
+     "type": "compare",
+     "title": "Myeloma vs bony metastases vs hyperparathyroidism",
+     "head": [
+      "Feature",
+      "Myeloma",
+      "Bony metastases",
+      "Primary HPT"
+     ],
+     "rows": [
+      [
+       "Calcium",
+       "High",
+       "High",
+       "High"
+      ],
+      [
+       "PTH",
+       "**Suppressed**",
+       "Suppressed",
+       "**High**"
+      ],
+      [
+       "ALP",
+       "Often **normal**",
+       "Raised",
+       "Normal or raised"
+      ],
+      [
+       "Other",
+       "Anaemia, renal, high ESR",
+       "Known primary",
+       "Low phosphate, stones"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Winston has no migratory clots. **Trousseau's syndrome** belongs to **pancreatic** cancer, not myeloma: a classic mix-up."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect best initial test (serum protein electrophoresis), confirmatory test (bone marrow biopsy), imaging (whole-body low-dose CT) and film findings (rouleaux).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "What is the best initial test for Winston?",
+     "o": [
+      "Bone marrow biopsy",
+      "MRI whole spine",
+      "PET-CT",
+      "Serum protein electrophoresis"
+     ],
+     "a": 3,
+     "r": "**SPEP** looks for the monoclonal band; marrow biopsy **confirms** after the screen."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Winston's full **myeloma screen**: SPEP, serum free light chains and urine **Bence Jones** protein, alongside FBC, calcium, renal function, ESR."
+    },
+    {
+     "type": "labs",
+     "title": "Myeloma screen",
+     "rows": [
+      [
+       "SPEP",
+       "IgG kappa paraprotein 38 g/L",
+       "none",
+       "H"
+      ],
+      [
+       "Serum free kappa",
+       "420 mg/L",
+       "3.3–19.4",
+       "H"
+      ],
+      [
+       "Kappa:lambda ratio",
+       "31",
+       "0.26–1.65",
+       "H"
+      ],
+      [
+       "Urine Bence Jones",
+       "Positive",
+       "negative",
+       "H"
+      ],
+      [
+       "PTH",
+       "0.7 pmol/L",
+       "1.6–8.5",
+       "L"
+      ]
+     ],
+     "text": "A monoclonal **IgG** band with a **suppressed PTH**: the calcium is not parathyroid."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Winston's blood film shows red cells stacked like coins: **rouleaux**, from paraprotein coating the cells."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Winston has **whole-body low-dose CT**: punched-out **lytic** lesions in his spine, pelvis and skull ('raindrop skull')."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Clonal plasma cells in marrow",
+      "min": 0,
+      "max": 60,
+      "unit": "%",
+      "bands": [
+       [
+        0,
+        10,
+        "below myeloma threshold",
+        "ok"
+       ],
+       [
+        10,
+        60,
+        "myeloma (with CRAB)",
+        "bad"
+       ]
+      ],
+      "value": 34,
+      "label": "Winston 34%",
+      "caption": "More than **10% clonal plasma cells** confirms the diagnosis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The **gold standard** is the myeloma screen plus **bone marrow biopsy**; Winston's shows 34% clonal plasma cells."
+    },
+    {
+     "type": "trap",
+     "text": "A **bone scan** can look normal in myeloma: lesions are purely lytic, with little osteoblastic activity to take up tracer. Use CT."
+    },
+    {
+     "type": "flow",
+     "title": "Investigating suspected myeloma",
+     "nodes": [
+      "CRAB symptoms, high ESR",
+      "Myeloma screen: SPEP, free light chains, urine Bence Jones",
+      "Whole-body low-dose CT for lytic lesions",
+      "Bone marrow biopsy: >10% clonal plasma cells"
+     ]
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect emergencies (cord compression: emergency MRI), drugs to avoid (NSAIDs), bone protection (bisphosphonates) and transplant for fitter patients.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Week 2: Winston's back pain suddenly worsens.",
+      "Now his legs feel heavy and he is struggling to pass urine.",
+      "Bilateral leg weakness, sensory level at T10."
+     ],
+     "vitals": {
+      "HR": "96 bpm",
+      "BP": "138/82 mmHg"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "What is the most urgent step?",
+     "o": [
+      "Bone scan",
+      "Emergency MRI whole spine",
+      "Oral morphine and review",
+      "Plain X-ray spine"
+     ],
+     "a": 1,
+     "r": "Back pain with **neurological deficit** in myeloma is **cord compression** until proven otherwise: MRI now, then urgent treatment."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Winston's cord compression needs **emergency MRI** and treatment. He must also avoid **NSAIDs**, which can tip his kidneys into failure."
+    },
+    {
+     "type": "trap",
+     "text": "Do not give naproxen or ibuprofen for myeloma bone pain. **NSAIDs** can precipitate renal failure in an already damaged kidney."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Once stable, Winston starts a **bortezomib and dexamethasone**-based regimen. In older patients, the MPT protocol is an option."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "At 71 with frailty, Winston is not a transplant candidate. A **younger, fitter** patient would go on to **autologous stem cell transplant**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Winston takes a **bisphosphonate** for his bones, with supportive care for calcium, kidneys, pain and fractures."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Winston's paraprotein on treatment",
+      "x": [
+       "Diagnosis",
+       "Cycle 2",
+       "Cycle 4",
+       "Cycle 6",
+       "Month 9"
+      ],
+      "unit": "g/L",
+      "series": [
+       {
+        "name": "IgG paraprotein",
+        "values": [
+         38,
+         22,
+         11,
+         5,
+         4
+        ]
+       }
+      ],
+      "caption": "The paraprotein is the marker used to follow response."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Managing myeloma",
+     "nodes": [
+      "Emergencies first: cord compression, high calcium, AKI, sepsis",
+      "Systemic therapy: bortezomib/dexamethasone-based",
+      "Fit and younger → autologous stem cell transplant",
+      "All: bisphosphonate, analgesia (no NSAIDs), infection care"
+     ]
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect mechanism questions: why lytic lesions and hypercalcaemia, why renal failure (cast nephropathy), why infections (immunoparesis).",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Winston's disease is one **clone** of terminally differentiated B cells, all making the same IgG kappa paraprotein."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Myeloma cells release **RANKL and IL-6**, revving osteoclasts while suppressing osteoblasts: Winston's lytic lesions and high calcium."
+    },
+    {
+     "type": "flow",
+     "title": "Why bones break in myeloma",
+     "nodes": [
+      "Myeloma cells in marrow",
+      "RANKL and IL-6 released",
+      "Osteoclasts activated",
+      "Osteoblasts suppressed",
+      "Lytic lesions, fractures, hypercalcaemia"
+     ],
+     "caption": "No new bone forms, so ALP and bone scans are often normal."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Winston's free kappa chains filter into his tubules and form **casts**: 'myeloma kidney', worsened by his high calcium and dehydration."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Plasma cells crowd out Winston's marrow (**anaemia**) and he makes too little normal antibody (**immunoparesis**): hence the chest infections."
+    },
+    {
+     "type": "ask",
+     "q": "Why does Winston keep getting chest infections despite a high total protein?",
+     "o": [
+      "Hypercalcaemia",
+      "Immunoparesis",
+      "Neutrophilia",
+      "Renal impairment"
+     ],
+     "a": 1,
+     "r": "The protein is **one useless monoclonal antibody**; normal immunoglobulins are suppressed (**immunoparesis**)."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Winston may have had **MGUS** for years: a premalignant paraprotein that can progress to myeloma."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What does CRAB stand for in myeloma?",
+   "o": [
+    "Calcium, Rash, Arthritis, Bleeding",
+    "Calcium, Renal, Anaemia, Bone",
+    "Cough, Renal, Anaemia, Back pain",
+    "Creatinine, Rouleaux, Albumin, Bence Jones"
+   ],
+   "a": 1,
+   "r": "Hyper**C**alcaemia, **R**enal impairment, **A**naemia, **B**one lesions."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the median age at diagnosis of myeloma?",
+   "o": [
+    "35 years",
+    "50 years",
+    "72 years",
+    "90 years"
+   ],
+   "a": 2,
+   "r": "A disease of older adults; median **72**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which type of anaemia is typical of myeloma?",
+   "o": [
+    "Macrocytic",
+    "Microcytic hypochromic",
+    "Normocytic normochromic",
+    "Sideroblastic"
+   ],
+   "a": 2,
+   "r": "Marrow infiltration gives a **normocytic** anaemia."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the best initial investigation for suspected myeloma?",
+   "o": [
+    "Bone marrow biopsy",
+    "Bone scan",
+    "Serum protein electrophoresis",
+    "Skull X-ray"
+   ],
+   "a": 2,
+   "r": "**SPEP** detects the paraprotein."
+  },
+  {
+   "d": "investigation",
+   "q": "What percentage of clonal plasma cells on marrow confirms myeloma?",
+   "o": [
+    "More than 1%",
+    "More than 10%",
+    "More than 50%",
+    "More than 90%"
+   ],
+   "a": 1,
+   "r": "**>10%** clonal plasma cells."
+  },
+  {
+   "d": "investigation",
+   "q": "Which blood film finding suggests myeloma?",
+   "o": [
+    "Rouleaux formation",
+    "Schistocytes",
+    "Spherocytes",
+    "Target cells"
+   ],
+   "a": 0,
+   "r": "Paraprotein makes red cells **stack like coins**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line imaging in suspected myeloma?",
+   "o": [
+    "Bone scan",
+    "Plain chest X-ray",
+    "Ultrasound",
+    "Whole-body low-dose CT"
+   ],
+   "a": 3,
+   "r": "**Whole-body low-dose CT** shows lytic lesions."
+  },
+  {
+   "d": "management",
+   "q": "Which drug class should be avoided in myeloma?",
+   "o": [
+    "Bisphosphonates",
+    "NSAIDs",
+    "Opioids",
+    "Proton pump inhibitors"
+   ],
+   "a": 1,
+   "r": "**NSAIDs** can precipitate renal failure."
+  },
+  {
+   "d": "management",
+   "q": "What follows chemotherapy in younger, fitter patients?",
+   "o": [
+    "Allogeneic liver transplant",
+    "Autologous stem cell transplant",
+    "Radiotherapy alone",
+    "Splenectomy"
+   ],
+   "a": 1,
+   "r": "**Autologous SCT** after induction."
+  },
+  {
+   "d": "science",
+   "q": "Which cytokines drive osteoclast activity in myeloma?",
+   "o": [
+    "IL-2 and IFN-gamma",
+    "PTH and calcitonin",
+    "RANKL and IL-6",
+    "TNF and IL-10"
+   ],
+   "a": 2,
+   "r": "Myeloma cells secrete **RANKL and IL-6**."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is multiple myeloma?",
+    "tip": "Exam thinking: which cell and what it makes.",
+    "points": [
+     {
+      "p": "Malignancy of plasma cells in bone marrow",
+      "k": [
+       [
+        "plasma"
+       ]
+      ],
+      "why": "Post-germinal centre B cells."
+     },
+     {
+      "p": "Monoclonal immunoglobulin (paraprotein), usually IgG",
+      "k": [
+       [
+        "paraprotein",
+        "monoclonal",
+        "igg"
+       ]
+      ],
+      "why": "IgM points to Waldenström."
+     },
+     {
+      "p": "Bone destruction, marrow failure, renal damage",
+      "k": [
+       [
+        "bone"
+       ],
+       [
+        "renal",
+        "kidney",
+        "marrow"
+       ]
+      ],
+      "why": "Hence CRAB."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who gets myeloma? Give the risk factors.",
+    "tip": "Exam thinking: age and ethnicity in the stem.",
+    "points": [
+     {
+      "p": "Older age, median 72",
+      "k": [
+       [
+        "72",
+        "older",
+        "elderly",
+        "age"
+       ]
+      ],
+      "why": "Rare under 40."
+     },
+     {
+      "p": "African/Caribbean ethnicity",
+      "k": [
+       [
+        "african",
+        "caribbean",
+        "black"
+       ]
+      ],
+      "why": "About twice the risk."
+     },
+     {
+      "p": "MGUS progression, family history",
+      "k": [
+       [
+        "mgus"
+       ]
+      ],
+      "why": "MGUS is the precursor."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What does CRAB stand for, with the symptoms of each?",
+    "tip": "Exam thinking: each letter has a symptom in the stem.",
+    "points": [
+     {
+      "p": "Hypercalcaemia: confusion, constipation, polyuria",
+      "k": [
+       [
+        "calc"
+       ]
+      ],
+      "why": "PTH suppressed."
+     },
+     {
+      "p": "Renal impairment: raised urea and creatinine",
+      "k": [
+       [
+        "renal",
+        "kidney"
+       ]
+      ],
+      "why": "Cast nephropathy."
+     },
+     {
+      "p": "Anaemia: normocytic, fatigue, pallor",
+      "k": [
+       [
+        "anaemi",
+        "anemi"
+       ]
+      ],
+      "why": "Normocytic, not microcytic."
+     },
+     {
+      "p": "Bone lesions: pain, lytic lesions, fractures",
+      "k": [
+       [
+        "bone",
+        "lytic",
+        "fracture"
+       ]
+      ],
+      "why": "Back pain is commonest."
+     },
+     {
+      "p": "Recurrent infections, weight loss",
+      "k": [
+       [
+        "infect"
+       ]
+      ],
+      "why": "Immunoparesis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of myeloma, and which cancer features must not be confused with it?",
+    "tip": "Exam thinking: emergencies and distractors.",
+    "points": [
+     {
+      "p": "Spinal cord compression",
+      "k": [
+       [
+        "cord"
+       ]
+      ],
+      "why": "Back pain + neuro deficit."
+     },
+     {
+      "p": "Renal failure, pathological fractures, hypercalcaemic crisis",
+      "k": [
+       [
+        "renal",
+        "fracture",
+        "crisis"
+       ]
+      ],
+      "why": "All CRAB-related."
+     },
+     {
+      "p": "Infection and anaemia",
+      "k": [
+       [
+        "infect",
+        "anaemi"
+       ]
+      ],
+      "why": "Sepsis is a common cause of death."
+     },
+     {
+      "p": "Migratory thrombophlebitis (Trousseau's syndrome) is pancreatic cancer, not myeloma",
+      "k": [
+       [
+        "trousseau",
+        "thrombophlebitis",
+        "pancrea"
+       ]
+      ],
+      "why": "Classic distractor."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the best initial test, what makes up the myeloma screen, and what is the typical blood pattern?",
+    "tip": "Exam thinking: SPEP first.",
+    "points": [
+     {
+      "p": "Serum protein electrophoresis (SPEP)",
+      "k": [
+       [
+        "electrophoresis",
+        "spep"
+       ]
+      ],
+      "why": "Shows the M band."
+     },
+     {
+      "p": "Serum free light chains and urine Bence Jones protein",
+      "k": [
+       [
+        "light chain",
+        "bence"
+       ]
+      ],
+      "why": "Completes the screen."
+     },
+     {
+      "p": "Normocytic anaemia, high calcium, renal impairment",
+      "k": [
+       [
+        "anaemi",
+        "calc",
+        "renal"
+       ]
+      ],
+      "why": "CRAB on bloods."
+     },
+     {
+      "p": "High ESR with normal CRP",
+      "k": [
+       [
+        "esr"
+       ]
+      ],
+      "why": "Classic clue."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What confirms myeloma, and what do imaging and the blood film show?",
+    "tip": "Exam thinking: confirm, image, film.",
+    "points": [
+     {
+      "p": "Bone marrow biopsy: >10% clonal plasma cells",
+      "k": [
+       [
+        "marrow"
+       ],
+       [
+        "10"
+       ]
+      ],
+      "why": "Gold standard with the screen."
+     },
+     {
+      "p": "Whole-body low-dose CT first-line imaging",
+      "k": [
+       [
+        "ct"
+       ],
+       [
+        "whole",
+        "low-dose",
+        "low dose"
+       ]
+      ],
+      "why": "Bone scan misses lesions."
+     },
+     {
+      "p": "Lytic punched-out lesions; raindrop skull",
+      "k": [
+       [
+        "lytic",
+        "punched",
+        "raindrop"
+       ]
+      ],
+      "why": "Pepper-pot is hyperparathyroidism."
+     },
+     {
+      "p": "Rouleaux on blood film",
+      "k": [
+       [
+        "rouleaux"
+       ]
+      ],
+      "why": "Red cells stacked like coins."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is first-line and definitive treatment of myeloma?",
+    "tip": "Exam thinking: age and fitness decide.",
+    "points": [
+     {
+      "p": "Bortezomib/dexamethasone-based combination therapy",
+      "k": [
+       [
+        "bortezomib",
+        "dexamethasone",
+        "chemo"
+       ]
+      ],
+      "why": "Systemic anti-myeloma therapy."
+     },
+     {
+      "p": "Older patients: MPT (melphalan, prednisolone, thalidomide)",
+      "k": [
+       [
+        "mpt",
+        "melphalan",
+        "thalidomide"
+       ]
+      ],
+      "why": "For those unfit for transplant."
+     },
+     {
+      "p": "Younger/fitter: autologous stem cell transplant",
+      "k": [
+       [
+        "stem cell",
+        "transplant",
+        "asct"
+       ]
+      ],
+      "why": "After induction."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How are myeloma emergencies and long-term complications managed, and what must be avoided?",
+    "tip": "Exam thinking: cord, calcium, kidney, sepsis.",
+    "points": [
+     {
+      "p": "Cord compression: emergency MRI and urgent treatment",
+      "k": [
+       [
+        "mri"
+       ]
+      ],
+      "why": "Whole spine."
+     },
+     {
+      "p": "Hypercalcaemic crisis: urgent correction",
+      "k": [
+       [
+        "calc"
+       ],
+       [
+        "fluid",
+        "correct",
+        "urgent"
+       ]
+      ],
+      "why": "IV fluids first."
+     },
+     {
+      "p": "Bisphosphonates for bone protection",
+      "k": [
+       [
+        "bisphosphonate",
+        "zoledron"
+       ]
+      ],
+      "why": "All with bone disease."
+     },
+     {
+      "p": "Avoid NSAIDs: can precipitate renal failure",
+      "k": [
+       [
+        "nsaid",
+        "naproxen",
+        "ibuprofen"
+       ]
+      ],
+      "why": "Classic question."
+     },
+     {
+      "p": "AKI and sepsis need urgent treatment",
+      "k": [
+       [
+        "sepsis",
+        "aki",
+        "infect"
+       ]
+      ],
+      "why": "Immunosuppressed."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does myeloma cause bone lesions and hypercalcaemia?",
+    "tip": "Exam thinking: osteoclasts up, osteoblasts down.",
+    "points": [
+     {
+      "p": "Myeloma cells release RANKL and IL-6",
+      "k": [
+       [
+        "rankl",
+        "il-6",
+        "il6"
+       ]
+      ],
+      "why": "Cytokine-driven."
+     },
+     {
+      "p": "Increased osteoclast and suppressed osteoblast activity",
+      "k": [
+       [
+        "osteoclast"
+       ],
+       [
+        "osteoblast",
+        "suppress"
+       ]
+      ],
+      "why": "Why ALP and bone scans are often normal."
+     },
+     {
+      "p": "Bone resorption releases calcium",
+      "k": [
+       [
+        "resorp",
+        "release"
+       ]
+      ],
+      "why": "Hypercalcaemia."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does myeloma cause renal impairment, anaemia and infections, and how does MGUS relate?",
+    "tip": "Exam thinking: one mechanism each.",
+    "points": [
+     {
+      "p": "Light chain (Bence Jones) cast nephropathy, worse with calcium and dehydration",
+      "k": [
+       [
+        "cast",
+        "light chain",
+        "bence"
+       ]
+      ],
+      "why": "Myeloma kidney."
+     },
+     {
+      "p": "Marrow infiltration crowds out haematopoiesis: anaemia",
+      "k": [
+       [
+        "marrow",
+        "infiltrat",
+        "crowd"
+       ]
+      ],
+      "why": "Normocytic."
+     },
+     {
+      "p": "Immunoparesis: low normal immunoglobulins, infections",
+      "k": [
+       [
+        "immunopares",
+        "immunoglobulin",
+        "antibod"
+       ]
+      ],
+      "why": "Total protein still high."
+     },
+     {
+      "p": "MGUS is a premalignant precursor that can progress",
+      "k": [
+       [
+        "mgus"
+       ],
+       [
+        "precursor",
+        "premalignant",
+        "progress"
+       ]
+      ],
+      "why": "Monitor MGUS."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "multiple myeloma": "Cancer of plasma cells in bone marrow producing a monoclonal antibody.",
+  "plasma cells": "Fully mature B cells that make antibodies.",
+  "paraprotein": "A single monoclonal immunoglobulin made in excess by one clone of cells.",
+  "M protein": "Another name for the paraprotein band on electrophoresis.",
+  "IgG": "The commonest immunoglobulin class and the commonest myeloma paraprotein.",
+  "CRAB": "HyperCalcaemia, Renal impairment, Anaemia, Bone lesions: myeloma end-organ damage.",
+  "MGUS": "Monoclonal gammopathy of undetermined significance: a small paraprotein without CRAB that can progress.",
+  "plasma cell dyscrasia": "Any disorder of a clone of plasma cells making abnormal antibody.",
+  "SPEP": "Serum protein electrophoresis; separates blood proteins to reveal a monoclonal band.",
+  "serum protein electrophoresis": "Blood test separating proteins to show a monoclonal paraprotein band.",
+  "free light chains": "Kappa or lambda antibody fragments measured in blood; the ratio becomes abnormal in myeloma.",
+  "Bence Jones protein": "Free immunoglobulin light chains found in the urine in myeloma.",
+  "kappa": "One of two types of antibody light chain.",
+  "lambda": "One of two types of antibody light chain.",
+  "ESR": "Erythrocyte sedimentation rate; very high in myeloma because paraprotein makes red cells clump.",
+  "CRP": "C-reactive protein; an acute-phase marker that is often normal in myeloma.",
+  "normocytic": "Red cells of normal size (normal MCV).",
+  "MCV": "Mean cell volume, the average red cell size.",
+  "rouleaux": "Red cells stacked like coins on a blood film, caused by excess protein.",
+  "lytic lesions": "Areas where bone has been destroyed, seen as holes on imaging.",
+  "raindrop skull": "Skull X-ray with many punched-out lytic holes in myeloma.",
+  "pathological fracture": "A fracture through bone weakened by disease, after little or no trauma.",
+  "spinal cord compression": "Pressure on the cord causing back pain, leg weakness, a sensory level and retention.",
+  "sensory level": "A level on the trunk below which sensation is reduced; points to a cord lesion.",
+  "bone marrow biopsy": "Sample of marrow, usually from the pelvis, to count plasma cells.",
+  "whole-body low-dose CT": "CT of the whole skeleton at low radiation dose to find lytic lesions.",
+  "bortezomib": "A proteasome inhibitor used to treat myeloma.",
+  "dexamethasone": "A potent steroid used with other drugs to kill myeloma cells.",
+  "MPT": "Melphalan, prednisolone and thalidomide; a regimen for older patients.",
+  "thalidomide": "An immunomodulatory drug used in myeloma.",
+  "melphalan": "An alkylating chemotherapy drug used in myeloma.",
+  "autologous stem cell transplant": "High-dose chemotherapy then return of the patient's own stored stem cells.",
+  "bisphosphonates": "Drugs that block osteoclasts and protect bone.",
+  "zoledronic acid": "An IV bisphosphonate used for myeloma bone disease.",
+  "NSAIDs": "Non-steroidal anti-inflammatory drugs such as naproxen and ibuprofen; harmful to kidneys in myeloma.",
+  "RANKL": "Signal that activates osteoclasts to resorb bone.",
+  "IL-6": "Interleukin-6; a cytokine that supports myeloma cell growth and bone resorption.",
+  "osteoclast": "Bone cell that breaks bone down.",
+  "osteoblast": "Bone cell that builds bone.",
+  "myeloma kidney": "Kidney damage from light chain casts blocking the tubules.",
+  "cast nephropathy": "Tubular blockage by protein casts made of light chains.",
+  "immunoparesis": "Suppression of normal antibodies, causing infections.",
+  "Trousseau's syndrome": "Migratory thrombophlebitis linked to pancreatic cancer, not myeloma.",
+  "Waldenström macroglobulinaemia": "A lymphoma producing an IgM paraprotein."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man has 4 months of back pain and fatigue. He has had two chest infections this year. Investigations: haemoglobin 96 g/L (130–180), MCV 88 fL (80–100), adjusted calcium 2.84 mmol/L (2.20–2.60), creatinine 182 µmol/L (60–110), ESR 104 mm/h (<20), CRP 4 mg/L (<5).",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Metastatic prostate cancer",
+    "Multiple myeloma",
+    "Polymyalgia rheumatica",
+    "Primary hyperparathyroidism",
+    "Tuberculosis of the spine"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis from symptoms plus a bloods panel."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "back pain and fatigue",
+      "two chest infections",
+      "haemoglobin 96",
+      "MCV 88",
+      "calcium 2.84",
+      "creatinine 182",
+      "ESR 104",
+      "CRP 4"
+     ],
+     "x": "Bone pain, infections; normocytic anaemia, high calcium, renal impairment, ESR high but CRP normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "CRAB plus infections plus high ESR: **multiple myeloma**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Causes bone pain and high calcium, but not renal impairment, very high ESR and infections; ALP high."
+      ],
+      [
+       2,
+       "High ESR but also high CRP, shoulder stiffness, normal calcium."
+      ],
+      [
+       3,
+       "No anaemia or high ESR; PTH would be high."
+      ],
+      [
+       4,
+       "Fever, weight loss, high CRP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Multiple myeloma.** Older patient + CRAB + high ESR, normal CRP = myeloma."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old woman has back pain, anaemia and renal impairment. Serum protein electrophoresis shows an IgG paraprotein, and urine is positive for Bence Jones protein. Whole-body low-dose CT shows lytic lesions.",
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Bone marrow aspirate and biopsy",
+    "Bone scan",
+    "Lymph node biopsy",
+    "PET-CT",
+    "Repeat serum protein electrophoresis"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirmatory test after a positive screen."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "IgG paraprotein",
+      "Bence Jones protein",
+      "lytic lesions"
+     ],
+     "x": "Screen positive, imaging positive."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Confirm with **bone marrow biopsy**: >10% clonal plasma cells."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "May be normal in myeloma."
+      ],
+      [
+       2,
+       "For lymphoma."
+      ],
+      [
+       3,
+       "Not the confirmatory test."
+      ],
+      [
+       4,
+       "Already done; does not confirm marrow infiltration."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bone marrow aspirate and biopsy.** SPEP screens; marrow confirms."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man was diagnosed with multiple myeloma last week. His back pain is poorly controlled and his GP started a new tablet 3 days ago. Creatinine has risen from 140 to 260 µmol/L (60–110).",
+   "q": "Which medication should be stopped?",
+   "o": [
+    "Codeine phosphate",
+    "Dexamethasone",
+    "Naproxen",
+    "Omeprazole",
+    "Paracetamol"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which drug harms here?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "multiple myeloma",
+      "new tablet 3 days ago",
+      "Creatinine has risen"
+     ],
+     "x": "New analgesic followed by an acute rise in creatinine."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The **NSAID**: naproxen."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Constipating but not nephrotoxic."
+      ],
+      [
+       1,
+       "Part of his myeloma treatment."
+      ],
+      [
+       3,
+       "Not a cause of acute renal decline here."
+      ],
+      [
+       4,
+       "Safe for the kidneys."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Naproxen.** Myeloma: avoid NSAIDs."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old man with multiple myeloma has worsening renal function. Urine is strongly positive for Bence Jones protein. Renal biopsy shows dense casts in the distal tubules.",
+   "q": "Which is the most likely mechanism of his renal impairment?",
+   "o": [
+    "Glomerulonephritis from immune complexes",
+    "Light chain cast nephropathy",
+    "Obstruction from renal stones",
+    "Prerenal hypoperfusion alone",
+    "Renal artery stenosis"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of myeloma kidney."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Bence Jones protein",
+      "casts in the distal tubules"
+     ],
+     "x": "Free light chains in urine plus tubular casts."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Light chain cast nephropathy**: myeloma kidney."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Casts in tubules point to light chains, not immune complexes."
+      ],
+      [
+       2,
+       "Not on biopsy."
+      ],
+      [
+       3,
+       "Does not form casts."
+      ],
+      [
+       4,
+       "Vascular, not tubular."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Light chain cast nephropathy.** Bence Jones + casts = cast nephropathy."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old woman has 3 months of lower back pain, tiredness and constipation. Her pulse rate is 88 bpm, BP 128/76 mmHg and temperature 36.9°C. She has tenderness over L2. Investigations are shown.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "98 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Adjusted calcium",
+     "2.79 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "156 µmol/L",
+     "45–90",
+     "H"
+    ],
+    [
+     "ESR",
+     "86 mm/h",
+     "<20",
+     "H"
+    ],
+    [
+     "ALP",
+     "92 IU/L",
+     "30–130",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Multiple myeloma",
+    "Osteoporotic vertebral fracture",
+    "Paget's disease of bone",
+    "Polymyalgia rheumatica",
+    "Primary hyperparathyroidism"
+   ],
+   "a": 0,
+   "e": "Anaemia, hypercalcaemia, renal impairment and bone pain (CRAB) with a high ESR is myeloma. Hyperparathyroidism does not cause anaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis from bone pain and bloods."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "lower back pain, tiredness and constipation",
+      "tenderness over L2"
+     ],
+     "x": "Bone pain, constipation (calcium); anaemia, high calcium, renal impairment, high ESR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Multiple myeloma** (CRAB)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Bloods would be normal."
+      ],
+      [
+       2,
+       "Isolated raised ALP, normal calcium and renal function."
+      ],
+      [
+       3,
+       "Shoulder and hip girdle stiffness; normal calcium."
+      ],
+      [
+       4,
+       "No anaemia or renal impairment; PTH would be high."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Multiple myeloma.** CRAB in an older patient = myeloma."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man with suspected myeloma has a blood film examined. His pulse rate is 84 bpm and BP 134/80 mmHg. ESR is 112 mm/h (<20).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on the blood film?",
+   "o": [
+    "Bite cells",
+    "Hypersegmented neutrophils",
+    "Rouleaux formation",
+    "Schistocytes",
+    "Target cells"
+   ],
+   "a": 2,
+   "e": "Paraprotein causes red cells to stack like coins (rouleaux) and raises the ESR.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Blood film finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "suspected myeloma",
+      "ESR is 112"
+     ],
+     "x": "Paraprotein raises ESR and makes red cells stick."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Rouleaux formation.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "G6PD deficiency."
+      ],
+      [
+       1,
+       "B12 or folate deficiency."
+      ],
+      [
+       3,
+       "Haemolysis, such as DIC or HUS."
+      ],
+      [
+       4,
+       "Liver disease or thalassaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Rouleaux formation.** Myeloma film: rouleaux."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old man has diffuse bone pain. Serum protein electrophoresis shows an IgG paraprotein. His pulse rate is 80 bpm and BP 140/84 mmHg. A lateral skull X-ray is taken.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on the skull X-ray?",
+   "o": [
+    "Cotton wool appearance",
+    "Hair-on-end appearance",
+    "Multiple punched-out lytic lesions",
+    "Pepper-pot skull",
+    "Single sclerotic lesion"
+   ],
+   "a": 2,
+   "e": "Myeloma causes multiple punched-out lytic lesions ('raindrop skull'). Pepper-pot skull is hyperparathyroidism; cotton wool is Paget's.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Imaging finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "diffuse bone pain",
+      "IgG paraprotein"
+     ],
+     "x": "Myeloma with bone involvement."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**'Raindrop' skull**: punched-out lytic lesions."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Paget's disease."
+      ],
+      [
+       1,
+       "Thalassaemia or sickle cell."
+      ],
+      [
+       3,
+       "Hyperparathyroidism."
+      ],
+      [
+       4,
+       "Prostate metastasis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Multiple punched-out lytic lesions.** Myeloma: lytic, not sclerotic."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man with known multiple myeloma has 2 days of worsening back pain and heavy legs. He has not passed urine for 10 hours. His pulse rate is 94 bpm, BP 136/82 mmHg and temperature 36.8°C. There is bilateral leg weakness with a sensory level at T10.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cauda equina from disc prolapse",
+    "Guillain-Barré syndrome",
+    "Hypercalcaemic crisis",
+    "Osteoporotic fracture without cord involvement",
+    "Spinal cord compression"
+   ],
+   "a": 4,
+   "e": "A sensory level with leg weakness and retention in myeloma is spinal cord compression from vertebral disease; it needs emergency MRI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a myeloma emergency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "known multiple myeloma",
+      "heavy legs",
+      "not passed urine for 10 hours",
+      "sensory level at T10"
+     ],
+     "x": "Myeloma, back pain, leg weakness, retention, sensory level."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Myeloma **spinal cord compression**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Saddle anaesthesia without a thoracic level; myeloma is the clue."
+      ],
+      [
+       1,
+       "Ascending weakness with areflexia; no sensory level."
+      ],
+      [
+       2,
+       "Confusion and dehydration, not a sensory level."
+      ],
+      [
+       3,
+       "Would not give leg weakness or retention."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Spinal cord compression.** Back pain + neuro deficit in myeloma = cord compression."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 73 year old woman is being investigated for back pain and renal impairment. Her pulse rate is 82 bpm and BP 130/78 mmHg. Serum protein electrophoresis shows a monoclonal band. A 24 hour urine is sent.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on urine testing?",
+   "o": [
+    "Bence Jones protein",
+    "Glucose",
+    "Myoglobin",
+    "Nitrites",
+    "Red cell casts"
+   ],
+   "a": 0,
+   "e": "Free immunoglobulin light chains spill into the urine as Bence Jones protein; they also damage tubules.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Urine finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "back pain and renal impairment",
+      "monoclonal band"
+     ],
+     "x": "Paraprotein with renal involvement."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Free light chains in urine: **Bence Jones protein**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Diabetes."
+      ],
+      [
+       2,
+       "Rhabdomyolysis."
+      ],
+      [
+       3,
+       "Infection."
+      ],
+      [
+       4,
+       "Glomerulonephritis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bence Jones protein.** Myeloma urine: Bence Jones."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man has fatigue and back pain. His pulse rate is 86 bpm and BP 132/80 mmHg. Haemoglobin is 100 g/L (130–180), calcium 2.74 mmol/L (2.20–2.60) and total protein 96 g/L (60–80).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on serum protein electrophoresis?",
+   "o": [
+    "Monoclonal IgG band",
+    "Monoclonal IgM band",
+    "Normal pattern",
+    "Polyclonal increase",
+    "Raised alpha-1 band"
+   ],
+   "a": 0,
+   "e": "Myeloma produces a monoclonal paraprotein, usually IgG. A polyclonal rise suggests infection or liver disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Electrophoresis finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fatigue and back pain",
+      "calcium 2.74",
+      "total protein 96"
+     ],
+     "x": "CRAB features with high total protein."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **monoclonal IgG** paraprotein."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Waldenström macroglobulinaemia; IgG is commonest in myeloma."
+      ],
+      [
+       2,
+       "Total protein is high."
+      ],
+      [
+       3,
+       "Chronic infection or liver disease."
+      ],
+      [
+       4,
+       "Acute phase response."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Monoclonal IgG band.** Myeloma: monoclonal, usually IgG."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 75 year old man has back pain, anaemia and a raised calcium. His pulse rate is 78 bpm and BP 138/80 mmHg. Investigations are shown.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "101 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "Adjusted calcium",
+     "2.82 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "PTH",
+     "0.8 pmol/L",
+     "1.6–8.5",
+     "L"
+    ],
+    [
+     "ESR",
+     "92 mm/h",
+     "<20",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Bone marrow biopsy",
+    "Bone scan",
+    "MRI whole spine",
+    "Prostate-specific antigen",
+    "Serum protein electrophoresis"
+   ],
+   "a": 4,
+   "e": "Serum protein electrophoresis is the best initial test for myeloma; bone marrow biopsy confirms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Best initial test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "back pain, anaemia and a raised calcium"
+     ],
+     "x": "CRAB picture with suppressed PTH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**SPEP** (as part of the myeloma screen)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Confirms, after the screen."
+      ],
+      [
+       1,
+       "Often normal in myeloma."
+      ],
+      [
+       2,
+       "For cord compression."
+      ],
+      [
+       3,
+       "Prostate cancer; less likely here with ESR and renal picture."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Serum protein electrophoresis.** Suspect myeloma: SPEP first."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 67 year old woman has an IgG paraprotein of 32 g/L and anaemia. Her pulse rate is 76 bpm and BP 126/74 mmHg. She is referred to haematology for imaging of the skeleton.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial imaging?",
+   "o": [
+    "Bone scan",
+    "DEXA scan",
+    "Plain X-ray of the lumbar spine",
+    "Ultrasound abdomen",
+    "Whole-body low-dose CT"
+   ],
+   "a": 4,
+   "e": "Whole-body low-dose CT is first-line imaging for lytic lesions; bone scans miss them as there is little osteoblastic activity.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "First-line imaging."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "IgG paraprotein",
+      "imaging of the skeleton"
+     ],
+     "x": "Paraprotein, needs skeletal survey."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Whole-body low-dose CT.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Misses lytic lesions."
+      ],
+      [
+       1,
+       "Measures density only."
+      ],
+      [
+       2,
+       "Limited view."
+      ],
+      [
+       3,
+       "Does not image bone."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Whole-body low-dose CT.** Myeloma imaging: whole-body low-dose CT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 69 year old woman with myeloma develops sudden back pain and leg weakness. Her pulse rate is 90 bpm and BP 140/84 mmHg. She has reduced sensation below the umbilicus.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Bone scan",
+    "CT head",
+    "Emergency MRI whole spine",
+    "Oral morphine and outpatient review",
+    "Plain X-ray of the spine"
+   ],
+   "a": 2,
+   "e": "Suspected spinal cord compression needs emergency MRI of the whole spine and urgent treatment.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in an emergency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "myeloma",
+      "leg weakness",
+      "reduced sensation below the umbilicus"
+     ],
+     "x": "Suspected cord compression."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Emergency MRI whole spine.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not urgent and misses lytic lesions."
+      ],
+      [
+       1,
+       "Wrong area."
+      ],
+      [
+       3,
+       "Delays an emergency."
+      ],
+      [
+       4,
+       "Cannot show the cord."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Emergency MRI whole spine.** Cord compression: MRI now."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old man has newly diagnosed multiple myeloma. He is fit, works full time and has no other conditions. His pulse rate is 72 bpm and BP 124/78 mmHg. He has completed induction chemotherapy.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next management?",
+   "o": [
+    "Allogeneic kidney transplant",
+    "Autologous stem cell transplantation",
+    "Melphalan, prednisolone and thalidomide",
+    "Palliative care only",
+    "Watch and wait"
+   ],
+   "a": 1,
+   "e": "Younger, fitter patients have autologous stem cell transplant after induction chemotherapy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next management for a fit, younger patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "58 year old",
+      "fit",
+      "completed induction chemotherapy"
+     ],
+     "x": "Young, fit, after induction."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Autologous stem cell transplant.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not a myeloma treatment."
+      ],
+      [
+       2,
+       "MPT is for older patients."
+      ],
+      [
+       3,
+       "He is young and fit."
+      ],
+      [
+       4,
+       "He has active disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Autologous stem cell transplantation.** Fit and younger: ASCT after induction."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old woman has started bortezomib and dexamethasone for multiple myeloma with lytic lesions. Her pulse rate is 80 bpm and BP 128/76 mmHg. Investigations are shown.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "2.68 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "88 µmol/L",
+     "45–90",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate additional treatment to protect her bones?",
+   "o": [
+    "Calcitriol",
+    "Calcium carbonate",
+    "Naproxen",
+    "Teriparatide",
+    "Zoledronic acid"
+   ],
+   "a": 4,
+   "e": "Bisphosphonates protect bone in myeloma. Calcium or vitamin D would worsen hypercalcaemia; NSAIDs harm the kidneys.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Bone protection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "lytic lesions"
+     ],
+     "x": "Myeloma bone disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **bisphosphonate**: zoledronic acid."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Raises calcium."
+      ],
+      [
+       1,
+       "Not with a high calcium."
+      ],
+      [
+       2,
+       "NSAIDs risk renal failure."
+      ],
+      [
+       3,
+       "Anabolic; not used in myeloma."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Zoledronic acid.** Myeloma: bisphosphonates for all with bone disease."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 71 year old man with myeloma has recurrent pneumonias. His total protein is high. His pulse rate is 98 bpm, BP 128/78 mmHg and temperature 38.1°C. Investigations are shown.",
+   "labs": [
+    [
+     "IgG (paraprotein)",
+     "48 g/L",
+     "6–16",
+     "H"
+    ],
+    [
+     "IgA",
+     "0.3 g/L",
+     "0.8–4.0",
+     "L"
+    ],
+    [
+     "IgM",
+     "0.2 g/L",
+     "0.5–2.0",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his recurrent infections?",
+   "o": [
+    "Complement deficiency",
+    "Hypercalcaemia",
+    "Immunoparesis",
+    "Neutrophil dysfunction from uraemia",
+    "T cell depletion"
+   ],
+   "a": 2,
+   "e": "The clone makes one monoclonal antibody while normal immunoglobulins are suppressed (immunoparesis), causing infections.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of infections."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "recurrent pneumonias",
+      "total protein is high"
+     ],
+     "x": "High total protein but low normal antibodies."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Immunoparesis**: suppressed normal immunoglobulins."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not a feature of myeloma."
+      ],
+      [
+       1,
+       "Does not suppress immunity."
+      ],
+      [
+       3,
+       "Minor; not the main mechanism."
+      ],
+      [
+       4,
+       "Myeloma affects B cell lineage."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Immunoparesis.** Lots of protein, all useless."
+    }
+   ]
+  }
+ ]
+}

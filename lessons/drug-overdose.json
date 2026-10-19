@@ -1,0 +1,2437 @@
+{
+ "id": "drug-overdose",
+ "patient": {
+  "name": "Jasmine Kaur",
+  "age": 22,
+  "sex": "F",
+  "setting": "Emergency Department (resus)",
+  "complaint": "Found drowsy by her flatmate next to empty co-codamol packets",
+  "background": [
+   "Low mood since a breakup two months ago; no previous self-harm",
+   "Weight 60 kg",
+   "No regular medicines, drinks little alcohol",
+   "Student nurse in Tooting"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'Which drug has most likely been taken?': match the toxidrome (pupils, heart rate, skin, breathing) or the classic clue (tinnitus for aspirin, broad QRS for TCA, pinpoint pupils for opioids).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Jasmine, 22, found by her flatmate at 23:00, hard to rouse.",
+      "Empty packets: **20 co-codamol 30/500** tablets, all taken at about 21:00.",
+      "A note on the bed; no needle marks."
+     ],
+     "vitals": {
+      "T": "36.4°C",
+      "HR": "64 bpm",
+      "BP": "108/66 mmHg",
+      "RR": "7 /min",
+      "SpO2": "88% on air",
+      "GCS": "9",
+      "CBG": "5.6 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Jasmine's is an **intentional overdose** with two dangers: CNS and respiratory depression now, liver failure later."
+    },
+    {
+     "type": "story",
+     "points": [
+      "**Pinpoint pupils**, both 1 mm.",
+      "Snoring, slow shallow breathing.",
+      "Skin cool and dry; no rash; normal tone.",
+      "Each tablet: **30 mg codeine + 500 mg paracetamol**."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Jasmine shows it all: reduced GCS, abnormal pupils, abnormal breathing, empty packets and a **self-harm context**."
+    },
+    {
+     "type": "ask",
+     "q": "Jasmine has pinpoint pupils, RR 7 and GCS 9. Which toxidrome is this?",
+     "o": [
+      "Anticholinergic",
+      "Cholinergic",
+      "Opioid",
+      "Sympathomimetic"
+     ],
+     "a": 2,
+     "r": "**Pinpoint pupils, respiratory depression, low GCS** is the opioid triad. Cholinergic also gives small pupils but with secretions and diarrhoea."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Jasmine fits the **opioid toxidrome** from the codeine. The other patterns help when the packet is not found."
+    },
+    {
+     "type": "compare",
+     "title": "The four toxidromes",
+     "head": [
+      "Toxidrome",
+      "Pupils",
+      "Heart rate",
+      "Skin",
+      "Examples"
+     ],
+     "rows": [
+      [
+       "Opioid",
+       "**Pinpoint**",
+       "Normal or slow",
+       "Normal",
+       "Heroin, morphine, codeine"
+      ],
+      [
+       "Anticholinergic",
+       "Dilated",
+       "Fast",
+       "**Hot, dry**",
+       "TCAs, antihistamines"
+      ],
+      [
+       "Sympathomimetic",
+       "Dilated",
+       "Fast, high BP",
+       "**Sweaty**",
+       "Cocaine, amphetamines"
+      ],
+      [
+       "Cholinergic",
+       "Pinpoint",
+       "Often slow",
+       "Sweaty, salivating",
+       "Organophosphates"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Jasmine took two drugs: **codeine** is the threat tonight; **paracetamol** is the silent threat to her liver over the next days."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Jasmine's GCS",
+      "min": 3,
+      "max": 15,
+      "unit": "",
+      "bands": [
+       [
+        3,
+        8,
+        "8 or less: airway at risk",
+        "bad"
+       ],
+       [
+        8,
+        13,
+        "reduced",
+        "warn"
+       ],
+       [
+        13,
+        15,
+        "alert or near",
+        "ok"
+       ]
+      ],
+      "value": 9,
+      "label": "Jasmine 9",
+      "caption": "GCS 9 with RR 7: support the airway and breathing now."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Paracetamol overdose looks **well for the first 24 hours**. A chatty patient with normal obs can still die of liver failure: always check the level."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most important investigation?' (12-lead ECG in TCA overdose) and paracetamol timing questions (level at 4 hours, plotted on the nomogram).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Jasmine arrives with GCS 9 and RR 7. What comes first?",
+     "o": [
+      "ABCDE assessment",
+      "CT head",
+      "Paracetamol level",
+      "Urine drug screen"
+     ],
+     "a": 0,
+     "r": "**ABCDE** always comes first. Tests come alongside resuscitation, not before it."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Jasmine gets an **ABCDE** assessment with bedside tests: glucose (5.6), an **ECG** and a blood gas because she is hypoventilating."
+    },
+    {
+     "type": "labs",
+     "title": "Bedside tests on arrival",
+     "rows": [
+      [
+       "Capillary glucose",
+       "5.6 mmol/L",
+       "4.0–7.8",
+       ""
+      ],
+      [
+       "Venous pH",
+       "7.29",
+       "7.35–7.45",
+       "L"
+      ],
+      [
+       "Venous pCO2",
+       "7.6 kPa",
+       "4.7–6.0",
+       "H"
+      ],
+      [
+       "Lactate",
+       "1.4 mmol/L",
+       "<2.0",
+       ""
+      ],
+      [
+       "ECG QRS duration",
+       "86 ms",
+       "<120",
+       ""
+      ]
+     ],
+     "text": "Respiratory acidosis from hypoventilation; ECG normal, so no cardiotoxic co-ingestant."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Jasmine's diagnosis rests on **clinical assessment** (packets, toxidrome) plus a **drug-specific test**: her paracetamol level."
+    },
+    {
+     "type": "flow",
+     "title": "When to take the paracetamol level",
+     "nodes": [
+      "Single ingestion, time known",
+      "Under 4 hours: wait, take level at 4 hours",
+      "4 to 15 hours: take level now",
+      "Plot on nomogram: above line = NAC",
+      "Staggered (>1 hour) or time unknown: NAC immediately"
+     ],
+     "caption": "Jasmine took them all at 21:00, so her level is taken at 01:00."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Jasmine's level is taken at **4 hours** and plotted on the nomogram. Had she taken amitriptyline, the **ECG** would be the key test."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods at 4 hours after ingestion",
+     "rows": [
+      [
+       "Paracetamol",
+       "152 mg/L",
+       "Treatment line at 4 h: 100",
+       "H"
+      ],
+      [
+       "Salicylate",
+       "Not detected",
+       "",
+       ""
+      ],
+      [
+       "ALT",
+       "22 U/L",
+       "<40",
+       ""
+      ],
+      [
+       "INR",
+       "1.0",
+       "0.8–1.2",
+       ""
+      ],
+      [
+       "Creatinine",
+       "64 µmol/L",
+       "45–90",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "4-hour paracetamol level",
+      "min": 0,
+      "max": 200,
+      "unit": "mg/L",
+      "bands": [
+       [
+        0,
+        100,
+        "below treatment line",
+        "ok"
+       ],
+       [
+        100,
+        200,
+        "on or above line: treat with NAC",
+        "bad"
+       ]
+      ],
+      "value": 152,
+      "label": "Jasmine 152",
+      "caption": "Above the treatment line: she needs acetylcysteine."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "TCA overdose: the **12-lead ECG** is the key test. **QRS >100 ms** means seizure risk; **QRS >160 ms** means ventricular arrhythmia risk."
+    },
+    {
+     "type": "trap",
+     "text": "A level taken **before 4 hours** after a single ingestion cannot be interpreted: absorption is incomplete and it falsely reassures."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'next most appropriate step': ABCDE, then the right antidote (naloxone, NAC, sodium bicarbonate). Classic traps: naltrexone instead of naloxone, charcoal after 1 hour, waiting for a level in a staggered overdose.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Jasmine has pinpoint pupils and RR 7. Which drug do you give?",
+     "o": [
+      "IV flumazenil",
+      "IV N-acetylcysteine",
+      "IV naloxone",
+      "Oral naltrexone"
+     ],
+     "a": 2,
+     "r": "**IV naloxone** reverses opioid respiratory depression. Naltrexone is oral relapse prevention, not an antidote."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Jasmine's airway is opened and supported with **bag-valve-mask oxygen** while naloxone is drawn up: ABCDE comes first."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Jasmine gets **naloxone** 400 micrograms IV, repeated as needed. Flumazenil, atropine and vitamin K are the other antidotes to know."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Jasmine after naloxone",
+      "x": [
+       "0 min",
+       "2 min",
+       "15 min",
+       "45 min",
+       "60 min"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Respiratory rate",
+        "values": [
+         7,
+         16,
+         16,
+         9,
+         15
+        ]
+       },
+       {
+        "name": "GCS",
+        "values": [
+         9,
+         14,
+         15,
+         11,
+         15
+        ]
+       }
+      ],
+      "caption": "She re-sedates at 45 minutes: naloxone wears off before codeine does. Repeat dose, consider an infusion."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "**Naloxone is short-acting** compared with most opioids. Observe after reversal and repeat or infuse if breathing slows again."
+    },
+    {
+     "type": "ask",
+     "q": "Jasmine took the tablets 2.5 hours ago and is drowsy. Should she have activated charcoal?",
+     "o": [
+      "No: beyond 1 hour and airway not protected",
+      "Yes: always for paracetamol",
+      "Yes: charcoal reverses codeine",
+      "Yes: give it with naloxone"
+     ],
+     "a": 0,
+     "r": "Charcoal is for paracetamol within **1 hour** in a patient who can protect their airway."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Jasmine's level is above the line, so **NAC 150 mg/kg over 1 hour** starts now, with LFTs and INR rechecked before it finishes."
+    },
+    {
+     "type": "story",
+     "points": [
+      "30 minutes into the first NAC bag: flushing and itchy wheals.",
+      "Mild wheeze; BP 112/70 mmHg, no stridor.",
+      "This is the common **anaphylactoid** reaction."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "What do you do about Jasmine's reaction to NAC?",
+     "o": [
+      "Give IM adrenaline and stop NAC permanently",
+      "Ignore it and continue",
+      "Stop the infusion, give IV chlorphenamine, restart more slowly",
+      "Switch to activated charcoal"
+     ],
+     "a": 2,
+     "r": "A **non-IgE** reaction: stop, give **chlorphenamine 10 mg IV** (salbutamol for wheeze), then restart at a slower rate."
+    },
+    {
+     "type": "compare",
+     "title": "Antidotes to know",
+     "head": [
+      "Overdose",
+      "Antidote or key treatment"
+     ],
+     "rows": [
+      [
+       "Opioid",
+       "**Naloxone**"
+      ],
+      [
+       "Benzodiazepine",
+       "**Flumazenil** (with caution)"
+      ],
+      [
+       "Beta-blocker",
+       "**Atropine**, glucagon if resistant"
+      ],
+      [
+       "Warfarin",
+       "**Vitamin K**"
+      ],
+      [
+       "Paracetamol",
+       "**N-acetylcysteine**; charcoal if within 1 hour"
+      ],
+      [
+       "Aspirin",
+       "IV sodium bicarbonate; haemodialysis if severe"
+      ],
+      [
+       "TCA",
+       "IV sodium bicarbonate"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Not Jasmine's drugs, but examiners love these: **sodium bicarbonate** for both aspirin and TCA overdose, and dialysis when severe."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Jasmine's care follows **TOXBASE** advice, the **MHRA nomogram** and the Resuscitation Council **ABCDE** approach."
+    },
+    {
+     "type": "pearl",
+     "text": "Once medically fit, Jasmine needs a **psychosocial (mental health) assessment** before discharge, as with every intentional overdose."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: how NAC works, why aspirin gives a mixed acid-base picture, why TCAs widen the QRS and why bicarbonate helps, and how naloxone works.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Jasmine's 10 g of paracetamol will exhaust her **glutathione**, letting **NAPQI** destroy hepatocytes unless NAC refills the supply."
+    },
+    {
+     "type": "flow",
+     "title": "Paracetamol in overdose",
+     "nodes": [
+      "Glucuronidation and sulphation saturate",
+      "More goes via CYP450 to NAPQI",
+      "Glutathione used up conjugating NAPQI",
+      "Free NAPQI: centrilobular hepatocyte necrosis",
+      "NAC replenishes glutathione: NAPQI safely excreted"
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "abdomen",
+      "title": "Where untreated paracetamol toxicity hurts",
+      "regions": [
+       "RUQ"
+      ],
+      "caption": "Days 2 to 4 without NAC: RUQ pain and jaundice from acute liver injury."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Jasmine's codeine acted on **mu-opioid receptors** in her brainstem; naloxone competitively knocked it off."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Had Jasmine taken aspirin, her gas would start as a **respiratory alkalosis** and slide into **metabolic acidosis**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Blood pH in a salicylate overdose",
+      "x": [
+       "2 h",
+       "6 h",
+       "12 h",
+       "18 h"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "pH",
+        "values": [
+         7.5,
+         7.46,
+         7.36,
+         7.24
+        ]
+       }
+      ],
+      "caption": "Early hyperventilation raises pH; later uncoupling and lactic acid drive it down."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "A TCA would have blocked Jasmine's cardiac **sodium channels**, widening the QRS; bicarbonate restores sodium channel function."
+    },
+    {
+     "type": "ask",
+     "q": "How does sodium bicarbonate reduce arrhythmia risk in TCA overdose?",
+     "o": [
+      "It binds the TCA in the gut",
+      "It blocks beta-receptors",
+      "It raises extracellular sodium and alkalinises the blood",
+      "It speeds liver metabolism of the TCA"
+     ],
+     "a": 2,
+     "r": "Extra **sodium** and an **alkaline pH** overcome the sodium channel blockade and narrow the QRS."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Jasmine's toxidrome was recognisable because every opioid acts on the **same receptor**; each class has its own pattern."
+    },
+    {
+     "type": "pearl",
+     "text": "**P450 inducers** (rifampicin, phenytoin, carbamazepine, St John's Wort) and chronic alcohol make more NAPQI; malnutrition and anorexia leave less glutathione. Both raise hepatotoxicity risk."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the earliest symptom of aspirin overdose?",
+   "o": [
+    "Jaundice",
+    "Pinpoint pupils",
+    "Seizures",
+    "Tinnitus"
+   ],
+   "a": 3,
+   "r": "**Tinnitus** is the earliest symptom of salicylate toxicity."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which triad suggests opioid overdose?",
+   "o": [
+    "Fever, rash, neck stiffness",
+    "Hot, dry skin, dilated pupils, tachycardia",
+    "Reduced consciousness, respiratory depression, pinpoint pupils",
+    "Tinnitus, vomiting, hyperventilation"
+   ],
+   "a": 2,
+   "r": "**Low GCS, respiratory depression and pinpoint pupils**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which toxidrome causes hot, dry skin, dilated pupils, tachycardia and confusion?",
+   "o": [
+    "Anticholinergic",
+    "Cholinergic",
+    "Opioid",
+    "Sympathomimetic"
+   ],
+   "a": 0,
+   "r": "**Anticholinergic** (TCAs, antihistamines). Sympathomimetic is sweaty, not dry."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which increases the risk of hepatotoxicity in paracetamol overdose?",
+   "o": [
+    "Carbamazepine use",
+    "High body weight",
+    "Hypertension",
+    "Young age"
+   ],
+   "a": 0,
+   "r": "**P450 inducers** such as carbamazepine increase NAPQI production."
+  },
+  {
+   "d": "investigation",
+   "q": "When is the paracetamol level taken after a single acute ingestion?",
+   "o": [
+    "At 1 hour",
+    "At 4 hours",
+    "At 12 hours",
+    "Immediately"
+   ],
+   "a": 1,
+   "r": "At **4 hours**, plotted on the treatment nomogram."
+  },
+  {
+   "d": "investigation",
+   "q": "Which QRS duration in TCA overdose is linked with ventricular arrhythmias?",
+   "o": [
+    "Over 80 ms",
+    "Over 100 ms",
+    "Over 120 ms",
+    "Over 160 ms"
+   ],
+   "a": 3,
+   "r": "**>160 ms**: ventricular arrhythmias. >100 ms: seizure risk."
+  },
+  {
+   "d": "management",
+   "q": "What is the antidote for benzodiazepine overdose?",
+   "o": [
+    "Atropine",
+    "Flumazenil",
+    "Naloxone",
+    "Vitamin K"
+   ],
+   "a": 1,
+   "r": "**Flumazenil**, a benzodiazepine receptor antagonist."
+  },
+  {
+   "d": "management",
+   "q": "What is the first dose of N-acetylcysteine in paracetamol overdose?",
+   "o": [
+    "10 mg/kg over 24 hours",
+    "150 mg/kg over 1 hour",
+    "50 mg orally",
+    "500 mg IV bolus"
+   ],
+   "a": 1,
+   "r": "**150 mg/kg over 1 hour**, started immediately when indicated."
+  },
+  {
+   "d": "management",
+   "q": "Which treatment is used for TCA cardiotoxicity?",
+   "o": [
+    "IV amiodarone",
+    "IV flumazenil",
+    "IV naloxone",
+    "IV sodium bicarbonate"
+   ],
+   "a": 3,
+   "r": "**IV sodium bicarbonate**; dialysis in severe toxicity."
+  },
+  {
+   "d": "science",
+   "q": "Which toxic metabolite causes liver damage in paracetamol overdose?",
+   "o": [
+    "Acetaldehyde",
+    "Formic acid",
+    "NAPQI",
+    "Salicylic acid"
+   ],
+   "a": 2,
+   "r": "**NAPQI** accumulates once glutathione is depleted."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is a drug overdose and how does it present?",
+    "tip": "Exam thinking: the stem hides clues in the surroundings (packets, note, needle marks).",
+    "points": [
+     {
+      "p": "Toxic effects of too much drug: accidental, intentional, recreational or therapeutic misadventure",
+      "k": [
+       [
+        "accident",
+        "intentional",
+        "self-harm",
+        "recreational",
+        "misadventure"
+       ]
+      ],
+      "why": "Therapeutic misadventure: e.g. morphine accumulating in renal failure."
+     },
+     {
+      "p": "Drowsiness, confusion, collapse, reduced GCS",
+      "k": [
+       [
+        "drows",
+        "confus",
+        "collapse",
+        "gcs",
+        "consciousness"
+       ]
+      ],
+      "why": "CNS depression."
+     },
+     {
+      "p": "Empty pill packets, self-harm context",
+      "k": [
+       [
+        "packet",
+        "pill",
+        "self-harm",
+        "note"
+       ]
+      ],
+      "why": "Clues at the scene."
+     },
+     {
+      "p": "Abnormal pupils, RR or ECG; vomiting, seizures, agitation, palpitations",
+      "k": [
+       [
+        "pupil",
+        "ecg",
+        "seizure",
+        "vomit",
+        "palpitation"
+       ]
+      ],
+      "why": "Respiratory failure, arrhythmia and organ failure kill."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features and risk factors of paracetamol toxicity, and what counts as staggered?",
+    "tip": "Exam thinking: early paracetamol overdose is silent.",
+    "points": [
+     {
+      "p": "RUQ pain and jaundice from acute liver injury",
+      "k": [
+       [
+        "ruq",
+        "right upper",
+        "jaundice",
+        "liver"
+       ]
+      ],
+      "why": "Appears after 24 hours or more."
+     },
+     {
+      "p": "Risk factors: anorexia, HIV, malnutrition, chronic alcohol, epilepsy drugs",
+      "k": [
+       [
+        "anorexia",
+        "malnutrition",
+        "alcohol",
+        "hiv"
+       ]
+      ],
+      "why": "Low glutathione or more NAPQI."
+     },
+     {
+      "p": "P450 inducers: rifampicin, phenytoin, carbamazepine, St John's Wort",
+      "k": [
+       [
+        "rifampicin",
+        "phenytoin",
+        "carbamazepine",
+        "st john",
+        "inducer"
+       ]
+      ],
+      "why": "More NAPQI made."
+     },
+     {
+      "p": "Staggered overdose (over more than 1 hour) needs immediate treatment",
+      "k": [
+       [
+        "stagger"
+       ],
+       [
+        "immediate",
+        "now",
+        "straight"
+       ]
+      ],
+      "why": "The nomogram cannot be used."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do opioid and benzodiazepine overdoses present?",
+    "tip": "Exam thinking: the pupils separate them.",
+    "points": [
+     {
+      "p": "Opioid: confusion, reduced consciousness, respiratory depression",
+      "k": [
+       [
+        "respiratory depression",
+        "slow breathing",
+        "bradypnoea",
+        "low rr"
+       ]
+      ],
+      "why": "Can cause type 2 respiratory failure."
+     },
+     {
+      "p": "Opioid: pinpoint pupils",
+      "k": [
+       [
+        "pinpoint",
+        "miosis",
+        "constricted"
+       ]
+      ],
+      "why": "The giveaway sign."
+     },
+     {
+      "p": "Benzodiazepine: drowsiness, ataxia, slurred speech, sedation",
+      "k": [
+       [
+        "ataxia",
+        "slurred"
+       ]
+      ],
+      "why": "Pupils usually normal."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do aspirin and TCA overdoses present?",
+    "tip": "Exam thinking: tinnitus = aspirin; broad QRS + anticholinergic = TCA.",
+    "points": [
+     {
+      "p": "Aspirin: tinnitus earliest",
+      "k": [
+       [
+        "tinnitus"
+       ]
+      ],
+      "why": "Plus vomiting and dehydration."
+     },
+     {
+      "p": "Aspirin: early respiratory alkalosis then metabolic acidosis",
+      "k": [
+       [
+        "alkalosis"
+       ],
+       [
+        "acidosis"
+       ]
+      ],
+      "why": "Mixed picture."
+     },
+     {
+      "p": "TCA: anticholinergic effects, coma, respiratory depression, tachycardia",
+      "k": [
+       [
+        "anticholinergic",
+        "tachycardi",
+        "coma"
+       ]
+      ],
+      "why": "Hot, dry, dilated pupils."
+     },
+     {
+      "p": "TCA: hypotension, arrhythmia, QRS/PR/QT prolongation",
+      "k": [
+       [
+        "qrs",
+        "arrhythmia",
+        "hypotension"
+       ]
+      ],
+      "why": "Sodium channel blockade."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the four toxidromes with examples.",
+    "tip": "Exam thinking: pupils, heart rate and skin sort them in seconds.",
+    "points": [
+     {
+      "p": "Opioid: pinpoint pupils, respiratory depression, low GCS",
+      "k": [
+       [
+        "opioid",
+        "opiate"
+       ]
+      ],
+      "why": "Heroin, morphine, codeine."
+     },
+     {
+      "p": "Anticholinergic: hot, dry, tachycardic, dilated pupils, confused",
+      "k": [
+       [
+        "anticholinergic"
+       ]
+      ],
+      "why": "TCAs, antihistamines."
+     },
+     {
+      "p": "Sympathomimetic: agitated, sweaty, tachycardic, dilated, hypertensive",
+      "k": [
+       [
+        "sympathomimetic",
+        "cocaine",
+        "amphetamine"
+       ]
+      ],
+      "why": "Sweaty, unlike anticholinergic."
+     },
+     {
+      "p": "Cholinergic: salivation, sweating, diarrhoea, pinpoint pupils, bronchorrhoea",
+      "k": [
+       [
+        "cholinergic",
+        "organophosphate"
+       ]
+      ],
+      "why": "Small pupils like opioids, but wet."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What are the first-line assessment and bedside tests in any overdose?",
+    "tip": "Exam thinking: ABCDE first, ECG is mandatory.",
+    "points": [
+     {
+      "p": "ABCDE assessment comes first",
+      "k": [
+       [
+        "abcde",
+        "airway"
+       ]
+      ],
+      "why": "Resuscitate before testing."
+     },
+     {
+      "p": "Capillary glucose",
+      "k": [
+       [
+        "glucose",
+        "cbg",
+        "sugar",
+        "bm"
+       ]
+      ],
+      "why": "Hypoglycaemia mimics overdose."
+     },
+     {
+      "p": "Mandatory ECG",
+      "k": [
+       [
+        "ecg",
+        "electrocardiogram"
+       ]
+      ],
+      "why": "Cardiotoxic overdose."
+     },
+     {
+      "p": "Observations and blood gases if indicated",
+      "k": [
+       [
+        "gas",
+        "abg",
+        "vbg",
+        "observation"
+       ]
+      ],
+      "why": "Respiratory failure, acidosis."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which drug-specific tests matter for TCA and paracetamol overdose?",
+    "tip": "Exam thinking: know the numbers.",
+    "points": [
+     {
+      "p": "TCA: 12-lead ECG is the most important investigation",
+      "k": [
+       [
+        "ecg",
+        "electrocardiogram"
+       ]
+      ],
+      "why": "Look at the QRS."
+     },
+     {
+      "p": "QRS >100 ms: seizure risk; >160 ms: ventricular arrhythmias",
+      "k": [
+       [
+        "100"
+       ],
+       [
+        "160"
+       ]
+      ],
+      "why": "Classic thresholds."
+     },
+     {
+      "p": "Paracetamol level at 4 hours post-ingestion on the nomogram",
+      "k": [
+       [
+        "4 hour",
+        "four hour",
+        "4h",
+        "4 h",
+        "4-hour"
+       ]
+      ],
+      "why": "Below the line: conservative management."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you approach any overdose, and what are the main antidotes?",
+    "tip": "Exam thinking: ABCDE, then match the antidote to the drug.",
+    "points": [
+     {
+      "p": "ABCDE: protect airway, oxygen, IV access and fluids, glucose, look for clues",
+      "k": [
+       [
+        "abcde",
+        "airway"
+       ]
+      ],
+      "why": "Recovery position if breathing; CPR if not."
+     },
+     {
+      "p": "Naloxone for opioids",
+      "k": [
+       [
+        "naloxone"
+       ]
+      ],
+      "why": "Short-acting: repeat or infuse."
+     },
+     {
+      "p": "Flumazenil for benzodiazepines",
+      "k": [
+       [
+        "flumazenil"
+       ]
+      ],
+      "why": "Use with caution."
+     },
+     {
+      "p": "Atropine (glucagon if resistant) for beta-blockers",
+      "k": [
+       [
+        "atropine",
+        "glucagon"
+       ]
+      ],
+      "why": "For bradycardia."
+     },
+     {
+      "p": "Vitamin K for warfarin",
+      "k": [
+       [
+        "vitamin k"
+       ]
+      ],
+      "why": "Reverses anticoagulation."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is paracetamol overdose treated, including a reaction to NAC?",
+    "tip": "Exam thinking: the timing decides charcoal and whether to wait for a level.",
+    "points": [
+     {
+      "p": "Activated charcoal within 1 hour",
+      "k": [
+       [
+        "charcoal"
+       ]
+      ],
+      "why": "Only if airway is protected."
+     },
+     {
+      "p": "NAC 150 mg/kg over 1 hour",
+      "k": [
+       [
+        "nac",
+        "acetylcysteine",
+        "parvolex"
+       ],
+       [
+        "150"
+       ]
+      ],
+      "why": "Started regardless of level when indicated (e.g. staggered)."
+     },
+     {
+      "p": "Continue if level or ALT remains raised",
+      "k": [
+       [
+        "alt",
+        "continue"
+       ]
+      ],
+      "why": "Recheck bloods near the end."
+     },
+     {
+      "p": "Anaphylactoid reaction: stop, IV chlorphenamine 10 mg, restart slower",
+      "k": [
+       [
+        "chlorphenamine",
+        "antihistamine",
+        "piriton"
+       ]
+      ],
+      "why": "Non-IgE: no need to abandon NAC."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How are aspirin and TCA overdoses managed as emergencies?",
+    "tip": "Exam thinking: bicarbonate for both; dialysis when severe.",
+    "points": [
+     {
+      "p": "Aspirin: urinary alkalinisation with IV sodium bicarbonate",
+      "k": [
+       [
+        "bicarbonate",
+        "alkalinis",
+        "alkaliniz"
+       ]
+      ],
+      "why": "Speeds salicylate excretion."
+     },
+     {
+      "p": "Aspirin: haemodialysis for pulmonary oedema or severe acidosis",
+      "k": [
+       [
+        "dialysis",
+        "haemodialysis",
+        "hemodialysis"
+       ]
+      ],
+      "why": "Plus charcoal within 1 hour."
+     },
+     {
+      "p": "TCA: IV sodium bicarbonate, ECG monitoring, senior toxicology input",
+      "k": [
+       [
+        "bicarbonate"
+       ],
+       [
+        "tca",
+        "tricyclic",
+        "amitriptyline",
+        "ecg"
+       ]
+      ],
+      "why": "Dialysis in severe toxicity."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does paracetamol damage the liver, and how does NAC work?",
+    "tip": "Exam thinking: NAPQI and glutathione.",
+    "points": [
+     {
+      "p": "Glutathione stores are depleted",
+      "k": [
+       [
+        "glutathione"
+       ]
+      ],
+      "why": "Normally conjugates NAPQI."
+     },
+     {
+      "p": "NAPQI accumulates, causing centrilobular hepatocyte necrosis",
+      "k": [
+       [
+        "napqi"
+       ],
+       [
+        "necrosis",
+        "centrilobular",
+        "hepatocyte"
+       ]
+      ],
+      "why": "Zone 3 is richest in CYP450."
+     },
+     {
+      "p": "NAC replenishes glutathione so NAPQI is conjugated and excreted",
+      "k": [
+       [
+        "replenish",
+        "restor"
+       ]
+      ],
+      "why": "Most effective within 8 hours."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Explain the aspirin acid-base picture, TCA cardiotoxicity and how naloxone works.",
+    "tip": "Exam thinking: one mechanism each.",
+    "points": [
+     {
+      "p": "Aspirin stimulates the respiratory centre: respiratory alkalosis",
+      "k": [
+       [
+        "respiratory centre",
+        "respiratory center",
+        "hyperventilat"
+       ]
+      ],
+      "why": "The early phase."
+     },
+     {
+      "p": "Then uncouples oxidative phosphorylation: metabolic acidosis",
+      "k": [
+       [
+        "uncoupl",
+        "oxidative"
+       ]
+      ],
+      "why": "Lactic and organic acids."
+     },
+     {
+      "p": "TCA: cardiac sodium channel blockade widens QRS; bicarbonate restores it",
+      "k": [
+       [
+        "sodium channel",
+        "na channel"
+       ]
+      ],
+      "why": "Slows phase 0 depolarisation."
+     },
+     {
+      "p": "Naloxone: competitive mu-receptor antagonist",
+      "k": [
+       [
+        "mu",
+        "μ"
+       ],
+       [
+        "antagonist",
+        "compet",
+        "block"
+       ]
+      ],
+      "why": "Reverses brainstem respiratory depression."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Overdose": "Taking more of a drug or substance than the body can safely handle, causing toxic effects.",
+  "Therapeutic misadventure": "Accidental toxicity from a prescribed medicine, for example morphine accumulating in kidney failure.",
+  "Toxidrome": "A recognisable group of signs caused by a class of toxin acting on one receptor system.",
+  "Co-codamol": "Combination tablet of codeine (an opioid) and paracetamol; 30/500 means 30 mg codeine and 500 mg paracetamol.",
+  "Pinpoint pupils": "Very small, constricted pupils, typical of opioid or cholinergic toxicity.",
+  "Miosis": "Constriction of the pupil.",
+  "Mydriasis": "Dilation of the pupil.",
+  "GCS": "Glasgow Coma Scale, a 3 to 15 score of eye, verbal and motor responses.",
+  "ABCDE": "Airway, Breathing, Circulation, Disability, Exposure: the structured approach to an acutely unwell patient.",
+  "Staggered overdose": "Tablets taken over more than 1 hour, so the paracetamol nomogram cannot be used and NAC starts immediately.",
+  "Nomogram": "Graph of paracetamol level against time since ingestion with a treatment line; levels on or above it need NAC.",
+  "NAC": "N-acetylcysteine (acetylcysteine): the paracetamol antidote that replenishes liver glutathione.",
+  "N-acetylcysteine": "The antidote to paracetamol, given IV, that restores glutathione to detoxify NAPQI.",
+  "NAPQI": "N-acetyl-p-benzoquinone imine: the toxic paracetamol metabolite that destroys liver cells when glutathione runs out.",
+  "Glutathione": "A liver antioxidant that binds and neutralises NAPQI.",
+  "Centrilobular necrosis": "Death of liver cells around the central veins (zone 3), the pattern of paracetamol injury.",
+  "Hepatotoxicity": "Damage to the liver caused by a drug or chemical.",
+  "P450 inducers": "Drugs such as rifampicin, phenytoin and carbamazepine that increase liver enzyme activity and NAPQI production.",
+  "St John's Wort": "Herbal antidepressant that induces liver P450 enzymes.",
+  "Activated charcoal": "Oral powder that binds drugs in the gut; useful within 1 hour of ingestion if the airway is safe.",
+  "Anaphylactoid reaction": "An allergy-like reaction not caused by IgE antibodies, common with NAC; it settles when the infusion is stopped.",
+  "Chlorphenamine": "Antihistamine given IV to treat an anaphylactoid reaction to NAC.",
+  "Naloxone": "Short-acting competitive opioid receptor antagonist that reverses opioid overdose.",
+  "Naltrexone": "Long-acting oral opioid antagonist used for relapse prevention, not for acute overdose.",
+  "Flumazenil": "Benzodiazepine receptor antagonist; can trigger seizures, so used with caution.",
+  "Mu-opioid receptor": "The main opioid receptor; activation in the brainstem slows breathing.",
+  "Salicylate": "The active compound in aspirin; also the name of the blood level measured in overdose.",
+  "Tinnitus": "Ringing or buzzing in the ears; the earliest symptom of aspirin toxicity.",
+  "Respiratory alkalosis": "High blood pH from blowing off too much CO2 by overbreathing.",
+  "Metabolic acidosis": "Low blood pH from accumulation of acid or loss of bicarbonate.",
+  "Uncoupling of oxidative phosphorylation": "Mitochondria burn fuel without making ATP, producing heat and lactic acid.",
+  "Urinary alkalinisation": "IV sodium bicarbonate to make urine alkaline, trapping salicylate in the urine to speed excretion.",
+  "Haemodialysis": "Filtering the blood through a machine to remove toxins, used in severe aspirin overdose.",
+  "TCA": "Tricyclic antidepressant, such as amitriptyline: anticholinergic and cardiotoxic in overdose.",
+  "Amitriptyline": "A tricyclic antidepressant, also used for nerve pain, dangerous in overdose.",
+  "QRS": "The ventricular depolarisation complex on the ECG; widening above 100 ms in TCA overdose signals danger.",
+  "Sodium channel blockade": "Blocking of fast sodium channels in heart muscle, slowing conduction and widening the QRS.",
+  "Anticholinergic": "Blocking acetylcholine: hot, dry, flushed, dilated pupils, fast heart, confusion, urinary retention.",
+  "Sympathomimetic": "Mimicking adrenaline: agitated, sweaty, fast heart, high blood pressure, dilated pupils.",
+  "Cholinergic": "Excess acetylcholine: salivation, sweating, diarrhoea, small pupils and wet chest.",
+  "Organophosphates": "Insecticides that inhibit acetylcholinesterase, causing a cholinergic toxidrome.",
+  "TOXBASE": "The UK National Poisons Information Service online database for managing poisoning.",
+  "Bronchorrhoea": "Excessive watery secretions from the airways."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old woman is brought to the Emergency Department 3 hours after taking a large number of her hay fever tablets. She is agitated and confused, her skin is hot, flushed and dry, and her pupils are dilated. She has a palpable bladder. Her temperature is 38.1°C, pulse rate 128 bpm, BP 136/84 mmHg and respiratory rate 20 breaths per minute.",
+   "q": "Which toxidrome is most likely?",
+   "o": [
+    "Anticholinergic",
+    "Cholinergic",
+    "Opioid",
+    "Serotonin syndrome",
+    "Sympathomimetic"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Name the toxidrome: check pupils, skin and heart rate."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hay fever tablets",
+      "hot, flushed and dry",
+      "pupils are dilated",
+      "palpable bladder",
+      "pulse rate 128 bpm"
+     ],
+     "x": "Antihistamine overdose: dry skin, dilated pupils, tachycardia, urinary retention, confusion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Anticholinergic** toxidrome."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Cholinergic gives pinpoint pupils and wet skin."
+      ],
+      [
+       2,
+       "Opioids give pinpoint pupils and slow breathing."
+      ],
+      [
+       3,
+       "Serotonin syndrome gives clonus and sweating after serotonergic drugs."
+      ],
+      [
+       4,
+       "Sympathomimetic is similar but sweaty, not dry, and needs a stimulant."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Anticholinergic.** Rule: dry = anticholinergic; sweaty = sympathomimetic."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 42 year old man with depression is brought in after taking an unknown number of amitriptyline tablets 2 hours ago. He is drowsy with dilated pupils and dry skin. His pulse rate is 124 bpm, BP 98/60 mmHg, respiratory rate 14 breaths per minute and oxygen saturation 96% breathing air. His capillary glucose is 6.1 mmol/L.",
+   "q": "Which is the most important investigation?",
+   "o": [
+    "12-lead ECG",
+    "CT head",
+    "Serum paracetamol level",
+    "Serum salicylate level",
+    "Urine drug screen"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The most important test in this overdose."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "amitriptyline",
+      "dilated pupils and dry skin",
+      "pulse rate is 124 bpm",
+      "BP 98/60 mmHg"
+     ],
+     "x": "TCA overdose with anticholinergic signs, tachycardia and hypotension: cardiotoxic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**12-lead ECG** to measure the QRS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CT head is not needed; the cause is clear."
+      ],
+      [
+       2,
+       "A paracetamol level is routine in self-harm but not the key test here."
+      ],
+      [
+       3,
+       "Salicylate level is not the priority with a known TCA."
+      ],
+      [
+       4,
+       "A urine screen does not change acute management."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. 12-lead ECG.** Rule: TCA = ECG; QRS >100 ms seizures, >160 ms arrhythmias."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 36 year old woman has taken 40 amitriptyline tablets. She is drowsy. Her pulse rate is 136 bpm, BP 84/50 mmHg, respiratory rate 14 breaths per minute and oxygen saturation 95% on 2 L/min oxygen. ECG shows sinus tachycardia with a QRS duration of 150 ms.",
+   "labs": [
+    [
+     "pH",
+     "7.28",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "Potassium",
+     "4.2 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous amiodarone",
+    "Intravenous flumazenil",
+    "Intravenous naloxone",
+    "Intravenous sodium bicarbonate",
+    "Oral activated charcoal"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of a cardiotoxic overdose."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "40 amitriptyline tablets",
+      "BP 84/50 mmHg",
+      "QRS duration of 150 ms",
+      "She is drowsy"
+     ],
+     "x": "TCA with a broad QRS, hypotension and acidosis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV sodium bicarbonate**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amiodarone can worsen TCA cardiotoxicity."
+      ],
+      [
+       1,
+       "Flumazenil can precipitate seizures in TCA overdose."
+      ],
+      [
+       2,
+       "Naloxone is for opioids."
+      ],
+      [
+       4,
+       "Charcoal is unsafe in a drowsy patient and does not treat the QRS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. IV sodium bicarbonate.** Rule: broad QRS in TCA overdose = bicarbonate."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 17 year old girl took 60 aspirin tablets 3 hours ago. She has tinnitus, has vomited and is breathing rapidly. Her temperature is 37.6°C, pulse rate 112 bpm and respiratory rate 30 breaths per minute.",
+   "labs": [
+    [
+     "pH",
+     "7.51",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaCO2",
+     "3.0 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "21 mmol/L",
+     "22–26",
+     "L"
+    ]
+   ],
+   "q": "Which is the most likely mechanism of her blood gas abnormality?",
+   "o": [
+    "Direct stimulation of the respiratory centre",
+    "Increased renal bicarbonate loss",
+    "Lactic acidosis from hypoperfusion",
+    "Uncoupling of oxidative phosphorylation",
+    "Vomiting causing loss of gastric acid"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism: explain this specific gas."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "60 aspirin tablets",
+      "3 hours ago",
+      "tinnitus",
+      "breathing rapidly"
+     ],
+     "x": "pH 7.51 with PaCO2 3.0: early respiratory alkalosis in salicylate overdose."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Salicylate **directly stimulates the respiratory centre**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Renal bicarbonate loss is compensation, not the primary process."
+      ],
+      [
+       2,
+       "Lactic acidosis would lower pH; here pH is high."
+      ],
+      [
+       3,
+       "Uncoupling causes the later metabolic acidosis, not this alkalosis."
+      ],
+      [
+       4,
+       "Vomiting gives metabolic alkalosis with a high bicarbonate."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Respiratory centre stimulation.** Rule: early aspirin = respiratory alkalosis; late = metabolic acidosis."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 79 year old man with chronic kidney disease was started on oral morphine for back pain 5 days ago. His daughter finds him very drowsy. He has pinpoint pupils. His temperature is 36.5°C, pulse rate 58 bpm, BP 112/68 mmHg, respiratory rate 7 breaths per minute and oxygen saturation 87% breathing air.",
+   "labs": [
+    [
+     "Capillary glucose",
+     "6.0 mmol/L",
+     "4.0–7.8",
+     ""
+    ],
+    [
+     "Creatinine",
+     "248 µmol/L",
+     "60–110",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Alcohol intoxication",
+    "Benzodiazepine overdose",
+    "Hypoglycaemia",
+    "Opioid overdose",
+    "Tricyclic antidepressant overdose"
+   ],
+   "a": 3,
+   "e": "Pinpoint pupils, respiratory depression and reduced consciousness after starting morphine in renal impairment is opioid toxicity from accumulation: a therapeutic misadventure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis in a drowsy elderly man: look at the pupils and breathing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chronic kidney disease",
+      "oral morphine",
+      "pinpoint pupils",
+      "respiratory rate 7"
+     ],
+     "x": "Morphine metabolites accumulate in CKD; opioid triad."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Opioid overdose** (therapeutic misadventure)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No alcohol history; alcohol does not cause pinpoint pupils."
+      ],
+      [
+       1,
+       "Benzodiazepines cause sedation with normal pupils."
+      ],
+      [
+       2,
+       "Glucose is 6.0 mmol/L."
+      ],
+      [
+       4,
+       "TCAs cause dilated pupils and tachycardia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Opioid overdose.** Rule: pinpoint pupils + slow breathing + low GCS = opioid."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 20 year old woman has ringing in her ears and has vomited three times. She is breathing deeply and rapidly. She admits taking tablets from the bathroom cabinet 4 hours ago. Her temperature is 37.8°C, pulse rate 110 bpm, BP 118/74 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 99% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.49",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaCO2",
+     "3.1 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "19 mmol/L",
+     "22–26",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which drug has she most likely taken?",
+   "o": [
+    "Amitriptyline",
+    "Aspirin",
+    "Diazepam",
+    "Paracetamol",
+    "Tramadol"
+   ],
+   "a": 1,
+   "e": "Tinnitus is the earliest symptom of salicylate toxicity; vomiting and hyperventilation with a respiratory alkalosis fit early aspirin overdose.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which drug? Find the one specific symptom."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ringing in her ears",
+      "vomited three times",
+      "breathing deeply and rapidly"
+     ],
+     "x": "Tinnitus plus hyperventilation and respiratory alkalosis (pH 7.49, PaCO2 3.1)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Aspirin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amitriptyline gives anticholinergic signs and a broad QRS."
+      ],
+      [
+       2,
+       "Diazepam causes sedation, not hyperventilation."
+      ],
+      [
+       3,
+       "Paracetamol is silent early."
+      ],
+      [
+       4,
+       "Tramadol is an opioid: slow breathing and seizures."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Aspirin.** Rule: tinnitus = salicylate."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old man with chronic back pain and depression is found unresponsive. His skin is hot and dry and his pupils are dilated. His pulse rate is 132 bpm, BP 90/56 mmHg, respiratory rate 10 breaths per minute and oxygen saturation 93% breathing air. ECG (see item resources).",
+   "visual": {
+    "kind": "ecg",
+    "title": "12-lead ECG",
+    "layout": "12lead",
+    "rhythm": "sinus_tachy",
+    "rate": 132,
+    "leads": {},
+    "caption": "Sinus tachycardia 132 bpm; QRS 136 ms with prolonged PR and QT intervals."
+   },
+   "q": "Which drug has he most likely taken?",
+   "o": [
+    "Amitriptyline",
+    "Codeine",
+    "Diazepam",
+    "Lithium",
+    "Paracetamol"
+   ],
+   "a": 0,
+   "e": "Anticholinergic features (hot, dry, dilated pupils, tachycardia) with coma, hypotension and a broad QRS are tricyclic antidepressant overdose; amitriptyline is also used for chronic pain.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which drug? Combine the toxidrome with the ECG."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chronic back pain and depression",
+      "hot and dry",
+      "pupils are dilated",
+      "BP 90/56 mmHg"
+     ],
+     "x": "Anticholinergic signs, hypotension and a wide QRS on the ECG."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Amitriptyline** (TCA)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Codeine causes pinpoint pupils."
+      ],
+      [
+       2,
+       "Diazepam sedates without tachycardia or a broad QRS."
+      ],
+      [
+       3,
+       "Lithium toxicity gives tremor, ataxia and confusion, not anticholinergic signs."
+      ],
+      [
+       4,
+       "Paracetamol does not cause early coma or ECG change."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Amitriptyline.** Rule: anticholinergic + broad QRS = TCA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old man is brought from a nightclub. He is agitated, sweating profusely and has chest tightness. His pupils are dilated. His temperature is 38.4°C, pulse rate 134 bpm, BP 182/106 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 98% breathing air.",
+   "visual": null,
+   "q": "Which toxidrome is most likely?",
+   "o": [
+    "Anticholinergic",
+    "Cholinergic",
+    "Opioid",
+    "Sedative-hypnotic",
+    "Sympathomimetic"
+   ],
+   "a": 4,
+   "e": "Agitation, sweating, tachycardia, hypertension and dilated pupils after a night out are the sympathomimetic toxidrome, e.g. cocaine or amphetamines. Anticholinergic patients are dry.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Name the toxidrome: the skin decides between the two dilated-pupil patterns."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "nightclub",
+      "sweating profusely",
+      "pupils are dilated",
+      "BP 182/106 mmHg"
+     ],
+     "x": "Wet skin, dilated pupils, hypertension: stimulant use."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Sympathomimetic** (cocaine or amphetamine)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anticholinergic skin is hot and dry."
+      ],
+      [
+       1,
+       "Cholinergic pupils are pinpoint."
+      ],
+      [
+       2,
+       "Opioid pupils are pinpoint with slow breathing."
+      ],
+      [
+       3,
+       "Sedatives depress consciousness, not agitation and hypertension."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Sympathomimetic.** Rule: dilated + sweaty + hypertensive = stimulant."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 26 year old woman has 1 day of right upper quadrant pain and yellow eyes. Three days ago she took about 30 tablets after an argument but told no one. She has anorexia nervosa. Her temperature is 37.2°C, pulse rate 104 bpm, BP 102/64 mmHg and respiratory rate 18 breaths per minute.",
+   "labs": [
+    [
+     "ALT",
+     "4820 U/L",
+     "<40",
+     "H"
+    ],
+    [
+     "Bilirubin",
+     "68 µmol/L",
+     "<21",
+     "H"
+    ],
+    [
+     "INR",
+     "3.2",
+     "0.8–1.2",
+     "H"
+    ],
+    [
+     "Paracetamol",
+     "18 mg/L",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute hepatitis A",
+    "Acute liver injury from paracetamol overdose",
+    "Biliary colic",
+    "Budd-Chiari syndrome",
+    "Gilbert's syndrome"
+   ],
+   "a": 1,
+   "e": "RUQ pain and jaundice days after an undisclosed overdose, with a massive ALT and raised INR, is paracetamol hepatotoxicity; anorexia increases the risk by lowering glutathione.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis in acute liver injury with a hidden history."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "right upper quadrant pain and yellow eyes",
+      "Three days ago she took about 30 tablets",
+      "anorexia nervosa"
+     ],
+     "x": "Late presentation after overdose; ALT in thousands; risk factor for hepatotoxicity."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute liver injury from paracetamol overdose**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hepatitis A has a viral prodrome and exposure history, not an overdose."
+      ],
+      [
+       2,
+       "Biliary colic does not cause an ALT of 4820 and a high INR."
+      ],
+      [
+       3,
+       "Budd-Chiari causes ascites and hepatomegaly in prothrombotic states."
+      ],
+      [
+       4,
+       "Gilbert's gives a mild unconjugated bilirubin rise with normal ALT."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Paracetamol liver injury.** Rule: a low or undetectable level late on does not exclude it."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old woman is found drowsy at home next to her sister's prescription box. She can be roused, but her speech is slurred and she is very unsteady when helped to stand. Her pupils are normal in size. Her temperature is 36.6°C, pulse rate 78 bpm, BP 118/72 mmHg, respiratory rate 12 breaths per minute and oxygen saturation 95% breathing air.",
+   "labs": [
+    [
+     "Capillary glucose",
+     "5.4 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which drug has she most likely taken?",
+   "o": [
+    "Amitriptyline",
+    "Aspirin",
+    "Diazepam",
+    "Morphine",
+    "Paracetamol"
+   ],
+   "a": 2,
+   "e": "Sedation, slurred speech and ataxia with normal pupils and relatively preserved observations suggest benzodiazepine overdose.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which drug? Pupils and coordination are the clues."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "speech is slurred",
+      "very unsteady",
+      "pupils are normal in size",
+      "respiratory rate 12"
+     ],
+     "x": "Sedation and ataxia without pinpoint pupils or anticholinergic signs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Diazepam** (benzodiazepine)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amitriptyline gives dilated pupils and tachycardia."
+      ],
+      [
+       1,
+       "Aspirin causes tinnitus and hyperventilation."
+      ],
+      [
+       3,
+       "Morphine causes pinpoint pupils."
+      ],
+      [
+       4,
+       "Paracetamol does not cause early sedation or ataxia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Diazepam.** Rule: drowsy + ataxic + slurred + normal pupils = benzodiazepine."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 33 year old man has taken 50 dosulepin tablets. His pulse rate is 126 bpm, BP 96/58 mmHg and GCS 12. A 12-lead ECG has been recorded and the team is assessing his risk.",
+   "visual": null,
+   "q": "Which ECG finding indicates the highest risk of ventricular arrhythmia?",
+   "o": [
+    "PR interval 220 ms",
+    "QRS duration 110 ms",
+    "QRS duration 170 ms",
+    "QTc interval 450 ms",
+    "Sinus tachycardia 115 bpm"
+   ],
+   "a": 2,
+   "e": "In TCA overdose, QRS over 100 ms is associated with seizures and QRS over 160 ms with ventricular arrhythmias.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Risk stratification on the ECG in a TCA overdose."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "50 dosulepin tablets",
+      "BP 96/58 mmHg",
+      "GCS 12"
+     ],
+     "x": "Dosulepin is a TCA; arrhythmia risk is about the QRS width."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**QRS over 160 ms**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "PR prolongation occurs but is not the arrhythmia predictor."
+      ],
+      [
+       1,
+       "QRS 110 ms crosses the seizure threshold (>100) only."
+      ],
+      [
+       3,
+       "QTc 450 ms is borderline and not the TCA threshold."
+      ],
+      [
+       4,
+       "Sinus tachycardia is expected from anticholinergic effects."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. QRS 170 ms.** Rule: >100 ms seizures; >160 ms ventricular arrhythmias."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 24 year old woman took 24 paracetamol 500 mg tablets all at once 2 hours ago. She weighs 64 kg and is well. Her pulse rate is 82 bpm, BP 120/76 mmHg, respiratory rate 14 breaths per minute and oxygen saturation 99% breathing air. Her ECG and capillary glucose are normal.",
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Immediate paracetamol level",
+    "Liver ultrasound",
+    "Paracetamol level at 4 hours after ingestion",
+    "Paracetamol level at 12 hours after ingestion",
+    "Urine drug screen"
+   ],
+   "a": 2,
+   "e": "After a single acute ingestion with a known time, the paracetamol level is taken at 4 hours and plotted on the nomogram. A level before 4 hours cannot be interpreted.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "When to take the paracetamol level."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "all at once",
+      "2 hours ago",
+      "is well"
+     ],
+     "x": "Single ingestion, known time, under 4 hours, not staggered."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Wait and take the level at **4 hours**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Before 4 hours absorption is incomplete; it falsely reassures."
+      ],
+      [
+       1,
+       "Ultrasound does not assess paracetamol toxicity."
+      ],
+      [
+       3,
+       "Waiting until 12 hours delays NAC, which works best early."
+      ],
+      [
+       4,
+       "A urine screen does not guide paracetamol treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Level at 4 hours.** Rule: single ingestion = 4-hour level on the nomogram."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 31 year old man is found collapsed in a public toilet with a syringe beside him. He is barely rousable and has pinpoint pupils. He has a palpable carotid pulse. His pulse rate is 56 bpm, BP 104/62 mmHg, respiratory rate 5 breaths per minute and oxygen saturation 82% breathing air.",
+   "visual": null,
+   "q": "Which is the most appropriate initial drug treatment?",
+   "o": [
+    "Intravenous flumazenil",
+    "Intravenous naloxone",
+    "Intravenous sodium bicarbonate",
+    "N-acetylcysteine",
+    "Oral naltrexone"
+   ],
+   "a": 1,
+   "e": "Opioid overdose with severe respiratory depression: support the airway and breathing and give IV naloxone, a competitive mu-receptor antagonist. Naltrexone is for relapse prevention.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial drug treatment: match the antidote."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "syringe beside him",
+      "pinpoint pupils",
+      "palpable carotid pulse",
+      "respiratory rate 5"
+     ],
+     "x": "Opioid triad; he has a pulse, so not CPR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV naloxone** with airway support."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Flumazenil is for benzodiazepines."
+      ],
+      [
+       2,
+       "Bicarbonate is for TCA or aspirin overdose."
+      ],
+      [
+       3,
+       "NAC is for paracetamol."
+      ],
+      [
+       4,
+       "Naltrexone is oral relapse prevention, not an emergency antidote."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IV naloxone.** Rule: pinpoint + slow breathing = naloxone."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 40 year old woman says she has taken about 8 paracetamol tablets each day for the last 3 days for toothache, more than the recommended dose. She weighs 58 kg and feels nauseated. Her pulse rate is 90 bpm, BP 124/78 mmHg and respiratory rate 16 breaths per minute.",
+   "labs": [
+    [
+     "Paracetamol",
+     "34 mg/L",
+     "",
+     ""
+    ],
+    [
+     "ALT",
+     "96 U/L",
+     "<40",
+     "H"
+    ],
+    [
+     "INR",
+     "1.2",
+     "0.8–1.2",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Activated charcoal",
+    "Discharge with GP follow-up",
+    "Intravenous acetylcysteine immediately",
+    "Plot the level on the treatment nomogram",
+    "Repeat liver function tests in 24 hours"
+   ],
+   "a": 2,
+   "e": "Tablets taken over more than 1 hour (staggered) cannot be plotted on the nomogram: start IV acetylcysteine immediately, regardless of the level, especially with a raised ALT.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in a paracetamol overdose: what kind of ingestion?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "each day for the last 3 days",
+      "more than the recommended dose",
+      "feels nauseated"
+     ],
+     "x": "A staggered overdose with a raised ALT (96)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV acetylcysteine now**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Charcoal only helps within 1 hour of ingestion."
+      ],
+      [
+       1,
+       "She has a raised ALT and needs treatment."
+      ],
+      [
+       3,
+       "The nomogram is only valid for a single ingestion with a known time."
+      ],
+      [
+       4,
+       "Waiting risks progressive liver injury."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV acetylcysteine immediately.** Rule: staggered = NAC now, regardless of level."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old man took 100 aspirin tablets 8 hours ago. He is confused and breathless with bibasal crackles. His pulse rate is 124 bpm, BP 96/58 mmHg, respiratory rate 32 breaths per minute and oxygen saturation 89% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.18",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "9 mmol/L",
+     "22–26",
+     "L"
+    ],
+    [
+     "Salicylate",
+     "860 mg/L",
+     "Toxic above 300",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate definitive treatment?",
+   "o": [
+    "Activated charcoal",
+    "Haemodialysis",
+    "Intravenous acetylcysteine",
+    "Intravenous naloxone",
+    "Oral fluids and observation"
+   ],
+   "a": 1,
+   "e": "Severe salicylate toxicity with pulmonary oedema, confusion and severe metabolic acidosis needs haemodialysis; urinary alkalinisation alone is not enough.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Definitive treatment in severe aspirin overdose."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "100 aspirin tablets",
+      "8 hours ago",
+      "confused",
+      "bibasal crackles"
+     ],
+     "x": "Late, severe: pulmonary oedema, CNS features, pH 7.18, very high salicylate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Haemodialysis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Charcoal helps within 1 hour; it is 8 hours."
+      ],
+      [
+       2,
+       "NAC is for paracetamol."
+      ],
+      [
+       3,
+       "Naloxone is for opioids."
+      ],
+      [
+       4,
+       "This is life-threatening toxicity, not a case for observation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Haemodialysis.** Rule: aspirin + pulmonary oedema or severe acidosis = dialysis."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 23 year old woman took 40 paracetamol tablets 6 hours ago. Her 6-hour level is above the treatment line and an infusion is started. Her pulse rate is 86 bpm and BP 118/74 mmHg.",
+   "labs": [
+    [
+     "Paracetamol",
+     "128 mg/L",
+     "Treatment line at 6 h: about 67",
+     "H"
+    ],
+    [
+     "ALT",
+     "28 U/L",
+     "<40",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the mechanism of action of the treatment?",
+   "o": [
+    "Blocks cytochrome P450 enzymes",
+    "Chelates paracetamol in the gut",
+    "Increases renal excretion of paracetamol",
+    "Replenishes hepatic glutathione",
+    "Reverses mu-opioid receptor binding"
+   ],
+   "a": 3,
+   "e": "N-acetylcysteine replenishes hepatic glutathione, which conjugates the toxic metabolite NAPQI so it can be safely excreted, preventing centrilobular necrosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism: how does the paracetamol antidote work?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "40 paracetamol tablets",
+      "above the treatment line",
+      "an infusion is started"
+     ],
+     "x": "She is on N-acetylcysteine."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "NAC **replenishes glutathione** to mop up NAPQI."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "NAC does not inhibit P450."
+      ],
+      [
+       1,
+       "Chelation in the gut describes charcoal binding, not NAC."
+      ],
+      [
+       2,
+       "NAC does not increase renal paracetamol excretion."
+      ],
+      [
+       4,
+       "Reversing opioid binding is naloxone."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Replenishes glutathione.** Rule: glutathione conjugates NAPQI."
+    }
+   ]
+  }
+ ]
+}

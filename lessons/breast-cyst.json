@@ -1,0 +1,1945 @@
+{
+  "id": "breast-cyst",
+  "patient": {
+    "name": "Nadia Rahman",
+    "age": 44,
+    "sex": "F",
+    "setting": "GP surgery, then breast one-stop clinic",
+    "complaint": "Tender lump in the right breast that seems bigger before her period",
+    "background": [
+      "Periods regular but heavier this year",
+      "Two children, breastfed both; youngest is 9",
+      "No family history of breast cancer",
+      "Pharmacist in Tower Hamlets; no regular medication"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a smooth, tender, mobile lump in a woman of 30 to 50 that changes with her cycle, against fibroadenoma (younger, non-tender), galactocele (after breastfeeding) and cancer (hard, fixed, skin changes).",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Nadia, 44, found a **tender** lump in her right breast.",
+            "It gets **bigger and sorer before her period**, then eases.",
+            "Some general breast aching on both sides.",
+            "No nipple discharge, no skin change."
+          ],
+          "vitals": {
+            "T": "36.6°C",
+            "HR": "72 bpm",
+            "BP": "118/74 mmHg"
+          }
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Nadia is **44 and still having periods**: the peak age and hormonal state for breast cysts."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Age and breast lumps",
+            "min": 15,
+            "max": 75,
+            "unit": "years",
+            "bands": [
+              [
+                15,
+                30,
+                "Fibroadenoma most likely",
+                "ok"
+              ],
+              [
+                30,
+                50,
+                "Breast cyst peak",
+                "warn"
+              ],
+              [
+                50,
+                75,
+                "Cancer most likely",
+                "bad"
+              ]
+            ],
+            "value": 44,
+            "label": "Nadia 44",
+            "caption": "Cysts cluster at **30 to 50**, especially around the perimenopause."
+          }
+        },
+        {
+          "type": "story",
+          "points": [
+            "Right upper outer quadrant: **2.5 cm smooth, well-defined** lump.",
+            "It is **mobile**, slightly tender and feels fluctuant.",
+            "No skin tethering, no nipple change, no axillary nodes.",
+            "A smaller, similar lump in the left breast."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Nadia's lump is classic: **smooth, mobile, well-defined, tender**, cyclical, and there may be more than one."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Nadia's lump across her cycle",
+            "x": [
+              "Day 1",
+              "Day 7",
+              "Day 14",
+              "Day 21",
+              "Day 26"
+            ],
+            "unit": "cm",
+            "series": [
+              {
+                "name": "Lump size",
+                "values": [
+                  1.8,
+                  1.7,
+                  2.0,
+                  2.4,
+                  2.6
+                ]
+              }
+            ],
+            "caption": "Larger and more tender in the **luteal phase**, before her period."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Nadia's lump is a **fluid-filled sac** from a blocked duct, part of benign **fibrocystic change**."
+        },
+        {
+          "type": "ask",
+          "q": "Which feature would make you worry that Nadia's lump is cancer rather than a cyst?",
+          "o": [
+            "Change in size with her cycle",
+            "Hard, irregular and fixed",
+            "More than one lump",
+            "Tenderness"
+          ],
+          "a": 1,
+          "r": "A **hard, irregular, fixed** lump, skin change or nodes are red flags. Tenderness, multiple lumps and cyclical change fit a cyst."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Nadia stopped breastfeeding 9 years ago, so a **galactocele** is unlikely, and she has **no red flags** for cancer."
+        },
+        {
+          "type": "compare",
+          "title": "Smooth breast lumps: which one?",
+          "head": [
+            "Lump",
+            "Age",
+            "Feel",
+            "Clue"
+          ],
+          "rows": [
+            [
+              "**Breast cyst**",
+              "30 to 50",
+              "Smooth, mobile, often **tender**, fluctuant",
+              "Varies with cycle; may be multiple"
+            ],
+            [
+              "Fibroadenoma",
+              "Under 30",
+              "Firm, rubbery, very mobile, non-tender",
+              "'Breast mouse'"
+            ],
+            [
+              "Galactocele",
+              "Recently stopped breastfeeding",
+              "Mobile, cyst-like, may be tender",
+              "Milk-filled"
+            ],
+            [
+              "Breast abscess",
+              "Breastfeeding",
+              "Warm, red, very tender",
+              "Fever"
+            ],
+            [
+              "Breast cancer",
+              "Older",
+              "Hard, irregular, **fixed**",
+              "Skin changes, nodes"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "'Smooth and mobile' alone does not mean cyst: a fibroadenoma is too. **Tenderness, fluctuation, cyclical change and age 30 to 50** point to a cyst."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' where the answer is breast ultrasound (shows a fluid-filled lesion) as part of triple assessment, with aspiration to confirm and relieve it.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Nadia is referred to the breast one-stop clinic.",
+            "Every new discrete breast lump has **triple assessment**.",
+            "At 44, imaging starts with ultrasound of the lump."
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "Which imaging is the key test for Nadia's lump?",
+          "o": [
+            "Breast ultrasound",
+            "CT chest",
+            "MRI breast",
+            "PET scan"
+          ],
+          "a": 0,
+          "r": "**Ultrasound** tells fluid from solid at once. MRI and PET are not first-line for a lump."
+        },
+        {
+          "type": "labs",
+          "title": "Nadia's breast ultrasound",
+          "rows": [
+            [
+              "Right UOQ lesion",
+              "2.6 cm, round, well-defined",
+              "",
+              ""
+            ],
+            [
+              "Contents",
+              "Anechoic (fluid-filled)",
+              "",
+              ""
+            ],
+            [
+              "Posterior acoustic enhancement",
+              "Present",
+              "",
+              ""
+            ],
+            [
+              "Solid component",
+              "None",
+              "",
+              ""
+            ],
+            [
+              "Left breast",
+              "1.2 cm simple cyst",
+              "",
+              ""
+            ]
+          ],
+          "text": "A **simple cyst**: thin wall, all fluid, nothing solid."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Nadia's ultrasound shows a **fluid-filled lesion**; **ultrasound plus aspiration** is the gold standard."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Because Nadia's cyst is sore, **fine needle aspiration** confirms it is a cyst and relieves her symptoms in one go."
+        },
+        {
+          "type": "flow",
+          "title": "Nadia's work-up",
+          "nodes": [
+            "New breast lump → triple assessment",
+            "Ultrasound: fluid-filled lesion",
+            "Simple cyst and no symptoms → reassure",
+            "Symptomatic → ultrasound-guided FNA",
+            "Thick, solid or residual mass → imaging and biopsy"
+          ]
+        },
+        {
+          "type": "pearl",
+          "text": "Ultrasound is the imaging of choice under 40 and the key test for a cyst at any age: it separates **fluid** from **solid** in seconds."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' where a simple asymptomatic cyst needs reassurance only, a painful cyst needs ultrasound-guided aspiration, and thick or solid aspirate or a residual mass needs imaging and biopsy.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Nadia's large cyst is painful. What is the most appropriate management?",
+          "o": [
+            "Excision biopsy",
+            "Oral antibiotics",
+            "Reassurance only",
+            "Ultrasound-guided fine needle aspiration"
+          ],
+          "a": 3,
+          "r": "A **symptomatic** cyst is drained by **ultrasound-guided FNA**. Reassurance alone is for asymptomatic simple cysts."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Nadia's right cyst is drained under ultrasound for **symptom relief**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Nadia's right cyst after aspiration",
+            "x": [
+              "Before",
+              "After FNA",
+              "6 weeks",
+              "6 months"
+            ],
+            "unit": "cm",
+            "series": [
+              {
+                "name": "Cyst size",
+                "values": [
+                  2.6,
+                  0,
+                  0,
+                  0.4
+                ]
+              }
+            ],
+            "caption": "The cyst disappears completely: a reassuring sign. A small recurrence at 6 months is common."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Nadia's small left cyst is simple and painless, so she needs **reassurance only**."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Aspirate: 8 mL of **clear, straw-coloured** fluid.",
+            "The lump disappears completely after drainage.",
+            "No residual mass on repeat ultrasound."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Nadia's aspirate was clear, so she is **followed up for recurrence**; cysts that keep coming back are re-imaged and may be re-aspirated."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Had Nadia's aspirate been **thick** or the cyst had **solid elements** or a mass left behind, she would need imaging and **biopsy**."
+        },
+        {
+          "type": "compare",
+          "title": "What the aspirate tells you",
+          "head": [
+            "Finding",
+            "Meaning",
+            "Next step"
+          ],
+          "rows": [
+            [
+              "Clear fluid, lump gone",
+              "Benign simple cyst",
+              "Reassure, follow up for recurrence"
+            ],
+            [
+              "Recurrent symptomatic cyst",
+              "Benign but troublesome",
+              "Imaging ± repeat aspiration"
+            ],
+            [
+              "Thick fluid or solid elements",
+              "**Suspicious**",
+              "Imaging and biopsy"
+            ],
+            [
+              "Residual mass after drainage",
+              "**Suspicious**",
+              "Imaging and biopsy"
+            ]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "Do not refer a simple cyst for **excision**. Surgery is not the answer; aspiration is for symptoms, and biopsy only for suspicious features."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions on why cysts change with the menstrual cycle, why they peak in the perimenopause, or what the aspirate tells you.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Nadia's cyst is a **dilated terminal ductal-lobular unit**, filled with fluid as part of fibrocystic change."
+        },
+        {
+          "type": "flow",
+          "title": "How a breast cyst forms",
+          "nodes": [
+            "Cyclical hormonal stimulation",
+            "Overgrowth of glandular and connective tissue",
+            "Duct outflow blocked",
+            "Terminal ductal-lobular unit dilates with fluid",
+            "Smooth, mobile, fluctuant lump"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Nadia's lump swells before her period because **oestrogen and progesterone** rise and fall through the cycle."
+        },
+        {
+          "type": "ask",
+          "q": "Why are breast cysts most common in women Nadia's age?",
+          "o": [
+            "Breast tissue is replaced by fat",
+            "Hormonal fluctuation is greatest perimenopausally",
+            "Lactation peaks in the forties",
+            "Oestrogen levels are lowest"
+          ],
+          "a": 1,
+          "r": "**Perimenopausal** hormone swings are the biggest. After menopause, cysts become uncommon."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Nadia is **perimenopausal**, when the hormonal swings are greatest; once her periods stop, new cysts become less likely."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Draining Nadia's cyst **decompressed** it and stopped the pain, and the **clear** fluid was reassuring."
+        },
+        {
+          "type": "pearl",
+          "text": "A new cyst in a postmenopausal woman not on HRT is unusual: think harder about other causes and image carefully."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    {
+      "d": "diagnosis",
+      "q": "In which age group are breast cysts most common?",
+      "o": [
+        "15 to 25",
+        "30 to 50",
+        "55 to 70",
+        "Over 75"
+      ],
+      "a": 1,
+      "r": "**30 to 50**, premenopausal."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Which feature is typical of a breast cyst?",
+      "o": [
+        "Hard and fixed",
+        "Peau d'orange",
+        "Size changes with the menstrual cycle",
+        "Unilateral bloody nipple discharge"
+      ],
+      "a": 2,
+      "r": "Cysts **fluctuate with the cycle**; the others are cancer features."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Which differential should you consider in a woman who has recently stopped breastfeeding?",
+      "o": [
+        "Duct ectasia",
+        "Fibroadenoma",
+        "Galactocele",
+        "Phyllodes tumour"
+      ],
+      "a": 2,
+      "r": "A **galactocele** is a milk-filled cyst after recently stopping breastfeeding."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Breast cysts are commonly part of which benign process?",
+      "o": [
+        "Duct ectasia",
+        "Fat necrosis",
+        "Fibrocystic change",
+        "Intraductal papilloma"
+      ],
+      "a": 2,
+      "r": "Part of **fibrocystic change**."
+    },
+    {
+      "d": "investigation",
+      "q": "What is the key imaging investigation for a breast cyst?",
+      "o": [
+        "CT chest",
+        "Mammogram alone",
+        "MRI breast",
+        "Ultrasound"
+      ],
+      "a": 3,
+      "r": "**Ultrasound** shows a fluid-filled lesion."
+    },
+    {
+      "d": "investigation",
+      "q": "Which procedure both confirms a cyst and relieves symptoms?",
+      "o": [
+        "Core biopsy",
+        "Excision biopsy",
+        "Fine needle aspiration",
+        "Mammogram"
+      ],
+      "a": 2,
+      "r": "**FNA** drains the cyst and confirms it."
+    },
+    {
+      "d": "management",
+      "q": "What is the management of a simple asymptomatic cyst?",
+      "o": [
+        "Antibiotics",
+        "Excision",
+        "Reassurance only",
+        "Tamoxifen"
+      ],
+      "a": 2,
+      "r": "**Reassurance only**."
+    },
+    {
+      "d": "management",
+      "q": "What is first-line management of a symptomatic breast cyst?",
+      "o": [
+        "Mastectomy",
+        "Oral danazol",
+        "Ultrasound-guided FNA",
+        "Watch and wait"
+      ],
+      "a": 2,
+      "r": "**Ultrasound-guided FNA** for symptom relief."
+    },
+    {
+      "d": "management",
+      "q": "What does a thick aspirate or solid element in a cyst need?",
+      "o": [
+        "Discharge",
+        "Further imaging and biopsy",
+        "Repeat aspiration only",
+        "Reassurance"
+      ],
+      "a": 1,
+      "r": "Raises suspicion of malignancy: **imaging and biopsy**."
+    },
+    {
+      "d": "science",
+      "q": "Why does a breast cyst change size through the menstrual cycle?",
+      "o": [
+        "Cyclical oestrogen and progesterone changes",
+        "Cyclical infection",
+        "Prolactin surges",
+        "Thyroid hormone changes"
+      ],
+      "a": 0,
+      "r": "**Oestrogen and progesterone** fluctuation."
+    }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 41 year old woman has a 3 week history of a tender lump in her left breast. She thinks it is bigger in the week before her period. There is a 2 cm smooth, well-defined, mobile, fluctuant lump in the upper outer quadrant. There are no skin changes or axillary nodes. Her temperature is 36.7°C, pulse rate 74 bpm and BP 120/76 mmHg.",
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Breast abscess",
+        "Breast cyst",
+        "Fat necrosis",
+        "Fibroadenoma",
+        "Invasive ductal carcinoma"
+      ],
+      "a": 1,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "A breast lump diagnosis: age, feel and cyclical change."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "41 year old",
+            "tender lump",
+            "bigger in the week before her period",
+            "fluctuant",
+            "no skin changes or axillary nodes"
+          ],
+          "x": "Right age, tender, cyclical, fluctuant, no red flags."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Breast cyst**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "An abscess is hot and red, usually when breastfeeding, with fever."
+            ],
+            [
+              2,
+              "Fat necrosis is hard and irregular, after trauma."
+            ],
+            [
+              3,
+              "Fibroadenoma is firm, non-tender, in under-30s."
+            ],
+            [
+              4,
+              "Cancer is hard, irregular and fixed."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Breast cyst.** 30 to 50 + tender + cyclical + fluctuant."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 39 year old woman has a smooth, tender, mobile 2 cm lump in her right breast that has varied in size over two months. She is seen in the breast clinic.",
+      "q": "Which is the most appropriate initial imaging?",
+      "o": [
+        "Breast ultrasound",
+        "CT chest",
+        "Mammogram",
+        "MRI breast",
+        "PET-CT"
+      ],
+      "a": 0,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "'Initial imaging' for a suspected cyst."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "39 year old",
+            "smooth, tender, mobile",
+            "varied in size"
+          ],
+          "x": "Under 40, features of a **cyst**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Breast ultrasound**: shows a fluid-filled lesion."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "CT is for cancer staging."
+            ],
+            [
+              2,
+              "Mammograms are less useful in dense young breasts and cannot show fluid vs solid as well."
+            ],
+            [
+              3,
+              "MRI is for lobular cancer or high-risk screening."
+            ],
+            [
+              4,
+              "PET-CT is for metastases."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Breast ultrasound.**"
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 46 year old woman has a painful 3 cm lump in her right breast. Ultrasound shows a simple fluid-filled cyst with no solid component. The pain is stopping her sleeping on that side.",
+      "q": "Which is the most appropriate management?",
+      "o": [
+        "Core biopsy",
+        "Oral antibiotics",
+        "Reassurance only",
+        "Surgical excision",
+        "Ultrasound-guided fine needle aspiration"
+      ],
+      "a": 4,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Management of a confirmed cyst: symptomatic or not?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "painful 3 cm lump",
+            "simple fluid-filled cyst",
+            "no solid component"
+          ],
+          "x": "**Symptomatic** simple cyst."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Ultrasound-guided FNA** for symptom relief."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Biopsy is for solid or suspicious lesions."
+            ],
+            [
+              1,
+              "No infection."
+            ],
+            [
+              2,
+              "Reassurance alone is for asymptomatic cysts."
+            ],
+            [
+              3,
+              "Excision is not needed for a simple cyst."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**E. Ultrasound-guided FNA.**"
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 43 year old woman has a breast cyst aspirated. She asks what a breast cyst actually is and why it formed.",
+      "q": "Which is the most likely explanation of how breast cysts form?",
+      "o": [
+        "Clonal proliferation of ductal cells",
+        "Dilated, fluid-filled terminal ductal-lobular units in fibrocystic change",
+        "Infection of a blocked milk duct",
+        "Necrosis of fat after trauma",
+        "Retained milk after breastfeeding"
+      ],
+      "a": 1,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Pathophysiology of a breast cyst."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "43 year old",
+            "breast cyst aspirated"
+          ],
+          "x": "Typical age; benign cyst."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Dilated fluid-filled terminal ductal-lobular units**, part of fibrocystic change."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Clonal proliferation is a neoplasm."
+            ],
+            [
+              2,
+              "Infection of a blocked duct is mastitis or abscess."
+            ],
+            [
+              3,
+              "That is fat necrosis."
+            ],
+            [
+              4,
+              "That is a galactocele."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Dilated terminal ductal-lobular units.**"
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 45 year old woman has a tender lump in her right breast which she noticed a month ago. It becomes more painful before her period. There is a 2.5 cm smooth, well-defined, mobile lump at 10 o'clock. There is no skin change or lymphadenopathy. Her temperature is 36.8°C, pulse rate 76 bpm and BP 124/78 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Breast abscess",
+        "Breast cyst",
+        "Duct ectasia",
+        "Fibroadenoma",
+        "Invasive ductal carcinoma"
+      ],
+      "a": 1,
+      "e": "A smooth, mobile, tender, cyclical lump in a woman of 30 to 50 is a breast cyst. Fibroadenoma is non-tender and in younger women.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Breast lump diagnosis."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "45 year old",
+            "tender lump",
+            "more painful before her period",
+            "smooth, well-defined, mobile"
+          ],
+          "x": "Typical age, tender, cyclical, smooth and mobile."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Breast cyst**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "No fever, not breastfeeding, not red."
+            ],
+            [
+              2,
+              "Duct ectasia gives nipple discharge near the areola."
+            ],
+            [
+              3,
+              "Fibroadenoma is non-tender, in under-30s."
+            ],
+            [
+              4,
+              "Cancer is hard and fixed."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Breast cyst.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 38 year old woman has noticed a lump in her left breast that varies in size with her menstrual cycle. Her pulse rate is 70 bpm and BP 116/72 mmHg. Ultrasound later confirms a simple cyst.",
+      "visual": null,
+      "q": "Which is the most likely clinical finding on examination of the left breast?",
+      "o": [
+        "A hard, irregular, fixed mass with skin tethering",
+        "A non-tender, firm, rubbery, very mobile mass in the upper outer quadrant",
+        "A red, hot, tender area with fever",
+        "A smooth, well-defined, mobile, tender mass",
+        "An eczematous rash of the nipple"
+      ],
+      "a": 3,
+      "e": "A breast cyst is smooth, well-defined, mobile and often tender. A non-tender rubbery 'breast mouse' is a fibroadenoma.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Predict the examination finding for a cyst."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "varies in size with her menstrual cycle",
+            "simple cyst"
+          ],
+          "x": "Confirmed **simple cyst**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Smooth, well-defined, mobile, tender** mass."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "That is breast cancer."
+            ],
+            [
+              1,
+              "That is a fibroadenoma."
+            ],
+            [
+              2,
+              "That is mastitis or abscess."
+            ],
+            [
+              4,
+              "That is Paget's disease of the nipple."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Smooth, well-defined, mobile, tender mass.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 47 year old woman has several tender lumps in both breasts that come and go over a few months. Each is smooth and mobile. She has regular periods. There are no skin changes, nipple changes or axillary nodes. Her temperature is 36.5°C, pulse rate 68 bpm and BP 122/80 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Bilateral breast abscesses",
+        "Fat necrosis",
+        "Lobular carcinoma",
+        "Multiple breast cysts",
+        "Multiple fibroadenomas"
+      ],
+      "a": 3,
+      "e": "Cysts may be multiple and bilateral, are tender and fluctuate with hormones in premenopausal women aged 30 to 50.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis of several breast lumps."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "several tender lumps in both breasts",
+            "come and go",
+            "regular periods"
+          ],
+          "x": "Multiple, tender, fluctuating, premenopausal."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Multiple breast cysts**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Abscesses are hot and painful with fever."
+            ],
+            [
+              1,
+              "Fat necrosis is a single hard lump after trauma."
+            ],
+            [
+              2,
+              "Cancer does not come and go; it is hard and fixed."
+            ],
+            [
+              4,
+              "Fibroadenomas are non-tender and in younger women."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Multiple breast cysts.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 42 year old woman has a tender, smooth 2 cm lump in her right breast that is larger before each period. Her temperature is 36.6°C, pulse rate 70 bpm and BP 118/74 mmHg. Breast ultrasound is performed in the one-stop clinic.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely finding on the ultrasound?",
+      "o": [
+        "An anechoic, fluid-filled lesion",
+        "An irregular hypoechoic mass with posterior shadowing",
+        "Clustered microcalcifications",
+        "Diffuse skin thickening",
+        "Solid oval lesion with internal blood flow"
+      ],
+      "a": 0,
+      "e": "A breast cyst shows as a well-defined anechoic (black) fluid-filled lesion. An irregular shadowing mass suggests cancer; microcalcification is DCIS.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Predict the ultrasound appearance."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "42 year old",
+            "tender, smooth 2 cm lump",
+            "larger before each period"
+          ],
+          "x": "Typical age, tender, smooth, cyclical: a **cyst**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Anechoic fluid-filled lesion**: a simple cyst."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "That is the appearance of breast cancer."
+            ],
+            [
+              2,
+              "Microcalcification is a mammogram finding of DCIS."
+            ],
+            [
+              3,
+              "Skin thickening suggests inflammatory cancer or mastitis."
+            ],
+            [
+              4,
+              "A solid vascular oval lesion is a fibroadenoma."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Anechoic fluid-filled lesion.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 44 year old woman has a painful lump in her left breast aspirated under ultrasound guidance. The lump disappears completely after aspiration. Her pulse rate is 72 bpm and BP 118/70 mmHg.",
+      "labs": [
+        [
+          "Aspirate volume",
+          "6 mL",
+          "",
+          ""
+        ],
+        [
+          "Residual mass on ultrasound",
+          "None",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely appearance of the aspirate?",
+      "o": [
+        "Clear, straw-coloured fluid",
+        "Frank pus",
+        "Milky fluid",
+        "Thick fluid with solid fragments",
+        "Uniform blood"
+      ],
+      "a": 0,
+      "e": "A simple breast cyst gives clear (straw-coloured or greenish) fluid and the lump disappears. Thick or solid aspirate raises suspicion of malignancy.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Predict what comes out of the cyst."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "disappears completely after aspiration"
+          ],
+          "x": "Lump gone, no residual mass: a **simple cyst**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Clear fluid**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Pus means an abscess."
+            ],
+            [
+              2,
+              "Milky fluid means a galactocele."
+            ],
+            [
+              3,
+              "Thick or solid aspirate is suspicious and would not fit a lump that vanished."
+            ],
+            [
+              4,
+              "Uniform blood is not typical of a simple cyst."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Clear, straw-coloured fluid.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 36 year old woman has a tender lump in her right breast. She has not breastfed for 6 years. She is otherwise well. Over three months the lump has been larger and more painful just before each period and smaller afterwards.",
+      "visual": null,
+      "q": "Which feature most strongly supports a breast cyst?",
+      "o": [
+        "Age of 36",
+        "Cyclical change in size and tenderness",
+        "Last breastfed 6 years ago",
+        "Right-sided lump",
+        "Woman being otherwise well"
+      ],
+      "a": 1,
+      "e": "Cyclical change in size and tenderness is the classic cyst feature, reflecting oestrogen and progesterone fluctuation.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Which single feature best supports a cyst?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "larger and more painful just before each period",
+            "smaller afterwards"
+          ],
+          "x": "Size and tenderness follow the **cycle**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Cyclical change**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Age fits, but many lumps occur at 36."
+            ],
+            [
+              2,
+              "Not breastfeeding only makes a galactocele less likely."
+            ],
+            [
+              3,
+              "Side does not help."
+            ],
+            [
+              4,
+              "Being well fits many benign lumps."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Cyclical change in size and tenderness.**"
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 40 year old woman has a smooth, mobile, tender 2 cm lump in her left breast. She is seen in the breast clinic for triple assessment. Her pulse rate is 78 bpm and BP 126/80 mmHg.",
+      "visual": null,
+      "q": "Which is the most appropriate imaging investigation?",
+      "o": [
+        "Breast ultrasound",
+        "CT chest",
+        "Isotope bone scan",
+        "MRI breast",
+        "PET scan"
+      ],
+      "a": 0,
+      "e": "Ultrasound is the key imaging for a suspected breast cyst and shows a fluid-filled lesion.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Imaging for a suspected cyst."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "smooth, mobile, tender",
+            "triple assessment"
+          ],
+          "x": "Features of a **cyst**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Breast ultrasound**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "CT is for cancer staging."
+            ],
+            [
+              2,
+              "Bone scan is for bone metastases."
+            ],
+            [
+              3,
+              "MRI is for lobular cancer or high-risk screening."
+            ],
+            [
+              4,
+              "PET is for metastases."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Breast ultrasound.**"
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 43 year old woman has a painful, smooth 3 cm lump in her right breast. Ultrasound shows a well-defined fluid-filled lesion.",
+      "labs": [
+        [
+          "Breast ultrasound",
+          "3 cm anechoic lesion, no solid part",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which investigation will both confirm the diagnosis and relieve her symptoms?",
+      "o": [
+        "Core needle biopsy",
+        "Excision biopsy",
+        "Fine needle aspiration",
+        "Mammogram",
+        "MRI breast"
+      ],
+      "a": 2,
+      "e": "Fine needle aspiration confirms the cyst and decompresses it, relieving pain.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "A test that is also treatment."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "painful",
+            "fluid-filled lesion"
+          ],
+          "x": "A symptomatic **cyst**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Fine needle aspiration**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Core biopsy is for solid lesions."
+            ],
+            [
+              1,
+              "Excision is unnecessary surgery."
+            ],
+            [
+              3,
+              "A mammogram does not relieve symptoms."
+            ],
+            [
+              4,
+              "MRI does not relieve symptoms."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**C. FNA.** Confirms and treats."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 37 year old woman had a breast ultrasound for breast pain. It shows a 1 cm simple cyst in her left breast. She cannot feel it and it does not hurt. Her pulse rate is 66 bpm and BP 114/70 mmHg.",
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": [
+        "Core biopsy",
+        "Reassurance only",
+        "Repeat ultrasound every month",
+        "Surgical excision",
+        "Ultrasound-guided aspiration"
+      ],
+      "a": 1,
+      "e": "A simple asymptomatic cyst needs reassurance only. Aspiration is for symptomatic cysts.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Management of a simple cyst."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "1 cm simple cyst",
+            "She cannot feel it and it does not hurt"
+          ],
+          "x": "Simple and **asymptomatic**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Reassurance only**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Biopsy is for suspicious lesions."
+            ],
+            [
+              2,
+              "Monthly scans are unnecessary."
+            ],
+            [
+              3,
+              "Excision is not needed."
+            ],
+            [
+              4,
+              "Aspiration is for symptoms."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Reassurance only.**"
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 48 year old woman has a breast cyst aspirated. The aspirate is thick and a small solid area remains on repeat ultrasound. She has no family history of breast cancer.",
+      "labs": [
+        [
+          "Aspirate",
+          "Thick, with solid fragments",
+          "",
+          ""
+        ],
+        [
+          "Repeat ultrasound",
+          "8 mm residual solid component",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most appropriate next step?",
+      "o": [
+        "Discharge with reassurance",
+        "Further imaging and biopsy",
+        "Oral antibiotics",
+        "Repeat aspiration only",
+        "Review in 12 months"
+      ],
+      "a": 1,
+      "e": "Thick aspirate or a solid element raises suspicion of malignancy and needs further imaging and biopsy.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Next step after a worrying aspirate."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "thick",
+            "small solid area remains"
+          ],
+          "x": "**Suspicious** aspirate and residual mass."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Imaging and biopsy**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Not safe with suspicious features."
+            ],
+            [
+              2,
+              "Not an infection."
+            ],
+            [
+              3,
+              "Draining again does not sample the solid part."
+            ],
+            [
+              4,
+              "Delay could miss a cancer."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Further imaging and biopsy.**"
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 45 year old woman had a painful simple breast cyst aspirated 3 months ago. The fluid was clear and the lump disappeared. The cyst has come back and is painful again. Ultrasound shows a simple cyst with no solid component.",
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": [
+        "Mastectomy",
+        "Oral tamoxifen",
+        "Radiotherapy",
+        "Repeat aspiration with imaging follow-up",
+        "Wide local excision"
+      ],
+      "a": 3,
+      "e": "Recurrent symptomatic simple cysts are followed with imaging and repeat aspiration as needed.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Management of a recurrent cyst."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "has come back and is painful again",
+            "no solid component"
+          ],
+          "x": "**Recurrent, symptomatic, simple** cyst."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Repeat aspiration** and imaging follow-up."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Far too radical for a benign cyst."
+            ],
+            [
+              1,
+              "Tamoxifen is for ER-positive breast cancer."
+            ],
+            [
+              2,
+              "Radiotherapy is for cancer."
+            ],
+            [
+              4,
+              "Excision is not needed for a simple cyst."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Repeat aspiration with imaging follow-up.**"
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 46 year old woman has had several breast cysts over the past 2 years, each larger and more tender before her period. Her pulse rate is 70 bpm and BP 120/76 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely explanation for the cyclical change in her cysts?",
+      "o": [
+        "Cyclical oestrogen and progesterone changes",
+        "Cyclical prolactin surges",
+        "Increased testosterone",
+        "Recurrent bacterial infection",
+        "Thyroid hormone fluctuation"
+      ],
+      "a": 0,
+      "e": "Oestrogen and progesterone changes during the cycle drive fluctuation in cyst size and tenderness; hormonal swings peak perimenopausally.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Mechanism of a cyclical sign."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "several breast cysts",
+            "larger and more tender before her period"
+          ],
+          "x": "Changes track the **menstrual cycle**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Oestrogen and progesterone** fluctuation."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Prolactin drives milk production, as in galactocele."
+            ],
+            [
+              2,
+              "Testosterone is not the driver."
+            ],
+            [
+              3,
+              "Infection would cause fever and redness."
+            ],
+            [
+              4,
+              "Thyroid hormone does not vary with the cycle like this."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Cyclical oestrogen and progesterone changes.**"
+        }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is a breast cyst and who gets one?",
+        "tip": "Exam thinking: the age in the stem is a big clue.",
+        "points": [
+          {
+            "p": "Benign fluid-filled sac, part of fibrocystic change",
+            "k": [
+              [
+                "fluid"
+              ]
+            ],
+            "why": "Not cancer."
+          },
+          {
+            "p": "Overgrowth of glandular/connective tissue blocks ducts, fluid collects",
+            "k": [
+              [
+                "block",
+                "duct"
+              ]
+            ],
+            "why": "Explains the formation."
+          },
+          {
+            "p": "Women aged 30 to 50, premenopausal",
+            "k": [
+              [
+                "30",
+                "40",
+                "50",
+                "premenopaus",
+                "perimenopaus"
+              ]
+            ],
+            "why": "Peak perimenopausally."
+          },
+          {
+            "p": "Linked to hormonal fluctuation",
+            "k": [
+              [
+                "hormon",
+                "oestrogen",
+                "estrogen"
+              ]
+            ],
+            "why": "Less common after menopause."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does a breast cyst present and feel?",
+        "tip": "Exam thinking: tender + cyclical separates it from fibroadenoma.",
+        "points": [
+          {
+            "p": "Smooth, well-defined, mobile lump",
+            "k": [
+              [
+                "smooth",
+                "well-defined",
+                "well defined",
+                "mobile"
+              ]
+            ],
+            "why": "A fibroadenoma is also smooth and mobile."
+          },
+          {
+            "p": "Often tender, with breast pain",
+            "k": [
+              [
+                "tender",
+                "pain",
+                "sore"
+              ]
+            ],
+            "why": "Fibroadenomas are usually non-tender."
+          },
+          {
+            "p": "Size fluctuates with the menstrual cycle",
+            "k": [
+              [
+                "cycle",
+                "period",
+                "menstru"
+              ]
+            ],
+            "why": "Hormone-driven."
+          },
+          {
+            "p": "May be multiple",
+            "k": [
+              [
+                "multiple",
+                "several",
+                "bilateral"
+              ]
+            ],
+            "why": "Part of fibrocystic change."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What is the key differential after breastfeeding, and what are the red flags for cancer?",
+        "tip": "Exam thinking: read the breastfeeding history and the feel of the lump.",
+        "points": [
+          {
+            "p": "Galactocele: recently stopped breastfeeding, mobile, cyst-like",
+            "k": [
+              [
+                "galactocele"
+              ]
+            ],
+            "why": "Milk-filled cyst."
+          },
+          {
+            "p": "Red flags: skin changes",
+            "k": [
+              [
+                "skin",
+                "peau",
+                "tether",
+                "dimpl"
+              ]
+            ],
+            "why": "Prompt urgent referral."
+          },
+          {
+            "p": "Hard, irregular mass",
+            "k": [
+              [
+                "hard",
+                "irregular",
+                "fixed"
+              ]
+            ],
+            "why": "Cysts are smooth and fluctuant."
+          },
+          {
+            "p": "Lymphadenopathy",
+            "k": [
+              [
+                "lymph",
+                "node",
+                "axilla"
+              ]
+            ],
+            "why": "Suggests cancer."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How do you tell a breast cyst from a fibroadenoma?",
+        "tip": "Exam thinking: age and tenderness.",
+        "points": [
+          {
+            "p": "Cyst: 30 to 50; fibroadenoma: under 30",
+            "k": [
+              [
+                "30"
+              ]
+            ],
+            "why": "Age is the first discriminator."
+          },
+          {
+            "p": "Cyst: tender, fluctuant; fibroadenoma: non-tender, firm, rubbery",
+            "k": [
+              [
+                "tender"
+              ],
+              [
+                "rubbery",
+                "firm",
+                "non-tender"
+              ]
+            ],
+            "why": "Fibroadenoma is the 'breast mouse'."
+          },
+          {
+            "p": "Cyst varies with the cycle",
+            "k": [
+              [
+                "cycle",
+                "period",
+                "menstru"
+              ]
+            ],
+            "why": "Fibroadenomas stay much the same."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is the gold-standard investigation and what does it show?",
+        "tip": "Exam thinking: ultrasound separates fluid from solid.",
+        "points": [
+          {
+            "p": "Ultrasound plus aspiration is the gold standard",
+            "k": [
+              [
+                "ultrasound",
+                "uss"
+              ],
+              [
+                "aspirat",
+                "fna"
+              ]
+            ],
+            "why": "Part of triple assessment."
+          },
+          {
+            "p": "Ultrasound shows a fluid-filled lesion",
+            "k": [
+              [
+                "fluid",
+                "anechoic"
+              ]
+            ],
+            "why": "Well-defined, thin-walled, no solid part."
+          },
+          {
+            "p": "FNA confirms the diagnosis and relieves symptoms",
+            "k": [
+              [
+                "fna",
+                "fine needle",
+                "aspirat"
+              ]
+            ],
+            "why": "Diagnostic and therapeutic."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is a breast cyst managed, from simple to suspicious?",
+        "tip": "Exam thinking: symptoms decide aspiration; aspirate decides biopsy.",
+        "points": [
+          {
+            "p": "Simple asymptomatic cyst: reassurance only",
+            "k": [
+              [
+                "reassur"
+              ]
+            ],
+            "why": "No intervention needed."
+          },
+          {
+            "p": "Symptomatic cyst: ultrasound-guided FNA",
+            "k": [
+              [
+                "fna",
+                "aspirat",
+                "fine needle"
+              ]
+            ],
+            "why": "Relieves pain."
+          },
+          {
+            "p": "Recurrent symptomatic cysts: follow-up imaging ± repeat aspiration",
+            "k": [
+              [
+                "recur",
+                "repeat",
+                "follow"
+              ]
+            ],
+            "why": "Not surgery."
+          },
+          {
+            "p": "Thick or solid aspirate or suspicious findings: imaging and biopsy",
+            "k": [
+              [
+                "biopsy"
+              ]
+            ],
+            "why": "Raises suspicion of malignancy."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "Which aspirate findings are reassuring and which are suspicious?",
+        "tip": "Exam thinking: what is left after drainage matters.",
+        "points": [
+          {
+            "p": "Clear fluid and the lump disappears: benign, follow up",
+            "k": [
+              [
+                "clear"
+              ]
+            ],
+            "why": "Monitor for recurrence."
+          },
+          {
+            "p": "Thick aspirate: suspicious",
+            "k": [
+              [
+                "thick"
+              ]
+            ],
+            "why": "Needs imaging and biopsy."
+          },
+          {
+            "p": "Solid elements or residual mass: suspicious",
+            "k": [
+              [
+                "solid",
+                "residual"
+              ]
+            ],
+            "why": "Biopsy the solid part."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do breast cysts form, change with the cycle and peak perimenopausally?",
+        "tip": "Exam thinking: it all comes back to hormones.",
+        "points": [
+          {
+            "p": "Dilated, fluid-filled terminal ductal-lobular units",
+            "k": [
+              [
+                "terminal",
+                "lobular",
+                "tdlu"
+              ]
+            ],
+            "why": "Part of benign fibrocystic change."
+          },
+          {
+            "p": "Cyclical oestrogen and progesterone change drives size and tenderness",
+            "k": [
+              [
+                "oestrogen",
+                "estrogen",
+                "progesterone"
+              ]
+            ],
+            "why": "Bigger before a period."
+          },
+          {
+            "p": "Hormonal fluctuation greatest perimenopausally; fewer after menopause",
+            "k": [
+              [
+                "perimenopaus",
+                "menopaus"
+              ]
+            ],
+            "why": "Explains the age peak."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does aspiration help both diagnosis and treatment?",
+        "tip": "Exam thinking: decompression and the character of the fluid.",
+        "points": [
+          {
+            "p": "Decompresses the cyst and relieves pain",
+            "k": [
+              [
+                "decompress",
+                "relieve",
+                "relief",
+                "drain"
+              ]
+            ],
+            "why": "Therapeutic."
+          },
+          {
+            "p": "Character of the aspirate separates benign from suspicious",
+            "k": [
+              [
+                "clear",
+                "thick",
+                "character",
+                "solid"
+              ]
+            ],
+            "why": "Clear vs thick or solid."
+          }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "Breast cyst": "Benign fluid-filled sac in breast tissue, common in women aged 30 to 50.",
+    "Simple cyst": "Thin-walled, fluid-only cyst with no solid part on ultrasound; benign.",
+    "Fibrocystic change": "Benign hormone-related lumpiness and cysts in the breast.",
+    "Terminal ductal-lobular unit": "The milk-producing lobule and its small duct, where cysts form.",
+    "Galactocele": "Milk-filled cyst in a woman who has recently stopped breastfeeding.",
+    "Fibroadenoma": "Benign firm, rubbery, very mobile, non-tender lump in young women.",
+    "Breast mouse": "Nickname for a fibroadenoma because it slips away under the fingers.",
+    "Fluctuant": "Feels like fluid under pressure when pressed.",
+    "Mobile": "Moves freely under the skin and over deeper tissue.",
+    "Well-defined": "Has clear, smooth edges.",
+    "Premenopausal": "Still having periods, before the menopause.",
+    "Perimenopause": "The years around the menopause when hormone levels swing most.",
+    "Luteal phase": "Second half of the menstrual cycle, after ovulation, when progesterone is high.",
+    "Oestrogen": "Main female sex hormone; stimulates breast glandular tissue.",
+    "Progesterone": "Hormone of the luteal phase that also acts on breast tissue.",
+    "Triple assessment": "Clinical examination, imaging and needle sampling of a breast lump.",
+    "Breast ultrasound": "Imaging with sound waves; shows whether a lump is fluid or solid.",
+    "Anechoic": "Black on ultrasound because it contains fluid that reflects no echoes.",
+    "Posterior acoustic enhancement": "Bright area behind a fluid-filled lesion on ultrasound.",
+    "FNA": "Fine needle aspiration: drawing fluid or cells out with a thin needle.",
+    "Fine needle aspiration": "Thin needle draws out cyst fluid or cells; confirms and treats a cyst.",
+    "Aspirate": "The fluid or cells drawn out by a needle.",
+    "Aspiration": "Draining fluid with a needle and syringe.",
+    "Ultrasound-guided": "Using ultrasound to place the needle accurately.",
+    "Core biopsy": "Wider needle sample of tissue for histology.",
+    "Residual mass": "A lump still present after a cyst has been drained; needs biopsy.",
+    "Red flags": "Features suggesting cancer: skin changes, hard irregular mass, lymphadenopathy.",
+    "Lymphadenopathy": "Enlarged lymph nodes, such as in the axilla.",
+    "Skin tethering": "Skin pulled inwards over a lump, a sign of cancer.",
+    "One-stop clinic": "Breast clinic where examination, imaging and biopsy happen in one visit.",
+    "Breast abscess": "Collection of pus in the breast, usually when breastfeeding, with fever."
+  }
+}

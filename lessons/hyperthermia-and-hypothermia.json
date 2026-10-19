@@ -1,0 +1,2155 @@
+{
+ "id": "hyperthermia-and-hypothermia",
+ "patient": {
+  "name": "Harold Fenwick",
+  "age": 82,
+  "sex": "M",
+  "setting": "Emergency Department resuscitation bay",
+  "complaint": "Found on his kitchen floor in January after lying there overnight; cold and barely responsive",
+  "background": [
+   "Lives alone in Hackney; widowed",
+   "Hypertension; mild Parkinson's disease",
+   "Heating broken for a week, according to his neighbour",
+   "Two falls in the past six months"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an older person found cold (hypothermia, bradycardia, J waves) or a young exerting person or drug user who is hot and confused (heat stroke, MDMA). Heat exhaustion and infection are the classic distractors.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Harold, 82, found by his neighbour on the **kitchen floor**.",
+      "He fell last night; the house is freezing.",
+      "Skin **ice-cold**; he has stopped shivering.",
+      "He groans but does not answer questions."
+     ],
+     "vitals": {
+      "T": "27.4°C (oesophageal)",
+      "HR": "36 bpm",
+      "BP": "78/42 mmHg",
+      "RR": "7 /min",
+      "SpO2": "Unrecordable",
+      "GCS": "8",
+      "CBG": "6.2 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Harold's core temperature of 27.4°C is well **below 35°C**: hypothermia. Hyperthermia is the opposite failure, not the same as a fever."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Harold is **elderly, frail**, lives alone and was exposed to cold: the classic hypothermia patient. A young runner collapsing in heat is the hyperthermia mirror."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Core temperature",
+      "min": 24,
+      "max": 43,
+      "unit": "°C",
+      "bands": [
+       [
+        24,
+        28,
+        "Severe hypothermia (<28): ECMO",
+        "bad"
+       ],
+       [
+        28,
+        35,
+        "Hypothermia (<35)",
+        "warn"
+       ],
+       [
+        35,
+        37.5,
+        "Normal",
+        "ok"
+       ],
+       [
+        37.5,
+        40,
+        "Raised",
+        "warn"
+       ],
+       [
+        40,
+        43,
+        "Heat stroke (>40 + CNS)",
+        "bad"
+       ]
+      ],
+      "value": 27.4,
+      "label": "Harold 27.4",
+      "caption": "Two cut-offs to learn: hypothermia is **below 35°C** and severe below **28°C**; heat stroke is **above 40°C** with CNS dysfunction."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Harold has the **severe** features: bradycardia, reduced consciousness and slow breathing. He no longer shivers, a bad sign."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Harold's rhythm strip",
+      "layout": "strip",
+      "rhythm": "sinus_brady",
+      "rate": 36,
+      "caption": "Sinus bradycardia at 36 bpm with a long QT. Look for the extra hump at the end of each QRS: the **J (Osborn) wave**."
+     },
+     "text": "Harold's monitor shows a slow sinus rhythm with J waves."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Harold's ECG shows the hypothermia triad: **bradycardia, long QT and J waves**. In a heatwave, the signature would be heat stroke: above 40°C with confusion."
+    },
+    {
+     "type": "compare",
+     "title": "Hypothermia vs heat stroke",
+     "head": [
+      "Feature",
+      "Hypothermia",
+      "Heat stroke"
+     ],
+     "rows": [
+      [
+       "Core temp",
+       "Below 35°C (severe <28°C)",
+       "Above 40°C"
+      ],
+      [
+       "Who",
+       "Elderly, frail, exposed",
+       "Young exerting; elderly in heatwaves"
+      ],
+      [
+       "Skin",
+       "Cold",
+       "Hot and dry, no sweating"
+      ],
+      [
+       "Pulse",
+       "Bradycardia when severe",
+       "Tachycardia"
+      ],
+      [
+       "Danger",
+       "VF, arrhythmias",
+       "Seizures, rhabdomyolysis, multi-organ failure"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Harold is cold, not hot. But a hot, agitated young person with **dilated pupils and brisk reflexes** and no heat exposure suggests MDMA or serotonin syndrome."
+    },
+    {
+     "type": "trap",
+     "text": "**Heat exhaustion** is below 40°C with a normal mental state and sweating. Confusion, seizures or absent sweating with a core temperature above 40°C means **heat stroke**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate method of measuring temperature?' (a core probe, not tympanic or oral) and first-line bloods: U&Es and glucose in both, plus CK in hyperthermia for rhabdomyolysis.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "The tympanic thermometer reads 'LO'. How should Harold's temperature be measured?",
+     "o": [
+      "Axillary thermometer",
+      "Core oesophageal probe",
+      "Oral thermometer",
+      "Repeat tympanic reading"
+     ],
+     "a": 1,
+     "r": "A **core probe** (oesophageal) is the gold standard. Peripheral thermometers are unreliable at extremes of temperature."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Harold's 27.4°C came from an **oesophageal probe**, the gold standard. Standard ward thermometers often cannot read this low."
+    },
+    {
+     "type": "labs",
+     "title": "Harold's bloods",
+     "rows": [
+      [
+       "Sodium",
+       "141 mmol/L",
+       "135–145",
+       ""
+      ],
+      [
+       "Potassium",
+       "4.9 mmol/L",
+       "3.5–5.3",
+       ""
+      ],
+      [
+       "Urea",
+       "12.8 mmol/L",
+       "2.5–7.8",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "134 µmol/L",
+       "60–110",
+       "H"
+      ],
+      [
+       "Glucose",
+       "6.2 mmol/L",
+       "4.0–7.8",
+       ""
+      ],
+      [
+       "CK",
+       "1450 U/L",
+       "<200",
+       "H"
+      ]
+     ],
+     "text": "Mild AKI and a raised CK from lying on the floor. Glucose is normal, so hypoglycaemia is not the cause of his drowsiness."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Harold's **U&Es and glucose** come first. His CK is up from a long lie; in hyperthermia, CK is checked routinely for rhabdomyolysis."
+    },
+    {
+     "type": "flow",
+     "title": "Investigating a temperature emergency",
+     "nodes": [
+      "Core temperature (oesophageal probe)",
+      "Glucose at the bedside",
+      "U&Es in both",
+      "CK in hyperthermia (rhabdomyolysis)",
+      "ECG and cardiac monitoring"
+     ],
+     "caption": "Measure the core, check the glucose, watch the heart."
+    },
+    {
+     "type": "pearl",
+     "text": "A long lie on the floor raises CK in hypothermia too. Always ask: how long was the patient down?"
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': passive rewarming for mild hypothermia, active rewarming for severe, **ECMO** below 28°C with instability, and **rapid active cooling** for heat stroke. Know the 3-shock rule in hypothermic arrest.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Harold is far too cold for blankets alone: he needs **active rewarming** with warmed IV fluids and a forced-air blanket while the team calls for help."
+    },
+    {
+     "type": "ask",
+     "q": "Harold is 27.4°C, bradycardic, hypotensive and GCS 8. Which is the most appropriate rewarming?",
+     "o": [
+      "Hot water bottles at home",
+      "Passive rewarming with blankets",
+      "Venoarterial ECMO",
+      "Warm oral drinks"
+     ],
+     "a": 2,
+     "r": "Below **28°C** with impaired consciousness, bradycardia and hypotension: **ECMO** for circulatory support and rapid internal rewarming."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Harold meets every ECMO criterion. If ECMO were not available, **peritoneal lavage with warmed saline** is the fallback."
+    },
+    {
+     "type": "story",
+     "points": [
+      "While the ECMO team is called, Harold's monitor changes.",
+      "No pulse: the rhythm is **ventricular fibrillation**.",
+      "CPR starts; the first shock is delivered."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Harold arrests",
+      "layout": "strip",
+      "rhythm": "vf",
+      "caption": "VF in a 27°C heart: shocks often fail until the myocardium is warmer."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Harold gets **3 shocks**, then CPR continues with rewarming; no more shocks until he reaches **30°C**. As he warms, watch for **distributive shock**."
+    },
+    {
+     "type": "flow",
+     "title": "Hypothermic cardiac arrest",
+     "nodes": [
+      "Confirm arrest; start CPR",
+      "VF or pulseless VT: up to 3 shocks",
+      "Still in VF below 30°C → no more shocks",
+      "Continue CPR and active rewarming (ECMO)",
+      "Shock again once core temp reaches 30°C"
+     ],
+     "caption": "Nobody is dead until they are warm and dead."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Harold on ECMO: rewarming",
+      "x": [
+       "0 h",
+       "1 h",
+       "2 h",
+       "3 h",
+       "4 h"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Core temp (°C)",
+        "values": [
+         27.4,
+         29.1,
+         31.0,
+         33.2,
+         35.0
+        ]
+       },
+       {
+        "name": "Mean arterial pressure (mmHg)",
+        "values": [
+         54,
+         66,
+         58,
+         52,
+         64
+        ]
+       }
+      ],
+      "caption": "As Harold warms, his vessels dilate and his BP dips (**rewarming shock**). Warmed fluids and support pull him through."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Harold's arrest follows **Resuscitation Council UK** guidance: maximum 3 shocks below 30°C, then rewarm before trying again."
+    },
+    {
+     "type": "pearl",
+     "text": "Heat stroke is the mirror image: **rapid active cooling** first (ice packs to groin, axillae and neck, cold water immersion, fans and spray), plus fluids."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: the hypothalamus as thermostat, why cold hearts resist defibrillation, what the J wave is, why heat stroke causes organ failure, why rewarming drops the BP and how serotonin syndrome makes heat.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Harold's **hypothalamus** could not keep up: in a freezing house, his shivering and metabolism made less heat than he lost."
+    },
+    {
+     "type": "flow",
+     "title": "Hypothalamic thermostat",
+     "nodes": [
+      "Core temperature sensed by hypothalamus",
+      "Too cold → shivering, vasoconstriction, more metabolism",
+      "Too hot → sweating, vasodilation",
+      "Elderly, drugs, alcohol, frailty blunt these responses",
+      "Responses fail → hypothermia or hyperthermia"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Harold's cold heart conducted slowly (bradycardia, long QT), showed **J waves**, and then went into **VF** that resisted shocks until he warmed."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Had Harold overheated instead, loss of sweating would let his temperature climb until **proteins denature**, muscle breaks down and organs fail."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Harold's BP dipped on rewarming because his cold-constricted vessels **dilated** before his heart could raise its output: rewarming shock."
+    },
+    {
+     "type": "ask",
+     "q": "Why did Harold's BP fall as he warmed up?",
+     "o": [
+      "Bleeding from the ECMO cannula",
+      "Hypoglycaemia",
+      "Peripheral vasodilation without a rise in cardiac output",
+      "Pulmonary embolism"
+     ],
+     "a": 2,
+     "r": "**Rewarming shock**: vessels dilate faster than cardiac output rises, causing distributive shock."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Unlike Harold's environmental cold, **serotonin syndrome** makes heat from inside: excess serotonin drives muscle activity and metabolic heat."
+    },
+    {
+     "type": "pearl",
+     "text": "Heat stroke comes from **outside heat** overwhelming loss mechanisms; serotonin syndrome and MDMA make **extra heat** from overactive muscle."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which core temperature defines hypothermia?",
+   "o": [
+    "Below 32°C",
+    "Below 35°C",
+    "Below 36°C",
+    "Below 37°C"
+   ],
+   "a": 1,
+   "r": "Hypothermia is a core temperature **below 35°C**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which defines heat stroke?",
+   "o": [
+    "Core temp above 38°C with sweating",
+    "Core temp above 40°C with CNS dysfunction",
+    "Core temp above 39°C with a rash",
+    "Fever with a raised CRP"
+   ],
+   "a": 1,
+   "r": "Heat stroke: **above 40°C with CNS dysfunction**, hot dry skin and no sweating."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which ECG finding is classic in hypothermia?",
+   "o": [
+    "Delta waves",
+    "J (Osborn) waves",
+    "Peaked T waves",
+    "S1Q3T3"
+   ],
+   "a": 1,
+   "r": "**J (Osborn) waves**, with bradycardia and a long QT."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which group is most prone to hypothermia?",
+   "o": [
+    "Elderly people",
+    "Pregnant women",
+    "Teenagers",
+    "Young athletes"
+   ],
+   "a": 0,
+   "r": "**Elderly** people; young active people are more prone to hyperthermia."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard method to measure core temperature?",
+   "o": [
+    "Axillary thermometer",
+    "Oesophageal probe",
+    "Oral thermometer",
+    "Tympanic thermometer"
+   ],
+   "a": 1,
+   "r": "A **core probe** such as an oesophageal probe."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test is added in hyperthermia to look for rhabdomyolysis?",
+   "o": [
+    "Amylase",
+    "Creatine kinase",
+    "Ferritin",
+    "Troponin"
+   ],
+   "a": 1,
+   "r": "**CK**, alongside U&Es and glucose."
+  },
+  {
+   "d": "management",
+   "q": "What is the first-line management of heat stroke?",
+   "o": [
+    "Dantrolene",
+    "Oral paracetamol",
+    "Rapid active cooling",
+    "Rest in a cool room only"
+   ],
+   "a": 2,
+   "r": "**Rapid active cooling**: ice packs, cold water immersion, fans and spray, with fluids."
+  },
+  {
+   "d": "management",
+   "q": "How many shocks are given in hypothermic VF before rewarming to 30°C?",
+   "o": [
+    "1",
+    "3",
+    "5",
+    "Unlimited"
+   ],
+   "a": 1,
+   "r": "A maximum of **3 shocks**, then rewarm to **30°C** before further shocks."
+  },
+  {
+   "d": "management",
+   "q": "Severe hypothermia below 28°C with bradycardia and hypotension is best treated with?",
+   "o": [
+    "ECMO",
+    "Passive rewarming",
+    "Transcutaneous pacing",
+    "Warm bath"
+   ],
+   "a": 0,
+   "r": "**ECMO** gives circulatory support and rapid internal rewarming."
+  },
+  {
+   "d": "science",
+   "q": "Why can rapid rewarming cause shock?",
+   "o": [
+    "Hyperkalaemia",
+    "Hypoglycaemia",
+    "Myocardial infarction",
+    "Peripheral vasodilation"
+   ],
+   "a": 3,
+   "r": "**Peripheral vasodilation** without a matching rise in cardiac output: distributive shock."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "An 86 year old woman is found at home during a summer heatwave. Her flat has no fan and the windows are shut. She is confused and has had a seizure. Her temperature is 40.9°C, pulse rate 128 bpm and BP 96/58 mmHg. Her skin is hot and dry. There is no neck stiffness and her chest is clear.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Heat exhaustion",
+    "Heat stroke",
+    "Meningitis",
+    "Sepsis",
+    "Serotonin syndrome"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis in a hot, confused older woman: separate heat stroke from exhaustion and infection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "summer heatwave",
+      "confused and has had a seizure",
+      "temperature is 40.9°C",
+      "hot and dry",
+      "no neck stiffness and her chest is clear"
+     ],
+     "x": "Above 40°C with CNS dysfunction and no sweating, after heat exposure, with no infective source."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Heat stroke**. Older adults lose heat poorly and feel less thirst."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Heat exhaustion is below 40°C with a normal mental state and sweating."
+      ],
+      [
+       2,
+       "No neck stiffness and a clear heat exposure."
+      ],
+      [
+       3,
+       "No source of infection; heat exposure explains it."
+      ],
+      [
+       4,
+       "No serotonergic drugs, tremor or clonus are described."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Heat stroke.** Rule: above 40°C + CNS dysfunction + hot dry skin = heat stroke."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 79 year old man is brought in after being found in his garden on a frosty morning. His core temperature is 31.8°C. He is drowsy and confused. His pulse rate is 48 bpm and BP 104/62 mmHg. He is being rewarmed and attached to a cardiac monitor.",
+   "q": "Which is the most appropriate initial blood test?",
+   "o": [
+    "Blood cultures",
+    "Blood glucose and U&Es",
+    "Creatine kinase",
+    "Thyroid function tests",
+    "Troponin"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "First-line bloods in hypothermia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "frosty morning",
+      "core temperature is 31.8°C",
+      "drowsy and confused",
+      "pulse rate is 48 bpm"
+     ],
+     "x": "Environmental hypothermia, drowsy: rule out hypoglycaemia and check the electrolytes."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Glucose and U&Es**: first-line in both hypothermia and hyperthermia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No sign of infection; cultures are not first-line here."
+      ],
+      [
+       2,
+       "CK is added in hyperthermia, not first-line here."
+      ],
+      [
+       3,
+       "TFTs can come later if no exposure explains it; here the cause is clear."
+      ],
+      [
+       4,
+       "Troponin does not guide first steps in exposure hypothermia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: U&Es and glucose in both; add CK in hyperthermia."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old woman is found in her cold flat after a fall. Her core temperature is 34.1°C. She is shivering, alert and talking. Her pulse rate is 72 bpm and BP 132/78 mmHg. Her ECG shows sinus rhythm.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Extracorporeal membrane oxygenation",
+    "Intravenous atropine",
+    "Passive external rewarming with blankets",
+    "Peritoneal lavage with warmed saline",
+    "Warmed intravenous fluids alone"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: grade the hypothermia first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "core temperature is 34.1°C",
+      "shivering, alert and talking",
+      "BP 132/78 mmHg"
+     ],
+     "x": "Mild hypothermia: still shivering, alert, stable."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Passive external rewarming** with blankets in a warm room."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "ECMO is for severe hypothermia below 28°C with instability."
+      ],
+      [
+       1,
+       "Her heart rate is normal."
+      ],
+      [
+       3,
+       "Lavage is a fallback for severe hypothermia when ECMO is unavailable."
+      ],
+      [
+       4,
+       "IV fluids are not needed alone in a stable, mild case."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Rule: mild = passive; severe = active; below 28°C and unstable = ECMO."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 68 year old man is pulled from a freezing river. His core temperature is 26.9°C and he is in ventricular fibrillation. Three shocks have failed to restore a rhythm. His pads are correctly placed and his potassium is 4.6 mmol/L.",
+   "q": "Which is the most likely explanation for the failed defibrillation?",
+   "o": [
+    "Cold myocardium is refractory until rewarmed",
+    "Hyperkalaemia",
+    "Hypoglycaemia",
+    "Incorrect pad position",
+    "Tension pneumothorax"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why the shocks are not working."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "freezing river",
+      "core temperature is 26.9°C",
+      "Three shocks have failed",
+      "pads are correctly placed",
+      "potassium is 4.6 mmol/L"
+     ],
+     "x": "Severe hypothermia; other causes are removed from the stem."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Hypothermic VF is often **refractory to defibrillation until the core temperature rises**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Potassium is normal."
+      ],
+      [
+       2,
+       "No glucose is given and hypoglycaemia does not stop defibrillation working."
+      ],
+      [
+       3,
+       "The pads are correctly placed."
+      ],
+      [
+       4,
+       "No chest injury or signs are described."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: 3 shocks, then rewarm to 30°C before shocking again."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "An 84 year old woman is found on her bedroom floor by her carer in December. She lives alone and the heating is off. She is drowsy and confused. Her temperature is 31.2°C (oesophageal), pulse rate 46 bpm and BP 102/60 mmHg. Pupils are equal and reactive. There is no head injury.",
+   "labs": [
+    [
+     "Capillary glucose",
+     "5.9 mmol/L",
+     "4.0–7.8",
+     ""
+    ],
+    [
+     "Sodium",
+     "139 mmol/L",
+     "135–145",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hypoglycaemia",
+    "Hypothermia",
+    "Opioid toxicity",
+    "Septic shock",
+    "Subdural haematoma"
+   ],
+   "a": 1,
+   "e": "Core temperature below 35°C with bradycardia and confusion in a frail woman exposed to cold is hypothermia. Normal glucose and pupils, and no head injury, remove the mimics.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a drowsy older person found on the floor."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "lives alone and the heating is off",
+      "drowsy and confused",
+      "temperature is 31.2°C",
+      "pulse rate 46 bpm",
+      "Pupils are equal and reactive",
+      "no head injury"
+     ],
+     "x": "Cold exposure, core below 35°C, bradycardia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hypothermia**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Glucose is 5.9 mmol/L."
+      ],
+      [
+       2,
+       "Opioids give pinpoint pupils; hers are normal."
+      ],
+      [
+       3,
+       "Sepsis can cause a low temperature, but exposure and bradycardia explain this."
+      ],
+      [
+       4,
+       "No head injury or focal signs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: below 35°C core = hypothermia; look for exposure and frailty."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 23 year old army recruit collapses near the end of a 15 km march on a hot day. He is agitated and confused and stops sweating. His temperature is 41.3°C (rectal), pulse rate 142 bpm and BP 92/50 mmHg. His skin is hot and dry. He takes no medication or drugs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bacterial meningitis",
+    "Heat exhaustion",
+    "Heat stroke",
+    "Neuroleptic malignant syndrome",
+    "Thyroid storm"
+   ],
+   "a": 2,
+   "e": "Exertional heat with a core temperature above 40°C, confusion and absent sweating is heat stroke. Heat exhaustion has a normal mental state and a temperature below 40°C.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a hot, confused young man after exertion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "15 km march on a hot day",
+      "agitated and confused",
+      "stops sweating",
+      "41.3°C",
+      "hot and dry",
+      "no medication or drugs"
+     ],
+     "x": "Above 40°C + CNS dysfunction + no sweating, exertional."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Heat stroke**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Sudden onset during exertion in heat; no meningism or rash."
+      ],
+      [
+       1,
+       "Heat exhaustion has a normal mental state, sweating and a temperature under 40°C."
+      ],
+      [
+       3,
+       "NMS needs an antipsychotic; he takes none."
+      ],
+      [
+       4,
+       "No thyroid history; exertion in heat explains it."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Rule: confusion decides heat stroke over heat exhaustion."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 77 year old man is found outside after a night in sub-zero temperatures. His core temperature is 29.6°C. His pulse rate is 40 bpm and BP 96/54 mmHg. An ECG is recorded. ECG (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "12-lead ECG",
+    "layout": "12lead",
+    "rhythm": "sinus_brady",
+    "rate": 40,
+    "caption": "Sinus bradycardia at 40 bpm with a prolonged QT interval."
+   },
+   "q": "Which is the most likely additional finding on his ECG?",
+   "o": [
+    "Delta waves",
+    "J (Osborn) waves",
+    "S1Q3T3 pattern",
+    "Saddle-shaped ST elevation",
+    "U waves"
+   ],
+   "a": 1,
+   "e": "Hypothermia classically gives bradycardia, a long QT and J (Osborn) waves at the end of the QRS. U waves suggest hypokalaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The most likely ECG finding in hypothermia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "night in sub-zero temperatures",
+      "core temperature is 29.6°C",
+      "pulse rate is 40 bpm"
+     ],
+     "x": "Hypothermia with bradycardia on the ECG."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**J (Osborn) waves**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Delta waves are Wolff-Parkinson-White."
+      ],
+      [
+       2,
+       "S1Q3T3 is a (rare) sign of pulmonary embolism."
+      ],
+      [
+       3,
+       "Saddle-shaped ST elevation is pericarditis."
+      ],
+      [
+       4,
+       "U waves suggest hypokalaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: hypothermia ECG = bradycardia, long QT, J waves."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 20 year old man is brought from a music festival. He is agitated and sweating with a jaw tremor. His temperature is 40.2°C, pulse rate 136 bpm and BP 158/92 mmHg. His pupils are dilated and his reflexes are brisk with clonus. It is a cool evening and he has not been exerting himself.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his hyperthermia?",
+   "o": [
+    "Alcohol withdrawal",
+    "Bacterial meningitis",
+    "Environmental heat stroke",
+    "MDMA toxicity",
+    "Thyrotoxicosis"
+   ],
+   "a": 3,
+   "e": "Hyperthermia with confusion, tremor, brisk reflexes and dilated pupils without heat exposure suggests MDMA toxicity (serotonergic).",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The cause of hyperthermia: is it outside heat or internal?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "music festival",
+      "jaw tremor",
+      "temperature is 40.2°C",
+      "pupils are dilated",
+      "reflexes are brisk with clonus",
+      "cool evening"
+     ],
+     "x": "Serotonergic features; no environmental heat."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**MDMA toxicity**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Withdrawal needs a drinking history and causes tremor, not clonus with dilated pupils at a festival."
+      ],
+      [
+       1,
+       "No headache, neck stiffness or rash."
+      ],
+      [
+       2,
+       "A cool evening and no exertion: not environmental."
+      ],
+      [
+       4,
+       "No thyroid history; clonus and dilated pupils point to a drug."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: hyperthermia without heat exposure + brisk reflexes + big pupils = MDMA or serotonin syndrome."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 88 year old woman is brought in after lying on her floor overnight in a cold house. She is drowsy and no longer shivering. Her core temperature is 27.6°C. Her respiratory rate is 8 breaths per minute.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination of her pulse?",
+   "o": [
+    "Bradycardia",
+    "Collapsing pulse",
+    "Pulsus paradoxus",
+    "Sinus tachycardia",
+    "Slow-rising pulse"
+   ],
+   "a": 0,
+   "e": "Severe hypothermia slows cardiac conduction, causing bradycardia. Tachycardia is the pattern of hyperthermia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The most likely pulse finding in severe hypothermia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cold house",
+      "no longer shivering",
+      "core temperature is 27.6°C",
+      "8 breaths per minute"
+     ],
+     "x": "Severe hypothermia with slow breathing."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Bradycardia**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "A collapsing pulse is aortic regurgitation."
+      ],
+      [
+       2,
+       "Pulsus paradoxus is tamponade or severe asthma."
+      ],
+      [
+       3,
+       "Tachycardia fits hyperthermia, not severe hypothermia."
+      ],
+      [
+       4,
+       "A slow-rising pulse is aortic stenosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: severe hypothermia = bradycardia, reduced consciousness, slow breathing."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old woman collapsed during a marathon on a hot day and was treated for heat stroke. The next day she passes dark brown urine. Her temperature is 37.4°C, pulse rate 96 bpm and BP 118/72 mmHg. Urine dipstick is strongly positive for blood but microscopy shows no red cells.",
+   "labs": [
+    [
+     "Creatine kinase",
+     "48 000 U/L",
+     "<200",
+     "H"
+    ],
+    [
+     "Potassium",
+     "5.8 mmol/L",
+     "3.5–5.3",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "168 µmol/L",
+     "45–90",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her dark urine?",
+   "o": [
+    "Acute glomerulonephritis",
+    "Bladder injury",
+    "Dehydration alone",
+    "Rhabdomyolysis",
+    "Urinary tract infection"
+   ],
+   "a": 3,
+   "e": "Heat stroke breaks down muscle: very high CK, dipstick blood without red cells (myoglobin), hyperkalaemia and AKI mean rhabdomyolysis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The cause of dark urine after heat stroke: a complication."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "treated for heat stroke",
+      "dark brown urine",
+      "strongly positive for blood",
+      "no red cells"
+     ],
+     "x": "Myoglobin, not blood. CK 48 000."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Rhabdomyolysis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "GN gives red cells and casts on microscopy."
+      ],
+      [
+       1,
+       "No trauma, and microscopy shows no red cells."
+      ],
+      [
+       2,
+       "Dehydration concentrates urine but does not give a dipstick positive for blood with CK 48 000."
+      ],
+      [
+       4,
+       "No urinary symptoms or fever now."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: hyperthermia means check CK for rhabdomyolysis."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 90 year old man is brought in from a cold flat. He is drowsy. His pulse rate is 44 bpm and BP 98/58 mmHg. The tympanic thermometer reads 'LO' and the team needs an accurate temperature.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate method to measure his temperature?",
+   "o": [
+    "Axillary thermometer",
+    "Oesophageal temperature probe",
+    "Oral thermometer",
+    "Temporal artery scanner",
+    "Tympanic thermometer"
+   ],
+   "a": 1,
+   "e": "Core temperature measured with an oesophageal probe is the gold standard. Peripheral devices under-read at low temperatures.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The gold-standard temperature measurement."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cold flat",
+      "pulse rate is 44 bpm",
+      "reads 'LO'",
+      "accurate temperature"
+     ],
+     "x": "Suspected severe hypothermia; peripheral readings fail."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Oesophageal core probe**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Axillary readings are peripheral and inaccurate."
+      ],
+      [
+       2,
+       "Oral thermometers are inaccurate and unsafe if drowsy."
+      ],
+      [
+       3,
+       "Skin scanners are inaccurate when cold."
+      ],
+      [
+       4,
+       "The tympanic device has already failed."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: confirm with a core probe."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 26 year old man is admitted with heat stroke after a half marathon. He is being cooled. His temperature is now 39.1°C, pulse rate 118 bpm and BP 108/64 mmHg. His U&Es and glucose have been sent.",
+   "labs": [
+    [
+     "Sodium",
+     "146 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Glucose",
+     "5.6 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate additional investigation?",
+   "o": [
+    "Creatine kinase",
+    "Erythrocyte sedimentation rate",
+    "Serum amylase",
+    "Serum ferritin",
+    "Serum lipid profile"
+   ],
+   "a": 0,
+   "e": "In hyperthermia, CK is added to U&Es and glucose to detect rhabdomyolysis, which can cause AKI and hyperkalaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The extra test in hyperthermia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heat stroke after a half marathon",
+      "U&Es and glucose have been sent"
+     ],
+     "x": "Exertional heat stroke: muscle breakdown risk."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Creatine kinase**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "ESR does not guide heat stroke care."
+      ],
+      [
+       2,
+       "Amylase is for pancreatitis."
+      ],
+      [
+       3,
+       "Ferritin is for iron status."
+      ],
+      [
+       4,
+       "Lipids are not relevant acutely."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: hyperthermia = U&Es, glucose and CK."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 19 year old man collapses during a football match in a heatwave. He is confused and not sweating. His temperature is 41.0°C, pulse rate 138 bpm and BP 98/56 mmHg. His airway is clear.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous dantrolene",
+    "Oral ibuprofen",
+    "Oral paracetamol",
+    "Rapid active cooling with cold water immersion",
+    "Removal to a cool room only"
+   ],
+   "a": 3,
+   "e": "Heat stroke needs rapid active cooling first: cold water immersion, ice packs to groin, axillae and neck, fans and spray, plus fluids. Antipyretics do not work.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of heat stroke."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heatwave",
+      "confused and not sweating",
+      "temperature is 41.0°C"
+     ],
+     "x": "Above 40°C with CNS dysfunction: heat stroke."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Rapid active cooling**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dantrolene is for malignant hyperthermia, not heat stroke."
+      ],
+      [
+       1,
+       "NSAIDs do not lower heat stroke temperature and harm the kidneys."
+      ],
+      [
+       2,
+       "Paracetamol works on fever set-point, not failed thermoregulation."
+      ],
+      [
+       4,
+       "Passive cooling is too slow."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: heat stroke = cool first, fast."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "An 80 year old man is found outdoors after a night in the snow. His core temperature is 26.8°C and GCS 7. His pulse rate is 32 bpm and BP 70/38 mmHg. He has a palpable pulse. The hospital has an ECMO service.",
+   "labs": [
+    [
+     "Potassium",
+     "5.1 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Glucose",
+     "6.8 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Intravenous atropine",
+    "Passive rewarming with blankets",
+    "Transcutaneous pacing",
+    "Venoarterial ECMO",
+    "Warm oral drinks"
+   ],
+   "a": 3,
+   "e": "Severe hypothermia below 28°C with impaired consciousness, bradycardia and hypotension needs ECMO for support and rapid internal rewarming.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of severe, unstable hypothermia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "core temperature is 26.8°C",
+      "GCS 7",
+      "pulse rate is 32 bpm",
+      "BP 70/38 mmHg",
+      "ECMO service"
+     ],
+     "x": "Below 28°C with all three instability features."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**ECMO**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "The bradycardia is from cold; atropine will not fix it."
+      ],
+      [
+       1,
+       "Passive rewarming is for mild hypothermia."
+      ],
+      [
+       2,
+       "Pacing a cold, irritable heart can trigger VF and does not rewarm."
+      ],
+      [
+       4,
+       "He is unconscious; oral drinks are unsafe."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: below 28°C and unstable = ECMO (peritoneal lavage if unavailable)."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 55 year old man is in cardiac arrest after immersion in a cold lake. His core temperature is 27.2°C. His rhythm is ventricular fibrillation and he has received three shocks with good CPR. He remains in VF.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Continue CPR with active rewarming and no further shocks yet",
+    "Deliver further shocks every 2 minutes",
+    "Give intravenous amiodarone and shock again",
+    "Stop resuscitation",
+    "Synchronised DC cardioversion"
+   ],
+   "a": 0,
+   "e": "In hypothermic arrest, give a maximum of 3 shocks, then continue CPR and rewarm to 30°C before shocking again. Do not stop until he is warm.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The next step after 3 failed shocks in hypothermic VF."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cold lake",
+      "core temperature is 27.2°C",
+      "received three shocks",
+      "remains in VF"
+     ],
+     "x": "Below 30°C, 3 shocks already given."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Continue CPR and rewarm**; shock again at 30°C."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Further shocks below 30°C are unlikely to work."
+      ],
+      [
+       2,
+       "Drugs and shocks are held until rewarmed to 30°C."
+      ],
+      [
+       3,
+       "Do not stop: nobody is dead until warm and dead."
+      ],
+      [
+       4,
+       "Synchronised cardioversion needs a pulse; this is VF arrest."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: 3 shocks, then rewarm to 30°C."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 78 year old woman with severe hypothermia is being actively rewarmed. Her core temperature rises from 28°C to 32°C over 2 hours. Her BP falls from 104/62 mmHg to 78/40 mmHg and her pulse rate is 88 bpm. Her peripheries become warm and flushed. There is no bleeding.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "128 g/L",
+     "115–165",
+     ""
+    ],
+    [
+     "Glucose",
+     "6.4 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism for her fall in blood pressure?",
+   "o": [
+    "Acute myocardial infarction",
+    "Anaphylaxis to warmed fluids",
+    "Haemorrhage",
+    "Peripheral vasodilation without a rise in cardiac output",
+    "Pulmonary embolism"
+   ],
+   "a": 3,
+   "e": "Rewarming shock: cold-constricted vessels dilate before cardiac output can rise, causing distributive shock.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why the BP falls on rewarming."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "actively rewarmed",
+      "BP falls from 104/62 mmHg to 78/40 mmHg",
+      "warm and flushed",
+      "no bleeding"
+     ],
+     "x": "Warm, flushed peripheries = vasodilation; Hb stable."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Rewarming shock**: vasodilation without a matching rise in cardiac output."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No chest pain or ECG change described; flushing points to vasodilation."
+      ],
+      [
+       1,
+       "No rash, wheeze or angioedema."
+      ],
+      [
+       2,
+       "No bleeding and haemoglobin is stable."
+      ],
+      [
+       4,
+       "No breathlessness or hypoxia given."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: rapid rewarming can cause distributive shock."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "Define hypothermia and hyperthermia, and how is hyperthermia different from fever?",
+    "tip": "Exam thinking: know the numbers.",
+    "points": [
+     {
+      "p": "Hypothermia: core temperature below 35°C",
+      "k": [
+       [
+        "35"
+       ]
+      ],
+      "why": "Severe is below 28°C."
+     },
+     {
+      "p": "Hyperthermia: raised core temperature from failure of thermoregulation",
+      "k": [
+       [
+        "thermoregulat",
+        "failure",
+        "fail"
+       ]
+      ],
+      "why": "Fever is a raised set-point; hyperthermia is a failed system."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who gets hypothermia and who gets hyperthermia? List the risk factors.",
+    "tip": "Exam thinking: the age in the stem points the way.",
+    "points": [
+     {
+      "p": "Elderly more prone to hypothermia",
+      "k": [
+       [
+        "elderly",
+        "older",
+        "old"
+       ]
+      ],
+      "why": "Less heat production and frailty."
+     },
+     {
+      "p": "Young active people more prone to hyperthermia (exertion)",
+      "k": [
+       [
+        "young",
+        "exert",
+        "athlete",
+        "active"
+       ]
+      ],
+      "why": "Exertional heat stroke."
+     },
+     {
+      "p": "Environmental exposure",
+      "k": [
+       [
+        "environment",
+        "exposure",
+        "cold",
+        "heat"
+       ]
+      ],
+      "why": "Cold houses, heatwaves."
+     },
+     {
+      "p": "Drugs and alcohol",
+      "k": [
+       [
+        "drug",
+        "alcohol"
+       ]
+      ],
+      "why": "Impair thermoregulation."
+     },
+     {
+      "p": "Infection, frailty",
+      "k": [
+       [
+        "infection",
+        "frail"
+       ]
+      ],
+      "why": "Shared risk factors."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does hypothermia present, and what are the severe features?",
+    "tip": "Exam thinking: shivering stops as it gets worse.",
+    "points": [
+     {
+      "p": "Shivering, confusion, cold skin",
+      "k": [
+       [
+        "shiver",
+        "cold skin",
+        "confus"
+       ]
+      ],
+      "why": "Mild features."
+     },
+     {
+      "p": "Slow respirations",
+      "k": [
+       [
+        "slow resp",
+        "slow breath",
+        "bradypnoea",
+        "respiration"
+       ]
+      ],
+      "why": "Depressed metabolism."
+     },
+     {
+      "p": "Severe: bradycardia",
+      "k": [
+       [
+        "bradycard"
+       ]
+      ],
+      "why": "Slowed cardiac conduction."
+     },
+     {
+      "p": "Severe: reduced consciousness and arrhythmias",
+      "k": [
+       [
+        "conscious",
+        "arrhythmi",
+        "vf",
+        "gcs"
+       ]
+      ],
+      "why": "VF risk rises below 28°C."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What defines heat stroke, and which other causes of hyperthermia must you consider?",
+    "tip": "Exam thinking: confusion separates stroke from exhaustion.",
+    "points": [
+     {
+      "p": "Core temperature above 40°C",
+      "k": [
+       [
+        "40"
+       ]
+      ],
+      "why": "Heat exhaustion is below 40°C."
+     },
+     {
+      "p": "CNS dysfunction",
+      "k": [
+       [
+        "cns",
+        "confus",
+        "seizure",
+        "neuro"
+       ]
+      ],
+      "why": "The defining feature."
+     },
+     {
+      "p": "Hot dry skin, absent sweating",
+      "k": [
+       [
+        "dry",
+        "sweat"
+       ]
+      ],
+      "why": "Thermoregulatory failure."
+     },
+     {
+      "p": "Serotonin syndrome or MDMA if no heat exposure",
+      "k": [
+       [
+        "serotonin",
+        "mdma",
+        "ecstasy"
+       ]
+      ],
+      "why": "Tremor, brisk reflexes, dilated pupils."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the ECG findings in hypothermia, and why are older adults prone to heat stroke?",
+    "tip": "Exam thinking: three ECG features.",
+    "points": [
+     {
+      "p": "Bradycardia",
+      "k": [
+       [
+        "bradycard"
+       ]
+      ],
+      "why": "Slow conduction."
+     },
+     {
+      "p": "Long QT",
+      "k": [
+       [
+        "qt"
+       ]
+      ],
+      "why": "Prolonged repolarisation."
+     },
+     {
+      "p": "J (Osborn) waves",
+      "k": [
+       [
+        "osborn",
+        "j wave",
+        "j-wave"
+       ]
+      ],
+      "why": "A hump at the end of the QRS."
+     },
+     {
+      "p": "Older adults: impaired heat dissipation and reduced thirst",
+      "k": [
+       [
+        "dissipat",
+        "thirst"
+       ]
+      ],
+      "why": "Heatwaves kill older people."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you confirm the temperature, and which bloods are first-line?",
+    "tip": "Exam thinking: core, not peripheral.",
+    "points": [
+     {
+      "p": "Core temperature with an oesophageal probe (gold standard)",
+      "k": [
+       [
+        "core",
+        "oesophageal",
+        "esophageal",
+        "probe"
+       ]
+      ],
+      "why": "Tympanic and oral under-read."
+     },
+     {
+      "p": "U&Es and glucose in both",
+      "k": [
+       [
+        "u&e",
+        "urea",
+        "electrolyte"
+       ],
+       [
+        "glucose",
+        "sugar",
+        "cbg"
+       ]
+      ],
+      "why": "Look for AKI and hypoglycaemia."
+     },
+     {
+      "p": "CK in hyperthermia for rhabdomyolysis",
+      "k": [
+       [
+        "ck",
+        "creatine kinase"
+       ]
+      ],
+      "why": "Muscle breakdown causes AKI and hyperkalaemia."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you rewarm mild versus severe hypothermia?",
+    "tip": "Exam thinking: passive, active, then ECMO.",
+    "points": [
+     {
+      "p": "Mild: passive external rewarming with blankets",
+      "k": [
+       [
+        "passive",
+        "blanket"
+       ]
+      ],
+      "why": "Patient still makes heat."
+     },
+     {
+      "p": "Severe: active rewarming with warmed IV fluids and forced-air blankets",
+      "k": [
+       [
+        "active",
+        "warmed",
+        "forced"
+       ]
+      ],
+      "why": "Forced-air is the main perioperative method."
+     },
+     {
+      "p": "Below 28°C with impaired consciousness, bradycardia, hypotension: ECMO",
+      "k": [
+       [
+        "ecmo",
+        "extracorporeal"
+       ]
+      ],
+      "why": "Support plus rapid internal rewarming."
+     },
+     {
+      "p": "No ECMO: peritoneal lavage with warmed saline",
+      "k": [
+       [
+        "lavage",
+        "peritoneal"
+       ]
+      ],
+      "why": "The fallback."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage heat stroke?",
+    "tip": "Exam thinking: active cooling, not paracetamol.",
+    "points": [
+     {
+      "p": "Rapid active cooling first-line",
+      "k": [
+       [
+        "cool"
+       ]
+      ],
+      "why": "Time at high temperature drives organ damage."
+     },
+     {
+      "p": "Ice packs to groin, axillae and neck",
+      "k": [
+       [
+        "ice",
+        "groin",
+        "axilla"
+       ]
+      ],
+      "why": "Over large vessels."
+     },
+     {
+      "p": "Cold water immersion, fans and cold water spray",
+      "k": [
+       [
+        "immers",
+        "fan",
+        "spray",
+        "cold water"
+       ]
+      ],
+      "why": "Fastest heat loss."
+     },
+     {
+      "p": "Oral or IV rehydration and remove the cause",
+      "k": [
+       [
+        "fluid",
+        "rehydrat",
+        "hydrat"
+       ]
+      ],
+      "why": "Stop the drug or remove from heat."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage hypothermic cardiac arrest, and what can happen on rewarming?",
+    "tip": "Exam thinking: the number 3 and the number 30.",
+    "points": [
+     {
+      "p": "Maximum 3 shocks",
+      "k": [
+       [
+        "3",
+        "three"
+       ]
+      ],
+      "why": "Cold myocardium resists defibrillation."
+     },
+     {
+      "p": "Rewarm to 30°C before further shocks",
+      "k": [
+       [
+        "30"
+       ]
+      ],
+      "why": "Resuscitation Council UK guidance."
+     },
+     {
+      "p": "Supportive: warmed IV fluids and cardiac monitoring",
+      "k": [
+       [
+        "monitor",
+        "warmed"
+       ]
+      ],
+      "why": "In both conditions."
+     },
+     {
+      "p": "Rewarming can cause distributive shock",
+      "k": [
+       [
+        "distributive",
+        "vasodilat",
+        "rewarming shock"
+       ]
+      ],
+      "why": "Have fluids ready."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How is body temperature controlled, and why does heat stroke cause organ failure?",
+    "tip": "Exam thinking: thermostat, then failure.",
+    "points": [
+     {
+      "p": "Hypothalamus controls temperature",
+      "k": [
+       [
+        "hypothalam"
+       ]
+      ],
+      "why": "The body's thermostat."
+     },
+     {
+      "p": "Balances heat production (shivering, metabolism) and loss (sweating, vasodilation)",
+      "k": [
+       [
+        "shiver",
+        "sweat",
+        "vasodilat",
+        "metabol"
+       ]
+      ],
+      "why": "Failure of either side causes problems."
+     },
+     {
+      "p": "Heat stroke: loss of sweating, then protein denaturation",
+      "k": [
+       [
+        "denatur",
+        "protein"
+       ]
+      ],
+      "why": "Cells are damaged directly."
+     },
+     {
+      "p": "Rhabdomyolysis and multi-organ dysfunction",
+      "k": [
+       [
+        "rhabdo",
+        "organ"
+       ]
+      ],
+      "why": "If not cooled rapidly."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why is the cold heart dangerous, what is the J wave, and how does serotonin syndrome cause hyperthermia?",
+    "tip": "Exam thinking: conduction, VF, potassium current, muscle heat.",
+    "points": [
+     {
+      "p": "Cold slows conduction and enzyme function: bradycardia, long QT",
+      "k": [
+       [
+        "conduction",
+        "enzyme",
+        "metabolism"
+       ]
+      ],
+      "why": "Depressed cellular metabolism."
+     },
+     {
+      "p": "Predisposes to VF refractory to defibrillation until rewarmed",
+      "k": [
+       [
+        "vf",
+        "fibrillation"
+       ]
+      ],
+      "why": "Hence the 3-shock rule."
+     },
+     {
+      "p": "J wave: repolarisation gradient from changes in the transient outward potassium current",
+      "k": [
+       [
+        "potassium",
+        "repolari",
+        "ito"
+       ]
+      ],
+      "why": "Cold-induced change in myocardial repolarisation."
+     },
+     {
+      "p": "Serotonin syndrome: excess muscle activity makes heat",
+      "k": [
+       [
+        "muscle",
+        "muscular"
+       ]
+      ],
+      "why": "A different mechanism from environmental heat stroke."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "hypothermia": "Core body temperature below 35°C.",
+  "hyperthermia": "Raised core temperature caused by failure of thermoregulation, not a raised set-point.",
+  "heat stroke": "Core temperature above 40°C with CNS dysfunction, often with hot dry skin and no sweating.",
+  "heat exhaustion": "Milder heat illness below 40°C with a normal mental state and sweating.",
+  "core temperature": "Temperature deep in the body, measured with an oesophageal or other internal probe.",
+  "oesophageal probe": "A temperature sensor passed into the oesophagus to measure core temperature accurately.",
+  "tympanic": "Measured in the ear canal; unreliable at extremes of temperature.",
+  "thermoregulation": "The body's control of temperature, run by the hypothalamus.",
+  "hypothalamus": "Brain region that acts as the body's thermostat.",
+  "shivering": "Involuntary muscle contractions that generate heat; stops in severe hypothermia.",
+  "vasoconstriction": "Narrowing of blood vessels to keep heat in the core.",
+  "vasodilation": "Widening of blood vessels, which releases heat and lowers blood pressure.",
+  "bradycardia": "Heart rate below 60 beats per minute.",
+  "tachycardia": "Heart rate above 100 beats per minute.",
+  "J wave": "A hump at the junction of the QRS and ST segment, classic in hypothermia.",
+  "Osborn wave": "Another name for the J wave seen on the ECG in hypothermia.",
+  "QT": "The ECG interval from the start of the QRS to the end of the T wave; prolonged in hypothermia.",
+  "VF": "Ventricular fibrillation: a chaotic, pulseless rhythm treated with defibrillation.",
+  "ventricular fibrillation": "Chaotic ventricular electrical activity with no cardiac output.",
+  "defibrillation": "An electric shock to stop VF or pulseless VT; less effective in a cold heart.",
+  "ECMO": "Extracorporeal membrane oxygenation: a machine that pumps and oxygenates blood outside the body, also rewarming it.",
+  "venoarterial ECMO": "ECMO that supports both heart and lungs by returning blood to an artery.",
+  "peritoneal lavage": "Washing the abdominal cavity with fluid; warmed saline rewarms when ECMO is unavailable.",
+  "passive external rewarming": "Blankets and a warm room, letting the patient's own heat restore temperature.",
+  "active rewarming": "Adding heat with warmed IV fluids, forced-air blankets or internal methods.",
+  "forced-air warming": "A blanket that blows warm air over the patient.",
+  "rewarming shock": "A fall in blood pressure during rewarming as vessels dilate before cardiac output rises.",
+  "distributive shock": "Shock from widespread vasodilation, so blood pools in the periphery.",
+  "rhabdomyolysis": "Muscle breakdown releasing myoglobin, potassium and CK; can cause AKI.",
+  "CK": "Creatine kinase: a muscle enzyme, very high in rhabdomyolysis.",
+  "creatine kinase": "Enzyme released from damaged muscle; checked in hyperthermia.",
+  "myoglobin": "Muscle protein that turns urine dark and gives a positive dipstick for blood without red cells.",
+  "serotonin syndrome": "Excess serotonin activity causing hyperthermia, agitation, tremor, clonus and dilated pupils.",
+  "MDMA": "Ecstasy: a stimulant drug that can cause hyperthermia and serotonin toxicity.",
+  "clonus": "Rhythmic involuntary muscle jerks on stretching, a sign of hyperexcitable reflexes.",
+  "mydriasis": "Dilated pupils.",
+  "dantrolene": "Muscle relaxant used for malignant hyperthermia, not for heat stroke.",
+  "neuroleptic malignant syndrome": "Reaction to antipsychotics with fever, rigidity, confusion and high CK.",
+  "transient outward potassium current": "Early repolarising potassium current in heart cells; cold changes it, producing the J wave.",
+  "Resuscitation Council UK": "UK body that publishes resuscitation guidelines, including hypothermic cardiac arrest."
+ }
+}

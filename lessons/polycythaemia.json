@@ -1,0 +1,414 @@
+{
+  "id": "polycythaemia",
+  "patient": {
+    "name": "Michael Brennan",
+    "age": 67,
+    "sex": "M",
+    "setting": "Haematology clinic (urgent GP referral)",
+    "complaint": "Headaches and intense itching after hot showers for 4 months",
+    "background": [
+      "Hypertension on amlodipine",
+      "Lifelong non-smoker; no snoring",
+      "Never lived at altitude",
+      "Retired taxi driver in Islington"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a raised haemoglobin: itching after a bath, plethora, splenomegaly and raised WCC and platelets mean PV; low sats, COPD, OSA or steroids mean secondary polycythaemia. Budd-Chiari is the classic complication.",
+      "steps": [
+        {"type": "story", "points": ["Michael, 67, retired taxi driver.", "4 months of **headaches**, dizziness and ringing in his ears.", "Intense **itching after a hot shower**.", "Burning, red hands and feet in the evenings."], "vitals": {"T": "36.7°C", "HR": "78 bpm", "BP": "158/92 mmHg", "SpO2": "98% on air"}},
+        {"type": "notes", "src": 0, "lead": "Michael's symptoms fit **thick blood**: too many red cells raising viscosity. First question: primary (PV) or secondary?"},
+        {"type": "story", "points": ["Ruddy, **plethoric** face.", "Spleen palpable 4 cm below the left costal margin.", "Chest clear; no clubbing or cyanosis.", "Oxygen saturation 98% on air."]},
+        {"type": "visual", "visual": {"kind": "abdomen", "title": "What the GP felt", "regions": ["LUQ"], "caption": "Splenomegaly (a LUQ mass): a PV clue that secondary polycythaemia lacks."}},
+        {"type": "labs", "title": "Full blood count", "rows": [["Haemoglobin", "192 g/L", "130–175", "H"], ["Haematocrit", "0.58", "0.40–0.52", "H"], ["White cell count", "13.6 ×10⁹/L", "4.0–11.0", "H"], ["Platelet count", "548 ×10⁹/L", "150–400", "H"], ["MCV", "80 fL", "80–100", ""], ["Urate", "0.52 mmol/L", "0.20–0.43", "H"]], "text": "All three cell lines are up: a **marrow** problem, not a response to hypoxia."},
+        {"type": "notes", "src": 1, "lead": "Michael has **aquagenic pruritus**, plethora, **erythromelalgia**, splenomegaly and raised WCC and platelets with normal sats: classic **PV**."},
+        {"type": "compare", "title": "Polycythaemia vera vs secondary polycythaemia", "head": ["Feature", "Polycythaemia vera", "Secondary polycythaemia"], "rows": [["Cause", "JAK2 clonal marrow disorder", "Raised EPO: COPD, OSA, smoking, altitude, EPO tumour, anabolic steroids"], ["EPO", "**Low**", "**Raised**"], ["WCC and platelets", "Raised", "Normal"], ["Spleen", "Often enlarged", "Normal"], ["Itch after a bath", "Characteristic", "No"], ["Oxygen saturation", "Normal", "Often low"]]},
+        {"type": "ask", "q": "Which feature most strongly points to PV rather than secondary polycythaemia?", "o": ["Headache", "Hypertension", "Itching after a hot shower", "Raised haematocrit"], "a": 2, "r": "**Aquagenic pruritus** is characteristic of PV. Headache, hypertension and a raised haematocrit occur in both."},
+        {"type": "notes", "src": 2, "lead": "Michael's thick blood puts him at risk of stroke, MI, DVT/PE and, classically, **Budd-Chiari**. His raised urate also explains a risk of gout."},
+        {"type": "trap", "text": "A raised Hb with **low sats** in a smoker or COPD patient is secondary polycythaemia, not PV. Check the sats, then the EPO."},
+        {"type": "pearl", "text": "Exam pattern: **itching after a bath + plethora + splenomegaly + raised Hb = PV**. Add RUQ pain and ascites and think Budd-Chiari."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (JAK2 mutation screen) or 'Which result is most likely?' where EPO is low in PV and raised in secondary polycythaemia.",
+      "steps": [
+        {"type": "flow", "title": "Raised haematocrit: finding the cause", "nodes": ["FBC: raised Hb and haematocrit", "JAK2 mutation screen", "Serum erythropoietin (EPO)", "Low EPO + JAK2 positive → PV", "Raised EPO → look for hypoxia or an EPO-producing tumour"]},
+        {"type": "notes", "src": 1, "lead": "Michael's FBC confirms a raised **Hb and haematocrit**. His EPO level will point to the cause."},
+        {"type": "labs", "title": "Second-line tests", "rows": [["JAK2 V617F mutation", "Detected", "Not detected", ""], ["Serum erythropoietin", "1.8 IU/L", "3.3–16.6", "L"], ["Ferritin", "24 µg/L", "30–400", "L"]], "text": "Low EPO plus a JAK2 V617F mutation: **polycythaemia vera**. Low ferritin is common in PV as iron is used up making red cells."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Serum EPO", "min": 0, "max": 40, "unit": "IU/L", "bands": [[0, 3.3, "Low: PV", "bad"], [3.3, 16.6, "Normal", "ok"], [16.6, 40, "Raised: secondary", "warn"]], "value": 1.8, "label": "Michael 1.8", "caption": "Suppressed EPO means the marrow is making red cells on its own."}},
+        {"type": "notes", "src": 0, "lead": "Michael's diagnosis rests on **FBC + JAK2 + EPO**, with the **JAK2 screen** the most important single test."},
+        {"type": "ask", "q": "A man with COPD has an Hb of 185 g/L and SpO2 of 88%. Which EPO result do you expect?", "o": ["Low", "Normal", "Raised", "Undetectable"], "a": 2, "r": "Chronic hypoxia drives the kidney to make more EPO: **raised EPO** means secondary polycythaemia."},
+        {"type": "trap", "text": "Do not reach for a bone marrow biopsy first. **JAK2** and **EPO** come first; the marrow is for unclear cases."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?': venesection to haematocrit below 0.45 plus aspirin 75 mg in PV, hydroxycarbamide if high risk, and treating the cause (e.g. CPAP) in secondary polycythaemia.",
+      "steps": [
+        {"type": "visual", "visual": {"kind": "scale", "title": "Haematocrit", "min": 0.35, "max": 0.65, "unit": "", "bands": [[0.35, 0.45, "Target below 0.45", "ok"], [0.45, 0.52, "Above target", "warn"], [0.52, 0.65, "High thrombosis risk", "bad"]], "value": 0.58, "label": "Michael 0.58", "caption": "Michael is far above the 0.45 target."}},
+        {"type": "ask", "q": "What is first-line treatment to bring Michael's haematocrit down?", "o": ["Hydroxycarbamide alone", "Imatinib", "Venesection", "Warfarin"], "a": 2, "r": "**Venesection** (therapeutic phlebotomy) is first-line. Imatinib is for CML; warfarin does not lower the count."},
+        {"type": "notes", "src": 0, "lead": "Michael starts **venesection** to keep his haematocrit **below 0.45**, plus **aspirin 75 mg** as his platelets are well below 1500."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Michael's haematocrit with venesection", "x": ["Week 0", "Week 2", "Week 4", "Week 8", "Week 12"], "unit": "", "series": [{"name": "Haematocrit", "values": [0.58, 0.53, 0.49, 0.46, 0.44]}], "caption": "Regular venesection brings him below 0.45 by week 12."}},
+        {"type": "notes", "src": 1, "lead": "Michael is 67, so **high risk**: he also starts **hydroxycarbamide** to control his counts."},
+        {"type": "flow", "title": "PV treatment ladder", "nodes": ["Venesection to haematocrit below 0.45", "Plus aspirin 75 mg once daily", "High risk (older, previous thrombosis) → hydroxycarbamide", "Control cardiovascular risk factors, e.g. his BP"]},
+        {"type": "notes", "src": 3, "lead": "Michael is told that stroke symptoms, chest pain, a swollen leg or breathlessness need **urgent assessment**."},
+        {"type": "notes", "src": 2, "lead": "For secondary polycythaemia the fix is the cause: **CPAP** for OSA, oxygen in COPD, stopping smoking, treating a tumour."},
+        {"type": "notes", "src": "guidelines", "lead": "Michael's haematocrit target, aspirin and cytoreduction follow the **British Society for Haematology** PV guideline."},
+        {"type": "trap", "text": "In secondary polycythaemia, the treatment is the **cause** (CPAP, oxygen, stopping steroids), not hydroxycarbamide."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why EPO is low in PV but high in secondary polycythaemia, why polycythaemia causes thrombosis, and why PV causes itching after a bath.",
+      "steps": [
+        {"type": "flow", "title": "How JAK2 causes PV", "nodes": ["JAK2 V617F mutation in a marrow stem cell", "JAK-STAT signalling always switched on", "Red cells made without needing EPO", "Kidney senses plenty of oxygen → EPO falls", "Raised red cell mass, often with high WCC and platelets"]},
+        {"type": "notes", "src": 0, "lead": "Michael's red cells grow **without EPO**, so his kidneys switch EPO off. In COPD the opposite happens: hypoxia drives EPO up."},
+        {"type": "notes", "src": 1, "lead": "Michael's haematocrit of 0.58 makes his blood **viscous**, slowing the microcirculation: hence his headaches and clot risk."},
+        {"type": "notes", "src": 2, "lead": "Venesection lowers Michael's **red cell mass** and viscosity, but the JAK2 clone keeps making cells, so it is ongoing."},
+        {"type": "notes", "src": 3, "lead": "Michael's shower itch is **histamine** release from abnormal mast cells and basophils triggered by warm water."},
+        {"type": "ask", "q": "Why does Michael need lifelong follow-up even when his counts are controlled?", "o": ["Risk of iron overload", "Risk of progression to myelofibrosis or AML", "Risk of vitamin B12 deficiency", "Risk of hypothyroidism"], "a": 1, "r": "Long-standing PV can enter a **spent phase**: myelofibrosis or, rarely, AML."},
+        {"type": "notes", "src": 4, "lead": "Years on, Michael's PV may enter a **spent phase**: falling counts, a bigger spleen, then myelofibrosis or rarely AML."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "Which mutation drives polycythaemia vera?", "o": ["BCR-ABL", "BRCA1", "JAK2 V617F", "KRAS"], "a": 2, "r": "**JAK2 V617F**. BCR-ABL (Philadelphia chromosome) is CML."},
+    {"d": "diagnosis", "q": "Which symptom is characteristic of polycythaemia vera?", "o": ["Haemoptysis", "Itching after a hot bath", "Night-time snoring", "Weight gain"], "a": 1, "r": "**Aquagenic pruritus** is characteristic of PV."},
+    {"d": "diagnosis", "q": "Which is the classic hepatic complication of polycythaemia vera?", "o": ["Budd-Chiari syndrome", "Gilbert's syndrome", "Haemochromatosis", "Primary biliary cholangitis"], "a": 0, "r": "**Budd-Chiari** (hepatic vein thrombosis) is the most likely PV complication."},
+    {"d": "diagnosis", "q": "Which is a cause of secondary polycythaemia?", "o": ["Iron deficiency", "JAK2 mutation", "Obstructive sleep apnoea", "Vitamin B12 deficiency"], "a": 2, "r": "**OSA** causes nocturnal hypoxia and raises EPO; COPD, smoking and altitude do the same."},
+    {"d": "investigation", "q": "Which is the most important diagnostic test for polycythaemia vera?", "o": ["Bone marrow biopsy", "JAK2 mutation screen", "Serum ferritin", "Urate"], "a": 1, "r": "The **JAK2 mutation screen**, alongside FBC and EPO."},
+    {"d": "investigation", "q": "What is the serum EPO in polycythaemia vera?", "o": ["Low", "Normal", "Raised", "Very high"], "a": 0, "r": "**Low**: the clone grows without EPO, so it is suppressed. Raised EPO means secondary."},
+    {"d": "management", "q": "What haematocrit does venesection aim for in PV?", "o": ["Below 0.35", "Below 0.45", "Below 0.55", "Below 0.65"], "a": 1, "r": "Keep the haematocrit **below 0.45**."},
+    {"d": "management", "q": "Which drug is used for high-risk polycythaemia vera?", "o": ["Allopurinol", "Hydroxycarbamide", "Imatinib", "Rituximab"], "a": 1, "r": "**Hydroxycarbamide**, which inhibits ribonucleotide reductase."},
+    {"d": "management", "q": "What is the treatment of secondary polycythaemia from OSA?", "o": ["CPAP", "Hydroxycarbamide", "Splenectomy", "Venesection alone"], "a": 0, "r": "Treat the cause: **CPAP** corrects nocturnal hypoxia."},
+    {"d": "science", "q": "Why is EPO raised in secondary polycythaemia?", "o": ["Autonomous marrow clone", "Iron overload", "Splenic sequestration", "Tissue hypoxia or ectopic EPO"], "a": 3, "r": "**Hypoxia** (or an EPO-producing tumour) drives a compensatory rise in EPO."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is polycythaemia, and what are its two main types?", "tip": "Exam thinking: decide primary or secondary before anything else.", "points": [
+        {"p": "Abnormally increased red cell mass", "k": [["red cell", "rbc", "erythrocyt", "haemoglobin", "hb"], ["increase", "raised", "high", "more"]], "why": "Raises viscosity and thrombosis risk."},
+        {"p": "Polycythaemia vera: primary myeloproliferative disorder", "k": [["vera", "PV", "primary"]], "why": "JAK2 mutation, low EPO."},
+        {"p": "Secondary polycythaemia: driven by raised EPO", "k": [["secondary"]], "why": "Hypoxia or an EPO-producing tumour."}
+      ]},
+      {"d": "diagnosis", "q": "What are the symptoms and signs of polycythaemia vera?", "tip": "Exam thinking: the itch and the spleen are the discriminators.", "points": [
+        {"p": "Headache, dizziness, tinnitus, visual disturbance, lethargy", "k": [["headache", "dizz", "tinnitus", "vision", "visual", "letharg"]], "why": "Hyperviscosity symptoms."},
+        {"p": "Aquagenic pruritus: itching after a hot bath", "k": [["itch", "prurit"]], "why": "Characteristic of PV."},
+        {"p": "Facial plethora", "k": [["plethor", "ruddy", "red face"]], "why": "Also seen in secondary polycythaemia."},
+        {"p": "Splenomegaly (LUQ mass)", "k": [["spleen", "splenomegaly", "luq"]], "why": "Points to PV over secondary."},
+        {"p": "Erythromelalgia: burning red hands and feet", "k": [["erythromelalgia", "burning"]], "why": "Also seen in ET."}
+      ]},
+      {"d": "diagnosis", "q": "What causes secondary polycythaemia, and how do its bloods differ from PV?", "tip": "Exam thinking: low sats, a smoker or a big snorer = secondary.", "points": [
+        {"p": "Chronic hypoxia: COPD, smoking, OSA, high altitude, cyanotic heart disease", "k": [["copd", "smok", "osa", "sleep apnoea", "sleep apnea", "altitude", "cyanotic", "hypox"]], "why": "OSA is common in obesity."},
+        {"p": "EPO-producing tumours or anabolic steroids", "k": [["tumour", "tumor", "renal cell", "steroid"]], "why": "Ask about bodybuilding."},
+        {"p": "Raised EPO", "k": [["epo", "erythropoietin"], ["raised", "high", "increase", "elevated"]], "why": "The key test difference."},
+        {"p": "Normal WCC and platelets, often low sats", "k": [["normal"], ["white", "wcc", "platelet", "leuc"]], "why": "PV usually raises all three lines."}
+      ]},
+      {"d": "diagnosis", "q": "What are the complications of polycythaemia vera?", "tip": "Exam thinking: thrombosis anywhere, Budd-Chiari classically, then transformation.", "points": [
+        {"p": "Thrombosis: DVT, PE, stroke, MI", "k": [["dvt", "pe", "stroke", "mi", "thromb", "clot"]], "why": "Arterial and venous."},
+        {"p": "Budd-Chiari syndrome", "k": [["budd", "hepatic vein"]], "why": "The most likely PV complication in the exam."},
+        {"p": "Gout", "k": [["gout", "urate"]], "why": "High cell turnover raises urate."},
+        {"p": "Progression to myelofibrosis or rarely AML", "k": [["myelofibrosis", "aml", "leukaemia", "leukemia"]], "why": "Low Hb and platelets, high WBC and lethargy suggest AML."}
+      ]},
+      {"d": "investigation", "q": "How do you investigate a raised haemoglobin?", "tip": "Exam thinking: JAK2 is the most important; EPO separates primary and secondary.", "points": [
+        {"p": "FBC: raised Hb and haematocrit", "k": [["fbc", "full blood", "haematocrit", "hematocrit", "hb"]], "why": "Check whether WCC and platelets are up too."},
+        {"p": "JAK2 mutation screen: the most important test", "k": [["jak2", "jak 2", "jak"]], "why": "Positive in almost all PV."},
+        {"p": "Serum EPO: low in PV, raised in secondary", "k": [["epo", "erythropoietin"]], "why": "A raised EPO sends you looking for hypoxia or a tumour."},
+        {"p": "Assess the underlying cause (sats, smoking, sleep, renal imaging)", "k": [["cause", "sats", "oxygen", "sleep", "renal"]], "why": "Part of the gold-standard work-up."}
+      ]},
+      {"d": "management", "q": "How is polycythaemia vera treated?", "tip": "Exam thinking: venesection first, aspirin alongside, hydroxycarbamide if high risk.", "points": [
+        {"p": "Venesection (therapeutic phlebotomy) first-line", "k": [["venesection", "phlebotomy"]], "why": "Fastest way to lower viscosity."},
+        {"p": "Target haematocrit below 0.45", "k": [["0.45", "45"]], "why": "The number the exam asks for."},
+        {"p": "Low-dose aspirin 75 mg once daily", "k": [["aspirin"]], "why": "Avoid if platelets above 1500 (bleeding risk)."},
+        {"p": "High risk (elderly, recurrent thrombosis): hydroxycarbamide", "k": [["hydroxycarbamide", "hydroxyurea"]], "why": "Cytoreductive therapy."}
+      ]},
+      {"d": "management", "q": "How is secondary polycythaemia managed, and when is it an emergency?", "tip": "Exam thinking: treat the cause; act fast on any clot.", "points": [
+        {"p": "Treat the cause: CPAP for OSA", "k": [["cpap"]], "why": "Corrects night-time hypoxia."},
+        {"p": "Optimise oxygenation in COPD and stop smoking", "k": [["oxygen", "smoking", "copd"]], "why": "Removes the hypoxic drive."},
+        {"p": "Treat any EPO-producing tumour", "k": [["tumour", "tumor"]], "why": "For example renal cell carcinoma."},
+        {"p": "Stroke, chest pain, DVT/PE or severe hyperviscosity need urgent assessment", "k": [["stroke", "chest pain", "dvt", "pe", "hyperviscosity", "urgent"]], "why": "Thrombosis is the main killer."}
+      ]},
+      {"d": "science", "q": "Why is EPO low in PV but high in secondary polycythaemia?", "tip": "Exam thinking: one is autonomous, the other is a response.", "points": [
+        {"p": "PV: JAK2 V617F clone grows independently of EPO", "k": [["jak2", "jak 2", "clon"], ["independ", "without", "autonomous"]], "why": "Constitutive JAK-STAT signalling."},
+        {"p": "So EPO is appropriately suppressed", "k": [["suppress", "low", "feedback"]], "why": "The kidney senses plenty of oxygen."},
+        {"p": "Secondary: hypoxia or ectopic EPO raises EPO", "k": [["hypox", "ectopic", "tumour"]], "why": "A physiological compensation."}
+      ]},
+      {"d": "science", "q": "Why does polycythaemia cause thrombosis, why does venesection help, and why the bath itch?", "tip": "Exam thinking: viscosity explains clots; histamine explains the itch.", "points": [
+        {"p": "Raised red cell mass increases whole blood viscosity", "k": [["viscos", "thick"]], "why": "Impairs microcirculatory flow."},
+        {"p": "Arterial and venous thrombosis result", "k": [["arterial", "venous", "thromb"]], "why": "Including Budd-Chiari."},
+        {"p": "Venesection reduces red cell mass but does not cure the clone", "k": [["venesection", "phlebotomy"], ["cure", "clone", "underlying"]], "why": "So it continues long term."},
+        {"p": "Aquagenic pruritus: histamine release from mast cells and basophils", "k": [["histamine", "mast", "basophil"]], "why": "Triggered by temperature change on contact with water."}
+      ]}
+    ]
+  },
+  "glossary": {
+    "polycythaemia": "An abnormally increased red cell mass, raising the haemoglobin and haematocrit.",
+    "polycythaemia vera": "A JAK2-driven bone marrow cancer that overproduces red cells, often with white cells and platelets.",
+    "PV": "Polycythaemia vera.",
+    "secondary polycythaemia": "Raised red cells driven by raised EPO, from hypoxia or an EPO-producing tumour.",
+    "myeloproliferative": "Describes clonal marrow disorders that overproduce one or more blood cell lines.",
+    "JAK2": "A signalling enzyme; the V617F mutation switches it on permanently in PV.",
+    "JAK2 V617F": "The point mutation in JAK2 found in almost all PV and many ET and myelofibrosis cases.",
+    "JAK-STAT": "A signalling pathway that tells marrow cells to grow; always on in PV.",
+    "EPO": "Erythropoietin: a kidney hormone that drives red cell production.",
+    "erythropoietin": "A kidney hormone that drives red cell production; low in PV, raised in secondary polycythaemia.",
+    "erythrocytosis": "An increase in red blood cells.",
+    "haematocrit": "The proportion of blood volume made up of red cells; target below 0.45 in PV.",
+    "viscosity": "How thick and sticky the blood is; higher viscosity slows flow and causes clots.",
+    "hyperviscosity": "Blood so thick that flow slows, causing headache, visual upset and clots.",
+    "aquagenic pruritus": "Itching after contact with water, especially a hot bath; characteristic of PV.",
+    "plethora": "A ruddy, red complexion from excess red cells.",
+    "plethoric": "Having a ruddy, red complexion from excess red cells.",
+    "erythromelalgia": "Burning pain and redness of the hands and feet.",
+    "splenomegaly": "An enlarged spleen, felt as a mass in the left upper quadrant.",
+    "Budd-Chiari syndrome": "Hepatic vein thrombosis causing RUQ pain, hepatomegaly and ascites.",
+    "venesection": "Removing blood from a vein to lower the red cell mass.",
+    "therapeutic phlebotomy": "Another name for venesection.",
+    "hydroxycarbamide": "An oral cytoreductive drug that inhibits ribonucleotide reductase to lower blood counts.",
+    "cytoreductive therapy": "Drugs that lower blood cell production in the marrow.",
+    "ribonucleotide reductase": "The enzyme that makes DNA building blocks; blocked by hydroxycarbamide.",
+    "aspirin": "An antiplatelet drug given at 75 mg daily in PV to reduce clots.",
+    "OSA": "Obstructive sleep apnoea: repeated airway collapse in sleep causing night-time hypoxia.",
+    "CPAP": "Continuous positive airway pressure: a mask that keeps the airway open in OSA.",
+    "COPD": "Chronic obstructive pulmonary disease; chronic hypoxia can cause secondary polycythaemia.",
+    "anabolic steroids": "Testosterone-like drugs used in bodybuilding; they raise red cell production.",
+    "cyanotic heart disease": "Congenital heart defects that mix deoxygenated blood into the systemic circulation.",
+    "myelofibrosis": "Scarring of the bone marrow, causing anaemia, a large spleen and teardrop cells.",
+    "spent phase": "Late PV when the marrow scars and counts fall, progressing to myelofibrosis.",
+    "AML": "Acute myeloid leukaemia: a rare late transformation of PV.",
+    "gout": "Painful joint inflammation from urate crystals; urate rises with high cell turnover.",
+    "urate": "A breakdown product of cell DNA; raised when cell turnover is high.",
+    "histamine": "A chemical released by mast cells and basophils that causes itching.",
+    "BCR-ABL": "The Philadelphia chromosome fusion gene of chronic myeloid leukaemia, not PV."
+  },
+  "technique": [
+    {"d": "diagnosis",
+     "stem": "A 64 year old man has 3 months of headaches and itching after a hot bath. He has never smoked. He has a ruddy complexion and a mass palpable in the left upper quadrant. His pulse rate is 76 bpm, BP 152/90 mmHg and oxygen saturation 98% breathing air.",
+     "labs": [["Haemoglobin", "198 g/L", "130–175", "H"], ["White cell count", "12.9 ×10⁹/L", "4.0–11.0", "H"], ["Platelet count", "512 ×10⁹/L", "150–400", "H"]],
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Chronic myeloid leukaemia", "Essential thrombocythaemia", "Polycythaemia vera", "Primary myelofibrosis", "Secondary polycythaemia"],
+     "a": 2,
+     "steps": [
+       {"t": "Read the question line first", "x": "A diagnosis question with a raised Hb: primary or secondary, and which MPN."},
+       {"t": "Pick out the clues", "clues": ["itching after a hot bath", "never smoked", "ruddy complexion", "left upper quadrant", "oxygen saturation 98%"], "x": "**Aquagenic pruritus**, plethora, splenomegaly, normal sats and no smoking: no hypoxic cause. The **Hb** is the dominant rise."},
+       {"t": "Make your own answer before looking", "x": "**Polycythaemia vera**."},
+       {"t": "Rule out the others", "elim": [[0, "CML gives a very high WCC with a left shift, massive spleen and BCR-ABL, not a dominant Hb rise."], [1, "ET is a platelet disorder; the Hb would be normal."], [3, "Myelofibrosis causes anaemia, not a raised Hb."], [4, "Secondary polycythaemia has normal WCC and platelets, no itch and no spleen."]]},
+       {"t": "Commit", "x": "**C. Polycythaemia vera.** Rule: raised Hb + bath itch + spleen + normal sats = PV."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 59 year old woman has a haemoglobin of 186 g/L found on a routine blood test. She has occasional headaches. She has never smoked, does not snore and her oxygen saturation is 98% breathing air. Her pulse rate is 72 bpm and BP 138/84 mmHg. A JAK2 mutation screen has been sent.",
+     "q": "Which other result would most support polycythaemia vera?",
+     "o": ["Low serum erythropoietin", "Low white cell count", "Normal spleen size on ultrasound", "Raised serum erythropoietin", "Raised serum ferritin"],
+     "a": 0,
+     "steps": [
+       {"t": "Read the question line first", "x": "Which result separates PV from secondary polycythaemia."},
+       {"t": "Pick out the clues", "clues": ["haemoglobin of 186 g/L", "never smoked", "does not snore", "oxygen saturation is 98%"], "x": "Raised Hb with **no hypoxic cause**: PV is likely."},
+       {"t": "Make your own answer before looking", "x": "PV clone grows without EPO, so **EPO is low**."},
+       {"t": "Rule out the others", "elim": [[1, "PV usually raises, not lowers, the white cell count."], [2, "Splenomegaly supports PV; a normal spleen does not."], [3, "Raised EPO points to secondary polycythaemia."], [4, "Ferritin is often low in PV as iron is used for red cells."]]},
+       {"t": "Commit", "x": "**A. Low EPO.** Rule: low EPO = PV; raised EPO = secondary."}
+     ]},
+    {"d": "management",
+     "stem": "A 55 year old man has polycythaemia vera confirmed by a positive JAK2 V617F mutation. He has had no thrombosis. His pulse rate is 80 bpm and BP 136/84 mmHg.",
+     "labs": [["Haematocrit", "0.56", "0.40–0.52", "H"], ["Platelet count", "460 ×10⁹/L", "150–400", "H"]],
+     "q": "Which is the most appropriate initial management?",
+     "o": ["Hydroxycarbamide alone", "Imatinib", "Splenectomy", "Venesection to a haematocrit below 0.45", "Warfarin"],
+     "a": 3,
+     "steps": [
+       {"t": "Read the question line first", "x": "First-line treatment of PV."},
+       {"t": "Pick out the clues", "clues": ["polycythaemia vera confirmed", "no thrombosis", "55 year old"], "x": "Low-risk PV with a haematocrit of 0.56."},
+       {"t": "Make your own answer before looking", "x": "**Venesection** to a haematocrit **below 0.45**, plus aspirin 75 mg."},
+       {"t": "Rule out the others", "elim": [[0, "Hydroxycarbamide is added for high-risk disease (older or previous thrombosis)."], [1, "Imatinib is for CML (BCR-ABL)."], [2, "Splenectomy is not a treatment for PV."], [4, "Warfarin does not lower the count and is not routine in PV."]]},
+       {"t": "Commit", "x": "**D. Venesection to Hct below 0.45.** Rule: PV = venesect + aspirin; hydroxycarbamide if high risk."}
+     ]},
+    {"d": "science",
+     "stem": "A 70 year old woman with polycythaemia vera has a haematocrit of 0.60. She has headaches and blurred vision and is found to have a deep vein thrombosis of the left leg. Her pulse rate is 84 bpm and BP 150/88 mmHg.",
+     "q": "Which is the most likely mechanism of her thrombosis?",
+     "o": ["Antithrombin deficiency", "Endothelial injury from surgery", "Increased whole blood viscosity", "Platelet deficiency", "Vitamin K excess"],
+     "a": 2,
+     "steps": [
+       {"t": "Read the question line first", "x": "Mechanism of thrombosis in polycythaemia."},
+       {"t": "Pick out the clues", "clues": ["haematocrit of 0.60", "headaches and blurred vision", "deep vein thrombosis"], "x": "Very high haematocrit with **hyperviscosity symptoms** and a clot."},
+       {"t": "Make your own answer before looking", "x": "Raised red cell mass → **increased viscosity** → impaired flow → thrombosis."},
+       {"t": "Rule out the others", "elim": [[0, "Nothing suggests an inherited thrombophilia."], [1, "She has had no surgery."], [3, "PV usually raises platelets; a low count causes bleeding, not clots."], [4, "Vitamin K excess is not a recognised cause of thrombosis."]]},
+       {"t": "Commit", "x": "**C. Increased whole blood viscosity.** Rule: more red cells = thicker blood = clots."}
+     ]}
+  ],
+  "practice": [
+    {"d": "diagnosis",
+     "stem": "A 68 year old woman has 6 months of itching after showers, headaches and burning pain in her feet. She has never smoked. Her face is red and her spleen is palpable. Her pulse rate is 78 bpm, BP 148/88 mmHg and oxygen saturation 97% breathing air.",
+     "labs": [["Haemoglobin", "189 g/L", "115–165", "H"], ["White cell count", "13.1 ×10⁹/L", "4.0–11.0", "H"], ["Platelet count", "498 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Chronic myeloid leukaemia", "Essential thrombocythaemia", "Polycythaemia vera", "Primary myelofibrosis", "Secondary polycythaemia"],
+     "a": 2,
+     "e": "Aquagenic pruritus, erythromelalgia, plethora, splenomegaly and a dominant Hb rise with raised WCC and platelets is PV. Secondary polycythaemia has normal WCC and platelets and no spleen.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a raised Hb."},
+       {"t": "Pick out the clues", "clues": ["itching after showers", "burning pain in her feet", "never smoked", "face is red", "spleen is palpable"], "x": "**Aquagenic pruritus**, **erythromelalgia**, plethora, splenomegaly, no hypoxic cause."},
+       {"t": "Make your own answer before looking", "x": "**Polycythaemia vera**."},
+       {"t": "Rule out the others", "elim": [[0, "CML has a very high WCC with a left shift, not a dominant Hb rise."], [1, "ET does not raise the Hb."], [3, "Myelofibrosis causes anaemia."], [4, "Secondary polycythaemia has normal WCC and platelets and no splenomegaly."]]},
+       {"t": "Commit", "x": "**C. Polycythaemia vera.**"}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 52 year old man has morning headaches and daytime sleepiness. His wife says he snores loudly and stops breathing at night. His BMI is 41 kg/m². His pulse rate is 84 bpm, BP 154/96 mmHg and oxygen saturation 94% breathing air. His spleen is not palpable.",
+     "labs": [["Haemoglobin", "184 g/L", "130–175", "H"], ["White cell count", "7.2 ×10⁹/L", "4.0–11.0", ""], ["Platelet count", "260 ×10⁹/L", "150–400", ""], ["Serum erythropoietin", "24 IU/L", "3.3–16.6", "H"]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Chronic myeloid leukaemia", "Dehydration", "Essential thrombocythaemia", "Polycythaemia vera", "Secondary polycythaemia"],
+     "a": 4,
+     "e": "Obstructive sleep apnoea causes night-time hypoxia, raising EPO and the Hb: secondary polycythaemia. PV would have a low EPO and usually raised WCC and platelets.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a raised Hb: check EPO and the other lines."},
+       {"t": "Pick out the clues", "clues": ["snores loudly and stops breathing at night", "BMI is 41", "oxygen saturation 94%", "spleen is not palpable"], "x": "**OSA** in obesity, normal WCC and platelets, **raised EPO**."},
+       {"t": "Make your own answer before looking", "x": "Hypoxia-driven: **secondary polycythaemia**."},
+       {"t": "Rule out the others", "elim": [[0, "CML raises the white count."], [1, "Dehydration (relative polycythaemia) would not raise the EPO."], [2, "ET raises platelets; his are normal."], [3, "PV has low EPO, and usually high WCC, platelets and a spleen."]]},
+       {"t": "Commit", "x": "**E. Secondary polycythaemia.** Rule: raised EPO + hypoxic cause = secondary."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 29 year old man has a haemoglobin of 190 g/L on a blood test for his gym membership. He trains daily and is preparing for a bodybuilding competition. He does not smoke or snore. His BMI is 27 kg/m². His oxygen saturation is 99% breathing air. His white cell count and platelet count are normal and the JAK2 mutation screen is negative.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely cause of his raised haemoglobin?",
+     "o": ["Anabolic steroid use", "High-altitude training", "JAK2-negative polycythaemia vera", "Obstructive sleep apnoea", "Renal cell carcinoma"],
+     "a": 0,
+     "e": "Anabolic steroids stimulate red cell production and are a recognised cause of secondary polycythaemia in a young bodybuilder. Normal sats and no snoring make hypoxic causes unlikely.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Cause of a secondary polycythaemia."},
+       {"t": "Pick out the clues", "clues": ["29 year old man", "bodybuilding competition", "does not smoke or snore", "oxygen saturation is 99%", "JAK2 mutation screen is negative"], "x": "Young bodybuilder, no hypoxia, JAK2 negative."},
+       {"t": "Make your own answer before looking", "x": "**Anabolic steroids**."},
+       {"t": "Rule out the others", "elim": [[1, "Nothing in the stem mentions altitude."], [2, "PV is rare at 29 and he has no other features."], [3, "He does not snore and his BMI is only 27."], [4, "Renal cell carcinoma is unlikely at 29 without haematuria or a mass."]]},
+       {"t": "Commit", "x": "**A. Anabolic steroid use.** Rule: young bodybuilder + raised Hb = ask about steroids."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 61 year old woman with polycythaemia vera has 2 weeks of right upper quadrant pain and increasing abdominal swelling. Her liver is enlarged and tender and there is shifting dullness. Her pulse rate is 96 bpm, BP 118/74 mmHg and temperature 36.9°C.",
+     "labs": [["ALT", "182 U/L", "<40", "H"], ["Bilirubin", "34 µmol/L", "<21", "H"], ["Haemoglobin", "178 g/L", "115–165", "H"]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Acute cholecystitis", "Budd-Chiari syndrome", "Hepatocellular carcinoma", "Hepatitis A infection", "Right heart failure"],
+     "a": 1,
+     "e": "PV is the commonest cause of Budd-Chiari syndrome (hepatic vein thrombosis): RUQ pain, tender hepatomegaly and ascites. Cholecystitis would cause fever and no ascites.",
+     "steps": [
+       {"t": "Read the question line first", "x": "A complication of PV in the liver."},
+       {"t": "Pick out the clues", "clues": ["polycythaemia vera", "right upper quadrant pain", "increasing abdominal swelling", "liver is enlarged and tender", "shifting dullness"], "x": "**PV** + RUQ pain + tender hepatomegaly + **ascites**: classic triad."},
+       {"t": "Make your own answer before looking", "x": "Hepatic vein thrombosis: **Budd-Chiari syndrome**."},
+       {"t": "Rule out the others", "elim": [[0, "Cholecystitis causes fever and Murphy's sign, not ascites."], [2, "HCC usually arises in a cirrhotic liver with weight loss."], [3, "Hepatitis A has a viral prodrome and no link to PV."], [4, "Right heart failure gives a raised JVP and leg oedema."]]},
+       {"t": "Commit", "x": "**B. Budd-Chiari syndrome.** Rule: PV + RUQ pain + ascites = Budd-Chiari."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 66 year old man has polycythaemia vera newly diagnosed after a raised haemoglobin was found. He has headaches and a red face. His pulse rate is 74 bpm and BP 146/90 mmHg.",
+     "labs": [], "visual": {"kind": "abdomen", "title": "Abdominal examination", "regions": ["LUQ"], "caption": "Where to feel."},
+     "q": "Which is the most likely finding on abdominal examination?",
+     "o": ["Ascites", "Caput medusae", "Palpable bladder", "Pulsatile epigastric mass", "Splenomegaly"],
+     "a": 4,
+     "e": "Splenomegaly (a LUQ mass) is a common finding in PV and helps distinguish it from secondary polycythaemia. Ascites would suggest Budd-Chiari, a complication.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Most likely examination finding in PV."},
+       {"t": "Pick out the clues", "clues": ["polycythaemia vera newly diagnosed", "red face"], "x": "Uncomplicated new PV."},
+       {"t": "Make your own answer before looking", "x": "**Splenomegaly**."},
+       {"t": "Rule out the others", "elim": [[0, "Ascites suggests Budd-Chiari, a complication, not the usual finding."], [1, "Caput medusae is portal hypertension in cirrhosis."], [2, "A palpable bladder is urinary retention."], [3, "A pulsatile mass is an aortic aneurysm."]]},
+       {"t": "Commit", "x": "**E. Splenomegaly.** Rule: PV = LUQ mass; secondary polycythaemia = no spleen."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 74 year old man has had polycythaemia vera for 15 years. He no longer needs venesection. Over 6 months he has become more tired and has early satiety. His spleen is now palpable to the umbilicus. A blood film shows teardrop-shaped red cells and no blasts.",
+     "labs": [["Haemoglobin", "96 g/L", "130–175", "L"], ["White cell count", "5.1 ×10⁹/L", "4.0–11.0", ""], ["Platelet count", "92 ×10⁹/L", "150–400", "L"]],
+     "visual": null,
+     "q": "Which is the most likely explanation?",
+     "o": ["Acute myeloid leukaemia", "Hydroxycarbamide toxicity", "Iron deficiency from venesection", "Progression to myelofibrosis", "Splenic infarction"],
+     "a": 3,
+     "e": "Long-standing PV in a spent phase with falling counts, massive splenomegaly and teardrop cells has progressed to secondary myelofibrosis. AML would show blasts and a high WBC.",
+     "steps": [
+       {"t": "Read the question line first", "x": "What has happened to a long-standing PV."},
+       {"t": "Pick out the clues", "clues": ["polycythaemia vera for 15 years", "no longer needs venesection", "palpable to the umbilicus", "teardrop-shaped red cells", "no blasts"], "x": "**Spent phase**: counts falling, massive spleen, **dacrocytes**, no blasts."},
+       {"t": "Make your own answer before looking", "x": "**Progression to myelofibrosis**."},
+       {"t": "Rule out the others", "elim": [[0, "AML would show blasts and usually a high WBC."], [1, "Hydroxycarbamide toxicity lowers counts but does not enlarge the spleen or make teardrop cells."], [2, "He no longer has venesection, and iron deficiency does not cause massive splenomegaly."], [4, "Splenic infarction causes acute LUQ pain."]]},
+       {"t": "Commit", "x": "**D. Progression to myelofibrosis.** Rule: old PV + falling counts + teardrop cells = spent phase."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 63 year old woman has headaches and itching after hot baths. She has a plethoric face and a palpable spleen. She has never smoked. Her pulse rate is 80 bpm, BP 150/90 mmHg and oxygen saturation 98% breathing air.",
+     "labs": [["Haemoglobin", "191 g/L", "115–165", "H"], ["Haematocrit", "0.57", "0.37–0.47", "H"]],
+     "visual": null,
+     "q": "Which is the most appropriate diagnostic investigation?",
+     "o": ["BCR-ABL (Philadelphia chromosome) testing", "Bone marrow biopsy", "JAK2 mutation screen", "Serum ferritin", "Urinary catecholamines"],
+     "a": 2,
+     "e": "The JAK2 mutation screen is the most important diagnostic test for PV, alongside FBC and EPO. Bone marrow biopsy is not first.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnostic test for suspected PV."},
+       {"t": "Pick out the clues", "clues": ["itching after hot baths", "plethoric face", "palpable spleen", "never smoked"], "x": "Classic **PV** picture."},
+       {"t": "Make your own answer before looking", "x": "**JAK2 mutation screen**."},
+       {"t": "Rule out the others", "elim": [[0, "BCR-ABL is for CML."], [1, "Marrow biopsy is for unclear cases or myelofibrosis."], [3, "Ferritin does not diagnose PV."], [4, "Catecholamines are for phaeochromocytoma."]]},
+       {"t": "Commit", "x": "**C. JAK2 mutation screen.** Rule: suspected PV = JAK2 first."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 71 year old man with severe COPD has a haemoglobin of 186 g/L. He smokes 30 cigarettes a day. His pulse rate is 92 bpm, BP 138/80 mmHg and oxygen saturation 87% breathing air. His spleen is not palpable.",
+     "labs": [["White cell count", "8.0 ×10⁹/L", "4.0–11.0", ""], ["Platelet count", "290 ×10⁹/L", "150–400", ""]],
+     "visual": null,
+     "q": "Which is the most likely finding on further investigation?",
+     "o": ["JAK2 V617F mutation detected", "Low serum erythropoietin", "Philadelphia chromosome detected", "Raised serum erythropoietin", "Teardrop cells on blood film"],
+     "a": 3,
+     "e": "Chronic hypoxia from COPD and smoking drives a compensatory rise in EPO: secondary polycythaemia. Low EPO and JAK2 point to PV.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Predict a test result in a raised Hb."},
+       {"t": "Pick out the clues", "clues": ["severe COPD", "smokes 30 cigarettes a day", "oxygen saturation 87%", "spleen is not palpable"], "x": "**Chronic hypoxia**, normal WCC and platelets, no spleen."},
+       {"t": "Make your own answer before looking", "x": "Secondary polycythaemia: **raised EPO**."},
+       {"t": "Rule out the others", "elim": [[0, "JAK2 is the PV mutation."], [1, "Low EPO means PV."], [2, "The Philadelphia chromosome is CML."], [4, "Teardrop cells mean myelofibrosis."]]},
+       {"t": "Commit", "x": "**D. Raised EPO.** Rule: hypoxia = high EPO = secondary polycythaemia."}
+     ]},
+    {"d": "management",
+     "stem": "A 48 year old woman has polycythaemia vera. Her haematocrit has been brought below 0.45 by venesection. She has had no thrombosis and has no bleeding history. Her pulse rate is 72 bpm and BP 128/80 mmHg.",
+     "labs": [["Haematocrit", "0.44", "0.37–0.47", ""], ["Platelet count", "430 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which drug should be added to reduce her thrombotic risk?",
+     "o": ["Apixaban", "Aspirin 75 mg once daily", "Clopidogrel", "Hydroxycarbamide", "Warfarin"],
+     "a": 1,
+     "e": "Low-dose aspirin 75 mg is added in PV to reduce thrombosis. Hydroxycarbamide is for high-risk disease (older or previous thrombosis), which she is not.",
+     "steps": [
+       {"t": "Read the question line first", "x": "The add-on drug in PV."},
+       {"t": "Pick out the clues", "clues": ["below 0.45 by venesection", "no thrombosis", "no bleeding history", "48 year old"], "x": "Low-risk PV, counts controlled, platelets well below 1500."},
+       {"t": "Make your own answer before looking", "x": "**Aspirin 75 mg** once daily."},
+       {"t": "Rule out the others", "elim": [[0, "A DOAC is not routine in PV without a VTE."], [2, "Clopidogrel is not the standard antiplatelet in PV."], [3, "Hydroxycarbamide is for high-risk disease."], [4, "Warfarin is not routine and raises bleeding risk."]]},
+       {"t": "Commit", "x": "**B. Aspirin 75 mg.** Rule: PV = venesection + low-dose aspirin."}
+     ]},
+    {"d": "management",
+     "stem": "A 50 year old man has secondary polycythaemia. Sleep studies confirm severe obstructive sleep apnoea. His BMI is 39 kg/m². His pulse rate is 82 bpm and BP 150/94 mmHg. The JAK2 mutation screen is negative.",
+     "labs": [["Haemoglobin", "182 g/L", "130–175", "H"], ["Serum erythropoietin", "21 IU/L", "3.3–16.6", "H"]],
+     "visual": null,
+     "q": "Which is the most appropriate management?",
+     "o": ["Aspirin alone", "Continuous positive airway pressure", "Hydroxycarbamide", "Imatinib", "Splenectomy"],
+     "a": 1,
+     "e": "Secondary polycythaemia is treated by fixing the cause: CPAP corrects night-time hypoxia from OSA, so EPO and Hb fall. Hydroxycarbamide is for PV.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Management of secondary polycythaemia."},
+       {"t": "Pick out the clues", "clues": ["secondary polycythaemia", "severe obstructive sleep apnoea", "JAK2 mutation screen is negative"], "x": "The cause is **OSA**."},
+       {"t": "Make your own answer before looking", "x": "Treat the cause: **CPAP**."},
+       {"t": "Rule out the others", "elim": [[0, "Aspirin does not remove the hypoxic drive."], [2, "Hydroxycarbamide is cytoreduction for PV."], [3, "Imatinib is for CML."], [4, "Splenectomy has no role."]]},
+       {"t": "Commit", "x": "**B. CPAP.** Rule: secondary polycythaemia = treat the cause."}
+     ]},
+    {"d": "management",
+     "stem": "A 76 year old man with polycythaemia vera had an ischaemic stroke 1 year ago. He has needed venesection every 2 weeks to control his haematocrit and is finding it hard to tolerate. His pulse rate is 78 bpm and BP 140/84 mmHg.",
+     "labs": [["Haematocrit", "0.51", "0.40–0.52", ""], ["Platelet count", "720 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which is the most appropriate additional treatment?",
+     "o": ["Allopurinol", "Bone marrow transplant", "Hydroxycarbamide", "Imatinib", "Splenectomy"],
+     "a": 2,
+     "e": "Older age and previous thrombosis make this high-risk PV: add cytoreduction with hydroxycarbamide, which inhibits ribonucleotide reductase. Imatinib is for CML.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Treatment for uncontrolled, high-risk PV."},
+       {"t": "Pick out the clues", "clues": ["76 year old", "ischaemic stroke 1 year ago", "venesection every 2 weeks", "hard to tolerate"], "x": "**Elderly**, previous **thrombosis**, poorly controlled with venesection."},
+       {"t": "Make your own answer before looking", "x": "Cytoreduction: **hydroxycarbamide**."},
+       {"t": "Rule out the others", "elim": [[0, "Allopurinol treats gout, not the counts."], [1, "Transplant is not used for PV at his age."], [3, "Imatinib targets BCR-ABL in CML."], [4, "Splenectomy does not control PV."]]},
+       {"t": "Commit", "x": "**C. Hydroxycarbamide.** Rule: high-risk PV = add hydroxycarbamide."}
+     ]},
+    {"d": "science",
+     "stem": "A 60 year old man has polycythaemia vera. His haemoglobin is 195 g/L. His serum erythropoietin is low and a JAK2 V617F mutation is detected.",
+     "labs": [["Serum erythropoietin", "1.5 IU/L", "3.3–16.6", "L"]],
+     "visual": null,
+     "q": "Which is the most likely mechanism of his low erythropoietin?",
+     "o": ["Chronic kidney disease", "EPO-independent red cell production suppressing EPO", "Hypoxic stimulation of the kidney", "Iron deficiency", "Splenic destruction of EPO"],
+     "a": 1,
+     "e": "The JAK2 V617F clone makes red cells without needing EPO; the raised red cell mass then suppresses renal EPO production. Hypoxia would raise EPO.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Mechanism of a test result in PV."},
+       {"t": "Pick out the clues", "clues": ["polycythaemia vera", "serum erythropoietin is low", "JAK2 V617F mutation"], "x": "**Constitutive JAK-STAT signalling** drives red cells independently of EPO."},
+       {"t": "Make your own answer before looking", "x": "Autonomous production → negative feedback → **EPO suppressed**."},
+       {"t": "Rule out the others", "elim": [[0, "CKD causes anaemia, not a Hb of 195."], [2, "Hypoxia raises EPO."], [3, "Iron deficiency does not lower EPO."], [4, "The spleen does not destroy EPO."]]},
+       {"t": "Commit", "x": "**B. EPO-independent production suppressing EPO.** Rule: PV = autonomous clone, low EPO."}
+     ]}
+  ]
+}

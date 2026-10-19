@@ -1,0 +1,2382 @@
+{
+ "id": "stroke",
+ "patient": {
+  "name": "Desmond Clarke",
+  "age": 74,
+  "sex": "M",
+  "setting": "Emergency Department (hyperacute stroke unit)",
+  "complaint": "Sudden right arm and face weakness and difficulty speaking, witnessed at 10:15",
+  "background": [
+   "Paroxysmal atrial fibrillation, stopped apixaban 3 months ago (felt 'it made him bruise')",
+   "Hypertension on amlodipine",
+   "Type 2 diabetes on metformin",
+   "Retired bus driver from Lewisham; lives with his wife, independent"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with sudden focal deficit in an AF or hypertensive patient, or a named syndrome (Wallenberg, Weber's, lacunar) to localise; persistence beyond 24 hours means stroke, not TIA.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Desmond, 74, was reading the paper at **10:15**.",
+      "His wife saw the paper drop from his **right hand**.",
+      "His right face drooped; he could not get his words out.",
+      "He understands her and nods to questions correctly.",
+      "She called 999; he arrives at 11:05."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "112 bpm irregular",
+      "BP": "196/104 mmHg",
+      "RR": "16 /min",
+      "SpO2": "96% on air",
+      "GCS": "14",
+      "CBG": "7.8 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond has the two big risk factors: **AF** off anticoagulation and **hypertension**. Ischaemic stroke is far more likely (~85%), but only a scan can tell."
+    },
+    {
+     "type": "ask",
+     "q": "Desmond understands but cannot produce fluent speech. Where is the lesion?",
+     "o": [
+      "Arcuate fasciculus",
+      "Inferior frontal gyrus (Broca's area)",
+      "Left superior temporal gyrus (Wernicke's area)",
+      "Occipital cortex"
+     ],
+     "a": 1,
+     "r": "Effortful, non-fluent speech with **preserved comprehension** is **Broca's (expressive) aphasia**: dominant inferior frontal gyrus."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond's sudden focal deficit plus **expressive aphasia** points to the dominant (left) hemisphere."
+    },
+    {
+     "type": "compare",
+     "title": "Which aphasia?",
+     "head": [
+      "Type",
+      "Lesion",
+      "Key feature"
+     ],
+     "rows": [
+      [
+       "Broca's (expressive)",
+       "Inferior frontal gyrus",
+       "Non-fluent; understands commands"
+      ],
+      [
+       "Wernicke's (receptive)",
+       "Left superior temporal gyrus",
+       "Fluent but meaningless; poor comprehension"
+      ],
+      [
+       "Conduction",
+       "Arcuate fasciculus",
+       "Cannot repeat words"
+      ]
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Right arm power 1/5, right leg 3/5: **arm worse than leg**.",
+      "Right homonymous hemianopia on confrontation.",
+      "Right facial droop with forehead spared (UMN).",
+      "Reduced sensation on the right side."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Arm worse than leg, face involved, hemianopia and aphasia: Desmond's deficit fits the **left MCA territory**."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Hemiparesis + homonymous hemianopia + aphasia: all three present, so Desmond has a **TACI** (total anterior circulation infarct), if the scan shows infarction."
+    },
+    {
+     "type": "flow",
+     "title": "Bamford (Oxford) classification",
+     "nodes": [
+      "Hemiparesis / hemisensory loss?",
+      "Homonymous hemianopia?",
+      "Higher cortical dysfunction?",
+      "All 3 = TACI",
+      "2 of 3 = PACI",
+      "Pure motor/sensory, no cortical signs = LACI",
+      "Cerebellar / brainstem signs = POCI"
+     ],
+     "caption": "Count the three features first; DANISH signs mean posterior circulation."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's picture is anterior circulation. The exam also loves the named **brainstem and posterior** syndromes: recognise each from its signature."
+    },
+    {
+     "type": "compare",
+     "title": "Named syndromes: the one clue",
+     "head": [
+      "Syndrome",
+      "Artery",
+      "Signature clue"
+     ],
+     "rows": [
+      [
+       "Lateral medullary (Wallenberg)",
+       "PICA",
+       "Ipsilateral face + contralateral body pain/temp loss, Horner's"
+      ],
+      [
+       "Weber's",
+       "PCA branch (midbrain)",
+       "Ipsilateral CN III palsy + contralateral hemiparesis"
+      ],
+      [
+       "Locked-in",
+       "Basilar",
+       "Quadriplegia, conscious, vertical eye movements only"
+      ],
+      [
+       "Pontine haemorrhage",
+       "Pons",
+       "Low GCS, bilateral pinpoint pupils"
+      ],
+      [
+       "Amaurosis fugax",
+       "Ophthalmic / retinal",
+       "Painless curtain over one eye"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond's off-anticoagulant AF makes infarct likely, but a **bleed** looks similar at the bedside; on CT a haemorrhage is **high-attenuating** (bright)."
+    },
+    {
+     "type": "trap",
+     "text": "You **cannot** tell ischaemic from haemorrhagic stroke clinically. A low GCS and headache hint at bleeding, but the answer is always the **CT** before any thrombolysis."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?': the answer is non-contrast CT head; DWI-MRI, CT angiography and bubble echo (young patient) are the follow-ups.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Desmond arrives 50 minutes after onset. What is the first imaging?",
+     "o": [
+      "CT angiogram only",
+      "Diffusion-weighted MRI",
+      "Non-contrast CT head",
+      "Carotid Doppler"
+     ],
+     "a": 2,
+     "r": "**Non-contrast CT head** immediately, to exclude haemorrhage before thrombolysis."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's CT shows no blood and a **hyperdense left MCA sign**: thrombus in the artery, confirming ischaemia."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond goes on to CT angiography, which shows a **proximal left MCA occlusion**: a thrombectomy target. DWI-MRI later confirms the infarct as bright tissue."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Rhythm strip on arrival",
+      "layout": "strip",
+      "rhythm": "af",
+      "rate": 112,
+      "caption": "Irregularly irregular, no P waves: **AF**, the cardioembolic source."
+     },
+     "text": "The ECG explains the stroke: a clot from the left atrium."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond's CBG of **7.8 mmol/L** rules out hypoglycaemia, the classic mimic. His age and AF make thrombophilia or PFO work-up unnecessary."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods on arrival",
+     "rows": [
+      [
+       "Capillary glucose",
+       "7.8 mmol/L",
+       "4.0–7.8",
+       ""
+      ],
+      [
+       "Sodium",
+       "139 mmol/L",
+       "135–145",
+       ""
+      ],
+      [
+       "Platelets",
+       "246 ×10⁹/L",
+       "150–400",
+       ""
+      ],
+      [
+       "INR",
+       "1.0",
+       "0.8–1.2",
+       ""
+      ],
+      [
+       "Creatinine",
+       "88 µmol/L",
+       "60–110",
+       ""
+      ]
+     ],
+     "text": "Normal glucose, sodium, platelets and clotting: no mimic and no contraindication to alteplase."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "In ED Desmond's **ROSIER** is positive; his **NIHSS of 16** measures severity and supports reperfusion."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "NIH Stroke Scale",
+      "min": 0,
+      "max": 42,
+      "unit": "points",
+      "bands": [
+       [
+        0,
+        5,
+        "minor (0–4)",
+        "ok"
+       ],
+       [
+        5,
+        16,
+        "moderate (5–15)",
+        "warn"
+       ],
+       [
+        16,
+        42,
+        "severe (16+)",
+        "bad"
+       ]
+      ],
+      "value": 16,
+      "label": "Desmond 16",
+      "caption": "NIHSS >5 with a large vessel occlusion: thrombectomy benefits most."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "**ROSIER** recognises stroke in ED; **NIHSS** grades severity; **Barthel** measures function afterwards; **DRAGON** and **SOAR** predict outcome."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect timing questions: 999 from the GP, alteplase within 4.5 hours with BP <185/110, thrombectomy within 6 to 24 hours, aspirin 300 mg, then clopidogrel plus atorvastatin or a DOAC at 2 weeks for AF.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "His wife did the right thing: from home or the GP, a suspected stroke is a **999** call. In ED: ABCDE, stroke team, CT."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Time since onset: what is still possible",
+      "min": 0,
+      "max": 24,
+      "unit": "hours",
+      "bands": [
+       [
+        0,
+        4.5,
+        "thrombolysis",
+        "ok"
+       ],
+       [
+        4.5,
+        6,
+        "thrombectomy",
+        "warn"
+       ],
+       [
+        6,
+        24,
+        "thrombectomy if imaging shows salvageable tissue",
+        "bad"
+       ]
+      ],
+      "value": 1.5,
+      "label": "Desmond 1.5 h",
+      "caption": "Inside 4.5 hours: alteplase **and** thrombectomy for his MCA occlusion."
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Systolic BP before thrombolysis",
+      "min": 100,
+      "max": 220,
+      "unit": "mmHg",
+      "bands": [
+       [
+        100,
+        185,
+        "safe to lyse (<185/110)",
+        "ok"
+       ],
+       [
+        185,
+        220,
+        "lower first",
+        "bad"
+       ]
+      ],
+      "value": 196,
+      "label": "Desmond 196",
+      "caption": "196/104 mmHg: lower it below **185/110** (e.g. labetalol) before alteplase."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "After IV labetalol Desmond's BP is 172/96, so **IV alteplase** starts at 1 h 40 min. **Aspirin 300 mg** waits until 24 hours after thrombolysis."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond has a **proximal MCA** thrombus within 6 hours: he goes straight on to **mechanical thrombectomy** as well."
+    },
+    {
+     "type": "flow",
+     "title": "Hyperacute ischaemic stroke pathway",
+     "nodes": [
+      "999 / ABCDE, CBG",
+      "Non-contrast CT head",
+      "No bleed: BP <185/110",
+      "IV alteplase if <4.5 h",
+      "CTA: large vessel occlusion?",
+      "Thrombectomy if <6 h (up to 24 h)",
+      "Aspirin 300 mg at 24 h"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "On the ward Desmond coughs on water and has a wet voice: **nil by mouth**, IV fluids and **SALT** review to prevent aspiration pneumonia."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond's stroke is **AF-related**: aspirin until day 14, then restart a DOAC (apixaban 5 mg BD) plus **atorvastatin 80 mg**, rather than clopidogrel."
+    },
+    {
+     "type": "ask",
+     "q": "When should Desmond's anticoagulation restart?",
+     "o": [
+      "Immediately after the CT",
+      "At 24 hours",
+      "About 2 weeks after the stroke",
+      "Never: use clopidogrel"
+     ],
+     "a": 2,
+     "r": "After a disabling ischaemic stroke, anticoagulation for AF starts **2 weeks** after the event to limit haemorrhagic transformation."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "If Desmond's CT had shown a **bleed**: no lysis; reverse any anticoagulant, systolic BP **<140** within an hour, neurosurgical review."
+    },
+    {
+     "type": "trap",
+     "text": "Never give aspirin or alteplase before the CT. And if the patient was thrombolysed, **aspirin waits 24 hours**."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Desmond's whole pathway follows **NICE NG128** and the RCP stroke guideline; ROSIER, NIHSS and Barthel are the named tools."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Applied mechanism: cardioembolism from AF, the penumbra, why territories cause specific deficits, and haemorrhagic transformation after lysis.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's AF let a clot form in the left atrium; it embolised to the left MCA and cut off flow: a **cardioembolic** stroke."
+    },
+    {
+     "type": "flow",
+     "title": "From AF to infarct",
+     "nodes": [
+      "AF: stasis in left atrial appendage",
+      "Thrombus forms",
+      "Embolus to left MCA",
+      "Core infarcts in minutes",
+      "Penumbra survives for hours"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Alteplase and thrombectomy aim to save Desmond's **penumbra**, not the dead core. That is why 'time is brain'."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "The MCA supplies the **lateral** cortex: Desmond's face and arm areas and Broca's area, which is why his leg is less weak."
+    },
+    {
+     "type": "ask",
+     "q": "Which territory gives leg-predominant weakness and urinary incontinence?",
+     "o": [
+      "ACA",
+      "MCA",
+      "PCA",
+      "PICA"
+     ],
+     "a": 0,
+     "r": "The **ACA** supplies the **medial** cortex, where the leg and bladder areas lie."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Desmond had bled, his hypertension would predict a **deep** (basal ganglia, thalamus, pons) haemorrhage; amyloid angiopathy causes **lobar** bleeds."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Day 2: Desmond's drowsiness worsens. Repeat CT checks for **haemorrhagic transformation**, reperfused leaky tissue bleeding after lysis."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "A large MCA infarct swells by day 2 to 5. In a patient **under 60** with malignant oedema, **hemicraniectomy** relieves the raised ICP."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Desmond's NIHSS after reperfusion",
+      "x": [
+       "Arrival",
+       "After lysis",
+       "After thrombectomy",
+       "Day 7"
+      ],
+      "unit": "points",
+      "series": [
+       {
+        "name": "NIHSS",
+        "values": [
+         16,
+         13,
+         7,
+         4
+        ]
+       }
+      ],
+      "caption": "Rescued penumbra shows as a falling NIHSS."
+     }
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the strongest overall risk factor for stroke?",
+   "o": [
+    "Atrial fibrillation",
+    "Diabetes",
+    "Hypertension",
+    "Smoking"
+   ],
+   "a": 2,
+   "r": "**Hypertension** is the strongest overall risk factor; AF is the main cardioembolic one."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which artery is occluded in lateral medullary (Wallenberg's) syndrome?",
+   "o": [
+    "Anterior cerebral artery",
+    "Basilar artery",
+    "Middle cerebral artery",
+    "Posterior inferior cerebellar artery"
+   ],
+   "a": 3,
+   "r": "**PICA** infarct: vertigo, ataxia, ipsilateral Horner's and crossed sensory loss."
+  },
+  {
+   "d": "diagnosis",
+   "q": "A homonymous hemianopia WITH macular sparing suggests which territory?",
+   "o": [
+    "ACA",
+    "MCA",
+    "PCA",
+    "Lacunar"
+   ],
+   "a": 2,
+   "r": "**PCA** (occipital cortex) infarcts spare the macula; MCA hemianopia does not."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What does DANISH describe?",
+   "o": [
+    "Cerebellar (posterior circulation) signs",
+    "Lacunar syndrome",
+    "MCA syndrome",
+    "Signs of raised ICP"
+   ],
+   "a": 0,
+   "r": "Dysdiadochokinesia, Ataxia, Nystagmus, Intention tremor, Slurred speech, Hypotonia."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line imaging in suspected stroke?",
+   "o": [
+    "CT angiogram",
+    "Diffusion-weighted MRI",
+    "Non-contrast CT head",
+    "Carotid Doppler"
+   ],
+   "a": 2,
+   "r": "Urgent **non-contrast CT** excludes haemorrhage before thrombolysis."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test detects a patent foramen ovale in a young stroke patient?",
+   "o": [
+    "Bubble echocardiogram",
+    "Carotid Doppler",
+    "CT angiogram",
+    "24-hour ECG"
+   ],
+   "a": 0,
+   "r": "A **bubble (contrast) echo** shows right-to-left shunting through a PFO."
+  },
+  {
+   "d": "management",
+   "q": "What is the time window for IV alteplase in ischaemic stroke?",
+   "o": [
+    "1 hour",
+    "4.5 hours",
+    "6 hours",
+    "24 hours"
+   ],
+   "a": 1,
+   "r": "Within **4.5 hours** of onset (extended to 9 h with salvageable tissue on imaging)."
+  },
+  {
+   "d": "management",
+   "q": "What BP must be reached before thrombolysis?",
+   "o": [
+    "Below 140/90 mmHg",
+    "Below 160/100 mmHg",
+    "Below 185/110 mmHg",
+    "Below 220/120 mmHg"
+   ],
+   "a": 2,
+   "r": "**<185/110 mmHg** before alteplase."
+  },
+  {
+   "d": "management",
+   "q": "What is the secondary prevention after a non-AF ischaemic stroke, from day 14?",
+   "o": [
+    "Aspirin 75 mg + dipyridamole",
+    "Clopidogrel 75 mg + atorvastatin 80 mg",
+    "Apixaban 5 mg BD",
+    "Warfarin + simvastatin"
+   ],
+   "a": 1,
+   "r": "**Clopidogrel 75 mg OD** (aspirin 75 mg if contraindicated) plus **atorvastatin 80 mg**."
+  },
+  {
+   "d": "science",
+   "q": "Which tissue do reperfusion therapies aim to save?",
+   "o": [
+    "Infarct core",
+    "Ischaemic penumbra",
+    "Necrotic white matter",
+    "Vasogenic oedema"
+   ],
+   "a": 1,
+   "r": "The **penumbra** is hypoperfused but not yet infarcted."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What are the two types of stroke, their proportions and their risk factors?",
+    "tip": "Exam thinking: AF and hypertension in the stem should make you say 'stroke' before you read the deficit.",
+    "points": [
+     {
+      "p": "Ischaemic ~85%: arterial occlusion causing infarction",
+      "k": [
+       [
+        "ischaemic",
+        "ischemic",
+        "infarct"
+       ],
+       [
+        "85"
+       ]
+      ],
+      "why": "Most strokes are ischaemic, but a CT is still needed to prove it."
+     },
+     {
+      "p": "Haemorrhagic ~15%: bleeding into the brain, more severe",
+      "k": [
+       [
+        "haemorrhagic",
+        "hemorrhagic",
+        "bleed"
+       ],
+       [
+        "15"
+       ]
+      ],
+      "why": "Haemorrhagic strokes more often cause headache, vomiting and low GCS."
+     },
+     {
+      "p": "Ischaemic risk factors: AF (main), hypertension (strongest overall), diabetes, hyperlipidaemia",
+      "k": [
+       [
+        "atrial fibrillation",
+        "af"
+       ],
+       [
+        "hypertension",
+        "high blood pressure",
+        "htn"
+       ]
+      ],
+      "why": "AF is the classic stem clue: 'irregularly irregular pulse'."
+     },
+     {
+      "p": "Haemorrhagic risk factors: anticoagulation, amyloid angiopathy, cocaine/amphetamines, haemophilia",
+      "k": [
+       [
+        "anticoag",
+        "warfarin",
+        "doac",
+        "amyloid",
+        "cocaine",
+        "amphetamine"
+       ]
+      ],
+      "why": "A young cocaine user with sudden deficit: think haemorrhage."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do MCA, ACA and PCA territory infarcts differ?",
+    "tip": "Exam thinking: arm vs leg decides MCA vs ACA; macular sparing decides PCA.",
+    "points": [
+     {
+      "p": "MCA: contralateral weakness/sensory loss arm > leg, hemianopia, aphasia if dominant",
+      "k": [
+       [
+        "mca",
+        "middle cerebral"
+       ],
+       [
+        "arm"
+       ]
+      ],
+      "why": "MCA is the most common thromboembolic stroke."
+     },
+     {
+      "p": "ACA: contralateral weakness leg > arm, urinary incontinence",
+      "k": [
+       [
+        "aca",
+        "anterior cerebral"
+       ],
+       [
+        "leg"
+       ]
+      ],
+      "why": "The leg and bladder areas sit on the medial cortex."
+     },
+     {
+      "p": "PCA: contralateral homonymous hemianopia with macular sparing, cortical blindness, visual agnosia",
+      "k": [
+       [
+        "pca",
+        "posterior cerebral"
+       ],
+       [
+        "macula",
+        "hemianopia",
+        "visual"
+       ]
+      ],
+      "why": "Macular sparing is the PCA giveaway."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What defines TACI, PACI, LACI and POCI?",
+    "tip": "Exam thinking: count the three cortical features.",
+    "points": [
+     {
+      "p": "TACI: hemiparesis + homonymous hemianopia + higher cortical dysfunction (all 3)",
+      "k": [
+       [
+        "taci",
+        "total anterior"
+       ],
+       [
+        "3",
+        "three",
+        "all"
+       ]
+      ],
+      "why": "TACI carries the worst prognosis."
+     },
+     {
+      "p": "PACI: 2 of the 3",
+      "k": [
+       [
+        "paci",
+        "partial anterior"
+       ],
+       [
+        "2",
+        "two"
+       ]
+      ],
+      "why": "Isolated higher cortical dysfunction can also count as PACI."
+     },
+     {
+      "p": "LACI: pure motor and/or sensory, no cortical signs; perforating arteries (internal capsule, thalamus, basal ganglia)",
+      "k": [
+       [
+        "laci",
+        "lacunar"
+       ],
+       [
+        "motor",
+        "sensory",
+        "capsule",
+        "no cortical"
+       ]
+      ],
+      "why": "No aphasia, neglect or hemianopia in a lacunar stroke."
+     },
+     {
+      "p": "POCI: cerebellar/brainstem signs (DANISH)",
+      "k": [
+       [
+        "poci",
+        "posterior circulation"
+       ],
+       [
+        "cerebell",
+        "danish",
+        "brainstem",
+        "ataxia"
+       ]
+      ],
+      "why": "DANISH: dysdiadochokinesia, ataxia, nystagmus, intention tremor, slurred speech, hypotonia."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Name the signature features of Wallenberg's, Weber's and locked-in syndrome.",
+    "tip": "Exam thinking: 'crossed' signs (one side face, other side body) mean the brainstem.",
+    "points": [
+     {
+      "p": "Wallenberg (PICA): vertigo, ataxia, dysphagia, ipsilateral Horner's, ipsilateral face and contralateral body pain/temp loss",
+      "k": [
+       [
+        "wallenberg",
+        "lateral medullary",
+        "pica"
+       ],
+       [
+        "horner",
+        "crossed",
+        "contralateral"
+       ]
+      ],
+      "why": "Lower cranial nerve (IX–XII) palsies cause the dysphagia and hoarseness."
+     },
+     {
+      "p": "Weber's (PCA branch, midbrain): ipsilateral CN III palsy + contralateral hemiparesis",
+      "k": [
+       [
+        "weber"
+       ],
+       [
+        "iii",
+        "oculomotor",
+        "third"
+       ]
+      ],
+      "why": "Fixed dilated pupil and ptosis on the side of the lesion."
+     },
+     {
+      "p": "Locked-in (basilar): quadriplegia, conscious, only vertical eye movements",
+      "k": [
+       [
+        "locked",
+        "basilar"
+       ],
+       [
+        "vertical",
+        "conscious",
+        "quadripleg"
+       ]
+      ],
+      "why": "Consciousness is preserved: do not call it coma."
+     },
+     {
+      "p": "Pontine haemorrhage: low GCS, paralysis, bilateral pinpoint pupils",
+      "k": [
+       [
+        "pontine",
+        "pons"
+       ],
+       [
+        "pinpoint"
+       ]
+      ],
+      "why": "Pinpoint pupils also suggest opioids: check the stem."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which aphasia matches which lesion?",
+    "tip": "Exam thinking: ask 'can they understand?' and 'can they repeat?'.",
+    "points": [
+     {
+      "p": "Broca's (expressive): inferior frontal gyrus, non-fluent, comprehension preserved",
+      "k": [
+       [
+        "broca",
+        "expressive"
+       ],
+       [
+        "frontal"
+       ]
+      ],
+      "why": "Patient follows commands but struggles to speak."
+     },
+     {
+      "p": "Wernicke's (receptive): left superior temporal gyrus, poor comprehension",
+      "k": [
+       [
+        "wernicke",
+        "receptive"
+       ],
+       [
+        "temporal"
+       ]
+      ],
+      "why": "Fluent speech that makes no sense."
+     },
+     {
+      "p": "Conduction: arcuate fasciculus, cannot repeat",
+      "k": [
+       [
+        "conduction"
+       ],
+       [
+        "arcuate",
+        "repeat"
+       ]
+      ],
+      "why": "Comprehension and fluency are both fine."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the first-line imaging in suspected stroke, why, and what can it show?",
+    "tip": "Exam thinking: CT first, every time, before any clot-buster.",
+    "points": [
+     {
+      "p": "Urgent non-contrast CT head",
+      "k": [
+       [
+        "ct"
+       ],
+       [
+        "non-contrast",
+        "noncontrast",
+        "non contrast",
+        "plain",
+        "without contrast"
+       ]
+      ],
+      "why": "Contrast is for angiography, not the first scan."
+     },
+     {
+      "p": "To exclude haemorrhage before thrombolysis",
+      "k": [
+       [
+        "haemorrhage",
+        "hemorrhage",
+        "bleed"
+       ]
+      ],
+      "why": "Lysis into a bleed is catastrophic."
+     },
+     {
+      "p": "Ischaemic: hyperdense artery (MCA) sign; haemorrhage: hyperdense collection",
+      "k": [
+       [
+        "hyperdense",
+        "high attenuat",
+        "bright"
+       ]
+      ],
+      "why": "Early ischaemic CT may be normal."
+     },
+     {
+      "p": "DWI-MRI confirms infarct (bright); CT angiogram if dissection/large vessel occlusion",
+      "k": [
+       [
+        "mri",
+        "diffusion",
+        "dwi"
+       ]
+      ],
+      "why": "DWI is the most sensitive test for acute infarct."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which bedside tests and scores do you use in suspected stroke?",
+    "tip": "Exam thinking: always exclude hypoglycaemia; know which score does what.",
+    "points": [
+     {
+      "p": "Capillary glucose to exclude hypoglycaemia (mimic)",
+      "k": [
+       [
+        "glucose",
+        "cbg",
+        "sugar",
+        "bm"
+       ]
+      ],
+      "why": "Other mimics: hyponatraemia, tumour, infection, migraine, functional."
+     },
+     {
+      "p": "ROSIER: recognise stroke in ED",
+      "k": [
+       [
+        "rosier"
+       ]
+      ],
+      "why": "Distinguishes stroke from mimics."
+     },
+     {
+      "p": "NIHSS: severity, guides thrombolysis/thrombectomy",
+      "k": [
+       [
+        "nihss",
+        "nih"
+       ]
+      ],
+      "why": "Thrombectomy benefits most when NIHSS >5."
+     },
+     {
+      "p": "Barthel: function/ADLs after stroke",
+      "k": [
+       [
+        "barthel"
+       ]
+      ],
+      "why": "DRAGON predicts 3-month outcome after alteplase; SOAR predicts mortality."
+     },
+     {
+      "p": "Young with no cause: bubble echo for PFO, thrombophilia/autoimmune screen",
+      "k": [
+       [
+        "bubble",
+        "pfo",
+        "patent foramen",
+        "thrombophilia"
+       ]
+      ],
+      "why": "Under 55 with no risk factors is the trigger."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the hyperacute management of ischaemic stroke, with time windows and BP target?",
+    "tip": "Exam thinking: the stem tells you the time since onset; match it to the window.",
+    "points": [
+     {
+      "p": "GP: call 999; ED: ABCDE and CT head",
+      "k": [
+       [
+        "999",
+        "ambulance",
+        "abcde"
+       ]
+      ],
+      "why": "Never 'refer to TIA clinic' for ongoing symptoms."
+     },
+     {
+      "p": "IV alteplase (or tenecteplase) within 4.5 hours",
+      "k": [
+       [
+        "alteplase",
+        "tenecteplase",
+        "thromboly"
+       ],
+       [
+        "4.5",
+        "4 and a half",
+        "four and a half"
+       ]
+      ],
+      "why": "Extended to 9 h if perfusion imaging shows salvageable tissue."
+     },
+     {
+      "p": "BP below 185/110 before lysis",
+      "k": [
+       [
+        "185"
+       ]
+      ],
+      "why": "Use labetalol to bring it down."
+     },
+     {
+      "p": "Thrombectomy within 6 hours (up to 24 h) for proximal MCA/ICA occlusion",
+      "k": [
+       [
+        "thrombectomy"
+       ],
+       [
+        "6",
+        "six",
+        "24"
+       ]
+      ],
+      "why": "Combine with alteplase if within 4.5 hours."
+     },
+     {
+      "p": "Aspirin 300 mg within 24 h (after 24 h if thrombolysed)",
+      "k": [
+       [
+        "aspirin"
+       ],
+       [
+        "300"
+       ]
+      ],
+      "why": "Aspirin is delayed after lysis to reduce bleeding."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What secondary prevention follows an ischaemic stroke, with and without AF?",
+    "tip": "Exam thinking: AF changes the answer from clopidogrel to a DOAC.",
+    "points": [
+     {
+      "p": "From day 14: clopidogrel 75 mg OD (aspirin 75 mg if contraindicated)",
+      "k": [
+       [
+        "clopidogrel"
+       ]
+      ],
+      "why": "Aspirin 300 mg covers the first two weeks."
+     },
+     {
+      "p": "Atorvastatin 80 mg at night",
+      "k": [
+       [
+        "atorvastatin",
+        "statin"
+       ],
+       [
+        "80"
+       ]
+      ],
+      "why": "High-intensity statin for everyone with ischaemic stroke."
+     },
+     {
+      "p": "AF: anticoagulate (e.g. apixaban 5 mg BD) from 2 weeks",
+      "k": [
+       [
+        "apixaban",
+        "doac",
+        "anticoag",
+        "warfarin",
+        "rivaroxaban",
+        "edoxaban"
+       ],
+       [
+        "2 week",
+        "two week",
+        "14"
+       ]
+      ],
+      "why": "After a TIA, anticoagulate immediately once bleed excluded."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage haemorrhagic stroke and the complications of stroke?",
+    "tip": "Exam thinking: reverse, lower BP, call neurosurgery; and check the swallow.",
+    "points": [
+     {
+      "p": "Reverse anticoagulation: warfarin with IV vitamin K + PCC; dabigatran with idarucizumab",
+      "k": [
+       [
+        "vitamin k",
+        "pcc",
+        "prothrombin",
+        "idarucizumab"
+       ]
+      ],
+      "why": "Reverse first, then operate."
+     },
+     {
+      "p": "Systolic BP <140 mmHg within 1 hour (GTN or labetalol)",
+      "k": [
+       [
+        "140"
+       ]
+      ],
+      "why": "Do not drop it below 120."
+     },
+     {
+      "p": "Neurosurgical review, ICU, airway protection; evacuation/decompression",
+      "k": [
+       [
+        "neurosurg",
+        "evacuat",
+        "decompress"
+       ]
+      ],
+      "why": "Haemorrhagic stroke is supportive plus surgery."
+     },
+     {
+      "p": "Unsafe swallow: nil by mouth, IV fluids, SALT",
+      "k": [
+       [
+        "nil by mouth",
+        "nbm",
+        "salt",
+        "speech and language"
+       ]
+      ],
+      "why": "Aspiration pneumonia is a common killer after stroke."
+     },
+     {
+      "p": "Hemicraniectomy: <60 y, severe, reduced GCS, infarct ≥50% MCA territory",
+      "k": [
+       [
+        "hemicraniectomy",
+        "craniectomy"
+       ]
+      ],
+      "why": "For malignant MCA oedema."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the ischaemic penumbra and why does it matter?",
+    "tip": "Exam thinking: reperfusion saves the penumbra, not the core.",
+    "points": [
+     {
+      "p": "Hypoperfused tissue not yet infarcted",
+      "k": [
+       [
+        "hypoperfus",
+        "not yet infarct",
+        "salvageable",
+        "at risk"
+       ]
+      ],
+      "why": "The core is already dead."
+     },
+     {
+      "p": "Target of thrombolysis and thrombectomy",
+      "k": [
+       [
+        "thromboly",
+        "alteplase",
+        "thrombectomy",
+        "reperfus"
+       ]
+      ],
+      "why": "Time windows exist because the penumbra dies with time."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does haemorrhagic stroke occur, and why can thrombolysis cause bleeding?",
+    "tip": "Exam thinking: deep bleed = hypertension; lobar bleed in the elderly = amyloid.",
+    "points": [
+     {
+      "p": "Hypertensive vasculopathy: deep bleeds (basal ganglia, thalamus, pons)",
+      "k": [
+       [
+        "hypertens"
+       ],
+       [
+        "deep",
+        "basal ganglia",
+        "thalamus",
+        "pons"
+       ]
+      ],
+      "why": "Small penetrating arteries are damaged by chronic hypertension."
+     },
+     {
+      "p": "Cerebral amyloid angiopathy: lobar bleeds in the elderly",
+      "k": [
+       [
+        "amyloid"
+       ],
+       [
+        "lobar"
+       ]
+      ],
+      "why": "Recurrent lobar bleeds in an older patient."
+     },
+     {
+      "p": "Haemorrhagic transformation: reperfusion into necrotic, leaky tissue",
+      "k": [
+       [
+        "reperfus",
+        "leaky",
+        "necrotic"
+       ]
+      ],
+      "why": "A deterioration after lysis needs a repeat CT."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "TACI": "Total anterior circulation infarct: hemiparesis, homonymous hemianopia and higher cortical dysfunction together.",
+  "PACI": "Partial anterior circulation infarct: two of the three TACI features.",
+  "LACI": "Lacunar infarct: small deep perforating artery stroke causing pure motor or sensory loss without cortical signs.",
+  "POCI": "Posterior circulation infarct: brainstem, cerebellar or occipital stroke.",
+  "Lacunar": "A small deep infarct from occlusion of a perforating artery, often from hypertension.",
+  "MCA": "Middle cerebral artery: supplies the lateral cortex, face, arm and language areas.",
+  "ACA": "Anterior cerebral artery: supplies the medial cortex including the leg and bladder areas.",
+  "PCA": "Posterior cerebral artery: supplies the occipital cortex and midbrain.",
+  "PICA": "Posterior inferior cerebellar artery: its occlusion causes lateral medullary syndrome.",
+  "homonymous hemianopia": "Loss of the same half of the visual field in both eyes, from a lesion behind the optic chiasm.",
+  "macular sparing": "Preserved central vision despite a hemianopia, typical of occipital (PCA) strokes.",
+  "Broca's": "Expressive aphasia from an inferior frontal gyrus lesion: non-fluent speech with preserved understanding.",
+  "Wernicke's": "Receptive aphasia from a superior temporal gyrus lesion: fluent speech with poor comprehension.",
+  "Conduction aphasia": "Inability to repeat words, from an arcuate fasciculus lesion.",
+  "arcuate fasciculus": "White matter tract linking Wernicke's and Broca's areas.",
+  "Wallenberg's": "Lateral medullary syndrome from a PICA infarct, with crossed sensory loss and Horner's.",
+  "Horner's": "Ptosis, miosis and anhidrosis from interrupted sympathetic supply to one side of the face.",
+  "Weber's syndrome": "Midbrain stroke: ipsilateral oculomotor palsy with contralateral hemiparesis.",
+  "Locked-in syndrome": "Basilar artery occlusion causing quadriplegia with preserved consciousness and vertical eye movements.",
+  "Hemiballismus": "Violent flinging movements of one side, from a contralateral subthalamic nucleus lesion.",
+  "Amaurosis fugax": "Painless, temporary, curtain-like loss of vision in one eye from retinal artery ischaemia.",
+  "DANISH": "Mnemonic for cerebellar signs: dysdiadochokinesia, ataxia, nystagmus, intention tremor, slurred speech, hypotonia.",
+  "dysdiadochokinesia": "Inability to perform rapid alternating movements, a cerebellar sign.",
+  "Hyperdense artery sign": "A bright artery on non-contrast CT showing thrombus within it.",
+  "high-attenuating": "Appearing bright on CT, as fresh blood does.",
+  "DWI": "Diffusion-weighted MRI, the most sensitive scan for acute infarction, which shows as bright.",
+  "ROSIER": "Recognition of Stroke in the Emergency Room scale, separating stroke from mimics.",
+  "NIHSS": "NIH Stroke Scale: scores neurological severity (0 to 42) and guides reperfusion.",
+  "Barthel Index": "Scale of independence in activities of daily living after stroke.",
+  "DRAGON score": "Predicts 3-month outcome after thrombolysis with alteplase.",
+  "SOAR": "Score predicting short-term mortality after ischaemic stroke.",
+  "modified Rankin": "Scale of disability and dependence, 0 (none) to 6 (dead).",
+  "Hoover's sign": "Test for functional leg weakness using involuntary hip extension when the other leg flexes.",
+  "patent foramen ovale": "A persistent hole between the atria that lets venous clots reach the brain.",
+  "PFO": "Patent foramen ovale: an interatrial hole allowing paradoxical embolism.",
+  "bubble echocardiogram": "Echo with agitated saline to show right-to-left shunting across a PFO.",
+  "Alteplase": "Recombinant tissue plasminogen activator that dissolves clot; given IV within 4.5 hours.",
+  "Tenecteplase": "A modified tissue plasminogen activator given as a single IV bolus.",
+  "thrombolysis": "Dissolving a clot with a drug such as alteplase.",
+  "Mechanical thrombectomy": "Removing a clot from a large artery with a catheter device.",
+  "Decompressive hemicraniectomy": "Removing part of the skull to relieve pressure from a swollen infarct.",
+  "penumbra": "Hypoperfused brain tissue that is not yet infarcted and can be saved.",
+  "haemorrhagic transformation": "Bleeding into infarcted tissue, especially after reperfusion.",
+  "cerebral amyloid angiopathy": "Amyloid deposits in cortical vessel walls causing lobar haemorrhages in the elderly.",
+  "idarucizumab": "Antibody fragment that reverses dabigatran.",
+  "PCC": "Prothrombin complex concentrate: replaces clotting factors II, VII, IX and X to reverse warfarin.",
+  "SALT": "Speech and language therapy, which assesses swallow safety.",
+  "DOAC": "Direct oral anticoagulant, such as apixaban or rivaroxaban.",
+  "labetalol": "IV alpha and beta blocker used to lower blood pressure quickly in stroke.",
+  "UMN": "Upper motor neurone: lesion above the brainstem nucleus, so the forehead is spared in facial weakness."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old man has sudden weakness of his right arm and difficulty finding words that started 3 hours ago. He has atrial fibrillation and stopped warfarin last year. His pulse rate is 104 bpm irregularly irregular and BP 182/98 mmHg. Right arm power is 2/5 and right leg 4/5. He understands commands but his speech is slow and effortful.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hypoglycaemia",
+    "Lacunar infarct",
+    "Left middle cerebral artery infarct",
+    "Right anterior cerebral artery infarct",
+    "Transient ischaemic attack"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for a diagnosis: localise the lesion and name the territory."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden weakness of his right arm",
+      "difficulty finding words",
+      "atrial fibrillation",
+      "stopped warfarin",
+      "Right arm power is 2/5 and right leg 4/5",
+      "understands commands"
+     ],
+     "x": "Sudden onset, AF off anticoagulation; arm worse than leg; expressive aphasia with preserved comprehension."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Right-sided arm > leg weakness plus Broca's aphasia: **left MCA** territory, cardioembolic from AF."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A mimic, but AF plus cortical signs fits stroke; no glucose problem is given."
+      ],
+      [
+       1,
+       "Aphasia is a cortical sign, which excludes lacunar stroke."
+      ],
+      [
+       3,
+       "Wrong side and ACA is leg > arm."
+      ],
+      [
+       4,
+       "Symptoms are ongoing; a TIA fully resolves."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Left middle cerebral artery infarct.** Arm > leg + aphasia = MCA; leg > arm = ACA; no cortical signs = lacunar."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 77 year old woman is brought to the emergency department 70 minutes after sudden onset of left-sided weakness and slurred speech. She takes no anticoagulants. Her pulse rate is 88 bpm and BP 176/92 mmHg. Her capillary glucose is 6.1 mmol/L. Left arm and leg power are 2/5.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Carotid Doppler ultrasound",
+    "CT angiogram of the head and neck",
+    "Diffusion-weighted MRI brain",
+    "Lumbar puncture",
+    "Non-contrast CT head"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation in a possible thrombolysis candidate."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "70 minutes after sudden onset",
+      "left-sided weakness",
+      "capillary glucose is 6.1 mmol/L"
+     ],
+     "x": "Inside the thrombolysis window; glucose normal so the mimic is excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Non-contrast CT head** to exclude haemorrhage before alteplase."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Part of secondary prevention work-up, not the hyperacute scan."
+      ],
+      [
+       1,
+       "Looks for large vessel occlusion after the plain CT has excluded bleeding."
+      ],
+      [
+       2,
+       "Confirms infarct but is slower; it is second-line."
+      ],
+      [
+       3,
+       "For suspected SAH with a late normal CT, not focal stroke."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Non-contrast CT head.** In acute stroke, the first scan is always a plain CT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man has right-sided weakness and expressive dysphasia that began 2 hours ago. Non-contrast CT head shows no haemorrhage. His pulse rate is 82 bpm and BP 202/112 mmHg. His capillary glucose is 7.2 mmol/L. He takes no regular medication.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Aspirin 300 mg orally",
+    "Clopidogrel 75 mg orally",
+    "IV alteplase immediately",
+    "IV labetalol",
+    "Low molecular weight heparin"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next' step: what must happen before the obvious treatment?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "2 hours ago",
+      "shows no haemorrhage",
+      "BP 202/112 mmHg"
+     ],
+     "x": "Within 4.5 hours with no bleed: a lysis candidate, but BP is too high."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Lower BP below **185/110** with **IV labetalol**, then give alteplase."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Given within 24 h, but lysis comes first and then aspirin waits 24 h."
+      ],
+      [
+       1,
+       "Long-term secondary prevention from day 14."
+      ],
+      [
+       2,
+       "BP is above 185/110; it must be lowered first."
+      ],
+      [
+       4,
+       "No role in hyperacute ischaemic stroke."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. IV labetalol.** BP >185/110 blocks thrombolysis until it is lowered."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 71 year old woman receives IV alteplase 2 hours after onset of a left MCA stroke. Her pulse rate is 76 bpm and BP 168/88 mmHg. Eighteen hours later her GCS falls from 14 to 9 and she vomits. Repeat CT shows new hyperdensity within the infarcted area.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her deterioration?",
+   "o": [
+    "Cerebral vasospasm",
+    "Hypoglycaemia",
+    "Recurrent embolism",
+    "Reperfusion of necrotic, leaky brain tissue",
+    "Venous sinus thrombosis"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why did she bleed?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "receives IV alteplase",
+      "Eighteen hours later",
+      "new hyperdensity within the infarcted area"
+     ],
+     "x": "Lysis, then deterioration, then blood inside the infarct."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Haemorrhagic transformation**: reperfusion into necrotic, leaky vessels."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Typical of SAH at 7 to 14 days."
+      ],
+      [
+       1,
+       "Would not cause new hyperdensity on CT."
+      ],
+      [
+       2,
+       "A new infarct would be dark (hypodense), not bright."
+      ],
+      [
+       4,
+       "No risk factors and wrong pattern."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Reperfusion of necrotic, leaky brain tissue.** Bright blood inside an infarct after lysis = haemorrhagic transformation."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man has sudden onset of vertigo, vomiting and difficulty swallowing. His pulse rate is 84 bpm and BP 168/96 mmHg. He has a left-sided ptosis and small left pupil. There is loss of pain and temperature sensation on the left side of his face and the right side of his body. He has left-sided limb ataxia.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Benign paroxysmal positional vertigo",
+    "Lateral medullary syndrome",
+    "Left lacunar infarct",
+    "Vestibular neuritis",
+    "Weber's syndrome"
+   ],
+   "a": 1,
+   "e": "Crossed sensory loss with ipsilateral Horner's and dysphagia is lateral medullary syndrome from a PICA infarct. Weber's is midbrain with CN III palsy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: crossed signs point to the brainstem."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden onset of vertigo",
+      "difficulty swallowing",
+      "left-sided ptosis and small left pupil",
+      "left side of his face and the right side of his body",
+      "left-sided limb ataxia"
+     ],
+     "x": "Ipsilateral Horner's, crossed pain/temp loss, dysphagia (CN IX/X) and ataxia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**PICA infarct: lateral medullary (Wallenberg's) syndrome.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Brief positional episodes with no neurological signs."
+      ],
+      [
+       2,
+       "Lacunar strokes do not cause Horner's or crossed sensory loss."
+      ],
+      [
+       3,
+       "Isolated vertigo with no Horner's or sensory loss."
+      ],
+      [
+       4,
+       "Causes CN III palsy with contralateral hemiparesis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Lateral medullary syndrome.** Crossed face/body sensory loss + Horner's = Wallenberg's."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man with long-standing hypertension wakes with weakness of his left face, arm and leg. He has no visual field defect, no neglect and his speech content is normal. Sensation is normal. His pulse rate is 72 bpm regular and BP 178/94 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Left partial anterior circulation infarct",
+    "Posterior circulation infarct",
+    "Right lacunar infarct",
+    "Right total anterior circulation infarct",
+    "Todd's paresis"
+   ],
+   "a": 2,
+   "e": "Pure motor weakness of face, arm and leg with no cortical signs is a lacunar syndrome; hypertension damages perforating arteries.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: classify by the Bamford features."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing hypertension",
+      "weakness of his left face, arm and leg",
+      "no visual field defect, no neglect",
+      "Sensation is normal"
+     ],
+     "x": "Pure motor hemiparesis with no cortical signs in a hypertensive."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Pure motor stroke, no cortical signs: **lacunar infarct** (internal capsule), right side of the brain."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Wrong side, and PACI needs two of the three cortical features."
+      ],
+      [
+       1,
+       "No cerebellar, brainstem or visual signs."
+      ],
+      [
+       3,
+       "TACI needs hemianopia and higher cortical dysfunction too."
+      ],
+      [
+       4,
+       "Follows a seizure, which is not described."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Right lacunar infarct.** No cortical signs = lacunar."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old woman notices she keeps bumping into objects on her right side. It started suddenly yesterday. She has atrial fibrillation. Her pulse rate is 92 bpm irregularly irregular and BP 150/86 mmHg. She has a right homonymous hemianopia with macular sparing. Limb power and speech are normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely site of the infarct?",
+   "o": [
+    "Left anterior cerebral artery territory",
+    "Left middle cerebral artery territory",
+    "Left posterior cerebral artery territory",
+    "Optic chiasm",
+    "Right posterior cerebral artery territory"
+   ],
+   "a": 2,
+   "e": "Isolated homonymous hemianopia with macular sparing is a PCA (occipital) infarct, on the side opposite the field defect.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Asks for the site: territory and side."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started suddenly yesterday",
+      "atrial fibrillation",
+      "right homonymous hemianopia with macular sparing",
+      "Limb power and speech are normal"
+     ],
+     "x": "Sudden isolated hemianopia with macular sparing in AF."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Right field loss = left occipital cortex = **left PCA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "ACA gives leg weakness, not visual loss."
+      ],
+      [
+       1,
+       "MCA hemianopia lacks macular sparing and comes with arm weakness or aphasia."
+      ],
+      [
+       3,
+       "A chiasmal lesion gives bitemporal hemianopia."
+      ],
+      [
+       4,
+       "A right occipital lesion causes a LEFT hemianopia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Left posterior cerebral artery territory.** Macular sparing = PCA; field defect is contralateral to the lesion."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 78 year old man taking apixaban for atrial fibrillation suddenly develops a severe headache, vomiting and left-sided weakness. His pulse rate is 96 bpm irregularly irregular and BP 214/118 mmHg. His GCS is 11. Non-contrast CT head shows a large high-attenuating area in the right basal ganglia.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Extradural haemorrhage",
+    "Haemorrhagic stroke",
+    "Ischaemic stroke with hyperdense MCA sign",
+    "Migraine with aura",
+    "Subarachnoid haemorrhage"
+   ],
+   "a": 1,
+   "e": "A high-attenuating deep parenchymal lesion in an anticoagulated patient is an intracerebral (haemorrhagic) stroke; hypertension favours deep bleeds.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: read the CT description."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "taking apixaban",
+      "severe headache, vomiting",
+      "GCS is 11",
+      "large high-attenuating area in the right basal ganglia"
+     ],
+     "x": "Anticoagulated, headache, vomiting, low GCS and a bright deep lesion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bright (blood) in the basal ganglia in an anticoagulated hypertensive: **haemorrhagic stroke**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Follows trauma; a lens-shaped extra-axial collection, not basal ganglia."
+      ],
+      [
+       2,
+       "That sign is a bright line in the artery, not a large parenchymal bright area."
+      ],
+      [
+       3,
+       "Would not cause a hyperdense lesion or low GCS."
+      ],
+      [
+       4,
+       "Blood would lie in the basal cisterns and sulci, not the basal ganglia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Haemorrhagic stroke.** Bright on CT = blood; deep site = hypertensive bleed."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old woman has had sudden left-sided weakness for 30 hours. She has hypertension and type 2 diabetes. Her pulse rate is 86 bpm and BP 164/90 mmHg. She has left arm and face weakness and neglects the left side of space. A CT head shows a hypodense area in the right MCA territory.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bell's palsy",
+    "Functional neurological disorder",
+    "Ischaemic stroke",
+    "Subdural haemorrhage",
+    "Transient ischaemic attack"
+   ],
+   "a": 2,
+   "e": "Persistent symptoms beyond 24 hours with hypoattenuation on CT confirm ischaemic stroke; a TIA resolves fully.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: stroke versus TIA depends on resolution."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden left-sided weakness for 30 hours",
+      "neglects the left side of space",
+      "hypodense area in the right MCA territory"
+     ],
+     "x": "Symptoms beyond 24 hours, cortical sign (neglect), established infarct on CT."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Persistent deficit with a dark infarct: **ischaemic stroke**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "LMN facial palsy only; no limb weakness or neglect."
+      ],
+      [
+       1,
+       "Neglect and a CT infarct make this organic."
+      ],
+      [
+       3,
+       "A crescentic collection, usually with fluctuating confusion after a fall."
+      ],
+      [
+       4,
+       "Symptoms persisting beyond 24 hours with infarction on CT are a stroke."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Ischaemic stroke.** Still there after 24 h = stroke, not TIA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 55 year old man is brought in by his daughter. He suddenly became confused 1 hour ago. He speaks fluently but his words make no sense, and he cannot follow simple commands. His pulse rate is 98 bpm irregularly irregular and BP 158/92 mmHg. His capillary glucose is 6.4 mmol/L. Limb power is normal. ECG (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "ECG",
+    "layout": "12lead",
+    "rhythm": "af",
+    "rate": 98,
+    "leads": {},
+    "caption": "Irregularly irregular narrow-complex rhythm with no P waves: atrial fibrillation."
+   },
+   "q": "Which is the most likely site of the lesion?",
+   "o": [
+    "Arcuate fasciculus",
+    "Left inferior frontal gyrus",
+    "Left superior temporal gyrus",
+    "Right parietal lobe",
+    "Subthalamic nucleus"
+   ],
+   "a": 2,
+   "e": "Fluent, meaningless speech with poor comprehension is Wernicke's (receptive) aphasia from a left superior temporal gyrus lesion. Sudden 'confusion' in AF is often aphasia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Asks for the lesion site in an aphasia stem."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "suddenly became confused",
+      "speaks fluently but his words make no sense",
+      "cannot follow simple commands",
+      "irregularly irregular",
+      "capillary glucose is 6.4 mmol/L"
+     ],
+     "x": "Sudden onset in AF; fluent but meaningless speech, poor comprehension; glucose normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Receptive (Wernicke's) aphasia: **left superior temporal gyrus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Conduction aphasia: comprehension preserved, repetition lost."
+      ],
+      [
+       1,
+       "Broca's: non-fluent speech with understanding preserved."
+      ],
+      [
+       3,
+       "Causes neglect, not aphasia."
+      ],
+      [
+       4,
+       "Causes hemiballismus."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Left superior temporal gyrus.** Fluent nonsense + no understanding = Wernicke's."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 31 year old woman has sudden right arm weakness and dysphasia. She has no vascular risk factors and takes no medication. Her pulse rate is 72 bpm regular and BP 118/74 mmHg. Diffusion-weighted MRI confirms a small left MCA infarct. ECG and 24-hour tape show sinus rhythm. Carotid imaging is normal.",
+   "labs": [
+    [
+     "Cholesterol",
+     "4.2 mmol/L",
+     "<5.0",
+     ""
+    ],
+    [
+     "HbA1c",
+     "36 mmol/mol",
+     "<48",
+     ""
+    ],
+    [
+     "Platelets",
+     "264 ×10⁹/L",
+     "150–400",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to find the cause?",
+   "o": [
+    "Bubble echocardiogram",
+    "CT pulmonary angiogram",
+    "Electroencephalogram",
+    "Lumbar puncture",
+    "Repeat non-contrast CT head"
+   ],
+   "a": 0,
+   "e": "A young patient with cryptogenic stroke needs a bubble echocardiogram for patent foramen ovale (plus thrombophilia and autoimmune screens).",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation to find the cause, not to confirm the stroke."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "31 year old",
+      "no vascular risk factors",
+      "ECG and 24-hour tape show sinus rhythm",
+      "Carotid imaging is normal"
+     ],
+     "x": "Young, no risk factors, no AF, normal carotids."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Young stroke with no cause: paradoxical embolism through a **PFO**, shown on **bubble echo**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Looks for PE, not the stroke's source."
+      ],
+      [
+       2,
+       "For seizures, not stroke aetiology."
+      ],
+      [
+       3,
+       "For SAH or infection."
+      ],
+      [
+       4,
+       "The infarct is already confirmed; it will not show the cause."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bubble echocardiogram.** Young + no cause = look for PFO."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 70 year old man has sudden left arm and leg weakness that began 5 hours ago. Non-contrast CT head shows no haemorrhage and a hyperdense right MCA sign. His pulse rate is 90 bpm and BP 170/94 mmHg. His NIHSS score is 14.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Carotid Doppler ultrasound",
+    "CT angiogram",
+    "Echocardiogram",
+    "Electroencephalogram",
+    "Lumbar puncture"
+   ],
+   "a": 1,
+   "e": "A hyperdense MCA sign within 6 hours suggests a large vessel occlusion; CT angiography confirms it and allows mechanical thrombectomy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation to decide on reperfusion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5 hours ago",
+      "hyperdense right MCA sign",
+      "NIHSS score is 14"
+     ],
+     "x": "Past the lysis window but within 6 hours for thrombectomy; signs of MCA thrombus; NIHSS >5."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CT angiogram** to confirm a large vessel occlusion before thrombectomy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Useful later for secondary prevention, not to plan thrombectomy."
+      ],
+      [
+       2,
+       "A later search for an embolic source."
+      ],
+      [
+       3,
+       "No role in acute stroke."
+      ],
+      [
+       4,
+       "No role; CT shows no SAH."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. CT angiogram.** Possible large vessel occlusion = CT angiogram, then thrombectomy."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 67 year old woman visits her GP. Forty minutes ago she suddenly developed slurred speech and weakness of her left hand, which are ongoing. She takes ramipril. Her pulse rate is 80 bpm and BP 172/96 mmHg. Her capillary glucose is 5.9 mmol/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Arrange a 999 ambulance to the hyperacute stroke unit",
+    "Give aspirin 300 mg and refer to TIA clinic",
+    "Refer for outpatient MRI brain",
+    "Start amlodipine and review in 1 week",
+    "Start clopidogrel 75 mg daily"
+   ],
+   "a": 0,
+   "e": "Ongoing focal deficit is a stroke until proven otherwise; a 999 ambulance gets her a CT and possible thrombolysis. TIA clinic is for resolved symptoms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management in a GP setting."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Forty minutes ago",
+      "which are ongoing",
+      "capillary glucose is 5.9 mmol/L"
+     ],
+     "x": "Ongoing deficit, inside the lysis window, mimic excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Suspected stroke in primary care: **999** to the hyperacute stroke unit."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "For resolved symptoms; hers are ongoing."
+      ],
+      [
+       2,
+       "Far too slow; she may be a lysis candidate."
+      ],
+      [
+       3,
+       "BP is not the emergency here."
+      ],
+      [
+       4,
+       "Long-term prevention, not acute care."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Arrange a 999 ambulance to the hyperacute stroke unit.** Ongoing symptoms = 999; resolved symptoms = aspirin + TIA clinic."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 73 year old man had an ischaemic stroke 14 days ago and was given aspirin 300 mg daily. He was not thrombolysed. ECG and 24-hour tape show sinus rhythm. His pulse rate is 70 bpm and BP 138/82 mmHg. He has no allergies.",
+   "labs": [
+    [
+     "Total cholesterol",
+     "5.8 mmol/L",
+     "<5.0",
+     "H"
+    ],
+    [
+     "LDL",
+     "3.9 mmol/L",
+     "<3.0",
+     "H"
+    ],
+    [
+     "eGFR",
+     "74 mL/min",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate long-term secondary prevention?",
+   "o": [
+    "Apixaban 5 mg twice daily",
+    "Aspirin 75 mg plus dipyridamole",
+    "Clopidogrel 75 mg daily plus atorvastatin 80 mg at night",
+    "Continue aspirin 300 mg daily",
+    "Warfarin plus atorvastatin 20 mg"
+   ],
+   "a": 2,
+   "e": "After 2 weeks of aspirin 300 mg, non-AF ischaemic stroke is treated with clopidogrel 75 mg plus high-intensity atorvastatin 80 mg.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Long-term secondary prevention."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ischaemic stroke 14 days ago",
+      "aspirin 300 mg daily",
+      "sinus rhythm"
+     ],
+     "x": "Day 14, non-AF ischaemic stroke."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Clopidogrel 75 mg OD + atorvastatin 80 mg**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anticoagulation is for AF-related stroke; he is in sinus rhythm."
+      ],
+      [
+       1,
+       "Only if clopidogrel is not tolerated."
+      ],
+      [
+       3,
+       "The high dose is for the first 2 weeks only."
+      ],
+      [
+       4,
+       "No AF, and the statin dose is too low."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Clopidogrel 75 mg daily plus atorvastatin 80 mg at night.** Non-AF stroke at 2 weeks = clopidogrel + atorvastatin 80."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 79 year old woman taking warfarin for a mechanical mitral valve develops sudden right-sided weakness and drowsiness. Her pulse rate is 88 bpm and BP 192/104 mmHg. Her GCS is 12. CT head shows an intracerebral haemorrhage in the left thalamus.",
+   "labs": [
+    [
+     "INR",
+     "3.8",
+     "0.8–1.2",
+     "H"
+    ],
+    [
+     "Haemoglobin",
+     "128 g/L",
+     "115–165",
+     ""
+    ],
+    [
+     "Platelets",
+     "212 ×10⁹/L",
+     "150–400",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Aspirin 300 mg",
+    "IV alteplase",
+    "IV idarucizumab",
+    "IV vitamin K and prothrombin complex concentrate",
+    "Mechanical thrombectomy"
+   ],
+   "a": 3,
+   "e": "Warfarin-related intracerebral haemorrhage is reversed with IV vitamin K plus prothrombin complex concentrate; idarucizumab is for dabigatran.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of a bleed on warfarin."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "taking warfarin",
+      "intracerebral haemorrhage in the left thalamus"
+     ],
+     "x": "Warfarin-associated intracerebral haemorrhage with a high INR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Reverse warfarin: **IV vitamin K + PCC**, then BP control and neurosurgery."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Contraindicated in a bleed."
+      ],
+      [
+       1,
+       "Contraindicated in haemorrhage."
+      ],
+      [
+       2,
+       "Reverses dabigatran, not warfarin."
+      ],
+      [
+       4,
+       "For ischaemic large vessel occlusion only."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. IV vitamin K and prothrombin complex concentrate.** Bleed on warfarin = vitamin K + PCC."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 68 year old man has a left MCA occlusion. CT perfusion 3 hours after onset shows a small core of infarcted tissue surrounded by a larger region of reduced blood flow. His pulse rate is 94 bpm and BP 176/90 mmHg. He receives thrombolysis and thrombectomy.",
+   "labs": [],
+   "visual": null,
+   "q": "Which best describes the tissue that these treatments aim to save?",
+   "o": [
+    "Hypoperfused tissue that is not yet infarcted",
+    "Liquefied necrotic tissue",
+    "Normally perfused tissue at risk of oedema",
+    "Tissue already infarcted at the core",
+    "Tissue with vasogenic oedema from haemorrhage"
+   ],
+   "a": 0,
+   "e": "Reperfusion therapies target the ischaemic penumbra, hypoperfused tissue not yet infarcted; the core is already lost.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Science: define the target of reperfusion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "small core of infarcted tissue",
+      "larger region of reduced blood flow",
+      "thrombolysis and thrombectomy"
+     ],
+     "x": "Core vs surrounding hypoperfused rim."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The **ischaemic penumbra**: hypoperfused but not yet infarcted."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Dead tissue cannot be rescued."
+      ],
+      [
+       2,
+       "Normally perfused tissue does not need reperfusion."
+      ],
+      [
+       3,
+       "The core is already dead."
+      ],
+      [
+       4,
+       "This is not haemorrhage."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Hypoperfused tissue that is not yet infarcted.** Reperfusion saves the penumbra."
+    }
+   ]
+  }
+ ]
+}

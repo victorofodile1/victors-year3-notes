@@ -1,0 +1,739 @@
+{
+  "id": "hernias",
+  "patient": {
+    "name": "Desmond Clarke",
+    "age": 58,
+    "sex": "M",
+    "setting": "GP surgery, then surgical clinic",
+    "complaint": "Right groin lump that comes and goes for 4 months",
+    "background": [
+      "Scaffolder in Lewisham; lifts heavy loads daily",
+      "Smoker, 30 pack-years, with a chronic morning cough",
+      "BMI 31; tends to constipation",
+      "No previous abdominal surgery; no regular medicines"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a groin lump: the pubic tubercle decides inguinal versus femoral, the deep ring test decides indirect versus direct, and tenderness with colour change means strangulation.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Desmond, 58, has a **right groin lump** for 4 months.",
+            "Bigger at the end of a shift and when he coughs.",
+            "Disappears when he lies down; a **dragging ache** on lifting.",
+            "No vomiting, bowels normal, no scrotal swelling."
+          ],
+          "vitals": { "T": "36.6°C", "HR": "78 bpm", "BP": "136/84 mmHg" }
+        },
+        {
+          "type": "visual",
+          "visual": { "kind": "abdomen", "title": "Where Desmond's lump is", "regions": ["RIF"], "caption": "The right groin, just above the inguinal ligament. Next step: find the pubic tubercle." }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Desmond's lump is abdominal contents pushing through a weak spot. The first question is always **inguinal or femoral**."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "**Male**, heavy lifting, a smoker's cough and constipation: every one raises Desmond's **intra-abdominal pressure**."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Standing: a 4 cm soft swelling with a **cough impulse**.",
+            "It **reduces** easily when he lies flat.",
+            "It sits **above and medial to the pubic tubercle**.",
+            "You can get above it; it does not enter the scrotum."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "A groin lump, worse on standing and coughing, **reducible** with a cough impulse: Desmond's story is a textbook hernia."
+        },
+        {
+          "type": "ask",
+          "q": "Desmond's lump is above and medial to the pubic tubercle. Which hernia is it?",
+          "o": ["Femoral hernia", "Inguinal hernia", "Obturator hernia", "Spigelian hernia"],
+          "a": 1,
+          "r": "Above and medial to the pubic tubercle = **inguinal**. Femoral hernias sit below the ligament, inferolateral to the tubercle."
+        },
+        {
+          "type": "compare",
+          "title": "Inguinal vs femoral",
+          "head": ["Feature", "Inguinal", "Femoral"],
+          "rows": [
+            ["Position", "**Superior and medial** to pubic tubercle", "**Inferior and lateral** to pubic tubercle"],
+            ["Who", "Men; most common hernia overall", "Older women"],
+            ["Strangulation risk", "Up to 3% per year", "**Higher** (narrow femoral canal)"],
+            ["Action", "Repair if symptomatic", "Urgent referral within 2 weeks"]
+          ]
+        },
+        {
+          "type": "story",
+          "points": [
+            "The lump is reduced while he lies flat.",
+            "Firm pressure is held over the **deep inguinal ring**.",
+            "He stands and coughs: the lump **reappears**, medially.",
+            "Pressure on the deep ring does not control it."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Not controlled by deep ring pressure, in an older man with a chronic cough: Desmond has a **direct inguinal hernia** through Hesselbach's triangle."
+        },
+        {
+          "type": "compare",
+          "title": "Direct vs indirect inguinal hernia",
+          "head": ["Feature", "Direct", "Indirect"],
+          "rows": [
+            ["Route", "Through **Hesselbach's triangle**", "Through deep ring along a **patent processus vaginalis**"],
+            ["Relation to inferior epigastric vessels", "**Medial**", "**Lateral**"],
+            ["Deep ring occlusion", "Lump still appears", "Lump controlled"],
+            ["Typical patient", "Older adults (acquired)", "Younger; all children"],
+            ["Scrotum", "Rarely", "Can extend into it"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Desmond's lump is a groin hernia, but the exam also tests these rarer hernias, each by one signature clue."
+        },
+        {
+          "type": "notes",
+          "src": 5,
+          "lead": "Desmond is warned: if the lump becomes **irreducible, tender, red or hot**, or he vomits, it may be **strangulated**."
+        },
+        {
+          "type": "trap",
+          "text": "A tender, irreducible lump with **normal bowels** can still be strangulated: a **Richter's hernia** traps only part of the bowel wall, so there is no obstruction."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' where the answer is usually clinical examination; ultrasound only when the examination is uncertain.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Desmond's lump is easy to feel and reduce. What confirms the diagnosis?",
+          "o": ["Clinical examination", "CT abdomen and pelvis", "MRI groin", "Ultrasound groin"],
+          "a": 0,
+          "r": "A hernia is a **clinical diagnosis**. History and examination are the gold standard."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Desmond's history and examination are the test. Had the lump been **controlled** by deep ring occlusion, it would be indirect."
+        },
+        {
+          "type": "flow",
+          "title": "Examining a groin lump",
+          "nodes": [
+            "Examine standing; ask him to cough",
+            "Find the pubic tubercle",
+            "Above and medial → inguinal; below and lateral → femoral",
+            "Reduce it lying down, press on the deep ring, ask him to cough",
+            "Controlled → indirect; reappears → direct"
+          ],
+          "caption": "The pubic tubercle, then the deep ring: two landmarks answer most hernia questions."
+        },
+        {
+          "type": "pearl",
+          "text": "The **deep inguinal ring** lies just above the **midpoint of the inguinal ligament** (halfway between the ASIS and the pubic tubercle)."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Had Desmond described a lump nobody could feel, **ultrasound** would be the next step."
+        },
+        {
+          "type": "trap",
+          "text": "Do not pick CT or MRI for an obvious, reducible groin hernia. Imaging is for an **uncertain** diagnosis (ultrasound first)."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' with the hernia type and situation deciding: watchful waiting, open mesh, laparoscopic mesh, urgent femoral referral, or emergency surgery for strangulation.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "A small, painless inguinal hernia could be watched. Desmond's aches and limits his work, so he is offered repair."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend", "title": "Desmond's groin pain over time", "x": ["Month 0", "Month 1", "Month 2", "Month 3", "Month 4"], "unit": "pain score /10 at end of shift",
+            "series": [{ "name": "Pain", "values": [2, 2, 3, 5, 6] }],
+            "caption": "Symptoms getting worse and interfering with work: repair rather than watchful waiting."
+          }
+        },
+        {
+          "type": "ask",
+          "q": "Desmond has a unilateral, uncomplicated direct inguinal hernia. Which repair?",
+          "o": ["Elective laparoscopic mesh repair", "Elective open mesh repair", "Emergency open non-mesh repair", "Truss support belt alone"],
+          "a": 1,
+          "r": "Unilateral, uncomplicated: **elective open mesh repair**. Laparoscopic is for bilateral or recurrent hernias."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond is listed for an **open mesh repair** and consented for **ilioinguinal nerve injury**."
+        },
+        {
+          "type": "compare",
+          "title": "Which repair, when?",
+          "head": ["Situation", "Management"],
+          "rows": [
+            ["Small, asymptomatic inguinal", "Watchful waiting and safety-netting"],
+            ["Unilateral, uncomplicated", "**Elective open mesh repair**"],
+            ["Bilateral or recurrent inguinal", "**Laparoscopic mesh repair**"],
+            ["Irreducible / strangulated", "Emergency **open non-mesh** repair"],
+            ["Femoral hernia", "Urgent surgical referral **within 2 weeks**"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "If Desmond's hernia strangulated while he waited, he would need **emergency surgery**, not an attempt to push it back."
+        },
+        {
+          "type": "trap",
+          "text": "Never choose **manual reduction** of a strangulated hernia: you may push dead bowel back into the abdomen."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Desmond's own plan is simple, but the exam tests these timings for femoral, paediatric, epigastric and umbilical hernias."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale", "title": "Congenital inguinal hernia: how fast to repair", "min": 0, "max": 72, "unit": "age in months",
+            "bands": [[0, 1.5, "under 6 weeks: within 2 days", "bad"], [1.5, 6, "under 6 months: within 2 weeks", "warn"], [6, 72, "under 6 years: within 2 months", "ok"]],
+            "value": 4, "label": "a 4-month-old",
+            "caption": "The younger the baby, the faster the repair. A 4-month-old needs paediatric surgery within 2 weeks."
+          }
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "Desmond's pathway follows **NICE CKS** and **Royal College of Surgeons** groin hernia guidance."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Two weeks after open mesh repair, the wound has healed.",
+            "Desmond notices **numbness over his upper inner thigh**.",
+            "Also tingling at the **base of his penis** and front of scrotum.",
+            "Classic **ilioinguinal nerve** injury."
+          ]
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied anatomy: where an indirect or direct hernia runs relative to the inferior epigastric vessels, why femoral hernias strangulate, and which nerve is injured at repair.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Desmond's lifting and coughing push a **peritoneal sac** through a weak area of his abdominal wall."
+        },
+        {
+          "type": "flow",
+          "title": "From weak wall to emergency",
+          "nodes": [
+            "Raised intra-abdominal pressure",
+            "Musculofascial weakness or defect",
+            "Peritoneal sac protrudes, with or without contents",
+            "Contents stuck in the sac → incarcerated",
+            "Blood supply cut off → strangulated"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond's hernia is **acquired**: it pushes straight through the weak posterior wall, **medial** to the inferior epigastric vessels."
+        },
+        {
+          "type": "ask",
+          "q": "Desmond's hernia lies medial to the inferior epigastric vessels. Through which area does it pass?",
+          "o": ["Deep inguinal ring", "Femoral canal", "Hesselbach's triangle", "Obturator canal"],
+          "a": 2,
+          "r": "**Direct** hernias pass through **Hesselbach's triangle**, medial to the inferior epigastric vessels. Indirect hernias enter the deep ring, lateral to them."
+        },
+        {
+          "type": "pearl",
+          "text": "**Hesselbach's triangle**: inferior epigastric vessels (lateral), lateral border of rectus abdominis (medial), inguinal ligament (inferior)."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "If Desmond were a 75 year old woman with a lump below the ligament, the **narrow, rigid femoral canal** would make strangulation far likelier."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "A trapped loop in Desmond's hernia would lose its **venous** drainage first, then its **arterial** supply."
+        },
+        {
+          "type": "flow",
+          "title": "How strangulation kills bowel",
+          "nodes": [
+            "Bowel trapped at a tight neck",
+            "Venous outflow blocked first",
+            "Bowel wall swells (oedema)",
+            "Arterial inflow cut off",
+            "Ischaemia → necrosis → perforation"
+          ],
+          "caption": "Which is why colour change, heat and tenderness are surgical emergencies."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Where does an inguinal hernia lie relative to the pubic tubercle?", "o": ["Inferior and lateral", "Inferior and medial", "Superior and lateral", "Superior and medial"], "a": 3, "r": "Inguinal = **superior and medial**; femoral = inferior and lateral." },
+    { "d": "diagnosis", "q": "Which hernia is typical in an older woman and has a higher strangulation risk?", "o": ["Direct inguinal", "Femoral", "Indirect inguinal", "Umbilical"], "a": 1, "r": "**Femoral** hernias are commoner in older women and strangulate more often." },
+    { "d": "diagnosis", "q": "Which type of inguinal hernia do children have?", "o": ["Direct", "Femoral", "Indirect", "Spigelian"], "a": 2, "r": "Children's inguinal hernias are always **indirect** (patent processus vaginalis), more on the right and in boys." },
+    { "d": "diagnosis", "q": "Which hernia strangulates without causing bowel obstruction?", "o": ["Incisional", "Obturator", "Richter's", "Spigelian"], "a": 2, "r": "In a **Richter's hernia** only part of the bowel wall is trapped." },
+    { "d": "diagnosis", "q": "A tender mass felt per rectum in an elderly woman suggests which hernia?", "o": ["Femoral", "Obturator", "Spigelian", "Umbilical"], "a": 1, "r": "**Obturator hernia**: tender mass on rectal examination." },
+    { "d": "investigation", "q": "Which is the gold-standard diagnosis of a groin hernia?", "o": ["Clinical history and examination", "CT abdomen", "Herniography", "MRI pelvis"], "a": 0, "r": "Hernias are a **clinical diagnosis**; ultrasound if uncertain." },
+    { "d": "management", "q": "How quickly should a femoral hernia be referred, even if asymptomatic?", "o": ["Routinely within 18 weeks", "Urgently within 2 weeks", "Within 6 months", "Only if it becomes painful"], "a": 1, "r": "**Within 2 weeks**, because of the high strangulation risk." },
+    { "d": "management", "q": "Which repair suits bilateral or recurrent inguinal hernias?", "o": ["Herniotomy", "Laparoscopic mesh repair", "Open mesh repair", "Open non-mesh repair"], "a": 1, "r": "**Laparoscopic mesh repair** for bilateral or recurrent hernias." },
+    { "d": "management", "q": "By what age do most small umbilical hernias in babies resolve?", "o": ["6 months", "12 months", "3 years", "5 years"], "a": 1, "r": "Most resolve by **12 months**; repair at 4 to 5 years if they persist." },
+    { "d": "science", "q": "An indirect inguinal hernia enters the canal at which point relative to the inferior epigastric vessels?", "o": ["Behind them", "In front of them", "Lateral to them", "Medial to them"], "a": 2, "r": "Indirect hernias enter the **deep ring, lateral** to the inferior epigastric vessels." }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is a hernia, what are the common types, and what raises the risk?",
+        "tip": "Exam thinking: anything that raises intra-abdominal pressure is a risk factor.",
+        "points": [
+          { "p": "Protrusion of abdominal contents through a weakness or defect in the wall", "k": [["protru", "push", "bulge"], ["weak", "defect"]], "why": "The sac is peritoneum, with or without bowel or omentum." },
+          { "p": "Types: inguinal, femoral, umbilical, incisional", "k": [["inguinal"], ["femoral"], ["umbilical", "incisional"]], "why": "Inguinal is the commonest overall." },
+          { "p": "Male sex (inguinal); older women (femoral)", "k": [["male", "men"], ["women", "female"]], "why": "Sex points you to the type." },
+          { "p": "Raised intra-abdominal pressure: lifting, chronic cough, constipation, obesity, pregnancy, previous surgery", "k": [["lift", "cough", "constipat", "obes", "pregnan", "pressure"]], "why": "Look for the smoker, the constipated or the pregnant patient." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does a groin hernia present on history and examination?",
+        "tip": "Exam thinking: reducible + cough impulse = hernia; transillumination = hydrocele.",
+        "points": [
+          { "p": "Groin lump or dragging sensation, bigger on standing or coughing", "k": [["lump", "swelling", "drag"], ["stand", "cough"]], "why": "Disappears on lying down." },
+          { "p": "Discomfort or pain on standing or lifting", "k": [["pain", "discomfort", "ache"]], "why": "Symptoms decide on repair." },
+          { "p": "Reducible swelling", "k": [["reduc"]], "why": "Irreducible means incarcerated or strangulated." },
+          { "p": "Cough impulse", "k": [["cough impulse", "impulse"]], "why": "A hydrocele or varicocele does not reduce like this." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How do you tell an inguinal from a femoral hernia?",
+        "tip": "Exam thinking: find the pubic tubercle in the stem.",
+        "points": [
+          { "p": "Inguinal: superior and medial to the pubic tubercle", "k": [["inguinal"], ["superior", "above", "medial"]], "why": "Most common, men." },
+          { "p": "Femoral: below the inguinal ligament, inferolateral to the pubic tubercle", "k": [["femoral"], ["inferior", "below", "lateral", "inferolateral"]], "why": "Older women." },
+          { "p": "Femoral has a higher strangulation risk", "k": [["strangulat", "incarcerat"]], "why": "Narrow, rigid femoral canal." },
+          { "p": "Scrotal lump you cannot get above suggests inguinoscrotal hernia", "k": [["scrot"], ["get above", "cannot get", "can't get"]], "why": "A testicular lump you can get above is not a hernia." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How do you tell a direct from an indirect inguinal hernia?",
+        "tip": "Exam thinking: the deep ring test, then the epigastric vessels.",
+        "points": [
+          { "p": "Direct: through Hesselbach's triangle, medial to inferior epigastric vessels", "k": [["hesselbach", "medial"]], "why": "Acquired weakness, older adults." },
+          { "p": "Indirect: patent processus vaginalis, lateral to inferior epigastric vessels", "k": [["processus", "lateral"]], "why": "Can extend into the scrotum." },
+          { "p": "Indirect is controlled by pressure over the deep inguinal ring", "k": [["deep ring", "deep inguinal ring"], ["control", "occlu", "pressure"]], "why": "A direct hernia reappears despite pressure." },
+          { "p": "Children: always indirect, boys, right side, bulge on crying", "k": [["child", "infant", "baby", "boy"], ["indirect"]], "why": "Paediatric repair timings depend on age." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Name the other hernias and the one clue for each: umbilical, incisional, Spigelian, obturator, diaphragmatic, Richter's.",
+        "tip": "Exam thinking: each rare hernia is tested by a single signature clue.",
+        "points": [
+          { "p": "Umbilical: infants, obesity, pregnancy; low incarceration risk", "k": [["umbilical"]], "why": "Most in babies close by 12 months." },
+          { "p": "Incisional: at a previous surgical scar; Spigelian: through the linea semilunaris", "k": [["incisional", "scar"], ["spigelian", "semilunaris"]], "why": "Spigelian sits at the lateral edge of rectus." },
+          { "p": "Obturator: tender mass per rectum", "k": [["obturator"], ["rectal", "rectum", "pr"]], "why": "Thin elderly women with obstruction." },
+          { "p": "Diaphragmatic: bowel sounds in the chest of a neonate in respiratory distress", "k": [["diaphragm"], ["neonat", "newborn", "baby"]], "why": "Congenital diaphragmatic hernia." },
+          { "p": "Richter's: strangulation without obstruction (part of bowel wall)", "k": [["richter"], ["without obstruct", "no obstruct", "part of", "wall"]], "why": "Bowels can be normal despite gangrene." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How do you recognise an incarcerated versus a strangulated hernia?",
+        "tip": "Exam thinking: tenderness, colour change and heat mean the blood supply is going.",
+        "points": [
+          { "p": "Incarcerated: irreducible, may be tender or red, retains cough impulse", "k": [["incarcerat"], ["irreducib", "cannot reduce", "can't reduce"]], "why": "High risk of progressing to strangulation." },
+          { "p": "Strangulated: colour change, irreducible, tender, raised local temperature", "k": [["strangulat"], ["colour", "red", "tender", "hot", "warm"]], "why": "A surgical emergency." },
+          { "p": "Preceding intermittent pain that resolves; obstructive bowel sounds", "k": [["intermittent", "obstruct", "tinkling", "bowel sound"]], "why": "Look for vomiting and distension too." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "How is a hernia diagnosed, and when is imaging needed?",
+        "tip": "Exam thinking: 'clinical diagnosis' is a real exam answer.",
+        "points": [
+          { "p": "Gold standard: clinical diagnosis by history and examination", "k": [["clinical", "examination", "history"]], "why": "No imaging for an obvious hernia." },
+          { "p": "Indirect: does not reappear on coughing with the deep ring occluded", "k": [["deep ring", "occlu"]], "why": "The bedside test that types the hernia." },
+          { "p": "Ultrasound if the diagnosis is uncertain", "k": [["ultrasound", "uss", "us scan"]], "why": "E.g. obese patient or impalpable lump." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is an uncomplicated inguinal hernia managed, and which repair is used when?",
+        "tip": "Exam thinking: symptoms, laterality and complication decide the operation.",
+        "points": [
+          { "p": "Small asymptomatic: watchful waiting with safety-netting", "k": [["watch", "wait", "conservative", "observ"]], "why": "Safety-net for strangulation or obstruction." },
+          { "p": "Unilateral uncomplicated: elective open mesh repair", "k": [["open"], ["mesh"]], "why": "Lower recurrence." },
+          { "p": "Bilateral or recurrent: laparoscopic mesh repair", "k": [["laparoscop", "keyhole"]], "why": "Avoids operating through scarred tissue." },
+          { "p": "Irreducible or strangulated: open non-mesh repair", "k": [["non-mesh", "non mesh", "without mesh", "no mesh"]], "why": "Mesh is avoided in a contaminated field." },
+          { "p": "Risk: ilioinguinal nerve injury (numb superomedial thigh, base of penis, anterior scrotum/labia)", "k": [["ilioinguinal"]], "why": "A favourite applied anatomy question." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is a complicated hernia managed, and what are the timings for femoral, paediatric and umbilical hernias?",
+        "tip": "Exam thinking: femoral means urgent even when painless.",
+        "points": [
+          { "p": "Irreducible/strangulated: urgent surgical review or emergency surgery; no manual reduction", "k": [["emergency", "urgent"], ["surg", "operat", "repair"]], "why": "Children: emergency herniotomy, call 999." },
+          { "p": "Femoral: urgent referral within 2 weeks even without complications", "k": [["femoral"], ["2 week", "two week"]], "why": "High strangulation risk." },
+          { "p": "Congenital inguinal: under 6 weeks within 2 days; under 6 months within 2 weeks; under 6 years within 2 months", "k": [["2 day", "two day"], ["2 month", "two month"]], "why": "All go to paediatric surgery." },
+          { "p": "Umbilical in babies: most resolve by 12 months; repair at 4–5 years if persists (2–3 years if large/symptomatic)", "k": [["12 month", "one year", "1 year", "twelve month"]], "why": "Small asymptomatic ones are watched." },
+          { "p": "High surgical risk: truss with referral if no improvement; epigastric: weight loss advice", "k": [["truss", "belt", "weight loss"]], "why": "For the frail patient with short life expectancy." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do direct and indirect inguinal hernias differ, and why do femoral hernias strangulate more?",
+        "tip": "Exam thinking: name the embryological path and the canal.",
+        "points": [
+          { "p": "Indirect follows the processus vaginalis through the deep ring, lateral to inferior epigastric vessels", "k": [["processus"], ["lateral", "deep ring"]], "why": "So it can reach the scrotum." },
+          { "p": "Direct pushes through the weak posterior wall (Hesselbach's triangle), medial to the vessels", "k": [["hesselbach", "posterior wall"], ["medial"]], "why": "Acquired weakness with age." },
+          { "p": "Femoral passes through the narrow, rigid femoral canal", "k": [["femoral canal", "narrow", "rigid"]], "why": "A tight neck traps contents." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does strangulation happen and what does it lead to?",
+        "tip": "Exam thinking: veins close before arteries.",
+        "points": [
+          { "p": "Blood supply compromised: venous first, then arterial", "k": [["venous", "vein"], ["arter"]], "why": "Venous congestion causes swelling that tightens the neck." },
+          { "p": "Ischaemia and necrosis", "k": [["ischaem", "ischem"], ["necros", "gangren", "dead"]], "why": "Explains colour change, heat and tenderness." },
+          { "p": "Potential perforation: surgical emergency", "k": [["perforat"]], "why": "Leads to peritonitis and sepsis." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "hernia": "Protrusion of a structure, usually bowel or fat, through a weakness in the wall that normally contains it.",
+    "inguinal hernia": "A hernia through the inguinal canal, above and medial to the pubic tubercle.",
+    "femoral hernia": "A hernia through the femoral canal, below the inguinal ligament and inferolateral to the pubic tubercle.",
+    "direct inguinal hernia": "Pushes straight through Hesselbach's triangle, medial to the inferior epigastric vessels.",
+    "indirect inguinal hernia": "Enters the deep inguinal ring lateral to the inferior epigastric vessels, along a patent processus vaginalis.",
+    "pubic tubercle": "The bony bump at the inner end of the inguinal ligament; the key landmark for groin lumps.",
+    "inguinal ligament": "The band running from the anterior superior iliac spine to the pubic tubercle.",
+    "deep inguinal ring": "The internal opening of the inguinal canal, just above the midpoint of the inguinal ligament.",
+    "inguinal canal": "A passage through the lower abdominal wall carrying the spermatic cord or round ligament.",
+    "Hesselbach's triangle": "Weak area of the posterior inguinal wall bounded by inferior epigastric vessels, rectus and inguinal ligament.",
+    "inferior epigastric vessels": "Artery and vein in the lower abdominal wall; the landmark separating direct from indirect hernias.",
+    "processus vaginalis": "A fold of peritoneum that follows the testis into the scrotum; if it stays open, an indirect hernia can form.",
+    "femoral canal": "A small, narrow, rigid space medial to the femoral vein below the inguinal ligament.",
+    "cough impulse": "A palpable expansion of a lump when the patient coughs, typical of a hernia.",
+    "reducible": "Can be pushed back into the abdomen.",
+    "irreducible": "Cannot be pushed back into the abdomen.",
+    "incarcerated": "A hernia that is stuck and irreducible but still has its blood supply.",
+    "strangulated": "A hernia whose blood supply is cut off, causing ischaemia; a surgical emergency.",
+    "Richter's hernia": "Only part of the bowel wall is trapped, so it can strangulate without causing obstruction.",
+    "obturator hernia": "A hernia through the obturator canal of the pelvis; may be felt as a tender mass on rectal examination.",
+    "Spigelian hernia": "A hernia through the linea semilunaris at the lateral edge of the rectus sheath.",
+    "linea semilunaris": "The curved line along the lateral border of the rectus abdominis muscle.",
+    "incisional hernia": "A hernia through the scar of a previous operation.",
+    "umbilical hernia": "A hernia at the umbilicus; common in babies and usually closes by 12 months.",
+    "epigastric hernia": "A hernia through the linea alba above the umbilicus.",
+    "diaphragmatic hernia": "Abdominal contents pass into the chest through a diaphragm defect; in neonates causes respiratory distress.",
+    "uncal herniation": "Brain herniation of the uncus that compresses CN III and causes a dilated pupil.",
+    "inguinoscrotal": "A hernia that has travelled down the inguinal canal into the scrotum.",
+    "herniotomy": "Operation that removes the hernial sac alone; the standard repair in children.",
+    "mesh repair": "Hernia repair using a synthetic mesh to reinforce the weak wall.",
+    "laparoscopic": "Keyhole surgery using a camera through small incisions.",
+    "truss": "A support belt that holds a reducible hernia in place.",
+    "ilioinguinal nerve": "Nerve running in the inguinal canal; injury numbs the upper inner thigh, base of penis and anterior scrotum or labia.",
+    "watchful waiting": "Monitoring without surgery, with advice on symptoms that need urgent review.",
+    "ASIS": "Anterior superior iliac spine: the bony point at the front of the hip.",
+    "hydrocele": "Fluid around the testis; transilluminates and is not reducible.",
+    "varicocele": "Dilated veins of the spermatic cord; feels like a 'bag of worms'."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 3 month old boy is brought by his mother with an intermittent swelling in his right groin. It appears when he cries and disappears when he is asleep. On examination there is a soft swelling lateral to the pubic tubercle with an impulse on crying. It reduces easily. He is feeding well and his abdomen is soft.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Direct inguinal hernia", "Femoral hernia", "Hydrocele", "Indirect inguinal hernia", "Umbilical hernia"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "A groin lump in a baby: in children, the type of hernia is almost always decided by age alone." },
+        { "t": "Pick out the clues", "clues": ["3 month old boy", "right groin", "appears when he cries", "impulse on crying", "It reduces easily"], "x": "A boy, right side, reducible bulge on crying: a congenital hernia along a patent processus vaginalis." },
+        { "t": "Make your own answer before looking", "x": "Children's inguinal hernias are **always indirect**." },
+        { "t": "Rule out the others", "elim": [[0, "Direct hernias are acquired in older adults."], [1, "Femoral hernias are rare in infants and lie below the ligament."], [2, "A hydrocele transilluminates and has no impulse on crying."], [4, "An umbilical hernia sits at the umbilicus, not the groin."]] },
+        { "t": "Commit", "x": "**D. Indirect inguinal hernia.** Then repair within 2 weeks (under 6 months)." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 52 year old man has a 3 month history of a lump in his right groin that enlarges when he lifts. On standing there is a 3 cm soft swelling superior and medial to the pubic tubercle with a cough impulse. It reduces easily when he lies down. There is no tenderness. The testes are normal.",
+      "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+      "o": ["Clinical examination alone", "CT abdomen and pelvis", "Herniography", "MRI pelvis", "Ultrasound of the groin"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "What confirms a hernia that is easy to feel?" },
+        { "t": "Pick out the clues", "clues": ["superior and medial to the pubic tubercle", "cough impulse", "reduces easily"], "x": "Classic, palpable, reducible inguinal hernia: no doubt clinically." },
+        { "t": "Make your own answer before looking", "x": "Hernias are a **clinical diagnosis**: history and examination are the gold standard." },
+        { "t": "Rule out the others", "elim": [[1, "CT is for complications such as obstruction, not an obvious hernia."], [2, "Herniography is invasive and outdated."], [3, "MRI is for occult groin pain, not a clear hernia."], [4, "Ultrasound is for an uncertain diagnosis; this one is certain."]] },
+        { "t": "Commit", "x": "**A. Clinical examination alone.** Rule: image only when you cannot be sure." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 67 year old man with a known right inguinal hernia has 6 hours of severe groin pain and vomiting. The swelling is now irreducible, red, hot and very tender. His temperature is 37.9°C, pulse rate 112 bpm and BP 118/74 mmHg. His abdomen is distended with tinkling bowel sounds.",
+      "labs": [["Lactate", "3.4 mmol/L", "<2.0", "H"], ["WCC", "15.2 x10^9/L", "4.0–11.0", "H"]],
+      "q": "Which is the most appropriate management?",
+      "o": ["Elective open mesh repair", "Emergency surgical repair", "Manual reduction and discharge", "Truss support belt", "Watchful waiting"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Management of an acutely painful hernia: first decide if it is strangulated." },
+        { "t": "Pick out the clues", "clues": ["irreducible, red, hot and very tender", "vomiting", "pulse rate 112 bpm", "tinkling bowel sounds"], "x": "Colour change, heat, tenderness, obstruction and a raised lactate: strangulated." },
+        { "t": "Make your own answer before looking", "x": "**Emergency surgery** (open, usually non-mesh) after resuscitation." },
+        { "t": "Rule out the others", "elim": [[0, "Elective repair is far too slow for dying bowel."], [2, "Manual reduction of a strangulated hernia is not recommended."], [3, "A truss is for frail patients with reducible hernias."], [4, "Waiting risks necrosis and perforation."]] },
+        { "t": "Commit", "x": "**B. Emergency surgical repair.** Rule: strangulated = theatre, never push it back." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 48 year old man has an elective open mesh repair of a left inguinal hernia. Three weeks later he has numbness and tingling over the upper inner part of his left thigh, the base of his penis and the front of his scrotum. The wound has healed well. Hip flexion and knee extension are normal.",
+      "q": "Which nerve is most likely to have been injured?",
+      "o": ["Femoral nerve", "Genitofemoral nerve", "Iliohypogastric nerve", "Ilioinguinal nerve", "Obturator nerve"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "Applied anatomy: match the numb area to the nerve in the operative field." },
+        { "t": "Pick out the clues", "clues": ["open mesh repair", "upper inner part of his left thigh", "base of his penis", "front of his scrotum", "knee extension are normal"], "x": "Sensory loss in the classic ilioinguinal distribution; no motor loss." },
+        { "t": "Make your own answer before looking", "x": "The **ilioinguinal nerve** runs in the inguinal canal and is at risk in open repair." },
+        { "t": "Rule out the others", "elim": [[0, "Femoral injury weakens knee extension; that is normal."], [1, "Genitofemoral gives a small patch of anterior thigh and the cremaster."], [2, "Iliohypogastric supplies the suprapubic skin."], [4, "Obturator supplies the medial thigh and hip adductors, not the penis."]] },
+        { "t": "Commit", "x": "**D. Ilioinguinal nerve.** Rule: thigh + base of penis + anterior scrotum = ilioinguinal." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 74 year old woman has a 2 month history of a lump in her right groin. It gets bigger when she coughs. There is a 2 cm swelling below the inguinal ligament, inferolateral to the pubic tubercle. It is not tender. Her pulse rate is 78 bpm and BP 142/84 mmHg. There is no pulsation and no lymphadenopathy elsewhere.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Femoral artery aneurysm", "Femoral hernia", "Inguinal hernia", "Lymphadenopathy", "Saphena varix"],
+      "a": 1,
+      "e": "A lump below the inguinal ligament, inferolateral to the pubic tubercle, enlarging on coughing in an older woman is a femoral hernia. Inguinal hernias are superomedial to the tubercle.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Groin lump diagnosis: locate it against the pubic tubercle." },
+        { "t": "Pick out the clues", "clues": ["74 year old woman", "bigger when she coughs", "below the inguinal ligament, inferolateral to the pubic tubercle", "no pulsation"], "x": "Older woman, below the ligament, enlarges with coughing, not pulsatile." },
+        { "t": "Make your own answer before looking", "x": "**Femoral hernia.**" },
+        { "t": "Rule out the others", "elim": [[0, "An aneurysm is pulsatile and expansile."], [2, "Inguinal hernias lie above and medial to the tubercle."], [3, "Nodes do not enlarge with coughing."], [4, "A saphena varix has a cough thrill and blue tinge, and vanishes lying flat."]] },
+        { "t": "Commit", "x": "**B. Femoral hernia.** Then refer urgently within 2 weeks." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 24 year old man has a swelling in his right groin that extends into his scrotum when he plays football. On standing the examiner cannot get above the scrotal swelling. It does not transilluminate. It reduces lying down, and firm pressure over the deep inguinal ring stops it reappearing when he coughs.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Direct inguinal hernia", "Hydrocele", "Indirect inguinal hernia", "Testicular tumour", "Varicocele"],
+      "a": 2,
+      "e": "A young man's inguinoscrotal hernia controlled by deep ring pressure is indirect. A direct hernia reappears despite deep ring occlusion and rarely reaches the scrotum.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Groin and scrotal lump: hernia or testicular? Then direct or indirect?" },
+        { "t": "Pick out the clues", "clues": ["24 year old man", "extends into his scrotum", "cannot get above the scrotal swelling", "does not transilluminate", "stops it reappearing when he coughs"], "x": "Cannot get above = inguinoscrotal hernia; controlled at the deep ring = indirect." },
+        { "t": "Make your own answer before looking", "x": "**Indirect inguinal hernia.**" },
+        { "t": "Rule out the others", "elim": [[0, "Direct hernias are not controlled by deep ring pressure."], [1, "A hydrocele transilluminates and you can get above it."], [3, "A tumour is a hard testicular lump you can get above."], [4, "A varicocele is a bag of worms above the testis."]] },
+        { "t": "Commit", "x": "**C. Indirect inguinal hernia.** Rule: controlled at deep ring = indirect." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 76 year old man with COPD and a chronic cough has a lump in his left groin for a year. On standing there is a broad swelling superior and medial to the pubic tubercle with a cough impulse. After reduction, pressure over the deep inguinal ring does not stop the lump reappearing medially when he coughs. It does not enter the scrotum.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Direct inguinal hernia", "Femoral hernia", "Indirect inguinal hernia", "Spigelian hernia", "Umbilical hernia"],
+      "a": 0,
+      "e": "An older man's inguinal hernia that reappears despite deep ring occlusion, medial and not scrotal, is direct (through Hesselbach's triangle). An indirect hernia would be controlled.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis: which type of groin hernia?" },
+        { "t": "Pick out the clues", "clues": ["76 year old man", "chronic cough", "superior and medial to the pubic tubercle", "does not stop the lump reappearing medially", "does not enter the scrotum"], "x": "Inguinal by position; not controlled at the deep ring; older man with raised pressure." },
+        { "t": "Make your own answer before looking", "x": "**Direct inguinal hernia.**" },
+        { "t": "Rule out the others", "elim": [[1, "Femoral lies below and lateral to the tubercle."], [2, "Indirect is controlled by deep ring pressure."], [3, "Spigelian lies at the lateral edge of rectus, higher up."], [4, "Umbilical hernias are at the umbilicus."]] },
+        { "t": "Commit", "x": "**A. Direct inguinal hernia.** Rule: older + reappears despite deep ring = direct." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 69 year old man with a known right inguinal hernia has an 8 hour history of severe pain in the lump and vomiting. The lump is irreducible, tense, red and warm. His temperature is 37.8°C, pulse rate 114 bpm and BP 122/76 mmHg. His abdomen is distended with tinkling bowel sounds.",
+      "labs": [["WCC", "16.4 x10^9/L", "4.0–11.0", "H"], ["Lactate", "3.8 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Epididymo-orchitis", "Incarcerated hernia without ischaemia", "Inguinal lymphadenitis", "Strangulated inguinal hernia", "Testicular torsion"],
+      "a": 3,
+      "e": "Colour change, raised local temperature, tenderness, obstruction and a raised lactate mean the hernia is strangulated. Incarceration alone does not cause redness, heat and a lactate rise.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A complicated hernia: incarcerated or strangulated?" },
+        { "t": "Pick out the clues", "clues": ["known right inguinal hernia", "irreducible, tense, red and warm", "pulse rate 114 bpm", "tinkling bowel sounds"], "x": "Irreducible plus colour change and heat, obstruction, tachycardia and lactate 3.8." },
+        { "t": "Make your own answer before looking", "x": "**Strangulated inguinal hernia.**" },
+        { "t": "Rule out the others", "elim": [[0, "Epididymo-orchitis is a tender testis, without obstruction."], [1, "Ischaemic signs and a raised lactate go beyond incarceration."], [2, "Nodes do not cause bowel obstruction."], [4, "Torsion is a testicular emergency in younger males, no obstruction."]] },
+        { "t": "Commit", "x": "**D. Strangulated inguinal hernia.** Next: emergency surgery." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "An 80 year old woman has a 1 day history of a painful lump in her left groin below the inguinal ligament. The lump is irreducible, tender and red. She is opening her bowels normally and passing flatus. She has not vomited and her abdomen is not distended. Her temperature is 37.6°C, pulse rate 102 bpm and BP 134/80 mmHg.",
+      "labs": [["Lactate", "2.6 mmol/L", "<2.0", "H"], ["CRP", "88 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Obturator hernia", "Reducible femoral hernia", "Richter's hernia", "Saphena varix", "Spigelian hernia"],
+      "a": 2,
+      "e": "A strangulated-looking hernia (red, tender, irreducible, raised lactate) with normal bowel function is a Richter's hernia, where only part of the bowel wall is trapped; femoral hernias are a classic site.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Strangulation signs but no obstruction: which hernia does that?" },
+        { "t": "Pick out the clues", "clues": ["below the inguinal ligament", "irreducible, tender and red", "opening her bowels normally and passing flatus", "not distended"], "x": "Femoral position, ischaemic lump, but the lumen is not blocked." },
+        { "t": "Make your own answer before looking", "x": "Part of the bowel wall is strangulated: **Richter's hernia**." },
+        { "t": "Rule out the others", "elim": [[0, "Obturator hernias are felt per rectum, not as a groin lump."], [1, "The lump is irreducible and ischaemic, not reducible."], [3, "A saphena varix is soft, compressible and not red."], [4, "A Spigelian hernia lies at the edge of rectus, above the groin."]] },
+        { "t": "Commit", "x": "**C. Richter's hernia.** Rule: strangulation without obstruction = Richter's." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "An 82 year old thin woman has 2 days of colicky abdominal pain, vomiting and distension. She has pain down the inside of her right thigh to the knee. There is no groin lump. A tender mass is felt on the right on rectal examination. Her pulse rate is 104 bpm and BP 126/72 mmHg. Bowel sounds are tinkling.",
+      "labs": [["Sodium", "132 mmol/L", "135–145", "L"], ["Urea", "11.2 mmol/L", "2.5–7.8", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Femoral hernia", "Obturator hernia", "Richter's hernia", "Sigmoid volvulus", "Spigelian hernia"],
+      "a": 1,
+      "e": "Small bowel obstruction with no groin lump, medial thigh pain and a tender mass per rectum in a thin elderly woman is an obturator hernia.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Obstruction with no visible hernia: look for the hidden one." },
+        { "t": "Pick out the clues", "clues": ["82 year old thin woman", "pain down the inside of her right thigh", "no groin lump", "tender mass is felt on the right on rectal examination"], "x": "Obturator nerve pain down the medial thigh and a mass per rectum." },
+        { "t": "Make your own answer before looking", "x": "**Obturator hernia.**" },
+        { "t": "Rule out the others", "elim": [[0, "A femoral hernia would be a lump in the groin."], [2, "Richter's does not cause obstruction."], [3, "Volvulus gives huge distension, not a rectal mass or thigh pain."], [4, "Spigelian is an anterior abdominal wall lump."]] },
+        { "t": "Commit", "x": "**B. Obturator hernia.** Rule: tender mass per rectum = obturator." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 31 year old man has a soft lump in his right groin that has grown over 2 months and extends towards the scrotum. It reduces when he lies down. The examiner reduces it and presses over the deep inguinal ring, then asks him to stand and cough to type the hernia.",
+      "labs": [],
+      "visual": null,
+      "q": "Which finding on examination would confirm an indirect inguinal hernia?",
+      "o": ["Lump below and lateral to the pubic tubercle", "Lump transilluminates", "No cough impulse", "No reappearance on coughing with the deep ring occluded", "Reappearance medially despite deep ring pressure"],
+      "a": 3,
+      "e": "An indirect hernia leaves through the deep ring, so occluding it stops the lump reappearing on coughing. Reappearance despite pressure means direct.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The gold standard is clinical: which bedside finding types the hernia?" },
+        { "t": "Pick out the clues", "clues": ["extends towards the scrotum", "presses over the deep inguinal ring", "stand and cough"], "x": "The deep ring occlusion test." },
+        { "t": "Make your own answer before looking", "x": "Indirect = **controlled** by deep ring pressure: no reappearance on coughing." },
+        { "t": "Rule out the others", "elim": [[0, "Below and lateral to the tubercle is femoral."], [1, "Transillumination suggests a hydrocele."], [2, "Hernias have a cough impulse."], [4, "Reappearance despite pressure means direct."]] },
+        { "t": "Commit", "x": "**D.** Rule: controlled = indirect; not controlled = direct." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 45 year old woman with a BMI of 41 has a 6 month history of an aching right groin that is worse at the end of the day. She has seen a lump there when standing. On examination no lump can be felt, either standing or on coughing. There is no tenderness. Her abdomen is soft.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate investigation?",
+      "o": ["Abdominal X-ray", "CT abdomen and pelvis", "Diagnostic laparoscopy", "MRI pelvis", "Ultrasound of the groin"],
+      "a": 4,
+      "e": "When a hernia is suspected but the examination is uncertain, ultrasound is the second-line test. CT and laparoscopy are not first choices.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Investigation when the clinical diagnosis is uncertain." },
+        { "t": "Pick out the clues", "clues": ["BMI of 41", "seen a lump there when standing", "no lump can be felt"], "x": "Symptoms of a hernia, but obesity makes it impalpable." },
+        { "t": "Make your own answer before looking", "x": "**Ultrasound of the groin.**" },
+        { "t": "Rule out the others", "elim": [[0, "AXR does not show abdominal wall hernias."], [1, "CT is for complications or acute obstruction."], [2, "Laparoscopy is invasive, not a first test."], [3, "MRI is not first-line for a suspected hernia."]] },
+        { "t": "Commit", "x": "**E. Ultrasound.** Rule: clinical first, ultrasound if uncertain." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 71 year old woman has a painless lump in her left groin noticed 1 month ago. It is below the inguinal ligament, inferolateral to the pubic tubercle, and reduces with gentle pressure. She has no vomiting and normal bowels. Her pulse rate is 72 bpm and BP 138/82 mmHg. She is otherwise fit.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Reassure and discharge", "Routine surgical referral", "Truss and review in 6 months", "Urgent surgical referral within 2 weeks", "Watchful waiting"],
+      "a": 3,
+      "e": "Femoral hernias carry a high strangulation risk, so they are referred urgently within 2 weeks even without symptoms.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Management: first name the hernia, then its referral rule." },
+        { "t": "Pick out the clues", "clues": ["painless lump", "below the inguinal ligament, inferolateral to the pubic tubercle", "otherwise fit"], "x": "An uncomplicated femoral hernia in a fit woman." },
+        { "t": "Make your own answer before looking", "x": "**Urgent surgical referral within 2 weeks.**" },
+        { "t": "Rule out the others", "elim": [[0, "Discharging ignores the strangulation risk."], [1, "Routine referral is too slow for a femoral hernia."], [2, "A truss is for the high-risk or frail patient."], [4, "Watchful waiting is for small asymptomatic inguinal hernias."]] },
+        { "t": "Commit", "x": "**D.** Rule: femoral = urgent, even if painless." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 55 year old man has aching lumps in both groins for 8 months that limit his work. On examination there are reducible swellings with cough impulses above and medial to both pubic tubercles. Neither is tender. He is fit for a general anaesthetic.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Bilateral open non-mesh repair", "Emergency herniotomy", "Laparoscopic mesh repair", "Truss support belt", "Watchful waiting"],
+      "a": 2,
+      "e": "Bilateral (or recurrent) symptomatic inguinal hernias are repaired laparoscopically with mesh. Non-mesh open repair is for strangulated hernias.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which operation, for which hernia pattern?" },
+        { "t": "Pick out the clues", "clues": ["both groins", "limit his work", "reducible swellings", "fit for a general anaesthetic"], "x": "Bilateral, symptomatic, uncomplicated inguinal hernias in a fit man." },
+        { "t": "Make your own answer before looking", "x": "**Laparoscopic mesh repair.**" },
+        { "t": "Rule out the others", "elim": [[0, "Non-mesh open repair is for irreducible or strangulated hernias."], [1, "Herniotomy is the operation for children."], [3, "A truss is for patients unfit for surgery."], [4, "He is symptomatic, so repair is indicated."]] },
+        { "t": "Commit", "x": "**C. Laparoscopic mesh repair.** Rule: bilateral or recurrent = laparoscopic." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "An 86 year old man with heart failure has a small painless swelling in his right groin noticed at a routine review. It is above and medial to the pubic tubercle, has a cough impulse and is easily reducible. He has no bowel symptoms. His pulse rate is 68 bpm and BP 124/70 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Elective laparoscopic mesh repair", "Elective open mesh repair", "Emergency open repair", "Manual reduction under sedation", "Watchful waiting with safety-netting"],
+      "a": 4,
+      "e": "A small asymptomatic inguinal hernia, especially in a frail patient, is managed by watchful waiting with safety-netting for strangulation or obstruction.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Management: is surgery needed at all?" },
+        { "t": "Pick out the clues", "clues": ["86 year old man with heart failure", "small painless swelling", "above and medial to the pubic tubercle", "easily reducible"], "x": "Small, asymptomatic, reducible inguinal hernia in a frail man." },
+        { "t": "Make your own answer before looking", "x": "**Watchful waiting**, with advice on strangulation signs." },
+        { "t": "Rule out the others", "elim": [[0, "Surgery adds risk for no symptom benefit."], [1, "Same: he has no symptoms and high surgical risk."], [2, "Nothing is strangulated or irreducible."], [3, "It already reduces; reduction is not a treatment."]] },
+        { "t": "Commit", "x": "**E. Watchful waiting with safety-netting.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 78 year old woman has a small, non-tender lump below her right inguinal ligament. The surgeon explains that this type of hernia is much more likely to become trapped and lose its blood supply than the commoner hernia above the ligament, so it must be repaired soon.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely explanation for the higher risk?",
+      "o": ["It contains only omentum", "It follows a patent processus vaginalis", "It is lateral to the inferior epigastric vessels", "It lies within Hesselbach's triangle", "It passes through a narrow, rigid femoral canal"],
+      "a": 4,
+      "e": "Femoral hernias pass through the narrow, rigid femoral canal, so contents are easily trapped and strangulated.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism: why does this hernia strangulate?" },
+        { "t": "Pick out the clues", "clues": ["below her right inguinal ligament", "more likely to become trapped and lose its blood supply"], "x": "A femoral hernia with high strangulation risk." },
+        { "t": "Make your own answer before looking", "x": "The **femoral canal is narrow and rigid**." },
+        { "t": "Rule out the others", "elim": [[0, "Contents vary; that is not the reason."], [1, "The processus vaginalis is the path of indirect inguinal hernias."], [2, "Lateral to the epigastric vessels describes indirect inguinal hernias."], [3, "Hesselbach's triangle is the route of direct inguinal hernias."]] },
+        { "t": "Commit", "x": "**E.** Rule: narrow rigid canal = trapped contents = strangulation." }
+      ]
+    }
+  ]
+}

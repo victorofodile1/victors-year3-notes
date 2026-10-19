@@ -1,0 +1,431 @@
+{
+  "id": "brain-abscess",
+  "patient": {
+    "name": "Callum Brennan",
+    "age": 27,
+    "sex": "M",
+    "setting": "Emergency Department",
+    "complaint": "Ten days of worsening headache and fever, now weak down his left side",
+    "background": ["Right ear pain and discharge for 3 weeks; one course of oral antibiotics from his GP", "Witnessed seizure at home this morning", "No past medical history, no regular medicines", "Cycle courier in Hackney"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with fever, headache and focal neurology after an ear, sinus or dental infection (or in cyanotic heart disease), often with a ring-enhancing lesion on CT.",
+      "steps": [
+        { "type": "story", "points": ["Callum, 27: headache for **10 days**, steadily worse.", "Fevers and sweats; vomited twice today.", "Partner saw a **seizure** this morning.", "Right ear has been discharging for 3 weeks."], "vitals": { "T": "38.3°C", "HR": "102 bpm", "BP": "132/78 mmHg", "RR": "18 /min", "SpO2": "98% on air", "GCS": "14" } },
+        { "type": "notes", "src": 0, "lead": "Callum has a **collection of pus** in his brain: the mass, the oedema and the raised pressure explain each of his symptoms." },
+        { "type": "notes", "src": 1, "lead": "Callum's source is his **ear**: otitis media spreading into the mastoid and on into the temporal lobe." },
+        { "type": "story", "points": ["Tender, swollen right mastoid; pus in the right ear canal.", "**Left arm and leg** weakness, power 3/5.", "Bilateral **papilloedema** on fundoscopy.", "No neck stiffness, no rash."] },
+        { "type": "ask", "q": "Callum's weakness is on the left. Where is the lesion?", "o": ["Left cerebellum", "Left temporal lobe", "Right temporal lobe", "Spinal cord"], "a": 2, "r": "Hemiparesis is **contralateral** to a hemisphere lesion. His right ear infection has spread to the **right** temporal lobe." },
+        { "type": "notes", "src": 2, "lead": "Callum has the whole picture: subacute headache, fever, seizure, **contralateral** weakness and **papilloedema** from raised ICP." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Callum's GCS", "min": 3, "max": 15, "unit": "", "bands": [[3, 8, "8 or less: airway at risk", "bad"], [8, 13, "moderate", "warn"], [13, 15, "mild", "ok"]], "value": 14, "label": "Callum 14", "caption": "GCS 14 now. A falling GCS means rising ICP: escalate urgently." }, "text": "Track the GCS on neuro-observations; it is the earliest sign he is deteriorating." },
+        { "type": "notes", "src": 3, "lead": "When Callum's CT comes back, the clinching clue is a **solitary ring-enhancing lesion** with oedema around it." },
+        { "type": "compare", "title": "Ring-enhancing lesion: abscess or tumour?", "head": ["Feature", "Brain abscess", "Brain metastasis", "Glioblastoma"], "rows": [["Fever, raised CRP", "**Yes**", "Usually no", "No"], ["Onset", "Subacute (days to weeks)", "Weeks", "Weeks to months"], ["Clue in the history", "Ear, sinus, teeth, endocarditis", "Known cancer", "Older adult, no infection"], ["Number", "Usually solitary", "Often multiple", "Usually single"]] },
+        { "type": "trap", "text": "No neck stiffness does not make this 'not infection'. A brain abscess is **parenchymal**, so meningism is often absent. Focal signs plus fever = image the brain." }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (contrast CT head or MRI) and questions on how the organism is found (aspiration). Lumbar puncture is the classic wrong answer.",
+      "steps": [
+        { "type": "ask", "q": "Callum has fever, focal weakness and papilloedema. Which test first?", "o": ["CT head with contrast", "Electroencephalogram", "Lumbar puncture", "Skull X-ray"], "a": 0, "r": "Focal signs and papilloedema mean **image first**. LP risks herniation with a mass lesion." },
+        { "type": "notes", "src": 1, "lead": "Callum goes straight to a **contrast-enhanced CT head**; MRI is an alternative if it can be done urgently." },
+        { "type": "story", "points": ["CT: **3 cm ring-enhancing lesion**, right temporal lobe.", "Surrounding low-density **oedema**; 4 mm midline shift.", "Right mastoid air cells opacified."] },
+        { "type": "labs", "title": "Callum's bloods", "rows": [["WCC", "15.8 ×10⁹/L", "4.0–11.0", "H"], ["Neutrophils", "12.9 ×10⁹/L", "2.0–7.5", "H"], ["CRP", "74 mg/L", "<5", "H"], ["Sodium", "136 mmol/L", "135–145", ""], ["Glucose", "5.6 mmol/L", "4.0–7.8", ""]], "text": "Raised inflammatory markers support infection, but they can be only mildly raised." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "CRP", "min": 0, "max": 200, "unit": "mg/L", "bands": [[0, 5, "normal", "ok"], [5, 100, "raised", "warn"], [100, 200, "very high", "bad"]], "value": 74, "label": "Callum 74", "caption": "Moderately raised: fits a walled-off infection. A normal CRP would not exclude an abscess." } },
+        { "type": "notes", "src": 2, "lead": "Callum's **blood cultures** go off before antibiotics; with no murmur, the ear is his obvious source." },
+        { "type": "flow", "title": "Investigating a suspected brain abscess", "nodes": ["Fever + headache + focal signs", "Contrast CT head (or urgent MRI)", "Ring-enhancing lesion", "Blood cultures, inflammatory markers, look for source", "Neurosurgical aspiration: Gram stain and culture"], "caption": "Imaging finds it; aspiration names the organism." },
+        { "type": "notes", "src": 0, "lead": "Callum's definitive diagnosis comes from the **pus aspirated** in theatre, which identifies the organism." },
+        { "type": "trap", "text": "Do not pick **lumbar puncture**. With a mass lesion and raised ICP it risks **coning**, and CSF rarely grows the organism." }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?': urgent neurosurgical drainage plus IV ceftriaxone and metronidazole. Distractors are aciclovir alone, oral antibiotics or radiotherapy.",
+      "steps": [
+        { "type": "ask", "q": "Callum's CT shows a 3 cm abscess with midline shift. What is first-line treatment?", "o": ["IV aciclovir alone", "IV ceftriaxone plus metronidazole with neurosurgical drainage", "Oral amoxicillin", "Whole-brain radiotherapy"], "a": 1, "r": "**Drainage plus broad-spectrum IV antibiotics** covering streptococci and anaerobes. Aciclovir is for HSV encephalitis." },
+        { "type": "notes", "src": 0, "lead": "Callum gets **IV ceftriaxone plus metronidazole** and goes for **surgical drainage** of the abscess." },
+        { "type": "flow", "title": "Callum's management", "nodes": ["ABCDE, neuro-observations", "Blood cultures then IV ceftriaxone + metronidazole", "Urgent neurosurgical review", "Aspiration or drainage of the abscess", "Tailor antibiotics to culture; treat the source (ENT)"] },
+        { "type": "notes", "src": 1, "lead": "Callum needs **urgent neurosurgical review**, seizure control and hourly neuro-obs, with escalation if his GCS falls." },
+        { "type": "story", "points": ["Burr-hole aspiration: 20 mL of thick pus.", "Gram-positive cocci in chains: **Streptococcus milleri** group.", "Levetiracetam started after his seizure.", "ENT plan mastoid surgery for the source."] },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Callum's response to treatment", "x": ["Day 0", "Day 3", "Week 1", "Week 2", "Week 4"], "unit": "", "series": [{ "name": "CRP (mg/L)", "values": [74, 58, 31, 12, 4] }, { "name": "Abscess diameter (mm)", "values": [30, 18, 14, 10, 6] }], "caption": "Drainage shrinks the cavity at once; prolonged IV antibiotics bring the CRP down over weeks." } },
+        { "type": "pearl", "text": "Antibiotics run for **weeks** (often 4 to 6, initially IV), guided by repeat imaging, because drugs penetrate a walled-off cavity poorly." },
+        { "type": "notes", "src": "guidelines", "lead": "Callum's antibiotic choice and urgent referral follow the **IDSA/BSAC** and NICE neurological infection pathways." },
+        { "type": "trap", "text": "Antibiotics alone are not enough for a large abscess with mass effect. **Drainage** treats it and gives the organism." }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why it is ring-enhancing, how infection reaches the brain, why cyanotic heart disease predisposes, and why aspiration is needed.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Callum's abscess formed by **direct spread** from his infected middle ear and mastoid into the adjacent temporal lobe." },
+        { "type": "compare", "title": "Two routes to the brain", "head": ["Route", "Sources", "Typical pattern"], "rows": [["Contiguous spread", "Otitis media, mastoiditis, sinusitis, dental infection", "Single abscess next to the source"], ["Haematogenous spread", "Endocarditis, cyanotic heart disease (right-to-left shunt)", "Often multiple, in arterial territories"]] },
+        { "type": "flow", "title": "From cerebritis to abscess", "nodes": ["Bacteria seed brain tissue", "Early cerebritis: inflamed, no capsule", "Late cerebritis: necrotic centre forms", "Mature abscess: fibrous capsule around pus"], "caption": "The capsule is what enhances on contrast." },
+        { "type": "notes", "src": 1, "lead": "Callum's mature abscess has an enhancing **capsule** around a necrotic centre that does not enhance: the **ring**." },
+        { "type": "ask", "q": "Why does the centre of Callum's lesion not enhance with contrast?", "o": ["It is calcified", "It is filled with necrotic pus with no blood supply", "It is full of fresh blood", "It is solid tumour"], "a": 1, "r": "Contrast reaches the vascular **capsule** and inflamed edge, not the avascular **pus**." },
+        { "type": "notes", "src": 2, "lead": "Callum's right temporal mass and its **vasogenic oedema** compress the motor pathways, giving left-sided weakness." },
+        { "type": "notes", "src": 3, "lead": "Callum has no heart disease, but a child with uncorrected **tetralogy of Fallot** shunts septic emboli straight past the lung filter." },
+        { "type": "notes", "src": 4, "lead": "Callum's aspirate grew **Strep. milleri**, so his antibiotics can be targeted rather than guessed." },
+        { "type": "pearl", "text": "**Streptococcus milleri** (anginosus group) is the classic abscess-forming organism; metronidazole is added for **anaerobes** from ear, sinus or teeth." }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which organism is classically implicated in brain abscess?", "o": ["Haemophilus influenzae", "Listeria monocytogenes", "Neisseria meningitidis", "Streptococcus milleri"], "a": 3, "r": "**Strep. milleri** (anginosus group) is the classic abscess former." },
+    { "d": "diagnosis", "q": "Which is a recognised source of brain abscess?", "o": ["Mastoiditis", "Migraine", "Osteoarthritis", "Tension headache"], "a": 0, "r": "Ear, sinus and dental infection spread directly; **mastoiditis** is classic." },
+    { "d": "diagnosis", "q": "A right temporal abscess causes weakness on which side?", "o": ["Both sides", "Left", "Neither side", "Right"], "a": 1, "r": "Hemiparesis is **contralateral** to the lesion." },
+    { "d": "diagnosis", "q": "What is the classic CT appearance of a brain abscess?", "o": ["Crescent-shaped collection", "Hyperdense blood in the sulci", "Multiple small calcifications", "Solitary ring-enhancing lesion with oedema"], "a": 3, "r": "A **solitary ring-enhancing lesion** with surrounding oedema and mass effect." },
+    { "d": "investigation", "q": "What is the first-line investigation?", "o": ["Blood cultures", "Contrast-enhanced CT head", "Lumbar puncture", "Skull X-ray"], "a": 1, "r": "**Contrast CT head** (or urgent MRI) comes first." },
+    { "d": "investigation", "q": "How is a definitive microbiological diagnosis made?", "o": ["Aspiration or drainage of the abscess", "CSF culture", "Serum CRP", "Urine culture"], "a": 0, "r": "**Aspirated pus** identifies the organism and guides antibiotics." },
+    { "d": "management", "q": "What is the first-line antibiotic regimen?", "o": ["IV aciclovir", "IV ceftriaxone plus metronidazole", "Oral amoxicillin", "Oral doxycycline"], "a": 1, "r": "**3rd-generation cephalosporin plus metronidazole** covers streptococci and anaerobes." },
+    { "d": "management", "q": "Which treatment is combined with IV antibiotics as first-line?", "o": ["Chemotherapy", "Plasma exchange", "Surgical drainage", "Thrombolysis"], "a": 2, "r": "**Surgical drainage or aspiration** plus IV antibiotics." },
+    { "d": "science", "q": "Why does cyanotic congenital heart disease predispose to brain abscess?", "o": ["It bypasses the pulmonary capillary filter", "It causes immunosuppression", "It damages the blood-brain barrier", "It raises intracranial pressure"], "a": 0, "r": "**Right-to-left shunting** lets septic emboli skip the lungs and reach the brain." },
+    { "d": "science", "q": "What part of a mature abscess enhances on contrast imaging?", "o": ["The capsule", "The necrotic centre", "The ventricles", "The whole lesion uniformly"], "a": 0, "r": "The vascular **fibrous capsule** enhances; the pus does not." }
+  ],
+  "blurt": {
+    "prompts": [
+      { "d": "diagnosis", "q": "What is a brain abscess and which organisms cause it?", "tip": "Exam thinking: 'pus in the brain parenchyma' plus the classic streptococcus.", "points": [
+        { "p": "Collection of pus within brain parenchyma", "k": [["pus", "collection"], ["parenchyma", "brain"]], "why": "Unlike meningitis, which is in the meninges." },
+        { "p": "Streptococcus milleri (also other Strep and Staph species)", "k": [["milleri", "anginosus"]], "why": "The classic abscess-forming organism." },
+        { "p": "Symptoms from mass effect, oedema, raised ICP, focal damage", "k": [["mass effect", "mass"], ["oedema", "edema", "icp", "pressure"]], "why": "Four mechanisms." }
+      ] },
+      { "d": "diagnosis", "q": "List the sources and risk factors for brain abscess.", "tip": "Exam thinking: the stem nearly always hands you the source.", "points": [
+        { "p": "Otitis media or mastoiditis", "k": [["otitis", "mastoid", "ear"]], "why": "Temporal lobe or cerebellar abscess." },
+        { "p": "Sinusitis", "k": [["sinus"]], "why": "Frontal lobe abscess." },
+        { "p": "Dental infection", "k": [["dental", "tooth", "teeth"]], "why": "Often anaerobes too." },
+        { "p": "Endocarditis or cyanotic congenital heart disease", "k": [["endocarditis", "cyanotic", "fallot", "congenital heart"]], "why": "Haematogenous spread." },
+        { "p": "Immunosuppression (including steroids), recent neurosurgery or trauma", "k": [["immunosupp", "steroid", "neurosurgery", "trauma", "hiv"]], "why": "Direct inoculation or impaired defence." }
+      ] },
+      { "d": "diagnosis", "q": "How does a brain abscess present?", "tip": "Exam thinking: a space-occupying lesion plus fever, coming on subacutely.", "points": [
+        { "p": "Fever and headache", "k": [["fever", "pyrexia", "temperature"], ["headache"]], "why": "Fever can be absent, so do not rely on it." },
+        { "p": "Contralateral hemiparesis and focal neuro signs", "k": [["contralateral", "hemiparesis", "focal", "weakness"]], "why": "Depends on location." },
+        { "p": "Seizures", "k": [["seizure", "fit"]], "why": "Cortical irritation." },
+        { "p": "Raised ICP: vomiting, papilloedema, reduced GCS, altered mental state", "k": [["papilloedema", "vomit", "gcs", "icp"]], "why": "Oculomotor palsy suggests herniation." },
+        { "p": "Subacute onset; inflammatory markers may be raised", "k": [["subacute", "days", "weeks", "crp", "inflammatory"]], "why": "Not sudden like a bleed." }
+      ] },
+      { "d": "diagnosis", "q": "What is the classic imaging appearance, and how does it differ from a tumour?", "tip": "Exam thinking: ring-enhancing lesion + infection clue = abscess.", "points": [
+        { "p": "Solitary ring-enhancing lesion", "k": [["ring"]], "why": "Tumours and metastases can also ring-enhance." },
+        { "p": "Surrounding oedema and mass effect", "k": [["oedema", "edema", "mass effect"]], "why": "Can cause midline shift." },
+        { "p": "Fever, raised markers and an infective source point to abscess", "k": [["fever", "source", "infection", "crp"]], "why": "Known cancer or multiple lesions point to metastases." }
+      ] },
+      { "d": "investigation", "q": "What is the first-line investigation, and which test is the classic wrong answer?", "tip": "Exam thinking: focal signs = image before anything invasive.", "points": [
+        { "p": "Contrast-enhanced CT head, or urgent MRI head", "k": [["ct", "mri", "imaging", "scan"]], "why": "MRI is more sensitive." },
+        { "p": "Lumbar puncture is contraindicated with a mass lesion", "k": [["lumbar", "lp"], ["contraindicat", "avoid", "not", "herniat", "coning"]], "why": "Risk of coning; CSF is rarely diagnostic." }
+      ] },
+      { "d": "investigation", "q": "How is the diagnosis confirmed and the source found?", "tip": "Exam thinking: imaging finds it, aspiration names the organism.", "points": [
+        { "p": "Neuro-imaging plus microbiology from aspiration or drainage", "k": [["aspirat", "drainage", "drain"]], "why": "The gold standard." },
+        { "p": "Blood cultures and inflammatory markers", "k": [["blood culture", "cultures"]], "why": "Take before antibiotics where possible." },
+        { "p": "Look for source, e.g. endocarditis", "k": [["endocarditis", "echo", "source"]], "why": "Murmur in the stem = echocardiogram." }
+      ] },
+      { "d": "management", "q": "What is the first-line treatment of a brain abscess?", "tip": "Exam thinking: drain it and give two IV antibiotics.", "points": [
+        { "p": "Surgical drainage or aspiration", "k": [["drain", "aspirat", "surg", "burr"]], "why": "Diagnostic and therapeutic." },
+        { "p": "IV 3rd-generation cephalosporin (ceftriaxone)", "k": [["ceftriaxone", "cefotaxime", "cephalosporin"]], "why": "Covers streptococci." },
+        { "p": "Plus metronidazole", "k": [["metronidazole"]], "why": "Covers anaerobes." }
+      ] },
+      { "d": "management", "q": "How do you manage a brain abscess as an emergency?", "tip": "Exam thinking: escalate early, watch the GCS.", "points": [
+        { "p": "Urgent neurosurgical review for drainage", "k": [["neurosurg"]], "why": "Do not wait for the antibiotics to work." },
+        { "p": "Manage raised ICP and seizures", "k": [["icp", "pressure", "seizure", "antiepileptic", "levetiracetam"]], "why": "Treat seizures as they happen." },
+        { "p": "Neuro-observations and urgent escalation on deterioration", "k": [["neuro obs", "neuro-obs", "observations", "gcs", "escalat"]], "why": "Falling GCS or a new pupil change = herniation risk." }
+      ] },
+      { "d": "science", "q": "How does a brain abscess form, and why is it ring-enhancing?", "tip": "Exam thinking: route of spread, then the stages to a capsule.", "points": [
+        { "p": "Haematogenous spread (endocarditis, right-to-left shunt)", "k": [["haematogenous", "hematogenous", "blood"]], "why": "Often multiple abscesses." },
+        { "p": "Direct spread from a contiguous focus (ear, sinus, teeth)", "k": [["direct", "contiguous", "adjacent"]], "why": "Usually a single abscess." },
+        { "p": "Cerebritis evolves into a mature abscess with a fibrous capsule", "k": [["cerebritis", "capsule"]], "why": "Early cerebritis has no capsule." },
+        { "p": "Capsule enhances; necrotic pus centre does not", "k": [["necro", "pus", "centre", "center"]], "why": "Hence the ring." }
+      ] },
+      { "d": "science", "q": "Why does cyanotic congenital heart disease predispose, and why is aspiration needed?", "tip": "Exam thinking: the lungs normally filter septic emboli.", "points": [
+        { "p": "Right-to-left shunt bypasses the pulmonary capillary filter", "k": [["filter", "bypass", "shunt"]], "why": "E.g. tetralogy of Fallot." },
+        { "p": "Aspiration identifies the organism to target antibiotics", "k": [["organism", "target", "culture"]], "why": "Blood cultures are often negative." }
+      ] }
+    ]
+  },
+  "glossary": {
+    "Brain abscess": "A walled-off collection of pus inside the brain tissue.",
+    "Parenchyma": "The functional tissue of an organ; in the brain, the neurons and glia rather than the coverings.",
+    "Streptococcus milleri": "A group of streptococci (anginosus group) that classically form abscesses in the brain, liver and chest.",
+    "Ring-enhancing lesion": "A lesion whose rim lights up with contrast on CT or MRI while the centre stays dark.",
+    "Mass effect": "Pressure from a lesion pushing on and displacing nearby brain.",
+    "Midline shift": "Displacement of the brain's midline structures to one side by a mass, a sign of dangerous pressure.",
+    "Vasogenic oedema": "Brain swelling from fluid leaking out of damaged blood vessels into the surrounding tissue.",
+    "ICP": "Intracranial pressure: the pressure inside the skull.",
+    "Papilloedema": "Swelling of the optic disc caused by raised intracranial pressure.",
+    "GCS": "Glasgow Coma Scale, a 3 to 15 score of eye, verbal and motor responses.",
+    "Contralateral": "On the opposite side of the body to the lesion.",
+    "Hemiparesis": "Weakness of one side of the body.",
+    "Oculomotor nerve palsy": "Third nerve palsy: a 'down and out' eye, ptosis and a dilated pupil, a warning sign of herniation.",
+    "Otitis media": "Infection of the middle ear.",
+    "Mastoiditis": "Infection spreading from the middle ear into the mastoid air cells behind the ear.",
+    "Sinusitis": "Infection or inflammation of the paranasal sinuses.",
+    "Endocarditis": "Infection of the heart valves that can throw infected emboli into the bloodstream.",
+    "Cyanotic congenital heart disease": "Heart defects present from birth that shunt deoxygenated blood into the systemic circulation, such as tetralogy of Fallot.",
+    "Tetralogy of Fallot": "Congenital heart defect with a ventricular septal defect and right-to-left shunting, causing cyanosis.",
+    "Right-to-left shunt": "Blood passing from the right heart to the left without going through the lungs.",
+    "Haematogenous spread": "Spread of infection or cancer through the bloodstream.",
+    "Contiguous spread": "Spread of infection directly from a neighbouring infected structure.",
+    "Septic emboli": "Clumps of infected material carried in the bloodstream that lodge in distant vessels.",
+    "Cerebritis": "Early, poorly defined inflammation of brain tissue before an abscess capsule forms.",
+    "Capsule": "The fibrous wall that forms around a mature abscess.",
+    "Aspiration": "Drawing pus out of the abscess with a needle, usually via a burr hole.",
+    "Burr hole": "A small hole drilled in the skull to drain fluid or pus.",
+    "Ceftriaxone": "An IV third-generation cephalosporin antibiotic that crosses into the brain well.",
+    "Metronidazole": "Antibiotic that covers anaerobic bacteria.",
+    "Anaerobes": "Bacteria that grow without oxygen, common in ear, sinus and dental infections.",
+    "Neuro-observations": "Regular checks of GCS, pupils, limb power and vital signs to detect neurological deterioration.",
+    "Coning": "Herniation of the brainstem through the foramen magnum due to raised pressure, which can be fatal.",
+    "Lumbar puncture": "Needle sampling of CSF from the lower back; dangerous when a mass lesion raises intracranial pressure.",
+    "CRP": "C-reactive protein, a blood marker of inflammation and infection."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 21 year old man has a 2 week history of worsening headache and fever. He had a painful discharging left ear a month ago. He is drowsy and has weakness of his right arm and leg. His temperature is 38.4°C, pulse rate 104 bpm and BP 128/76 mmHg. A contrast CT head shows a single ring-enhancing lesion in the left temporal lobe with surrounding oedema.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Bacterial meningitis", "Brain abscess", "Cerebral venous sinus thrombosis", "Glioblastoma", "Subarachnoid haemorrhage"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis: fever plus a focal lesion on CT." },
+        { "t": "Pick out the clues", "clues": ["2 week history", "discharging left ear", "weakness of his right arm and leg", "38.4°C", "single ring-enhancing lesion in the left temporal lobe"], "x": "Subacute, febrile, ear source on the same side as the lesion, contralateral weakness, ring enhancement." },
+        { "t": "Make your own answer before looking", "x": "Otogenic **brain abscess** in the left temporal lobe." },
+        { "t": "Rule out the others", "elim": [[0, "Meningitis causes neck stiffness and photophobia, not a ring-enhancing mass."], [2, "Venous sinus thrombosis causes headache and venous infarcts, not a ring lesion."], [3, "Glioblastoma is not febrile and has no infective source."], [4, "SAH is a sudden thunderclap headache with blood on CT."]] },
+        { "t": "Commit", "x": "**B. Brain abscess.** Rule: infection source + fever + ring-enhancing lesion = abscess." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 44 year old woman has a 3 cm ring-enhancing lesion in the right frontal lobe on contrast CT after a week of fever, headache and personality change. She had sinusitis a month ago. Her temperature is 38.1°C, pulse rate 96 bpm and BP 124/80 mmHg. Blood cultures are negative.",
+      "q": "Which investigation will give the definitive microbiological diagnosis?",
+      "o": ["Aspiration of the lesion for Gram stain and culture", "Lumbar puncture for CSF culture", "Repeat blood cultures", "Repeat CT head in 1 week", "Serum procalcitonin"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "It asks for the definitive organism test, not the imaging." },
+        { "t": "Pick out the clues", "clues": ["3 cm ring-enhancing lesion", "sinusitis a month ago", "Blood cultures are negative"], "x": "An abscess has been found; cultures are negative, so you need the pus itself." },
+        { "t": "Make your own answer before looking", "x": "**Aspirate the abscess** and send the pus." },
+        { "t": "Rule out the others", "elim": [[1, "LP is dangerous with a mass and CSF is usually sterile."], [2, "Repeat blood cultures are often negative too."], [3, "Waiting a week delays treatment and still gives no organism."], [4, "Procalcitonin suggests bacterial infection but names no organism."]] },
+        { "t": "Commit", "x": "**A. Aspiration.** Rule: gold standard = imaging + microbiology from drainage." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 35 year old man has a 3.5 cm ring-enhancing lesion in the left cerebellum with surrounding oedema on contrast CT. He had chronic otitis media. His temperature is 38.6°C, pulse rate 100 bpm, BP 134/82 mmHg and GCS 14. Blood cultures have been taken.",
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Dexamethasone alone", "IV aciclovir", "Neurosurgical drainage with IV ceftriaxone and metronidazole", "Oral co-amoxiclav and outpatient review", "Whole-brain radiotherapy"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management of a confirmed abscess." },
+        { "t": "Pick out the clues", "clues": ["3.5 cm ring-enhancing lesion", "chronic otitis media", "38.6°C", "Blood cultures have been taken"], "x": "Large otogenic abscess, febrile, cultures done: treat now." },
+        { "t": "Make your own answer before looking", "x": "**Drain it** and start **IV ceftriaxone plus metronidazole**." },
+        { "t": "Rule out the others", "elim": [[0, "Steroids alone do not treat infection and may worsen it."], [1, "Aciclovir treats HSV encephalitis, not a bacterial abscess."], [3, "Oral antibiotics as an outpatient are unsafe for an intracranial abscess."], [4, "Radiotherapy is for metastases, not infection."]] },
+        { "t": "Commit", "x": "**C. Drainage plus ceftriaxone and metronidazole.** Rule: drain and two IV antibiotics." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 9 year old boy with uncorrected tetralogy of Fallot has a 5 day history of headache, vomiting and fever. He has a left hemiparesis. A contrast CT head shows a ring-enhancing lesion in the right parietal lobe. He has had no ear, sinus or dental infections.",
+      "q": "Which is the most likely mechanism by which his heart condition predisposed to this lesion?",
+      "o": ["Bypass of the pulmonary capillary filter by right-to-left shunting", "Direct spread from the middle ear", "Impaired neutrophil function from polycythaemia", "Reduced cerebral blood flow from heart failure", "Splenic dysfunction"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism: how does cyanotic heart disease cause a brain abscess?" },
+        { "t": "Pick out the clues", "clues": ["uncorrected tetralogy of Fallot", "ring-enhancing lesion", "no ear, sinus or dental infections"], "x": "No local source, so this is haematogenous spread through a right-to-left shunt." },
+        { "t": "Make your own answer before looking", "x": "The shunt lets septic emboli **bypass the lung filter**." },
+        { "t": "Rule out the others", "elim": [[1, "The stem rules out an ear source."], [2, "Polycythaemia raises viscosity but is not the abscess mechanism."], [3, "Reduced flow causes infarcts, not abscesses."], [4, "Splenic dysfunction predisposes to encapsulated sepsis, not this."]] },
+        { "t": "Commit", "x": "**A. Bypass of the pulmonary filter.** Rule: right-to-left shunt = emboli skip the lungs." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 30 year old man has a 12 day history of headache, fever and two episodes of vomiting. He has had a discharging right ear for a month. He has left-sided weakness and bilateral papilloedema. His temperature is 38.2°C, pulse rate 98 bpm, BP 130/80 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 98% breathing air.",
+      "labs": [["WCC", "16.1 ×10⁹/L", "4.0–11.0", "H"], ["CRP", "68 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute disseminated encephalomyelitis", "Bacterial meningitis", "Brain abscess", "Glioblastoma", "Herpes simplex encephalitis"],
+      "a": 2,
+      "e": "Subacute fever and headache, a chronic ear infection, contralateral weakness and papilloedema point to an otogenic brain abscess. Meningitis gives meningism rather than focal weakness.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis: febrile, focal and raised ICP." },
+        { "t": "Pick out the clues", "clues": ["12 day history", "discharging right ear", "left-sided weakness", "bilateral papilloedema"], "x": "Ear source, contralateral weakness, raised ICP, building over days, high WCC and CRP." },
+        { "t": "Make your own answer before looking", "x": "Right temporal **brain abscess** from the ear." },
+        { "t": "Rule out the others", "elim": [[0, "ADEM follows a viral illness or vaccine with multifocal white matter lesions."], [1, "Meningitis gives neck stiffness and photophobia, not a focal deficit with papilloedema."], [3, "Glioblastoma is not febrile and has no infective source."], [4, "HSV encephalitis gives confusion and temporal signs but no ear source or papilloedema."]] },
+        { "t": "Commit", "x": "**C. Brain abscess.** Rule: ear infection + fever + focal signs = abscess." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 10 year old boy with uncorrected cyanotic congenital heart disease has a 6 day history of headache and vomiting. He has a low-grade fever and a new right-sided weakness. His temperature is 37.9°C, pulse rate 110 bpm, BP 104/66 mmHg and oxygen saturation 82% breathing air, which is his baseline.",
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Brain abscess", "Cerebral venous sinus thrombosis", "Infective endocarditis", "Medulloblastoma", "Viral meningitis"],
+      "a": 0,
+      "e": "Cyanotic heart disease with a right-to-left shunt predisposes to brain abscess; fever, headache, vomiting and focal weakness fit. Endocarditis is a source, but does not itself explain the focal deficit.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis in a cyanotic child with focal signs." },
+        { "t": "Pick out the clues", "clues": ["uncorrected cyanotic congenital heart disease", "6 day history", "low-grade fever", "new right-sided weakness"], "x": "Right-to-left shunt, subacute, febrile, focal." },
+        { "t": "Make your own answer before looking", "x": "**Brain abscess**." },
+        { "t": "Rule out the others", "elim": [[1, "Venous sinus thrombosis is possible with polycythaemia but less likely with fever and a subacute focal deficit."], [2, "Endocarditis is a source, not the cause of a focal neurological deficit here."], [3, "Medulloblastoma is cerebellar (ataxia), afebrile and slower."], [4, "Viral meningitis does not cause focal weakness."]] },
+        { "t": "Commit", "x": "**A. Brain abscess.** Rule: cyanotic heart disease + focal signs + fever = abscess." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 40 year old woman has a ring-enhancing lesion in the left frontal lobe after recent dental extraction. Aspirated pus grows Gram-positive cocci in chains that form abscesses. Her temperature is 38.0°C, pulse rate 94 bpm and BP 122/78 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely causative organism?",
+      "o": ["Escherichia coli", "Haemophilus influenzae", "Listeria monocytogenes", "Neisseria meningitidis", "Streptococcus milleri"],
+      "a": 4,
+      "e": "Streptococcus milleri (anginosus group) is the classic abscess-forming streptococcus, often from dental or sinus sources. The others are meningitis organisms.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Organism question for a brain abscess." },
+        { "t": "Pick out the clues", "clues": ["ring-enhancing lesion", "recent dental extraction", "Gram-positive cocci in chains"], "x": "Dental source, Gram-positive chains = streptococci; abscess former." },
+        { "t": "Make your own answer before looking", "x": "**Streptococcus milleri**." },
+        { "t": "Rule out the others", "elim": [[0, "E. coli is Gram-negative; neonatal meningitis."], [1, "H. influenzae is a Gram-negative coccobacillus."], [2, "Listeria is a Gram-positive rod, in elderly, pregnant or immunosuppressed meningitis."], [3, "N. meningitidis is a Gram-negative diplococcus causing meningitis."]] },
+        { "t": "Commit", "x": "**E. Streptococcus milleri.** Rule: 'abscess' + streptococcus = milleri." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 45 year old woman has a 10 day history of frontal headache, fever and behavioural change. Three weeks ago she had facial pain and purulent nasal discharge that was not treated. A contrast CT shows a ring-enhancing lesion in the right frontal lobe. Her temperature is 38.3°C, pulse rate 96 bpm and BP 126/80 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely source of the infection?",
+      "o": ["Endocarditis", "Frontal sinusitis", "Mastoiditis", "Otitis externa", "Urinary tract infection"],
+      "a": 1,
+      "e": "Facial pain and purulent nasal discharge are sinusitis, which spreads directly to the frontal lobe. Mastoiditis spreads to the temporal lobe or cerebellum.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The source of a brain abscess: match it to the lobe." },
+        { "t": "Pick out the clues", "clues": ["facial pain and purulent nasal discharge", "not treated", "right frontal lobe"], "x": "Untreated sinusitis, then a frontal lobe abscess next door." },
+        { "t": "Make your own answer before looking", "x": "Contiguous spread from **frontal sinusitis**." },
+        { "t": "Rule out the others", "elim": [[0, "Endocarditis gives multiple emboli and a murmur; none here."], [2, "Mastoiditis causes temporal or cerebellar abscesses."], [3, "Otitis externa is superficial and rarely spreads intracranially."], [4, "UTI is not a recognised brain abscess source."]] },
+        { "t": "Commit", "x": "**B. Frontal sinusitis.** Rule: sinus = frontal; ear = temporal or cerebellum." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 33 year old man has a contrast CT showing a 3 cm ring-enhancing abscess in the right temporal lobe with surrounding oedema, after untreated right mastoiditis. His temperature is 38.4°C, pulse rate 100 bpm, BP 136/84 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 97% breathing air.",
+      "visual": null,
+      "q": "Which is the most likely finding on neurological examination?",
+      "o": ["Bilateral leg weakness", "Left-sided hemiparesis", "Neck stiffness with Kernig's sign", "Right lower motor neurone facial palsy", "Right-sided hemiparesis"],
+      "a": 1,
+      "e": "A right hemisphere mass with oedema compresses motor pathways, so weakness is contralateral: left-sided hemiparesis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Examination finding: which side, and which pattern?" },
+        { "t": "Pick out the clues", "clues": ["right temporal lobe", "surrounding oedema", "right mastoiditis"], "x": "Right-sided lesion with mass effect." },
+        { "t": "Make your own answer before looking", "x": "**Contralateral** (left) hemiparesis." },
+        { "t": "Rule out the others", "elim": [[0, "Bilateral leg weakness suggests a spinal cord lesion."], [2, "Meningism is usually absent with a parenchymal abscess."], [3, "An LMN facial palsy comes from the nerve itself, not a temporal lobe mass."], [4, "Right-sided weakness would need a left hemisphere lesion."]] },
+        { "t": "Commit", "x": "**B. Left-sided hemiparesis.** Rule: hemiparesis is contralateral to the lesion." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 38 year old man who injects heroin is on IV antibiotics for tricuspid and mitral valve endocarditis. He has a new seizure and left arm weakness. A contrast CT head shows a ring-enhancing lesion with surrounding oedema in the right frontal lobe. His temperature is 38.5°C, pulse rate 108 bpm and BP 118/70 mmHg.",
+      "labs": [["WCC", "17.2 ×10⁹/L", "4.0–11.0", "H"], ["CRP", "142 mg/L", "<5", "H"], ["Blood cultures", "Staphylococcus aureus", "No growth", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Bacterial meningitis", "Brain abscess", "Brain metastasis", "Embolic ischaemic stroke", "Intracerebral haemorrhage"],
+      "a": 1,
+      "e": "Endocarditis seeds septic emboli by haematogenous spread; fever, seizure, focal weakness and a ring-enhancing lesion are a brain abscess. A stroke would not ring-enhance.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis in a patient with an infective source in the blood." },
+        { "t": "Pick out the clues", "clues": ["injects heroin", "endocarditis", "new seizure", "ring-enhancing lesion with surrounding oedema"], "x": "Bacteraemia, then a febrile focal lesion with a ring." },
+        { "t": "Make your own answer before looking", "x": "Haematogenous **brain abscess**." },
+        { "t": "Rule out the others", "elim": [[0, "Meningitis does not give a ring-enhancing parenchymal lesion."], [2, "No known cancer; fever and bacteraemia point to infection."], [3, "An embolic infarct is wedge-shaped and does not ring-enhance."], [4, "A bleed is hyperdense on plain CT, not ring-enhancing with fever."]] },
+        { "t": "Commit", "x": "**B. Brain abscess.** Rule: endocarditis + ring lesion + fever = abscess." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 26 year old woman has a 9 day history of headache and fever after a dental abscess. She has right arm weakness and papilloedema. Her temperature is 38.2°C, pulse rate 100 bpm, BP 128/80 mmHg and GCS 14.",
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["CT head with contrast", "Electroencephalogram", "Lumbar puncture", "Skull X-ray", "Transthoracic echocardiogram"],
+      "a": 0,
+      "e": "Fever, focal weakness and papilloedema suggest a brain abscess: image first with contrast CT (or urgent MRI). Lumbar puncture is contraindicated with raised ICP.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial investigation in a febrile patient with focal signs." },
+        { "t": "Pick out the clues", "clues": ["dental abscess", "right arm weakness", "papilloedema"], "x": "Possible mass lesion with raised ICP." },
+        { "t": "Make your own answer before looking", "x": "**Contrast-enhanced CT head**." },
+        { "t": "Rule out the others", "elim": [[1, "EEG does not show a structural lesion."], [2, "LP with papilloedema and focal signs risks coning."], [3, "Skull X-ray cannot see brain tissue."], [4, "Echo looks for endocarditis later; the source here is dental."]] },
+        { "t": "Commit", "x": "**A. CT head with contrast.** Rule: focal signs + papilloedema = scan before LP." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 50 year old man has a ring-enhancing lesion in the left parietal lobe. He has no ear, sinus or dental symptoms. He has a new pansystolic murmur and splinter haemorrhages. His temperature is 38.7°C, pulse rate 104 bpm and BP 120/74 mmHg.",
+      "labs": [["CRP", "118 mg/L", "<5", "H"], ["WCC", "14.9 ×10⁹/L", "4.0–11.0", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate investigation to identify the source?",
+      "o": ["Abdominal ultrasound", "Blood cultures", "Colonoscopy", "Lumbar puncture", "Urine culture"],
+      "a": 1,
+      "e": "A new murmur and splinter haemorrhages suggest endocarditis seeding the abscess: take blood cultures (with echocardiography). LP is unsafe with a mass lesion.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Looking for the source of a confirmed abscess." },
+        { "t": "Pick out the clues", "clues": ["no ear, sinus or dental symptoms", "new pansystolic murmur", "splinter haemorrhages"], "x": "No local source; signs of endocarditis." },
+        { "t": "Make your own answer before looking", "x": "**Blood cultures** for endocarditis." },
+        { "t": "Rule out the others", "elim": [[0, "Abdominal ultrasound does not look for endocarditis."], [2, "Colonoscopy has no role here."], [3, "LP is contraindicated with a mass lesion."], [4, "Urine is not the source suggested by the murmur."]] },
+        { "t": "Commit", "x": "**B. Blood cultures.** Rule: second-line tests look for the source, e.g. endocarditis." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 31 year old man has a 2.5 cm ring-enhancing right temporal abscess after chronic otitis media. Neurosurgery plan aspiration today. His temperature is 38.3°C, pulse rate 98 bpm, BP 130/82 mmHg and GCS 15. Blood cultures have been taken.",
+      "visual": null,
+      "q": "Which is the most appropriate antibiotic regimen?",
+      "o": ["IV aciclovir", "IV benzylpenicillin alone", "IV ceftriaxone and metronidazole", "Oral amoxicillin", "Oral flucloxacillin"],
+      "a": 2,
+      "e": "First-line empirical treatment is an IV third-generation cephalosporin plus metronidazole, covering streptococci and anaerobes. Oral antibiotics do not achieve adequate brain levels.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Empirical antibiotics for a brain abscess." },
+        { "t": "Pick out the clues", "clues": ["ring-enhancing right temporal abscess", "chronic otitis media", "Blood cultures have been taken"], "x": "Otogenic abscess: streptococci plus anaerobes likely." },
+        { "t": "Make your own answer before looking", "x": "**IV ceftriaxone plus metronidazole**." },
+        { "t": "Rule out the others", "elim": [[0, "Aciclovir treats HSV encephalitis."], [1, "Benzylpenicillin alone misses anaerobes and some streptococci."], [3, "Oral amoxicillin is inadequate for an intracranial abscess."], [4, "Flucloxacillin is for staphylococcal skin infection, and oral."]] },
+        { "t": "Commit", "x": "**C. IV ceftriaxone and metronidazole.** Rule: cephalosporin + metronidazole." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 42 year old woman has a contrast CT showing a 3 cm ring-enhancing lesion in the left frontal lobe with oedema and 5 mm midline shift. She had sinusitis a month ago. IV ceftriaxone and metronidazole have been started. Her temperature is 38.1°C, pulse rate 96 bpm, BP 132/84 mmHg and GCS 14.",
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Discharge with oral antibiotics", "Lumbar puncture", "Palliative care referral", "Stereotactic radiosurgery", "Urgent neurosurgical drainage"],
+      "a": 4,
+      "e": "A large abscess with midline shift needs urgent neurosurgical drainage alongside IV antibiotics: it decompresses the lesion and gives the organism.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Antibiotics are running; what comes next?" },
+        { "t": "Pick out the clues", "clues": ["3 cm ring-enhancing lesion", "5 mm midline shift", "IV ceftriaxone and metronidazole have been started"], "x": "A large abscess with mass effect: antibiotics alone are not enough." },
+        { "t": "Make your own answer before looking", "x": "**Urgent neurosurgical drainage**." },
+        { "t": "Rule out the others", "elim": [[0, "Oral antibiotics at home are unsafe for an intracranial abscess."], [1, "LP risks coning with midline shift."], [2, "This is a treatable infection, not a palliative situation."], [3, "Radiosurgery is for metastases, not abscesses."]] },
+        { "t": "Commit", "x": "**E. Urgent neurosurgical drainage.** Rule: drainage + IV antibiotics." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 28 year old man with a known right temporal brain abscess, awaiting neurosurgical drainage, has a generalised tonic-clonic seizure on the ward that has lasted 6 minutes. He has IV access. His pulse rate is 118 bpm, BP 150/92 mmHg and oxygen saturation 93% on 15 L/min oxygen.",
+      "labs": [["Capillary glucose", "6.2 mmol/L", "4.0–7.8", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate immediate management?",
+      "o": ["Intravenous lorazepam", "Intravenous mannitol", "Lumbar puncture", "Oral levetiracetam", "Urgent MRI head"],
+      "a": 0,
+      "e": "Seizures in a brain abscess are treated as they occur: a seizure over 5 minutes with IV access needs IV lorazepam. Oral drugs cannot be given during a seizure.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Immediate management of a seizure in a brain abscess patient." },
+        { "t": "Pick out the clues", "clues": ["generalised tonic-clonic seizure", "lasted 6 minutes", "He has IV access"], "x": "Over 5 minutes = treat now; IV route available; glucose normal." },
+        { "t": "Make your own answer before looking", "x": "**IV lorazepam**." },
+        { "t": "Rule out the others", "elim": [[1, "Mannitol lowers ICP but does not stop a seizure."], [2, "LP is contraindicated with a mass lesion."], [3, "Oral drugs cannot be swallowed during a seizure."], [4, "Imaging can follow once the seizure stops."]] },
+        { "t": "Commit", "x": "**A. IV lorazepam.** Rule: in an abscess emergency, control seizures, then escalate to neurosurgery." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 36 year old man has a 3 week history of headache and fever after mastoiditis. A contrast CT head shows a lesion in the right temporal lobe with a thin bright rim and a dark centre, surrounded by low-density oedema. His temperature is 38.0°C, pulse rate 92 bpm and BP 126/78 mmHg.",
+      "visual": null,
+      "q": "Which best explains the appearance of the lesion?",
+      "o": ["Acute haemorrhage into the lesion", "Calcified tumour wall", "Cerebral venous infarction", "Enhancing fibrous capsule around a necrotic centre", "Ventricular dilatation"],
+      "a": 3,
+      "e": "A mature abscess has a vascular fibrous capsule that takes up contrast, around a necrotic pus-filled centre that does not: the ring-enhancing appearance.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism: why is it a ring?" },
+        { "t": "Pick out the clues", "clues": ["3 week history", "after mastoiditis", "thin bright rim and a dark centre"], "x": "Weeks in: a mature abscess with a capsule." },
+        { "t": "Make your own answer before looking", "x": "The **capsule** enhances; the **pus** does not." },
+        { "t": "Rule out the others", "elim": [[0, "Fresh blood is bright throughout on plain CT, not a ring."], [1, "Calcification is not the cause of contrast enhancement in an abscess."], [2, "Venous infarction is not a rim-enhancing cavity."], [4, "Ventricular dilatation is hydrocephalus, not a lobar lesion."]] },
+        { "t": "Commit", "x": "**D. Enhancing capsule around a necrotic centre.** Rule: cerebritis then capsule = ring." }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,770 @@
+{
+ "id": "ankylosing-spondylitis",
+ "patient": {
+  "name": "Tariq Mahmood",
+  "age": 26,
+  "sex": "M",
+  "setting": "GP surgery, then rheumatology clinic",
+  "complaint": "Eight months of low back and buttock pain, worst first thing in the morning",
+  "background": [
+   "Software developer in Stratford; plays five-a-side football",
+   "Father has 'a stiff back' and walks stooped",
+   "Has taken ibuprofen on and off from the pharmacy",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a young man whose back pain is worse in the morning and better with exercise, often plus one 'A' clue (red eye, heel pain, early diastolic murmur). Also 'most likely finding on examination' (reduced lateral lumbar flexion, Schober's <5 cm).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Tariq, 26, has **8 months** of low back and buttock pain.",
+      "Stiff for **over an hour** every morning.",
+      "Pain **eases with football**, worse sitting at his desk.",
+      "Wakes him in the **second half of the night**.",
+      "He is **exhausted** all the time."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "74 bpm",
+      "BP": "124/78 mmHg",
+      "RR": "14 /min"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Which feature of Tariq's pain most strongly suggests an inflammatory rather than mechanical cause?",
+     "o": ["Pain after lifting", "Pain improves with exercise", "Pain radiates below the knee", "Pain worse at the end of the day"],
+     "a": 1,
+     "r": "Inflammatory back pain **improves with exercise and worsens with rest**. Mechanical pain is the opposite; radiation below the knee suggests a radiculopathy."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A young man with chronic inflammatory back pain: think of a disease that fuses the **spine and sacroiliac joints**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Tariq is **male, under 40**, and his stooped father hints at a **family history** and possibly **HLA-B27**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Morning stiffness",
+      "min": 0,
+      "max": 120,
+      "unit": "min",
+      "bands": [[0, 30, "Mechanical range", "ok"], [30, 120, "Inflammatory: over 30 min", "bad"]],
+      "value": 75,
+      "label": "Tariq 75 min",
+      "caption": "Morning stiffness **over 30 minutes** is the inflammatory cut-off. Mechanical back pain stiffens briefly, if at all."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "**Tender left Achilles** insertion; he limps first thing.",
+      "Side-bending to slide his hand down his leg is **reduced**.",
+      "Chest expansion is reduced at **3 cm**.",
+      "Posture still upright; neurology normal."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Tariq has the classic pattern: **morning stiffness, better with exercise, night pain, fatigue, Achilles enthesitis** and **reduced lateral flexion**, the early sign."
+    },
+    {
+     "type": "flow",
+     "title": "Is this inflammatory back pain?",
+     "nodes": ["Age under 40, gradual onset", "Morning stiffness over 30 min", "Better with exercise, worse with rest", "Night pain, buttock pain, fatigue", "Think axial spondyloarthritis: refer to rheumatology"],
+     "caption": "Several of these together in a young adult should push you away from 'mechanical back pain'."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Ask Tariq about the **'A's**: red painful eyes, heel pain, palpitations and breathlessness all point to extra-articular AS."
+    },
+    {
+     "type": "compare",
+     "title": "Inflammatory vs mechanical back pain",
+     "head": ["Feature", "Ankylosing spondylitis", "Mechanical back pain"],
+     "rows": [
+      ["Age at onset", "Under 40", "Any age, often older"],
+      ["Onset", "Insidious, over months", "Often sudden, after strain"],
+      ["Morning stiffness", "Over 30 minutes", "Brief"],
+      ["Exercise", "Improves pain", "Worsens pain"],
+      ["Rest", "Worsens pain", "Improves pain"],
+      ["Night pain", "Common, second half of night", "Unusual"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Untreated, Tariq risks the path his father took: **bamboo spine**, a stooped posture and **osteoporotic fractures**."
+    },
+    {
+     "type": "trap",
+     "text": "A **stooped 'question mark' posture** and **bamboo spine** are **late** findings. A young patient in an SBA usually has a normal posture; the early clue is **reduced lateral lumbar flexion**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (pelvic X-ray of the sacroiliac joints) versus 'Which is the most appropriate diagnostic investigation?' (MRI of the sacroiliac joints), and Schober's test as the bedside measure.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "At the bedside, Tariq's lumbar flexion is measured with **Schober's test**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Schober's test: increase on forward flexion",
+      "min": 0,
+      "max": 8,
+      "unit": "cm",
+      "bands": [[0, 5, "Under 5 cm: suggests AS", "bad"], [5, 8, "5 cm or more: normal", "ok"]],
+      "value": 3.5,
+      "label": "Tariq 3.5 cm",
+      "caption": "Marks 10 cm above and 5 cm below the dimples of Venus. They should separate by at least **5 cm** on bending forward."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Tariq's bloods",
+     "rows": [
+      ["CRP", "24 mg/L", "<5", "H"],
+      ["ESR", "31 mm/h", "1–15", "H"],
+      ["Haemoglobin", "128 g/L", "130–170", "L"],
+      ["Rheumatoid factor", "Negative", "Negative", ""],
+      ["HLA-B27", "Positive", "", ""]
+     ],
+     "text": "Raised inflammatory markers and a **negative rheumatoid factor**: a **seronegative** picture. HLA-B27 supports, but does not prove, the diagnosis."
+    },
+    {
+     "type": "ask",
+     "q": "Which imaging should be requested first for Tariq?",
+     "o": ["CT of the lumbar spine", "MRI of the whole spine", "Pelvic X-ray of the sacroiliac joints", "Ultrasound of the Achilles tendon"],
+     "a": 2,
+     "r": "The **pelvic X-ray of the SI joints** is the initial investigation. MRI is the gold standard if the X-ray is normal or early disease is suspected."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Tariq's X-ray shows **bilateral sacroiliitis** with subchondral sclerosis: the finding needed for the modified classification criteria."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Had Tariq's X-ray been normal, **MRI of the SI joints** would show bone marrow oedema of early sacroiliitis long before X-ray changes appear."
+    },
+    {
+     "type": "compare",
+     "title": "Initial vs gold standard",
+     "head": ["Test", "Role", "Shows"],
+     "rows": [
+      ["Pelvic X-ray (SI joints)", "Initial", "Sacroiliitis, sclerosis, erosions; may be normal early"],
+      ["MRI SI joints", "Gold standard", "Early inflammation (bone marrow oedema)"],
+      ["Ultrasound", "Second-line", "Enthesitis and joint inflammation severity"],
+      ["DXA scan", "Every 2 years", "Osteoporosis"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Ultrasound can grade Tariq's **Achilles enthesitis**, and he joins **2-yearly osteoporosis screening**."
+    },
+    {
+     "type": "pearl",
+     "text": "Lead-in decides the answer: **'initial'** = pelvic X-ray of the SI joints; **'diagnostic' / 'gold standard'** = **MRI of the SI joints**."
+    },
+    {
+     "type": "trap",
+     "text": "**HLA-B27** is not diagnostic: most HLA-B27 positive people never get AS. It is a risk marker, never the 'most appropriate diagnostic investigation'."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (NSAID plus physiotherapy), 'next step' after NSAID failure (TNF-alpha inhibitor), and the AS patient with a painful red eye who needs same-day ophthalmology.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Tariq has confirmed AS. What is the most appropriate first-line treatment?",
+     "o": ["Adalimumab", "Methotrexate", "Naproxen with a physiotherapy programme", "Oral prednisolone"],
+     "a": 2,
+     "r": "**NSAIDs plus exercise/physiotherapy** are first-line. Methotrexate helps peripheral joints, not the axial spine; steroids are not a long-term answer."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Tariq starts **naproxen** and a structured **physiotherapy** and stretching programme; he keeps up the football."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Three months later: still stiff for an hour each morning.",
+      "He has tried **two NSAIDs** at full dose.",
+      "CRP remains raised; he is missing work."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "NSAIDs have failed, so Tariq moves to a **TNF-alpha inhibitor**; secukinumab is kept for if TNF inhibitors are unsuitable."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Tariq's response to treatment",
+      "x": ["Diagnosis", "NSAID 3 mo", "Adalimumab 3 mo", "Adalimumab 6 mo"],
+      "unit": "",
+      "series": [
+       { "name": "Morning stiffness (min)", "values": [75, 60, 20, 10] },
+       { "name": "CRP (mg/L)", "values": [24, 21, 6, 3] }
+      ],
+      "caption": "Little change on NSAIDs; stiffness and CRP fall once the **TNF-alpha inhibitor** starts."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Treatment ladder in AS",
+     "nodes": ["NSAID (ibuprofen or naproxen) + physiotherapy", "Inadequate response", "TNF-alpha inhibitor (adalimumab, etanercept, infliximab)", "TNF inhibitor unsuitable", "IL-17 inhibitor (secukinumab)"],
+     "caption": "Screen for TB before any biologic."
+    },
+    {
+     "type": "story",
+     "points": [
+      "A year on, Tariq calls: **left eye painful, red, blurred**.",
+      "Bright light hurts; started yesterday."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "What should Tariq's GP do now?",
+     "o": ["Prescribe chloramphenicol drops", "Refer for routine optician review", "Same-day ophthalmology assessment", "Start oral aciclovir"],
+     "a": 2,
+     "r": "A painful red eye with blurred vision in AS is **anterior uveitis** until proven otherwise: **same-day ophthalmology**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Tariq has **anterior uveitis**: he is seen the same day and given **cyclopentolate** to relax the ciliary muscle."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "These guide Tariq's long-term care: **2-yearly osteoporosis screening** and the **modified New York criteria** used to classify his AS."
+    },
+    {
+     "type": "trap",
+     "text": "Do not give **chloramphenicol** for a red eye in AS. Painful, photophobic and blurred is **uveitis**, not conjunctivitis, and needs ophthalmology the same day."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why HLA-B27 matters, why AS inflames entheses rather than synovium, why the spine fuses, and the cytokine targeted by a named biologic.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Tariq is **seronegative** (no rheumatoid factor) and **HLA-B27 positive**: the classic spondyloarthropathy profile."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Tariq's **Achilles pain** and **reduced chest expansion** are both enthesitis: at the heel and at the costochondral joints."
+    },
+    {
+     "type": "flow",
+     "title": "From enthesitis to bamboo spine",
+     "nodes": ["HLA-B27 presents self-peptides", "Autoimmune inflammation at entheses", "TNF-alpha and IL-17 drive it", "Bone erosion, then new bone (syndesmophytes)", "Syndesmophytes bridge vertebrae", "Fused 'bamboo spine'"]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Without control of inflammation, Tariq's **syndesmophytes** would bridge his vertebrae, as his father's have."
+    },
+    {
+     "type": "ask",
+     "q": "Why does adalimumab help Tariq?",
+     "o": ["It blocks IL-6 receptors", "It depletes CD20 B cells", "It inhibits COX enzymes", "It neutralises TNF-alpha"],
+     "a": 3,
+     "r": "Adalimumab is an anti-**TNF-alpha** monoclonal antibody. TNF-alpha and IL-17 are the key cytokines driving AS inflammation."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Tariq's uveitis shares the **IL-17/IL-23 axis** with AS; the same pathway links psoriasis and IBD."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Chest X-ray in long-standing AS (his father)",
+      "findings": [ { "type": "fibrosis", "side": "both", "zone": "upper" } ],
+      "caption": "**Apical fibrosis** is one of the 'A's of AS: upper zone fibrosis, unlike the lower zone pattern of IPF."
+     },
+     "text": "The 'A's are extra-articular: lung apex, eye, aortic valve, Achilles, AV node."
+    },
+    {
+     "type": "pearl",
+     "text": "AS is **enthesitis-first**, rheumatoid arthritis is **synovitis-first**. That is why AS gives heel pain and fusion, while RA gives symmetrical small-joint erosions."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  { "d": "diagnosis", "q": "Which genetic marker is most strongly associated with ankylosing spondylitis?", "o": ["HLA-B27", "HLA-DR3", "HLA-DR4", "HLA-DQ2"], "a": 0, "r": "**HLA-B27**. HLA-DR4 is rheumatoid arthritis; DQ2 is coeliac disease." },
+  { "d": "diagnosis", "q": "Which is an early examination sign of ankylosing spondylitis?", "o": ["Bamboo spine", "Reduced lateral lumbar flexion", "Stooped posture", "Positive straight leg raise"], "a": 1, "r": "**Reduced lateral lumbar flexion** is early; stooped posture and bamboo spine are late." },
+  { "d": "diagnosis", "q": "Which eye complication is classically associated with AS?", "o": ["Anterior uveitis", "Central retinal vein occlusion", "Keratoconjunctivitis sicca", "Retinal detachment"], "a": 0, "r": "**Anterior uveitis** (iritis): painful red eye, blurred vision, photophobia; hypopyon if severe." },
+  { "d": "diagnosis", "q": "Which valve lesion is one of the 'A's of AS?", "o": ["Aortic regurgitation", "Aortic stenosis", "Mitral regurgitation", "Mitral stenosis"], "a": 0, "r": "**Aortic regurgitation**, heard as an early diastolic murmur." },
+  { "d": "investigation", "q": "What Schober's test result suggests AS?", "o": ["An increase under 5 cm", "An increase over 10 cm", "Pain on straight leg raise", "Reduced chest expansion under 7 cm"], "a": 0, "r": "The marks should separate by at least 5 cm; **under 5 cm** suggests reduced lumbar flexion." },
+  { "d": "investigation", "q": "What is the gold standard investigation for AS?", "o": ["CT of the pelvis", "HLA-B27 testing", "MRI of the sacroiliac joints", "Pelvic X-ray"], "a": 2, "r": "**MRI of the SI joints** is far more sensitive than X-ray, especially in early disease." },
+  { "d": "management", "q": "What is first-line management of AS?", "o": ["NSAIDs plus physiotherapy/exercise", "Oral prednisolone", "Methotrexate", "TNF-alpha inhibitor"], "a": 0, "r": "**NSAIDs** (ibuprofen or naproxen) with an **exercise programme**." },
+  { "d": "management", "q": "What is the second-line treatment if NSAIDs fail in AS?", "o": ["Hydroxychloroquine", "IL-6 inhibitor", "Sulfasalazine", "TNF-alpha inhibitor"], "a": 3, "r": "**TNF-alpha inhibitor** (adalimumab, etanercept, infliximab); secukinumab if TNF inhibitors are unsuitable." },
+  { "d": "science", "q": "What is the primary site of inflammation in AS?", "o": ["Articular cartilage", "Entheses", "Muscle", "Synovium"], "a": 1, "r": "AS is an **enthesitis**, not primarily a synovitis." },
+  { "d": "science", "q": "What are the bony outgrowths that bridge vertebrae in AS called?", "o": ["Heberden's nodes", "Osteophytes", "Syndesmophytes", "Tophi"], "a": 2, "r": "**Syndesmophytes** bridge vertebral bodies to form the bamboo spine." }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is ankylosing spondylitis and who gets it?",
+    "tip": "Exam thinking: the stem is nearly always a young man; the HLA type is a favourite one-liner.",
+    "points": [
+     { "p": "Chronic inflammatory disease fusing the spine and sacroiliac joints", "k": [["spine", "spinal", "vertebra"], ["sacroiliac", "si joint", "sij"]], "why": "It is axial first; peripheral joints are less prominent." },
+     { "p": "Strongly associated with HLA-B27", "k": [["hla-b27", "hla b27", "b27"]], "why": "HLA-DR4 is the RA distractor." },
+     { "p": "Male sex", "k": [["male", "men", "man"]], "why": "Classic SBA patient: a man in his 20s." },
+     { "p": "Age under 40", "k": [["40", "young", "forty"]], "why": "New inflammatory back pain over 40 makes AS less likely." },
+     { "p": "Family history", "k": [["family"]], "why": "A stooped relative is a common stem hint." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the classic back pain of AS.",
+    "tip": "Exam thinking: these features separate inflammatory from mechanical back pain.",
+    "points": [
+     { "p": "Morning stiffness over 30 minutes", "k": [["morning", "stiff"], ["30", "thirty", "half an hour"]], "why": "The cut-off is 30 minutes." },
+     { "p": "Improves with exercise", "k": [["exercise", "activity", "moving", "movement"]], "why": "Mechanical pain is worse with activity." },
+     { "p": "Worse at rest", "k": [["rest", "inactivity", "sitting"]], "why": "Hence stiffness after sleep." },
+     { "p": "Night pain and buttock pain", "k": [["night", "buttock"]], "why": "Buttock pain reflects sacroiliitis." },
+     { "p": "Fatigue", "k": [["fatigue", "tired", "exhaust"]], "why": "An important, often missed symptom." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the examination findings in AS, early and late?",
+    "tip": "Exam thinking: 'most likely finding on examination' wants the early sign in a young patient.",
+    "points": [
+     { "p": "Reduced lateral lumbar flexion (early sign)", "k": [["lateral"], ["flexion", "bending", "bend"]], "why": "The earliest spinal sign." },
+     { "p": "Reduced forward flexion: Schober's under 5 cm", "k": [["schober", "forward flexion"]], "why": "Less than 5 cm increase is abnormal." },
+     { "p": "Reduced chest expansion", "k": [["chest expansion", "chest"]], "why": "From costochondral enthesitis." },
+     { "p": "Achilles enthesitis", "k": [["achilles", "heel", "enthesitis"]], "why": "Ankle or heel pain in a young man with back pain." },
+     { "p": "Stooped posture (late)", "k": [["stoop", "question mark", "kyphosis"]], "why": "Late; unlikely in a 25 year old stem." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "List the 'A's of AS.",
+    "tip": "Exam thinking: one 'A' in a stem (red eye, murmur, heel pain) is often the hook.",
+    "points": [
+     { "p": "Apical fibrosis", "k": [["apical", "apex", "upper zone"]], "why": "Upper zone, unlike IPF." },
+     { "p": "Anterior uveitis", "k": [["uveitis", "iritis"]], "why": "Most common extra-articular feature." },
+     { "p": "Aortic regurgitation", "k": [["aortic regurg", "aortic regurgitation", "aortic incompetence", "ar"]], "why": "Early diastolic murmur." },
+     { "p": "Achilles tendonitis", "k": [["achilles"]], "why": "Enthesitis at the heel." },
+     { "p": "AV node block", "k": [["av node", "heart block", "av block", "atrioventricular"]], "why": "Conduction tissue fibrosis." },
+     { "p": "Amyloidosis / amyotrophy", "k": [["amyloid", "amyotroph"]], "why": "Chronic inflammation causes AA amyloid." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the eye features and the long-term complications of AS?",
+    "tip": "Exam thinking: a painful red eye with blurred vision in AS is uveitis; sudden back pain after minor trauma is a fracture.",
+    "points": [
+     { "p": "Iritis: eye pain, blurred vision, redness", "k": [["pain", "blur", "red"]], "why": "Photophobia too; distinguishes it from conjunctivitis." },
+     { "p": "Hypopyon (pus in the anterior chamber)", "k": [["hypopyon", "pus"]], "why": "Marks severe uveitis." },
+     { "p": "Bamboo spine (late spinal fusion)", "k": [["bamboo", "fusion", "fused"]], "why": "Late X-ray sign." },
+     { "p": "Fractures and reduced mobility", "k": [["fracture"]], "why": "A rigid spine breaks with little force." },
+     { "p": "Osteoporosis and fragility fractures", "k": [["osteoporo"]], "why": "Chronic inflammation drives bone loss." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What are the initial and gold standard investigations for AS, and what do they show?",
+    "tip": "Exam thinking: the lead-in word ('initial' or 'diagnostic') picks the answer.",
+    "points": [
+     { "p": "Initial: pelvic X-ray of the sacroiliac joints", "k": [["x-ray", "xray", "radiograph"]], "why": "May be normal in early disease." },
+     { "p": "Sacroiliitis: most specific finding, needed for classification criteria", "k": [["sacroiliitis"]], "why": "Modified New York criteria need radiographic sacroiliitis." },
+     { "p": "Squaring of vertebrae, syndesmophytes, erosions and sclerosis, bamboo spine", "k": [["squar", "syndesmophyte", "sclerosis", "erosion", "bamboo"]], "why": "Bamboo spine is late." },
+     { "p": "Gold standard: MRI of the sacroiliac joints", "k": [["mri"]], "why": "Much more sensitive than X-ray for early disease." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What other tests are used in AS: bedside, second-line and long-term?",
+    "tip": "Exam thinking: know the Schober's cut-off and the 2-yearly osteoporosis screen.",
+    "points": [
+     { "p": "Schober's test: increase under 5 cm suggests AS", "k": [["schober"], ["5", "five"]], "why": "Measures lumbar forward flexion." },
+     { "p": "Ultrasound second-line for inflammation and enthesitis", "k": [["ultrasound", "uss"]], "why": "Useful for heel enthesitis." },
+     { "p": "Osteoporosis screening every 2 years (NICE)", "k": [["osteoporo", "dxa", "dexa", "bone density"], ["2", "two"]], "why": "DXA is the test." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Outline the treatment ladder for AS.",
+    "tip": "Exam thinking: 'initial management' = NSAID plus exercise; 'next step' after NSAID failure = TNF-alpha inhibitor.",
+    "points": [
+     { "p": "First-line: NSAID (ibuprofen or naproxen)", "k": [["nsaid", "ibuprofen", "naproxen"]], "why": "Two NSAIDs are usually tried before biologics." },
+     { "p": "Plus physiotherapy / exercise programme", "k": [["physio", "exercise"]], "why": "Always paired with the NSAID." },
+     { "p": "Second-line: TNF-alpha inhibitor (adalimumab, etanercept, infliximab)", "k": [["tnf", "adalimumab", "etanercept", "infliximab"]], "why": "Screen for TB before biologics." },
+     { "p": "If TNF inhibitors unsuitable: IL-17 inhibitor (secukinumab)", "k": [["il-17", "il17", "secukinumab"]], "why": "Targets the IL-17/IL-23 axis." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage an acute red painful eye in a patient with AS?",
+    "tip": "Exam thinking: urgency is the answer, not antibiotics.",
+    "points": [
+     { "p": "Suspect anterior uveitis", "k": [["uveitis", "iritis"]], "why": "Not conjunctivitis: it is painful with blurred vision." },
+     { "p": "Urgent same-day ophthalmology assessment", "k": [["ophthalm", "eye casualty", "eye clinic"], ["same day", "same-day", "urgent", "today"]], "why": "Routine optician review is the distractor." },
+     { "p": "Topical cyclopentolate for severe uveitis or hypopyon", "k": [["cyclopentolate", "cycloplegic", "mydriatic"]], "why": "Relaxes the ciliary muscle and prevents adhesions." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does AS cause enthesitis, a bamboo spine and links with uveitis, psoriasis and IBD?",
+    "tip": "Exam thinking: entheses not synovium; TNF-alpha and IL-17 explain the biologics.",
+    "points": [
+     { "p": "Seronegative spondyloarthropathy linked to HLA-B27", "k": [["seronegative", "hla-b27", "b27"]], "why": "Rheumatoid factor negative." },
+     { "p": "HLA-B27 presents self-peptides/misfolded proteins, triggering inflammation at entheses", "k": [["enthes"]], "why": "Not synovium, unlike RA." },
+     { "p": "Erosion then new bone (syndesmophytes) bridging vertebrae", "k": [["syndesmophyte", "new bone"]], "why": "This produces the bamboo spine." },
+     { "p": "Shared IL-17/IL-23 axis with uveitis, psoriasis and IBD", "k": [["il-23", "il23", "il-17", "il17"]], "why": "Explains the overlap of spondyloarthropathies." },
+     { "p": "TNF-alpha and IL-17 drive the cascade: targets for biologics", "k": [["tnf"]], "why": "Adalimumab blocks TNF; secukinumab blocks IL-17A." }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Ankylosing spondylitis": "Chronic inflammatory arthritis of the spine and sacroiliac joints that can fuse them over years.",
+  "AS": "Ankylosing spondylitis.",
+  "HLA-B27": "A class I HLA gene variant strongly linked to ankylosing spondylitis and other seronegative spondyloarthropathies.",
+  "Sacroiliac joint": "Joint between the sacrum and the iliac bone of the pelvis; inflamed early in AS.",
+  "Sacroiliitis": "Inflammation of the sacroiliac joints, the most specific X-ray finding in AS.",
+  "Enthesis": "The point where a tendon or ligament attaches to bone.",
+  "Enthesitis": "Inflammation where tendons or ligaments insert into bone, such as the Achilles insertion.",
+  "Spondyloarthropathy": "Family of HLA-B27 linked arthritides affecting the spine and entheses: AS, psoriatic, reactive and enteropathic arthritis.",
+  "Seronegative": "Rheumatoid factor negative; used for the spondyloarthropathies.",
+  "Schober's test": "Bedside test of lumbar forward flexion; marks should separate by at least 5 cm.",
+  "Lateral lumbar flexion": "Side-bending of the lower spine; reduced early in AS.",
+  "Syndesmophytes": "Vertical bony bridges growing from vertebral body margins in AS.",
+  "Bamboo spine": "Late X-ray appearance of a fused spine bridged by syndesmophytes.",
+  "Squaring": "Loss of the normal concave front of vertebral bodies from inflammation at the corners.",
+  "Subchondral sclerosis": "Increased bone density just beneath the joint surface, seen on X-ray.",
+  "Anterior uveitis": "Inflammation of the iris and ciliary body causing a painful red eye, photophobia and blurred vision.",
+  "Iritis": "Another name for anterior uveitis.",
+  "Hypopyon": "A layer of pus (white cells) in the anterior chamber of the eye.",
+  "Cyclopentolate": "Anticholinergic eye drop that dilates the pupil and relaxes the ciliary muscle, easing uveitis pain.",
+  "Aortic regurgitation": "Leaky aortic valve; causes an early diastolic murmur.",
+  "Apical fibrosis": "Scarring of the upper zones of the lungs, an extra-articular feature of AS.",
+  "AV node block": "Delayed or blocked conduction from atria to ventricles, seen on ECG as heart block.",
+  "First-degree heart block": "PR interval longer than 200 ms with every P wave conducted.",
+  "Amyloidosis": "Deposition of abnormal protein (AA amyloid in chronic inflammation) in organs such as the kidney.",
+  "Costochondritis": "Inflammation where ribs join the sternum; reduces chest expansion in AS.",
+  "Plantar fasciitis": "Inflammation of the plantar fascia insertion at the heel, causing heel pain.",
+  "NSAIDs": "Non-steroidal anti-inflammatory drugs that inhibit COX enzymes, e.g. ibuprofen and naproxen.",
+  "TNF-alpha": "Pro-inflammatory cytokine central to AS and RA inflammation.",
+  "TNF-alpha inhibitor": "Biologic that blocks TNF-alpha, e.g. adalimumab, etanercept, infliximab.",
+  "Adalimumab": "Monoclonal antibody against TNF-alpha.",
+  "Etanercept": "Fusion protein that binds and neutralises TNF-alpha.",
+  "Infliximab": "Chimeric monoclonal antibody against TNF-alpha, given by infusion.",
+  "Secukinumab": "Monoclonal antibody against IL-17A, used when TNF inhibitors are unsuitable.",
+  "IL-17": "Pro-inflammatory cytokine driving spondyloarthropathy inflammation.",
+  "IL-23": "Cytokine that sustains IL-17 producing T cells; the IL-17/IL-23 axis.",
+  "Modified New York criteria": "Classification criteria for AS requiring radiographic sacroiliitis plus clinical features.",
+  "DXA": "Dual-energy X-ray absorptiometry; the scan that measures bone density for osteoporosis.",
+  "Osteoporosis": "Low bone mass and weak bone structure raising fracture risk.",
+  "CRP": "C-reactive protein, a blood marker of inflammation.",
+  "ESR": "Erythrocyte sedimentation rate, a non-specific marker of inflammation.",
+  "Rheumatoid factor": "Autoantibody against IgG Fc, positive in many with RA and negative in spondyloarthropathies.",
+  "Dimples of Venus": "Skin dimples over the posterior superior iliac spines, the landmark for Schober's test."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old man has a 9 month history of low back pain. He is stiff for over an hour every morning and the pain improves when he goes to the gym. The pain wakes him in the early hours. He also has pain at the back of his right heel. Neurological examination of the legs is normal.",
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute lumbar disc prolapse", "Ankylosing spondylitis", "Lumbar spinal stenosis", "Mechanical back pain", "Spondylolisthesis"],
+   "a": 1,
+   "steps": [
+    { "t": "Read the question line first", "x": "A diagnosis question about back pain: decide **inflammatory vs mechanical** first." },
+    { "t": "Pick out the clues", "clues": ["24 year old man", "9 month history", "stiff for over an hour every morning", "improves when he goes to the gym", "wakes him in the early hours", "pain at the back of his right heel"], "x": "Young man, chronic, morning stiffness over 30 min, better with exercise, night pain, plus **Achilles enthesitis**." },
+    { "t": "Make your own answer before looking", "x": "Inflammatory back pain with enthesitis in a young man: **ankylosing spondylitis**." },
+    { "t": "Rule out the others", "elim": [[0, "Disc prolapse is sudden, often after lifting, with sciatica below the knee."], [2, "Spinal stenosis affects older people and causes leg pain on walking eased by bending."], [3, "Mechanical pain worsens with exercise and does not cause long morning stiffness."], [4, "Spondylolisthesis gives mechanical pain, worse on extension, without enthesitis."]] },
+    { "t": "Commit", "x": "**B. Ankylosing spondylitis.** Rule: young + morning stiffness over 30 min + better with exercise = inflammatory back pain." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 27 year old man has 5 months of inflammatory low back pain and buttock pain. He is HLA-B27 positive and his CRP is raised. A pelvic X-ray of the sacroiliac joints is reported as normal. His rheumatologist still suspects early ankylosing spondylitis.",
+   "labs": [["CRP", "19 mg/L", "<5", "H"]],
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": ["CT of the pelvis", "DXA scan", "MRI of the sacroiliac joints", "Ultrasound of the sacroiliac joints", "X-ray of the lumbar spine"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "'Diagnostic', not 'initial': the X-ray is done, so they want the **gold standard**." },
+    { "t": "Pick out the clues", "clues": ["5 months", "HLA-B27 positive", "pelvic X-ray of the sacroiliac joints is reported as normal", "early ankylosing spondylitis"], "x": "Early disease with a normal X-ray: X-ray changes lag behind inflammation." },
+    { "t": "Make your own answer before looking", "x": "**MRI of the SI joints** detects early sacroiliitis (bone marrow oedema)." },
+    { "t": "Rule out the others", "elim": [[0, "CT shows bony change but misses early inflammation and gives radiation."], [1, "DXA screens for osteoporosis, not sacroiliitis."], [3, "Ultrasound assesses peripheral joints and enthesitis, not deep SI joint inflammation."], [4, "Lumbar X-ray changes (squaring, syndesmophytes) appear later still."]] },
+    { "t": "Commit", "x": "**C. MRI of the sacroiliac joints.** Rule: normal X-ray but suspicion persists = MRI SIJ." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old man with ankylosing spondylitis has persistent back pain and morning stiffness despite two different NSAIDs at full dose and a physiotherapy programme. A TNF-alpha inhibitor was started but stopped because he developed demyelinating symptoms, so TNF inhibitors are now considered unsuitable.",
+   "q": "Which is the most appropriate next step in management?",
+   "o": ["Adalimumab", "Etanercept", "Infliximab", "Oral prednisolone", "Secukinumab"],
+   "a": 4,
+   "steps": [
+    { "t": "Read the question line first", "x": "'Next step': place him on the treatment ladder." },
+    { "t": "Pick out the clues", "clues": ["despite two different NSAIDs", "TNF inhibitors are now considered unsuitable"], "x": "NSAIDs failed and anti-TNF is ruled out: the next rung is the IL-17 inhibitor." },
+    { "t": "Make your own answer before looking", "x": "**IL-17 inhibitor: secukinumab.**" },
+    { "t": "Rule out the others", "elim": [[0, "Adalimumab is a TNF-alpha inhibitor, now unsuitable."], [1, "Etanercept is a TNF-alpha inhibitor, now unsuitable."], [2, "Infliximab is a TNF-alpha inhibitor, now unsuitable."], [3, "Long-term oral steroids do not control axial AS and worsen osteoporosis."]] },
+    { "t": "Commit", "x": "**E. Secukinumab.** Ladder: NSAID + physio → TNF-alpha inhibitor → IL-17 inhibitor." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 29 year old woman with ankylosing spondylitis is started on adalimumab after NSAIDs failed to control her symptoms. Her morning stiffness and CRP improve over three months.",
+   "q": "Which is the mechanism of action of adalimumab?",
+   "o": ["Blocks the IL-6 receptor", "Blocks IL-17A", "Depletes CD20 positive B cells", "Inhibits cyclo-oxygenase", "Neutralises TNF-alpha"],
+   "a": 4,
+   "steps": [
+    { "t": "Read the question line first", "x": "A drug mechanism question: name the target of adalimumab." },
+    { "t": "Pick out the clues", "clues": ["adalimumab", "after NSAIDs failed"], "x": "Second-line after NSAIDs in AS is the **TNF-alpha inhibitor** class; adalimumab is one." },
+    { "t": "Make your own answer before looking", "x": "Anti-**TNF-alpha** monoclonal antibody." },
+    { "t": "Rule out the others", "elim": [[0, "IL-6 receptor blockade is tocilizumab."], [1, "IL-17A blockade is secukinumab."], [2, "CD20 depletion is rituximab."], [3, "COX inhibition is how NSAIDs work."]] },
+    { "t": "Commit", "x": "**E. Neutralises TNF-alpha.** '-mab' drugs in AS: adalimumab/infliximab = TNF, secukinumab = IL-17." }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 23 year old man has a 7 month history of low back and alternating buttock pain. He is stiff for about an hour each morning and feels better after cycling to work. Sitting at his desk makes it worse. He feels constantly tired. His father had a 'fused spine'. Straight leg raise is negative bilaterally.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Ankylosing spondylitis", "Lumbar disc prolapse", "Mechanical back pain", "Psoriatic arthritis", "Reactive arthritis"],
+   "a": 0,
+   "e": "Young man with inflammatory back pain, buttock pain, fatigue and a family history: ankylosing spondylitis. Mechanical pain would worsen with exercise.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: inflammatory or mechanical back pain?" },
+    { "t": "Pick out the clues", "clues": ["23 year old man", "alternating buttock pain", "stiff for about an hour each morning", "feels better after cycling", "constantly tired", "father had a 'fused spine'"], "x": "Classic inflammatory features plus **family history** and **fatigue**." },
+    { "t": "Make your own answer before looking", "x": "**Ankylosing spondylitis.**" },
+    { "t": "Rule out the others", "elim": [[1, "Disc prolapse gives sciatica and a positive straight leg raise."], [2, "Mechanical pain worsens with activity and stiffness is brief."], [3, "Psoriatic arthritis needs psoriasis or nail changes."], [4, "Reactive arthritis follows an infection and is usually acute."]] },
+    { "t": "Commit", "x": "**A. Ankylosing spondylitis.** Better with exercise, worse at rest = inflammatory." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 25 year old man has 6 months of low back pain and morning stiffness lasting 45 minutes that eases with exercise. His temperature is 36.8°C, pulse rate 70 bpm and BP 122/76 mmHg. He has full power and normal reflexes in both legs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination of his spine?",
+   "o": ["Increased lumbar lordosis", "Positive straight leg raise", "Reduced ankle reflexes", "Reduced lateral lumbar flexion", "Saddle anaesthesia"],
+   "a": 3,
+   "e": "Reduced lateral lumbar flexion is the early examination sign of AS. Straight leg raise, reflex loss and saddle anaesthesia are nerve root or cauda equina signs.",
+   "steps": [
+    { "t": "Read the question line first", "x": "An examination finding question: the stem describes AS, so pick its **early** sign." },
+    { "t": "Pick out the clues", "clues": ["25 year old man", "morning stiffness lasting 45 minutes", "eases with exercise", "normal reflexes"], "x": "Inflammatory back pain, neurology normal." },
+    { "t": "Make your own answer before looking", "x": "Early AS sign: **reduced lateral lumbar flexion** (and Schober's under 5 cm)." },
+    { "t": "Rule out the others", "elim": [[0, "AS flattens lordosis; it does not increase it."], [1, "Straight leg raise is positive in disc prolapse."], [2, "Reflexes are normal in the stem."], [4, "Saddle anaesthesia is cauda equina syndrome."]] },
+    { "t": "Commit", "x": "**D. Reduced lateral lumbar flexion.** Early = lateral flexion; late = stooped posture." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old man with ankylosing spondylitis has a 1 day history of a painful red right eye with blurred vision and pain in bright light. The redness is most marked around the cornea. The right pupil is small. His temperature is 36.6°C, pulse rate 78 bpm and BP 126/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute angle-closure glaucoma", "Anterior uveitis", "Bacterial conjunctivitis", "Episcleritis", "Subconjunctival haemorrhage"],
+   "a": 1,
+   "e": "Painful red eye with photophobia, blurred vision, perilimbal redness and a small pupil in AS is anterior uveitis. Angle-closure gives a fixed mid-dilated pupil.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of a red eye in a patient with AS." },
+    { "t": "Pick out the clues", "clues": ["ankylosing spondylitis", "painful red right eye", "blurred vision", "pain in bright light", "around the cornea", "pupil is small"], "x": "Photophobia, ciliary flush and a small pupil = iritis." },
+    { "t": "Make your own answer before looking", "x": "**Anterior uveitis**, the commonest extra-articular 'A' of AS." },
+    { "t": "Rule out the others", "elim": [[0, "Angle-closure gives a fixed, mid-dilated pupil, haloes and vomiting."], [2, "Conjunctivitis is gritty with discharge and normal vision."], [3, "Episcleritis is mildly uncomfortable with normal vision."], [4, "Subconjunctival haemorrhage is painless with normal vision."]] },
+    { "t": "Commit", "x": "**B. Anterior uveitis.** AS + painful red eye + photophobia = same-day ophthalmology." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old man with ankylosing spondylitis for 35 years has increasing breathlessness on exertion. His pulse rate is 84 bpm and collapsing in character, and BP 158/48 mmHg. There is an early diastolic murmur at the left sternal edge, loudest with him sitting forward in expiration. ECG (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "Resting ECG",
+    "layout": "strip",
+    "rhythm": "first_degree",
+    "rate": 84,
+    "caption": "PR interval prolonged at 240 ms: first-degree heart block."
+   },
+   "q": "Which is the most likely cause of his murmur?",
+   "o": ["Aortic regurgitation", "Aortic stenosis", "Mitral regurgitation", "Mitral stenosis", "Tricuspid regurgitation"],
+   "a": 0,
+   "e": "Early diastolic murmur, collapsing pulse and wide pulse pressure in long-standing AS = aortic regurgitation. The first-degree block is the 'AV node block' A.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Name the valve lesion from the murmur." },
+    { "t": "Pick out the clues", "clues": ["ankylosing spondylitis for 35 years", "collapsing in character", "158/48 mmHg", "early diastolic murmur at the left sternal edge", "sitting forward in expiration"], "x": "Wide pulse pressure and early diastolic murmur, with AV conduction disease on ECG." },
+    { "t": "Make your own answer before looking", "x": "**Aortic regurgitation**, an 'A' of AS." },
+    { "t": "Rule out the others", "elim": [[1, "Aortic stenosis is ejection systolic with a slow-rising pulse."], [2, "Mitral regurgitation is pansystolic at the apex."], [3, "Mitral stenosis is mid-diastolic at the apex."], [4, "Tricuspid regurgitation is pansystolic with giant v waves."]] },
+    { "t": "Commit", "x": "**A. Aortic regurgitation.** AS 'A's on the heart: aortic regurgitation and AV node block." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man with long-standing ankylosing spondylitis has sudden severe mid-back pain after slipping on a step. He has a fixed stooped posture. His temperature is 36.7°C, pulse rate 92 bpm and BP 138/84 mmHg. Leg neurology is normal. A previous DXA scan was abnormal.",
+   "labs": [["CRP", "8 mg/L", "<5", "H"], ["Adjusted calcium", "2.38 mmol/L", "2.20–2.60", ""], ["ALP", "96 IU/L", "30–130", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Cauda equina syndrome", "Discitis", "Metastatic spinal disease", "Osteoporotic vertebral fracture", "Spinal stenosis"],
+   "a": 3,
+   "e": "A rigid, osteoporotic AS spine fractures with minor trauma. Normal calcium and ALP and no fever make metastases and discitis unlikely.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of acute back pain in a patient with known AS." },
+    { "t": "Pick out the clues", "clues": ["long-standing ankylosing spondylitis", "sudden severe mid-back pain", "after slipping on a step", "fixed stooped posture", "previous DXA scan was abnormal"], "x": "Late AS (fused, stooped) plus osteoporosis plus minor trauma." },
+    { "t": "Make your own answer before looking", "x": "**Osteoporotic (fragility) vertebral fracture**, a recognised AS complication." },
+    { "t": "Rule out the others", "elim": [[0, "Cauda equina needs saddle anaesthesia or sphincter problems; neurology is normal."], [1, "Discitis gives fever and a much higher CRP."], [2, "Metastases suggest weight loss, raised calcium or ALP."], [4, "Spinal stenosis causes gradual claudication-type leg pain."]] },
+    { "t": "Commit", "x": "**D. Osteoporotic vertebral fracture.** AS raises fracture risk through fusion and osteoporosis." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 21 year old man has 10 months of pain at the back of both heels and low back stiffness each morning that improves with running. He has no diarrhoea, urinary symptoms or rash and no recent illness. Both Achilles insertions are tender. Schober's test shows a 3 cm increase.",
+   "labs": [["CRP", "22 mg/L", "<5", "H"], ["Rheumatoid factor", "Negative", "Negative", ""], ["Serum urate", "0.31 mmol/L", "0.20–0.42", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Achilles tendon rupture", "Ankylosing spondylitis", "Gout", "Reactive arthritis", "Rheumatoid arthritis"],
+   "a": 1,
+   "e": "Chronic inflammatory back pain, bilateral Achilles enthesitis, Schober's under 5 cm and seronegative bloods = AS. No preceding infection rules out reactive arthritis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: heel pain plus back stiffness in a young man." },
+    { "t": "Pick out the clues", "clues": ["10 months", "back of both heels", "improves with running", "no diarrhoea, urinary symptoms or rash", "Schober's test shows a 3 cm increase"], "x": "Enthesitis, inflammatory back pain, reduced lumbar flexion, no trigger infection." },
+    { "t": "Make your own answer before looking", "x": "**Ankylosing spondylitis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Rupture is sudden, unilateral and does not cause back stiffness."], [2, "Gout is acute monoarthritis; urate is normal."], [3, "Reactive arthritis follows GI or GU infection, which is excluded."], [4, "RA is a symmetrical small-joint polyarthritis; RF is negative."]] },
+    { "t": "Commit", "x": "**B. Ankylosing spondylitis.** Enthesitis + inflammatory back pain + Schober's under 5 cm." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 26 year old man has 8 months of low back pain with morning stiffness lasting over an hour. The pain improves with exercise and his chest expansion is reduced. His GP suspects ankylosing spondylitis and refers him to rheumatology. No imaging has yet been done.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": ["CT of the lumbar spine", "HLA-B27 testing", "MRI of the sacroiliac joints", "Rheumatoid factor", "X-ray of the sacroiliac joints"],
+   "a": 4,
+   "e": "Pelvic X-ray of the sacroiliac joints is the initial investigation in AS. MRI is the gold standard if the X-ray is normal.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Initial' investigation, not 'diagnostic'." },
+    { "t": "Pick out the clues", "clues": ["suspects ankylosing spondylitis", "No imaging has yet been done"], "x": "Imaging starts with the cheap, available test." },
+    { "t": "Make your own answer before looking", "x": "**Pelvic X-ray of the sacroiliac joints**, looking for sacroiliitis." },
+    { "t": "Rule out the others", "elim": [[0, "CT adds radiation and is not first-line."], [1, "HLA-B27 supports but cannot diagnose AS."], [2, "MRI is the gold standard, used if the X-ray is inconclusive."], [3, "RF is for RA and is negative in AS."]] },
+    { "t": "Commit", "x": "**E. X-ray of the sacroiliac joints.** Initial = X-ray; diagnostic = MRI." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old man has 4 months of inflammatory buttock and low back pain. His pulse rate is 76 bpm and BP 120/74 mmHg. Pelvic X-ray of the sacroiliac joints is normal. The rheumatologist still suspects early ankylosing spondylitis.",
+   "labs": [["CRP", "17 mg/L", "<5", "H"], ["ESR", "28 mm/h", "1–15", "H"], ["HLA-B27", "Positive", "", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": ["Bone scintigraphy", "CT of the pelvis", "DXA scan", "MRI of the sacroiliac joints", "Ultrasound of the sacroiliac joints"],
+   "a": 3,
+   "e": "MRI of the SI joints is the gold standard and detects early sacroiliitis when the X-ray is still normal.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Diagnostic' after a normal X-ray: gold standard." },
+    { "t": "Pick out the clues", "clues": ["4 months", "Pelvic X-ray of the sacroiliac joints is normal", "early ankylosing spondylitis"], "x": "Short history: X-ray changes have not appeared yet." },
+    { "t": "Make your own answer before looking", "x": "**MRI of the SI joints.**" },
+    { "t": "Rule out the others", "elim": [[0, "Bone scans are non-specific and not used to diagnose AS."], [1, "CT misses early inflammation and adds radiation."], [2, "DXA measures bone density for osteoporosis screening."], [4, "Ultrasound assesses enthesitis, not deep SI joint inflammation."]] },
+    { "t": "Commit", "x": "**D. MRI of the sacroiliac joints.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 24 year old man is diagnosed with ankylosing spondylitis after a pelvic X-ray shows bilateral sacroiliitis. He has morning stiffness for an hour and night pain. He has no history of peptic ulcer, asthma or kidney disease and has not taken any regular treatment.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Adalimumab", "Ibuprofen and an exercise programme", "Methotrexate", "Oral prednisolone", "Secukinumab"],
+   "a": 1,
+   "e": "First-line AS treatment is an NSAID plus physiotherapy/exercise. Biologics come only after NSAIDs fail.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Initial' management of newly diagnosed AS." },
+    { "t": "Pick out the clues", "clues": ["no history of peptic ulcer, asthma or kidney disease", "has not taken any regular treatment"], "x": "No contraindication to NSAIDs and treatment-naive." },
+    { "t": "Make your own answer before looking", "x": "**NSAID (ibuprofen or naproxen) + physiotherapy/exercise.**" },
+    { "t": "Rule out the others", "elim": [[0, "Adalimumab is second-line after NSAID failure."], [2, "Methotrexate does not help axial AS."], [3, "Oral steroids are not used long term in axial AS."], [4, "Secukinumab is for when TNF inhibitors are unsuitable."]] },
+    { "t": "Commit", "x": "**B. Ibuprofen and an exercise programme.** Never skip the physio half." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 29 year old man with ankylosing spondylitis has ongoing back pain and morning stiffness despite 3 months of two different NSAIDs at full dose and regular physiotherapy. Screening for tuberculosis is negative and he has no contraindication to biologics.",
+   "labs": [["CRP", "26 mg/L", "<5", "H"], ["ESR", "34 mm/h", "1–15", "H"]],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": ["Adalimumab", "Hydroxychloroquine", "Intramuscular methylprednisolone", "Methotrexate", "Secukinumab"],
+   "a": 0,
+   "e": "After NSAID failure, the next step is a TNF-alpha inhibitor such as adalimumab. Secukinumab is reserved for when TNF inhibitors are unsuitable.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Next step': NSAIDs have already failed." },
+    { "t": "Pick out the clues", "clues": ["despite 3 months of two different NSAIDs", "Screening for tuberculosis is negative", "no contraindication to biologics"], "x": "NSAID failure, safe to start a biologic." },
+    { "t": "Make your own answer before looking", "x": "**TNF-alpha inhibitor**: adalimumab." },
+    { "t": "Rule out the others", "elim": [[1, "Hydroxychloroquine is a DMARD for RA and lupus, not AS."], [2, "Steroid injections give short relief only."], [3, "Methotrexate does not treat axial AS."], [4, "Secukinumab comes if TNF inhibitors are unsuitable; here they are fine."]] },
+    { "t": "Commit", "x": "**A. Adalimumab.** NSAID fail → anti-TNF → IL-17 inhibitor." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 33 year old woman with ankylosing spondylitis phones her GP with a 1 day history of a painful red left eye, blurred vision and discomfort in bright light. Her temperature is 36.9°C, pulse rate 80 bpm and BP 118/72 mmHg. Visual acuity is reduced in the left eye.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Oral aciclovir", "Routine ophthalmology referral", "Same-day ophthalmology assessment", "Topical chloramphenicol", "Topical sodium cromoglicate"],
+   "a": 2,
+   "e": "A painful red eye with reduced vision in AS suggests anterior uveitis, which needs same-day ophthalmology. A routine referral risks synechiae and vision loss.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management: how urgently and where?" },
+    { "t": "Pick out the clues", "clues": ["ankylosing spondylitis", "painful red left eye", "blurred vision", "discomfort in bright light", "Visual acuity is reduced"], "x": "Painful, photophobic, reduced vision: **anterior uveitis**." },
+    { "t": "Make your own answer before looking", "x": "**Urgent same-day ophthalmology assessment.**" },
+    { "t": "Rule out the others", "elim": [[0, "Aciclovir is for herpetic eye disease; no dendritic ulcer or rash is described."], [1, "Routine referral is too slow for uveitis."], [3, "Chloramphenicol treats bacterial conjunctivitis."], [4, "Cromoglicate treats allergic conjunctivitis."]] },
+    { "t": "Commit", "x": "**C. Same-day ophthalmology assessment.** Then cyclopentolate if severe." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 27 year old man with ankylosing spondylitis has reduced chest expansion of 2 cm and pain over his anterior chest wall where the ribs meet the sternum. His pulse rate is 72 bpm and BP 118/70 mmHg. His chest X-ray is normal and spirometry shows no airway obstruction.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his reduced chest expansion?",
+   "o": ["Apical pulmonary fibrosis", "Enthesitis at the costochondral joints", "Intercostal muscle weakness", "Pleural effusion", "Synovitis of the sternoclavicular joints"],
+   "a": 1,
+   "e": "AS is an enthesitis: inflammation at costochondral (and costovertebral) insertions stiffens the rib cage. The normal chest X-ray excludes apical fibrosis and effusion.",
+   "steps": [
+    { "t": "Read the question line first", "x": "A mechanism question explaining a sign of AS." },
+    { "t": "Pick out the clues", "clues": ["where the ribs meet the sternum", "chest X-ray is normal", "no airway obstruction"], "x": "Chest wall pain at rib insertions with normal lungs." },
+    { "t": "Make your own answer before looking", "x": "**Enthesitis** at the costochondral joints (costochondritis)." },
+    { "t": "Rule out the others", "elim": [[0, "Apical fibrosis would show on the chest X-ray."], [2, "AS does not cause muscle weakness of the chest wall."], [3, "An effusion would be seen on the chest X-ray."], [4, "AS is enthesitis-first, not synovitis-first."]] },
+    { "t": "Commit", "x": "**B. Enthesitis at the costochondral joints.** Enthesitis explains Achilles pain, plantar fasciitis and costochondritis." }
+   ]
+  }
+ ]
+}

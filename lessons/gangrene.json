@@ -1,0 +1,2159 @@
+{
+ "id": "gangrene",
+ "patient": {
+  "name": "Kwame Asante",
+  "age": 67,
+  "sex": "M",
+  "setting": "Diabetic foot clinic, then Emergency Department",
+  "complaint": "Two black toes on the right foot, now smelly and swollen",
+  "background": [
+   "Type 2 diabetes for 20 years, poorly controlled",
+   "Peripheral vascular disease; calf claudication",
+   "Smoker, 40 pack-years",
+   "Lives alone in Tottenham; no known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a black or discoloured limb: dry, wet or gas gangrene is decided by moisture, demarcation, infection and crepitus.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kwame, 67, has **two black toes** on his right foot.",
+      "They turned dark over 3 weeks and **stopped hurting**.",
+      "They are dry, shrivelled and hard.",
+      "A **sharp line** separates black toes from pink skin."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "82 bpm",
+      "BP": "148/84 mmHg",
+      "RR": "15 /min",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's toes have died from **ischaemia**: diabetes, PVD and smoking are all on his list of risk factors."
+    },
+    {
+     "type": "ask",
+     "q": "Kwame's toes are dry, black, painless and clearly demarcated, with no fever. Which type of gangrene?",
+     "o": [
+      "Dry gangrene",
+      "Gas gangrene",
+      "Wet gangrene",
+      "Not gangrene: a bruise"
+     ],
+     "a": 0,
+     "r": "Mummified, painless, **clear demarcation**, no infection: **dry gangrene** from chronic arterial insufficiency."
+    },
+    {
+     "type": "story",
+     "points": [
+      "He misses his follow-up; 10 days later he attends ED.",
+      "The foot is **swollen, red and moist**, with blisters.",
+      "**Pus** and a foul smell; severe pain.",
+      "No clear edge between dead and living tissue."
+     ],
+     "vitals": {
+      "T": "38.8°C",
+      "HR": "118 bpm",
+      "BP": "98/60 mmHg",
+      "RR": "24 /min",
+      "SpO2": "95% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame started with **dry** gangrene; infection has now turned it **wet**: painful, moist, foul, febrile and poorly demarcated."
+    },
+    {
+     "type": "compare",
+     "title": "Dry vs wet vs gas gangrene",
+     "head": [
+      "Feature",
+      "Dry",
+      "Wet",
+      "Gas"
+     ],
+     "rows": [
+      [
+       "Cause",
+       "Ischaemia alone",
+       "Infection in necrotic tissue",
+       "**Clostridium perfringens**"
+      ],
+      [
+       "Look",
+       "Black, shrivelled, mummified",
+       "Moist, blistering, swollen",
+       "Bullae, discoloured skin"
+      ],
+      [
+       "Pain",
+       "Painless",
+       "Severe",
+       "Out of proportion"
+      ],
+      [
+       "Demarcation",
+       "**Clear line**",
+       "None",
+       "None, spreads fast"
+      ],
+      [
+       "Special sign",
+       "Toes, smoker",
+       "Pus, foul odour, fever",
+       "**Crepitus**, gas on imaging"
+      ],
+      [
+       "Urgency",
+       "Urgent",
+       "Emergency",
+       "Emergency + ICU"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame has no wound, no crepitus and no gas, so this is not **gas gangrene**: that follows trauma and crackles under your fingers."
+    },
+    {
+     "type": "trap",
+     "text": "**Pain out of proportion** plus crepitus after a minor cut is gas gangrene (or necrotising infection), not cellulitis. Oral antibiotics are never the answer."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame's fever, tachycardia and low BP warn of the feared complications: **sepsis**, multi-organ failure and amputation."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (ABPI for dry gangrene), the gold standard to find the blockage (CT angiography), and X-ray for gas in soft tissue.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "In clinic, Kwame's toes were examined for **viability** and his ABPI was measured to judge the arterial supply."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Kwame's right ABPI",
+      "min": 0,
+      "max": 1.4,
+      "unit": "",
+      "bands": [
+       [
+        0,
+        0.5,
+        "critical ischaemia",
+        "bad"
+       ],
+       [
+        0.5,
+        0.8,
+        "significant disease",
+        "warn"
+       ],
+       [
+        0.8,
+        1.3,
+        "normal or mild",
+        "ok"
+       ]
+      ],
+      "value": 0.38,
+      "label": "Kwame 0.38",
+      "caption": "An ABPI **below 0.8** supports dry gangrene from arterial disease; 0.38 is critical."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Diabetics can have stiff, calcified arteries that give a **falsely high** ABPI. Absent pulses with a 'normal' ABPI still need imaging."
+    },
+    {
+     "type": "labs",
+     "title": "Kwame's bloods in ED",
+     "rows": [
+      [
+       "CRP",
+       "286 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "WCC",
+       "21.4 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Lactate",
+       "4.1 mmol/L",
+       "<2.0",
+       "H"
+      ],
+      [
+       "Glucose",
+       "21.8 mmol/L",
+       "4.0–7.8",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "168 µmol/L",
+       "60–110",
+       "H"
+      ]
+     ],
+     "text": "Raised CRP, WCC and lactate: wet gangrene with sepsis and acute kidney injury."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Lactate",
+      "min": 0,
+      "max": 8,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        0,
+        2,
+        "normal",
+        "ok"
+       ],
+       [
+        2,
+        4,
+        "raised",
+        "warn"
+       ],
+       [
+        4,
+        8,
+        "severe, hypoperfusion",
+        "bad"
+       ]
+      ],
+      "value": 4.1,
+      "label": "Kwame 4.1",
+      "caption": "Lactate above 4 means septic shock risk: resuscitate now."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Once stable, **CT angiography** maps Kwame's blockage. In suspected gas gangrene you would also check CRP, lactate and **X-ray for gas**."
+    },
+    {
+     "type": "pearl",
+     "text": "**ABPI** first, **CT angiography** for the blockage, **X-ray** for gas in the soft tissues. Never delay surgery in gas gangrene to get a scan."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': urgent vascular referral for dry gangrene, IV antibiotics plus surgical review for wet, and emergency debridement for gas gangrene.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Kwame is febrile, hypotensive and has wet gangrene. What comes first?",
+     "o": [
+      "CT angiography",
+      "IV broad-spectrum antibiotics and urgent surgical review",
+      "Oral flucloxacillin and clinic review",
+      "Outpatient vascular referral"
+     ],
+     "a": 1,
+     "r": "Wet gangrene is an **emergency**: Sepsis Six with immediate IV antibiotics and urgent surgery. Imaging can wait."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame gets IV **co-amoxiclav** now plus an urgent surgical review. Had this been gas gangrene: emergency debridement, **piperacillin-tazobactam** and ICU."
+    },
+    {
+     "type": "flow",
+     "title": "Gangrene management by type",
+     "nodes": [
+      "Dry → urgent vascular referral for revascularisation",
+      "Non-viable tissue → amputation",
+      "Wet → IV co-amoxiclav (or fluclox + metronidazole) + urgent surgery",
+      "Gas → emergency debridement + IV pip-taz + ICU",
+      "Everyone: clopidogrel + atorvastatin"
+     ],
+     "caption": "The wetter and more systemic, the faster you operate."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame's infected, non-viable toes need **surgical debridement** and amputation: dead tissue will not recover with antibiotics alone."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kwame after IV antibiotics and amputation",
+      "x": [
+       "Admission",
+       "6 h",
+       "Day 1",
+       "Day 3",
+       "Day 7"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Lactate (mmol/L)",
+        "values": [
+         4.1,
+         2.6,
+         1.6,
+         1.1,
+         0.9
+        ]
+       },
+       {
+        "name": "NEWS2 score",
+        "values": [
+         9,
+         7,
+         4,
+         2,
+         1
+        ]
+       }
+      ],
+      "caption": "Source control in theatre plus IV antibiotics settles the sepsis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Back at the dry-gangrene stage, Kwame needed an **urgent vascular referral** for revascularisation, plus **clopidogrel** and **atorvastatin** lifelong."
+    },
+    {
+     "type": "trap",
+     "text": "Do not reach for **oral** antibiotics or an outpatient referral when the stem has fever, moist necrosis or crepitus. That is wet or gas gangrene: IV and theatre."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the organism and toxin in gas gangrene, why dry gangrene is demarcated, and what the ABPI ratio reflects.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's toes first died from critically low blood supply (**ischaemic, dry** gangrene); bacteria then colonised the dead tissue (**wet**)."
+    },
+    {
+     "type": "flow",
+     "title": "Dry to wet gangrene",
+     "nodes": [
+      "Critical arterial narrowing",
+      "Distal tissue necrosis",
+      "Dead tissue dries and mummifies (dry)",
+      "Bacteria invade necrotic tissue",
+      "Toxins, liquefaction, rapid spread (wet)",
+      "Sepsis and multi-organ failure"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's original sharp line formed because nearby skin stayed **perfused**; infection destroyed that boundary and spread."
+    },
+    {
+     "type": "ask",
+     "q": "Which toxin explains the crepitus and myonecrosis of gas gangrene?",
+     "o": [
+      "Alpha-toxin (lecithinase)",
+      "Panton-Valentine leukocidin",
+      "Streptococcal pyrogenic exotoxin",
+      "Tetanospasmin"
+     ],
+     "a": 0,
+     "r": "**Clostridium perfringens alpha-toxin**, a lecithinase, destroys cell membranes, causing myonecrosis and gas in tissue planes."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame had no gas gangrene, but in that case **alpha-toxin** destroys muscle and makes gas, so tissue crackles and hurts beyond what you see."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame's ABPI of 0.38 means his ankle pressure is little more than a third of his arm pressure: **severe ischaemia**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which feature is typical of dry gangrene?",
+   "o": [
+    "Clear line of demarcation",
+    "Crepitus",
+    "Foul-smelling pus",
+    "Severe pain and fever"
+   ],
+   "a": 0,
+   "r": "Dry gangrene is mummified, painless and **clearly demarcated**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism causes gas gangrene?",
+   "o": [
+    "Clostridium perfringens",
+    "Clostridium tetani",
+    "Staphylococcus aureus",
+    "Streptococcus pyogenes"
+   ],
+   "a": 0,
+   "r": "**Clostridium perfringens** (clostridial myonecrosis)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the classic palpation finding in gas gangrene?",
+   "o": [
+    "Crepitus",
+    "Fluctuance",
+    "Pitting oedema",
+    "Pulsatile mass"
+   ],
+   "a": 0,
+   "r": "**Crepitus** from gas in the soft tissues (subcutaneous emphysema)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which describes wet gangrene?",
+   "o": [
+    "Dry, painless, demarcated",
+    "Moist, painful, foul, no demarcation",
+    "Pale, cold, painless",
+    "Red, warm, well-defined edge"
+   ],
+   "a": 1,
+   "r": "Wet gangrene is infected necrotic tissue: moist, painful, foul, febrile, **no demarcation**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which ABPI value supports dry gangrene from arterial disease?",
+   "o": [
+    "Above 1.3",
+    "Below 0.8",
+    "Between 0.9 and 1.2",
+    "Exactly 1.0"
+   ],
+   "a": 1,
+   "r": "ABPI **below 0.8** supports arterial insufficiency."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold standard to identify the arterial blockage?",
+   "o": [
+    "ABPI",
+    "CT angiography",
+    "Plain X-ray",
+    "Venous duplex"
+   ],
+   "a": 1,
+   "r": "**CT angiography** maps the blockage before revascularisation."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line antibiotic for wet gangrene in the notes?",
+   "o": [
+    "IV co-amoxiclav",
+    "Oral amoxicillin",
+    "Oral doxycycline",
+    "Topical fusidic acid"
+   ],
+   "a": 0,
+   "r": "**IV co-amoxiclav**, or flucloxacillin plus metronidazole, with urgent surgical review."
+  },
+  {
+   "d": "management",
+   "q": "What is the key treatment for gas gangrene?",
+   "o": [
+    "Compression and elevation",
+    "Emergency surgical debridement",
+    "Oral antibiotics",
+    "Outpatient vascular review"
+   ],
+   "a": 1,
+   "r": "**Emergency debridement**, IV piperacillin-tazobactam and ICU care."
+  },
+  {
+   "d": "science",
+   "q": "What does Clostridium perfringens alpha-toxin do?",
+   "o": [
+    "Blocks acetylcholine release",
+    "Blocks inhibitory interneurones",
+    "Destroys cell membranes as a lecithinase",
+    "Inhibits protein synthesis"
+   ],
+   "a": 2,
+   "r": "Alpha-toxin is a **lecithinase** causing myonecrosis and gas production."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is gangrene and what are its risk factors?",
+    "tip": "Exam thinking: ischaemia first, infection second.",
+    "points": [
+     {
+      "p": "Tissue death due to ischaemia, sometimes with superimposed infection",
+      "k": [
+       [
+        "death",
+        "necros",
+        "dead"
+       ],
+       [
+        "ischaem",
+        "blood supply"
+       ]
+      ],
+      "why": "Infection is what turns dry into wet."
+     },
+     {
+      "p": "Peripheral vascular disease",
+      "k": [
+       [
+        "pvd",
+        "pad",
+        "peripheral",
+        "vascular"
+       ]
+      ],
+      "why": "The commonest background."
+     },
+     {
+      "p": "Diabetes mellitus",
+      "k": [
+       [
+        "diabet"
+       ]
+      ],
+      "why": "Neuropathy and vasculopathy together."
+     },
+     {
+      "p": "Smoking and arterial thrombosis",
+      "k": [
+       [
+        "smok",
+        "thrombo"
+       ]
+      ],
+      "why": "Smoking is specific for dry gangrene of the toes."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the presentation of dry gangrene.",
+    "tip": "Exam thinking: dry = no infection.",
+    "points": [
+     {
+      "p": "Chronic arterial insufficiency, ischaemia alone, no infection",
+      "k": [
+       [
+        "arterial",
+        "ischaem"
+       ]
+      ],
+      "why": "No fever, no pus."
+     },
+     {
+      "p": "Dry, shrivelled, black, mummified",
+      "k": [
+       [
+        "dry",
+        "shrivel",
+        "black",
+        "mummif"
+       ]
+      ],
+      "why": "The classic look."
+     },
+     {
+      "p": "Painless",
+      "k": [
+       [
+        "painless",
+        "no pain"
+       ]
+      ],
+      "why": "Dead nerves do not hurt."
+     },
+     {
+      "p": "Clear line of demarcation",
+      "k": [
+       [
+        "demarcat",
+        "line"
+       ]
+      ],
+      "why": "The key difference from wet gangrene."
+     },
+     {
+      "p": "Typically the toes",
+      "k": [
+       [
+        "toe"
+       ]
+      ],
+      "why": "Most distal tissue."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the presentation of wet gangrene.",
+    "tip": "Exam thinking: wet = infected and an emergency.",
+    "points": [
+     {
+      "p": "Infection within necrotic tissue; an emergency",
+      "k": [
+       [
+        "infect",
+        "emergenc"
+       ]
+      ],
+      "why": "Needs IV antibiotics and surgery."
+     },
+     {
+      "p": "Severe pain, erythema, swelling",
+      "k": [
+       [
+        "pain",
+        "erythem",
+        "swell",
+        "red"
+       ]
+      ],
+      "why": "Unlike painless dry gangrene."
+     },
+     {
+      "p": "Moist, blackish, blistering",
+      "k": [
+       [
+        "moist",
+        "wet",
+        "blister"
+       ]
+      ],
+      "why": "Moisture comes from infection and tissue liquefaction."
+     },
+     {
+      "p": "Purulent discharge and foul odour",
+      "k": [
+       [
+        "pus",
+        "purulent",
+        "odour",
+        "smell",
+        "odor"
+       ]
+      ],
+      "why": "Classic stem clue."
+     },
+     {
+      "p": "Fever and malaise",
+      "k": [
+       [
+        "fever",
+        "malaise",
+        "temperature",
+        "pyrex"
+       ]
+      ],
+      "why": "Systemic upset points to sepsis."
+     },
+     {
+      "p": "No clear line of demarcation",
+      "k": [
+       [
+        "demarcat",
+        "no line",
+        "spread"
+       ]
+      ],
+      "why": "Infection crosses the boundary."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is gas gangrene, what causes it and what are the classic findings?",
+    "tip": "Exam thinking: trauma + crepitus + pain out of proportion.",
+    "points": [
+     {
+      "p": "Clostridial myonecrosis caused by Clostridium perfringens",
+      "k": [
+       [
+        "clostrid",
+        "perfringens"
+       ]
+      ],
+      "why": "An anaerobic Gram-positive rod."
+     },
+     {
+      "p": "Follows trauma, e.g. a minor cut",
+      "k": [
+       [
+        "trauma",
+        "cut",
+        "wound",
+        "injur"
+       ]
+      ],
+      "why": "Spores enter the wound."
+     },
+     {
+      "p": "Pain out of proportion to findings",
+      "k": [
+       [
+        "proportion"
+       ]
+      ],
+      "why": "Same red flag as necrotising fasciitis."
+     },
+     {
+      "p": "Crepitus and subcutaneous emphysema",
+      "k": [
+       [
+        "crepit",
+        "emphysema",
+        "crackl"
+       ]
+      ],
+      "why": "Gas in the tissues."
+     },
+     {
+      "p": "Foul discharge, bullae, discolouration, systemic infection",
+      "k": [
+       [
+        "bulla",
+        "blister",
+        "discol",
+        "foul",
+        "sepsis",
+        "systemic"
+       ]
+      ],
+      "why": "Rapidly becomes septic."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What complications can gangrene cause?",
+    "tip": "Exam thinking: limb and life.",
+    "points": [
+     {
+      "p": "Amputation",
+      "k": [
+       [
+        "amput"
+       ]
+      ],
+      "why": "Non-viable tissue must be removed."
+     },
+     {
+      "p": "Sepsis",
+      "k": [
+       [
+        "sepsis",
+        "septic"
+       ]
+      ],
+      "why": "Wet and gas gangrene."
+     },
+     {
+      "p": "Multi-organ failure",
+      "k": [
+       [
+        "organ"
+       ]
+      ],
+      "why": "The end of untreated sepsis."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you investigate dry gangrene?",
+    "tip": "Exam thinking: bedside first, then map the arteries.",
+    "points": [
+     {
+      "p": "Clinical examination of tissue viability",
+      "k": [
+       [
+        "viab",
+        "examin",
+        "clinical"
+       ]
+      ],
+      "why": "Decides salvage versus amputation."
+     },
+     {
+      "p": "ABPI; below 0.8 supports dry gangrene",
+      "k": [
+       [
+        "abpi",
+        "ankle"
+       ],
+       [
+        "0.8"
+       ]
+      ],
+      "why": "Can be falsely high in diabetes."
+     },
+     {
+      "p": "CT angiography: gold standard to identify the blockage",
+      "k": [
+       [
+        "ct angio",
+        "cta",
+        "angiogra"
+       ]
+      ],
+      "why": "Plans revascularisation."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you investigate suspected gas gangrene?",
+    "tip": "Exam thinking: tests must not delay theatre.",
+    "points": [
+     {
+      "p": "Check pulses and ABPI",
+      "k": [
+       [
+        "pulse",
+        "abpi"
+       ]
+      ],
+      "why": "Is the limb also ischaemic?"
+     },
+     {
+      "p": "Bloods: CRP and lactate",
+      "k": [
+       [
+        "crp",
+        "lactate"
+       ]
+      ],
+      "why": "Lactate signals hypoperfusion and sepsis."
+     },
+     {
+      "p": "X-ray showing gas in the soft tissues",
+      "k": [
+       [
+        "x-ray",
+        "xray",
+        "x ray",
+        "radiograph"
+       ]
+      ],
+      "why": "Gas confirms the clinical crepitus."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage dry, wet and gas gangrene?",
+    "tip": "Exam thinking: one plan per type.",
+    "points": [
+     {
+      "p": "Dry: urgent vascular surgery referral for revascularisation",
+      "k": [
+       [
+        "vascular",
+        "revascular"
+       ]
+      ],
+      "why": "Restore flow if tissue can be saved."
+     },
+     {
+      "p": "Non-viable tissue: amputation",
+      "k": [
+       [
+        "amput"
+       ]
+      ],
+      "why": "Dead tissue does not recover."
+     },
+     {
+      "p": "Wet: immediate IV co-amoxiclav (or flucloxacillin + metronidazole) and urgent surgical review",
+      "k": [
+       [
+        "co-amoxiclav",
+        "coamoxiclav",
+        "co amoxiclav",
+        "flucloxacillin",
+        "metronidazole"
+       ]
+      ],
+      "why": "IV, not oral."
+     },
+     {
+      "p": "Gas: emergency surgical debridement",
+      "k": [
+       [
+        "debrid"
+       ]
+      ],
+      "why": "Source control is life-saving."
+     },
+     {
+      "p": "Gas: IV piperacillin-tazobactam (vancomycin/meropenem alternatives) and ICU",
+      "k": [
+       [
+        "piperacillin",
+        "tazobactam",
+        "pip-taz",
+        "tazocin",
+        "meropenem",
+        "vancomycin"
+       ]
+      ],
+      "why": "Plus ICU care."
+     },
+     {
+      "p": "Underlying disease: clopidogrel and atorvastatin",
+      "k": [
+       [
+        "clopidogrel",
+        "antiplatelet"
+       ],
+       [
+        "atorvastatin",
+        "statin"
+       ]
+      ],
+      "why": "Secondary prevention."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why is dry gangrene demarcated while wet gangrene spreads?",
+    "tip": "Exam thinking: perfusion vs bacteria.",
+    "points": [
+     {
+      "p": "Dry: tissue mummifies as it desiccates",
+      "k": [
+       [
+        "mummif",
+        "desicc",
+        "dries",
+        "dry out"
+       ]
+      ],
+      "why": "Desiccated tissue shrinks and turns black."
+     },
+     {
+      "p": "Adjacent viable tissue stays perfused, giving a clear line",
+      "k": [
+       [
+        "perfus",
+        "viable",
+        "blood supply"
+       ]
+      ],
+      "why": "The demarcation is the edge of the blood supply."
+     },
+     {
+      "p": "Wet: bacteria produce toxins and gas, liquefying tissue",
+      "k": [
+       [
+        "toxin",
+        "gas",
+        "liquef"
+       ]
+      ],
+      "why": "Hence rapid spread and sepsis."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does gas gangrene cause crepitus and disproportionate pain, and what does ABPI measure?",
+    "tip": "Exam thinking: name the toxin.",
+    "points": [
+     {
+      "p": "Clostridium perfringens alpha-toxin, a lecithinase",
+      "k": [
+       [
+        "alpha",
+        "lecithinase"
+       ]
+      ],
+      "why": "Destroys cell membranes."
+     },
+     {
+      "p": "Myonecrosis and gas in tissue planes",
+      "k": [
+       [
+        "myonecros",
+        "muscle"
+       ],
+       [
+        "gas"
+       ]
+      ],
+      "why": "Gas gives crepitus."
+     },
+     {
+      "p": "ABPI: ratio of ankle to brachial systolic BP, falls with stenosis",
+      "k": [
+       [
+        "ratio",
+        "ankle"
+       ],
+       [
+        "brachial",
+        "arm"
+       ]
+      ],
+      "why": "Correlates with severity of ischaemia."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "gangrene": "Death of body tissue from loss of blood supply, sometimes with infection.",
+  "dry gangrene": "Ischaemic tissue death without infection: dry, black, painless and clearly demarcated.",
+  "wet gangrene": "Gangrene with infection: moist, swollen, painful, foul-smelling, no clear edge.",
+  "gas gangrene": "Life-threatening muscle infection by Clostridium perfringens producing gas in tissues.",
+  "clostridial myonecrosis": "Another name for gas gangrene: muscle death caused by clostridial toxins.",
+  "Clostridium perfringens": "Anaerobic, spore-forming Gram-positive rod that causes gas gangrene.",
+  "alpha-toxin": "Lecithinase made by Clostridium perfringens that destroys cell membranes.",
+  "lecithinase": "Enzyme that breaks down lecithin in cell membranes, killing cells.",
+  "myonecrosis": "Death of muscle tissue.",
+  "necrosis": "Death of cells or tissue from injury or loss of blood supply.",
+  "ischaemia": "Inadequate blood supply to a tissue, starving it of oxygen.",
+  "demarcation": "The visible line between dead and living tissue.",
+  "mummified": "Dried out, shrunken and hard, as in dry gangrene.",
+  "crepitus": "A crackling feeling under the fingers, here from gas in soft tissue.",
+  "subcutaneous emphysema": "Gas or air trapped under the skin, felt as crackling.",
+  "bullae": "Large fluid-filled blisters.",
+  "PVD": "Peripheral vascular disease: narrowing of the arteries to the limbs.",
+  "peripheral arterial disease": "Atherosclerotic narrowing of the arteries supplying the legs.",
+  "ABPI": "Ankle-brachial pressure index: ankle systolic pressure divided by arm systolic pressure.",
+  "CT angiography": "CT with IV contrast showing the arteries and any blockage.",
+  "revascularisation": "Restoring blood flow by angioplasty or bypass surgery.",
+  "debridement": "Surgical or other removal of dead, infected tissue from a wound.",
+  "amputation": "Surgical removal of a limb or part of a limb.",
+  "sepsis": "Life-threatening organ dysfunction caused by a dysregulated response to infection.",
+  "lactate": "Blood marker of poor tissue perfusion; above 4 mmol/L signals severe sepsis.",
+  "CRP": "C-reactive protein: a blood marker of inflammation and infection.",
+  "co-amoxiclav": "Amoxicillin with clavulanic acid, a broad-spectrum penicillin.",
+  "flucloxacillin": "Narrow-spectrum penicillin active against Staphylococcus aureus.",
+  "metronidazole": "Antibiotic active against anaerobic bacteria.",
+  "piperacillin-tazobactam": "Very broad-spectrum IV penicillin with a beta-lactamase inhibitor (Tazocin).",
+  "clopidogrel": "Antiplatelet drug blocking the P2Y12 receptor, used in vascular disease.",
+  "atorvastatin": "Statin that lowers cholesterol and stabilises atherosclerotic plaque.",
+  "necrotising fasciitis": "Rapidly spreading infection of the fascia with pain out of proportion; a surgical emergency.",
+  "multi-organ failure": "Failure of two or more organ systems, often from sepsis."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old woman with type 2 diabetes has had a black right fourth toe for 2 weeks. Over 2 days the toe and forefoot have become swollen, moist and blistered with a foul-smelling purulent discharge. There is no clear boundary between the necrotic and healthy tissue. She feels unwell. Her temperature is 38.6°C, pulse rate 112 bpm and BP 104/66 mmHg.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Arterial ulcer",
+    "Cellulitis",
+    "Dry gangrene",
+    "Venous ulcer",
+    "Wet gangrene"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about necrotic tissue: decide dry, wet or gas."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "black right fourth toe",
+      "swollen, moist and blistered",
+      "foul-smelling purulent discharge",
+      "no clear boundary",
+      "temperature is 38.6°C"
+     ],
+     "x": "Necrosis plus moisture, pus, odour, fever and no demarcation: infected necrotic tissue."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Wet gangrene.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "An arterial ulcer is a punched-out wound, not a black infected toe."
+      ],
+      [
+       1,
+       "Cellulitis does not cause black necrotic tissue."
+      ],
+      [
+       2,
+       "Dry gangrene is dry, painless, demarcated and afebrile."
+      ],
+      [
+       3,
+       "Venous ulcers are shallow, medial and not necrotic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Wet gangrene.** Black + moist + pus + fever + no line = wet."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 70 year old man has a black, dry, shrivelled left big toe with a clear line of demarcation. It is painless. He has smoked for 50 years and has calf claudication at 50 m. Foot pulses are absent. His temperature is 36.7°C, pulse rate 78 bpm and BP 150/88 mmHg.",
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Ankle-brachial pressure index",
+    "Blood cultures",
+    "CT angiography",
+    "MRI of the foot",
+    "Wound swab"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The **initial** test for suspected dry gangrene."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "black, dry, shrivelled left big toe",
+      "clear line of demarcation",
+      "calf claudication at 50 m",
+      "Foot pulses are absent"
+     ],
+     "x": "Dry gangrene from arterial disease; no infection."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Examine viability, then **ABPI**: below 0.8 supports dry gangrene."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No fever or sepsis; cultures are not the first test."
+      ],
+      [
+       2,
+       "Gold standard to map the blockage, after ABPI."
+      ],
+      [
+       3,
+       "MRI looks for osteomyelitis, not arterial supply."
+      ],
+      [
+       4,
+       "Dry gangrene is not infected."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. ABPI.** First-line for dry gangrene; CT angiography next."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old man has dry gangrene of his right second and third toes. Vascular surgeons have reviewed him and planned revascularisation. He takes metformin and ramipril only. His pulse rate is 76 bpm and BP 138/80 mmHg.",
+   "labs": [
+    [
+     "Total cholesterol",
+     "6.4 mmol/L",
+     "<5.0",
+     "H"
+    ],
+    [
+     "Right ABPI",
+     "0.46",
+     "0.9–1.3",
+     "L"
+    ]
+   ],
+   "q": "Which drug combination should be started for his underlying vascular disease?",
+   "o": [
+    "Aspirin and dipyridamole",
+    "Bisoprolol and amlodipine",
+    "Clopidogrel and atorvastatin",
+    "Rivaroxaban alone",
+    "Warfarin and ezetimibe"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Secondary prevention for the vascular disease behind dry gangrene."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry gangrene",
+      "planned revascularisation",
+      "metformin and ramipril only"
+     ],
+     "x": "Arterial disease, not on antiplatelet or statin, high cholesterol."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Clopidogrel** (antiplatelet) plus **atorvastatin** (lipids)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspirin plus dipyridamole is an old stroke regimen, not PAD first-line."
+      ],
+      [
+       1,
+       "BP drugs do not treat the atheroma; he is normotensive on ramipril."
+      ],
+      [
+       3,
+       "Anticoagulation alone is not standard for PAD."
+      ],
+      [
+       4,
+       "Warfarin is not indicated; ezetimibe is not first-line."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Clopidogrel + atorvastatin for every gangrene patient with vascular disease."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 68 year old man with peripheral arterial disease has a black, dry, painless left big toe. There is a sharp line between the black toe and the pink skin of the foot. He has no fever.",
+   "q": "Which is the most likely explanation for the sharp line?",
+   "o": [
+    "Bacterial gas tracking along tissue planes",
+    "Clostridial toxin destroying muscle",
+    "Immune complexes depositing in vessels",
+    "Mummification of dead tissue beside perfused viable tissue",
+    "Venous congestion liquefying the tissue"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why is dry gangrene demarcated?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "black, dry, painless",
+      "sharp line",
+      "no fever"
+     ],
+     "x": "Dry gangrene with no infection."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Dead tissue **desiccates**; adjacent tissue stays **perfused**, so the edge is sharp."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gas tracking is gas gangrene and spreads, not demarcates."
+      ],
+      [
+       1,
+       "Clostridial toxin is gas gangrene."
+      ],
+      [
+       2,
+       "Immune complexes cause vasculitis, not this line."
+      ],
+      [
+       4,
+       "Liquefaction is a feature of wet gangrene."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Dry = mummified dead tissue next to living perfused tissue."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old man has had darkening of his right big toe for 4 weeks. He has smoked 30 cigarettes a day for 50 years. The toe is black, shrivelled, hard and painless. There is a clear line between the black toe and the healthy skin. There is no discharge. His temperature is 36.6°C.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Arterial ulcer",
+    "Dry gangrene",
+    "Frostbite",
+    "Gas gangrene",
+    "Wet gangrene"
+   ],
+   "a": 1,
+   "e": "Black, shrivelled, painless, clearly demarcated and uninfected tissue in a heavy smoker is dry gangrene.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a black toe."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smoked 30 cigarettes a day for 50 years",
+      "black, shrivelled, hard and painless",
+      "clear line",
+      "no discharge"
+     ],
+     "x": "Mummified, demarcated, no infection, smoker."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Dry gangrene.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "An ulcer is a wound, not a whole mummified toe."
+      ],
+      [
+       2,
+       "No cold exposure is described."
+      ],
+      [
+       3,
+       "Gas gangrene follows trauma with crepitus and sepsis."
+      ],
+      [
+       4,
+       "Wet gangrene is moist, painful, foul and poorly demarcated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Dry gangrene.** Dry, black, painless, clear line."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old woman with type 2 diabetes has a 3 day history of a painful, swollen left foot. Her left third toe has been black for a month. The forefoot is now red, moist and blistered with a foul-smelling discharge and no clear edge to the necrosis. Her temperature is 38.9°C, pulse rate 116 bpm and BP 100/62 mmHg.",
+   "labs": [
+    [
+     "CRP",
+     "241 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "WCC",
+     "19.2 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "Lactate",
+     "3.2 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cellulitis",
+    "Charcot foot",
+    "Dry gangrene",
+    "Gout",
+    "Wet gangrene"
+   ],
+   "a": 4,
+   "e": "Infected necrotic tissue that is moist, foul, painful and poorly demarcated, with sepsis, is wet gangrene. Dry gangrene is uninfected and demarcated.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: dry, wet or gas gangrene?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "black for a month",
+      "red, moist and blistered",
+      "foul-smelling discharge",
+      "no clear edge"
+     ],
+     "x": "Necrotic toe now infected, with fever and raised lactate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Wet gangrene** with sepsis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cellulitis does not produce black necrotic tissue."
+      ],
+      [
+       1,
+       "Charcot foot is a warm, deformed foot without necrosis or sepsis."
+      ],
+      [
+       2,
+       "Dry gangrene has no infection and a clear line."
+      ],
+      [
+       3,
+       "Gout causes a hot joint, not necrosis and pus."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Wet gangrene.** It is an emergency."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old man cut his foot on a rusty nail while gardening 2 days ago. He now has severe pain in the foot, far worse than its appearance suggests. The skin is discoloured with bullae and a foul-smelling discharge. Light palpation produces a crackling sensation. His temperature is 39.2°C, pulse rate 124 bpm and BP 92/58 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cellulitis",
+    "Deep vein thrombosis",
+    "Dry gangrene",
+    "Gas gangrene",
+    "Tetanus"
+   ],
+   "a": 3,
+   "e": "Trauma, pain out of proportion, bullae, foul discharge, crepitus and sepsis are gas gangrene (Clostridium perfringens).",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis after a penetrating wound."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cut his foot on a rusty nail",
+      "far worse than its appearance suggests",
+      "bullae",
+      "crackling sensation"
+     ],
+     "x": "Trauma, disproportionate pain, bullae and **crepitus**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Gas gangrene** (clostridial myonecrosis)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cellulitis does not crackle or cause bullae with sepsis this fast."
+      ],
+      [
+       1,
+       "DVT causes calf swelling, no crepitus or discharge."
+      ],
+      [
+       2,
+       "Dry gangrene is painless and uninfected."
+      ],
+      [
+       4,
+       "Tetanus causes muscle spasm and trismus, not crepitus."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Gas gangrene.** Wound + crepitus + pain out of proportion."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old woman had a deep laceration to her thigh in a road traffic collision 36 hours ago. She now has severe thigh pain, swelling, bronze discolouration and bullae. Her temperature is 38.7°C, pulse rate 128 bpm and BP 88/54 mmHg. Gas gangrene is suspected.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on palpation of the thigh?",
+   "o": [
+    "Absent sensation",
+    "Bounding pulses",
+    "Crepitus",
+    "Pitting oedema",
+    "Pulsatile mass"
+   ],
+   "a": 2,
+   "e": "Gas in the soft tissues (subcutaneous emphysema) produces crepitus on light palpation, the classic sign of gas gangrene.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A finding question: name the condition, then its sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "deep laceration",
+      "severe thigh pain",
+      "bronze discolouration and bullae",
+      "Gas gangrene is suspected"
+     ],
+     "x": "Trauma then myonecrosis with gas."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Gas in tissue planes: **crepitus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pain is severe; sensation is not the key finding."
+      ],
+      [
+       1,
+       "Septic shock does not give bounding limb pulses as a sign."
+      ],
+      [
+       3,
+       "Pitting oedema is non-specific and not the classic sign."
+      ],
+      [
+       4,
+       "A pulsatile mass suggests a false aneurysm."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Crepitus.** Gas gangrene crackles."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 79 year old man has peripheral arterial disease and type 2 diabetes. Over 3 weeks his left fourth and fifth toes have turned black. They are cold and dry with no swelling or discharge. His temperature is 36.8°C, pulse rate 74 bpm and BP 146/82 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination of the toes?",
+   "o": [
+    "Clear line of demarcation",
+    "Crepitus on palpation",
+    "Foul-smelling discharge",
+    "Moist blistering",
+    "Spreading erythema"
+   ],
+   "a": 0,
+   "e": "Dry ischaemic gangrene is clearly demarcated from healthy tissue. The other findings mean infection: wet or gas gangrene.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A finding question: which type of gangrene is this?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "peripheral arterial disease",
+      "cold and dry",
+      "no swelling or discharge",
+      "36.8°C"
+     ],
+     "x": "Ischaemic, dry and uninfected: dry gangrene."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Dry gangrene gives a **clear line of demarcation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Crepitus is gas gangrene."
+      ],
+      [
+       2,
+       "Discharge means wet gangrene."
+      ],
+      [
+       3,
+       "Moist blistering means wet gangrene."
+      ],
+      [
+       4,
+       "Spreading erythema means infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Dry gangrene = demarcated."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old woman with wet gangrene of her right foot has become drowsy. Her temperature is 39.1°C, pulse rate 132 bpm, BP 78/44 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 93% breathing air.",
+   "labs": [
+    [
+     "Lactate",
+     "5.8 mmol/L",
+     "<2.0",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "212 µmol/L",
+     "60–110",
+     "H"
+    ],
+    [
+     "WCC",
+     "24.6 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which complication of her gangrene has developed?",
+   "o": [
+    "Anaphylaxis",
+    "Cardiogenic shock",
+    "Hypovolaemic shock from bleeding",
+    "Pulmonary embolism",
+    "Sepsis"
+   ],
+   "a": 4,
+   "e": "Fever, tachycardia, hypotension, raised lactate and AKI in wet gangrene is sepsis with organ failure, a recognised complication.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Complication of gangrene."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "wet gangrene",
+      "drowsy",
+      "39.1°C",
+      "BP 78/44 mmHg"
+     ],
+     "x": "Infected source, fever, shock and organ dysfunction."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Sepsis** heading to multi-organ failure."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No trigger, rash or wheeze."
+      ],
+      [
+       1,
+       "No cardiac history or pulmonary oedema; there is fever."
+      ],
+      [
+       2,
+       "No bleeding is described."
+      ],
+      [
+       3,
+       "PE does not explain a high fever from an infected foot."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Sepsis.** Then Sepsis Six and source control."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 52 year old man has severe pain in his right leg 1 day after a deep puncture wound. The skin is discoloured with bullae and crepitus is felt. His temperature is 38.8°C, pulse rate 120 bpm and BP 96/60 mmHg. The surgeon wants imaging to confirm gas in the tissues while theatre is prepared.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "CT angiography",
+    "D-dimer",
+    "Nerve conduction studies",
+    "Plain X-ray of the leg",
+    "Venous duplex ultrasound"
+   ],
+   "a": 3,
+   "e": "In suspected gas gangrene, an X-ray shows gas in the soft tissues. It must not delay emergency debridement.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Imaging to show gas in tissue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "deep puncture wound",
+      "crepitus is felt",
+      "confirm gas in the tissues"
+     ],
+     "x": "Suspected gas gangrene."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**X-ray** for soft tissue gas, plus CRP and lactate."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Maps arterial blockage, not gas."
+      ],
+      [
+       1,
+       "D-dimer is for VTE."
+      ],
+      [
+       2,
+       "Irrelevant to infection."
+      ],
+      [
+       4,
+       "Looks for DVT, not gas."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Plain X-ray.** Gas in soft tissues."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 74 year old man has dry gangrene of his left second toe. He smokes and has claudication. His temperature is 36.7°C. The vascular surgeon wants to know where his arteries are blocked before planning revascularisation.",
+   "labs": [
+    [
+     "Left ABPI",
+     "0.41",
+     "0.9–1.3",
+     "L"
+    ],
+    [
+     "eGFR",
+     "70 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": {
+    "kind": "scale",
+    "title": "Left ABPI",
+    "min": 0,
+    "max": 1.4,
+    "unit": "",
+    "bands": [
+     [
+      0,
+      0.5,
+      "critical",
+      "bad"
+     ],
+     [
+      0.5,
+      0.8,
+      "significant",
+      "warn"
+     ],
+     [
+      0.8,
+      1.3,
+      "normal or mild",
+      "ok"
+     ]
+    ],
+    "value": 0.41,
+    "label": "0.41"
+   },
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Ankle-brachial pressure index",
+    "Blood cultures",
+    "CT angiography",
+    "Plain X-ray of the foot",
+    "Wound swab"
+   ],
+   "a": 2,
+   "e": "CT angiography is the gold standard to identify the arterial blockage. The ABPI is already known and only gives severity.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which test shows where the blockage is?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry gangrene",
+      "where his arteries are blocked",
+      "planning revascularisation"
+     ],
+     "x": "Severity known (ABPI 0.41); anatomy needed."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CT angiography.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Already done; it does not locate the lesion."
+      ],
+      [
+       1,
+       "No sepsis."
+      ],
+      [
+       3,
+       "Shows bone and gas, not arteries."
+      ],
+      [
+       4,
+       "Dry gangrene is not infected."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. CT angiography**, gold standard."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 77 year old woman has dry gangrene of her right big toe with a clear line of demarcation. There is no fever, discharge or spreading redness. Her right ABPI is 0.44. Her temperature is 36.8°C, pulse rate 80 bpm and BP 152/86 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Compression bandaging",
+    "Hyperbaric oxygen therapy",
+    "Oral flucloxacillin",
+    "Topical antiseptic and review in 3 months",
+    "Urgent vascular surgery referral"
+   ],
+   "a": 4,
+   "e": "Dry gangrene needs urgent vascular referral for revascularisation, with amputation of non-viable tissue. There is no infection to treat.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of dry gangrene."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry gangrene",
+      "no fever, discharge or spreading redness",
+      "ABPI is 0.44"
+     ],
+     "x": "Uninfected ischaemic necrosis with critical ischaemia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent vascular surgery referral** for revascularisation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Compression is dangerous with a low ABPI."
+      ],
+      [
+       1,
+       "Not standard first-line care."
+      ],
+      [
+       2,
+       "There is no infection."
+      ],
+      [
+       3,
+       "Waiting 3 months risks limb loss."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Dry gangrene = urgent vascular referral."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 68 year old man with diabetes has a black, moist, swollen left foot with pus, a foul smell and no clear demarcation. He has no drug allergies. His temperature is 38.7°C, pulse rate 114 bpm and BP 102/64 mmHg.",
+   "labs": [
+    [
+     "CRP",
+     "198 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Lactate",
+     "2.9 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "IV co-amoxiclav and urgent surgical review",
+    "Oral clopidogrel and atorvastatin",
+    "Oral flucloxacillin and GP review",
+    "Outpatient vascular referral",
+    "Topical silver dressing"
+   ],
+   "a": 0,
+   "e": "Wet gangrene is an emergency: immediate IV broad-spectrum antibiotics (co-amoxiclav) and urgent surgical review for debridement or amputation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management, in a septic patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "black, moist, swollen",
+      "pus, a foul smell",
+      "no clear demarcation",
+      "38.7°C"
+     ],
+     "x": "Wet gangrene with early sepsis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV co-amoxiclav** plus urgent surgery."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Secondary prevention, not emergency care."
+      ],
+      [
+       2,
+       "Oral treatment is inadequate for wet gangrene."
+      ],
+      [
+       3,
+       "Far too slow for an emergency."
+      ],
+      [
+       4,
+       "Dressings do not treat spreading infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Wet = IV antibiotics + urgent surgery."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 40 year old man has severe pain, bullae and crepitus in his left leg 2 days after a crush injury. His temperature is 39.4°C, pulse rate 130 bpm and BP 84/50 mmHg. X-ray shows gas in the soft tissues.",
+   "labs": [
+    [
+     "Lactate",
+     "6.1 mmol/L",
+     "<2.0",
+     "H"
+    ],
+    [
+     "CRP",
+     "312 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Elevation and oral co-amoxiclav",
+    "Emergency surgical debridement and IV piperacillin-tazobactam",
+    "Hyperbaric oxygen alone",
+    "IV fluids and observe for 24 hours",
+    "MRI of the leg before any surgery"
+   ],
+   "a": 1,
+   "e": "Gas gangrene needs emergency surgical debridement, IV broad-spectrum antibiotics (piperacillin-tazobactam) and ICU care.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of a septic patient with gas in tissue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "crush injury",
+      "crepitus",
+      "BP 84/50 mmHg",
+      "gas in the soft tissues"
+     ],
+     "x": "Gas gangrene with septic shock."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Emergency debridement**, IV pip-taz, ICU."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Oral antibiotics are inadequate."
+      ],
+      [
+       2,
+       "Never instead of surgery."
+      ],
+      [
+       3,
+       "Delay is fatal."
+      ],
+      [
+       4,
+       "Imaging must not delay theatre."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Gas gangrene = theatre now."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 30 year old man has gas gangrene of his calf after a contaminated wound. His pulse rate is 126 bpm and BP 90/56 mmHg. There is crepitus and severe pain out of proportion to the skin changes. Gram stain of the tissue shows large Gram-positive rods.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of the muscle destruction?",
+   "o": [
+    "Alpha-toxin (lecithinase) destroying cell membranes",
+    "Immune complex deposition in vessels",
+    "Superantigen activation of T cells",
+    "Tetanospasmin blocking inhibitory neurones",
+    "Thrombosis of the popliteal artery"
+   ],
+   "a": 0,
+   "e": "Clostridium perfringens alpha-toxin, a lecithinase, causes myonecrosis and gas, giving crepitus and disproportionate pain.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of myonecrosis in gas gangrene."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "contaminated wound",
+      "crepitus",
+      "large Gram-positive rods"
+     ],
+     "x": "Clostridium perfringens."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Alpha-toxin**, a lecithinase."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Vasculitis mechanism."
+      ],
+      [
+       2,
+       "Toxic shock (Staph or Strep) mechanism."
+      ],
+      [
+       3,
+       "Clostridium tetani: spasm, not myonecrosis."
+      ],
+      [
+       4,
+       "Thrombosis gives dry ischaemic gangrene, not gas."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** C. perfringens alpha-toxin = lecithinase."
+    }
+   ]
+  }
+ ]
+}

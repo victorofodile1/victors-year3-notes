@@ -1,0 +1,1964 @@
+{
+ "id": "influenza",
+ "patient": {
+  "name": "Gloria Adeyemi",
+  "age": 72,
+  "sex": "F",
+  "setting": "GP home visit in January, then GP follow-up",
+  "complaint": "Sudden high fever, aching all over and a dry cough since last night",
+  "background": [
+   "COPD (ex-smoker) and type 2 diabetes",
+   "Missed her flu vaccine this autumn",
+   "Lives with her husband in Hackney",
+   "Several neighbours have had 'flu' this week"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an abrupt winter fever, severe myalgia, dry cough and a normal chest; and questions on complications (secondary Staph. aureus pneumonia) and antigenic shift versus drift.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Gloria, 72: fine at teatime, shivering by 9 pm.",
+      "**Severe aching** in back and legs.",
+      "Dry cough, headache, sore throat.",
+      "Too exhausted to get out of bed."
+     ],
+     "vitals": {
+      "T": "39.4°C",
+      "HR": "108 bpm",
+      "BP": "128/74 mmHg",
+      "RR": "18 /min",
+      "SpO2": "95% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A winter outbreak among her neighbours and **abrupt** onset point to **influenza** A or B, spread by droplets."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Gloria's **age**, COPD and diabetes make her **high risk** for complications."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Hot, flushed, tachycardic.",
+      "Chest: **clear**, no crackles, no bronchial breathing.",
+      "No rash, no neck stiffness."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "High fever, **severe myalgia**, dry cough and a **normal chest**: the classic early picture of flu."
+    },
+    {
+     "type": "ask",
+     "q": "Gloria's neighbours are ill, onset was abrupt, myalgia severe and her chest clear. What is it?",
+     "o": [
+      "Acute bronchitis",
+      "Community-acquired pneumonia",
+      "Covid-19",
+      "Influenza"
+     ],
+     "a": 3,
+     "r": "Abrupt fever with **severe myalgia** in a winter outbreak, normal chest: influenza. No anosmia (Covid) and no focal signs (pneumonia)."
+    },
+    {
+     "type": "compare",
+     "title": "Influenza vs common cold vs Covid-19",
+     "head": [
+      "Feature",
+      "Influenza",
+      "Common cold",
+      "Covid-19"
+     ],
+     "rows": [
+      [
+       "Onset",
+       "**Abrupt**, hours",
+       "Gradual",
+       "Gradual"
+      ],
+      [
+       "Fever",
+       "**High**",
+       "Low or none",
+       "Common"
+      ],
+      [
+       "Myalgia",
+       "**Severe**",
+       "Mild",
+       "Common"
+      ],
+      [
+       "Distinctive clue",
+       "Winter outbreak, prostration",
+       "Coryza, sneezing",
+       "**Anosmia**"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "This winter's virus has **drifted**, which is why the vaccine is updated every year; a **shift** would cause a pandemic."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Gloria is told to call back if she gets **chest pain, breathlessness or worsening** after improving: possible secondary bacterial pneumonia."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Chest X-ray if she had worsened (secondary pneumonia)",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "right",
+        "zone": "lower"
+       }
+      ],
+      "caption": "Right lower zone consolidation: **secondary bacterial pneumonia**, a complication. In simple flu the film is normal."
+     },
+     "text": "What a secondary pneumonia would look like."
+    },
+    {
+     "type": "trap",
+     "text": "A clear chest does **not** argue against flu. Focal crackles and purulent sputum suggest a **secondary** pneumonia."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (nasopharyngeal swab for viral PCR), or no test when flu is circulating in a healthy adult.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which test confirms influenza?",
+     "o": [
+      "Blood cultures",
+      "Chest X-ray",
+      "Nasopharyngeal swab for viral PCR",
+      "Serum antibodies"
+     ],
+     "a": 2,
+     "r": "**Viral PCR** on a nasopharyngeal swab is the gold standard."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Gloria is high risk, so a **nasopharyngeal PCR** swab is sent; a healthy adult in peak season could be diagnosed clinically."
+    },
+    {
+     "type": "labs",
+     "title": "Results back the next day",
+     "rows": [
+      [
+       "Influenza A PCR",
+       "Detected",
+       "Not detected",
+       "H"
+      ],
+      [
+       "Influenza B PCR",
+       "Not detected",
+       "Not detected",
+       ""
+      ],
+      [
+       "SARS-CoV-2 PCR",
+       "Not detected",
+       "Not detected",
+       ""
+      ],
+      [
+       "CRP",
+       "38 mg/L",
+       "<5",
+       "H"
+      ]
+     ],
+     "text": "Flu A confirmed; Covid-19 excluded."
+    },
+    {
+     "type": "pearl",
+     "text": "The exam likes the healthy adult in **high community circulation**: no test needed, it is a clinical diagnosis."
+    },
+    {
+     "type": "trap",
+     "text": "Do not wait for the PCR result before giving an antiviral to a high-risk patient: start treatment on clinical suspicion."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?': supportive care for healthy adults, oral oseltamivir for high-risk patients, admission for IV antivirals in respiratory failure, and vaccination questions.",
+   "steps": [
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Hours since symptom onset",
+      "min": 0,
+      "max": 96,
+      "unit": "h",
+      "bands": [
+       [
+        0,
+        48,
+        "Antiviral works best",
+        "ok"
+       ],
+       [
+        48,
+        96,
+        "Benefit falls (still treat if severe)",
+        "warn"
+       ]
+      ],
+      "value": 20,
+      "label": "Gloria 20 h",
+      "caption": "Neuraminidase inhibitors work best **early** (NICE: within 48 hours); Gloria is well inside the window."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Gloria has COPD and diabetes and is 20 hours in. What is first-line?",
+     "o": [
+      "Bed rest and paracetamol only",
+      "Oral amoxicillin",
+      "Oral oseltamivir",
+      "Oral prednisolone"
+     ],
+     "a": 2,
+     "r": "High-risk patients get a **neuraminidase inhibitor**: oral oseltamivir (or inhaled zanamivir). Antibiotics do not treat a virus."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Gloria gets **oral oseltamivir** plus fluids, rest and paracetamol. Her healthy granddaughter would get supportive care only."
+    },
+    {
+     "type": "flow",
+     "title": "Influenza management by risk",
+     "nodes": [
+      "Healthy adult: rest, fluids, paracetamol or ibuprofen",
+      "High risk (comorbidity, immunosuppressed): oral oseltamivir or inhaled zanamivir",
+      "Respiratory failure: admit for IV antiviral",
+      "ICU and ventilation if needed",
+      "Prevention: annual vaccination"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Gloria's sats fell and her breathing quickened, she would be **admitted for IV antivirals**, and ICU if needed."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Gloria's temperature on oseltamivir",
+      "x": [
+       "Day 1",
+       "Day 2",
+       "Day 3",
+       "Day 4",
+       "Day 6"
+      ],
+      "unit": "°C",
+      "series": [
+       {
+        "name": "Temperature",
+        "values": [
+         39.4,
+         39.0,
+         38.1,
+         37.4,
+         36.9
+        ]
+       }
+      ],
+      "caption": "Fever settles over days. A **second spike** after improvement would suggest secondary bacterial pneumonia."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Once recovered, Gloria (over 65 with chronic disease) must have her **annual flu vaccine**; it is postponed only while she is acutely unwell."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Gloria's vaccination falls under the **UK annual seasonal influenza programme** run by the JCVI and NHS."
+    },
+    {
+     "type": "trap",
+     "text": "Zanamivir is **inhaled** and can cause bronchospasm: think twice in COPD or asthma. Oseltamivir is oral."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: how haemagglutinin and neuraminidase work (and why oseltamivir helps), antigenic shift vs drift, and why flu predisposes to Staph. aureus pneumonia.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The virus's **haemagglutinin** latched onto sialic acid on Gloria's airway cells; **neuraminidase** cuts new virions free. Oseltamivir blocks that release."
+    },
+    {
+     "type": "flow",
+     "title": "Influenza life cycle and the drug target",
+     "nodes": [
+      "Haemagglutinin binds sialic acid",
+      "Virus enters and replicates (segmented RNA)",
+      "New virions bud from the cell",
+      "Neuraminidase cleaves sialic acid to release them",
+      "Oseltamivir / zanamivir block neuraminidase"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why are neuraminidase inhibitors effective?",
+     "o": [
+      "They block viral entry",
+      "They prevent release of new virions",
+      "They inhibit RNA polymerase",
+      "They kill infected cells"
+     ],
+     "a": 1,
+     "r": "Neuraminidase frees new virions; blocking it traps them on the cell surface and **limits spread**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Small **point mutations** (drift) cause each winter's epidemic; **reassortment** between strains (shift) creates a pandemic subtype."
+    },
+    {
+     "type": "compare",
+     "title": "Antigenic drift vs shift",
+     "head": [
+      "Feature",
+      "Drift",
+      "Shift"
+     ],
+     "rows": [
+      [
+       "Mechanism",
+       "Point mutations in H and N",
+       "**Reassortment** of gene segments"
+      ],
+      [
+       "Change",
+       "Gradual, minor",
+       "Sudden, novel subtype"
+      ],
+      [
+       "Immunity",
+       "Partial",
+       "Little or none"
+      ],
+      [
+       "Result",
+       "Seasonal epidemics, annual vaccine update",
+       "**Pandemics**"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Flu strips Gloria's ciliated epithelium, impairing **mucociliary clearance** and opening the door to Staph. aureus or Strep. pneumoniae."
+    },
+    {
+     "type": "pearl",
+     "text": "The **segmented** RNA genome is what makes reassortment, and so antigenic shift, possible."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which feature is most characteristic of influenza?",
+   "o": [
+    "Anosmia",
+    "Coryza without fever",
+    "Gradual onset",
+    "Severe myalgia with high fever"
+   ],
+   "a": 3,
+   "r": "Abrupt **high fever and severe myalgia**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the classic secondary bacterial cause of pneumonia after influenza?",
+   "o": [
+    "Klebsiella pneumoniae",
+    "Legionella pneumophila",
+    "Mycoplasma pneumoniae",
+    "Staphylococcus aureus"
+   ],
+   "a": 3,
+   "r": "**Staph. aureus** (also Strep. pneumoniae)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which mechanism causes influenza pandemics?",
+   "o": [
+    "Antigenic drift",
+    "Antigenic shift",
+    "Latency",
+    "Reactivation"
+   ],
+   "a": 1,
+   "r": "**Shift**: novel H/N subtype, little immunity."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the chest examination usually like early in influenza?",
+   "o": [
+    "Bronchial breathing",
+    "Focal crackles",
+    "Normal",
+    "Stony dullness"
+   ],
+   "a": 2,
+   "r": "Chest exam usually **normal initially**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard test for influenza?",
+   "o": [
+    "Blood culture",
+    "Chest X-ray",
+    "Nasopharyngeal swab for viral PCR",
+    "Paired serology"
+   ],
+   "a": 2,
+   "r": "**Nasopharyngeal PCR**."
+  },
+  {
+   "d": "management",
+   "q": "What class of drug is oseltamivir?",
+   "o": [
+    "Haemagglutinin blocker",
+    "M2 ion channel blocker",
+    "Neuraminidase inhibitor",
+    "RNA polymerase inhibitor"
+   ],
+   "a": 2,
+   "r": "Oseltamivir (Tamiflu) is a **neuraminidase inhibitor**."
+  },
+  {
+   "d": "management",
+   "q": "Who should get first-line antivirals?",
+   "o": [
+    "All adults with a cough",
+    "Healthy adults under 65",
+    "High-risk patients with comorbidities",
+    "Only children"
+   ],
+   "a": 2,
+   "r": "**High-risk** patients (comorbidity, immunosuppression)."
+  },
+  {
+   "d": "management",
+   "q": "What should you do with the flu vaccine if a patient is acutely unwell?",
+   "o": [
+    "Give a double dose",
+    "Give it as planned",
+    "Never give it",
+    "Postpone until recovered"
+   ],
+   "a": 3,
+   "r": "**Postpone** until recovered."
+  },
+  {
+   "d": "science",
+   "q": "What does haemagglutinin bind to?",
+   "o": [
+    "ACE2",
+    "CD4",
+    "ICAM-1",
+    "Sialic acid"
+   ],
+   "a": 3,
+   "r": "Haemagglutinin binds **sialic acid** receptors."
+  },
+  {
+   "d": "science",
+   "q": "Why does influenza predispose to bacterial pneumonia?",
+   "o": [
+    "It causes neutrophilia",
+    "It impairs mucociliary clearance",
+    "It increases surfactant",
+    "It reduces airway mucus"
+   ],
+   "a": 1,
+   "r": "Epithelial destruction **impairs mucociliary clearance**."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 46 year old man has had a sudden onset of fever, severe aching in his back and legs, headache and dry cough since yesterday. It is January and several colleagues are off work with similar symptoms. His temperature is 39.2°C, pulse rate 104 bpm, BP 126/78 mmHg and oxygen saturation 97% breathing air. His chest is clear.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bronchitis",
+    "Common cold",
+    "Community-acquired pneumonia",
+    "Infectious mononucleosis",
+    "Influenza"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question: abrupt febrile illness."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden onset",
+      "severe aching",
+      "dry cough",
+      "January",
+      "several colleagues",
+      "His chest is clear"
+     ],
+     "x": "Abrupt high fever, **severe myalgia**, winter outbreak, clear chest."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Influenza."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cough after a cold with mild fever; not abrupt prostration."
+      ],
+      [
+       1,
+       "Mild, gradual, coryza; not high fever and severe myalgia."
+      ],
+      [
+       2,
+       "Would give focal signs; his chest is clear."
+      ],
+      [
+       3,
+       "Young adults, sore throat, lymphadenopathy, over weeks."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Influenza.** Rule: abrupt fever + severe myalgia + winter outbreak + normal chest = flu."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old woman with chronic kidney disease has had a sudden fever, myalgia and dry cough for 1 day during a winter outbreak. Her temperature is 38.9°C, pulse rate 100 bpm, BP 134/80 mmHg and oxygen saturation 96% breathing air.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Blood cultures",
+    "Chest X-ray",
+    "Nasopharyngeal swab for viral PCR",
+    "Paired viral serology",
+    "Sputum culture"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic test question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden fever, myalgia and dry cough",
+      "winter outbreak"
+     ],
+     "x": "Suspected flu in a high-risk patient."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Nasopharyngeal viral PCR."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For bacteraemia, not a virus."
+      ],
+      [
+       1,
+       "Looks for complications, does not diagnose flu."
+      ],
+      [
+       3,
+       "Retrospective; too slow."
+      ],
+      [
+       4,
+       "For bacteria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Nasopharyngeal swab for viral PCR.** Rule: flu gold standard = **nasopharyngeal swab PCR**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 59 year old man with diabetes has had influenza for 3 days. He is now increasingly breathless and drowsy. His temperature is 39.0°C, pulse rate 118 bpm, BP 108/66 mmHg, respiratory rate 32 breaths per minute and oxygen saturation 87% breathing air. Influenza A PCR is positive.",
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Admit for intravenous antiviral therapy",
+    "Inhaled zanamivir at home",
+    "Oral amoxicillin at home",
+    "Oral oseltamivir at home",
+    "Paracetamol and fluids at home"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: assess severity first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "increasingly breathless and drowsy",
+      "respiratory rate 32",
+      "87% breathing air"
+     ],
+     "x": "Low sats, tachypnoea: **respiratory failure**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Admit for IV antiviral."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "He is in respiratory failure; home treatment is unsafe."
+      ],
+      [
+       2,
+       "Antibiotics do not treat flu, and he needs admission."
+      ],
+      [
+       3,
+       "Right for stable high-risk patients, not respiratory failure."
+      ],
+      [
+       4,
+       "Supportive care alone is unsafe here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Admit for intravenous antiviral therapy.** Rule: flu with respiratory failure = **admit for IV antivirals**, ICU if needed."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A new influenza A subtype emerges after a pig farmer is infected with human and swine strains at the same time. It spreads rapidly worldwide because very few people have immunity.",
+   "q": "Which is the most likely mechanism?",
+   "o": [
+    "Antigenic drift",
+    "Antigenic shift",
+    "Latency and reactivation",
+    "Phase variation",
+    "Transduction"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: novel subtype, pandemic."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "new influenza A subtype",
+      "human and swine strains at the same time",
+      "very few people have immunity"
+     ],
+     "x": "Co-infection → **reassortment** → novel subtype → pandemic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Antigenic shift."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gradual point mutations; seasonal outbreaks, not pandemics."
+      ],
+      [
+       2,
+       "Herpes viruses, not flu."
+      ],
+      [
+       3,
+       "A bacterial mechanism."
+      ],
+      [
+       4,
+       "Bacteriophage-mediated gene transfer in bacteria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Antigenic shift.** Rule: shift = reassortment = pandemic; drift = mutations = seasonal."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old woman developed fever, shivering, severe muscle aches and a dry cough over a few hours yesterday. It is February and her children were ill last week. Her temperature is 39.3°C, pulse rate 110 bpm, BP 118/72 mmHg and oxygen saturation 98% breathing air. Her chest is clear.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bronchitis",
+    "Covid-19",
+    "Influenza",
+    "Legionnaires' disease",
+    "Streptococcal pharyngitis"
+   ],
+   "a": 2,
+   "e": "Abrupt high fever, severe myalgia and dry cough in winter with a clear chest is influenza; Covid-19 would suggest anosmia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: abrupt febrile illness in winter."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "over a few hours",
+      "severe muscle aches",
+      "February",
+      "her children were ill",
+      "Her chest is clear"
+     ],
+     "x": "Abrupt high fever, severe myalgia, contacts, clear chest."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Influenza."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Follows a cold, mild fever, rhonchi."
+      ],
+      [
+       1,
+       "Anosmia would be the clue; onset is more gradual."
+      ],
+      [
+       3,
+       "Pneumonia with hyponatraemia; water exposure."
+      ],
+      [
+       4,
+       "Sore throat, exudate, nodes; not severe myalgia and cough."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Influenza.** Rule: abrupt + severe myalgia + winter = flu."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man had influenza a week ago and was improving. He now has a high fever, cough productive of purulent sputum and breathlessness. His temperature is 39.6°C, pulse rate 120 bpm, BP 98/60 mmHg and oxygen saturation 89% breathing air. Chest X-ray shows bilateral cavitating lesions.",
+   "labs": [
+    [
+     "White cell count",
+     "21.4 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "CRP",
+     "286 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Haemophilus influenzae",
+    "Legionella pneumophila",
+    "Mycoplasma pneumoniae",
+    "Pneumocystis jirovecii",
+    "Staphylococcus aureus"
+   ],
+   "a": 4,
+   "e": "Secondary bacterial pneumonia after influenza is classically Staphylococcus aureus, which causes cavitation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: secondary pneumonia after flu."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "influenza a week ago",
+      "purulent sputum",
+      "bilateral cavitating lesions"
+     ],
+     "x": "Post-influenza, cavitating pneumonia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Staph. aureus."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "COPD exacerbations; does not typically cavitate after flu."
+      ],
+      [
+       1,
+       "Water exposure, hyponatraemia; not post-flu cavities."
+      ],
+      [
+       2,
+       "Young adults, mild, extrapulmonary features."
+      ],
+      [
+       3,
+       "Immunosuppressed (HIV), bilateral ground-glass."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Staphylococcus aureus.** Rule: post-flu pneumonia, especially cavitating = **Staph. aureus**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old man has had influenza for 5 days. He now has central chest pain and palpitations. His temperature is 38.1°C, pulse rate 124 bpm and BP 106/70 mmHg. His ECG shows sinus tachycardia with widespread T-wave inversion.",
+   "labs": [
+    [
+     "hs-Troponin T",
+     "186 ng/L",
+     "<14",
+     "H"
+    ],
+    [
+     "CRP",
+     "64 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Acute coronary syndrome",
+    "Aortic dissection",
+    "Myocarditis",
+    "Pneumothorax",
+    "Pulmonary embolism"
+   ],
+   "a": 2,
+   "e": "Chest pain, tachycardia, raised troponin and widespread T-wave changes after flu in a young man is myocarditis, a recognised complication.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Complication question: heart involvement after flu."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "influenza for 5 days",
+      "central chest pain and palpitations",
+      "widespread T-wave inversion"
+     ],
+     "x": "Viral illness, chest pain, raised troponin, widespread changes."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Myocarditis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Young, no risk factors, viral prodrome."
+      ],
+      [
+       1,
+       "Tearing back pain, pulse deficit."
+      ],
+      [
+       3,
+       "Pleuritic pain, reduced breath sounds; troponin not raised."
+      ],
+      [
+       4,
+       "Hypoxia and leg signs; troponin can rise but viral myocarditis fits."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Myocarditis.** Rule: flu + chest pain + raised troponin in a young adult = **myocarditis**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old woman has had influenza-like illness for 2 days, with fever, myalgia and dry cough. Her temperature is 38.8°C, pulse rate 102 bpm, BP 124/76 mmHg and oxygen saturation 97% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on chest examination?",
+   "o": [
+    "Bronchial breathing at the left base",
+    "Coarse right basal crackles",
+    "Normal breath sounds",
+    "Pleural rub",
+    "Reduced breath sounds with stony dullness"
+   ],
+   "a": 2,
+   "e": "In early uncomplicated influenza the chest examination is usually normal; crackles suggest secondary bacterial pneumonia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely finding: what does early flu look like?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "for 2 days",
+      "97% breathing air"
+     ],
+     "x": "Early uncomplicated flu."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Chest exam usually normal."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Consolidation (pneumonia)."
+      ],
+      [
+       1,
+       "Secondary pneumonia, not early flu."
+      ],
+      [
+       3,
+       "Pleurisy."
+      ],
+      [
+       4,
+       "Effusion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Normal breath sounds.** Rule: early flu = **normal chest**; focal signs mean a complication."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old woman who is 30 weeks pregnant has had abrupt fever, severe myalgia, headache and dry cough for 1 day during a winter outbreak. Her temperature is 38.9°C, pulse rate 106 bpm, BP 112/68 mmHg and oxygen saturation 97% breathing air. Her chest is clear.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Chorioamnionitis",
+    "Covid-19",
+    "Influenza",
+    "Pulmonary embolism",
+    "Pyelonephritis"
+   ],
+   "a": 2,
+   "e": "Abrupt fever, severe myalgia and dry cough in a winter outbreak is influenza; pregnancy makes her high risk.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a high-risk patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "30 weeks pregnant",
+      "abrupt fever, severe myalgia",
+      "winter outbreak",
+      "Her chest is clear"
+     ],
+     "x": "Abrupt febrile myalgic illness, pregnant (high risk)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Influenza."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Uterine tenderness and offensive discharge; no cough."
+      ],
+      [
+       1,
+       "Anosmia would be expected; myalgia and abrupt onset fit flu."
+      ],
+      [
+       4,
+       "Loin pain, dysuria."
+      ],
+      [
+       3,
+       "Pleuritic pain, hypoxia, no high fever and myalgia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Influenza.** Rule: pregnancy is a **risk factor**; the picture is still flu."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 75 year old man who had his influenza vaccine last year develops influenza this winter. His temperature is 38.7°C, pulse rate 98 bpm and BP 136/82 mmHg. The circulating strain has small changes in its haemagglutinin compared with last year's.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely explanation for his infection despite vaccination?",
+   "o": [
+    "Antigenic drift",
+    "Antigenic shift",
+    "Live vaccine reversion",
+    "Primary immunodeficiency",
+    "Vaccine-induced infection"
+   ],
+   "a": 0,
+   "e": "Antigenic drift, gradual point mutations in haemagglutinin and neuraminidase, evades last year's immunity and requires annual vaccine updates.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Explanation question: small changes in surface antigens."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "vaccine last year",
+      "small changes in its haemagglutinin"
+     ],
+     "x": "Gradual mutation → partial immune evasion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Antigenic drift."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Shift is a new subtype causing a pandemic."
+      ],
+      [
+       2,
+       "The standard IM vaccine is inactivated."
+      ],
+      [
+       3,
+       "No history to suggest it."
+      ],
+      [
+       4,
+       "Inactivated vaccine cannot cause flu."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Antigenic drift.** Rule: drift = small changes, seasonal outbreaks, **annual vaccine update**."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 66 year old man with heart failure has had sudden fever, myalgia and dry cough for 1 day. His temperature is 38.9°C, pulse rate 104 bpm, BP 128/76 mmHg and oxygen saturation 95% breathing air.",
+   "labs": [
+    [
+     "CRP",
+     "32 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "White cell count",
+     "6.4 ×10⁹/L",
+     "4.0–11.0",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Blood cultures",
+    "Chest X-ray",
+    "Monospot test",
+    "Nasopharyngeal swab for viral PCR",
+    "Sputum culture"
+   ],
+   "a": 3,
+   "e": "Nasopharyngeal swab for viral PCR is the gold standard for influenza.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirmatory test question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heart failure",
+      "sudden fever, myalgia and dry cough"
+     ],
+     "x": "Suspected flu, high risk."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Nasopharyngeal viral PCR."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For bacteraemia."
+      ],
+      [
+       1,
+       "For complications."
+      ],
+      [
+       2,
+       "Glandular fever."
+      ],
+      [
+       4,
+       "Bacteria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Nasopharyngeal swab for viral PCR.** Rule: gold standard = **viral PCR on a nasopharyngeal swab**."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 24 year old woman has had abrupt fever, severe myalgia and dry cough for 1 day. There is high community circulation of influenza. She has no medical history. Her temperature is 38.6°C, pulse rate 96 bpm, BP 116/72 mmHg and oxygen saturation 99% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Chest X-ray",
+    "Full blood count",
+    "Nasopharyngeal swab for viral PCR",
+    "No investigation, clinical diagnosis",
+    "Throat swab culture"
+   ],
+   "a": 3,
+   "e": "During high community circulation influenza can be diagnosed clinically in healthy adults; PCR is for high-risk or uncertain cases.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation: does this healthy adult need a test?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "high community circulation",
+      "no medical history",
+      "99% breathing air"
+     ],
+     "x": "Healthy adult, peak season."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Clinical diagnosis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Chest is clear; not needed."
+      ],
+      [
+       1,
+       "Would not change management."
+      ],
+      [
+       2,
+       "Gold standard, but not needed in a healthy adult during high circulation."
+      ],
+      [
+       4,
+       "For streptococcal pharyngitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. No investigation, clinical diagnosis.** Rule: high circulation + healthy adult = **clinical diagnosis**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 67 year old woman with type 2 diabetes and chronic kidney disease has had abrupt fever, myalgia and dry cough for 24 hours during a flu outbreak. Her temperature is 38.8°C, pulse rate 100 bpm, BP 132/78 mmHg and oxygen saturation 96% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Admit for intravenous antiviral",
+    "Oral amoxicillin",
+    "Oral co-amoxiclav",
+    "Oral oseltamivir",
+    "Rest, fluids and paracetamol only"
+   ],
+   "a": 3,
+   "e": "High-risk patients (diabetes, CKD) get oral oseltamivir first-line; IV antivirals are for respiratory failure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: high risk but stable."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes and chronic kidney disease",
+      "96% breathing air"
+     ],
+     "x": "High-risk, stable."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Oral oseltamivir."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For respiratory failure; she is stable."
+      ],
+      [
+       1,
+       "Does not treat a viral infection."
+      ],
+      [
+       2,
+       "No bacterial infection."
+      ],
+      [
+       4,
+       "Right for healthy adults, but she is high risk."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Oral oseltamivir.** Rule: high risk = **oral oseltamivir** (or inhaled zanamivir)."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 31 year old man has had abrupt fever, myalgia and dry cough for 2 days during a flu outbreak. He has no medical history. His temperature is 38.5°C, pulse rate 92 bpm, BP 122/76 mmHg and oxygen saturation 98% breathing air. His chest is clear.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Inhaled zanamivir",
+    "Oral amoxicillin",
+    "Oral oseltamivir",
+    "Oral prednisolone",
+    "Rest, fluids and paracetamol"
+   ],
+   "a": 4,
+   "e": "Uncomplicated influenza in a healthy adult needs bed rest, fluids and analgesia; antivirals are for high-risk patients.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: is he high risk?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no medical history",
+      "98% breathing air",
+      "His chest is clear"
+     ],
+     "x": "Healthy, uncomplicated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Supportive care."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For high-risk patients."
+      ],
+      [
+       1,
+       "Antibiotics do not help."
+      ],
+      [
+       2,
+       "For high-risk patients."
+      ],
+      [
+       3,
+       "No role."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Rest, fluids and paracetamol.** Rule: uncomplicated flu in a healthy adult = **supportive care**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old man with COPD attends a flu vaccination clinic. He has had a fever of 38.4°C and a productive cough since yesterday. His pulse rate is 98 bpm and BP 134/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate action regarding his vaccination?",
+   "o": [
+    "Give a live attenuated vaccine instead",
+    "Give the vaccine today",
+    "Give the vaccine with oseltamivir",
+    "Never vaccinate him",
+    "Postpone vaccination until he has recovered"
+   ],
+   "a": 4,
+   "e": "Vaccination is postponed while acutely unwell, then given because he is ≥65 with chronic disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Vaccination question: what if acutely unwell?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "COPD",
+      "fever of 38.4°C"
+     ],
+     "x": "Priority group, but acutely unwell."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Postpone until recovered."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not used in adults this age; still postpone."
+      ],
+      [
+       1,
+       "Postpone if acutely unwell."
+      ],
+      [
+       2,
+       "Not the rule."
+      ],
+      [
+       3,
+       "He is in a priority group (≥65, COPD)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Postpone vaccination until he has recovered.** Rule: **postpone** flu vaccine if acutely unwell; never drop it."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 64 year old woman with influenza A is prescribed oseltamivir. A student asks how the drug works.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the mechanism of action of oseltamivir?",
+   "o": [
+    "Blocks haemagglutinin binding to sialic acid",
+    "Blocks the M2 ion channel",
+    "Inhibits DNA polymerase",
+    "Inhibits neuraminidase, preventing release of new virions",
+    "Inhibits viral protease"
+   ],
+   "a": 3,
+   "e": "Oseltamivir inhibits neuraminidase, which normally frees new virions from the host cell, so spread is limited.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism question: match the drug."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "influenza A",
+      "oseltamivir"
+     ],
+     "x": "Oseltamivir is a neuraminidase inhibitor."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Prevents release of new virions."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No drug in this class blocks entry."
+      ],
+      [
+       1,
+       "Amantadine, now not used."
+      ],
+      [
+       2,
+       "Aciclovir (herpes viruses)."
+      ],
+      [
+       4,
+       "Nirmatrelvir (Covid-19)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Inhibits neuraminidase, preventing release of new virions.** Rule: oseltamivir/zanamivir = **neuraminidase inhibitors**."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is influenza, and how is it spread?",
+    "tip": "Exam thinking: name the virus type and genome.",
+    "points": [
+     {
+      "p": "Acute viral respiratory infection by influenza A or B",
+      "k": [
+       [
+        "influenza",
+        "flu",
+        "virus"
+       ],
+       [
+        "type a",
+        "influenza a",
+        "flu a",
+        "a or b",
+        "a and b",
+        "a/b",
+        "type b"
+       ]
+      ],
+      "why": "Type A causes pandemics."
+     },
+     {
+      "p": "Enveloped virus with segmented RNA genome",
+      "k": [
+       [
+        "segment"
+       ]
+      ],
+      "why": "Segments allow reassortment."
+     },
+     {
+      "p": "Respiratory droplets and close contact, mainly winter",
+      "k": [
+       [
+        "droplet",
+        "contact"
+       ]
+      ],
+      "why": "Winter outbreaks."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who is at risk of severe influenza?",
+    "tip": "Exam thinking: these are also the antiviral and vaccine groups.",
+    "points": [
+     {
+      "p": "Older age",
+      "k": [
+       [
+        "older",
+        "elderly",
+        "65",
+        "age"
+       ]
+      ],
+      "why": "Age ≥65."
+     },
+     {
+      "p": "Chronic disease",
+      "k": [
+       [
+        "chronic",
+        "comorbid",
+        "diabet",
+        "copd",
+        "heart"
+       ]
+      ],
+      "why": "Heart, lung, kidney, liver, neuro, diabetes."
+     },
+     {
+      "p": "Pregnancy",
+      "k": [
+       [
+        "pregnan"
+       ]
+      ],
+      "why": "Pregnant women are vaccinated."
+     },
+     {
+      "p": "Immunosuppression",
+      "k": [
+       [
+        "immunosupp",
+        "immunocomp"
+       ]
+      ],
+      "why": "High risk."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the classic presentation and examination of influenza.",
+    "tip": "Exam thinking: abrupt, severe myalgia, normal chest.",
+    "points": [
+     {
+      "p": "High fever and severe myalgia",
+      "k": [
+       [
+        "fever"
+       ],
+       [
+        "myalgia",
+        "muscle",
+        "aching"
+       ]
+      ],
+      "why": "Abrupt onset."
+     },
+     {
+      "p": "Dry cough, headache, fatigue, sore throat",
+      "k": [
+       [
+        "cough",
+        "headache",
+        "sore throat",
+        "fatigue"
+       ]
+      ],
+      "why": "Systemic upset."
+     },
+     {
+      "p": "Exam: fever, tachycardia, chest usually normal initially",
+      "k": [
+       [
+        "normal",
+        "clear"
+       ]
+      ],
+      "why": "Focal signs suggest a complication."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is the difference between antigenic shift and antigenic drift?",
+    "tip": "Exam thinking: pandemic vs seasonal.",
+    "points": [
+     {
+      "p": "Shift: novel H/N subtype, little immunity: pandemics",
+      "k": [
+       [
+        "shift"
+       ],
+       [
+        "pandemic"
+       ]
+      ],
+      "why": "From reassortment."
+     },
+     {
+      "p": "Drift: gradual mutations: seasonal outbreaks",
+      "k": [
+       [
+        "drift"
+       ],
+       [
+        "season",
+        "annual",
+        "yearly"
+       ]
+      ],
+      "why": "Annual vaccine updates."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of influenza?",
+    "tip": "Exam thinking: secondary pneumonia is the big one.",
+    "points": [
+     {
+      "p": "Secondary bacterial pneumonia, commonly Staph. aureus",
+      "k": [
+       [
+        "pneumonia"
+       ],
+       [
+        "staph",
+        "aureus"
+       ]
+      ],
+      "why": "Also Strep. pneumoniae."
+     },
+     {
+      "p": "Sinusitis, otitis media",
+      "k": [
+       [
+        "sinusitis",
+        "otitis"
+       ]
+      ],
+      "why": "ENT complications."
+     },
+     {
+      "p": "Myocarditis",
+      "k": [
+       [
+        "myocarditis"
+       ]
+      ],
+      "why": "Chest pain, raised troponin."
+     },
+     {
+      "p": "Pulmonary embolism",
+      "k": [
+       [
+        "pe",
+        "embol"
+       ]
+      ],
+      "why": "SOB, chest pain, haemoptysis."
+     },
+     {
+      "p": "Chest pain, breathlessness or hypoxia = suspect secondary pneumonia (emergency)",
+      "k": [
+       [
+        "chest pain",
+        "breathless",
+        "hypox",
+        "sob"
+       ]
+      ],
+      "why": "Red flags."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is influenza diagnosed?",
+    "tip": "Exam thinking: PCR, or clinical in season.",
+    "points": [
+     {
+      "p": "Gold standard: nasopharyngeal swab for viral PCR",
+      "k": [
+       [
+        "pcr"
+       ],
+       [
+        "nasopharyn",
+        "swab"
+       ]
+      ],
+      "why": "Classic answer."
+     },
+     {
+      "p": "Clinical diagnosis in healthy adults during high community circulation",
+      "k": [
+       [
+        "clinical"
+       ]
+      ],
+      "why": "No test needed."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is influenza treated, by risk?",
+    "tip": "Exam thinking: risk and severity decide.",
+    "points": [
+     {
+      "p": "Uncomplicated: rest, fluids, paracetamol or ibuprofen",
+      "k": [
+       [
+        "rest",
+        "fluid",
+        "paracetamol",
+        "ibuprofen",
+        "supportive"
+       ]
+      ],
+      "why": "Healthy adults."
+     },
+     {
+      "p": "High risk: oral oseltamivir (Tamiflu) or inhaled zanamivir",
+      "k": [
+       [
+        "oseltamivir",
+        "tamiflu",
+        "zanamivir"
+       ]
+      ],
+      "why": "Neuraminidase inhibitors."
+     },
+     {
+      "p": "Respiratory failure: admit for IV antivirals",
+      "k": [
+       [
+        "iv",
+        "intravenous"
+       ],
+       [
+        "antiviral"
+       ]
+      ],
+      "why": "Low sats, tachypnoea."
+     },
+     {
+      "p": "ICU for mechanical ventilation if needed",
+      "k": [
+       [
+        "icu",
+        "intensive",
+        "ventilat"
+       ]
+      ],
+      "why": "Most severe."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Who should have the annual flu vaccine, and what are the rules?",
+    "tip": "Exam thinking: priority groups and postponement.",
+    "points": [
+     {
+      "p": "Age ≥65, chronic disease, healthcare workers, pregnant women, contacts of immunosuppressed",
+      "k": [
+       [
+        "65",
+        "chronic",
+        "pregnan",
+        "healthcare"
+       ]
+      ],
+      "why": "Priority groups."
+     },
+     {
+      "p": "Standard IM vaccine is inactivated, safe in comorbidities",
+      "k": [
+       [
+        "inactivat",
+        "killed"
+       ]
+      ],
+      "why": "Cannot cause flu."
+     },
+     {
+      "p": "Postpone if acutely unwell until recovered",
+      "k": [
+       [
+        "postpone",
+        "delay",
+        "defer"
+       ]
+      ],
+      "why": "Then give it."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does influenza enter and leave cells, and why do neuraminidase inhibitors work?",
+    "tip": "Exam thinking: H in, N out.",
+    "points": [
+     {
+      "p": "Haemagglutinin binds sialic acid receptors (entry)",
+      "k": [
+       [
+        "haemagglutinin",
+        "hemagglutinin"
+       ],
+       [
+        "sialic"
+       ]
+      ],
+      "why": "Entry."
+     },
+     {
+      "p": "Neuraminidase releases new virions; blocked by oseltamivir/zanamivir",
+      "k": [
+       [
+        "neuraminidase"
+       ],
+       [
+        "release"
+       ]
+      ],
+      "why": "Limits spread."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does influenza predispose to bacterial pneumonia, and how does shift happen?",
+    "tip": "Exam thinking: mucociliary clearance; reassortment.",
+    "points": [
+     {
+      "p": "Epithelial destruction impairs mucociliary clearance",
+      "k": [
+       [
+        "mucociliary",
+        "cilia"
+       ]
+      ],
+      "why": "Bacteria colonise."
+     },
+     {
+      "p": "Classically Staph. aureus or Strep. pneumoniae",
+      "k": [
+       [
+        "staph",
+        "aureus",
+        "strep",
+        "pneumoniae"
+       ]
+      ],
+      "why": "Staph. aureus classic."
+     },
+     {
+      "p": "Shift: reassortment of gene segments between strains (e.g. human/animal)",
+      "k": [
+       [
+        "reassort"
+       ]
+      ],
+      "why": "Novel subtype, pandemic."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "influenza": "Acute viral respiratory infection caused by influenza A or B virus.",
+  "segmented RNA genome": "A viral genome split into separate RNA pieces, which can swap between strains.",
+  "enveloped": "A virus wrapped in a lipid membrane taken from the host cell.",
+  "myalgia": "Muscle aches.",
+  "prostration": "Extreme exhaustion that stops someone getting out of bed.",
+  "haemagglutinin": "Influenza surface protein that binds sialic acid to let the virus enter cells.",
+  "neuraminidase": "Influenza surface enzyme that cleaves sialic acid to release new virions.",
+  "sialic acid": "Sugar on host cell surfaces that influenza haemagglutinin binds.",
+  "virions": "Complete virus particles that can infect other cells.",
+  "antigenic drift": "Gradual point mutations in H and N causing seasonal epidemics and annual vaccine updates.",
+  "antigenic shift": "Reassortment between strains creating a novel subtype with pandemic potential.",
+  "reassortment": "Swapping of gene segments when two influenza strains infect the same cell.",
+  "pandemic": "A new infection spreading worldwide because few people are immune.",
+  "oseltamivir": "Oral neuraminidase inhibitor (Tamiflu) for high-risk patients with influenza.",
+  "Tamiflu": "Brand name of oseltamivir.",
+  "zanamivir": "Inhaled (or IV) neuraminidase inhibitor; can cause bronchospasm in asthma or COPD.",
+  "neuraminidase inhibitor": "Antiviral class that stops new influenza virions leaving infected cells.",
+  "PCR": "Polymerase chain reaction: detects viral genetic material; gold standard for influenza.",
+  "nasopharyngeal swab": "Swab taken from the back of the nose to test for respiratory viruses.",
+  "Staph. aureus": "Staphylococcus aureus: bacterium that classically causes severe, cavitating pneumonia after flu.",
+  "Strep. pneumoniae": "Streptococcus pneumoniae: the commonest cause of community-acquired pneumonia.",
+  "mucociliary clearance": "Cilia sweeping mucus and trapped microbes out of the airways.",
+  "secondary bacterial pneumonia": "Bacterial lung infection that follows a viral illness such as flu.",
+  "myocarditis": "Inflammation of the heart muscle, sometimes after viral infection.",
+  "otitis media": "Middle ear infection.",
+  "sinusitis": "Inflammation of the paranasal sinuses.",
+  "cavitating": "Forming air-filled holes within lung consolidation.",
+  "JCVI": "Joint Committee on Vaccination and Immunisation, which advises the UK on vaccines.",
+  "inactivated vaccine": "Vaccine made from killed virus; cannot cause infection.",
+  "aTIV": "Adjuvanted trivalent influenza vaccine, offered to people aged 65 and over.",
+  "respiratory failure": "Low blood oxygen (with or without high CO2) because the lungs cannot exchange gas well enough.",
+  "COPD": "Chronic obstructive pulmonary disease: fixed airflow obstruction, usually from smoking."
+ }
+}

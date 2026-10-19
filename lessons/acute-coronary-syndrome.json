@@ -1,0 +1,2838 @@
+{
+  "id": "acute-coronary-syndrome",
+  "patient": {
+    "name": "Desmond Asante",
+    "age": 62,
+    "sex": "M",
+    "setting": "Emergency Department (brought in by ambulance)",
+    "complaint": "Central crushing chest pain at rest for 50 minutes, with sweating and nausea",
+    "background": [
+      "Type 2 diabetes on metformin",
+      "Hypertension on amlodipine",
+      "Current smoker, 35 pack-years",
+      "Father had a myocardial infarction aged 55",
+      "Not on any anticoagulant"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect a vignette of central crushing chest pain with sweating and nausea, then 'Which is the most likely diagnosis?' where you must place the patient on the UA / NSTEMI / STEMI spectrum, or spot a complication (new murmur, collapse, widespread ST elevation weeks later) or a mimic (costochondritis, cocaine).",
+      "steps": [
+        {
+          "type": "story",
+          "vitals": {
+            "T": "36.9°C",
+            "HR": "48 bpm",
+            "BP": "112/70 mmHg",
+            "RR": "20 /min",
+            "SpO2": "96% air",
+            "CBG": "11.2 mmol/L"
+          },
+          "points": [
+            "62M bus driver: **heavy, crushing central chest pain** at rest",
+            "Started watching TV; radiates to left jaw",
+            "Grey, sweaty, vomited once",
+            "Paramedics take him straight to resus"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Textbook story: **central crushing** pain to the jaw, plus sweating and nausea. Autonomic features in a stem = think ACS."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond has four risk factors: **smoking, hypertension, diabetes, family history**. Examiners put these in the first line on purpose."
+        },
+        {
+          "type": "ask",
+          "q": "Before any test results, what umbrella diagnosis best fits Desmond right now?",
+          "o": [
+            "Acute coronary syndrome",
+            "Costochondritis",
+            "Gastro-oesophageal reflux",
+            "Stable angina"
+          ],
+          "a": 0,
+          "r": "Pain **at rest** with sweating and vomiting in a high-risk man = ACS until proven otherwise. Stable angina is exertional and settles with rest."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "ACS is a spectrum. Where Desmond sits depends on two things: his **ECG** and his **troponin**."
+        },
+        {
+          "type": "flow",
+          "title": "One plaque, three diagnoses",
+          "nodes": [
+            "Atherosclerotic plaque ruptures",
+            "Platelets aggregate, thrombus forms",
+            "Partial occlusion, troponin normal: unstable angina",
+            "Partial occlusion, troponin raised: NSTEMI",
+            "Complete occlusion, ST elevation: STEMI"
+          ],
+          "caption": "Same process; how much the thrombus occludes the artery and whether myocytes die decides the label."
+        },
+        {
+          "type": "compare",
+          "title": "Placing a patient on the ACS spectrum",
+          "head": [
+            "",
+            "Unstable angina",
+            "NSTEMI",
+            "STEMI"
+          ],
+          "rows": [
+            [
+              "ECG",
+              "Normal or ischaemic changes (ST depression / T inversion)",
+              "Normal, ST depression or T-wave inversion",
+              "ST elevation (or new LBBB)"
+            ],
+            [
+              "Troponin",
+              "**Normal**",
+              "**Raised**",
+              "Raised"
+            ],
+            [
+              "Infarction?",
+              "No",
+              "Yes, not full thickness",
+              "Yes, full thickness"
+            ],
+            [
+              "Key next step",
+              "Risk stratify",
+              "GRACE score",
+              "**Urgent reperfusion**"
+            ]
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "The paramedic ECG shows **ST elevation in II, III and aVF**. Where is Desmond on the spectrum?",
+          "o": [
+            "NSTEMI",
+            "STEMI",
+            "Unstable angina",
+            "Cannot say until troponin is back"
+          ],
+          "a": 1,
+          "r": "ST elevation with the right story **is** a STEMI. Never wait for troponin to label or treat it."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "As a diabetic he could have had a **silent MI** (breathless or nauseated only). A **new LBBB** would get the same STEMI pathway."
+        },
+        {
+          "type": "compare",
+          "title": "Stable angina vs crescendo (unstable) angina",
+          "head": [
+            "",
+            "Stable angina",
+            "Crescendo / unstable angina"
+          ],
+          "rows": [
+            [
+              "Pattern",
+              "Predictable, on exertion",
+              "Increasing frequency, or at rest"
+            ],
+            [
+              "Relief",
+              "Rest / GTN",
+              "Relieved by rest at first, then less so"
+            ],
+            [
+              "Thrombus",
+              "No",
+              "Yes, on a ruptured plaque"
+            ],
+            [
+              "Troponin",
+              "Normal",
+              "Normal"
+            ]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 5,
+          "lead": "No chest wall tenderness, no drugs. Rule out two mimics every time: **costochondritis** (tender to press) and **cocaine vasospasm** (young, party)."
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Pulse **48 bpm** + inferior STEMI = proximal RCA: risk of complete heart block, 3-fold 30-day mortality. Clear chest is good; crackles = cardiogenic shock."
+        },
+        {
+          "type": "pearl",
+          "text": "Complications by timing: **minutes–hours** = VF, heart block; **days** = VSR (new pansystolic murmur + heart failure, urgent echo); **weeks** = Dressler's (widespread ST elevation + PR depression)."
+        },
+        {
+          "type": "trap",
+          "text": "Widespread ST elevation + PR depression weeks after MI = **Dressler's syndrome**, not a new STEMI. STEMI is territorial with reciprocal depression."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (ECG), ECG lead-to-artery questions ('Which artery is most likely occluded?'), serial troponin timing, CK-MB for reinfarction and GRACE thresholds for angiography in NSTEMI.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "12-lead ECG recorded within **4 minutes** of arrival",
+            "Registrar reads it at the bedside",
+            "Nurse cannulates and sends bloods"
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "What is the single most important first investigation in Desmond?",
+          "o": [
+            "12-lead ECG",
+            "Chest X-ray",
+            "CT coronary angiography",
+            "Serum troponin"
+          ],
+          "a": 0,
+          "r": "ECG within **10 minutes** of arrival: it decides whether he goes straight to reperfusion. Troponin takes 2–3 hours to rise."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "ecg",
+            "title": "Desmond's 12-lead ECG",
+            "layout": "12lead",
+            "rhythm": "sinus_brady",
+            "rate": 48,
+            "leads": {
+              "II": "st_elev",
+              "III": "st_elev",
+              "aVF": "st_elev",
+              "I": "st_dep",
+              "aVL": "st_dep"
+            },
+            "caption": "ST elevation in II, III and aVF with reciprocal ST depression in I and aVL: inferior STEMI. Sinus bradycardia at 48 bpm, narrow QRS (no LBBB), V1–V6 normal."
+          },
+          "text": "Find the ST **elevation** first, then the **reciprocal depression** opposite. The slow rate points to a proximal RCA."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "ST elevation **II, III, aVF** with reciprocal I/aVL depression = inferior territory. Use this list for any ECG in a stem."
+        },
+        {
+          "type": "flow",
+          "title": "ECG leads to culprit artery",
+          "nodes": [
+            "II, III, aVF: inferior, right coronary artery",
+            "V1–V3: anterior, left anterior descending",
+            "V1–V3 plus V5/V6: anterolateral",
+            "I and aVL: left circumflex",
+            "V7–V9 elevation with V1–V3 depression: posterior"
+          ],
+          "caption": "Learn it as a map: lead groups look at walls, walls are fed by named arteries."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "ecg",
+            "title": "Contrast: anterior STEMI",
+            "layout": "12lead",
+            "rhythm": "sinus_tachy",
+            "rate": 104,
+            "leads": {
+              "V1": "st_elev",
+              "V2": "st_elev",
+              "V3": "st_elev",
+              "V4": "st_elev",
+              "II": "st_dep",
+              "III": "st_dep",
+              "aVF": "st_dep"
+            },
+            "caption": "ST elevation V1–V4 with reciprocal inferior depression: anterior STEMI, LAD. If V5 and V6 were also elevated it would be anterolateral; I and aVL alone would be the circumflex."
+          },
+          "text": "Same disease, different artery: now the **chest leads** carry the elevation and the inferior leads show reciprocal change."
+        },
+        {
+          "type": "ask",
+          "q": "Which artery is most likely occluded in Desmond?",
+          "o": [
+            "Left anterior descending",
+            "Left circumflex",
+            "Left main stem",
+            "Right coronary artery"
+          ],
+          "a": 3,
+          "r": "Inferior leads = **RCA**. The RCA usually supplies the SA and AV nodes, so proximal occlusion risks bradycardia and complete heart block."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "coronary",
+            "title": "Desmond's culprit artery",
+            "artery": "RCA",
+            "caption": "The right coronary artery supplies the inferior wall and, in most people, the SA and AV nodes. A proximal RCA block gives inferior STEMI with bradycardia and a risk of complete heart block."
+          }
+        },
+        {
+          "type": "labs",
+          "title": "Initial bloods (0 hours)",
+          "rows": [
+            [
+              "High-sensitivity troponin T",
+              "38 ng/L",
+              "<14 ng/L",
+              "H"
+            ],
+            [
+              "Haemoglobin",
+              "148 g/L",
+              "130–180 g/L",
+              ""
+            ],
+            [
+              "White cell count",
+              "10.9 ×10^9/L",
+              "3.8–10.0 ×10^9/L",
+              "H"
+            ],
+            [
+              "Platelets",
+              "265 ×10^9/L",
+              "150–400 ×10^9/L",
+              ""
+            ],
+            [
+              "Sodium",
+              "138 mmol/L",
+              "135–145 mmol/L",
+              ""
+            ],
+            [
+              "Potassium",
+              "4.3 mmol/L",
+              "3.5–5.0 mmol/L",
+              ""
+            ],
+            [
+              "Creatinine",
+              "92 µmol/L",
+              "60–110 µmol/L",
+              ""
+            ],
+            [
+              "Glucose",
+              "11.2 mmol/L",
+              "3.9–7.8 mmol/L",
+              "H"
+            ]
+          ],
+          "text": "First troponin only mildly raised. CXR: normal heart size, clear lungs."
+        },
+        {
+          "type": "pearl",
+          "text": "Other first tests: **FBC** (Hb, platelets before antithrombotics), **U&Es** (before contrast) and **CXR** (pulmonary oedema, wide mediastinum)."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Pain began under an hour ago, so troponin is only mildly up. Diagnosis = **story + ECG + troponin**, and a repeat shows the rise."
+        },
+        {
+          "type": "labs",
+          "title": "Repeat troponin (3 hours, after PCI)",
+          "rows": [
+            [
+              "High-sensitivity troponin T",
+              "2150 ng/L",
+              "<14 ng/L",
+              "H"
+            ]
+          ],
+          "text": "A sharp **rise** between samples confirms acute MI."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Desmond's troponin",
+            "x": [
+              "0 h",
+              "3 h",
+              "12 h",
+              "Day 4"
+            ],
+            "unit": "ng/L",
+            "series": [
+              {
+                "name": "hs-troponin T",
+                "values": [
+                  38,
+                  2150,
+                  4800,
+                  1200
+                ]
+              },
+              {
+                "name": "Upper limit (14)",
+                "values": [
+                  14,
+                  14,
+                  14,
+                  14
+                ]
+              }
+            ],
+            "caption": "Barely raised at first, then a steep **rise**: acute MI. It stays high for days, so it cannot detect reinfarction (use CK-MB)."
+          }
+        },
+        {
+          "type": "trap",
+          "text": "In STEMI **never wait for troponin** to activate the cath lab. The ECG decides; troponin confirms later."
+        },
+        {
+          "type": "ask",
+          "q": "On day 4 Desmond has new chest pain. His troponin is still high from the first event. Which marker best detects a reinfarction?",
+          "o": [
+            "CK-MB",
+            "CRP",
+            "D-dimer",
+            "Troponin T"
+          ],
+          "a": 0,
+          "r": "Troponin stays raised for days. **CK-MB** falls quickly, so a re-elevation points to reinfarction."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond is a STEMI, so no GRACE: straight to reperfusion. In NSTEMI the **GRACE score** decides how fast angiography happens."
+        },
+        {
+          "type": "ask",
+          "q": "A different patient in the next bay has an NSTEMI with a GRACE score of 5.4%. What does this mean?",
+          "o": [
+            "Coronary angiography within 72 hours",
+            "Discharge with outpatient exercise test",
+            "Immediate thrombolysis",
+            "Repeat troponin only"
+          ],
+          "a": 0,
+          "r": "GRACE **>3%** = coronary angiography within 72 hours. Thrombolysis is never used in NSTEMI."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the next most appropriate step in management?' after a stem that lists the drugs already given, so you must know the order: aspirin, MONA, second antiplatelet, anticoagulant, then primary PCI (or fibrinolysis if PCI is not timely). Also post-MI secondary prevention, eplerenone, Dressler's and DVLA rules.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "The ECG is being recorded. Which drug should Desmond receive immediately, even before the diagnosis is confirmed?",
+          "o": [
+            "Aspirin 300 mg orally",
+            "Clopidogrel 75 mg orally",
+            "Intravenous alteplase",
+            "Subcutaneous fondaparinux"
+          ],
+          "a": 0,
+          "r": "**Aspirin 300 mg PO** straight away in every suspected ACS. Alteplase only if primary PCI cannot happen in time."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Sats 96%: **no oxygen**. Systolic 112: GTN is safe (avoid if <90). IV morphine + metoclopramide for pain and vomiting."
+        },
+        {
+          "type": "flow",
+          "title": "Immediate drugs in suspected ACS",
+          "nodes": [
+            "Aspirin 300 mg PO now",
+            "Oxygen only if SpO2 <94%",
+            "GTN unless systolic BP <90 mmHg",
+            "IV morphine + metoclopramide if severe pain",
+            "Second antiplatelet",
+            "Anticoagulant (heparin or fondaparinux)"
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "Desmond is going for PCI and takes no anticoagulant. Which second antiplatelet fits the notes best?",
+          "o": [
+            "Clopidogrel",
+            "Dipyridamole",
+            "Prasugrel 60 mg",
+            "Warfarin"
+          ],
+          "a": 2,
+          "r": "**Prasugrel 60 mg** if going for PCI and not anticoagulated. Clopidogrel if already on apixaban or warfarin."
+        },
+        {
+          "type": "compare",
+          "title": "Choosing the second antiplatelet",
+          "head": [
+            "Drug",
+            "Choose when",
+            "Watch out"
+          ],
+          "rows": [
+            [
+              "Prasugrel 60 mg",
+              "Going for PCI, not anticoagulated",
+              "Bleeding"
+            ],
+            [
+              "Ticagrelor",
+              "Not high bleeding risk",
+              "Caution over age 75"
+            ],
+            [
+              "Clopidogrel",
+              "Already anticoagulated (apixaban, warfarin) or high bleeding risk",
+              "Weaker effect"
+            ]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Onset 50 minutes ago, cath lab on site: PCI well within **120 minutes**. He goes for **primary PCI** via the radial artery."
+        },
+        {
+          "type": "flow",
+          "title": "STEMI reperfusion decision",
+          "nodes": [
+            "STEMI or new LBBB, onset within 12 hours",
+            "PCI deliverable within 120 minutes?",
+            "Yes: primary PCI with drug-eluting stent",
+            "No: fibrinolysis (alteplase + fondaparinux) unless BP >180/110",
+            "Repeat ECG at 60–90 min: persistent ST elevation = urgent PCI"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "The two most tested numbers: GRACE **>3%** = angiography within 72 hours (NSTEMI); **120 minutes** = STEMI primary PCI window."
+        },
+        {
+          "type": "ask",
+          "q": "Imagine Desmond had presented to a rural hospital where PCI could not happen within 120 minutes. His BP is 150/90 mmHg. What is the next step?",
+          "o": [
+            "Coronary artery bypass grafting",
+            "Fibrinolysis with alteplase",
+            "Observe and repeat troponin",
+            "Wait for PCI the next morning"
+          ],
+          "a": 1,
+          "r": "PCI not possible in time = **fibrinolysis**. BP is below the 180/110 contraindication. Repeat ECG at 60–90 minutes."
+        },
+        {
+          "type": "flow",
+          "title": "NSTEMI pathway",
+          "nodes": [
+            "Aspirin 300 mg",
+            "Calculate GRACE score",
+            "GRACE ≤3%: add ticagrelor (or clopidogrel 300 mg if high bleeding risk)",
+            "GRACE >3% or unstable: angiography within 72 hours + second antiplatelet + GTN",
+            "Left main, triple vessel or not suitable for PCI: consider CABG"
+          ]
+        },
+        {
+          "type": "story",
+          "points": [
+            "Drug-eluting stent placed in **proximal RCA**",
+            "Pain settled; HR back to 70 bpm",
+            "Day 2 echo: **ejection fraction 35%**"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Discharge: ramipril, bisoprolol, atorvastatin 80 mg, aspirin 75 mg lifelong, prasugrel 12 months. EF 35% + diabetes = add **eplerenone**."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Back 3 weeks later: **sharp** chest pain, worse lying flat",
+            "ECG: **widespread ST elevation with PR depression**",
+            "Asks about driving: 10 days post-angioplasty, feels well"
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "He is already on antiplatelets. What is the most appropriate treatment for this new pain?",
+          "o": [
+            "High-dose aspirin for 1–2 weeks",
+            "Repeat primary PCI",
+            "Stop prasugrel",
+            "Thrombolysis"
+          ],
+          "a": 0,
+          "r": "**Dressler's syndrome**. Already on antiplatelets, so **high-dose aspirin for 1–2 weeks**. Not a new occlusion, so no PCI. Driving: 1 week after successful angioplasty."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: 'Which is the most likely mechanism...?' for ST elevation vs depression, why troponin is delayed, how a drug in the stem works, or 'Which is the most likely cause of his collapse?' (VF).",
+      "steps": [
+        {
+          "type": "flow",
+          "title": "From plaque to infarct",
+          "nodes": [
+            "Lipid-rich atherosclerotic plaque",
+            "Fibrous cap ruptures",
+            "Thrombogenic core exposed",
+            "Platelets aggregate, thrombus forms",
+            "Coronary flow falls acutely"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Smoking, diabetes and hypertension built the plaque over decades. The rupture in front of the TV was the acute event."
+        },
+        {
+          "type": "ask",
+          "q": "Why does Desmond's ECG show ST **elevation**?",
+          "o": [
+            "Complete occlusion causing transmural injury",
+            "Inflammation of the pericardium",
+            "Partial occlusion causing subendocardial ischaemia",
+            "Previous scar from an old MI"
+          ],
+          "a": 0,
+          "r": "Complete occlusion injures the **full thickness** of the wall: ST elevation. Partial occlusion is subendocardial: ST depression or T inversion."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond's RCA was completely blocked, so the inferior wall was injured through its full thickness."
+        },
+        {
+          "type": "compare",
+          "title": "Transmural vs subendocardial",
+          "head": [
+            "",
+            "Transmural",
+            "Subendocardial"
+          ],
+          "rows": [
+            [
+              "Occlusion",
+              "Complete",
+              "Partial / incomplete"
+            ],
+            [
+              "ECG",
+              "ST elevation",
+              "ST depression / T-wave inversion"
+            ],
+            [
+              "Syndrome",
+              "STEMI",
+              "NSTEMI or unstable angina"
+            ]
+          ]
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "ecg",
+            "title": "Contrast: subendocardial ischaemia (NSTEMI)",
+            "layout": "12lead",
+            "rhythm": "sinus",
+            "rate": 88,
+            "leads": {
+              "V4": "st_dep",
+              "V5": "st_dep",
+              "V6": "st_dep",
+              "I": "t_inv",
+              "aVL": "t_inv"
+            },
+            "caption": "ST depression V4–V6 with T-wave inversion in I and aVL, no ST elevation. With a rising troponin this is NSTEMI; with a normal troponin, unstable angina."
+          },
+          "text": "If the RCA were only **partly** blocked, the injury would stay subendocardial and the ECG would look like this."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Troponin 38 ng/L at under an hour, 2150 ng/L by 3 hours: myocytes had to **die and leak** first."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Every drug hits a step in the flow: antiplatelets stop aggregation, anticoagulants block the cascade, PCI opens the artery, ramipril and bisoprolol limit remodelling."
+        },
+        {
+          "type": "compare",
+          "title": "Where each drug acts",
+          "head": [
+            "Drug",
+            "Target",
+            "Effect"
+          ],
+          "rows": [
+            [
+              "Aspirin",
+              "Irreversibly inhibits COX, less thromboxane A2",
+              "Less platelet aggregation"
+            ],
+            [
+              "Clopidogrel, prasugrel, ticagrelor",
+              "Block the platelet P2Y12 (ADP) receptor",
+              "Less platelet aggregation"
+            ],
+            [
+              "Heparin, fondaparinux",
+              "Act via antithrombin (fondaparinux: factor Xa)",
+              "Coagulation cascade inhibited"
+            ],
+            [
+              "Alteplase",
+              "Converts plasminogen to plasmin",
+              "Dissolves the thrombus"
+            ],
+            [
+              "ACE inhibitor, beta-blocker",
+              "RAAS / beta-1 receptors",
+              "Less remodelling and oxygen demand"
+            ]
+          ]
+        },
+        {
+          "type": "story",
+          "points": [
+            "Cath lab: RCA being opened",
+            "Monitor: sudden **chaotic, irregular, broad** trace",
+            "No pulse: shocked once",
+            "Back in sinus rhythm"
+          ]
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "ecg",
+            "title": "Monitor strip in the cath lab",
+            "layout": "strip",
+            "rhythm": "vf",
+            "caption": "Chaotic, irregular waveform with no identifiable QRS complexes: ventricular fibrillation. Shockable rhythm: defibrillate."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "He arrested at **reperfusion**: freshly reperfused ischaemic myocardium is electrically unstable, so VF strikes then."
+        },
+        {
+          "type": "pearl",
+          "text": "Pulseless collapse soon after ACS pain = **ventricular fibrillation**, the commonest cause of death in ACS."
+        },
+        {
+          "type": "trap",
+          "text": "Pulseless collapse is not complete heart block. Heart block (proximal RCA) gives bradycardia and syncope, but a pulse remains."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    {
+      "d": "diagnosis",
+      "q": "Which ECG finding with ACS symptoms is treated as a STEMI-equivalent?",
+      "o": [
+        "First degree heart block",
+        "New left bundle branch block",
+        "Right axis deviation",
+        "T-wave inversion in V1"
+      ],
+      "a": 1,
+      "r": "New LBBB is always treated the same as a STEMI."
+    },
+    {
+      "d": "diagnosis",
+      "q": "What distinguishes unstable angina from NSTEMI?",
+      "o": [
+        "Presence of ST elevation",
+        "Pain at rest",
+        "Response to GTN",
+        "Troponin is normal in unstable angina"
+      ],
+      "a": 3,
+      "r": "Both can have the same ECG changes; troponin is raised in NSTEMI and normal in unstable angina."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Which feature suggests costochondritis rather than ACS?",
+      "o": [
+        "Pain radiating to the jaw",
+        "Sweating and nausea",
+        "Tenderness on palpation of the chest wall",
+        "ST depression on ECG"
+      ],
+      "a": 2,
+      "r": "Costochondritis is tender to press and hurts on inspiration; treat with NSAIDs or paracetamol."
+    },
+    {
+      "d": "investigation",
+      "q": "How soon after presentation should the ECG be done in suspected ACS?",
+      "o": [
+        "Within 10 minutes",
+        "Within 1 hour",
+        "Within 3 hours",
+        "After the troponin result"
+      ],
+      "a": 0,
+      "r": "ECG immediately, within 10 minutes."
+    },
+    {
+      "d": "investigation",
+      "q": "ST elevation in V1–V3 indicates occlusion of which artery?",
+      "o": [
+        "Left anterior descending",
+        "Left circumflex",
+        "Posterior descending",
+        "Right coronary"
+      ],
+      "a": 0,
+      "r": "V1–V3 = anterior MI = LAD."
+    },
+    {
+      "d": "investigation",
+      "q": "In NSTEMI, which GRACE score means coronary angiography within 72 hours?",
+      "o": [
+        ">1%",
+        ">3%",
+        ">10%",
+        ">20%"
+      ],
+      "a": 1,
+      "r": "GRACE >3% → angiography within 72 hours of admission."
+    },
+    {
+      "d": "management",
+      "q": "Which blood pressure contraindicates fibrinolysis in STEMI?",
+      "o": [
+        "Systolic <100 mmHg",
+        "Systolic >140 or diastolic >90 mmHg",
+        "Systolic >160 or diastolic >100 mmHg",
+        "Systolic >180 or diastolic >110 mmHg"
+      ],
+      "a": 3,
+      "r": "Severe hypertension, systolic >180 or diastolic >110 mmHg, contraindicates fibrinolysis."
+    },
+    {
+      "d": "management",
+      "q": "How long should a patient avoid driving a car after successful angioplasty for MI?",
+      "o": [
+        "24 hours",
+        "1 week",
+        "4 weeks",
+        "6 months"
+      ],
+      "a": 1,
+      "r": "1 week, then resume once recovered and the GP confirms it is safe."
+    },
+    {
+      "d": "science",
+      "q": "What is the most common cause of death in ACS?",
+      "o": [
+        "Cardiac tamponade",
+        "Complete heart block",
+        "Pulmonary oedema",
+        "Ventricular fibrillation"
+      ],
+      "a": 3,
+      "r": "VF, from electrical instability in ischaemic or reperfused myocardium."
+    },
+    {
+      "d": "science",
+      "q": "Why does NSTEMI cause ST depression rather than ST elevation?",
+      "o": [
+        "Complete occlusion with transmural injury",
+        "Partial occlusion with subendocardial ischaemia",
+        "Pericardial inflammation",
+        "Reperfusion injury"
+      ],
+      "a": 1,
+      "r": "Incomplete occlusion affects only the subendocardium, giving ST depression or T-wave inversion."
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What separates unstable angina, NSTEMI and STEMI?",
+        "tip": "Exam thinking: troponin splits angina from infarction; the ECG splits NSTEMI from STEMI.",
+        "points": [
+          {
+            "p": "Unstable angina: ischaemic pain with a normal troponin",
+            "k": [
+              [
+                "unstable angina",
+                "ua"
+              ],
+              [
+                "normal",
+                "negative",
+                "not raised",
+                "no rise"
+              ]
+            ],
+            "why": "A normal troponin with ischaemic ECG changes is still unstable angina, not NSTEMI."
+          },
+          {
+            "p": "NSTEMI: raised troponin without ST elevation (ST depression, T-wave inversion or normal ECG)",
+            "k": [
+              [
+                "nstemi",
+                "non-st"
+              ],
+              [
+                "troponin",
+                "trop"
+              ]
+            ],
+            "why": "A normal ECG does not exclude NSTEMI; serial troponins decide."
+          },
+          {
+            "p": "STEMI: ST elevation plus raised troponin, full-thickness infarction",
+            "k": [
+              [
+                "st elevation",
+                "st-elevation",
+                "elevated st",
+                "raised st"
+              ]
+            ],
+            "why": "STEMI needs urgent reperfusion, so treatment starts before the troponin returns."
+          },
+          {
+            "p": "Usually caused by atherosclerotic plaque rupture with thrombus",
+            "k": [
+              [
+                "plaque"
+              ],
+              [
+                "rupture",
+                "thromb",
+                "clot"
+              ]
+            ],
+            "why": "Stable angina has no thrombus; the plaque rupture is what makes it acute."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What is the classic presentation of ACS, and who presents atypically?",
+        "tip": "Exam thinking: an elderly diabetic woman with epigastric pain and breathlessness can still be an MI.",
+        "points": [
+          {
+            "p": "Central crushing chest pain radiating to the arm or jaw",
+            "k": [
+              [
+                "crushing",
+                "central",
+                "chest pain",
+                "tight",
+                "heavy"
+              ],
+              [
+                "arm",
+                "jaw",
+                "neck",
+                "radiat"
+              ]
+            ],
+            "why": "Pain lasting over 15 to 20 minutes at rest points to ACS rather than stable angina."
+          },
+          {
+            "p": "Sweating, nausea, breathlessness, palpitations or syncope",
+            "k": [
+              [
+                "sweat",
+                "diaphor",
+                "clammy",
+                "nausea",
+                "vomit",
+                "breathless",
+                "sob",
+                "dyspnoea",
+                "palpitation",
+                "syncope"
+              ]
+            ],
+            "why": "Autonomic symptoms are often the clue when the pain is vague."
+          },
+          {
+            "p": "Diabetics, women and the elderly can present atypically or silently, without chest pain",
+            "k": [
+              [
+                "diabet",
+                "women",
+                "female",
+                "elderly",
+                "older"
+              ],
+              [
+                "atypical",
+                "silent",
+                "no chest pain",
+                "without chest pain",
+                "painless"
+              ]
+            ],
+            "why": "Diabetic autonomic neuropathy blunts pain, so 'silent MI' is a common SBA twist."
+          },
+          {
+            "p": "Risk factors: smoking, hypertension, diabetes, hyperlipidaemia, family history",
+            "k": [
+              [
+                "smok",
+                "hypertension",
+                "cholesterol",
+                "lipid",
+                "family history"
+              ]
+            ],
+            "why": "These also feed the GRACE and secondary prevention questions."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Which ECG leads localise each coronary territory?",
+        "tip": "Exam thinking: name the leads, then the artery, then look for reciprocal change.",
+        "points": [
+          {
+            "p": "Inferior (RCA): ST elevation II, III, aVF with reciprocal depression I/aVL",
+            "k": [
+              [
+                "inferior",
+                "rca",
+                "right coronary"
+              ],
+              [
+                "ii, iii",
+                "ii iii",
+                "avf"
+              ]
+            ],
+            "why": "Inferior MI can also show left axis deviation."
+          },
+          {
+            "p": "Anterior (LAD): ST elevation V1 to V3 (V4)",
+            "k": [
+              [
+                "anterior",
+                "lad",
+                "left anterior descending"
+              ],
+              [
+                "v1",
+                "v2",
+                "v3",
+                "v4"
+              ]
+            ],
+            "why": "Anterior MI from the LAD carries the largest area at risk."
+          },
+          {
+            "p": "Anterolateral: V1 to V3 plus V5/V6",
+            "k": [
+              [
+                "anterolateral"
+              ]
+            ],
+            "why": "Lateral extension means V5 and V6 are also involved."
+          },
+          {
+            "p": "Lateral (left circumflex): ST elevation I and aVL (V5/V6)",
+            "k": [
+              [
+                "circumflex",
+                "lcx",
+                "lateral"
+              ],
+              [
+                "avl"
+              ]
+            ],
+            "why": "Circumflex occlusions are the ones most easily missed on a standard ECG."
+          },
+          {
+            "p": "Posterior: ST depression V1 to V3, ST elevation V7 to V9",
+            "k": [
+              [
+                "posterior"
+              ],
+              [
+                "v7",
+                "v8",
+                "v9",
+                "depression",
+                "reciprocal"
+              ]
+            ],
+            "why": "Tall R waves with ST depression in V1 to V3 should make you record posterior leads."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What ECG findings are treated as a STEMI, and what mimics ACS?",
+        "tip": "Exam thinking: new LBBB means reperfusion; tenderness on palpation means think chest wall.",
+        "points": [
+          {
+            "p": "New left bundle branch block is treated as a STEMI-equivalent",
+            "k": [
+              [
+                "lbbb",
+                "left bundle"
+              ]
+            ],
+            "why": "A new LBBB with chest pain goes down the primary PCI pathway."
+          },
+          {
+            "p": "Costochondritis: tender on palpation, pain on inspiration, treated with NSAIDs or paracetamol",
+            "k": [
+              [
+                "costochondritis",
+                "chest wall",
+                "musculoskeletal"
+              ]
+            ],
+            "why": "Reproducible tenderness is the distinguishing feature in the stem."
+          },
+          {
+            "p": "Coronary vasospasm, strongly associated with cocaine use",
+            "k": [
+              [
+                "vasospasm",
+                "spasm",
+                "cocaine"
+              ]
+            ],
+            "why": "Ask about cocaine in a young patient with chest pain and ST changes."
+          },
+          {
+            "p": "Pericarditis (including Dressler's): widespread saddle ST elevation with PR depression",
+            "k": [
+              [
+                "pericarditis",
+                "dressler"
+              ]
+            ],
+            "why": "Widespread ST elevation across territories plus PR depression is pericarditis, not STEMI."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the complications of an MI and their clues?",
+        "tip": "Exam thinking: match the timing and the new sign to the complication.",
+        "points": [
+          {
+            "p": "Ventricular fibrillation, the commonest cause of death in ACS",
+            "k": [
+              [
+                "ventricular fibrillation",
+                "vf",
+                "arrhythm"
+              ]
+            ],
+            "why": "VF arises early from electrically unstable ischaemic myocardium."
+          },
+          {
+            "p": "Cardiogenic shock and acute heart failure: lung crackles, hypotension",
+            "k": [
+              [
+                "cardiogenic",
+                "shock",
+                "heart failure",
+                "crackles",
+                "pulmonary oedema"
+              ]
+            ],
+            "why": "Crackles on auscultation are a poor prognostic sign."
+          },
+          {
+            "p": "Ventricular septal rupture: new pansystolic murmur plus acute heart failure",
+            "k": [
+              [
+                "septal",
+                "vsd",
+                "pansystolic",
+                "murmur",
+                "papillary",
+                "mitral"
+              ]
+            ],
+            "why": "Needs urgent echo and surgical repair."
+          },
+          {
+            "p": "Dressler's syndrome: pericarditis weeks after MI",
+            "k": [
+              [
+                "dressler"
+              ]
+            ],
+            "why": "Treat with high-dose aspirin for 1 to 2 weeks."
+          },
+          {
+            "p": "Proximal RCA occlusion: bradycardia and complete heart block",
+            "k": [
+              [
+                "heart block",
+                "bradycardia",
+                "av block",
+                "chb"
+              ]
+            ],
+            "why": "Proximal RCA occlusion carries a 3-fold higher 30-day mortality; manage with urgent PCI."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What are the first investigations in suspected ACS, and how is troponin used?",
+        "tip": "Exam thinking: ECG first, troponin repeated, never wait for troponin in a STEMI.",
+        "points": [
+          {
+            "p": "12-lead ECG within 10 minutes of arrival",
+            "k": [
+              [
+                "ecg",
+                "electrocardiogram"
+              ],
+              [
+                "10",
+                "ten"
+              ]
+            ],
+            "why": "The ECG decides whether the patient goes straight to reperfusion."
+          },
+          {
+            "p": "Serial high-sensitivity troponins, looking for a rise or fall",
+            "k": [
+              [
+                "troponin",
+                "trop"
+              ],
+              [
+                "serial",
+                "repeat",
+                "rise",
+                "rising",
+                "fall",
+                "trend",
+                "two",
+                "second"
+              ]
+            ],
+            "why": "A single raised troponin is not enough; it is the change between samples that confirms MI."
+          },
+          {
+            "p": "Troponin takes 2 to 3 hours to rise after the infarct",
+            "k": [
+              [
+                "troponin",
+                "trop"
+              ],
+              [
+                "2",
+                "3",
+                "two",
+                "three",
+                "hours"
+              ]
+            ],
+            "why": "An early normal troponin does not exclude MI."
+          },
+          {
+            "p": "CK-MB is best for detecting reinfarction",
+            "k": [
+              [
+                "ck-mb",
+                "ckmb",
+                "ck mb",
+                "creatine kinase"
+              ]
+            ],
+            "why": "CK-MB falls faster than troponin, so a fresh rise means new infarction."
+          },
+          {
+            "p": "Also FBC, U&Es and chest X-ray",
+            "k": [
+              [
+                "fbc",
+                "blood count",
+                "u&e",
+                "renal",
+                "creatinine",
+                "cxr",
+                "chest x"
+              ]
+            ],
+            "why": "Anaemia and renal function affect bleeding risk and drug choice."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "How is an NSTEMI risk-stratified and what does the result change?",
+        "tip": "Exam thinking: GRACE number, then the angiography deadline.",
+        "points": [
+          {
+            "p": "GRACE score estimates 6-month mortality in NSTEMI",
+            "k": [
+              [
+                "grace"
+              ]
+            ],
+            "why": "Ischaemic risk scores, not troponin level alone, decide the timing of angiography."
+          },
+          {
+            "p": "GRACE above 3% or unstable: coronary angiography (with PCI if needed) within 72 hours",
+            "k": [
+              [
+                "angiogra",
+                "angio",
+                "pci",
+                "cath"
+              ],
+              [
+                "72",
+                "3 days",
+                "three days",
+                "3%",
+                "3 %"
+              ]
+            ],
+            "why": "Haemodynamic instability means immediate angiography regardless of score."
+          },
+          {
+            "p": "GRACE 3% or less: medical management with a second antiplatelet",
+            "k": [
+              [
+                "ticagrelor",
+                "clopidogrel",
+                "second antiplatelet",
+                "dual antiplatelet",
+                "dapt",
+                "medical"
+              ]
+            ],
+            "why": "Clopidogrel 300mg is preferred if bleeding risk is high."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is the immediate management of suspected ACS?",
+        "tip": "Exam thinking: aspirin first, oxygen only if hypoxic, check BP before GTN.",
+        "points": [
+          {
+            "p": "Aspirin 300mg orally straight away",
+            "k": [
+              [
+                "aspirin"
+              ],
+              [
+                "300"
+              ]
+            ],
+            "why": "Given before the diagnosis is confirmed."
+          },
+          {
+            "p": "Oxygen only if saturations below 94%",
+            "k": [
+              [
+                "oxygen",
+                "o2"
+              ],
+              [
+                "94"
+              ]
+            ],
+            "why": "Routine oxygen in non-hypoxic patients is a classic wrong answer."
+          },
+          {
+            "p": "GTN, avoided if systolic BP below 90 mmHg",
+            "k": [
+              [
+                "gtn",
+                "nitrate",
+                "glyceryl"
+              ]
+            ],
+            "why": "Nitrates drop preload and can crash an already hypotensive patient, e.g. right ventricular MI."
+          },
+          {
+            "p": "IV morphine with an antiemetic such as metoclopramide for severe pain",
+            "k": [
+              [
+                "morphine",
+                "opioid",
+                "opiate",
+                "diamorphine"
+              ]
+            ],
+            "why": "Always pair the opioid with an antiemetic."
+          },
+          {
+            "p": "Second antiplatelet: prasugrel 60mg if PCI and not anticoagulated, clopidogrel if anticoagulated, ticagrelor otherwise",
+            "k": [
+              [
+                "prasugrel",
+                "ticagrelor",
+                "clopidogrel"
+              ]
+            ],
+            "why": "Ticagrelor is used with caution over 75 because of bleeding."
+          },
+          {
+            "p": "Anticoagulation with fondaparinux or unfractionated heparin",
+            "k": [
+              [
+                "fondaparinux",
+                "heparin",
+                "ufh",
+                "anticoag"
+              ]
+            ],
+            "why": "Heparin is preferred when immediate angiography or PCI is planned."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is the reperfusion choice in STEMI and its time limits?",
+        "tip": "Exam thinking: PCI if within 12 hours of onset and deliverable within 120 minutes, otherwise fibrinolysis.",
+        "points": [
+          {
+            "p": "Primary PCI with drug-eluting stent via the radial artery",
+            "k": [
+              [
+                "pci",
+                "angioplasty",
+                "stent",
+                "primary percutaneous"
+              ]
+            ],
+            "why": "Radial access has fewer bleeding complications than femoral."
+          },
+          {
+            "p": "PCI if onset within 12 hours and it can be delivered within 120 minutes",
+            "k": [
+              [
+                "12",
+                "twelve"
+              ],
+              [
+                "120",
+                "2 hours",
+                "two hours"
+              ]
+            ],
+            "why": "Both time limits must be met to choose PCI."
+          },
+          {
+            "p": "Otherwise fibrinolysis (e.g. alteplase) with fondaparinux",
+            "k": [
+              [
+                "fibrinoly",
+                "thromboly",
+                "alteplase",
+                "tenecteplase",
+                "clot bust"
+              ]
+            ],
+            "why": "Severe hypertension (systolic over 180 or diastolic over 110) contraindicates fibrinolysis."
+          },
+          {
+            "p": "Repeat ECG at 60 to 90 minutes after fibrinolysis; rescue PCI if ST elevation persists",
+            "k": [
+              [
+                "60",
+                "90"
+              ],
+              [
+                "repeat",
+                "ecg",
+                "rescue",
+                "persist"
+              ]
+            ],
+            "why": "Failure to resolve ST elevation by half means failed fibrinolysis."
+          },
+          {
+            "p": "CABG for left main or triple vessel disease, or if PCI is unsuitable",
+            "k": [
+              [
+                "cabg",
+                "bypass"
+              ]
+            ],
+            "why": "Ongoing pain or instability after PCI may also need CABG."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "Which drugs go on the discharge list after an MI, and for how long?",
+        "tip": "Exam thinking: the secondary prevention list, plus the extras for low EF.",
+        "points": [
+          {
+            "p": "Lifelong aspirin 75mg",
+            "k": [
+              [
+                "aspirin"
+              ],
+              [
+                "75",
+                "lifelong",
+                "life"
+              ]
+            ],
+            "why": "Aspirin drops to 75mg once the loading dose is given."
+          },
+          {
+            "p": "Second antiplatelet (ticagrelor or prasugrel) for 12 months",
+            "k": [
+              [
+                "ticagrelor",
+                "prasugrel",
+                "clopidogrel",
+                "second antiplatelet",
+                "dapt",
+                "dual"
+              ],
+              [
+                "12",
+                "twelve",
+                "year"
+              ]
+            ],
+            "why": "Clopidogrel is the option if the patient is also anticoagulated."
+          },
+          {
+            "p": "ACE inhibitor such as ramipril, started within 24 hours",
+            "k": [
+              [
+                "ace",
+                "ramipril",
+                "perindopril",
+                "lisinopril"
+              ]
+            ],
+            "why": "ACE inhibitors limit remodelling after infarction."
+          },
+          {
+            "p": "Beta-blocker such as bisoprolol",
+            "k": [
+              [
+                "beta",
+                "bisoprolol",
+                "atenolol",
+                "metoprolol"
+              ]
+            ],
+            "why": "Beta-blockers reduce oxygen demand and arrhythmia risk."
+          },
+          {
+            "p": "High-dose statin: atorvastatin 80mg",
+            "k": [
+              [
+                "statin",
+                "atorvastatin"
+              ]
+            ],
+            "why": "Atorvastatin 80mg regardless of baseline cholesterol."
+          },
+          {
+            "p": "Eplerenone if ejection fraction below 40%",
+            "k": [
+              [
+                "eplerenone",
+                "aldosterone",
+                "mra",
+                "spironolactone"
+              ]
+            ],
+            "why": "Especially with heart failure or diabetes; DVLA: no driving for 1 week after successful angioplasty."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does STEMI show ST elevation but NSTEMI does not?",
+        "tip": "Exam thinking: complete versus partial occlusion.",
+        "points": [
+          {
+            "p": "STEMI: complete occlusion causes transmural, full-thickness injury",
+            "k": [
+              [
+                "transmural",
+                "full thickness",
+                "full-thickness",
+                "complete occlusion",
+                "completely occlu"
+              ]
+            ],
+            "why": "Transmural injury currents point towards the overlying leads, giving ST elevation."
+          },
+          {
+            "p": "NSTEMI/UA: partial occlusion causes subendocardial ischaemia, giving ST depression or T-wave inversion",
+            "k": [
+              [
+                "subendocardial",
+                "partial",
+                "incomplete"
+              ]
+            ],
+            "why": "The subendocardium is most vulnerable because it is furthest from the epicardial arteries."
+          },
+          {
+            "p": "Troponin rises only once cardiomyocytes are irreversibly damaged, taking 2 to 3 hours",
+            "k": [
+              [
+                "troponin",
+                "trop"
+              ],
+              [
+                "necro",
+                "irreversib",
+                "damage",
+                "death",
+                "leak"
+              ]
+            ],
+            "why": "This is why troponin is normal in unstable angina."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "How do the ACS drugs work?",
+        "tip": "Exam thinking: match the drug to the step it blocks.",
+        "points": [
+          {
+            "p": "Antiplatelets (aspirin, P2Y12 inhibitors) stop platelet aggregation and thrombus growth",
+            "k": [
+              [
+                "antiplatelet",
+                "platelet",
+                "aspirin",
+                "p2y12",
+                "cox"
+              ]
+            ],
+            "why": "Aspirin irreversibly inhibits COX; clopidogrel, prasugrel and ticagrelor block the P2Y12 receptor."
+          },
+          {
+            "p": "Anticoagulants (fondaparinux, heparin) inhibit the coagulation cascade",
+            "k": [
+              [
+                "anticoag",
+                "coagulation",
+                "factor xa",
+                "xa",
+                "thrombin",
+                "heparin",
+                "fondaparinux"
+              ]
+            ],
+            "why": "Fondaparinux inhibits factor Xa; heparin potentiates antithrombin."
+          },
+          {
+            "p": "PCI mechanically reopens the artery; fibrinolysis dissolves the clot",
+            "k": [
+              [
+                "pci",
+                "stent",
+                "mechanical",
+                "fibrinoly",
+                "plasmin",
+                "dissolv"
+              ]
+            ],
+            "why": "Fibrinolytics convert plasminogen to plasmin, which breaks down fibrin."
+          },
+          {
+            "p": "ACE inhibitors and beta-blockers reduce remodelling and myocardial oxygen demand",
+            "k": [
+              [
+                "remodel",
+                "oxygen demand",
+                "workload",
+                "afterload"
+              ]
+            ],
+            "why": "This is why they are lifelong after MI."
+          }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "ACS": "Acute coronary syndrome: unstable angina, NSTEMI or STEMI caused by a sudden fall in coronary blood flow.",
+    "troponin": "A heart muscle protein released into the blood when cardiomyocytes die; the key blood test for myocardial infarction.",
+    "hs-troponin": "High-sensitivity troponin assay that detects very small rises, so serial samples hours apart can confirm or exclude MI.",
+    "CK-MB": "A heart-specific creatine kinase enzyme that falls quickly after MI, making it useful for spotting reinfarction.",
+    "unstable angina": "Ischaemic chest pain at rest or worsening, with normal troponin, so there is no infarction.",
+    "stable angina": "Predictable chest pain on exertion relieved by rest or GTN, caused by fixed narrowing without thrombus.",
+    "crescendo angina": "Angina becoming more frequent or severe over a short period, a form of unstable angina.",
+    "NSTEMI": "Non-ST-elevation myocardial infarction: raised troponin without ST elevation, usually from partial coronary occlusion.",
+    "STEMI": "ST-elevation myocardial infarction: full-thickness infarction from complete occlusion, needing urgent reperfusion.",
+    "plaque rupture": "Tearing of the cap over an atherosclerotic plaque, exposing material that triggers platelet clumping and clot formation.",
+    "atherosclerotic": "Describing fatty, fibrous plaques that build up in artery walls and narrow them.",
+    "transmural": "Affecting the full thickness of the heart wall, from endocardium to epicardium.",
+    "subendocardial": "The inner layer of heart muscle, the first to become ischaemic when blood supply falls.",
+    "reciprocal": "ST depression in leads facing the opposite side of the heart to an area of ST elevation, supporting a true STEMI.",
+    "LBBB": "Left bundle branch block: delayed conduction in the left ventricle giving broad QRS; new LBBB with chest pain is treated as STEMI.",
+    "RCA": "Right coronary artery, supplying the inferior wall and usually the SA and AV nodes.",
+    "LAD": "Left anterior descending artery, supplying the anterior wall and most of the septum.",
+    "circumflex": "The left circumflex artery, supplying the lateral wall of the left ventricle.",
+    "left axis deviation": "The heart's overall electrical axis pointing further left than normal, seen on ECG; can accompany inferior MI.",
+    "complete heart block": "No atrial impulses reach the ventricles, causing a slow independent ventricular rhythm; a risk after inferior MI.",
+    "GRACE score": "A risk score estimating death after ACS; in NSTEMI a value above 3% means angiography within 72 hours.",
+    "TIMI": "A simpler risk score for unstable angina and NSTEMI, predicting death, reinfarction or urgent revascularisation.",
+    "Killip": "A bedside classification of heart failure severity after MI, from no crackles (I) to cardiogenic shock (IV).",
+    "PCI": "Percutaneous coronary intervention: a catheter through the wrist or groin opens the blocked artery with a balloon and stent.",
+    "primary PCI": "PCI performed as the first reperfusion treatment for STEMI, without fibrinolysis beforehand.",
+    "drug-eluting stent": "A metal coronary stent coated with a drug that slows tissue regrowth, reducing re-narrowing.",
+    "coronary angiography": "X-ray imaging of the coronary arteries with injected contrast to find blockages, often followed by PCI.",
+    "fibrinolysis": "Clot-dissolving drug treatment for STEMI when PCI cannot be delivered within 120 minutes.",
+    "alteplase": "A recombinant tissue plasminogen activator that converts plasminogen to plasmin to dissolve clot.",
+    "CABG": "Coronary artery bypass graft: open-heart surgery that uses a vein or artery to bypass blocked coronary arteries.",
+    "triple vessel disease": "Significant narrowing in all three main coronary arteries, often better treated by CABG than PCI.",
+    "left main": "The short left main coronary artery before it splits into the LAD and circumflex; disease here threatens most of the left ventricle.",
+    "MONA": "Old mnemonic for immediate ACS care: morphine, oxygen, nitrates, aspirin; oxygen now only if saturations below 94%.",
+    "GTN": "Glyceryl trinitrate, a nitrate that dilates veins and coronary arteries to relieve ischaemic pain; avoid if systolic BP under 90.",
+    "metoclopramide": "An antiemetic given with morphine to stop opioid-induced nausea and vomiting.",
+    "prasugrel": "A P2Y12 antiplatelet given with aspirin before PCI in patients not on an anticoagulant.",
+    "ticagrelor": "A P2Y12 antiplatelet used with aspirin in ACS, given with caution over 75 because of bleeding risk.",
+    "clopidogrel": "A P2Y12 antiplatelet used with aspirin when bleeding risk is high or the patient is already anticoagulated.",
+    "P2Y12": "A platelet ADP receptor; blocking it with clopidogrel, prasugrel or ticagrelor stops platelets clumping.",
+    "DAPT": "Dual antiplatelet therapy: aspirin plus a P2Y12 inhibitor, usually continued for 12 months after ACS.",
+    "fondaparinux": "An injectable factor Xa inhibitor used as anticoagulation in ACS and alongside fibrinolysis.",
+    "unfractionated heparin": "An anticoagulant given IV that boosts antithrombin; preferred when immediate PCI is planned as it is quickly reversible.",
+    "ramipril": "An ACE inhibitor started within 24 hours of MI to limit ventricular remodelling.",
+    "bisoprolol": "A cardioselective beta-blocker that slows the heart and lowers oxygen demand after MI.",
+    "atorvastatin": "A statin given at 80mg after ACS to lower cholesterol and stabilise plaques.",
+    "eplerenone": "An aldosterone antagonist added after MI when ejection fraction is below 40%.",
+    "ejection fraction": "The percentage of blood the left ventricle pumps out per beat; below 40% means significant systolic dysfunction.",
+    "remodelling": "Harmful changes in ventricular size and shape after MI that lead to heart failure.",
+    "cardiogenic shock": "Low blood pressure and poor organ perfusion because the heart is failing as a pump.",
+    "ventricular septal rupture": "A tear in the wall between the ventricles days after MI, causing a new pansystolic murmur and heart failure.",
+    "pansystolic murmur": "A murmur lasting through the whole of systole, heard with septal rupture or mitral regurgitation.",
+    "ventricular fibrillation": "Chaotic ventricular electrical activity with no output, the commonest cause of death early in ACS.",
+    "Dressler's syndrome": "Autoimmune pericarditis weeks after MI, with chest pain, fever and widespread ST elevation.",
+    "pericarditis": "Inflammation of the pericardium causing sharp pleuritic chest pain eased by sitting forward, with saddle ST elevation.",
+    "PR depression": "Downward shift of the PR segment on ECG, a typical sign of pericarditis.",
+    "costochondritis": "Inflammation of the rib cartilage causing chest pain reproduced by pressing on the chest wall.",
+    "vasospasm": "Sudden tightening of a coronary artery causing ischaemia, classically triggered by cocaine.",
+    "silent MI": "A myocardial infarction without typical chest pain, more common in diabetics, women and the elderly.",
+    "DVLA": "The UK driving licence agency; after successful angioplasty for ACS the patient should not drive for 1 week."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 71 year old woman has had nausea and breathlessness for 3 hours. She has no chest pain. She has type 2 diabetes and hypertension.\n\nHer temperature is 36.8°C, pulse rate 98 bpm, BP 146/88 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air.\n\nHer ECG shows ST depression in leads V4–V6.\n\nInvestigations:",
+      "labs": [
+        [
+          "High-sensitivity troponin T (0 hours)",
+          "64 ng/L",
+          "<14 ng/L",
+          "H"
+        ],
+        [
+          "High-sensitivity troponin T (3 hours)",
+          "412 ng/L",
+          "<14 ng/L",
+          "H"
+        ]
+      ],
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Acute pericarditis",
+        "Non-ST elevation myocardial infarction",
+        "Pulmonary embolism",
+        "ST elevation myocardial infarction",
+        "Unstable angina"
+      ],
+      "a": 1,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "It asks for a diagnosis. In a breathless diabetic with ECG changes and two troponins, the examiner wants you to place her on the ACS spectrum."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "no chest pain",
+            "type 2 diabetes",
+            "ST depression in leads V4–V6",
+            "nausea and breathlessness"
+          ],
+          "x": "Diabetics and women can present **atypically** without chest pain. ST depression (not elevation) means partial occlusion. A **rising** troponin from 64 to 412 means myocyte death."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Infarction (raised, rising troponin) without ST elevation = **NSTEMI**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Pericarditis gives widespread saddle ST elevation and PR depression, and pain that changes with posture."
+            ],
+            [
+              2,
+              "PE is possible in a breathless patient, but ST depression in a coronary territory with a steep troponin rise points to ACS."
+            ],
+            [
+              3,
+              "There is no ST elevation and no new LBBB, so it is not a STEMI."
+            ],
+            [
+              4,
+              "Unstable angina has the same ECG changes but a **normal** troponin."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "B. Rule: ST elevation decides STEMI vs not; troponin decides NSTEMI vs unstable angina. No chest pain in a diabetic woman does not exclude ACS."
+        }
+      ],
+      "visual": {
+        "kind": "ecg",
+        "title": "12-lead ECG",
+        "layout": "12lead",
+        "rhythm": "sinus",
+        "rate": 98,
+        "leads": {
+          "V4": "st_dep",
+          "V5": "st_dep",
+          "V6": "st_dep"
+        },
+        "caption": "ST depression in V4–V6, no ST elevation."
+      }
+    },
+    {
+      "d": "investigation",
+      "stem": "A 59 year old man has had central chest tightness for 1 hour. It started while he was walking his dog. He smokes 20 cigarettes a day.\n\nHis temperature is 36.7°C, pulse rate 88 bpm, BP 148/90 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air.\n\nHis ECG shows ST depression in leads V4–V6. He has been given aspirin 300 mg.\n\nInvestigations:",
+      "labs": [
+        [
+          "High-sensitivity troponin T",
+          "9 ng/L",
+          "<14 ng/L",
+          ""
+        ],
+        [
+          "Haemoglobin",
+          "151 g/L",
+          "130–180 g/L",
+          ""
+        ],
+        [
+          "Creatinine",
+          "88 µmol/L",
+          "60–110 µmol/L",
+          ""
+        ]
+      ],
+      "q": "Which is the most appropriate next investigation?",
+      "o": [
+        "Chest X-ray",
+        "CT coronary angiography",
+        "Exercise ECG",
+        "Repeat serum troponin at 3 hours",
+        "Transthoracic echocardiogram"
+      ],
+      "a": 3,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "'Next investigation' means the ECG and first bloods are already done. What do you still need to make the diagnosis?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "for 1 hour",
+            "central chest tightness",
+            "ST depression in leads V4–V6"
+          ],
+          "x": "Pain began only **1 hour** ago and the troponin of 9 ng/L is normal. Troponin does not rise until **2–3 hours** after MI, so a normal first value cannot rule out NSTEMI."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Repeat the troponin to look for a rising or falling trend: **serial troponins**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "A CXR is an initial test but does not tell you whether he is having an MI."
+            ],
+            [
+              1,
+              "CT coronary angiography is for stable chest pain, not an ongoing possible ACS."
+            ],
+            [
+              2,
+              "Exercise testing in a possible ACS is dangerous and not a diagnostic step here."
+            ],
+            [
+              4,
+              "Echo can show wall motion abnormality but does not define NSTEMI vs unstable angina."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "D. Rule: early normal troponin = repeat it. NSTEMI vs unstable angina is decided by troponin, and troponin needs 2–3 hours."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 64 year old man has central crushing chest pain associated with sweating and nausea for 40 minutes.\n\nHis temperature is 36.9°C, pulse rate 92 bpm, BP 138/84 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 97% breathing air.\n\nHis ECG shows ST elevation in leads V1–V4. The hospital has an on-site catheter laboratory.\n\nHe is treated with aspirin, prasugrel, intravenous morphine and glyceryl trinitrate.",
+      "labs": [],
+      "q": "Which is the next most appropriate step in management?",
+      "o": [
+        "Alteplase",
+        "Calculate GRACE score",
+        "Coronary artery bypass grafting",
+        "Primary percutaneous coronary intervention",
+        "Repeat serum troponin at 3 hours"
+      ],
+      "a": 3,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "'Next step' after a list of drugs: the examiner has given the immediate medical treatment, so they want the **reperfusion** decision."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "40 minutes",
+            "ST elevation in leads V1–V4",
+            "on-site catheter laboratory"
+          ],
+          "x": "Anterior STEMI, within 12 hours of onset, and PCI is clearly deliverable within 120 minutes."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "STEMI + PCI available in time = **primary PCI**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Fibrinolysis is only for when PCI cannot be delivered within 120 minutes."
+            ],
+            [
+              1,
+              "GRACE stratifies NSTEMI, not STEMI."
+            ],
+            [
+              2,
+              "CABG is for left main / triple vessel disease, failure of PCI or unsuitability for PCI, not first-line STEMI."
+            ],
+            [
+              4,
+              "Never wait for troponin in STEMI; the ECG has made the diagnosis."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "D. Rule: STEMI within 12 hours and PCI within 120 minutes = primary PCI; otherwise fibrinolysis."
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 55 year old man has had central crushing chest pain for 2 hours. He has no history of heart disease and does not use recreational drugs.\n\nHis temperature is 36.8°C, pulse rate 104 bpm, BP 128/80 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air.\n\nHis ECG shows ST elevation in leads V1–V4 with reciprocal ST depression in the inferior leads.",
+      "labs": [],
+      "q": "Which is the most likely mechanism of the ECG changes?",
+      "o": [
+        "Complete coronary occlusion causing transmural injury",
+        "Coronary vasospasm",
+        "Diffuse pericardial inflammation",
+        "Partial coronary occlusion causing subendocardial ischaemia",
+        "Ventricular aneurysm formation"
+      ],
+      "a": 0,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "A mechanism question: explain the finding (ST elevation), not name the disease."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "2 hours",
+            "no history of heart disease",
+            "does not use recreational drugs",
+            "ST elevation in leads V1–V4",
+            "reciprocal ST depression"
+          ],
+          "x": "Territorial elevation with reciprocal change = acute STEMI. No old MI, no cocaine."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "ST elevation reflects **transmural**, full-thickness injury from **complete occlusion**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Vasospasm is linked to cocaine use, which he denies."
+            ],
+            [
+              2,
+              "Pericarditis gives widespread elevation without reciprocal depression."
+            ],
+            [
+              3,
+              "Partial occlusion gives ST depression or T inversion (NSTEMI / UA)."
+            ],
+            [
+              4,
+              "An aneurysm causes persistent elevation weeks after an old MI; he has no cardiac history."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "A. Rule: complete occlusion = transmural = ST elevation; partial occlusion = subendocardial = ST depression."
+        }
+      ],
+      "visual": {
+        "kind": "ecg",
+        "title": "12-lead ECG",
+        "layout": "12lead",
+        "rhythm": "sinus_tachy",
+        "rate": 104,
+        "leads": {
+          "V1": "st_elev",
+          "V2": "st_elev",
+          "V3": "st_elev",
+          "V4": "st_elev",
+          "II": "st_dep",
+          "III": "st_dep",
+          "aVF": "st_dep"
+        },
+        "caption": "ST elevation V1–V4 with reciprocal inferior ST depression."
+      }
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 27 year old man has central chest pain that started while he was dancing at a party. He used cocaine 1 hour earlier. He has no past medical history.\n\nHis temperature is 37.1°C, pulse rate 118 bpm, BP 152/94 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 98% breathing air.\n\nHis ECG shows transient ST elevation in leads V2–V4, which resolves after sublingual glyceryl trinitrate. There is no chest wall tenderness.",
+      "labs": [],
+      "q": "Which is the most likely cause of his chest pain?",
+      "o": [
+        "Aortic dissection",
+        "Atherosclerotic plaque rupture",
+        "Cocaine-induced coronary artery vasospasm",
+        "Costochondritis",
+        "Pericarditis"
+      ],
+      "a": 2,
+      "e": "Young man, **cocaine**, transient ST elevation that resolves with GTN = **cocaine-induced coronary vasospasm**. Plaque rupture needs risk factors; pericarditis gives widespread, persistent elevation.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "It asks for a **cause**, not a label. Think: what made this artery stop flowing?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "27 year old man",
+            "used cocaine 1 hour earlier",
+            "resolves after sublingual glyceryl trinitrate",
+            "no chest wall tenderness"
+          ],
+          "x": "Young, no history, cocaine. ST elevation that **goes away with GTN** = spasm, not a fixed clot."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Cocaine-induced coronary vasospasm.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "No tearing pain to the back, no arm BP difference."
+            ],
+            [
+              1,
+              "27 with no risk factors; a clot would not vanish with GTN."
+            ],
+            [
+              3,
+              "No chest wall tenderness."
+            ],
+            [
+              4,
+              "Pericarditis: widespread, persistent elevation, not transient territorial V2–V4."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "C. Rule: young + cocaine + chest pain = **coronary vasospasm** until proven otherwise."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 68 year old man was admitted 3 days ago with an anterior STEMI treated with primary PCI. He now has sudden worsening breathlessness.\n\nHis temperature is 37.0°C, pulse rate 112 bpm, BP 94/60 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 90% breathing air.\n\nThere is a new loud pansystolic murmur at the left sternal edge with a palpable thrill, and crackles at both lung bases.",
+      "labs": [],
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Aortic stenosis",
+        "Dressler's syndrome",
+        "Infective endocarditis",
+        "Left ventricular aneurysm",
+        "Ventricular septal rupture"
+      ],
+      "a": 4,
+      "e": "New **pansystolic murmur + acute heart failure** days after MI = **ventricular septal rupture**: urgent echo and surgical repair. Dressler's is weeks later with pericarditic pain.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis, in a patient **3 days** after a STEMI. Think complications by timing."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "3 days ago with an anterior STEMI",
+            "new loud pansystolic murmur at the left sternal edge",
+            "palpable thrill",
+            "crackles at both lung bases",
+            "BP 94/60 mmHg"
+          ],
+          "x": "Days post-MI + new pansystolic murmur + heart failure + low BP = mechanical complication."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Ventricular septal rupture.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Ejection systolic murmur, not a sudden new pansystolic one."
+            ],
+            [
+              1,
+              "Weeks after MI, with pericarditic pain and widespread ST elevation."
+            ],
+            [
+              2,
+              "No fever or embolic signs; murmur is too sudden."
+            ],
+            [
+              3,
+              "Aneurysm is later, with persistent ST elevation, not a new thrill."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "E. Rule: **days** post-MI + new pansystolic murmur + acute heart failure = VSR. Urgent echo."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 60 year old woman had a myocardial infarction 4 weeks ago. She now has sharp central chest pain that is worse on lying flat and a low-grade fever.\n\nHer temperature is 37.9°C, pulse rate 96 bpm, BP 128/78 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air.\n\nHer ECG shows widespread ST elevation with PR depression. There is no reciprocal ST depression.",
+      "labs": [],
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Costochondritis",
+        "Dressler's syndrome",
+        "Pulmonary embolism",
+        "Re-infarction",
+        "Ventricular septal rupture"
+      ],
+      "a": 1,
+      "e": "**Widespread ST elevation + PR depression** weeks after MI = **Dressler's syndrome**. Re-infarction is territorial with reciprocal depression.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis, **4 weeks** after an MI. Timing points to a late complication."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "myocardial infarction 4 weeks ago",
+            "worse on lying flat",
+            "low-grade fever",
+            "widespread ST elevation with PR depression",
+            "no reciprocal ST depression"
+          ],
+          "x": "Positional pain + fever + widespread ST elevation with PR depression = pericardial inflammation."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Post-infarction pericarditis: **Dressler's syndrome.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Pain is positional, not tender on palpation; ECG is abnormal."
+            ],
+            [
+              2,
+              "PE gives hypoxia and tachypnoea; sats are 97%."
+            ],
+            [
+              3,
+              "Re-infarction is territorial with reciprocal depression."
+            ],
+            [
+              4,
+              "VSR occurs days after MI with a new pansystolic murmur."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "B. Rule: **weeks** post-MI + widespread ST elevation + PR depression = Dressler's."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 57 year old man has central crushing chest pain associated with sweating for 30 minutes. He smokes and has hypertension.\n\nHis temperature is 36.8°C, pulse rate 46 bpm, BP 108/68 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air.\n\nAn ECG is recorded (see item resources).",
+      "labs": [],
+      "q": "Which artery is most likely to be occluded?",
+      "o": [
+        "Circumflex artery",
+        "Diagonal artery",
+        "Left anterior descending artery",
+        "Left main stem",
+        "Right coronary artery"
+      ],
+      "a": 4,
+      "e": "ST elevation **II, III, aVF** with reciprocal I/aVL depression = inferior MI = **RCA**. Bradycardia fits a proximal RCA. V1–V3 = LAD; I and aVL alone = circumflex.",
+      "visual": {
+        "kind": "ecg",
+        "title": "12-lead ECG",
+        "layout": "12lead",
+        "rhythm": "sinus_brady",
+        "rate": 46,
+        "leads": {
+          "II": "st_elev",
+          "III": "st_elev",
+          "aVF": "st_elev",
+          "I": "st_dep",
+          "aVL": "st_dep"
+        },
+        "caption": "12-lead ECG on arrival."
+      },
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "It asks for the **artery**. Read the ECG leads, map to a wall, then to a vessel."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "central crushing chest pain",
+            "pulse rate 46 bpm",
+            "see item resources"
+          ],
+          "x": "ECG: ST elevation II, III, aVF; reciprocal depression I, aVL. Bradycardia hints the SA/AV node supply is hit."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Inferior STEMI = **right coronary artery**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Circumflex: ST elevation in I and aVL, which here are depressed."
+            ],
+            [
+              1,
+              "Diagonal branch: high lateral changes, not inferior."
+            ],
+            [
+              2,
+              "LAD: ST elevation V1–V3; chest leads are normal."
+            ],
+            [
+              3,
+              "Left main: widespread depression with aVR elevation and shock."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "E. Rule: **II, III, aVF = RCA**. Add bradycardia = proximal RCA, watch for heart block."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 63 year old man has central crushing chest pain with sweating for 1 hour. He has type 2 diabetes and smokes.\n\nHis temperature is 36.7°C, pulse rate 94 bpm, BP 136/84 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air.\n\nHis 12-lead ECG shows horizontal ST depression in leads V1–V3. Posterior leads show ST elevation in V7–V9.\n\nInvestigations:",
+      "labs": [
+        [
+          "High-sensitivity troponin T",
+          "96 ng/L",
+          "<14 ng/L",
+          "H"
+        ],
+        [
+          "Haemoglobin",
+          "142 g/L",
+          "130–180 g/L",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Anterior ST elevation myocardial infarction",
+        "Inferior ST elevation myocardial infarction",
+        "Non-ST elevation myocardial infarction",
+        "Posterior ST elevation myocardial infarction",
+        "Unstable angina"
+      ],
+      "a": 3,
+      "e": "ST depression **V1–V3** with ST elevation **V7–V9** = **posterior STEMI**: the anterior leads see the posterior wall in reverse. Calling it NSTEMI delays reperfusion.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis: place him on the ACS spectrum and name the territory."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "central crushing chest pain with sweating",
+            "ST depression in leads V1–V3",
+            "ST elevation in V7–V9"
+          ],
+          "x": "ACS story. V1–V3 depression is the **mirror image** of posterior elevation; V7–V9 confirm it."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Posterior STEMI** (needs reperfusion)."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Anterior STEMI = ST elevation V1–V3, not depression."
+            ],
+            [
+              1,
+              "Inferior STEMI = elevation II, III, aVF; not mentioned."
+            ],
+            [
+              2,
+              "The trap: V1–V3 depression looks like NSTEMI, but V7–V9 elevation makes it a STEMI."
+            ],
+            [
+              4,
+              "Troponin is raised, so it is infarction, not unstable angina."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "D. Rule: ST depression V1–V3 in an ACS story = **check V7–V9** for posterior STEMI."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 69 year old woman has had three episodes of central chest tightness in the past 2 days, the latest at rest this morning lasting 15 minutes. Over the previous month her exertional chest pain had become more frequent. She is now pain free.\n\nHer temperature is 36.6°C, pulse rate 78 bpm, BP 150/88 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 98% breathing air.\n\nHer ECG shows T-wave inversion in leads V4–V6.\n\nInvestigations:",
+      "labs": [
+        [
+          "High-sensitivity troponin T (0 hours)",
+          "8 ng/L",
+          "<14 ng/L",
+          ""
+        ],
+        [
+          "High-sensitivity troponin T (3 hours)",
+          "9 ng/L",
+          "<14 ng/L",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Costochondritis",
+        "Non-ST elevation myocardial infarction",
+        "Stable angina",
+        "ST elevation myocardial infarction",
+        "Unstable angina"
+      ],
+      "a": 4,
+      "e": "Crescendo angina, now **at rest**, ischaemic ECG, **normal serial troponins** = **unstable angina**. A rising troponin would make it NSTEMI.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis. Place her on the ACS spectrum using ECG and troponin."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "the latest at rest this morning",
+            "exertional chest pain had become more frequent",
+            "T-wave inversion in leads V4–V6"
+          ],
+          "x": "Crescendo pattern + rest pain = unstable plaque. Both troponins (8, 9 ng/L) are **normal**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "ACS without infarction: **unstable angina.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "No chest wall tenderness; ECG is ischaemic."
+            ],
+            [
+              1,
+              "NSTEMI needs a raised troponin; hers is normal twice."
+            ],
+            [
+              2,
+              "Stable angina is predictable and exertional, not at rest."
+            ],
+            [
+              3,
+              "No ST elevation."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "E. Rule: ACS story + **normal serial troponin** = unstable angina; raised = NSTEMI."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 66 year old woman has had intermittent central chest pain at rest for 6 hours. She has hypertension and hypercholesterolaemia. She is now pain free.\n\nHer temperature is 36.6°C, pulse rate 84 bpm, BP 142/86 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 98% breathing air.\n\nHer ECG shows T-wave inversion in leads V3–V6. She has been given aspirin 300 mg. Her calculated GRACE score is 6.2%.\n\nInvestigations:",
+      "labs": [
+        [
+          "High-sensitivity troponin T (0 hours)",
+          "88 ng/L",
+          "<14 ng/L",
+          "H"
+        ],
+        [
+          "High-sensitivity troponin T (3 hours)",
+          "346 ng/L",
+          "<14 ng/L",
+          "H"
+        ]
+      ],
+      "q": "Which is the most appropriate next investigation?",
+      "o": [
+        "Coronary angiography within 72 hours",
+        "CT coronary angiography",
+        "Exercise ECG",
+        "Myocardial perfusion scan",
+        "Transthoracic echocardiogram"
+      ],
+      "a": 0,
+      "e": "Rising troponin, no ST elevation = **NSTEMI**. GRACE **>3%** = coronary angiography within 72 hours. CTCA, exercise ECG and perfusion scans are for stable chest pain.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Next **investigation**. First decide which ACS this is, then apply the rule."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "chest pain at rest",
+            "T-wave inversion in leads V3–V6",
+            "GRACE score is 6.2%"
+          ],
+          "x": "Troponin 88 → 346 ng/L: rising, so infarction. No ST elevation = NSTEMI. GRACE above 3%."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "NSTEMI + GRACE >3% = **coronary angiography within 72 hours.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "CT coronary angiography is for stable chest pain."
+            ],
+            [
+              2,
+              "Exercise testing is unsafe and unhelpful in confirmed NSTEMI."
+            ],
+            [
+              3,
+              "Perfusion scans assess stable disease."
+            ],
+            [
+              4,
+              "Echo is useful later for LV function, but does not treat the culprit."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "A. Rule: NSTEMI, GRACE **>3%** → angiography within **72 hours**."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 70 year old man was admitted 5 days ago with an NSTEMI. He now has a new episode of central chest pain lasting 30 minutes.\n\nHis temperature is 36.9°C, pulse rate 90 bpm, BP 134/82 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air.\n\nHis troponin has remained elevated since admission.",
+      "labs": [],
+      "q": "Which is the most appropriate blood test to detect reinfarction?",
+      "o": [
+        "B-type natriuretic peptide",
+        "C-reactive protein",
+        "Creatine kinase-MB",
+        "D-dimer",
+        "Troponin T"
+      ],
+      "a": 2,
+      "e": "Troponin stays raised for days, so it misses a second event. **CK-MB** falls quickly, so re-elevation = **reinfarction**. BNP reflects heart failure.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "It asks for a **blood test** to detect reinfarction."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "admitted 5 days ago with an NSTEMI",
+            "new episode of central chest pain",
+            "troponin has remained elevated since admission"
+          ],
+          "x": "Troponin is already high, so a new rise is hard to see. You need a marker that clears fast."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**CK-MB.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "BNP reflects heart failure, not new infarction."
+            ],
+            [
+              1,
+              "CRP is a non-specific inflammatory marker."
+            ],
+            [
+              3,
+              "D-dimer is for PE/DVT; not specific to MI."
+            ],
+            [
+              4,
+              "Troponin is still raised from the first MI."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "C. Rule: reinfarction within days = **CK-MB**, because troponin stays high."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 73 year old woman has central crushing chest pain for 1 hour. She has atrial fibrillation and takes apixaban.\n\nHer temperature is 36.7°C, pulse rate 96 bpm irregularly irregular, BP 132/80 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air.\n\nHer ECG shows ST elevation in leads II, III and aVF. She has been given aspirin 300 mg and is going for primary PCI.",
+      "labs": [],
+      "q": "Which is the most appropriate second antiplatelet?",
+      "o": [
+        "Abciximab",
+        "Clopidogrel",
+        "Dipyridamole",
+        "Prasugrel",
+        "Ticagrelor"
+      ],
+      "a": 1,
+      "e": "Already **anticoagulated** (apixaban), so the second antiplatelet is **clopidogrel**. Prasugrel is for PCI only when not anticoagulated.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Pick the **second antiplatelet**. The choice depends on PCI and anticoagulation."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "takes apixaban",
+            "ST elevation in leads II, III and aVF",
+            "going for primary PCI"
+          ],
+          "x": "Inferior STEMI going for PCI, but **already anticoagulated**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Anticoagulated = **clopidogrel.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Abciximab (GP IIb/IIIa) is not the standard second antiplatelet in the notes."
+            ],
+            [
+              2,
+              "Dipyridamole is not used in ACS."
+            ],
+            [
+              3,
+              "Prasugrel only if **not** anticoagulated; bleeding risk."
+            ],
+            [
+              4,
+              "Ticagrelor + apixaban + aspirin: too much bleeding risk."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "B. Rule: on apixaban or warfarin = **clopidogrel**; PCI and not anticoagulated = prasugrel."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 61 year old man has central crushing chest pain with sweating for 2 hours. He is at a district hospital where the nearest primary PCI centre cannot treat him within 120 minutes.\n\nHis temperature is 36.8°C, pulse rate 88 bpm, BP 146/88 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air.\n\nHis ECG shows ST elevation in leads V1–V4. He has been given aspirin 300 mg.",
+      "labs": [],
+      "q": "Which is the most appropriate next step in management?",
+      "o": [
+        "Coronary artery bypass grafting",
+        "Fibrinolysis with alteplase",
+        "Intravenous unfractionated heparin only",
+        "Observe and repeat troponin at 3 hours",
+        "Transfer for primary PCI the next morning"
+      ],
+      "a": 1,
+      "e": "STEMI within 12 hours, PCI **not possible within 120 minutes** = **fibrinolysis** (alteplase + fondaparinux). BP is below 180/110. Repeat ECG at 60–90 minutes.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Next **management** step in a STEMI. Ask: can PCI happen within 120 minutes?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "for 2 hours",
+            "cannot treat him within 120 minutes",
+            "BP 146/88 mmHg",
+            "ST elevation in leads V1–V4"
+          ],
+          "x": "Anterior STEMI, within 12 hours, PCI not timely, no BP contraindication."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Fibrinolysis with alteplase.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "CABG is for left main or triple vessel disease, not first reperfusion."
+            ],
+            [
+              2,
+              "Heparin alone does not reperfuse the artery."
+            ],
+            [
+              3,
+              "Never wait for troponin in STEMI."
+            ],
+            [
+              4,
+              "Delaying reperfusion overnight loses myocardium."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "B. Rule: PCI not within **120 minutes** = fibrinolysis, unless BP >180/110."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 58 year old man with type 2 diabetes is being discharged 5 days after an anterior STEMI treated with primary PCI. He is taking aspirin 75 mg, ticagrelor, ramipril, bisoprolol and atorvastatin 80 mg.\n\nHis pulse rate is 64 bpm and BP 118/72 mmHg.\n\nAn echocardiogram shows a left ventricular ejection fraction of 32%.",
+      "labs": [
+        [
+          "Potassium",
+          "4.4 mmol/L",
+          "3.5–5.0 mmol/L",
+          ""
+        ],
+        [
+          "Creatinine",
+          "96 µmol/L",
+          "60–110 µmol/L",
+          ""
+        ]
+      ],
+      "q": "Which additional drug is most appropriate?",
+      "o": [
+        "Amlodipine",
+        "Digoxin",
+        "Eplerenone",
+        "Ivabradine",
+        "Nicorandil"
+      ],
+      "a": 2,
+      "e": "Post-MI with **EF <40%**, especially with diabetes, add **eplerenone**. Potassium is normal, so it is safe. The others are not standard secondary prevention.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Which **extra drug** at discharge after a STEMI. Check what he already takes."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "type 2 diabetes",
+            "aspirin 75 mg, ticagrelor, ramipril, bisoprolol and atorvastatin 80 mg",
+            "ejection fraction of 32%"
+          ],
+          "x": "Full secondary prevention already. EF below 40% + diabetes. Potassium 4.4 is normal."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Add an aldosterone antagonist: **eplerenone.**"
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Amlodipine is for BP; not post-MI prognosis."
+            ],
+            [
+              1,
+              "Digoxin is for AF rate control; no AF here."
+            ],
+            [
+              3,
+              "Ivabradine is not standard post-MI prevention."
+            ],
+            [
+              4,
+              "Nicorandil is for angina symptoms; he is pain free."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "C. Rule: post-MI + **EF <40%** (esp. diabetes) = add eplerenone."
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 65 year old woman has central crushing chest pain with sweating that began 1 hour ago. She has hypertension and hypercholesterolaemia. She has had no treatment yet apart from aspirin.\n\nHer ECG shows ST depression in leads V4–V6.\n\nInvestigations:",
+      "labs": [
+        [
+          "High-sensitivity troponin T (1 hour after onset)",
+          "10 ng/L",
+          "<14 ng/L",
+          ""
+        ],
+        [
+          "High-sensitivity troponin T (4 hours after onset)",
+          "520 ng/L",
+          "<14 ng/L",
+          "H"
+        ]
+      ],
+      "q": "Which best explains the normal first troponin result?",
+      "o": [
+        "Coronary reperfusion is required before troponin is released",
+        "Ischaemia must last over 24 hours before any myocyte dies",
+        "Renal clearance of troponin is fastest in the first hours",
+        "Time is needed for myocyte necrosis and leakage into the circulation",
+        "Troponin is released only after platelet degranulation"
+      ],
+      "a": 3,
+      "e": "Troponin leaks only from **irreversibly damaged cardiomyocytes**. The 2–3 hour delay is time for necrosis and leakage, hence serial troponins. No reperfusion was needed for it to rise.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "**Mechanism**: why is the first troponin normal in a real NSTEMI?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "began 1 hour ago",
+            "no treatment yet apart from aspirin",
+            "ST depression in leads V4–V6"
+          ],
+          "x": "Sample at 1 hour normal, at 4 hours 520 ng/L. It rose with no reperfusion."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Myocytes must **die and leak** before troponin appears: about 2–3 hours."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "It rose without any reperfusion."
+            ],
+            [
+              1,
+              "Troponin rises within 2–3 hours, not after 24."
+            ],
+            [
+              2,
+              "Renal clearance does not explain a delayed rise."
+            ],
+            [
+              4,
+              "Platelets do not release troponin; myocytes do."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "D. Rule: troponin = **myocyte necrosis**, rises 2–3 hours after onset, so repeat it."
+        }
+      ]
+    }
+  ]
+}

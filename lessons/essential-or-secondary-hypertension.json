@@ -1,0 +1,2411 @@
+{
+ "id": "essential-or-secondary-hypertension",
+ "patient": {
+  "name": "Sophie Hartley",
+  "age": 36,
+  "sex": "F",
+  "setting": "GP surgery (routine health check), then hypertension clinic",
+  "complaint": "High blood pressure found at a routine check, with headaches and tiredness",
+  "background": [
+   "Office manager in Clapham; BMI 26",
+   "No regular medications; stopped the combined pill 2 years ago",
+   "Hoping to try for a baby next year",
+   "Mother had high blood pressure in her 60s"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely cause' with a hypertensive patient plus one clue: low potassium (hyperaldosteronism), episodic headache, sweating and palpitations (phaeochromocytoma), or a bruit with flash pulmonary oedema (renal artery stenosis).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Sophie, 36, has a routine check at her GP practice.",
+      "Clinic BP **164/102 mmHg**, repeated **160/100 mmHg**.",
+      "Several months of headaches and feeling **lethargic**.",
+      "No chest pain, no visual change, no palpitations or sweats."
+     ],
+     "vitals": {
+      "HR": "76 bpm",
+      "BP": "164/102 mmHg",
+      "RR": "14 /min",
+      "SpO2": "99% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sophie's BP is persistently raised. The first question is always: **essential** (no cause, most people) or **secondary** (a cause you can find and fix)?"
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Sophie is **under 40** with stage 2 readings: that alone means you must look for a **secondary** cause."
+    },
+    {
+     "type": "compare",
+     "title": "Essential vs secondary: who to screen",
+     "head": [
+      "Feature",
+      "Essential",
+      "Secondary suspected"
+     ],
+     "rows": [
+      [
+       "Age",
+       "Older",
+       "**Young (<40)**"
+      ],
+      [
+       "Onset",
+       "Gradual",
+       "Sudden"
+      ],
+      [
+       "Control",
+       "Responds to treatment",
+       "**Resistant** (3 drugs)"
+      ],
+      [
+       "Clues",
+       "None, asymptomatic",
+       "Low K+, bruit, episodic symptoms"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Examine Sophie for **end-organ damage** and for clues to a cause: listen for a renal bruit, look for Cushingoid or thyroid features."
+    },
+    {
+     "type": "story",
+     "points": [
+      "No abdominal bruit; radial and femoral pulses together.",
+      "No café-au-lait spots, no Cushingoid features, thyroid normal.",
+      "Fundi normal: no papilloedema.",
+      "Her lethargy and headache stay unexplained so far."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Run Sophie through the secondary causes: **renal**, **hyperaldosteronism**, **phaeochromocytoma**, other endocrine, sleep apnoea, coarctation and drugs such as the **OCP**."
+    },
+    {
+     "type": "compare",
+     "title": "The three secondary causes the exam loves",
+     "head": [
+      "Cause",
+      "Signature clue",
+      "First test"
+     ],
+     "rows": [
+      [
+       "Primary hyperaldosteronism",
+       "**Low K+**, lethargy, headache",
+       "Renin:aldosterone ratio"
+      ],
+      [
+       "Phaeochromocytoma",
+       "Episodic **headache, sweating, palpitations**",
+       "Plasma free metanephrines"
+      ],
+      [
+       "Renal artery stenosis",
+       "Resistant HTN, **flash pulmonary oedema**, bruit",
+       "Renal imaging"
+      ]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Sophie's lethargy and headache would point most to which cause if her potassium is low?",
+     "o": [
+      "Coarctation of the aorta",
+      "Phaeochromocytoma",
+      "Primary hyperaldosteronism",
+      "Renal artery stenosis"
+     ],
+     "a": 2,
+     "r": "**Hypertension + low potassium** with lethargy and headache is primary hyperaldosteronism. Phaeo is episodic sweating and palpitations."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Sophie has no papilloedema or encephalopathy, so this is not **malignant hypertension**. Left uncontrolled, it would threaten her brain, heart, kidneys and eyes."
+    },
+    {
+     "type": "trap",
+     "text": "Do not call a young patient's hypertension 'essential' without screening. **Young age, resistant BP, sudden onset or a low K+** each demand a secondary work-up."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the next most appropriate step?' after a raised clinic BP (answer: ABPM), or 'most appropriate initial investigation' for a suspected secondary cause (renin:aldosterone ratio, plasma free metanephrines).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Sophie's clinic BP is 164/102 mmHg with no end-organ damage. What confirms hypertension?",
+     "o": [
+      "24 hour ambulatory BP monitoring",
+      "Echocardiogram",
+      "Repeat clinic reading in 1 year",
+      "Start treatment without confirmation"
+     ],
+     "a": 0,
+     "r": "NICE recommends **ABPM** to confirm any clinic BP of 140/90 or more. Below 180/120 with no worrying signs, there is time to confirm."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sophie's ABPM daytime average is **156/98 mmHg**: above 150/95, so this is **stage 2** hypertension."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "ABPM daytime average systolic",
+      "min": 120,
+      "max": 180,
+      "unit": "mmHg",
+      "bands": [
+       [
+        120,
+        135,
+        "Normal",
+        "ok"
+       ],
+       [
+        135,
+        150,
+        "Stage 1 (≥135/85)",
+        "warn"
+       ],
+       [
+        150,
+        180,
+        "Stage 2 (≥150/95)",
+        "bad"
+       ]
+      ],
+      "value": 156,
+      "label": "Sophie 156",
+      "caption": "ABPM cut-offs are 5 lower than clinic: stage 1 ≥135/85, stage 2 ≥150/95."
+     },
+     "text": "Use the **ABPM** thresholds for ABPM readings, not the clinic ones."
+    },
+    {
+     "type": "labs",
+     "title": "Sophie's baseline bloods",
+     "rows": [
+      [
+       "Sodium",
+       "144 mmol/L",
+       "135–145",
+       ""
+      ],
+      [
+       "Potassium",
+       "3.1 mmol/L",
+       "3.5–5.3",
+       "L"
+      ],
+      [
+       "Creatinine",
+       "68 µmol/L",
+       "45–90",
+       ""
+      ],
+      [
+       "Haemoglobin",
+       "134 g/L",
+       "115–165",
+       ""
+      ],
+      [
+       "Urine dipstick",
+       "No protein, no blood",
+       "Negative",
+       ""
+      ],
+      [
+       "ECG",
+       "Sinus rhythm, no LVH",
+       "",
+       ""
+      ]
+     ],
+     "text": "High-normal sodium with **low potassium**, and she takes no diuretic."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Sophie's baseline FBC, U&Es, urinalysis and ECG are done. Her BP is under 180/120, so no urgent end-organ work-up, but the **low K+** is the clue."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Serum potassium",
+      "min": 2.5,
+      "max": 6.0,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        2.5,
+        3.5,
+        "Low",
+        "bad"
+       ],
+       [
+        3.5,
+        5.3,
+        "Normal",
+        "ok"
+       ],
+       [
+        5.3,
+        6.0,
+        "High",
+        "warn"
+       ]
+      ],
+      "value": 3.1,
+      "label": "Sophie 3.1",
+      "caption": "Hypertension with unexplained hypokalaemia: screen for primary hyperaldosteronism."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sophie's **renin:aldosterone ratio** is high (aldosterone up, renin suppressed). High-resolution CT shows **bilateral adrenal hyperplasia**; adrenal venous sampling confirms no single-sided source."
+    },
+    {
+     "type": "flow",
+     "title": "Work-up for suspected hyperaldosteronism",
+     "nodes": [
+      "Hypertension + low K+",
+      "Plasma renin:aldosterone ratio",
+      "Raised: high-resolution CT abdomen",
+      "Adrenal venous sampling to lateralise",
+      "Bilateral → medical; unilateral adenoma → surgery"
+     ],
+     "caption": "Biochemistry first, then find the source."
+    },
+    {
+     "type": "trap",
+     "text": "For phaeochromocytoma, prove the **catecholamine excess** first (plasma free metanephrines) before scanning for the tumour. Imaging first is the classic wrong answer."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' where age and ethnicity decide step 1 (ACE inhibitor vs CCB), the potassium decides step 4, pregnancy changes the drug, and malignant hypertension means IV labetalol.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sophie gets lifestyle advice: salt under 6 g/day, weight, exercise, alcohol. As she is **under 55 and not Black**, the standard step 1 is an **ACE inhibitor**."
+    },
+    {
+     "type": "ask",
+     "q": "Which first-line drug would suit a 64 year old Black African man with confirmed stage 2 hypertension?",
+     "o": [
+      "Amlodipine",
+      "Bendroflumethiazide",
+      "Bisoprolol",
+      "Ramipril"
+     ],
+     "a": 0,
+     "r": "**Age ≥55 or Black African/Caribbean** origin: a **calcium channel blocker** first. ACE inhibitors are first for under 55s who are not Black."
+    },
+    {
+     "type": "flow",
+     "title": "NICE treatment ladder",
+     "nodes": [
+      "Step 1: <55 not Black → ACEi/ARB; ≥55 or Black → CCB",
+      "Step 2: add ACEi/ARB or CCB (the other one)",
+      "Step 3: add thiazide-like diuretic (indapamide)",
+      "Step 4: K+ ≤4.5 → spironolactone; K+ >4.5 → beta- or alpha-blocker"
+     ],
+     "caption": "Diabetes or CKD favours an ACEi/ARB at step 1 whatever the age or ethnicity."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Sophie's BP stayed high on one drug, she would add the other class, then **indapamide** (watch for low K+ and Na+, gout, high Ca2+)."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Sophie's cause is **aldosterone**, so **spironolactone** is the targeted drug. In essential hypertension it is step 4, used when K+ is 4.5 or lower."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Step 4: potassium decides",
+      "min": 3.0,
+      "max": 6.0,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        3.0,
+        4.5,
+        "≤4.5: spironolactone",
+        "ok"
+       ],
+       [
+        4.5,
+        6.0,
+        ">4.5: beta- or alpha-blocker",
+        "warn"
+       ]
+      ],
+      "value": 3.1,
+      "label": "Sophie 3.1",
+      "caption": "Low K+ makes spironolactone safe and effective; a high K+ risks hyperkalaemia."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sophie's target is clinic BP **<140/90**. When she plans pregnancy, ACE inhibitors, ARBs and spironolactone stop; **labetalol**, nifedipine or methyldopa are used instead."
+    },
+    {
+     "type": "trap",
+     "text": "Never leave a woman who is pregnant or planning pregnancy on an **ACE inhibitor or ARB**. Switch to **labetalol** (or nifedipine, methyldopa)."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Sophie ever developed papilloedema, encephalopathy or AKI with very high BP, she would need **IV labetalol** with controlled, not rapid, lowering."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Sophie on spironolactone",
+      "x": [
+       "Start",
+       "4 weeks",
+       "8 weeks",
+       "12 weeks"
+      ],
+      "unit": "mmHg / mmol/L",
+      "series": [
+       {
+        "name": "Clinic systolic BP",
+        "values": [
+         162,
+         148,
+         138,
+         134
+        ]
+       },
+       {
+        "name": "Potassium x 10",
+        "values": [
+         31,
+         38,
+         42,
+         44
+        ]
+       }
+      ],
+      "caption": "BP falls below target and potassium normalises as aldosterone is blocked."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Sophie's care follows **NICE**: staging by clinic and ABPM, the stepped ladder by age and ethnicity, and QRisk over 10% for a statin."
+    },
+    {
+     "type": "pearl",
+     "text": "ACE inhibitor causing a **dry cough**? Switch to an **ARB** (losartan). ACE inhibitor causing a big **creatinine rise**? Think **renal artery stenosis**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why ACE inhibitors cause a cough (bradykinin), why creatinine rises in renal artery stenosis on an ACE inhibitor, or why hyperaldosteronism gives low potassium.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Had Sophie's hypertension been essential, it would be genes, **sympathetic** drive, **RAAS** overactivity and diet raising peripheral resistance."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sophie's adrenals make aldosterone **regardless of renin**: sodium and water are kept (BP up), potassium is lost in urine (K+ down)."
+    },
+    {
+     "type": "flow",
+     "title": "Why aldosterone excess gives high BP and low K+",
+     "nodes": [
+      "Autonomous aldosterone secretion",
+      "Distal tubule: Na+ reabsorbed, K+ excreted",
+      "Water follows sodium: volume up, BP up",
+      "Renal K+ wasting: hypokalaemia",
+      "Volume suppresses renin: high aldosterone:renin ratio"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why does spironolactone treat Sophie's hypertension?",
+     "o": [
+      "It blocks angiotensin I to II conversion",
+      "It blocks the aldosterone (mineralocorticoid) receptor",
+      "It blocks the Na-Cl cotransporter",
+      "It blocks L-type calcium channels"
+     ],
+     "a": 1,
+     "r": "Spironolactone is an **aldosterone antagonist**, so it reverses both the sodium retention and the potassium loss."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Not Sophie's cause, but a classic: in **renal artery stenosis** the kidney keeps its GFR by efferent constriction, so an ACE inhibitor makes creatinine jump."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Phaeochromocytoma was on Sophie's list: a chromaffin-cell tumour releasing catecholamines in **surges**, hence **episodic** headache, sweating and tachycardia."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Had Sophie started ramipril, a **dry cough** would come from **bradykinin**, which ACE normally breaks down."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Treating Sophie now protects her: years of high pressure cause **LVH**, glomerulosclerosis, retinopathy and stroke through mechanical vessel stress."
+    },
+    {
+     "type": "pearl",
+     "text": "One enzyme, two jobs: **ACE** makes angiotensin II and breaks down **bradykinin**. Block it and BP falls, but bradykinin builds up (cough, angioedema). ARBs spare bradykinin."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What proportion of hypertension is essential (primary)?",
+   "o": [
+    "50-60%",
+    "70-75%",
+    "90-95%",
+    "Over 99%"
+   ],
+   "a": 2,
+   "r": "Essential hypertension is **90-95%** of cases; secondary has an identifiable cause."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is the classic triad of phaeochromocytoma?",
+   "o": [
+    "Chest pain, cough, fever",
+    "Episodic headache, sweating, palpitations",
+    "Polyuria, polydipsia, weight loss",
+    "Weakness, low K+, nocturia"
+   ],
+   "a": 1,
+   "r": "Catecholamine surges give **episodic headache, sweating and tachycardia**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Resistant hypertension with recurrent flash pulmonary oedema and an abdominal bruit suggests:",
+   "o": [
+    "Coarctation of the aorta",
+    "Cushing's syndrome",
+    "Phaeochromocytoma",
+    "Renal artery stenosis"
+   ],
+   "a": 3,
+   "r": "**Renal artery stenosis**: resistant to 3 agents, flash pulmonary oedema, bruit."
+  },
+  {
+   "d": "investigation",
+   "q": "What ABPM daytime average defines stage 1 hypertension?",
+   "o": [
+    "≥130/80 mmHg",
+    "≥135/85 mmHg",
+    "≥140/90 mmHg",
+    "≥150/95 mmHg"
+   ],
+   "a": 1,
+   "r": "ABPM stage 1 is **≥135/85**; clinic stage 1 is ≥140/90."
+  },
+  {
+   "d": "investigation",
+   "q": "Which is the first test for suspected phaeochromocytoma?",
+   "o": [
+    "Adrenal venous sampling",
+    "CT abdomen",
+    "Plasma free metanephrines",
+    "Renin:aldosterone ratio"
+   ],
+   "a": 2,
+   "r": "**Plasma free metanephrines** (or 24h urinary metanephrines) before localising the tumour."
+  },
+  {
+   "d": "management",
+   "q": "First-line drug for a 45 year old white man with stage 2 hypertension:",
+   "o": [
+    "Amlodipine",
+    "Indapamide",
+    "Ramipril",
+    "Spironolactone"
+   ],
+   "a": 2,
+   "r": "Under 55 and not Black: **ACE inhibitor** such as ramipril."
+  },
+  {
+   "d": "management",
+   "q": "Step 4 drug if potassium is 4.1 mmol/L:",
+   "o": [
+    "Atenolol",
+    "Doxazosin",
+    "Losartan",
+    "Spironolactone"
+   ],
+   "a": 3,
+   "r": "K+ **≤4.5** → **spironolactone**; above 4.5 → beta- or alpha-blocker."
+  },
+  {
+   "d": "management",
+   "q": "Which is the treatment for malignant hypertension?",
+   "o": [
+    "IV labetalol",
+    "Oral amlodipine",
+    "Oral ramipril",
+    "Sublingual nifedipine"
+   ],
+   "a": 0,
+   "r": "**IV labetalol** with controlled lowering; avoid a rapid drop."
+  },
+  {
+   "d": "science",
+   "q": "Why do ACE inhibitors cause a dry cough?",
+   "o": [
+    "Angiotensin II excess",
+    "Bradykinin accumulation",
+    "Histamine release",
+    "Hyperkalaemia"
+   ],
+   "a": 1,
+   "r": "ACE normally breaks down **bradykinin**; blocking it lets bradykinin build up."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old woman has had several episodes of pounding headache, profuse sweating and palpitations over 3 months, each lasting about 20 minutes. Between episodes she feels well. During an episode in clinic her pulse rate is 128 bpm and BP 210/118 mmHg. She has several café-au-lait spots and cutaneous neurofibromas.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Anxiety disorder",
+    "Essential hypertension",
+    "Hyperthyroidism",
+    "Phaeochromocytoma",
+    "Primary hyperaldosteronism"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question in a young hypertensive: think secondary cause."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pounding headache, profuse sweating and palpitations",
+      "each lasting about 20 minutes",
+      "BP 210/118 mmHg",
+      "café-au-lait spots and cutaneous neurofibromas"
+     ],
+     "x": "The **episodic triad** with severe hypertension, plus **NF1** features, which are associated with phaeochromocytoma."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Catecholamine surges from an adrenal medulla tumour: **phaeochromocytoma**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anxiety does not give BP 210/118 or neurofibromas."
+      ],
+      [
+       1,
+       "Essential is gradual and asymptomatic, not episodic in a 32 year old."
+      ],
+      [
+       2,
+       "Hyperthyroidism is continuous, with weight loss and tremor, not attacks."
+      ],
+      [
+       4,
+       "Hyperaldosteronism is sustained with low K+ and lethargy, not paroxysms."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Phaeochromocytoma.** Episodic headache + sweating + palpitations = phaeo; NF1, MEN2 and VHL raise suspicion."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 41 year old man has hypertension that remains uncontrolled on ramipril, amlodipine and indapamide. He feels tired and has frequent headaches. His pulse rate is 72 bpm and BP 168/104 mmHg.",
+   "labs": [
+    [
+     "Sodium",
+     "145 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "Potassium",
+     "2.9 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "82 µmol/L",
+     "60–110",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "24 hour urinary metanephrines",
+    "Adrenal venous sampling",
+    "CT abdomen",
+    "Plasma renin:aldosterone ratio",
+    "Renal artery Doppler ultrasound"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation: first decide the suspected cause, then its first test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "41 year old",
+      "uncontrolled on ramipril, amlodipine and indapamide",
+      "feels tired"
+     ],
+     "x": "Resistant hypertension, lethargy and **marked hypokalaemia**: primary hyperaldosteronism. Indapamide lowers K+, but not usually this far."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Screen biochemically first: **plasma renin:aldosterone ratio**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Metanephrines are for phaeo: episodic triad, not low K+."
+      ],
+      [
+       1,
+       "AVS comes after a positive ratio and CT, to lateralise."
+      ],
+      [
+       2,
+       "CT localises; it comes after biochemical confirmation."
+      ],
+      [
+       4,
+       "Renal Doppler suits renal artery stenosis: bruit, flash oedema, creatinine rise on ACEi."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Plasma renin:aldosterone ratio.** Order: ratio → high-resolution CT → adrenal venous sampling."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 48 year old white man has a clinic BP of 158/98 mmHg. Ambulatory monitoring shows a daytime average of 152/96 mmHg. He has no other medical conditions and takes no medication. His pulse rate is 70 bpm. He has already been given lifestyle advice.",
+   "q": "Which is the most appropriate initial drug treatment?",
+   "o": [
+    "Amlodipine",
+    "Atenolol",
+    "Bendroflumethiazide",
+    "Doxazosin",
+    "Ramipril"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial drug: age and ethnicity decide step 1."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "48 year old white man",
+      "daytime average of 152/96 mmHg",
+      "no other medical conditions"
+     ],
+     "x": "ABPM ≥150/95 = **stage 2**, so treat. Under 55, not Black."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Step 1 for under 55, not Black: **ACE inhibitor**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A CCB is step 1 for ≥55 or Black African/Caribbean."
+      ],
+      [
+       1,
+       "Beta-blockers are step 4 (K+ >4.5) or for heart failure/post-MI."
+      ],
+      [
+       2,
+       "Thiazide-like diuretics are step 3, and indapamide is preferred."
+      ],
+      [
+       3,
+       "Alpha-blockers are step 4 options."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Ramipril.** Under 55 and not Black = ACE inhibitor; check U&Es first."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 52 year old woman started ramipril for hypertension 6 weeks ago. Her BP is now 134/84 mmHg and her pulse rate is 74 bpm. She has developed a persistent, tickly dry cough with no sputum, fever or breathlessness. Her chest is clear on examination.",
+   "q": "Which is the most likely mechanism of her cough?",
+   "o": [
+    "Accumulation of bradykinin",
+    "Angiotensin II receptor blockade",
+    "Eosinophilic airway inflammation",
+    "Increased aldosterone secretion",
+    "Potassium retention"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about a drug side effect."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started ramipril",
+      "persistent, tickly dry cough",
+      "chest is clear"
+     ],
+     "x": "New dry cough after an **ACE inhibitor**, with no infection."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "ACE breaks down bradykinin; block ACE and **bradykinin accumulates**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "That is how ARBs work, and ARBs do not cause the cough."
+      ],
+      [
+       2,
+       "Eosinophilic inflammation is asthma, not drug cough."
+      ],
+      [
+       3,
+       "ACE inhibitors reduce aldosterone."
+      ],
+      [
+       4,
+       "Hyperkalaemia is a side effect but does not cause cough."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Accumulation of bradykinin.** Switch to an ARB such as losartan."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 39 year old man has hypertension that has needed three drugs to control. He complains of tiredness, muscle weakness and headaches. He takes no diuretic. His pulse rate is 68 bpm and BP 162/100 mmHg. There is no abdominal bruit and no Cushingoid features.",
+   "labs": [
+    [
+     "Sodium",
+     "146 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Potassium",
+     "2.8 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Bicarbonate",
+     "31 mmol/L",
+     "22–29",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Coarctation of the aorta",
+    "Cushing's syndrome",
+    "Phaeochromocytoma",
+    "Primary hyperaldosteronism",
+    "Renal artery stenosis"
+   ],
+   "a": 3,
+   "e": "Resistant hypertension with hypokalaemia, high-normal sodium and lethargy, off diuretics, is primary hyperaldosteronism. Cushing's would bring Cushingoid features.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a young resistant hypertensive: a secondary cause."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "needed three drugs",
+      "tiredness, muscle weakness",
+      "takes no diuretic",
+      "no Cushingoid features"
+     ],
+     "x": "Resistant HTN with **unexplained low K+** and sodium retention."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Autonomous aldosterone: **primary hyperaldosteronism**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coarctation gives radio-femoral delay, not hypokalaemia."
+      ],
+      [
+       1,
+       "No Cushingoid features are present."
+      ],
+      [
+       2,
+       "Phaeo is episodic headache, sweating, palpitations."
+      ],
+      [
+       4,
+       "No bruit or flash pulmonary oedema; K+ loss points to aldosterone."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Primary hyperaldosteronism.** Hypertension + low K+ = check renin:aldosterone ratio."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old woman has a BP of 152/96 mmHg at a contraception review. Her BP was 118/74 mmHg two years ago. She started a new contraceptive 8 months ago and has no symptoms. Her pulse rate is 72 bpm. Examination, urinalysis and U&Es are normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of her hypertension?",
+   "o": [
+    "Coarctation of the aorta",
+    "Combined oral contraceptive pill",
+    "Obstructive sleep apnoea",
+    "Phaeochromocytoma",
+    "Renal artery stenosis"
+   ],
+   "a": 1,
+   "e": "New hypertension at a contraception review in a young woman with no other findings is most likely drug-induced, from the combined OCP. Stopping it is the first step.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely cause: a young woman needs a secondary cause considered."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "27 year old woman",
+      "contraception review",
+      "118/74 mmHg two years ago",
+      "started a new contraceptive 8 months ago"
+     ],
+     "x": "BP was normal, then rose after a new drug at a contraception review."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Drug-induced hypertension: the **combined OCP**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coarctation is present from youth, with radio-femoral delay."
+      ],
+      [
+       2,
+       "OSA fits obese snorers with daytime sleepiness."
+      ],
+      [
+       3,
+       "Phaeo gives episodic symptoms; she has none."
+      ],
+      [
+       4,
+       "RAS gives resistant HTN, bruit or abnormal U&Es."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Combined oral contraceptive pill.** Drugs (OCP, steroids) are a reversible secondary cause."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man with peripheral arterial disease has hypertension uncontrolled on amlodipine, ramipril and indapamide. He has had two admissions with sudden pulmonary oedema, each time with a normal echocardiogram. An abdominal bruit is heard. His pulse rate is 78 bpm and BP 176/94 mmHg.",
+   "labs": [
+    [
+     "Creatinine (before ramipril)",
+     "98 µmol/L",
+     "60–110",
+     ""
+    ],
+    [
+     "Creatinine (2 weeks after)",
+     "162 µmol/L",
+     "60–110",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Chronic glomerulonephritis",
+    "Coarctation of the aorta",
+    "Phaeochromocytoma",
+    "Primary hyperaldosteronism",
+    "Renal artery stenosis"
+   ],
+   "a": 4,
+   "e": "Resistant hypertension, flash pulmonary oedema, an abdominal bruit and a sharp creatinine rise on an ACE inhibitor in an arteriopath is renal artery stenosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: which secondary cause fits an older arteriopath?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "peripheral arterial disease",
+      "uncontrolled on amlodipine, ramipril and indapamide",
+      "sudden pulmonary oedema",
+      "abdominal bruit"
+     ],
+     "x": "Atherosclerosis elsewhere, resistant to 3 agents, **flash oedema**, bruit, creatinine jump on ACEi."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Renal artery stenosis** (atherosclerotic)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Glomerulonephritis gives blood and protein in urine, not a bruit or flash oedema."
+      ],
+      [
+       1,
+       "Coarctation presents young with radio-femoral delay."
+      ],
+      [
+       2,
+       "Phaeo is episodic headache, sweating, palpitations."
+      ],
+      [
+       3,
+       "Hyperaldosteronism gives low K+, not a bruit."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Renal artery stenosis.** Creatinine rise >30% on ACEi in an arteriopath: image the renal arteries."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man has a 2 day history of severe headache and blurred vision. He stopped his antihypertensives 3 months ago. His pulse rate is 94 bpm and BP 236/138 mmHg. He is drowsy but oriented.",
+   "labs": [
+    [
+     "Creatinine",
+     "188 µmol/L",
+     "60–110",
+     "H"
+    ],
+    [
+     "Urine dipstick",
+     "Protein 2+, blood 1+",
+     "Negative",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on fundoscopy?",
+   "o": [
+    "Cherry-red spot at the macula",
+    "Cupping of the optic disc",
+    "Normal fundi",
+    "Optic disc pallor",
+    "Papilloedema"
+   ],
+   "a": 4,
+   "e": "Very high BP with headache, visual blurring, drowsiness and AKI is malignant hypertension, whose hallmark on fundoscopy is papilloedema.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A finding question: name the condition, then its fundoscopy sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe headache and blurred vision",
+      "stopped his antihypertensives",
+      "BP 236/138 mmHg",
+      "drowsy"
+     ],
+     "x": "BP over 180/120 with **encephalopathy** and **AKI**: malignant hypertension."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Raised ICP and severe retinopathy: **papilloedema**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cherry-red spot is central retinal artery occlusion."
+      ],
+      [
+       1,
+       "Disc cupping is glaucoma."
+      ],
+      [
+       2,
+       "End-organ damage this severe is unlikely with normal fundi."
+      ],
+      [
+       3,
+       "Disc pallor is chronic optic atrophy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Papilloedema.** Malignant hypertension = BP very high + papilloedema/encephalopathy/AKI."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old man has a BP of 168/96 mmHg in his right arm at a university health check. He gets cramping pain in his legs when running. His pulse rate is 64 bpm. The femoral pulses are weak and delayed compared with the radial pulses. There is a systolic murmur heard over the back.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his hypertension?",
+   "o": [
+    "Aortic dissection",
+    "Coarctation of the aorta",
+    "Essential hypertension",
+    "Phaeochromocytoma",
+    "Renal artery stenosis"
+   ],
+   "a": 1,
+   "e": "Arm hypertension with weak, delayed femoral pulses, leg claudication and a murmur over the back in a young man is coarctation of the aorta.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely cause in a 19 year old: secondary until proven otherwise."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "19 year old",
+      "in his right arm",
+      "cramping pain in his legs",
+      "weak and delayed compared with the radial pulses",
+      "murmur heard over the back"
+     ],
+     "x": "**Radio-femoral delay** and leg claudication: obstruction beyond the arm vessels."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Coarctation of the aorta**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dissection is acute tearing pain, not a long history of claudication and murmur."
+      ],
+      [
+       2,
+       "Too young, and the pulse delay is a structural cause."
+      ],
+      [
+       3,
+       "Phaeo is episodic and does not cause radio-femoral delay."
+      ],
+      [
+       4,
+       "RAS gives an abdominal bruit, not delayed femorals."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Coarctation of the aorta.** Always feel the femorals in a young hypertensive."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old woman has a clinic BP of 148/92 mmHg at a routine review. She is asymptomatic. Ambulatory monitoring shows a daytime average of 141/88 mmHg. Her pulse rate is 70 bpm. Examination, U&Es, urinalysis and ECG are normal.",
+   "labs": [
+    [
+     "Potassium",
+     "4.3 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Creatinine",
+     "71 µmol/L",
+     "45–90",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Masked hypertension",
+    "Primary hypertension, stage 1",
+    "Primary hypertension, stage 2",
+    "Secondary hypertension",
+    "White coat hypertension"
+   ],
+   "a": 1,
+   "e": "An older, asymptomatic woman with normal tests and ABPM between 135/85 and 150/95 has stage 1 essential hypertension. White coat would need a normal ABPM.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: decide essential vs secondary, then the stage from ABPM."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "63 year old",
+      "asymptomatic",
+      "daytime average of 141/88 mmHg",
+      "U&Es, urinalysis and ECG are normal"
+     ],
+     "x": "Older, no red flags; ABPM ≥135/85 but <150/95."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Essential (primary) hypertension, stage 1**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Masked hypertension is normal clinic BP with raised ABPM; her clinic BP is raised."
+      ],
+      [
+       2,
+       "Stage 2 needs ABPM ≥150/95."
+      ],
+      [
+       3,
+       "No secondary clues: older, normal K+ and tests."
+      ],
+      [
+       4,
+       "White coat means ABPM below 135/85; hers is above."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Primary hypertension, stage 1.** ABPM 135/85 to 149/94 = stage 1."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 54 year old man has a clinic BP of 152/94 mmHg at a health check, and 150/92 mmHg on repeat. He has no symptoms. His pulse rate is 72 bpm. There is no evidence of end-organ damage and he has no other medical conditions.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "24 hour ambulatory BP monitoring",
+    "Echocardiogram",
+    "Plasma free metanephrines",
+    "Prescribe ramipril",
+    "Renal ultrasound"
+   ],
+   "a": 0,
+   "e": "A clinic BP of 140/90 or more is confirmed with ABPM before diagnosing hypertension. There are no secondary clues to justify further tests.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after a raised clinic BP: confirm before treating."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "152/94 mmHg",
+      "no symptoms",
+      "no evidence of end-organ damage"
+     ],
+     "x": "Clinic BP over 140/90 but below 180/120, no worrying signs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Confirm with **ABPM** (NICE)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Echo is not a confirmatory test for hypertension."
+      ],
+      [
+       2,
+       "Metanephrines are for suspected phaeo only."
+      ],
+      [
+       3,
+       "Treatment waits for confirmation by ABPM."
+      ],
+      [
+       4,
+       "Renal imaging is for suspected secondary causes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. 24 hour ambulatory BP monitoring.** Clinic ≥140/90 → ABPM (or HBPM) to confirm."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old woman has attacks of headache, sweating and a racing heart. Her father had medullary thyroid carcinoma. Her pulse rate is 112 bpm and BP 194/112 mmHg during an attack.",
+   "labs": [
+    [
+     "Potassium",
+     "4.2 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Calcitonin",
+     "Raised",
+     "",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Adrenal venous sampling",
+    "CT abdomen",
+    "Plasma free metanephrines",
+    "Plasma renin:aldosterone ratio",
+    "Thyroid ultrasound"
+   ],
+   "a": 2,
+   "e": "Episodic triad with a family history suggesting MEN2 points to phaeochromocytoma. Biochemical confirmation with plasma free metanephrines comes before imaging.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation: confirm the cause biochemically before imaging."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "attacks of headache, sweating and a racing heart",
+      "medullary thyroid carcinoma",
+      "BP 194/112 mmHg"
+     ],
+     "x": "Classic triad plus **MEN2** link: phaeochromocytoma."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Plasma free metanephrines** (or 24h urinary metanephrines)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AVS lateralises aldosterone excess."
+      ],
+      [
+       1,
+       "CT localises the tumour after biochemistry."
+      ],
+      [
+       3,
+       "Renin:aldosterone ratio is for hyperaldosteronism; K+ is normal."
+      ],
+      [
+       4,
+       "Thyroid imaging does not explain the hypertensive attacks."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Plasma free metanephrines.** Prove catecholamine excess, then find the tumour."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 66 year old man of Black Caribbean origin has ambulatory monitoring showing a daytime average of 156/98 mmHg. He has no diabetes or kidney disease and has started lifestyle changes. His pulse rate is 68 bpm and clinic BP 162/100 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial drug treatment?",
+   "o": [
+    "Amlodipine",
+    "Bisoprolol",
+    "Doxazosin",
+    "Indapamide",
+    "Lisinopril"
+   ],
+   "a": 0,
+   "e": "Age 55 or over, or Black African/Caribbean origin, means a calcium channel blocker first. ACE inhibitors are first only for under 55s who are not Black, or with diabetes/CKD.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial drug: age, ethnicity and diabetes/CKD decide."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "66 year old",
+      "Black Caribbean origin",
+      "156/98 mmHg",
+      "no diabetes or kidney disease"
+     ],
+     "x": "Stage 2 confirmed, **≥55 and Black**, no reason to prefer an ACEi."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Step 1: a **calcium channel blocker**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Beta-blockers are step 4 or for heart failure/post-MI."
+      ],
+      [
+       2,
+       "Alpha-blockers are step 4."
+      ],
+      [
+       3,
+       "Thiazide-like diuretics are step 3."
+      ],
+      [
+       4,
+       "ACEi is step 1 only under 55 and not Black, or with diabetes/CKD."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Amlodipine.** ≥55 or Black = CCB first."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 61 year old woman has hypertension that remains above target on maximum doses of ramipril, amlodipine and indapamide. She takes them reliably. Her pulse rate is 76 bpm and BP 156/94 mmHg.",
+   "labs": [
+    [
+     "Sodium",
+     "139 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "Potassium",
+     "3.9 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Creatinine",
+     "74 µmol/L",
+     "45–90",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Add atenolol",
+    "Add doxazosin",
+    "Add losartan",
+    "Add spironolactone",
+    "Switch indapamide to bendroflumethiazide"
+   ],
+   "a": 3,
+   "e": "Resistant hypertension on three drugs including a diuretic is step 4. With K+ at 4.5 or below, add spironolactone; above 4.5, a beta- or alpha-blocker.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step on three drugs: this is step 4, so check the potassium."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ramipril, amlodipine and indapamide",
+      "takes them reliably"
+     ],
+     "x": "Resistant hypertension, adherent, **K+ ≤4.5**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Step 4 with low-normal K+: **spironolactone**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A beta-blocker is the step 4 option when K+ is above 4.5."
+      ],
+      [
+       1,
+       "An alpha-blocker is also for K+ above 4.5."
+      ],
+      [
+       2,
+       "Do not combine an ARB with an ACE inhibitor."
+      ],
+      [
+       4,
+       "Swapping diuretics does not add a new class."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Add spironolactone.** Step 4: K+ ≤4.5 → spironolactone; watch for hyperkalaemia."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 47 year old man has severe headache, confusion and blurred vision. His pulse rate is 98 bpm and BP 242/140 mmHg. Fundoscopy shows bilateral papilloedema and flame haemorrhages.",
+   "labs": [
+    [
+     "Creatinine",
+     "214 µmol/L",
+     "60–110",
+     "H"
+    ],
+    [
+     "Urine dipstick",
+     "Protein 3+",
+     "Negative",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "IV labetalol",
+    "Oral amlodipine and review in 1 week",
+    "Oral ramipril",
+    "Sublingual nifedipine",
+    "Urgent ambulatory BP monitoring"
+   ],
+   "a": 0,
+   "e": "Malignant hypertension with encephalopathy, papilloedema and AKI needs controlled IV lowering with labetalol, avoiding a rapid drop. Oral or outpatient plans are too slow.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of a hypertensive emergency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confusion",
+      "BP 242/140 mmHg",
+      "bilateral papilloedema"
+     ],
+     "x": "Encephalopathy, papilloedema and AKI: **malignant hypertension**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV labetalol**, controlled lowering."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Outpatient oral therapy is too slow for end-organ damage."
+      ],
+      [
+       2,
+       "Oral ACEi in AKI is slow and risks worsening renal function."
+      ],
+      [
+       3,
+       "Sublingual nifedipine drops BP too fast, risking stroke."
+      ],
+      [
+       4,
+       "ABPM delays urgent treatment; diagnosis is clear."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. IV labetalol.** Malignant hypertension = IV, controlled, not rapid."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 69 year old man with hypertension and peripheral arterial disease starts ramipril. Two weeks later his creatinine has risen from 102 to 174 µmol/L. His pulse rate is 72 bpm and BP 150/86 mmHg. Renal Doppler shows bilateral renal artery stenosis.",
+   "labs": [
+    [
+     "Creatinine",
+     "174 µmol/L",
+     "60–110",
+     "H"
+    ],
+    [
+     "Potassium",
+     "5.6 mmol/L",
+     "3.5–5.3",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of the rise in creatinine?",
+   "o": [
+    "Accumulation of bradykinin in the kidney",
+    "Afferent arteriolar vasoconstriction",
+    "Direct tubular toxicity of ramipril",
+    "Loss of efferent arteriolar vasoconstriction",
+    "Renal artery thrombosis"
+   ],
+   "a": 3,
+   "e": "With stenosed renal arteries, angiotensin II constricts the efferent arteriole to keep glomerular pressure up. An ACE inhibitor removes this, so GFR falls and creatinine rises.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why creatinine rises on an ACEi."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "starts ramipril",
+      "from 102 to 174 µmol/L",
+      "bilateral renal artery stenosis"
+     ],
+     "x": "Low perfusion pressure: the kidneys rely on angiotensin II."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "ACEi removes compensatory **efferent arteriolar vasoconstriction**, so GFR falls."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bradykinin explains the cough, not the creatinine rise."
+      ],
+      [
+       1,
+       "ACE inhibitors do not constrict the afferent arteriole."
+      ],
+      [
+       2,
+       "Ramipril is not directly tubulotoxic."
+      ],
+      [
+       4,
+       "No sudden occlusion; the timing fits the drug."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Loss of efferent arteriolar vasoconstriction.** Big creatinine rise on ACEi = suspect RAS."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What are essential and secondary hypertension, and which patients make you suspect secondary?",
+    "tip": "Exam thinking: a young or resistant hypertensive is a secondary-cause question.",
+    "points": [
+     {
+      "p": "Essential: no identifiable cause, 90-95% of cases",
+      "k": [
+       [
+        "essential",
+        "primary"
+       ],
+       [
+        "90",
+        "95",
+        "no cause",
+        "no identifiable"
+       ]
+      ],
+      "why": "Older, gradual onset, asymptomatic, no red flags."
+     },
+     {
+      "p": "Secondary: has an identifiable cause",
+      "k": [
+       [
+        "secondary"
+       ],
+       [
+        "cause",
+        "identifiable"
+       ]
+      ],
+      "why": "Worth finding because many are curable."
+     },
+     {
+      "p": "Suspect secondary: young (<40)",
+      "k": [
+       [
+        "young",
+        "40"
+       ]
+      ],
+      "why": "Age is the commonest stem clue."
+     },
+     {
+      "p": "Resistant, sudden onset or severe hypertension",
+      "k": [
+       [
+        "resistant",
+        "sudden",
+        "severe",
+        "three drugs",
+        "3 drugs"
+       ]
+      ],
+      "why": "Resistant = not controlled on 3 agents."
+     },
+     {
+      "p": "Signs of an underlying disease (low K+, bruit, endocrine features)",
+      "k": [
+       [
+        "sign",
+        "potassium",
+        "k+",
+        "bruit",
+        "endocrine",
+        "feature"
+       ]
+      ],
+      "why": "One clue in the stem points to the cause."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Give the features of primary hyperaldosteronism and its most common cause.",
+    "tip": "Exam thinking: hypertension + low potassium = aldosterone until proven otherwise.",
+    "points": [
+     {
+      "p": "Hypertension with low potassium (hypokalaemia)",
+      "k": [
+       [
+        "potassium",
+        "k+",
+        "hypokal"
+       ]
+      ],
+      "why": "Off diuretics, low K+ is the key clue."
+     },
+     {
+      "p": "Sodium retention",
+      "k": [
+       [
+        "sodium",
+        "na+"
+       ]
+      ],
+      "why": "Sodium is high-normal."
+     },
+     {
+      "p": "Lethargy and headache",
+      "k": [
+       [
+        "lethar",
+        "tired",
+        "fatigue",
+        "headache"
+       ]
+      ],
+      "why": "Muscle weakness from hypokalaemia."
+     },
+     {
+      "p": "Most common cause: bilateral idiopathic adrenal hyperplasia",
+      "k": [
+       [
+        "bilateral",
+        "hyperplasia"
+       ]
+      ],
+      "why": "A unilateral adenoma (Conn's) is the other cause."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is the classic triad of phaeochromocytoma, and what is it associated with?",
+    "tip": "Exam thinking: the word 'episodic' and a syndrome in the family history.",
+    "points": [
+     {
+      "p": "Episodic headache",
+      "k": [
+       [
+        "headache"
+       ]
+      ],
+      "why": "Symptoms come in surges."
+     },
+     {
+      "p": "Sweating",
+      "k": [
+       [
+        "sweat",
+        "diaphores"
+       ]
+      ],
+      "why": "Catecholamine-driven."
+     },
+     {
+      "p": "Tachycardia / palpitations",
+      "k": [
+       [
+        "tachycard",
+        "palpitation",
+        "racing"
+       ]
+      ],
+      "why": "Beta-adrenergic stimulation."
+     },
+     {
+      "p": "Associated with MEN2, NF1 and von Hippel-Lindau",
+      "k": [
+       [
+        "men2",
+        "men 2",
+        "nf1",
+        "neurofibromat",
+        "hippel",
+        "vhl"
+       ]
+      ],
+      "why": "Café-au-lait spots or medullary thyroid cancer in the stem."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does renal artery stenosis present, and name other secondary causes of hypertension.",
+    "tip": "Exam thinking: flash pulmonary oedema with a normal echo is renal artery stenosis.",
+    "points": [
+     {
+      "p": "RAS: resistant hypertension despite 3 agents",
+      "k": [
+       [
+        "resistant",
+        "three",
+        "3 agents",
+        "3 drugs"
+       ]
+      ],
+      "why": "Often an older arteriopath."
+     },
+     {
+      "p": "Recurrent flash pulmonary oedema",
+      "k": [
+       [
+        "flash",
+        "pulmonary oedema",
+        "pulmonary edema"
+       ]
+      ],
+      "why": "Occurs with normal labs/echo."
+     },
+     {
+      "p": "Abdominal (renal) bruit",
+      "k": [
+       [
+        "bruit"
+       ]
+      ],
+      "why": "Listen either side of the umbilicus."
+     },
+     {
+      "p": "Others: CKD, Cushing's, thyroid disease, OSA, coarctation",
+      "k": [
+       [
+        "ckd",
+        "cushing",
+        "thyroid",
+        "sleep apn",
+        "osa",
+        "coarctation"
+       ]
+      ],
+      "why": "Coarctation: radio-femoral delay."
+     },
+     {
+      "p": "Drugs: OCP, steroids",
+      "k": [
+       [
+        "ocp",
+        "pill",
+        "contracept",
+        "steroid"
+       ]
+      ],
+      "why": "Reversible: stop the drug."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of hypertension, including malignant hypertension?",
+    "tip": "Exam thinking: very high BP plus papilloedema, confusion or AKI = malignant.",
+    "points": [
+     {
+      "p": "Malignant: encephalopathy, papilloedema",
+      "k": [
+       [
+        "encephalopath",
+        "papilloedema",
+        "papilledema"
+       ]
+      ],
+      "why": "Fundoscopy is the key bedside test."
+     },
+     {
+      "p": "Malignant: intracranial haemorrhage, raised ICP, aortic dissection, AKI",
+      "k": [
+       [
+        "haemorrhage",
+        "hemorrhage",
+        "icp",
+        "dissection",
+        "aki",
+        "kidney injury"
+       ]
+      ],
+      "why": "These make it an emergency."
+     },
+     {
+      "p": "Chronic: stroke and heart failure/LVH",
+      "k": [
+       [
+        "stroke",
+        "heart failure",
+        "lvh"
+       ]
+      ],
+      "why": "Brain and heart."
+     },
+     {
+      "p": "Chronic: CKD and hypertensive retinopathy",
+      "k": [
+       [
+        "ckd",
+        "kidney",
+        "retinopath"
+       ]
+      ],
+      "why": "Kidneys and eyes."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is hypertension diagnosed and staged on clinic and ABPM readings?",
+    "tip": "Exam thinking: ABPM numbers are 5 lower than clinic numbers.",
+    "points": [
+     {
+      "p": "Clinic BP >140/90 confirmed by ABPM (or HBPM)",
+      "k": [
+       [
+        "abpm",
+        "ambulatory",
+        "hbpm",
+        "home"
+       ]
+      ],
+      "why": "NICE recommends ABPM."
+     },
+     {
+      "p": "Stage 1: clinic ≥140/90, ABPM ≥135/85",
+      "k": [
+       [
+        "135"
+       ]
+      ],
+      "why": "Lifestyle advice alone for stage 1 in the notes."
+     },
+     {
+      "p": "Stage 2: clinic ≥160/100, ABPM ≥150/95",
+      "k": [
+       [
+        "150",
+        "160"
+       ]
+      ],
+      "why": "Treat with drugs."
+     },
+     {
+      "p": "≥180/120 with no worrying signs: urgent end-organ tests (dipstick, fundoscopy)",
+      "k": [
+       [
+        "180"
+       ]
+      ],
+      "why": "Look for papilloedema."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What baseline tests does every hypertensive need, and how are secondary causes investigated?",
+    "tip": "Exam thinking: biochemistry before imaging.",
+    "points": [
+     {
+      "p": "Baseline: FBC, U&Es, urinalysis, ECG",
+      "k": [
+       [
+        "u&e",
+        "urea",
+        "electrolyte",
+        "urinalysis",
+        "dipstick",
+        "ecg"
+       ]
+      ],
+      "why": "Looks for kidney damage and LVH."
+     },
+     {
+      "p": "Phaeo: plasma free metanephrines (or 24h urinary)",
+      "k": [
+       [
+        "metanephrine"
+       ]
+      ],
+      "why": "Before localising the tumour."
+     },
+     {
+      "p": "Hyperaldosteronism: renin:aldosterone ratio",
+      "k": [
+       [
+        "renin"
+       ]
+      ],
+      "why": "Raised aldosterone, suppressed renin."
+     },
+     {
+      "p": "Then high-resolution CT abdomen, then adrenal venous sampling",
+      "k": [
+       [
+        "ct"
+       ],
+       [
+        "venous sampling",
+        "avs"
+       ]
+      ],
+      "why": "AVS separates unilateral from bilateral."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Describe the NICE stepped treatment ladder for hypertension, steps 1 to 4.",
+    "tip": "Exam thinking: the stem gives you age, ethnicity, diabetes and potassium on purpose.",
+    "points": [
+     {
+      "p": "Step 1: under 55 and not Black → ACE inhibitor (or ARB)",
+      "k": [
+       [
+        "ace",
+        "ramipril",
+        "lisinopril"
+       ],
+       [
+        "55"
+       ]
+      ],
+      "why": "Diabetes or CKD favours ACEi/ARB regardless."
+     },
+     {
+      "p": "Step 1: ≥55 or Black African/Caribbean → CCB",
+      "k": [
+       [
+        "ccb",
+        "calcium channel",
+        "amlodipine"
+       ]
+      ],
+      "why": "Side effects: ankle oedema."
+     },
+     {
+      "p": "Step 2: add the other (ACEi/ARB or CCB)",
+      "k": [
+       [
+        "step 2",
+        "add",
+        "combination"
+       ]
+      ],
+      "why": "Or thiazide-like diuretic if intolerant."
+     },
+     {
+      "p": "Step 3: thiazide-like diuretic, indapamide first",
+      "k": [
+       [
+        "indapamide",
+        "thiazide"
+       ]
+      ],
+      "why": "Bendroflumethiazide second."
+     },
+     {
+      "p": "Step 4: K+ ≤4.5 spironolactone; K+ >4.5 beta- or alpha-blocker",
+      "k": [
+       [
+        "spironolactone"
+       ],
+       [
+        "4.5"
+       ]
+      ],
+      "why": "Watch hyperkalaemia and gynaecomastia."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What changes in pregnancy, in malignant hypertension, and in each secondary cause?",
+    "tip": "Exam thinking: a pregnant woman on ramipril is always a wrong answer.",
+    "points": [
+     {
+      "p": "Pregnancy: avoid ACEi/ARB; use labetalol, nifedipine or methyldopa",
+      "k": [
+       [
+        "labetalol",
+        "nifedipine",
+        "methyldopa"
+       ]
+      ],
+      "why": "ACE inhibitors are teratogenic."
+     },
+     {
+      "p": "Malignant: IV labetalol, controlled lowering, avoid a rapid drop",
+      "k": [
+       [
+        "iv",
+        "intravenous"
+       ],
+       [
+        "labetalol"
+       ]
+      ],
+      "why": "Rapid drops cause cerebral ischaemia."
+     },
+     {
+      "p": "Phaeo: surgery",
+      "k": [
+       [
+        "surg",
+        "adrenalectomy",
+        "resect"
+       ]
+      ],
+      "why": "After alpha-blockade, then beta-blockade (NICE practice)."
+     },
+     {
+      "p": "Hyperaldosteronism: spironolactone",
+      "k": [
+       [
+        "spironolactone"
+       ]
+      ],
+      "why": "Aldosterone antagonist."
+     },
+     {
+      "p": "Renal artery stenosis: angioplasty/stenting",
+      "k": [
+       [
+        "angioplast",
+        "stent"
+       ]
+      ],
+      "why": "Treats the cause."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the side effects of ACE inhibitors, CCBs and thiazide-like diuretics, and the BP target?",
+    "tip": "Exam thinking: match the side effect to the drug class.",
+    "points": [
+     {
+      "p": "ACEi: dry cough (switch to ARB), hyperkalaemia",
+      "k": [
+       [
+        "cough"
+       ]
+      ],
+      "why": "Losartan is the ARB switch."
+     },
+     {
+      "p": "CCB: ankle oedema, gum hypertrophy, reflex tachycardia (nifedipine)",
+      "k": [
+       [
+        "ankle",
+        "oedema",
+        "edema",
+        "gum"
+       ]
+      ],
+      "why": "Avoid verapamil in heart failure."
+     },
+     {
+      "p": "Thiazide-like: gout, erectile dysfunction, low K+ and Na+, high Ca2+",
+      "k": [
+       [
+        "gout",
+        "erectile",
+        "hypokal",
+        "hyponat",
+        "hypercal"
+       ]
+      ],
+      "why": "Hypercalcaemia with hypocalciuria."
+     },
+     {
+      "p": "Target under 80: clinic <140/90",
+      "k": [
+       [
+        "140"
+       ]
+      ],
+      "why": "Statin if QRisk >10%."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does hyperaldosteronism cause hypokalaemia, and why does an ACE inhibitor cause cough and raise creatinine in RAS?",
+    "tip": "Exam thinking: name the receptor, the molecule or the arteriole.",
+    "points": [
+     {
+      "p": "Aldosterone made independent of renin: Na+ and water retained",
+      "k": [
+       [
+        "sodium",
+        "na+",
+        "water"
+       ]
+      ],
+      "why": "Volume rises, BP rises, renin falls."
+     },
+     {
+      "p": "Renal potassium wasting gives hypokalaemia",
+      "k": [
+       [
+        "potassium",
+        "k+"
+       ],
+       [
+        "wast",
+        "excret",
+        "loss",
+        "lost"
+       ]
+      ],
+      "why": "Spironolactone blocks this."
+     },
+     {
+      "p": "ACEi cough: bradykinin accumulation",
+      "k": [
+       [
+        "bradykinin"
+       ]
+      ],
+      "why": "ACE normally breaks bradykinin down."
+     },
+     {
+      "p": "RAS: ACEi removes efferent arteriolar vasoconstriction, creatinine rises",
+      "k": [
+       [
+        "efferent"
+       ]
+      ],
+      "why": "The kidney relied on angiotensin II."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What drives essential hypertension, phaeochromocytoma symptoms and end-organ damage?",
+    "tip": "Exam thinking: resistance, catecholamines, mechanical stress.",
+    "points": [
+     {
+      "p": "Essential: genes, sympathetic activity, RAAS overactivity, diet/obesity",
+      "k": [
+       [
+        "raas",
+        "renin",
+        "sympathetic",
+        "genetic"
+       ]
+      ],
+      "why": "Raises peripheral vascular resistance."
+     },
+     {
+      "p": "Phaeo: chromaffin-cell tumour of the adrenal medulla secreting catecholamines",
+      "k": [
+       [
+        "chromaffin",
+        "medulla",
+        "catecholamine",
+        "adrenaline",
+        "noradrenaline"
+       ]
+      ],
+      "why": "Alpha/beta stimulation."
+     },
+     {
+      "p": "End-organ damage: arteriolosclerosis, LVH, glomerulosclerosis, retinal damage",
+      "k": [
+       [
+        "arteriolosclerosis",
+        "lvh",
+        "glomerulosclerosis",
+        "retina"
+       ]
+      ],
+      "why": "Sustained mechanical stress on vessel walls."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "ABPM": "Ambulatory blood pressure monitoring: a cuff worn for 24 hours, the NICE-preferred way to confirm hypertension.",
+  "HBPM": "Home blood pressure monitoring: the patient measures their own BP at home, an alternative to ABPM.",
+  "Essential hypertension": "High blood pressure with no identifiable cause; 90-95% of cases.",
+  "Secondary hypertension": "High blood pressure due to an identifiable, often treatable, underlying cause.",
+  "Resistant hypertension": "Blood pressure not controlled despite three drugs, including a diuretic.",
+  "Malignant hypertension": "Very high BP with acute end-organ damage such as papilloedema, encephalopathy or AKI.",
+  "End-organ damage": "Damage to the brain, heart, kidneys or eyes caused by high blood pressure.",
+  "Papilloedema": "Swelling of the optic disc from raised intracranial pressure, seen on fundoscopy.",
+  "Fundoscopy": "Looking at the back of the eye with an ophthalmoscope to see the retina and optic disc.",
+  "Hypertensive retinopathy": "Damage to the retinal blood vessels caused by high blood pressure.",
+  "LVH": "Left ventricular hypertrophy: thickened left ventricle muscle from working against high pressure.",
+  "Primary hyperaldosteronism": "The adrenal glands make too much aldosterone on their own, causing hypertension and low potassium.",
+  "Conn's syndrome": "Primary hyperaldosteronism caused by a single aldosterone-secreting adrenal adenoma.",
+  "Renin:aldosterone ratio": "Blood test screening for primary hyperaldosteronism: high aldosterone with suppressed renin.",
+  "Adrenal venous sampling": "Sampling blood from each adrenal vein to see whether one or both glands make excess aldosterone.",
+  "AVS": "Adrenal venous sampling: lateralises the source of excess aldosterone.",
+  "Phaeochromocytoma": "Catecholamine-secreting tumour of the adrenal medulla causing episodic headache, sweating and palpitations.",
+  "Metanephrines": "Breakdown products of adrenaline and noradrenaline; measured in plasma or urine to detect phaeochromocytoma.",
+  "Chromaffin cells": "Catecholamine-producing cells of the adrenal medulla, the origin of phaeochromocytoma.",
+  "MEN2": "Multiple endocrine neoplasia type 2: inherited syndrome with phaeochromocytoma and medullary thyroid carcinoma.",
+  "NF1": "Neurofibromatosis type 1: café-au-lait spots and neurofibromas, associated with phaeochromocytoma.",
+  "Von Hippel-Lindau": "Inherited tumour syndrome associated with phaeochromocytoma and renal cancers.",
+  "Renal artery stenosis": "Narrowing of a renal artery, usually atherosclerotic, causing renin-driven hypertension.",
+  "Flash pulmonary oedema": "Sudden fluid in the lungs, classically recurrent in renal artery stenosis.",
+  "Coarctation of the aorta": "Congenital narrowing of the aorta causing arm hypertension and weak, delayed femoral pulses.",
+  "Radio-femoral delay": "The femoral pulse arrives later than the radial pulse; a sign of coarctation.",
+  "OSA": "Obstructive sleep apnoea: repeated airway collapse in sleep, a cause of secondary hypertension.",
+  "RAAS": "Renin-angiotensin-aldosterone system: hormones that raise BP by vasoconstriction and sodium retention.",
+  "ACE inhibitor": "Drug (e.g. ramipril) blocking conversion of angiotensin I to II; can cause cough and hyperkalaemia.",
+  "ARB": "Angiotensin II receptor blocker (e.g. losartan); used when an ACE inhibitor causes cough.",
+  "CCB": "Calcium channel blocker (e.g. amlodipine); first-line for age 55 or over or Black patients.",
+  "Indapamide": "Thiazide-like diuretic; the preferred step 3 drug for hypertension.",
+  "Spironolactone": "Aldosterone antagonist; step 4 when potassium is 4.5 or lower, and treats hyperaldosteronism.",
+  "Labetalol": "Combined alpha- and beta-blocker; used in pregnancy and IV for malignant hypertension.",
+  "Methyldopa": "Centrally acting antihypertensive safe in pregnancy.",
+  "Bradykinin": "Vasodilator peptide broken down by ACE; its build-up causes the ACE inhibitor cough.",
+  "Efferent arteriole": "The vessel leaving the glomerulus; its constriction by angiotensin II keeps glomerular pressure up.",
+  "QRisk": "Score estimating 10-year cardiovascular risk; above 10% means offer a statin.",
+  "Gynaecomastia": "Breast tissue enlargement in men; a side effect of spironolactone.",
+  "Arteriolosclerosis": "Thickening and hardening of small arteries caused by long-standing high blood pressure.",
+  "Glomerulosclerosis": "Scarring of the kidney glomeruli, a cause of CKD in hypertension.",
+  "Masked hypertension": "Normal BP in clinic but raised on ambulatory or home monitoring."
+ }
+}

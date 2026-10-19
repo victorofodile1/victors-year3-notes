@@ -1,0 +1,2129 @@
+{
+ "id": "hyperparathyroidism",
+ "patient": {
+  "name": "Patricia Mensah",
+  "age": 63,
+  "sex": "F",
+  "setting": "Emergency Department, then endocrine clinic",
+  "complaint": "Right loin-to-groin pain on a background of thirst, constipation and low mood",
+  "background": [
+   "Hypertension on bendroflumethiazide",
+   "Postmenopausal; no fractures",
+   "Retired bus controller in Lewisham",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a bone profile and PTH: decide primary, secondary or tertiary from the calcium and the kidneys.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Patricia, 63, retired bus controller from Lewisham.",
+      "Two months of **thirst**, passing urine at night, tiredness.",
+      "Constipated and 'low and foggy', says her daughter.",
+      "Last night: severe **right loin-to-groin pain**, vomited twice."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "96 bpm",
+      "BP": "142/86 mmHg",
+      "RR": "18 /min",
+      "SpO2": "98% on air"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "abdomen",
+      "title": "Where the pain is",
+      "regions": [
+       "R_flank",
+       "suprapubic"
+      ],
+      "caption": "Loin to groin colic: a **renal stone**. In a stem, ask why she is making stones."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia's thirst, polyuria, tiredness and her **renal stone** are the usual way raised calcium shows itself."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Stones (colic), abdominal groans (constipation), psychiatric overtones (low mood, fog): Patricia ticks the **mnemonic**. Excess PTH explains all of it."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods in the ED",
+     "rows": [
+      [
+       "Adjusted calcium",
+       "2.94 mmol/L",
+       "2.20–2.60",
+       "H"
+      ],
+      [
+       "Phosphate",
+       "0.62 mmol/L",
+       "0.80–1.50",
+       "L"
+      ],
+      [
+       "Creatinine",
+       "78 µmol/L",
+       "45–90",
+       ""
+      ],
+      [
+       "ALP",
+       "104 IU/L",
+       "30–130",
+       ""
+      ]
+     ],
+     "text": "High calcium with **low phosphate** and normal kidneys: think PTH."
+    },
+    {
+     "type": "ask",
+     "q": "Patricia's calcium is 2.94 mmol/L with low phosphate. What is the most likely cause?",
+     "o": [
+      "Bony metastases",
+      "Multiple myeloma",
+      "Primary hyperparathyroidism",
+      "Sarcoidosis"
+     ],
+     "a": 2,
+     "r": "In a well outpatient, **primary hyperparathyroidism** is the commonest cause of hypercalcaemia; low phosphate points to PTH action."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia is a **postmenopausal woman**, the classic group. A solitary **adenoma** is the usual culprit."
+    },
+    {
+     "type": "compare",
+     "title": "Primary vs secondary vs tertiary",
+     "head": [
+      "Type",
+      "Calcium",
+      "PTH",
+      "Typical cause"
+     ],
+     "rows": [
+      [
+       "Primary",
+       "**High**",
+       "High (or inappropriately normal)",
+       "Parathyroid adenoma"
+      ],
+      [
+       "Secondary",
+       "**Low** or normal",
+       "High",
+       "Vitamin D deficiency, CKD"
+      ],
+      [
+       "Tertiary",
+       "**High**",
+       "High",
+       "Long-standing CKD, autonomous glands"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Patricia has no ulcers or pituitary symptoms, but a young patient with hypercalcaemia and **peptic ulcers** should make you think **MEN1**."
+    },
+    {
+     "type": "trap",
+     "text": "Do not call it 'normal PTH so not parathyroid'. A PTH in the normal range with a **high calcium** is inappropriate: it should be suppressed."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect the diagnostic test (bone profile with PTH) or the localising test after diagnosis (sestamibi scan).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Repeat bloods sent with a **PTH** and vitamin D.",
+      "CT KUB: 6 mm right ureteric stone, plus a small left renal stone."
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Bone profile and PTH",
+     "rows": [
+      [
+       "Adjusted calcium",
+       "2.91 mmol/L",
+       "2.20–2.60",
+       "H"
+      ],
+      [
+       "Phosphate",
+       "0.64 mmol/L",
+       "0.80–1.50",
+       "L"
+      ],
+      [
+       "PTH",
+       "14.2 pmol/L",
+       "1.6–8.5",
+       "H"
+      ],
+      [
+       "ALP",
+       "118 IU/L",
+       "30–130",
+       ""
+      ],
+      [
+       "25-OH vitamin D",
+       "58 nmol/L",
+       ">50",
+       ""
+      ],
+      [
+       "eGFR",
+       ">90 mL/min",
+       ">90",
+       ""
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Adjusted calcium",
+      "min": 1.8,
+      "max": 4.0,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        1.8,
+        2.2,
+        "low",
+        "warn"
+       ],
+       [
+        2.2,
+        2.6,
+        "normal",
+        "ok"
+       ],
+       [
+        2.6,
+        3.0,
+        "mild",
+        "warn"
+       ],
+       [
+        3.0,
+        3.5,
+        "moderate",
+        "warn"
+       ],
+       [
+        3.5,
+        4.0,
+        "severe",
+        "bad"
+       ]
+      ],
+      "value": 2.91,
+      "label": "Patricia 2.91"
+     },
+     "text": "Calcium above 2.6 is high; above 3.5 is a crisis. Patricia sits in the mild-to-moderate band."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "High calcium **and** high PTH with normal kidneys and vitamin D: Patricia has **primary** hyperparathyroidism on the bone profile and PTH alone."
+    },
+    {
+     "type": "ask",
+     "q": "The diagnosis is made. What does the sestamibi scan add?",
+     "o": [
+      "Confirms the diagnosis",
+      "Grades the hypercalcaemia",
+      "Localises the adenoma before surgery",
+      "Measures bone density"
+     ],
+     "a": 2,
+     "r": "Imaging comes **after** biochemistry; it tells the surgeon **where** the adenoma is. It never makes the diagnosis."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia's neck ultrasound is normal, so a **Tc-99m sestamibi** scan finds a right inferior adenoma. DEXA and urinary calcium complete the work-up."
+    },
+    {
+     "type": "flow",
+     "title": "Working up hypercalcaemia",
+     "nodes": [
+      "Raised adjusted calcium",
+      "Check PTH",
+      "PTH high or inappropriately normal → hyperparathyroidism",
+      "PTH suppressed → malignancy, myeloma, sarcoid, vitamin D excess",
+      "Hyperparathyroid → ultrasound then sestamibi to localise"
+     ],
+     "caption": "PTH is the branch point."
+    },
+    {
+     "type": "pearl",
+     "text": "Hypercalcaemia + **suppressed PTH** is not hyperparathyroidism: look for malignancy or myeloma. A raised PTH makes it parathyroid."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'immediate management' of symptomatic hypercalcaemia (IV fluids) and 'definitive management' (parathyroidectomy, cinacalcet if unfit).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "In the ED Patricia is dry: tachycardic, sticky mouth.",
+      "Her colic is controlled with analgesia.",
+      "She takes **bendroflumethiazide** for blood pressure."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "What is Patricia's most appropriate initial treatment?",
+     "o": [
+      "Cinacalcet",
+      "IV 0.9% sodium chloride",
+      "IV calcium gluconate",
+      "Oral vitamin D"
+     ],
+     "a": 1,
+     "r": "**Rehydration** with IV saline comes first. Calcium gluconate is for **hypo**calcaemia; cinacalcet is long-term."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia gets IV fluids and her **thiazide is stopped**, as thiazides reduce renal calcium excretion and raise calcium further."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Patricia's calcium were above 3.5 with confusion, vomiting and arrhythmia risk, this would be a **hypercalcaemic crisis** needing urgent hospital care."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Patricia's calcium",
+      "x": [
+       "Day 0",
+       "Day 2",
+       "Week 6 (pre-op)",
+       "Day 1 post-op",
+       "Month 3"
+      ],
+      "unit": "mmol/L",
+      "series": [
+       {
+        "name": "Adjusted calcium",
+        "values": [
+         2.94,
+         2.75,
+         2.88,
+         2.35,
+         2.4
+        ]
+       }
+      ],
+      "caption": "Fluids lower it only briefly; **surgery cures** it."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia has a stone and is fit, so she is referred for **parathyroidectomy**. If she were unfit, **cinacalcet** or monitoring."
+    },
+    {
+     "type": "flow",
+     "title": "Managing primary hyperparathyroidism",
+     "nodes": [
+      "Hydrate; stop thiazide or lithium",
+      "Severe or symptomatic → admit, IV fluids",
+      "Fit for surgery → parathyroidectomy",
+      "Unfit → cinacalcet or monitor"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia has primary disease, but in **secondary** disease you replace vitamin D and, in CKD, balance phosphate and calcium with renal input."
+    },
+    {
+     "type": "trap",
+     "text": "Thiazides and lithium raise calcium. Stopping them is part of first-line treatment, and a classic distractor if left on."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect mechanism questions: how PTH raises calcium, why phosphate is low, or why CKD leads to secondary then tertiary disease.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's adenoma floods her with PTH: **bone resorption** via RANKL, more renal calcium reabsorption, phosphate loss and more active vitamin D."
+    },
+    {
+     "type": "flow",
+     "title": "How PTH raises calcium",
+     "nodes": [
+      "PTH binds osteoblasts",
+      "Osteoblasts release RANKL",
+      "Osteoclasts resorb bone → calcium out",
+      "Kidney: ↑ calcium reabsorption, ↑ phosphate excretion",
+      "Kidney: ↑ 1-alpha-hydroxylase → calcitriol → gut absorption"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why is Patricia's phosphate low?",
+     "o": [
+      "Calcium binds phosphate in the gut",
+      "Low vitamin D absorption",
+      "Phosphate shifts into cells",
+      "PTH increases renal phosphate excretion"
+     ],
+     "a": 3,
+     "r": "PTH reduces proximal tubule phosphate reabsorption, so phosphate is **lost in the urine**: hypophosphataemia in primary disease."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia's kidneys are healthy. In **CKD**, low calcium drives the glands up (secondary) until they run **autonomously** (tertiary)."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Untreated, Patricia faces more **stones**, **osteoporosis** and fractures, pancreatitis, renal impairment and neuropsychiatric symptoms."
+    },
+    {
+     "type": "pearl",
+     "text": "Tertiary disease is the gland that 'forgot to switch off': calcium is now **high** even though the original low-calcium drive has gone."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most common cause of primary hyperparathyroidism?",
+   "o": [
+    "Parathyroid carcinoma",
+    "Parathyroid hyperplasia",
+    "Solitary parathyroid adenoma",
+    "Vitamin D deficiency"
+   ],
+   "a": 2,
+   "r": "A **solitary adenoma**; hyperplasia is less common and carcinoma rare."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which group is most often affected by primary hyperparathyroidism?",
+   "o": [
+    "Children",
+    "Postmenopausal women",
+    "Premenopausal women",
+    "Young men"
+   ],
+   "a": 1,
+   "r": "It is **more common in postmenopausal women**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which MEN syndrome features parathyroid hyperplasia, pituitary and pancreatic tumours?",
+   "o": [
+    "MEN1",
+    "MEN2A",
+    "MEN2B",
+    "Neurofibromatosis type 1"
+   ],
+   "a": 0,
+   "r": "**MEN1**: the 3 Ps (parathyroid, pituitary, pancreas)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Raised PTH with low calcium in CKD is which type?",
+   "o": [
+    "Primary",
+    "Pseudo",
+    "Secondary",
+    "Tertiary"
+   ],
+   "a": 2,
+   "r": "**Secondary**: a compensatory PTH rise to low calcium."
+  },
+  {
+   "d": "investigation",
+   "q": "Which is the classic bone profile in primary hyperparathyroidism?",
+   "o": [
+    "High calcium, high phosphate, low PTH",
+    "High calcium, low phosphate, high PTH",
+    "Low calcium, high phosphate, high PTH",
+    "Low calcium, low phosphate, low PTH"
+   ],
+   "a": 1,
+   "r": "PTH raises calcium and **wastes phosphate**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which scan localises a parathyroid adenoma after biochemical diagnosis?",
+   "o": [
+    "Bone scan",
+    "DEXA scan",
+    "Tc-99m sestamibi scan",
+    "Thyroid uptake scan"
+   ],
+   "a": 2,
+   "r": "**Sestamibi** localises; it does not diagnose."
+  },
+  {
+   "d": "management",
+   "q": "What is the definitive treatment for primary hyperparathyroidism?",
+   "o": [
+    "Bisphosphonates",
+    "Cinacalcet",
+    "IV fluids",
+    "Parathyroidectomy"
+   ],
+   "a": 3,
+   "r": "**Parathyroidectomy** is definitive; cinacalcet if unfit."
+  },
+  {
+   "d": "management",
+   "q": "How does cinacalcet work?",
+   "o": [
+    "Activates the calcium-sensing receptor",
+    "Blocks osteoclast RANKL",
+    "Blocks vitamin D activation",
+    "Increases renal calcium loss"
+   ],
+   "a": 0,
+   "r": "An allosteric **calcimimetic** that makes the gland think calcium is high."
+  },
+  {
+   "d": "management",
+   "q": "Which drug should be stopped in hypercalcaemia?",
+   "o": [
+    "Amlodipine",
+    "Bendroflumethiazide",
+    "Furosemide",
+    "Ramipril"
+   ],
+   "a": 1,
+   "r": "**Thiazides** (and lithium) raise calcium."
+  },
+  {
+   "d": "science",
+   "q": "Which enzyme does PTH stimulate to activate vitamin D?",
+   "o": [
+    "1-alpha-hydroxylase",
+    "24-hydroxylase",
+    "25-hydroxylase",
+    "Alkaline phosphatase"
+   ],
+   "a": 0,
+   "r": "Renal **1-alpha-hydroxylase** makes calcitriol, increasing gut calcium absorption."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is hyperparathyroidism and what is the mnemonic for its features?",
+    "tip": "Exam thinking: the stem hides the mnemonic in small symptoms.",
+    "points": [
+     {
+      "p": "Excess PTH raising serum calcium",
+      "k": [
+       [
+        "pth",
+        "parathyroid hormone"
+       ],
+       [
+        "calcium",
+        "ca"
+       ]
+      ],
+      "why": "Raised calcium is the hallmark of primary and tertiary disease."
+     },
+     {
+      "p": "Stones: renal stones",
+      "k": [
+       [
+        "stone",
+        "calculi",
+        "nephrolith"
+       ]
+      ],
+      "why": "Loin-to-groin pain plus raised calcium is a classic stem."
+     },
+     {
+      "p": "Bones: bone pain, fractures, osteoporosis",
+      "k": [
+       [
+        "bone"
+       ]
+      ],
+      "why": "Fragility fractures can be the only clue."
+     },
+     {
+      "p": "Abdominal groans: constipation, pain, pancreatitis",
+      "k": [
+       [
+        "groan",
+        "constipat",
+        "abdominal",
+        "pancreat"
+       ]
+      ],
+      "why": "Pancreatitis is a complication of hypercalcaemia."
+     },
+     {
+      "p": "Psychiatric overtones: depression, confusion, lethargy",
+      "k": [
+       [
+        "psych",
+        "depress",
+        "confus",
+        "lethar",
+        "mood"
+       ]
+      ],
+      "why": "Confusion signals severe hypercalcaemia."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Define primary, secondary and tertiary hyperparathyroidism and their causes.",
+    "tip": "Exam thinking: the calcium tells you which one.",
+    "points": [
+     {
+      "p": "Primary: autonomous gland, usually solitary adenoma",
+      "k": [
+       [
+        "primary"
+       ],
+       [
+        "adenoma"
+       ]
+      ],
+      "why": "Hyperplasia and rarely carcinoma also occur."
+     },
+     {
+      "p": "Secondary: compensatory PTH rise to low calcium, vitamin D deficiency or CKD",
+      "k": [
+       [
+        "secondary"
+       ],
+       [
+        "vitamin d",
+        "ckd",
+        "kidney",
+        "renal"
+       ]
+      ],
+      "why": "Calcium low or normal."
+     },
+     {
+      "p": "Tertiary: autonomous secretion after long-standing secondary disease, advanced CKD",
+      "k": [
+       [
+        "tertiary"
+       ],
+       [
+        "autonom",
+        "ckd",
+        "kidney",
+        "renal"
+       ]
+      ],
+      "why": "Calcium is now high."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who typically gets primary hyperparathyroidism, and how common is it?",
+    "tip": "Exam thinking: the commonest cause of hypercalcaemia.",
+    "points": [
+     {
+      "p": "Most common cause of hypercalcaemia overall",
+      "k": [
+       [
+        "common"
+       ],
+       [
+        "hypercalc",
+        "calcium"
+       ]
+      ],
+      "why": "Malignancy is the main inpatient alternative."
+     },
+     {
+      "p": "Postmenopausal women",
+      "k": [
+       [
+        "menopaus",
+        "older women",
+        "women"
+       ]
+      ],
+      "why": "The typical stem patient."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the usual presenting symptoms and signs?",
+    "tip": "Exam thinking: most are effects of high calcium.",
+    "points": [
+     {
+      "p": "Polyuria and polydipsia, dehydration",
+      "k": [
+       [
+        "polyuria",
+        "thirst",
+        "polydips",
+        "urinat"
+       ]
+      ],
+      "why": "Hypercalcaemia causes nephrogenic diabetes insipidus."
+     },
+     {
+      "p": "Fatigue and muscle (proximal) weakness",
+      "k": [
+       [
+        "fatigue",
+        "tired",
+        "weak"
+       ]
+      ],
+      "why": "Non-specific but common."
+     },
+     {
+      "p": "Bone tenderness",
+      "k": [
+       [
+        "bone"
+       ]
+      ],
+      "why": "Raised ALP if bone is involved."
+     },
+     {
+      "p": "Renal stones",
+      "k": [
+       [
+        "stone",
+        "nephrolith",
+        "calculi"
+       ]
+      ],
+      "why": "Recurrent stones: check calcium."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which syndrome links hyperparathyroidism with peptic ulcers, and what are its parts?",
+    "tip": "Exam thinking: a young patient with high calcium and ulcers.",
+    "points": [
+     {
+      "p": "MEN1",
+      "k": [
+       [
+        "men1",
+        "men 1",
+        "men type 1",
+        "multiple endocrine neoplasia"
+       ]
+      ],
+      "why": "MEN2A pairs parathyroid with medullary thyroid cancer."
+     },
+     {
+      "p": "Parathyroid hyperplasia, pituitary and pancreatic tumours",
+      "k": [
+       [
+        "pituitar"
+       ],
+       [
+        "pancrea"
+       ]
+      ],
+      "why": "The 3 Ps."
+     },
+     {
+      "p": "Gastrinoma causing Zollinger–Ellison syndrome",
+      "k": [
+       [
+        "gastrinoma",
+        "zollinger"
+       ]
+      ],
+      "why": "Severe peptic ulcers, reflux and diarrhoea."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the gold-standard diagnostic test and the bloods pattern for each type?",
+    "tip": "Exam thinking: read calcium, PTH, phosphate, then kidneys.",
+    "points": [
+     {
+      "p": "Bone profile plus PTH",
+      "k": [
+       [
+        "pth",
+        "parathyroid hormone"
+       ],
+       [
+        "bone profile",
+        "calcium"
+       ]
+      ],
+      "why": "Biochemical diagnosis."
+     },
+     {
+      "p": "Primary: high calcium, high PTH, low phosphate, ALP raised if bone involved",
+      "k": [
+       [
+        "primary"
+       ],
+       [
+        "high",
+        "raised"
+       ]
+      ],
+      "why": "Normal PTH with high calcium is still inappropriate."
+     },
+     {
+      "p": "Secondary: low calcium, high PTH, low vitamin D",
+      "k": [
+       [
+        "secondary"
+       ],
+       [
+        "low"
+       ]
+      ],
+      "why": "Phosphate high in CKD."
+     },
+     {
+      "p": "Tertiary: high PTH and high calcium in advanced CKD",
+      "k": [
+       [
+        "tertiary"
+       ]
+      ],
+      "why": "Calcium high is the switch."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is done after biochemical confirmation, and what other tests help?",
+    "tip": "Exam thinking: imaging localises, it does not diagnose.",
+    "points": [
+     {
+      "p": "Tc-99m sestamibi scan to localise the adenoma",
+      "k": [
+       [
+        "sestamibi",
+        "mibi",
+        "technetium"
+       ]
+      ],
+      "why": "Especially if ultrasound is normal."
+     },
+     {
+      "p": "Neck ultrasound",
+      "k": [
+       [
+        "ultrasound",
+        "uss",
+        "us"
+       ]
+      ],
+      "why": "Often first localising scan."
+     },
+     {
+      "p": "Vitamin D, urinary calcium, DEXA, renal function",
+      "k": [
+       [
+        "vitamin d",
+        "urinary calcium",
+        "dexa",
+        "renal",
+        "u&e"
+       ]
+      ],
+      "why": "DEXA assesses bone damage."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the first-line and emergency management of hypercalcaemia from hyperparathyroidism?",
+    "tip": "Exam thinking: 'immediate' means fluids.",
+    "points": [
+     {
+      "p": "Rehydrate: IV 0.9% saline",
+      "k": [
+       [
+        "fluid",
+        "saline",
+        "hydrat"
+       ]
+      ],
+      "why": "Calcium gluconate is the opposite condition."
+     },
+     {
+      "p": "Stop thiazides and lithium",
+      "k": [
+       [
+        "thiazide",
+        "lithium"
+       ]
+      ],
+      "why": "Both raise calcium."
+     },
+     {
+      "p": "Severe or crisis (confusion, vomiting, arrhythmia): urgent hospital and specialist care",
+      "k": [
+       [
+        "crisis",
+        "severe",
+        "urgent",
+        "hospital",
+        "specialist"
+       ]
+      ],
+      "why": "Above 3.5 mmol/L is severe."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the definitive treatment, the option if unfit, and the management of secondary disease?",
+    "tip": "Exam thinking: definitive vs immediate vs unfit.",
+    "points": [
+     {
+      "p": "Parathyroidectomy for primary and tertiary",
+      "k": [
+       [
+        "parathyroidectomy",
+        "surgery"
+       ]
+      ],
+      "why": "The cure."
+     },
+     {
+      "p": "Cinacalcet if unfit (calcimimetic on the calcium-sensing receptor), or monitoring",
+      "k": [
+       [
+        "cinacalcet",
+        "calcimimetic"
+       ]
+      ],
+      "why": "Allosteric activation of the CaSR."
+     },
+     {
+      "p": "Secondary: replace vitamin D; in CKD balance phosphate, calcium and vitamin D",
+      "k": [
+       [
+        "vitamin d",
+        "phosphate"
+       ]
+      ],
+      "why": "Renal and endocrine input."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does PTH raise calcium, and why is phosphate low in primary disease?",
+    "tip": "Exam thinking: bone, kidney, gut.",
+    "points": [
+     {
+      "p": "Osteoblasts release RANKL to activate osteoclasts: bone resorption",
+      "k": [
+       [
+        "rankl",
+        "osteoclast",
+        "osteoblast",
+        "resorption"
+       ]
+      ],
+      "why": "Osteoclasts have no PTH receptor."
+     },
+     {
+      "p": "Increased renal calcium reabsorption",
+      "k": [
+       [
+        "reabsor"
+       ]
+      ],
+      "why": "Distal tubule."
+     },
+     {
+      "p": "Increased renal phosphate excretion: hypophosphataemia",
+      "k": [
+       [
+        "phosphate"
+       ],
+       [
+        "excret",
+        "loss",
+        "urine",
+        "low"
+       ]
+      ],
+      "why": "Low phosphate is a key clue."
+     },
+     {
+      "p": "Stimulates 1-alpha-hydroxylase: more active vitamin D, gut absorption",
+      "k": [
+       [
+        "1-alpha",
+        "1 alpha",
+        "hydroxylase",
+        "calcitriol"
+       ]
+      ],
+      "why": "Calcitriol increases gut calcium absorption."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does CKD cause secondary and then tertiary hyperparathyroidism, and what are the complications?",
+    "tip": "Exam thinking: the glands eventually stop listening.",
+    "points": [
+     {
+      "p": "CKD: phosphate retention, less vitamin D activation, low calcium drive PTH",
+      "k": [
+       [
+        "phosphate",
+        "vitamin d",
+        "hypocalc",
+        "low calcium"
+       ]
+      ],
+      "why": "Secondary is compensatory."
+     },
+     {
+      "p": "Prolonged stimulation: autonomous PTH secretion (tertiary)",
+      "k": [
+       [
+        "autonom",
+        "unregulated"
+       ]
+      ],
+      "why": "Persists even when the stimulus is corrected."
+     },
+     {
+      "p": "Complications: stones, osteoporosis, fractures, pancreatitis, renal impairment, neuropsychiatric",
+      "k": [
+       [
+        "stone",
+        "osteopor",
+        "fracture",
+        "pancreat",
+        "renal"
+       ]
+      ],
+      "why": "Same list as the mnemonic."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "PTH": "Parathyroid hormone; raises blood calcium by acting on bone, kidney and, via vitamin D, gut.",
+  "hypercalcaemia": "A blood calcium above the normal range, roughly above 2.6 mmol/L.",
+  "hypophosphataemia": "A low blood phosphate; in primary hyperparathyroidism it is from urinary phosphate loss.",
+  "adjusted calcium": "Total calcium corrected for albumin, so low albumin does not mislead.",
+  "parathyroid adenoma": "A benign tumour of one parathyroid gland; the usual cause of primary hyperparathyroidism.",
+  "hyperplasia": "Enlargement of all the glands from too many cells; seen in MEN1 and secondary disease.",
+  "primary hyperparathyroidism": "Autonomous PTH excess from the gland itself, with a high calcium.",
+  "secondary hyperparathyroidism": "Appropriate PTH rise in response to low calcium, e.g. vitamin D deficiency or CKD.",
+  "tertiary hyperparathyroidism": "Autonomous PTH secretion after long-standing secondary disease, with a high calcium.",
+  "MEN1": "Multiple endocrine neoplasia type 1: parathyroid, pituitary and pancreatic tumours.",
+  "MEN2A": "Multiple endocrine neoplasia 2A: medullary thyroid cancer, phaeochromocytoma and parathyroid disease.",
+  "gastrinoma": "A gastrin-secreting tumour, usually pancreatic or duodenal, causing excess acid.",
+  "Zollinger–Ellison syndrome": "Severe peptic ulcers, reflux and diarrhoea from a gastrinoma.",
+  "nephrolithiasis": "Stones in the kidney or urinary tract.",
+  "renal colic": "Severe loin-to-groin pain from a stone moving down the ureter.",
+  "CT KUB": "Non-contrast CT of kidneys, ureters and bladder; the standard test for stones.",
+  "sestamibi": "Technetium-99m sestamibi scan; nuclear imaging that lights up an overactive parathyroid gland.",
+  "Tc-99m": "Technetium-99m, a radioactive tracer used in nuclear medicine scans.",
+  "DEXA": "Dual-energy X-ray absorptiometry; measures bone mineral density.",
+  "ALP": "Alkaline phosphatase; rises when bone turnover is high.",
+  "bone profile": "Blood panel of calcium, phosphate, albumin and ALP.",
+  "parathyroidectomy": "Surgical removal of parathyroid tissue; the definitive treatment.",
+  "cinacalcet": "A calcimimetic drug that activates the calcium-sensing receptor and lowers PTH.",
+  "calcimimetic": "A drug that mimics calcium at its sensing receptor, switching off PTH release.",
+  "calcium-sensing receptor": "Receptor on parathyroid cells that detects calcium and reduces PTH when calcium is high.",
+  "RANKL": "Signal from osteoblasts that activates osteoclasts to resorb bone.",
+  "osteoclast": "Bone cell that breaks down bone and releases calcium.",
+  "osteoblast": "Bone-forming cell; also relays PTH's signal to osteoclasts.",
+  "1-alpha-hydroxylase": "Kidney enzyme that makes active vitamin D (calcitriol).",
+  "calcitriol": "1,25-dihydroxyvitamin D, the active form; increases gut calcium absorption.",
+  "hypercalcaemic crisis": "Severe, symptomatic hypercalcaemia with dehydration, confusion, vomiting and arrhythmia risk.",
+  "thiazides": "Diuretics such as bendroflumethiazide that reduce urinary calcium and can raise blood calcium.",
+  "bendroflumethiazide": "A thiazide diuretic used for hypertension; raises calcium.",
+  "lithium": "Mood stabiliser that can raise PTH and calcium.",
+  "CKD": "Chronic kidney disease.",
+  "polyuria": "Passing large volumes of urine.",
+  "polydipsia": "Excessive thirst and drinking.",
+  "osteoporosis": "Low bone mass and fragile bones with normal bone chemistry.",
+  "pancreatitis": "Inflammation of the pancreas; hypercalcaemia is one cause.",
+  "multiple myeloma": "Plasma cell cancer that causes hypercalcaemia with a suppressed PTH."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 61 year old woman sees her GP with 3 months of tiredness, thirst and constipation. She passed a kidney stone last year. Her mood has been low. Investigations: adjusted calcium 2.86 mmol/L (2.20–2.60), phosphate 0.66 mmol/L (0.80–1.50), PTH 11.8 pmol/L (1.6–8.5), creatinine 72 µmol/L (45–90).",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Multiple myeloma",
+    "Primary hyperparathyroidism",
+    "Secondary hyperparathyroidism",
+    "Tertiary hyperparathyroidism",
+    "Vitamin D toxicity"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question with a bone profile: read calcium first, then PTH, then the kidneys."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "tiredness, thirst and constipation",
+      "kidney stone",
+      "mood has been low",
+      "adjusted calcium 2.86",
+      "phosphate 0.66",
+      "PTH 11.8",
+      "creatinine 72"
+     ],
+     "x": "Stones, groans, psychiatric overtones. High calcium with a high PTH and low phosphate, normal kidneys."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "High calcium + high PTH + normal renal function = **primary** hyperparathyroidism."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Myeloma raises calcium with a **suppressed** PTH, plus anaemia or renal impairment."
+      ],
+      [
+       2,
+       "Secondary has a **low** or normal calcium."
+      ],
+      [
+       3,
+       "Tertiary needs long-standing **CKD**; her creatinine is normal."
+      ],
+      [
+       4,
+       "Excess vitamin D suppresses PTH."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Primary hyperparathyroidism.** Calcium high and PTH high with normal kidneys is primary until proven otherwise."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 58 year old woman has an adjusted calcium of 2.79 mmol/L (2.20–2.60) and PTH of 10.6 pmol/L (1.6–8.5) on two occasions. Renal function and vitamin D are normal. She is referred to an endocrine surgeon. A neck ultrasound is normal.",
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Bone marrow biopsy",
+    "DEXA scan",
+    "Serum protein electrophoresis",
+    "Technetium-99m sestamibi scan",
+    "Thyroid function tests"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next investigation' after diagnosis is already made: the surgeon needs a map."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "on two occasions",
+      "referred to an endocrine surgeon",
+      "neck ultrasound is normal"
+     ],
+     "x": "Biochemistry confirms it; ultrasound has not found the adenoma; surgery is planned."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Localise the adenoma: **sestamibi scan**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For myeloma; PTH is not suppressed here."
+      ],
+      [
+       1,
+       "Useful to assess bone, but does not find the gland."
+      ],
+      [
+       2,
+       "Screens for myeloma, which gives a suppressed PTH."
+      ],
+      [
+       4,
+       "The thyroid is not the source of PTH."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Technetium-99m sestamibi scan.** Bloods diagnose; sestamibi localises."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man is brought to the ED with 3 days of vomiting and confusion. He has known primary hyperparathyroidism and is awaiting surgery. His pulse rate is 112 bpm, BP 98/60 mmHg and his mucous membranes are dry. Investigations: adjusted calcium 3.72 mmol/L (2.20–2.60).",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Cinacalcet",
+    "Emergency parathyroidectomy",
+    "IV 0.9% sodium chloride",
+    "IV calcium gluconate",
+    "Oral bendroflumethiazide"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Initial management' in an unwell patient: resuscitate first, cure later."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "vomiting and confusion",
+      "pulse rate is 112 bpm",
+      "BP 98/60 mmHg",
+      "mucous membranes are dry",
+      "3.72 mmol/L"
+     ],
+     "x": "Calcium above 3.5 with confusion and dehydration: a **hypercalcaemic crisis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Rehydrate with **IV saline**, then specialist care."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Long-term option for patients unfit for surgery, too slow for a crisis."
+      ],
+      [
+       1,
+       "Definitive, but not the first step in a dehydrated, confused patient."
+      ],
+      [
+       3,
+       "Treats **hypo**calcaemia; it would make this worse."
+      ],
+      [
+       4,
+       "Thiazides **raise** calcium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV 0.9% sodium chloride.** Severe hypercalcaemia: fluids first; surgery is definitive but later."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 55 year old woman has primary hyperparathyroidism due to a parathyroid adenoma. Investigations: adjusted calcium 2.82 mmol/L (2.20–2.60), phosphate 0.58 mmol/L (0.80–1.50), PTH 12.4 pmol/L (1.6–8.5).",
+   "q": "Which is the most likely mechanism of her low phosphate?",
+   "o": [
+    "Increased gut phosphate absorption",
+    "Increased renal phosphate excretion",
+    "Osteoclast uptake of phosphate",
+    "Phosphate shift into cells",
+    "Reduced vitamin D activation"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about one lab: what does PTH do to phosphate?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "parathyroid adenoma",
+      "phosphate 0.58",
+      "PTH 12.4"
+     ],
+     "x": "High PTH, low phosphate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PTH reduces tubular phosphate reabsorption: **phosphaturia**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That would raise phosphate, not lower it."
+      ],
+      [
+       2,
+       "Bone resorption releases phosphate rather than taking it up."
+      ],
+      [
+       3,
+       "Seen with insulin or refeeding, not PTH excess."
+      ],
+      [
+       4,
+       "PTH **increases** vitamin D activation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Increased renal phosphate excretion.** PTH: keeps calcium, dumps phosphate."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old woman has had 4 months of aching bones, thirst and passing urine at night. She has become forgetful. Her pulse rate is 84 bpm, BP 136/82 mmHg and temperature 36.8°C. Investigations are shown.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "2.88 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "Phosphate",
+     "0.70 mmol/L",
+     "0.80–1.50",
+     "L"
+    ],
+    [
+     "PTH",
+     "12.9 pmol/L",
+     "1.6–8.5",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "74 µmol/L",
+     "45–90",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Diabetes insipidus",
+    "Multiple myeloma",
+    "Osteomalacia",
+    "Primary hyperparathyroidism",
+    "Secondary hyperparathyroidism"
+   ],
+   "a": 3,
+   "e": "High calcium with a raised PTH and normal kidneys is primary hyperparathyroidism. Myeloma would suppress PTH; secondary disease has a low calcium.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis from a bone profile: calcium, then PTH, then renal function."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "aching bones, thirst and passing urine at night",
+      "forgetful"
+     ],
+     "x": "Bones, polyuria, psychiatric overtones; high calcium with high PTH and normal kidneys."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Primary hyperparathyroidism.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Causes thirst and polyuria, but not bone pain or a high calcium."
+      ],
+      [
+       1,
+       "Gives high calcium but with a **suppressed** PTH and often anaemia."
+      ],
+      [
+       2,
+       "Bone pain with **low** calcium and phosphate."
+      ],
+      [
+       4,
+       "Calcium is low or normal in secondary disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Primary hyperparathyroidism.** High calcium with a high PTH and normal kidneys is primary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old woman of South Asian heritage has 3 months of tiredness and aching legs. She wears a full veil and rarely goes outside. Investigations are shown.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "2.08 mmol/L",
+     "2.20–2.60",
+     "L"
+    ],
+    [
+     "Phosphate",
+     "0.74 mmol/L",
+     "0.80–1.50",
+     "L"
+    ],
+    [
+     "PTH",
+     "13.6 pmol/L",
+     "1.6–8.5",
+     "H"
+    ],
+    [
+     "25-OH vitamin D",
+     "14 nmol/L",
+     ">50",
+     "L"
+    ],
+    [
+     "ALP",
+     "212 IU/L",
+     "30–130",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hypoparathyroidism",
+    "Primary hyperparathyroidism",
+    "Pseudohypoparathyroidism",
+    "Secondary hyperparathyroidism",
+    "Tertiary hyperparathyroidism"
+   ],
+   "a": 3,
+   "e": "Low calcium with high PTH and very low vitamin D is secondary hyperparathyroidism. Primary disease would have a high calcium.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis from bloods: is calcium high or low, and why is PTH up?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "aching legs",
+      "rarely goes outside"
+     ],
+     "x": "Little sunlight, low vitamin D, low calcium: PTH rises to compensate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Low calcium + high PTH + low vitamin D = **secondary** hyperparathyroidism."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "PTH would be **low**, and phosphate high."
+      ],
+      [
+       1,
+       "Primary has a **high** calcium."
+      ],
+      [
+       2,
+       "Low calcium with high PTH, but phosphate is **high** and vitamin D normal."
+      ],
+      [
+       4,
+       "Needs long-standing CKD and a **high** calcium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Secondary hyperparathyroidism.** Secondary: the parathyroids are responding appropriately to a low calcium."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old man has had haemodialysis for end-stage kidney disease for 9 years. He now has bone pain and itching. His pulse rate is 78 bpm, BP 148/90 mmHg and temperature 36.6°C. Investigations: adjusted calcium 2.78 mmol/L (2.20–2.60), phosphate 2.1 mmol/L (0.80–1.50), PTH 96 pmol/L (1.6–8.5).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Multiple myeloma",
+    "Parathyroid carcinoma",
+    "Primary hyperparathyroidism",
+    "Secondary hyperparathyroidism",
+    "Tertiary hyperparathyroidism"
+   ],
+   "a": 4,
+   "e": "Years of CKD drove secondary disease until the glands became autonomous, so calcium is now high: tertiary. Secondary disease has a low calcium.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in CKD: which type of hyperparathyroidism fits the calcium?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemodialysis for end-stage kidney disease for 9 years",
+      "calcium 2.78",
+      "PTH 96"
+     ],
+     "x": "Years of CKD, now calcium is **high** with a very high PTH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Long-standing CKD + high calcium + high PTH = **tertiary**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would suppress PTH."
+      ],
+      [
+       1,
+       "Rare; the long dialysis history is the clue."
+      ],
+      [
+       2,
+       "Primary has low phosphate and no CKD driver."
+      ],
+      [
+       3,
+       "Secondary has a **low** or normal calcium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tertiary hyperparathyroidism.** In CKD: low calcium = secondary; high calcium = tertiary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old man has recurrent duodenal ulcers despite treatment and chronic diarrhoea. His father had 'calcium problems' and a pituitary tumour. His pulse rate is 80 bpm and BP 124/78 mmHg. Investigations: adjusted calcium 2.84 mmol/L (2.20–2.60), PTH 10.1 pmol/L (1.6–8.5).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely underlying diagnosis?",
+   "o": [
+    "Coeliac disease",
+    "Familial hypocalciuric hypercalcaemia",
+    "Multiple endocrine neoplasia type 1",
+    "Multiple endocrine neoplasia type 2A",
+    "Sarcoidosis"
+   ],
+   "a": 2,
+   "e": "Hyperparathyroidism with Zollinger–Ellison (gastrinoma) and a family pituitary tumour is MEN1. MEN2A links parathyroid with medullary thyroid cancer and phaeochromocytoma.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Underlying diagnosis linking several systems."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "recurrent duodenal ulcers",
+      "chronic diarrhoea",
+      "pituitary tumour",
+      "calcium 2.84",
+      "PTH 10.1"
+     ],
+     "x": "Ulcers and diarrhoea (gastrinoma), family pituitary tumour, hyperparathyroidism in a young man."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Parathyroid + pituitary + pancreas = **MEN1**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Causes diarrhoea but not hypercalcaemia or ulcers."
+      ],
+      [
+       1,
+       "No ulcers or pituitary link."
+      ],
+      [
+       3,
+       "MEN2A pairs parathyroid with medullary thyroid cancer and phaeochromocytoma."
+      ],
+      [
+       4,
+       "Raises calcium with a **suppressed** PTH."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Multiple endocrine neoplasia type 1.** Young hyperparathyroidism with ulcers: think MEN1 (Zollinger–Ellison)."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 60 year old woman has hypercalcaemia found on routine bloods. Repeat testing shows a raised PTH, low phosphate and normal renal function. Her pulse rate is 72 bpm and BP 130/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause?",
+   "o": [
+    "Adenoma of a single parathyroid gland",
+    "Bony metastases",
+    "Parathyroid carcinoma",
+    "Parathyroid hyperplasia",
+    "Vitamin D deficiency"
+   ],
+   "a": 0,
+   "e": "A solitary adenoma causes most primary hyperparathyroidism; hyperplasia is less common and carcinoma rare.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Most likely cause' of primary hyperparathyroidism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hypercalcaemia",
+      "raised PTH, low phosphate",
+      "normal renal function"
+     ],
+     "x": "Primary hyperparathyroidism in a woman of 60."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Most primary cases are a **solitary adenoma**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Suppress PTH."
+      ],
+      [
+       2,
+       "Possible but **rare**."
+      ],
+      [
+       3,
+       "Less common than an adenoma; think MEN."
+      ],
+      [
+       4,
+       "Causes secondary disease with a low calcium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Adenoma of a single parathyroid gland.** Primary: adenoma > hyperplasia > carcinoma."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old woman has sudden severe left loin pain radiating to the groin. Her pulse rate is 98 bpm, BP 146/88 mmHg and temperature 36.9°C. CT KUB shows a 5 mm left ureteric calculus and bilateral renal stones. Investigations: adjusted calcium 2.92 mmol/L (2.20–2.60), PTH 13.1 pmol/L (1.6–8.5).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of her stones?",
+   "o": [
+    "Gout",
+    "Hypoparathyroidism",
+    "Primary hyperparathyroidism",
+    "Recurrent urinary infection",
+    "Secondary hyperparathyroidism"
+   ],
+   "a": 2,
+   "e": "Hypercalcaemia with a raised PTH explains her stones: primary hyperparathyroidism. Secondary disease has a low calcium and does not cause hypercalciuric stones.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Underlying cause of renal stones."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bilateral renal stones",
+      "calcium 2.92",
+      "PTH 13.1"
+     ],
+     "x": "Recurrent, bilateral calcium stones plus high calcium and PTH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "'Stones': **primary hyperparathyroidism**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Uric acid stones without hypercalcaemia."
+      ],
+      [
+       1,
+       "Low calcium, not high."
+      ],
+      [
+       3,
+       "Struvite stones, no calcium or PTH rise."
+      ],
+      [
+       4,
+       "Calcium is low or normal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Primary hyperparathyroidism.** Stones plus high calcium: check PTH."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 57 year old woman has had fatigue and constipation for 2 months. Her pulse rate is 76 bpm and BP 132/84 mmHg. Investigations: adjusted calcium 2.81 mmol/L (2.20–2.60), phosphate 0.71 mmol/L (0.80–1.50), creatinine 70 µmol/L (45–90).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to establish the cause?",
+   "o": [
+    "Bone marrow biopsy",
+    "CT chest, abdomen and pelvis",
+    "Serum parathyroid hormone",
+    "Technetium-99m sestamibi scan",
+    "Urinary Bence Jones protein"
+   ],
+   "a": 2,
+   "e": "PTH (with the bone profile) is the gold-standard diagnostic step: raised PTH means hyperparathyroidism. Sestamibi only localises after diagnosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of hypercalcaemia: what is the branch point?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "calcium 2.81",
+      "phosphate 0.71",
+      "creatinine 70"
+     ],
+     "x": "Raised calcium, low phosphate, normal kidneys."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Check **PTH** with the bone profile."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Only if myeloma is suspected after a suppressed PTH."
+      ],
+      [
+       1,
+       "For malignancy, after PTH is shown to be suppressed."
+      ],
+      [
+       3,
+       "Localises an adenoma **after** biochemical diagnosis."
+      ],
+      [
+       4,
+       "A myeloma test; not the first branch point."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Serum parathyroid hormone.** Hypercalcaemia: PTH first, then decide."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 62 year old woman has primary hyperparathyroidism confirmed on repeated bone profile and PTH. Her pulse rate is 70 bpm and BP 128/76 mmHg. She is being prepared for parathyroidectomy, and a neck ultrasound did not show an adenoma.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "CT head",
+    "DEXA scan",
+    "Fine needle aspiration of the thyroid",
+    "Serum protein electrophoresis",
+    "Technetium-99m sestamibi scan"
+   ],
+   "a": 4,
+   "e": "After biochemical confirmation, a sestamibi scan localises the adenoma, especially when ultrasound is normal.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis is made; next step for surgery."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confirmed on repeated bone profile and PTH",
+      "prepared for parathyroidectomy",
+      "did not show an adenoma"
+     ],
+     "x": "Diagnosed; ultrasound negative; surgery planned."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Localise with a **sestamibi scan**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No pituitary symptoms."
+      ],
+      [
+       1,
+       "Assesses bone density, not gland location."
+      ],
+      [
+       2,
+       "Not indicated; risks seeding a parathyroid lesion."
+      ],
+      [
+       3,
+       "For myeloma; the diagnosis is already made."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Technetium-99m sestamibi scan.** Sestamibi localises, especially if ultrasound is normal."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 59 year old man attends the ED with 1 week of nausea, thirst and polyuria. He seems anxious and slightly muddled. His pulse rate is 104 bpm, BP 104/66 mmHg and mucous membranes are dry. Investigations: adjusted calcium 3.38 mmol/L (2.20–2.60), phosphate 0.52 mmol/L (0.80–1.50), PTH 11.4 pmol/L (1.6–8.5).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate immediate management?",
+   "o": [
+    "Calcium infusion",
+    "IV 0.9% sodium chloride",
+    "Oral cinacalcet",
+    "Parathyroidectomy",
+    "Vitamin D supplements"
+   ],
+   "a": 1,
+   "e": "Symptomatic hypercalcaemia with dehydration needs IV 0.9% saline first. Parathyroidectomy is the definitive treatment but comes later.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Immediate management' of a dehydrated hypercalcaemic patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "nausea, thirst and polyuria",
+      "pulse rate is 104 bpm",
+      "mucous membranes are dry",
+      "calcium 3.38"
+     ],
+     "x": "Symptomatic hypercalcaemia with dehydration."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hydrate** with IV saline."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Worsens hypercalcaemia."
+      ],
+      [
+       2,
+       "Long-term option if unfit for surgery."
+      ],
+      [
+       3,
+       "Definitive, but not immediate."
+      ],
+      [
+       4,
+       "Increase calcium absorption."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IV 0.9% sodium chloride.** Symptomatic hypercalcaemia: fluids first."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old woman has confirmed primary hyperparathyroidism due to a localised adenoma. She has had two renal stones and her DEXA scan shows osteoporosis. She is otherwise well, with pulse rate 72 bpm and BP 128/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate definitive management?",
+   "o": [
+    "Alendronic acid",
+    "Annual calcium monitoring",
+    "Cinacalcet",
+    "Increase oral fluid intake",
+    "Parathyroidectomy"
+   ],
+   "a": 4,
+   "e": "Parathyroidectomy is the definitive treatment for primary hyperparathyroidism; cinacalcet is for patients unfit for surgery.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Definitive management': what cures it?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "localised adenoma",
+      "two renal stones",
+      "osteoporosis",
+      "otherwise well"
+     ],
+     "x": "Symptomatic with end-organ damage, fit, gland localised."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Parathyroidectomy.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Protects bone but leaves the high PTH untreated."
+      ],
+      [
+       1,
+       "She has end-organ damage, so surgery is indicated."
+      ],
+      [
+       2,
+       "For those **unfit** for surgery."
+      ],
+      [
+       3,
+       "Supportive, not definitive."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Parathyroidectomy.** Primary hyperparathyroidism: surgery if fit; cinacalcet if not."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "An 86 year old woman with severe heart failure and COPD has primary hyperparathyroidism. The anaesthetist judges her unfit for surgery. Her pulse rate is 88 bpm and BP 118/70 mmHg. Investigations are shown.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "2.96 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "PTH",
+     "14.0 pmol/L",
+     "1.6–8.5",
+     "H"
+    ],
+    [
+     "eGFR",
+     "64 mL/min",
+     ">90",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Bendroflumethiazide",
+    "Cinacalcet",
+    "IV calcium gluconate",
+    "Oral colecalciferol loading",
+    "Parathyroidectomy"
+   ],
+   "a": 1,
+   "e": "If unfit for surgery, cinacalcet activates the calcium-sensing receptor and lowers PTH. Thiazides would worsen calcium.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management when surgery is ruled out."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe heart failure and COPD",
+      "unfit for surgery"
+     ],
+     "x": "Primary hyperparathyroidism, not a surgical candidate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cinacalcet** (calcimimetic) or monitoring."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Raises calcium."
+      ],
+      [
+       2,
+       "For hypocalcaemia."
+      ],
+      [
+       3,
+       "Treats vitamin D deficiency, not primary disease."
+      ],
+      [
+       4,
+       "She is unfit for surgery."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Cinacalcet.** Unfit for surgery: cinacalcet."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 68 year old woman with primary hyperparathyroidism has bone pain. A DEXA scan shows reduced bone density at the distal radius. Her pulse rate is 74 bpm and BP 134/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of bone loss?",
+   "o": [
+    "Direct PTH binding to osteoclasts",
+    "Excess unmineralised osteoid",
+    "Osteoblast RANKL signalling to osteoclasts",
+    "Plasma cell IL-6 secretion",
+    "Reduced calcitriol production"
+   ],
+   "a": 2,
+   "e": "PTH binds osteoblasts, which signal osteoclasts by RANKL, causing bone resorption. Osteoclasts have no PTH receptor.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of bone resorption in PTH excess."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "primary hyperparathyroidism",
+      "reduced bone density"
+     ],
+     "x": "PTH excess drives resorption."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PTH acts on **osteoblasts**, which release **RANKL** to activate osteoclasts."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Osteoclasts lack PTH receptors; they are activated **via** osteoblasts."
+      ],
+      [
+       1,
+       "That is osteomalacia."
+      ],
+      [
+       3,
+       "That is myeloma."
+      ],
+      [
+       4,
+       "PTH **increases** calcitriol."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Osteoblast RANKL signalling to osteoclasts.** PTH: osteoblast → RANKL → osteoclast."
+    }
+   ]
+  }
+ ]
+}

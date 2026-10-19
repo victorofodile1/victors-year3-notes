@@ -1,0 +1,2268 @@
+{
+ "id": "diabetic-nephropathy",
+ "patient": {
+  "name": "Sunil Mehta",
+  "age": 61,
+  "sex": "M",
+  "setting": "GP surgery (annual diabetes review)",
+  "complaint": "Routine annual diabetes check; feels well",
+  "background": [
+   "Type 2 diabetes for 14 years, on metformin and gliclazide",
+   "Hypertension, on amlodipine 5 mg",
+   "HbA1c has drifted up over two years",
+   "Ex-smoker; taxi driver in Harrow"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis/cause?' in a long-standing diabetic with a raised ACR, or oedema with heavy proteinuria and a normal echo. Retinopathy in the stem is a strong pointer.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Sunil, 61, **type 2 diabetes for 14 years**.",
+      "Here for his annual review; **no symptoms at all**.",
+      "BP has been running in the 140s.",
+      "HbA1c has crept up from 53 to 64 mmol/mol."
+     ],
+     "vitals": {
+      "HR": "78 bpm",
+      "BP": "146/88 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Years of **hyperglycaemia** quietly damage Sunil's glomeruli long before he notices anything."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Sunil has every risk factor: diabetes, **hypertension**, **poor control** and a **long duration**."
+    },
+    {
+     "type": "labs",
+     "title": "Annual review bloods and urine",
+     "rows": [
+      [
+       "Urine ACR (early morning)",
+       "9 mg/mmol",
+       "<3",
+       "H"
+      ],
+      [
+       "eGFR",
+       "68 mL/min/1.73m²",
+       ">90",
+       "L"
+      ],
+      [
+       "Creatinine",
+       "104 µmol/L",
+       "60–120",
+       ""
+      ],
+      [
+       "HbA1c",
+       "64 mmol/mol",
+       "<48",
+       "H"
+      ],
+      [
+       "Potassium",
+       "4.4 mmol/L",
+       "3.5–5.3",
+       ""
+      ]
+     ],
+     "text": "Only the ACR is clearly abnormal. That is exactly what early disease looks like."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Urine albumin:creatinine ratio",
+      "min": 0,
+      "max": 60,
+      "unit": "mg/mmol",
+      "bands": [
+       [
+        0,
+        3,
+        "normal",
+        "ok"
+       ],
+       [
+        3,
+        30,
+        "microalbuminuria",
+        "warn"
+       ],
+       [
+        30,
+        60,
+        "macroalbuminuria",
+        "bad"
+       ]
+      ],
+      "value": 9,
+      "label": "Sunil 9",
+      "caption": "Sunil sits in the **microalbuminuria** band (3 to 30): the first sign of diabetic nephropathy."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sunil is asymptomatic with **microalbuminuria only**: the earliest stage on the road to CKD."
+    },
+    {
+     "type": "flow",
+     "title": "How it progresses",
+     "nodes": [
+      "Hyperfiltration (no symptoms)",
+      "Microalbuminuria: ACR ≥3",
+      "Macroalbuminuria: ACR ≥30",
+      "Falling eGFR: CKD",
+      "End-stage renal failure"
+     ],
+     "caption": "Catching it at the microalbuminuria step is the whole point of screening."
+    },
+    {
+     "type": "ask",
+     "q": "Sunil feels well but his ACR is 9 mg/mmol. What is the earliest sign of diabetic nephropathy?",
+     "o": [
+      "Haematuria",
+      "Low serum albumin",
+      "Microalbuminuria",
+      "Peripheral oedema"
+     ],
+     "a": 2,
+     "r": "**Microalbuminuria** comes first. Oedema and low albumin are late features of heavy proteinuria."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Sunil's disease progresses, protein loss gives **oedema** and **low albumin**; his biggest risk is **cardiovascular disease**."
+    },
+    {
+     "type": "compare",
+     "title": "Diabetic nephropathy vs its look-alikes",
+     "head": [
+      "Feature",
+      "Diabetic nephropathy",
+      "Glomerulonephritis",
+      "Cardiac failure"
+     ],
+     "rows": [
+      [
+       "Urine",
+       "Albumin/protein, **no blood**",
+       "**Blood** and protein",
+       "Little or no protein"
+      ],
+      [
+       "Clue",
+       "Long diabetes, retinopathy",
+       "Recent infection, rapid decline",
+       "Breathless, raised JVP"
+      ],
+      [
+       "Echo",
+       "Normal",
+       "Normal",
+       "**Reduced function**"
+      ],
+      [
+       "Course",
+       "Slow, over years",
+       "Days to weeks",
+       "Variable"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Blood on dipstick or a rapid fall in eGFR is **not** typical of diabetic nephropathy. Think glomerulonephritis or another cause."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' where the answer is an early morning urine ACR, and questions on how persistent albuminuria is confirmed (2 of 3 readings over 3 months).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which test screens every diabetic patient for nephropathy each year?",
+     "o": [
+      "Renal ultrasound",
+      "Serum creatinine alone",
+      "Urine ACR, early morning sample",
+      "Urine dipstick for protein"
+     ],
+     "a": 2,
+     "r": "**Early morning urine ACR** picks up microalbuminuria that a dipstick misses."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Sunil's annual **early morning ACR** caught it; his eGFR, U&Es, lipids and HbA1c complete the picture."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Sunil repeats the early morning ACR twice over 3 months.",
+      "Results: 9, then 11, then 8 mg/mmol.",
+      "Three raised readings: persistent, not a one-off."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Sunil's confirmation ACRs",
+      "x": [
+       "Month 0",
+       "Month 1.5",
+       "Month 3"
+      ],
+      "unit": "mg/mmol",
+      "series": [
+       {
+        "name": "ACR",
+        "values": [
+         9,
+         11,
+         8
+        ]
+       }
+      ],
+      "caption": "All above 3 mg/mmol: at least **2 of 3 elevated over 3 months** confirms it."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sunil now meets the gold standard: a **persistently elevated ACR**, confirmed on 2 of 3 readings over at least 3 months."
+    },
+    {
+     "type": "trap",
+     "text": "A single raised ACR does not make the diagnosis. Infection, exercise and menstruation can raise it transiently, so **repeat** it."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sunil will now have **ACR and eGFR** checked regularly to track severity."
+    },
+    {
+     "type": "pearl",
+     "text": "ACR thresholds: **≥3 mg/mmol** = microalbuminuria, **≥30 mg/mmol** = macroalbuminuria. The same 3 also triggers an ACE inhibitor."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate medication?' in a diabetic with a raised ACR: ACE inhibitor or ARB first, then SGLT2 inhibitor if ACR >30 in type 2, and indapamide for BP still high.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Sunil's ACR is persistently 9 mg/mmol and his BP 146/88. What should be started?",
+     "o": [
+      "Doxazosin",
+      "Indapamide",
+      "Ramipril",
+      "Spironolactone"
+     ],
+     "a": 2,
+     "r": "An **ACE inhibitor** (ramipril) or ARB is indicated for ACR ≥3: it lowers BP and reduces proteinuria."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sunil starts **ramipril**, titrated up, aiming for BP **130/80 mmHg** and a better HbA1c."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Two years later his ACR has risen to **42 mg/mmol**.",
+      "eGFR 52; on maximum ramipril.",
+      "BP now 128/78 mmHg."
+     ],
+     "vitals": {
+      "BP": "128/78 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Type 2, CKD, on an ACE inhibitor, ACR >30: Sunil adds **dapagliflozin**. If BP stayed high, **indapamide** would be next."
+    },
+    {
+     "type": "flow",
+     "title": "Drug ladder",
+     "nodes": [
+      "ACR ≥3 mg/mmol → ACE inhibitor or ARB",
+      "Type 2 + ACR >30 → add SGLT2 inhibitor",
+      "BP still high → add thiazide-like diuretic",
+      "Plus statin, glucose and lifestyle",
+      "Advanced CKD → nephrology"
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Sunil's ACR on treatment",
+      "x": [
+       "Diagnosis",
+       "Ramipril 1 yr",
+       "2 yrs",
+       "Dapagliflozin 6 m",
+       "1 yr"
+      ],
+      "unit": "mg/mmol",
+      "series": [
+       {
+        "name": "ACR",
+        "values": [
+         9,
+         6,
+         42,
+         28,
+         21
+        ]
+       }
+      ],
+      "caption": "Each step reduces albuminuria, which slows CKD progression."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sunil's ACR is not above 70, but **<130/80** is still the target; he gets **statin**, salt reduction and weight advice."
+    },
+    {
+     "type": "trap",
+     "text": "Never combine an ACE inhibitor **and** an ARB. Check potassium and creatinine 1 to 2 weeks after starting or increasing either."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Had Sunil's potassium climbed with a falling eGFR, that signals advanced disease: **urgent nephrology**."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "If Sunil reaches advanced CKD, **nephrology** plans for **dialysis or transplant**."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Sunil's care follows **NICE NG28 and NG203**, plus KDIGO for CKD."
+    },
+    {
+     "type": "pearl",
+     "text": "Watch for **vaginal or genital candidiasis** with SGLT2 inhibitors; it is the classic side effect the exam asks about."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why ACE inhibitors reduce proteinuria (efferent dilation), how SGLT2 inhibitors work (tubuloglomerular feedback), or the classic biopsy finding (Kimmelstiel-Wilson).",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sunil's glomeruli first **hyperfilter**, then the basement membrane thickens and podocytes fail, so albumin leaks out."
+    },
+    {
+     "type": "flow",
+     "title": "From sugar to proteinuria",
+     "nodes": [
+      "Chronic hyperglycaemia",
+      "Glomerular hyperfiltration",
+      "GBM thickening, mesangial expansion",
+      "Podocyte loss: leaky filter",
+      "Microalbuminuria → overt proteinuria",
+      "Nodular glomerulosclerosis (Kimmelstiel-Wilson)"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which histological finding is classic of advanced diabetic nephropathy?",
+     "o": [
+      "Crescents in Bowman's space",
+      "IgA deposits in the mesangium",
+      "Kimmelstiel-Wilson nodules",
+      "Podocyte effacement only"
+     ],
+     "a": 2,
+     "r": "**Nodular glomerulosclerosis (Kimmelstiel-Wilson)** is the classic finding. Crescents suggest rapidly progressive GN."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Ramipril **dilates Sunil's efferent arteriole**; dapagliflozin **constricts his afferent** one. Both lower intraglomerular pressure."
+    },
+    {
+     "type": "compare",
+     "title": "Two drugs, two arterioles",
+     "head": [
+      "Drug",
+      "Arteriole",
+      "How",
+      "Result"
+     ],
+     "rows": [
+      [
+       "ACE inhibitor / ARB",
+       "**Efferent** dilates",
+       "Less angiotensin II action",
+       "Lower glomerular pressure"
+      ],
+      [
+       "SGLT2 inhibitor",
+       "**Afferent** constricts",
+       "More sodium to macula densa (tubuloglomerular feedback)",
+       "Lower glomerular pressure"
+      ]
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "A small creatinine rise (under about 30%) after starting an ACE inhibitor is expected: it reflects the lower glomerular pressure."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the first sign of diabetic nephropathy?",
+   "o": [
+    "Haematuria",
+    "Microalbuminuria",
+    "Oedema",
+    "Raised creatinine"
+   ],
+   "a": 1,
+   "r": "**Microalbuminuria** is the first sign; it is often asymptomatic."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a late feature of diabetic nephropathy?",
+   "o": [
+    "Haematuria",
+    "Low serum albumin",
+    "Raised SAAG",
+    "Red cell casts"
+   ],
+   "a": 1,
+   "r": "Heavy protein loss gives **low albumin**, oedema and ascites with a low SAAG (<1.1 g/dL)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is the commonest serious complication of diabetic nephropathy?",
+   "o": [
+    "Cardiovascular disease",
+    "Hepatic failure",
+    "Pulmonary fibrosis",
+    "Renal cell carcinoma"
+   ],
+   "a": 0,
+   "r": "**Cardiovascular disease** is a major complication, alongside CKD and end-stage renal failure."
+  },
+  {
+   "d": "investigation",
+   "q": "Which ACR defines microalbuminuria?",
+   "o": [
+    "≥1 mg/mmol",
+    "≥3 mg/mmol",
+    "≥30 mg/mmol",
+    "≥70 mg/mmol"
+   ],
+   "a": 1,
+   "r": "**ACR ≥3 mg/mmol** is microalbuminuria; ≥30 is macroalbuminuria."
+  },
+  {
+   "d": "investigation",
+   "q": "How is persistent albuminuria confirmed?",
+   "o": [
+    "1 reading above 30 mg/mmol",
+    "2 of 3 raised ACRs over at least 3 months",
+    "24-hour urine collection",
+    "Renal biopsy"
+   ],
+   "a": 1,
+   "r": "**2 of 3 elevated readings over at least 3 months**."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line treatment for a diabetic with ACR ≥3 mg/mmol?",
+   "o": [
+    "ACE inhibitor or ARB",
+    "Calcium channel blocker",
+    "Loop diuretic",
+    "SGLT2 inhibitor alone"
+   ],
+   "a": 0,
+   "r": "An **ACE inhibitor (e.g. ramipril) or ARB** reduces proteinuria and BP."
+  },
+  {
+   "d": "management",
+   "q": "Which side effect is typical of dapagliflozin?",
+   "o": [
+    "Dry cough",
+    "Gum hypertrophy",
+    "Hypoglycaemia alone",
+    "Vaginal candidiasis"
+   ],
+   "a": 3,
+   "r": "Glycosuria from **SGLT2 inhibitors** predisposes to **genital candidiasis**."
+  },
+  {
+   "d": "management",
+   "q": "What is the BP target in CKD with ACR >70 mg/mmol?",
+   "o": [
+    "<120/70 mmHg",
+    "<130/80 mmHg",
+    "<140/90 mmHg",
+    "<150/90 mmHg"
+   ],
+   "a": 1,
+   "r": "**<130/80 mmHg** when there is significant proteinuria."
+  },
+  {
+   "d": "science",
+   "q": "How do ACE inhibitors reduce proteinuria?",
+   "o": [
+    "Afferent arteriole constriction",
+    "Efferent arteriole dilation",
+    "Increased GFR",
+    "Sodium reabsorption in the PCT"
+   ],
+   "a": 1,
+   "r": "**Efferent dilation** lowers intraglomerular pressure and protein leak."
+  },
+  {
+   "d": "science",
+   "q": "What is the classic histological finding in advanced diabetic nephropathy?",
+   "o": [
+    "Crescents",
+    "Kimmelstiel-Wilson nodules",
+    "Spike-and-dome deposits",
+    "Wire-loop lesions"
+   ],
+   "a": 1,
+   "r": "**Nodular glomerulosclerosis (Kimmelstiel-Wilson lesions)**."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old woman with type 1 diabetes for 20 years attends clinic. She has background diabetic retinopathy. She feels well. Her HbA1c has been above 70 mmol/mol for several years. Her pulse rate is 76 bpm and BP 148/90 mmHg. Urine dipstick shows protein 2+ and no blood.",
+   "labs": [
+    [
+     "Urine ACR",
+     "45 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "62 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Serum albumin",
+     "36 g/L",
+     "35–50",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Diabetic nephropathy",
+    "IgA nephropathy",
+    "Minimal change disease",
+    "Polycystic kidney disease",
+    "Renal artery stenosis"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about proteinuria in a diabetic: ask whether diabetes explains it all."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes for 20 years",
+      "diabetic retinopathy",
+      "above 70 mmol/mol",
+      "BP 148/90 mmHg",
+      "no blood"
+     ],
+     "x": "Long duration, poor control, hypertension and another **microvascular** complication; protein without blood."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "ACR 45 = **macroalbuminuria** in a long-standing, poorly controlled diabetic with retinopathy: **diabetic nephropathy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "IgA nephropathy gives **visible haematuria** after a sore throat; there is no blood."
+      ],
+      [
+       2,
+       "Minimal change gives sudden heavy nephrotic syndrome, usually in children."
+      ],
+      [
+       3,
+       "PKD has a family history, flank pain and haematuria."
+      ],
+      [
+       4,
+       "Renal artery stenosis gives resistant hypertension and creatinine rise on ACE inhibitor, not heavy albuminuria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Diabetic nephropathy.** Rule: retinopathy + long diabetes + albuminuria without blood = diabetic nephropathy."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 57 year old man with type 2 diabetes has a urine albumin:creatinine ratio of 6 mg/mmol at his annual review. He has no urinary symptoms. His previous ACR a year ago was normal. His pulse rate is 72 bpm and BP 136/82 mmHg.",
+   "labs": [
+    [
+     "Urine ACR",
+     "6 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "84 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Urine dipstick",
+     "Nitrite and leucocyte negative",
+     "",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "24-hour urine protein collection",
+    "Renal biopsy",
+    "Renal ultrasound",
+    "Repeat early morning urine ACR",
+    "Urine microscopy and culture"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The next investigation after one raised ACR: you need to prove it is **persistent**."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6 mg/mmol",
+      "no urinary symptoms",
+      "previous ACR a year ago was normal"
+     ],
+     "x": "A first raised ACR in the microalbuminuria range, with no infection."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Confirm with **repeat early morning ACRs**: 2 of 3 raised over at least 3 months."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "24-hour collections are cumbersome; ACR is the test used."
+      ],
+      [
+       1,
+       "Biopsy is only for atypical features such as haematuria or rapid decline."
+      ],
+      [
+       2,
+       "Ultrasound does not show albuminuria."
+      ],
+      [
+       4,
+       "The dipstick shows no infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Repeat early morning urine ACR.** Rule: one raised ACR is a flag; 2 of 3 over 3 months is a diagnosis."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 66 year old woman with type 2 diabetes and chronic kidney disease takes metformin and ramipril 10 mg daily. Her pulse rate is 80 bpm and BP 128/78 mmHg. She has no history of ketoacidosis.",
+   "labs": [
+    [
+     "Urine ACR",
+     "48 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "46 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Potassium",
+     "4.8 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "HbA1c",
+     "58 mmol/mol",
+     "<48",
+     "H"
+    ]
+   ],
+   "q": "Which is the most appropriate additional medication?",
+   "o": [
+    "Amlodipine",
+    "Candesartan",
+    "Dapagliflozin",
+    "Furosemide",
+    "Indapamide"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An add-on drug for someone already on an ACE inhibitor: what does her ACR and BP tell you?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "ramipril 10 mg daily",
+      "BP 128/78 mmHg",
+      "chronic kidney disease"
+     ],
+     "x": "Type 2, CKD, on maximum ACE inhibitor, **ACR >30**, BP already at target."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Add an **SGLT2 inhibitor**: dapagliflozin."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Her BP is at target; amlodipine does not reduce albuminuria."
+      ],
+      [
+       1,
+       "Never combine an ARB with an ACE inhibitor."
+      ],
+      [
+       3,
+       "She is not fluid overloaded."
+      ],
+      [
+       4,
+       "Indapamide is for BP above target on a maximised ACE inhibitor; hers is controlled."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Dapagliflozin.** Rule: type 2 + CKD + ACE inhibitor + ACR >30 = add SGLT2 inhibitor."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 59 year old man with type 2 diabetes and albuminuria is started on dapagliflozin. Six months later his urine albumin:creatinine ratio has fallen from 40 to 24 mg/mmol.",
+   "q": "Which is the most likely mechanism of the reduction in albuminuria?",
+   "o": [
+    "Afferent arteriolar vasoconstriction via tubuloglomerular feedback",
+    "Efferent arteriolar vasodilation via reduced angiotensin II",
+    "Increased podocyte regeneration",
+    "Reduced aldosterone secretion",
+    "Reduced renal sympathetic tone"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about the SGLT2 inhibitor specifically."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dapagliflozin",
+      "fallen from 40 to 24 mg/mmol"
+     ],
+     "x": "SGLT2 blocks sodium-glucose reabsorption in the proximal tubule."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "More sodium reaches the **macula densa** → **afferent** constriction → lower glomerular pressure."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Efferent dilation is how **ACE inhibitors/ARBs** work."
+      ],
+      [
+       2,
+       "Podocytes do not regenerate with this drug."
+      ],
+      [
+       3,
+       "Aldosterone reduction is not its main renal effect."
+      ],
+      [
+       4,
+       "It does not act through sympathetic nerves."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Afferent vasoconstriction via tubuloglomerular feedback.** Rule: ACE inhibitor = efferent; SGLT2 = afferent."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old woman with type 2 diabetes for 25 years has a 3 month history of bilateral ankle swelling. She has diabetic retinopathy. She is not breathless. Her pulse rate is 74 bpm and BP 152/86 mmHg. There is pitting oedema to the knees. Echocardiogram shows normal systolic function. Urinalysis shows protein 3+ and no blood, nitrites or leucocytes.",
+   "labs": [
+    [
+     "Serum albumin",
+     "26 g/L",
+     "35–50",
+     "L"
+    ],
+    [
+     "eGFR",
+     "38 mL/min/1.73m²",
+     ">90",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her peripheral oedema?",
+   "o": [
+    "Amyloidosis",
+    "Cardiac failure",
+    "Diabetic nephropathy",
+    "Glomerulonephritis",
+    "Lymphoedema"
+   ],
+   "a": 2,
+   "e": "Long-standing diabetes with retinopathy, heavy proteinuria without blood and low albumin is diabetic nephropathy. The normal echo excludes cardiac failure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause of oedema question: cardiac, renal or lymphatic?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 25 years",
+      "diabetic retinopathy",
+      "normal systolic function",
+      "protein 3+ and no blood"
+     ],
+     "x": "Heart is fine; heavy proteinuria with low albumin in a long-standing diabetic with retinopathy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Late diabetic nephropathy causing hypoalbuminaemia and **oedema**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amyloidosis is possible but needs a cause like myeloma or chronic inflammation; diabetes explains it."
+      ],
+      [
+       1,
+       "Normal echo and no breathlessness."
+      ],
+      [
+       3,
+       "GN gives **blood** in the urine; there is none."
+      ],
+      [
+       4,
+       "Lymphoedema does not cause proteinuria or low albumin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Diabetic nephropathy.** Rule: diabetic + retinopathy + protein without blood + normal echo."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old man with type 2 diabetes for 9 years attends his annual review. He has no symptoms. His BMI is 33 kg/m². His pulse rate is 70 bpm and BP 142/88 mmHg. Three early morning urine samples over 4 months show raised albumin:creatinine ratios. Urine dipstick shows no blood.",
+   "labs": [
+    [
+     "Urine ACR (third sample)",
+     "12 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "79 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "HbA1c",
+     "67 mmol/mol",
+     "<48",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute interstitial nephritis",
+    "Diabetic nephropathy",
+    "IgA nephropathy",
+    "Orthostatic proteinuria",
+    "Urinary tract infection"
+   ],
+   "a": 1,
+   "e": "Persistent microalbuminuria (ACR 3 to 30) on repeated early morning samples in an asymptomatic diabetic is early diabetic nephropathy. Orthostatic proteinuria is excluded by early morning samples.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in an asymptomatic diabetic with an abnormal urine test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 9 years",
+      "no symptoms",
+      "Three early morning urine samples over 4 months",
+      "raised albumin:creatinine ratios",
+      "no blood"
+     ],
+     "x": "Persistent ACR 3 to 30 = **microalbuminuria**; confirmed over 3 months."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Early **diabetic nephropathy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AIN follows a new drug, with rash, fever and an acute creatinine rise."
+      ],
+      [
+       2,
+       "IgA nephropathy causes haematuria."
+      ],
+      [
+       3,
+       "Orthostatic proteinuria is absent in **early morning** samples."
+      ],
+      [
+       4,
+       "UTI gives symptoms and a positive dipstick."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Diabetic nephropathy.** Rule: persistent ACR ≥3 in a diabetic is diabetic nephropathy until proven otherwise."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old woman has had type 1 diabetes for 12 years. She is asymptomatic. Her pulse rate is 68 bpm and BP 132/80 mmHg. Her GP is concerned she is developing diabetic kidney disease and wants to look for the earliest detectable abnormality.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely first abnormal finding?",
+   "o": [
+    "Hyperkalaemia",
+    "Hypoalbuminaemia",
+    "Microalbuminuria",
+    "Peripheral oedema",
+    "Raised serum creatinine"
+   ],
+   "a": 2,
+   "e": "Microalbuminuria is the first sign of diabetic nephropathy, appearing years before creatinine rises. Oedema and low albumin are late features.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The **earliest** abnormality: think of the first stage of the disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes for 12 years",
+      "asymptomatic",
+      "earliest detectable abnormality"
+     ],
+     "x": "Asymptomatic: early disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Microalbuminuria** (ACR ≥3 mg/mmol)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hyperkalaemia comes with advanced CKD."
+      ],
+      [
+       1,
+       "Low albumin needs heavy protein loss: late."
+      ],
+      [
+       3,
+       "Oedema is a late feature."
+      ],
+      [
+       4,
+       "Creatinine rises only after substantial nephron loss."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Microalbuminuria.** Rule: first sign = microalbuminuria; that is why ACR is screened yearly."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man with type 2 diabetes for 22 years has a renal biopsy because his proteinuria is heavier than expected. He has diabetic retinopathy. Light microscopy shows a thickened glomerular basement membrane, mesangial expansion and rounded acellular nodules within the glomeruli.",
+   "labs": [
+    [
+     "Urine ACR",
+     "180 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "34 mL/min/1.73m²",
+     ">90",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely histological diagnosis?",
+   "o": [
+    "Crescentic glomerulonephritis",
+    "Focal segmental glomerulosclerosis",
+    "Membranous nephropathy",
+    "Mesangial IgA deposition",
+    "Nodular glomerulosclerosis"
+   ],
+   "a": 4,
+   "e": "Rounded mesangial nodules with GBM thickening in a long-standing diabetic are Kimmelstiel-Wilson lesions: nodular glomerulosclerosis, the classic finding in advanced diabetic nephropathy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Name the histological finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 22 years",
+      "thickened glomerular basement membrane, mesangial expansion",
+      "rounded acellular nodules"
+     ],
+     "x": "The three classic diabetic changes, ending in **nodules**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Kimmelstiel-Wilson** nodular glomerulosclerosis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Crescents mean rapidly progressive GN."
+      ],
+      [
+       1,
+       "FSGS shows segmental scarring, not nodules."
+      ],
+      [
+       2,
+       "Membranous shows subepithelial spikes, not nodules."
+      ],
+      [
+       3,
+       "IgA deposits are seen on immunofluorescence, with haematuria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Nodular glomerulosclerosis.** Rule: diabetic + nodules = Kimmelstiel-Wilson."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man with type 2 diabetes and known heavy proteinuria has a 2 month history of increasing abdominal swelling and ankle oedema. He drinks no alcohol. His pulse rate is 82 bpm and BP 150/90 mmHg. There is shifting dullness and pitting oedema. There are no stigmata of chronic liver disease. Ascitic tap is performed.",
+   "labs": [
+    [
+     "Serum albumin",
+     "22 g/L",
+     "35–50",
+     "L"
+    ],
+    [
+     "Ascitic albumin",
+     "14 g/L",
+     "",
+     ""
+    ],
+    [
+     "SAAG",
+     "0.8 g/dL",
+     "",
+     "L"
+    ],
+    [
+     "Urine ACR",
+     "260 mg/mmol",
+     "<3",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of his ascites?",
+   "o": [
+    "Alcohol-related cirrhosis",
+    "Budd-Chiari syndrome",
+    "Congestive cardiac failure",
+    "Diabetic nephropathy",
+    "Portal vein thrombosis"
+   ],
+   "a": 3,
+   "e": "A low SAAG (<1.1 g/dL) means the ascites is not from portal hypertension; with heavy proteinuria and low albumin it is from diabetic nephropathy. Cirrhosis, Budd-Chiari, heart failure and portal vein thrombosis give a high SAAG.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of ascites: start with the **SAAG**."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heavy proteinuria",
+      "drinks no alcohol",
+      "no stigmata of chronic liver disease",
+      "abdominal swelling and ankle oedema"
+     ],
+     "x": "SAAG <1.1 = **not** portal hypertension; very low serum albumin from protein loss."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Late **diabetic nephropathy** with hypoalbuminaemia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cirrhosis gives a high SAAG; no alcohol or liver stigmata."
+      ],
+      [
+       1,
+       "Budd-Chiari gives a high SAAG with painful hepatomegaly."
+      ],
+      [
+       2,
+       "Heart failure gives a high SAAG."
+      ],
+      [
+       4,
+       "Portal vein thrombosis gives a high SAAG."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Diabetic nephropathy.** Rule: low SAAG + heavy proteinuria in a diabetic = renal protein loss."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old woman with type 2 diabetes has diabetic nephropathy with macroalbuminuria and an eGFR of 41 mL/min/1.73m². She asks what her greatest long-term risk is. She has hypertension and takes ramipril and atorvastatin. Her pulse rate is 76 bpm and BP 134/82 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of death in this patient?",
+   "o": [
+    "Cardiovascular disease",
+    "Diabetic ketoacidosis",
+    "Hyperkalaemia",
+    "Renal cell carcinoma",
+    "Uraemic encephalopathy"
+   ],
+   "a": 0,
+   "e": "Albuminuria and CKD in diabetes greatly raise cardiovascular risk; most patients die of cardiovascular disease before reaching end-stage renal failure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The commonest cause of death, not the commonest renal outcome."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "macroalbuminuria",
+      "eGFR of 41",
+      "hypertension"
+     ],
+     "x": "Albuminuria is a powerful **cardiovascular** risk marker."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cardiovascular disease** (MI, stroke)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "DKA is a type 1 emergency, not the usual death here."
+      ],
+      [
+       2,
+       "Hyperkalaemia is a risk in advanced CKD, but less common."
+      ],
+      [
+       3,
+       "Not linked to diabetic nephropathy."
+      ],
+      [
+       4,
+       "Uraemia occurs only in untreated end-stage disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cardiovascular disease.** Rule: in diabetic kidney disease, the heart usually fails before the kidneys do."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 49 year old man is newly diagnosed with type 2 diabetes. He has no urinary symptoms. His pulse rate is 80 bpm and BP 138/84 mmHg. The practice nurse is setting up his annual checks to detect kidney complications as early as possible.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate screening investigation?",
+   "o": [
+    "Early morning urine albumin:creatinine ratio",
+    "Renal ultrasound",
+    "Serum cystatin C",
+    "Urine dipstick for protein",
+    "Urine protein:creatinine ratio"
+   ],
+   "a": 0,
+   "e": "All diabetic patients have an annual early morning urine ACR, which detects microalbuminuria earlier than a dipstick or PCR.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A **screening** test for diabetic kidney disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "newly diagnosed with type 2 diabetes",
+      "as early as possible"
+     ],
+     "x": "Earliest detection = microalbuminuria."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Annual **early morning urine ACR**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Ultrasound does not detect early disease."
+      ],
+      [
+       2,
+       "Cystatin C estimates GFR, which falls late."
+      ],
+      [
+       3,
+       "Dipstick misses microalbuminuria."
+      ],
+      [
+       4,
+       "PCR is less sensitive than ACR for small amounts of albumin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Early morning urine ACR.** Rule: diabetic + screening for kidney damage = ACR every year."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 60 year old man with type 2 diabetes has persistent microalbuminuria confirmed on three early morning samples. His GP now wants to stage his chronic kidney disease. His pulse rate is 72 bpm and BP 140/86 mmHg.",
+   "labs": [
+    [
+     "Urine ACR",
+     "14 mg/mmol",
+     "<3",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which additional investigation is most appropriate?",
+   "o": [
+    "Renal biopsy",
+    "Renal ultrasound",
+    "Serum albumin",
+    "Serum creatinine with eGFR",
+    "Urine microscopy"
+   ],
+   "a": 3,
+   "e": "CKD is staged by eGFR (from serum creatinine) plus ACR; together they are used for ongoing monitoring. Biopsy is reserved for atypical features.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "He already has the ACR; what else stages CKD?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "persistent microalbuminuria confirmed",
+      "stage his chronic kidney disease"
+     ],
+     "x": "Staging uses **ACR plus eGFR**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**U&Es with eGFR**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Biopsy only if atypical (haematuria, rapid decline)."
+      ],
+      [
+       1,
+       "Ultrasound is for obstruction or unexplained CKD."
+      ],
+      [
+       2,
+       "Albumin is low only in late heavy proteinuria."
+      ],
+      [
+       4,
+       "Microscopy looks for casts or blood, not staging."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Serum creatinine with eGFR.** Rule: CKD = eGFR category + ACR category."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 55 year old woman with type 2 diabetes takes metformin and atorvastatin. Her pulse rate is 74 bpm and BP 144/88 mmHg. Repeat early morning urine samples confirm persistent albuminuria. She is not pregnant and has no drug allergies.",
+   "labs": [
+    [
+     "Urine ACR",
+     "8 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "72 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Potassium",
+     "4.2 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "HbA1c",
+     "55 mmol/mol",
+     "<48",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate medication to prescribe?",
+   "o": [
+    "Amlodipine",
+    "Bendroflumethiazide",
+    "Doxazosin",
+    "Lisinopril",
+    "Spironolactone"
+   ],
+   "a": 3,
+   "e": "ACR ≥3 mg/mmol in diabetes is the indication for an ACE inhibitor or ARB, which reduces proteinuria as well as BP. Amlodipine lowers BP but does not protect the kidney in the same way.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A first drug in a diabetic with albuminuria."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "persistent albuminuria",
+      "BP 144/88 mmHg",
+      "not pregnant"
+     ],
+     "x": "ACR ≥3 confirmed; BP above target; no contraindication."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**ACE inhibitor** (or ARB)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CCBs do not reduce proteinuria like RAAS blockade."
+      ],
+      [
+       1,
+       "A thiazide comes later, if BP stays high on an ACE inhibitor."
+      ],
+      [
+       2,
+       "Alpha-blockers are late add-ons."
+      ],
+      [
+       4,
+       "Spironolactone is not first-line and raises potassium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Lisinopril.** Rule: diabetic + ACR ≥3 = ACE inhibitor or ARB, regardless of age or ethnicity."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man with type 2 diabetes and diabetic nephropathy takes metformin and the maximum dose of ramipril. He is already taking dapagliflozin. His pulse rate is 78 bpm and BP 148/90 mmHg on repeated readings. He has no oedema.",
+   "labs": [
+    [
+     "Urine ACR",
+     "22 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "50 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Potassium",
+     "4.6 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Add candesartan",
+    "Add furosemide",
+    "Add indapamide",
+    "Increase ramipril",
+    "Stop dapagliflozin"
+   ],
+   "a": 2,
+   "e": "Suboptimal BP despite a maximised ACE inhibitor in CKD calls for a thiazide-like diuretic such as indapamide. Adding an ARB to an ACE inhibitor is not recommended.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step with BP still above target."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "maximum dose of ramipril",
+      "already taking dapagliflozin",
+      "BP 148/90 mmHg on repeated readings",
+      "no oedema"
+     ],
+     "x": "RAAS blockade maximised; BP above 130/80."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Add a **thiazide-like diuretic**: indapamide."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Never combine ACE inhibitor and ARB."
+      ],
+      [
+       1,
+       "Loop diuretics are for fluid overload; he has none."
+      ],
+      [
+       3,
+       "Ramipril is already at maximum dose."
+      ],
+      [
+       4,
+       "Dapagliflozin is protecting his kidneys; there is no reason to stop it."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Add indapamide.** Rule: BP high on max ACE inhibitor in CKD = thiazide-like diuretic."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 71 year old woman with type 2 diabetes and diabetic nephropathy takes ramipril and dapagliflozin. Over 6 months her eGFR has fallen from 32 to 17 mL/min/1.73m². She feels tired. Her pulse rate is 70 bpm and BP 138/84 mmHg. ECG shows no acute changes.",
+   "labs": [
+    [
+     "Potassium",
+     "6.1 mmol/L",
+     "3.5–5.3",
+     "H"
+    ],
+    [
+     "eGFR",
+     "17 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Urine ACR",
+     "150 mg/mmol",
+     "<3",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Add amlodipine",
+    "Add spironolactone",
+    "Increase ramipril",
+    "Refer urgently to nephrology",
+    "Repeat bloods in 6 months"
+   ],
+   "a": 3,
+   "e": "Worsening renal function with high potassium in a diabetic suggests advanced disease and needs urgent nephrology input, including planning for dialysis or transplant.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in a deteriorating patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fallen from 32 to 17",
+      "She feels tired",
+      "no acute changes"
+     ],
+     "x": "Rapidly falling eGFR plus **hyperkalaemia** = advanced disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent nephrology** referral."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "BP is near target; amlodipine does not address the problem."
+      ],
+      [
+       1,
+       "Spironolactone would raise potassium further."
+      ],
+      [
+       2,
+       "More ramipril would worsen hyperkalaemia."
+      ],
+      [
+       4,
+       "Six months is far too long with this decline."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Refer urgently to nephrology.** Rule: rising potassium + falling eGFR in a diabetic = urgent nephrology."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 56 year old man with type 2 diabetes and an albumin:creatinine ratio of 18 mg/mmol starts ramipril. Three months later his ACR has fallen to 7 mg/mmol and his creatinine has risen by 12%. His pulse rate is 72 bpm and BP 128/78 mmHg.",
+   "labs": [
+    [
+     "Urine ACR",
+     "7 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "112 µmol/L",
+     "60–120",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of the fall in albuminuria?",
+   "o": [
+    "Afferent arteriolar vasoconstriction",
+    "Efferent arteriolar vasodilation",
+    "Increased glomerular filtration rate",
+    "Increased proximal tubular albumin reabsorption",
+    "Reduced mesangial matrix"
+   ],
+   "a": 1,
+   "e": "ACE inhibitors reduce angiotensin II, dilating the efferent arteriole and lowering intraglomerular pressure, so less albumin leaks. The small creatinine rise reflects that lower pressure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of an ACE inhibitor on the glomerulus."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "starts ramipril",
+      "fallen to 7 mg/mmol",
+      "creatinine has risen by 12%"
+     ],
+     "x": "Less albumin and a little less filtration: glomerular pressure has fallen."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Angiotensin II normally constricts the **efferent** arteriole; blocking it **dilates** it."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Afferent constriction is the SGLT2 inhibitor mechanism."
+      ],
+      [
+       2,
+       "GFR falls slightly, as the creatinine shows."
+      ],
+      [
+       3,
+       "Tubular reabsorption is not how it works."
+      ],
+      [
+       4,
+       "Matrix change is slow and not the immediate effect."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Efferent arteriolar vasodilation.** Rule: ACE inhibitor = efferent dilation = lower intraglomerular pressure."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is diabetic nephropathy and what are its risk factors?",
+    "tip": "Exam thinking: the stem stacks the risk factors to point you there.",
+    "points": [
+     {
+      "p": "CKD caused by long-term hyperglycaemia",
+      "k": [
+       [
+        "hyperglycaemia",
+        "hyperglycemia",
+        "glucose",
+        "sugar",
+        "diabet"
+       ],
+       [
+        "kidney",
+        "renal",
+        "ckd",
+        "glomerul"
+       ]
+      ],
+      "why": "Glomerular damage gives proteinuria and falling function."
+     },
+     {
+      "p": "Hypertension",
+      "k": [
+       [
+        "hypertension",
+        "high bp",
+        "blood pressure"
+       ]
+      ],
+      "why": "Both a cause and a consequence; control slows it."
+     },
+     {
+      "p": "Poor glycaemic control",
+      "k": [
+       [
+        "poor control",
+        "glycaemic",
+        "glycemic",
+        "hba1c",
+        "control"
+       ]
+      ],
+      "why": "A high HbA1c in the stem is a pointer."
+     },
+     {
+      "p": "Long duration of diabetes",
+      "k": [
+       [
+        "duration",
+        "long",
+        "years"
+       ]
+      ],
+      "why": "Retinopathy in the stem suggests long duration and microvascular disease."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does diabetic nephropathy present early, and how does it progress?",
+    "tip": "Exam thinking: the earliest sign is a favourite question.",
+    "points": [
+     {
+      "p": "Asymptomatic early on",
+      "k": [
+       [
+        "asymptomatic",
+        "no symptoms",
+        "silent"
+       ]
+      ],
+      "why": "So it must be screened for."
+     },
+     {
+      "p": "Microalbuminuria is the first sign",
+      "k": [
+       [
+        "microalbumin"
+       ]
+      ],
+      "why": "ACR ≥3 mg/mmol."
+     },
+     {
+      "p": "Micro → macroalbuminuria → CKD",
+      "k": [
+       [
+        "macroalbumin",
+        "overt proteinuria"
+       ],
+       [
+        "ckd",
+        "chronic kidney",
+        "renal failure"
+       ]
+      ],
+      "why": "Macroalbuminuria is ACR ≥30 mg/mmol."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the late features and complications of diabetic nephropathy?",
+    "tip": "Exam thinking: oedema with a normal echo and heavy proteinuria in a diabetic.",
+    "points": [
+     {
+      "p": "Oedema, ascites, fatigue, hypertension",
+      "k": [
+       [
+        "oedema",
+        "edema",
+        "swelling",
+        "ascites"
+       ]
+      ],
+      "why": "From hypoalbuminaemia."
+     },
+     {
+      "p": "Low serum albumin, low SAAG (<1.1 g/dL)",
+      "k": [
+       [
+        "albumin",
+        "saag"
+       ]
+      ],
+      "why": "A low SAAG says the ascites is not portal hypertension."
+     },
+     {
+      "p": "Cardiovascular disease",
+      "k": [
+       [
+        "cardiovascular",
+        "cvd",
+        "heart",
+        "mi",
+        "stroke"
+       ]
+      ],
+      "why": "The commonest cause of death."
+     },
+     {
+      "p": "End-stage renal failure",
+      "k": [
+       [
+        "end-stage",
+        "end stage",
+        "esrf",
+        "eskd",
+        "dialysis"
+       ]
+      ],
+      "why": "Needs dialysis or transplant."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which features suggest proteinuria in a diabetic is NOT diabetic nephropathy?",
+    "tip": "Exam thinking: the distractor options are GN, IgA nephropathy and heart failure.",
+    "points": [
+     {
+      "p": "Haematuria (blood on dipstick)",
+      "k": [
+       [
+        "haematuria",
+        "hematuria",
+        "blood"
+       ]
+      ],
+      "why": "Points to glomerulonephritis or IgA nephropathy."
+     },
+     {
+      "p": "Rapid fall in eGFR",
+      "k": [
+       [
+        "rapid",
+        "sudden",
+        "fast"
+       ]
+      ],
+      "why": "Diabetic nephropathy progresses slowly over years."
+     },
+     {
+      "p": "No retinopathy or short diabetes duration",
+      "k": [
+       [
+        "retinopathy",
+        "short",
+        "duration"
+       ]
+      ],
+      "why": "Microvascular disease usually travels together."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the screening test for diabetic nephropathy, and what are the ACR cut-offs?",
+    "tip": "Exam thinking: know the numbers 3 and 30.",
+    "points": [
+     {
+      "p": "Annual early morning urine ACR in all diabetics",
+      "k": [
+       [
+        "acr",
+        "albumin:creatinine",
+        "albumin creatinine",
+        "albumin-creatinine"
+       ],
+       [
+        "early morning",
+        "first void",
+        "morning",
+        "annual",
+        "yearly"
+       ]
+      ],
+      "why": "A dipstick misses microalbuminuria."
+     },
+     {
+      "p": "Microalbuminuria ACR ≥3 mg/mmol",
+      "k": [
+       [
+        "3",
+        "three"
+       ],
+       [
+        "micro"
+       ]
+      ],
+      "why": "Also the trigger for an ACE inhibitor."
+     },
+     {
+      "p": "Macroalbuminuria ACR ≥30 mg/mmol",
+      "k": [
+       [
+        "30",
+        "thirty"
+       ],
+       [
+        "macro"
+       ]
+      ],
+      "why": "Also the SGLT2 inhibitor threshold in type 2."
+     },
+     {
+      "p": "eGFR, U&Es, lipids and HbA1c",
+      "k": [
+       [
+        "egfr",
+        "u&e",
+        "creatinine"
+       ]
+      ],
+      "why": "Renal function plus cardiovascular and glycaemic risk."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is the diagnosis confirmed and how is it monitored?",
+    "tip": "Exam thinking: a single raised ACR is not a diagnosis.",
+    "points": [
+     {
+      "p": "Persistently elevated ACR is the gold standard",
+      "k": [
+       [
+        "persistent",
+        "repeat",
+        "elevated"
+       ]
+      ],
+      "why": "Infection or exercise can raise it transiently."
+     },
+     {
+      "p": "2 of 3 raised readings over at least 3 months",
+      "k": [
+       [
+        "2 of 3",
+        "two of three",
+        "2 out of 3",
+        "two out of three"
+       ],
+       [
+        "3 months",
+        "three months"
+       ]
+      ],
+      "why": "The classic number pair."
+     },
+     {
+      "p": "Ongoing ACR and eGFR monitoring",
+      "k": [
+       [
+        "acr"
+       ],
+       [
+        "egfr"
+       ]
+      ],
+      "why": "eGFR at diagnosis in type 2; after 5 years in type 1 (per notes)."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the first-line treatment and the BP target?",
+    "tip": "Exam thinking: albuminuria trumps age and ethnicity in choosing the drug.",
+    "points": [
+     {
+      "p": "ACE inhibitor (ramipril) or ARB for ACR ≥3 mg/mmol",
+      "k": [
+       [
+        "ace",
+        "ramipril",
+        "lisinopril",
+        "arb",
+        "losartan",
+        "candesartan",
+        "sartan"
+       ]
+      ],
+      "why": "Never combine an ACE inhibitor with an ARB."
+     },
+     {
+      "p": "Reduces proteinuria and protects the kidney",
+      "k": [
+       [
+        "proteinuria",
+        "albuminuria",
+        "protect"
+       ]
+      ],
+      "why": "Not just BP lowering."
+     },
+     {
+      "p": "BP target <130/80 mmHg",
+      "k": [
+       [
+        "130"
+       ]
+      ],
+      "why": "Applies with proteinuria, including ACR >70 mg/mmol."
+     },
+     {
+      "p": "Optimise HbA1c",
+      "k": [
+       [
+        "hba1c",
+        "glucose",
+        "glycaemic",
+        "glycemic"
+       ]
+      ],
+      "why": "Slows progression."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What do you add next, and when do you refer?",
+    "tip": "Exam thinking: read the ACR and the BP to choose between SGLT2 inhibitor and indapamide.",
+    "points": [
+     {
+      "p": "SGLT2 inhibitor (dapagliflozin) in type 2, on ACEi/ARB, ACR >30",
+      "k": [
+       [
+        "sglt2",
+        "dapagliflozin",
+        "empagliflozin",
+        "flozin"
+       ]
+      ],
+      "why": "Side effect: vaginal/genital candidiasis."
+     },
+     {
+      "p": "Thiazide-like diuretic (indapamide) if BP still high",
+      "k": [
+       [
+        "indapamide",
+        "thiazide"
+       ]
+      ],
+      "why": "After a maximised ACE inhibitor/ARB."
+     },
+     {
+      "p": "Statin, lifestyle (weight, salt, smoking)",
+      "k": [
+       [
+        "statin",
+        "atorvastatin"
+       ]
+      ],
+      "why": "Cardiovascular risk is the big killer."
+     },
+     {
+      "p": "Urgent nephrology if rising K+ and falling eGFR; dialysis/transplant later",
+      "k": [
+       [
+        "nephrolog",
+        "renal team",
+        "specialist"
+       ]
+      ],
+      "why": "Advanced disease."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the pathophysiology of diabetic nephropathy?",
+    "tip": "Exam thinking: know the sequence and the eponym.",
+    "points": [
+     {
+      "p": "Glomerular hyperfiltration",
+      "k": [
+       [
+        "hyperfiltration"
+       ]
+      ],
+      "why": "The first change, before albuminuria."
+     },
+     {
+      "p": "GBM thickening and mesangial expansion",
+      "k": [
+       [
+        "basement membrane",
+        "gbm",
+        "mesangi"
+       ]
+      ],
+      "why": "Structural change."
+     },
+     {
+      "p": "Podocyte loss → protein leak",
+      "k": [
+       [
+        "podocyte"
+       ]
+      ],
+      "why": "Micro then overt proteinuria."
+     },
+     {
+      "p": "Kimmelstiel-Wilson nodular glomerulosclerosis",
+      "k": [
+       [
+        "kimmelstiel",
+        "nodular"
+       ]
+      ],
+      "why": "Classic biopsy finding."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do ACE inhibitors/ARBs and SGLT2 inhibitors protect the kidney?",
+    "tip": "Exam thinking: efferent versus afferent is the whole question.",
+    "points": [
+     {
+      "p": "ACEi/ARB dilate the efferent arteriole",
+      "k": [
+       [
+        "efferent"
+       ]
+      ],
+      "why": "RAAS drives intraglomerular hypertension."
+     },
+     {
+      "p": "SGLT2 inhibitors constrict the afferent arteriole",
+      "k": [
+       [
+        "afferent"
+       ]
+      ],
+      "why": "Both lower intraglomerular pressure."
+     },
+     {
+      "p": "Via tubuloglomerular feedback at the macula densa",
+      "k": [
+       [
+        "tubuloglomerular",
+        "macula densa",
+        "tgf"
+       ]
+      ],
+      "why": "More sodium delivered to the macula densa."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "ACR": "Urine albumin:creatinine ratio; a spot urine test for albumin leakage, corrected for urine concentration.",
+  "Microalbuminuria": "Small amounts of albumin in the urine (ACR 3 to 30 mg/mmol); the first sign of diabetic nephropathy.",
+  "Macroalbuminuria": "Larger albumin leak (ACR 30 mg/mmol or more); overt proteinuria.",
+  "Proteinuria": "Protein in the urine, showing the glomerular filter is leaking.",
+  "eGFR": "Estimated glomerular filtration rate; calculated from serum creatinine to stage kidney function.",
+  "CKD": "Chronic kidney disease: reduced kidney function or kidney damage lasting more than 3 months.",
+  "U&Es": "Urea and electrolytes blood test: sodium, potassium, urea and creatinine.",
+  "HbA1c": "Glycated haemoglobin; reflects average blood glucose over about 3 months.",
+  "SAAG": "Serum-ascites albumin gradient; 1.1 g/dL or more suggests portal hypertension, below suggests other causes like protein loss.",
+  "Hypoalbuminaemia": "Low blood albumin, causing fluid to leak into tissues as oedema.",
+  "Ascites": "Fluid collecting in the peritoneal cavity, causing abdominal swelling.",
+  "Oedema": "Swelling from fluid in the tissues, often pitting at the ankles.",
+  "Glomerular hyperfiltration": "Abnormally high filtration per glomerulus; the earliest change in diabetic kidneys.",
+  "GBM": "Glomerular basement membrane; the filter layer between capillary and Bowman's space.",
+  "Mesangial expansion": "Increase in the supporting matrix between glomerular capillaries.",
+  "Podocyte": "Specialised cell wrapping glomerular capillaries whose foot processes stop protein leaking.",
+  "Kimmelstiel-Wilson lesions": "Rounded nodules of nodular glomerulosclerosis; the classic biopsy finding of advanced diabetic nephropathy.",
+  "Nodular glomerulosclerosis": "Scarring of glomeruli into rounded nodules; same as Kimmelstiel-Wilson lesions.",
+  "RAAS": "Renin-angiotensin-aldosterone system; hormone cascade that raises BP and constricts the efferent arteriole.",
+  "Efferent arteriole": "Vessel carrying blood out of the glomerulus; dilating it lowers glomerular pressure.",
+  "Afferent arteriole": "Vessel carrying blood into the glomerulus; constricting it lowers glomerular pressure.",
+  "Macula densa": "Sodium-sensing cells in the distal tubule that signal the afferent arteriole.",
+  "Tubuloglomerular feedback": "Reflex where more sodium at the macula densa constricts the afferent arteriole.",
+  "ACE inhibitor": "Drug (e.g. ramipril) that blocks angiotensin II production, lowering BP and proteinuria.",
+  "ARB": "Angiotensin receptor blocker (e.g. losartan); an alternative to an ACE inhibitor.",
+  "Ramipril": "ACE inhibitor used first-line for diabetic nephropathy with ACR 3 mg/mmol or more.",
+  "SGLT2 inhibitor": "Drug (e.g. dapagliflozin) blocking glucose and sodium reabsorption in the proximal tubule.",
+  "Dapagliflozin": "SGLT2 inhibitor that slows CKD progression; can cause genital candidiasis.",
+  "Indapamide": "Thiazide-like diuretic added when BP stays high despite a maximised ACE inhibitor or ARB.",
+  "Vaginal candidiasis": "Thrush; a common side effect of SGLT2 inhibitors due to glucose in the urine.",
+  "Retinopathy": "Diabetic damage to retinal vessels; its presence supports diabetic nephropathy as the cause of proteinuria.",
+  "Glomerulonephritis": "Inflammation of the glomeruli, usually with blood and protein in the urine.",
+  "IgA nephropathy": "Glomerulonephritis with IgA deposits, typically visible haematuria after a sore throat.",
+  "Dialysis": "Artificial removal of waste and fluid from the blood when the kidneys fail.",
+  "End-stage renal failure": "Kidney function too low to sustain life without dialysis or transplant.",
+  "KDIGO": "Kidney Disease: Improving Global Outcomes; international guideline body for kidney disease.",
+  "Hyperkalaemia": "High blood potassium; a danger in advanced CKD and with ACE inhibitors."
+ }
+}

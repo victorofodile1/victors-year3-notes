@@ -1,0 +1,2114 @@
+{
+ "id": "tonsiliitis",
+ "patient": {
+  "name": "Ellie Brennan",
+  "age": 20,
+  "sex": "F",
+  "setting": "GP surgery, then the ENT emergency clinic",
+  "complaint": "Severe sore throat, fever and painful swallowing for 3 days",
+  "background": [
+   "Second-year law student living in halls in Waterloo",
+   "Her flatmate had a sore throat last week",
+   "Four sore throats needing antibiotics in the past year",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a sore throat, fever and exudate: count the Centor criteria, and watch for trismus and a hot potato voice (quinsy) or splenomegaly (glandular fever).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Ellie, 20, has a **severe sore throat** for 3 days.",
+      "Swallowing hurts so much she is barely eating.",
+      "Headache, aches and feeling hot and shivery.",
+      "**No cough** and no runny nose.",
+      "Her flatmate was ill with a sore throat last week."
+     ],
+     "vitals": {
+      "T": "38.6°C",
+      "HR": "102 bpm",
+      "BP": "116/72 mmHg",
+      "RR": "16 /min",
+      "SpO2": "99% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Ellie's palatine tonsils are inflamed. Most cases are **viral**, but her picture raises the question of **Group A Streptococcus**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Ellie fits the age group (**young adult**) and has close **contact** with an infected flatmate in halls."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Both tonsils are **red, swollen and covered in white exudate**.",
+      "**Tender anterior cervical lymph nodes** on both sides.",
+      "Uvula central; she opens her mouth fully; voice normal.",
+      "No splenomegaly; no rash."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Ellie has the full set: severe sore throat, **odynophagia**, fever over 38°C, exudate and tender anterior nodes."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Score Ellie with the **Centor criteria**: exudate, tender anterior nodes, fever over 38°C and no cough."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Ellie's Centor score",
+      "min": 0,
+      "max": 4,
+      "unit": "points",
+      "bands": [
+       [
+        0,
+        2,
+        "Low: likely viral",
+        "ok"
+       ],
+       [
+        2,
+        3,
+        "Intermediate",
+        "warn"
+       ],
+       [
+        3,
+        4,
+        "High: likely Group A strep",
+        "bad"
+       ]
+      ],
+      "value": 4,
+      "label": "Ellie 4/4",
+      "caption": "One point each: exudate, tender anterior nodes, fever over 38°C, absence of cough."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Ellie scores 4/4 on Centor with no splenomegaly. Which is the most likely diagnosis?",
+     "o": [
+      "Bacterial tonsillitis",
+      "Diphtheria",
+      "Infectious mononucleosis",
+      "Viral pharyngitis"
+     ],
+     "a": 0,
+     "r": "A **Centor of 4** makes **Group A strep tonsillitis** most likely. Glandular fever gives splenomegaly and posterior nodes; viral pharyngitis usually has a cough."
+    },
+    {
+     "type": "compare",
+     "title": "Sore throat: which one?",
+     "head": [
+      "Feature",
+      "Bacterial tonsillitis",
+      "Glandular fever (EBV)",
+      "Viral pharyngitis"
+     ],
+     "rows": [
+      [
+       "Cough",
+       "**Absent**",
+       "Absent",
+       "Often present, with coryza"
+      ],
+      [
+       "Nodes",
+       "Tender **anterior** cervical",
+       "Posterior and generalised",
+       "Mild or none"
+      ],
+      [
+       "Other",
+       "Fever over 38°C, exudate",
+       "**Splenomegaly**, fatigue, 15-25 years",
+       "Runny nose"
+      ],
+      [
+       "Trap",
+       "Centor guides antibiotics",
+       "Amoxicillin causes a rash",
+       "No antibiotic"
+      ]
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 6: the pain shifts to the **left side** and gets worse.",
+      "She **cannot open her mouth** fully (trismus).",
+      "Muffled '**hot potato**' voice; she is drooling.",
+      "Uvula pushed to the right by a swollen left soft palate."
+     ],
+     "vitals": {
+      "T": "39.2°C",
+      "HR": "112 bpm",
+      "BP": "112/70 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Ellie now has the emergency features of a **peritonsillar abscess (quinsy)**: one-sided pain, **trismus**, hot potato voice and a tender peritonsillar swelling."
+    },
+    {
+     "type": "trap",
+     "text": "Quinsy pushes the **uvula away** from the abscess. Bilateral symmetrical tonsils with a central uvula is tonsillitis, not quinsy."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' where the answer is usually none (clinical with Centor), or a throat swab when you need to confirm Group A strep.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Ellie scores Centor 4. What confirms Group A strep if needed?",
+     "o": [
+      "Blood cultures",
+      "Monospot test",
+      "Throat swab",
+      "Ultrasound of the neck"
+     ],
+     "a": 2,
+     "r": "Tonsillitis is a **clinical diagnosis**; a **throat swab** confirms Group A strep when a bacterial cause is suspected. Monospot is for glandular fever."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Ellie's diagnosis is **clinical**, scored with Centor. A **throat swab** would confirm Group A strep but does not delay treatment."
+    },
+    {
+     "type": "labs",
+     "title": "Ellie's bloods on day 6 (ENT clinic)",
+     "rows": [
+      [
+       "White cell count",
+       "18.4 x 10^9/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Neutrophils",
+       "15.1 x 10^9/L",
+       "2.0–7.5",
+       "H"
+      ],
+      [
+       "C-reactive protein",
+       "164 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "Throat swab",
+       "Streptococcus pyogenes (Group A)",
+       "",
+       ""
+      ]
+     ],
+     "text": "Raised neutrophils and CRP support a **bacterial** infection, now with a collection."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Ellie's temperature",
+      "x": [
+       "Day 3",
+       "Day 4",
+       "Day 5",
+       "Day 6",
+       "Day 8"
+      ],
+      "unit": "°C",
+      "series": [
+       {
+        "name": "Temperature",
+        "values": [
+         38.6,
+         38.1,
+         37.6,
+         39.2,
+         37.1
+        ]
+       }
+      ],
+      "caption": "Improving on penicillin, then a new spike with one-sided pain: the quinsy. It settles after drainage."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "If the stem adds **splenomegaly** or posterior nodes in a teenager, the investigation is a **Monospot** for glandular fever, not a throat swab."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?' where Centor decides antibiotics (phenoxymethylpenicillin; clarithromycin if allergic), a dehydrated child is admitted, and quinsy needs drainage plus antibiotics.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Ellie's **Centor of 4** is above 3, so she gets **phenoxymethylpenicillin** (penicillin V) for 5-10 days with paracetamol and ibuprofen."
+    },
+    {
+     "type": "ask",
+     "q": "Which antibiotic is first-line for Ellie, who has no allergy?",
+     "o": [
+      "Amoxicillin",
+      "Clarithromycin",
+      "Doxycycline",
+      "Phenoxymethylpenicillin"
+     ],
+     "a": 3,
+     "r": "**Phenoxymethylpenicillin**. Amoxicillin is avoided because it causes a widespread rash if the sore throat is actually glandular fever."
+    },
+    {
+     "type": "flow",
+     "title": "Sore throat decisions",
+     "nodes": [
+      "Systemically unwell or cannot drink? → admit",
+      "Quinsy features? → ENT: drainage + antibiotics",
+      "Centor low → self-care: paracetamol, ibuprofen",
+      "Centor high → phenoxymethylpenicillin 5-10 days",
+      "Penicillin allergy → clarithromycin"
+     ],
+     "caption": "Emergencies first; then the score decides antibiotics."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "On day 6 Ellie's **quinsy** needs **drainage plus antibiotics**, with a corticosteroid as an adjunct. A child unable to drink would be admitted whatever the Centor."
+    },
+    {
+     "type": "story",
+     "points": [
+      "ENT aspirate 4 mL of pus from the left peritonsillar space.",
+      "IV benzylpenicillin and a single dose of dexamethasone.",
+      "Next morning she is swallowing and opening her mouth."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Ellie takes no statin. But if a penicillin-allergic patient on **atorvastatin** needs **clarithromycin**, hold the statin: the combination risks **rhabdomyolysis**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Tonsillitis episodes in the last 12 months",
+      "min": 0,
+      "max": 10,
+      "unit": "episodes",
+      "bands": [
+       [
+        0,
+        7,
+        "Below SIGN 1-year threshold",
+        "ok"
+       ],
+       [
+        7,
+        10,
+        "7+ in a year: consider tonsillectomy",
+        "bad"
+       ]
+      ],
+      "value": 5,
+      "label": "Ellie 5",
+      "caption": "Ellie has 5 this year, so she meets the criteria only if she also had 5+ last year."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Ellie's recurrent episodes are counted against the **SIGN criteria**: 7+ in 1 year, 5+ in each of 2 years, or 3+ in each of 3 years."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Ellie's care uses the **Centor criteria** to decide antibiotics and the **SIGN** tonsillectomy criteria for her recurrent episodes."
+    },
+    {
+     "type": "trap",
+     "text": "One quinsy plus recurrent tonsillitis is a common reason for tonsillectomy, but the exam answer for an acute quinsy is **drainage plus antibiotics**, not immediate tonsillectomy."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the organism (Group A strep), why bacterial tonsillitis looks different, molecular mimicry in rheumatic fever, or why quinsy causes trismus.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Ellie's tonsils are lymphoid tissue in **Waldeyer's ring**, the first immune checkpoint for what she breathes and swallows."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Ellie's high fever and exudate come from GAS virulence factors (**streptolysin O, M protein**); that difference is what Centor scores."
+    },
+    {
+     "type": "ask",
+     "q": "Which mechanism explains rheumatic fever weeks after untreated strep throat?",
+     "o": [
+      "Direct bacterial invasion of the heart",
+      "Exotoxin-mediated shock",
+      "Immune complex deposition in the skin",
+      "Molecular mimicry"
+     ],
+     "a": 3,
+     "r": "Antibodies against streptococcal antigens such as **M protein** cross-react with heart, joint and brain tissue: **molecular mimicry**."
+    },
+    {
+     "type": "flow",
+     "title": "Untreated strep throat to rheumatic fever",
+     "nodes": [
+      "Group A strep pharyngitis",
+      "Antibodies made against M protein",
+      "Cross-reaction with cardiac myosin and valves",
+      "2-4 weeks later: carditis, arthritis, chorea",
+      "Years later: rheumatic mitral stenosis"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Treating Ellie's strep throat reduces her risk of **rheumatic fever** and **post-streptococcal glomerulonephritis**, both from **molecular mimicry** weeks later."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Ellie's infection broke through the tonsillar capsule; the inflamed **pterygoid muscles** next door went into spasm, giving her **trismus**."
+    },
+    {
+     "type": "pearl",
+     "text": "Post-strep glomerulonephritis comes **1-3 weeks** after the throat infection; IgA nephropathy gives haematuria **within days** of it."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which organism most commonly causes bacterial tonsillitis?",
+   "o": [
+    "Haemophilus influenzae",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae",
+    "Streptococcus pyogenes"
+   ],
+   "a": 3,
+   "r": "**Group A Streptococcus** (Streptococcus pyogenes)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is NOT one of the Centor criteria?",
+   "o": [
+    "Absence of cough",
+    "Fever over 38°C",
+    "Splenomegaly",
+    "Tonsillar exudate"
+   ],
+   "a": 2,
+   "r": "The fourth criterion is **tender anterior cervical lymphadenopathy**; splenomegaly suggests glandular fever."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which feature suggests a peritonsillar abscess?",
+   "o": [
+    "Bilateral exudate",
+    "Productive cough",
+    "Splenomegaly",
+    "Trismus"
+   ],
+   "a": 3,
+   "r": "**Trismus**, hot potato voice and a one-sided peritonsillar swelling are quinsy."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Who most commonly gets tonsillitis?",
+   "o": [
+    "Children and young adults",
+    "Elderly men",
+    "Infants under 3 months",
+    "Postmenopausal women"
+   ],
+   "a": 0,
+   "r": "Most common in **children and young adults**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test confirms Group A strep tonsillitis?",
+   "o": [
+    "Blood culture",
+    "Monospot",
+    "Throat swab",
+    "Urine antigen"
+   ],
+   "a": 2,
+   "r": "A **throat swab** confirms GAS when bacterial infection is suspected."
+  },
+  {
+   "d": "management",
+   "q": "Which antibiotic is used for tonsillitis in penicillin allergy?",
+   "o": [
+    "Amoxicillin",
+    "Ceftriaxone",
+    "Clarithromycin",
+    "Flucloxacillin"
+   ],
+   "a": 2,
+   "r": "**Clarithromycin** (or erythromycin, or azithromycin)."
+  },
+  {
+   "d": "management",
+   "q": "How many episodes in the last 12 months meet the SIGN tonsillectomy criterion?",
+   "o": [
+    "3 or more",
+    "4 or more",
+    "5 or more",
+    "7 or more"
+   ],
+   "a": 3,
+   "r": "**7+** in 1 year, 5+ in each of 2 years, or 3+ in each of 3 years."
+  },
+  {
+   "d": "management",
+   "q": "A patient on atorvastatin needs clarithromycin. What should you do with the statin?",
+   "o": [
+    "Continue it",
+    "Double the dose",
+    "Hold it",
+    "Switch to a fibrate"
+   ],
+   "a": 2,
+   "r": "**Hold the statin**: clarithromycin raises its level and risks rhabdomyolysis."
+  },
+  {
+   "d": "science",
+   "q": "Which mechanism causes rheumatic fever after strep throat?",
+   "o": [
+    "Direct invasion",
+    "Molecular mimicry",
+    "Superantigen release",
+    "Type I hypersensitivity"
+   ],
+   "a": 1,
+   "r": "**Molecular mimicry** between streptococcal antigens and human tissue."
+  },
+  {
+   "d": "science",
+   "q": "Which muscles cause trismus in quinsy?",
+   "o": [
+    "Buccinator",
+    "Masseter alone",
+    "Pterygoid muscles",
+    "Stylopharyngeus"
+   ],
+   "a": 2,
+   "r": "Inflammation and spasm of the **pterygoid muscles**."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 17 year old boy has a 2 day history of a severe sore throat and painful swallowing. He has no cough. His temperature is 38.7°C and pulse rate 104 bpm. Both tonsils are enlarged with white exudate, and he has tender anterior cervical lymphadenopathy. There is no splenomegaly.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bacterial tonsillitis",
+    "Diphtheria",
+    "Infectious mononucleosis",
+    "Peritonsillar abscess",
+    "Viral pharyngitis"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a sore throat: count Centor and look for the look-alikes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no cough",
+      "38.7°C",
+      "white exudate",
+      "tender anterior cervical lymphadenopathy",
+      "no splenomegaly"
+     ],
+     "x": "All four **Centor** criteria; no splenomegaly."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Centor 4: **bacterial (Group A strep) tonsillitis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Diphtheria: grey adherent membrane, unvaccinated, very rare in the UK."
+      ],
+      [
+       2,
+       "Glandular fever: splenomegaly and posterior nodes."
+      ],
+      [
+       3,
+       "Quinsy is one-sided with trismus and uvula deviation."
+      ],
+      [
+       4,
+       "Viral pharyngitis usually has cough and coryza."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bacterial tonsillitis.** Centor 4 = likely Group A strep."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 23 year old woman has a 3 day history of a sore throat and fever. She has no cough. Her temperature is 38.4°C. Both tonsils have exudate and she has tender anterior cervical nodes. Her GP wants to confirm whether the infection is caused by Group A Streptococcus.",
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Antistreptolysin O titre",
+    "Blood cultures",
+    "CT neck",
+    "Monospot test",
+    "Throat swab"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The question asks how to **confirm Group A strep** now."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confirm whether the infection is caused by Group A Streptococcus",
+      "tender anterior cervical nodes"
+     ],
+     "x": "Acute bacterial tonsillitis suspected."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **throat swab** confirms GAS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "ASO titre shows past infection, used for rheumatic fever or post-strep GN."
+      ],
+      [
+       1,
+       "Blood cultures are rarely positive in tonsillitis."
+      ],
+      [
+       2,
+       "CT neck is for deep neck abscess, not simple tonsillitis."
+      ],
+      [
+       3,
+       "Monospot tests for EBV, not strep."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Throat swab.** Clinical diagnosis; swab confirms GAS."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 5 year old boy has a 3 day history of sore throat and fever. He has refused all drinks for 2 days and has passed very little urine. He is lethargic. His temperature is 39.0°C, pulse rate 150 bpm and capillary refill time 4 seconds. His tonsils are enlarged with exudate. He has a cough.",
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Clarithromycin and review in 48 hours",
+    "Immediate hospital admission",
+    "Paracetamol and ibuprofen at home",
+    "Phenoxymethylpenicillin at home",
+    "Throat swab and await result"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: is this child safe at home?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "refused all drinks for 2 days",
+      "passed very little urine",
+      "lethargic",
+      "capillary refill time 4 seconds"
+     ],
+     "x": "**Dehydrated** and systemically unwell."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Systemically unwell child: Centor irrelevant, **immediate admission**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "He needs fluids and assessment, not oral antibiotics at home."
+      ],
+      [
+       2,
+       "Home self-care is unsafe when dehydrated."
+      ],
+      [
+       3,
+       "Oral antibiotics at home ignore the dehydration."
+      ],
+      [
+       4,
+       "Waiting for a swab delays urgent care."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Immediate hospital admission.** Unwell or dehydrated child = admit, whatever the score."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 24 year old man has had left-sided throat pain for 5 days after tonsillitis. He now cannot open his mouth more than one finger's width. His voice is muffled. There is a tender swelling above the left tonsil pushing the uvula to the right.",
+   "q": "Which is the most likely cause of his difficulty opening his mouth?",
+   "o": [
+    "Dislocation of the temporomandibular joint",
+    "Hypoglossal nerve palsy",
+    "Masseter muscle abscess",
+    "Spasm of the pterygoid muscles",
+    "Tetanus toxin"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of trismus in this patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cannot open his mouth more than one finger's width",
+      "tender swelling above the left tonsil",
+      "pushing the uvula to the right"
+     ],
+     "x": "**Quinsy** with trismus."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Infection in the peritonsillar space inflames the nearby **pterygoid muscles**, causing spasm."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "TMJ dislocation follows trauma or yawning, not infection."
+      ],
+      [
+       1,
+       "CN XII palsy causes tongue deviation, not trismus."
+      ],
+      [
+       2,
+       "The collection is peritonsillar, not in the masseter."
+      ],
+      [
+       4,
+       "Tetanus follows a wound and causes generalised spasm."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Spasm of the pterygoid muscles.** Quinsy trismus = pterygoid irritation."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old woman has a 2 day history of a sore throat and pain on swallowing. She has no cough or runny nose. Her temperature is 38.5°C, pulse rate 98 bpm and BP 118/72 mmHg. Both tonsils are red with pus on them. She has tender lymph nodes at the angle of the jaw. Her abdomen is soft with no organomegaly.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute epiglottitis",
+    "Bacterial tonsillitis",
+    "Infectious mononucleosis",
+    "Peritonsillar abscess",
+    "Viral pharyngitis"
+   ],
+   "a": 1,
+   "e": "Fever, exudate, tender anterior nodes and no cough give Centor 4: bacterial tonsillitis. No organomegaly makes glandular fever less likely; no trismus rules out quinsy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Sore throat diagnosis: score Centor."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no cough or runny nose",
+      "38.5°C",
+      "pus on them",
+      "tender lymph nodes at the angle of the jaw",
+      "no organomegaly"
+     ],
+     "x": "**Centor 4**, no splenomegaly."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Group A strep **bacterial tonsillitis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Epiglottitis: drooling, stridor, tripod position."
+      ],
+      [
+       2,
+       "Glandular fever: splenomegaly, posterior nodes, fatigue."
+      ],
+      [
+       3,
+       "Quinsy: one-sided, trismus, uvula deviation."
+      ],
+      [
+       4,
+       "Viral pharyngitis usually has cough and coryza."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bacterial tonsillitis.** Four Centor criteria."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 22 year old man has had tonsillitis for 4 days. Today the pain is much worse on the right and he cannot open his mouth fully. His voice sounds muffled and he is drooling. His temperature is 39.1°C, pulse rate 112 bpm and BP 124/76 mmHg. The uvula is deviated to the left.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute epiglottitis",
+    "Infectious mononucleosis",
+    "Ludwig's angina",
+    "Peritonsillar abscess",
+    "Retropharyngeal abscess"
+   ],
+   "a": 3,
+   "e": "One-sided pain, trismus, hot potato voice and uvula deviation away from the side after tonsillitis is quinsy. Ludwig's angina is floor-of-mouth swelling from a dental source.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a complication of tonsillitis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "had tonsillitis for 4 days",
+      "much worse on the right",
+      "cannot open his mouth fully",
+      "voice sounds muffled",
+      "uvula is deviated to the left"
+     ],
+     "x": "One-sided, **trismus**, **hot potato voice**, uvula pushed away."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Peritonsillar abscess (quinsy)**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Epiglottitis causes stridor and no uvula deviation."
+      ],
+      [
+       1,
+       "Glandular fever is bilateral, with splenomegaly."
+      ],
+      [
+       2,
+       "Ludwig's angina: floor-of-mouth swelling from a tooth."
+      ],
+      [
+       4,
+       "Retropharyngeal abscess is in young children with neck stiffness."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Peritonsillar abscess.** Trismus + uvula deviation after tonsillitis = quinsy."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 14 year old girl has a 3 day history of sore throat and fever. She has no cough. Her temperature is 38.8°C. Both tonsils are covered in exudate and her anterior cervical nodes are tender. A throat swab grows beta-haemolytic colonies on blood agar.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Epstein-Barr virus",
+    "Haemophilus influenzae",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae",
+    "Streptococcus pyogenes"
+   ],
+   "a": 4,
+   "e": "Bacterial tonsillitis is caused by Group A Streptococcus (Streptococcus pyogenes), which is beta-haemolytic. S. pneumoniae is alpha-haemolytic.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no cough",
+      "covered in exudate",
+      "anterior cervical nodes are tender",
+      "beta-haemolytic"
+     ],
+     "x": "Centor 4 and a **beta-haemolytic** organism."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Group A Streptococcus: Streptococcus pyogenes**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "EBV is a virus and does not grow on blood agar."
+      ],
+      [
+       1,
+       "H. influenzae causes epiglottitis and otitis media."
+      ],
+      [
+       2,
+       "S. aureus is not a usual tonsillitis cause."
+      ],
+      [
+       3,
+       "S. pneumoniae is alpha-haemolytic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Streptococcus pyogenes.** Bacterial tonsillitis = Group A strep."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 26 year old man has a sore throat for 2 days. He has a dry cough. His temperature is 37.8°C. Both tonsils are red and covered in white exudate. He has tender anterior cervical lymphadenopathy.",
+   "labs": [],
+   "visual": null,
+   "q": "What is his Centor score?",
+   "o": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "a": 2,
+   "e": "He scores for exudate and tender anterior nodes only. A cough loses a point and 37.8°C is not above 38°C: Centor 2.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Count each of the four Centor criteria."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry cough",
+      "37.8°C",
+      "white exudate",
+      "tender anterior cervical lymphadenopathy"
+     ],
+     "x": "Exudate (1), nodes (1); fever not above 38°C (0); cough present (0)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**2 points**: low to intermediate probability of Group A strep."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "He has two positive criteria."
+      ],
+      [
+       1,
+       "Do not miss the tender anterior nodes."
+      ],
+      [
+       3,
+       "37.8°C does not score: the cut-off is above 38°C."
+      ],
+      [
+       4,
+       "A cough and a low-grade fever each lose a point."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. 2.** Check the exact temperature and the cough every time."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 8 year old boy had a sore throat with fever 2 days ago. He now has a rough, sandpaper-like red rash starting on his neck and chest, flushed cheeks with pallor around his mouth, and a red swollen tongue. His temperature is 38.6°C, pulse rate 118 bpm and BP 98/60 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely complication of his tonsillitis?",
+   "o": [
+    "Measles",
+    "Rheumatic fever",
+    "Scarlet fever",
+    "Toxic shock syndrome",
+    "Varicella"
+   ],
+   "a": 2,
+   "e": "Sandpaper rash, circumoral pallor and strawberry tongue after strep throat is scarlet fever, a complication in the notes. Rheumatic fever comes weeks later with joints and carditis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A complication of strep tonsillitis: timing and rash."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sore throat with fever 2 days ago",
+      "sandpaper-like red rash",
+      "pallor around his mouth",
+      "red swollen tongue"
+     ],
+     "x": "Classic **scarlet fever** features within days."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Group A strep toxin rash: **scarlet fever**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Measles has cough, coryza, conjunctivitis and Koplik spots."
+      ],
+      [
+       1,
+       "Rheumatic fever is 2-4 weeks later with carditis and arthritis."
+      ],
+      [
+       3,
+       "Toxic shock causes hypotension and shock; BP is normal."
+      ],
+      [
+       4,
+       "Varicella gives itchy vesicles in crops, not a sandpaper rash."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Scarlet fever.** Sandpaper rash + strawberry tongue after strep throat."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 21 year old woman has a severe sore throat for 2 days with fever and no cough. Her temperature is 38.4°C, pulse rate 96 bpm and BP 114/70 mmHg. Both tonsils are enlarged with white exudate.",
+   "labs": [],
+   "visual": null,
+   "q": "Which additional finding on examination is most likely?",
+   "o": [
+    "Generalised lymphadenopathy",
+    "Koplik spots",
+    "Splenomegaly",
+    "Stridor",
+    "Tender anterior cervical lymphadenopathy"
+   ],
+   "a": 4,
+   "e": "Bacterial tonsillitis gives tender anterior cervical lymphadenopathy, a Centor criterion. Splenomegaly and generalised nodes suggest glandular fever.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question for bacterial tonsillitis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no cough",
+      "38.4°C",
+      "white exudate"
+     ],
+     "x": "Three Centor criteria already: this is **bacterial tonsillitis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The remaining Centor sign: **tender anterior cervical nodes**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Generalised nodes suggest EBV or HIV."
+      ],
+      [
+       1,
+       "Koplik spots are measles."
+      ],
+      [
+       2,
+       "Splenomegaly is glandular fever."
+      ],
+      [
+       3,
+       "Stridor suggests croup or epiglottitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tender anterior cervical lymphadenopathy.** The fourth Centor criterion."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old man has a 3 day history of sore throat and fever. He has no cough. His temperature is 38.6°C, pulse rate 100 bpm and BP 126/80 mmHg. Both tonsils have exudate and there are tender anterior cervical nodes. The GP wants to confirm the bacterial cause.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Antistreptolysin O titre",
+    "Chest X-ray",
+    "Full blood count",
+    "Monospot test",
+    "Throat swab"
+   ],
+   "a": 4,
+   "e": "A throat swab confirms Group A strep when a bacterial cause is suspected. ASO titre reflects past infection and is used for post-streptococcal complications.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming the organism in acute tonsillitis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no cough",
+      "38.6°C",
+      "tender anterior cervical nodes",
+      "confirm the bacterial cause"
+     ],
+     "x": "Centor 4; the GP wants confirmation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Throat swab** for Group A strep."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "ASO rises over weeks; used for rheumatic fever."
+      ],
+      [
+       1,
+       "No chest signs."
+      ],
+      [
+       2,
+       "FBC may show neutrophilia but does not identify the organism."
+      ],
+      [
+       3,
+       "Monospot is for EBV."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Throat swab.** It confirms GAS."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 16 year old girl has tonsillitis with fever and exudate and no cough. Her temperature is 38.9°C and pulse rate 106 bpm. Blood tests are taken.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "132 g/L",
+     "115–165",
+     ""
+    ],
+    [
+     "Platelets",
+     "310 x 10^9/L",
+     "150–400",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which blood result would most support a bacterial cause?",
+   "o": [
+    "Atypical lymphocytes on film",
+    "Low platelet count",
+    "Lymphocytosis",
+    "Neutrophilia with raised CRP",
+    "Raised eosinophils"
+   ],
+   "a": 3,
+   "e": "Bacterial tonsillitis may show raised white cells (neutrophils) and CRP. Atypical lymphocytes and lymphocytosis point to glandular fever.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which result fits bacterial infection?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fever and exudate and no cough",
+      "38.9°C"
+     ],
+     "x": "High Centor: likely bacterial."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bacterial infection: **raised WCC (neutrophils) and CRP**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Atypical lymphocytes are EBV."
+      ],
+      [
+       1,
+       "Low platelets are not typical of strep."
+      ],
+      [
+       2,
+       "Lymphocytosis suggests a viral cause."
+      ],
+      [
+       4,
+       "Eosinophilia suggests allergy or parasites."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Neutrophilia with raised CRP.** Bacterial = neutrophils up."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 20 year old woman has a 2 day history of severe sore throat with no cough. Her temperature is 38.7°C, pulse rate 100 bpm and BP 116/74 mmHg. Both tonsils have exudate and she has tender anterior cervical nodes. She is drinking fluids. She has no drug allergies.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Amoxicillin",
+    "Clarithromycin",
+    "Paracetamol and ibuprofen only",
+    "Phenoxymethylpenicillin",
+    "Tonsillectomy referral"
+   ],
+   "a": 3,
+   "e": "Centor 4 (above 3) means oral phenoxymethylpenicillin for 5-10 days. Amoxicillin is avoided because of the rash if the cause is EBV.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: score Centor, check allergy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no cough",
+      "38.7°C",
+      "exudate",
+      "tender anterior cervical nodes",
+      "no drug allergies"
+     ],
+     "x": "**Centor 4**, not allergic, drinking."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Phenoxymethylpenicillin** (penicillin V)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amoxicillin causes a rash in glandular fever."
+      ],
+      [
+       1,
+       "Clarithromycin is for penicillin allergy."
+      ],
+      [
+       2,
+       "Self-care alone is for a low Centor."
+      ],
+      [
+       4,
+       "One episode does not meet SIGN criteria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Phenoxymethylpenicillin.** High Centor, no allergy."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man has bacterial tonsillitis with a Centor score of 4. He is allergic to penicillin. He takes atorvastatin 40 mg daily, ramipril and aspirin. His temperature is 38.5°C, pulse rate 94 bpm and BP 136/84 mmHg.",
+   "labs": [
+    [
+     "Creatine kinase",
+     "110 U/L",
+     "40–320",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Amoxicillin and continue atorvastatin",
+    "Clarithromycin and continue atorvastatin",
+    "Clarithromycin and hold atorvastatin",
+    "Flucloxacillin and hold aspirin",
+    "Phenoxymethylpenicillin and hold ramipril"
+   ],
+   "a": 2,
+   "e": "Clarithromycin is the penicillin-allergy choice, but it inhibits statin metabolism and raises rhabdomyolysis risk, so hold atorvastatin during the course.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Two decisions: antibiotic and drug interaction."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Centor score of 4",
+      "allergic to penicillin",
+      "atorvastatin 40 mg daily"
+     ],
+     "x": "Needs an antibiotic, cannot have penicillin, on a statin."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Clarithromycin and hold the statin.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amoxicillin is a penicillin."
+      ],
+      [
+       1,
+       "Continuing the statin risks rhabdomyolysis."
+      ],
+      [
+       3,
+       "Flucloxacillin is a penicillin; aspirin is not the problem."
+      ],
+      [
+       4,
+       "Penicillin V is contraindicated by the allergy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Clarithromycin and hold atorvastatin.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 25 year old woman has a left peritonsillar abscess after 5 days of tonsillitis. She has trismus and a hot potato voice. Her temperature is 38.9°C, pulse rate 108 bpm and BP 118/76 mmHg. Her airway is patent and oxygen saturation is 98% breathing air.",
+   "labs": [
+    [
+     "White cell count",
+     "17.1 x 10^9/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "C-reactive protein",
+     "138 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Drainage and antibiotics",
+    "Elective tonsillectomy in 6 weeks",
+    "Oral antibiotics alone at home",
+    "Oral corticosteroids alone",
+    "Paracetamol and review in 1 week"
+   ],
+   "a": 0,
+   "e": "Quinsy is treated with drainage (needle aspiration or incision) plus antibiotics, with corticosteroids as an adjunct. Antibiotics alone do not drain the pus.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of quinsy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "left peritonsillar abscess",
+      "trismus and a hot potato voice"
+     ],
+     "x": "An established **abscess**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Pus needs **drainage plus antibiotics**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Tonsillectomy may follow later but does not treat the acute abscess."
+      ],
+      [
+       2,
+       "Antibiotics alone do not drain pus."
+      ],
+      [
+       3,
+       "Steroids are only an adjunct."
+      ],
+      [
+       4,
+       "Delay risks airway compromise and spread."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Drainage and antibiotics.** Abscess = drain it."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 12 year old boy had an untreated sore throat with fever 3 weeks ago. He now has painful swelling of the knees then the ankles, a new murmur and raised antistreptolysin O titre. His temperature is 38.2°C, pulse rate 112 bpm and BP 104/62 mmHg.",
+   "labs": [
+    [
+     "Antistreptolysin O titre",
+     "640 IU/mL",
+     "<200",
+     "H"
+    ],
+    [
+     "C-reactive protein",
+     "86 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his current illness?",
+   "o": [
+    "Direct bacterial infection of the joints",
+    "Exotoxin-mediated vasodilation",
+    "IgE-mediated hypersensitivity",
+    "Molecular mimicry",
+    "Septic emboli from the heart"
+   ],
+   "a": 3,
+   "e": "Rheumatic fever after untreated Group A strep tonsillitis is caused by molecular mimicry: antibodies to streptococcal M protein cross-react with heart and joint tissue.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of a delayed complication."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "untreated sore throat with fever 3 weeks ago",
+      "knees then the ankles",
+      "new murmur",
+      "raised antistreptolysin O titre"
+     ],
+     "x": "Weeks after strep throat: migratory arthritis and carditis = **rheumatic fever**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Cross-reacting antibodies: **molecular mimicry**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "The joints are sterile in rheumatic fever."
+      ],
+      [
+       1,
+       "Exotoxins cause scarlet fever or toxic shock, not weeks-later arthritis."
+      ],
+      [
+       2,
+       "This is not an allergic reaction."
+      ],
+      [
+       4,
+       "Septic emboli suggest endocarditis with positive cultures."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Molecular mimicry.** Weeks after GAS = cross-reacting antibodies."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is tonsillitis, what causes it, and who gets it?",
+    "tip": "Exam thinking: mostly viral; the bacterial cause is always Group A strep.",
+    "points": [
+     {
+      "p": "Infection causing inflammation of the palatine tonsils",
+      "k": [
+       [
+        "tonsil"
+       ],
+       [
+        "inflam",
+        "infect"
+       ]
+      ],
+      "why": "Palatine tonsils sit either side of the oropharynx."
+     },
+     {
+      "p": "Most commonly viral",
+      "k": [
+       [
+        "viral",
+        "virus"
+       ]
+      ],
+      "why": "So most do not need antibiotics."
+     },
+     {
+      "p": "Bacterial: Group A Streptococcus (Strep pyogenes)",
+      "k": [
+       [
+        "group a",
+        "gas",
+        "pyogenes"
+       ]
+      ],
+      "why": "Beta-haemolytic."
+     },
+     {
+      "p": "Children and young adults; contact with infected people",
+      "k": [
+       [
+        "child",
+        "young"
+       ]
+      ],
+      "why": "Spreads in schools and halls."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the presentation and examination findings of bacterial tonsillitis.",
+    "tip": "Exam thinking: sore throat, fever, exudate, anterior nodes, no cough.",
+    "points": [
+     {
+      "p": "Severe sore throat and odynophagia",
+      "k": [
+       [
+        "sore throat",
+        "odynophagia",
+        "painful swallow",
+        "swallowing"
+       ]
+      ],
+      "why": "Odynophagia means painful swallowing."
+     },
+     {
+      "p": "Fever over 38°C",
+      "k": [
+       [
+        "fever",
+        "temperature",
+        "38"
+       ]
+      ],
+      "why": "A Centor criterion."
+     },
+     {
+      "p": "Enlarged tonsils with white exudate",
+      "k": [
+       [
+        "exudate",
+        "pus",
+        "white"
+       ]
+      ],
+      "why": "Hyperaemic tonsils with pus."
+     },
+     {
+      "p": "Tender anterior cervical lymphadenopathy",
+      "k": [
+       [
+        "anterior"
+       ],
+       [
+        "node",
+        "lymph"
+       ]
+      ],
+      "why": "Posterior nodes suggest EBV."
+     },
+     {
+      "p": "Headache, malaise; may have raised WCC/CRP",
+      "k": [
+       [
+        "headache",
+        "malaise",
+        "wcc",
+        "crp"
+       ]
+      ],
+      "why": "Bloods support bacterial infection."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "List the four Centor criteria and what the score tells you.",
+    "tip": "Exam thinking: the score decides antibiotics; remember it is absence of cough.",
+    "points": [
+     {
+      "p": "Tonsillar exudate",
+      "k": [
+       [
+        "exudate"
+       ]
+      ],
+      "why": "One point."
+     },
+     {
+      "p": "Tender anterior cervical lymphadenopathy",
+      "k": [
+       [
+        "lymph",
+        "node"
+       ]
+      ],
+      "why": "One point."
+     },
+     {
+      "p": "Fever over 38°C",
+      "k": [
+       [
+        "fever",
+        "38",
+        "temperature"
+       ]
+      ],
+      "why": "One point."
+     },
+     {
+      "p": "Absence of cough",
+      "k": [
+       [
+        "cough"
+       ]
+      ],
+      "why": "A cough suggests a viral cause."
+     },
+     {
+      "p": "Estimates probability of Group A strep; above 3 → antibiotics",
+      "k": [
+       [
+        "strep",
+        "bacteria",
+        "antibiotic",
+        "probability"
+       ]
+      ],
+      "why": "Low scores get self-care."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of tonsillitis, and how does quinsy present?",
+    "tip": "Exam thinking: trismus and hot potato voice = quinsy; weeks later = rheumatic fever or GN.",
+    "points": [
+     {
+      "p": "Peritonsillar abscess (quinsy): pus between tonsillar capsule and pharyngeal muscles",
+      "k": [
+       [
+        "quinsy",
+        "peritonsillar"
+       ]
+      ],
+      "why": "Uvula deviates away."
+     },
+     {
+      "p": "Trismus, hot potato voice, tender peritonsillar mass, foul breath, fever",
+      "k": [
+       [
+        "trismus",
+        "hot potato",
+        "muffled"
+       ]
+      ],
+      "why": "Emergency features."
+     },
+     {
+      "p": "Rheumatic fever",
+      "k": [
+       [
+        "rheumatic"
+       ]
+      ],
+      "why": "2-4 weeks later."
+     },
+     {
+      "p": "Scarlet fever",
+      "k": [
+       [
+        "scarlet"
+       ]
+      ],
+      "why": "Sandpaper rash, strawberry tongue."
+     },
+     {
+      "p": "Post-streptococcal glomerulonephritis",
+      "k": [
+       [
+        "glomerulo",
+        "nephritis",
+        "gn"
+       ]
+      ],
+      "why": "Haematuria 1-3 weeks later."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell bacterial tonsillitis from glandular fever and viral pharyngitis?",
+    "tip": "Exam thinking: splenomegaly and posterior nodes = EBV; cough and coryza = viral.",
+    "points": [
+     {
+      "p": "Glandular fever: splenomegaly, posterior or generalised nodes, fatigue",
+      "k": [
+       [
+        "spleno",
+        "spleen",
+        "posterior",
+        "ebv",
+        "glandular",
+        "mononucleosis"
+       ]
+      ],
+      "why": "Test with a Monospot."
+     },
+     {
+      "p": "Amoxicillin causes a rash in glandular fever",
+      "k": [
+       [
+        "amoxicillin"
+       ],
+       [
+        "rash"
+       ]
+      ],
+      "why": "Why penicillin V, not amoxicillin, is used."
+     },
+     {
+      "p": "Viral pharyngitis: cough, runny nose, low Centor",
+      "k": [
+       [
+        "cough",
+        "coryza",
+        "runny"
+       ]
+      ],
+      "why": "Self-care only."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is tonsillitis diagnosed and how is Group A strep confirmed?",
+    "tip": "Exam thinking: clinical with Centor; swab confirms GAS.",
+    "points": [
+     {
+      "p": "Clinical diagnosis",
+      "k": [
+       [
+        "clinical",
+        "centor"
+       ]
+      ],
+      "why": "The score guides treatment."
+     },
+     {
+      "p": "Throat swab confirms Group A strep if bacterial infection suspected",
+      "k": [
+       [
+        "swab"
+       ]
+      ],
+      "why": "Does not delay treatment."
+     },
+     {
+      "p": "Raised WCC/CRP may support bacterial infection",
+      "k": [
+       [
+        "wcc",
+        "white cell",
+        "neutrophil",
+        "crp"
+       ]
+      ],
+      "why": "Atypical lymphocytes suggest EBV."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is acute tonsillitis treated, including in penicillin allergy?",
+    "tip": "Exam thinking: Centor decides; avoid amoxicillin.",
+    "points": [
+     {
+      "p": "Mild: self-care with paracetamol and ibuprofen",
+      "k": [
+       [
+        "paracetamol",
+        "ibuprofen",
+        "self-care",
+        "self care",
+        "analges"
+       ]
+      ],
+      "why": "Most cases are viral."
+     },
+     {
+      "p": "Centor above 3: phenoxymethylpenicillin (penicillin V)",
+      "k": [
+       [
+        "phenoxymethylpenicillin",
+        "penicillin v",
+        "pen v"
+       ]
+      ],
+      "why": "Narrow spectrum."
+     },
+     {
+      "p": "For 5-10 days",
+      "k": [
+       [
+        "5",
+        "10",
+        "five",
+        "ten"
+       ]
+      ],
+      "why": "A full course reduces complications."
+     },
+     {
+      "p": "Penicillin allergy: clarithromycin (or erythromycin, azithromycin)",
+      "k": [
+       [
+        "clarithromycin",
+        "erythromycin",
+        "azithromycin",
+        "macrolide"
+       ]
+      ],
+      "why": "Watch for statin interaction."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the emergency situations in tonsillitis and how are they managed?",
+    "tip": "Exam thinking: an unwell child is admitted whatever the score.",
+    "points": [
+     {
+      "p": "Systemically unwell or dehydrated child (not drinking ~2 days): immediate admission",
+      "k": [
+       [
+        "admi",
+        "hospital"
+       ]
+      ],
+      "why": "Centor score is irrelevant."
+     },
+     {
+      "p": "Quinsy: drainage plus antibiotics",
+      "k": [
+       [
+        "drain",
+        "aspirat",
+        "incision"
+       ]
+      ],
+      "why": "Pus must be drained."
+     },
+     {
+      "p": "Corticosteroids as an adjunct",
+      "k": [
+       [
+        "steroid",
+        "dexamethasone"
+       ]
+      ],
+      "why": "Reduce swelling and pain."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the SIGN tonsillectomy criteria, and which drug interaction must you remember?",
+    "tip": "Exam thinking: 7, 5, 3; clarithromycin plus statin.",
+    "points": [
+     {
+      "p": "7+ episodes in the preceding 12 months",
+      "k": [
+       [
+        "7",
+        "seven"
+       ]
+      ],
+      "why": "One-year threshold."
+     },
+     {
+      "p": "5+ in each of the preceding 2 years",
+      "k": [
+       [
+        "5",
+        "five"
+       ]
+      ],
+      "why": "Two-year threshold."
+     },
+     {
+      "p": "3+ in each of the preceding 3 years",
+      "k": [
+       [
+        "3",
+        "three"
+       ]
+      ],
+      "why": "Three-year threshold."
+     },
+     {
+      "p": "Clarithromycin + atorvastatin: rhabdomyolysis risk, hold the statin",
+      "k": [
+       [
+        "statin",
+        "atorvastatin"
+       ],
+       [
+        "rhabdo",
+        "hold",
+        "stop"
+       ]
+      ],
+      "why": "Clarithromycin inhibits CYP3A4."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does bacterial tonsillitis look different from viral, and why do delayed complications happen?",
+    "tip": "Exam thinking: virulence factors explain Centor; molecular mimicry explains rheumatic fever.",
+    "points": [
+     {
+      "p": "Tonsils are lymphoid tissue in Waldeyer's ring",
+      "k": [
+       [
+        "waldeyer",
+        "lymphoid"
+       ]
+      ],
+      "why": "Immune tissue reacting to infection."
+     },
+     {
+      "p": "GAS virulence factors: streptolysin O, M protein",
+      "k": [
+       [
+        "streptolysin",
+        "m protein"
+       ]
+      ],
+      "why": "Strong inflammation: higher fever, exudate."
+     },
+     {
+      "p": "Rheumatic fever and post-strep GN weeks after untreated GAS",
+      "k": [
+       [
+        "rheumatic",
+        "glomerulo"
+       ]
+      ],
+      "why": "Treating GAS reduces rheumatic fever."
+     },
+     {
+      "p": "Molecular mimicry between streptococcal antigens and human tissue",
+      "k": [
+       [
+        "mimicry",
+        "cross-react",
+        "cross react"
+       ]
+      ],
+      "why": "Antibodies attack heart, joints, kidneys."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does quinsy cause trismus?",
+    "tip": "Exam thinking: name the muscle.",
+    "points": [
+     {
+      "p": "Infection spreads beyond the tonsillar capsule into the peritonsillar space",
+      "k": [
+       [
+        "capsule",
+        "peritonsillar"
+       ]
+      ],
+      "why": "Between capsule and superior constrictor."
+     },
+     {
+      "p": "Inflammation and spasm of the pterygoid muscles",
+      "k": [
+       [
+        "pterygoid"
+       ]
+      ],
+      "why": "Medial pterygoid is adjacent."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Tonsillitis": "Infection and inflammation of the palatine tonsils.",
+  "Palatine tonsils": "The two lymphoid lumps either side of the back of the throat.",
+  "Waldeyer's ring": "The ring of lymphoid tissue (adenoids, palatine and lingual tonsils) guarding the throat.",
+  "Group A Streptococcus": "Streptococcus pyogenes, the bacterium behind bacterial tonsillitis, scarlet fever and rheumatic fever.",
+  "GAS": "Group A Streptococcus (Streptococcus pyogenes).",
+  "Streptococcus pyogenes": "The species name of Group A Streptococcus; beta-haemolytic on blood agar.",
+  "Beta-haemolytic": "Bacteria that completely break down red cells on blood agar, leaving a clear zone.",
+  "Exudate": "Pus or fluid coating the surface of inflamed tonsils, seen as white patches.",
+  "Odynophagia": "Pain on swallowing.",
+  "Cervical lymphadenopathy": "Enlarged lymph nodes in the neck.",
+  "Centor criteria": "Four-point score (exudate, tender anterior nodes, fever over 38°C, no cough) estimating the chance of Group A strep.",
+  "Centor": "Short for the Centor criteria, the sore throat score used to decide antibiotics.",
+  "FeverPAIN": "An alternative sore throat score: fever, purulence, fast attendance, inflamed tonsils, no cough or coryza.",
+  "Quinsy": "Peritonsillar abscess: a collection of pus beside the tonsil.",
+  "Peritonsillar abscess": "Pus between the tonsil capsule and the pharyngeal muscles, causing trismus and a hot potato voice.",
+  "Trismus": "Difficulty opening the mouth because of jaw muscle spasm.",
+  "Hot potato voice": "A muffled voice, as if speaking with a hot potato in the mouth, typical of quinsy.",
+  "Uvula": "The small fleshy tag hanging from the soft palate; pushed away from a quinsy.",
+  "Pterygoid muscles": "Jaw muscles near the tonsil; their spasm causes trismus in quinsy.",
+  "Rheumatic fever": "Immune reaction 2-4 weeks after Group A strep throat, affecting heart, joints, skin and brain.",
+  "Scarlet fever": "Group A strep infection with a sandpaper rash, flushed cheeks and strawberry tongue.",
+  "Post-streptococcal glomerulonephritis": "Kidney inflammation 1-3 weeks after strep infection, causing haematuria, oedema and hypertension.",
+  "Molecular mimicry": "When antibodies made against a microbe also attack similar-looking human tissue.",
+  "M protein": "A Group A strep surface protein; antibodies against it cross-react with heart tissue.",
+  "Streptolysin O": "A Group A strep toxin that damages cells; antibodies to it (ASO titre) show recent infection.",
+  "ASO titre": "Antistreptolysin O antibody level, showing recent Group A strep infection.",
+  "Antistreptolysin O titre": "Blood test for antibodies to streptolysin O, showing recent strep infection.",
+  "Throat swab": "A swab of the tonsils sent for culture to identify Group A strep.",
+  "Monospot": "Rapid test for heterophile antibodies in glandular fever (EBV).",
+  "Infectious mononucleosis": "Glandular fever: EBV infection with sore throat, posterior nodes, fatigue and splenomegaly.",
+  "Glandular fever": "Infectious mononucleosis, caused by Epstein-Barr virus.",
+  "EBV": "Epstein-Barr virus, the cause of glandular fever.",
+  "Phenoxymethylpenicillin": "Penicillin V: the first-line oral antibiotic for strep tonsillitis.",
+  "Penicillin V": "Phenoxymethylpenicillin, a narrow-spectrum oral penicillin.",
+  "Clarithromycin": "A macrolide antibiotic for penicillin allergy; it raises statin levels.",
+  "Rhabdomyolysis": "Breakdown of skeletal muscle releasing myoglobin, which can cause kidney injury.",
+  "Atorvastatin": "A statin that lowers cholesterol; its level rises dangerously with clarithromycin.",
+  "Tonsillectomy": "Surgical removal of the palatine tonsils.",
+  "Diphtheria": "Rare toxin-producing infection with a grey adherent throat membrane, in unvaccinated people.",
+  "Epiglottitis": "Infection of the epiglottis causing drooling, stridor and airway risk.",
+  "SIGN criteria": "Scottish (SIGN) tonsillectomy criteria: 7+ episodes in 1 year, 5+ in each of 2 years, or 3+ in each of 3 years."
+ }
+}

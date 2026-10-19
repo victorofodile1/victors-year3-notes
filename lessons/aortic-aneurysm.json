@@ -1,0 +1,2055 @@
+{
+ "id": "aortic-aneurysm",
+ "patient": {
+  "name": "Desmond Hayes",
+  "age": 74,
+  "sex": "M",
+  "setting": "Emergency Department (blue-light ambulance)",
+  "complaint": "Sudden severe abdominal pain going through to his back, then collapse at home",
+  "background": [
+   "AAA found at NHS screening aged 65 (3.4 cm); last scan 5.2 cm, then missed two appointments",
+   "Smoked 40 a day for 50 years; severe COPD",
+   "Hypertension",
+   "Lives with his wife in Croydon"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an older male smoker, sudden abdominal or back pain, hypotension and a pulsatile mass (ruptured AAA), or an asymptomatic pulsatile mass found on examination.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Desmond, 74, felt a **sudden tearing pain** in his abdomen and **back**.",
+      "He **collapsed** in the kitchen; his wife called 999.",
+      "Now pale, sweaty and frightened."
+     ],
+     "vitals": {
+      "HR": "128 bpm",
+      "BP": "84/52 mmHg",
+      "RR": "26 /min",
+      "SpO2": "94% on air",
+      "GCS": "15"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Sudden abdominal/back pain with **hypotension** and **tachycardia** in a man with a known AAA: this is **rupture** until proven otherwise."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "abdomen",
+      "title": "Where Desmond's pain is",
+      "regions": [
+       "umbilical",
+       "epigastric",
+       "L_flank"
+      ],
+      "caption": "Central abdominal pain that goes through to the **back** or **left flank**."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "**Pulsatile, expansile mass** above the umbilicus.",
+      "Abdomen tender; peripheries cold and mottled.",
+      "Femoral pulses weak but present."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's **pulsatile abdominal mass** is the classic AAA sign; a thoracic aneurysm would instead cause chest pain and compression symptoms."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's aorta, normally about 2 cm, has grown past **5 cm**: well over **1.5 times** normal, and infrarenal."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Fifty years of **smoking**, plus hypertension and atherosclerosis: Desmond carries the AAA risk profile."
+    },
+    {
+     "type": "ask",
+     "q": "What is the most likely diagnosis?",
+     "o": [
+      "Acute pancreatitis",
+      "Aortic dissection",
+      "Renal colic",
+      "Ruptured abdominal aortic aneurysm"
+     ],
+     "a": 3,
+     "r": "Known AAA, sudden abdominal/back pain, shock and a pulsatile mass = **ruptured AAA**. Dissection gives tearing chest pain radiating to the back."
+    },
+    {
+     "type": "compare",
+     "title": "Abdominal pain to the back: spot the difference",
+     "head": [
+      "",
+      "Ruptured AAA",
+      "Renal colic",
+      "Pancreatitis",
+      "Dissection"
+     ],
+     "rows": [
+      [
+       "Who",
+       "Older male smoker",
+       "Any age",
+       "Alcohol, gallstones",
+       "Hypertension, Marfan"
+      ],
+      [
+       "Pain",
+       "Sudden, abdomen/back",
+       "Loin to groin, colicky",
+       "Epigastric to back",
+       "Tearing chest to back"
+      ],
+      [
+       "Key sign",
+       "Pulsatile mass, shock",
+       "Writhing, haematuria",
+       "Raised amylase/lipase",
+       "Arm BP difference"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "An older man with first-ever **'renal colic'** and low BP is a **ruptured AAA** until proven otherwise. Do not be reassured by microscopic haematuria."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (abdominal ultrasound), questions on screening (men in the year they turn 65) and CT angiography for planning repair.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Resus: two large-bore cannulas, bloods, **crossmatch** sent.",
+      "Bedside ultrasound by the ED consultant.",
+      "Vascular surgeon called immediately."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond was found through **screening** in the year he turned **65**. His bedside **ultrasound** now measures the aorta at 6.3 cm."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Aortic diameter on ultrasound",
+      "min": 0,
+      "max": 8,
+      "unit": "cm",
+      "bands": [
+       [
+        0,
+        3,
+        "Normal: discharge",
+        "ok"
+       ],
+       [
+        3,
+        4.5,
+        "Small: yearly scan",
+        "warn"
+       ],
+       [
+        4.5,
+        5.5,
+        "Medium: 3-monthly",
+        "warn"
+       ],
+       [
+        5.5,
+        8,
+        "Large: surgery in 2 weeks",
+        "bad"
+       ]
+      ],
+      "value": 6.3,
+      "label": "Desmond 6.3 cm",
+      "caption": "Size decides everything: surveillance below 5.5 cm, **repair** at 5.5 cm or more."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "**Ultrasound** found and followed Desmond's aneurysm; **CT** is what the surgeons use to plan the repair."
+    },
+    {
+     "type": "labs",
+     "title": "Desmond's resus bloods",
+     "rows": [
+      [
+       "Haemoglobin",
+       "94 g/L",
+       "130–180",
+       "L"
+      ],
+      [
+       "Lactate",
+       "4.8 mmol/L",
+       "<2.0",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "142 µmol/L",
+       "60–110",
+       "H"
+      ],
+      [
+       "Platelets",
+       "168 ×10⁹/L",
+       "150–400",
+       ""
+      ],
+      [
+       "Crossmatch",
+       "6 units requested",
+       "",
+       ""
+      ]
+     ],
+     "text": "Falling Hb and rising lactate: he is **bleeding** and underperfused."
+    },
+    {
+     "type": "ask",
+     "q": "Desmond's BP responds to a small fluid bolus and holds at 92 systolic. What is the role of CT now?",
+     "o": [
+      "CT angiogram to plan the repair, without delaying theatre",
+      "CT is never used in AAA",
+      "Repeat CT in 3 months",
+      "Ultrasound alone is enough to plan surgery"
+     ],
+     "a": 0,
+     "r": "**CT angiogram** shows the leak and whether the anatomy suits **EVAR**. A patient who stays unstable goes straight to theatre."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's **CT angiogram** confirms a retroperitoneal rupture and anatomy that is **suitable for EVAR**."
+    },
+    {
+     "type": "flow",
+     "title": "AAA investigation",
+     "nodes": [
+      "Men in the year they turn 65: screening ultrasound",
+      "Suspected AAA: abdominal ultrasound, measure diameter",
+      "Size sets the surveillance interval",
+      "Repair planned: CT angiogram (EVAR suitability)",
+      "Suspected rupture: crossmatch, imaging only if stable"
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "Screening is **one** ultrasound for men in the year they turn **65**. Men over 65 who were never screened can ask for one."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?' by size: <3 cm discharge, 3–4.4 cm yearly scan, 4.5–5.4 cm 3-monthly, ≥5.5 cm (or symptomatic or growing >1 cm/year) surgery within 2 weeks. Rupture: crossmatch 6 units and emergency surgery.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's team **crossmatch 6 units** and take him for **emergency surgery** within the hour."
+    },
+    {
+     "type": "ask",
+     "q": "What is the priority for Desmond now?",
+     "o": [
+      "Admit to the ward and repeat ultrasound tomorrow",
+      "Crossmatch blood and emergency repair",
+      "IV morphine and observe",
+      "Outpatient vascular referral"
+     ],
+     "a": 1,
+     "r": "Ruptured AAA: **crossmatch (commonly 6 units)** and **emergency surgery**. Any delay is fatal."
+    },
+    {
+     "type": "flow",
+     "title": "Ruptured AAA: the first hour",
+     "nodes": [
+      "Call vascular surgeon and theatres",
+      "Two large-bore cannulas; crossmatch 6 units",
+      "Cautious fluids: keep him conscious, not normotensive",
+      "CT angiogram only if stable",
+      "Emergency EVAR or open repair"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Open repair is usually first-line, but Desmond's **severe COPD** is a **major anaesthetic risk**, so he has **EVAR** instead."
+    },
+    {
+     "type": "ask",
+     "q": "Why is EVAR chosen for Desmond rather than open repair?",
+     "o": [
+      "He is under 65",
+      "His aneurysm is small",
+      "Severe COPD makes major anaesthesia and laparotomy high risk",
+      "EVAR never needs follow-up"
+     ],
+     "a": 2,
+     "r": "**EVAR** avoids a laparotomy, so it suits patients **unfit for open repair**. It needs lifelong imaging for endoleak."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Desmond's aortic diameter over the years",
+      "x": [
+       "Age 65",
+       "68",
+       "70",
+       "72",
+       "74"
+      ],
+      "unit": "cm",
+      "series": [
+       {
+        "name": "Diameter (cm)",
+        "values": [
+         3.4,
+         3.9,
+         4.6,
+         5.2,
+         6.3
+        ]
+       }
+      ],
+      "caption": "Small at 65 (yearly scans), medium from 70 (3-monthly). Reaching **5.5 cm** should have triggered referral for repair."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's surveillance followed the size bands; **missed scans** meant nobody saw him pass 5.5 cm. Smoking cessation and **BP control** were key."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Desmond's pathway follows the **NHS AAA screening programme** and **NICE** AAA guidance."
+    },
+    {
+     "type": "trap",
+     "text": "Do not swap the intervals: **small (3–4.4 cm) = yearly**, **medium (4.5–5.4 cm) = every 3 months**. Below 3 cm needs no further scans."
+    },
+    {
+     "type": "pearl",
+     "text": "Urgent referral **within 2 weeks** if symptomatic, **≥5.5 cm**, or growing **>1 cm/year**. Any aneurysm >3 cm is referred to vascular surgeons within 12 weeks."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Science questions ask about the wall weakness (elastin and collagen breakdown), why rupture risk climbs steeply with size (Laplace's law) or why EVAR needs long-term follow-up (endoleak).",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "How Desmond's aneurysm grew",
+     "nodes": [
+      "Smoking and chronic inflammation",
+      "Matrix metalloproteinases activated",
+      "Elastin and collagen in the media degraded",
+      "Weak wall dilates",
+      "Bigger radius: more wall tension (Laplace)",
+      "More dilation, then rupture"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's smoking drove the **inflammation** and **MMP** activity that broke down his aortic wall; his hypertension added wall stress."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "As Desmond's aorta widened, **wall tension** rose with it, so his rupture risk climbed **disproportionately** as he grew past 5.5 cm."
+    },
+    {
+     "type": "ask",
+     "q": "By Laplace's law, if pressure stays the same and the radius doubles, wall tension:",
+     "o": [
+      "Doubles",
+      "Halves",
+      "Quadruples",
+      "Stays the same"
+     ],
+     "a": 0,
+     "r": "Laplace: tension ∝ **pressure × radius**. Bigger aneurysm = more tension = more dilation, a vicious cycle."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's EVAR avoids a laparotomy, lowering his **perioperative** risk, but he will need lifelong scans for **endoleak**."
+    },
+    {
+     "type": "compare",
+     "title": "EVAR vs open repair",
+     "head": [
+      "",
+      "EVAR",
+      "Open repair"
+     ],
+     "rows": [
+      [
+       "Access",
+       "Femoral arteries, stent graft",
+       "Laparotomy, sewn graft"
+      ],
+      [
+       "Early mortality",
+       "Lower",
+       "Higher"
+      ],
+      [
+       "Long term",
+       "More re-interventions (endoleak)",
+       "Durable"
+      ],
+      [
+       "Who",
+       "Unfit for open repair, hostile abdomen",
+       "First-line if fit"
+      ]
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "An **endoleak** is blood still flowing into the aneurysm sac outside the stent graft; the sac stays pressurised and can still grow or rupture."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What defines an aortic aneurysm?",
+   "o": [
+    "Any aortic calcification",
+    "Dilation to at least 1.5 times normal diameter",
+    "Diameter above 2 cm",
+    "A tear in the intima"
+   ],
+   "a": 1,
+   "r": "Permanent dilation to **≥1.5x** normal diameter. An intimal tear is dissection."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the strongest risk factor for AAA?",
+   "o": [
+    "Diabetes",
+    "Female sex",
+    "Hyperlipidaemia",
+    "Smoking"
+   ],
+   "a": 3,
+   "r": "**Smoking** is the strongest risk factor."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is the classic examination finding of AAA?",
+   "o": [
+    "Caput medusae",
+    "Pulsatile abdominal mass",
+    "Shifting dullness",
+    "Succussion splash"
+   ],
+   "a": 1,
+   "r": "A **pulsatile (expansile) abdominal mass**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which triad suggests AAA rupture?",
+   "o": [
+    "Fever, jaundice, RUQ pain",
+    "Headache, neck stiffness, photophobia",
+    "Sudden abdominal/back pain, hypotension, tachycardia",
+    "Vomiting, distension, constipation"
+   ],
+   "a": 2,
+   "r": "Rupture: **sudden abdominal/back pain, hypotension, tachycardia**."
+  },
+  {
+   "d": "investigation",
+   "q": "Who is offered AAA screening in the UK?",
+   "o": [
+    "All adults over 50",
+    "Men in the year they turn 65",
+    "Smokers over 40",
+    "Women over 70"
+   ],
+   "a": 1,
+   "r": "**Men in the year they turn 65**: one ultrasound."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test is used to plan EVAR?",
+   "o": [
+    "Abdominal X-ray",
+    "CT angiogram",
+    "Echocardiogram",
+    "Ultrasound alone"
+   ],
+   "a": 1,
+   "r": "**CT angiogram** determines EVAR suitability and pre-op planning."
+  },
+  {
+   "d": "management",
+   "q": "How often is a 4.8 cm AAA rescanned?",
+   "o": [
+    "Every 3 months",
+    "Every 6 months",
+    "Every year",
+    "Never"
+   ],
+   "a": 0,
+   "r": "**Medium (4.5–5.4 cm)**: every 3 months."
+  },
+  {
+   "d": "management",
+   "q": "Which is an indication for referral for surgery within 2 weeks?",
+   "o": [
+    "Diameter 3.5 cm",
+    "Diameter 4.8 cm, stable",
+    "Diameter ≥5.5 cm",
+    "Growth 0.3 cm/year"
+   ],
+   "a": 2,
+   "r": "Symptomatic, **≥5.5 cm**, or growing **>1 cm/year**."
+  },
+  {
+   "d": "management",
+   "q": "How many units of blood are commonly crossmatched for a ruptured AAA?",
+   "o": [
+    "2",
+    "4",
+    "6",
+    "10"
+   ],
+   "a": 2,
+   "r": "Commonly **6 units**, with emergency surgery."
+  },
+  {
+   "d": "science",
+   "q": "Why does rupture risk rise sharply with diameter?",
+   "o": [
+    "Bernoulli's principle",
+    "Fick's law",
+    "Laplace's law",
+    "Starling's law"
+   ],
+   "a": 2,
+   "r": "**Laplace's law**: larger radius, higher wall tension."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is an aortic aneurysm, and which type is most common?",
+    "tip": "Exam thinking: definition by diameter.",
+    "points": [
+     {
+      "p": "Permanent dilation to at least 1.5 times normal diameter",
+      "k": [
+       [
+        "1.5",
+        "one and a half"
+       ]
+      ],
+      "why": "Clinically, an abdominal aorta of 3 cm or more."
+     },
+     {
+      "p": "Risk of rupture and life-threatening bleeding",
+      "k": [
+       [
+        "ruptur",
+        "bleed",
+        "haemorrh"
+       ]
+      ],
+      "why": "The main danger."
+     },
+     {
+      "p": "AAA is most common, usually infrarenal",
+      "k": [
+       [
+        "infrarenal",
+        "below the renal",
+        "abdominal",
+        "aaa"
+       ]
+      ],
+      "why": "Below the renal arteries."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors for AAA?",
+    "tip": "Exam thinking: an older male smoker.",
+    "points": [
+     {
+      "p": "Smoking (strongest)",
+      "k": [
+       [
+        "smok"
+       ]
+      ],
+      "why": "Strongest risk factor."
+     },
+     {
+      "p": "Hypertension",
+      "k": [
+       [
+        "hypertens",
+        "blood pressure"
+       ]
+      ],
+      "why": "Raises wall stress."
+     },
+     {
+      "p": "Atherosclerosis",
+      "k": [
+       [
+        "atheroscl"
+       ]
+      ],
+      "why": "Shared vascular risk."
+     },
+     {
+      "p": "Chronic renal disease",
+      "k": [
+       [
+        "renal",
+        "kidney",
+        "ckd"
+       ]
+      ],
+      "why": "Listed in the notes."
+     },
+     {
+      "p": "Family history",
+      "k": [
+       [
+        "family"
+       ]
+      ],
+      "why": "First-degree relatives at higher risk."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do abdominal and thoracic aortic aneurysms present?",
+    "tip": "Exam thinking: most AAAs are silent.",
+    "points": [
+     {
+      "p": "AAA: pulsatile abdominal mass",
+      "k": [
+       [
+        "pulsatile",
+        "expansile"
+       ]
+      ],
+      "why": "Often found incidentally or at screening."
+     },
+     {
+      "p": "Thoracic: chest pain",
+      "k": [
+       [
+        "chest"
+       ]
+      ],
+      "why": "Thoracic aortic aneurysm."
+     },
+     {
+      "p": "Thoracic: compression of surrounding structures",
+      "k": [
+       [
+        "compress",
+        "hoarse",
+        "dysphag"
+       ]
+      ],
+      "why": "E.g. hoarseness, dysphagia."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does a ruptured AAA present?",
+    "tip": "Exam thinking: an older man with 'renal colic' and low BP.",
+    "points": [
+     {
+      "p": "Sudden abdominal or back pain",
+      "k": [
+       [
+        "sudden",
+        "abdominal",
+        "back"
+       ]
+      ],
+      "why": "May radiate to the flank or groin."
+     },
+     {
+      "p": "Hypotension",
+      "k": [
+       [
+        "hypotens",
+        "low bp",
+        "low blood pressure",
+        "shock"
+       ]
+      ],
+      "why": "Reflects blood loss."
+     },
+     {
+      "p": "Tachycardia",
+      "k": [
+       [
+        "tachycard"
+       ]
+      ],
+      "why": "Haemodynamic instability."
+     },
+     {
+      "p": "Instability = life-threatening emergency",
+      "k": [
+       [
+        "emergency",
+        "unstable",
+        "instab",
+        "life"
+       ]
+      ],
+      "why": "Straight to surgery."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is AAA investigated and screened for?",
+    "tip": "Exam thinking: ultrasound to find it, CT to fix it.",
+    "points": [
+     {
+      "p": "Abdominal ultrasound first-line, measuring diameter",
+      "k": [
+       [
+        "ultrasound",
+        "uss"
+       ]
+      ],
+      "why": "Gold standard for screening."
+     },
+     {
+      "p": "Screening: men in the year they turn 65",
+      "k": [
+       [
+        "65"
+       ]
+      ],
+      "why": "One-off scan."
+     },
+     {
+      "p": "CT angiogram for EVAR suitability and planning",
+      "k": [
+       [
+        "ct"
+       ]
+      ],
+      "why": "Gold standard for surgical planning."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What follow-up does each AAA size need?",
+    "tip": "Exam thinking: learn the four size bands.",
+    "points": [
+     {
+      "p": "<3 cm: no further scanning",
+      "k": [
+       [
+        "3"
+       ],
+       [
+        "no",
+        "discharg"
+       ]
+      ],
+      "why": "Normal."
+     },
+     {
+      "p": ">3 cm: refer to vascular surgeons within 12 weeks",
+      "k": [
+       [
+        "12"
+       ]
+      ],
+      "why": "All confirmed AAAs."
+     },
+     {
+      "p": "3–4.4 cm: repeat ultrasound after 1 year",
+      "k": [
+       [
+        "year",
+        "annual",
+        "12 month"
+       ]
+      ],
+      "why": "Small."
+     },
+     {
+      "p": "4.5–5.4 cm: repeat ultrasound every 3 months",
+      "k": [
+       [
+        "3 month",
+        "three month"
+       ]
+      ],
+      "why": "Medium."
+     },
+     {
+      "p": "Smoking cessation and BP control",
+      "k": [
+       [
+        "smok",
+        "blood pressure",
+        "bp"
+       ]
+      ],
+      "why": "Slow growth."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When is AAA repaired, and how?",
+    "tip": "Exam thinking: three triggers, two operations.",
+    "points": [
+     {
+      "p": "Refer within 2 weeks: symptomatic, ≥5.5 cm or >1 cm/year growth",
+      "k": [
+       [
+        "5.5"
+       ],
+       [
+        "2 week",
+        "two week",
+        "1 cm",
+        "symptomatic"
+       ]
+      ],
+      "why": "Any one is enough."
+     },
+     {
+      "p": "Open aortic repair is first-line",
+      "k": [
+       [
+        "open"
+       ]
+      ],
+      "why": "If fit for surgery."
+     },
+     {
+      "p": "EVAR if unsuitable for open repair",
+      "k": [
+       [
+        "evar",
+        "endovascular"
+       ]
+      ],
+      "why": "Anaesthetic risk, comorbidity, horseshoe kidney, stoma, hostile abdomen."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the emergency management of a ruptured AAA?",
+    "tip": "Exam thinking: blood and theatre, no delay.",
+    "points": [
+     {
+      "p": "Crossmatch blood, commonly 6 units",
+      "k": [
+       [
+        "crossmatch",
+        "cross-match",
+        "cross match",
+        "blood"
+       ],
+       [
+        "6",
+        "six"
+       ]
+      ],
+      "why": "Plus major haemorrhage call."
+     },
+     {
+      "p": "Emergency surgery",
+      "k": [
+       [
+        "surg",
+        "theatre",
+        "repair",
+        "evar"
+       ]
+      ],
+      "why": "Open or EVAR."
+     },
+     {
+      "p": "Imaging only if stable",
+      "k": [
+       [
+        "stable",
+        "ct",
+        "unstable"
+       ]
+      ],
+      "why": "Unstable goes straight to theatre."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does an aneurysm form and grow?",
+    "tip": "Exam thinking: the media weakens.",
+    "points": [
+     {
+      "p": "Elastin and collagen degraded in the aortic media",
+      "k": [
+       [
+        "elastin",
+        "collagen"
+       ]
+      ],
+      "why": "Structural proteins of the wall."
+     },
+     {
+      "p": "Matrix metalloproteinases and chronic inflammation",
+      "k": [
+       [
+        "metalloprotein",
+        "mmp",
+        "inflamm"
+       ]
+      ],
+      "why": "Drive the breakdown."
+     },
+     {
+      "p": "Atherosclerosis and hypertension increase wall stress",
+      "k": [
+       [
+        "hypertens",
+        "atheroscl",
+        "stress"
+       ]
+      ],
+      "why": "Accelerate growth."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does rupture risk rise with size, and why is EVAR a trade-off?",
+    "tip": "Exam thinking: Laplace, then endoleak.",
+    "points": [
+     {
+      "p": "Laplace's law: larger diameter, higher wall tension",
+      "k": [
+       [
+        "laplace",
+        "tension"
+       ]
+      ],
+      "why": "Tension ∝ pressure × radius."
+     },
+     {
+      "p": "Rupture risk rises disproportionately",
+      "k": [
+       [
+        "disproportion",
+        "sharp",
+        "exponent",
+        "rapid"
+       ]
+      ],
+      "why": "Hence the 5.5 cm threshold."
+     },
+     {
+      "p": "EVAR lowers perioperative mortality (no laparotomy)",
+      "k": [
+       [
+        "laparotomy",
+        "perioperative",
+        "mortality"
+       ]
+      ],
+      "why": "Less invasive."
+     },
+     {
+      "p": "EVAR needs more re-intervention due to endoleak",
+      "k": [
+       [
+        "endoleak"
+       ]
+      ],
+      "why": "Lifelong surveillance."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Aneurysm": "Permanent dilation of an artery to at least 1.5 times its normal diameter.",
+  "AAA": "Abdominal aortic aneurysm, usually below the renal arteries.",
+  "Infrarenal": "Below the level of the renal arteries; where most AAAs arise.",
+  "Thoracic aortic aneurysm": "An aneurysm of the aorta in the chest, causing chest pain and compression symptoms.",
+  "Pulsatile mass": "A swelling that throbs with each heartbeat.",
+  "Expansile": "Pushes the examiner's fingers apart, not just up, suggesting an aneurysm rather than a transmitted pulse.",
+  "Rupture": "Bursting of the aneurysm wall, causing massive internal bleeding.",
+  "Retroperitoneal": "Behind the peritoneum; most AAA ruptures bleed here at first.",
+  "EVAR": "Endovascular aneurysm repair: a stent graft placed through the femoral arteries, avoiding a laparotomy.",
+  "Open aortic repair": "Replacing the aneurysmal aorta with a synthetic graft through a laparotomy.",
+  "Endoleak": "Persistent blood flow into the aneurysm sac outside an EVAR stent graft.",
+  "Laparotomy": "Open abdominal surgery through a large incision.",
+  "Hostile abdomen": "An abdomen with dense adhesions or previous surgery that makes open repair risky.",
+  "Horseshoe kidney": "Congenitally fused kidneys lying across the aorta, which complicates open repair.",
+  "Stoma": "An opening of bowel onto the abdominal wall, making open repair harder.",
+  "Crossmatch": "Testing donor blood against the patient's blood so units are ready for transfusion.",
+  "CT angiogram": "CT scan with IV contrast showing the aorta's size, shape and leaks; used to plan EVAR.",
+  "NHS AAA screening programme": "A one-off abdominal ultrasound offered to men in the year they turn 65.",
+  "Surveillance": "Repeat ultrasound scans at set intervals to watch an aneurysm's growth.",
+  "Laplace's law": "Wall tension is proportional to pressure times radius, so wider aneurysms are under more tension.",
+  "Matrix metalloproteinases": "Enzymes that break down elastin and collagen in the aortic wall.",
+  "MMP": "Matrix metalloproteinase.",
+  "Elastin": "A stretchy protein in the aortic media that lets it recoil.",
+  "Collagen": "A strong structural protein in the aortic wall that resists rupture.",
+  "Media": "The middle, muscular and elastic layer of the artery wall.",
+  "Aortic dissection": "A tear in the aortic intima letting blood split the wall, causing tearing chest pain.",
+  "Renal colic": "Severe loin-to-groin pain from a kidney stone; a classic misdiagnosis for ruptured AAA.",
+  "Permissive hypotension": "Accepting a lower blood pressure in bleeding patients to avoid worsening the haemorrhage.",
+  "COPD": "Chronic obstructive pulmonary disease, which raises anaesthetic risk.",
+  "Major haemorrhage protocol": "A hospital system to deliver large amounts of blood products quickly.",
+  "Haemodynamic instability": "Low blood pressure and fast pulse showing poor circulation."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man has a 1 hour history of severe left loin pain radiating to his groin. He has never had kidney stones. He smokes 30 cigarettes a day. His pulse rate is 122 bpm and BP 88/56 mmHg. He is pale and sweaty. Urinalysis shows a trace of blood.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pyelonephritis",
+    "Diverticulitis",
+    "Renal colic",
+    "Ruptured abdominal aortic aneurysm",
+    "Testicular torsion"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question: is this really renal colic?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "71 year old man",
+      "never had kidney stones",
+      "smokes 30 cigarettes a day",
+      "BP 88/56 mmHg",
+      "pale and sweaty"
+     ],
+     "x": "An older male smoker with first-ever 'renal colic' and **shock**: ruptured AAA mimics colic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Ruptured AAA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pyelonephritis gives fever and dysuria, not sudden shock."
+      ],
+      [
+       1,
+       "Diverticulitis gives LIF pain and fever."
+      ],
+      [
+       2,
+       "Renal colic does not cause hypotension; trace blood is common in AAA rupture too."
+      ],
+      [
+       4,
+       "Torsion affects young males with testicular pain."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: older man + first 'renal colic' + low BP = ruptured AAA."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 76 year old man has sudden severe abdominal and back pain. He has a known 5.4 cm abdominal aortic aneurysm. His pulse rate is 130 bpm and BP 78/44 mmHg. A vascular surgeon is on the way.",
+   "q": "Which is the most appropriate immediate investigation?",
+   "o": [
+    "Abdominal X-ray",
+    "Crossmatch of 6 units of blood",
+    "CT angiography",
+    "Erect chest X-ray",
+    "Serum amylase"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Immediate investigation in an unstable suspected rupture."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden severe abdominal and back pain",
+      "known 5.4 cm abdominal aortic aneurysm",
+      "BP 78/44 mmHg"
+     ],
+     "x": "Known AAA + pain + shock = **rupture**; he is too unstable for CT."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Get blood ready: **crossmatch (commonly 6 units)**, then theatre."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AXR adds nothing and wastes time."
+      ],
+      [
+       2,
+       "CT is for stable patients; this man is shocked."
+      ],
+      [
+       3,
+       "Erect CXR looks for perforation."
+      ],
+      [
+       4,
+       "Amylase helps in pancreatitis, not here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: unstable ruptured AAA = crossmatch and theatre, no CT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man has a 6.0 cm abdominal aortic aneurysm on ultrasound. He has severe heart failure and has had several previous laparotomies for Crohn's disease, with an ileostomy. A CT angiogram shows anatomy suitable for an endovascular graft.",
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Endovascular aneurysm repair",
+    "Open aortic repair",
+    "Repeat ultrasound in 1 year",
+    "Repeat ultrasound in 3 months",
+    "Smoking cessation alone"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A repair question: is he fit for open surgery?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6.0 cm",
+      "severe heart failure",
+      "several previous laparotomies",
+      "ileostomy",
+      "anatomy suitable for an endovascular graft"
+     ],
+     "x": "≥5.5 cm needs repair. Major anaesthetic risk, hostile abdomen and a stoma make open repair unsuitable."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**EVAR**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Open repair is first-line only if fit; he is not."
+      ],
+      [
+       2,
+       "Yearly scans are for 3–4.4 cm."
+      ],
+      [
+       3,
+       "3-monthly scans are for 4.5–5.4 cm."
+      ],
+      [
+       4,
+       "Risk-factor control alone leaves a 6 cm aneurysm untreated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: ≥5.5 cm = repair; open first-line, EVAR if unsuitable for open."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 79 year old man had endovascular aneurysm repair 3 years ago. A follow-up CT shows contrast flowing into the aneurysm sac outside the stent graft, and the sac has enlarged.",
+   "q": "Which best explains why he needs further intervention?",
+   "o": [
+    "Anastomotic dehiscence",
+    "Endoleak into the aneurysm sac",
+    "Graft infection",
+    "Incisional hernia",
+    "Wound dehiscence"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about EVAR follow-up."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "endovascular aneurysm repair 3 years ago",
+      "contrast flowing into the aneurysm sac outside the stent graft",
+      "sac has enlarged"
+     ],
+     "x": "Blood still entering the sac after EVAR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Endoleak**: the reason EVAR has more long-term re-interventions."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anastomotic dehiscence is a sutured (open) repair problem."
+      ],
+      [
+       2,
+       "Infection gives fever and gas around the graft."
+      ],
+      [
+       3,
+       "Incisional hernia follows laparotomy, not EVAR."
+      ],
+      [
+       4,
+       "EVAR has only small groin wounds."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: EVAR = lower early mortality, but endoleak means lifelong surveillance."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old man collapses at home with sudden severe central abdominal pain radiating to his back. He smokes and has hypertension. His pulse rate is 124 bpm, BP 82/50 mmHg and respiratory rate 24 breaths per minute. A pulsatile, expansile mass is felt above the umbilicus.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "96 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "Lactate",
+     "5.1 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pancreatitis",
+    "Aortic dissection",
+    "Perforated peptic ulcer",
+    "Renal colic",
+    "Ruptured abdominal aortic aneurysm"
+   ],
+   "a": 4,
+   "e": "Sudden abdominal/back pain, shock and a pulsatile expansile mass in an older male smoker is a ruptured AAA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: abdominal pain to the back with shock."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden severe central abdominal pain radiating to his back",
+      "smokes",
+      "BP 82/50 mmHg",
+      "pulsatile, expansile mass"
+     ],
+     "x": "Smoker, back pain, hypotension, pulsatile mass."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Ruptured AAA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pancreatitis rarely causes this shock so suddenly and has no pulsatile mass."
+      ],
+      [
+       1,
+       "Dissection gives tearing chest pain to the back."
+      ],
+      [
+       2,
+       "Perforation gives a rigid abdomen without a pulsatile mass."
+      ],
+      [
+       3,
+       "Renal colic does not cause shock."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Pain + shock + pulsatile mass = ruptured AAA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man who smokes sees his GP for a routine check. He has no symptoms. On abdominal examination there is a non-tender, pulsatile, expansile mass in the epigastrium. His BP is 150/90 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Abdominal aortic aneurysm",
+    "Colorectal carcinoma",
+    "Hepatomegaly",
+    "Horseshoe kidney",
+    "Pancreatic pseudocyst"
+   ],
+   "a": 0,
+   "e": "An asymptomatic pulsatile, expansile epigastric mass in an older male smoker is an AAA. A mass overlying the aorta transmits pulsation but is not expansile.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: what is an expansile mass?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smokes",
+      "no symptoms",
+      "pulsatile, expansile mass in the epigastrium"
+     ],
+     "x": "Expansile, not just pulsatile: the mass itself is the artery."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**AAA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Colorectal carcinoma gives bowel symptoms and is not expansile."
+      ],
+      [
+       2,
+       "Hepatomegaly is in the RUQ and moves with respiration."
+      ],
+      [
+       3,
+       "Horseshoe kidney is rarely felt and not expansile."
+      ],
+      [
+       4,
+       "A pseudocyst follows pancreatitis and only transmits pulsation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Expansile pulsatile mass = AAA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man with long-standing hypertension has a 3 month history of dull central chest pain, a hoarse voice and difficulty swallowing. He has not lost weight. His BP is 168/96 mmHg. A chest X-ray shows a widened mediastinum.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Achalasia",
+    "Bronchial carcinoma",
+    "Oesophageal carcinoma",
+    "Thoracic aortic aneurysm",
+    "Thyroid goitre"
+   ],
+   "a": 3,
+   "e": "Chest pain with compression of surrounding structures (recurrent laryngeal nerve, oesophagus) and a widened mediastinum in a hypertensive man suggests a thoracic aortic aneurysm.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: chest pain plus compression symptoms."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing hypertension",
+      "dull central chest pain",
+      "hoarse voice and difficulty swallowing",
+      "not lost weight",
+      "widened mediastinum"
+     ],
+     "x": "Compression of the recurrent laryngeal nerve and oesophagus by a mediastinal mass; no weight loss."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Thoracic aortic aneurysm**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Achalasia causes dysphagia but not hoarseness or a widened mediastinum."
+      ],
+      [
+       1,
+       "Bronchial carcinoma usually causes weight loss, cough and haemoptysis."
+      ],
+      [
+       2,
+       "Oesophageal cancer causes progressive dysphagia and weight loss."
+      ],
+      [
+       4,
+       "A goitre is a neck mass."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Chest pain + compression symptoms = thoracic aneurysm."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man has an abdominal aortic aneurysm found on screening. He asks which of his habits or conditions most contributed to it.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the strongest risk factor for his condition?",
+   "o": [
+    "Diabetes mellitus",
+    "Female sex",
+    "Hyperlipidaemia",
+    "Hypertension",
+    "Smoking"
+   ],
+   "a": 4,
+   "e": "Smoking is the strongest risk factor for AAA. Diabetes is not a risk factor and AAA is more common in men.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A risk factor question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "abdominal aortic aneurysm found on screening",
+      "most contributed"
+     ],
+     "x": "AAA risk factors: smoking, hypertension, atherosclerosis, CKD, family history."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The **strongest** is **smoking**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Diabetes is not a recognised AAA risk factor."
+      ],
+      [
+       1,
+       "AAA is commoner in men."
+      ],
+      [
+       2,
+       "Hyperlipidaemia contributes via atherosclerosis but is weaker."
+      ],
+      [
+       3,
+       "Hypertension is a risk factor, but weaker than smoking."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** AAA = smoking."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 65 year old man attends his NHS AAA screening appointment. Ultrasound shows an infrarenal aortic diameter of 5.0 cm. He has no symptoms. His BP is 142/86 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on abdominal examination?",
+   "o": [
+    "Bruit over the liver",
+    "Caput medusae",
+    "Pulsatile expansile mass above the umbilicus",
+    "Shifting dullness",
+    "Succussion splash"
+   ],
+   "a": 2,
+   "e": "A 5 cm AAA is classically felt as a pulsatile, expansile mass above the umbilicus (the aorta divides at about the umbilicus).",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A finding question: what would you feel?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "NHS AAA screening",
+      "infrarenal aortic diameter of 5.0 cm"
+     ],
+     "x": "A medium AAA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pulsatile, expansile mass above the umbilicus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A hepatic bruit suggests hepatocellular carcinoma or alcoholic hepatitis."
+      ],
+      [
+       1,
+       "Caput medusae is portal hypertension."
+      ],
+      [
+       3,
+       "Shifting dullness is ascites."
+      ],
+      [
+       4,
+       "Succussion splash is gastric outlet obstruction."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** AAA = pulsatile expansile mass."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 78 year old man with a known 5.9 cm abdominal aortic aneurysm, awaiting surgery, has sudden severe back pain and feels faint. His pulse rate is 132 bpm and BP 80/48 mmHg. He is pale and clammy.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "88 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "Lactate",
+     "4.6 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of his presentation?",
+   "o": [
+    "Aortic dissection",
+    "Mesenteric ischaemia",
+    "Renal colic",
+    "Rupture of the aneurysm",
+    "Vertebral collapse"
+   ],
+   "a": 3,
+   "e": "A large known AAA with sudden back pain, hypotension and tachycardia means rupture, the major complication.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question in a known AAA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "known 5.9 cm abdominal aortic aneurysm",
+      "sudden severe back pain",
+      "BP 80/48 mmHg"
+     ],
+     "x": "Large AAA + pain + shock."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Rupture**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dissection gives tearing chest pain and pulse deficits."
+      ],
+      [
+       1,
+       "Mesenteric ischaemia gives abdominal pain out of proportion, often with AF."
+      ],
+      [
+       2,
+       "Renal colic does not cause shock."
+      ],
+      [
+       4,
+       "Vertebral collapse causes back pain without shock."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Known AAA + back pain + shock = rupture."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 65 year old man receives a letter inviting him to the NHS abdominal aortic aneurysm screening programme. He has no symptoms.",
+   "labs": [],
+   "visual": null,
+   "q": "Which investigation will he be offered?",
+   "o": [
+    "Abdominal ultrasound",
+    "Abdominal X-ray",
+    "CT angiography",
+    "MR angiography",
+    "Serum lipid profile"
+   ],
+   "a": 0,
+   "e": "AAA screening is a single abdominal ultrasound measuring aortic diameter, offered to men in the year they turn 65.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A screening investigation question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "65 year old man",
+      "screening programme",
+      "no symptoms"
+     ],
+     "x": "Men in the year they turn 65 are screened."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Abdominal ultrasound**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "AXR cannot measure the aorta reliably."
+      ],
+      [
+       2,
+       "CTA is for planning repair."
+      ],
+      [
+       3,
+       "MRA is not used for screening."
+      ],
+      [
+       4,
+       "Lipids assess cardiovascular risk, not AAA."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Screening = ultrasound."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 72 year old man has a 5.8 cm abdominal aortic aneurysm on ultrasound and has been referred for repair. The vascular surgeon wants to know whether he is suitable for an endovascular graft.",
+   "labs": [
+    [
+     "eGFR",
+     "64 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "108 µmol/L",
+     "60–110",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Abdominal X-ray",
+    "CT angiography",
+    "Echocardiography",
+    "MRI lumbar spine",
+    "Repeat ultrasound in 3 months"
+   ],
+   "a": 1,
+   "e": "CT angiography is the gold standard for surgical planning and determines suitability for EVAR.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A planning investigation question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5.8 cm",
+      "referred for repair",
+      "suitable for an endovascular graft"
+     ],
+     "x": "Repair planned; anatomy needed."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CT angiography**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AXR gives no anatomical detail."
+      ],
+      [
+       2,
+       "Echo assesses the heart for anaesthesia, not EVAR anatomy."
+      ],
+      [
+       3,
+       "MRI spine is irrelevant."
+      ],
+      [
+       4,
+       "Rescanning delays a repair that is already indicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** EVAR planning = CT angiography."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 67 year old man has an abdominal aortic aneurysm of 4.8 cm on ultrasound. He has no symptoms. It measured 4.6 cm a year ago. His BP is 136/82 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Emergency open repair",
+    "No further scanning",
+    "Repeat ultrasound every 3 months",
+    "Repeat ultrasound in 1 year",
+    "Urgent referral for surgery within 2 weeks"
+   ],
+   "a": 2,
+   "e": "A medium AAA (4.5–5.4 cm) that is asymptomatic and growing slowly is rescanned every 3 months. Yearly scans are for small (3–4.4 cm) aneurysms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A surveillance question: place the diameter in its band."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "4.8 cm",
+      "no symptoms",
+      "4.6 cm a year ago"
+     ],
+     "x": "Medium band, asymptomatic, growth 0.2 cm/year."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Ultrasound every 3 months**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Emergency repair is for rupture."
+      ],
+      [
+       1,
+       "No scanning is only for <3 cm."
+      ],
+      [
+       3,
+       "Yearly is for 3–4.4 cm."
+      ],
+      [
+       4,
+       "2-week referral needs ≥5.5 cm, symptoms or >1 cm/year growth."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** 4.5–5.4 cm = every 3 months."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 71 year old man has an asymptomatic abdominal aortic aneurysm. It measured 5.0 cm six months ago and now measures 5.6 cm. His pulse rate is 70 bpm and BP 138/84 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "No further follow-up",
+    "Repeat ultrasound every 3 months",
+    "Repeat ultrasound in 1 year",
+    "Start a statin and review in 6 months",
+    "Urgent vascular referral within 2 weeks"
+   ],
+   "a": 4,
+   "e": "Diameter ≥5.5 cm (and growth >1 cm/year) is an indication for urgent referral for surgery within 2 weeks.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A threshold question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5.0 cm six months ago",
+      "now measures 5.6 cm"
+     ],
+     "x": "Now ≥5.5 cm, and growing at 1.2 cm/year."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent referral within 2 weeks**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A 5.6 cm aneurysm must not be discharged."
+      ],
+      [
+       1,
+       "3-monthly scans are for 4.5–5.4 cm."
+      ],
+      [
+       2,
+       "Yearly scans are for 3–4.4 cm."
+      ],
+      [
+       3,
+       "A statin helps risk but delays needed repair."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** ≥5.5 cm or >1 cm/year = surgery within 2 weeks."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old man with a ruptured abdominal aortic aneurysm is in the resuscitation room. Blood has been crossmatched. His pulse rate is 128 bpm and BP 84/50 mmHg.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "91 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "Lactate",
+     "4.9 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Elective EVAR within 2 weeks",
+    "Emergency surgical repair",
+    "IV morphine and ward observation",
+    "Repeat ultrasound in 3 months",
+    "Thrombolysis"
+   ],
+   "a": 1,
+   "e": "A ruptured AAA needs crossmatched blood (commonly 6 units) and emergency surgery. Delay is fatal.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of rupture."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ruptured abdominal aortic aneurysm",
+      "Blood has been crossmatched",
+      "BP 84/50 mmHg"
+     ],
+     "x": "Rupture with shock."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Emergency surgery**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Elective timing is for intact aneurysms."
+      ],
+      [
+       2,
+       "Observation of a rupture is fatal."
+      ],
+      [
+       3,
+       "Surveillance is for small intact aneurysms."
+      ],
+      [
+       4,
+       "Thrombolysis would worsen bleeding."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rupture = crossmatch 6 units + emergency surgery."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 70 year old man's abdominal aortic aneurysm has grown from 4.0 cm to 6.0 cm. His surgeon explains that the risk of rupture has risen far more than the 50% increase in diameter.",
+   "labs": [],
+   "visual": null,
+   "q": "Which principle best explains this?",
+   "o": [
+    "Bernoulli's principle",
+    "Fick's law",
+    "Laplace's law",
+    "Poiseuille's law",
+    "Starling's law"
+   ],
+   "a": 2,
+   "e": "Laplace's law: wall tension is proportional to pressure times radius, so larger aneurysms carry disproportionately higher wall tension and rupture risk.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An applied physics question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "grown from 4.0 cm to 6.0 cm",
+      "risen far more"
+     ],
+     "x": "Bigger radius → more wall tension → more dilation and rupture."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Laplace's law**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bernoulli relates flow velocity and pressure."
+      ],
+      [
+       1,
+       "Fick's law describes diffusion."
+      ],
+      [
+       3,
+       "Poiseuille's law describes flow resistance."
+      ],
+      [
+       4,
+       "Starling's law relates to cardiac filling or capillary fluid exchange."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Aneurysm rupture risk = Laplace."
+    }
+   ]
+  }
+ ]
+}

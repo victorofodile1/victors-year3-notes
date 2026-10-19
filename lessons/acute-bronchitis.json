@@ -1,0 +1,1900 @@
+{
+ "id": "acute-bronchitis",
+ "patient": {
+  "name": "Chloe Mensah",
+  "age": 36,
+  "sex": "F",
+  "setting": "GP surgery (same-day appointment)",
+  "complaint": "Cough for 10 days after a cold, now bringing up green sputum",
+  "background": [
+   "Smokes 10 cigarettes a day",
+   "Had a runny nose and sore throat two weeks ago",
+   "No asthma, COPD, diabetes or heart disease",
+   "Works in a busy call centre in Croydon"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with cough after a cold, mild fever and wheeze or rhonchi but **no focal consolidation**: the chest signs separate bronchitis from pneumonia.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Chloe, 36, coughing for **10 days**.",
+      "It started after a cold two weeks ago.",
+      "Now green sputum, a tight chest, some wheeze.",
+      "She still feels well enough to work."
+     ],
+     "vitals": {
+      "T": "37.8°C",
+      "HR": "88 bpm",
+      "BP": "122/76 mmHg",
+      "RR": "16 /min",
+      "SpO2": "98% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Chloe's cough after a cold points to a **viral** infection of the bronchi, not the alveoli."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Her recent **URTI** and **smoking** are the two classic risk factors; rhinovirus is the likeliest culprit."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Chest: scattered **rhonchi that clear after coughing**.",
+      "Mild bilateral end-expiratory wheeze.",
+      "No bronchial breathing, no dullness, no focal crackles."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Green sputum does **not** mean bacteria. What matters is the absence of **focal consolidation signs**."
+    },
+    {
+     "type": "ask",
+     "q": "Chloe has rhonchi clearing on coughing and no focal signs. What is it?",
+     "o": [
+      "Acute bronchitis",
+      "Asthma",
+      "Community-acquired pneumonia",
+      "Pulmonary embolism"
+     ],
+     "a": 0,
+     "r": "Cough after a URTI with **no focal signs** is acute bronchitis. Focal crackles or bronchial breathing would suggest pneumonia."
+    },
+    {
+     "type": "compare",
+     "title": "Acute bronchitis vs pneumonia vs asthma",
+     "head": [
+      "Feature",
+      "Acute bronchitis",
+      "Pneumonia",
+      "Asthma"
+     ],
+     "rows": [
+      [
+       "Cause",
+       "Viral (rhinovirus)",
+       "Usually bacterial (pneumococcus)",
+       "Airway hyperreactivity"
+      ],
+      [
+       "Systemic upset",
+       "Mild fever",
+       "High fever, unwell",
+       "Usually afebrile"
+      ],
+      [
+       "Chest signs",
+       "Rhonchi, wheeze, **no focal signs**",
+       "**Focal** crackles, dullness, bronchial breathing",
+       "Widespread polyphonic wheeze"
+      ],
+      [
+       "CXR",
+       "Normal",
+       "Consolidation",
+       "Normal or hyperinflated"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Chloe is safety-netted: **high fever, breathlessness or chest pain** would mean progression to pneumonia."
+    },
+    {
+     "type": "trap",
+     "text": "Sputum colour is a poor guide. Green or yellow sputum is common in **viral** bronchitis and does not justify antibiotics."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' where the answer is usually none (clinical diagnosis), or a chest X-ray when pneumonia cannot be excluded.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Chloe asks for tests to 'find the bug'. What confirms her diagnosis?",
+     "o": [
+      "Chest X-ray",
+      "Clinical assessment alone",
+      "Sputum culture",
+      "Viral PCR swab"
+     ],
+     "a": 1,
+     "r": "Acute bronchitis is a **clinical diagnosis**. Tests would not change her management."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Chloe's history and chest examination are the test: **no routine investigations** needed."
+    },
+    {
+     "type": "pearl",
+     "text": "Investigations are for **doubt**: when focal signs, high fever or hypoxia make pneumonia possible."
+    },
+    {
+     "type": "labs",
+     "title": "Point-of-care CRP (practice nurse)",
+     "rows": [
+      [
+       "CRP",
+       "22 mg/L",
+       "<5",
+       "H"
+      ]
+     ],
+     "text": "A mildly raised CRP fits a viral bronchitis; the key cut-off for antibiotics is 100 mg/L."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "CRP and the antibiotic decision",
+      "min": 0,
+      "max": 160,
+      "unit": "mg/L",
+      "bands": [
+       [
+        0,
+        20,
+        "Normal / no antibiotic",
+        "ok"
+       ],
+       [
+        20,
+        100,
+        "Raised, still no routine antibiotic",
+        "warn"
+       ],
+       [
+        100,
+        160,
+        ">100: antibiotics",
+        "bad"
+       ]
+      ],
+      "value": 22,
+      "label": "Chloe 22",
+      "caption": "Chloe's CRP is far below **100 mg/L**: no antibiotic needed on CRP grounds."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Had Chloe's chest signs been uncertain, a **chest X-ray** would be used to exclude pneumonia."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Chest X-ray",
+      "findings": [],
+      "caption": "Clear lung fields, no consolidation, no effusion: **pneumonia excluded**."
+     },
+     "text": "This is what a CXR would show in bronchitis: normal. Consolidation would change the diagnosis."
+    },
+    {
+     "type": "trap",
+     "text": "Do not send sputum culture or bloods routinely. They add cost and delay and do not alter the plan."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?': self-care and analgesia for most, salbutamol only with airway disease, and doxycycline for 5 days only in high-risk patients (comorbidity, age over 80, CRP over 100).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Chloe is well, 36, no comorbidities, CRP 22. What does she need?",
+     "o": [
+      "Amoxicillin for 5 days",
+      "Doxycycline for 5 days",
+      "Oral prednisolone",
+      "Self-care, paracetamol and reassurance"
+     ],
+     "a": 3,
+     "r": "Most cases need **reassurance and self-care**. She has none of the high-risk features for antibiotics."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Chloe gets **reassurance**, fluids, **paracetamol or ibuprofen**, and stop-smoking advice. No inhaler: she has no underlying airway disease."
+    },
+    {
+     "type": "flow",
+     "title": "Who gets what",
+     "nodes": [
+      "Cough after URTI, no focal signs",
+      "Most: reassurance, self-care, analgesia",
+      "Wheeze with asthma/airway disease → salbutamol",
+      "High risk: comorbidity, age >80 or CRP >100",
+      "→ Doxycycline for 5 days",
+      "Red flags → reassess for pneumonia"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Chloe had **heart failure or diabetes**, were **over 80**, or had a **CRP over 100**, she would get **doxycycline for 5 days**."
+    },
+    {
+     "type": "compare",
+     "title": "Antibiotics: yes or no?",
+     "head": [
+      "Patient",
+      "Antibiotic?",
+      "Why"
+     ],
+     "rows": [
+      [
+       "Chloe, 36, well, CRP 22",
+       "No",
+       "Viral, low risk"
+      ],
+      [
+       "84 year old, well",
+       "Doxycycline 5 days",
+       "Age >80"
+      ],
+      [
+       "55 year old with heart failure",
+       "Doxycycline 5 days",
+       "Comorbidity"
+      ],
+      [
+       "40 year old, CRP 130",
+       "Doxycycline 5 days",
+       "CRP >100"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Chloe's plan follows **NICE NG120** on acute cough: no antibiotic for most, targeted antibiotics for high risk."
+    },
+    {
+     "type": "trap",
+     "text": "A short-acting bronchodilator is not for everyone with wheeze: the notes say **only if underlying airway disease** such as asthma."
+    },
+    {
+     "type": "pearl",
+     "text": "Tell Chloe the cough may last **3 to 4 weeks**. Expecting it reduces repeat visits for antibiotics."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the most likely organism (rhinovirus), why the chest has no consolidation, why cough lasts weeks, and why antibiotics rarely help.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Chloe's virus infected her **tracheobronchial epithelium**: inflamed airways and extra mucus, but her alveoli stayed clear."
+    },
+    {
+     "type": "flow",
+     "title": "From cold to bronchitis",
+     "nodes": [
+      "Rhinovirus URTI",
+      "Spreads to tracheobronchial epithelium",
+      "Inflammation and mucus hypersecretion",
+      "Cough, rhonchi, wheeze",
+      "Alveoli spared: no consolidation"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Chloe's cough will outlast the virus because the airway lining stays **inflamed and hyperresponsive** for weeks."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Chloe's cough over time",
+      "x": [
+       "Day 1",
+       "Week 1",
+       "Week 2",
+       "Week 3",
+       "Week 4"
+      ],
+      "unit": "cough score (0–10)",
+      "series": [
+       {
+        "name": "Cough",
+        "values": [
+         8,
+         7,
+         5,
+         3,
+         1
+        ]
+       },
+       {
+        "name": "Fever",
+        "values": [
+         5,
+         1,
+         0,
+         0,
+         0
+        ]
+       }
+      ],
+      "caption": "Fever settles in days but the cough lingers **for weeks**: airway inflammation outlasts the virus."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Why will antibiotics not help Chloe?",
+     "o": [
+      "Bacteria are resistant",
+      "The cause is viral",
+      "The drugs cannot reach the bronchi",
+      "The infection is fungal"
+     ],
+     "a": 1,
+     "r": "Acute bronchitis is almost always **viral**, so antibiotics offer little benefit and add side effects and resistance."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Antibiotics are saved for those where **bacterial superinfection** is more likely or more dangerous."
+    },
+    {
+     "type": "pearl",
+     "text": "**Rhinovirus** is the most common cause; influenza, coronavirus and RSV are others."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most common cause of acute bronchitis?",
+   "o": [
+    "Haemophilus influenzae",
+    "Mycoplasma pneumoniae",
+    "Rhinovirus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 2,
+   "r": "Almost always **viral**; rhinovirus is the most common."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which examination finding fits acute bronchitis?",
+   "o": [
+    "Bronchial breathing at one base",
+    "Dullness to percussion",
+    "Rhonchi that clear with coughing",
+    "Stony dullness and absent breath sounds"
+   ],
+   "a": 2,
+   "r": "Rhonchi clearing with cough, wheeze, **no focal signs**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which features suggest progression to pneumonia?",
+   "o": [
+    "Clear sputum",
+    "High fever, breathlessness, chest pain",
+    "Mild wheeze",
+    "Rhonchi that clear"
+   ],
+   "a": 1,
+   "r": "These **emergency features** suggest pneumonia."
+  },
+  {
+   "d": "investigation",
+   "q": "How is acute bronchitis diagnosed?",
+   "o": [
+    "Chest X-ray",
+    "Clinically",
+    "Spirometry",
+    "Sputum culture"
+   ],
+   "a": 1,
+   "r": "A **clinical diagnosis** on history and examination."
+  },
+  {
+   "d": "investigation",
+   "q": "When is a chest X-ray used?",
+   "o": [
+    "Always",
+    "To exclude pneumonia if uncertain",
+    "To confirm rhinovirus",
+    "Only in smokers"
+   ],
+   "a": 1,
+   "r": "CXR **excludes pneumonia** when the diagnosis is in doubt."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line management for a healthy adult?",
+   "o": [
+    "Amoxicillin",
+    "Doxycycline",
+    "Oral steroids",
+    "Reassurance and self-care"
+   ],
+   "a": 3,
+   "r": "Most need **reassurance, self-care, analgesia**."
+  },
+  {
+   "d": "management",
+   "q": "What antibiotic is used when indicated?",
+   "o": [
+    "Amoxicillin 7 days",
+    "Clarithromycin 3 days",
+    "Co-amoxiclav 7 days",
+    "Doxycycline 5 days"
+   ],
+   "a": 3,
+   "r": "**Doxycycline for 5 days**."
+  },
+  {
+   "d": "management",
+   "q": "Which CRP level supports antibiotics?",
+   "o": [
+    "Above 5 mg/L",
+    "Above 20 mg/L",
+    "Above 50 mg/L",
+    "Above 100 mg/L"
+   ],
+   "a": 3,
+   "r": "CRP **>100 mg/L** is a high-risk criterion."
+  },
+  {
+   "d": "science",
+   "q": "Why is there no consolidation in acute bronchitis?",
+   "o": [
+    "Infection is limited to the bronchi",
+    "Infection is in the pleura",
+    "The alveoli fill with fluid",
+    "The virus is cleared within a day"
+   ],
+   "a": 0,
+   "r": "Airway inflammation **without alveolar** involvement."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 42 year old man has had a cough for 2 weeks, productive of green sputum. It began after a cold. He smokes 15 cigarettes a day. His temperature is 37.6°C, pulse rate 84 bpm and oxygen saturation 98% breathing air. There are scattered rhonchi that clear after coughing, and no focal signs.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bronchitis",
+    "Asthma",
+    "Community-acquired pneumonia",
+    "COPD exacerbation",
+    "Lung cancer"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about cough: bronchi or alveoli?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cough for 2 weeks",
+      "began after a cold",
+      "smokes 15 cigarettes a day",
+      "rhonchi that clear after coughing",
+      "no focal signs"
+     ],
+     "x": "Post-URTI cough, smoker, rhonchi clearing on cough, **no focal signs**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Acute bronchitis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No history of episodic wheeze or atopy; this followed a cold."
+      ],
+      [
+       2,
+       "Pneumonia gives **focal** signs; there are none."
+      ],
+      [
+       3,
+       "No COPD diagnosis and he is only 42."
+      ],
+      [
+       4,
+       "Two weeks after a cold is too short; no weight loss or haemoptysis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute bronchitis.** Rule: cough after URTI + no focal signs = acute bronchitis; green sputum does not change it."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old woman has had a cough with clear sputum for 8 days after a sore throat. She feels otherwise well. Her temperature is 37.4°C, pulse rate 80 bpm, respiratory rate 14 breaths per minute and oxygen saturation 99% breathing air. She has a mild wheeze and no focal chest signs.",
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Chest X-ray",
+    "Full blood count",
+    "No investigation required",
+    "Spirometry",
+    "Sputum culture"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation question: is any test needed?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "after a sore throat",
+      "feels otherwise well",
+      "99% breathing air",
+      "no focal chest signs"
+     ],
+     "x": "Classic, well, normal sats, no focal signs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Clinical diagnosis: no tests."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Only if pneumonia cannot be excluded; she has no focal signs."
+      ],
+      [
+       1,
+       "Would not change management."
+      ],
+      [
+       3,
+       "For suspected asthma or COPD, not an acute viral cough."
+      ],
+      [
+       4,
+       "Not needed: the cause is almost always viral."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. No investigation required.** Rule: typical acute bronchitis is a **clinical diagnosis**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "An 84 year old woman has had a cough productive of yellow sputum for 9 days after a cold. She lives independently. Her temperature is 37.7°C, pulse rate 90 bpm, BP 134/78 mmHg and oxygen saturation 96% breathing air. There are scattered rhonchi and no focal signs. Her chest X-ray is normal.",
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Intravenous co-amoxiclav",
+    "Oral amoxicillin for 7 days",
+    "Oral doxycycline for 5 days",
+    "Oral prednisolone",
+    "Self-care and reassurance only"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: decide whether she meets an antibiotic criterion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "84 year old",
+      "no focal signs",
+      "chest X-ray is normal"
+     ],
+     "x": "Acute bronchitis in a patient **over 80**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Doxycycline for 5 days."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For severe pneumonia, which she does not have."
+      ],
+      [
+       1,
+       "Not the antibiotic or duration the notes give."
+      ],
+      [
+       3,
+       "Steroids have no role in acute bronchitis."
+      ],
+      [
+       4,
+       "Right for most, but she is **over 80**: high risk."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Oral doxycycline for 5 days.** Rule: comorbidity, age >80 or CRP >100 = **doxycycline 5 days**."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 25 year old man has acute bronchitis after a cold. His temperature is 37.5°C. He is worried because his cough is still present 3 weeks later, although his fever settled after 2 days.",
+   "q": "Which is the most likely explanation for his persistent cough?",
+   "o": [
+    "Alveolar consolidation",
+    "Bacterial superinfection",
+    "Bronchiectasis",
+    "Ongoing airway epithelial inflammation and hyperresponsiveness",
+    "Persistent viral replication"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why does the cough outlast the illness?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute bronchitis",
+      "still present 3 weeks later",
+      "fever settled after 2 days"
+     ],
+     "x": "Virus gone, cough continues."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Prolonged airway inflammation and hyperresponsiveness."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No consolidation in bronchitis; that is pneumonia."
+      ],
+      [
+       1,
+       "Fever settled; no new systemic features."
+      ],
+      [
+       2,
+       "A chronic structural disease with daily purulent sputum for years."
+      ],
+      [
+       4,
+       "The virus has usually cleared; the airway is still inflamed."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Ongoing airway epithelial inflammation and hyperresponsiveness.** Rule: bronchitis cough lasts **weeks** after the virus clears."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old man has had a cough for 12 days, productive of green sputum, with chest tightness. He had a runny nose and sore throat 2 weeks ago. His temperature is 37.7°C, pulse rate 86 bpm, BP 128/80 mmHg and oxygen saturation 97% breathing air. There is bilateral end-expiratory wheeze and no focal signs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bronchitis",
+    "Asthma",
+    "Community-acquired pneumonia",
+    "Pertussis",
+    "Pulmonary embolism"
+   ],
+   "a": 0,
+   "e": "A cough after a URTI with bilateral wheeze and no focal signs is acute bronchitis; pneumonia would give focal consolidation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a cough after a cold."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "runny nose and sore throat 2 weeks ago",
+      "bilateral end-expiratory wheeze",
+      "no focal signs"
+     ],
+     "x": "Post-URTI cough, bilateral wheeze, no focal signs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Acute bronchitis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No prior episodic wheeze; this followed a URTI."
+      ],
+      [
+       2,
+       "No focal signs of consolidation."
+      ],
+      [
+       3,
+       "Whooping paroxysms and vomiting are absent."
+      ],
+      [
+       4,
+       "No pleuritic pain, haemoptysis or hypoxia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute bronchitis.** Rule: bilateral wheeze, no focal signs, after URTI = bronchitis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old woman has acute bronchitis. Her cough began 3 days after a common cold. She is otherwise well. Her temperature is 37.4°C.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Haemophilus influenzae",
+    "Mycoplasma pneumoniae",
+    "Respiratory syncytial virus",
+    "Rhinovirus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 3,
+   "e": "Acute bronchitis is almost always viral, and rhinovirus is the most common cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An organism question: viral or bacterial?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute bronchitis",
+      "common cold",
+      "otherwise well"
+     ],
+     "x": "Bronchitis is almost always **viral**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Rhinovirus, the most common cause."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A bacterial cause of COPD exacerbations, not typical bronchitis."
+      ],
+      [
+       1,
+       "Causes atypical pneumonia, not the usual bronchitis."
+      ],
+      [
+       2,
+       "A cause, but less common in adults than rhinovirus."
+      ],
+      [
+       4,
+       "The commonest cause of pneumonia, not bronchitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Rhinovirus.** Rule: acute bronchitis = **rhinovirus** most commonly."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 50 year old man has had a cough for 10 days after a cold. His temperature is 37.6°C, pulse rate 88 bpm, BP 130/82 mmHg and oxygen saturation 97% breathing air. He is not breathless.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on chest auscultation?",
+   "o": [
+    "Bronchial breathing at the right base",
+    "Fine bibasal end-inspiratory crackles",
+    "Pleural rub",
+    "Reduced breath sounds with stony dullness",
+    "Rhonchi that clear with coughing"
+   ],
+   "a": 4,
+   "e": "Rhonchi from airway mucus that clear on coughing are typical of acute bronchitis; bronchial breathing means consolidation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question: recall the classic sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cough for 10 days after a cold",
+      "He is not breathless"
+     ],
+     "x": "Post-URTI cough, well: acute bronchitis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Rhonchi that clear with coughing."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A sign of consolidation (pneumonia)."
+      ],
+      [
+       1,
+       "Pulmonary fibrosis or oedema."
+      ],
+      [
+       2,
+       "Pleurisy, e.g. pneumonia or PE."
+      ],
+      [
+       3,
+       "Pleural effusion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Rhonchi that clear with coughing.** Rule: bronchitis = rhonchi clearing on cough, **no focal signs**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old woman was diagnosed with acute bronchitis 6 days ago. She now has a temperature of 39.2°C, pleuritic right-sided chest pain and is breathless. Her pulse rate is 112 bpm, BP 118/72 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 92% breathing air. There are coarse crackles at the right base.",
+   "labs": [
+    [
+     "CRP",
+     "186 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "White cell count",
+     "17.2 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Asthma exacerbation",
+    "Bronchiectasis",
+    "Pneumothorax",
+    "Pulmonary embolism",
+    "Secondary bacterial pneumonia"
+   ],
+   "a": 4,
+   "e": "High fever, breathlessness, chest pain and focal crackles mean acute bronchitis has progressed to secondary bacterial pneumonia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A complication question: what is the main risk of bronchitis?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute bronchitis 6 days ago",
+      "39.2°C",
+      "pleuritic right-sided chest pain",
+      "coarse crackles at the right base"
+     ],
+     "x": "High fever, pleuritic pain, breathlessness, focal crackles."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Progression to bacterial pneumonia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No asthma history; focal crackles are not asthma."
+      ],
+      [
+       1,
+       "A chronic disease, not a sudden complication."
+      ],
+      [
+       2,
+       "Reduced breath sounds and hyper-resonance, not crackles and fever."
+      ],
+      [
+       3,
+       "High fever with focal crackles points to infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Secondary bacterial pneumonia.** Rule: high fever, breathlessness, chest pain = **progression to pneumonia**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 28 year old man who smokes has had a dry cough and mild chest discomfort for 9 days, after a cold. His temperature is 37.5°C and oxygen saturation 98% breathing air. His chest is clear.",
+   "labs": [
+    [
+     "CRP",
+     "14 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "White cell count",
+     "8.9 ×10⁹/L",
+     "4.0–11.0",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bronchitis",
+    "Community-acquired pneumonia",
+    "Lung abscess",
+    "Pneumothorax",
+    "Sarcoidosis"
+   ],
+   "a": 0,
+   "e": "A post-URTI cough in a smoker with a normal chest and mild inflammatory markers is acute bronchitis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: a normal chest does not exclude bronchitis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smokes",
+      "dry cough",
+      "after a cold",
+      "His chest is clear"
+     ],
+     "x": "Smoker, post-URTI cough, chest often normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Acute bronchitis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Clear chest, normal WCC and only mildly raised CRP."
+      ],
+      [
+       2,
+       "Swinging fever and foul sputum."
+      ],
+      [
+       3,
+       "Sudden pleuritic pain and breathlessness, not a post-viral cough."
+      ],
+      [
+       4,
+       "Chronic, with bilateral hilar lymphadenopathy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute bronchitis.** Rule: the chest exam in bronchitis is **often normal**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 40 year old woman has had a cough productive of clear sputum for 10 days, with mild wheeze. Her temperature is 37.3°C, pulse rate 78 bpm and BP 124/76 mmHg. She has no focal chest signs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely risk factor for her presentation?",
+   "o": [
+    "Asbestos exposure",
+    "Atopy",
+    "Long-haul flight",
+    "Recent antibiotic use",
+    "Recent upper respiratory tract infection"
+   ],
+   "a": 4,
+   "e": "Acute bronchitis typically follows a recent URTI; smoking is the other key risk factor.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A risk factor question for her diagnosis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cough productive of clear sputum",
+      "mild wheeze",
+      "no focal chest signs"
+     ],
+     "x": "Picture of acute bronchitis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Recent URTI (or smoking) is the risk factor."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Linked to mesothelioma and fibrosis."
+      ],
+      [
+       1,
+       "Points to asthma, not given here."
+      ],
+      [
+       2,
+       "A VTE risk factor."
+      ],
+      [
+       3,
+       "Linked to C. difficile, not bronchitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Recent upper respiratory tract infection.** Rule: risk factors = **recent URTI** and smoking."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 37 year old man has had a cough for a week after a cold. He is well. His temperature is 37.4°C, pulse rate 76 bpm, BP 122/74 mmHg and oxygen saturation 98% breathing air. He has scattered rhonchi but no focal signs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Chest X-ray",
+    "CT thorax",
+    "No investigation, clinical diagnosis",
+    "Spirometry",
+    "Sputum culture"
+   ],
+   "a": 2,
+   "e": "Acute bronchitis is a clinical diagnosis; investigations are not needed when the picture is typical.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation question: does this need any test?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "after a cold",
+      "He is well",
+      "no focal signs"
+     ],
+     "x": "Typical bronchitis, well, no focal signs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "None: clinical diagnosis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Only if pneumonia is suspected."
+      ],
+      [
+       1,
+       "No indication."
+      ],
+      [
+       3,
+       "For chronic airway disease."
+      ],
+      [
+       4,
+       "Viral cause; not needed."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. No investigation, clinical diagnosis.** Rule: typical bronchitis needs **no tests**."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 62 year old woman has had a cough for 10 days after a cold. Her temperature is 38.0°C, pulse rate 96 bpm, BP 132/80 mmHg and oxygen saturation 95% breathing air. There are some crackles over the left lower chest that do not clear on coughing, and the doctor is unsure whether she has pneumonia.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Bronchoscopy",
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "Peak expiratory flow",
+    "Viral throat swab"
+   ],
+   "a": 1,
+   "e": "A chest X-ray is used to exclude pneumonia when the diagnosis of acute bronchitis is uncertain.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation when the diagnosis is uncertain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "crackles over the left lower chest that do not clear",
+      "unsure whether she has pneumonia"
+     ],
+     "x": "Possible focal sign: pneumonia must be excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Chest X-ray."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Invasive; not for acute infection."
+      ],
+      [
+       2,
+       "For suspected PE."
+      ],
+      [
+       3,
+       "For asthma."
+      ],
+      [
+       4,
+       "Would not exclude pneumonia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Chest X-ray.** Rule: CXR is used to **exclude pneumonia** when uncertain."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 31 year old woman has acute bronchitis. She has a cough productive of green sputum and mild fever. Her temperature is 37.8°C, pulse rate 84 bpm, BP 118/72 mmHg and oxygen saturation 98% breathing air. She has no medical history. She asks for antibiotics.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Amoxicillin for 5 days",
+    "Doxycycline for 5 days",
+    "Oral prednisolone",
+    "Paracetamol, fluids and reassurance",
+    "Salbutamol inhaler"
+   ],
+   "a": 3,
+   "e": "A healthy adult with acute bronchitis needs reassurance and analgesia; green sputum and patient request are not antibiotic indications.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: does she meet any antibiotic criterion?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute bronchitis",
+      "green sputum",
+      "no medical history",
+      "She asks for antibiotics"
+     ],
+     "x": "Healthy, low risk; green sputum is not an indication."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Self-care and analgesia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Antibiotics are not indicated: viral and low risk."
+      ],
+      [
+       1,
+       "Only for high-risk patients."
+      ],
+      [
+       2,
+       "No role."
+      ],
+      [
+       4,
+       "Only if underlying airway disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Paracetamol, fluids and reassurance.** Rule: most need **reassurance, self-care and analgesia**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 54 year old man with heart failure has a cough productive of sputum for 8 days after a cold. His temperature is 37.9°C, pulse rate 92 bpm, BP 128/76 mmHg and oxygen saturation 96% breathing air. There are rhonchi and no focal signs. His chest X-ray shows no consolidation.",
+   "labs": [
+    [
+     "CRP",
+     "64 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "eGFR",
+     "72 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Amoxicillin for 7 days",
+    "Clarithromycin for 14 days",
+    "Doxycycline for 5 days",
+    "Intravenous co-amoxiclav",
+    "Reassurance only"
+   ],
+   "a": 2,
+   "e": "Heart failure is a high-risk comorbidity, so doxycycline for 5 days is indicated.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: look for a high-risk feature."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heart failure",
+      "no focal signs",
+      "no consolidation"
+     ],
+     "x": "Bronchitis plus comorbidity (heart failure)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Doxycycline for 5 days."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not the antibiotic the notes give."
+      ],
+      [
+       1,
+       "Wrong drug and duration."
+      ],
+      [
+       3,
+       "For severe pneumonia."
+      ],
+      [
+       4,
+       "He has a high-risk **comorbidity**."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Doxycycline for 5 days.** Rule: comorbidity, age >80 or CRP >100 = doxycycline 5 days."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 26 year old woman with asthma has acute bronchitis after a cold. She has a cough and wheeze. Her temperature is 37.4°C, pulse rate 88 bpm, BP 116/70 mmHg and oxygen saturation 97% breathing air. Her chest has bilateral wheeze and no focal signs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate additional management?",
+   "o": [
+    "Doxycycline for 5 days",
+    "Montelukast",
+    "Nebulised ipratropium in hospital",
+    "Oral codeine linctus",
+    "Salbutamol inhaler as needed"
+   ],
+   "a": 4,
+   "e": "Salbutamol helps wheeze in acute bronchitis when there is underlying airway disease such as asthma; antibiotics are not indicated.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: who benefits from a bronchodilator?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "with asthma",
+      "cough and wheeze",
+      "no focal signs"
+     ],
+     "x": "Wheeze with **underlying airway disease**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Short-acting bronchodilator (salbutamol)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She has no antibiotic criterion."
+      ],
+      [
+       1,
+       "A preventer, not acute relief."
+      ],
+      [
+       2,
+       "She is well; not needed."
+      ],
+      [
+       3,
+       "Not first-line; opioid cough suppressants are avoided."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Salbutamol inhaler as needed.** Rule: bronchodilators only if underlying airway disease, e.g. asthma."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 35 year old man has acute bronchitis after a viral illness. He has a cough and mild wheeze. A medical student asks why his chest X-ray is normal when a patient with pneumonia has consolidation.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely explanation?",
+   "o": [
+    "Bacteria are cleared by alveolar macrophages",
+    "Consolidation takes 2 weeks to appear",
+    "Inflammation is confined to the bronchial epithelium",
+    "Pleural fluid hides the consolidation",
+    "The virus causes alveolar collapse"
+   ],
+   "a": 2,
+   "e": "Acute bronchitis inflames the tracheobronchial epithelium and increases mucus without involving the alveoli, so there is no consolidation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: what part of the lung is involved?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute bronchitis",
+      "chest X-ray is normal"
+     ],
+     "x": "Bronchi inflamed, alveoli spared."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Inflammation confined to the bronchial epithelium."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not the reason; the cause is viral."
+      ],
+      [
+       1,
+       "Pneumonia consolidation is visible early."
+      ],
+      [
+       3,
+       "No effusion here."
+      ],
+      [
+       4,
+       "Alveoli are spared."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Inflammation is confined to the bronchial epithelium.** Rule: bronchitis = airway inflammation and mucus, **no alveolar consolidation**."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is acute bronchitis and what causes it?",
+    "tip": "Exam thinking: viral, bronchi not alveoli.",
+    "points": [
+     {
+      "p": "Acute infection of the bronchi",
+      "k": [
+       [
+        "bronch"
+       ]
+      ],
+      "why": "Airway lining inflamed."
+     },
+     {
+      "p": "Almost always viral; rhinovirus most common",
+      "k": [
+       [
+        "viral",
+        "virus"
+       ],
+       [
+        "rhinovirus",
+        "rhino"
+       ]
+      ],
+      "why": "Also influenza, coronavirus, RSV."
+     },
+     {
+      "p": "No alveolar consolidation",
+      "k": [
+       [
+        "consolidation",
+        "alveol"
+       ]
+      ],
+      "why": "This separates it from pneumonia."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors for acute bronchitis?",
+    "tip": "Exam thinking: look for a cold and smoking in the stem.",
+    "points": [
+     {
+      "p": "Recent upper respiratory tract infection",
+      "k": [
+       [
+        "urti",
+        "upper respiratory",
+        "cold"
+       ]
+      ],
+      "why": "Cough begins after a cold."
+     },
+     {
+      "p": "Smoking",
+      "k": [
+       [
+        "smok"
+       ]
+      ],
+      "why": "Impairs airway defences."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the classic presentation and examination of acute bronchitis.",
+    "tip": "Exam thinking: no focal signs.",
+    "points": [
+     {
+      "p": "Persistent cough, dry or with clear or green sputum",
+      "k": [
+       [
+        "cough"
+       ]
+      ],
+      "why": "Green sputum does not mean bacteria."
+     },
+     {
+      "p": "Mild fever, chest discomfort, wheeze",
+      "k": [
+       [
+        "fever",
+        "temperature"
+       ]
+      ],
+      "why": "Mild, not high."
+     },
+     {
+      "p": "Rhonchi that clear with coughing; bilateral end-expiratory wheeze",
+      "k": [
+       [
+        "rhonch",
+        "wheeze"
+       ]
+      ],
+      "why": "Airway mucus."
+     },
+     {
+      "p": "Often normal chest; no focal consolidation signs",
+      "k": [
+       [
+        "focal",
+        "consolidation",
+        "normal"
+       ]
+      ],
+      "why": "No bronchial breathing or dullness."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell acute bronchitis from pneumonia?",
+    "tip": "Exam thinking: systemic upset and focal signs.",
+    "points": [
+     {
+      "p": "Pneumonia: high fever, breathlessness, chest pain",
+      "k": [
+       [
+        "high fever",
+        "breathless",
+        "chest pain",
+        "sob"
+       ]
+      ],
+      "why": "Emergency features."
+     },
+     {
+      "p": "Pneumonia: focal crackles, dullness, bronchial breathing",
+      "k": [
+       [
+        "focal",
+        "bronchial breathing",
+        "dull"
+       ]
+      ],
+      "why": "Signs of consolidation."
+     },
+     {
+      "p": "CXR consolidation in pneumonia, normal in bronchitis",
+      "k": [
+       [
+        "x-ray",
+        "xray",
+        "cxr"
+       ]
+      ],
+      "why": "CXR resolves doubt."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of acute bronchitis?",
+    "tip": "Exam thinking: progression is the danger.",
+    "points": [
+     {
+      "p": "Secondary bacterial infection",
+      "k": [
+       [
+        "bacterial",
+        "secondary",
+        "superinfection"
+       ]
+      ],
+      "why": "More likely in high-risk patients."
+     },
+     {
+      "p": "Progression to pneumonia",
+      "k": [
+       [
+        "pneumonia"
+       ]
+      ],
+      "why": "Look for high fever, breathlessness, chest pain."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is acute bronchitis diagnosed and when do you image?",
+    "tip": "Exam thinking: usually no tests.",
+    "points": [
+     {
+      "p": "Clinical diagnosis on history and examination",
+      "k": [
+       [
+        "clinical",
+        "history",
+        "examination"
+       ]
+      ],
+      "why": "No routine tests."
+     },
+     {
+      "p": "Chest X-ray to exclude pneumonia if uncertain",
+      "k": [
+       [
+        "x-ray",
+        "xray",
+        "cxr"
+       ],
+       [
+        "pneumonia",
+        "uncertain",
+        "exclude"
+       ]
+      ],
+      "why": "Second-line only."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is first-line management of acute bronchitis?",
+    "tip": "Exam thinking: self-care for nearly everyone.",
+    "points": [
+     {
+      "p": "Reassurance, self-care, supportive measures",
+      "k": [
+       [
+        "reassur",
+        "self-care",
+        "self care",
+        "supportive"
+       ]
+      ],
+      "why": "The usual right answer."
+     },
+     {
+      "p": "Paracetamol or ibuprofen",
+      "k": [
+       [
+        "paracetamol",
+        "ibuprofen",
+        "analges"
+       ]
+      ],
+      "why": "Symptom relief."
+     },
+     {
+      "p": "Simple cough suppressant e.g. dextromethorphan",
+      "k": [
+       [
+        "dextromethorphan",
+        "suppress"
+       ]
+      ],
+      "why": "If needed."
+     },
+     {
+      "p": "Salbutamol only if underlying airway disease (e.g. asthma)",
+      "k": [
+       [
+        "salbutamol",
+        "bronchodilat"
+       ],
+       [
+        "asthma",
+        "airway disease",
+        "underlying"
+       ]
+      ],
+      "why": "Not for everyone with wheeze."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Who gets antibiotics in acute bronchitis, and which one?",
+    "tip": "Exam thinking: three high-risk criteria, one drug.",
+    "points": [
+     {
+      "p": "Comorbidities e.g. type 2 diabetes, heart failure",
+      "k": [
+       [
+        "comorbid",
+        "diabet",
+        "heart failure"
+       ]
+      ],
+      "why": "Higher risk of complication."
+     },
+     {
+      "p": "Age over 80",
+      "k": [
+       [
+        "80",
+        "eighty"
+       ]
+      ],
+      "why": "Age threshold."
+     },
+     {
+      "p": "CRP over 100 mg/L",
+      "k": [
+       [
+        "crp"
+       ],
+       [
+        "100"
+       ]
+      ],
+      "why": "CRP threshold."
+     },
+     {
+      "p": "Doxycycline for 5 days",
+      "k": [
+       [
+        "doxycycline",
+        "doxy"
+       ],
+       [
+        "5",
+        "five"
+       ]
+      ],
+      "why": "First-line when indicated."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does the cough last weeks, and why is there no consolidation?",
+    "tip": "Exam thinking: airway epithelium, not alveoli.",
+    "points": [
+     {
+      "p": "Viral infection of tracheobronchial epithelium with inflammation and mucus",
+      "k": [
+       [
+        "epitheli",
+        "airway",
+        "mucus"
+       ]
+      ],
+      "why": "Alveoli spared."
+     },
+     {
+      "p": "Prolonged airway inflammation and hyperresponsiveness after the virus clears",
+      "k": [
+       [
+        "hyperrespons",
+        "hyper-respons",
+        "inflam"
+       ]
+      ],
+      "why": "Cough can last several weeks."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do antibiotics have limited benefit?",
+    "tip": "Exam thinking: viral cause.",
+    "points": [
+     {
+      "p": "The cause is viral",
+      "k": [
+       [
+        "viral",
+        "virus"
+       ]
+      ],
+      "why": "Antibiotics do not act on viruses."
+     },
+     {
+      "p": "Reserved for high-risk patients where bacterial superinfection is likely or dangerous",
+      "k": [
+       [
+        "high-risk",
+        "high risk",
+        "superinfection",
+        "bacterial"
+       ]
+      ],
+      "why": "Stewardship and side effects."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "acute bronchitis": "Short-lived, usually viral, inflammation of the bronchi causing cough, without lung consolidation.",
+  "bronchi": "The large airways branching from the trachea into each lung.",
+  "tracheobronchial": "Relating to the trachea and bronchi together.",
+  "rhinovirus": "The common cold virus; the most common cause of acute bronchitis.",
+  "RSV": "Respiratory syncytial virus; a common respiratory virus, worst in infants and the elderly.",
+  "URTI": "Upper respiratory tract infection, such as a cold or sore throat.",
+  "rhonchi": "Low-pitched rattling sounds from mucus in large airways, often clearing after a cough.",
+  "wheeze": "High-pitched whistling from narrowed airways, usually on breathing out.",
+  "end-expiratory": "Occurring at the end of breathing out.",
+  "consolidation": "Alveoli filled with fluid or pus, as in pneumonia; gives focal signs and CXR shadowing.",
+  "focal signs": "Chest signs in one area, such as crackles, dullness or bronchial breathing, suggesting consolidation.",
+  "bronchial breathing": "Harsh, hollow breath sounds heard over consolidated lung.",
+  "alveoli": "Tiny air sacs where gas exchange happens.",
+  "pneumonia": "Infection of the lung tissue with alveolar consolidation.",
+  "CRP": "C-reactive protein; a blood marker of inflammation used to guide antibiotics in acute cough.",
+  "point-of-care": "A test done at the bedside or in the surgery with a result within minutes.",
+  "doxycycline": "Tetracycline antibiotic; first-line for acute bronchitis when antibiotics are indicated.",
+  "dextromethorphan": "Over-the-counter cough suppressant.",
+  "salbutamol": "Short-acting beta-2 agonist inhaler that opens narrowed airways.",
+  "bronchodilator": "A drug that widens the airways, such as salbutamol.",
+  "hyperresponsiveness": "Airways that narrow too easily in response to triggers.",
+  "mucociliary clearance": "Hair-like cilia sweeping mucus out of the airways.",
+  "superinfection": "A second, often bacterial, infection on top of a first, often viral, one.",
+  "NG120": "NICE guideline on antimicrobial prescribing for acute cough.",
+  "safety-netting": "Telling a patient which warning signs should prompt them to return.",
+  "comorbidity": "Another long-term condition the patient has, such as diabetes or heart failure.",
+  "pertussis": "Whooping cough, caused by Bordetella pertussis, with paroxysmal coughing fits.",
+  "COPD": "Chronic obstructive pulmonary disease: fixed airflow obstruction, usually from smoking.",
+  "antimicrobial stewardship": "Using antibiotics only when needed to limit resistance and side effects."
+ }
+}

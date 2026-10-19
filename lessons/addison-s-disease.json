@@ -1,0 +1,2315 @@
+{
+ "id": "addison-s-disease",
+ "patient": {
+  "name": "Grace Mensah",
+  "age": 34,
+  "sex": "F",
+  "setting": "GP surgery, then the Emergency Department",
+  "complaint": "Four months of exhaustion, dizziness on standing and weight loss",
+  "background": [
+   "Hypothyroidism on levothyroxine",
+   "Vitiligo on her hands since her twenties",
+   "Primary school teacher in Croydon",
+   "No regular steroids, inhaled or oral"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with fatigue, weight loss, postural hypotension, hyperpigmentation and low sodium with high potassium. Distractors: hypothyroidism, secondary adrenal insufficiency (no pigmentation), SIADH, Conn's. Addisonian crisis is the emergency version.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Grace, 34: tired all the time for 4 months.",
+      "Lost 5 kg; nauseated; vague tummy ache.",
+      "Light-headed when she stands; **craves crisps and salt**.",
+      "Her partner says she looks **tanned** though it is winter."
+     ],
+     "vitals": {
+      "T": "36.8°C",
+      "HR": "92 bpm",
+      "BP": "102/64 mmHg lying, 84/52 mmHg standing",
+      "RR": "14 /min"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Grace has the classic picture: fatigue, weight loss, **postural hypotension**, nausea, abdominal pain and **salt craving**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Dark **palmar creases** and dark patches inside her cheeks.",
+      "Vitiligo on both hands.",
+      "Thinning axillary hair."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Her pigmented creases and buccal mucosa mean **high ACTH**, so this is **primary** adrenal failure, not pituitary."
+    },
+    {
+     "type": "labs",
+     "title": "Grace's U&Es and glucose",
+     "rows": [
+      [
+       "Sodium",
+       "128 mmol/L",
+       "135–145",
+       "L"
+      ],
+      [
+       "Potassium",
+       "5.9 mmol/L",
+       "3.5–5.3",
+       "H"
+      ],
+      [
+       "Urea",
+       "8.6 mmol/L",
+       "2.5–7.8",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "94 µmol/L",
+       "45–90",
+       "H"
+      ],
+      [
+       "Glucose",
+       "3.8 mmol/L",
+       "4.0–7.8",
+       "L"
+      ]
+     ],
+     "text": "Low sodium, high potassium and a raised urea (volume depletion): the electrolyte fingerprint of aldosterone deficiency."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Serum potassium",
+      "min": 2.5,
+      "max": 7.5,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        2.5,
+        3.5,
+        "Low (Conn's)",
+        "warn"
+       ],
+       [
+        3.5,
+        5.3,
+        "Normal",
+        "ok"
+       ],
+       [
+        5.3,
+        6.5,
+        "High",
+        "warn"
+       ],
+       [
+        6.5,
+        7.5,
+        "Dangerous",
+        "bad"
+       ]
+      ],
+      "value": 5.9,
+      "label": "Grace 5.9",
+      "caption": "High K with low Na points to Addison's; Conn's is the mirror image (low K, high Na)."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Grace lacks **cortisol and aldosterone**: the zona fasciculata and zona glomerulosa have both failed, so this is **primary** adrenal insufficiency."
+    },
+    {
+     "type": "ask",
+     "q": "Grace has vitiligo and hypothyroidism. What is the most likely cause of her Addison's?",
+     "o": [
+      "Adrenal metastases",
+      "Autoimmune adrenalitis",
+      "Inhaled steroids",
+      "Tuberculosis"
+     ],
+     "a": 1,
+     "r": "**Autoimmune adrenalitis** causes 80–90% of cases and clusters with thyroid disease, vitiligo and type 1 diabetes."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "With two other autoimmune diseases, Grace almost certainly has **autoimmune adrenalitis**. In someone from a TB area, think **TB adrenalitis**."
+    },
+    {
+     "type": "compare",
+     "title": "Primary vs secondary adrenal insufficiency",
+     "head": [
+      "Feature",
+      "Primary (Addison's)",
+      "Secondary (pituitary or steroids)"
+     ],
+     "rows": [
+      [
+       "ACTH",
+       "High",
+       "Low"
+      ],
+      [
+       "Pigmentation",
+       "Yes",
+       "No (pale)"
+      ],
+      [
+       "Aldosterone",
+       "Low",
+       "Normal (RAAS intact)"
+      ],
+      [
+       "Potassium",
+       "High",
+       "Normal"
+      ],
+      [
+       "Common cause",
+       "Autoimmune adrenalitis",
+       "Stopping long-term steroids, pituitary tumour"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Grace's real danger is **Addisonian crisis**: an infection or a missed dose can tip her into shock, hypoglycaemia and hyperkalaemia."
+    },
+    {
+     "type": "trap",
+     "text": "Hypoglycaemia is **common** in adrenal crisis. In a collapsed patient with low BP, low glucose and high K, think adrenal crisis, not just sepsis."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (9am cortisol) and 'Which is the most appropriate diagnostic investigation?' (short Synacthen test). Watch the cut-offs: 100–500 nmol/L is inconclusive; 30-minute cortisol ≥450 is normal.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "The GP suspects adrenal insufficiency. What is the first blood test?",
+     "o": [
+      "9am serum cortisol",
+      "Plasma renin",
+      "Random cortisol at 4 pm",
+      "Short Synacthen test"
+     ],
+     "a": 0,
+     "r": "A **9am cortisol** is timed to the diurnal peak. An afternoon cortisol is naturally low and misleading."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Grace's 9am cortisol is **140 nmol/L**: low, but in the **100–500** grey zone, so she needs a short Synacthen test."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "9am cortisol",
+      "min": 0,
+      "max": 700,
+      "unit": "nmol/L",
+      "bands": [
+       [
+        0,
+        100,
+        "Adrenal insufficiency likely",
+        "bad"
+       ],
+       [
+        100,
+        500,
+        "Inconclusive: do a Synacthen test",
+        "warn"
+       ],
+       [
+        500,
+        700,
+        "Unlikely",
+        "ok"
+       ]
+      ],
+      "value": 140,
+      "label": "Grace 140",
+      "caption": "Grace is in the grey zone: the short Synacthen test decides."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The **short Synacthen test** confirms it: IM/IV synthetic ACTH, then cortisol at 30 minutes. A normal response is **≥450 nmol/L**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Grace's short Synacthen test",
+      "x": [
+       "0 min",
+       "30 min",
+       "60 min"
+      ],
+      "unit": "nmol/L",
+      "series": [
+       {
+        "name": "Grace's cortisol",
+        "values": [
+         138,
+         162,
+         170
+        ]
+       },
+       {
+        "name": "Pass line (≥450 at 30 min)",
+        "values": [
+         450,
+         450,
+         450
+        ]
+       }
+      ],
+      "caption": "Grace's adrenals cannot respond to ACTH: **primary adrenal insufficiency** confirmed."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Follow-up tests",
+     "rows": [
+      [
+       "Plasma ACTH",
+       "480 ng/L",
+       "<50",
+       "H"
+      ],
+      [
+       "Renin",
+       "Raised",
+       "Normal",
+       "H"
+      ],
+      [
+       "Aldosterone",
+       "Low",
+       "Normal",
+       "L"
+      ],
+      [
+       "Adrenal (21-hydroxylase) antibodies",
+       "Positive",
+       "Negative",
+       "H"
+      ]
+     ],
+     "text": "High ACTH and renin with positive adrenal antibodies: autoimmune primary adrenal failure."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Further tests find the level and cause: the **prolonged ACTH stimulation test** separates primary, secondary and tertiary, with **autoantibodies** and **adrenal imaging**."
+    },
+    {
+     "type": "trap",
+     "text": "Never delay treatment in a shocked patient to do a Synacthen test. Take a cortisol sample, then give **hydrocortisone** straight away."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' for a collapsed patient (IV/IM hydrocortisone 100 mg plus 0.9% saline) and long-term questions: hydrocortisone plus fludrocortisone, and sick day rules (double hydrocortisone, same fludrocortisone).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Grace is diagnosed. Which combination replaces what she has lost?",
+     "o": [
+      "Dexamethasone alone",
+      "Hydrocortisone and fludrocortisone",
+      "Levothyroxine dose increase",
+      "Prednisolone and spironolactone"
+     ],
+     "a": 1,
+     "r": "**Hydrocortisone** replaces cortisol; **fludrocortisone** replaces aldosterone. Spironolactone blocks aldosterone and would worsen her potassium."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Grace takes **hydrocortisone** in split doses, most in the **morning**, to copy the natural diurnal rhythm, plus daily **fludrocortisone**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Hydrocortisone dosing copies the cortisol rhythm",
+      "x": [
+       "6 am",
+       "8 am",
+       "12 pm",
+       "4 pm",
+       "8 pm",
+       "midnight"
+      ],
+      "unit": "relative level",
+      "series": [
+       {
+        "name": "Normal cortisol",
+        "values": [
+         8,
+         10,
+         6,
+         4,
+         2,
+         1
+        ]
+       },
+       {
+        "name": "Grace on 10/5/5 mg",
+        "values": [
+         2,
+         9,
+         6,
+         5,
+         3,
+         1
+        ]
+       }
+      ],
+      "caption": "Largest dose on waking, smaller doses at midday and afternoon, none late at night."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Grace learns the **sick day rules**: if her temperature is **above 37.5°C**, she **doubles hydrocortisone**, keeps fludrocortisone the same, and uses her **IM injection kit** if vomiting."
+    },
+    {
+     "type": "pearl",
+     "text": "Every patient gets a **steroid emergency card**, a MedicAlert bracelet and an IM hydrocortisone kit."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Eight months later: norovirus; she has **vomited** all night.",
+      "She could not keep her tablets down.",
+      "Brought in drowsy and pale; abdominal pain."
+     ],
+     "vitals": {
+      "T": "37.9°C",
+      "HR": "124 bpm",
+      "BP": "76/44 mmHg",
+      "RR": "24 /min",
+      "CBG": "2.8 mmol/L",
+      "GCS": "13"
+     }
+    },
+    {
+     "type": "labs",
+     "title": "ED bloods",
+     "rows": [
+      [
+       "Sodium",
+       "126 mmol/L",
+       "135–145",
+       "L"
+      ],
+      [
+       "Potassium",
+       "6.3 mmol/L",
+       "3.5–5.3",
+       "H"
+      ],
+      [
+       "Urea",
+       "14.2 mmol/L",
+       "2.5–7.8",
+       "H"
+      ],
+      [
+       "Glucose",
+       "2.8 mmol/L",
+       "4.0–7.8",
+       "L"
+      ]
+     ],
+     "text": "Shock, hypoglycaemia and hyperkalaemia in a known Addison's patient: **adrenal crisis**."
+    },
+    {
+     "type": "ask",
+     "q": "What is the immediate priority?",
+     "o": [
+      "Await a short Synacthen test",
+      "IV hydrocortisone 100 mg and IV 0.9% saline",
+      "IV insulin-dextrose only",
+      "Oral hydrocortisone double dose"
+     ],
+     "a": 1,
+     "r": "**Hydrocortisone 100 mg IV/IM immediately** plus large-volume **0.9% saline**. She cannot absorb oral tablets, and the steroid also lowers her potassium."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Any Addison's patient who is unwell and collapses is treated as an **adrenal crisis**: Grace gets **hydrocortisone 100 mg IV** and fast **0.9% saline**."
+    },
+    {
+     "type": "flow",
+     "title": "Adrenal crisis in the ED",
+     "nodes": [
+      "Suspect: known Addison's or steroid user, unwell, low BP",
+      "Hydrocortisone 100 mg IV/IM now",
+      "0.9% saline, large volume",
+      "Treat hypoglycaemia; monitor K",
+      "Find and treat the trigger"
+     ],
+     "caption": "Never wait for tests before the hydrocortisone."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Grace's crisis plan follows **Society for Endocrinology** emergency guidance; her long-term care follows **NICE CKS: Addison's disease**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why there is hyperpigmentation (ACTH and MSH share POMC), why sodium falls and potassium rises (aldosterone deficiency in the distal nephron), and why stress triggers a crisis.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "Why Grace became unwell",
+     "nodes": [
+      "Autoimmune destruction of the adrenal cortex",
+      "Cortisol and aldosterone fall",
+      "No negative feedback → ACTH rises",
+      "Aldosterone loss → Na lost, K kept",
+      "Stress without extra cortisol → shock"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Grace's autoantibodies slowly destroyed her **whole cortex**, so she lost both **cortisol and aldosterone**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Grace's tan is **ACTH**: it is cut from **POMC**, the same precursor as **MSH**, which stimulates melanocytes."
+    },
+    {
+     "type": "ask",
+     "q": "Why is a patient with secondary adrenal insufficiency not pigmented?",
+     "o": [
+      "ACTH is low",
+      "Aldosterone is high",
+      "Cortisol is high",
+      "MSH receptors are blocked"
+     ],
+     "a": 0,
+     "r": "In pituitary failure **ACTH is low**, so there is no excess POMC product to darken the skin."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Without aldosterone, Grace's distal nephron cannot reabsorb **sodium** or excrete **potassium**: low Na, high K and a contracted volume."
+    },
+    {
+     "type": "compare",
+     "title": "Aldosterone in the distal nephron",
+     "head": [
+      "",
+      "Normal",
+      "Grace (no aldosterone)"
+     ],
+     "rows": [
+      [
+       "Na reabsorption (ENaC)",
+       "Yes",
+       "Reduced → hyponatraemia"
+      ],
+      [
+       "K secretion",
+       "Yes",
+       "Reduced → hyperkalaemia"
+      ],
+      [
+       "H secretion",
+       "Yes",
+       "Reduced → mild acidosis"
+      ],
+      [
+       "Blood volume",
+       "Maintained",
+       "Falls → postural hypotension"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Cortisol keeps vessels responsive to **catecholamines**. With norovirus and no stress-dose steroid, Grace's vessels could not hold her BP."
+    },
+    {
+     "type": "pearl",
+     "text": "Sick day rules copy the **cortisol surge** a normal adrenal makes in illness. Fixed doses cannot do that on their own."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most common cause of Addison's disease in the UK?",
+   "o": [
+    "Adrenal metastases",
+    "Autoimmune adrenalitis",
+    "Bilateral adrenal haemorrhage",
+    "Tuberculosis"
+   ],
+   "a": 1,
+   "r": "**Autoimmune adrenalitis** (80–90%). TB is commoner worldwide."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What electrolyte pattern is typical of Addison's disease?",
+   "o": [
+    "High Na, high K",
+    "High Na, low K",
+    "Low Na, high K",
+    "Low Na, low K"
+   ],
+   "a": 2,
+   "r": "**Hyponatraemia and hyperkalaemia** from aldosterone deficiency."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which sign distinguishes primary from secondary adrenal insufficiency?",
+   "o": [
+    "Fatigue",
+    "Hyperpigmentation",
+    "Postural hypotension",
+    "Weight loss"
+   ],
+   "a": 1,
+   "r": "**Hyperpigmentation** (from high ACTH) occurs only in primary disease."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is Waterhouse-Friderichsen syndrome?",
+   "o": [
+    "Adrenal haemorrhage from meningococcal sepsis",
+    "Autoimmune adrenalitis with thyroiditis",
+    "Pituitary apoplexy",
+    "TB of the adrenals"
+   ],
+   "a": 0,
+   "r": "Bilateral adrenal haemorrhage in **meningococcal septicaemia**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the initial investigation for suspected Addison's?",
+   "o": [
+    "9am cortisol",
+    "CT adrenals",
+    "Dexamethasone suppression test",
+    "Midnight cortisol"
+   ],
+   "a": 0,
+   "r": "A **9am cortisol**, at the diurnal peak."
+  },
+  {
+   "d": "investigation",
+   "q": "What confirms the diagnosis?",
+   "o": [
+    "Low-dose dexamethasone suppression test",
+    "Plasma aldosterone:renin ratio",
+    "Short Synacthen test",
+    "Urinary free cortisol"
+   ],
+   "a": 2,
+   "r": "**Short Synacthen test**: 30-min cortisol below 450 nmol/L."
+  },
+  {
+   "d": "management",
+   "q": "What is the immediate treatment of adrenal crisis?",
+   "o": [
+    "Hydrocortisone 100 mg IV/IM",
+    "IV dexamethasone after the Synacthen test",
+    "Oral fludrocortisone",
+    "Oral prednisolone 5 mg"
+   ],
+   "a": 0,
+   "r": "**Hydrocortisone 100 mg IV/IM** now, plus 0.9% saline."
+  },
+  {
+   "d": "management",
+   "q": "What are the sick day rules in Addison's?",
+   "o": [
+    "Double fludrocortisone only",
+    "Double hydrocortisone, same fludrocortisone",
+    "Halve hydrocortisone",
+    "Stop all steroids"
+   ],
+   "a": 1,
+   "r": "**Double hydrocortisone** if febrile (>37.5°C); fludrocortisone unchanged."
+  },
+  {
+   "d": "management",
+   "q": "What does fludrocortisone replace?",
+   "o": [
+    "ACTH",
+    "Aldosterone",
+    "Cortisol",
+    "DHEA"
+   ],
+   "a": 1,
+   "r": "**Fludrocortisone** is the mineralocorticoid (aldosterone) replacement."
+  },
+  {
+   "d": "science",
+   "q": "Why does hyperpigmentation occur in Addison's?",
+   "o": [
+    "ACTH and MSH share the precursor POMC",
+    "Aldosterone stimulates melanocytes",
+    "Cortisol inhibits melanin breakdown",
+    "Low sodium darkens skin"
+   ],
+   "a": 0,
+   "r": "Raised **ACTH** comes from **POMC**, which also makes MSH."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is Addison's disease and which hormones are lost?",
+    "tip": "Exam thinking: primary means the gland itself, so both hormones go.",
+    "points": [
+     {
+      "p": "Primary adrenal insufficiency",
+      "k": [
+       [
+        "primary"
+       ],
+       [
+        "adrenal"
+       ]
+      ],
+      "why": "Secondary is pituitary."
+     },
+     {
+      "p": "Cortisol deficiency (zona fasciculata)",
+      "k": [
+       [
+        "cortisol",
+        "glucocorticoid"
+       ]
+      ],
+      "why": "Impairs the stress response."
+     },
+     {
+      "p": "Aldosterone deficiency (zona glomerulosa)",
+      "k": [
+       [
+        "aldosterone",
+        "mineralocorticoid"
+       ]
+      ],
+      "why": "Disturbs Na/K balance."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What causes Addison's disease?",
+    "tip": "Exam thinking: autoimmune unless the stem says TB, cancer, HIV or sepsis.",
+    "points": [
+     {
+      "p": "Autoimmune adrenalitis (80–90%)",
+      "k": [
+       [
+        "autoimmun"
+       ]
+      ],
+      "why": "Most common in the UK."
+     },
+     {
+      "p": "TB adrenalitis",
+      "k": [
+       [
+        "tb",
+        "tubercul"
+       ]
+      ],
+      "why": "Most common worldwide; calcified adrenals."
+     },
+     {
+      "p": "Malignancy, HIV/fungal infection, amyloid, sarcoid",
+      "k": [
+       [
+        "malignan",
+        "metasta",
+        "cancer",
+        "hiv",
+        "fungal",
+        "amyloid",
+        "sarcoid"
+       ]
+      ],
+      "why": "Infiltrative causes."
+     },
+     {
+      "p": "Exogenous steroids (even inhaled)",
+      "k": [
+       [
+        "steroid"
+       ]
+      ],
+      "why": "Iatrogenic."
+     },
+     {
+      "p": "Associations: thyroid disease, vitiligo, type 1 diabetes",
+      "k": [
+       [
+        "thyroid",
+        "vitiligo",
+        "type 1",
+        "t1dm"
+       ]
+      ],
+      "why": "Autoimmune clustering."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the symptoms, signs and biochemistry of Addison's?",
+    "tip": "Exam thinking: the stem is vague until the electrolytes arrive.",
+    "points": [
+     {
+      "p": "Fatigue, weakness, weight loss",
+      "k": [
+       [
+        "fatigue",
+        "tired",
+        "weak",
+        "weight loss"
+       ]
+      ],
+      "why": "Insidious onset."
+     },
+     {
+      "p": "Postural dizziness/hypotension",
+      "k": [
+       [
+        "postural",
+        "hypotension",
+        "dizz"
+       ]
+      ],
+      "why": "Volume depletion."
+     },
+     {
+      "p": "Nausea, abdominal pain, salt craving",
+      "k": [
+       [
+        "nausea",
+        "abdominal",
+        "salt"
+       ]
+      ],
+      "why": "Salt craving is a strong clue."
+     },
+     {
+      "p": "Hyperpigmentation of palmar creases",
+      "k": [
+       [
+        "pigment",
+        "palmar",
+        "tanned",
+        "dark"
+       ]
+      ],
+      "why": "Primary only."
+     },
+     {
+      "p": "Hyponatraemia and hyperkalaemia",
+      "k": [
+       [
+        "hyponatr",
+        "low sodium",
+        "low na"
+       ],
+       [
+        "hyperkal",
+        "high potassium",
+        "high k"
+       ]
+      ],
+      "why": "The reverse of Conn's."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell primary from secondary adrenal insufficiency?",
+    "tip": "Exam thinking: look at the skin and the potassium.",
+    "points": [
+     {
+      "p": "Primary: high ACTH, so pigmentation",
+      "k": [
+       [
+        "acth"
+       ],
+       [
+        "high",
+        "raised"
+       ]
+      ],
+      "why": "Key distinguishing feature."
+     },
+     {
+      "p": "Secondary: low ACTH, no pigmentation (pale)",
+      "k": [
+       [
+        "secondary",
+        "pituitary"
+       ],
+       [
+        "no pigment",
+        "pale",
+        "low acth"
+       ]
+      ],
+      "why": "Often after stopping steroids."
+     },
+     {
+      "p": "Secondary keeps aldosterone, so potassium is normal",
+      "k": [
+       [
+        "aldosterone",
+        "potassium",
+        "renin",
+        "raas"
+       ]
+      ],
+      "why": "RAAS is ACTH-independent."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is an Addisonian crisis, what triggers it, and what is Waterhouse-Friderichsen?",
+    "tip": "Exam thinking: collapsed + low glucose + high K = crisis.",
+    "points": [
+     {
+      "p": "Shock/hypotension and abdominal pain",
+      "k": [
+       [
+        "shock",
+        "hypotens",
+        "collapse"
+       ]
+      ],
+      "why": "Life-threatening."
+     },
+     {
+      "p": "Hypoglycaemia (common), hyperkalaemia, mild hyponatraemia",
+      "k": [
+       [
+        "hypoglyc",
+        "low glucose",
+        "low sugar"
+       ]
+      ],
+      "why": "Glucose is often low."
+     },
+     {
+      "p": "Triggers: infection, trauma, surgery, missed steroids",
+      "k": [
+       [
+        "infection",
+        "trauma",
+        "surgery",
+        "missed",
+        "stress",
+        "vomit"
+       ]
+      ],
+      "why": "Stress without extra cortisol."
+     },
+     {
+      "p": "Waterhouse-Friderichsen: meningococcal sepsis, bilateral adrenal haemorrhage",
+      "k": [
+       [
+        "meningococc",
+        "waterhouse",
+        "haemorrhage",
+        "hemorrhage"
+       ]
+      ],
+      "why": "Rash, neck stiffness, fever."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you investigate suspected Addison's, with cut-offs?",
+    "tip": "Exam thinking: initial 9am cortisol; confirm with Synacthen.",
+    "points": [
+     {
+      "p": "Initial: 9am serum cortisol",
+      "k": [
+       [
+        "9am",
+        "9 am",
+        "morning"
+       ],
+       [
+        "cortisol"
+       ]
+      ],
+      "why": "Diurnal peak."
+     },
+     {
+      "p": "100–500 nmol/L is inconclusive",
+      "k": [
+       [
+        "100"
+       ],
+       [
+        "500"
+       ]
+      ],
+      "why": "Needs dynamic testing."
+     },
+     {
+      "p": "Confirm: short Synacthen (ACTH stimulation) test",
+      "k": [
+       [
+        "synacthen",
+        "acth stimulation"
+       ]
+      ],
+      "why": "Gold standard."
+     },
+     {
+      "p": "Normal = 30-minute cortisol ≥450 nmol/L",
+      "k": [
+       [
+        "450"
+       ]
+      ],
+      "why": "Addison's fails to reach it."
+     },
+     {
+      "p": "Then: prolonged ACTH test, autoantibodies, adrenal imaging",
+      "k": [
+       [
+        "prolonged",
+        "antibod",
+        "imaging",
+        "ct"
+       ]
+      ],
+      "why": "Find the level and cause."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the long-term treatment of Addison's and the sick day rules?",
+    "tip": "Exam thinking: replace both hormones; double only hydrocortisone.",
+    "points": [
+     {
+      "p": "Hydrocortisone, most of the dose in the morning",
+      "k": [
+       [
+        "hydrocortisone"
+       ]
+      ],
+      "why": "Mimics the diurnal rhythm."
+     },
+     {
+      "p": "Fludrocortisone for aldosterone",
+      "k": [
+       [
+        "fludrocortisone"
+       ]
+      ],
+      "why": "Mineralocorticoid."
+     },
+     {
+      "p": "Fever >37.5°C: double hydrocortisone, same fludrocortisone",
+      "k": [
+       [
+        "double"
+       ]
+      ],
+      "why": "Fludrocortisone unchanged."
+     },
+     {
+      "p": "Vomiting: IM hydrocortisone kit until it stops",
+      "k": [
+       [
+        "im",
+        "intramuscular",
+        "injection"
+       ]
+      ],
+      "why": "Plus steroid card and bracelet."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage an adrenal crisis?",
+    "tip": "Exam thinking: treat first, test later.",
+    "points": [
+     {
+      "p": "Hydrocortisone 100 mg IV/IM immediately",
+      "k": [
+       [
+        "hydrocortisone"
+       ],
+       [
+        "100",
+        "iv",
+        "im",
+        "intravenous",
+        "intramuscular"
+       ]
+      ],
+      "why": "Do not wait for cortisol results."
+     },
+     {
+      "p": "Large-volume IV 0.9% saline",
+      "k": [
+       [
+        "saline",
+        "fluid",
+        "0.9"
+       ]
+      ],
+      "why": "For shock and hypotension."
+     },
+     {
+      "p": "Any known Addison's patient who collapses = adrenal crisis",
+      "k": [
+       [
+        "collapse",
+        "known addison",
+        "emergency"
+       ]
+      ],
+      "why": "Treat as a medical emergency."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do patients with Addison's get pigmentation, low sodium and high potassium?",
+    "tip": "Exam thinking: two hormones, two sets of findings.",
+    "points": [
+     {
+      "p": "Loss of cortisol feedback raises ACTH",
+      "k": [
+       [
+        "feedback"
+       ],
+       [
+        "acth"
+       ]
+      ],
+      "why": "Primary only."
+     },
+     {
+      "p": "ACTH comes from POMC, shared with MSH",
+      "k": [
+       [
+        "pomc",
+        "msh",
+        "melanocyte"
+       ]
+      ],
+      "why": "MSH darkens the skin."
+     },
+     {
+      "p": "No aldosterone: less Na reabsorption, less K excretion in the distal nephron",
+      "k": [
+       [
+        "aldosterone"
+       ],
+       [
+        "distal",
+        "nephron",
+        "kidney",
+        "renal"
+       ]
+      ],
+      "why": "Volume depletion and hypotension."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does physiological stress cause an Addisonian crisis?",
+    "tip": "Exam thinking: cortisol's job in the circulation.",
+    "points": [
+     {
+      "p": "Cortisol maintains vascular tone and catecholamine responsiveness",
+      "k": [
+       [
+        "vascular tone",
+        "catecholamine",
+        "adrenaline",
+        "noradrenaline"
+       ]
+      ],
+      "why": "Without it, BP is refractory."
+     },
+     {
+      "p": "Stress needs a cortisol surge that fixed doses cannot make",
+      "k": [
+       [
+        "surge",
+        "stress"
+       ]
+      ],
+      "why": "Hence refractory shock."
+     },
+     {
+      "p": "Sick day rules mimic the surge",
+      "k": [
+       [
+        "sick day",
+        "double"
+       ]
+      ],
+      "why": "Stress-dose steroids."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Addison's disease": "Primary adrenal insufficiency: the adrenal cortex fails, so cortisol and aldosterone are lost.",
+  "Primary adrenal insufficiency": "Adrenal failure from disease of the adrenal gland itself; ACTH is high.",
+  "Secondary adrenal insufficiency": "Adrenal failure from low pituitary ACTH; no pigmentation and aldosterone is preserved.",
+  "Adrenal cortex": "Outer layer of the adrenal gland that makes aldosterone, cortisol and androgens.",
+  "Zona glomerulosa": "Outer cortical layer that makes aldosterone.",
+  "Zona fasciculata": "Middle cortical layer that makes cortisol.",
+  "Cortisol": "Main glucocorticoid; maintains blood pressure, glucose and the stress response.",
+  "Aldosterone": "Mineralocorticoid that makes the kidney retain sodium and excrete potassium.",
+  "ACTH": "Adrenocorticotropic hormone from the pituitary; drives cortisol production.",
+  "POMC": "Pro-opiomelanocortin: the precursor protein cut into ACTH and MSH.",
+  "MSH": "Melanocyte-stimulating hormone; darkens the skin.",
+  "Hyperpigmentation": "Darkening of the skin, e.g. palmar creases, scars and gums, from high ACTH.",
+  "Palmar creases": "The lines on the palms; they darken in Addison's disease.",
+  "Buccal mucosa": "The lining inside the cheeks; pigmented patches here suggest Addison's.",
+  "Vitiligo": "Autoimmune loss of skin pigment in patches; associated with Addison's.",
+  "Autoimmune adrenalitis": "Autoimmune destruction of the adrenal cortex; the commonest cause of Addison's in the UK.",
+  "21-hydroxylase": "Adrenal enzyme; antibodies against it mark autoimmune Addison's.",
+  "Postural hypotension": "A fall in blood pressure on standing, causing dizziness.",
+  "Hyponatraemia": "Low blood sodium, below 135 mmol/L.",
+  "Hyperkalaemia": "High blood potassium, above 5.3 mmol/L.",
+  "Hypoglycaemia": "Low blood glucose, below 4 mmol/L.",
+  "Addisonian crisis": "Life-threatening acute adrenal insufficiency with shock, hypoglycaemia and hyperkalaemia.",
+  "Adrenal crisis": "Acute, life-threatening cortisol deficiency needing immediate hydrocortisone.",
+  "Waterhouse-Friderichsen syndrome": "Bilateral adrenal haemorrhage in meningococcal septicaemia, causing acute adrenal failure.",
+  "Meningococcal septicaemia": "Bloodstream infection with Neisseria meningitidis, often with a non-blanching rash.",
+  "9am cortisol": "Morning cortisol taken at its natural daily peak; the first test for adrenal insufficiency.",
+  "Short Synacthen test": "Synthetic ACTH given, then cortisol measured at 30 minutes; confirms adrenal insufficiency.",
+  "Synacthen": "Tetracosactide, a synthetic ACTH used in stimulation tests.",
+  "Diurnal": "Following a daily rhythm; cortisol peaks in the morning and falls at night.",
+  "Renin": "Kidney enzyme that drives the angiotensin-aldosterone system; high when aldosterone is low.",
+  "Hydrocortisone": "Synthetic cortisol; the glucocorticoid replacement in Addison's.",
+  "Fludrocortisone": "Synthetic mineralocorticoid that replaces aldosterone.",
+  "Sick day rules": "Doubling hydrocortisone during febrile illness to copy the normal stress cortisol surge.",
+  "Steroid emergency card": "Card carried by steroid-dependent patients telling clinicians to give hydrocortisone in emergencies.",
+  "Conn's syndrome": "Primary hyperaldosteronism: high sodium, low potassium and hypertension; the opposite of Addison's.",
+  "Distal nephron": "The distal tubule and collecting duct, where aldosterone acts.",
+  "ENaC": "Epithelial sodium channel in the collecting duct, increased by aldosterone.",
+  "Catecholamines": "Adrenaline and noradrenaline; cortisol keeps blood vessels responsive to them.",
+  "SIADH": "Syndrome of inappropriate ADH: euvolaemic hyponatraemia with normal potassium.",
+  "Hypopituitarism": "Failure of the pituitary to make one or more hormones, including ACTH."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old woman has a 3 month history of fatigue, weight loss and dizziness on standing. She craves salty food. She has type 1 diabetes. Her BP is 104/66 mmHg lying and 82/50 mmHg standing, pulse rate 96 bpm. Her palmar creases and buccal mucosa are pigmented.",
+   "labs": [
+    [
+     "Sodium",
+     "127 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "Potassium",
+     "5.8 mmol/L",
+     "3.5–5.3",
+     "H"
+    ],
+    [
+     "Glucose",
+     "3.9 mmol/L",
+     "4.0–7.8",
+     "L"
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Addison's disease",
+    "Anorexia nervosa",
+    "Hypothyroidism",
+    "Secondary adrenal insufficiency",
+    "SIADH"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: link the symptoms to the electrolytes and the skin."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fatigue, weight loss and dizziness on standing",
+      "craves salty food",
+      "type 1 diabetes",
+      "82/50 mmHg standing",
+      "palmar creases and buccal mucosa are pigmented"
+     ],
+     "x": "Postural hypotension, salt craving, pigmentation, hyperkalaemia and another autoimmune disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Addison's disease** (primary adrenal insufficiency)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Anorexia does not cause pigmentation or hyperkalaemia."
+      ],
+      [
+       2,
+       "Hypothyroidism causes weight gain, not pigmentation and postural hypotension."
+      ],
+      [
+       3,
+       "Secondary insufficiency has low ACTH, so no pigmentation, and potassium is normal."
+      ],
+      [
+       4,
+       "SIADH is euvolaemic with low sodium but normal potassium and no pigmentation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Addison's disease.** Pigmentation + low Na + high K = primary adrenal failure."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 45 year old man has a 2 month history of tiredness, nausea and weight loss. His BP is 108/68 mmHg. His 9am serum cortisol is 260 nmol/L (200–700). He is clinically stable.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "CT adrenal glands",
+    "Low-dose dexamethasone suppression test",
+    "Plasma aldosterone:renin ratio",
+    "Repeat 9am cortisol in 3 months",
+    "Short Synacthen test"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the **diagnostic** test, so think dynamic testing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "tiredness, nausea and weight loss",
+      "9am serum cortisol is 260 nmol/L",
+      "clinically stable"
+     ],
+     "x": "Suspected adrenal insufficiency with a 9am cortisol in the 100–500 inconclusive range."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Short Synacthen test**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Imaging looks for a cause after the diagnosis is confirmed."
+      ],
+      [
+       1,
+       "That tests for cortisol excess (Cushing's)."
+      ],
+      [
+       2,
+       "That screens for Conn's syndrome."
+      ],
+      [
+       3,
+       "A grey-zone result needs a dynamic test now."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Short Synacthen test.** Cortisol 100–500 = do a short Synacthen test."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 29 year old woman with Addison's disease has had diarrhoea and vomiting for 2 days and has not kept her tablets down. She is drowsy. Her temperature is 37.8°C, pulse rate 128 bpm, BP 74/40 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 97% breathing air. Capillary glucose is 2.9 mmol/L.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Double her oral hydrocortisone",
+    "Hydrocortisone 100 mg IV",
+    "IV fludrocortisone",
+    "IV insulin and dextrose",
+    "Short Synacthen test"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of a collapsed Addison's patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Addison's disease",
+      "has not kept her tablets down",
+      "BP 74/40 mmHg",
+      "Capillary glucose is 2.9 mmol/L"
+     ],
+     "x": "Known Addison's, vomiting, shocked and hypoglycaemic: **adrenal crisis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hydrocortisone 100 mg IV** now, with 0.9% saline."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She is vomiting and shocked; oral steroid will not be absorbed in time."
+      ],
+      [
+       2,
+       "Fludrocortisone is oral only; high-dose hydrocortisone provides mineralocorticoid effect."
+      ],
+      [
+       3,
+       "Hyperkalaemia improves with hydrocortisone and fluids; insulin would worsen her hypoglycaemia."
+      ],
+      [
+       4,
+       "Never delay treatment for a test in crisis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Hydrocortisone 100 mg IV.** Adrenal crisis = hydrocortisone 100 mg IV/IM immediately + saline."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 41 year old man with newly diagnosed Addison's disease asks why his blood tests showed a high potassium.",
+   "labs": [
+    [
+     "Potassium",
+     "5.7 mmol/L",
+     "3.5–5.3",
+     "H"
+    ],
+    [
+     "Sodium",
+     "129 mmol/L",
+     "135–145",
+     "L"
+    ]
+   ],
+   "q": "Which is the most likely mechanism?",
+   "o": [
+    "Cortisol deficiency increasing cell lysis",
+    "Excess ACTH acting on the kidney",
+    "Excess ADH causing water retention",
+    "Reduced aldosterone-driven potassium secretion in the distal nephron",
+    "Reduced insulin secretion"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: which missing hormone handles potassium?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Addison's disease",
+      "high potassium"
+     ],
+     "x": "Primary failure destroys the zona glomerulosa, so aldosterone falls."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Reduced aldosterone-driven K secretion in the distal nephron**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cortisol loss does not cause haemolysis."
+      ],
+      [
+       1,
+       "ACTH does not act on the nephron."
+      ],
+      [
+       2,
+       "ADH affects sodium dilution, not potassium."
+      ],
+      [
+       4,
+       "Insulin is not the problem here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Reduced aldosterone-driven potassium secretion in the distal nephron.** No aldosterone = Na lost, K kept."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old woman has a 4 month history of tiredness, weight loss and abdominal pain. She feels faint when she stands up. She has vitiligo. Her pulse rate is 98 bpm and BP 100/62 mmHg lying and 80/50 mmHg standing. Her skin looks tanned, including her palmar creases.",
+   "labs": [
+    [
+     "Sodium",
+     "129 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "Potassium",
+     "5.8 mmol/L",
+     "3.5–5.3",
+     "H"
+    ],
+    [
+     "Urea",
+     "8.9 mmol/L",
+     "2.5–7.8",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Addison's disease",
+    "Coeliac disease",
+    "Haemochromatosis",
+    "Hypopituitarism",
+    "Phaeochromocytoma"
+   ],
+   "a": 0,
+   "e": "Fatigue, weight loss, postural hypotension and palmar crease pigmentation with hyponatraemia and hyperkalaemia is primary adrenal insufficiency. Hypopituitarism lowers ACTH so the skin is pale.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: pigmentation plus electrolytes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "feels faint when she stands up",
+      "vitiligo",
+      "80/50 mmHg standing",
+      "palmar creases"
+     ],
+     "x": "Postural hypotension, pigmentation, autoimmune history, low Na and high K."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Addison's disease**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Coeliac causes weight loss but not postural hypotension or hyperkalaemia."
+      ],
+      [
+       2,
+       "Haemochromatosis pigments skin but causes diabetes and liver disease, not hyperkalaemia."
+      ],
+      [
+       3,
+       "Hypopituitarism gives low ACTH, so pale skin and normal potassium."
+      ],
+      [
+       4,
+       "Phaeochromocytoma causes paroxysmal hypertension."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Addison's disease.** Pigmentation + postural hypotension + low Na/high K = Addison's."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old man with Addison's disease is brought in after collapsing at home. He has had a chest infection for 3 days and stopped taking his tablets because of vomiting. His temperature is 38.4°C, pulse rate 130 bpm, BP 72/40 mmHg and respiratory rate 26 breaths per minute. Capillary glucose is 2.6 mmol/L.",
+   "labs": [
+    [
+     "Sodium",
+     "128 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "Potassium",
+     "6.4 mmol/L",
+     "3.5–5.3",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Addisonian crisis",
+    "Diabetic ketoacidosis",
+    "Hyperosmolar hyperglycaemic state",
+    "Hypovolaemic shock from gastroenteritis alone",
+    "SIADH"
+   ],
+   "a": 0,
+   "e": "Shock, hypoglycaemia and hyperkalaemia in an Addison's patient who has missed steroids during an infection is an Addisonian crisis. Hypoglycaemia is common in crisis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a collapsed patient with known Addison's."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Addison's disease",
+      "stopped taking his tablets",
+      "BP 72/40 mmHg",
+      "Capillary glucose is 2.6 mmol/L"
+     ],
+     "x": "Infection plus missed steroids; shock, hypoglycaemia, hyperkalaemia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Addisonian (adrenal) crisis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "DKA has high glucose and ketones."
+      ],
+      [
+       2,
+       "HHS has very high glucose."
+      ],
+      [
+       3,
+       "Vomiting contributes, but missed steroids with hypoglycaemia and high K is adrenal crisis."
+      ],
+      [
+       4,
+       "SIADH is euvolaemic, not shocked, with normal potassium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Addisonian crisis.** Known Addison's + unwell + collapse = adrenal crisis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 30 year old woman with autoimmune hypothyroidism and vitiligo has primary adrenal insufficiency confirmed on a short Synacthen test. She has never taken steroids, has no history of tuberculosis and an adrenal CT shows small adrenal glands without calcification.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of her adrenal insufficiency?",
+   "o": [
+    "Adrenal metastases",
+    "Amyloidosis",
+    "Autoimmune adrenalitis",
+    "Bilateral adrenal haemorrhage",
+    "Tuberculous adrenalitis"
+   ],
+   "a": 2,
+   "e": "Autoimmune adrenalitis causes 80 to 90% of Addison's disease and clusters with thyroid disease and vitiligo; it shrinks the glands. TB typically calcifies them.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the cause of primary adrenal insufficiency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "autoimmune hypothyroidism and vitiligo",
+      "never taken steroids",
+      "no history of tuberculosis",
+      "small adrenal glands without calcification"
+     ],
+     "x": "Other autoimmune disease and small, uncalcified glands."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Autoimmune adrenalitis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Metastases enlarge the glands, usually in older patients with cancer."
+      ],
+      [
+       1,
+       "Amyloid is a rare infiltrative cause."
+      ],
+      [
+       3,
+       "Haemorrhage is acute, with sepsis or anticoagulation."
+      ],
+      [
+       4,
+       "TB gives enlarged or calcified adrenals; she has no TB history."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Autoimmune adrenalitis.** Most common cause (80–90%) = autoimmune; clusters with thyroid disease, vitiligo, T1DM."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 36 year old woman has a 3 month history of fatigue, nausea and weight loss. She craves salt. Her pulse rate is 94 bpm and BP 98/60 mmHg lying and 82/52 mmHg standing. Her buccal mucosa is pigmented. Urea and electrolytes are sent.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely result?",
+   "o": [
+    "Sodium 128 mmol/L, potassium 5.9 mmol/L",
+    "Sodium 132 mmol/L, potassium 3.0 mmol/L",
+    "Sodium 140 mmol/L, potassium 4.2 mmol/L",
+    "Sodium 147 mmol/L, potassium 2.9 mmol/L",
+    "Sodium 150 mmol/L, potassium 5.8 mmol/L"
+   ],
+   "a": 0,
+   "e": "Aldosterone deficiency in Addison's causes hyponatraemia and hyperkalaemia. High sodium with low potassium is Conn's syndrome.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks which electrolytes fit the clinical picture."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "craves salt",
+      "82/52 mmHg standing",
+      "buccal mucosa is pigmented"
+     ],
+     "x": "Classic Addison's: aldosterone deficiency."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Low sodium, high potassium**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Low potassium suggests vomiting or diuretics, not aldosterone deficiency."
+      ],
+      [
+       2,
+       "Normal results would not fit aldosterone loss."
+      ],
+      [
+       3,
+       "High Na and low K is Conn's syndrome."
+      ],
+      [
+       4,
+       "Hypernatraemia does not occur with aldosterone deficiency."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Sodium 128 mmol/L, potassium 5.9 mmol/L.** Addison's = hyponatraemia + hyperkalaemia; Conn's = the reverse."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 40 year old man has a 6 month history of tiredness, weight loss and dizziness on standing. His sodium is 129 mmol/L and potassium 5.7 mmol/L. His pulse rate is 90 bpm and BP 104/64 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Bitemporal hemianopia",
+    "Exophthalmos",
+    "Pale, waxy skin",
+    "Pigmentation of the palmar creases",
+    "Purple abdominal striae"
+   ],
+   "a": 3,
+   "e": "Primary adrenal insufficiency raises ACTH, which darkens palmar creases, scars and buccal mucosa. Pale skin fits secondary insufficiency, where ACTH is low.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely examination finding with this biochemistry."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dizziness on standing",
+      "sodium is 129 mmol/L",
+      "potassium 5.7 mmol/L"
+     ],
+     "x": "Low Na, high K: aldosterone lost, so primary adrenal failure with high ACTH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Palmar crease pigmentation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That suggests a pituitary tumour, which would cause secondary failure."
+      ],
+      [
+       1,
+       "Exophthalmos is Graves' disease."
+      ],
+      [
+       2,
+       "Pallor fits secondary (pituitary) insufficiency with low ACTH."
+      ],
+      [
+       4,
+       "Striae are Cushing's (cortisol excess)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pigmentation of the palmar creases.** Primary failure = high ACTH = pigmentation."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old student has a 12 hour history of fever, headache and neck stiffness. She now has a spreading non-blanching purpuric rash. Her temperature is 39.6°C, pulse rate 140 bpm and BP 68/34 mmHg despite 2 litres of fluid. Her glucose is 2.7 mmol/L and potassium 6.0 mmol/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of her refractory hypotension?",
+   "o": [
+    "Anaphylaxis",
+    "Bilateral adrenal haemorrhage",
+    "Cardiac tamponade",
+    "Dengue haemorrhagic fever",
+    "Toxic shock syndrome"
+   ],
+   "a": 1,
+   "e": "Meningococcal septicaemia can cause bilateral adrenal haemorrhage (Waterhouse-Friderichsen syndrome), giving acute adrenal crisis with refractory shock, hypoglycaemia and hyperkalaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Why is the BP not responding? Look at glucose and potassium."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "non-blanching purpuric rash",
+      "neck stiffness",
+      "despite 2 litres of fluid",
+      "glucose is 2.7 mmol/L and potassium 6.0 mmol/L"
+     ],
+     "x": "Meningococcal septicaemia with hypoglycaemia and hyperkalaemia: acute adrenal failure."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Bilateral adrenal haemorrhage** (Waterhouse-Friderichsen)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anaphylaxis has urticaria and wheeze, not fever and purpura."
+      ],
+      [
+       2,
+       "Tamponade gives raised JVP and muffled heart sounds."
+      ],
+      [
+       3,
+       "There is no travel history."
+      ],
+      [
+       4,
+       "Toxic shock gives a diffuse erythroderma, not purpura with hyperkalaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bilateral adrenal haemorrhage.** Meningococcal sepsis + refractory shock + high K, low glucose = Waterhouse-Friderichsen."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 34 year old woman has a 3 month history of fatigue, weight loss and dizziness on standing. Her skin looks darker than usual. She is clinically stable. Her pulse rate is 88 bpm and BP 106/66 mmHg.",
+   "labs": [
+    [
+     "Sodium",
+     "131 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "Potassium",
+     "5.5 mmol/L",
+     "3.5–5.3",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "24-hour urinary free cortisol",
+    "9am serum cortisol",
+    "CT adrenal glands",
+    "Plasma aldosterone:renin ratio",
+    "Random cortisol at 5 pm"
+   ],
+   "a": 1,
+   "e": "The initial test is a 9am cortisol, timed to the diurnal peak. A result of 100 to 500 nmol/L is inconclusive and needs a short Synacthen test.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial test for suspected adrenal insufficiency in a stable patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dizziness on standing",
+      "skin looks darker",
+      "clinically stable"
+     ],
+     "x": "Suspected Addison's, not in crisis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**9am serum cortisol**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That screens for cortisol excess."
+      ],
+      [
+       2,
+       "Imaging is for the cause, after diagnosis."
+      ],
+      [
+       3,
+       "That is the screening test for Conn's."
+      ],
+      [
+       4,
+       "Evening cortisol is naturally low and misleading."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. 9am serum cortisol.** Initial = 9am cortisol; confirm = short Synacthen."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 42 year old man with suspected Addison's disease has a short Synacthen test. He has hyperpigmentation, a sodium of 130 mmol/L and a potassium of 5.6 mmol/L.",
+   "labs": [
+    [
+     "Baseline cortisol",
+     "150 nmol/L",
+     "200–700",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which result is most likely?",
+   "o": [
+    "30-minute cortisol 210 nmol/L",
+    "30-minute cortisol 620 nmol/L",
+    "Low baseline ACTH",
+    "Suppressed renin",
+    "Suppression of cortisol after dexamethasone"
+   ],
+   "a": 0,
+   "e": "In Addison's the damaged cortex cannot respond to Synacthen, so cortisol fails to reach 450 nmol/L at 30 minutes. ACTH and renin are high in primary disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the expected Synacthen result."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "suspected Addison's disease",
+      "hyperpigmentation",
+      "potassium of 5.6 mmol/L"
+     ],
+     "x": "Primary failure: the adrenals cannot respond to synthetic ACTH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**30-minute cortisol below 450** (e.g. 210 nmol/L)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "A rise to 450 or more is a normal response."
+      ],
+      [
+       2,
+       "ACTH is high in primary disease."
+      ],
+      [
+       3,
+       "Renin is high because aldosterone is low."
+      ],
+      [
+       4,
+       "That is a test for Cushing's."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. 30-minute cortisol 210 nmol/L.** Pass = 30-minute cortisol ≥450 nmol/L; Addison's fails."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 33 year old woman has just been diagnosed with autoimmune Addison's disease on a short Synacthen test. She has postural hypotension and a potassium of 5.6 mmol/L. Her pulse rate is 88 bpm and BP 102/64 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate long-term management?",
+   "o": [
+    "Dexamethasone at night",
+    "Fludrocortisone alone",
+    "Hydrocortisone alone",
+    "Hydrocortisone and fludrocortisone",
+    "Prednisolone and spironolactone"
+   ],
+   "a": 3,
+   "e": "Primary adrenal failure needs glucocorticoid replacement with hydrocortisone, mostly in the morning, and mineralocorticoid replacement with fludrocortisone.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Long-term replacement in primary adrenal failure."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "autoimmune Addison's disease",
+      "postural hypotension",
+      "potassium of 5.6 mmol/L"
+     ],
+     "x": "Both cortisol and aldosterone are missing."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hydrocortisone and fludrocortisone**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Night-time steroid disturbs sleep and the diurnal rhythm, and has no mineralocorticoid effect."
+      ],
+      [
+       1,
+       "She also needs glucocorticoid replacement."
+      ],
+      [
+       2,
+       "She is aldosterone deficient (postural hypotension, high K) and needs fludrocortisone too."
+      ],
+      [
+       4,
+       "Spironolactone blocks aldosterone and would worsen hyperkalaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Hydrocortisone and fludrocortisone.** Addison's = replace both: hydrocortisone (most in the morning) + fludrocortisone."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 45 year old man with Addison's disease takes hydrocortisone 10 mg, 5 mg and 5 mg daily and fludrocortisone 100 micrograms daily. He has a flu-like illness with a temperature of 38.3°C. He is eating and drinking and not vomiting. His pulse rate is 96 bpm and BP 122/78 mmHg.",
+   "labs": [
+    [
+     "Sodium",
+     "136 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "Potassium",
+     "4.6 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate advice?",
+   "o": [
+    "Double fludrocortisone, same hydrocortisone",
+    "Double hydrocortisone, same fludrocortisone",
+    "Go to the ED for IV hydrocortisone",
+    "Stop hydrocortisone until the fever settles",
+    "Use his IM hydrocortisone injection now"
+   ],
+   "a": 1,
+   "e": "Sick day rules: with a fever above 37.5°C, double the hydrocortisone dose and keep fludrocortisone the same. The IM kit is for vomiting.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Sick day rules for a febrile but well patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Addison's disease",
+      "temperature of 38.3°C",
+      "not vomiting"
+     ],
+     "x": "Fever above 37.5°C, keeping tablets down."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Double hydrocortisone, same fludrocortisone**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "It is the other way round."
+      ],
+      [
+       2,
+       "He is well, tolerating oral intake and not vomiting."
+      ],
+      [
+       3,
+       "Stopping steroids risks crisis."
+      ],
+      [
+       4,
+       "The injection is for vomiting or inability to take tablets."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Double hydrocortisone, same fludrocortisone.** Febrile >37.5°C = double hydrocortisone; vomiting = IM injection."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 27 year old woman with Addison's disease has vomited 4 times in 3 hours with gastroenteritis and cannot keep her hydrocortisone down. She is at home and still alert. Her husband has her emergency kit.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate immediate action?",
+   "o": [
+    "Double oral fludrocortisone",
+    "Double oral hydrocortisone",
+    "IM hydrocortisone injection",
+    "Oral rehydration solution only",
+    "Wait 24 hours and review"
+   ],
+   "a": 2,
+   "e": "If vomiting prevents oral steroids, the patient uses the IM hydrocortisone injection kit and continues until vomiting stops, seeking urgent medical help. Doubling tablets fails if they are not absorbed.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Immediate action when vomiting stops oral steroids."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "vomited 4 times",
+      "cannot keep her hydrocortisone down",
+      "emergency kit"
+     ],
+     "x": "Vomiting = no steroid absorbed."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IM hydrocortisone** from her kit, then seek medical help."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Fludrocortisone is not increased and she cannot absorb it."
+      ],
+      [
+       1,
+       "She cannot keep tablets down."
+      ],
+      [
+       3,
+       "Fluids alone do not replace cortisol."
+      ],
+      [
+       4,
+       "Delay risks adrenal crisis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IM hydrocortisone injection.** Vomiting in Addison's = IM hydrocortisone, continue until vomiting stops."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 37 year old woman with primary adrenal insufficiency has dark palmar creases and a pigmented scar. Her partner asks why her skin has darkened.",
+   "labs": [
+    [
+     "Plasma ACTH",
+     "520 ng/L",
+     "<50",
+     "H"
+    ],
+    [
+     "9am cortisol",
+     "60 nmol/L",
+     "200–700",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism?",
+   "o": [
+    "Excess aldosterone stimulating melanocytes",
+    "Iron deposition in the skin",
+    "Loss of cortisol feedback raising ACTH, which shares POMC with MSH",
+    "Low cortisol directly activating melanocytes",
+    "Sun exposure from outdoor work"
+   ],
+   "a": 2,
+   "e": "Without cortisol negative feedback the pituitary makes excess ACTH from POMC, the same precursor as melanocyte-stimulating hormone, so the skin darkens. It does not occur in secondary disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why pigment in primary, not secondary, disease?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "primary adrenal insufficiency",
+      "dark palmar creases",
+      "pigmented scar"
+     ],
+     "x": "Primary failure: no cortisol feedback, high ACTH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**High ACTH from POMC, which also makes MSH**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aldosterone is low and does not pigment skin."
+      ],
+      [
+       1,
+       "That is haemochromatosis."
+      ],
+      [
+       3,
+       "Cortisol has no direct pigment effect."
+      ],
+      [
+       4,
+       "Palmar creases and scars are not sun-exposed sites."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Loss of cortisol feedback raising ACTH, which shares POMC with MSH.** Pigment = high ACTH = POMC = MSH."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,2028 @@
+{
+ "id": "scleritis",
+ "patient": {
+  "name": "Fatima Begum",
+  "age": 54,
+  "sex": "F",
+  "setting": "GP surgery, then same-day eye casualty",
+  "complaint": "Five days of a deep, boring pain and redness in her left eye",
+  "background": [
+   "Seropositive rheumatoid arthritis for 12 years, on methotrexate",
+   "Hypertension on amlodipine",
+   "Works as a school administrator in Tower Hamlets",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a red eye in a patient with rheumatoid arthritis or vasculitis: severe pain worse on eye movement and failure to blanch with phenylephrine point to scleritis over episcleritis.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Fatima, 54, has **rheumatoid arthritis** on methotrexate.",
+      "Five days of a deep, boring **left eye pain**.",
+      "Pain woke her last night and spreads to her **jaw**.",
+      "Looking side to side makes it **much worse**.",
+      "Vision a little blurred; light hurts."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "84 bpm",
+      "BP": "132/80 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A red, painful eye in a woman with **seropositive RA** should make you think of the sclera first: scleritis is the eye's classic autoimmune emergency."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Left eye: diffuse **deep red-violet** colour, not bright red.",
+      "Globe is **tender** through the closed lid.",
+      "No discharge; mild watering only.",
+      "Visual acuity 6/12 left, 6/6 right."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Fatima has the full picture: **severe pain worse on eye movement**, violet hue, tenderness, photophobia, reduced vision and pain radiating to the jaw."
+    },
+    {
+     "type": "ask",
+     "q": "Which single feature best separates Fatima's scleritis from episcleritis?",
+     "o": [
+      "Bilateral redness",
+      "Pain worse on eye movement",
+      "Sticky discharge",
+      "Watering"
+     ],
+     "a": 1,
+     "r": "Scleritis pain is **severe and worse with eye movement**. Episcleritis is mild, with watering, and movement does not worsen it."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "The GP puts in **phenylephrine** drops: Fatima's deep vessels do **not blanch**, so this is not episcleritis."
+    },
+    {
+     "type": "compare",
+     "title": "Scleritis vs episcleritis",
+     "head": [
+      "Feature",
+      "Scleritis",
+      "Episcleritis"
+     ],
+     "rows": [
+      [
+       "Pain",
+       "**Severe**, worse on eye movement",
+       "Mild, not worse on movement"
+      ],
+      [
+       "Colour",
+       "Deep red-violet",
+       "Bright red, segmental"
+      ],
+      [
+       "Phenylephrine",
+       "**No blanching**",
+       "Blanches"
+      ],
+      [
+       "Association",
+       "RA, vasculitis, SLE",
+       "**Ulcerative colitis**"
+      ],
+      [
+       "Course",
+       "Emergency, threatens sight",
+       "Usually self-limiting"
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Pain score (0 to 10)",
+      "min": 0,
+      "max": 10,
+      "unit": "",
+      "bands": [
+       [
+        0,
+        3,
+        "Episcleritis: mild ache",
+        "ok"
+       ],
+       [
+        3,
+        6,
+        "Moderate",
+        "warn"
+       ],
+       [
+        6,
+        10,
+        "Scleritis: severe, wakes at night",
+        "bad"
+       ]
+      ],
+      "value": 9,
+      "label": "Fatima 9/10",
+      "caption": "Severe pain that wakes the patient is scleritis until proven otherwise."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Red eye in a patient with RA",
+     "nodes": [
+      "Red eye: is the pain severe?",
+      "Pain worse on eye movement, tender globe",
+      "Phenylephrine: vessels do not blanch",
+      "Deep scleral plexus inflamed → scleritis",
+      "Same-day ophthalmology"
+     ],
+     "caption": "Mild, blanching, watery and segmental → episcleritis instead."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Untreated, Fatima risks **vision loss**, **scleral thinning** and, rarely, **globe rupture**."
+    },
+    {
+     "type": "trap",
+     "text": "Do not call a red, painful eye in RA 'conjunctivitis'. Conjunctivitis is gritty with discharge and **no deep pain**; scleritis pain is severe and boring."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate next step?' where the answer is same-day ophthalmology assessment, or a question on the bloods that look for the underlying autoimmune disease (ESR/CRP, autoimmune screen).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "The GP suspects scleritis. What is the most appropriate first step?",
+     "o": [
+      "Chloramphenicol drops and review in 1 week",
+      "Routine ophthalmology referral",
+      "Same-day ophthalmology assessment",
+      "Topical steroid drops from the GP"
+     ],
+     "a": 2,
+     "r": "Scleritis is an **ophthalmological emergency**: same-day specialist assessment. GPs should not start topical steroids for a red eye."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Fatima goes to **eye casualty today**. Bloods look for the **systemic disease** behind it."
+    },
+    {
+     "type": "labs",
+     "title": "Fatima's bloods in eye casualty",
+     "rows": [
+      [
+       "ESR",
+       "68 mm/h",
+       "<20",
+       "H"
+      ],
+      [
+       "CRP",
+       "42 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "Rheumatoid factor",
+       "Positive (high titre)",
+       "Negative",
+       "H"
+      ],
+      [
+       "Anti-CCP",
+       "Positive",
+       "Negative",
+       "H"
+      ],
+      [
+       "ANCA",
+       "Negative",
+       "Negative",
+       ""
+      ],
+      [
+       "ANA",
+       "Negative",
+       "Negative",
+       ""
+      ]
+     ],
+     "text": "Raised inflammatory markers and active seropositive RA; ANCA negative, so no new vasculitis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "ESR",
+      "min": 0,
+      "max": 100,
+      "unit": "mm/h",
+      "bands": [
+       [
+        0,
+        20,
+        "Normal",
+        "ok"
+       ],
+       [
+        20,
+        50,
+        "Raised",
+        "warn"
+       ],
+       [
+        50,
+        100,
+        "Markedly raised",
+        "bad"
+       ]
+      ],
+      "value": 68,
+      "label": "Fatima 68",
+      "caption": "A high ESR fits active systemic inflammation driving the scleritis."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "The **autoimmune screen** (RF, anti-CCP, ANCA, ANA) matters: about half of scleritis is linked to systemic disease, and finding it changes treatment."
+    },
+    {
+     "type": "trap",
+     "text": "A **normal CRP** does not exclude scleritis. The diagnosis is clinical, made by the ophthalmologist on slit lamp; bloods look for the cause."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': same-day ophthalmology first, then oral NSAIDs for mild disease and systemic steroids (oral prednisolone or IV methylprednisolone) for severe or necrotising disease.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The GP's job for Fatima is one phone call: **same-day ophthalmology**, because scleritis threatens sight."
+    },
+    {
+     "type": "ask",
+     "q": "In eye casualty Fatima has diffuse anterior scleritis, no necrosis. What is first treatment?",
+     "o": [
+      "Intravenous methylprednisolone",
+      "Oral flurbiprofen",
+      "Topical chloramphenicol",
+      "Topical phenylephrine"
+     ],
+     "a": 1,
+     "r": "Milder, non-necrotising scleritis starts with a **systemic NSAID** such as flurbiprofen 100 mg TDS. Topical drops do not reach the deep sclera."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Fatima starts **flurbiprofen 100 mg orally TDS** with a PPI for stomach protection."
+    },
+    {
+     "type": "story",
+     "points": [
+      "One week later: pain still 8/10.",
+      "Slit lamp: a new **avascular patch** in the sclera.",
+      "Ophthalmologist worries about **necrotising** disease."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Failure of NSAIDs and signs of necrosis mean **systemic steroids**: pulsed **IV methylprednisolone**, then oral prednisolone, with rheumatology on board."
+    },
+    {
+     "type": "flow",
+     "title": "Scleritis treatment ladder",
+     "nodes": [
+      "Suspected scleritis → same-day ophthalmology",
+      "Mild → oral NSAID (flurbiprofen)",
+      "Severe or NSAID failure → oral prednisolone",
+      "Necrotising → pulsed IV methylprednisolone",
+      "Underlying disease → immunosuppressant (specialist)"
+     ],
+     "caption": "Escalate by severity; treat the systemic disease too."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Fatima's response to treatment",
+      "x": [
+       "Day 0",
+       "Day 7",
+       "Day 10",
+       "Day 21"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Pain score /10",
+        "values": [
+         9,
+         8,
+         4,
+         1
+        ]
+       },
+       {
+        "name": "ESR /10 (mm/h)",
+        "values": [
+         6.8,
+         6.5,
+         3.8,
+         2.0
+        ]
+       }
+      ],
+      "caption": "Little change on NSAIDs alone; pain and ESR fall once steroids start on day 7."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Fatima's care follows the **Royal College of Ophthalmologists** guidance and **NICE CKS Red eye**: urgent referral, then specialist-led treatment."
+    },
+    {
+     "type": "trap",
+     "text": "Never treat suspected scleritis with **topical steroids alone** in primary care. It needs systemic treatment and an ophthalmologist."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why phenylephrine does not blanch scleritis (deep plexus), why rheumatoid arthritis causes scleromalacia and perforation, or the type of inflammation involved.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Fatima's scleritis is an **extra-articular** feature of her RA: a granulomatous, **T-cell mediated** infiltrate in the sclera."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Her sclera is rigid and has little blood supply, so swelling **stretches the nerve-rich episclera**: that is why her pain is 9/10."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Phenylephrine constricts **superficial** vessels only. Fatima's inflammation is in the **deep vascular plexus**, so the redness stays."
+    },
+    {
+     "type": "flow",
+     "title": "From RA to globe rupture",
+     "nodes": [
+      "Immune complex deposition",
+      "Vasculitis of scleral vessels",
+      "Ischaemia and necrosis",
+      "Scleromalacia (thinning)",
+      "Globe rupture (rare)"
+     ],
+     "caption": "This is why necrotising scleritis needs pulsed steroids fast."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Fatima's avascular patch was early **necrosis**: left alone, it can thin into **scleromalacia** and rupture."
+    },
+    {
+     "type": "ask",
+     "q": "Why did phenylephrine fail to blanch Fatima's eye?",
+     "o": [
+      "Conjunctival vessels are inflamed",
+      "Deep scleral plexus is inflamed",
+      "Phenylephrine dilates vessels",
+      "The vessels are thrombosed"
+     ],
+     "a": 1,
+     "r": "Scleritis involves the **deeper vascular plexus**; phenylephrine only blanches superficial episcleral and conjunctival vessels."
+    },
+    {
+     "type": "pearl",
+     "text": "**Scleromalacia perforans** is the painless, necrotising variant classically seen in long-standing **rheumatoid arthritis**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which feature most reliably distinguishes scleritis from episcleritis?",
+   "o": [
+    "Pain worse on eye movement",
+    "Photophobia absent",
+    "Purulent discharge",
+    "Segmental redness"
+   ],
+   "a": 0,
+   "r": "Scleritis pain is **worse with eye movement**; episcleritis pain is not."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which condition is most associated with scleritis?",
+   "o": [
+    "Coeliac disease",
+    "Rheumatoid arthritis",
+    "Type 2 diabetes",
+    "Ulcerative colitis"
+   ],
+   "a": 1,
+   "r": "RA, vasculitis and SLE. **Ulcerative colitis** is the classic association of episcleritis."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What happens when phenylephrine is put in a scleritis eye?",
+   "o": [
+    "Pupil constricts",
+    "Redness blanches",
+    "Redness does not blanch",
+    "Redness worsens"
+   ],
+   "a": 2,
+   "r": "Deep scleral vessels **do not blanch**; episcleral redness does."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a recognised complication of scleritis?",
+   "o": [
+    "Cataract only",
+    "Globe rupture",
+    "Retinal detachment only",
+    "Subconjunctival haemorrhage"
+   ],
+   "a": 1,
+   "r": "Vision loss, **scleral thinning** and rarely **globe rupture**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line step for suspected scleritis?",
+   "o": [
+    "CT orbits",
+    "Routine eye clinic in 4 weeks",
+    "Same-day ophthalmology assessment",
+    "Trial of antibiotic drops"
+   ],
+   "a": 2,
+   "r": "It is an **ophthalmological emergency**: same-day assessment."
+  },
+  {
+   "d": "investigation",
+   "q": "Which bloods are sent in scleritis?",
+   "o": [
+    "ESR/CRP and autoimmune screen",
+    "HbA1c only",
+    "Serum ACE only",
+    "Troponin"
+   ],
+   "a": 0,
+   "r": "**ESR/CRP and an autoimmune screen** look for the systemic cause."
+  },
+  {
+   "d": "management",
+   "q": "Which drug is used for mild scleritis?",
+   "o": [
+    "Chloramphenicol drops",
+    "Flurbiprofen orally",
+    "Pilocarpine drops",
+    "Timolol drops"
+   ],
+   "a": 1,
+   "r": "Systemic NSAID: ibuprofen or **flurbiprofen 100 mg TDS**."
+  },
+  {
+   "d": "management",
+   "q": "What is used for severe scleritis?",
+   "o": [
+    "IV methylprednisolone",
+    "Oral aciclovir",
+    "Oral doxycycline",
+    "Topical NSAID"
+   ],
+   "a": 0,
+   "r": "Systemic steroids: oral prednisolone or pulsed **IV methylprednisolone**."
+  },
+  {
+   "d": "science",
+   "q": "What type of infiltrate is seen in scleritis?",
+   "o": [
+    "Eosinophilic, IgE mediated",
+    "Granulomatous, T-cell mediated",
+    "Neutrophilic, bacterial",
+    "Plasma cell, IgA mediated"
+   ],
+   "a": 1,
+   "r": "A **granulomatous, T-cell mediated** infiltrate within the sclera."
+  },
+  {
+   "d": "science",
+   "q": "Why is scleritis pain so severe?",
+   "o": [
+    "Corneal nerves are cut",
+    "Optic nerve ischaemia",
+    "Raised intraocular pressure",
+    "Rigid sclera stretches nerve-rich episclera"
+   ],
+   "a": 3,
+   "r": "The sclera is **rigid and relatively avascular**; swelling stretches the nerve-rich episclera."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is scleritis and which systemic diseases is it linked to?",
+    "tip": "Exam thinking: the stem hides an RA, vasculitis or SLE history.",
+    "points": [
+     {
+      "p": "Inflammation of the sclera",
+      "k": [
+       [
+        "sclera"
+       ],
+       [
+        "inflam",
+        "itis"
+       ]
+      ],
+      "why": "More serious than episcleritis."
+     },
+     {
+      "p": "Rheumatoid arthritis",
+      "k": [
+       [
+        "rheumatoid",
+        "ra"
+       ]
+      ],
+      "why": "The commonest systemic association."
+     },
+     {
+      "p": "Vasculitis (e.g. GPA)",
+      "k": [
+       [
+        "vasculitis",
+        "gpa",
+        "granulomatosis",
+        "anca"
+       ]
+      ],
+      "why": "ANCA vasculitis can present with scleritis."
+     },
+     {
+      "p": "Systemic lupus erythematosus",
+      "k": [
+       [
+        "sle",
+        "lupus"
+       ]
+      ],
+      "why": "The third named association in the notes."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the classic presentation of scleritis.",
+    "tip": "Exam thinking: severe pain is the word that separates it from other red eyes.",
+    "points": [
+     {
+      "p": "Severe eye pain worse with eye movement",
+      "k": [
+       [
+        "severe",
+        "intense",
+        "boring"
+       ],
+       [
+        "movement",
+        "moving"
+       ]
+      ],
+      "why": "The key differentiator."
+     },
+     {
+      "p": "Deep red/violet eye",
+      "k": [
+       [
+        "violet",
+        "purple",
+        "deep red"
+       ]
+      ],
+      "why": "Deeper colour than the bright red of episcleritis."
+     },
+     {
+      "p": "Photophobia and reduced vision",
+      "k": [
+       [
+        "photophobia",
+        "light"
+       ],
+       [
+        "vision",
+        "acuity",
+        "blur"
+       ]
+      ],
+      "why": "Reduced vision means sight is threatened."
+     },
+     {
+      "p": "Tender eye",
+      "k": [
+       [
+        "tender"
+       ]
+      ],
+      "why": "Tenderness on palpation through the lid."
+     },
+     {
+      "p": "Pain radiating to jaw or face",
+      "k": [
+       [
+        "jaw",
+        "face"
+       ]
+      ],
+      "why": "Classic radiation of scleritis pain."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell scleritis from episcleritis?",
+    "tip": "Exam thinking: pain, phenylephrine and the associated disease.",
+    "points": [
+     {
+      "p": "Episcleritis is mild and not worse on movement",
+      "k": [
+       [
+        "mild"
+       ],
+       [
+        "movement",
+        "moving"
+       ]
+      ],
+      "why": "Scleritis pain is severe and worse on eye movement."
+     },
+     {
+      "p": "Episcleritis: watering, segmental injection",
+      "k": [
+       [
+        "water",
+        "tear"
+       ],
+       [
+        "segment",
+        "sector"
+       ]
+      ],
+      "why": "Segmental bulbar injection is typical of episcleritis."
+     },
+     {
+      "p": "Phenylephrine blanches episcleritis, not scleritis",
+      "k": [
+       [
+        "phenylephrine"
+       ],
+       [
+        "blanch"
+       ]
+      ],
+      "why": "Deep vessels do not blanch."
+     },
+     {
+      "p": "Episcleritis linked to ulcerative colitis and self-limiting",
+      "k": [
+       [
+        "ulcerative colitis",
+        "uc",
+        "ibd"
+       ]
+      ],
+      "why": "Episcleritis usually resolves on its own."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What complications can scleritis cause?",
+    "tip": "Exam thinking: why it is an emergency.",
+    "points": [
+     {
+      "p": "Vision loss",
+      "k": [
+       [
+        "vision",
+        "sight",
+        "blind"
+       ]
+      ],
+      "why": "Reason for same-day referral."
+     },
+     {
+      "p": "Scleral thinning (scleromalacia)",
+      "k": [
+       [
+        "thinning",
+        "scleromalacia"
+       ]
+      ],
+      "why": "Especially in RA."
+     },
+     {
+      "p": "Globe rupture (rare)",
+      "k": [
+       [
+        "rupture",
+        "perforat"
+       ]
+      ],
+      "why": "Seen in severe necrotising disease."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the first-line step and which bloods are sent in suspected scleritis?",
+    "tip": "Exam thinking: the 'investigation' answer is often the referral itself.",
+    "points": [
+     {
+      "p": "Same-day ophthalmology assessment",
+      "k": [
+       [
+        "same-day",
+        "same day",
+        "urgent",
+        "emergency"
+       ],
+       [
+        "ophthalm",
+        "eye"
+       ]
+      ],
+      "why": "Ophthalmological emergency."
+     },
+     {
+      "p": "ESR/CRP",
+      "k": [
+       [
+        "esr",
+        "crp",
+        "inflammatory"
+       ]
+      ],
+      "why": "Usually raised."
+     },
+     {
+      "p": "Autoimmune screen",
+      "k": [
+       [
+        "autoimmune",
+        "rf",
+        "anca",
+        "ana",
+        "rheumatoid factor"
+       ]
+      ],
+      "why": "Finds the systemic disease behind it."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the first-line management of suspected scleritis?",
+    "tip": "Exam thinking: GP does not treat it; it goes to eye casualty today.",
+    "points": [
+     {
+      "p": "Same-day/urgent ophthalmology referral",
+      "k": [
+       [
+        "same-day",
+        "same day",
+        "urgent"
+       ],
+       [
+        "ophthalm",
+        "eye"
+       ]
+      ],
+      "why": "Not a routine referral."
+     },
+     {
+      "p": "Do not start topical treatment alone",
+      "k": [
+       [
+        "topical",
+        "drops"
+       ]
+      ],
+      "why": "Topical drops do not reach the deep sclera."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is scleritis treated, mild versus severe?",
+    "tip": "Exam thinking: escalate by severity.",
+    "points": [
+     {
+      "p": "Mild: systemic NSAID (ibuprofen or flurbiprofen 100 mg TDS)",
+      "k": [
+       [
+        "nsaid",
+        "ibuprofen",
+        "flurbiprofen"
+       ]
+      ],
+      "why": "Oral, not topical."
+     },
+     {
+      "p": "Severe: oral prednisolone or pulsed IV methylprednisolone",
+      "k": [
+       [
+        "prednisolone",
+        "methylprednisolone",
+        "steroid"
+       ]
+      ],
+      "why": "Pulsed IV for necrotising disease."
+     },
+     {
+      "p": "Underlying disease: immunosuppressants under specialist care",
+      "k": [
+       [
+        "immunosuppress",
+        "methotrexate",
+        "rituximab",
+        "specialist"
+       ]
+      ],
+      "why": "Treats the cause and prevents recurrence."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the pathophysiology of scleritis, and why is the pain severe?",
+    "tip": "Exam thinking: link the histology to the symptom.",
+    "points": [
+     {
+      "p": "Granulomatous, T-cell mediated infiltrate",
+      "k": [
+       [
+        "granulom"
+       ],
+       [
+        "t-cell",
+        "t cell",
+        "lymphocyt"
+       ]
+      ],
+      "why": "Often extra-articular autoimmune disease."
+     },
+     {
+      "p": "Sclera is rigid and relatively avascular",
+      "k": [
+       [
+        "rigid",
+        "avascular"
+       ]
+      ],
+      "why": "Swelling cannot expand outward."
+     },
+     {
+      "p": "Stretches the nerve-rich episclera",
+      "k": [
+       [
+        "nerve",
+        "stretch"
+       ]
+      ],
+      "why": "Hence severe boring pain."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does phenylephrine not blanch scleritis, and why can RA cause globe rupture?",
+    "tip": "Exam thinking: deep plexus versus superficial vessels.",
+    "points": [
+     {
+      "p": "Scleritis involves the deep vascular plexus",
+      "k": [
+       [
+        "deep"
+       ],
+       [
+        "plexus",
+        "vessel"
+       ]
+      ],
+      "why": "Phenylephrine only constricts superficial vessels."
+     },
+     {
+      "p": "RA: immune complex deposition and vasculitis",
+      "k": [
+       [
+        "immune complex",
+        "vasculitis"
+       ]
+      ],
+      "why": "Starts the ischaemic process."
+     },
+     {
+      "p": "Ischaemia and necrosis → scleromalacia → rupture",
+      "k": [
+       [
+        "ischaemi",
+        "necros"
+       ],
+       [
+        "scleromalacia",
+        "thin",
+        "rupture"
+       ]
+      ],
+      "why": "Necrotising scleritis is the highest-risk form."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Scleritis": "Inflammation of the sclera, the tough white outer coat of the eye; painful and sight-threatening.",
+  "Episcleritis": "Mild, usually self-limiting inflammation of the thin layer over the sclera; not worse on eye movement.",
+  "sclera": "The tough white outer wall of the eyeball.",
+  "episclera": "The thin, nerve-rich vascular layer between the conjunctiva and the sclera.",
+  "Phenylephrine": "Alpha-agonist eye drop that constricts superficial vessels; blanches episcleritis but not scleritis.",
+  "blanching": "Whitening of a red area when its vessels constrict or are pressed.",
+  "Scleromalacia": "Thinning and softening of the sclera, which can progress to perforation.",
+  "scleromalacia perforans": "Painless necrotising scleritis without inflammation, classically in long-standing rheumatoid arthritis.",
+  "necrotising": "Causing tissue death; necrotising scleritis is the most severe form.",
+  "globe rupture": "A full-thickness break in the wall of the eyeball.",
+  "Photophobia": "Pain or discomfort caused by light.",
+  "bulbar injection": "Redness of the conjunctiva over the eyeball itself, rather than inside the lids.",
+  "Rheumatoid arthritis": "Autoimmune inflammatory arthritis of small joints; the commonest cause of scleritis.",
+  "RA": "Rheumatoid arthritis.",
+  "SLE": "Systemic lupus erythematosus, a multisystem autoimmune disease with ANA antibodies.",
+  "vasculitis": "Inflammation of blood vessel walls, causing narrowing, ischaemia or bleeding.",
+  "GPA": "Granulomatosis with polyangiitis, an ANCA-positive small-vessel vasculitis that can cause scleritis.",
+  "ulcerative colitis": "Inflammatory bowel disease of the colon; classically associated with episcleritis.",
+  "extra-articular": "Affecting organs outside the joints in an arthritis such as RA.",
+  "Granulomatous": "Inflammation with clusters of activated macrophages (granulomas).",
+  "T-cell mediated": "Inflammation driven by T lymphocytes rather than antibodies.",
+  "immune complex": "Antibody bound to antigen; can deposit in vessel walls and trigger inflammation.",
+  "ESR": "Erythrocyte sedimentation rate; a non-specific marker of inflammation.",
+  "CRP": "C-reactive protein; an acute-phase protein that rises with inflammation.",
+  "autoimmune screen": "Blood tests for autoantibodies such as RF, anti-CCP, ANA and ANCA.",
+  "ANCA": "Anti-neutrophil cytoplasmic antibody; positive in small-vessel vasculitis such as GPA.",
+  "ANA": "Antinuclear antibody; screening test for SLE and related diseases.",
+  "Anti-CCP": "Antibody highly specific for rheumatoid arthritis.",
+  "Rheumatoid factor": "Antibody against IgG found in most rheumatoid arthritis.",
+  "flurbiprofen": "An oral NSAID used at 100 mg three times daily for mild scleritis.",
+  "NSAID": "Non-steroidal anti-inflammatory drug, e.g. ibuprofen; first systemic treatment for mild scleritis.",
+  "TDS": "Three times a day.",
+  "methylprednisolone": "Potent corticosteroid given as pulsed IV doses for severe or necrotising scleritis.",
+  "prednisolone": "Oral corticosteroid used for severe scleritis.",
+  "slit lamp": "A microscope with a bright light used to examine the eye in detail.",
+  "visual acuity": "Sharpness of vision, measured on a Snellen chart (e.g. 6/6).",
+  "conjunctivitis": "Inflammation of the conjunctiva: gritty, red, with discharge, without deep pain.",
+  "anterior uveitis": "Inflammation of the iris and ciliary body: photophobia, small pupil, ciliary flush."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 54 year old woman with rheumatoid arthritis has a 5 day history of severe pain in her left eye. The pain is worse when she moves her eye and radiates to her jaw. The eye is deep red-violet and tender. Visual acuity is reduced. The redness does not blanch with topical phenylephrine.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute angle closure glaucoma",
+    "Anterior uveitis",
+    "Bacterial conjunctivitis",
+    "Episcleritis",
+    "Scleritis"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about a red eye: decide whether the pain is severe and where the inflammation is."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rheumatoid arthritis",
+      "worse when she moves her eye",
+      "radiates to her jaw",
+      "deep red-violet and tender",
+      "does not blanch with topical phenylephrine"
+     ],
+     "x": "RA is the classic association. Pain worse on eye movement, violet colour, tenderness and no blanching mean **deep scleral** inflammation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Severe painful violet eye in RA that does not blanch: **scleritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Angle closure is sudden, with a fixed mid-dilated pupil, haloes and vomiting."
+      ],
+      [
+       1,
+       "Uveitis gives photophobia and ciliary flush; pain is not typically worse on eye movement or radiating to the jaw."
+      ],
+      [
+       2,
+       "Conjunctivitis is gritty with discharge and no deep pain."
+      ],
+      [
+       3,
+       "Episcleritis is mild, not worse on movement and **blanches** with phenylephrine."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Scleritis.** Rule: RA + severe pain worse on movement + no blanching = scleritis."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 61 year old man with granulomatosis with polyangiitis has a 3 day history of a severely painful red right eye that is worse on eye movement. He saw his GP this morning. The eye is violet and tender, and his vision is reduced to 6/18.",
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "CT orbits",
+    "Routine ophthalmology referral",
+    "Same-day ophthalmology assessment",
+    "Swab for culture",
+    "Topical steroid trial and GP review"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in a suspected scleritis: this is about urgency, not a scan."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "granulomatosis with polyangiitis",
+      "worse on eye movement",
+      "violet and tender",
+      "reduced to 6/18"
+     ],
+     "x": "Vasculitis plus severe pain on movement and a violet eye: **scleritis**. Reduced vision makes it sight-threatening."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Scleritis is an **ophthalmological emergency**: same-day ophthalmology."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CT orbits is for orbital cellulitis or trauma; it does not diagnose scleritis."
+      ],
+      [
+       1,
+       "Routine referral is too slow for a sight-threatening emergency."
+      ],
+      [
+       3,
+       "A swab is for infective conjunctivitis with discharge."
+      ],
+      [
+       4,
+       "GPs should not start topical steroids for a red eye; it delays specialist care."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Same-day ophthalmology assessment.** Rule: suspected scleritis is seen by eye casualty today."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 48 year old woman with SLE has diffuse anterior scleritis confirmed by an ophthalmologist. There is no scleral thinning or necrosis. Her pain is moderate. She has no history of peptic ulcer disease and her renal function is normal.",
+   "q": "Which is the most appropriate initial treatment?",
+   "o": [
+    "Intravenous methylprednisolone",
+    "Oral flurbiprofen",
+    "Oral rituximab",
+    "Topical chloramphenicol",
+    "Topical phenylephrine"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial treatment once scleritis is confirmed: decide mild or severe."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no scleral thinning or necrosis",
+      "pain is moderate",
+      "no history of peptic ulcer disease",
+      "renal function is normal"
+     ],
+     "x": "No necrosis and moderate pain = **milder** disease. No ulcer and normal kidneys mean an NSAID is safe."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Mild scleritis: **systemic NSAID** such as flurbiprofen 100 mg orally TDS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pulsed IV methylprednisolone is for severe or necrotising disease."
+      ],
+      [
+       2,
+       "Rituximab is an IV specialist immunosuppressant for refractory disease, not first-line, and is not oral."
+      ],
+      [
+       3,
+       "Chloramphenicol treats bacterial conjunctivitis."
+      ],
+      [
+       4,
+       "Phenylephrine is a diagnostic test, not a treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Oral flurbiprofen.** Rule: mild = oral NSAID; severe = systemic steroid."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old woman with long-standing rheumatoid arthritis has scleritis. On slit lamp examination there is an area of bluish, thinned sclera through which the underlying choroid can be seen.",
+   "q": "Which is the most likely mechanism of the scleral thinning?",
+   "o": [
+    "Collagen breakdown from raised intraocular pressure",
+    "Immune complex vasculitis causing ischaemic necrosis",
+    "Infective destruction by Staphylococcus aureus",
+    "Steroid-induced collagen loss",
+    "Topical NSAID toxicity"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: link RA to the thinned sclera."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing rheumatoid arthritis",
+      "bluish, thinned sclera",
+      "underlying choroid can be seen"
+     ],
+     "x": "Long-standing RA plus thin blue sclera = **scleromalacia** from necrotising scleritis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Immune complex deposition and vasculitis cause **ischaemia and necrosis** of the sclera."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Raised pressure does not cause focal scleral necrosis."
+      ],
+      [
+       2,
+       "This is autoimmune, not infective."
+      ],
+      [
+       3,
+       "Steroids treat the necrosis; they are not the cause in this vignette."
+      ],
+      [
+       4,
+       "Topical NSAIDs are not the mechanism of RA scleromalacia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Immune complex vasculitis causing ischaemic necrosis.** Rule: RA → vasculitis → necrosis → scleromalacia → rupture."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 57 year old woman with rheumatoid arthritis has a 4 day history of a severe, boring pain in her right eye that woke her from sleep. The pain is worse on looking around and spreads to her cheek. The eye is diffusely deep red with a violet hue and is tender to touch. Her temperature is 36.9°C, pulse rate 84 bpm and BP 132/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute angle closure glaucoma",
+    "Anterior uveitis",
+    "Bacterial conjunctivitis",
+    "Episcleritis",
+    "Scleritis"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely diagnosis of a painful red eye."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rheumatoid arthritis",
+      "woke her from sleep",
+      "worse on looking around",
+      "violet hue",
+      "tender to touch"
+     ],
+     "x": "Severe pain that wakes her, worse on eye movement, violet hue and tenderness in RA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Scleritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Angle closure has a fixed mid-dilated pupil, haloes and vomiting; pain is not worse on movement."
+      ],
+      [
+       1,
+       "Uveitis gives photophobia, a small pupil and ciliary flush; pain does not radiate to the face or worsen on movement."
+      ],
+      [
+       2,
+       "Conjunctivitis has discharge and grittiness, no deep pain."
+      ],
+      [
+       3,
+       "Episcleritis is mild and not worse on movement."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Scleritis.** Rule: severe pain worse on eye movement in RA = scleritis."
+    }
+   ],
+   "e": "Severe, night-waking pain worse on eye movement with a violet tender eye in RA is scleritis. Episcleritis is mild and not worse on movement."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old man has a painful red left eye for 2 days. He has a 6 month history of nasal crusting, epistaxis and haemoptysis. The pain is severe and worse on eye movement. The eye is violet and does not blanch with phenylephrine drops. His temperature is 37.4°C, pulse rate 92 bpm and BP 148/90 mmHg.",
+   "labs": [
+    [
+     "CRP",
+     "88 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "c-ANCA (PR3)",
+     "Positive",
+     "Negative",
+     "H"
+    ],
+    [
+     "Urinalysis",
+     "Blood 2+, protein 1+",
+     "Negative",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute angle closure glaucoma",
+    "Anterior uveitis",
+    "Episcleritis",
+    "Orbital cellulitis",
+    "Scleritis"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a red eye in a man with a systemic illness."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "nasal crusting, epistaxis and haemoptysis",
+      "worse on eye movement",
+      "does not blanch with phenylephrine"
+     ],
+     "x": "Nasal crusting, epistaxis and haemoptysis suggest **GPA (vasculitis)**. Severe pain on movement and no blanching = deep scleral inflammation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Vasculitis-associated **scleritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Angle closure is sudden with a fixed mid-dilated pupil, haloes and vomiting."
+      ],
+      [
+       1,
+       "Uveitis gives photophobia, a small pupil and ciliary flush; it fits no vasculitis-violet-eye picture as well."
+      ],
+      [
+       2,
+       "Episcleritis blanches with phenylephrine and is mild."
+      ],
+      [
+       3,
+       "Orbital cellulitis gives proptosis, lid swelling and fever, often after sinusitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Scleritis.** Rule: vasculitis clues + non-blanching violet eye = scleritis."
+    }
+   ],
+   "e": "Upper and lower airway features suggest GPA, a classic cause of scleritis. Episcleritis would blanch with phenylephrine."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 50 year old woman with rheumatoid arthritis has a painful red eye. An ophthalmology registrar is asked to distinguish scleritis from episcleritis at the bedside and instils topical phenylephrine 10%.",
+   "labs": [],
+   "visual": null,
+   "q": "Which finding is most likely if this is scleritis?",
+   "o": [
+    "Blanching of the redness within 15 minutes",
+    "Corneal fluorescein staining",
+    "Fixed, mid-dilated pupil",
+    "Persistence of the deep redness",
+    "Purulent discharge"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely finding with phenylephrine in scleritis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rheumatoid arthritis",
+      "distinguish scleritis from episcleritis",
+      "topical phenylephrine 10%"
+     ],
+     "x": "Phenylephrine constricts superficial vessels only. Scleritis is in the **deep plexus**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The deep redness **persists** (no blanching)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Blanching is the finding in episcleritis."
+      ],
+      [
+       1,
+       "Fluorescein staining shows a corneal abrasion or ulcer."
+      ],
+      [
+       2,
+       "A fixed mid-dilated pupil is angle closure glaucoma."
+      ],
+      [
+       4,
+       "Discharge suggests bacterial conjunctivitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Persistence of the deep redness.** Rule: no blanching = scleritis."
+    }
+   ],
+   "e": "Phenylephrine blanches superficial episcleral vessels but not the deep scleral plexus, so scleritis redness persists."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 39 year old woman has a 7 day history of a severely painful, red right eye that is tender and worse on eye movement. She also has a malar rash, mouth ulcers and painful swollen fingers.",
+   "labs": [
+    [
+     "ANA",
+     "Positive 1:640",
+     "Negative",
+     "H"
+    ],
+    [
+     "Anti-dsDNA",
+     "Raised",
+     "Negative",
+     "H"
+    ],
+    [
+     "ESR",
+     "58 mm/h",
+     "<20",
+     "H"
+    ],
+    [
+     "CRP",
+     "12 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Episcleritis secondary to Crohn's disease",
+    "Herpes zoster ophthalmicus",
+    "Reactive arthritis with conjunctivitis",
+    "Scleritis secondary to SLE",
+    "Uveitis secondary to sarcoidosis"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "This asks for the diagnosis that explains both the eye and the systemic picture."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severely painful, red right eye",
+      "worse on eye movement",
+      "malar rash, mouth ulcers and painful swollen fingers"
+     ],
+     "x": "Severe pain worse on movement = **scleritis**. Malar rash, mouth ulcers and arthritis = **SLE**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Scleritis secondary to SLE**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Episcleritis is mild and not worse on movement; Crohn's would give bowel symptoms."
+      ],
+      [
+       1,
+       "Shingles gives a dermatomal vesicular rash on the forehead."
+      ],
+      [
+       2,
+       "Reactive arthritis gives conjunctivitis and urethritis after infection, without a malar rash."
+      ],
+      [
+       4,
+       "Sarcoid uveitis has no malar rash and pain is not worse on movement."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Scleritis secondary to SLE.** Rule: severe pain on movement + autoimmune multisystem disease = scleritis."
+    }
+   ],
+   "e": "Severe pain worse on eye movement with SLE features (malar rash, mouth ulcers, arthritis) is SLE-associated scleritis. Episcleritis is mild."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old woman with 30 years of rheumatoid arthritis has had scleritis for several months. Her pain has worsened despite oral NSAIDs. On examination there is a bluish area of thinned sclera. Her temperature is 36.8°C, pulse rate 78 bpm and BP 138/76 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most serious complication she is at risk of?",
+   "o": [
+    "Cataract",
+    "Globe rupture",
+    "Ptosis",
+    "Retinal vein occlusion",
+    "Subconjunctival haemorrhage"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most serious complication of this scleritis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "30 years of rheumatoid arthritis",
+      "worsened despite oral NSAIDs",
+      "bluish area of thinned sclera"
+     ],
+     "x": "Long-standing RA with a thin blue sclera = **scleromalacia**, from necrotising scleritis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Thinning can progress to **globe rupture**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cataract can follow chronic steroids but is not the most serious risk here."
+      ],
+      [
+       2,
+       "Ptosis is not a complication of scleritis."
+      ],
+      [
+       3,
+       "Retinal vein occlusion is linked to hypertension and glaucoma, not scleral thinning."
+      ],
+      [
+       4,
+       "Subconjunctival haemorrhage is benign."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Globe rupture.** Rule: scleritis → thinning (scleromalacia) → rarely rupture."
+    }
+   ],
+   "e": "Scleral thinning in necrotising RA scleritis can progress to globe rupture. The other options are not the feared complication."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old man with a history of bloody diarrhoea has a red right eye. On examination there is a segmental area of bright red bulbar injection with watering. There is mild discomfort that does not worsen on eye movement. Vision is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which feature in this patient argues most strongly against scleritis?",
+   "o": [
+    "Bloody diarrhoea",
+    "Bright red colour",
+    "Discomfort not worse on eye movement",
+    "Normal vision",
+    "Watering"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which single feature best argues against scleritis. Find the key differentiator from the notes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "segmental area of bright red bulbar injection",
+      "does not worsen on eye movement",
+      "Vision is normal"
+     ],
+     "x": "The notes name the **key differentiator**: scleritis pain is worse with eye movement."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Pain **not worse on eye movement**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bloody diarrhoea suggests UC, which favours episcleritis but does not exclude scleritis."
+      ],
+      [
+       1,
+       "Colour is suggestive but less reliable than the pain pattern."
+      ],
+      [
+       3,
+       "Vision can be normal in early scleritis."
+      ],
+      [
+       4,
+       "Watering occurs in many red eyes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Discomfort not worse on eye movement.** Rule: the key scleritis feature is pain worse with eye movement."
+    }
+   ],
+   "e": "The key differentiator in the notes is that scleritis pain is worse with eye movement; its absence points to episcleritis."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 52 year old woman with rheumatoid arthritis attends her GP with 3 days of severe left eye pain that is worse on eye movement and radiates to her jaw. The eye is violet and tender. Visual acuity is 6/12 in the left eye. Her temperature is 36.9°C, pulse rate 80 bpm and BP 128/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Prescribe chloramphenicol and review in 1 week",
+    "Refer routinely to ophthalmology",
+    "Refer to ophthalmology for same-day assessment",
+    "Request an orbital ultrasound in 2 weeks",
+    "Start topical prednisolone drops"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step for suspected scleritis in primary care."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rheumatoid arthritis",
+      "worse on eye movement",
+      "violet and tender",
+      "6/12"
+     ],
+     "x": "Classic scleritis with reduced vision in RA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Same-day ophthalmology assessment**: it is an emergency."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Chloramphenicol treats bacterial conjunctivitis and delays care."
+      ],
+      [
+       1,
+       "Routine referral is too slow."
+      ],
+      [
+       3,
+       "Imaging is specialist-led and a 2 week wait is unsafe."
+      ],
+      [
+       4,
+       "Topical steroids should not be started by the GP for a red eye."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Same-day ophthalmology.** Rule: suspected scleritis = eye casualty today."
+    }
+   ],
+   "e": "Scleritis is an ophthalmological emergency needing same-day assessment; routine referral or GP drops delay sight-saving treatment."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 44 year old man is seen in eye casualty with scleritis of the right eye. He has no known medical history. He reports recent sinus problems and joint aches. The ophthalmologist wants to identify an underlying cause.",
+   "labs": [
+    [
+     "ESR",
+     "74 mm/h",
+     "<20",
+     "H"
+    ],
+    [
+     "CRP",
+     "56 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "88 µmol/L",
+     "60–110",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Autoimmune screen including ANCA, RF and ANA",
+    "Conjunctival swab",
+    "CT head",
+    "Fluorescein angiography",
+    "Intraocular pressure measurement"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation for the underlying cause of scleritis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no known medical history",
+      "sinus problems and joint aches",
+      "identify an underlying cause"
+     ],
+     "x": "Scleritis is often a manifestation of **systemic autoimmune or vasculitic disease**; sinus symptoms hint at GPA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**ESR/CRP and an autoimmune screen** (ANCA, RF, ANA)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "A swab looks for infective conjunctivitis."
+      ],
+      [
+       2,
+       "CT head does not find the systemic cause."
+      ],
+      [
+       3,
+       "Fluorescein angiography images the retina, e.g. in diabetic eye disease."
+      ],
+      [
+       4,
+       "Pressure is measured for glaucoma, not to find the cause of scleritis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Autoimmune screen.** Rule: new scleritis = look for RA, vasculitis, SLE."
+    }
+   ],
+   "e": "Bloods in scleritis are ESR/CRP and an autoimmune screen to find the systemic disease (here possible GPA). The other tests do not identify the cause."
+  },
+  {
+   "d": "management",
+   "stem": "A 49 year old woman with rheumatoid arthritis is diagnosed with diffuse anterior scleritis in eye casualty. There is no scleral thinning or necrosis and her vision is 6/9. She has no history of peptic ulcer, asthma or kidney disease. Her pulse rate is 76 bpm and BP 124/76 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial treatment?",
+   "o": [
+    "Intravenous methylprednisolone",
+    "Oral aciclovir",
+    "Oral flurbiprofen",
+    "Topical chloramphenicol",
+    "Topical timolol"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial treatment: grade the severity first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no scleral thinning or necrosis",
+      "vision is 6/9",
+      "no history of peptic ulcer, asthma or kidney disease"
+     ],
+     "x": "Non-necrotising with good vision = **milder** disease, and NSAIDs are safe."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Oral flurbiprofen** 100 mg TDS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "IV methylprednisolone is for severe or necrotising disease."
+      ],
+      [
+       1,
+       "Aciclovir is for herpes zoster ophthalmicus."
+      ],
+      [
+       3,
+       "Chloramphenicol is for bacterial conjunctivitis."
+      ],
+      [
+       4,
+       "Timolol lowers pressure in glaucoma."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Oral flurbiprofen.** Rule: mild scleritis = systemic NSAID."
+    }
+   ],
+   "e": "Milder, non-necrotising scleritis is treated with a systemic NSAID such as flurbiprofen 100 mg TDS; steroids are reserved for severe disease."
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man with granulomatosis with polyangiitis has necrotising scleritis of the left eye. There is an avascular area of sclera and his vision has fallen to 6/36. His pain is not controlled by oral NSAIDs. His temperature is 37.1°C, pulse rate 88 bpm and BP 142/84 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Increase NSAID dose",
+    "Oral doxycycline",
+    "Pulsed intravenous methylprednisolone",
+    "Topical dexamethasone alone",
+    "Topical phenylephrine"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of severe, necrotising scleritis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "necrotising scleritis",
+      "avascular area of sclera",
+      "fallen to 6/36",
+      "not controlled by oral NSAIDs"
+     ],
+     "x": "Necrosis, falling vision and NSAID failure = **severe** disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Systemic steroids: **pulsed IV methylprednisolone**, then oral prednisolone, plus immunosuppression for GPA."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "NSAIDs have already failed and will not stop necrosis."
+      ],
+      [
+       1,
+       "Doxycycline is used in ocular rosacea and blepharitis."
+      ],
+      [
+       3,
+       "Topical steroids do not control deep scleral necrosis."
+      ],
+      [
+       4,
+       "Phenylephrine is a diagnostic test."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Pulsed IV methylprednisolone.** Rule: severe or necrotising = systemic steroids."
+    }
+   ],
+   "e": "Severe necrotising scleritis needs systemic steroids, often pulsed IV methylprednisolone, with immunosuppressants for the underlying vasculitis."
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old woman with rheumatoid arthritis has recurrent scleritis. Each episode has needed oral prednisolone, and symptoms return when the dose is reduced below 15 mg daily. Her rheumatoid arthritis is also active.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Long-term topical NSAID drops",
+    "Steroid-sparing immunosuppressant under specialist care",
+    "Stop all treatment and observe",
+    "Topical antibiotic prophylaxis",
+    "Topical phenylephrine as needed"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step for steroid-dependent scleritis with active underlying disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "recurrent scleritis",
+      "symptoms return when the dose is reduced",
+      "rheumatoid arthritis is also active"
+     ],
+     "x": "Steroid-dependent disease with active RA: treat the **underlying autoimmune disease**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Immunosuppressant** (steroid-sparing) under specialist care."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Topical NSAIDs do not control systemic scleritis."
+      ],
+      [
+       2,
+       "Stopping treatment risks necrosis and vision loss."
+      ],
+      [
+       3,
+       "There is no infection to prevent."
+      ],
+      [
+       4,
+       "Phenylephrine is a diagnostic test, not a treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Immunosuppressant under specialist care.** Rule: underlying autoimmune disease = specialist immunosuppression."
+    }
+   ],
+   "e": "When scleritis is driven by active autoimmune disease and is steroid-dependent, specialist immunosuppression (e.g. methotrexate, rituximab) is added."
+  },
+  {
+   "d": "science",
+   "stem": "A 47 year old woman has a severely painful red eye that is worse on eye movement. Topical phenylephrine 10% is instilled and, after 15 minutes, the deep red-violet colour is unchanged.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely explanation for this finding?",
+   "o": [
+    "Inflammation of the conjunctival vessels",
+    "Inflammation of the deep scleral vascular plexus",
+    "Phenylephrine-induced vasodilation",
+    "Raised intraocular pressure",
+    "Subconjunctival bleeding"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Explain the failed blanching (mechanism)."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "worse on eye movement",
+      "phenylephrine 10%",
+      "deep red-violet colour is unchanged"
+     ],
+     "x": "Severe pain on movement + no blanching = scleritis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Scleritis involves the **deeper vascular plexus**, which phenylephrine does not constrict."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Conjunctival vessels are superficial and would blanch."
+      ],
+      [
+       2,
+       "Phenylephrine is an alpha-agonist and constricts vessels."
+      ],
+      [
+       3,
+       "Raised pressure is glaucoma and does not explain non-blanching."
+      ],
+      [
+       4,
+       "Subconjunctival haemorrhage is painless and bright red, not a violet, painful eye."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Deep scleral plexus inflammation.** Rule: superficial vessels blanch; deep vessels do not."
+    }
+   ],
+   "e": "Phenylephrine constricts superficial (episcleral/conjunctival) vessels; scleritis involves the deep vascular plexus, so redness persists."
+  }
+ ]
+}

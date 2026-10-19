@@ -1,0 +1,2280 @@
+{
+ "id": "hyperosmolar-hyperglycaemic-state",
+ "patient": {
+  "name": "Doreen Campbell",
+  "age": 79,
+  "sex": "F",
+  "setting": "Emergency Department",
+  "complaint": "Found by her daughter drowsy and confused after 4 days of feeling unwell",
+  "background": [
+   "Type 2 diabetes on metformin and gliclazide",
+   "Burning on passing urine for a week",
+   "Takes furosemide for ankle swelling",
+   "Lives alone in Croydon"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an older type 2 diabetic, confused and dry, glucose above 30 and osmolality above 320 but a near-normal pH: the absence of acidosis is what separates HHS from DKA.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Doreen, 79, **type 2 diabetes**.",
+      "Days of **thirst and passing lots of urine**, then drowsy.",
+      "Dysuria for a week; barely drinking.",
+      "Very dry tongue, sunken eyes; responds to voice."
+     ],
+     "vitals": {
+      "T": "38.1°C",
+      "HR": "118 bpm",
+      "BP": "92/54 mmHg",
+      "RR": "20 /min",
+      "SpO2": "96% on air",
+      "GCS": "12",
+      "CBG": "HI"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Doreen's confusion, **reduced GCS**, dry mucous membranes, hypotension and tachycardia are all **profound volume depletion**."
+    },
+    {
+     "type": "labs",
+     "title": "First bloods",
+     "rows": [
+      [
+       "Glucose (lab)",
+       "46 mmol/L",
+       "4.0–7.8",
+       "H"
+      ],
+      [
+       "Sodium",
+       "154 mmol/L",
+       "135–145",
+       "H"
+      ],
+      [
+       "Urea",
+       "22 mmol/L",
+       "2.5–7.8",
+       "H"
+      ],
+      [
+       "Venous pH",
+       "7.36",
+       "7.35–7.45",
+       ""
+      ],
+      [
+       "Bicarbonate",
+       "22 mmol/L",
+       "22–29",
+       ""
+      ],
+      [
+       "Blood ketones",
+       "0.6 mmol/L",
+       "<0.6",
+       ""
+      ]
+     ],
+     "text": "Huge glucose, high sodium and urea, but **pH and bicarbonate normal** and ketones minimal."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Doreen meets the triad: glucose **above 30**, osmolality **above 320** and volume depletion, with pH above 7.3 and HCO3 above 15."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Doreen's serum osmolality",
+      "min": 270,
+      "max": 400,
+      "unit": "mOsm/kg",
+      "bands": [
+       [
+        270,
+        295,
+        "normal 275–295",
+        "ok"
+       ],
+       [
+        295,
+        320,
+        "raised",
+        "warn"
+       ],
+       [
+        320,
+        400,
+        "HHS range (>320)",
+        "bad"
+       ]
+      ],
+      "value": 376,
+      "label": "Doreen 376",
+      "caption": "(2 × 154) + 46 + 22 = 376: far above the 320 cut-off."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Doreen has the classic triggers: an **infection** (urinary), **dehydration** and a **diuretic** (furosemide)."
+    },
+    {
+     "type": "ask",
+     "q": "Doreen's glucose is 46 with pH 7.36 and ketones 0.6. Which is most likely?",
+     "o": [
+      "Diabetic ketoacidosis",
+      "Hyperosmolar hyperglycaemic state",
+      "Lactic acidosis from metformin",
+      "Sepsis without a metabolic emergency"
+     ],
+     "r": "Glucose above 30 and osmolality above 320 **without acidosis** is HHS. DKA needs ketones above 3 and acidosis.",
+     "a": 1
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Doreen's **normal pH** is the single result that makes this HHS rather than DKA."
+    },
+    {
+     "type": "compare",
+     "title": "HHS vs DKA",
+     "head": [
+      "Feature",
+      "HHS",
+      "DKA"
+     ],
+     "rows": [
+      [
+       "Typical patient",
+       "Older, **type 2**",
+       "Younger, type 1"
+      ],
+      [
+       "Onset",
+       "Days to weeks",
+       "Hours to a day"
+      ],
+      [
+       "Glucose",
+       "**>30 mmol/L**",
+       ">11 mmol/L"
+      ],
+      [
+       "Ketones / pH",
+       "Minimal; **pH >7.3**",
+       ">3 mmol/L; pH <7.3"
+      ],
+      [
+       "Osmolality",
+       "**>320 mOsm/kg**",
+       "Variable"
+      ],
+      [
+       "Main threat",
+       "Dehydration, thrombosis",
+       "Acidosis, hyperkalaemia"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Two dangers lie ahead for Doreen: **cerebral oedema** if she is corrected too fast, and **thrombosis** from her thick, hyperosmolar blood."
+    },
+    {
+     "type": "trap",
+     "text": "A 'mildly raised' ketone of 0.6 to 1 does not make it DKA. HHS allows minimal ketones; DKA needs ketonaemia above 3 with acidosis."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' (glucose, osmolality, ketones and a venous gas) or a calculation of osmolality from sodium, glucose and urea.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Doreen's glucose is **46** and her calculated osmolality **376**; ketones and pH confirm there is **no significant acidosis**."
+    },
+    {
+     "type": "pearl",
+     "text": "Calculated osmolality = **(2 × Na) + glucose + urea**. Doreen: (2 × 154) + 46 + 22 = 376 mOsm/kg."
+    },
+    {
+     "type": "ask",
+     "q": "Which set of tests should Doreen have straight away?",
+     "o": [
+      "CT head and lumbar puncture",
+      "HbA1c and lipid profile",
+      "Thyroid function and cortisol",
+      "U&Es, venous gas, FBC and CRP"
+     ],
+     "r": "**U&Es, VBG and FBC/CRP** assess electrolytes, acid-base and the infective trigger. HbA1c helps later, not now.",
+     "a": 3
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Doreen's tests look for the **trigger**: her CRP of 168 and WCC of 15 fit the urinary infection."
+    },
+    {
+     "type": "labs",
+     "title": "Trigger and complications screen",
+     "rows": [
+      [
+       "Potassium",
+       "4.9 mmol/L",
+       "3.5–5.3",
+       ""
+      ],
+      [
+       "Creatinine",
+       "212 µmol/L",
+       "45–90",
+       "H"
+      ],
+      [
+       "WCC",
+       "15.2 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "CRP",
+       "168 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "Urine dipstick",
+       "Nitrites +, leucocytes +++",
+       "Negative",
+       ""
+      ]
+     ],
+     "text": "Pre-renal AKI from dehydration and a **urinary infection** as the trigger. Also do an ECG and blood cultures."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Doreen's venous pH",
+      "min": 7.0,
+      "max": 7.6,
+      "unit": "",
+      "bands": [
+       [
+        7.0,
+        7.3,
+        "acidosis: think DKA",
+        "bad"
+       ],
+       [
+        7.3,
+        7.35,
+        "mild",
+        "warn"
+       ],
+       [
+        7.35,
+        7.45,
+        "normal",
+        "ok"
+       ],
+       [
+        7.45,
+        7.6,
+        "alkalosis",
+        "warn"
+       ]
+      ],
+      "value": 7.36,
+      "label": "Doreen 7.36",
+      "caption": "Above 7.3: no significant acidosis, so HHS, not DKA."
+     }
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (IV 0.9% saline, before insulin) or 'next step' questions on low-dose insulin, potassium or a falling GCS from cerebral oedema.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "What does Doreen get first?",
+     "o": [
+      "Intravenous 0.9% sodium chloride",
+      "Intravenous 10% glucose",
+      "Intravenous insulin 0.1 units/kg/hour",
+      "Intravenous sodium bicarbonate"
+     ],
+     "r": "**IV 0.9% saline first**: fluids alone lower glucose and osmolality. Insulin comes later, at a low dose.",
+     "a": 0
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Doreen gets **1 litre of 0.9% saline over 1 to 2 hours**, then more. Fluids come **before insulin**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Doreen's first 24 hours",
+      "x": [
+       "0 h",
+       "4 h",
+       "8 h",
+       "12 h",
+       "24 h"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Glucose (mmol/L)",
+        "values": [
+         46,
+         34,
+         27,
+         22,
+         15
+        ]
+       },
+       {
+        "name": "Osmolality ÷ 10 (mOsm/kg)",
+        "values": [
+         37.6,
+         36.2,
+         34.9,
+         33.6,
+         30.0
+        ]
+       }
+      ],
+      "caption": "Osmolality 376 → 300 over 24 hours (about 3 per hour): a slow, safe fall. Glucose falls under 5 mmol/L per hour."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Once Doreen is resuscitated and her glucose stops falling with fluids, **low-dose IV insulin** starts; her **potassium** is checked and replaced."
+    },
+    {
+     "type": "flow",
+     "title": "Doreen's HHS pathway",
+     "nodes": [
+      "IV 0.9% saline, 1 L over 1–2 h, then continue",
+      "Monitor glucose, osmolality, sodium, potassium hourly",
+      "Low-dose IV insulin once fluid-resuscitated",
+      "Replace potassium; prophylactic LMWH",
+      "Treat the trigger: antibiotics for her UTI"
+     ],
+     "caption": "Slow and steady: the aim is gradual correction, not speed."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Doreen's **UTI** is treated with antibiotics. Her correction stays **gradual**; a falling GCS would mean calling ITU about **mannitol**."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Doreen's plan follows the **JBDS HHS guideline**: fluids first, low-dose insulin, gradual correction, VTE prophylaxis."
+    },
+    {
+     "type": "trap",
+     "text": "Do not start insulin first or at the DKA rate. Insulin before fluids drives glucose and water into cells and can cause **circulatory collapse**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why there is no ketosis (relative insulin deficiency), why dehydration is so severe (osmotic diuresis), why rapid correction causes cerebral oedema, or why thrombosis risk is high.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Doreen still makes **some insulin**: enough to stop lipolysis and ketones, not enough to control her glucose."
+    },
+    {
+     "type": "ask",
+     "q": "Why does Doreen have no significant ketoacidosis?",
+     "o": [
+      "Her kidneys excrete all the ketones",
+      "Metformin blocks ketone production",
+      "Relative insulin deficiency still suppresses lipolysis",
+      "Type 2 diabetics cannot make ketones"
+     ],
+     "r": "**Relative, not absolute,** insulin deficiency: a little insulin switches off ketogenesis. DKA is near-absolute deficiency.",
+     "a": 2
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Doreen's glucose spilled into her urine, pulling water with it (**osmotic diuresis**). Dehydration then cut her kidney function, raising glucose further."
+    },
+    {
+     "type": "flow",
+     "title": "The vicious cycle",
+     "nodes": [
+      "High glucose",
+      "Osmotic diuresis: water lost in urine",
+      "Dehydration and hypovolaemia",
+      "Pre-renal AKI: less glucose excreted",
+      "Glucose climbs higher"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Over days, water left Doreen's brain cells. If her osmolality fell fast, water would rush back in: **cerebral oedema**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Doreen's thick, hyperosmolar blood raises her risk of **stroke, MI and VTE**, so she gets prophylactic heparin."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Safe rate of osmolality fall",
+      "min": 0,
+      "max": 20,
+      "unit": "mOsm/kg per hour",
+      "bands": [
+       [
+        0,
+        3,
+        "too slow",
+        "warn"
+       ],
+       [
+        3,
+        8,
+        "target 3–8",
+        "ok"
+       ],
+       [
+        8,
+        20,
+        "too fast: cerebral oedema risk",
+        "bad"
+       ]
+      ],
+      "value": 3.2,
+      "label": "Doreen 3.2",
+      "caption": "JBDS target is a fall of 3 to 8 mOsm/kg per hour."
+     }
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "HHS typically occurs in which patients?",
+   "o": [
+    "Children with new diabetes",
+    "Pregnant women",
+    "Type 1 diabetes",
+    "Type 2 diabetes"
+   ],
+   "r": "HHS is a **type 2** emergency, usually in older people.",
+   "a": 3
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which glucose cut-off is in the HHS triad?",
+   "o": [
+    "Above 11 mmol/L",
+    "Above 15 mmol/L",
+    "Above 20 mmol/L",
+    "Above 30 mmol/L"
+   ],
+   "r": "Glucose **above 30 mmol/L**, with osmolality above 320.",
+   "a": 3
+  },
+  {
+   "d": "diagnosis",
+   "q": "What separates HHS from DKA?",
+   "o": [
+    "Absence of significant acidosis",
+    "Degree of dehydration",
+    "Glucose above 20",
+    "Presence of confusion"
+   ],
+   "r": "HHS has **no significant ketoacidosis** (pH above 7.3, HCO3 above 15).",
+   "a": 0
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which complication follows over-rapid correction?",
+   "o": [
+    "Cerebral oedema",
+    "Hyperkalaemia",
+    "Pancreatitis",
+    "Pulmonary fibrosis"
+   ],
+   "r": "Rapid osmolality fall shifts water into brain cells: **cerebral oedema**.",
+   "a": 0
+  },
+  {
+   "d": "investigation",
+   "q": "How is serum osmolality estimated?",
+   "o": [
+    "(2 × Na) + glucose + urea",
+    "(2 × Na) − glucose",
+    "Na + Cl + HCO3",
+    "Na + K + glucose"
+   ],
+   "r": "**(2 × Na) + glucose + urea**.",
+   "a": 0
+  },
+  {
+   "d": "investigation",
+   "q": "Which osmolality cut-off is in the HHS triad?",
+   "o": [
+    "Above 280 mOsm/kg",
+    "Above 295 mOsm/kg",
+    "Above 320 mOsm/kg",
+    "Above 400 mOsm/kg"
+   ],
+   "r": "Osmolality **above 320 mOsm/kg**.",
+   "a": 2
+  },
+  {
+   "d": "management",
+   "q": "What is given first in HHS?",
+   "o": [
+    "IV 0.9% saline",
+    "IV bicarbonate",
+    "IV insulin",
+    "Subcutaneous insulin"
+   ],
+   "r": "**Fluids before insulin**.",
+   "a": 0
+  },
+  {
+   "d": "management",
+   "q": "Cerebral oedema develops during treatment. What next?",
+   "o": [
+    "Contact ITU about mannitol and hypertonic saline",
+    "Give more 0.9% saline faster",
+    "Increase the insulin rate",
+    "Lumbar puncture"
+   ],
+   "r": "Call **ITU** regarding mannitol infusion and hypertonic saline.",
+   "a": 0
+  },
+  {
+   "d": "science",
+   "q": "Why is there no significant ketosis in HHS?",
+   "o": [
+    "Absolute insulin deficiency",
+    "Excess glucagon",
+    "Relative insulin deficiency",
+    "Renal ketone loss"
+   ],
+   "r": "Enough insulin remains to **suppress lipolysis and ketogenesis**.",
+   "a": 2
+  },
+  {
+   "d": "science",
+   "q": "Why is dehydration so profound in HHS?",
+   "o": [
+    "Diarrhoea",
+    "Excess ADH",
+    "Osmotic diuresis",
+    "Vomiting from ketones"
+   ],
+   "r": "Glucose in the urine drags water: **osmotic diuresis**.",
+   "a": 2
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "An 82 year old man with type 2 diabetes is brought from his care home with a 5 day history of increasing drowsiness and reduced fluid intake. He has a cough. His mucous membranes are dry. His temperature is 37.9°C, pulse rate 116 bpm, BP 88/52 mmHg and respiratory rate 20 breaths per minute.",
+   "labs": [
+    [
+     "Glucose",
+     "52 mmol/L",
+     "4.0–7.8",
+     "H"
+    ],
+    [
+     "Sodium",
+     "151 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Urea",
+     "24 mmol/L",
+     "2.5–7.8",
+     "H"
+    ],
+    [
+     "Venous pH",
+     "7.34",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "Bicarbonate",
+     "20 mmol/L",
+     "22–29",
+     "L"
+    ],
+    [
+     "Blood ketones",
+     "0.8 mmol/L",
+     "<0.6",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Addisonian crisis",
+    "Diabetic ketoacidosis",
+    "Hyperosmolar hyperglycaemic state",
+    "Hypoglycaemia",
+    "Ischaemic stroke"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question: hyperglycaemic emergency, so DKA or HHS?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "5 day history",
+      "dry",
+      "BP 88/52 mmHg"
+     ],
+     "x": "Older type 2 diabetic, slow onset over days, severely dry and shocked."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Glucose 52, osmolality (2 × 151) + 52 + 24 = 378, pH 7.34, ketones minimal: **HHS**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Low sodium and high potassium; sodium is high here."
+      ],
+      [
+       1,
+       "Needs ketones above 3 and pH below 7.3; both are near normal."
+      ],
+      [
+       3,
+       "Glucose is 52."
+      ],
+      [
+       4,
+       "Drowsiness here is explained by hyperosmolality and dehydration."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Hyperosmolar hyperglycaemic state.** pH 7.34 and ketones 0.8 = no significant acidosis."
+    }
+   ],
+   "a": 2
+  },
+  {
+   "d": "investigation",
+   "stem": "A 76 year old woman with type 2 diabetes is confused and dehydrated after a week of diarrhoea. Her capillary glucose reads 'HI'. Her pulse rate is 110 bpm and BP 96/58 mmHg. Her venous pH is 7.37 and blood ketones are 0.4 mmol/L.",
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Blood cultures",
+    "CT head",
+    "HbA1c",
+    "Serum osmolality",
+    "Urine culture"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnostic test question: which result completes the triad?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "confused and dehydrated",
+      "venous pH is 7.37",
+      "blood ketones are 0.4 mmol/L"
+     ],
+     "x": "Very high glucose, no acidosis, no ketones: likely HHS."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Confirm hyperosmolality: **serum osmolality above 320** (measured or calculated)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Look for a trigger; do not make the diagnosis."
+      ],
+      [
+       1,
+       "Confusion is explained metabolically; not the confirmatory test."
+      ],
+      [
+       2,
+       "Reflects 3 months of control, not the acute state."
+      ],
+      [
+       4,
+       "Looks for a trigger; she has diarrhoea, not urinary symptoms."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Serum osmolality.** Glucose >30 + osmolality >320 + no acidosis = HHS."
+    }
+   ],
+   "a": 3,
+   "labs": []
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old man with HHS has received 3 litres of intravenous 0.9% saline over 6 hours. His glucose has fallen from 48 to 30 mmol/L and his osmolality is falling steadily. His pulse rate is 94 bpm and BP 122/70 mmHg.",
+   "labs": [
+    [
+     "Potassium",
+     "3.1 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Sodium",
+     "150 mmol/L",
+     "135–145",
+     "H"
+    ]
+   ],
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Add potassium chloride to the intravenous fluids",
+    "Give intravenous sodium bicarbonate",
+    "Start intravenous insulin at 0.1 units/kg/hour",
+    "Stop intravenous fluids",
+    "Switch to intravenous 5% glucose"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step: what is wrong right now?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 litres of intravenous 0.9% saline",
+      "falling steadily"
+     ],
+     "x": "Fluids are working, but potassium is **3.1**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Electrolytes, particularly **potassium**, must be corrected alongside fluids."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "There is no acidosis in HHS."
+      ],
+      [
+       2,
+       "Glucose is still falling with fluids; and 0.1 is the DKA rate. Insulin would also drop potassium further."
+      ],
+      [
+       3,
+       "He is still hyperosmolar and needs ongoing fluids."
+      ],
+      [
+       4,
+       "Only once glucose falls below about 14 mmol/L."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Add potassium chloride to the intravenous fluids.** Correct potassium alongside."
+    }
+   ],
+   "a": 0
+  },
+  {
+   "d": "science",
+   "stem": "An 80 year old woman with type 2 diabetes has a 10 day history of polyuria and thirst, followed by confusion. Her glucose is 50 mmol/L, sodium 152 mmol/L and urea 26 mmol/L. Her pulse rate is 120 bpm and BP 86/50 mmHg.",
+   "q": "Which is the most likely mechanism of her severe dehydration?",
+   "o": [
+    "Diarrhoea from metformin",
+    "Excess antidiuretic hormone",
+    "Osmotic diuresis from glycosuria",
+    "Third-space fluid loss into the gut",
+    "Vomiting from ketosis"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why is she so dry?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "polyuria and thirst",
+      "glucose is 50 mmol/L"
+     ],
+     "x": "Polyuria came first, then dehydration."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Glucose in the urine drags water: **osmotic diuresis**, a self-reinforcing cycle."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No diarrhoea in the history."
+      ],
+      [
+       1,
+       "Would retain water and lower sodium."
+      ],
+      [
+       3,
+       "Seen in obstruction or pancreatitis, not here."
+      ],
+      [
+       4,
+       "HHS has minimal ketones."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Osmotic diuresis from glycosuria.** Hyperglycaemia → polyuria → dehydration."
+    }
+   ],
+   "a": 2,
+   "labs": []
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 77 year old woman with type 2 diabetes has a 6 day history of thirst, polyuria and increasing confusion. She has had dysuria. Her mucous membranes are dry. Her temperature is 37.8°C, pulse rate 114 bpm, BP 94/56 mmHg and respiratory rate 18 breaths per minute.",
+   "labs": [
+    [
+     "Glucose",
+     "44 mmol/L",
+     "4.0–7.8",
+     "H"
+    ],
+    [
+     "Sodium",
+     "150 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Urea",
+     "20 mmol/L",
+     "2.5–7.8",
+     "H"
+    ],
+    [
+     "Venous pH",
+     "7.35",
+     "7.35–7.45",
+     ""
+    ],
+    [
+     "Blood ketones",
+     "0.5 mmol/L",
+     "<0.6",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Diabetic ketoacidosis",
+    "Hyperosmolar hyperglycaemic state",
+    "Hypoglycaemia",
+    "Lactic acidosis",
+    "Uraemic encephalopathy"
+   ],
+   "e": "Glucose 44, calculated osmolality (2 × 150) + 44 + 20 = 364, normal pH and no ketones in an older type 2 diabetic: HHS. DKA needs ketones above 3 and acidosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: hyperglycaemic emergency, so check ketones and pH."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "6 day history",
+      "dysuria",
+      "dry"
+     ],
+     "x": "Older type 2, slow onset, urinary trigger, dehydrated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Glucose above 30, osmolality 364, no acidosis: **HHS**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "pH and ketones are normal."
+      ],
+      [
+       2,
+       "Glucose is 44."
+      ],
+      [
+       3,
+       "pH is normal."
+      ],
+      [
+       4,
+       "Urea of 20 is pre-renal; the hyperosmolality explains the confusion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Hyperosmolar hyperglycaemic state.** Glucose >30, osmolality >320, no acidosis."
+    }
+   ],
+   "a": 1,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 84 year old man with type 2 diabetes on metformin is found drowsy at home. He has had a burning sensation passing urine and offensive urine for 5 days. His temperature is 38.4°C, pulse rate 120 bpm and BP 90/54 mmHg. His glucose is 49 mmol/L and osmolality 362 mOsm/kg with no acidosis.",
+   "labs": [
+    [
+     "WCC",
+     "16.4 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "CRP",
+     "190 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely precipitant?",
+   "o": [
+    "Alcohol excess",
+    "Gliclazide overdose",
+    "Hypothyroidism",
+    "Low-carbohydrate diet",
+    "Urinary tract infection"
+   ],
+   "e": "Infection is the commonest trigger of HHS; dysuria, offensive urine, fever and high inflammatory markers point to a UTI. Gliclazide overdose causes hypoglycaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A precipitant question: what tipped him into HHS?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "burning sensation passing urine",
+      "offensive urine",
+      "38.4°C"
+     ],
+     "x": "HHS (glucose 49, osmolality 362, no acidosis) with urinary symptoms and fever."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urinary tract infection**: infection is the classic trigger."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Causes alcoholic ketoacidosis or hypoglycaemia."
+      ],
+      [
+       1,
+       "Causes hypoglycaemia, not hyperglycaemia."
+      ],
+      [
+       2,
+       "Not a trigger of HHS."
+      ],
+      [
+       3,
+       "Lowers glucose; may cause ketosis, not HHS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Urinary tract infection.** Triggers: infection, dehydration, steroids, diuretics."
+    }
+   ],
+   "a": 4,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old man with type 2 diabetes was started on a high-dose oral medicine for an exacerbation of COPD 6 days ago. He is now confused and very thirsty. His pulse rate is 108 bpm and BP 102/60 mmHg. His glucose is 41 mmol/L, osmolality 338 mOsm/kg and pH 7.37.",
+   "q": "Which drug most likely precipitated his condition?",
+   "o": [
+    "Amlodipine",
+    "Atorvastatin",
+    "Bisoprolol",
+    "Levothyroxine",
+    "Prednisolone"
+   ],
+   "e": "Steroids raise glucose through insulin resistance and gluconeogenesis and are a classic HHS trigger, as are diuretics. A COPD exacerbation is treated with oral prednisolone.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A drug cause question: which drug raises glucose?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "exacerbation of COPD 6 days ago",
+      "very thirsty"
+     ],
+     "x": "HHS (glucose 41, osmolality 338, normal pH) after COPD treatment."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "COPD exacerbation = **oral prednisolone**: steroids trigger HHS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Does not raise glucose meaningfully."
+      ],
+      [
+       1,
+       "Small glucose effect; not an acute trigger."
+      ],
+      [
+       2,
+       "Can mask hypoglycaemia; not an HHS trigger."
+      ],
+      [
+       3,
+       "Not a trigger, and not a COPD treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Prednisolone.** Steroids and diuretics are the drug triggers."
+    }
+   ],
+   "a": 4,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old woman with type 2 diabetes is confused and severely dehydrated. Her pulse rate is 112 bpm and BP 96/60 mmHg. The admitting doctor is deciding between diabetic ketoacidosis and hyperosmolar hyperglycaemic state.",
+   "labs": [
+    [
+     "Glucose",
+     "38 mmol/L",
+     "4.0–7.8",
+     "H"
+    ],
+    [
+     "Venous pH",
+     "7.36",
+     "7.35–7.45",
+     ""
+    ],
+    [
+     "Bicarbonate",
+     "21 mmol/L",
+     "22–29",
+     "L"
+    ],
+    [
+     "Blood ketones",
+     "0.7 mmol/L",
+     "<0.6",
+     "H"
+    ],
+    [
+     "Calculated osmolality",
+     "346 mOsm/kg",
+     "275–295",
+     "H"
+    ]
+   ],
+   "q": "Which finding most strongly supports a diagnosis of hyperosmolar hyperglycaemic state?",
+   "o": [
+    "Absence of significant acidosis",
+    "Confusion",
+    "Glucose above 11 mmol/L",
+    "Hypotension",
+    "Tachycardia"
+   ],
+   "e": "HHS and DKA both cause severe hyperglycaemia and dehydration; the absence of significant acidosis (pH above 7.3, HCO3 above 15, minimal ketones) defines HHS.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A distinguishing-feature question: what is present in one and not the other?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "deciding between diabetic ketoacidosis and hyperosmolar hyperglycaemic state",
+      "severely dehydrated"
+     ],
+     "x": "Both cause confusion, dehydration and high glucose."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**No significant acidosis**: pH 7.36, HCO3 21, ketones 0.7."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Occurs in both."
+      ],
+      [
+       2,
+       "Occurs in both (HHS needs above 30)."
+      ],
+      [
+       3,
+       "Occurs in both from dehydration."
+      ],
+      [
+       4,
+       "Occurs in both."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Absence of significant acidosis.** The one feature that separates HHS from DKA."
+    }
+   ],
+   "a": 0,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 78 year old woman is being treated for HHS. Over the first 6 hours her osmolality has fallen from 370 to 320 mOsm/kg. She now has a headache, vomits and becomes more drowsy. Her pulse rate is 58 bpm and BP 168/94 mmHg. Her sodium and potassium are stable.",
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Central pontine myelinolysis",
+    "Cerebral oedema",
+    "Hypoglycaemia",
+    "Hypokalaemia",
+    "Subarachnoid haemorrhage"
+   ],
+   "e": "A fall of about 8 mOsm/kg per hour is too fast; water shifts into brain cells, causing cerebral oedema with headache, vomiting, drowsiness and a Cushing response.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A complication question: what happened during treatment?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fallen from 370 to 320",
+      "headache, vomits and becomes more drowsy",
+      "pulse rate is 58 bpm and BP 168/94 mmHg"
+     ],
+     "x": "Osmolality fell 50 in 6 hours (over 8 per hour); signs of raised intracranial pressure."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Rapid correction: **cerebral oedema**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Follows rapid sodium correction; her sodium is stable."
+      ],
+      [
+       2,
+       "Not suggested; would not cause bradycardia and hypertension."
+      ],
+      [
+       3,
+       "Causes weakness and arrhythmias, not raised ICP."
+      ],
+      [
+       4,
+       "Sudden thunderclap headache; the timing fits over-rapid correction."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Cerebral oedema.** Correct osmolality gradually (3–8 per hour)."
+    }
+   ],
+   "a": 1,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 81 year old man is on day 3 of treatment for HHS. He has new swelling and pain in his left calf. His pulse rate is 92 bpm and BP 132/78 mmHg. His left calf is 4 cm larger than the right and tender. He was not prescribed heparin on admission.",
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Cellulitis",
+    "Compartment syndrome",
+    "Deep vein thrombosis",
+    "Lymphoedema",
+    "Ruptured Baker's cyst"
+   ],
+   "e": "Hyperosmolar states cause hyperviscosity and predispose to thrombosis (VTE, stroke, MI), which is why prophylactic LMWH is given. A unilateral swollen tender calf is a DVT.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A complication question: link the new sign to HHS."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "day 3 of treatment for HHS",
+      "4 cm larger than the right",
+      "not prescribed heparin"
+     ],
+     "x": "Unilateral swollen tender calf in a hyperosmolar patient with no prophylaxis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "HHS predisposes to **thrombosis**: **DVT**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would show spreading redness and fever."
+      ],
+      [
+       1,
+       "Follows trauma or ischaemia, with severe pain on stretch."
+      ],
+      [
+       3,
+       "Chronic, painless and often bilateral."
+      ],
+      [
+       4,
+       "Needs a known knee cyst; DVT must be excluded first anyway."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Deep vein thrombosis.** Hyperviscosity = thrombosis; give LMWH prophylaxis."
+    }
+   ],
+   "a": 2,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "investigation",
+   "stem": "A 79 year old woman with type 2 diabetes is drowsy and dehydrated. Her pulse rate is 110 bpm and BP 98/60 mmHg. Her venous pH is 7.36.",
+   "labs": [
+    [
+     "Sodium",
+     "150 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Glucose",
+     "40 mmol/L",
+     "4.0–7.8",
+     "H"
+    ],
+    [
+     "Urea",
+     "20 mmol/L",
+     "2.5–7.8",
+     "H"
+    ]
+   ],
+   "q": "What is her calculated serum osmolality?",
+   "o": [
+    "210 mOsm/kg",
+    "290 mOsm/kg",
+    "330 mOsm/kg",
+    "360 mOsm/kg",
+    "400 mOsm/kg"
+   ],
+   "e": "(2 × 150) + 40 + 20 = 360 mOsm/kg, above the 320 cut-off, confirming hyperosmolality.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A calculation: use the formula from the notes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "venous pH is 7.36"
+     ],
+     "x": "Probable HHS; you need the osmolality."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "(2 × 150) + 40 + 20 = **360**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "You forgot to double the sodium."
+      ],
+      [
+       1,
+       "A normal value; you left out glucose and urea partly."
+      ],
+      [
+       2,
+       "Arithmetic error."
+      ],
+      [
+       4,
+       "Too high; you may have doubled glucose."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. 360 mOsm/kg.** (2 × Na) + glucose + urea."
+    }
+   ],
+   "a": 3,
+   "visual": null
+  },
+  {
+   "d": "investigation",
+   "stem": "An 83 year old woman with type 2 diabetes is brought in confused with a capillary glucose of 'HI'. Her temperature is 38.0°C, pulse rate 116 bpm and BP 92/56 mmHg. She is very dry. Hyperosmolar hyperglycaemic state is suspected.",
+   "q": "Which is the most appropriate initial investigation to distinguish it from diabetic ketoacidosis?",
+   "o": [
+    "Blood ketones and venous blood gas",
+    "CT head",
+    "HbA1c",
+    "Serum amylase",
+    "Urine culture"
+   ],
+   "e": "Ketones and a VBG show whether there is significant ketoacidosis; their absence confirms HHS rather than DKA. U&Es and FBC/CRP are sent at the same time.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'distinguish' question: what separates HHS from DKA?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "capillary glucose of 'HI'",
+      "Hyperosmolar hyperglycaemic state is suspected"
+     ],
+     "x": "The difference is acidosis and ketones."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Blood ketones and a venous blood gas**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Does not separate HHS from DKA."
+      ],
+      [
+       2,
+       "Shows long-term control only."
+      ],
+      [
+       3,
+       "For pancreatitis."
+      ],
+      [
+       4,
+       "Looks for the trigger, not the diagnosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Blood ketones and venous blood gas.** No acidosis = HHS."
+    }
+   ],
+   "a": 0,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "An 80 year old man with type 2 diabetes is confused and dehydrated. His pulse rate is 118 bpm, BP 88/50 mmHg and respiratory rate 20 breaths per minute. His glucose is 48 mmol/L, calculated osmolality 368 mOsm/kg, pH 7.36 and blood ketones 0.4 mmol/L.",
+   "labs": [
+    [
+     "Potassium",
+     "4.8 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Creatinine",
+     "190 µmol/L",
+     "60–120",
+     "H"
+    ]
+   ],
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous 0.9% sodium chloride",
+    "Intravenous 5% glucose",
+    "Intravenous fixed-rate insulin",
+    "Intravenous sodium bicarbonate",
+    "Oral rehydration"
+   ],
+   "e": "HHS is treated with IV 0.9% saline first (about 1 litre over 1 to 2 hours), which lowers osmolality and glucose. Insulin is started later at a low dose.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of HHS."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confused and dehydrated",
+      "BP 88/50 mmHg",
+      "pH 7.36"
+     ],
+     "x": "HHS: glucose 48, osmolality 368, no acidosis, shocked."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV 0.9% saline** first, before insulin."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Adds glucose; used only once glucose has fallen."
+      ],
+      [
+       2,
+       "Fluids come before insulin in HHS."
+      ],
+      [
+       3,
+       "There is no acidosis."
+      ],
+      [
+       4,
+       "He is shocked and confused; he needs IV fluid."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Intravenous 0.9% sodium chloride.** Fluids before insulin."
+    }
+   ],
+   "a": 0,
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 75 year old woman with HHS has received 4 litres of intravenous 0.9% saline over 8 hours. She is now well perfused. Her glucose has stopped falling and remains at 32 mmol/L. Her pulse rate is 88 bpm and BP 128/72 mmHg.",
+   "labs": [
+    [
+     "Potassium",
+     "4.4 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Blood ketones",
+     "0.5 mmol/L",
+     "<0.6",
+     ""
+    ]
+   ],
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Intravenous furosemide",
+    "Intravenous insulin at a low fixed rate",
+    "Intravenous sodium bicarbonate",
+    "Oral gliclazide",
+    "Subcutaneous insulin glargine"
+   ],
+   "e": "Once fully fluid-resuscitated and glucose no longer falls with fluids alone, low-dose IV insulin (0.05 units/kg/hour) is started, with potassium monitored.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step: fluids are done, what comes second?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "4 litres",
+      "well perfused",
+      "stopped falling"
+     ],
+     "x": "Resuscitated, potassium fine, glucose plateaued at 32."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Low-dose IV insulin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would worsen dehydration."
+      ],
+      [
+       2,
+       "No acidosis."
+      ],
+      [
+       3,
+       "Too slow for an emergency."
+      ],
+      [
+       4,
+       "Not the acute treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Intravenous insulin at a low fixed rate.** Insulin only after fluids."
+    }
+   ],
+   "a": 1,
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 77 year old man is being treated for HHS with intravenous fluids and insulin. Ten hours in, his osmolality has fallen by 90 mOsm/kg. He becomes increasingly drowsy and his GCS falls from 14 to 9. His pulse rate is 54 bpm and BP 172/96 mmHg.",
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Increase the insulin infusion rate",
+    "Increase the saline infusion rate",
+    "Intensive care review for mannitol and hypertonic saline",
+    "Intravenous dexamethasone",
+    "Lumbar puncture"
+   ],
+   "e": "Over-rapid correction has caused cerebral oedema. Contact ITU regarding mannitol infusion and hypertonic saline. Lumbar puncture is dangerous with raised intracranial pressure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A next-step question: what has happened, and who manages it?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fallen by 90 mOsm/kg",
+      "GCS falls from 14 to 9",
+      "pulse rate is 54 bpm and BP 172/96 mmHg"
+     ],
+     "x": "9 mOsm/kg per hour (too fast) with a falling GCS and Cushing response: **cerebral oedema**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Contact **ITU** about **mannitol** and hypertonic saline."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would lower osmolality even faster."
+      ],
+      [
+       1,
+       "More fluid worsens the osmotic shift."
+      ],
+      [
+       3,
+       "Used for tumour oedema, not osmotic cerebral oedema."
+      ],
+      [
+       4,
+       "Risks coning with raised intracranial pressure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Intensive care review for mannitol and hypertonic saline.**"
+    }
+   ],
+   "a": 2,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "science",
+   "stem": "A 74 year old woman with type 2 diabetes has HHS with a glucose of 45 mmol/L. Her pulse rate is 110 bpm and BP 96/58 mmHg. Her blood ketones are 0.5 mmol/L and venous pH is 7.37. A student asks why she has no ketoacidosis.",
+   "q": "Which is the most likely mechanism?",
+   "o": [
+    "Absolute insulin deficiency",
+    "Excess glucagon secretion",
+    "Increased renal excretion of ketones",
+    "Ketones buffered by plasma bicarbonate",
+    "Relative insulin deficiency suppressing lipolysis"
+   ],
+   "e": "In HHS enough insulin remains to suppress lipolysis and ketogenesis but not enough to control glucose. DKA results from near-absolute insulin deficiency.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why no ketones?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "blood ketones are 0.5 mmol/L"
+     ],
+     "x": "Type 2 diabetics still make some insulin."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Relative insulin deficiency**: enough to block lipolysis and ketogenesis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That causes DKA."
+      ],
+      [
+       1,
+       "Glucagon promotes ketogenesis, not prevents it."
+      ],
+      [
+       2,
+       "Ketones are not being made in the first place."
+      ],
+      [
+       3,
+       "Ketones are minimal, not buffered."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Relative insulin deficiency suppressing lipolysis.**"
+    }
+   ],
+   "a": 4,
+   "labs": [],
+   "visual": null
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is HHS and what is its diagnostic triad, with cut-offs?",
+    "tip": "Exam thinking: all three, plus no acidosis.",
+    "points": [
+     {
+      "p": "Severe complication of type 2 diabetes",
+      "k": [
+       [
+        "type 2",
+        "t2"
+       ]
+      ],
+      "why": "Usually older people."
+     },
+     {
+      "p": "Glucose above 30 mmol/L",
+      "k": [
+       [
+        "glucose",
+        "sugar"
+       ],
+       [
+        "30",
+        "thirty"
+       ]
+      ],
+      "why": "DKA only needs above 11."
+     },
+     {
+      "p": "Serum osmolality above 320 mOsm/kg",
+      "k": [
+       [
+        "osmolality",
+        "osmolarity"
+       ],
+       [
+        "320"
+       ]
+      ],
+      "why": "Calculate it if not measured."
+     },
+     {
+      "p": "Volume depletion",
+      "k": [
+       [
+        "dehydrat",
+        "volume",
+        "hypovol"
+       ]
+      ],
+      "why": "Often 10 litres or more down."
+     },
+     {
+      "p": "No significant ketoacidosis: pH above 7.3, HCO3 above 15",
+      "k": [
+       [
+        "7.3"
+       ],
+       [
+        "15",
+        "hco3",
+        "bicarb"
+       ]
+      ],
+      "why": "This separates it from DKA."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who gets HHS and what triggers it?",
+    "tip": "Exam thinking: find the trigger in the stem.",
+    "points": [
+     {
+      "p": "Type 2 diabetes",
+      "k": [
+       [
+        "type 2",
+        "t2"
+       ]
+      ],
+      "why": "May be the first presentation of diabetes."
+     },
+     {
+      "p": "Infection",
+      "k": [
+       [
+        "infect",
+        "uti",
+        "pneumonia",
+        "sepsis"
+       ]
+      ],
+      "why": "The commonest trigger."
+     },
+     {
+      "p": "Dehydration",
+      "k": [
+       [
+        "dehydrat",
+        "fluid"
+       ]
+      ],
+      "why": "Elderly people who cannot drink enough."
+     },
+     {
+      "p": "Drugs: steroids and diuretics",
+      "k": [
+       [
+        "steroid",
+        "prednisolone",
+        "diuretic",
+        "thiazide",
+        "furosemide"
+       ]
+      ],
+      "why": "Raise glucose or worsen dehydration."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does HHS present?",
+    "tip": "Exam thinking: dehydration and a reduced GCS.",
+    "points": [
+     {
+      "p": "Confusion or altered consciousness; reduced GCS",
+      "k": [
+       [
+        "confus",
+        "conscious",
+        "gcs",
+        "drows"
+       ]
+      ],
+      "why": "Usually develops over days."
+     },
+     {
+      "p": "Severe dehydration: dry mucous membranes",
+      "k": [
+       [
+        "dry",
+        "dehydrat"
+       ]
+      ],
+      "why": "Much more than in DKA."
+     },
+     {
+      "p": "Hypotension and tachycardia",
+      "k": [
+       [
+        "hypotens",
+        "low bp",
+        "tachycard"
+       ]
+      ],
+      "why": "Volume depletion."
+     },
+     {
+      "p": "Polyuria, polydipsia, weakness, seizures",
+      "k": [
+       [
+        "polyuria",
+        "polydipsia",
+        "thirst",
+        "seizure"
+       ]
+      ],
+      "why": "Polyuria comes first."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What separates HHS from DKA?",
+    "tip": "Exam thinking: one feature decides it.",
+    "points": [
+     {
+      "p": "Absence of significant acidosis in HHS",
+      "k": [
+       [
+        "acidosis",
+        "acid",
+        "ph"
+       ]
+      ],
+      "why": "Both have severe hyperglycaemia."
+     },
+     {
+      "p": "Minimal or absent ketones",
+      "k": [
+       [
+        "ketone"
+       ]
+      ],
+      "why": "DKA needs ketones above 3."
+     },
+     {
+      "p": "Diagnosis is clinical and biochemical",
+      "k": [
+       [
+        "clinical",
+        "biochem"
+       ]
+      ],
+      "why": "No imaging makes the diagnosis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of HHS and its treatment?",
+    "tip": "Exam thinking: falling GCS during treatment = cerebral oedema.",
+    "points": [
+     {
+      "p": "Cerebral oedema from rapid correction of osmolality",
+      "k": [
+       [
+        "cerebral oedema",
+        "cerebral edema",
+        "brain swelling"
+       ]
+      ],
+      "why": "Keep the fall to 3–8 mOsm/kg per hour."
+     },
+     {
+      "p": "If it occurs, contact ITU about mannitol and hypertonic saline",
+      "k": [
+       [
+        "mannitol",
+        "hypertonic"
+       ]
+      ],
+      "why": "Do not just speed up the fluids."
+     },
+     {
+      "p": "Thrombosis: stroke, MI, VTE",
+      "k": [
+       [
+        "thromb",
+        "vte",
+        "dvt",
+        "stroke",
+        "mi"
+       ]
+      ],
+      "why": "Hence prophylactic LMWH."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which investigations confirm HHS and look for the trigger?",
+    "tip": "Exam thinking: glucose, osmolality, ketones, gas.",
+    "points": [
+     {
+      "p": "Glucose above 30 and osmolality above 320",
+      "k": [
+       [
+        "glucose"
+       ],
+       [
+        "osmolality",
+        "osmolarity"
+       ]
+      ],
+      "why": "Both are needed."
+     },
+     {
+      "p": "Osmolality = (2 × Na) + glucose + urea",
+      "k": [
+       [
+        "2"
+       ],
+       [
+        "sodium",
+        "na"
+       ],
+       [
+        "urea"
+       ]
+      ],
+      "why": "Know how to calculate it."
+     },
+     {
+      "p": "Ketones minimal, pH normal or mildly low",
+      "k": [
+       [
+        "ketone",
+        "ph"
+       ]
+      ],
+      "why": "Confirms no significant acidosis."
+     },
+     {
+      "p": "U&Es, VBG/ABG, FBC/CRP",
+      "k": [
+       [
+        "u&e",
+        "u+e",
+        "electrolyte",
+        "renal"
+       ],
+       [
+        "gas",
+        "vbg",
+        "abg"
+       ]
+      ],
+      "why": "Electrolytes, acid-base and infection."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the order of treatment in HHS?",
+    "tip": "Exam thinking: fluids before insulin.",
+    "points": [
+     {
+      "p": "IV 0.9% saline first, e.g. 1 litre over 1–2 hours",
+      "k": [
+       [
+        "saline",
+        "0.9",
+        "sodium chloride",
+        "fluid"
+       ]
+      ],
+      "why": "Fluids alone lower glucose and osmolality."
+     },
+     {
+      "p": "Fluids before insulin",
+      "k": [
+       [
+        "before"
+       ]
+      ],
+      "why": "Insulin first can cause collapse."
+     },
+     {
+      "p": "Low-dose IV insulin once fluid-resuscitated",
+      "k": [
+       [
+        "insulin"
+       ],
+       [
+        "low",
+        "0.05",
+        "once",
+        "after"
+       ]
+      ],
+      "why": "0.05 units/kg/hour, half the DKA rate."
+     },
+     {
+      "p": "Correct electrolytes, especially potassium",
+      "k": [
+       [
+        "potassium",
+        "k+",
+        "electrolyte"
+       ]
+      ],
+      "why": "Insulin drives potassium into cells."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What else must be done in the emergency management of HHS?",
+    "tip": "Exam thinking: trigger, speed, brain.",
+    "points": [
+     {
+      "p": "Treat the precipitant: infection, MI, stroke",
+      "k": [
+       [
+        "precipitant",
+        "trigger",
+        "antibiotic",
+        "cause"
+       ]
+      ],
+      "why": "Antibiotics for the UTI or pneumonia."
+     },
+     {
+      "p": "Correct gradually throughout",
+      "k": [
+       [
+        "gradual",
+        "slow"
+       ]
+      ],
+      "why": "Fast correction risks cerebral oedema."
+     },
+     {
+      "p": "Cerebral oedema: contact ITU about mannitol and hypertonic saline",
+      "k": [
+       [
+        "itu",
+        "icu",
+        "intensive",
+        "mannitol"
+       ]
+      ],
+      "why": "Watch for headache and falling GCS."
+     },
+     {
+      "p": "Prophylactic LMWH for thrombosis risk",
+      "k": [
+       [
+        "lmwh",
+        "heparin",
+        "enoxaparin",
+        "dalteparin"
+       ]
+      ],
+      "why": "Standard JBDS practice."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why is there no ketoacidosis, and why is dehydration so severe?",
+    "tip": "Exam thinking: relative insulin deficiency and osmotic diuresis.",
+    "points": [
+     {
+      "p": "Relative, not absolute, insulin deficiency",
+      "k": [
+       [
+        "relative"
+       ]
+      ],
+      "why": "DKA is near-absolute deficiency."
+     },
+     {
+      "p": "Enough insulin to suppress lipolysis and ketogenesis, not hyperglycaemia",
+      "k": [
+       [
+        "lipolysis",
+        "ketogenesis",
+        "ketone"
+       ]
+      ],
+      "why": "Insulin's anti-lipolytic effect needs less insulin."
+     },
+     {
+      "p": "Hyperglycaemia causes an osmotic diuresis",
+      "k": [
+       [
+        "osmotic diuresis",
+        "glycosuria",
+        "osmotic"
+       ]
+      ],
+      "why": "Water follows glucose into the urine."
+     },
+     {
+      "p": "Dehydration causes pre-renal impairment, worsening hyperglycaemia",
+      "k": [
+       [
+        "pre-renal",
+        "prerenal",
+        "renal",
+        "kidney",
+        "cycle"
+       ]
+      ],
+      "why": "A self-reinforcing cycle."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does rapid correction cause cerebral oedema, and why is thrombosis common?",
+    "tip": "Exam thinking: water follows osmolality.",
+    "points": [
+     {
+      "p": "High osmolality draws water out of brain cells",
+      "k": [
+       [
+        "out of",
+        "shrink",
+        "draw"
+       ]
+      ],
+      "why": "Brain cells adapt over days."
+     },
+     {
+      "p": "Rapid correction shifts water back into cells quickly",
+      "k": [
+       [
+        "back",
+        "into",
+        "shift"
+       ]
+      ],
+      "why": "Hence the 3–8 mOsm/kg per hour target."
+     },
+     {
+      "p": "Hyperosmolality causes hyperviscosity and thrombosis",
+      "k": [
+       [
+        "viscos",
+        "thick",
+        "thromb"
+       ]
+      ],
+      "why": "Stroke, MI and VTE."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "HHS": "Hyperosmolar hyperglycaemic state: very high glucose and osmolality with dehydration but no significant acidosis.",
+  "DKA": "Diabetic ketoacidosis: hyperglycaemia, ketones above 3 and acidosis, usually in type 1 diabetes.",
+  "osmolality": "Concentration of dissolved particles in blood; normal 275–295 mOsm/kg.",
+  "serum osmolality": "Measured particle concentration of serum; above 320 mOsm/kg in HHS.",
+  "hyperosmolality": "Abnormally concentrated blood, which pulls water out of cells.",
+  "mOsm/kg": "Milliosmoles per kilogram, the unit of osmolality.",
+  "hyperglycaemia": "High blood glucose.",
+  "ketones": "Acids made from fat breakdown when insulin is very low; minimal in HHS.",
+  "ketoacidosis": "Acidosis caused by ketone accumulation.",
+  "ketogenesis": "Production of ketones in the liver from fatty acids.",
+  "lipolysis": "Breakdown of stored fat into fatty acids; suppressed by small amounts of insulin.",
+  "relative insulin deficiency": "Some insulin is present, but not enough for the body's needs.",
+  "osmotic diuresis": "Loss of water in urine dragged by glucose that the kidneys cannot reabsorb.",
+  "glycosuria": "Glucose in the urine.",
+  "polyuria": "Passing large volumes of urine.",
+  "polydipsia": "Excessive thirst and drinking.",
+  "volume depletion": "Loss of circulating fluid, causing low BP and fast pulse.",
+  "hypovolaemia": "Reduced circulating blood volume.",
+  "pre-renal": "Kidney impairment from poor blood flow to the kidneys, such as dehydration.",
+  "GCS": "Glasgow Coma Scale, 3 to 15; measures conscious level.",
+  "mucous membranes": "Moist linings such as the mouth; dry in dehydration.",
+  "cerebral oedema": "Brain swelling; in HHS caused by water rushing back into brain cells during fast correction.",
+  "mannitol": "Osmotic agent given IV to draw water out of a swollen brain.",
+  "hypertonic saline": "Concentrated saline used to reduce cerebral oedema.",
+  "ITU": "Intensive therapy unit, for patients needing organ support.",
+  "hyperviscosity": "Thickened blood that flows sluggishly and clots more easily.",
+  "thrombosis": "Formation of a blood clot inside a vessel.",
+  "VTE": "Venous thromboembolism: deep vein thrombosis or pulmonary embolism.",
+  "LMWH": "Low molecular weight heparin, given to prevent clots.",
+  "0.9% saline": "Isotonic sodium chloride solution; the first-line fluid in HHS.",
+  "fixed-rate insulin": "IV insulin at a set dose per kg per hour; 0.05 units/kg/hour in HHS.",
+  "U&Es": "Urea and electrolytes: sodium, potassium, urea and creatinine.",
+  "VBG": "Venous blood gas: gives pH, bicarbonate, glucose and potassium quickly.",
+  "ABG": "Arterial blood gas: pH, oxygen, CO2 and bicarbonate from an artery.",
+  "CRP": "C-reactive protein: an inflammatory marker that rises in infection.",
+  "JBDS": "Joint British Diabetes Societies, who publish the UK HHS and DKA guidelines.",
+  "precipitant": "The trigger that tipped the patient into the emergency.",
+  "gliclazide": "Sulfonylurea tablet that lowers glucose by making the pancreas release insulin.",
+  "metformin": "First-line type 2 diabetes tablet; reduces liver glucose output."
+ }
+}

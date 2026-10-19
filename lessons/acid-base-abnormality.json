@@ -1,0 +1,2542 @@
+{
+ "id": "acid-base-abnormality",
+ "patient": {
+  "name": "Niamh Brennan",
+  "age": 23,
+  "sex": "F",
+  "setting": "Emergency Department",
+  "complaint": "Took 60 aspirin tablets 50 minutes ago; ringing in her ears and breathing fast",
+  "background": [
+   "Recent break-up; no previous self-harm",
+   "Takes no regular medicines",
+   "Postgraduate student in Camden",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'What is the most likely acid-base disturbance?' with an ABG and electrolytes: decide acidosis or alkalosis from pH, then whether CO2 or HCO3- is driving it, then calculate the anion gap.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Niamh, 23, swallowed **60 aspirin** 50 minutes ago.",
+      "Ears ringing (**tinnitus**), nauseous, sweaty.",
+      "Breathing fast and deep; feels light-headed.",
+      "Alert and talking."
+     ],
+     "vitals": {
+      "T": "37.4°C",
+      "HR": "112 bpm",
+      "BP": "118/72 mmHg",
+      "RR": "30 /min",
+      "SpO2": "99% on air",
+      "GCS": "15"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Niamh's blood pH is held between **7.35 and 7.45**. Aspirin can push it either way, so read the gas systematically."
+    },
+    {
+     "type": "labs",
+     "title": "ABG on arrival (breathing air)",
+     "rows": [
+      [
+       "pH",
+       "7.51",
+       "7.35–7.45",
+       "H"
+      ],
+      [
+       "PaCO2",
+       "3.0 kPa",
+       "4.7–6.0",
+       "L"
+      ],
+      [
+       "PaO2",
+       "13.8 kPa",
+       "11–13",
+       "H"
+      ],
+      [
+       "HCO3-",
+       "22 mmol/L",
+       "22–26",
+       ""
+      ]
+     ],
+     "text": "High pH with a **low CO2**: the CO2 explains the pH, so it is respiratory."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Early aspirin overdose drives Niamh to **hyperventilate**: a **respiratory alkalosis**, the same pattern as a panic attack, PE or high altitude."
+    },
+    {
+     "type": "flow",
+     "title": "Reading any gas in four steps",
+     "nodes": [
+      "pH: acidosis (<7.35) or alkalosis (>7.45)?",
+      "CO2: does it explain the pH? → respiratory",
+      "HCO3-: does it explain the pH? → metabolic",
+      "Is the other value moving to compensate?",
+      "Metabolic acidosis? → calculate the anion gap"
+     ],
+     "caption": "Never stop at pH: a fully compensated disorder can have a normal pH."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Niamh's only clue was her **breathing pattern**. Interpreting **CO2 and HCO3-** together is what names the disorder."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Six hours later she is drowsy and vomiting.",
+      "Still breathing deeply at 28 /min.",
+      "Repeat gas and electrolytes sent."
+     ],
+     "vitals": {
+      "HR": "120 bpm",
+      "RR": "28 /min",
+      "GCS": "14"
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Repeat ABG at 6 hours",
+     "rows": [
+      [
+       "pH",
+       "7.29",
+       "7.35–7.45",
+       "L"
+      ],
+      [
+       "PaCO2",
+       "3.3 kPa",
+       "4.7–6.0",
+       "L"
+      ],
+      [
+       "HCO3-",
+       "12 mmol/L",
+       "22–26",
+       "L"
+      ],
+      [
+       "Na+",
+       "140 mmol/L",
+       "135–145",
+       ""
+      ],
+      [
+       "K+",
+       "4.0 mmol/L",
+       "3.5–5.3",
+       ""
+      ],
+      [
+       "Cl-",
+       "102 mmol/L",
+       "95–105",
+       ""
+      ]
+     ],
+     "text": "Now low pH and low HCO3-: **metabolic acidosis**, with low CO2 as respiratory compensation."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Niamh's gap is (140 + 4) − (12 + 102) = **30**: raised. **S**alicylates is the last letter of MUDPILES."
+    },
+    {
+     "type": "ask",
+     "q": "Which pattern does Niamh's 6 hour gas show?",
+     "o": [
+      "Metabolic alkalosis",
+      "Mixed respiratory and metabolic acidosis",
+      "Raised anion gap metabolic acidosis",
+      "Respiratory acidosis with renal compensation"
+     ],
+     "r": "Low pH and HCO3-, gap of **30**. Her CO2 is low (compensation), so there is no respiratory acidosis.",
+     "a": 2
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Niamh's anion gap",
+      "min": 0,
+      "max": 40,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        0,
+        10,
+        "low",
+        "warn"
+       ],
+       [
+        10,
+        20,
+        "normal 10–20",
+        "ok"
+       ],
+       [
+        20,
+        40,
+        "raised: MUDPILES",
+        "bad"
+       ]
+      ],
+      "value": 30,
+      "label": "Niamh 30",
+      "caption": "Above 20: extra unmeasured acid (here salicylate and lactate)."
+     }
+    },
+    {
+     "type": "compare",
+     "title": "The four primary disorders",
+     "head": [
+      "Disorder",
+      "pH",
+      "Primary change",
+      "Classic cause"
+     ],
+     "rows": [
+      [
+       "Respiratory acidosis",
+       "Low",
+       "**CO2 high**",
+       "COPD, opioid overdose"
+      ],
+      [
+       "Respiratory alkalosis",
+       "High",
+       "**CO2 low**",
+       "Anxiety, PE, early aspirin"
+      ],
+      [
+       "Metabolic acidosis",
+       "Low",
+       "**HCO3- low**",
+       "DKA, lactate, diarrhoea"
+      ],
+      [
+       "Metabolic alkalosis",
+       "High",
+       "**HCO3- high**",
+       "Vomiting, thiazides"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Niamh breathes fast. A **COPD** patient or someone after a **heroin** overdose does the opposite: CO2 builds up and pH falls."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' (an ABG) or a calculation, such as the anion gap from the electrolytes given.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which test names Niamh's acid-base disorder?",
+     "o": [
+      "Arterial blood gas",
+      "Capillary glucose",
+      "Serum lactate",
+      "Urine pH"
+     ],
+     "r": "The **ABG** gives pH, PaCO2 and HCO3- together, which is what you need to classify the disorder.",
+     "a": 0
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Niamh's two **ABGs** told the story: alkalosis at 50 minutes, acidosis at 6 hours."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Arterial pH",
+      "min": 7.0,
+      "max": 7.7,
+      "unit": "",
+      "bands": [
+       [
+        7.0,
+        7.35,
+        "acidosis",
+        "bad"
+       ],
+       [
+        7.35,
+        7.45,
+        "normal",
+        "ok"
+       ],
+       [
+        7.45,
+        7.7,
+        "alkalosis",
+        "warn"
+       ]
+      ],
+      "value": 7.29,
+      "label": "Niamh 7.29 at 6 h",
+      "caption": "Below 7.35 confirms acidosis. Her first gas, 7.51, sat in the alkalosis band."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "With the pattern known, Niamh needs **targeted tests**: salicylate and paracetamol levels, U&Es, glucose and lactate."
+    },
+    {
+     "type": "labs",
+     "title": "Targeted bloods",
+     "rows": [
+      [
+       "Salicylate",
+       "650 mg/L",
+       "<30",
+       "H"
+      ],
+      [
+       "Paracetamol",
+       "<10 mg/L",
+       "",
+       ""
+      ],
+      [
+       "Lactate",
+       "3.4 mmol/L",
+       "0.5–2.2",
+       "H"
+      ],
+      [
+       "Glucose",
+       "6.1 mmol/L",
+       "4.0–7.8",
+       ""
+      ],
+      [
+       "Creatinine",
+       "88 µmol/L",
+       "45–90",
+       ""
+      ]
+     ],
+     "text": "A salicylate over 500 mg/L is **significant toxicity**. Always check paracetamol in any overdose."
+    },
+    {
+     "type": "pearl",
+     "text": "Anion gap = (Na + K) − (HCO3- + Cl). Normal **10–20 mmol/L**. Above 20 means unmeasured acid: think MUDPILES."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': treat the cause. Know the specific ones: activated charcoal for aspirin, fomepizole for ethylene glycol, NIV for COPD, insulin for DKA.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Niamh's acid-base problem is fixed by treating its **cause**, the salicylate. The same rule gives insulin in DKA and NIV in COPD."
+    },
+    {
+     "type": "ask",
+     "q": "Niamh arrived 50 minutes after taking the tablets. What is the first step?",
+     "o": [
+      "Activated charcoal",
+      "Fomepizole",
+      "Haemodialysis",
+      "Rebreathing bag"
+     ],
+     "r": "**Activated charcoal** decontaminates the gut, ideally within an hour. Bicarbonate comes later for significant toxicity.",
+     "a": 0
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Niamh gets **charcoal** first. Her level of 650 mg/L then justifies **IV sodium bicarbonate** to alkalinise the urine and speed elimination."
+    },
+    {
+     "type": "flow",
+     "title": "Treat the cause",
+     "nodes": [
+      "DKA → insulin",
+      "COPD with high CO2 → controlled oxygen and NIV",
+      "Sepsis or lactate → antibiotics, fluids",
+      "Ethylene glycol → fomepizole",
+      "Aspirin → charcoal, then bicarbonate if severe"
+     ],
+     "caption": "There is no single 'acidosis drug': the answer is always the cause's treatment."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Niamh on treatment",
+      "x": [
+       "50 min",
+       "6 h",
+       "10 h",
+       "16 h",
+       "24 h"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Arterial pH",
+        "values": [
+         7.51,
+         7.29,
+         7.36,
+         7.4,
+         7.41
+        ]
+       }
+      ],
+      "caption": "Alkalosis first, then acidosis at 6 hours. Treating the salicylate (bicarbonate from 6 h) brings pH back to normal."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Niamh needs **IV fluids** and monitoring. If she became comatose or her pH kept falling, she would need **ICU** (and dialysis for salicylate)."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "The **anion gap** and **MUDPILES** guided Niamh's work-up and pointed straight at the salicylate."
+    },
+    {
+     "type": "trap",
+     "text": "A rebreathing bag is not for aspirin overdose. It is only for severe **anxiety** hyperventilation, after breathing techniques fail."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why a patient hyperventilates in metabolic acidosis, why vomiting causes alkalosis, or which mechanism produces a normal or raised anion gap.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Niamh's buffer is **bicarbonate**: her lungs control CO2 within minutes; her kidneys control HCO3- and H+ over days."
+    },
+    {
+     "type": "flow",
+     "title": "The bicarbonate buffer",
+     "nodes": [
+      "CO2 + H2O",
+      "⇌ H2CO3 (carbonic acid)",
+      "⇌ H+ + HCO3-",
+      "Lungs adjust CO2; kidneys adjust HCO3-",
+      "pH follows the HCO3- : CO2 ratio"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Salicylate and lactate are **added acid**, so Niamh's gap rose. Losing bicarbonate in diarrhoea would leave the gap **normal**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Niamh's deep breathing at 6 hours is **compensation**: blowing off CO2 to drag pH back up, like Kussmaul breathing in DKA."
+    },
+    {
+     "type": "ask",
+     "q": "Why did Niamh breathe fast within an hour of the overdose?",
+     "o": [
+      "Direct stimulation of the respiratory centre",
+      "Pain from gastric irritation",
+      "Pulmonary oedema",
+      "Respiratory compensation for a metabolic acidosis"
+     ],
+     "r": "Salicylate **directly stimulates the respiratory centre** early, causing a primary respiratory alkalosis. Compensation came later.",
+     "a": 0
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Niamh blew off too much CO2 (**alveolar hyperventilation**). Opioids or COPD cause the reverse: **hypoventilation** and CO2 retention."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Niamh vomited a little, but prolonged vomiting would lose **HCl** and volume, so the kidneys hold bicarbonate: **metabolic alkalosis**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Niamh's PaCO2 against her HCO3-",
+      "x": [
+       "50 min",
+       "6 h",
+       "24 h"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "PaCO2 (kPa)",
+        "values": [
+         3.0,
+         3.3,
+         5.0
+        ]
+       },
+       {
+        "name": "HCO3- (mmol/L)",
+        "values": [
+         22,
+         12,
+         23
+        ]
+       }
+      ],
+      "caption": "Early: CO2 falls first (primary). At 6 h: HCO3- falls (primary), CO2 stays low (compensation)."
+     }
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the normal range of arterial pH?",
+   "o": [
+    "7.25–7.35",
+    "7.30–7.50",
+    "7.35–7.45",
+    "7.45–7.55"
+   ],
+   "r": "**7.35–7.45**: below is acidosis, above is alkalosis.",
+   "a": 2
+  },
+  {
+   "d": "diagnosis",
+   "q": "Most common cause of respiratory acidosis?",
+   "o": [
+    "Anxiety",
+    "COPD",
+    "Pulmonary embolism",
+    "Vomiting"
+   ],
+   "r": "**COPD**/chronic bronchitis causes CO2 retention.",
+   "a": 1
+  },
+  {
+   "d": "diagnosis",
+   "q": "Most common cause of respiratory alkalosis?",
+   "o": [
+    "COPD",
+    "Diarrhoea",
+    "Hyperventilation from anxiety",
+    "Opioid overdose"
+   ],
+   "r": "**Hyperventilation** (anxiety, panic attacks).",
+   "a": 2
+  },
+  {
+   "d": "diagnosis",
+   "q": "Severe prolonged vomiting causes which disorder?",
+   "o": [
+    "Hyperchloraemic metabolic acidosis",
+    "Hypochloraemic metabolic alkalosis",
+    "Respiratory acidosis",
+    "Respiratory alkalosis"
+   ],
+   "r": "Loss of gastric HCl: **hypochloraemic metabolic alkalosis**.",
+   "a": 1
+  },
+  {
+   "d": "diagnosis",
+   "q": "Severe diarrhoea (e.g. Crohn's) gives which acidosis?",
+   "o": [
+    "Lactic acidosis",
+    "Normal anion gap metabolic acidosis",
+    "Raised anion gap metabolic acidosis",
+    "Respiratory acidosis"
+   ],
+   "r": "Bicarbonate loss: **normal anion gap**, with hypokalaemia.",
+   "a": 1
+  },
+  {
+   "d": "investigation",
+   "q": "What is the normal anion gap?",
+   "o": [
+    "0–5 mmol/L",
+    "10–20 mmol/L",
+    "20–30 mmol/L",
+    "30–40 mmol/L"
+   ],
+   "r": "**10–20 mmol/L** using (Na + K) − (HCO3- + Cl).",
+   "a": 1
+  },
+  {
+   "d": "investigation",
+   "q": "Gold-standard test for an acid-base disorder?",
+   "o": [
+    "Arterial blood gas",
+    "Serum bicarbonate",
+    "Urine pH",
+    "Venous lactate"
+   ],
+   "r": "The **ABG** gives pH, PaCO2 and HCO3- together.",
+   "a": 0
+  },
+  {
+   "d": "management",
+   "q": "Antidote for ethylene glycol poisoning?",
+   "o": [
+    "Acetylcysteine",
+    "Flumazenil",
+    "Fomepizole",
+    "Naloxone"
+   ],
+   "r": "**Fomepizole** blocks alcohol dehydrogenase.",
+   "a": 2
+  },
+  {
+   "d": "management",
+   "q": "First-line step in salicylate poisoning?",
+   "o": [
+    "Activated charcoal",
+    "Fomepizole",
+    "Haemodialysis",
+    "IV insulin"
+   ],
+   "r": "**Activated charcoal**; bicarbonate is for significant toxicity.",
+   "a": 0
+  },
+  {
+   "d": "science",
+   "q": "Why does a patient in metabolic acidosis hyperventilate?",
+   "o": [
+    "To blow off CO2 and raise pH",
+    "To correct hypoxia",
+    "To excrete ketones",
+    "To retain bicarbonate"
+   ],
+   "r": "Respiratory **compensation**: lowering CO2 pushes pH back up.",
+   "a": 0
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 22 year old woman has a 3 day history of profuse watery diarrhoea from a flare of Crohn's disease. She feels weak and dizzy. Her pulse rate is 110 bpm, BP 98/60 mmHg and respiratory rate 24 breaths per minute.",
+   "labs": [
+    [
+     "pH",
+     "7.28",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "3.6 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "14 mmol/L",
+     "22–26",
+     "L"
+    ],
+    [
+     "Na+",
+     "138 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "K+",
+     "3.0 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Cl-",
+     "114 mmol/L",
+     "95–105",
+     "H"
+    ]
+   ],
+   "q": "What is the most likely acid-base disturbance?",
+   "o": [
+    "Hypochloraemic metabolic alkalosis",
+    "Normal anion gap metabolic acidosis",
+    "Raised anion gap metabolic acidosis",
+    "Respiratory acidosis",
+    "Respiratory alkalosis"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An acid-base question: pH, then CO2 or HCO3-, then the gap."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "profuse watery diarrhoea",
+      "Crohn's disease",
+      "respiratory rate 24"
+     ],
+     "x": "Diarrhoea loses bicarbonate. pH 7.28 and HCO3- 14: **metabolic acidosis**; low CO2 is compensation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Gap = (138 + 3) − (14 + 114) = **13**: normal. Normal anion gap metabolic acidosis with low K."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is vomiting; here pH is low and chloride high."
+      ],
+      [
+       2,
+       "The gap is 13, inside 10–20."
+      ],
+      [
+       3,
+       "CO2 is low, not high."
+      ],
+      [
+       4,
+       "pH is low, so it is an acidosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Normal anion gap metabolic acidosis.** Diarrhoea loses HCO3-; the gap stays normal."
+    }
+   ],
+   "a": 1
+  },
+  {
+   "d": "investigation",
+   "stem": "A 45 year old man is brought to the Emergency Department confused and vomiting. His friend says he drank antifreeze 8 hours ago. His pulse rate is 108 bpm, BP 124/78 mmHg and respiratory rate 30 breaths per minute.",
+   "labs": [
+    [
+     "pH",
+     "7.18",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "2.9 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "8 mmol/L",
+     "22–26",
+     "L"
+    ],
+    [
+     "Na+",
+     "142 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "K+",
+     "4.6 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Cl-",
+     "104 mmol/L",
+     "95–105",
+     ""
+    ]
+   ],
+   "q": "What is his anion gap?",
+   "o": [
+    "12 mmol/L",
+    "18 mmol/L",
+    "26 mmol/L",
+    "35 mmol/L",
+    "42 mmol/L"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A calculation: use the formula from the notes, including potassium."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "drank antifreeze",
+      "respiratory rate 30"
+     ],
+     "x": "Antifreeze is **ethylene glycol**, a MUDPILES cause, so expect a raised gap."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "(142 + 4.6) − (8 + 104) = 146.6 − 112 = **34.6, about 35**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would be normal; ignores the very low bicarbonate."
+      ],
+      [
+       1,
+       "Normal range; arithmetic error."
+      ],
+      [
+       2,
+       "Raised, but the sums give 35."
+      ],
+      [
+       4,
+       "Too high; you may have dropped chloride or doubled sodium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. 35 mmol/L.** (Na + K) − (HCO3- + Cl); normal 10–20."
+    }
+   ],
+   "a": 3
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man with COPD has a 2 day history of increasing breathlessness and green sputum. He is drowsy. He is on 28% oxygen via a Venturi mask. His pulse rate is 104 bpm, BP 142/86 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 89%. He has had nebulised salbutamol, ipratropium and oral prednisolone.",
+   "labs": [
+    [
+     "pH",
+     "7.26",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "8.9 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "PaO2",
+     "7.9 kPa",
+     "11–13",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "30 mmol/L",
+     "22–26",
+     "H"
+    ]
+   ],
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "High-flow 15 L oxygen via non-rebreather",
+    "Intravenous sodium bicarbonate",
+    "Non-invasive ventilation",
+    "Paper bag rebreathing",
+    "Repeat nebulisers and review in 4 hours"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step: name the disorder, then treat its cause."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "COPD",
+      "drowsy",
+      "28% oxygen",
+      "nebulised salbutamol, ipratropium and oral prednisolone"
+     ],
+     "x": "pH 7.26, CO2 8.9: **respiratory acidosis** (HCO3- 30 is partial renal compensation). Medical therapy already given."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Persistent respiratory acidosis in COPD: **controlled oxygen and NIV**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Uncontrolled oxygen worsens CO2 retention in COPD."
+      ],
+      [
+       1,
+       "Does not fix the cause; the problem is ventilation."
+      ],
+      [
+       3,
+       "Raises CO2 further; only for anxiety hyperventilation."
+      ],
+      [
+       4,
+       "He is acidotic and drowsy now; delay is dangerous."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Non-invasive ventilation.** COPD respiratory acidosis despite medical therapy = NIV."
+    }
+   ],
+   "a": 2
+  },
+  {
+   "d": "science",
+   "stem": "A 34 year old woman has a 5 day history of persistent vomiting from hyperemesis. She is dizzy on standing. Her pulse rate is 104 bpm and BP 96/58 mmHg.",
+   "labs": [
+    [
+     "pH",
+     "7.53",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaCO2",
+     "6.4 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "36 mmol/L",
+     "22–26",
+     "H"
+    ],
+    [
+     "Cl-",
+     "84 mmol/L",
+     "95–105",
+     "L"
+    ],
+    [
+     "K+",
+     "3.1 mmol/L",
+     "3.5–5.3",
+     "L"
+    ]
+   ],
+   "q": "Which is the most likely mechanism of her acid-base disturbance?",
+   "o": [
+    "Gain of ketoacids from starvation",
+    "Hyperventilation from anxiety",
+    "Loss of bicarbonate in the stool",
+    "Loss of gastric hydrochloric acid",
+    "Renal failure to excrete acid"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: classify the gas, then explain it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "persistent vomiting",
+      "dizzy on standing",
+      "BP 96/58 mmHg"
+     ],
+     "x": "High pH and HCO3-, low chloride: **hypochloraemic metabolic alkalosis**. Raised CO2 is compensation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Vomiting loses **gastric HCl**; volume depletion then makes the kidneys retain bicarbonate."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would cause acidosis, not alkalosis."
+      ],
+      [
+       1,
+       "CO2 would be low; here it is high."
+      ],
+      [
+       2,
+       "Diarrhoea causes normal gap acidosis."
+      ],
+      [
+       4,
+       "Causes acidosis (uraemia)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Loss of gastric hydrochloric acid.** Vomiting = HCl loss = hypochloraemic alkalosis."
+    }
+   ],
+   "a": 3
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old woman has sudden breathlessness, tingling around her mouth and in her fingers after an argument. She feels her heart pounding. Her pulse rate is 108 bpm, BP 128/80 mmHg, respiratory rate 32 breaths per minute and oxygen saturation 100% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.54",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaCO2",
+     "2.8 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "PaO2",
+     "14.2 kPa",
+     "11–13",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "23 mmol/L",
+     "22–26",
+     ""
+    ]
+   ],
+   "q": "What is the most likely acid-base disturbance?",
+   "o": [
+    "Metabolic acidosis with respiratory compensation",
+    "Metabolic alkalosis",
+    "Respiratory acidosis",
+    "Respiratory alkalosis",
+    "Respiratory alkalosis with metabolic compensation"
+   ],
+   "e": "High pH, low CO2, high oxygen and normal HCO3-: acute uncompensated respiratory alkalosis from anxiety hyperventilation. Renal compensation takes days, so HCO3- is still normal.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Classify the gas: pH, then which value explains it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "after an argument",
+      "tingling around her mouth",
+      "respiratory rate 32",
+      "oxygen saturation 100%"
+     ],
+     "x": "pH 7.54 (alkalosis) with CO2 2.8 (low) and normal HCO3-."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Acute **respiratory alkalosis** from hyperventilation (the commonest cause)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "pH is high, not low."
+      ],
+      [
+       1,
+       "HCO3- is normal; the CO2 explains the pH."
+      ],
+      [
+       2,
+       "CO2 is low and pH high."
+      ],
+      [
+       4,
+       "HCO3- has not fallen: no compensation yet (acute)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Respiratory alkalosis.** Low CO2, high pH, normal HCO3- = acute."
+    }
+   ],
+   "a": 3,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man with COPD has a 3 day history of increasing breathlessness and purulent sputum. He is drowsy. His pulse rate is 100 bpm, BP 150/88 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 84% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.27",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "9.2 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "PaO2",
+     "6.8 kPa",
+     "11–13",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "31 mmol/L",
+     "22–26",
+     "H"
+    ]
+   ],
+   "q": "What is the most likely acid-base disturbance?",
+   "o": [
+    "Metabolic acidosis",
+    "Metabolic alkalosis with respiratory compensation",
+    "Mixed respiratory and metabolic acidosis",
+    "Respiratory acidosis with partial metabolic compensation",
+    "Respiratory alkalosis"
+   ],
+   "e": "Low pH with high CO2 is respiratory acidosis; the raised HCO3- is chronic renal compensation in COPD, but pH is still low, so compensation is partial.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Classify the gas: does CO2 or HCO3- explain the low pH?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "COPD",
+      "drowsy",
+      "oxygen saturation 84%"
+     ],
+     "x": "pH 7.27, CO2 9.2 (high): respiratory acidosis. HCO3- 31 is high, which opposes the acidosis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Respiratory acidosis with partial metabolic compensation** (acute on chronic)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "HCO3- is high, not low."
+      ],
+      [
+       1,
+       "pH is low, so the primary problem is acidosis."
+      ],
+      [
+       2,
+       "Needs a low HCO3-; it is raised."
+      ],
+      [
+       4,
+       "CO2 is high."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Respiratory acidosis with partial metabolic compensation.** COPD is the classic cause."
+    }
+   ],
+   "a": 3,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old man is brought in after being found collapsed with slurred speech, smelling of alcohol. His friend says he drank screenwash from the garage. His pulse rate is 112 bpm, BP 118/70 mmHg and respiratory rate 30 breaths per minute.",
+   "labs": [
+    [
+     "pH",
+     "7.15",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "2.7 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "7 mmol/L",
+     "22–26",
+     "L"
+    ],
+    [
+     "Na+",
+     "141 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "K+",
+     "4.8 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Cl-",
+     "103 mmol/L",
+     "95–105",
+     ""
+    ],
+    [
+     "Glucose",
+     "5.4 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "q": "What is the most likely acid-base disturbance?",
+   "o": [
+    "Metabolic alkalosis",
+    "Normal anion gap metabolic acidosis",
+    "Raised anion gap metabolic acidosis",
+    "Respiratory acidosis",
+    "Respiratory alkalosis"
+   ],
+   "e": "Low pH and HCO3- with a gap of (141 + 4.8) − (7 + 103) ≈ 36: a raised anion gap metabolic acidosis from ethylene glycol or methanol. Low CO2 is compensation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Classify, then calculate the gap."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "drank screenwash",
+      "respiratory rate 30"
+     ],
+     "x": "Screenwash contains **methanol or ethylene glycol** (M and E of MUDPILES). Normal glucose excludes DKA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "pH 7.15, HCO3- 7; gap about **36**: raised anion gap metabolic acidosis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "pH is low."
+      ],
+      [
+       1,
+       "The gap is about 36."
+      ],
+      [
+       3,
+       "CO2 is low (compensation), not high."
+      ],
+      [
+       4,
+       "pH is low."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Raised anion gap metabolic acidosis.** Toxic alcohols are MUDPILES causes."
+    }
+   ],
+   "a": 2,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 26 year old man is found unresponsive with pinpoint pupils and a syringe beside him. His pulse rate is 58 bpm, BP 104/66 mmHg, respiratory rate 6 breaths per minute and oxygen saturation 82% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.21",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "9.6 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "PaO2",
+     "7.1 kPa",
+     "11–13",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "25 mmol/L",
+     "22–26",
+     ""
+    ]
+   ],
+   "q": "What is the most likely acid-base disturbance?",
+   "o": [
+    "Metabolic acidosis with respiratory compensation",
+    "Metabolic alkalosis",
+    "Respiratory acidosis",
+    "Respiratory acidosis with full metabolic compensation",
+    "Respiratory alkalosis"
+   ],
+   "e": "Heroin overdose causes hypoventilation, so CO2 rises and pH falls. HCO3- is normal because renal compensation takes days: acute uncompensated respiratory acidosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Classify: pH, then CO2."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pinpoint pupils and a syringe",
+      "respiratory rate 6"
+     ],
+     "x": "Opioid overdose, RR 6: **hypoventilation** retains CO2."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "pH 7.21, CO2 9.6, HCO3- normal: acute **respiratory acidosis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "HCO3- is normal and CO2 high."
+      ],
+      [
+       1,
+       "pH is low."
+      ],
+      [
+       3,
+       "pH would be normal and HCO3- raised."
+      ],
+      [
+       4,
+       "CO2 is high, not low."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Respiratory acidosis.** Opioid hypoventilation = acute CO2 retention."
+    }
+   ],
+   "a": 2,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old woman has recurrent renal stones and muscle weakness. She has no diarrhoea or vomiting and takes no medicines. Her pulse rate is 76 bpm and BP 122/78 mmHg.",
+   "labs": [
+    [
+     "pH",
+     "7.30",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "15 mmol/L",
+     "22–26",
+     "L"
+    ],
+    [
+     "Na+",
+     "139 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "K+",
+     "2.9 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Cl-",
+     "115 mmol/L",
+     "95–105",
+     "H"
+    ],
+    [
+     "Urine pH",
+     "6.8",
+     "<5.5 when acidotic",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely cause of her acid-base disturbance?",
+   "o": [
+    "Addison's disease",
+    "Diabetic ketoacidosis",
+    "Lactic acidosis",
+    "Renal tubular acidosis type 1",
+    "Salicylate toxicity"
+   ],
+   "e": "Normal anion gap (about 12), hyperchloraemic, hypokalaemic metabolic acidosis with stones and an inappropriately alkaline urine is type 1 RTA. Addison's gives a normal gap but high potassium.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: classify, calculate the gap, then use potassium."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "recurrent renal stones",
+      "muscle weakness",
+      "no diarrhoea or vomiting"
+     ],
+     "x": "Gap = (139 + 2.9) − (15 + 115) ≈ 12: **normal gap**, high chloride, low potassium."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "No diarrhoea, stones, alkaline urine: **type 1 renal tubular acidosis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Normal gap too, but causes hyperkalaemia."
+      ],
+      [
+       1,
+       "Raised gap from ketones."
+      ],
+      [
+       2,
+       "Raised gap."
+      ],
+      [
+       4,
+       "Raised gap, with an overdose history."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Renal tubular acidosis type 1.** Normal gap + low K + no diarrhoea = RTA 1."
+    }
+   ],
+   "a": 3,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 67 year old woman takes chlortalidone for hypertension. She has felt tired with muscle cramps for 2 weeks. She has no vomiting. Her pulse rate is 80 bpm and BP 134/82 mmHg.",
+   "labs": [
+    [
+     "pH",
+     "7.49",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaCO2",
+     "6.3 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "33 mmol/L",
+     "22–26",
+     "H"
+    ],
+    [
+     "K+",
+     "2.8 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Cl-",
+     "92 mmol/L",
+     "95–105",
+     "L"
+    ]
+   ],
+   "q": "What is the most likely acid-base disturbance?",
+   "o": [
+    "Metabolic acidosis",
+    "Metabolic alkalosis with respiratory compensation",
+    "Respiratory acidosis with metabolic compensation",
+    "Respiratory alkalosis",
+    "Respiratory alkalosis with metabolic compensation"
+   ],
+   "e": "High pH and HCO3- is metabolic alkalosis, with hypoventilation raising CO2 as partial compensation. Thiazides such as chlortalidone are a classic cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Classify: pH, then which value explains it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chlortalidone",
+      "muscle cramps",
+      "no vomiting"
+     ],
+     "x": "pH 7.49 and HCO3- 33: **metabolic alkalosis**. CO2 6.3 is raised to compensate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Thiazide-induced **metabolic alkalosis with respiratory compensation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "pH is high."
+      ],
+      [
+       2,
+       "pH would be low or normal; here it is high."
+      ],
+      [
+       3,
+       "CO2 is high, not low."
+      ],
+      [
+       4,
+       "CO2 would be low and HCO3- low."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Metabolic alkalosis with respiratory compensation.** Thiazides cause metabolic alkalosis."
+    }
+   ],
+   "a": 1,
+   "visual": null
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old man has a 2 day history of vomiting and abdominal pain. He is drowsy and breathing deeply. His pulse rate is 118 bpm, BP 102/64 mmHg and respiratory rate 28 breaths per minute. A venous sample is available.",
+   "labs": [
+    [
+     "Na+",
+     "134 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "K+",
+     "5.6 mmol/L",
+     "3.5–5.3",
+     "H"
+    ],
+    [
+     "Cl-",
+     "98 mmol/L",
+     "95–105",
+     ""
+    ],
+    [
+     "HCO3-",
+     "8 mmol/L",
+     "22–26",
+     "L"
+    ],
+    [
+     "Glucose",
+     "28 mmol/L",
+     "4.0–7.8",
+     "H"
+    ]
+   ],
+   "q": "What is his anion gap?",
+   "o": [
+    "14 mmol/L",
+    "20 mmol/L",
+    "28 mmol/L",
+    "34 mmol/L",
+    "46 mmol/L"
+   ],
+   "e": "(134 + 5.6) − (8 + 98) = 33.6, about 34: a raised gap from ketones in DKA, the classic MUDPILES cause. Deep breathing is Kussmaul compensation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A calculation: use (Na + K) − (HCO3- + Cl)."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "breathing deeply",
+      "vomiting and abdominal pain"
+     ],
+     "x": "Kussmaul breathing and high glucose: DKA, so expect a raised gap."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "(134 + 5.6) − (8 + 98) = **33.6 ≈ 34**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Normal; the bicarbonate is far too low for this."
+      ],
+      [
+       1,
+       "Upper limit of normal; arithmetic error."
+      ],
+      [
+       2,
+       "You may have left out potassium and added wrongly."
+      ],
+      [
+       4,
+       "Too high; you may have added glucose."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. 34 mmol/L.** Raised gap = unmeasured acid (ketones)."
+    }
+   ],
+   "a": 3,
+   "visual": null
+  },
+  {
+   "d": "investigation",
+   "stem": "A 58 year old woman with type 2 diabetes is confused and breathing rapidly. She has sepsis from a urinary tract infection. Her pulse rate is 124 bpm, BP 84/50 mmHg and respiratory rate 32 breaths per minute. Her venous bicarbonate is low.",
+   "q": "Which is the most appropriate investigation to characterise her acid-base disturbance?",
+   "o": [
+    "Arterial blood gas",
+    "Chest X-ray",
+    "Serum osmolality",
+    "Urinary electrolytes",
+    "Urine pH"
+   ],
+   "e": "An ABG measures pH, PaCO2 and HCO3- together, which defines the disorder and its compensation. Other tests look for the cause afterwards.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An investigation question: which test classifies an acid-base problem?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "breathing rapidly",
+      "Her venous bicarbonate is low"
+     ],
+     "x": "Probable lactic acidosis from sepsis, but you must confirm the pattern."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The gold standard is the **arterial blood gas**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Looks for a cause; does not classify the disorder."
+      ],
+      [
+       2,
+       "Helps with toxic alcohols or HHS, not first."
+      ],
+      [
+       3,
+       "Used for RTA or alkalosis work-up later."
+      ],
+      [
+       4,
+       "Does not give blood pH, CO2 or HCO3-."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Arterial blood gas.** pH + PaCO2 + HCO3- together."
+    }
+   ],
+   "a": 0,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 21 year old woman took 50 aspirin tablets 40 minutes ago. She has tinnitus and nausea. She is alert. Her pulse rate is 104 bpm, BP 120/76 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 99% breathing air.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Activated charcoal",
+    "Fomepizole",
+    "Haemodialysis",
+    "Intravenous acetylcysteine",
+    "Naloxone"
+   ],
+   "e": "Within an hour of a salicylate overdose, activated charcoal decontaminates the gut. IV sodium bicarbonate is added for significant toxicity; dialysis is for severe cases.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of an overdose: what, how much, how long ago?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "50 aspirin tablets 40 minutes ago",
+      "tinnitus",
+      "She is alert"
+     ],
+     "x": "Salicylate overdose, under an hour, alert: decontaminate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Activated charcoal** first."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Antidote for ethylene glycol or methanol."
+      ],
+      [
+       2,
+       "For severe salicylate toxicity, not the first step."
+      ],
+      [
+       3,
+       "For paracetamol overdose."
+      ],
+      [
+       4,
+       "For opioid overdose; she is alert with a fast RR."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Activated charcoal.** Salicylate first step = charcoal."
+    }
+   ],
+   "a": 0,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 40 year old man drank antifreeze 4 hours ago. He is drowsy. His pulse rate is 106 bpm, BP 126/80 mmHg and respiratory rate 28 breaths per minute. Investigations show pH 7.22, HCO3- 11 mmol/L and a raised anion gap.",
+   "labs": [
+    [
+     "Osmolal gap",
+     "38 mOsm/kg",
+     "<10",
+     "H"
+    ],
+    [
+     "Glucose",
+     "5.8 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate specific treatment?",
+   "o": [
+    "Activated charcoal",
+    "Desferrioxamine",
+    "Fomepizole",
+    "Intravenous insulin",
+    "Paper bag rebreathing"
+   ],
+   "e": "Antifreeze is ethylene glycol; fomepizole blocks alcohol dehydrogenase so toxic acids are not made. Charcoal does not bind alcohols.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'specific treatment' question: name the toxin, then its antidote."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "drank antifreeze",
+      "raised anion gap"
+     ],
+     "x": "Ethylene glycol: raised gap acidosis and a high osmolal gap."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Antidote: **fomepizole**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Does not bind toxic alcohols."
+      ],
+      [
+       1,
+       "Antidote for iron."
+      ],
+      [
+       3,
+       "Treats DKA; glucose is normal."
+      ],
+      [
+       4,
+       "Raises CO2 and would worsen acidosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Fomepizole.** Ethylene glycol = fomepizole."
+    }
+   ],
+   "a": 2,
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 24 year old woman has had palpitations, breathlessness and tingling fingers for 20 minutes during an exam. She has no medical history. Her pulse rate is 104 bpm, BP 126/78 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 100% breathing air. Examination of the chest is normal.",
+   "labs": [
+    [
+     "pH",
+     "7.52",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaCO2",
+     "3.1 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "24 mmol/L",
+     "22–26",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Breathing techniques and reassurance",
+    "Intravenous sodium bicarbonate",
+    "Oral lorazepam",
+    "Oxygen 15 L via non-rebreather",
+    "Rebreathing mask"
+   ],
+   "e": "Anxiety hyperventilation causes respiratory alkalosis; slow breathing techniques come first, with a rebreathing mask reserved for severe cases.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: classify the gas, then treat the cause gently."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "during an exam",
+      "tingling fingers",
+      "respiratory rate 30",
+      "Examination of the chest is normal"
+     ],
+     "x": "High pH, low CO2: **respiratory alkalosis** from anxiety. Normal chest and sats argue against PE or pneumonia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Breathing techniques** first."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Would worsen an alkalosis."
+      ],
+      [
+       2,
+       "Not first-line; breathing techniques come first."
+      ],
+      [
+       3,
+       "She is not hypoxic."
+      ],
+      [
+       4,
+       "Reserved for severe cases after breathing techniques."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Breathing techniques and reassurance.** Rebreathing only if severe."
+    }
+   ],
+   "a": 0,
+   "visual": null
+  },
+  {
+   "d": "science",
+   "stem": "A 17 year old with type 1 diabetes has a 1 day history of vomiting and abdominal pain. He is breathing deeply and rapidly. His pulse rate is 122 bpm, BP 100/62 mmHg and respiratory rate 30 breaths per minute.",
+   "labs": [
+    [
+     "pH",
+     "7.12",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "2.6 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "7 mmol/L",
+     "22–26",
+     "L"
+    ],
+    [
+     "Ketones",
+     "5.8 mmol/L",
+     "<0.6",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely mechanism of his low PaCO2?",
+   "o": [
+    "Direct stimulation of the respiratory centre by ketones",
+    "Hypoxia driving ventilation",
+    "Primary respiratory alkalosis from anxiety",
+    "Pulmonary embolism",
+    "Respiratory compensation for metabolic acidosis"
+   ],
+   "e": "Ketoacids cause a raised gap metabolic acidosis; chemoreceptors drive Kussmaul breathing to blow off CO2 and push pH back up. A primary alkalosis would raise the pH.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: explain the CO2 in context."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "breathing deeply and rapidly",
+      "type 1 diabetes"
+     ],
+     "x": "pH 7.12, HCO3- 7, ketones high: DKA metabolic acidosis. Low CO2 opposes it."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Respiratory compensation**: Kussmaul breathing blows off CO2."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is salicylate's trick; here H+ drives chemoreceptors."
+      ],
+      [
+       1,
+       "No hypoxia is described."
+      ],
+      [
+       2,
+       "pH would be high, not 7.12."
+      ],
+      [
+       3,
+       "No PE features; the gas is metabolic acidosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Respiratory compensation for metabolic acidosis.** Kussmaul breathing in DKA."
+    }
+   ],
+   "a": 4,
+   "visual": null
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "How do you read an ABG step by step?",
+    "tip": "Exam thinking: pH alone can mislead.",
+    "points": [
+     {
+      "p": "pH: below 7.35 acidosis, above 7.45 alkalosis",
+      "k": [
+       [
+        "7.35"
+       ],
+       [
+        "7.45"
+       ]
+      ],
+      "why": "A normal pH can hide a fully compensated disorder."
+     },
+     {
+      "p": "CO2 explains the pH → respiratory",
+      "k": [
+       [
+        "co2",
+        "carbon dioxide"
+       ],
+       [
+        "respiratory"
+       ]
+      ],
+      "why": "High CO2 = acidosis; low CO2 = alkalosis."
+     },
+     {
+      "p": "HCO3- explains the pH → metabolic",
+      "k": [
+       [
+        "hco3",
+        "bicarb"
+       ],
+       [
+        "metabolic"
+       ]
+      ],
+      "why": "Low HCO3- = acidosis; high = alkalosis."
+     },
+     {
+      "p": "The other value moving the opposite way = compensation",
+      "k": [
+       [
+        "compensat"
+       ]
+      ],
+      "why": "Renal compensation takes days; respiratory takes minutes."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is the anion gap formula, its normal range and its causes when raised?",
+    "tip": "Exam thinking: calculate it every time pH and HCO3- are low.",
+    "points": [
+     {
+      "p": "(Na + K) − (HCO3- + Cl)",
+      "k": [
+       [
+        "na",
+        "sodium"
+       ],
+       [
+        "cl",
+        "chloride"
+       ]
+      ],
+      "why": "Some labs leave out K, giving 8–16."
+     },
+     {
+      "p": "Normal 10–20 mmol/L",
+      "k": [
+       [
+        "10"
+       ],
+       [
+        "20"
+       ]
+      ],
+      "why": "Above 20 = unmeasured acid."
+     },
+     {
+      "p": "MUDPILES: methanol, uraemia, DKA, paracetamol/propylene glycol, iron/isoniazid, lactate, ethanol/ethylene glycol, salicylates",
+      "k": [
+       [
+        "mudpiles",
+        "methanol",
+        "salicylate",
+        "ethylene"
+       ]
+      ],
+      "why": "DKA, lactate and toxic alcohols are the classics."
+     },
+     {
+      "p": "Also AKI, sepsis, mesenteric ischaemia, alcoholic ketoacidosis, metformin",
+      "k": [
+       [
+        "aki",
+        "kidney",
+        "sepsis",
+        "mesenteric",
+        "metformin",
+        "alcoholic keto"
+       ]
+      ],
+      "why": "Lactate from sepsis or ischaemia is common in stems."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What causes a normal anion gap metabolic acidosis, and how do you tell them apart?",
+    "tip": "Exam thinking: use the potassium.",
+    "points": [
+     {
+      "p": "Diarrhoea (e.g. Crohn's), with hypokalaemia",
+      "k": [
+       [
+        "diarrh",
+        "crohn"
+       ]
+      ],
+      "why": "Bicarbonate lost in the stool."
+     },
+     {
+      "p": "Renal tubular acidosis type 1: hypokalaemic, hyperchloraemic",
+      "k": [
+       [
+        "rta",
+        "renal tubular"
+       ]
+      ],
+      "why": "Look for stones and an alkaline urine."
+     },
+     {
+      "p": "Addison's disease",
+      "k": [
+       [
+        "addison",
+        "adrenal"
+       ]
+      ],
+      "why": "Normal gap but high potassium."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What causes metabolic alkalosis and respiratory alkalosis?",
+    "tip": "Exam thinking: vomiting vs hyperventilation.",
+    "points": [
+     {
+      "p": "Vomiting: hypochloraemic metabolic alkalosis",
+      "k": [
+       [
+        "vomit"
+       ]
+      ],
+      "why": "Low chloride is the clue."
+     },
+     {
+      "p": "Villous adenoma and thiazides (chlortalidone)",
+      "k": [
+       [
+        "villous",
+        "adenoma",
+        "thiazide",
+        "chlortalidone",
+        "bendroflumethiazide"
+       ]
+      ],
+      "why": "Hypokalaemia often accompanies."
+     },
+     {
+      "p": "Respiratory alkalosis: hyperventilation (anxiety, panic)",
+      "k": [
+       [
+        "hyperventilat",
+        "anxiety",
+        "panic"
+       ]
+      ],
+      "why": "The commonest cause."
+     },
+     {
+      "p": "Also early aspirin overdose, PE, pneumonia, high altitude",
+      "k": [
+       [
+        "aspirin",
+        "salicylate",
+        "pe",
+        "embol",
+        "altitude",
+        "pneumonia"
+       ]
+      ],
+      "why": "Aspirin: alkalosis early, acidosis later."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What causes respiratory acidosis?",
+    "tip": "Exam thinking: anything that makes you hypoventilate.",
+    "points": [
+     {
+      "p": "COPD/chronic bronchitis (most important)",
+      "k": [
+       [
+        "copd",
+        "chronic bronchitis"
+       ]
+      ],
+      "why": "Raised HCO3- shows chronic compensation."
+     },
+     {
+      "p": "Opioid (heroin) or other drug overdose",
+      "k": [
+       [
+        "opioid",
+        "heroin",
+        "overdose",
+        "morphine"
+       ]
+      ],
+      "why": "Pinpoint pupils and RR 6 in the stem."
+     },
+     {
+      "p": "Neuromuscular weakness",
+      "k": [
+       [
+        "neuromuscular",
+        "guillain",
+        "myasthenia",
+        "weakness"
+       ]
+      ],
+      "why": "Fails the respiratory pump."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the gold-standard investigation, and what comes next?",
+    "tip": "Exam thinking: classify first, then hunt the cause.",
+    "points": [
+     {
+      "p": "Arterial blood gas: pH, PaCO2 and HCO3- together",
+      "k": [
+       [
+        "abg",
+        "arterial blood gas",
+        "arterial gas"
+       ]
+      ],
+      "why": "A VBG is fine for pH and HCO3- but not oxygen."
+     },
+     {
+      "p": "Targeted bloods and imaging for the cause",
+      "k": [
+       [
+        "targeted",
+        "cause",
+        "salicylate",
+        "lactate",
+        "ketone",
+        "imaging"
+       ]
+      ],
+      "why": "E.g. lactate, ketones, toxicology, U&Es."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the cornerstone of management, with examples?",
+    "tip": "Exam thinking: the answer is the cause's treatment.",
+    "points": [
+     {
+      "p": "Treat the underlying cause",
+      "k": [
+       [
+        "cause",
+        "underlying"
+       ]
+      ],
+      "why": "There is no universal acidosis drug."
+     },
+     {
+      "p": "Insulin for DKA",
+      "k": [
+       [
+        "insulin"
+       ]
+      ],
+      "why": "Fluids too."
+     },
+     {
+      "p": "Controlled oxygen and NIV for COPD",
+      "k": [
+       [
+        "niv",
+        "non-invasive",
+        "bipap"
+       ]
+      ],
+      "why": "High-flow oxygen worsens CO2 retention."
+     },
+     {
+      "p": "Antibiotics for sepsis",
+      "k": [
+       [
+        "antibiotic"
+       ]
+      ],
+      "why": "Lactic acidosis clears as perfusion returns."
+     },
+     {
+      "p": "Supportive: oxygen and IV fluids; ICU and ventilation if severe",
+      "k": [
+       [
+        "icu",
+        "itu",
+        "intensive",
+        "ventilat"
+       ]
+      ],
+      "why": "Severe acidosis needs organ support."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Name the specific treatments for metformin, alcoholic ketoacidosis, ethylene glycol, salicylates and anxiety hyperventilation.",
+    "tip": "Exam thinking: one cause, one answer.",
+    "points": [
+     {
+      "p": "Stop metformin",
+      "k": [
+       [
+        "metformin"
+       ]
+      ],
+      "why": "Rarely causes lactic acidosis."
+     },
+     {
+      "p": "Alcoholic ketoacidosis: IV fluids, thiamine and dextrose",
+      "k": [
+       [
+        "thiamine"
+       ]
+      ],
+      "why": "Thiamine before glucose."
+     },
+     {
+      "p": "Ethylene glycol: fomepizole",
+      "k": [
+       [
+        "fomepizole"
+       ]
+      ],
+      "why": "Blocks alcohol dehydrogenase."
+     },
+     {
+      "p": "Salicylates: activated charcoal first, then IV sodium bicarbonate if significant",
+      "k": [
+       [
+        "charcoal"
+       ],
+       [
+        "bicarb"
+       ]
+      ],
+      "why": "Bicarbonate alkalinises the urine."
+     },
+     {
+      "p": "Anxiety: breathing techniques; rebreathing mask only if severe",
+      "k": [
+       [
+        "breathing technique",
+        "breathing exercise",
+        "slow breathing",
+        "rebreath"
+       ]
+      ],
+      "why": "Never rebreathe in hypoxia."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How is acid-base balance maintained, and why do compensation and the anion gap happen?",
+    "tip": "Exam thinking: buffer, lungs, kidneys.",
+    "points": [
+     {
+      "p": "Bicarbonate buffer system",
+      "k": [
+       [
+        "buffer",
+        "bicarbonate buffer"
+       ]
+      ],
+      "why": "CO2 + H2O ⇌ H2CO3 ⇌ H+ + HCO3-."
+     },
+     {
+      "p": "Kidneys regulate HCO3- and H+ excretion; lungs regulate CO2",
+      "k": [
+       [
+        "kidney",
+        "renal"
+       ],
+       [
+        "lung",
+        "respir"
+       ]
+      ],
+      "why": "Lungs act fast, kidneys slowly."
+     },
+     {
+      "p": "Raised gap = added unmeasured acid; normal gap = HCO3- loss or failure to excrete acid",
+      "k": [
+       [
+        "unmeasured",
+        "added acid",
+        "accumul"
+       ],
+       [
+        "loss",
+        "lose",
+        "lost"
+       ]
+      ],
+      "why": "Diarrhoea and RTA keep the gap normal."
+     },
+     {
+      "p": "Metabolic acidosis → hyperventilation to blow off CO2 (Kussmaul in DKA)",
+      "k": [
+       [
+        "kussmaul",
+        "hyperventilat",
+        "blow"
+       ]
+      ],
+      "why": "This is compensation, not a second disorder."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do vomiting and respiratory disease change the pH?",
+    "tip": "Exam thinking: explain the gas from the physiology.",
+    "points": [
+     {
+      "p": "Vomiting loses gastric HCl and volume",
+      "k": [
+       [
+        "hcl",
+        "hydrochloric",
+        "acid"
+       ]
+      ],
+      "why": "Hence low chloride."
+     },
+     {
+      "p": "Volume depletion makes the kidneys retain bicarbonate",
+      "k": [
+       [
+        "retain",
+        "reabsor",
+        "keep"
+       ],
+       [
+        "bicarb",
+        "hco3"
+       ]
+      ],
+      "why": "This keeps the alkalosis going."
+     },
+     {
+      "p": "Hypoventilation retains CO2: respiratory acidosis",
+      "k": [
+       [
+        "hypoventilat",
+        "retain",
+        "retention"
+       ]
+      ],
+      "why": "COPD, opioids, neuromuscular weakness."
+     },
+     {
+      "p": "Hyperventilation blows off CO2: respiratory alkalosis",
+      "k": [
+       [
+        "hyperventilat",
+        "blow"
+       ]
+      ],
+      "why": "Anxiety, PE, altitude."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "acidosis": "A process lowering blood pH below 7.35.",
+  "alkalosis": "A process raising blood pH above 7.45.",
+  "ABG": "Arterial blood gas: measures pH, PaO2, PaCO2 and bicarbonate in arterial blood.",
+  "VBG": "Venous blood gas: gives pH and bicarbonate reliably, but not oxygen.",
+  "PaCO2": "Partial pressure of carbon dioxide in arterial blood; normal 4.7–6.0 kPa.",
+  "PaO2": "Partial pressure of oxygen in arterial blood; normal 11–13 kPa on air.",
+  "HCO3-": "Bicarbonate, the main blood buffer base; normal 22–26 mmol/L.",
+  "bicarbonate buffer": "The CO2, carbonic acid and bicarbonate system that resists changes in pH.",
+  "compensation": "A change in the other system (lungs or kidneys) that pushes pH back towards normal.",
+  "anion gap": "(Na + K) − (HCO3- + Cl); a raised value means unmeasured acid such as ketones or lactate.",
+  "unmeasured anions": "Negative ions not included in routine tests, such as lactate, ketones and toxin acids.",
+  "MUDPILES": "Mnemonic for raised anion gap acidosis: methanol, uraemia, DKA, paracetamol, iron, lactate, ethylene glycol, salicylates.",
+  "uraemia": "Build-up of urea and other waste products from kidney failure.",
+  "lactic acidosis": "Acidosis from lactate, usually from poor tissue perfusion (sepsis, ischaemia).",
+  "DKA": "Diabetic ketoacidosis: hyperglycaemia, ketones and metabolic acidosis from insulin deficiency.",
+  "ketoacidosis": "Acidosis caused by ketone bodies, as in DKA or alcoholic ketoacidosis.",
+  "alcoholic ketoacidosis": "Ketoacidosis after heavy drinking and starvation, with a normal or low glucose.",
+  "renal tubular acidosis": "Failure of the kidney tubules to excrete acid or keep bicarbonate, giving a normal gap acidosis.",
+  "RTA": "Renal tubular acidosis.",
+  "hyperchloraemic": "With a raised blood chloride, typical of normal anion gap acidosis.",
+  "hypochloraemic": "With a low blood chloride, typical of vomiting.",
+  "hypokalaemia": "Low blood potassium, below 3.5 mmol/L.",
+  "villous adenoma": "A colonic polyp that can secrete large amounts of fluid and potassium.",
+  "chlortalidone": "A thiazide-like diuretic that can cause metabolic alkalosis and hypokalaemia.",
+  "thiazides": "Diuretics acting on the distal tubule; cause hypokalaemia and metabolic alkalosis.",
+  "hyperventilation": "Breathing more than needed, which lowers CO2 and raises pH.",
+  "hypoventilation": "Breathing too little, which raises CO2 and lowers pH.",
+  "Kussmaul breathing": "Deep, laboured breathing that blows off CO2 to compensate for metabolic acidosis.",
+  "salicylate": "Aspirin and related drugs; overdose causes respiratory alkalosis then metabolic acidosis.",
+  "tinnitus": "Ringing in the ears; an early sign of salicylate toxicity.",
+  "activated charcoal": "Oral adsorbent that binds drugs in the gut; best within an hour of ingestion.",
+  "sodium bicarbonate": "IV alkali used in salicylate poisoning to alkalinise urine and speed excretion.",
+  "fomepizole": "Antidote for ethylene glycol and methanol; blocks alcohol dehydrogenase.",
+  "ethylene glycol": "Toxic alcohol in antifreeze; causes raised anion gap acidosis and kidney injury.",
+  "methanol": "Toxic alcohol in screenwash; causes raised anion gap acidosis and blindness.",
+  "osmolal gap": "Measured minus calculated osmolality; raised by toxic alcohols.",
+  "NIV": "Non-invasive ventilation: mask ventilation that helps blow off CO2 in respiratory acidosis.",
+  "COPD": "Chronic obstructive pulmonary disease; the most important cause of respiratory acidosis.",
+  "thiamine": "Vitamin B1; given before glucose in alcohol-related illness to prevent Wernicke's encephalopathy.",
+  "Addison's disease": "Primary adrenal insufficiency; can cause normal gap acidosis with hyperkalaemia.",
+  "metformin": "Oral diabetes drug that rarely causes lactic acidosis, especially in renal failure."
+ }
+}

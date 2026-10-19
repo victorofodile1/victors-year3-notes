@@ -1,0 +1,832 @@
+{
+  "id": "gastro-oesophageal-reflux-disease",
+  "patient": {
+    "name": "Sanjay Patel",
+    "age": 48,
+    "sex": "M",
+    "setting": "GP surgery, then endoscopy unit",
+    "complaint": "Burning chest pain after meals and at night for 3 months",
+    "background": [
+      "BMI 33; smokes 10 cigarettes a day",
+      "Minicab driver in Wembley; eats his main meal at 11 pm after shifts",
+      "Drinks 4 cups of coffee a day",
+      "No other medical history; no regular medicines"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with heartburn after meals, worse lying down, sometimes with atypical cough or hoarseness, or a complication question (Barrett's, stricture, adenocarcinoma).",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Sanjay, 48, has **burning behind his breastbone** after meals.",
+            "Worse when he **lies down** after his late dinner.",
+            "Sour fluid comes up into his mouth at night.",
+            "He wakes coughing; his voice is hoarse in the mornings."
+          ],
+          "vitals": {
+            "T": "36.6°C",
+            "HR": "76 bpm",
+            "BP": "136/84 mmHg",
+            "RR": "14 /min",
+            "SpO2": "98% on air"
+          }
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "ecg",
+            "title": "Sanjay's 12-lead ECG",
+            "layout": "12lead",
+            "rhythm": "sinus",
+            "rate": 76,
+            "leads": {},
+            "caption": "Normal sinus rhythm, no ST changes. Always exclude a cardiac cause of chest pain first."
+          },
+          "text": "Burning chest pain needs an ECG before you call it reflux."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Sanjay has the classic trio: **heartburn after eating**, **regurgitation** and pain lying down, plus cough and hoarseness from acid reaching his larynx."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Acid is escaping past Sanjay's **lower oesophageal sphincter** into his oesophagus."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "He is **obese** and **smokes**; in a woman, **pregnancy** would be a classic risk too."
+        },
+        {
+          "type": "ask",
+          "q": "Which feature would make Sanjay's chest pain most likely to be cardiac rather than reflux?",
+          "o": [
+            "Burning after a large meal",
+            "Pain on exertion relieved by rest",
+            "Pain worse lying flat",
+            "Sour taste in the mouth"
+          ],
+          "a": 1,
+          "r": "**Exertional** pain relieved by rest is angina. Meal-related, positional burning with a sour taste is reflux."
+        },
+        {
+          "type": "compare",
+          "title": "Burning chest or upper abdominal pain",
+          "head": ["Feature", "GORD", "Angina / ACS", "Peptic ulcer"],
+          "rows": [
+            ["Trigger", "**Meals, lying down, bending**", "Exertion, stress", "Meals (duodenal: relieved)"],
+            ["Character", "Burning, retrosternal", "Tight, heavy", "Gnawing epigastric"],
+            ["Extras", "Regurgitation, sour taste, cough", "Sweating, breathless", "Bleeding, melaena"],
+            ["Key test", "Clinical, OGD if needed", "**ECG, troponin**", "OGD, H. pylori test"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Years of acid could give Sanjay **Barrett's oesophagus**, a **stricture** or **oesophageal adenocarcinoma**."
+        },
+        {
+          "type": "trap",
+          "text": "New **dysphagia** in a patient with long-standing reflux is a red flag: think stricture or adenocarcinoma, not just worse GORD."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (a clinical diagnosis with H. pylori testing if no red flags) or when to refer for endoscopy (red flags, age 55 or over, failed treatment).",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Sanjay is 48 with no red flags. Does he need an endoscopy now?",
+          "o": [
+            "No: clinical diagnosis, test for H. pylori and treat",
+            "Yes: routine endoscopy",
+            "Yes: urgent 2-week wait endoscopy",
+            "Yes: barium swallow first"
+          ],
+          "a": 0,
+          "r": "Under 55 with no red flags, **GORD is a clinical diagnosis**. Offer H. pylori testing and start treatment."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Sanjay's history is enough to diagnose GORD; **endoscopy** is kept for when confirmation is needed."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Sanjay has a **carbon-13 urea breath test** (negative), then starts **omeprazole** and keeps a meal diary."
+        },
+        {
+          "type": "flow",
+          "title": "Dyspepsia and reflux work-up",
+          "nodes": [
+            "Typical reflux symptoms",
+            "Red flags? → urgent endoscopy",
+            "None → urea breath test for H. pylori",
+            "Start PPI, lifestyle, meal diary",
+            "No response >4 weeks or age ≥55 → endoscopy"
+          ]
+        },
+        {
+          "type": "story",
+          "points": [
+            "8 weeks later: still heartburn most nights despite omeprazole.",
+            "No weight loss, no dysphagia, no bleeding.",
+            "GP books a **routine OGD**."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Sanjay's symptoms persist **despite treatment**, so he gets an OGD; he **stops omeprazole 2 weeks before** so acid damage is not masked."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Sanjay's age against the endoscopy threshold",
+            "min": 20,
+            "max": 80,
+            "unit": "years",
+            "bands": [
+              [20, 55, "Under 55: test and treat if no red flags", "ok"],
+              [55, 80, "55 or over: endoscopy", "warn"]
+            ],
+            "value": 48,
+            "label": "Sanjay 48",
+            "caption": "Below 55, so his OGD was triggered by failed treatment, not age."
+          }
+        },
+        {
+          "type": "labs",
+          "title": "Sanjay's OGD and biopsy",
+          "rows": [
+            ["Distal oesophagus", "Linear erosions, LA grade B oesophagitis", "Normal mucosa", "H"],
+            ["Gastro-oesophageal junction", "Small sliding hiatus hernia", "At diaphragm", ""],
+            ["Biopsy", "Inflamed squamous epithelium, no metaplasia", "Normal squamous", ""],
+            ["CLO test (H. pylori)", "Negative", "Negative", ""]
+          ],
+          "text": "Reflux oesophagitis confirmed. No Barrett's."
+        },
+        {
+          "type": "trap",
+          "text": "A **barium swallow** does not replace endoscopy for GORD: it cannot biopsy or show Barrett's."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?' (lifestyle plus a PPI) or 'next step' after partial response (higher dose or switch PPI, add an H2 antagonist, then fundoplication).",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Sanjay needs to **lose weight**, stop eating at 11 pm, **raise the head of his bed** and take **omeprazole**."
+        },
+        {
+          "type": "ask",
+          "q": "Which piece of lifestyle advice best targets Sanjay's night-time symptoms?",
+          "o": [
+            "Drink a glass of milk at bedtime",
+            "Eat his main meal 3 hours before bed",
+            "Lie flat after meals",
+            "Take ibuprofen for the chest pain"
+          ],
+          "a": 1,
+          "r": "**Avoiding late meals** and raising the bed head stop acid pooling at the LOS overnight. NSAIDs worsen dyspepsia."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Sanjay's heartburn nights per week",
+            "x": ["Start", "Week 4", "Week 8", "Week 12", "Week 16"],
+            "unit": "nights",
+            "series": [
+              { "name": "Heartburn nights", "values": [7, 5, 5, 2, 1] }
+            ],
+            "caption": "Partial response on omeprazole; better after switching to lansoprazole and adding famotidine at night."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Sanjay's partial response leads to **lansoprazole**; nocturnal symptoms then settle when **famotidine** is added at night."
+        },
+        {
+          "type": "flow",
+          "title": "GORD treatment ladder",
+          "nodes": [
+            "Lifestyle: weight, late meals, bed head, smoking",
+            "PPI (omeprazole)",
+            "Inadequate: increase dose or switch to lansoprazole",
+            "Persistent: add H2 antagonist (famotidine)",
+            "Refractory: fundoplication"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "Sanjay's care follows **NICE dyspepsia and GORD** guidance; any red flag would mean a **2-week wait** referral."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "If Sanjay's reflux stayed severe despite all of this, a **fundoplication** would be the rare surgical option."
+        },
+        {
+          "type": "pearl",
+          "text": "Stopping **smoking**, cutting caffeine and alcohol and losing weight all improve LOS function: lifestyle is always part of the answer."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: how a PPI works, why pregnancy or hiatus hernia worsens reflux, and which change occurs in Barrett's oesophagus (columnar metaplasia).",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Sanjay's **LOS** does not close properly, so acid flows backwards into his oesophagus."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Sanjay's small **sliding hiatus hernia** pulls the GOJ above the diaphragm and weakens his barrier; in pregnancy **progesterone** relaxes the LOS."
+        },
+        {
+          "type": "flow",
+          "title": "From reflux to cancer",
+          "nodes": [
+            "Repeated acid exposure",
+            "Oesophagitis",
+            "Columnar metaplasia (Barrett's)",
+            "Dysplasia",
+            "Oesophageal adenocarcinoma"
+          ],
+          "caption": "Squamous epithelium is replaced by acid-resistant columnar epithelium."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "If Sanjay's oesophagitis continues for years, his squamous lining may switch to **columnar** cells: **Barrett's**."
+        },
+        {
+          "type": "ask",
+          "q": "How does Sanjay's omeprazole reduce acid?",
+          "o": [
+            "Blocks histamine H2 receptors",
+            "Irreversibly inhibits the H+/K+ ATPase",
+            "Neutralises acid in the stomach",
+            "Tightens the lower oesophageal sphincter"
+          ],
+          "a": 1,
+          "r": "PPIs **irreversibly block the proton pump** on parietal cells. Famotidine blocks H2 receptors; antacids neutralise."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "With acid secretion cut, Sanjay's inflamed oesophagus can **heal**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Sanjay's BMI",
+            "min": 15,
+            "max": 45,
+            "unit": "kg/m²",
+            "bands": [
+              [15, 18.5, "Underweight", "warn"],
+              [18.5, 25, "Healthy", "ok"],
+              [25, 30, "Overweight", "warn"],
+              [30, 45, "Obese", "bad"]
+            ],
+            "value": 33,
+            "label": "Sanjay 33",
+            "caption": "Obesity raises intra-abdominal pressure and pushes gastric contents up past the LOS."
+          }
+        },
+        {
+          "type": "trap",
+          "text": "Barrett's is **metaplasia** (one mature cell type replaced by another), not dysplasia. Dysplasia is the next, precancerous step."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which structure is defective in GORD?", "o": ["Cricopharyngeus", "Lower oesophageal sphincter", "Pyloric sphincter", "Upper oesophageal sphincter"], "a": 1, "r": "A defective **lower oesophageal sphincter** lets acid reflux." },
+    { "d": "diagnosis", "q": "Which hormone explains reflux in pregnancy?", "o": ["Oestrogen", "Oxytocin", "Progesterone", "Prolactin"], "a": 2, "r": "**Progesterone** relaxes smooth muscle, including the LOS." },
+    { "d": "diagnosis", "q": "Which is the classic symptom of GORD?", "o": ["Exertional chest tightness", "Haematemesis", "Heartburn after meals", "Pain radiating to the back"], "a": 2, "r": "**Heartburn** after eating, worse lying down." },
+    { "d": "diagnosis", "q": "Which premalignant complication can long-standing GORD cause?", "o": ["Barrett's oesophagus", "Mallory-Weiss tear", "Oesophageal varices", "Zenker's diverticulum"], "a": 0, "r": "**Barrett's oesophagus**, a precursor of adenocarcinoma." },
+    { "d": "investigation", "q": "Which test for H. pylori is offered first-line in dyspepsia?", "o": ["Carbon-13 urea breath test", "Gastric biopsy", "H. pylori serology", "Upper GI endoscopy"], "a": 0, "r": "The **carbon-13 urea breath test**." },
+    { "d": "investigation", "q": "How long before endoscopy should omeprazole be stopped?", "o": ["24 hours", "3 days", "2 weeks", "3 months"], "a": 2, "r": "**2 weeks**, so it does not mask findings." },
+    { "d": "investigation", "q": "Which is a red flag that warrants urgent endoscopy?", "o": ["Belching", "Dysphagia", "Heartburn at night", "Sour taste"], "a": 1, "r": "**Dysphagia**, weight loss, GI bleeding and anaemia are red flags." },
+    { "d": "management", "q": "Which is the first-line drug for GORD?", "o": ["Famotidine", "Metoclopramide", "Omeprazole", "Sucralfate"], "a": 2, "r": "A **PPI** such as omeprazole." },
+    { "d": "management", "q": "Which surgery is used for refractory GORD?", "o": ["Billroth I", "Fundoplication", "Heller myotomy", "Oesophagectomy"], "a": 1, "r": "**Fundoplication** wraps the fundus around the lower oesophagus." },
+    { "d": "science", "q": "Which enzyme do PPIs block?", "o": ["Carbonic anhydrase", "H+/K+ ATPase", "Na+/K+ ATPase", "Pepsinogen"], "a": 1, "r": "They irreversibly inhibit the **H+/K+ ATPase** of parietal cells." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 45 year old woman has a 2 month history of burning retrosternal pain that comes on after large meals and is worse when she lies down. She has an acid taste in her mouth at night. She is overweight. The pain does not occur on exertion. Her ECG and troponin are normal.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute coronary syndrome", "Biliary colic", "Diffuse oesophageal spasm", "Gastro-oesophageal reflux disease", "Pericarditis"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "Chest pain diagnosis: rule out the heart, then look at the triggers." },
+        { "t": "Pick out the clues", "clues": ["burning retrosternal pain", "after large meals", "worse when she lies down", "acid taste", "overweight", "does not occur on exertion", "ECG and troponin are normal"], "x": "Burning, meal-related, positional, regurgitation, obese; cardiac tests normal." },
+        { "t": "Make your own answer before looking", "x": "**GORD**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Normal ECG and troponin and no exertional pain."],
+          [1, "Biliary colic is RUQ pain after fatty meals, not positional heartburn."],
+          [2, "Oesophageal spasm gives intermittent severe squeezing pain with dysphagia."],
+          [4, "Pericarditis is sharp pain eased by sitting forward, with ECG changes."]
+        ] },
+        { "t": "Commit", "x": "**D. GORD.** Burning + meals + lying down + sour taste." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 58 year old man has had heartburn and regurgitation for 3 months. He has taken omeprazole 20 mg daily for 6 weeks with little benefit. He has no weight loss, dysphagia or bleeding. His GP books a routine upper GI endoscopy in 6 weeks and a repeat H. pylori test.",
+      "q": "Which is the most appropriate advice before the endoscopy?",
+      "o": ["Continue omeprazole at the same dose", "Double the omeprazole dose", "Fast for 48 hours", "Start clarithromycin", "Stop omeprazole 2 weeks before"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "It asks about **preparation** for endoscopy." },
+        { "t": "Pick out the clues", "clues": ["58 year old", "omeprazole 20 mg daily for 6 weeks with little benefit", "routine upper GI endoscopy", "repeat H. pylori test"], "x": "Age and failed treatment justify OGD; a PPI would mask findings and H. pylori." },
+        { "t": "Make your own answer before looking", "x": "**Stop omeprazole 2 weeks before**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Continuing the PPI can heal lesions and give false negative H. pylori tests."],
+          [1, "A higher dose masks findings even more."],
+          [2, "Only a few hours of fasting are needed."],
+          [3, "No antibiotic before diagnosis."]
+        ] },
+        { "t": "Commit", "x": "**E. Stop omeprazole 2 weeks before.** Off PPI so the scope sees the truth." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 39 year old man has had severe GORD for 4 years. Despite weight loss, high-dose lansoprazole and night-time famotidine he still has daily regurgitation. Endoscopy shows oesophagitis without Barrett's, and 24-hour pH monitoring confirms acid reflux. He wants a long-term solution.",
+      "q": "Which is the most appropriate management?",
+      "o": ["Add metoclopramide", "Endoscopic mucosal resection", "Laparoscopic fundoplication", "Oesophagectomy", "Stop the PPI"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Management of reflux that has failed medical treatment." },
+        { "t": "Pick out the clues", "clues": ["high-dose lansoprazole and night-time famotidine", "daily regurgitation", "without Barrett's", "confirms acid reflux", "long-term solution"], "x": "Every rung of the medical ladder tried; reflux is proven." },
+        { "t": "Make your own answer before looking", "x": "**Laparoscopic fundoplication**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Metoclopramide is not part of the GORD ladder and has neurological side effects."],
+          [1, "EMR treats dysplasia or early cancer; there is none."],
+          [3, "Oesophagectomy is for cancer."],
+          [4, "Stopping the PPI will make him worse."]
+        ] },
+        { "t": "Commit", "x": "**C. Fundoplication.** Refractory, proven reflux = surgery." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 52 year old man with 10 years of GORD has an upper GI endoscopy. There is salmon-pink mucosa extending 3 cm above the gastro-oesophageal junction. Biopsy shows the normal stratified squamous epithelium replaced by columnar epithelium with goblet cells. There is no dysplasia.",
+      "q": "Which pathological process does this represent?",
+      "o": ["Atrophy", "Columnar metaplasia of squamous epithelium", "Dysplasia", "Hyperplasia", "Squamous cell carcinoma in situ"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "A **pathological process** question: name the cell change." },
+        { "t": "Pick out the clues", "clues": ["10 years of GORD", "salmon-pink mucosa", "squamous epithelium replaced by columnar epithelium", "no dysplasia"], "x": "One mature epithelium replaced by another: Barrett's." },
+        { "t": "Make your own answer before looking", "x": "**Metaplasia**: squamous to columnar." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Atrophy is shrinkage of cells or tissue."],
+          [2, "The biopsy says no dysplasia."],
+          [3, "Hyperplasia is more of the same cells."],
+          [4, "There is no squamous neoplasia; the new cells are columnar."]
+        ] },
+        { "t": "Commit", "x": "**B. Columnar metaplasia.** Barrett's: acid-resistant cells replace squamous." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 44 year old man has a 6 week history of burning central chest pain after meals, worse when he bends or lies down, with a sour taste in his mouth. He is obese and smokes. His temperature is 36.7°C, pulse rate 74 bpm and BP 134/82 mmHg. ECG (see item resources).",
+      "labs": [["Troponin T", "<5 ng/L", "<14", ""]],
+      "visual": { "kind": "ecg", "title": "12-lead ECG", "layout": "12lead", "rhythm": "sinus", "rate": 74, "leads": {}, "caption": "Normal sinus rhythm with no ST or T wave changes." },
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Achalasia", "Acute coronary syndrome", "Biliary colic", "Gastro-oesophageal reflux disease", "Peptic ulcer disease"],
+      "a": 3,
+      "e": "Burning chest pain after meals, worse bending or lying, with regurgitation in an obese smoker is GORD. A normal ECG and troponin make ACS unlikely.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Chest pain diagnosis: heart first, then gut." },
+        { "t": "Pick out the clues", "clues": ["burning central chest pain after meals", "worse when he bends or lies down", "sour taste", "obese and smokes", "ECG (see item resources)"], "x": "Classic heartburn and regurgitation with risk factors; ECG normal." },
+        { "t": "Make your own answer before looking", "x": "**GORD**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Achalasia causes dysphagia to solids and liquids from the start."],
+          [1, "ECG and troponin are normal and the pain is meal-related."],
+          [2, "Biliary colic is RUQ pain, not positional heartburn."],
+          [4, "Peptic ulcer pain is epigastric and gnawing, not positional with regurgitation."]
+        ] },
+        { "t": "Commit", "x": "**D. GORD.** Heartburn + positional + regurgitation." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 29 year old woman who is 30 weeks pregnant has burning retrosternal discomfort after meals and when lying flat at night. She has no headache, visual disturbance or right upper quadrant pain. Her temperature is 36.8°C, pulse rate 88 bpm and BP 116/72 mmHg. Urinalysis shows no protein.",
+      "labs": [["ALT", "18 U/L", "<35", ""], ["Platelets", "232 ×10⁹/L", "150–400", ""], ["Bilirubin", "8 µmol/L", "<21", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute fatty liver of pregnancy", "Biliary colic", "HELLP syndrome", "Pre-eclampsia", "Reflux oesophagitis"],
+      "a": 4,
+      "e": "Heartburn after meals and lying flat in pregnancy is reflux: progesterone relaxes the LOS. Normal BP, no proteinuria and normal LFTs and platelets exclude pre-eclampsia and HELLP.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Upper GI symptoms in pregnancy: exclude the dangerous causes first." },
+        { "t": "Pick out the clues", "clues": ["30 weeks pregnant", "burning retrosternal discomfort after meals", "lying flat at night", "no headache, visual disturbance or right upper quadrant pain", "no protein"], "x": "Typical heartburn; no features of pre-eclampsia; labs are normal." },
+        { "t": "Make your own answer before looking", "x": "**Reflux (GORD)** from progesterone and the gravid uterus." },
+        { "t": "Rule out the others", "elim": [
+          [0, "AFLP causes vomiting, jaundice and deranged LFTs."],
+          [1, "Biliary colic is RUQ pain after fatty food."],
+          [2, "HELLP needs haemolysis, raised ALT and low platelets."],
+          [3, "BP is normal and there is no proteinuria."]
+        ] },
+        { "t": "Commit", "x": "**E. Reflux oesophagitis.** Pregnancy is a classic GORD risk factor." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 51 year old non-smoking man has a 4 month dry cough and hoarse voice, worst at night and after late meals. He also gets occasional heartburn. Chest X-ray and spirometry are normal. He takes no regular medicines. ENT examination shows a red, swollen posterior larynx.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Asthma", "Gastro-oesophageal reflux disease", "Interstitial lung disease", "Laryngeal carcinoma", "Sarcoidosis"],
+      "a": 1,
+      "e": "Chronic cough and hoarseness worse at night and after meals, with heartburn and posterior laryngeal inflammation, is extra-oesophageal GORD.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Chronic cough diagnosis: look for the gut clue." },
+        { "t": "Pick out the clues", "clues": ["non-smoking", "dry cough and hoarse voice", "worst at night and after late meals", "occasional heartburn", "spirometry are normal", "red, swollen posterior larynx"], "x": "Atypical GORD: acid irritates the larynx when lying down." },
+        { "t": "Make your own answer before looking", "x": "**GORD** with laryngopharyngeal symptoms." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Normal spirometry and a meal link make asthma less likely."],
+          [2, "ILD shows crackles and abnormal imaging."],
+          [3, "Laryngeal cancer is linked to smoking and shows a mass, not diffuse posterior redness."],
+          [4, "Sarcoid gives hilar nodes on X-ray."]
+        ] },
+        { "t": "Commit", "x": "**B. GORD.** Cough + hoarseness + meals + lying down." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 57 year old man has had GORD for 15 years. Upper GI endoscopy shows tongues of salmon-pink mucosa extending 4 cm above the gastro-oesophageal junction. Biopsy shows columnar epithelium with goblet cells and no dysplasia.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Barrett's oesophagus", "Eosinophilic oesophagitis", "Oesophageal adenocarcinoma", "Oesophageal candidiasis", "Squamous dysplasia"],
+      "a": 0,
+      "e": "Columnar metaplasia with goblet cells replacing squamous epithelium above the GOJ after long-standing reflux is Barrett's oesophagus, a precursor of adenocarcinoma.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A complication of long-standing reflux on OGD." },
+        { "t": "Pick out the clues", "clues": ["GORD for 15 years", "salmon-pink mucosa", "columnar epithelium with goblet cells", "no dysplasia"], "x": "Classic endoscopic and histological Barrett's." },
+        { "t": "Make your own answer before looking", "x": "**Barrett's oesophagus**." },
+        { "t": "Rule out the others", "elim": [
+          [1, "Eosinophilic oesophagitis shows rings and eosinophils, often with food bolus obstruction."],
+          [2, "No dysplasia or mass, so not cancer."],
+          [3, "Candidiasis gives white plaques, usually with immunosuppression."],
+          [4, "The cells are columnar, not dysplastic squamous."]
+        ] },
+        { "t": "Commit", "x": "**A. Barrett's oesophagus.** Salmon-pink + columnar + goblet cells." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 64 year old man with 20 years of untreated GORD has 3 months of progressive difficulty swallowing solids, now also soft food, and 6 kg weight loss. He is obese and a former smoker. His temperature is 36.6°C, pulse rate 90 bpm and BP 128/78 mmHg.",
+      "labs": [["Haemoglobin", "112 g/L", "130–180", "L"], ["MCV", "77 fL", "80–100", "L"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Achalasia", "Benign peptic stricture", "Oesophageal adenocarcinoma", "Oesophageal squamous cell carcinoma", "Pharyngeal pouch"],
+      "a": 2,
+      "e": "Rapidly progressive dysphagia with weight loss after long-standing GORD is oesophageal adenocarcinoma via Barrett's. Squamous cell carcinoma links to smoking and alcohol in the upper and middle oesophagus.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A complication of long-standing reflux with red flags." },
+        { "t": "Pick out the clues", "clues": ["20 years of untreated GORD", "progressive difficulty swallowing solids", "6 kg weight loss", "obese"], "x": "Reflux, obesity, progressive dysphagia and weight loss; anaemia on labs." },
+        { "t": "Make your own answer before looking", "x": "**Oesophageal adenocarcinoma**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Achalasia causes dysphagia to solids and liquids from the start."],
+          [1, "A benign stricture is slow, without marked weight loss or anaemia."],
+          [3, "SCC is linked to heavy smoking and alcohol, not GORD."],
+          [4, "A pouch causes regurgitation of old food and halitosis."]
+        ] },
+        { "t": "Commit", "x": "**C. Oesophageal adenocarcinoma.** GORD → Barrett's → adenocarcinoma." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 71 year old woman with many years of poorly controlled reflux has 2 years of slowly worsening difficulty swallowing meat and bread. Her heartburn has recently become less troublesome. Her weight is stable. Endoscopy shows a smooth, short, concentric narrowing in the distal oesophagus, and biopsies are benign.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Achalasia", "Benign peptic stricture", "Oesophageal adenocarcinoma", "Pharyngeal pouch", "Plummer-Vinson syndrome"],
+      "a": 1,
+      "e": "Long-standing reflux scars the distal oesophagus into a smooth benign peptic stricture, with slow dysphagia to solids and stable weight. Biopsies exclude cancer.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A reflux complication with dysphagia: benign or malignant?" },
+        { "t": "Pick out the clues", "clues": ["poorly controlled reflux", "2 years of slowly worsening", "Her weight is stable", "smooth, short, concentric narrowing", "biopsies are benign"], "x": "Slow, solids only, no weight loss, smooth and benign." },
+        { "t": "Make your own answer before looking", "x": "**Benign peptic stricture**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Achalasia shows a dilated oesophagus with a tight LOS and liquid dysphagia."],
+          [2, "Biopsies are benign and weight is stable."],
+          [3, "A pouch is in the pharynx, with regurgitation and halitosis."],
+          [4, "Plummer-Vinson is an upper web with iron deficiency."]
+        ] },
+        { "t": "Commit", "x": "**B. Benign peptic stricture.** Slow + smooth + benign biopsy." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 60 year old man has 2 months of new indigestion, upper abdominal discomfort and 5 kg unintentional weight loss. He has had reflux for years. His pulse rate is 92 bpm and BP 124/76 mmHg.",
+      "labs": [["Haemoglobin", "104 g/L", "130–180", "L"], ["MCV", "74 fL", "80–100", "L"], ["Ferritin", "11 µg/L", "30–400", "L"]],
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["Barium swallow", "CT abdomen", "Oesophageal manometry", "Urea breath test", "Urgent upper GI endoscopy"],
+      "a": 4,
+      "e": "Red flags (weight loss, iron deficiency anaemia, age 55 or over) mean urgent 2-week wait endoscopy. A breath test is only for patients with no red flags.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial investigation: check for **red flags** first." },
+        { "t": "Pick out the clues", "clues": ["60 year old", "5 kg unintentional weight loss", "reflux for years"], "x": "Over 55, weight loss, anaemia on labs." },
+        { "t": "Make your own answer before looking", "x": "**Urgent OGD**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Barium cannot biopsy."],
+          [1, "CT stages cancer after diagnosis."],
+          [2, "Manometry is for motility disorders."],
+          [3, "Test-and-treat is only for patients with no red flags."]
+        ] },
+        { "t": "Commit", "x": "**E. Urgent upper GI endoscopy.** Red flags skip test-and-treat." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 34 year old woman has 6 weeks of heartburn after meals and acid regurgitation. She has no weight loss, dysphagia, vomiting or bleeding. She has not taken any acid-suppressing medicine. Her pulse rate is 72 bpm and BP 118/70 mmHg. Abdominal examination is normal.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["24-hour oesophageal pH monitoring", "Barium swallow", "Carbon-13 urea breath test", "Chest X-ray", "Upper GI endoscopy"],
+      "a": 2,
+      "e": "Under 55 with no red flags, GORD is a clinical diagnosis: offer a carbon-13 urea breath test for H. pylori and start treatment. Endoscopy is for red flags or failed treatment.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial investigation in uncomplicated reflux." },
+        { "t": "Pick out the clues", "clues": ["34 year old", "heartburn after meals", "no weight loss, dysphagia, vomiting or bleeding", "not taken any acid-suppressing medicine"], "x": "Young, typical, no red flags; off PPI so the breath test is valid." },
+        { "t": "Make your own answer before looking", "x": "**Carbon-13 urea breath test**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "pH monitoring is for refractory or atypical cases, often before surgery."],
+          [1, "Barium is for structural or motility questions, not first-line."],
+          [3, "Chest X-ray does not help reflux."],
+          [4, "Endoscopy is for red flags, age 55 or over, or failed treatment."]
+        ] },
+        { "t": "Commit", "x": "**C. Urea breath test.** No red flags = test and treat." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 40 year old man has 2 months of heartburn after late evening meals and regurgitation when lying down. He has a BMI of 32 and drinks 5 cups of coffee a day. He has no red flag symptoms and a urea breath test is negative.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Famotidine", "Laparoscopic fundoplication", "Lifestyle advice and omeprazole", "Metoclopramide", "Urgent upper GI endoscopy"],
+      "a": 2,
+      "e": "First-line GORD treatment is lifestyle modification (weight loss, avoiding late meals, raising the bed head, cutting caffeine) plus a PPI such as omeprazole.",
+      "steps": [
+        { "t": "Read the question line first", "x": "**Initial** management of uncomplicated GORD." },
+        { "t": "Pick out the clues", "clues": ["late evening meals", "BMI of 32", "5 cups of coffee", "no red flag symptoms", "urea breath test is negative"], "x": "Modifiable triggers, no red flags, H. pylori negative." },
+        { "t": "Make your own answer before looking", "x": "**Lifestyle advice plus a PPI**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "An H2 antagonist is added later if symptoms persist on a PPI."],
+          [1, "Surgery is for refractory cases."],
+          [3, "Metoclopramide is not on the GORD ladder."],
+          [4, "No red flags, so no urgent scope."]
+        ] },
+        { "t": "Commit", "x": "**C. Lifestyle advice and omeprazole.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 46 year old woman has GORD. She has taken omeprazole for 8 weeks with only a partial response, despite good adherence and lifestyle changes. Upper GI endoscopy last month showed mild oesophagitis only, and she is H. pylori negative. She has no red flags.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Add metoclopramide", "Laparoscopic fundoplication", "Stop all acid suppression", "Switch to lansoprazole", "Urgent repeat endoscopy"],
+      "a": 3,
+      "e": "With an inadequate PPI response, increase the dose or try another PPI such as lansoprazole. Surgery is reserved for cases refractory to the whole medical ladder.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step after partial response to first-line." },
+        { "t": "Pick out the clues", "clues": ["partial response", "good adherence and lifestyle changes", "mild oesophagitis only", "no red flags"], "x": "Endoscopy done and reassuring; climb one rung of the ladder." },
+        { "t": "Make your own answer before looking", "x": "**Change PPI (lansoprazole)** or increase the dose." },
+        { "t": "Rule out the others", "elim": [
+          [0, "Metoclopramide is not part of the ladder."],
+          [1, "Too early: medical options remain."],
+          [2, "Stopping will worsen symptoms."],
+          [4, "She had a scope last month and has no red flags."]
+        ] },
+        { "t": "Commit", "x": "**D. Switch to lansoprazole.** Second-line: change or increase the PPI." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 52 year old man with endoscopically confirmed mild reflux oesophagitis takes high-dose lansoprazole. Daytime symptoms are controlled but he still wakes with heartburn most nights. He sleeps with the bed head raised and eats early. His pulse rate is 70 bpm and BP 130/80 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Add famotidine at night", "Laparoscopic fundoplication", "Repeat upper GI endoscopy", "Stop lansoprazole", "Switch to antacids alone"],
+      "a": 0,
+      "e": "Persistent symptoms, especially at night, despite a PPI are treated by adding an H2 receptor antagonist such as famotidine. Fundoplication is for refractory disease.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step for persistent symptoms on a PPI." },
+        { "t": "Pick out the clues", "clues": ["high-dose lansoprazole", "wakes with heartburn most nights", "bed head raised and eats early"], "x": "Nocturnal breakthrough on optimised PPI and lifestyle." },
+        { "t": "Make your own answer before looking", "x": "**Add an H2 antagonist (famotidine)**." },
+        { "t": "Rule out the others", "elim": [
+          [1, "Surgery comes after the medical ladder fails."],
+          [2, "Already confirmed on endoscopy, no red flags."],
+          [3, "Stopping the PPI loses daytime control."],
+          [4, "Antacids alone are weaker than his current treatment."]
+        ] },
+        { "t": "Commit", "x": "**A. Add famotidine at night.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 42 year old woman with GORD starts omeprazole. After 4 weeks her heartburn has resolved. Her endoscopic oesophagitis has healed on repeat endoscopy. She asks how the tablet works.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the mechanism of action of her medication?",
+      "o": ["Blockade of histamine H2 receptors", "Dopamine D2 receptor antagonism", "Irreversible inhibition of the H+/K+ ATPase", "Neutralisation of gastric acid", "Prostaglandin E1 analogue"],
+      "a": 2,
+      "e": "Omeprazole irreversibly inhibits the H+/K+ ATPase (proton pump) on parietal cells, cutting acid secretion so the mucosa can heal. Famotidine blocks H2 receptors.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Drug mechanism: which class is omeprazole?" },
+        { "t": "Pick out the clues", "clues": ["omeprazole", "oesophagitis has healed"], "x": "A PPI, which allows healing by cutting acid." },
+        { "t": "Make your own answer before looking", "x": "**Irreversible proton pump (H+/K+ ATPase) inhibition**." },
+        { "t": "Rule out the others", "elim": [
+          [0, "H2 blockade is famotidine."],
+          [1, "D2 antagonism is metoclopramide or domperidone."],
+          [3, "Neutralisation is antacids."],
+          [4, "A PGE1 analogue is misoprostol."]
+        ] },
+        { "t": "Commit", "x": "**C. H+/K+ ATPase inhibition.**" }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is GORD and what causes it?",
+        "tip": "Exam thinking: name the barrier that fails.",
+        "points": [
+          { "p": "Acid refluxes from stomach into oesophagus, causing irritation", "k": [["reflux", "flows back", "backflow"]], "why": "Retrograde flow of acidic gastric contents." },
+          { "p": "Defective lower oesophageal sphincter", "k": [["sphincter", "los", "les"]], "why": "The main cause." },
+          { "p": "Reduced oesophageal motility", "k": [["motility", "clearance"]], "why": "Acid is not cleared." },
+          { "p": "Hiatus hernia", "k": [["hiatus", "hernia"]], "why": "Disrupts the barrier at the GOJ." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the risk factors for GORD?",
+        "tip": "Exam thinking: anything that raises abdominal pressure or relaxes the LOS.",
+        "points": [
+          { "p": "Obesity", "k": [["obes", "weight", "bmi"]], "why": "Raises intra-abdominal pressure." },
+          { "p": "Hiatus hernia", "k": [["hiatus", "hernia"]], "why": "GOJ moves above the diaphragm." },
+          { "p": "Pregnancy (progesterone)", "k": [["pregnan", "progesterone"]], "why": "Progesterone relaxes the LOS." },
+          { "p": "Smoking", "k": [["smok", "cigarette"]], "why": "Lowers LOS tone." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does GORD present, including the atypical features?",
+        "tip": "Exam thinking: the stem may hide reflux behind a cough.",
+        "points": [
+          { "p": "Heartburn: burning chest pain worse after eating", "k": [["heartburn", "burning"]], "why": "The classic symptom." },
+          { "p": "Acid regurgitation", "k": [["regurgitat", "sour", "acid taste"]], "why": "Sour fluid into the mouth." },
+          { "p": "Worse lying down", "k": [["lying", "supine", "flat", "bending", "night"]], "why": "Gravity no longer helps." },
+          { "p": "Dysphagia, chronic cough, hoarseness", "k": [["cough", "hoarse", "dysphagia"]], "why": "Dysphagia is also a red flag." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the complications of long-standing GORD?",
+        "tip": "Exam thinking: one premalignant, one malignant, one benign.",
+        "points": [
+          { "p": "Barrett's oesophagus", "k": [["barrett"]], "why": "Columnar metaplasia." },
+          { "p": "Oesophageal carcinoma (adenocarcinoma)", "k": [["carcinoma", "cancer", "adenocarcinoma"]], "why": "Via Barrett's." },
+          { "p": "Benign oesophageal strictures", "k": [["stricture"]], "why": "Slow solid dysphagia with stable weight." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Which features suggest chest pain is GORD rather than cardiac?",
+        "tip": "Exam thinking: exclude ACS first with ECG and troponin.",
+        "points": [
+          { "p": "Related to meals, lying down or bending", "k": [["meal", "eating", "food", "lying", "bending"]], "why": "Cardiac pain comes with exertion." },
+          { "p": "Burning with regurgitation or sour taste", "k": [["burning", "regurgitat", "sour"]], "why": "Not tight or heavy." },
+          { "p": "Normal ECG and troponin", "k": [["ecg", "troponin"]], "why": "Always check first." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "How is GORD diagnosed, and what is done first-line?",
+        "tip": "Exam thinking: no red flags means no scope.",
+        "points": [
+          { "p": "Clinical diagnosis in most cases", "k": [["clinical", "history"]], "why": "Endoscopy is gold standard if confirmation is needed." },
+          { "p": "Carbon-13 urea breath test for H. pylori", "k": [["breath", "urea", "pylori"]], "why": "Test and treat." },
+          { "p": "Start a PPI (omeprazole)", "k": [["ppi", "omeprazole", "proton pump"]], "why": "After testing." },
+          { "p": "Meal diary to identify triggers", "k": [["diary", "trigger"]], "why": "Lifestyle intervention if no red flags." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "When is endoscopy needed, and what must the patient do before it?",
+        "tip": "Exam thinking: list the red flags in one breath.",
+        "points": [
+          { "p": "Red flags: weight loss, dysphagia, GI bleeding, anaemia, recurrent dyspepsia", "k": [["weight", "dysphagia", "bleed", "anaemi", "anemi"]], "why": "Urgent endoscopy." },
+          { "p": "Age 55 or over, or over 4 weeks of symptoms despite treatment", "k": [["55", "4 weeks", "four weeks", "despite"]], "why": "Routine endoscopy." },
+          { "p": "Stop omeprazole 2 weeks before", "k": [["2 weeks", "two weeks", "stop"]], "why": "So the PPI does not mask findings." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is first-line management of GORD?",
+        "tip": "Exam thinking: lifestyle plus PPI, every time.",
+        "points": [
+          { "p": "Weight loss", "k": [["weight"]], "why": "Lowers intra-abdominal pressure." },
+          { "p": "Avoid late meals", "k": [["late", "meal", "eating"]], "why": "Empty stomach at bedtime." },
+          { "p": "Elevate the head of the bed", "k": [["head", "elevat", "raise", "pillow"]], "why": "Gravity keeps acid down." },
+          { "p": "PPI (omeprazole)", "k": [["ppi", "omeprazole", "proton pump"]], "why": "First-line drug." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What do you do if a PPI does not work, and what is the surgical option?",
+        "tip": "Exam thinking: climb the ladder one rung at a time.",
+        "points": [
+          { "p": "Increase PPI dose or switch to lansoprazole", "k": [["increase", "double", "lansoprazole", "higher dose", "switch"]], "why": "Second-line." },
+          { "p": "Add an H2 receptor antagonist (famotidine)", "k": [["famotidine", "h2"]], "why": "Useful for night-time symptoms." },
+          { "p": "Fundoplication for refractory cases", "k": [["fundoplication", "nissen"]], "why": "Rare surgical option." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does chronic reflux lead to Barrett's and cancer?",
+        "tip": "Exam thinking: name the cell change exactly.",
+        "points": [
+          { "p": "Repeated acid exposure causes oesophagitis", "k": [["oesophagitis", "esophagitis", "inflamm"]], "why": "First step." },
+          { "p": "Columnar metaplasia of squamous epithelium (Barrett's)", "k": [["columnar", "metaplasia"]], "why": "Acid-resistant cells replace squamous." },
+          { "p": "Precursor to adenocarcinoma", "k": [["adenocarcinoma"]], "why": "Via dysplasia." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do pregnancy and hiatus hernia worsen reflux, and how do PPIs work?",
+        "tip": "Exam thinking: hormone, anatomy, enzyme.",
+        "points": [
+          { "p": "Progesterone relaxes smooth muscle including the LOS", "k": [["progesterone"]], "why": "Pregnancy risk." },
+          { "p": "Hiatus hernia disrupts the anatomical barrier at the GOJ", "k": [["hiatus", "goj", "junction", "barrier"]], "why": "Sliding hernias cause GORD." },
+          { "p": "PPIs irreversibly inhibit the H+/K+ ATPase on parietal cells", "k": [["atpase", "proton pump", "h+/k+"]], "why": "Less acid, so the mucosa heals." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "GORD": "Gastro-oesophageal reflux disease: symptoms or damage from stomach contents flowing back into the oesophagus.",
+    "lower oesophageal sphincter": "Muscle ring at the bottom of the oesophagus that stops stomach contents flowing back up.",
+    "LOS": "Lower oesophageal sphincter.",
+    "heartburn": "Burning pain behind the breastbone caused by acid in the oesophagus.",
+    "regurgitation": "Stomach contents coming back up into the mouth without vomiting.",
+    "dyspepsia": "Upper abdominal discomfort or indigestion.",
+    "dysphagia": "Difficulty swallowing; a red flag in reflux disease.",
+    "hoarseness": "A rough or strained voice, here from acid irritating the larynx.",
+    "hiatus hernia": "Part of the stomach pushed up through the diaphragm's oesophageal opening.",
+    "GOJ": "Gastro-oesophageal junction, where the oesophagus joins the stomach.",
+    "progesterone": "Pregnancy hormone that relaxes smooth muscle, including the LOS.",
+    "oesophagitis": "Inflammation of the oesophageal lining.",
+    "Barrett's oesophagus": "Replacement of oesophageal squamous lining by columnar cells due to reflux; premalignant.",
+    "metaplasia": "One mature cell type replaced by another better suited to a hostile environment.",
+    "columnar epithelium": "Tall, column-shaped lining cells, like those of the stomach and intestine.",
+    "dysplasia": "Disordered, abnormal cell growth that can progress to cancer.",
+    "adenocarcinoma": "Cancer of glandular cells; the oesophageal cancer linked to reflux and Barrett's.",
+    "stricture": "Narrowing of the oesophagus from scarring.",
+    "achalasia": "Failure of the LOS to relax with loss of peristalsis, causing dysphagia to solids and liquids.",
+    "red flags": "Warning features (weight loss, dysphagia, bleeding, anaemia) needing urgent endoscopy.",
+    "endoscopy": "A camera passed into the gut to look and take biopsies.",
+    "OGD": "Oesophagogastroduodenoscopy: endoscopy of the oesophagus, stomach and duodenum.",
+    "carbon-13 urea breath test": "Breath test detecting H. pylori, which splits labelled urea into labelled CO2.",
+    "H. pylori": "Helicobacter pylori, a stomach bacterium causing gastritis and ulcers.",
+    "PPI": "Proton pump inhibitor, such as omeprazole or lansoprazole; blocks acid secretion.",
+    "omeprazole": "A proton pump inhibitor; first-line drug for GORD.",
+    "lansoprazole": "An alternative proton pump inhibitor tried when omeprazole works poorly.",
+    "H2 receptor antagonist": "Drug such as famotidine that blocks histamine-driven acid secretion.",
+    "famotidine": "H2 receptor antagonist added for persistent, often night-time, reflux.",
+    "H+/K+ ATPase": "The proton pump on parietal cells that secretes stomach acid.",
+    "parietal cells": "Stomach lining cells that secrete acid and intrinsic factor.",
+    "fundoplication": "Surgery wrapping the gastric fundus around the lower oesophagus to stop reflux.",
+    "24-hour pH monitoring": "A probe measuring oesophageal acid over a day to prove reflux.",
+    "antacids": "Alkaline medicines that neutralise stomach acid for quick relief.",
+    "test and treat": "Testing for H. pylori and treating it before endoscopy in patients without red flags.",
+    "2-week wait": "NHS urgent suspected cancer referral, seen within two weeks."
+  }
+}

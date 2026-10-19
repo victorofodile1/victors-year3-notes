@@ -1,0 +1,2060 @@
+{
+ "id": "epididymitis-and-orchitis",
+ "patient": {
+  "name": "Kwame Mensah",
+  "age": 24,
+  "sex": "M",
+  "setting": "Emergency Department, then the sexual health clinic",
+  "complaint": "Two days of a painful, swollen right testicle",
+  "background": [
+   "Postgraduate student in Camden",
+   "New female partner 3 weeks ago; no condoms",
+   "Had MMR as a child",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely causative organism' with a painful scrotum: age and sexual history pick the organism, and onset, Prehn's sign and the cremasteric reflex separate it from torsion.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kwame, 24: right testicle aching for **2 days**, getting worse.",
+      "Stings when he passes urine.",
+      "**Unprotected sex** with a new partner 3 weeks ago.",
+      "No trauma; pain built up slowly, not in seconds."
+     ],
+     "vitals": {
+      "T": "38.1°C",
+      "HR": "96 bpm",
+      "BP": "128/76 mmHg",
+      "RR": "16 /min"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame has the textbook picture: one-sided, red, swollen, tender scrotum with fever and **dysuria**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Under 35 with recent unprotected sex: think **Chlamydia** or **gonorrhoea** first."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Age points to the organism",
+      "min": 15,
+      "max": 75,
+      "unit": "years",
+      "bands": [
+       [
+        15,
+        35,
+        "under 35: chlamydia, gonorrhoea",
+        "warn"
+       ],
+       [
+        35,
+        75,
+        "over 35: E. coli, Klebsiella",
+        "bad"
+       ]
+      ],
+      "value": 24,
+      "label": "Kwame 24",
+      "caption": "Under 35 = STI organisms; over 35 = urinary organisms. A recent catheter or UTI also points to urinary bugs."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Right epididymis swollen and **tender posteriorly**.",
+      "Lifting the testis **eases** the pain (Prehn's sign).",
+      "Testis lies normally; cremasteric reflex present.",
+      "No hard lump; swelling does not transilluminate."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "What is the most likely diagnosis?",
+     "o": [
+      "Epididymo-orchitis",
+      "Hydrocele",
+      "Testicular cancer",
+      "Testicular torsion"
+     ],
+     "a": 0,
+     "r": "Gradual painful swelling, fever, dysuria and pain eased by lifting the testis fit **epididymo-orchitis**. Torsion is sudden and elevation does not help."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's infection probably started in the **epididymis** and is spreading into the testis: epididymo-orchitis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "How the pain builds",
+      "x": [
+       "0 h",
+       "1 h",
+       "6 h",
+       "24 h",
+       "48 h"
+      ],
+      "unit": "pain /10",
+      "series": [
+       {
+        "name": "Torsion",
+        "values": [
+         9,
+         10,
+         10,
+         10,
+         10
+        ]
+       },
+       {
+        "name": "Epididymo-orchitis",
+        "values": [
+         2,
+         3,
+         5,
+         7,
+         7
+        ]
+       }
+      ],
+      "caption": "Torsion hits in minutes; epididymo-orchitis builds over hours to days."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame's positive **Prehn's sign** argues against torsion. Mumps orchitis would follow a swollen parotid by 4 to 8 days."
+    },
+    {
+     "type": "compare",
+     "title": "Painful scrotum: which one?",
+     "head": [
+      "Feature",
+      "Epididymo-orchitis",
+      "Testicular torsion",
+      "Mumps orchitis"
+     ],
+     "rows": [
+      [
+       "Age",
+       "Any; STI if under 35",
+       "Usually teens",
+       "Unvaccinated young men"
+      ],
+      [
+       "Onset",
+       "Gradual, hours to days",
+       "Sudden, severe",
+       "4 to 8 days after parotitis"
+      ],
+      [
+       "Prehn's sign",
+       "Elevation relieves pain",
+       "No relief",
+       "Often relieves"
+      ],
+      [
+       "Other clues",
+       "Dysuria, fever, positive urine",
+       "High-riding testis, absent cremasteric reflex",
+       "Parotid swelling, may be bilateral"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "A sudden painful testis in a teenager is **torsion until proven otherwise**. Do not let an epididymitis label delay a surgical review."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Kwame needs to hear why treatment matters: untreated infection risks **abscess**, chronic pain and infertility."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (urine dipstick), then the test that matches the likely organism (first-void NAAT under 35, MSU culture over 35), and scrotal ultrasound to exclude torsion.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which test is done first in the ED?",
+     "o": [
+      "CT abdomen and pelvis",
+      "Serum mumps IgM",
+      "Testicular biopsy",
+      "Urine dipstick"
+     ],
+     "a": 3,
+     "r": "The **urine dipstick** is the initial test: it shows leucocytes and nitrites and supports infection."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame is under 35 with STI risk, so after the dipstick he needs a **first-void urine NAAT** for chlamydia and gonorrhoea."
+    },
+    {
+     "type": "labs",
+     "title": "Kwame's results",
+     "rows": [
+      [
+       "Urine dipstick: leucocytes",
+       "+++",
+       "Negative",
+       "H"
+      ],
+      [
+       "Urine dipstick: nitrites",
+       "Negative",
+       "Negative",
+       ""
+      ],
+      [
+       "CRP",
+       "64 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "White cell count",
+       "13.2 x10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "First-void urine NAAT",
+       "Chlamydia trachomatis detected",
+       "Not detected",
+       "H"
+      ]
+     ],
+     "text": "Leucocytes without nitrites fits an STI urethritis rather than a typical E. coli UTI. The NAAT confirms chlamydia."
+    },
+    {
+     "type": "pearl",
+     "text": "Match the test to the age: **under 35 = first-void urine NAAT** (or urethral swab); **over 35 = MSU** for microscopy and culture."
+    },
+    {
+     "type": "story",
+     "points": [
+      "The registrar is fairly sure, but the pain is severe.",
+      "She wants torsion firmly excluded.",
+      "Ultrasound: swollen, hyperaemic epididymis; normal testicular blood flow."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's ultrasound shows **increased** flow to the epididymis. Torsion would show reduced or absent flow to the testis."
+    },
+    {
+     "type": "trap",
+     "text": "Mumps serology is not the first test in a sexually active man with dysuria. Think STI first, mumps only with parotid swelling."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': IM ceftriaxone plus oral doxycycline for an STI cause, oral ofloxacin for a urinary cause, and supportive care for mumps orchitis.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which antibiotic plan is right for Kwame?",
+     "o": [
+      "IM ceftriaxone plus oral doxycycline",
+      "Oral nitrofurantoin for 3 days",
+      "Oral ofloxacin for 14 days",
+      "No antibiotics; wait for NAAT"
+     ],
+     "a": 0,
+     "r": "Under 35 with STI risk: **IM ceftriaxone** (gonorrhoea) **plus doxycycline** (chlamydia), started before results return."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame gets a **single IM ceftriaxone** dose and **doxycycline twice daily for 2 weeks**, covering both gonorrhoea and chlamydia."
+    },
+    {
+     "type": "compare",
+     "title": "Which regimen?",
+     "head": [
+      "Cause",
+      "Typical patient",
+      "Treatment"
+     ],
+     "rows": [
+      [
+       "STI (chlamydia, gonorrhoea)",
+       "Under 35, unprotected sex",
+       "IM ceftriaxone once + oral doxycycline 2 weeks"
+      ],
+      [
+       "Urinary (E. coli, Klebsiella)",
+       "Over 35, UTI, catheter, BPH",
+       "Oral ofloxacin 14 days (or levofloxacin 10 days)"
+      ],
+      [
+       "Mumps",
+       "Unvaccinated, after parotitis",
+       "Rest, analgesia, scrotal elevation"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame also needs **analgesia, fluids and scrotal support**. He was vaccinated, so mumps is unlikely."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Response to treatment",
+      "x": [
+       "Day 0",
+       "Day 1",
+       "Day 3",
+       "Day 7",
+       "Day 14"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Pain score /10",
+        "values": [
+         7,
+         6,
+         4,
+         2,
+         1
+        ]
+       },
+       {
+        "name": "Temperature °C",
+        "values": [
+         38.1,
+         37.8,
+         37.1,
+         36.8,
+         36.7
+        ]
+       }
+      ],
+      "caption": "Fever settles in days; swelling can take weeks. No improvement in 3 days means reassess for abscess."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "An STI cause means **partner notification** and a full sexual health screen; he should avoid sex until he and his partner are treated."
+    },
+    {
+     "type": "trap",
+     "text": "Ofloxacin alone is the urinary regimen. In a young man with STI risk it misses **gonorrhoea**, so it is the wrong answer."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Science questions ask how infection reaches the epididymis (retrograde spread), why mumps causes orchitis (haematogenous) and why Prehn's sign works.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's chlamydia travelled **backwards** from the urethra up the vas deferens to the epididymis."
+    },
+    {
+     "type": "flow",
+     "title": "Retrograde spread",
+     "nodes": [
+      "Urethritis or UTI",
+      "Ejaculatory duct",
+      "Vas deferens",
+      "Epididymis",
+      "Testis (epididymo-orchitis)"
+     ],
+     "caption": "In older men, BPH causes stasis, which seeds urinary organisms the same way."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Kwame had been unvaccinated with swollen parotids, the virus would have reached the testis through the **blood**."
+    },
+    {
+     "type": "flow",
+     "title": "Mumps orchitis",
+     "nodes": [
+      "Mumps parotitis",
+      "Viraemia",
+      "Haematogenous spread to testis",
+      "Swelling 4 to 8 days later",
+      "Bilateral: risk of subfertility"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why did lifting Kwame's testis ease his pain?",
+     "o": [
+      "It reduces venous congestion of the inflamed testis",
+      "It stretches the cremaster muscle",
+      "It untwists the spermatic cord",
+      "It increases arterial inflow"
+     ],
+     "a": 0,
+     "r": "Elevation helps an oedematous, inflamed testis drain. In torsion the pedicle is twisted, so it does not help."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame's positive Prehn's sign makes sense: his testis is inflamed, not ischaemic."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which organisms most commonly cause epididymo-orchitis in men under 35?",
+   "o": [
+    "E. coli and Klebsiella",
+    "Chlamydia and gonorrhoea",
+    "Staphylococcus aureus",
+    "Mumps virus only"
+   ],
+   "a": 1,
+   "r": "Under 35 it is usually **STI-related**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism is most common in men over 35?",
+   "o": [
+    "Chlamydia trachomatis",
+    "Escherichia coli",
+    "Neisseria gonorrhoeae",
+    "Treponema pallidum"
+   ],
+   "a": 1,
+   "r": "Over 35, **urinary pathogens** such as E. coli dominate."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is Prehn's sign?",
+   "o": [
+    "Pain worse on lifting the testis",
+    "Pain relieved by lifting the testis",
+    "Loss of the cremasteric reflex",
+    "Transillumination of the swelling"
+   ],
+   "a": 1,
+   "r": "Relief on elevation suggests **epididymitis** rather than torsion."
+  },
+  {
+   "d": "diagnosis",
+   "q": "How long after parotid swelling does mumps orchitis typically appear?",
+   "o": [
+    "Within 24 hours",
+    "4 to 8 days",
+    "3 to 4 weeks",
+    "3 months"
+   ],
+   "a": 1,
+   "r": "Classically **4 to 8 days** after parotitis."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a complication of epididymo-orchitis?",
+   "o": [
+    "Hydronephrosis",
+    "Infertility",
+    "Varicocele",
+    "Testicular cancer"
+   ],
+   "a": 1,
+   "r": "Complications: **infertility**, abscess, chronic pain."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the initial test in suspected epididymo-orchitis?",
+   "o": [
+    "Scrotal ultrasound",
+    "Urine dipstick",
+    "Blood cultures",
+    "CT abdomen"
+   ],
+   "a": 1,
+   "r": "**Urine dipstick** first."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test is used when an STI cause is suspected?",
+   "o": [
+    "Mid-stream urine culture",
+    "First-void urine NAAT",
+    "Serum PSA",
+    "Blood film"
+   ],
+   "a": 1,
+   "r": "**NAAT** on first-void urine or a urethral swab."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line treatment for STI-related epididymitis?",
+   "o": [
+    "Oral ofloxacin 14 days",
+    "IM ceftriaxone plus oral doxycycline",
+    "Oral amoxicillin 7 days",
+    "IV gentamicin"
+   ],
+   "a": 1,
+   "r": "Single IM ceftriaxone plus **doxycycline twice daily for 2 weeks**."
+  },
+  {
+   "d": "management",
+   "q": "How is mumps orchitis prevented?",
+   "o": [
+    "Doxycycline prophylaxis",
+    "MMR vaccine",
+    "Condoms",
+    "Scrotal support"
+   ],
+   "a": 1,
+   "r": "The **MMR vaccine** prevents mumps."
+  },
+  {
+   "d": "science",
+   "q": "How does bacterial infection usually reach the epididymis?",
+   "o": [
+    "Haematogenous spread",
+    "Lymphatic spread",
+    "Retrograde spread along the vas deferens",
+    "Direct trauma"
+   ],
+   "a": 2,
+   "r": "Pathogens ascend **from the urethra or bladder** via the vas."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old man has a 3 day history of increasing pain and swelling of his left testis and burning on passing urine. He has had two new sexual partners this month. His temperature is 38.0°C, pulse rate 98 bpm and BP 126/78 mmHg. The left epididymis is swollen and tender. The pain eases when the testis is elevated. The cremasteric reflex is present.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Epididymo-orchitis",
+    "Incarcerated inguinal hernia",
+    "Mumps orchitis",
+    "Testicular torsion",
+    "Testicular tumour"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about a painful scrotum: first decide infection vs torsion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 day history of increasing pain",
+      "burning on passing urine",
+      "two new sexual partners",
+      "38.0°C",
+      "pain eases when the testis is elevated",
+      "cremasteric reflex is present"
+     ],
+     "x": "Gradual onset, dysuria, STI risk, fever, positive Prehn's sign and a present reflex all point away from torsion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Infection of the epididymis spreading to the testis: **epididymo-orchitis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "A hernia gives a groin swelling you cannot get above, with obstructive symptoms, not dysuria."
+      ],
+      [
+       2,
+       "Mumps follows parotid swelling and is not linked to dysuria or new partners."
+      ],
+      [
+       3,
+       "Torsion is sudden, the reflex is absent and elevation does not ease pain."
+      ],
+      [
+       4,
+       "A tumour is a painless, hard, craggy lump."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Epididymo-orchitis.** Rule: gradual + dysuria + Prehn's positive = infection; sudden + absent reflex = torsion."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 61 year old man has a 2 day history of a painful, swollen right testis. He had a urinary catheter removed a week ago after a hip replacement. He has a single long-term partner. His temperature is 37.9°C, pulse rate 92 bpm and BP 140/84 mmHg. Urine dipstick shows leucocytes and nitrites.",
+   "visual": null,
+   "q": "Which is the most appropriate investigation to identify the causative organism?",
+   "o": [
+    "First-void urine NAAT",
+    "Mid-stream urine microscopy and culture",
+    "Serum alpha-fetoprotein",
+    "Serum mumps IgM",
+    "Testicular biopsy"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An investigation question asking for the organism: decide STI or urinary first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "61 year old",
+      "urinary catheter removed a week ago",
+      "single long-term partner",
+      "leucocytes and nitrites"
+     ],
+     "x": "Over 35, recent catheter, low STI risk and nitrites: a urinary organism such as E. coli."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Urinary organism = **MSU for microscopy and culture**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "NAAT looks for chlamydia and gonorrhoea, which are unlikely here."
+      ],
+      [
+       2,
+       "AFP is a testicular tumour marker, not an infection test."
+      ],
+      [
+       3,
+       "Mumps is a young unvaccinated man's disease after parotitis."
+      ],
+      [
+       4,
+       "Biopsy is never used to diagnose infection and risks spread."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Mid-stream urine microscopy and culture.** Rule: over 35 = MSU; under 35 = NAAT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 20 year old man has a 2 day history of a painful, swollen left testis and urethral discharge. He had unprotected sex with a new partner 10 days ago. His temperature is 37.8°C, pulse rate 90 bpm and BP 122/74 mmHg. Prehn's sign is positive. Scrotal ultrasound shows normal testicular blood flow. NAAT results are awaited.",
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "IM ceftriaxone plus oral doxycycline",
+    "Oral amoxicillin for 7 days",
+    "Oral ofloxacin for 14 days",
+    "Supportive treatment only",
+    "Urgent scrotal exploration"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: start treatment that covers the likely organisms before the results are back."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "20 year old",
+      "urethral discharge",
+      "unprotected sex with a new partner",
+      "normal testicular blood flow",
+      "NAAT results are awaited"
+     ],
+     "x": "Young man with an STI picture, torsion excluded: cover both gonorrhoea and chlamydia now."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IM ceftriaxone single dose plus doxycycline twice daily for 2 weeks.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Amoxicillin covers neither chlamydia nor gonorrhoea reliably."
+      ],
+      [
+       2,
+       "Ofloxacin is the urinary-organism regimen and misses gonorrhoea."
+      ],
+      [
+       3,
+       "Bacterial infection needs antibiotics; supportive care alone is for mumps."
+      ],
+      [
+       4,
+       "Ultrasound has excluded torsion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. IM ceftriaxone plus oral doxycycline.** Treat empirically; do not wait for NAAT."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 25 year old man has a 2 day history of a painful, swollen right testis. When the doctor gently lifts the testis, his pain is clearly reduced. Ultrasound shows an enlarged, oedematous epididymis with increased blood flow.",
+   "visual": null,
+   "q": "Which is the most likely explanation for the reduction in pain?",
+   "o": [
+    "Increased arterial inflow to the testis",
+    "Reduced venous congestion of the inflamed tissue",
+    "Relaxation of the cremaster muscle",
+    "Stretching of the ilioinguinal nerve",
+    "Untwisting of the spermatic cord"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question explaining a sign in the vignette: Prehn's sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pain is clearly reduced",
+      "oedematous epididymis",
+      "increased blood flow"
+     ],
+     "x": "An inflamed, oedematous epididymis with no torsion: lifting helps it drain."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Elevation reduces **venous congestion** and so the pain."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Elevation does not increase arterial inflow."
+      ],
+      [
+       2,
+       "The cremaster is not the source of the pain."
+      ],
+      [
+       3,
+       "Elevation does not stretch this nerve, and it does not explain relief."
+      ],
+      [
+       4,
+       "There is no torsion here; flow is increased."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Reduced venous congestion.** In torsion the pedicle is twisted, so elevation cannot help."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 23 year old man has a 2 day history of gradually worsening pain and swelling in his right testis. He has dysuria. He had unprotected sex with a new partner 3 weeks ago. His temperature is 38.2°C, pulse rate 100 bpm and BP 124/76 mmHg. The right hemiscrotum is red and the epididymis is tender. Lifting the testis relieves the pain.",
+   "labs": [
+    [
+     "Urine dipstick",
+     "Leucocytes +++",
+     "Negative",
+     "H"
+    ],
+    [
+     "CRP",
+     "58 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Epididymal cyst",
+    "Epididymo-orchitis",
+    "Testicular torsion",
+    "Testicular tumour",
+    "Varicocele"
+   ],
+   "a": 1,
+   "e": "Gradual unilateral scrotal pain with fever, dysuria and a positive Prehn's sign is epididymo-orchitis. Torsion is sudden and not eased by elevation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a painful scrotum: infection or torsion?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "gradually worsening pain",
+      "dysuria",
+      "unprotected sex",
+      "38.2°C",
+      "Lifting the testis relieves the pain"
+     ],
+     "x": "Gradual, febrile, dysuria, STI risk, positive Prehn's sign."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Epididymo-orchitis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A cyst is painless, fluctuant and separate from the testis."
+      ],
+      [
+       2,
+       "Torsion is sudden and elevation does not relieve the pain."
+      ],
+      [
+       3,
+       "A tumour is painless and hard."
+      ],
+      [
+       4,
+       "A varicocele is a painless 'bag of worms', usually left-sided."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Epididymo-orchitis.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 26 year old man has a 3 day history of a painful, swollen left testis and a clear urethral discharge. He has had several casual partners and rarely uses condoms. His temperature is 37.8°C, pulse rate 88 bpm and BP 130/78 mmHg. The left epididymis is swollen and tender.",
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Chlamydia trachomatis",
+    "Escherichia coli",
+    "Mumps virus",
+    "Staphylococcus aureus",
+    "Treponema pallidum"
+   ],
+   "a": 0,
+   "e": "Under 35 with STI risk, chlamydia (and gonorrhoea) are the most common causes. E. coli is the over-35 urinary organism.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: age and sexual history decide it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "26 year old",
+      "clear urethral discharge",
+      "several casual partners",
+      "rarely uses condoms"
+     ],
+     "x": "Under 35 with STI risk and a clear discharge."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The commonest STI cause: **Chlamydia trachomatis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "E. coli is the commonest cause over 35 or with UTI."
+      ],
+      [
+       2,
+       "Mumps follows parotitis in unvaccinated men."
+      ],
+      [
+       3,
+       "Staph is not a typical cause of epididymitis."
+      ],
+      [
+       4,
+       "Syphilis causes a painless chancre, not epididymitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Chlamydia trachomatis.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man has a 2 day history of a painful, swollen right testis. He has a long history of a weak urinary stream and nocturia. He had a urinary catheter for 3 days last week. His temperature is 38.0°C, pulse rate 94 bpm and BP 142/86 mmHg. Urine dipstick shows nitrites and leucocytes.",
+   "labs": [
+    [
+     "MSU",
+     "Gram-negative bacilli >10⁵ CFU/mL",
+     "No growth",
+     "H"
+    ],
+    [
+     "CRP",
+     "71 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Chlamydia trachomatis",
+    "Escherichia coli",
+    "Mumps virus",
+    "Mycobacterium tuberculosis",
+    "Neisseria gonorrhoeae"
+   ],
+   "a": 1,
+   "e": "Over 35, after catheterisation and with BPH, a urinary pathogen such as E. coli is most likely.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question in an older man."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "66 year old",
+      "weak urinary stream and nocturia",
+      "urinary catheter",
+      "nitrites and leucocytes"
+     ],
+     "x": "Over 35, probable BPH with stasis, recent catheter, nitrite-positive urine."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A urinary organism: **E. coli**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Chlamydia is the under-35 STI organism."
+      ],
+      [
+       2,
+       "Mumps orchitis follows parotitis in unvaccinated men."
+      ],
+      [
+       3,
+       "TB epididymitis is rare and chronic, often with a beaded vas."
+      ],
+      [
+       4,
+       "Gonorrhoea is an STI organism in younger men."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Escherichia coli.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old man has a 1 day history of a painful, swollen left testis. A week ago he had fever and painful swelling in front of both ears. He was not vaccinated as a child. He has never been sexually active. His temperature is 38.3°C, pulse rate 102 bpm and BP 118/70 mmHg.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Gonococcal epididymitis",
+    "Infectious mononucleosis",
+    "Mumps orchitis",
+    "Testicular torsion",
+    "Testicular tumour"
+   ],
+   "a": 2,
+   "e": "Orchitis 4 to 8 days after parotid swelling in an unvaccinated young man is mumps. No sexual activity rules out gonorrhoea.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: link the earlier illness to the testis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "swelling in front of both ears",
+      "not vaccinated",
+      "never been sexually active",
+      "A week ago"
+     ],
+     "x": "Parotitis about a week ago in an unvaccinated young man, then orchitis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Mumps orchitis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "He has never been sexually active."
+      ],
+      [
+       1,
+       "EBV gives sore throat and lymphadenopathy, not orchitis after parotitis."
+      ],
+      [
+       3,
+       "Torsion is sudden and has no link to parotitis."
+      ],
+      [
+       4,
+       "A tumour is painless and gradual."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Mumps orchitis.** Orchitis 4 to 8 days after parotitis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 28 year old man has a 2 day history of increasing right scrotal pain and fever. He had unprotected sex 2 weeks ago. His temperature is 38.1°C, pulse rate 96 bpm and BP 128/80 mmHg. The right epididymis is swollen and tender posteriorly. The testis lies normally.",
+   "visual": null,
+   "q": "Which is the most likely finding on further examination?",
+   "o": [
+    "Absent cremasteric reflex",
+    "Hard, craggy, painless mass",
+    "High-riding testis with a horizontal lie",
+    "Pain relieved by elevating the testis",
+    "Transilluminating, fluctuant swelling"
+   ],
+   "a": 3,
+   "e": "Prehn's sign (pain relieved by elevation) supports epididymo-orchitis. A high-riding testis and absent reflex point to torsion.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question: predict the sign from the diagnosis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "2 day history of increasing",
+      "unprotected sex",
+      "38.1°C",
+      "tender posteriorly",
+      "testis lies normally"
+     ],
+     "x": "This is epididymo-orchitis, so the classic sign is Prehn's."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pain relieved by elevating the testis** (positive Prehn's sign)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That suggests torsion."
+      ],
+      [
+       1,
+       "That suggests a tumour."
+      ],
+      [
+       2,
+       "That is the torsion picture."
+      ],
+      [
+       4,
+       "That is a hydrocele or cyst."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pain relieved by elevating the testis.** The other options are torsion, tumour or hydrocele signs."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old man and his partner have been trying to conceive for 2 years. At 17 he was unvaccinated and had painful swelling of both testes a week after swelling of his parotid glands. Both testes are now small and soft. His pulse rate is 70 bpm and BP 124/78 mmHg.",
+   "labs": [
+    [
+     "Semen analysis: sperm concentration",
+     "2 million/mL",
+     ">16 million/mL",
+     "L"
+    ],
+    [
+     "FSH",
+     "24 IU/L",
+     "1.5–12.4",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of his subfertility?",
+   "o": [
+    "Anabolic steroid use",
+    "Bilateral mumps orchitis",
+    "Cryptorchidism",
+    "Klinefelter syndrome",
+    "Varicocele"
+   ],
+   "a": 1,
+   "e": "Bilateral mumps orchitis can cause testicular atrophy and subfertility, shown by low sperm count and raised FSH.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: join the past history to the present problem."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unvaccinated",
+      "both testes",
+      "a week after swelling of his parotid glands",
+      "small and soft"
+     ],
+     "x": "Bilateral orchitis after parotitis, now atrophic testes and low sperm count."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Bilateral mumps orchitis** causing testicular atrophy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "There is no history of steroid use."
+      ],
+      [
+       2,
+       "There is no history of undescended testes."
+      ],
+      [
+       3,
+       "Klinefelter causes lifelong small testes, not a clear post-infective history."
+      ],
+      [
+       4,
+       "A varicocele is a palpable 'bag of worms' and does not shrink both testes like this."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bilateral mumps orchitis.** Bilateral orchitis carries the subfertility risk."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 22 year old man has a 2 day history of a painful, swollen left testis and dysuria. He has a new sexual partner. His temperature is 37.9°C, pulse rate 92 bpm and BP 124/76 mmHg. Urine dipstick shows leucocytes but no nitrites. Testicular blood flow on ultrasound is normal.",
+   "visual": null,
+   "q": "Which is the most appropriate investigation to identify the cause?",
+   "o": [
+    "Blood cultures",
+    "First-void urine NAAT",
+    "Mid-stream urine culture",
+    "Serum mumps IgM",
+    "Testicular biopsy"
+   ],
+   "a": 1,
+   "e": "Under 35 with STI risk, the organism is found by NAAT on first-void urine or a urethral swab. MSU culture is for urinary organisms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An investigation question for the organism in a young man."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "22 year old",
+      "dysuria",
+      "new sexual partner",
+      "leucocytes but no nitrites"
+     ],
+     "x": "Under 35, STI risk, sterile-looking pyuria."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**First-void urine NAAT** for chlamydia and gonorrhoea."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Blood cultures rarely grow chlamydia or gonorrhoea."
+      ],
+      [
+       2,
+       "MSU is for urinary organisms in older men."
+      ],
+      [
+       3,
+       "No parotitis; STI is far more likely."
+      ],
+      [
+       4,
+       "Biopsy is not used to diagnose infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. First-void urine NAAT.**"
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old man has a 12 hour history of right testicular pain and swelling. The pain began gradually. He has mild dysuria. His temperature is 37.6°C, pulse rate 90 bpm and BP 130/82 mmHg. The testis lies normally and the cremasteric reflex is present, but the examination is limited by pain. The team wants to exclude torsion.",
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "CT abdomen and pelvis",
+    "Mid-stream urine culture",
+    "Plain abdominal X-ray",
+    "Scrotal ultrasound",
+    "Serum alpha-fetoprotein"
+   ],
+   "a": 3,
+   "e": "Scrotal ultrasound with Doppler shows testicular blood flow and excludes torsion. Urine tests identify the organism but cannot exclude torsion.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The question line tells you the aim: exclude torsion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "began gradually",
+      "mild dysuria",
+      "cremasteric reflex is present",
+      "limited by pain",
+      "exclude torsion"
+     ],
+     "x": "Probable epididymo-orchitis, but torsion must be excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Scrotal ultrasound** (with Doppler flow)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CT does not assess testicular blood flow well and gives radiation."
+      ],
+      [
+       1,
+       "MSU identifies an organism but cannot exclude torsion."
+      ],
+      [
+       2,
+       "An X-ray shows nothing about testicular perfusion."
+      ],
+      [
+       4,
+       "AFP is a tumour marker."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Scrotal ultrasound.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 21 year old man has a 3 day history of a painful, swollen right testis. Two days ago his first-void urine NAAT was positive for Neisseria gonorrhoeae. His temperature is 37.9°C, pulse rate 94 bpm and BP 120/74 mmHg. Ultrasound shows a swollen epididymis with normal testicular flow. He has no allergies.",
+   "labs": [
+    [
+     "First-void urine NAAT",
+     "N. gonorrhoeae detected",
+     "Not detected",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "IM ceftriaxone plus oral doxycycline",
+    "Oral ciprofloxacin for 3 days",
+    "Oral nitrofurantoin for 7 days",
+    "Oral ofloxacin for 14 days",
+    "Urgent orchidectomy"
+   ],
+   "a": 0,
+   "e": "STI-related epididymo-orchitis is treated with IM ceftriaxone plus doxycycline for 2 weeks, covering gonorrhoea and chlamydia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: match the regimen to the organism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "21 year old",
+      "positive for Neisseria gonorrhoeae",
+      "normal testicular flow"
+     ],
+     "x": "STI-related epididymo-orchitis in a young man."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IM ceftriaxone single dose plus oral doxycycline** (covers co-infection with chlamydia)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Too short, and gonorrhoea is often fluoroquinolone-resistant."
+      ],
+      [
+       2,
+       "Nitrofurantoin does not reach the epididymis or cover gonorrhoea."
+      ],
+      [
+       3,
+       "That is the urinary-organism regimen."
+      ],
+      [
+       4,
+       "This is an infection; surgery is not first-line."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. IM ceftriaxone plus oral doxycycline.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man has a 2 day history of a painful, swollen left testis following a urinary tract infection. He is in a long-term monogamous relationship. His temperature is 37.8°C, pulse rate 88 bpm and BP 138/84 mmHg. Mid-stream urine grows Escherichia coli. Ultrasound shows normal testicular blood flow.",
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "IM ceftriaxone plus oral doxycycline",
+    "Oral nitrofurantoin for 3 days",
+    "Oral ofloxacin for 14 days",
+    "Supportive treatment only",
+    "Urgent scrotal exploration"
+   ],
+   "a": 2,
+   "e": "Epididymo-orchitis from a urinary pathogen is treated with oral ofloxacin for 14 days. Ceftriaxone plus doxycycline is the STI regimen.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of a urinary-organism epididymo-orchitis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "63 year old",
+      "following a urinary tract infection",
+      "monogamous",
+      "Escherichia coli"
+     ],
+     "x": "Over 35, after UTI, E. coli grown."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Oral ofloxacin for 14 days** (or levofloxacin for 10 days)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is the STI regimen; he has a urinary organism."
+      ],
+      [
+       1,
+       "A 3 day course is for simple cystitis and does not treat epididymitis."
+      ],
+      [
+       3,
+       "Bacterial infection needs antibiotics."
+      ],
+      [
+       4,
+       "Torsion has been excluded."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Oral ofloxacin for 14 days.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 20 year old unvaccinated man has a painful, swollen right testis 5 days after developing bilateral parotid swelling. He is not sexually active. His temperature is 38.0°C, pulse rate 96 bpm and BP 122/70 mmHg. Ultrasound shows an enlarged testis with increased blood flow. Urine dipstick is negative.",
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "IM ceftriaxone plus oral doxycycline",
+    "Oral aciclovir",
+    "Oral ofloxacin for 14 days",
+    "Rest, analgesia and scrotal elevation",
+    "Urgent orchidectomy"
+   ],
+   "a": 3,
+   "e": "Mumps orchitis is managed supportively with rest, analgesia and scrotal elevation; antibiotics do not help. MMR prevents it.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of a viral orchitis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unvaccinated",
+      "5 days after developing bilateral parotid swelling",
+      "not sexually active",
+      "Urine dipstick is negative"
+     ],
+     "x": "Mumps orchitis is viral, so treatment is supportive."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Rest, analgesia and scrotal elevation.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "There is no bacterial or STI cause here."
+      ],
+      [
+       1,
+       "Aciclovir treats herpes viruses, not mumps."
+      ],
+      [
+       2,
+       "Antibiotics do not treat a viral orchitis."
+      ],
+      [
+       4,
+       "Orchitis settles with supportive care; surgery is wrong."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Rest, analgesia and scrotal elevation.** Prevention is MMR."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 25 year old man has epididymo-orchitis. First-void urine NAAT is positive for Chlamydia trachomatis. Ten days earlier he had a urethral discharge and dysuria. Ultrasound shows a swollen epididymis with inflammation extending into the testis.",
+   "visual": null,
+   "q": "Which is the most likely route by which infection reached the epididymis?",
+   "o": [
+    "Direct spread from the inguinal canal",
+    "Haematogenous spread",
+    "Lymphatic spread from the pelvis",
+    "Retrograde spread along the vas deferens",
+    "Spread from the overlying scrotal skin"
+   ],
+   "a": 3,
+   "e": "Bacteria ascend from the urethra or bladder along the vas deferens to the epididymis, then spread into the testis. Haematogenous spread is mumps.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: how does a urethral infection reach the epididymis?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Chlamydia trachomatis",
+      "Ten days earlier he had a urethral discharge",
+      "inflammation extending into the testis"
+     ],
+     "x": "Urethritis first, then epididymitis, then the testis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Retrograde spread** up the vas deferens, then contiguous spread into the testis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "The inguinal canal is not a route of infection here."
+      ],
+      [
+       1,
+       "That is how mumps reaches the testis."
+      ],
+      [
+       2,
+       "Lymphatics are not the usual route."
+      ],
+      [
+       4,
+       "There is no skin infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Retrograde spread along the vas deferens.**"
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is epididymo-orchitis and how does it usually progress?",
+    "tip": "Exam thinking: it usually starts in the epididymis.",
+    "points": [
+     {
+      "p": "Inflammation of the epididymis and/or testis due to infection",
+      "k": [
+       [
+        "epididym"
+       ],
+       [
+        "testis",
+        "testes",
+        "testic",
+        "orchi"
+       ]
+      ],
+      "why": "Orchitis alone is classically viral."
+     },
+     {
+      "p": "Starts as epididymitis, can progress to epididymo-orchitis",
+      "k": [
+       [
+        "start",
+        "begin",
+        "progress",
+        "spread"
+       ]
+      ],
+      "why": "Isolated epididymitis: epididymis palpable separately."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which organisms cause it under 35 and over 35?",
+    "tip": "Exam thinking: age plus sexual history = organism.",
+    "points": [
+     {
+      "p": "Under 35: Chlamydia trachomatis",
+      "k": [
+       [
+        "chlamydia"
+       ]
+      ],
+      "why": "The commonest under 35."
+     },
+     {
+      "p": "Under 35: Neisseria gonorrhoeae",
+      "k": [
+       [
+        "gonorrh",
+        "gonococc"
+       ]
+      ],
+      "why": "Cover it with ceftriaxone."
+     },
+     {
+      "p": "Over 35: E. coli",
+      "k": [
+       [
+        "coli"
+       ]
+      ],
+      "why": "Commonest urinary organism."
+     },
+     {
+      "p": "Over 35: Klebsiella pneumoniae",
+      "k": [
+       [
+        "klebsiella"
+       ]
+      ],
+      "why": "Second most common urinary organism."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors and classic symptoms?",
+    "tip": "Exam thinking: dysuria and fever point to infection, not torsion.",
+    "points": [
+     {
+      "p": "Unprotected intercourse",
+      "k": [
+       [
+        "unprotected",
+        "condom",
+        "sexual",
+        "sti"
+       ]
+      ],
+      "why": "Under-35 route."
+     },
+     {
+      "p": "UTI or recent catheterisation",
+      "k": [
+       [
+        "uti",
+        "urinary tract",
+        "catheter"
+       ]
+      ],
+      "why": "Over-35 route."
+     },
+     {
+      "p": "Unilateral painful, red, swollen scrotum",
+      "k": [
+       [
+        "unilateral",
+        "one side",
+        "one-sided",
+        "swell",
+        "swollen"
+       ]
+      ],
+      "why": "Tender swollen epididymis."
+     },
+     {
+      "p": "Fever and dysuria",
+      "k": [
+       [
+        "fever",
+        "pyrexi",
+        "temperature"
+       ],
+       [
+        "dysuria",
+        "burning",
+        "sting"
+       ]
+      ],
+      "why": "Positive urine test supports infection."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell epididymo-orchitis from testicular torsion?",
+    "tip": "Exam thinking: onset, Prehn's sign and the cremasteric reflex.",
+    "points": [
+     {
+      "p": "Prehn's sign: pain relieved by elevating the testis",
+      "k": [
+       [
+        "prehn",
+        "elevat",
+        "lift"
+       ]
+      ],
+      "why": "In torsion elevation does not relieve pain."
+     },
+     {
+      "p": "Gradual onset rather than sudden",
+      "k": [
+       [
+        "gradual",
+        "slow",
+        "days"
+       ]
+      ],
+      "why": "Torsion is sudden and severe."
+     },
+     {
+      "p": "Torsion: high-riding testis, absent cremasteric reflex",
+      "k": [
+       [
+        "cremaster",
+        "high"
+       ]
+      ],
+      "why": "Torsion is a surgical emergency."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe classic mumps orchitis.",
+    "tip": "Exam thinking: look for parotid swelling earlier in the stem.",
+    "points": [
+     {
+      "p": "Viral, classically mumps",
+      "k": [
+       [
+        "mumps",
+        "viral",
+        "virus"
+       ]
+      ],
+      "why": "Haematogenous spread."
+     },
+     {
+      "p": "Unvaccinated young men",
+      "k": [
+       [
+        "unvaccinated",
+        "not vaccinated",
+        "no mmr"
+       ]
+      ],
+      "why": "MMR prevents it."
+     },
+     {
+      "p": "4 to 8 days after parotid swelling",
+      "k": [
+       [
+        "4",
+        "four"
+       ],
+       [
+        "parotid",
+        "parotitis"
+       ]
+      ],
+      "why": "Can be bilateral."
+     },
+     {
+      "p": "Epididymis not distinctly palpable from the testis",
+      "k": [
+       [
+        "not distinct",
+        "not separate",
+        "cannot separate",
+        "not palpable separately"
+       ]
+      ],
+      "why": "Unlike isolated epididymitis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications?",
+    "tip": "Exam thinking: bilateral disease threatens fertility.",
+    "points": [
+     {
+      "p": "Infertility",
+      "k": [
+       [
+        "infertil",
+        "subfertil"
+       ]
+      ],
+      "why": "Especially after bilateral mumps orchitis."
+     },
+     {
+      "p": "Testicular abscess",
+      "k": [
+       [
+        "abscess"
+       ]
+      ],
+      "why": "Suspect if no improvement on antibiotics."
+     },
+     {
+      "p": "Chronic pain",
+      "k": [
+       [
+        "chronic"
+       ]
+      ],
+      "why": "Chronic epididymitis."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which investigations do you do, and how does age change them?",
+    "tip": "Exam thinking: dipstick first, then match the test to the organism.",
+    "points": [
+     {
+      "p": "Urine dipstick first",
+      "k": [
+       [
+        "dipstick",
+        "urinalysis"
+       ]
+      ],
+      "why": "Initial test."
+     },
+     {
+      "p": "Over 35 or UTI: mid-stream urine microscopy and culture",
+      "k": [
+       [
+        "msu",
+        "mid-stream",
+        "midstream",
+        "culture"
+       ]
+      ],
+      "why": "Finds E. coli."
+     },
+     {
+      "p": "Under 35 or STI: first-void urine or urethral swab NAAT",
+      "k": [
+       [
+        "naat",
+        "first-void",
+        "first void",
+        "swab"
+       ]
+      ],
+      "why": "For chlamydia and gonorrhoea."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which test excludes testicular torsion?",
+    "tip": "Exam thinking: torsion has reduced flow, infection increased flow.",
+    "points": [
+     {
+      "p": "Scrotal ultrasound",
+      "k": [
+       [
+        "ultrasound",
+        "doppler",
+        "uss"
+       ]
+      ],
+      "why": "Second-line, to exclude torsion."
+     },
+     {
+      "p": "Infection shows increased flow; torsion shows reduced or absent flow",
+      "k": [
+       [
+        "flow",
+        "perfusion",
+        "hyperaem"
+       ]
+      ],
+      "why": "Do not let imaging delay surgery if torsion is clinically likely."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the antibiotic regimen for an STI cause and for a urinary cause?",
+    "tip": "Exam thinking: ceftriaxone covers gonorrhoea, doxycycline covers chlamydia.",
+    "points": [
+     {
+      "p": "STI: IM ceftriaxone single dose",
+      "k": [
+       [
+        "ceftriaxone"
+       ]
+      ],
+      "why": "Gonorrhoea cover."
+     },
+     {
+      "p": "Plus oral doxycycline twice daily for 2 weeks",
+      "k": [
+       [
+        "doxycycline"
+       ]
+      ],
+      "why": "Chlamydia cover."
+     },
+     {
+      "p": "Urinary: oral ofloxacin for 14 days",
+      "k": [
+       [
+        "ofloxacin",
+        "levofloxacin"
+       ]
+      ],
+      "why": "Or levofloxacin 500 mg daily for 10 days."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What supportive care and prevention are used?",
+    "tip": "Exam thinking: mumps orchitis gets no antibiotics.",
+    "points": [
+     {
+      "p": "Analgesia, rest, fluids",
+      "k": [
+       [
+        "analges",
+        "paracetamol",
+        "nsaid",
+        "ibuprofen",
+        "rest"
+       ]
+      ],
+      "why": "For all causes."
+     },
+     {
+      "p": "Scrotal elevation",
+      "k": [
+       [
+        "elevat",
+        "support"
+       ]
+      ],
+      "why": "Reduces congestion and pain."
+     },
+     {
+      "p": "MMR vaccine prevents mumps orchitis",
+      "k": [
+       [
+        "mmr",
+        "vaccin"
+       ]
+      ],
+      "why": "Most cases are in the unvaccinated."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does infection reach the epididymis and testis, and why does Prehn's sign work?",
+    "tip": "Exam thinking: bacteria ascend; mumps arrives by blood.",
+    "points": [
+     {
+      "p": "Bacteria: retrograde spread from urethra or bladder along the vas deferens",
+      "k": [
+       [
+        "retrograde",
+        "ascend",
+        "backward"
+       ]
+      ],
+      "why": "Then contiguous spread into the testis."
+     },
+     {
+      "p": "Older men: BPH causes outflow obstruction and stasis",
+      "k": [
+       [
+        "bph",
+        "obstruct",
+        "stasis"
+       ]
+      ],
+      "why": "Explains urinary organisms over 35."
+     },
+     {
+      "p": "Mumps: haematogenous spread",
+      "k": [
+       [
+        "haematogenous",
+        "hematogenous",
+        "blood"
+       ]
+      ],
+      "why": "A complication of parotitis."
+     },
+     {
+      "p": "Elevation reduces venous congestion; torsion pedicle is twisted",
+      "k": [
+       [
+        "venous",
+        "congest",
+        "oedema",
+        "drain"
+       ]
+      ],
+      "why": "So elevation does not help torsion."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "epididymis": "The coiled tube behind the testis that stores and carries sperm.",
+  "epididymitis": "Inflammation of the epididymis, usually from infection.",
+  "orchitis": "Inflammation of the testis.",
+  "epididymo-orchitis": "Infection and inflammation of both the epididymis and the testis.",
+  "testicular torsion": "Twisting of the spermatic cord cutting off the testis's blood supply; a surgical emergency.",
+  "Prehn's sign": "Pain relieved by lifting the testis; supports epididymitis rather than torsion.",
+  "cremasteric reflex": "Stroking the inner thigh makes the testis rise; usually absent in torsion.",
+  "spermatic cord": "The bundle carrying the vas deferens, testicular vessels and nerves.",
+  "vas deferens": "The duct carrying sperm from the epididymis to the urethra.",
+  "Chlamydia trachomatis": "A common sexually transmitted bacterium; a leading cause of epididymitis under 35.",
+  "Neisseria gonorrhoeae": "The bacterium causing gonorrhoea; an STI cause of epididymitis.",
+  "E. coli": "Escherichia coli: a gut bacterium that is the commonest urinary pathogen.",
+  "Klebsiella": "A Gram-negative bacterium that causes urinary and other infections.",
+  "mumps": "A paramyxovirus infection causing parotid swelling; can spread to the testis.",
+  "parotitis": "Inflammation and swelling of the parotid salivary glands.",
+  "MMR": "The measles, mumps and rubella vaccine.",
+  "NAAT": "Nucleic acid amplification test: a very sensitive DNA test for chlamydia and gonorrhoea.",
+  "first-void urine": "The first part of the urine stream, which carries urethral organisms for NAAT.",
+  "MSU": "Mid-stream urine sample for microscopy and culture.",
+  "urine dipstick": "A quick strip test for leucocytes, nitrites, blood and protein in urine.",
+  "nitrites": "Made by many Gram-negative bacteria such as E. coli; a positive dipstick suggests UTI.",
+  "dysuria": "Pain or burning on passing urine.",
+  "STI": "Sexually transmitted infection.",
+  "ceftriaxone": "A third-generation cephalosporin given IM to treat gonorrhoea.",
+  "doxycycline": "A tetracycline antibiotic that treats chlamydia.",
+  "ofloxacin": "A fluoroquinolone antibiotic used for urinary-organism epididymitis.",
+  "levofloxacin": "A fluoroquinolone alternative to ofloxacin.",
+  "scrotal ultrasound": "Imaging of the scrotum; Doppler shows testicular blood flow to exclude torsion.",
+  "retrograde spread": "Infection travelling backwards up a duct, here from urethra to epididymis.",
+  "haematogenous": "Spread through the bloodstream.",
+  "hydrocele": "Fluid around the testis giving a soft swelling that transilluminates.",
+  "subfertility": "Reduced ability to conceive.",
+  "partner notification": "Informing and treating sexual partners of someone with an STI."
+ }
+}

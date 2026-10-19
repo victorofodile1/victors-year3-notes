@@ -1,0 +1,2001 @@
+{
+ "id": "rhinosinusitis",
+ "patient": {
+  "name": "Priya Raman",
+  "age": 34,
+  "sex": "F",
+  "setting": "GP surgery (routine appointment)",
+  "complaint": "Left cheek pain and thick green nasal discharge for 12 days after a cold",
+  "background": [
+   "Allergic rhinitis (hay fever) every summer",
+   "Smokes 8 cigarettes a day",
+   "Pharmacist in Tooting",
+   "Penicillin allergy: widespread rash as a teenager"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with facial pain, purulent discharge and blocked nose after a cold, or 'Which is the most likely complication?' when the eye swells or a headache becomes severe.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Priya, 34, had a **cold** two weeks ago.",
+      "Now: throbbing pain over her **left cheek**, worse bending forward.",
+      "Thick **green nasal discharge** and a blocked nose.",
+      "Food tastes of nothing; she **cannot smell** her coffee.",
+      "She felt better on day 5, then **worse again**."
+     ],
+     "vitals": {
+      "T": "37.8°C",
+      "HR": "84 bpm",
+      "BP": "122/76 mmHg",
+      "RR": "14 /min",
+      "SpO2": "99% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya's cold inflamed her nose and sinuses; a second worsening after a viral start hints at **secondary bacterial** infection."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya has three risk factors in one: a **recent URTI**, **allergic rhinitis** and **smoking**. Her left cheek pain points to the **maxillary** sinus."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Priya's symptoms since the cold",
+      "x": [
+       "Day 1",
+       "Day 3",
+       "Day 5",
+       "Day 8",
+       "Day 12"
+      ],
+      "unit": "symptom score (0-10)",
+      "series": [
+       {
+        "name": "Facial pain and congestion",
+        "values": [
+         4,
+         6,
+         3,
+         6,
+         8
+        ]
+       }
+      ],
+      "caption": "Better, then worse again ('double sickening'), lasting beyond 10 days: suspect bacterial rhinosinusitis."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Pressing over her left maxilla is **tender**.",
+      "Anterior rhinoscopy: **pus** in the left nasal cavity.",
+      "Eyes normal: no swelling, full movements, normal vision.",
+      "Neurology normal; no neck stiffness."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Every classic feature is here: **facial pain**, purulent discharge, congestion, loss of smell, and **maxillary tenderness** with pus seen in the nose."
+    },
+    {
+     "type": "ask",
+     "q": "Which is the most likely diagnosis for Priya?",
+     "o": [
+      "Acute rhinosinusitis",
+      "Cluster headache",
+      "Dental abscess",
+      "Migraine"
+     ],
+     "a": 0,
+     "r": "Facial pain with **purulent discharge, congestion and anosmia** after a cold is rhinosinusitis. Cluster headache and migraine have no discharge; a dental abscess gives tooth pain."
+    },
+    {
+     "type": "compare",
+     "title": "Facial pain: rhinosinusitis vs the look-alikes",
+     "head": [
+      "Feature",
+      "Rhinosinusitis",
+      "Dental abscess",
+      "Cluster headache"
+     ],
+     "rows": [
+      [
+       "Trigger",
+       "After a cold",
+       "Bad tooth",
+       "None; attacks at night"
+      ],
+      [
+       "Nose",
+       "**Purulent discharge**, blocked",
+       "Normal",
+       "Clear runny, one side"
+      ],
+      [
+       "Smell",
+       "Reduced",
+       "Normal",
+       "Normal"
+      ],
+      [
+       "Pain",
+       "Cheek pressure, worse bending",
+       "Tooth, on biting",
+       "Severe, around one eye, 15-180 min"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Priya's eyes and neurology are normal, so there are **no red flags** for orbital or intracranial spread today."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Her sinuses sit right next to her **orbit** and **brain**: that is why she is safety-netted for eye swelling or a severe headache."
+    },
+    {
+     "type": "trap",
+     "text": "A swollen, red eyelid with **painful or reduced eye movements** in sinusitis is **orbital cellulitis**, not simple conjunctivitis. It needs same-day hospital assessment."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' where the answer is usually none (clinical diagnosis), or CT sinuses when disease is severe, recurrent or complicated.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Priya asks whether she needs an X-ray or a scan. What confirms the diagnosis?",
+     "o": [
+      "Clinical assessment alone",
+      "CT sinuses",
+      "Nasal swab culture",
+      "Sinus X-ray"
+     ],
+     "a": 0,
+     "r": "Acute rhinosinusitis is a **clinical diagnosis**. Imaging and swabs do not change management in uncomplicated cases."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya's history and examination make the diagnosis: **no blood tests, swab or imaging** are needed today."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "How long have symptoms lasted?",
+      "min": 0,
+      "max": 16,
+      "unit": "weeks",
+      "bands": [
+       [
+        0,
+        12,
+        "Acute (under 12 weeks)",
+        "ok"
+       ],
+       [
+        12,
+        16,
+        "Chronic (12 weeks or more)",
+        "warn"
+       ]
+      ],
+      "value": 1.7,
+      "label": "Priya 12 days",
+      "caption": "Priya is acute. Symptoms beyond 12 weeks make it chronic rhinosinusitis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Priya's sinusitis kept coming back or became severe, **CT sinuses** would show the anatomy, blocked ostia and any polyps."
+    },
+    {
+     "type": "trap",
+     "text": "Plain **sinus X-rays** are not used. If imaging is needed, it is **CT sinuses**; a suspected orbital or intracranial complication needs urgent contrast CT."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' where the duration and severity decide: self-care first, intranasal steroid for moderate symptoms, and phenoxymethylpenicillin (doxycycline if allergic) beyond 10 days or if severe.",
+   "steps": [
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Days of symptoms",
+      "min": 0,
+      "max": 21,
+      "unit": "days",
+      "bands": [
+       [
+        0,
+        10,
+        "Self-care: likely viral",
+        "ok"
+       ],
+       [
+        10,
+        21,
+        "Beyond 10 days: consider antibiotic",
+        "warn"
+       ]
+      ],
+      "value": 12,
+      "label": "Priya day 12",
+      "caption": "Priya has crossed the 10-day line and worsened after improving."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya already takes **paracetamol and ibuprofen**. Her symptoms are moderate, so she starts **intranasal fluticasone** and saline irrigation."
+    },
+    {
+     "type": "ask",
+     "q": "Priya's symptoms have lasted 12 days and worsened. She is penicillin allergic. Which antibiotic?",
+     "o": [
+      "Amoxicillin",
+      "Ciprofloxacin",
+      "Doxycycline",
+      "Phenoxymethylpenicillin"
+     ],
+     "a": 2,
+     "r": "Beyond 10 days, the first-line antibiotic is **phenoxymethylpenicillin**; with a penicillin allergy it is **doxycycline** (clarithromycin is the alternative)."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya qualifies for an antibiotic (**over 10 days**). Because of her penicillin allergy she gets **doxycycline** instead of phenoxymethylpenicillin."
+    },
+    {
+     "type": "flow",
+     "title": "Acute rhinosinusitis pathway",
+     "nodes": [
+      "Red flags (eye, neuro, severe headache)? → urgent hospital assessment",
+      "Up to 10 days → self-care: paracetamol, ibuprofen",
+      "Moderate-severe → intranasal corticosteroid + saline irrigation",
+      "Beyond 10 days or severe → phenoxymethylpenicillin",
+      "Penicillin allergy → doxycycline (or clarithromycin)"
+     ],
+     "caption": "Red flags first; then the 10-day line decides antibiotics."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Priya's plan follows **NICE NG79**: no antibiotic in the first 10 days, then a narrow-spectrum antibiotic if symptoms persist or are severe."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Priya does not need ENT now. If she developed **chronic** symptoms with **polyps**, a deviated septum, or **one-sided** pain or bleeding, she would be referred."
+    },
+    {
+     "type": "pearl",
+     "text": "**One-sided** chronic nasal symptoms (blockage, bleeding, pain) need ENT referral to exclude a structural cause or **tumour**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why the maxillary sinus is most affected, how a viral infection leads to bacterial sinusitis, or how infection reaches the orbit.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya's cold swelled her mucosa and slowed her cilia; blocked **ostia** trapped mucus where bacteria could multiply."
+    },
+    {
+     "type": "flow",
+     "title": "From cold to bacterial sinusitis",
+     "nodes": [
+      "Viral URTI",
+      "Mucosal oedema and impaired mucociliary clearance",
+      "Sinus ostia blocked",
+      "Stasis of secretions",
+      "Secondary bacterial infection"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why is Priya's maxillary sinus the one infected?",
+     "o": [
+      "It has no cilia",
+      "It has the thinnest mucosa",
+      "It is the smallest sinus",
+      "Its ostium drains against gravity"
+     ],
+     "a": 3,
+     "r": "The maxillary ostium is **high on the medial wall** and narrow, so it drains **against gravity** and blocks easily."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya's left maxillary sinus could not drain upwards through its narrow ostium, so secretions **pooled** and became infected."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Fluticasone shrinks Priya's swollen mucosa, **reopening the ostia** so the sinus can drain again."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Only a thin plate of bone (the **lamina papyracea**) separates Priya's ethmoid sinus from her orbit: infection can spread straight through."
+    },
+    {
+     "type": "pearl",
+     "text": "**Orbital cellulitis** in children usually comes from the **ethmoid** sinus through the lamina papyracea."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which sinus is most commonly affected in rhinosinusitis?",
+   "o": [
+    "Ethmoid",
+    "Frontal",
+    "Maxillary",
+    "Sphenoid"
+   ],
+   "a": 2,
+   "r": "The **maxillary** sinus, because its ostium drains against gravity."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What usually causes acute rhinosinusitis?",
+   "o": [
+    "Bacteria from the start",
+    "Fungi",
+    "Nasal polyps",
+    "Viruses"
+   ],
+   "a": 3,
+   "r": "Most cases are **viral**; bacterial infection often follows secondarily."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a risk factor for rhinosinusitis?",
+   "o": [
+    "Allergic rhinitis",
+    "Hypertension",
+    "Male sex",
+    "Statin use"
+   ],
+   "a": 0,
+   "r": "Recent URTI, **allergic rhinitis** and smoking are the risk factors in the notes."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which complication of rhinosinusitis presents with a swollen eye and painful eye movements?",
+   "o": [
+    "Brain abscess",
+    "Chronic sinusitis",
+    "Orbital cellulitis",
+    "Otitis media"
+   ],
+   "a": 2,
+   "r": "Spread into the orbit causes **orbital cellulitis**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold standard for diagnosing acute rhinosinusitis?",
+   "o": [
+    "Clinical diagnosis",
+    "CT sinuses",
+    "MRI head",
+    "Nasal swab"
+   ],
+   "a": 0,
+   "r": "It is a **clinical diagnosis**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which investigation is used in severe or recurrent rhinosinusitis?",
+   "o": [
+    "CT sinuses",
+    "Nasal endoscopy biopsy",
+    "Skull X-ray",
+    "Ultrasound face"
+   ],
+   "a": 0,
+   "r": "**CT sinuses** for severe or recurrent disease."
+  },
+  {
+   "d": "management",
+   "q": "After how many days of symptoms should an antibiotic be considered?",
+   "o": [
+    "3",
+    "5",
+    "7",
+    "10"
+   ],
+   "a": 3,
+   "r": "Symptoms persisting beyond **10 days**, or severe symptoms."
+  },
+  {
+   "d": "management",
+   "q": "Which antibiotic is first-line for bacterial rhinosinusitis?",
+   "o": [
+    "Amoxicillin",
+    "Clarithromycin",
+    "Doxycycline",
+    "Phenoxymethylpenicillin"
+   ],
+   "a": 3,
+   "r": "**Phenoxymethylpenicillin**; doxycycline if penicillin allergic."
+  },
+  {
+   "d": "management",
+   "q": "Which treatment is first-line for moderate-severe symptoms?",
+   "o": [
+    "Intranasal corticosteroid",
+    "Oral antihistamine",
+    "Oral antibiotic",
+    "Xylometazoline for 4 weeks"
+   ],
+   "a": 0,
+   "r": "**Intranasal corticosteroid** (e.g. fluticasone) with saline irrigation."
+  },
+  {
+   "d": "science",
+   "q": "How do intranasal corticosteroids help?",
+   "o": [
+    "Kill bacteria",
+    "Reduce mucosal oedema and improve drainage",
+    "Thin mucus directly",
+    "Vasoconstrict nasal vessels"
+   ],
+   "a": 1,
+   "r": "They **reduce inflammation and oedema**, reopening the sinus ostia."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 41 year old man has a 2 week history of pain over his right cheek and a blocked nose. It started after a cold. The pain is worse when he bends forward. He has thick yellow nasal discharge and has lost his sense of smell. There is tenderness over the right maxilla. His eyes and neurological examination are normal.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute rhinosinusitis",
+    "Allergic rhinitis",
+    "Cluster headache",
+    "Dental abscess",
+    "Trigeminal neuralgia"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about facial pain: look for nasal symptoms."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started after a cold",
+      "worse when he bends forward",
+      "thick yellow nasal discharge",
+      "lost his sense of smell",
+      "tenderness over the right maxilla"
+     ],
+     "x": "Post-viral onset, **purulent discharge**, anosmia and maxillary tenderness."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Facial pain + purulent discharge + congestion after a cold = **acute rhinosinusitis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Allergic rhinitis gives clear discharge, sneezing and itch, not facial pain with pus."
+      ],
+      [
+       2,
+       "Cluster headache: severe periorbital attacks lasting minutes to hours, clear rhinorrhoea."
+      ],
+      [
+       3,
+       "A dental abscess gives tooth pain and swelling, no nasal discharge."
+      ],
+      [
+       4,
+       "Trigeminal neuralgia is seconds-long electric shocks with no discharge."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute rhinosinusitis.** Rule: facial pain plus purulent nasal discharge after a cold."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 29 year old woman has a 6 day history of facial pain, nasal congestion and green nasal discharge following a cold. She is otherwise well. Her temperature is 37.6°C and pulse rate 80 bpm. There is tenderness over both maxillary sinuses. Her eyes and neurological examination are normal.",
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "CT sinuses",
+    "Full blood count and CRP",
+    "MRI head",
+    "Nasal swab for culture",
+    "No investigation needed"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An investigation question in a well patient: ask whether any test changes management."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6 day history",
+      "otherwise well",
+      "Her eyes and neurological examination are normal"
+     ],
+     "x": "Short history, well, **no red flags**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Uncomplicated acute rhinosinusitis is a **clinical diagnosis**: no tests."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CT sinuses is for severe or recurrent disease, or complications."
+      ],
+      [
+       1,
+       "Bloods do not change management in a well patient."
+      ],
+      [
+       2,
+       "MRI is not used for uncomplicated sinusitis."
+      ],
+      [
+       3,
+       "Swabs are not routinely used; most cases are viral."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. No investigation needed.** Rule: typical sinusitis without red flags is diagnosed clinically."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 36 year old woman has a 14 day history of facial pain, nasal blockage and purulent nasal discharge after a cold. Her symptoms are not improving despite paracetamol and ibuprofen. She has no penicillin allergy. Her temperature is 37.9°C, pulse rate 88 bpm and BP 124/78 mmHg. Her eyes and neurology are normal.",
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Amoxicillin-clavulanate",
+    "Ciprofloxacin",
+    "Doxycycline",
+    "Phenoxymethylpenicillin",
+    "Urgent ENT referral"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: the duration and allergy status decide."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "14 day history",
+      "not improving despite paracetamol and ibuprofen",
+      "no penicillin allergy",
+      "eyes and neurology are normal"
+     ],
+     "x": "Beyond **10 days**, failed self-care, not allergic, no red flags."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Persistent symptoms beyond 10 days: first-line **phenoxymethylpenicillin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Co-amoxiclav is reserved for severe or failed first-line treatment."
+      ],
+      [
+       1,
+       "Ciprofloxacin is not used for sinusitis."
+      ],
+      [
+       2,
+       "Doxycycline is for penicillin allergy; she has none."
+      ],
+      [
+       4,
+       "ENT is for structural problems or unilateral chronic symptoms."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Phenoxymethylpenicillin.** Rule: over 10 days, not allergic = penicillin V."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 45 year old man has recurrent episodes of left cheek pain and purulent nasal discharge after colds. CT sinuses shows fluid in the left maxillary sinus, while the frontal and ethmoid sinuses are clear.",
+   "q": "Which is the most likely reason the maxillary sinus is affected?",
+   "o": [
+    "It has the largest number of goblet cells",
+    "It is lined by squamous epithelium",
+    "It lacks a blood supply",
+    "Its ostium drains against gravity",
+    "Its walls are the thickest"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why this sinus?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fluid in the left maxillary sinus",
+      "frontal and ethmoid sinuses are clear"
+     ],
+     "x": "Only the maxillary sinus has pooled secretions."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The maxillary ostium is **high and narrow**, draining **against gravity**, so secretions stagnate."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Goblet cell number is not the explanation."
+      ],
+      [
+       1,
+       "Sinuses are lined by ciliated respiratory epithelium, not squamous."
+      ],
+      [
+       2,
+       "It has a good blood supply."
+      ],
+      [
+       4,
+       "Wall thickness does not explain stasis; thin walls explain spread."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Its ostium drains against gravity.** Narrow, upward drainage = obstruction and stasis."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old woman has a 12 day history of a blocked nose, thick green nasal discharge and pain over both cheeks. She had a cold before this started and felt better for a few days before getting worse. She has reduced sense of smell. Her temperature is 37.7°C, pulse rate 82 bpm and BP 118/74 mmHg. Both maxillae are tender.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bacterial rhinosinusitis",
+    "Allergic rhinitis",
+    "Common cold",
+    "Migraine",
+    "Nasal polyps"
+   ],
+   "a": 0,
+   "e": "Worsening after initial improvement, symptoms beyond 10 days, purulent discharge and maxillary tenderness point to bacterial rhinosinusitis. A cold resolves in about a week.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: viral cold versus sinusitis versus allergy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "12 day history",
+      "thick green nasal discharge",
+      "felt better for a few days before getting worse",
+      "Both maxillae are tender"
+     ],
+     "x": "Beyond 10 days, **double sickening**, purulent discharge, sinus tenderness."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Secondary bacterial infection after a viral start: **acute bacterial rhinosinusitis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Allergic rhinitis: clear discharge, sneezing, itch, no fever."
+      ],
+      [
+       2,
+       "A cold settles within about a week and does not worsen again."
+      ],
+      [
+       3,
+       "Migraine has no purulent discharge or sinus tenderness."
+      ],
+      [
+       4,
+       "Polyps give chronic blockage and anosmia, not acute pain and pus."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute bacterial rhinosinusitis.** Better then worse beyond 10 days = bacterial."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old man has facial pain and nasal congestion after a cold. He describes pressure under his right eye extending to his upper teeth. He has purulent nasal discharge.",
+   "labs": [],
+   "visual": null,
+   "q": "Which sinus is most likely to be affected?",
+   "o": [
+    "Ethmoid",
+    "Frontal",
+    "Maxillary",
+    "Mastoid air cells",
+    "Sphenoid"
+   ],
+   "a": 2,
+   "e": "Pain in the cheek under the eye radiating to the upper teeth is the maxillary sinus, the most commonly affected. Frontal gives forehead pain; sphenoid gives deep or vertex headache.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which sinus: map the pain to the anatomy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pressure under his right eye",
+      "extending to his upper teeth"
+     ],
+     "x": "Cheek pain spreading to the upper teeth = **maxillary**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The **maxillary** sinus sits above the upper teeth roots and is the most common."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Ethmoid pain is between the eyes."
+      ],
+      [
+       1,
+       "Frontal pain is over the forehead."
+      ],
+      [
+       3,
+       "Mastoid air cells relate to the ear, not the nose."
+      ],
+      [
+       4,
+       "Sphenoid gives deep, retro-orbital or vertex headache."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Maxillary.** The commonest sinus; pain under the eye and into the upper teeth."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old woman has recurrent facial pain and purulent nasal discharge every few months. She has seasonal sneezing and itchy eyes each summer and smokes 15 cigarettes a day. Her temperature is 37.4°C, pulse rate 76 bpm and BP 116/70 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely predisposing factor for her rhinosinusitis?",
+   "o": [
+    "Allergic rhinitis",
+    "Asthma",
+    "Female sex",
+    "Iron deficiency",
+    "Oral contraceptive pill"
+   ],
+   "a": 0,
+   "e": "Seasonal sneezing and itchy eyes are allergic rhinitis, a key risk factor (with smoking and recent URTI) because it causes chronic mucosal oedema.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A risk factor question: which option is in the notes' list?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "seasonal sneezing and itchy eyes",
+      "smokes 15 cigarettes a day"
+     ],
+     "x": "Hay fever pattern = **allergic rhinitis**; smoking is also a risk but is not an option."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Risk factors: recent URTI, **allergic rhinitis**, smoking."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Asthma is not described here."
+      ],
+      [
+       2,
+       "Female sex is not a recognised risk factor."
+      ],
+      [
+       3,
+       "Iron deficiency does not predispose to sinusitis."
+      ],
+      [
+       4,
+       "The pill is not a risk factor."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Allergic rhinitis.** Swollen mucosa blocks the ostia."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 9 year old boy has had a cold with purulent nasal discharge for 8 days. Today his left eyelids are red and swollen, and moving the left eye is painful. His temperature is 38.9°C, pulse rate 124 bpm and BP 102/64 mmHg. Left eye movements are reduced.",
+   "labs": [
+    [
+     "White cell count",
+     "17.8 x 10^9/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "C-reactive protein",
+     "112 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Allergic conjunctivitis",
+    "Brain abscess",
+    "Dacryocystitis",
+    "Orbital cellulitis",
+    "Periorbital eczema"
+   ],
+   "a": 3,
+   "e": "Eyelid swelling with painful and reduced eye movements after sinusitis is orbital cellulitis, from spread through the lamina papyracea. A brain abscess gives headache and neurological signs.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A complication question: where has the sinus infection gone?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "purulent nasal discharge for 8 days",
+      "moving the left eye is painful",
+      "Left eye movements are reduced"
+     ],
+     "x": "Sinusitis followed by eye signs: **painful, reduced movements** mean the orbit is involved."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Spread into the orbit: **orbital cellulitis**, an emergency."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Allergic conjunctivitis is itchy with normal eye movements and no fever."
+      ],
+      [
+       1,
+       "Brain abscess gives headache, vomiting or focal neurology."
+      ],
+      [
+       2,
+       "Dacryocystitis is a swelling at the medial canthus over the tear sac."
+      ],
+      [
+       4,
+       "Eczema is not febrile and does not restrict eye movement."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Orbital cellulitis.** Sinusitis + painful, reduced eye movements = orbital spread."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old man has a 10 day history of sinus pain and purulent nasal discharge. Over 2 days he has developed a severe headache, vomiting and confusion. His temperature is 39.1°C, pulse rate 110 bpm and BP 134/82 mmHg. He has a right-sided weakness. There is no neck stiffness.",
+   "labs": [
+    [
+     "White cell count",
+     "16.2 x 10^9/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "C-reactive protein",
+     "146 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Brain abscess",
+    "Chronic rhinosinusitis",
+    "Migraine with aura",
+    "Orbital cellulitis",
+    "Subarachnoid haemorrhage"
+   ],
+   "a": 0,
+   "e": "Sinusitis followed by severe headache, fever, confusion and focal weakness is intracranial spread: a brain abscess. Orbital cellulitis affects the eye, and SAH is sudden-onset without a preceding infection.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Complication question: the new features tell you where infection has spread."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sinus pain and purulent nasal discharge",
+      "severe headache, vomiting and confusion",
+      "right-sided weakness"
+     ],
+     "x": "Red flags: severe headache and **focal neurology** after sinusitis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Intracranial spread through the skull base: **brain abscess**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Chronic sinusitis is 12+ weeks of symptoms, not acute neurology."
+      ],
+      [
+       2,
+       "Migraine does not cause fever, raised CRP and confusion."
+      ],
+      [
+       3,
+       "Orbital cellulitis gives eye swelling and painful eye movements."
+      ],
+      [
+       4,
+       "SAH is a thunderclap headache with no preceding sinus infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Brain abscess.** Sinusitis + headache + neuro signs = intracranial complication."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 40 year old woman has had a cold for 5 days. She now has facial pressure and a blocked nose. A medical student examines her.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination if she has maxillary rhinosinusitis?",
+   "o": [
+    "Bilateral conjunctival injection",
+    "Clear watery rhinorrhoea",
+    "Pale, boggy nasal turbinates",
+    "Tenderness over the cheek",
+    "Tonsillar exudate"
+   ],
+   "a": 3,
+   "e": "Maxillary sinusitis causes tenderness over the affected sinus and purulent discharge in the nasal cavity. Pale boggy turbinates and clear rhinorrhoea suggest allergic rhinitis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A finding question: what would you see or feel in maxillary sinusitis?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "facial pressure",
+      "blocked nose",
+      "had a cold for 5 days"
+     ],
+     "x": "The sinus is under the cheek."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Tenderness over the maxillary sinus** (cheek), with purulent discharge in the nose."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Red eyes suggest conjunctivitis or allergy."
+      ],
+      [
+       1,
+       "Clear discharge fits a cold or allergy; sinusitis is purulent."
+      ],
+      [
+       2,
+       "Pale, boggy turbinates are allergic rhinitis."
+      ],
+      [
+       4,
+       "Tonsillar exudate is tonsillitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Tenderness over the cheek.** Tender sinus + pus in the nose."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 25 year old man has a 4 day history of nasal congestion, facial pain and yellow nasal discharge after a cold. He is otherwise well. His temperature is 37.5°C, pulse rate 78 bpm and BP 120/76 mmHg. There is tenderness over the left maxilla. His eyes and neurological examination are normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate way to confirm the diagnosis?",
+   "o": [
+    "Clinical assessment",
+    "CT sinuses",
+    "MRI head",
+    "Nasal swab",
+    "Sinus X-ray"
+   ],
+   "a": 0,
+   "e": "Acute rhinosinusitis is a clinical diagnosis, the gold standard in the notes. CT sinuses is reserved for severe or recurrent disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming the diagnosis: what is the gold standard?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "4 day history",
+      "otherwise well",
+      "eyes and neurological examination are normal"
+     ],
+     "x": "Short, uncomplicated, no red flags."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Clinical diagnosis** from history and examination."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CT is for severe or recurrent disease, or complications."
+      ],
+      [
+       2,
+       "MRI is not used for uncomplicated sinusitis."
+      ],
+      [
+       3,
+       "Swabs are not routine and most cases are viral."
+      ],
+      [
+       4,
+       "Plain X-rays are not used."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Clinical assessment.** Rhinosinusitis is a clinical diagnosis."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 47 year old woman has had five episodes of rhinosinusitis in the last year, each needing antibiotics. Between episodes she has a persistently blocked nose. Her temperature is 36.9°C and pulse rate 72 bpm.",
+   "labs": [
+    [
+     "C-reactive protein",
+     "6 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "White cell count",
+     "7.9 x 10^9/L",
+     "4.0–11.0",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Allergy skin prick test only",
+    "CT sinuses",
+    "Nasal swab for culture",
+    "No investigation",
+    "Plain sinus X-ray"
+   ],
+   "a": 1,
+   "e": "Recurrent rhinosinusitis needs CT sinuses to look for anatomical obstruction or polyps. Plain X-rays are not used.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation in recurrent disease: second-line imaging."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "five episodes of rhinosinusitis in the last year",
+      "persistently blocked nose"
+     ],
+     "x": "**Recurrent** disease with persistent blockage."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Severe or recurrent: **CT sinuses**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Allergy testing may help but does not show sinus anatomy."
+      ],
+      [
+       2,
+       "A swab does not explain why it keeps recurring."
+      ],
+      [
+       3,
+       "Recurrent disease warrants imaging."
+      ],
+      [
+       4,
+       "Plain X-rays are not used for sinus disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. CT sinuses.** Recurrent or severe = CT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 30 year old man has a 5 day history of facial pain, nasal congestion and purulent discharge after a cold. He is otherwise well. His temperature is 37.4°C, pulse rate 76 bpm and BP 122/80 mmHg. His eyes and neurology are normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Doxycycline",
+    "Oral prednisolone",
+    "Paracetamol and ibuprofen",
+    "Phenoxymethylpenicillin",
+    "Urgent ENT referral"
+   ],
+   "a": 2,
+   "e": "Within 10 days and well, management is self-care with paracetamol and ibuprofen. Antibiotics are for symptoms beyond 10 days or severe disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: check the day count."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5 day history",
+      "otherwise well",
+      "eyes and neurology are normal"
+     ],
+     "x": "Under 10 days, mild, no red flags."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Likely viral: **self-care** with paracetamol and ibuprofen."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Doxycycline is for penicillin-allergic patients needing antibiotics."
+      ],
+      [
+       1,
+       "Oral steroids are only for intense flares."
+      ],
+      [
+       3,
+       "Antibiotics wait until beyond 10 days or severe symptoms."
+      ],
+      [
+       4,
+       "ENT is for structural or unilateral chronic problems."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Paracetamol and ibuprofen.** Under 10 days = self-care."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 52 year old woman has a 13 day history of facial pain and purulent nasal discharge that is getting worse despite paracetamol, ibuprofen and fluticasone nasal spray. She had anaphylaxis to penicillin. Her temperature is 38.0°C, pulse rate 90 bpm and BP 128/82 mmHg. Her eyes and neurology are normal.",
+   "labs": [
+    [
+     "C-reactive protein",
+     "38 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate antibiotic?",
+   "o": [
+    "Amoxicillin",
+    "Co-amoxiclav",
+    "Doxycycline",
+    "Flucloxacillin",
+    "Phenoxymethylpenicillin"
+   ],
+   "a": 2,
+   "e": "Beyond 10 days with penicillin allergy, doxycycline is first choice (clarithromycin the alternative). Amoxicillin, co-amoxiclav, flucloxacillin and penicillin V are all penicillins.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Antibiotic choice: check the allergy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "13 day history",
+      "getting worse",
+      "anaphylaxis to penicillin"
+     ],
+     "x": "Beyond 10 days and worsening, with a **true penicillin allergy**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Penicillin allergic: **doxycycline**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amoxicillin is a penicillin."
+      ],
+      [
+       1,
+       "Co-amoxiclav contains amoxicillin."
+      ],
+      [
+       3,
+       "Flucloxacillin is a penicillin and targets skin staph."
+      ],
+      [
+       4,
+       "Penicillin V is first-line only if not allergic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Doxycycline.** Allergic = doxycycline (or clarithromycin)."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old man has 5 months of a blocked left nostril, left-sided facial pain and occasional blood-stained discharge from the left side. The right side is clear. He has tried a fluticasone nasal spray without benefit. His pulse rate is 74 bpm and BP 136/84 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Oral prednisolone course",
+    "Phenoxymethylpenicillin",
+    "Reassurance and saline irrigation",
+    "Referral to ENT",
+    "Xylometazoline spray"
+   ],
+   "a": 3,
+   "e": "Unilateral chronic rhinosinusitis symptoms with pain and bleeding need ENT referral to exclude a structural cause or tumour. More medical treatment would delay this.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step: is this a referral situation?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5 months",
+      "blocked left nostril",
+      "blood-stained discharge from the left side",
+      "The right side is clear"
+     ],
+     "x": "**Chronic**, **one-sided**, with bleeding."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Unilateral chronic symptoms = **ENT referral**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Steroids treat flares but miss a structural cause."
+      ],
+      [
+       1,
+       "Antibiotics do not address a chronic unilateral problem."
+      ],
+      [
+       2,
+       "Reassurance is unsafe with unilateral bleeding."
+      ],
+      [
+       4,
+       "Decongestants cause rebound and delay diagnosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Referral to ENT.** One-sided chronic symptoms = refer."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 26 year old woman develops facial pain and purulent nasal discharge 10 days after a viral upper respiratory tract infection. A swab later grows Streptococcus pneumoniae.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism allowing bacterial infection to develop?",
+   "o": [
+    "Direct invasion through intact mucosa",
+    "Haematogenous spread from the lungs",
+    "Increased cilia beat frequency",
+    "Mucosal oedema blocking the sinus ostia",
+    "Reduced mucus production"
+   ],
+   "a": 3,
+   "e": "Viral infection causes mucosal oedema and impaired mucociliary clearance, blocking the ostia so secretions stagnate and bacteria multiply.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: how does viral become bacterial?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "10 days after a viral upper respiratory tract infection",
+      "Streptococcus pneumoniae"
+     ],
+     "x": "A viral start, then a secondary bacterial infection."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Oedema and impaired clearance **obstruct the ostia**: stasis lets bacteria grow."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bacteria need stasis, not invasion of intact mucosa."
+      ],
+      [
+       1,
+       "Sinusitis is not spread from the blood or lungs."
+      ],
+      [
+       2,
+       "Mucociliary clearance is impaired, not increased."
+      ],
+      [
+       4,
+       "Mucus secretion increases."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Mucosal oedema blocking the sinus ostia.** Blocked drainage = stasis = infection."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is rhinosinusitis, what usually causes it, and which sinus is most affected?",
+    "tip": "Exam thinking: viral first, bacterial second; maxillary most often.",
+    "points": [
+     {
+      "p": "Inflammation of the nasal cavity and paranasal sinuses",
+      "k": [
+       [
+        "inflam"
+       ],
+       [
+        "sinus"
+       ]
+      ],
+      "why": "The 'rhino' part: the nose is always involved too."
+     },
+     {
+      "p": "Most commonly viral",
+      "k": [
+       [
+        "viral",
+        "virus"
+       ]
+      ],
+      "why": "So antibiotics are not needed in the first 10 days."
+     },
+     {
+      "p": "Bacterial infection often secondary",
+      "k": [
+       [
+        "bacteri"
+       ],
+       [
+        "second"
+       ]
+      ],
+      "why": "Double sickening suggests the bacterial phase."
+     },
+     {
+      "p": "Maxillary sinus most commonly affected",
+      "k": [
+       [
+        "maxillary"
+       ]
+      ],
+      "why": "Its ostium drains against gravity."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Name the risk factors for rhinosinusitis.",
+    "tip": "Exam thinking: the stem often hides hay fever or a smoking history.",
+    "points": [
+     {
+      "p": "Recent URTI",
+      "k": [
+       [
+        "urti",
+        "cold",
+        "upper respiratory",
+        "viral"
+       ]
+      ],
+      "why": "The most common trigger."
+     },
+     {
+      "p": "Allergic rhinitis",
+      "k": [
+       [
+        "allerg",
+        "hay fever"
+       ]
+      ],
+      "why": "Chronic mucosal oedema blocks the ostia."
+     },
+     {
+      "p": "Smoking",
+      "k": [
+       [
+        "smok",
+        "cigarette",
+        "tobacco"
+       ]
+      ],
+      "why": "Smoke paralyses cilia."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the symptoms and examination findings of acute rhinosinusitis?",
+    "tip": "Exam thinking: facial pain plus purulent discharge is the pairing that makes it sinusitis.",
+    "points": [
+     {
+      "p": "Facial pain or pressure",
+      "k": [
+       [
+        "facial",
+        "face",
+        "cheek"
+       ],
+       [
+        "pain",
+        "pressure",
+        "ache"
+       ]
+      ],
+      "why": "Worse bending forward."
+     },
+     {
+      "p": "Purulent nasal discharge",
+      "k": [
+       [
+        "purulent",
+        "pus",
+        "green",
+        "yellow"
+       ]
+      ],
+      "why": "Clear discharge points to a cold or allergy."
+     },
+     {
+      "p": "Nasal congestion",
+      "k": [
+       [
+        "congest",
+        "blocked",
+        "blockage",
+        "obstruct"
+       ]
+      ],
+      "why": "Oedema of the mucosa."
+     },
+     {
+      "p": "Headache and reduced smell (anosmia)",
+      "k": [
+       [
+        "smell",
+        "anosmia",
+        "hyposmia"
+       ]
+      ],
+      "why": "Loss of smell is a useful discriminator from a headache disorder."
+     },
+     {
+      "p": "Tenderness over the affected sinus; pus seen in the nasal cavity",
+      "k": [
+       [
+        "tender"
+       ]
+      ],
+      "why": "Maxillary tenderness is over the cheek."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of rhinosinusitis and the red flags that suggest one?",
+    "tip": "Exam thinking: eye signs = orbit; neuro signs or severe headache = brain.",
+    "points": [
+     {
+      "p": "Orbital cellulitis",
+      "k": [
+       [
+        "orbit"
+       ]
+      ],
+      "why": "Painful, reduced eye movements and eyelid swelling."
+     },
+     {
+      "p": "Brain abscess",
+      "k": [
+       [
+        "brain",
+        "intracranial"
+       ],
+       [
+        "abscess"
+       ]
+      ],
+      "why": "Severe headache, fever, confusion, focal signs."
+     },
+     {
+      "p": "Chronic sinusitis",
+      "k": [
+       [
+        "chronic"
+       ]
+      ],
+      "why": "Symptoms lasting 12 weeks or more."
+     },
+     {
+      "p": "Red flags: severe headache, neurological signs, eye symptoms → urgent assessment",
+      "k": [
+       [
+        "headache",
+        "neuro",
+        "eye",
+        "visual"
+       ]
+      ],
+      "why": "Any of these means same-day hospital assessment."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which features help you tell rhinosinusitis apart from a cold, allergic rhinitis and a headache disorder?",
+    "tip": "Exam thinking: duration, discharge colour and facial tenderness.",
+    "points": [
+     {
+      "p": "Cold: clear discharge, settles within about a week",
+      "k": [
+       [
+        "cold",
+        "urti"
+       ],
+       [
+        "week",
+        "clear",
+        "7"
+       ]
+      ],
+      "why": "Beyond 10 days suggests sinusitis."
+     },
+     {
+      "p": "Allergic rhinitis: clear discharge, sneezing, itch, seasonal",
+      "k": [
+       [
+        "allerg",
+        "hay fever"
+       ]
+      ],
+      "why": "Pale boggy turbinates, no fever."
+     },
+     {
+      "p": "Migraine or cluster headache: no purulent discharge or sinus tenderness",
+      "k": [
+       [
+        "migraine",
+        "cluster"
+       ]
+      ],
+      "why": "Cluster gives clear one-sided rhinorrhoea, not pus."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is rhinosinusitis diagnosed, and when is imaging used?",
+    "tip": "Exam thinking: most stems want 'no investigation'; recurrent or severe wants CT.",
+    "points": [
+     {
+      "p": "Clinical diagnosis is the gold standard",
+      "k": [
+       [
+        "clinical",
+        "history",
+        "examination"
+       ]
+      ],
+      "why": "No routine swabs or bloods."
+     },
+     {
+      "p": "CT sinuses for severe or recurrent disease",
+      "k": [
+       [
+        "ct"
+       ]
+      ],
+      "why": "Plain sinus X-rays are not used."
+     },
+     {
+      "p": "Urgent imaging if orbital or intracranial complication suspected",
+      "k": [
+       [
+        "complication",
+        "orbital",
+        "abscess",
+        "urgent",
+        "red flag"
+       ]
+      ],
+      "why": "Contrast CT shows the abscess."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Walk through the treatment of acute rhinosinusitis, from mild to severe.",
+    "tip": "Exam thinking: the 10-day line and the allergy status decide the answer.",
+    "points": [
+     {
+      "p": "Self-care: paracetamol and ibuprofen",
+      "k": [
+       [
+        "paracetamol",
+        "ibuprofen",
+        "analges",
+        "self-care",
+        "self care"
+       ]
+      ],
+      "why": "First 10 days: most cases are viral."
+     },
+     {
+      "p": "Moderate-severe: intranasal corticosteroid (fluticasone) with saline irrigation",
+      "k": [
+       [
+        "steroid",
+        "fluticasone",
+        "mometasone"
+       ]
+      ],
+      "why": "Reduces oedema and opens the ostia."
+     },
+     {
+      "p": "Oral corticosteroids for intense flares",
+      "k": [
+       [
+        "oral"
+       ],
+       [
+        "steroid",
+        "prednisolone"
+       ]
+      ],
+      "why": "Not routine."
+     },
+     {
+      "p": "Beyond 10 days or severe: phenoxymethylpenicillin",
+      "k": [
+       [
+        "phenoxymethylpenicillin",
+        "penicillin v",
+        "pen v"
+       ]
+      ],
+      "why": "Narrow spectrum, NICE NG79."
+     },
+     {
+      "p": "Penicillin allergy: doxycycline (alternative clarithromycin)",
+      "k": [
+       [
+        "doxycycline",
+        "clarithromycin"
+       ]
+      ],
+      "why": "Doxycycline is avoided in pregnancy and under 12s."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When should a patient with rhinosinusitis be referred to ENT?",
+    "tip": "Exam thinking: 'one-sided' in a chronic stem is the referral trigger.",
+    "points": [
+     {
+      "p": "Structural problems: nasal polyps or deviated septum",
+      "k": [
+       [
+        "polyp",
+        "septum",
+        "septal",
+        "structural"
+       ]
+      ],
+      "why": "Surgery may be needed."
+     },
+     {
+      "p": "Unilateral symptoms (pain or bleeding) in chronic rhinosinusitis",
+      "k": [
+       [
+        "unilateral",
+        "one side",
+        "one-sided"
+       ]
+      ],
+      "why": "Exclude a tumour."
+     },
+     {
+      "p": "Red flags (eye or neurological signs) need urgent hospital assessment",
+      "k": [
+       [
+        "red flag",
+        "eye",
+        "orbit",
+        "neuro",
+        "urgent"
+       ]
+      ],
+      "why": "Not routine referral."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does a viral infection lead to bacterial sinusitis, and why is the maxillary sinus most affected?",
+    "tip": "Exam thinking: oedema, cilia, blocked ostium, stasis.",
+    "points": [
+     {
+      "p": "Mucosal oedema",
+      "k": [
+       [
+        "oedema",
+        "edema",
+        "swell"
+       ]
+      ],
+      "why": "Narrows the ostia."
+     },
+     {
+      "p": "Impaired mucociliary clearance",
+      "k": [
+       [
+        "cilia",
+        "mucociliary",
+        "clearance"
+       ]
+      ],
+      "why": "Secretions are not cleared."
+     },
+     {
+      "p": "Obstructed ostia allow secondary bacterial infection",
+      "k": [
+       [
+        "ostia",
+        "ostium",
+        "obstruct",
+        "block"
+       ]
+      ],
+      "why": "Stasis lets bacteria multiply."
+     },
+     {
+      "p": "Maxillary ostium drains against gravity and is narrow",
+      "k": [
+       [
+        "gravity",
+        "narrow"
+       ]
+      ],
+      "why": "It sits high on the medial wall."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How do intranasal steroids work, and how does sinus infection reach the orbit and brain?",
+    "tip": "Exam thinking: thin bone is the route for spread.",
+    "points": [
+     {
+      "p": "Steroids reduce mucosal inflammation and oedema, improving drainage",
+      "k": [
+       [
+        "inflam",
+        "oedema",
+        "edema",
+        "swell"
+       ],
+       [
+        "drain",
+        "ostia",
+        "open"
+       ]
+      ],
+      "why": "They treat the obstruction, not the bacteria."
+     },
+     {
+      "p": "Direct spread through thin bony walls",
+      "k": [
+       [
+        "thin",
+        "direct",
+        "bone",
+        "bony"
+       ]
+      ],
+      "why": "No barrier to stop pus."
+     },
+     {
+      "p": "Lamina papyracea (to orbit) and skull base (to brain)",
+      "k": [
+       [
+        "lamina",
+        "papyracea",
+        "skull base"
+       ]
+      ],
+      "why": "Ethmoid to orbit via the lamina papyracea."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Rhinosinusitis": "Inflammation of the nasal lining and the paranasal sinuses together.",
+  "Paranasal sinuses": "Air-filled spaces in the facial bones (maxillary, frontal, ethmoid, sphenoid) that drain into the nose.",
+  "Maxillary sinus": "The largest sinus, in the cheekbone under the eye; the one most often infected.",
+  "Ethmoid sinus": "Small air cells between the eyes, separated from the orbit by very thin bone.",
+  "Frontal sinus": "Sinus in the forehead bone above the eyebrows.",
+  "Sphenoid sinus": "Deep sinus behind the nose, near the pituitary and cavernous sinus.",
+  "Ostium": "The small opening through which a sinus drains into the nose.",
+  "Ostia": "Plural of ostium: the drainage openings of the sinuses.",
+  "Mucociliary clearance": "The sweeping of mucus out of the airways and sinuses by beating cilia.",
+  "Cilia": "Tiny hair-like projections on lining cells that beat to move mucus.",
+  "Mucosal oedema": "Swelling of the lining of the nose and sinuses from inflammation.",
+  "Purulent": "Containing pus, so thick and yellow or green.",
+  "Anosmia": "Loss of the sense of smell.",
+  "Hyposmia": "A reduced sense of smell.",
+  "Rhinorrhoea": "A runny nose.",
+  "Anterior rhinoscopy": "Looking into the front of the nose with a light and speculum.",
+  "Double sickening": "Getting better from a cold and then worse again, suggesting secondary bacterial infection.",
+  "URTI": "Upper respiratory tract infection: an infection of the nose, sinuses, throat or larynx.",
+  "Allergic rhinitis": "Hay fever: allergic inflammation of the nose with sneezing, itch and clear discharge.",
+  "Orbital cellulitis": "Infection of the tissues behind the orbital septum, causing painful, reduced eye movements; an emergency.",
+  "Periorbital cellulitis": "Infection of the eyelid skin in front of the orbital septum, with normal eye movements.",
+  "Lamina papyracea": "The paper-thin bone between the ethmoid sinus and the orbit.",
+  "Brain abscess": "A collection of pus within the brain, causing headache, fever and focal neurology.",
+  "Chronic rhinosinusitis": "Rhinosinusitis lasting 12 weeks or more.",
+  "Nasal polyps": "Soft, painless swellings of the nasal lining that block the nose and reduce smell.",
+  "Deviated septum": "A nasal septum bent to one side, narrowing one nostril.",
+  "Saline irrigation": "Rinsing the nose with salt water to wash out mucus.",
+  "Fluticasone": "An intranasal corticosteroid spray that reduces nasal and sinus inflammation.",
+  "Intranasal corticosteroid": "A steroid spray into the nose that reduces mucosal swelling.",
+  "Phenoxymethylpenicillin": "Penicillin V: the first-line oral antibiotic for bacterial sinusitis.",
+  "Doxycycline": "A tetracycline antibiotic used when a patient is penicillin allergic; avoid in pregnancy and young children.",
+  "Clarithromycin": "A macrolide antibiotic, an alternative in penicillin allergy.",
+  "Xylometazoline": "A decongestant nasal spray; causes rebound congestion if used for more than a week.",
+  "CT sinuses": "A CT scan of the facial sinuses, used in severe, recurrent or complicated disease.",
+  "ENT": "Ear, nose and throat surgery.",
+  "NG79": "The NICE guideline on antibiotic prescribing for acute sinusitis."
+ }
+}

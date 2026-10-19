@@ -1,0 +1,2079 @@
+{
+ "id": "thyroid-nodules",
+ "patient": {
+  "name": "Hannah Kowalski",
+  "age": 34,
+  "sex": "F",
+  "setting": "GP surgery, then thyroid clinic and surgical ward",
+  "complaint": "A painless lump in the right side of her neck, growing for 3 months",
+  "background": [
+   "Hodgkin lymphoma at 14, treated with neck radiotherapy",
+   "Graphic designer in Ealing",
+   "No regular medication",
+   "Mother has hypothyroidism"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a neck lump: decide thyroid vs other (swallowing vs tongue protrusion), benign vs malignant (red flags), then the cancer type from age, spread and calcitonin.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Hannah, 34, noticed a **lump in her neck** while putting on a necklace.",
+      "Painless; it seems to have grown over 3 months.",
+      "Had **neck radiotherapy at 14** for Hodgkin lymphoma.",
+      "No weight change, palpitations or heat intolerance."
+     ],
+     "vitals": {
+      "T": "36.7°C",
+      "HR": "76 bpm",
+      "BP": "118/72 mmHg",
+      "RR": "14 /min"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Hannah has a **discrete lump within the thyroid**. Most are benign, but her history means it must be assessed properly."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Hannah's **childhood neck radiotherapy** is the single most important risk factor for thyroid cancer."
+    },
+    {
+     "type": "story",
+     "points": [
+      "A firm 2 cm nodule in the right lobe.",
+      "It **rises on swallowing** but **not on tongue protrusion**.",
+      "A hard 1.5 cm node in the right side of the neck.",
+      "Voice normal; no stridor."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which sign confirms the lump is in the thyroid, not a thyroglossal cyst?",
+     "o": [
+      "Fluctuant and transilluminates",
+      "Moves on swallowing but not on tongue protrusion",
+      "Moves on tongue protrusion",
+      "Pulsatile on palpation"
+     ],
+     "a": 1,
+     "r": "The thyroid is attached to the larynx (moves on swallowing). A **thyroglossal cyst** also rises when the tongue sticks out."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Hannah's lump is lateral and does not move with the tongue, so it is not a **thyroglossal cyst**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Like many nodules, Hannah's is **painless**. Hoarseness or dysphagia would suggest local invasion."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Hannah has two **red flags**: a growing nodule and a hard **lymph node**. Others: fixed irregular mass, hoarseness, weight loss."
+    },
+    {
+     "type": "notes",
+     "src": 6,
+     "lead": "A young woman with a solitary nodule and an **early nodal metastasis**: the pattern of **papillary carcinoma**."
+    },
+    {
+     "type": "compare",
+     "title": "Thyroid cancers at a glance",
+     "head": [
+      "Type",
+      "Who",
+      "Spread",
+      "Clue"
+     ],
+     "rows": [
+      [
+       "Papillary (~60%)",
+       "Women, 30–40",
+       "**Lymphatic** (nodes)",
+       "Node in the neck early"
+      ],
+      [
+       "Follicular",
+       "Women, older",
+       "**Blood** (bone, lung)",
+       "Bone pain, lung nodules"
+      ],
+      [
+       "Medullary",
+       "Any; MEN 2",
+       "Nodes and blood",
+       "**Calcitonin**, family history"
+      ],
+      [
+       "Anaplastic",
+       "Elderly",
+       "Local invasion",
+       "Rapid, hard, stridor"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Untreated, Hannah's papillary cancer would spread to **nodes and lungs**; follicular cancer goes through the blood to **bone**."
+    },
+    {
+     "type": "pearl",
+     "text": "Most thyroid nodules are **benign**. The exam tests whether you spot the red flags that change that."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'next investigation': TSH first, ultrasound if TSH is normal, radionuclide scan if TSH is low, and FNA for a suspicious nodule.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Hannah's first tests are **TSH** and a **neck ultrasound** to grade the nodule's malignancy risk."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Hannah's TSH",
+      "min": 0,
+      "max": 8,
+      "unit": "mU/L",
+      "bands": [
+       [
+        0,
+        0.4,
+        "Low: radionuclide scan",
+        "warn"
+       ],
+       [
+        0.4,
+        4.0,
+        "Normal: ultrasound, then FNA",
+        "ok"
+       ],
+       [
+        4.0,
+        8,
+        "High",
+        "warn"
+       ]
+      ],
+      "value": 1.8,
+      "label": "Hannah 1.8",
+      "caption": "Normal TSH, so this is not a hot autonomous nodule: go straight on to ultrasound."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Ultrasound report",
+     "rows": [
+      [
+       "Size",
+       "22 mm",
+       "",
+       ""
+      ],
+      [
+       "Echogenicity",
+       "Hypoechoic",
+       "",
+       ""
+      ],
+      [
+       "Calcification",
+       "Microcalcifications",
+       "",
+       ""
+      ],
+      [
+       "Margins",
+       "Irregular",
+       "",
+       ""
+      ],
+      [
+       "Right level III node",
+       "Abnormal",
+       "",
+       ""
+      ]
+     ],
+     "text": "Every feature is suspicious: graded U5 (malignant appearance)."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Ultrasound grade (BTA U score)",
+      "min": 1,
+      "max": 5,
+      "unit": "U",
+      "bands": [
+       [
+        1,
+        2.5,
+        "U1–U2 benign",
+        "ok"
+       ],
+       [
+        2.5,
+        3.5,
+        "U3 indeterminate",
+        "warn"
+       ],
+       [
+        3.5,
+        5,
+        "U4–U5 suspicious or malignant",
+        "bad"
+       ]
+      ],
+      "value": 5,
+      "label": "Hannah U5",
+      "caption": "U3 to U5 nodules go on to fine-needle aspiration."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Hannah's suspicious nodule needs **FNA**: cytology comes back **malignant**, consistent with papillary carcinoma."
+    },
+    {
+     "type": "ask",
+     "q": "A different patient's nodule comes with a **low TSH**. What next?",
+     "o": [
+      "Fine-needle aspiration",
+      "Radionuclide thyroid scan",
+      "Repeat TSH in 1 year",
+      "Total thyroidectomy"
+     ],
+     "a": 1,
+     "r": "Low TSH suggests an autonomous nodule: a scan shows whether it is **hot** (benign, functioning) or **cold**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Hannah's TSH is normal so she needs no scan. A **hot** nodule is reassuring; a **cold** one carries more cancer risk."
+    },
+    {
+     "type": "flow",
+     "title": "Thyroid nodule work-up",
+     "nodes": [
+      "Neck lump in the thyroid",
+      "TSH first",
+      "Low TSH → radionuclide scan (hot = benign)",
+      "Normal or high TSH → ultrasound",
+      "Suspicious ultrasound → FNA cytology",
+      "Malignant → surgery"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Hannah's tumour is papillary, so she will be followed with **thyroglobulin**. **Calcitonin** is the marker for medullary carcinoma."
+    },
+    {
+     "type": "trap",
+     "text": "FNA cannot tell **follicular adenoma** from carcinoma: invasion of the capsule or vessels is only seen on **histology** after removal."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect reassurance for benign nodules, thyroidectomy then radioiodine for cancer, and the post-thyroidectomy complications (hypocalcaemia, hoarseness, haematoma).",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Hannah's FNA is malignant, so she needs **thyroidectomy**, followed by **radioactive iodine**."
+    },
+    {
+     "type": "ask",
+     "q": "What is the definitive treatment for Hannah's papillary carcinoma?",
+     "o": [
+      "Levothyroxine suppression alone",
+      "Radioactive iodine alone",
+      "Reassurance and repeat ultrasound",
+      "Total thyroidectomy"
+     ],
+     "a": 3,
+     "r": "Malignant nodules need **surgery**; radioactive iodine follows to ablate remnant tissue."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "If Hannah's nodule had been benign, she would simply be **reassured and monitored**. A thyrotoxic nodule is treated with radioiodine or surgery."
+    },
+    {
+     "type": "flow",
+     "title": "Management by result",
+     "nodes": [
+      "Benign FNA → reassure, monitor",
+      "Benign-looking in pregnancy → monitor until postpartum",
+      "Hot toxic nodule → radioiodine or surgery",
+      "Malignant → total or partial thyroidectomy",
+      "Then radioactive iodine"
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 1 after total thyroidectomy and neck dissection.",
+      "Hannah reports **tingling around her lips** and fingers.",
+      "Chvostek's sign positive."
+     ],
+     "vitals": {
+      "HR": "88 bpm",
+      "BP": "124/78 mmHg"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Hannah's adjusted calcium after surgery",
+      "x": [
+       "Pre-op",
+       "6 h",
+       "Day 1",
+       "Day 2 (on calcium)"
+      ],
+      "unit": "mmol/L",
+      "series": [
+       {
+        "name": "Adjusted calcium",
+        "values": [
+         2.36,
+         2.18,
+         1.92,
+         2.14
+        ]
+       }
+      ],
+      "caption": "Parathyroid stunning drops her calcium; IV calcium gluconate then oral calcium bring it back."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Hannah's perioral tingling is **iatrogenic hypocalcaemia**. Her voice is checked for nerve damage and her neck for a **haematoma**."
+    },
+    {
+     "type": "trap",
+     "text": "A tense, swelling neck with stridor hours after thyroidectomy is a **haematoma**: open the wound and **remove the sutures at the bedside**, before going to theatre."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Hannah's care follows the **British Thyroid Association** thyroid cancer guideline: ultrasound grading, FNA, surgery, then radioiodine."
+    },
+    {
+     "type": "pearl",
+     "text": "Post-thyroidectomy hoarseness = **recurrent laryngeal nerve**; perioral tingling = **parathyroids** (low calcium)."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect histology (Orphan Annie nuclei, capsular invasion), why calcitonin marks medullary cancer, and the anatomy behind surgical complications.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Hannah's case is the minority: most nodules are **colloid change, hyperplasia or adenomas**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Hannah's histology shows **Orphan Annie eye** nuclei and psammoma bodies, typical of papillary carcinoma, which spreads via lymphatics."
+    },
+    {
+     "type": "compare",
+     "title": "Papillary vs follicular on the slide",
+     "head": [
+      "Feature",
+      "Papillary",
+      "Follicular"
+     ],
+     "rows": [
+      [
+       "Histology",
+       "**Orphan Annie eye** nuclei, psammoma bodies",
+       "**Capsular and vascular invasion**"
+      ],
+      [
+       "Diagnosed on FNA?",
+       "Yes",
+       "No: needs histology"
+      ],
+      [
+       "Spread",
+       "Lymphatic",
+       "Haematogenous: bone, lung"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Hannah's tumour had been medullary, it would come from **C cells**, so **calcitonin** would track it."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Hannah's tingling came from bruised **parathyroid glands**; the **recurrent laryngeal nerve** runs by the inferior thyroid artery."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Hannah's lowest adjusted calcium",
+      "min": 1.6,
+      "max": 2.8,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        1.6,
+        1.9,
+        "Severe",
+        "bad"
+       ],
+       [
+        1.9,
+        2.2,
+        "Low",
+        "warn"
+       ],
+       [
+        2.2,
+        2.6,
+        "Normal",
+        "ok"
+       ],
+       [
+        2.6,
+        2.8,
+        "High",
+        "warn"
+       ]
+      ],
+      "value": 1.92,
+      "label": "Hannah 1.92",
+      "caption": "Symptomatic hypocalcaemia: perioral paraesthesia and a positive Chvostek's sign."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "Medullary thyroid cancer is the one linked to **MEN 2** and **calcitonin**; it does not take up iodine, so radioiodine does not help."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most important risk factor for thyroid cancer?",
+   "o": [
+    "High iodine diet",
+    "Male sex",
+    "Prior radiation exposure",
+    "Smoking"
+   ],
+   "a": 2,
+   "r": "Especially childhood neck irradiation."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the most common thyroid cancer?",
+   "o": [
+    "Anaplastic carcinoma",
+    "Follicular carcinoma",
+    "Medullary carcinoma",
+    "Papillary carcinoma"
+   ],
+   "a": 3,
+   "r": "About 60% of cases."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which sign separates a thyroid nodule from a thyroglossal cyst?",
+   "o": [
+    "Fluctuance",
+    "Midline position",
+    "Moves on swallowing, not tongue protrusion",
+    "Moves on tongue protrusion"
+   ],
+   "a": 2,
+   "r": "A thyroglossal cyst rises with the tongue."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which thyroid cancer is associated with MEN 2?",
+   "o": [
+    "Anaplastic carcinoma",
+    "Follicular carcinoma",
+    "Medullary carcinoma",
+    "Papillary carcinoma"
+   ],
+   "a": 2,
+   "r": "From parafollicular C cells."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line imaging for a thyroid nodule?",
+   "o": [
+    "CT neck",
+    "MRI neck",
+    "Radionuclide scan",
+    "Ultrasound"
+   ],
+   "a": 3,
+   "r": "Grades malignancy risk."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the key diagnostic test for a suspicious nodule?",
+   "o": [
+    "Core biopsy of the node",
+    "Fine-needle aspiration",
+    "Radionuclide scan",
+    "Serum thyroglobulin"
+   ],
+   "a": 1,
+   "r": "Cytology: benign, indeterminate or malignant."
+  },
+  {
+   "d": "investigation",
+   "q": "Which ultrasound feature is suspicious?",
+   "o": [
+    "Hyperechoic texture",
+    "Microcalcifications",
+    "Smooth margins",
+    "Spongiform appearance"
+   ],
+   "a": 1,
+   "r": "Also hypoechogenicity and irregular margins."
+  },
+  {
+   "d": "management",
+   "q": "Definitive treatment for a malignant nodule?",
+   "o": [
+    "Carbimazole",
+    "Levothyroxine",
+    "Thyroidectomy",
+    "Watchful waiting"
+   ],
+   "a": 2,
+   "r": "Total or partial, then radioactive iodine."
+  },
+  {
+   "d": "management",
+   "q": "Perioral paraesthesia after thyroidectomy suggests:",
+   "o": [
+    "Haematoma",
+    "Hyperkalaemia",
+    "Hypocalcaemia",
+    "Recurrent laryngeal nerve injury"
+   ],
+   "a": 2,
+   "r": "Parathyroid injury or devascularisation."
+  },
+  {
+   "d": "science",
+   "q": "Orphan Annie eye nuclei are seen in:",
+   "o": [
+    "Anaplastic carcinoma",
+    "Follicular adenoma",
+    "Medullary carcinoma",
+    "Papillary carcinoma"
+   ],
+   "a": 3,
+   "r": "With psammoma bodies."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is a thyroid nodule and what are its risk factors?",
+    "tip": "Exam thinking: most are benign; know the risk factor.",
+    "points": [
+     {
+      "p": "Discrete lesion within the thyroid, benign or malignant",
+      "k": [
+       [
+        "thyroid"
+       ],
+       [
+        "lesion",
+        "lump",
+        "nodule"
+       ]
+      ],
+      "why": "Most are benign."
+     },
+     {
+      "p": "Most important risk factor: prior radiation exposure",
+      "k": [
+       [
+        "radiation",
+        "radiotherapy",
+        "irradiat"
+       ]
+      ],
+      "why": "Especially childhood neck radiation."
+     },
+     {
+      "p": "Family history of thyroid cancer",
+      "k": [
+       [
+        "family"
+       ]
+      ],
+      "why": "Also MEN 2 for medullary."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the red flags for malignancy in a thyroid nodule?",
+    "tip": "Exam thinking: the stem lists two or three.",
+    "points": [
+     {
+      "p": "Fixed, irregular, hard mass",
+      "k": [
+       [
+        "fixed",
+        "irregular",
+        "hard"
+       ]
+      ],
+      "why": "Benign nodules are smooth and mobile."
+     },
+     {
+      "p": "Cervical lymphadenopathy",
+      "k": [
+       [
+        "lymph",
+        "node"
+       ]
+      ],
+      "why": "Papillary spreads early to nodes."
+     },
+     {
+      "p": "Hoarseness or dysphagia",
+      "k": [
+       [
+        "hoarse",
+        "voice",
+        "dysphag"
+       ]
+      ],
+      "why": "Recurrent laryngeal nerve involvement."
+     },
+     {
+      "p": "Rapid growth or weight loss",
+      "k": [
+       [
+        "rapid",
+        "weight loss",
+        "growing"
+       ]
+      ],
+      "why": "Think anaplastic in the elderly."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell a thyroid nodule from a thyroglossal cyst?",
+    "tip": "Exam thinking: two manoeuvres.",
+    "points": [
+     {
+      "p": "Thyroid nodule moves on swallowing",
+      "k": [
+       [
+        "swallow"
+       ]
+      ],
+      "why": "Attached to the larynx."
+     },
+     {
+      "p": "Thyroglossal cyst is midline and rises on tongue protrusion",
+      "k": [
+       [
+        "tongue"
+       ],
+       [
+        "midline",
+        "rises",
+        "moves"
+       ]
+      ],
+      "why": "The nodule does not."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the four types of thyroid cancer and their key features?",
+    "tip": "Exam thinking: age and spread pick the type.",
+    "points": [
+     {
+      "p": "Papillary: commonest (~60%), women 30–40, early nodal spread",
+      "k": [
+       [
+        "papillary"
+       ]
+      ],
+      "why": "Lymphatic spread."
+     },
+     {
+      "p": "Follicular: older women, haematogenous to bone and lung",
+      "k": [
+       [
+        "follicular"
+       ]
+      ],
+      "why": "Bone pain clue."
+     },
+     {
+      "p": "Medullary: C cells, calcitonin, MEN 2",
+      "k": [
+       [
+        "medullary"
+       ],
+       [
+        "calcitonin",
+        "men 2",
+        "men2",
+        "c cell",
+        "parafollicular"
+       ]
+      ],
+      "why": "Family history of phaeo."
+     },
+     {
+      "p": "Anaplastic: elderly, rapid, aggressive, compressive",
+      "k": [
+       [
+        "anaplastic"
+       ]
+      ],
+      "why": "Rarest and worst."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the investigation pathway for a thyroid nodule?",
+    "tip": "Exam thinking: TSH decides the next step.",
+    "points": [
+     {
+      "p": "TSH first",
+      "k": [
+       [
+        "tsh",
+        "thyroid function"
+       ]
+      ],
+      "why": "Low TSH changes the route."
+     },
+     {
+      "p": "Ultrasound first-line imaging",
+      "k": [
+       [
+        "ultrasound",
+        "uss",
+        "us scan"
+       ]
+      ],
+      "why": "Grades risk."
+     },
+     {
+      "p": "FNA for large or suspicious nodules",
+      "k": [
+       [
+        "fna",
+        "fine needle",
+        "fine-needle"
+       ]
+      ],
+      "why": "Benign, indeterminate or malignant."
+     },
+     {
+      "p": "Low TSH: radionuclide scan (hot = benign, cold = higher risk)",
+      "k": [
+       [
+        "radionuclide",
+        "isotope",
+        "uptake scan",
+        "scintigraphy"
+       ]
+      ],
+      "why": "Hot nodules rarely malignant."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which ultrasound features are suspicious, and how is medullary cancer followed?",
+    "tip": "Exam thinking: three features and a marker.",
+    "points": [
+     {
+      "p": "Hypoechogenicity",
+      "k": [
+       [
+        "hypoechoic",
+        "hypoechogenic",
+        "hypoechogenicity"
+       ]
+      ],
+      "why": "Dark on ultrasound."
+     },
+     {
+      "p": "Microcalcifications",
+      "k": [
+       [
+        "microcalcif",
+        "calcification"
+       ]
+      ],
+      "why": "Psammoma bodies."
+     },
+     {
+      "p": "Irregular margins",
+      "k": [
+       [
+        "irregular"
+       ]
+      ],
+      "why": "Infiltrative edge."
+     },
+     {
+      "p": "Calcitonin: every 3 months for 2 years, then 6-monthly, then annually",
+      "k": [
+       [
+        "calcitonin"
+       ]
+      ],
+      "why": "Surveillance for medullary."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How are benign, toxic and malignant nodules managed?",
+    "tip": "Exam thinking: match the plan to the result.",
+    "points": [
+     {
+      "p": "Benign: reassurance and monitoring",
+      "k": [
+       [
+        "reassur",
+        "monitor",
+        "follow"
+       ]
+      ],
+      "why": "Pregnant: monitor postpartum."
+     },
+     {
+      "p": "Toxic nodule: radioiodine or surgery",
+      "k": [
+       [
+        "radioiodine",
+        "radioactive iodine",
+        "rai",
+        "i-131"
+       ]
+      ],
+      "why": "Treat the hyperthyroidism."
+     },
+     {
+      "p": "Malignant: total or partial thyroidectomy, then radioactive iodine",
+      "k": [
+       [
+        "thyroidectomy"
+       ]
+      ],
+      "why": "RAI is secondary."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the complications of thyroidectomy and how do they present?",
+    "tip": "Exam thinking: symptom to structure.",
+    "points": [
+     {
+      "p": "Hypocalcaemia: perioral paraesthesia",
+      "k": [
+       [
+        "hypocalc",
+        "low calcium",
+        "calcium"
+       ]
+      ],
+      "why": "Parathyroid injury."
+     },
+     {
+      "p": "Recurrent laryngeal nerve damage: hoarseness",
+      "k": [
+       [
+        "recurrent laryngeal",
+        "rln"
+       ]
+      ],
+      "why": "Near the inferior thyroid artery."
+     },
+     {
+      "p": "Wound haematoma: neck swelling 4–6 hours post-op; remove sutures immediately",
+      "k": [
+       [
+        "haematoma",
+        "hematoma"
+       ],
+       [
+        "suture",
+        "open"
+       ]
+      ],
+      "why": "Airway emergency."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How do the thyroid cancers differ histologically?",
+    "tip": "Exam thinking: what the pathologist sees.",
+    "points": [
+     {
+      "p": "Papillary: Orphan Annie eye nuclei and psammoma bodies",
+      "k": [
+       [
+        "orphan annie",
+        "psammoma"
+       ]
+      ],
+      "why": "Lymphatic spread."
+     },
+     {
+      "p": "Follicular carcinoma vs adenoma: capsular and vascular invasion, on histology not FNA",
+      "k": [
+       [
+        "capsul",
+        "vascular invasion"
+       ]
+      ],
+      "why": "Needs excision."
+     },
+     {
+      "p": "Medullary: from neural crest parafollicular C cells, calcitonin as marker",
+      "k": [
+       [
+        "parafollicular",
+        "c cell",
+        "neural crest"
+       ]
+      ],
+      "why": "Not iodine-avid."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why are most nodules benign, and why does surgery risk nerve and calcium problems?",
+    "tip": "Exam thinking: anatomy explains the complications.",
+    "points": [
+     {
+      "p": "Most nodules are colloid change, hyperplasia or adenomas",
+      "k": [
+       [
+        "colloid",
+        "hyperplas",
+        "adenoma"
+       ]
+      ],
+      "why": "Only a small minority malignant."
+     },
+     {
+      "p": "Recurrent laryngeal nerve runs near the inferior thyroid artery",
+      "k": [
+       [
+        "inferior thyroid artery"
+       ]
+      ],
+      "why": "Vulnerable in surgery or invasion."
+     },
+     {
+      "p": "Parathyroids injured or devascularised: hypocalcaemia",
+      "k": [
+       [
+        "parathyroid"
+       ]
+      ],
+      "why": "Perioral tingling, Chvostek's."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "thyroid nodule": "A discrete lump within the thyroid gland; most are benign.",
+  "thyroglossal cyst": "Midline neck cyst from the embryonic thyroid tract; rises on tongue protrusion.",
+  "papillary carcinoma": "Commonest thyroid cancer; young women, spreads to lymph nodes.",
+  "follicular carcinoma": "Second commonest thyroid cancer; spreads through blood to bone and lung.",
+  "medullary carcinoma": "Thyroid cancer from C cells that secretes calcitonin; linked to MEN 2.",
+  "anaplastic carcinoma": "Rare, very aggressive thyroid cancer in the elderly.",
+  "follicular adenoma": "Benign tumour of thyroid follicular cells; looks like carcinoma on FNA.",
+  "colloid nodule": "Benign nodule made of colloid-filled follicles.",
+  "FNA": "Fine-needle aspiration: a thin needle samples cells for cytology.",
+  "cytology": "Examination of individual cells under a microscope.",
+  "histology": "Examination of tissue architecture, needed to see capsular or vascular invasion.",
+  "TSH": "Thyroid-stimulating hormone; low in an overactive autonomous nodule.",
+  "radionuclide scan": "Scan of isotope uptake showing whether a nodule is hot or cold.",
+  "hot nodule": "Nodule taking up more isotope than the rest of the gland; usually benign and overactive.",
+  "cold nodule": "Nodule taking up little isotope; higher malignancy risk.",
+  "hypoechoic": "Darker than surrounding tissue on ultrasound; a suspicious feature.",
+  "microcalcifications": "Tiny bright calcium spots on ultrasound; suggest papillary carcinoma.",
+  "spongiform": "Sponge-like ultrasound appearance with many small cysts; a benign feature.",
+  "U score": "British Thyroid Association ultrasound grade from U1 (benign) to U5 (malignant).",
+  "calcitonin": "Hormone from C cells; tumour marker for medullary carcinoma.",
+  "thyroglobulin": "Protein made by thyroid cells; used to monitor differentiated thyroid cancer after surgery.",
+  "parafollicular C cells": "Neural crest-derived thyroid cells that make calcitonin.",
+  "MEN 2": "Inherited syndrome of medullary thyroid cancer, phaeochromocytoma and (2A) hyperparathyroidism.",
+  "phaeochromocytoma": "Adrenal tumour making adrenaline, causing episodes of palpitations, sweating and hypertension.",
+  "Orphan Annie eye": "Clear, empty-looking nuclei typical of papillary carcinoma.",
+  "psammoma bodies": "Round calcified bodies seen in papillary carcinoma.",
+  "capsular invasion": "Tumour breaking through its capsule; defines follicular carcinoma.",
+  "haematogenous": "Spreading through the bloodstream.",
+  "thyroidectomy": "Surgical removal of all (total) or part (hemi) of the thyroid.",
+  "radioactive iodine": "Iodine-131 taken up by thyroid tissue; ablates remnants or treats hyperthyroidism.",
+  "radioiodine": "Radioactive iodine treatment.",
+  "recurrent laryngeal nerve": "Nerve to the vocal cord muscles; damage causes hoarseness.",
+  "parathyroid glands": "Four small glands behind the thyroid that control calcium via PTH.",
+  "hypocalcaemia": "Low blood calcium, causing tingling, cramps and tetany.",
+  "perioral paraesthesia": "Tingling around the mouth; classic sign of low calcium.",
+  "Chvostek's sign": "Tapping the facial nerve makes facial muscles twitch; sign of hypocalcaemia.",
+  "haematoma": "Collection of blood; in the neck after surgery it can compress the airway.",
+  "stridor": "High-pitched noisy breathing from upper airway narrowing.",
+  "lymphadenopathy": "Enlarged lymph nodes.",
+  "dysphagia": "Difficulty swallowing.",
+  "Hodgkin lymphoma": "Lymph node cancer often treated with radiotherapy, raising later thyroid cancer risk."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old woman has a 2 month history of a painless lump on the right side of her neck. She had radiotherapy to her neck as a teenager. There is a firm 2 cm nodule in the right thyroid lobe that moves on swallowing, and a hard right cervical lymph node. Her TSH is normal.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Anaplastic thyroid carcinoma",
+    "Follicular thyroid carcinoma",
+    "Medullary thyroid carcinoma",
+    "Papillary thyroid carcinoma",
+    "Thyroid lymphoma"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about a thyroid lump: decide if it is malignant, then which type."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "32 year old woman",
+      "radiotherapy to her neck",
+      "moves on swallowing",
+      "hard right cervical lymph node"
+     ],
+     "x": "Young woman, neck irradiation, solitary nodule with an **early nodal metastasis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Papillary carcinoma**: commonest, young women, lymphatic spread."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Elderly patients with a rapidly growing, compressive mass."
+      ],
+      [
+       1,
+       "Older women; spreads through blood, not early to nodes."
+      ],
+      [
+       2,
+       "Needs calcitonin, MEN 2 or a family history."
+      ],
+      [
+       4,
+       "Older women with Hashimoto's and rapid diffuse growth."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Papillary thyroid carcinoma.** Young woman + solitary nodule + cervical node = papillary."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 45 year old woman has a 3 cm thyroid nodule. Her TSH is normal. Ultrasound shows a hypoechoic nodule with microcalcifications and irregular margins. She has no lymphadenopathy.",
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "CT neck",
+    "Fine-needle aspiration",
+    "Radionuclide thyroid scan",
+    "Repeat ultrasound in 6 months",
+    "Serum calcitonin"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next' investigation after a suspicious ultrasound."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "TSH is normal",
+      "hypoechoic",
+      "microcalcifications",
+      "irregular margins"
+     ],
+     "x": "Normal TSH and three **suspicious ultrasound features**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Get cytology: **FNA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Does not give a tissue diagnosis."
+      ],
+      [
+       2,
+       "Only when TSH is low."
+      ],
+      [
+       3,
+       "Delays diagnosis of a suspicious nodule."
+      ],
+      [
+       4,
+       "Used for medullary cancer surveillance, not as the first diagnostic test."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Fine-needle aspiration.** TSH → ultrasound → FNA if suspicious."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 51 year old woman had a total thyroidectomy 5 hours ago. She now has a rapidly enlarging, tense swelling in her neck and noisy breathing. Her pulse rate is 118 bpm, BP 142/88 mmHg and oxygen saturation 92% breathing air.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Arrange an urgent CT neck",
+    "Give IV calcium gluconate",
+    "Give nebulised salbutamol",
+    "Open the wound and remove the sutures at the bedside",
+    "Return to theatre at the end of the list"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of a post-operative emergency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5 hours ago",
+      "rapidly enlarging, tense swelling",
+      "noisy breathing"
+     ],
+     "x": "Neck swelling and stridor hours after thyroidectomy: **wound haematoma** compressing the airway."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Remove the sutures immediately** to release the clot."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Wastes time while the airway closes."
+      ],
+      [
+       1,
+       "Treats hypocalcaemia, which causes tingling, not neck swelling."
+      ],
+      [
+       2,
+       "This is not bronchospasm."
+      ],
+      [
+       4,
+       "Too slow; decompress now, then theatre."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Open the wound and remove the sutures at the bedside.** Post-thyroidectomy swelling + stridor = haematoma → open the wound now."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 49 year old woman has a thyroid nodule. FNA shows a follicular neoplasm. She is told that the cytology cannot say whether it is benign or malignant and that the nodule must be removed.",
+   "q": "Which is the most likely reason FNA cannot make the diagnosis?",
+   "o": [
+    "Calcitonin staining is needed",
+    "Follicular cells cannot be aspirated",
+    "Malignancy depends on capsular and vascular invasion",
+    "Orphan Annie eye nuclei are absent in all samples",
+    "Psammoma bodies are destroyed by aspiration"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why the test fails."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "FNA shows a follicular neoplasm",
+      "cannot say whether it is benign or malignant"
+     ],
+     "x": "Follicular adenoma and carcinoma look the same cell by cell."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Carcinoma is defined by **capsular and vascular invasion**, seen only on **histology**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That identifies medullary carcinoma, not follicular."
+      ],
+      [
+       1,
+       "They are aspirated; that is how the neoplasm was seen."
+      ],
+      [
+       3,
+       "That is papillary; irrelevant to follicular malignancy."
+      ],
+      [
+       4,
+       "Papillary feature, not related."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Malignancy depends on capsular and vascular invasion.** Follicular: FNA can't distinguish; histology after lobectomy decides."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 46 year old woman has had a small, soft lump in the front of her neck for 4 years that has not changed in size. She has no weight loss or voice change. Her pulse rate is 72 bpm and BP 120/76 mmHg. Ultrasound shows a 12 mm smooth, spongiform nodule.",
+   "labs": [
+    [
+     "TSH",
+     "2.0 mU/L",
+     "0.4–4.0",
+     ""
+    ],
+    [
+     "Free T4",
+     "15 pmol/L",
+     "9–25",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Anaplastic thyroid carcinoma",
+    "Benign colloid nodule",
+    "Follicular thyroid carcinoma",
+    "Medullary thyroid carcinoma",
+    "Papillary thyroid carcinoma"
+   ],
+   "a": 1,
+   "e": "Most nodules are benign colloid or hyperplastic nodules; stability, softness and a spongiform ultrasound are reassuring.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question: benign or malignant?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "has not changed in size",
+      "no weight loss or voice change",
+      "smooth, spongiform nodule"
+     ],
+     "x": "Long-standing, stable, soft, no red flags, benign ultrasound features."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Benign colloid nodule**: most nodules are benign."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Rapidly growing and hard, in the elderly."
+      ],
+      [
+       2,
+       "Would not look spongiform; usually larger, solid."
+      ],
+      [
+       3,
+       "Needs calcitonin or family history."
+      ],
+      [
+       4,
+       "Hypoechoic with microcalcifications; she has none."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Benign colloid nodule.** No red flags + benign ultrasound = benign nodule."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old woman has a lump in the lower left side of her neck. Her pulse rate is 78 bpm and BP 116/74 mmHg. Ultrasound shows a solitary nodule in the left thyroid lobe.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Lump is pulsatile",
+    "Lump lies in the posterior triangle",
+    "Lump rises on swallowing but not on tongue protrusion",
+    "Lump rises on tongue protrusion",
+    "Lump transilluminates"
+   ],
+   "a": 2,
+   "e": "Thyroid nodules move with the larynx on swallowing but not on tongue protrusion, which distinguishes them from a thyroglossal cyst.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An examination finding question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "lower left side of her neck",
+      "solitary nodule in the left thyroid lobe"
+     ],
+     "x": "A confirmed **thyroid** nodule."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The thyroid is attached to the larynx: it **moves on swallowing** but not with the tongue."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Suggests a carotid aneurysm or body tumour."
+      ],
+      [
+       1,
+       "Lateral to the thyroid: nodes or other lesions."
+      ],
+      [
+       3,
+       "That is a thyroglossal cyst."
+      ],
+      [
+       4,
+       "A cystic hygroma or other fluid-filled lesion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Lump rises on swallowing but not on tongue protrusion.** Thyroid moves on swallowing; thyroglossal cyst also moves on tongue protrusion."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 40 year old man has a hard nodule in his thyroid. His father had a thyroid operation and his brother had an adrenal tumour removed for episodes of palpitations and sweating. His BP is 168/102 mmHg and pulse rate 104 bpm.",
+   "labs": [
+    [
+     "Calcitonin",
+     "480 ng/L",
+     "<10",
+     "H"
+    ],
+    [
+     "TSH",
+     "1.9 mU/L",
+     "0.4–4.0",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Anaplastic thyroid carcinoma",
+    "Follicular thyroid carcinoma",
+    "Medullary thyroid carcinoma",
+    "Papillary thyroid carcinoma",
+    "Toxic adenoma"
+   ],
+   "a": 2,
+   "e": "Medullary carcinoma arises from calcitonin-secreting C cells and is linked to MEN 2 with phaeochromocytoma.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question: the family history is the clue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "father had a thyroid operation",
+      "adrenal tumour removed for episodes of palpitations and sweating",
+      "BP is 168/102 mmHg"
+     ],
+     "x": "Family history of thyroid cancer and **phaeochromocytoma**, hypertension, raised **calcitonin**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Medullary carcinoma** in **MEN 2**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Elderly, rapidly growing, compressive."
+      ],
+      [
+       1,
+       "No calcitonin rise or family link."
+      ],
+      [
+       3,
+       "Commonest, but calcitonin and MEN 2 family history point elsewhere."
+      ],
+      [
+       4,
+       "TSH would be suppressed; calcitonin normal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Medullary thyroid carcinoma.** Thyroid nodule + calcitonin + phaeo family history = medullary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 81 year old woman has a neck swelling that has grown rapidly over 4 weeks. She now has difficulty swallowing and noisy breathing. There is a hard, fixed mass in the thyroid with bilateral cervical lymphadenopathy. Her pulse rate is 96 bpm and BP 138/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Anaplastic thyroid carcinoma",
+    "Benign multinodular goitre",
+    "Follicular thyroid carcinoma",
+    "Medullary thyroid carcinoma",
+    "Papillary thyroid carcinoma"
+   ],
+   "a": 0,
+   "e": "Anaplastic carcinoma presents late in the elderly with a rapidly enlarging mass causing compressive symptoms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question: the speed and the age."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "81 year old woman",
+      "grown rapidly over 4 weeks",
+      "difficulty swallowing and noisy breathing",
+      "hard, fixed mass"
+     ],
+     "x": "Elderly, rapid growth, local compression and lymphadenopathy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Anaplastic carcinoma**: rarest, most aggressive."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Slow growth over years, not weeks, and not fixed."
+      ],
+      [
+       2,
+       "Slower; spreads by blood rather than local invasion."
+      ],
+      [
+       3,
+       "No calcitonin or family history."
+      ],
+      [
+       4,
+       "Younger patients, slow growth."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Anaplastic thyroid carcinoma.** Elderly + rapid hard compressive mass = anaplastic."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old woman has a 4 cm thyroid nodule. She has had pain in her right hip for 2 months. X-ray shows a lytic lesion in the femur. Her pulse rate is 80 bpm and BP 132/84 mmHg.",
+   "labs": [
+    [
+     "Calcitonin",
+     "<5 ng/L",
+     "<10",
+     ""
+    ],
+    [
+     "Adjusted calcium",
+     "2.48 mmol/L",
+     "2.20–2.60",
+     ""
+    ],
+    [
+     "ALP",
+     "190 U/L",
+     "30–130",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely type of thyroid cancer?",
+   "o": [
+    "Anaplastic thyroid carcinoma",
+    "Follicular thyroid carcinoma",
+    "Medullary thyroid carcinoma",
+    "Papillary thyroid carcinoma",
+    "Thyroid lymphoma"
+   ],
+   "a": 1,
+   "e": "Follicular carcinoma spreads haematogenously to bone and lung; papillary spreads to lymph nodes.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which type: look at the pattern of spread."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "63 year old woman",
+      "pain in her right hip",
+      "lytic lesion in the femur"
+     ],
+     "x": "Older woman, no nodes, a **bone metastasis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Follicular carcinoma**: haematogenous spread to bone and lung."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Kills by local invasion; she has no compressive features."
+      ],
+      [
+       2,
+       "Calcitonin is normal."
+      ],
+      [
+       3,
+       "Spreads to nodes first; she has none."
+      ],
+      [
+       4,
+       "Rapid diffuse enlargement, not a bone metastasis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Follicular thyroid carcinoma.** Bone or lung metastases = follicular; nodes = papillary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man has a hard, irregular thyroid mass. Over 6 weeks his voice has become hoarse and weak. He has lost 5 kg. His pulse rate is 84 bpm and BP 130/82 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his hoarse voice?",
+   "o": [
+    "Laryngopharyngeal reflux",
+    "Recurrent laryngeal nerve infiltration",
+    "Superior laryngeal nerve stretching by a goitre",
+    "Thyroid hormone excess",
+    "Vocal cord nodules"
+   ],
+   "a": 1,
+   "e": "Hoarseness from recurrent laryngeal nerve infiltration is a malignancy red flag in a thyroid nodule.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question about a red flag."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hard, irregular thyroid mass",
+      "hoarse and weak",
+      "lost 5 kg"
+     ],
+     "x": "Hard irregular mass, weight loss and new hoarseness: **malignant** nodule invading locally."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Recurrent laryngeal nerve** infiltration paralyses a vocal cord."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Does not explain the hard mass or weight loss."
+      ],
+      [
+       2,
+       "Causes voice fatigue, rarely persistent hoarseness, and no mass invasion."
+      ],
+      [
+       3,
+       "Does not cause hoarseness."
+      ],
+      [
+       4,
+       "From voice overuse, not malignancy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Recurrent laryngeal nerve infiltration.** Thyroid mass + hoarseness = recurrent laryngeal nerve involvement: a red flag."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 42 year old woman has a 2 cm thyroid nodule found on a carotid Doppler scan. She feels well. Her pulse rate is 70 bpm and BP 118/74 mmHg. Her TSH is 1.6 mU/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "CT neck",
+    "Fine-needle aspiration without imaging",
+    "Radionuclide thyroid scan",
+    "Serum calcitonin",
+    "Ultrasound of the thyroid"
+   ],
+   "a": 4,
+   "e": "Ultrasound is first-line imaging and stratifies malignancy risk to decide on FNA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next' investigation once TSH is known."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "2 cm thyroid nodule",
+      "TSH is 1.6 mU/L"
+     ],
+     "x": "Normal TSH: not a hot nodule."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Dedicated thyroid ultrasound** to grade risk."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not first-line for nodule assessment."
+      ],
+      [
+       1,
+       "Ultrasound decides whether FNA is needed and guides it."
+      ],
+      [
+       2,
+       "Only if TSH is low."
+      ],
+      [
+       3,
+       "Not a first-line test."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Ultrasound of the thyroid.** TSH normal → ultrasound; TSH low → scan."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 55 year old woman has a 3 cm thyroid nodule, weight loss and palpitations. Her pulse rate is 108 bpm and BP 136/78 mmHg.",
+   "labs": [
+    [
+     "TSH",
+     "<0.01 mU/L",
+     "0.4–4.0",
+     "L"
+    ],
+    [
+     "Free T4",
+     "31 pmol/L",
+     "9–25",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "CT neck",
+    "Fine-needle aspiration",
+    "MRI neck",
+    "Radionuclide thyroid scan",
+    "Serum calcitonin"
+   ],
+   "a": 3,
+   "e": "A low TSH suggests an autonomously functioning nodule; a radionuclide scan shows whether it is hot (benign) or cold.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation with a thyrotoxic nodule."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 cm thyroid nodule",
+      "palpitations",
+      "pulse rate is 108 bpm"
+     ],
+     "x": "Low TSH, high T4: the nodule may be **autonomous**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Radionuclide scan**: hot nodule = benign autonomous function."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Does not show function."
+      ],
+      [
+       1,
+       "Hot nodules are rarely malignant; scan first."
+      ],
+      [
+       2,
+       "Not first-line."
+      ],
+      [
+       4,
+       "Not indicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Radionuclide thyroid scan.** Low TSH + nodule → radionuclide scan."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 50 year old woman has a 15 mm thyroid nodule. Her TSH is normal. Ultrasound features are benign and FNA cytology is benign. She has no compressive symptoms. Her BP is 122/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Hemithyroidectomy",
+    "Levothyroxine suppression",
+    "Radioactive iodine",
+    "Reassurance and monitoring",
+    "Total thyroidectomy"
+   ],
+   "a": 3,
+   "e": "Benign, asymptomatic nodules with normal function are managed with reassurance and regular follow-up.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of a benign result."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "TSH is normal",
+      "FNA cytology is benign",
+      "no compressive symptoms"
+     ],
+     "x": "Normal function, benign ultrasound and benign cytology, no symptoms."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Reassure and monitor**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not needed for a benign, asymptomatic nodule."
+      ],
+      [
+       1,
+       "Not recommended for benign nodules."
+      ],
+      [
+       2,
+       "For hot toxic nodules or after cancer surgery."
+      ],
+      [
+       4,
+       "For malignant nodules."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Reassurance and monitoring.** Benign nodule = reassurance and follow-up."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 36 year old woman has a 25 mm thyroid nodule. FNA cytology is malignant, consistent with papillary carcinoma. Her pulse rate is 74 bpm and BP 116/70 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate definitive management?",
+   "o": [
+    "Carbimazole",
+    "External beam radiotherapy alone",
+    "Radioactive iodine alone",
+    "Surveillance ultrasound every 6 months",
+    "Thyroidectomy followed by radioactive iodine"
+   ],
+   "a": 4,
+   "e": "Malignant nodules need total or partial thyroidectomy, with radioactive iodine as secondary treatment.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Definitive' management of a malignant nodule."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "FNA cytology is malignant",
+      "papillary carcinoma"
+     ],
+     "x": "Cytology-proven papillary cancer."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Thyroidectomy**, then **radioactive iodine**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "An antithyroid drug for hyperthyroidism."
+      ],
+      [
+       1,
+       "Not primary treatment for papillary carcinoma."
+      ],
+      [
+       2,
+       "Given after surgery, not instead of it."
+      ],
+      [
+       3,
+       "Delays treatment of a confirmed cancer."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Thyroidectomy followed by radioactive iodine.** Malignant nodule → total or partial thyroidectomy, then RAI."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 60 year old woman has palpitations and weight loss. She has a single thyroid nodule that is 'hot' on radionuclide scan, with suppression of the rest of the gland. Her pulse rate is 104 bpm and BP 138/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate definitive management?",
+   "o": [
+    "Fine-needle aspiration",
+    "Propranolol alone",
+    "Radioiodine",
+    "Reassurance only",
+    "Total thyroidectomy with neck dissection"
+   ],
+   "a": 2,
+   "e": "A thyrotoxic hot nodule is treated by managing the hyperthyroidism, with radioiodine or surgery as options.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Definitive management of a toxic nodule."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "palpitations and weight loss",
+      "'hot' on radionuclide scan",
+      "pulse rate is 104 bpm"
+     ],
+     "x": "A **hot**, autonomously functioning nodule causing hyperthyroidism."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Treat the hyperthyroidism: **radioiodine** (or surgery)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hot nodules are rarely malignant."
+      ],
+      [
+       1,
+       "Treats symptoms, not the nodule."
+      ],
+      [
+       3,
+       "She is thyrotoxic."
+      ],
+      [
+       4,
+       "Cancer surgery; this is a benign toxic nodule."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Radioiodine.** Toxic nodule → radioiodine or surgery."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 44 year old woman develops tingling around her mouth and in her fingertips 18 hours after a total thyroidectomy. Her voice is normal. Her pulse rate is 82 bpm and BP 126/80 mmHg. Tapping over her facial nerve causes twitching of her lip.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her symptoms?",
+   "o": [
+    "Devascularisation of the parathyroid glands",
+    "Hyperventilation from anxiety",
+    "Injury to the recurrent laryngeal nerve",
+    "Neck haematoma compressing the trachea",
+    "Thyroid storm"
+   ],
+   "a": 0,
+   "e": "Injury to or devascularisation of the parathyroids during thyroidectomy causes hypocalcaemia with perioral paraesthesia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about a complication."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "tingling around her mouth",
+      "after a total thyroidectomy",
+      "twitching of her lip"
+     ],
+     "x": "Perioral paraesthesia and **Chvostek's sign** after thyroidectomy: **hypocalcaemia**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The **parathyroid glands** were injured or devascularised."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Can cause tingling, but not after this operation with a positive Chvostek's sign."
+      ],
+      [
+       2,
+       "Causes hoarseness; her voice is normal."
+      ],
+      [
+       3,
+       "Causes swelling and stridor."
+      ],
+      [
+       4,
+       "Fever, tachycardia, agitation; not perioral tingling."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Devascularisation of the parathyroid glands.** Perioral tingling after thyroidectomy = parathyroid injury → low calcium."
+    }
+   ]
+  }
+ ]
+}

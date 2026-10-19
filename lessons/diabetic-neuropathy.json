@@ -1,0 +1,411 @@
+{
+  "id": "diabetic-neuropathy",
+  "patient": {
+    "name": "Delroy Campbell",
+    "age": 64,
+    "sex": "M",
+    "setting": "GP diabetes review, then the diabetic foot clinic",
+    "complaint": "Burning, tingling feet that keep him awake at night",
+    "background": ["Type 2 diabetes for 16 years, poorly controlled", "Smokes 15 a day; BMI 33", "Benign prostatic hyperplasia on tamsulosin", "Retired bus mechanic from Brixton"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a long-standing diabetic who has burning feet, glove and stocking sensory loss and reduced ankle reflexes, or 'Which is the most likely finding on examination?'. B12 deficiency is the classic distractor.",
+      "steps": [
+        {"type": "story", "points": ["Delroy, 64, type 2 diabetes for **16 years**.", "Both feet **burn and tingle**, worst at night.", "Bedsheets on his feet feel unbearable.", "Feels unsteady in the dark."], "vitals": {"BP": "146/84 mmHg", "HR": "82 bpm", "CBG": "13.8 mmol/L"}},
+        {"type": "notes", "src": 0, "lead": "Years of **high glucose** have damaged Delroy's peripheral nerves, and as usual it started in the **feet**."},
+        {"type": "notes", "src": 1, "lead": "Delroy has every risk factor: **poor control**, a **long duration**, **smoking** and **obesity**."},
+        {"type": "story", "points": ["Vibration lost at both great toes (128 Hz tuning fork).", "Light touch reduced to mid-shin, both sides.", "**Ankle reflexes absent**; knee reflexes normal.", "Callus under the right first metatarsal head."]},
+        {"type": "notes", "src": 2, "lead": "Bilateral, **distal**, ascending burning pain worse at night, lost vibration and **absent ankle reflexes**: Delroy has distal symmetrical polyneuropathy."},
+        {"type": "ask", "q": "Which examination finding is most typical of Delroy's neuropathy?", "o": ["Brisk ankle reflexes", "Loss of vibration sense at the toes", "Proximal leg weakness", "Upgoing plantars"], "a": 1, "r": "**Loss of vibration sense** distally is the earliest classic sign. Brisk reflexes or upgoing plantars mean an upper motor neurone cause."},
+        {"type": "compare", "title": "Diabetic neuropathy vs its mimics", "head": ["Feature", "Diabetic neuropathy", "B12 deficiency", "Peripheral arterial disease"], "rows": [["Pain", "Burning, worse at night", "Tingling", "Calf claudication on walking, rest pain"], ["Reflexes", "**Ankle reflexes reduced**", "Absent ankle jerks but brisk knees, upgoing plantars", "Normal"], ["Pulses", "Present (foot warm)", "Present", "**Absent**, cold foot"], ["Clue", "Long-standing, poor control", "Anaemia, high MCV, metformin", "Smoker, shiny hairless skin"]]},
+        {"type": "story", "points": ["Delroy also: dizzy when he stands up.", "Feels full after a few mouthfuls; vomits undigested food.", "Erectile dysfunction for 2 years."], "vitals": {"BP": "144/82 mmHg lying, 112/70 mmHg standing"}},
+        {"type": "notes", "src": 3, "lead": "Delroy's dizziness on standing, early fullness and erectile dysfunction are **autonomic neuropathy**. A cranial nerve palsy would be **focal** neuropathy."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Delroy's lying and standing blood pressure", "x": ["Lying", "Standing 1 min", "Standing 3 min"], "unit": "mmHg", "series": [{"name": "Systolic", "values": [144, 118, 112]}, {"name": "Heart rate (bpm)", "values": [82, 84, 84]}], "caption": "A 32 mmHg systolic drop with no compensatory rise in heart rate: autonomic postural hypotension."}},
+        {"type": "notes", "src": 4, "lead": "Delroy cannot feel his callus, so it can break down into an **ulcer** unnoticed. Infection or Charcot foot could cost him his leg."},
+        {"type": "trap", "text": "A painless, warm, swollen foot in a neuropathic diabetic is **Charcot foot** until proven otherwise; do not call it cellulitis or gout without thinking of it."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (HbA1c) or when nerve conduction studies are needed (diagnosis uncertain). The diagnosis itself is clinical.",
+      "steps": [
+        {"type": "ask", "q": "What confirms Delroy's diagnosis?", "o": ["Clinical history and examination", "MRI spine", "Nerve conduction studies", "Sural nerve biopsy"], "a": 0, "r": "Typical diabetic neuropathy is a **clinical diagnosis**: symptoms plus examination (tuning fork, monofilament, reflexes)."},
+        {"type": "notes", "src": 0, "lead": "Delroy's symmetrical, distal, sensory picture is so typical that the **history and examination** are the gold standard."},
+        {"type": "labs", "title": "Delroy's bloods", "rows": [["HbA1c", "84 mmol/mol", "<48", "H"], ["Vitamin B12", "412 ng/L", "180–900", ""], ["TSH", "1.9 mU/L", "0.3–4.2", ""], ["eGFR", "68 mL/min/1.73m²", ">60", ""], ["MCV", "89 fL", "80–100", ""]], "text": "High HbA1c confirms poor control. Normal B12 and TSH exclude two common mimics."},
+        {"type": "notes", "src": 1, "lead": "Delroy's **HbA1c of 84** shows his glycaemic control is poor, the driver of his nerve damage."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Delroy's HbA1c", "min": 30, "max": 110, "unit": "mmol/mol", "bands": [[30, 48, "non-diabetic", "ok"], [48, 58, "target range", "warn"], [58, 110, "poor control", "bad"]], "value": 84, "label": "Delroy 84", "caption": "Well above the usual 48 to 53 mmol/mol target: tighter control is needed to slow progression."}},
+        {"type": "notes", "src": 2, "lead": "If Delroy's signs were **atypical** (asymmetric, motor-predominant, rapid), **nerve conduction studies** would help. His are typical, so none needed."},
+        {"type": "pearl", "text": "Screen feet with a **10 g monofilament** and **128 Hz tuning fork**. Always check **B12** too, especially on metformin, which lowers B12."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?' for neuropathic pain (amitriptyline, unless contraindicated, then duloxetine), what to do when one agent fails (switch, do not add), and metoclopramide for gastroparesis.",
+      "steps": [
+        {"type": "story", "points": ["Delroy wants something for the burning so he can sleep.", "He has BPH: slow stream, nocturia, on tamsulosin."]},
+        {"type": "ask", "q": "Delroy has BPH. Which agent for neuropathic pain is best?", "o": ["Amitriptyline", "Duloxetine", "Ibuprofen", "Oral morphine"], "a": 1, "r": "**Amitriptyline** is first-line, but its anticholinergic effect risks **urinary retention** in BPH. **Duloxetine** is the safe alternative."},
+        {"type": "notes", "src": 0, "lead": "Delroy needs **tighter glucose control**; amitriptyline would be first-line for his pain, but his **BPH** rules it out."},
+        {"type": "notes", "src": 1, "lead": "So Delroy starts **duloxetine**, on its own. If it fails, **swap** to another agent rather than adding one; refer to pain clinic if still uncontrolled."},
+        {"type": "flow", "title": "Neuropathic pain ladder", "nodes": ["Tight glucose control for all", "First-line: amitriptyline (not in glaucoma or BPH)", "Alternatives: duloxetine, gabapentin, pregabalin", "Monotherapy: stop one before starting another", "Still uncontrolled: pain management clinic"]},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Delroy's night pain on duloxetine", "x": ["Start", "2 weeks", "6 weeks", "12 weeks"], "unit": "0-10 pain score", "series": [{"name": "Night pain", "values": [8, 6, 4, 3]}], "caption": "Pain settles with duloxetine monotherapy; no second agent needed."}},
+        {"type": "notes", "src": 2, "lead": "Delroy's vomiting is treated with **metoclopramide**, his postural drop with **fluids** and slow standing, and his feet with **daily checks and podiatry**."},
+        {"type": "trap", "text": "Do not **add** pregabalin on top of amitriptyline when pain persists. Neuropathic agents are used as **monotherapy**: stop one, then start the next."},
+        {"type": "notes", "src": "guidelines", "lead": "Delroy's pain plan follows **NICE CG173** (neuropathic pain) and his foot care follows **NICE NG19** (diabetic foot problems)."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied mechanism questions: why hyperglycaemia damages nerves (polyol pathway, microvascular, AGEs), why the feet go first, and why autonomic neuropathy causes gastroparesis or postural hypotension.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Inside Delroy's nerves, extra glucose is turned into **sorbitol** by **aldose reductase**; his small nerve blood vessels are also damaged."},
+        {"type": "flow", "title": "Polyol pathway", "nodes": ["Hyperglycaemia", "Aldose reductase: glucose → sorbitol → fructose", "Sorbitol builds up: osmotic stress", "NADPH used up: oxidative stress", "Axon damage and slowed conduction"]},
+        {"type": "notes", "src": 1, "lead": "The nerves to Delroy's toes are the **longest** in his body, so they fail first, giving the **stocking** then glove pattern."},
+        {"type": "ask", "q": "Why did Delroy's feet go numb before his hands?", "o": ["Autoimmune attack on foot nerves", "Compression at the ankle", "Longest axons are damaged first", "Reduced blood flow to the legs only"], "a": 2, "r": "Diabetic neuropathy is **length-dependent**: the longest axons have the most to lose, so the feet go first."},
+        {"type": "notes", "src": 2, "lead": "Damage to Delroy's **unmyelinated autonomic fibres** explains his slow stomach (vagus), dizziness on standing (sympathetic) and erectile dysfunction (pelvic)."},
+        {"type": "pearl", "text": "One mechanism, many symptoms: **vagal** = gastroparesis, **sympathetic** = postural hypotension, **pelvic** = bladder and erectile dysfunction."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "What is the classic sensory distribution of diabetic peripheral neuropathy?", "o": ["Dermatomal", "Glove and stocking", "Hemisensory", "Saddle"], "a": 1, "r": "Symmetrical, distal, starting in the feet."},
+    {"d": "diagnosis", "q": "Which reflex is typically reduced in diabetic neuropathy?", "o": ["Ankle reflex", "Biceps reflex", "Jaw jerk", "Knee reflex"], "a": 0, "r": "Ankle reflexes are lost first (longest nerves)."},
+    {"d": "diagnosis", "q": "Which is a feature of diabetic autonomic neuropathy?", "o": ["Glove and stocking numbness", "Hemiparesis", "Postural hypotension", "Proximal muscle wasting"], "a": 2, "r": "Also gastroparesis, erectile and bladder dysfunction."},
+    {"d": "investigation", "q": "What is the gold standard for diagnosing diabetic neuropathy?", "o": ["Clinical diagnosis", "MRI spine", "Nerve biopsy", "Nerve conduction studies"], "a": 0, "r": "Clinical diagnosis; nerve conduction studies only if uncertain."},
+    {"d": "investigation", "q": "When are nerve conduction studies used?", "o": ["Always, before treatment", "Never", "When the diagnosis is uncertain", "When HbA1c is high"], "a": 2, "r": "Second-line when the picture is atypical or uncertain."},
+    {"d": "management", "q": "First-line drug for diabetic neuropathic pain?", "o": ["Amitriptyline", "Co-codamol", "Ibuprofen", "Paracetamol"], "a": 0, "r": "Amitriptyline (TCA), unless contraindicated."},
+    {"d": "management", "q": "Amitriptyline is contraindicated in BPH. What is a safe alternative?", "o": ["Duloxetine", "Imipramine", "Nortriptyline", "Oxybutynin"], "a": 0, "r": "Duloxetine; other TCAs share the anticholinergic problem."},
+    {"d": "management", "q": "What drug treats diabetic gastroparesis?", "o": ["Hyoscine", "Loperamide", "Metoclopramide", "Omeprazole"], "a": 2, "r": "Metoclopramide, a prokinetic."},
+    {"d": "science", "q": "Which enzyme converts glucose to sorbitol in the polyol pathway?", "o": ["Aldose reductase", "Glucokinase", "Hexokinase", "Sorbitol dehydrogenase"], "a": 0, "r": "Aldose reductase; sorbitol dehydrogenase then makes fructose."},
+    {"d": "science", "q": "Why are the feet affected first?", "o": ["Gravity", "Longest nerves affected first", "Pressure from shoes", "Worse blood supply only"], "a": 1, "r": "Length-dependent damage."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is diabetic neuropathy and who gets it?", "tip": "Exam thinking: mechanism in one line, then the risk factors.", "points": [
+        {"p": "Nerve damage from chronic hyperglycaemia", "k": [["hyperglycaemia", "glucose", "sugar"]], "why": "The nerve damage is driven by high glucose over years."},
+        {"p": "Affects distal nerves, feet first", "k": [["distal", "feet", "foot"]], "why": "Length-dependent pattern."},
+        {"p": "Risk factors: poor control, long duration, smoking, obesity", "k": [["poor control", "duration", "smok", "obes", "hba1c"]], "why": "Smoking adds microvascular damage."}
+      ]},
+      {"d": "diagnosis", "q": "How does distal symmetrical polyneuropathy present, and what do you find?", "tip": "Exam thinking: symptoms, pattern, then the examination signs.", "points": [
+        {"p": "Bilateral burning, tingling, numbness starting in the feet and ascending", "k": [["burn", "tingl", "numb"]], "why": "Glove and stocking distribution."},
+        {"p": "Pain worse at night; allodynia (excessively sensitive)", "k": [["night", "sensitiv", "allodynia"]], "why": "Bedsheets hurt."},
+        {"p": "Unsteadiness and weakness", "k": [["unstead", "weak", "balance"]], "why": "From lost proprioception."},
+        {"p": "Loss of vibration sense (tuning fork), proprioception and light touch", "k": [["vibration", "tuning fork"]], "why": "Vibration loss is the earliest sign."},
+        {"p": "Reduced ankle reflexes; foot ulcers", "k": [["ankle"], ["reflex", "jerk"]], "why": "Brisk reflexes would point to a central cause."}
+      ]},
+      {"d": "diagnosis", "q": "What are the features of autonomic and focal diabetic neuropathy?", "tip": "Exam thinking: name each autonomic symptom and its system.", "points": [
+        {"p": "Postural hypotension", "k": [["postural", "orthostatic"]], "why": "No compensatory tachycardia."},
+        {"p": "Gastroparesis: bloating, vomiting, delayed emptying (vagal)", "k": [["gastroparesis", "bloat", "vomit", "delayed emptying"]], "why": "Causes erratic glucose control."},
+        {"p": "Erectile and bladder dysfunction", "k": [["erectile", "bladder", "impoten"]], "why": "Pelvic autonomic fibres."},
+        {"p": "Focal: cranial nerve palsy or entrapment neuropathies", "k": [["cranial", "mononeuropathy", "entrapment", "carpal", "third nerve"]], "why": "Diabetic third nerve palsy classically spares the pupil."}
+      ]},
+      {"d": "diagnosis", "q": "What foot complications does diabetic neuropathy cause?", "tip": "Exam thinking: loss of protective sensation is the root of it all.", "points": [
+        {"p": "Loss of protective sensation: unnoticed trauma and ulceration", "k": [["ulcer", "trauma", "protective"]], "why": "Neuropathic ulcers form at pressure points."},
+        {"p": "With peripheral arterial disease: Charcot foot and amputation risk", "k": [["charcot", "amputat"]], "why": "Charcot: warm, swollen, deformed foot."},
+        {"p": "Diabetic foot infection is limb-threatening: urgent assessment", "k": [["infection", "urgent", "osteomyelitis"]], "why": "Refer urgently to the diabetic foot team."}
+      ]},
+      {"d": "diagnosis", "q": "How do you tell diabetic neuropathy from B12 deficiency and peripheral arterial disease?", "tip": "Exam thinking: reflexes, pulses, bloods.", "points": [
+        {"p": "B12: subacute combined degeneration can add upgoing plantars and brisk knee jerks; check B12 and MCV", "k": [["b12"]], "why": "Metformin lowers B12."},
+        {"p": "PAD: absent pulses, cold foot, claudication", "k": [["pulse", "cold", "claudication"]], "why": "Neuropathic feet are warm with pulses."}
+      ]},
+      {"d": "investigation", "q": "How is diabetic neuropathy investigated?", "tip": "Exam thinking: clinical diagnosis, HbA1c first, nerve conduction if uncertain.", "points": [
+        {"p": "Clinical diagnosis is the gold standard", "k": [["clinical"]], "why": "History plus monofilament and tuning fork."},
+        {"p": "First-line: HbA1c for glycaemic control", "k": [["hba1c", "a1c"]], "why": "Target usually 48 to 53 mmol/mol."},
+        {"p": "Nerve conduction studies if the diagnosis is uncertain", "k": [["nerve conduction", "ncs"]], "why": "Atypical, asymmetric or motor-predominant features."}
+      ]},
+      {"d": "management", "q": "How is diabetic neuropathic pain treated?", "tip": "Exam thinking: first-line, contraindications, monotherapy, referral.", "points": [
+        {"p": "Tight glucose control slows progression", "k": [["glucose", "glycaemic", "hba1c", "control"]], "why": "It slows, but rarely reverses, neuropathy."},
+        {"p": "First-line: amitriptyline", "k": [["amitriptyline"]], "why": "A tricyclic antidepressant."},
+        {"p": "Amitriptyline contraindicated in glaucoma and BPH", "k": [["glaucoma", "bph", "prostat"]], "why": "Anticholinergic effects."},
+        {"p": "Alternatives: duloxetine, gabapentin, pregabalin", "k": [["duloxetine", "gabapentin", "pregabalin"]], "why": "Duloxetine when amitriptyline is contraindicated."},
+        {"p": "Monotherapy: stop one before starting another; pain clinic if uncontrolled", "k": [["monotherapy", "stop one", "one at a time", "switch", "pain clinic"]], "why": "Do not combine agents."}
+      ]},
+      {"d": "management", "q": "How are autonomic symptoms and the feet managed long-term?", "tip": "Exam thinking: one drug, two measures.", "points": [
+        {"p": "Gastroparesis: metoclopramide", "k": [["metoclopramide"]], "why": "A prokinetic dopamine antagonist."},
+        {"p": "Postural hypotension: fluids and mobilisation measures", "k": [["fluid", "mobilis", "stand slowly"]], "why": "Rise slowly; review antihypertensives."},
+        {"p": "Foot care: daily checks, podiatry, proper footwear", "k": [["podiatr", "footwear", "foot check", "foot care", "shoes"]], "why": "Prevents ulcers and amputation."}
+      ]},
+      {"d": "science", "q": "Why does hyperglycaemia damage nerves in a glove and stocking pattern?", "tip": "Exam thinking: polyol, microvascular, AGE, then length.", "points": [
+        {"p": "Polyol pathway: aldose reductase turns glucose into sorbitol/fructose, causing osmotic and oxidative stress", "k": [["polyol", "sorbitol", "aldose"]], "why": "Sorbitol cannot easily leave the cell."},
+        {"p": "Microvascular damage: vasa nervorum ischaemia", "k": [["vasa nervorum", "microvascular", "ischaem"]], "why": "Nerves starve of blood."},
+        {"p": "AGE accumulation impairs conduction", "k": [["age", "advanced glycation", "glycation"]], "why": "Glycated proteins stiffen and damage tissue."},
+        {"p": "Longest nerves affected earliest and worst: length-dependent", "k": [["longest", "length"]], "why": "Hence feet before hands."}
+      ]},
+      {"d": "science", "q": "Why does autonomic neuropathy cause such varied symptoms?", "tip": "Exam thinking: fibre type, then system by system.", "points": [
+        {"p": "Damage to unmyelinated autonomic fibres", "k": [["unmyelinated"]], "why": "Small fibres are vulnerable."},
+        {"p": "Vagal damage: gastroparesis", "k": [["vagal", "vagus"]], "why": "Slow emptying, vomiting."},
+        {"p": "Sympathetic vasomotor failure: postural hypotension", "k": [["sympathetic", "vasomotor"]], "why": "Vessels fail to constrict on standing."},
+        {"p": "Pelvic autonomic fibres: bladder and erectile dysfunction", "k": [["pelvic", "bladder", "erectile"]], "why": "Parasympathetic pelvic nerves."}
+      ]}
+    ]
+  },
+  "glossary": {
+    "Distal symmetrical polyneuropathy": "The commonest diabetic neuropathy: both sides, starting in the feet and spreading upwards.",
+    "Glove and stocking": "Sensory loss in the hands and feet, like wearing gloves and socks; typical of length-dependent neuropathy.",
+    "Peripheral neuropathy": "Damage to nerves outside the brain and spinal cord, causing numbness, pain or weakness.",
+    "Autonomic neuropathy": "Damage to the nerves controlling automatic functions such as blood pressure, gut, bladder and erections.",
+    "Mononeuropathy": "Damage to a single nerve, such as a cranial nerve palsy or carpal tunnel syndrome.",
+    "Focal neuropathy": "Neuropathy affecting one nerve or one area, rather than a widespread pattern.",
+    "Entrapment neuropathy": "A nerve squeezed at a narrow point, such as the median nerve in carpal tunnel syndrome.",
+    "Allodynia": "Pain from something that should not hurt, such as bedsheets touching the feet.",
+    "Lancinating": "Sharp, stabbing, shooting pain.",
+    "Proprioception": "The sense of where the joints are in space, without looking.",
+    "Vibration sense": "Feeling a vibrating 128 Hz tuning fork on a bony point; lost early in neuropathy.",
+    "Monofilament": "A 10 g nylon filament pressed on the foot to test protective sensation.",
+    "Ankle reflex": "The ankle jerk (S1); reduced or absent in diabetic neuropathy.",
+    "Postural hypotension": "A drop in blood pressure of 20 systolic or more on standing, causing dizziness.",
+    "Gastroparesis": "Delayed stomach emptying without blockage, causing early fullness, bloating and vomiting.",
+    "Erectile dysfunction": "Inability to achieve or keep an erection; an autonomic feature of diabetes.",
+    "Charcot foot": "Neuropathic joint destruction: a warm, swollen foot that collapses into deformity.",
+    "Charcot neuroarthropathy": "Progressive destruction of foot bones and joints in a foot without protective sensation.",
+    "Diabetic foot infection": "Infection of a diabetic foot ulcer or tissues; limb-threatening and needs urgent assessment.",
+    "Neuropathic ulcer": "A painless ulcer at a pressure point, such as under a metatarsal head, on a warm foot with pulses.",
+    "Callus": "Thickened skin over a pressure point; a warning sign of ulcer risk in a neuropathic foot.",
+    "HbA1c": "Glycated haemoglobin, showing average blood glucose over about 3 months.",
+    "Nerve conduction studies": "Electrical tests of how fast and well nerves carry signals; used when the diagnosis is uncertain.",
+    "Amitriptyline": "A tricyclic antidepressant used at low dose for neuropathic pain; anticholinergic side effects.",
+    "TCA": "Tricyclic antidepressant, such as amitriptyline.",
+    "Duloxetine": "An SNRI antidepressant used for neuropathic pain, especially when amitriptyline is contraindicated.",
+    "Gabapentin": "An anticonvulsant used for neuropathic pain.",
+    "Pregabalin": "An anticonvulsant related to gabapentin, used for neuropathic pain.",
+    "Monotherapy": "Using one drug at a time, stopping one before starting another.",
+    "Metoclopramide": "A dopamine antagonist that speeds stomach emptying; used for gastroparesis.",
+    "BPH": "Benign prostatic hyperplasia: non-cancerous prostate enlargement causing urinary symptoms; TCAs can cause retention.",
+    "Primary open-angle glaucoma": "Chronic raised eye pressure damaging the optic nerve; listed in the notes as a contraindication to amitriptyline.",
+    "Podiatry": "Specialist foot care, including nail and callus care and footwear advice.",
+    "Polyol pathway": "Route by which excess glucose is turned into sorbitol and fructose, stressing nerve cells.",
+    "Aldose reductase": "The enzyme that converts glucose to sorbitol in the polyol pathway.",
+    "Sorbitol": "A sugar alcohol made from glucose that builds up in cells and causes osmotic stress.",
+    "Vasa nervorum": "The tiny blood vessels supplying peripheral nerves.",
+    "AGE": "Advanced glycation end-products: proteins damaged by glucose that impair nerve and vessel function.",
+    "Unmyelinated fibres": "Small nerve fibres without a myelin sheath, including autonomic fibres; vulnerable in diabetes.",
+    "Length-dependent": "Damage that affects the longest nerves first, so the feet before the hands.",
+    "Subacute combined degeneration": "Spinal cord damage from B12 deficiency, causing neuropathy with upper motor neurone signs.",
+    "Third nerve palsy": "Oculomotor nerve palsy: ptosis and a 'down and out' eye; diabetic ones usually spare the pupil."
+  },
+  "technique": [
+    {"d": "diagnosis",
+     "stem": "A 67 year old woman with type 2 diabetes for 14 years has 6 months of burning pain and numbness in both feet, worse at night. She has reduced pinprick sensation to the mid-shins bilaterally, absent vibration sense at the great toes and absent ankle reflexes. Knee reflexes and plantar responses are normal. Foot pulses are palpable.",
+     "labs": [["HbA1c", "79 mmol/mol", "<48", "H"], ["Vitamin B12", "380 ng/L", "180–900", ""], ["TSH", "2.4 mU/L", "0.3–4.2", ""]],
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Alcoholic neuropathy", "Diabetic peripheral neuropathy", "Hypothyroid neuropathy", "Multiple sclerosis", "Vitamin B12 deficiency"],
+     "a": 1,
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a symmetrical sensory neuropathy."},
+       {"t": "Pick out the clues", "clues": ["type 2 diabetes for 14 years", "burning pain and numbness in both feet, worse at night", "absent ankle reflexes", "plantar responses are normal"], "x": "Long-standing diabetes, distal symmetrical burning, lower motor neurone signs only."},
+       {"t": "Make your own answer before looking", "x": "**Diabetic peripheral neuropathy.**"},
+       {"t": "Rule out the others", "elim": [[0, "No alcohol history is given; diabetes and high HbA1c explain it."], [2, "TSH is normal."], [3, "MS gives upper motor neurone signs and relapsing episodes."], [4, "B12 is normal, and knees and plantars are normal."]]},
+       {"t": "Commit", "x": "**B. Diabetic peripheral neuropathy.** Rule: diabetes + glove and stocking + reduced ankle jerks."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 59 year old man with type 2 diabetes for 10 years has tingling in both feet. He has symmetrical loss of light touch and vibration to the ankles, reduced ankle reflexes and no weakness. His pulse rate is 76 bpm and BP 138/82 mmHg. His GP wonders how to confirm the diagnosis.",
+     "q": "Which is the most appropriate way to confirm the diagnosis?",
+     "o": ["Clinical history and examination", "Electromyography", "MRI lumbar spine", "Nerve conduction studies", "Sural nerve biopsy"],
+     "a": 0,
+     "steps": [
+       {"t": "Read the question line first", "x": "How is a typical diabetic neuropathy confirmed?"},
+       {"t": "Pick out the clues", "clues": ["symmetrical loss of light touch and vibration", "reduced ankle reflexes", "no weakness"], "x": "Typical distal, symmetrical, sensory picture."},
+       {"t": "Make your own answer before looking", "x": "**Clinical diagnosis** is the gold standard."},
+       {"t": "Rule out the others", "elim": [[1, "EMG is for muscle and motor disease, not typical sensory neuropathy."], [2, "Symmetrical distal loss is not a spinal root problem."], [3, "Nerve conduction studies are only for uncertain cases."], [4, "Biopsy is invasive and rarely needed."]]},
+       {"t": "Commit", "x": "**A. Clinical history and examination.** Then check HbA1c."}
+     ]},
+    {"d": "management",
+     "stem": "A 70 year old man with type 2 diabetes has painful diabetic neuropathy affecting both feet, disturbing his sleep. He has benign prostatic hyperplasia with a poor urinary stream and nocturia. He has no other medical problems. His pulse rate is 78 bpm and BP 136/80 mmHg.",
+     "labs": [["eGFR", "72 mL/min/1.73m²", ">60", ""], ["HbA1c", "62 mmol/mol", "<48", "H"]],
+     "q": "Which is the most appropriate initial drug treatment for his pain?",
+     "o": ["Amitriptyline", "Duloxetine", "Imipramine", "Nortriptyline", "Oral morphine"],
+     "a": 1,
+     "steps": [
+       {"t": "Read the question line first", "x": "First drug for neuropathic pain in a man with BPH."},
+       {"t": "Pick out the clues", "clues": ["painful diabetic neuropathy", "benign prostatic hyperplasia", "poor urinary stream"], "x": "BPH contraindicates amitriptyline (urinary retention)."},
+       {"t": "Make your own answer before looking", "x": "**Duloxetine**, the safe alternative."},
+       {"t": "Rule out the others", "elim": [[0, "Amitriptyline is contraindicated in BPH."], [2, "Imipramine is also a TCA with the same anticholinergic risk."], [3, "Nortriptyline is a TCA too."], [4, "Opioids are not first-line for neuropathic pain."]]},
+       {"t": "Commit", "x": "**B. Duloxetine.** Rule: amitriptyline first-line unless glaucoma or BPH."}
+     ]},
+    {"d": "science",
+     "stem": "A 55 year old woman with poorly controlled type 1 diabetes has numb feet. Her HbA1c has been above 80 mmol/mol for 10 years. A researcher explains that excess glucose inside her nerve cells is converted into a sugar alcohol that accumulates and causes osmotic and oxidative stress.",
+     "q": "Which enzyme is responsible for this first step?",
+     "o": ["Aldose reductase", "Glucokinase", "Glycogen synthase", "Hexokinase", "Sorbitol dehydrogenase"],
+     "a": 0,
+     "steps": [
+       {"t": "Read the question line first", "x": "Which enzyme starts the polyol pathway?"},
+       {"t": "Pick out the clues", "clues": ["converted into a sugar alcohol", "osmotic and oxidative stress"], "x": "Sugar alcohol = sorbitol: the polyol pathway."},
+       {"t": "Make your own answer before looking", "x": "**Aldose reductase**: glucose to sorbitol."},
+       {"t": "Rule out the others", "elim": [[1, "Glucokinase phosphorylates glucose in liver and beta cells."], [2, "Glycogen synthase stores glucose as glycogen."], [3, "Hexokinase starts glycolysis."], [4, "Sorbitol dehydrogenase is the second step, sorbitol to fructose."]]},
+       {"t": "Commit", "x": "**A. Aldose reductase.**"}
+     ]}
+  ],
+  "practice": [
+    {"d": "diagnosis",
+     "stem": "A 62 year old man with type 2 diabetes for 12 years has 4 months of burning and tingling in both feet, worse in bed at night. He has reduced sensation to light touch in both feet up to the ankles and reduced ankle reflexes. Foot pulses are palpable. His pulse rate is 80 bpm and BP 142/86 mmHg.",
+     "labs": [["HbA1c", "76 mmol/mol", "<48", "H"], ["Vitamin B12", "450 ng/L", "180–900", ""], ["MCV", "88 fL", "80–100", ""]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Charcot-Marie-Tooth disease", "Diabetic peripheral neuropathy", "Guillain-Barré syndrome", "Peripheral arterial disease", "Vitamin B12 deficiency"],
+     "a": 1,
+     "e": "Distal symmetrical burning pain worse at night with reduced ankle reflexes in a long-standing diabetic with high HbA1c is diabetic neuropathy. B12 and MCV are normal.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of painful feet in a diabetic."},
+       {"t": "Pick out the clues", "clues": ["type 2 diabetes for 12 years", "worse in bed at night", "reduced ankle reflexes", "Foot pulses are palpable"], "x": "Distal, symmetrical, neuropathic pain; pulses present."},
+       {"t": "Make your own answer before looking", "x": "**Diabetic peripheral neuropathy.**"},
+       {"t": "Rule out the others", "elim": [[0, "CMT is inherited, starts young, with high arches and wasting."], [2, "GBS is acute, ascending weakness over days."], [3, "Pulses are palpable; PAD causes claudication."], [4, "B12 and MCV are normal."]]},
+       {"t": "Commit", "x": "**B. Diabetic peripheral neuropathy.**"}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 66 year old woman with type 2 diabetes for 15 years has numb feet and feels unsteady in the dark. She has no back pain. Power in her legs is normal. Her pulse rate is 74 bpm and BP 138/80 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely finding on examination of her feet?",
+     "o": ["Absent foot pulses", "Brisk ankle reflexes", "Fasciculation of the calves", "Loss of vibration sense at the great toes", "Upgoing plantar responses"],
+     "a": 3,
+     "e": "Loss of vibration sense at the toes is the classic early sign of diabetic neuropathy, along with reduced ankle reflexes.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Examination finding in diabetic neuropathy."},
+       {"t": "Pick out the clues", "clues": ["type 2 diabetes for 15 years", "numb feet", "unsteady in the dark"], "x": "Distal sensory loss and lost proprioception."},
+       {"t": "Make your own answer before looking", "x": "**Lost vibration sense** distally."},
+       {"t": "Rule out the others", "elim": [[0, "Absent pulses suggest PAD, not neuropathy."], [1, "Ankle reflexes are reduced, not brisk."], [2, "Fasciculations suggest motor neurone disease."], [4, "Upgoing plantars mean an upper motor neurone lesion."]]},
+       {"t": "Commit", "x": "**D. Loss of vibration sense.** Tuning fork on the great toe."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 58 year old man with type 2 diabetes and peripheral neuropathy has a 2 week history of a swollen right foot. He has little pain. The foot is red and 3°C warmer than the left, with collapse of the midfoot arch. There is no ulcer. His temperature is 36.9°C, pulse rate 78 bpm and BP 136/82 mmHg.",
+     "labs": [["CRP", "8 mg/L", "<5", "H"], ["White cell count", "7.6 ×10⁹/L", "4.0–11.0", ""], ["Urate", "0.31 mmol/L", "0.20–0.42", ""]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Acute gout", "Cellulitis", "Charcot neuroarthropathy", "Deep vein thrombosis", "Osteomyelitis"],
+     "a": 2,
+     "e": "A warm, swollen, deformed but relatively painless foot in a neuropathic diabetic, with near-normal inflammatory markers and no ulcer, is Charcot foot.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a hot swollen foot in neuropathy."},
+       {"t": "Pick out the clues", "clues": ["peripheral neuropathy", "little pain", "3°C warmer", "collapse of the midfoot arch", "no ulcer"], "x": "Warm, deformed, painless foot; afebrile; normal white cells."},
+       {"t": "Make your own answer before looking", "x": "**Charcot neuroarthropathy.**"},
+       {"t": "Rule out the others", "elim": [[0, "Gout is very painful, often the big toe; urate normal."], [1, "Cellulitis causes fever and raised inflammatory markers, not arch collapse."], [3, "DVT swells the calf, not a deformed midfoot."], [4, "Osteomyelitis usually follows an ulcer and raises CRP."]]},
+       {"t": "Commit", "x": "**C. Charcot foot.** Urgent offloading in a cast."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 52 year old woman with type 1 diabetes for 30 years has 3 months of early fullness, bloating and vomiting of undigested food several hours after meals. Her blood glucose has become erratic with frequent hypoglycaemia. She has peripheral neuropathy. Her pulse rate is 84 bpm and BP 126/78 mmHg.",
+     "labs": [["HbA1c", "81 mmol/mol", "<48", "H"], ["Amylase", "60 U/L", "<100", ""], ["Tissue transglutaminase IgA", "Negative", "", ""]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Coeliac disease", "Gastric outlet obstruction", "Gastro-oesophageal reflux disease", "Gastroparesis", "Pancreatitis"],
+     "a": 3,
+     "e": "Delayed gastric emptying from vagal autonomic neuropathy causes early satiety, bloating, vomiting of undigested food and erratic glucose: diabetic gastroparesis.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of vomiting in a long-standing diabetic."},
+       {"t": "Pick out the clues", "clues": ["type 1 diabetes for 30 years", "vomiting of undigested food several hours after meals", "erratic", "peripheral neuropathy"], "x": "Autonomic neuropathy affecting the vagus."},
+       {"t": "Make your own answer before looking", "x": "**Gastroparesis.**"},
+       {"t": "Rule out the others", "elim": [[0, "Coeliac serology is negative."], [1, "Outlet obstruction needs an ulcer or tumour history."], [2, "GORD causes heartburn, not delayed vomiting of food."], [4, "Amylase is normal and there is no severe pain."]]},
+       {"t": "Commit", "x": "**D. Gastroparesis.** Treat with metoclopramide."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 69 year old man with type 2 diabetes for 20 years has light-headedness when he stands up, and fainted once getting out of bed. He has erectile dysfunction. His lying BP is 148/84 mmHg with pulse rate 80 bpm; after 3 minutes standing BP is 110/68 mmHg with pulse rate 82 bpm.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely cause of his symptoms?",
+     "o": ["Addison's disease", "Aortic stenosis", "Autonomic neuropathy", "Dehydration", "Vasovagal syncope"],
+     "a": 2,
+     "e": "A large postural drop without a compensatory rise in heart rate, plus erectile dysfunction, in a long-standing diabetic is autonomic neuropathy.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Cause of postural symptoms."},
+       {"t": "Pick out the clues", "clues": ["type 2 diabetes for 20 years", "erectile dysfunction", "pulse rate 82 bpm"], "x": "38 mmHg drop with no heart rate response: sympathetic failure."},
+       {"t": "Make your own answer before looking", "x": "**Autonomic neuropathy.**"},
+       {"t": "Rule out the others", "elim": [[0, "Addison's causes pigmentation, weight loss and low sodium."], [1, "Aortic stenosis gives exertional syncope and a murmur."], [3, "Dehydration would cause a compensatory tachycardia."], [4, "Vasovagal has a trigger and prodrome, not a fixed postural drop."]]},
+       {"t": "Commit", "x": "**C. Autonomic neuropathy.** No tachycardia is the clue."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 63 year old man with type 2 diabetes has sudden double vision and pain around his left eye. He has left ptosis and the left eye looks down and out. Both pupils are equal and react normally. His pulse rate is 76 bpm and BP 144/86 mmHg.",
+     "labs": [["Capillary glucose", "14.2 mmol/L", "4.0–7.8", "H"]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Diabetic oculomotor mononeuropathy", "Horner syndrome", "Myasthenia gravis", "Posterior communicating artery aneurysm", "Thyroid eye disease"],
+     "a": 0,
+     "e": "A pupil-sparing third nerve palsy in a diabetic is a focal diabetic mononeuropathy (microvascular). An aneurysm compresses the outer pupillary fibres, dilating the pupil.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a third nerve palsy."},
+       {"t": "Pick out the clues", "clues": ["type 2 diabetes", "left ptosis", "down and out", "pupils are equal and react normally"], "x": "Third nerve palsy, pupil spared."},
+       {"t": "Make your own answer before looking", "x": "Focal **diabetic mononeuropathy** of CN III."},
+       {"t": "Rule out the others", "elim": [[1, "Horner gives mild ptosis with a small pupil, not down and out."], [2, "Myasthenia fluctuates and is painless."], [3, "Aneurysm usually dilates the pupil."], [4, "Thyroid eye disease causes proptosis and lid retraction."]]},
+       {"t": "Commit", "x": "**A. Diabetic mononeuropathy.** Pupil-sparing = microvascular."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 57 year old woman with type 2 diabetes has tingling in both feet. She has symmetrical distal loss of vibration and light touch and reduced ankle reflexes. Her pulse rate is 72 bpm and BP 134/80 mmHg. She has not had any blood tests for a year.",
+     "labs": [], "visual": null,
+     "q": "Which is the most appropriate initial investigation?",
+     "o": ["Creatine kinase", "HbA1c", "Lumbar puncture", "Nerve conduction studies", "Sural nerve biopsy"],
+     "a": 1,
+     "e": "Diabetic neuropathy is a clinical diagnosis; HbA1c is checked first to assess glycaemic control, the driver of progression.",
+     "steps": [
+       {"t": "Read the question line first", "x": "'Initial' investigation."},
+       {"t": "Pick out the clues", "clues": ["type 2 diabetes", "symmetrical distal loss", "not had any blood tests for a year"], "x": "Typical neuropathy; control unknown."},
+       {"t": "Make your own answer before looking", "x": "**HbA1c.**"},
+       {"t": "Rule out the others", "elim": [[0, "CK is for muscle disease."], [2, "LP is for suspected GBS or CIDP."], [3, "Nerve conduction studies are for uncertain cases."], [4, "Biopsy is invasive and rarely needed."]]},
+       {"t": "Commit", "x": "**B. HbA1c.**"}
+     ]},
+    {"d": "investigation",
+     "stem": "A 61 year old man with type 2 diabetes has 2 months of weakness of his right foot with foot drop, and numbness only over the top of the right foot. The left leg is normal. His pulse rate is 78 bpm and BP 140/84 mmHg.",
+     "labs": [["HbA1c", "58 mmol/mol", "<48", "H"]],
+     "visual": null,
+     "q": "Which is the most appropriate investigation to clarify the diagnosis?",
+     "o": ["Creatine kinase", "HbA1c", "Lumbar puncture", "Nerve conduction studies", "Sural nerve biopsy"],
+     "a": 3,
+     "e": "Asymmetric, motor-predominant features are atypical for distal symmetrical diabetic neuropathy, so nerve conduction studies are used when the diagnosis is uncertain.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Test to clarify an uncertain picture."},
+       {"t": "Pick out the clues", "clues": ["foot drop", "numbness only over the top of the right foot", "The left leg is normal"], "x": "Asymmetric, motor: atypical, possibly a focal or entrapment neuropathy."},
+       {"t": "Make your own answer before looking", "x": "**Nerve conduction studies.**"},
+       {"t": "Rule out the others", "elim": [[0, "CK is for myopathy."], [1, "HbA1c is already known."], [2, "LP is not indicated for a focal problem."], [4, "Biopsy is a last resort."]]},
+       {"t": "Commit", "x": "**D. Nerve conduction studies.** Uncertain = NCS."}
+     ]},
+    {"d": "management",
+     "stem": "A 54 year old woman with type 2 diabetes has burning pain in both feet that disturbs her sleep. She has no other medical conditions and takes metformin only. Her pulse rate is 76 bpm and BP 128/78 mmHg.",
+     "labs": [["HbA1c", "64 mmol/mol", "<48", "H"], ["eGFR", "88 mL/min/1.73m²", ">60", ""]],
+     "visual": null,
+     "q": "Which is the most appropriate initial drug treatment for her pain?",
+     "o": ["Amitriptyline", "Co-codamol", "Ibuprofen", "Oral morphine", "Topical lidocaine"],
+     "a": 0,
+     "e": "Amitriptyline is first-line for diabetic neuropathic pain when there is no contraindication. Opioids and NSAIDs are not first-line.",
+     "steps": [
+       {"t": "Read the question line first", "x": "First-line drug for neuropathic pain."},
+       {"t": "Pick out the clues", "clues": ["burning pain in both feet", "no other medical conditions"], "x": "No glaucoma or BPH to stop a TCA."},
+       {"t": "Make your own answer before looking", "x": "**Amitriptyline.**"},
+       {"t": "Rule out the others", "elim": [[1, "Weak opioids are not first-line for neuropathic pain."], [2, "NSAIDs do not treat neuropathic pain and harm kidneys."], [3, "Strong opioids are not first-line."], [4, "Topical lidocaine is for localised pain, not first-line here."]]},
+       {"t": "Commit", "x": "**A. Amitriptyline.**"}
+     ]},
+    {"d": "management",
+     "stem": "A 60 year old man with painful diabetic neuropathy has taken amitriptyline at the maximum tolerated dose for 8 weeks. His pain remains severe and he has a dry mouth. His pulse rate is 80 bpm and BP 136/82 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the next most appropriate step in management?",
+     "o": ["Add gabapentin to amitriptyline", "Add oral morphine", "Continue amitriptyline and add pregabalin", "Refer for sural nerve biopsy", "Switch from amitriptyline to pregabalin"],
+     "a": 4,
+     "e": "Monotherapy is recommended: stop one neuropathic agent before starting another. Refer to pain clinic if still uncontrolled.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Next step when first-line fails."},
+       {"t": "Pick out the clues", "clues": ["maximum tolerated dose for 8 weeks", "pain remains severe"], "x": "Amitriptyline has failed."},
+       {"t": "Make your own answer before looking", "x": "**Switch** to an alternative, one agent at a time."},
+       {"t": "Rule out the others", "elim": [[0, "Combining agents goes against monotherapy."], [1, "Opioids are not the next step."], [2, "Adding rather than switching breaks monotherapy."], [3, "Biopsy does not treat pain."]]},
+       {"t": "Commit", "x": "**E. Switch to pregabalin.** Stop one before starting another."}
+     ]},
+    {"d": "management",
+     "stem": "A 49 year old woman with type 1 diabetes and autonomic neuropathy has early satiety and vomits undigested food most evenings. A gastric emptying study confirms delayed emptying with no obstruction on endoscopy. Her pulse rate is 82 bpm and BP 122/76 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the most appropriate drug treatment?",
+     "o": ["Hyoscine butylbromide", "Loperamide", "Metoclopramide", "Omeprazole", "Senna"],
+     "a": 2,
+     "e": "Diabetic gastroparesis is managed with metoclopramide, a prokinetic. Hyoscine slows the gut further.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Drug for gastroparesis."},
+       {"t": "Pick out the clues", "clues": ["autonomic neuropathy", "delayed emptying with no obstruction"], "x": "Confirmed diabetic gastroparesis."},
+       {"t": "Make your own answer before looking", "x": "**Metoclopramide.**"},
+       {"t": "Rule out the others", "elim": [[0, "An antispasmodic slows emptying further."], [1, "Loperamide slows gut transit."], [3, "PPIs reduce acid but do not speed emptying."], [4, "Senna is a laxative for the colon."]]},
+       {"t": "Commit", "x": "**C. Metoclopramide.**"}
+     ]},
+    {"d": "science",
+     "stem": "A 65 year old man with type 2 diabetes for 18 years has numbness in both feet up to the mid-calf and in both hands up to the wrists. He first noticed it in his toes years before his fingers. His pulse rate is 78 bpm and BP 140/82 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely explanation for the distribution of his sensory loss?",
+     "o": ["Autoimmune attack on the dorsal root ganglia", "Compression at the tarsal tunnel", "Demyelination of the dorsal columns", "Length-dependent damage to the longest axons", "Vitamin B12 malabsorption"],
+     "a": 3,
+     "e": "Diabetic neuropathy is length-dependent: the longest nerves (to the feet) are affected earliest and worst, giving the glove and stocking pattern.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Why glove and stocking?"},
+       {"t": "Pick out the clues", "clues": ["both feet up to the mid-calf", "toes years before his fingers"], "x": "Feet first, then hands, symmetrically."},
+       {"t": "Make your own answer before looking", "x": "**Length-dependent** axon damage."},
+       {"t": "Rule out the others", "elim": [[0, "Ganglionopathy is patchy and non-length-dependent."], [1, "Tarsal tunnel is one-sided and only the sole."], [2, "Dorsal column disease gives sensory ataxia with UMN signs."], [4, "Nothing points to B12 deficiency."]]},
+       {"t": "Commit", "x": "**D. Length-dependent damage.**"}
+     ]}
+  ]
+}

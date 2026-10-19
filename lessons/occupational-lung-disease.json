@@ -1,0 +1,653 @@
+{
+ "id": "occupational-lung-disease",
+ "patient": {
+  "name": "Darren Fletcher",
+  "age": 44,
+  "sex": "M",
+  "setting": "GP surgery, then respiratory clinic",
+  "complaint": "Wheeze, chest tightness and a cough that started after a new job",
+  "background": [
+   "Started as a car body-shop spray painter in Croydon 14 months ago",
+   "Previously a warehouse worker; no childhood asthma",
+   "Ex-smoker, 8 pack-years, stopped at 30",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' where the job is the clue: spray painter (isocyanates) with late-onset asthma that improves on holiday, builder or shipyard worker (asbestosis, mesothelioma), miner or sandblaster (silicosis, coal worker's pneumoconiosis), farmer (hypersensitivity pneumonitis).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Darren, 44, no asthma as a child.",
+      "Wheeze, cough and chest tightness for 10 months.",
+      "Worse by the end of the working week.",
+      "**Much better on a 2-week holiday** in Spain.",
+      "Back at work: symptoms return within days."
+     ],
+     "vitals": {
+      "T": "36.6°C",
+      "HR": "80 bpm",
+      "BP": "130/80 mmHg",
+      "RR": "16 /min",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Darren's symptoms began at a new workplace: an inhaled **workplace exposure** is the likely cause."
+    },
+    {
+     "type": "ask",
+     "q": "Which question will tell you most about the cause of Darren's symptoms?",
+     "o": ["Do you have pets at home?", "Do your symptoms improve away from work?", "Does anyone in your family have asthma?", "Have you had a recent cold?"],
+     "a": 1,
+     "r": "Improvement on days off or holiday links symptoms to **work**. The occupational history is critical."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Darren's wheeze plus a clear job link is the pattern: **occupational history is critical**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Darren is the textbook case: **late-onset asthma** after a new job, better on holiday, in a spray painter exposed to **isocyanates**."
+    },
+    {
+     "type": "compare",
+     "title": "Occupational lung diseases: job to diagnosis",
+     "head": ["Disease", "Job / exposure", "Key feature", "Spirometry"],
+     "rows": [
+      ["Occupational asthma", "Spray painting, foam, adhesives (**isocyanates**)", "Better on holiday", "Obstructive"],
+      ["Asbestosis", "Construction, shipyards", "Lower zone fibrosis, **pleural plaques**", "Restrictive"],
+      ["Silicosis", "Mining, sandblasting, stonework", "Upper lobe fibrosis, **TB risk**", "Restrictive"],
+      ["Coal worker's pneumoconiosis", "Coal mining", "Upper zone nodules", "Restrictive"],
+      ["Hypersensitivity pneumonitis", "Farming (mouldy hay), birds", "Fever, cough hours after exposure", "Restrictive"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Darren's job points to asthma, but a builder or shipyard worker would point to **asbestosis** or **mesothelioma**, and a sandblaster to **silicosis**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "For comparison: a retired shipyard worker",
+      "findings": [
+       { "type": "fibrosis", "side": "both", "zone": "lower" },
+       { "type": "effusion", "side": "right", "zone": "lower" }
+      ],
+      "caption": "Lower zone fibrosis (asbestosis) and a right pleural effusion: suspect mesothelioma."
+     },
+     "text": "Not Darren: this is what asbestos exposure decades earlier can look like."
+    },
+    {
+     "type": "pearl",
+     "text": "Asbestos-related disease appears **decades** after exposure. A retired builder in his 70s still counts."
+    },
+    {
+     "type": "trap",
+     "text": "Do not label late-onset wheeze as ordinary adult asthma without asking about **work**. Better on holiday = occupational."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'most appropriate investigation' to link asthma to work (serial peak flow diary at and away from work), the spirometry pattern (obstructive in asthma, restrictive in asbestosis), and imaging for pneumoconioses (CT more sensitive than CXR).",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Darren's detailed job history is half the diagnosis; imaging matters more for the dust diseases than for his asthma."
+    },
+    {
+     "type": "labs",
+     "title": "Darren's spirometry (on a work day)",
+     "rows": [
+      ["FEV1", "2.6 L (72% predicted)", ">80%", "L"],
+      ["FVC", "4.1 L (95% predicted)", ">80%", ""],
+      ["FEV1/FVC", "0.63", ">0.7", "L"],
+      ["Post-salbutamol FEV1", "3.1 L (+500 mL)", "", ""]
+     ],
+     "text": "Obstructive and reversible: asthma. Now prove the link to work."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Darren's FEV1/FVC",
+      "min": 0.4,
+      "max": 1.0,
+      "unit": "",
+      "bands": [
+       [0.4, 0.7, "Obstructive", "bad"],
+       [0.7, 1.0, "Normal or restrictive", "ok"]
+      ],
+      "value": 0.63,
+      "label": "Darren 0.63",
+      "caption": "Obstructive, as in occupational asthma. Asbestosis would sit above 0.7 with low volumes."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Darren's spirometry is **obstructive** (asthma); a builder with asbestosis would be **restrictive**. Bloods and TB testing matter most in silicosis."
+    },
+    {
+     "type": "ask",
+     "q": "Which test best shows that Darren's asthma is caused by work?",
+     "o": ["Chest X-ray", "HRCT chest", "Serial peak flow diary at and away from work", "Skin prick testing"],
+     "a": 2,
+     "r": "A **serial peak flow diary** on work days and days off shows the work-related pattern."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Darren records his **peak flow** four times a day for 4 weeks, including a week off."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Darren's peak flow diary",
+      "x": ["Mon", "Wed", "Fri", "Sun (off)", "Tue (off)", "Thu (off)", "Mon (back)", "Wed"],
+      "unit": "L/min",
+      "series": [
+       { "name": "Peak flow", "values": [470, 420, 380, 450, 500, 520, 460, 400] }
+      ],
+      "caption": "Falls through each working week and recovers on days off: occupational asthma."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Darren's diary is the guideline test: the **serial peak flow** pattern confirms occupational asthma."
+    },
+    {
+     "type": "trap",
+     "text": "Spirometry in clinic proves asthma, not **occupational** asthma. You need measurements at work and away from work."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'most appropriate initial management': confirm and refer to secondary care, then remove or avoid the trigger. Then standard asthma inhalers, or oxygen in advanced fibrotic disease.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Darren's diary confirms occupational asthma. What is central to his management?",
+     "o": ["Avoid the causative agent", "Long-term oral prednisolone", "Paper face mask at work", "Salbutamol before each shift"],
+     "a": 0,
+     "r": "**Removing the trigger** is central. A paper mask does not stop isocyanate exposure; inhalers alone leave him sensitised."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Darren's GP confirms the diagnosis, **refers him to secondary care**, and the plan is to **remove him from isocyanate exposure**."
+    },
+    {
+     "type": "flow",
+     "title": "Occupational asthma pathway",
+     "nodes": [
+      "Suspect: asthma better away from work",
+      "Confirm: serial peak flow at and away from work",
+      "Refer to secondary care",
+      "Remove or avoid the trigger",
+      "Standard asthma inhalers; monitor lung function"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Darren uses **inhaled steroid plus salbutamol** while redeployment is arranged, and his lung function is monitored over time."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Darren's FEV1 after leaving the paint booth",
+      "x": ["At diagnosis", "1 month", "3 months", "6 months"],
+      "unit": "% predicted",
+      "series": [
+       { "name": "FEV1 % predicted", "values": [72, 80, 86, 90] }
+      ],
+      "caption": "Early removal from exposure gives the best chance of recovery."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Darren's breathlessness had a clear job link, which is why he was assessed for occupational lung disease rather than treated blindly."
+    },
+    {
+     "type": "pearl",
+     "text": "Asbestosis and silicosis cannot be reversed: remove exposure, monitor lung function, give **oxygen** in advanced disease."
+    },
+    {
+     "type": "trap",
+     "text": "Staying in the same job with a better inhaler is the wrong answer. Sensitisation persists and asthma worsens with **continued exposure**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect mechanism questions: isocyanates sensitising the airway (IgE and cell-mediated), silica killing alveolar macrophages (TB risk), or the type III hypersensitivity of farmer's lung.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Darren's isocyanate fumes cause **airway hyperreactivity**; asbestos and silica cause **fibrosis**, and asbestos can also cause **malignancy**."
+    },
+    {
+     "type": "flow",
+     "title": "How isocyanates cause Darren's asthma",
+     "nodes": [
+      "Inhaled isocyanate binds airway proteins",
+      "Sensitisation (IgE and cell-mediated)",
+      "Re-exposure at work",
+      "Airway inflammation and bronchoconstriction",
+      "Wheeze, worse through the working week"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Darren is now **sensitised**: even small exposures trigger immediate (IgE) and delayed (cell-mediated) reactions."
+    },
+    {
+     "type": "ask",
+     "q": "Why do silicosis patients get TB more often?",
+     "o": ["Silica blocks IgE", "Silica is cytotoxic to alveolar macrophages", "Silica lowers CD4 count", "Silica thickens mucus"],
+     "a": 1,
+     "r": "Silica **kills alveolar macrophages**, the main defence against mycobacteria, and drives fibrosis."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Darren had been a sandblaster, silica would have damaged his **macrophages**, raising his TB risk."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Farmer's lung is a different mechanism from Darren's asthma: a **type III** (and partly type IV) reaction to organic dust in the alveoli."
+    },
+    {
+     "type": "compare",
+     "title": "Which immune reaction?",
+     "head": ["Disease", "Antigen", "Reaction", "Site"],
+     "rows": [
+      ["Occupational asthma", "Isocyanates", "IgE (type I) + cell-mediated", "Airways"],
+      ["Hypersensitivity pneumonitis", "Organic dust, mould, birds", "Type III (+ IV), granulomas", "Alveoli"],
+      ["Silicosis", "Silica", "Macrophage toxicity → fibrosis", "Upper lobes"]
+     ]
+    }
+   ]
+  }
+ },
+ "mcq": [
+  { "d": "diagnosis", "q": "What is the most common cause of occupational asthma?", "o": ["Asbestos", "Flour dust", "Isocyanates", "Silica"], "a": 2, "r": "**Isocyanates**: spray painting, foam moulding and adhesives." },
+  { "d": "diagnosis", "q": "Which history most suggests occupational asthma?", "o": ["Childhood eczema", "Improves on holiday", "Night sweats", "Worse in pollen season"], "a": 1, "r": "Late-onset asthma after a new job that **improves away from work**." },
+  { "d": "diagnosis", "q": "Which occupational lung disease raises TB risk?", "o": ["Asbestosis", "Farmer's lung", "Occupational asthma", "Silicosis"], "a": 3, "r": "**Silicosis**: silica damages alveolar macrophages." },
+  { "d": "diagnosis", "q": "Which malignancy is linked to asbestos exposure?", "o": ["Hodgkin lymphoma", "Mesothelioma", "Sarcoma of bone", "Thymoma"], "a": 1, "r": "**Mesothelioma**, presenting with an exudative malignant pleural effusion." },
+  { "d": "investigation", "q": "Which test confirms occupational asthma?", "o": ["Chest X-ray", "Serial peak flow diary", "Serum ACE", "Sweat test"], "a": 1, "r": "**Serial peak flow**, both at and away from work." },
+  { "d": "investigation", "q": "Which spirometry pattern is seen in asbestosis?", "o": ["Normal", "Obstructive", "Reversible obstruction", "Restrictive"], "a": 3, "r": "**Restrictive**: FEV1 and FVC below 80%, ratio 0.7 or more." },
+  { "d": "investigation", "q": "Which pleural fluid protein suggests an exudate?", "o": ["Above 35 g/L", "Below 10 g/L", "Below 25 g/L", "Exactly 30 g/L"], "a": 0, "r": "Protein **above 35 g/L** (and LDH above 2/3 of the serum upper limit)." },
+  { "d": "management", "q": "What is central to managing occupational lung disease?", "o": ["Antibiotics", "Lung transplant", "Oral steroids", "Remove the trigger"], "a": 3, "r": "**Remove or avoid the causative agent**, after confirming and referring." },
+  { "d": "science", "q": "What type of hypersensitivity is hypersensitivity pneumonitis?", "o": ["Type I only", "Type II", "Type III (and partly IV)", "Not immune-mediated"], "a": 2, "r": "**Type III** (and partly type IV), causing granulomatous inflammation." }
+ ],
+ "blurt": {
+  "prompts": [
+   { "d": "diagnosis", "q": "What is occupational lung disease, and which jobs are at risk?", "tip": "Exam thinking: always read the job line in the stem.", "points": [
+     { "p": "Lung disease from workplace exposure to harmful substances", "k": [["work", "occupation", "job"]], "why": "Usually chronic and progressive." },
+     { "p": "Mining", "k": [["mining", "miner", "coal"]], "why": "Coal worker's pneumoconiosis, silicosis." },
+     { "p": "Construction and shipyards", "k": [["construction", "builder", "shipyard"]], "why": "Asbestosis and mesothelioma." },
+     { "p": "Farming", "k": [["farm"]], "why": "Hypersensitivity pneumonitis (farmer's lung)." }
+   ] },
+   { "d": "diagnosis", "q": "What is the classic history and commonest cause of occupational asthma?", "tip": "Exam thinking: better on holiday is the giveaway.", "points": [
+     { "p": "Late-onset asthma after starting a new job", "k": [["late", "adult", "new job"]], "why": "No childhood asthma." },
+     { "p": "Cough and wheeze that improve on holiday or away from work", "k": [["holiday", "away", "weekend", "days off"]], "why": "Worse through the working week." },
+     { "p": "Isocyanates are the most common cause", "k": [["isocyanate"]], "why": "Spray painting, foam moulding, adhesives." }
+   ] },
+   { "d": "diagnosis", "q": "How does asbestosis present, and what is its malignant complication?", "tip": "Exam thinking: builder or shipyard + restrictive spirometry + plaques.", "points": [
+     { "p": "Construction or shipyard worker", "k": [["construction", "builder", "shipyard"]], "why": "Exposure decades earlier." },
+     { "p": "Restrictive spirometry: FEV1 and FVC below 80%, ratio 0.7 or more", "k": [["restrict"]], "why": "Lower zone fibrosis." },
+     { "p": "Pleural plaques on CXR", "k": [["plaque"]], "why": "Marker of exposure, benign in themselves." },
+     { "p": "Mesothelioma: malignant exudative pleural effusion", "k": [["mesothelioma"]], "why": "Unilateral effusion, chest pain, weight loss." },
+     { "p": "Exudate: LDH above 2/3 upper limit, protein above 35 g/L", "k": [["35", "ldh", "exudat"]], "why": "Light's-style criteria." }
+   ] },
+   { "d": "diagnosis", "q": "What are silicosis, coal worker's pneumoconiosis and hypersensitivity pneumonitis?", "tip": "Exam thinking: miner or sandblaster = upper zone; farmer = organic dust.", "points": [
+     { "p": "Silicosis: silica (mining, sandblasting), upper lobe fibrosis", "k": [["silic"], ["upper", "sandblast", "mining", "quarry"]], "why": "In CHARTS." },
+     { "p": "Silicosis increases TB risk", "k": [["tb", "tuberculosis"]], "why": "Macrophage damage." },
+     { "p": "Coal worker's pneumoconiosis: coal dust, progressive lung disease", "k": [["coal"]], "why": "Upper zone nodules." },
+     { "p": "Hypersensitivity pneumonitis: organic dust, e.g. farmer's lung", "k": [["hypersensitivity", "farmer", "alveolitis", "organic"]], "why": "Immune-mediated cough and breathlessness." }
+   ] },
+   { "d": "investigation", "q": "How do you investigate suspected occupational lung disease?", "tip": "Exam thinking: history first, then imaging or spirometry by disease.", "points": [
+     { "p": "Detailed occupational history", "k": [["occupational history", "job history", "work history", "history"]], "why": "The single most important step." },
+     { "p": "Imaging: CXR or CT chest (CT more sensitive)", "k": [["ct", "x-ray", "xray", "cxr", "imaging"]], "why": "Fibrosis, nodules, pleural plaques." },
+     { "p": "Spirometry: restrictive in asbestosis, obstructive in asthma", "k": [["spirometry", "fev1", "pft"]], "why": "Pattern points to the type." },
+     { "p": "Routine bloods and TB testing", "k": [["tb", "tuberculosis", "blood"]], "why": "Especially in silicosis." }
+   ] },
+   { "d": "investigation", "q": "How do you confirm occupational asthma?", "tip": "Exam thinking: 'link to work' = serial peak flow.", "points": [
+     { "p": "Serial peak flow diary", "k": [["peak flow", "pef", "pefr"]], "why": "Several readings a day over weeks." },
+     { "p": "Measured both at work and away from work", "k": [["work"], ["away", "off", "holiday", "home"]], "why": "Shows the work-related pattern." }
+   ] },
+   { "d": "management", "q": "What is the management of occupational lung disease?", "tip": "Exam thinking: confirm, refer, remove the trigger.", "points": [
+     { "p": "Confirm the diagnosis and refer to secondary care", "k": [["refer", "secondary", "specialist"]], "why": "Diagnosis has job implications." },
+     { "p": "Remove or avoid the trigger", "k": [["remove", "avoid", "stop exposure", "redeploy"]], "why": "Central to management." },
+     { "p": "Bronchodilators for asthma, steroids in some cases", "k": [["bronchodilator", "salbutamol", "inhaler", "steroid"]], "why": "Treat like asthma alongside removal." },
+     { "p": "Oxygen in advanced disease; monitor lung function", "k": [["oxygen", "monitor"]], "why": "Fibrotic pneumoconioses are irreversible." }
+   ] },
+   { "d": "science", "q": "How do inhaled particles damage the lung, and why does silica raise TB risk?", "tip": "Exam thinking: fibrosis, hyperreactivity or malignancy depending on the agent.", "points": [
+     { "p": "Inhaled particles trigger chronic inflammation", "k": [["inflamm"]], "why": "Coal, silica, asbestos, organic dusts." },
+     { "p": "Outcome: fibrosis, airway hyperreactivity or malignancy", "k": [["fibros", "hyperreactiv", "malignan", "cancer"]], "why": "Depends on agent and deposition." },
+     { "p": "Silica is cytotoxic to alveolar macrophages", "k": [["macrophage"]], "why": "Starts a fibrogenic cascade." },
+     { "p": "Predisposes to mycobacterial infection (TB)", "k": [["tb", "mycobacter", "tuberculosis"]], "why": "Screen silicosis patients for TB." }
+   ] },
+   { "d": "science", "q": "What immune mechanisms cause occupational asthma and hypersensitivity pneumonitis?", "tip": "Exam thinking: asthma = IgE; HP = type III.", "points": [
+     { "p": "Isocyanates: IgE-mediated (immediate) sensitisation", "k": [["ige", "type i", "type 1", "immediate"]], "why": "Bronchoconstriction on re-exposure." },
+     { "p": "Plus non-IgE, cell-mediated (delayed) sensitisation", "k": [["cell-mediated", "cell mediated", "delayed", "non-ige", "t cell"]], "why": "Explains late reactions." },
+     { "p": "Hypersensitivity pneumonitis: type III (partly type IV)", "k": [["type iii", "type 3", "immune complex"]], "why": "To inhaled organic antigens." },
+     { "p": "Granulomatous inflammation that can progress to fibrosis", "k": [["granulom", "fibros"]], "why": "If exposure continues." }
+   ] }
+  ]
+ },
+ "glossary": {
+  "Occupational asthma": "Asthma caused by a substance inhaled at work, improving away from work.",
+  "Isocyanates": "Chemicals in spray paints, foams and adhesives; the commonest cause of occupational asthma.",
+  "Serial peak flow": "Repeated peak expiratory flow readings over weeks, at and away from work.",
+  "Peak flow": "Peak expiratory flow: the fastest rate of breathing out, in L/min.",
+  "Sensitisation": "When the immune system becomes primed to react to a substance on re-exposure.",
+  "Asbestosis": "Lower-lobe pulmonary fibrosis caused by inhaled asbestos fibres.",
+  "Asbestos": "Fibrous mineral once used in building and shipyards; causes asbestosis, plaques and mesothelioma.",
+  "Pleural plaques": "Benign thickened patches on the pleura marking past asbestos exposure.",
+  "Mesothelioma": "Malignant tumour of the pleura strongly linked to asbestos exposure.",
+  "Pleural effusion": "Fluid collecting between the lung and chest wall.",
+  "Exudate": "Protein-rich pleural fluid (protein above 35 g/L) from inflammation, infection or malignancy.",
+  "LDH": "Lactate dehydrogenase; a high pleural fluid level suggests an exudate.",
+  "Pneumoconiosis": "Lung disease from inhaled mineral dust such as coal, silica or asbestos.",
+  "Coal worker's pneumoconiosis": "Lung disease from coal dust in miners, with upper zone nodules and fibrosis.",
+  "Silicosis": "Fibrotic lung disease from silica dust, mainly in the upper lobes, raising TB risk.",
+  "Silica": "Crystalline mineral dust from quarrying, mining, sandblasting and stonework.",
+  "Sandblasting": "Blasting surfaces with sand or grit; a classic silica exposure.",
+  "Hypersensitivity pneumonitis": "Immune reaction in the alveoli to inhaled organic antigens such as mouldy hay or bird proteins.",
+  "Farmer's lung": "Hypersensitivity pneumonitis from fungal spores in mouldy hay.",
+  "Extrinsic allergic alveolitis": "Another name for hypersensitivity pneumonitis.",
+  "Type III hypersensitivity": "Immune-complex-mediated inflammation.",
+  "IgE": "Antibody behind allergic, immediate (type I) reactions.",
+  "Alveolar macrophages": "Immune cells in the alveoli that engulf dust and microbes.",
+  "Restrictive pattern": "Spirometry with FEV1 and FVC below 80% but FEV1/FVC 0.7 or more.",
+  "Obstructive pattern": "Spirometry with FEV1/FVC below 0.7.",
+  "FEV1/FVC": "Proportion of vital capacity breathed out in one second.",
+  "Reversibility": "Improvement in FEV1 after a bronchodilator, typical of asthma.",
+  "Bronchodilator": "Drug that opens the airways, such as salbutamol.",
+  "Granulomatous": "Inflammation forming clusters of macrophages and immune cells.",
+  "TB": "Tuberculosis: infection with Mycobacterium tuberculosis.",
+  "Redeployment": "Moving a worker to a different role away from the harmful exposure."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 39 year old man has 8 months of wheeze, chest tightness and cough. He had no breathing problems until he started work as a car spray painter a year ago. His symptoms are worse at the end of the working week and largely disappeared during a 2 week holiday. He has never smoked.",
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asbestosis", "Chronic obstructive pulmonary disease", "Extrinsic allergic alveolitis", "Occupational asthma", "Silicosis"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "A diagnosis question: the job and the pattern decide it." },
+    { "t": "Pick out the clues", "clues": ["wheeze, chest tightness and cough", "car spray painter", "worse at the end of the working week", "disappeared during a 2 week holiday"], "x": "Late-onset asthma, isocyanate exposure, better away from work." },
+    { "t": "Make your own answer before looking", "x": "**Occupational asthma** from isocyanates." },
+    { "t": "Rule out the others", "elim": [[0, "Asbestosis is restrictive fibrosis decades after exposure, not wheeze."], [1, "COPD needs smoking and does not improve on holiday."], [2, "EAA gives fever and crackles after organic dust."], [4, "Silicosis needs silica (mining, sandblasting)."]] },
+    { "t": "Commit", "x": "**D. Occupational asthma.** Rule: new job + wheeze + better on holiday = occupational asthma." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 42 year old woman works in a factory making foam car seats. She has developed wheeze and cough over the past year that improve when she is on leave. Clinic spirometry shows an FEV1/FVC of 0.65 with 15% reversibility after salbutamol. Her temperature is 36.7°C, pulse rate 78 bpm, BP 122/74 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 98% breathing air.",
+   "q": "Which is the most appropriate investigation to confirm that her asthma is caused by work?",
+   "o": ["Chest X-ray", "HRCT chest", "Serial peak flow measurements at work and away from work", "Skin prick testing", "Spirometry repeated in clinic"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "She has asthma; the question is how to **link it to work**." },
+    { "t": "Pick out the clues", "clues": ["making foam car seats", "improve when she is on leave", "15% reversibility"], "x": "Isocyanate exposure; asthma already proven; work link suspected." },
+    { "t": "Make your own answer before looking", "x": "**Serial peak flow diary** at and away from work." },
+    { "t": "Rule out the others", "elim": [[0, "CXR is normal in asthma."], [1, "HRCT is for fibrosis and pneumoconiosis."], [3, "Skin prick testing does not link symptoms to the workplace."], [4, "Clinic spirometry shows asthma, not the work pattern."]] },
+    { "t": "Commit", "x": "**C. Serial peak flow.** Rule: occupational asthma = peak flow diary in and out of work." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 47 year old man works as a spray painter. A respiratory specialist has confirmed occupational asthma with a serial peak flow diary showing falls on work days and recovery at weekends. He currently uses a salbutamol inhaler before shifts and wears a paper dust mask.",
+   "q": "Which is the most appropriate management?",
+   "o": ["Avoid exposure to isocyanates", "Continue current work with a better-fitting paper mask", "Long-term oral prednisolone", "Regular long-acting beta agonist alone", "Salbutamol nebuliser at work"],
+   "a": 0,
+   "steps": [
+    { "t": "Read the question line first", "x": "Management once occupational asthma is confirmed." },
+    { "t": "Pick out the clues", "clues": ["confirmed occupational asthma", "salbutamol inhaler before shifts", "paper dust mask"], "x": "Already confirmed and referred; current measures do not stop exposure." },
+    { "t": "Make your own answer before looking", "x": "**Remove the trigger**: avoid isocyanates." },
+    { "t": "Rule out the others", "elim": [[1, "Paper masks do not stop isocyanate fumes; exposure continues."], [2, "Long-term oral steroids are not the answer while exposure continues."], [3, "LABA alone is unsafe in asthma."], [4, "Treats symptoms but not the cause."]] },
+    { "t": "Commit", "x": "**A. Avoid exposure.** Rule: occupational lung disease = remove the trigger." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 51 year old farmer has repeated episodes of fever, myalgia, dry cough and breathlessness starting 4 to 8 hours after moving mouldy hay. Between episodes he is well. Serum precipitins to fungal antigens are positive. Lung biopsy shows poorly formed granulomas around the small airways.",
+   "q": "Which is the most likely immune mechanism?",
+   "o": ["Direct toxic injury without immune involvement", "Type I (IgE-mediated) hypersensitivity", "Type II (antibody against cell surface) hypersensitivity", "Type III (immune complex) hypersensitivity", "Type IV only, with no antibody"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "A mechanism question: name the condition, then the hypersensitivity type." },
+    { "t": "Pick out the clues", "clues": ["4 to 8 hours after moving mouldy hay", "Serum precipitins to fungal antigens are positive", "granulomas"], "x": "Hours-later reaction to organic dust, precipitating antibodies: farmer's lung." },
+    { "t": "Make your own answer before looking", "x": "Hypersensitivity pneumonitis: **type III** (partly type IV)." },
+    { "t": "Rule out the others", "elim": [[0, "Positive precipitins prove an immune reaction."], [1, "Type I is immediate (minutes), as in asthma."], [2, "Type II targets cell-surface antigens, e.g. Goodpasture's."], [4, "Precipitating antibodies show it is not type IV alone."]] },
+    { "t": "Commit", "x": "**D. Type III hypersensitivity.** Rule: farmer's lung = type III (+ IV)." }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 54 year old dairy farmer has had four episodes this winter of fever, aching muscles, dry cough and breathlessness, each starting several hours after he forks hay in the barn. His temperature is 38.2°C, pulse rate 104 bpm, BP 128/80 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 92% breathing air. There are fine crackles at both bases.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asthma", "Coal worker's pneumoconiosis", "Hypersensitivity pneumonitis", "Influenza", "Sarcoidosis"],
+   "a": 2,
+   "e": "Recurrent flu-like episodes hours after handling hay in a farmer is farmer's lung, a hypersensitivity pneumonitis to organic dust. Influenza would not recur with each exposure.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis; the job and timing are key." },
+    { "t": "Pick out the clues", "clues": ["dairy farmer", "several hours after he forks hay", "four episodes this winter", "fine crackles"], "x": "Organic dust, delayed onset, recurrent." },
+    { "t": "Make your own answer before looking", "x": "**Farmer's lung** (hypersensitivity pneumonitis)." },
+    { "t": "Rule out the others", "elim": [[0, "Asthma is immediate wheeze without fever."], [1, "Coal dust is mining, and gradual."], [3, "Flu does not recur with each hay exposure."], [4, "Sarcoid is not exposure-linked."]] },
+    { "t": "Commit", "x": "**C. Hypersensitivity pneumonitis.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old man has 2 years of worsening exertional breathlessness. He worked as a lagger in a shipyard in his twenties and thirties. He has finger clubbing and fine end-inspiratory crackles at both bases. His chest X-ray shows lower zone reticular shadowing and calcified pleural plaques.",
+   "labs": [["FEV1", "64% predicted", ">80%", "L"], ["FVC", "61% predicted", ">80%", "L"], ["FEV1/FVC", "0.82", ">0.7", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asbestosis", "Coal worker's pneumoconiosis", "Hypersensitivity pneumonitis", "Sarcoidosis", "Silicosis"],
+   "a": 0,
+   "e": "Shipyard work, lower zone fibrosis, pleural plaques and restrictive spirometry is asbestosis. Silicosis and coal worker's pneumoconiosis affect the upper zones.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: job, zone and spirometry." },
+    { "t": "Pick out the clues", "clues": ["lagger in a shipyard", "fine end-inspiratory crackles at both bases", "lower zone reticular shadowing", "calcified pleural plaques"], "x": "Asbestos exposure, basal fibrosis, plaques; labs restrictive." },
+    { "t": "Make your own answer before looking", "x": "**Asbestosis**." },
+    { "t": "Rule out the others", "elim": [[1, "Coal dust gives upper zone disease in miners."], [2, "HP follows organic dust with fevers."], [3, "Sarcoid gives BHL in younger patients."], [4, "Silicosis is upper lobe, from silica."]] },
+    { "t": "Commit", "x": "**A. Asbestosis.** Rule: shipyard/builder + basal fibrosis + plaques = asbestosis." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man has 3 years of breathlessness and a dry cough. He has worked for 30 years as a stonemason and sandblaster. His temperature is 36.8°C, pulse rate 82 bpm, BP 134/82 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 94% breathing air. Chest X-ray (see item resources).",
+   "labs": [],
+   "visual": { "kind": "cxr", "title": "Chest X-ray", "findings": [{ "type": "fibrosis", "side": "both", "zone": "upper" }], "caption": "Bilateral upper zone nodular fibrosis." },
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asbestosis", "Coal worker's pneumoconiosis", "Mesothelioma", "Sarcoidosis", "Silicosis"],
+   "a": 4,
+   "e": "Long-term silica exposure (stonework, sandblasting) with upper zone fibrosis is silicosis. Asbestosis is lower zone; coal worker's pneumoconiosis needs coal mining.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: job then zone." },
+    { "t": "Pick out the clues", "clues": ["stonemason and sandblaster", "30 years", "see item resources"], "x": "Silica exposure; X-ray shows **upper** zone fibrosis." },
+    { "t": "Make your own answer before looking", "x": "**Silicosis**." },
+    { "t": "Rule out the others", "elim": [[0, "Asbestosis is lower zone with plaques."], [1, "Coal worker's pneumoconiosis needs coal mining."], [2, "Mesothelioma is a pleural tumour with effusion."], [3, "No BHL, skin or eye features; the job explains it."]] },
+    { "t": "Commit", "x": "**E. Silicosis.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old retired builder has 2 months of right-sided chest pain, breathlessness and 6 kg weight loss. He worked with asbestos boards in the 1970s. His temperature is 36.9°C, pulse rate 96 bpm, BP 130/78 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 93% breathing air. There is stony dullness at the right base.",
+   "labs": [["Pleural fluid protein", "46 g/L", "", "H"], ["Pleural fluid LDH", "520 IU/L", "", "H"], ["Serum LDH (upper limit)", "250 IU/L", "", ""], ["Pleural fluid cytology", "Atypical mesothelial cells", "", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asbestosis", "Benign pleural plaques", "Heart failure", "Malignant pleural mesothelioma", "Parapneumonic effusion"],
+   "a": 3,
+   "e": "A unilateral exudative effusion (protein above 35 g/L, LDH above 2/3 of the serum upper limit) with chest pain and weight loss after asbestos exposure is mesothelioma. Heart failure gives a transudate.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of a pleural effusion after asbestos exposure." },
+    { "t": "Pick out the clues", "clues": ["right-sided chest pain", "6 kg weight loss", "asbestos boards in the 1970s", "stony dullness at the right base"], "x": "Unilateral effusion, malignant features; fluid is an exudate with atypical cells." },
+    { "t": "Make your own answer before looking", "x": "**Mesothelioma**." },
+    { "t": "Rule out the others", "elim": [[0, "Asbestosis is fibrosis, not an effusion."], [1, "Plaques are benign and do not cause effusions or weight loss."], [2, "Heart failure gives bilateral transudates."], [4, "No fever or infection; cytology atypical."]] },
+    { "t": "Commit", "x": "**D. Malignant pleural mesothelioma.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 36 year old woman has had wheeze and cough for 6 months. She started a new job a year ago at a factory gluing foam into furniture using adhesives. Her symptoms improve at weekends and when she was on holiday. She had no breathing problems as a child.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative agent?",
+   "o": ["Asbestos", "Coal dust", "Isocyanates", "Mould spores", "Silica"],
+   "a": 2,
+   "e": "Isocyanates in foam moulding and adhesives are the most common cause of occupational asthma. Mould spores cause hypersensitivity pneumonitis; silica and coal cause pneumoconioses.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Which agent: diagnose first, then think of the exposure." },
+    { "t": "Pick out the clues", "clues": ["wheeze and cough", "gluing foam into furniture using adhesives", "improve at weekends", "no breathing problems as a child"], "x": "Late-onset, work-related asthma in foam and adhesive work." },
+    { "t": "Make your own answer before looking", "x": "**Isocyanates**." },
+    { "t": "Rule out the others", "elim": [[0, "Asbestos causes fibrosis and mesothelioma."], [1, "Coal dust causes pneumoconiosis."], [3, "Mould spores cause hypersensitivity pneumonitis."], [4, "Silica causes silicosis."]] },
+    { "t": "Commit", "x": "**C. Isocyanates.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man from South Wales has slowly worsening breathlessness and a cough productive of black sputum. He worked underground in a colliery for 35 years. His temperature is 36.7°C, pulse rate 80 bpm, BP 138/84 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 93% breathing air. Chest X-ray shows multiple small nodules in both upper zones.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asbestosis", "Coal worker's pneumoconiosis", "Idiopathic pulmonary fibrosis", "Sarcoidosis", "Tuberculosis"],
+   "a": 1,
+   "e": "Decades of underground coal mining with upper zone nodules is coal worker's pneumoconiosis. IPF and asbestosis are basal.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: job and zone." },
+    { "t": "Pick out the clues", "clues": ["black sputum", "worked underground in a colliery for 35 years", "small nodules in both upper zones"], "x": "Coal dust exposure and upper zone nodules." },
+    { "t": "Make your own answer before looking", "x": "**Coal worker's pneumoconiosis**." },
+    { "t": "Rule out the others", "elim": [[0, "Asbestosis is lower zone and needs asbestos."], [2, "IPF is basal and idiopathic; here there is a clear cause."], [3, "Sarcoid gives BHL in younger patients."], [4, "No fevers, sweats or weight loss."]] },
+    { "t": "Commit", "x": "**B. Coal worker's pneumoconiosis.**" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 62 year old man with silicosis from 25 years of quarrying has 6 weeks of fevers, night sweats, a cough and 5 kg weight loss. His temperature is 37.9°C, pulse rate 98 bpm, BP 124/76 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 95% breathing air. Chest X-ray shows a new cavity in the right upper zone.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": ["HRCT chest", "Serial peak flow diary", "Serum precipitins", "Spirometry", "Sputum for acid-fast bacilli"],
+   "a": 4,
+   "e": "Silicosis raises TB risk; fevers, sweats, weight loss and a new cavity need sputum smear and culture for acid-fast bacilli.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Which test for this new problem in a silicosis patient." },
+    { "t": "Pick out the clues", "clues": ["silicosis", "fevers, night sweats", "5 kg weight loss", "new cavity in the right upper zone"], "x": "Classic TB, the key complication of silicosis." },
+    { "t": "Make your own answer before looking", "x": "**Sputum for AFB** (smear, culture)." },
+    { "t": "Rule out the others", "elim": [[0, "HRCT will not identify the organism."], [1, "Peak flow is for occupational asthma."], [2, "Precipitins are for hypersensitivity pneumonitis."], [3, "Spirometry does not diagnose infection."]] },
+    { "t": "Commit", "x": "**E. Sputum for acid-fast bacilli.** Rule: silicosis + cavity + sweats = test for TB." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old retired electrician spent years working in old buildings lined with asbestos. He has mild exertional breathlessness and fine crackles at both bases. His chest X-ray is reported as normal. Spirometry shows FEV1/FVC 0.80 with FVC 78% of predicted.",
+   "labs": [["FEV1/FVC", "0.80", ">0.7", ""], ["FVC", "78% predicted", ">80%", "L"]],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": ["Bronchoscopy", "Echocardiogram", "High-resolution CT chest", "Pleural aspiration", "Serial peak flow diary"],
+   "a": 2,
+   "e": "CT is more sensitive than a chest X-ray for early fibrosis and pleural plaques, so a normal CXR does not exclude asbestosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Next test after a normal CXR." },
+    { "t": "Pick out the clues", "clues": ["lined with asbestos", "fine crackles at both bases", "chest X-ray is reported as normal"], "x": "Labs: mild restriction. Suspected early asbestosis; CXR not sensitive enough." },
+    { "t": "Make your own answer before looking", "x": "**HRCT chest**." },
+    { "t": "Rule out the others", "elim": [[0, "Bronchoscopy does not show fibrosis."], [1, "No signs of right heart strain."], [3, "There is no effusion to aspirate."], [4, "Peak flow is for occupational asthma."]] },
+    { "t": "Commit", "x": "**C. High-resolution CT chest.** Rule: CT is more sensitive than CXR." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old baker has developed wheeze and cough over the last year that are worse at work and settle when he is on holiday. His GP thinks he has occupational asthma. He is worried about his job.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Advise him to resign immediately", "Oral prednisolone for 5 days", "Reassure and review in 6 months", "Refer to secondary care to confirm the diagnosis", "Start a long-acting beta agonist alone"],
+   "a": 3,
+   "e": "Suspected occupational asthma should be confirmed and referred to secondary care before major job decisions; removing the trigger then follows. LABA alone is unsafe in asthma.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management of suspected occupational asthma." },
+    { "t": "Pick out the clues", "clues": ["worse at work and settle when he is on holiday", "GP thinks", "worried about his job"], "x": "Suspected, not yet confirmed; big job consequences." },
+    { "t": "Make your own answer before looking", "x": "**Confirm and refer to secondary care**." },
+    { "t": "Rule out the others", "elim": [[0, "Do not advise job loss before the diagnosis is confirmed."], [1, "Not an acute attack."], [2, "Delay lets sensitisation worsen."], [4, "LABA without inhaled steroid is unsafe in asthma."]] },
+    { "t": "Commit", "x": "**D. Refer to secondary care.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 79 year old man has advanced asbestosis. He is breathless walking around his flat. He has no pleural effusion and no evidence of malignancy. His temperature is 36.6°C, pulse rate 92 bpm, BP 128/74 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 87% breathing air.",
+   "labs": [["PaO2 (air, stable, two readings)", "7.0 kPa", "10.5–13.5", "L"], ["PaCO2", "5.0 kPa", "4.7–6.0", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": ["Inhaled corticosteroid", "Long-term oxygen therapy", "Oral prednisolone", "Salbutamol nebulisers", "Surgical pleurectomy"],
+   "a": 1,
+   "e": "Asbestosis is irreversible; in advanced disease with chronic hypoxaemia, oxygen is the supportive treatment. Steroids and bronchodilators do not help fibrosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Supportive management of advanced fibrotic occupational disease." },
+    { "t": "Pick out the clues", "clues": ["advanced asbestosis", "no pleural effusion", "87% breathing air"], "x": "Labs: PaO2 7.0 kPa twice when stable, normal CO2." },
+    { "t": "Make your own answer before looking", "x": "**Long-term oxygen therapy**." },
+    { "t": "Rule out the others", "elim": [[0, "Not an airway disease."], [2, "Steroids do not reverse asbestosis."], [3, "No obstruction to treat."], [4, "Pleurectomy is not a treatment for asbestosis."]] },
+    { "t": "Commit", "x": "**B. Long-term oxygen therapy.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 45 year old woman with confirmed occupational asthma from isocyanates has been moved to an office role away from the paint line. Six weeks later she still has a night-time cough and uses salbutamol 4 times a week. Spirometry still shows reversible obstruction.",
+   "labs": [["FEV1/FVC", "0.68", ">0.7", "L"], ["Reversibility", "16%", "<12%", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": ["Inhaled corticosteroid with salbutamol as needed", "Long-term oxygen therapy", "Oral azathioprine", "Pirfenidone", "Return to the paint line with a mask"],
+   "a": 0,
+   "e": "After removing the trigger, occupational asthma is treated like asthma: inhaled steroid with a reliever. Returning to exposure would worsen it.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Ongoing symptoms after the trigger is removed." },
+    { "t": "Pick out the clues", "clues": ["moved to an office role", "night-time cough", "salbutamol 4 times a week", "reversible obstruction"], "x": "Exposure removed; still uncontrolled asthma." },
+    { "t": "Make your own answer before looking", "x": "Add a **preventer**: inhaled corticosteroid." },
+    { "t": "Rule out the others", "elim": [[1, "She is not hypoxic."], [2, "Azathioprine is not an asthma drug."], [3, "Pirfenidone is for IPF."], [4, "Re-exposure worsens sensitised asthma."]] },
+    { "t": "Commit", "x": "**A. Inhaled corticosteroid with salbutamol.**" }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 60 year old man has worked for 30 years in a granite quarry. He has upper zone nodular fibrosis on chest X-ray. He is HIV negative and has no diabetes. He is told he has a much higher risk of tuberculosis than the general population.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his increased tuberculosis risk?",
+   "o": ["Cytotoxic injury to alveolar macrophages by silica", "IgE-mediated mast cell degranulation", "Reduced CD4 T cell count", "Steroid-induced immunosuppression", "Type III immune complex deposition"],
+   "a": 0,
+   "e": "Silica is directly cytotoxic to alveolar macrophages, the key defence against mycobacteria, and triggers a fibrogenic cascade.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Mechanism of TB risk." },
+    { "t": "Pick out the clues", "clues": ["granite quarry", "upper zone nodular fibrosis", "HIV negative and has no diabetes"], "x": "Silicosis; other TB risks excluded." },
+    { "t": "Make your own answer before looking", "x": "Silica **kills alveolar macrophages**." },
+    { "t": "Rule out the others", "elim": [[1, "IgE is the asthma mechanism."], [2, "Low CD4 is HIV; he is negative."], [3, "He is not on steroids."], [4, "Type III is hypersensitivity pneumonitis."]] },
+    { "t": "Commit", "x": "**A. Cytotoxic injury to alveolar macrophages.**" }
+   ]
+  }
+ ]
+}

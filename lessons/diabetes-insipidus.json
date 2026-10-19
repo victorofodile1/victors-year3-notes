@@ -1,0 +1,1999 @@
+{
+ "id": "diabetes-insipidus",
+ "patient": {
+  "name": "Daniel Okafor",
+  "age": 46,
+  "sex": "M",
+  "setting": "GP surgery, then endocrinology day unit",
+  "complaint": "Passing large volumes of urine and constant thirst for 4 months",
+  "background": [
+   "Bipolar disorder, on lithium for 12 years, stable",
+   "Bus driver in Lewisham",
+   "No head injury, no diabetes",
+   "No other regular medication"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with polyuria, polydipsia and a normal glucose: lithium points to nephrogenic DI, head injury or pituitary disease to cranial DI.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Daniel, 46, sees his GP: **passing huge volumes of urine**.",
+      "Up 5 times a night; drinks water from the bathroom tap.",
+      "On **lithium for bipolar disorder** for 12 years.",
+      "Craves ice-cold water; no weight loss."
+     ],
+     "vitals": {
+      "T": "36.6°C",
+      "HR": "92 bpm",
+      "BP": "118/74 mmHg",
+      "RR": "14 /min",
+      "CBG": "5.6 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Daniel's kidneys cannot hold on to water, so he makes **large volumes of dilute urine** and drinks to keep up."
+    },
+    {
+     "type": "ask",
+     "q": "Daniel's glucose is normal. Which type of DI does his history point to?",
+     "o": [
+      "AVP deficiency (cranial DI)",
+      "AVP resistance (nephrogenic DI)",
+      "Primary polydipsia",
+      "SIADH"
+     ],
+     "a": 1,
+     "r": "Long-term **lithium** makes the collecting duct resistant to ADH: **nephrogenic** DI."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Daniel's 12 years of **lithium** is the classic cause of nephrogenic DI. Head injury, sarcoid, meningitis or a pituitary tumour would point to cranial DI."
+    },
+    {
+     "type": "flow",
+     "title": "Polyuria: think in order",
+     "nodes": [
+      "Polyuria and polydipsia",
+      "Check glucose → exclude diabetes mellitus",
+      "Check calcium and potassium → exclude hypercalcaemia, hypokalaemia",
+      "Raised serum osmolality + dilute urine → suspect DI",
+      "Drug history (lithium) or head/pituitary insult → type"
+     ],
+     "caption": "Diabetes mellitus is the commonest cause of polyuria, so rule it out first."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Daniel has **nocturia**, disturbed sleep and dilute urine. If he could not get to water, he would become dehydrated and **hypernatraemic**."
+    },
+    {
+     "type": "compare",
+     "title": "Diabetes insipidus vs primary polydipsia",
+     "head": [
+      "Feature",
+      "Cranial DI",
+      "Nephrogenic DI",
+      "Primary polydipsia"
+     ],
+     "rows": [
+      [
+       "Problem",
+       "No ADH made",
+       "Kidney ignores ADH",
+       "Drinks too much"
+      ],
+      [
+       "Serum sodium",
+       "High-normal or **high**",
+       "High-normal or **high**",
+       "Low-normal"
+      ],
+      [
+       "Classic cause",
+       "Head injury, pituitary surgery",
+       "**Lithium**, CKD",
+       "Psychiatric illness"
+      ],
+      [
+       "After desmopressin",
+       "Urine concentrates",
+       "**No change**",
+       "Concentrates already on deprivation"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Primary polydipsia also gives dilute urine, but the **serum sodium is low-normal** because the person is overloaded with water, not short of it."
+    },
+    {
+     "type": "pearl",
+     "text": "In the exam, a patient on **lithium** with polyuria and a high sodium is nephrogenic DI. After head injury or pituitary surgery it is cranial DI."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'initial' (paired serum and urine osmolality) versus 'diagnostic' (water deprivation test), and reading the result after desmopressin.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Daniel's first tests are **paired serum and urine osmolality**: a concentrated blood with a dilute urine raises the suspicion of DI."
+    },
+    {
+     "type": "labs",
+     "title": "GP bloods and urine",
+     "rows": [
+      [
+       "Sodium",
+       "148 mmol/L",
+       "135–145",
+       "H"
+      ],
+      [
+       "Serum osmolality",
+       "303 mOsm/kg",
+       "275–295",
+       "H"
+      ],
+      [
+       "Urine osmolality",
+       "140 mOsm/kg",
+       "",
+       ""
+      ],
+      [
+       "Glucose",
+       "5.6 mmol/L",
+       "",
+       ""
+      ],
+      [
+       "Adjusted calcium",
+       "2.34 mmol/L",
+       "2.20–2.60",
+       ""
+      ],
+      [
+       "Lithium",
+       "0.8 mmol/L",
+       "0.4–1.0",
+       ""
+      ]
+     ],
+     "text": "High serum osmolality with inappropriately dilute urine; glucose and calcium normal."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Daniel's serum sodium",
+      "min": 125,
+      "max": 160,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        125,
+        135,
+        "Hyponatraemia",
+        "warn"
+       ],
+       [
+        135,
+        145,
+        "Normal",
+        "ok"
+       ],
+       [
+        145,
+        160,
+        "Hypernatraemia",
+        "bad"
+       ]
+      ],
+      "value": 148,
+      "label": "Daniel 148",
+      "caption": "Mild hypernatraemia from water loss. Primary polydipsia would sit at the low end of normal."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "To confirm it and find the type, Daniel has a **water deprivation test**, then desmopressin."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Water deprivation test: urine osmolality",
+      "x": [
+       "0 h",
+       "4 h",
+       "8 h",
+       "After desmopressin"
+      ],
+      "unit": "mOsm/kg",
+      "series": [
+       {
+        "name": "Normal",
+        "values": [
+         350,
+         650,
+         800,
+         820
+        ]
+       },
+       {
+        "name": "Cranial DI",
+        "values": [
+         150,
+         170,
+         200,
+         650
+        ]
+       },
+       {
+        "name": "Daniel",
+        "values": [
+         140,
+         160,
+         180,
+         195
+        ]
+       }
+      ],
+      "caption": "Daniel's urine stays **below 300** even after desmopressin: his kidneys ignore ADH, so this is **nephrogenic** DI."
+     }
+    },
+    {
+     "type": "compare",
+     "title": "Reading the water deprivation test",
+     "head": [
+      "Result",
+      "During deprivation",
+      "After desmopressin"
+     ],
+     "rows": [
+      [
+       "Normal",
+       "Concentrates",
+       "Concentrated"
+      ],
+      [
+       "Cranial DI",
+       "Stays dilute",
+       "**Rises above 305 mOsm/kg**"
+      ],
+      [
+       "Nephrogenic DI",
+       "Stays dilute",
+       "**Stays below 300 mOsm/kg**"
+      ]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "A patient with confirmed **cranial** DI and no head injury. Which test next?",
+     "o": [
+      "CT chest",
+      "MRI pituitary",
+      "Renal ultrasound",
+      "Repeat water deprivation test"
+     ],
+     "a": 1,
+     "r": "Cranial DI needs the hypothalamus and pituitary imaged to look for a tumour or infiltration."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Daniel's U&Es check his kidneys, which lithium also harms. Had his DI been **cranial**, an **MRI pituitary** would come next."
+    },
+    {
+     "type": "trap",
+     "text": "Do not give desmopressin first and skip the deprivation phase. The **deprivation** shows the urine cannot concentrate; desmopressin then shows the type."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate treatment?': desmopressin for cranial DI, treat the cause then a thiazide for nephrogenic DI, never fluid restriction.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Daniel has nephrogenic DI, so desmopressin will not work. Treat the cause (**review lithium**), then a **thiazide** if polyuria persists."
+    },
+    {
+     "type": "ask",
+     "q": "What is the most appropriate first step for Daniel's DI?",
+     "o": [
+      "Fluid restriction to 1.5 L/day",
+      "Intranasal desmopressin",
+      "Review lithium with his psychiatrist",
+      "Stop lithium today without review"
+     ],
+     "a": 2,
+     "r": "Lithium is the cause, but stopping it abruptly risks relapse of bipolar disorder: change it **with psychiatry**."
+    },
+    {
+     "type": "flow",
+     "title": "Treatment by type",
+     "nodes": [
+      "Confirm type with water deprivation test",
+      "Cranial DI → intranasal desmopressin",
+      "Nephrogenic DI → treat cause (stop or adjust lithium)",
+      "Still polyuric → thiazide diuretic",
+      "Everyone → drink to thirst, low-salt diet"
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Thiazides **raise lithium levels**. If a thiazide is started while Daniel is still on lithium, his lithium level must be checked closely."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Daniel is told to keep water close by, drink to thirst and eat a **low-salt diet**, which cuts the solute load and so urine volume."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Daniel's urine output",
+      "x": [
+       "Baseline",
+       "Lithium switched",
+       "+ Thiazide",
+       "3 months"
+      ],
+      "unit": "L/day",
+      "series": [
+       {
+        "name": "24 h urine volume",
+        "values": [
+         7.5,
+         6.0,
+         4.0,
+         3.2
+        ]
+       }
+      ],
+      "caption": "Lithium-induced DI may only partly recover; the thiazide cuts output further."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Daniel's care follows **NICE CKS** and **Society for Endocrinology** guidance: confirm the type, treat the cause, and use the right drug."
+    },
+    {
+     "type": "pearl",
+     "text": "Never fluid-restrict a patient with DI: they will become severely **hypernatraemic**. Fluid restriction is for SIADH, the opposite problem."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: where ADH acts, how lithium causes nephrogenic DI and why thiazides reduce urine output.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Daniel's posterior pituitary releases ADH normally, but his **collecting duct** cannot insert aquaporin-2 channels in response."
+    },
+    {
+     "type": "flow",
+     "title": "How ADH concentrates urine",
+     "nodes": [
+      "Hypothalamus makes ADH (AVP)",
+      "Posterior pituitary releases it",
+      "ADH binds V2 receptors in the collecting duct",
+      "Aquaporin-2 channels inserted",
+      "Water reabsorbed → concentrated urine"
+     ],
+     "caption": "Cranial DI breaks the first two steps; nephrogenic DI breaks the last three."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Lithium got into Daniel's principal cells through **ENaC** channels and built up there, switching down aquaporin-2."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Water pours out, so Daniel's plasma **osmolality and sodium rise**, which drives his thirst."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "A thiazide makes Daniel mildly volume-depleted, so his **proximal tubule** reabsorbs more salt and water and less reaches the collecting duct."
+    },
+    {
+     "type": "pearl",
+     "text": "Desmopressin is a **V2 receptor agonist**: it replaces missing ADH in cranial DI but cannot help when the receptor pathway is broken."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the classic drug cause of nephrogenic DI?",
+   "o": [
+    "Carbamazepine",
+    "Desmopressin",
+    "Furosemide",
+    "Lithium"
+   ],
+   "a": 3,
+   "r": "Lithium accumulates in collecting duct cells."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which electrolyte abnormality is typical of DI?",
+   "o": [
+    "Hyperkalaemia",
+    "Hypernatraemia",
+    "Hypocalcaemia",
+    "Hyponatraemia"
+   ],
+   "a": 1,
+   "r": "Free water loss concentrates the sodium."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a cause of cranial DI?",
+   "o": [
+    "Chronic kidney disease",
+    "Head injury",
+    "Hypercalcaemia",
+    "Lithium"
+   ],
+   "a": 1,
+   "r": "Damage to the hypothalamus or posterior pituitary."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the newer name for nephrogenic DI?",
+   "o": [
+    "AVP deficiency",
+    "AVP excess",
+    "AVP resistance",
+    "SIADH"
+   ],
+   "a": 2,
+   "r": "The kidney resists normal or high ADH."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard test for DI?",
+   "o": [
+    "MRI pituitary",
+    "Serum sodium",
+    "Urine dipstick",
+    "Water deprivation test"
+   ],
+   "a": 3,
+   "r": "It confirms DI and, with desmopressin, the type."
+  },
+  {
+   "d": "investigation",
+   "q": "In cranial DI, urine osmolality after desmopressin:",
+   "o": [
+    "Falls below 100 mOsm/kg",
+    "Rises above 305 mOsm/kg",
+    "Stays below 300 mOsm/kg",
+    "Stays unchanged at 200 mOsm/kg"
+   ],
+   "a": 1,
+   "r": "The kidney responds to the replaced ADH."
+  },
+  {
+   "d": "investigation",
+   "q": "Which first-line pair raises suspicion of DI?",
+   "o": [
+    "High serum and high urine osmolality",
+    "High serum and low urine osmolality",
+    "Low serum and high urine osmolality",
+    "Low serum and low urine osmolality"
+   ],
+   "a": 1,
+   "r": "Concentrated blood but dilute urine."
+  },
+  {
+   "d": "management",
+   "q": "First-line treatment for cranial DI?",
+   "o": [
+    "Fluid restriction",
+    "Intranasal desmopressin",
+    "Thiazide diuretic",
+    "Tolvaptan"
+   ],
+   "a": 1,
+   "r": "Replaces ADH at V2 receptors."
+  },
+  {
+   "d": "management",
+   "q": "First-line drug for nephrogenic DI?",
+   "o": [
+    "Desmopressin",
+    "Furosemide",
+    "Spironolactone",
+    "Thiazide diuretic"
+   ],
+   "a": 3,
+   "r": "Paradoxically reduces urine output."
+  },
+  {
+   "d": "science",
+   "q": "Where does ADH act?",
+   "o": [
+    "Beta-1 receptors in the heart",
+    "Mineralocorticoid receptors in the distal tubule",
+    "V1 receptors in the proximal tubule",
+    "V2 receptors in the collecting duct"
+   ],
+   "a": 3,
+   "r": "V2 activation inserts aquaporin-2 channels."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is diabetes insipidus and what are its two types?",
+    "tip": "Exam thinking: name the type from the cause.",
+    "points": [
+     {
+      "p": "Impaired renal water reabsorption: large volumes of dilute urine and polydipsia",
+      "k": [
+       [
+        "dilute",
+        "water"
+       ],
+       [
+        "polyuria",
+        "urine"
+       ]
+      ],
+      "why": "Not related to glucose."
+     },
+     {
+      "p": "Cranial DI (AVP deficiency): ADH production is faulty",
+      "k": [
+       [
+        "cranial",
+        "central",
+        "avp deficiency"
+       ]
+      ],
+      "why": "Desmopressin works."
+     },
+     {
+      "p": "Nephrogenic DI (AVP resistance): kidneys ignore ADH",
+      "k": [
+       [
+        "nephrogenic",
+        "avp resistance"
+       ]
+      ],
+      "why": "Desmopressin does not work."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the causes of cranial and nephrogenic DI?",
+    "tip": "Exam thinking: the stem gives you the cause.",
+    "points": [
+     {
+      "p": "Cranial: head injury, pituitary tumour or surgery",
+      "k": [
+       [
+        "head injury",
+        "trauma",
+        "pituitary"
+       ]
+      ],
+      "why": "Post-transsphenoidal surgery is common."
+     },
+     {
+      "p": "Cranial: sarcoidosis, meningitis, sickle cell, idiopathic, genetic",
+      "k": [
+       [
+        "sarcoid",
+        "meningitis",
+        "sickle",
+        "idiopathic"
+       ]
+      ],
+      "why": "Inflammatory and infective causes."
+     },
+     {
+      "p": "Nephrogenic: lithium (classic)",
+      "k": [
+       [
+        "lithium"
+       ]
+      ],
+      "why": "Bipolar disorder on lithium."
+     },
+     {
+      "p": "Nephrogenic: chronic kidney disease",
+      "k": [
+       [
+        "ckd",
+        "chronic kidney",
+        "renal disease"
+       ]
+      ],
+      "why": "Kidney cannot concentrate."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does DI present, and what happens in severe cases?",
+    "tip": "Exam thinking: severity is about access to water.",
+    "points": [
+     {
+      "p": "Polyuria, polydipsia, nocturia, disturbed sleep",
+      "k": [
+       [
+        "polyuria",
+        "nocturia",
+        "urine"
+       ],
+       [
+        "polydipsia",
+        "thirst"
+       ]
+      ],
+      "why": "Craves cold water."
+     },
+     {
+      "p": "Dilute urine with low osmolality",
+      "k": [
+       [
+        "dilute",
+        "low osmolality",
+        "low urine osm"
+       ]
+      ],
+      "why": "Inappropriately low for the serum."
+     },
+     {
+      "p": "Severe: dehydration, hypernatraemia, hypotension",
+      "k": [
+       [
+        "hypernatr",
+        "high sodium",
+        "high na"
+       ]
+      ],
+      "why": "When unable to drink."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell DI from primary polydipsia and diabetes mellitus?",
+    "tip": "Exam thinking: sodium and glucose are the quick discriminators.",
+    "points": [
+     {
+      "p": "Diabetes mellitus: raised glucose",
+      "k": [
+       [
+        "glucose",
+        "sugar"
+       ]
+      ],
+      "why": "Commonest cause of polyuria; check first."
+     },
+     {
+      "p": "DI: sodium high-normal or high; primary polydipsia: low-normal",
+      "k": [
+       [
+        "sodium",
+        "na"
+       ]
+      ],
+      "why": "Water-short vs water-overloaded."
+     },
+     {
+      "p": "Primary polydipsia concentrates urine on water deprivation",
+      "k": [
+       [
+        "deprivation",
+        "concentrat"
+       ]
+      ],
+      "why": "DI does not."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What are the first-line and second-line tests for DI?",
+    "tip": "Exam thinking: what each test is for.",
+    "points": [
+     {
+      "p": "Serum and urine osmolality first",
+      "k": [
+       [
+        "osmolality",
+        "osmolarity",
+        "osm"
+       ]
+      ],
+      "why": "High serum, low urine = suspect DI."
+     },
+     {
+      "p": "U&Es",
+      "k": [
+       [
+        "u&e",
+        "u+e",
+        "urea",
+        "electrolyte",
+        "renal function"
+       ]
+      ],
+      "why": "Sodium and kidney function."
+     },
+     {
+      "p": "MRI pituitary for a cranial cause",
+      "k": [
+       [
+        "mri"
+       ]
+      ],
+      "why": "Tumour or infiltration."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is the water deprivation test interpreted?",
+    "tip": "Exam thinking: two phases, two questions.",
+    "points": [
+     {
+      "p": "It is the gold-standard confirmatory test",
+      "k": [
+       [
+        "water deprivation",
+        "fluid deprivation",
+        "deprivation"
+       ]
+      ],
+      "why": "Followed by desmopressin."
+     },
+     {
+      "p": "Cranial DI: dilute during deprivation, rises above 305 mOsm/kg after desmopressin",
+      "k": [
+       [
+        "cranial",
+        "central"
+       ],
+       [
+        "305",
+        "rises",
+        "concentrat",
+        "increase"
+       ]
+      ],
+      "why": "Kidney responds to ADH."
+     },
+     {
+      "p": "Nephrogenic DI: stays below 300 mOsm/kg even after desmopressin",
+      "k": [
+       [
+        "nephrogenic"
+       ],
+       [
+        "300",
+        "stays",
+        "no change",
+        "remains",
+        "dilute"
+       ]
+      ],
+      "why": "Kidney ignores ADH."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is each type of DI treated?",
+    "tip": "Exam thinking: never fluid restrict.",
+    "points": [
+     {
+      "p": "Cranial: intranasal desmopressin",
+      "k": [
+       [
+        "desmopressin",
+        "ddavp"
+       ]
+      ],
+      "why": "V2 receptor agonist."
+     },
+     {
+      "p": "Nephrogenic: treat the cause, e.g. stop or adjust lithium",
+      "k": [
+       [
+        "lithium",
+        "cause"
+       ]
+      ],
+      "why": "With psychiatry."
+     },
+     {
+      "p": "Nephrogenic first-line drug: thiazide diuretic",
+      "k": [
+       [
+        "thiazide",
+        "bendroflumethiazide",
+        "chlorothiazide",
+        "chlorthiazide"
+       ]
+      ],
+      "why": "Paradoxically reduces urine output."
+     },
+     {
+      "p": "Long term: low-salt diet and adequate fluid intake",
+      "k": [
+       [
+        "low salt",
+        "low-salt",
+        "salt"
+       ],
+       [
+        "fluid",
+        "hydrat",
+        "drink"
+       ]
+      ],
+      "why": "Fluid restriction is for SIADH."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does ADH normally work, and how does each type fail?",
+    "tip": "Exam thinking: follow the hormone from brain to duct.",
+    "points": [
+     {
+      "p": "Made in the hypothalamus, released by the posterior pituitary",
+      "k": [
+       [
+        "hypothalamus"
+       ],
+       [
+        "posterior pituitary",
+        "posterior"
+       ]
+      ],
+      "why": "Cranial DI damages this."
+     },
+     {
+      "p": "Acts on V2 receptors in the collecting duct to insert aquaporin-2",
+      "k": [
+       [
+        "v2"
+       ],
+       [
+        "aquaporin",
+        "aqp"
+       ]
+      ],
+      "why": "Water reabsorbed."
+     },
+     {
+      "p": "Lithium enters via ENaC and downregulates aquaporin-2",
+      "k": [
+       [
+        "enac",
+        "sodium channel"
+       ],
+       [
+        "aquaporin",
+        "aqp"
+       ]
+      ],
+      "why": "Nephrogenic DI."
+     },
+     {
+      "p": "Loss of ADH action: dilute urine, rising plasma osmolality and sodium, thirst",
+      "k": [
+       [
+        "osmolality",
+        "sodium"
+       ],
+       [
+        "thirst",
+        "polydipsia"
+       ]
+      ],
+      "why": "Explains the symptoms."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do thiazides reduce urine output in nephrogenic DI?",
+    "tip": "Exam thinking: it happens upstream of the collecting duct.",
+    "points": [
+     {
+      "p": "Mild volume depletion",
+      "k": [
+       [
+        "volume deplet",
+        "hypovol",
+        "volume contract"
+       ]
+      ],
+      "why": "The trigger."
+     },
+     {
+      "p": "Increased proximal tubular sodium and water reabsorption",
+      "k": [
+       [
+        "proximal"
+       ]
+      ],
+      "why": "Less fluid reaches the collecting duct."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "diabetes insipidus": "Passing large volumes of dilute urine because ADH is lacking or the kidneys ignore it.",
+  "DI": "Diabetes insipidus.",
+  "cranial DI": "DI from too little ADH made or released by the hypothalamus or pituitary.",
+  "nephrogenic DI": "DI because the kidney does not respond to ADH.",
+  "AVP deficiency": "Newer name for cranial DI.",
+  "AVP resistance": "Newer name for nephrogenic DI.",
+  "ADH": "Antidiuretic hormone: makes the kidney reabsorb water and concentrate urine.",
+  "AVP": "Arginine vasopressin, another name for ADH.",
+  "vasopressin": "Another name for ADH.",
+  "desmopressin": "Synthetic ADH analogue that acts on V2 receptors; treats cranial DI.",
+  "V2 receptor": "ADH receptor in the collecting duct that triggers aquaporin-2 insertion.",
+  "aquaporin-2": "Water channel inserted into collecting duct cells by ADH.",
+  "collecting duct": "Final part of the nephron, where ADH controls how much water is reabsorbed.",
+  "principal cells": "Collecting duct cells that respond to ADH and aldosterone.",
+  "ENaC": "Epithelial sodium channel; lithium enters collecting duct cells through it.",
+  "posterior pituitary": "Back lobe of the pituitary that stores and releases ADH.",
+  "hypothalamus": "Brain region that makes ADH and senses plasma osmolality.",
+  "osmolality": "Concentration of dissolved particles in a fluid, measured in mOsm/kg.",
+  "polyuria": "Passing abnormally large volumes of urine, often over 3 L a day.",
+  "polydipsia": "Excessive thirst and drinking.",
+  "nocturia": "Waking at night to pass urine.",
+  "hypernatraemia": "Serum sodium above 145 mmol/L.",
+  "primary polydipsia": "Drinking too much water, often psychiatric; urine is dilute but sodium is low-normal.",
+  "water deprivation test": "Withholds fluid, then gives desmopressin, to confirm DI and its type.",
+  "lithium": "Mood stabiliser for bipolar disorder; the classic cause of nephrogenic DI.",
+  "thiazide": "Diuretic acting on the distal tubule; paradoxically reduces urine in nephrogenic DI.",
+  "bendroflumethiazide": "A commonly used thiazide diuretic in the UK.",
+  "sarcoidosis": "Inflammatory disease with granulomas that can infiltrate the pituitary and hypothalamus.",
+  "SIADH": "Too much ADH: low sodium and concentrated urine, the opposite of DI.",
+  "tolvaptan": "V2 receptor antagonist that blocks ADH; used for SIADH, not DI.",
+  "U&Es": "Urea and electrolytes blood test, including sodium and creatinine.",
+  "transsphenoidal surgery": "Pituitary surgery through the nose; a common cause of cranial DI.",
+  "proximal tubule": "First part of the nephron, which reabsorbs most filtered salt and water.",
+  "bipolar disorder": "Mood disorder with episodes of mania and depression; often treated with lithium."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 28 year old man has passed large volumes of urine and been extremely thirsty since he was knocked off his bike 2 weeks ago and hit his head. He drinks 8 L of water a day. His BP is 116/72 mmHg and pulse rate 96 bpm. His capillary glucose is 5.2 mmol/L.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cranial diabetes insipidus",
+    "Diabetes mellitus",
+    "Nephrogenic diabetes insipidus",
+    "Primary polydipsia",
+    "SIADH"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about polyuria: exclude diabetes mellitus, then pick the type of DI."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "large volumes of urine",
+      "extremely thirsty",
+      "hit his head",
+      "glucose is 5.2 mmol/L"
+     ],
+     "x": "Polyuria and polydipsia after **head injury** with a normal glucose."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Damage to the hypothalamus or posterior pituitary: **cranial DI**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Glucose is normal."
+      ],
+      [
+       2,
+       "No lithium, CKD or kidney cause; the trigger is a head injury."
+      ],
+      [
+       3,
+       "The thirst began abruptly after trauma; no psychiatric history."
+      ],
+      [
+       4,
+       "Causes low sodium and concentrated urine with no polyuria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cranial diabetes insipidus.** Head injury + polyuria + normal glucose = cranial DI."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 39 year old woman has 3 months of polyuria and polydipsia. Her serum sodium is 147 mmol/L, serum osmolality 301 mOsm/kg and urine osmolality 160 mOsm/kg. Her glucose and calcium are normal.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "24-hour urine collection",
+    "MRI pituitary",
+    "Oral glucose tolerance test",
+    "Serum lithium level",
+    "Water deprivation test"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Diagnostic investigation' means the gold-standard confirmatory test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "polyuria and polydipsia",
+      "serum osmolality 301 mOsm/kg",
+      "urine osmolality 160 mOsm/kg",
+      "glucose and calcium are normal"
+     ],
+     "x": "High serum osmolality with dilute urine; common causes of polyuria excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Water deprivation test** with desmopressin."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Measures volume but does not show why the urine is dilute."
+      ],
+      [
+       1,
+       "Done after cranial DI is confirmed, to find the cause."
+      ],
+      [
+       2,
+       "Glucose is already normal."
+      ],
+      [
+       3,
+       "She is not on lithium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Water deprivation test.** DI is confirmed and typed by water deprivation then desmopressin."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 45 year old woman had transsphenoidal surgery for a pituitary macroadenoma 3 days ago. She is now passing 6 L of urine a day. Her serum sodium is 149 mmol/L. A water deprivation test confirms cranial diabetes insipidus.",
+   "q": "Which is the most appropriate treatment?",
+   "o": [
+    "Bendroflumethiazide",
+    "Fluid restriction",
+    "Hydrocortisone",
+    "Intranasal desmopressin",
+    "Tolvaptan"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Treatment of a confirmed type."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "transsphenoidal surgery",
+      "6 L of urine a day",
+      "149 mmol/L",
+      "cranial diabetes insipidus"
+     ],
+     "x": "Cranial DI after pituitary surgery: she cannot make ADH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Replace it: **desmopressin** (V2 agonist)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "First-line for nephrogenic, not cranial, DI."
+      ],
+      [
+       1,
+       "Would worsen her hypernatraemia; that is SIADH treatment."
+      ],
+      [
+       2,
+       "Replaces cortisol; does not treat ADH deficiency."
+      ],
+      [
+       4,
+       "A V2 antagonist that blocks ADH: the opposite of what she needs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Intranasal desmopressin.** Cranial DI → desmopressin; nephrogenic DI → treat cause, then thiazide."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 52 year old man with bipolar disorder has taken lithium for 15 years. He has polyuria and a serum sodium of 148 mmol/L. His urine osmolality stays below 300 mOsm/kg after desmopressin.",
+   "q": "Which is the most likely mechanism of his polyuria?",
+   "o": [
+    "Destruction of the posterior pituitary",
+    "Downregulation of aquaporin-2 in collecting duct cells",
+    "Excess aldosterone secretion",
+    "Osmotic diuresis from glycosuria",
+    "Reduced ADH synthesis in the hypothalamus"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: explain why the kidney ignores ADH."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "lithium for 15 years",
+      "polyuria",
+      "stays below 300 mOsm/kg after desmopressin"
+     ],
+     "x": "Long-term lithium and no response to desmopressin: **nephrogenic DI**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Lithium enters principal cells via ENaC and **downregulates aquaporin-2**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is cranial DI; he would respond to desmopressin."
+      ],
+      [
+       2,
+       "Causes hypertension and low K+, not ADH resistance."
+      ],
+      [
+       3,
+       "Glucose is not the problem here."
+      ],
+      [
+       4,
+       "Cranial DI again; desmopressin would work."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Downregulation of aquaporin-2 in collecting duct cells.** Lithium → ENaC → accumulates → less aquaporin-2 → ADH resistance."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 41 year old woman with bipolar disorder has a 6 month history of passing large amounts of urine and waking at night to drink. She has taken lithium for 10 years. Her pulse rate is 94 bpm and BP 114/70 mmHg.",
+   "labs": [
+    [
+     "Sodium",
+     "147 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Glucose",
+     "5.1 mmol/L",
+     "3.5–7.8",
+     ""
+    ],
+    [
+     "Adjusted calcium",
+     "2.38 mmol/L",
+     "2.20–2.60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cranial diabetes insipidus",
+    "Diabetes mellitus",
+    "Hypothyroidism",
+    "Nephrogenic diabetes insipidus",
+    "Primary polydipsia"
+   ],
+   "a": 3,
+   "e": "Lithium is the classic cause of nephrogenic DI. Primary polydipsia gives a low-normal sodium, and hypothyroidism does not cause polyuria.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question: polyuria plus a drug history."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bipolar disorder",
+      "waking at night to drink",
+      "lithium for 10 years"
+     ],
+     "x": "Long-term **lithium**, nocturia, high sodium and normal glucose."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Nephrogenic DI**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No head injury, surgery or pituitary cause; lithium points to the kidney."
+      ],
+      [
+       1,
+       "Glucose is normal."
+      ],
+      [
+       2,
+       "Lithium can cause it, but it does not cause polyuria."
+      ],
+      [
+       4,
+       "Sodium is high, not low-normal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Nephrogenic diabetes insipidus.** Lithium + polyuria + high sodium = nephrogenic DI."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old woman had breast cancer treated 4 years ago. She has a 1 month history of headaches, extreme thirst and passing urine every hour. Her BP is 128/78 mmHg and pulse rate 90 bpm. Her glucose and calcium are normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cranial diabetes insipidus",
+    "Hypercalcaemia of malignancy",
+    "Nephrogenic diabetes insipidus",
+    "Primary polydipsia",
+    "SIADH"
+   ],
+   "a": 0,
+   "e": "Breast cancer can metastasise to the pituitary, causing cranial DI. Hypercalcaemia is excluded by the normal calcium.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question: polyuria in someone with past cancer."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "breast cancer",
+      "headaches",
+      "extreme thirst",
+      "glucose and calcium are normal"
+     ],
+     "x": "Headache plus new polyuria: a deposit in the **pituitary or hypothalamus**. Calcium and glucose normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cranial DI** from a metastasis to the pituitary stalk."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Calcium is normal."
+      ],
+      [
+       2,
+       "No lithium or renal disease; headache points to the brain."
+      ],
+      [
+       3,
+       "No psychiatric history; new headache suggests a structural cause."
+      ],
+      [
+       4,
+       "Causes low sodium without polyuria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cranial diabetes insipidus.** Cancer + headache + polyuria with normal calcium = cranial DI."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 35 year old man has a 2 month history of polyuria and polydipsia. He has no past medical history. His pulse rate is 98 bpm and BP 112/70 mmHg. Blood and urine tests are sent.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely pair of results?",
+   "o": [
+    "Serum osmolality 270, urine osmolality 110 mOsm/kg",
+    "Serum osmolality 270, urine osmolality 600 mOsm/kg",
+    "Serum osmolality 290, urine osmolality 700 mOsm/kg",
+    "Serum osmolality 304, urine osmolality 120 mOsm/kg",
+    "Serum osmolality 310, urine osmolality 800 mOsm/kg"
+   ],
+   "a": 3,
+   "e": "In DI water is lost in dilute urine, so serum osmolality rises while urine osmolality stays inappropriately low.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely result' question: predict the biochemistry of DI."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "polyuria and polydipsia",
+      "no past medical history"
+     ],
+     "x": "Polyuria and polydipsia in a well man: think DI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**High serum osmolality with inappropriately low urine osmolality**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Low serum with dilute urine is primary polydipsia."
+      ],
+      [
+       1,
+       "Low serum with concentrated urine is SIADH."
+      ],
+      [
+       2,
+       "Normal, appropriately concentrated urine."
+      ],
+      [
+       4,
+       "Appropriate concentration: the kidneys are holding water, as in dehydration."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Serum osmolality 304, urine osmolality 120 mOsm/kg.** DI = concentrated blood, dilute urine."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 47 year old man has a dry cough, tender red lumps on his shins and bilateral hilar lymphadenopathy on chest X-ray. He has developed polyuria and a water deprivation test confirms cranial diabetes insipidus. His BP is 124/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of his diabetes insipidus?",
+   "o": [
+    "Lithium toxicity",
+    "Meningitis",
+    "Sarcoidosis",
+    "Sickle cell disease",
+    "Tuberculosis"
+   ],
+   "a": 2,
+   "e": "Sarcoidosis can infiltrate the hypothalamus or pituitary stalk, causing cranial DI with hypernatraemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: the DI type is given, find the disease behind it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry cough",
+      "tender red lumps on his shins",
+      "bilateral hilar lymphadenopathy",
+      "cranial diabetes insipidus"
+     ],
+     "x": "Erythema nodosum, bilateral hilar lymphadenopathy and dry cough: **sarcoidosis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Neurosarcoid infiltrating the hypothalamus/pituitary causes **cranial DI**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Causes nephrogenic, not cranial, DI; no lithium given."
+      ],
+      [
+       1,
+       "No fever, neck stiffness or acute illness."
+      ],
+      [
+       3,
+       "A cause of cranial DI in the notes, but nothing in the stem suggests it."
+      ],
+      [
+       4,
+       "Can cause hilar nodes, but erythema nodosum with bilateral hilar nodes is classic sarcoid."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Sarcoidosis.** Sarcoid is an inflammatory cause of cranial DI and tends to cause hypernatraemia."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 44 year old woman on long-term lithium has polyuria and a serum sodium of 148 mmol/L. She has a water deprivation test followed by desmopressin.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely result?",
+   "o": [
+    "Urine concentrates during deprivation",
+    "Urine concentrates only after desmopressin",
+    "Urine osmolality rises above 800 mOsm/kg at 4 hours",
+    "Urine stays dilute throughout, even after desmopressin",
+    "Urine volume rises after desmopressin"
+   ],
+   "a": 3,
+   "e": "In nephrogenic DI the collecting duct ignores both endogenous and exogenous ADH, so urine stays below 300 mOsm/kg.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question on a test result."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-term lithium",
+      "polyuria",
+      "148 mmol/L",
+      "followed by desmopressin"
+     ],
+     "x": "Lithium + hypernatraemia = **nephrogenic DI**: the kidney ignores ADH."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "No response to deprivation **or** desmopressin: urine stays below 300 mOsm/kg."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is normal or primary polydipsia."
+      ],
+      [
+       1,
+       "That is cranial DI."
+      ],
+      [
+       2,
+       "Normal concentrating ability."
+      ],
+      [
+       4,
+       "Desmopressin reduces volume when it works; it does not increase it."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Urine stays dilute throughout, even after desmopressin.** Nephrogenic DI: dilute throughout. Cranial DI: concentrates only after desmopressin."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 82 year old woman with known cranial diabetes insipidus is brought from her care home after 2 days of a chest infection. She has been too drowsy to drink. Her temperature is 37.9°C, pulse rate 118 bpm and BP 92/58 mmHg.",
+   "labs": [
+    [
+     "Sodium",
+     "161 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Urea",
+     "14.2 mmol/L",
+     "2.5–7.8",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Bibasal fine crackles from fluid overload",
+    "Dry mucous membranes",
+    "Peripheral oedema",
+    "Raised JVP",
+    "Warm, flushed peripheries"
+   ],
+   "a": 1,
+   "e": "Unable to drink, she cannot replace dilute urine losses, so she becomes dehydrated, hypernatraemic and hypotensive.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An examination finding question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cranial diabetes insipidus",
+      "too drowsy to drink",
+      "pulse rate 118 bpm",
+      "BP 92/58 mmHg"
+     ],
+     "x": "DI with **no access to water**: free water loss goes unreplaced."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Severe dehydration and **hypernatraemia** with hypotension: **dry mucous membranes**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She is water-depleted, not overloaded."
+      ],
+      [
+       2,
+       "Implies overload, not free water loss."
+      ],
+      [
+       3,
+       "Her intravascular volume is low."
+      ],
+      [
+       4,
+       "Hypovolaemia gives cool peripheries."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Dry mucous membranes.** DI + cannot drink = dehydration, hypernatraemia, hypotension."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 31 year old woman has 6 weeks of polyuria and polydipsia. Her capillary glucose is 5.4 mmol/L. Her pulse rate is 88 bpm and BP 118/74 mmHg. She takes no medication.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Desmopressin trial",
+    "MRI pituitary",
+    "Paired serum and urine osmolality",
+    "Renal ultrasound",
+    "Water deprivation test"
+   ],
+   "a": 2,
+   "e": "High serum with inappropriately low urine osmolality raises suspicion of DI before the water deprivation test.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Initial' means the first-line test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "polyuria and polydipsia",
+      "glucose is 5.4 mmol/L",
+      "takes no medication"
+     ],
+     "x": "Polyuria with normal glucose: next ask whether this is DI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Serum and urine osmolality** together."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Treating before confirming risks dangerous hyponatraemia if she has primary polydipsia."
+      ],
+      [
+       1,
+       "Only once cranial DI is confirmed."
+      ],
+      [
+       3,
+       "Does not assess concentrating ability."
+      ],
+      [
+       4,
+       "The gold standard, but done after first-line osmolalities raise suspicion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Paired serum and urine osmolality.** First-line = paired osmolalities; confirm = water deprivation test."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 38 year old man has polyuria. A water deprivation test shows dilute urine during deprivation, with urine osmolality rising to 680 mOsm/kg after desmopressin. He has no history of head injury. His BP is 120/76 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "CT abdomen",
+    "MRI pituitary",
+    "Repeat water deprivation test",
+    "Serum lithium level",
+    "Short Synacthen test"
+   ],
+   "a": 1,
+   "e": "Cranial DI needs MRI pituitary to look for a tumour or infiltration of the hypothalamus or stalk.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next' investigation after the diagnosis is made."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dilute urine during deprivation",
+      "rising to 680 mOsm/kg after desmopressin",
+      "no history of head injury"
+     ],
+     "x": "Concentrates only after desmopressin: **cranial DI**. No obvious cause."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Image the hypothalamus and pituitary: **MRI pituitary**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "The kidney responded to desmopressin; the problem is central."
+      ],
+      [
+       2,
+       "The result is already diagnostic."
+      ],
+      [
+       3,
+       "Lithium causes nephrogenic DI; he responded to desmopressin."
+      ],
+      [
+       4,
+       "Tests adrenal reserve; not the next step for the cause."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. MRI pituitary.** Cranial DI without a clear cause → MRI pituitary."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 50 year old man with bipolar disorder well controlled on lithium for 14 years has nephrogenic diabetes insipidus confirmed on water deprivation testing. His serum sodium is 147 mmol/L. His pulse rate is 90 bpm and BP 122/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Fluid restriction",
+    "Intranasal desmopressin",
+    "Review lithium with his psychiatrist",
+    "Stop lithium immediately and start no alternative",
+    "Tolvaptan"
+   ],
+   "a": 2,
+   "e": "Treating the cause comes first; lithium should be changed in liaison with psychiatry, not stopped abruptly.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in management of a known cause."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bipolar disorder",
+      "lithium for 14 years",
+      "nephrogenic diabetes insipidus"
+     ],
+     "x": "Nephrogenic DI from lithium."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Treat the cause: **stop or adjust lithium** with psychiatry."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would worsen hypernatraemia."
+      ],
+      [
+       1,
+       "Does not work: the kidney ignores ADH."
+      ],
+      [
+       3,
+       "Risks a bipolar relapse."
+      ],
+      [
+       4,
+       "Blocks ADH and would worsen water loss."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Review lithium with his psychiatrist.** Nephrogenic DI → remove the cause first, safely."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 55 year old woman stopped lithium 6 months ago because of nephrogenic diabetes insipidus. She still passes 5 L of urine a day. Her pulse rate is 84 bpm.",
+   "labs": [
+    [
+     "Sodium",
+     "146 mmol/L",
+     "135–145",
+     "H"
+    ],
+    [
+     "Urine osmolality",
+     "150 mOsm/kg",
+     "",
+     ""
+    ],
+    [
+     "Creatinine",
+     "88 µmol/L",
+     "45–90",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate drug treatment?",
+   "o": [
+    "Desmopressin",
+    "Furosemide",
+    "Hydrocortisone",
+    "Spironolactone",
+    "Thiazide diuretic"
+   ],
+   "a": 4,
+   "e": "Thiazides cause mild volume depletion, increasing proximal reabsorption and reducing collecting duct flow.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Drug treatment after the cause is removed."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "stopped lithium 6 months ago",
+      "nephrogenic diabetes insipidus",
+      "5 L of urine a day"
+     ],
+     "x": "Persistent nephrogenic DI despite stopping lithium."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "First-line drug: **thiazide diuretic**, which paradoxically reduces urine output."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Ineffective in nephrogenic DI."
+      ],
+      [
+       1,
+       "A loop diuretic increases dilute urine loss."
+      ],
+      [
+       2,
+       "No cortisol deficiency."
+      ],
+      [
+       3,
+       "Does not reduce collecting duct water delivery in this way."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Thiazide diuretic.** Nephrogenic DI drug = thiazide."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 30 year old man has idiopathic nephrogenic diabetes insipidus. He takes a thiazide diuretic. He asks what else he can do. His BP is 118/72 mmHg and serum sodium 145 mmol/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate advice?",
+   "o": [
+    "Fluid restriction to 1 L a day",
+    "High-protein diet",
+    "High-salt diet",
+    "Low-salt diet with drinking to thirst",
+    "Stop the thiazide when thirsty"
+   ],
+   "a": 3,
+   "e": "A low-salt diet reduces solute load and so urine volume; fluid must never be restricted in DI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Long-term advice question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "nephrogenic diabetes insipidus",
+      "thiazide diuretic",
+      "what else he can do"
+     ],
+     "x": "Established nephrogenic DI on treatment."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Low-salt diet** and adequate fluid intake."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dangerous in DI: rapid hypernatraemia."
+      ],
+      [
+       1,
+       "Increases solute load and urine volume."
+      ],
+      [
+       2,
+       "Increases solute load and urine output."
+      ],
+      [
+       4,
+       "Thirst is protective; the thiazide reduces output."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Low-salt diet with drinking to thirst.** DI long-term: low salt, never restrict fluid."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 48 year old woman with nephrogenic diabetes insipidus starts bendroflumethiazide. Her 24-hour urine volume falls from 7 L to 4 L. Her BP is 116/70 mmHg and pulse rate 82 bpm.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of the fall in urine volume?",
+   "o": [
+    "Increased ADH release from the posterior pituitary",
+    "Increased aquaporin-2 insertion",
+    "Increased proximal tubular sodium and water reabsorption",
+    "Inhibition of the loop of Henle",
+    "Reduced glomerular filtration of glucose"
+   ],
+   "a": 2,
+   "e": "Thiazide-induced volume depletion increases proximal sodium and water reabsorption, so less fluid reaches the collecting duct.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about a paradox."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "nephrogenic diabetes insipidus",
+      "bendroflumethiazide",
+      "falls from 7 L to 4 L"
+     ],
+     "x": "A diuretic reducing urine output in nephrogenic DI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Mild volume depletion → **more proximal reabsorption** → less fluid reaches the collecting duct."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Her kidney ignores ADH regardless."
+      ],
+      [
+       1,
+       "The ADH pathway stays broken."
+      ],
+      [
+       3,
+       "That is a loop diuretic's action and would increase urine."
+      ],
+      [
+       4,
+       "Glucose is not involved."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Increased proximal tubular sodium and water reabsorption.** Thiazide paradox = volume depletion drives proximal reabsorption."
+    }
+   ]
+  }
+ ]
+}

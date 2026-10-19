@@ -1,0 +1,2190 @@
+{
+ "id": "unstable-angina",
+ "patient": {
+  "name": "Desmond Clarke",
+  "age": 64,
+  "sex": "M",
+  "setting": "Emergency Department",
+  "complaint": "Central chest tightness at rest for 40 minutes, not eased by his GTN spray",
+  "background": [
+   "Inferior MI with a stent in 2019",
+   "Type 2 diabetes and hypertension",
+   "Ex-smoker (30 pack-years)",
+   "Lorry driver from Lewisham (Group 2 licence)"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with rest or crescendo chest pain, ST depression or T-wave inversion (or a normal ECG) and a **normal troponin**: the troponin separates unstable angina from NSTEMI.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Desmond, 64, known IHD with a stent from 2019.",
+      "Two weeks: angina on **less and less exertion**.",
+      "Tonight: central tightness **at rest** for 40 minutes.",
+      "Two puffs of GTN barely touched it."
+     ],
+     "vitals": {
+      "T": "36.6°C",
+      "HR": "104 bpm",
+      "BP": "152/90 mmHg",
+      "RR": "20 /min",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's pain is new at rest after a **crescendo** fortnight: a plaque that has ruptured with **partial** thrombus, not yet killing muscle."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "His **previous MI and stent** are the strongest pointer; his diabetes, hypertension and smoking history add to it."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Pain spreads to his **left arm and jaw**.",
+      "He is **sweaty and nauseated**.",
+      "Chest clear, no murmur, no oedema.",
+      "Pain is not pleuritic and not positional."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rest pain, radiation, sweating and nausea fit ACS. Only the **troponin** will tell us which type."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "12-lead ECG at 8 minutes",
+      "layout": "12lead",
+      "rhythm": "sinus_tachy",
+      "rate": 104,
+      "leads": {
+       "V3": "st_dep",
+       "V4": "st_dep",
+       "V5": "st_dep",
+       "V6": "st_dep",
+       "I": "t_inv",
+       "aVL": "t_inv"
+      },
+      "caption": "Horizontal **ST depression** V3 to V6 with T-wave inversion in I and aVL. No ST elevation, so not a STEMI."
+     },
+     "text": "Desmond's ECG within 10 minutes: ischaemia, but no ST elevation."
+    },
+    {
+     "type": "ask",
+     "q": "Desmond has ST depression and his troponin comes back normal twice. What is this?",
+     "o": [
+      "NSTEMI",
+      "Stable angina",
+      "STEMI",
+      "Unstable angina"
+     ],
+     "a": 3,
+     "r": "Rest pain with ischaemic ECG changes but **no troponin rise** = unstable angina. A rise would make it NSTEMI."
+    },
+    {
+     "type": "compare",
+     "title": "Stable angina vs unstable angina vs NSTEMI vs STEMI",
+     "head": [
+      "Feature",
+      "Stable angina",
+      "Unstable angina",
+      "NSTEMI",
+      "STEMI"
+     ],
+     "rows": [
+      [
+       "Pain",
+       "On exertion, eased by rest/GTN",
+       "**At rest**, new or crescendo",
+       "At rest, prolonged",
+       "At rest, prolonged"
+      ],
+      [
+       "ECG",
+       "Usually normal",
+       "ST depression, T inversion or normal",
+       "ST depression, T inversion or normal",
+       "**ST elevation** or new LBBB"
+      ],
+      [
+       "Troponin",
+       "Normal",
+       "**Normal**",
+       "**Raised**",
+       "Raised"
+      ],
+      [
+       "Thrombus",
+       "None (fixed plaque)",
+       "Partial",
+       "Partial, some necrosis",
+       "Complete occlusion"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "A normal ECG does **not** exclude unstable angina. The history makes the diagnosis; ECG and troponin sort the type."
+    },
+    {
+     "type": "pearl",
+     "text": "Unstable angina is the only ACS with a **normal troponin**. If the stem gives a raised troponin, it is not unstable angina."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (12-lead ECG within 10 minutes) and questions on serial troponin and the GRACE score.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Desmond arrives in triage with rest chest pain. What comes first?",
+     "o": [
+      "12-lead ECG",
+      "CT coronary angiogram",
+      "Chest X-ray",
+      "Exercise tolerance test"
+     ],
+     "a": 0,
+     "r": "An **ECG within 10 minutes** of arrival sorts STEMI (cath lab now) from the rest. An exercise test is unsafe in suspected ACS."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond gets his **ECG at 8 minutes**. CT coronary angiography is the first-line test for **stable** chest pain, not for an acute rest-pain presentation."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods on arrival",
+     "rows": [
+      [
+       "hs-Troponin T (0 h)",
+       "8 ng/L",
+       "<14",
+       ""
+      ],
+      [
+       "hs-Troponin T (3 h)",
+       "9 ng/L",
+       "<14",
+       ""
+      ],
+      [
+       "Haemoglobin",
+       "142 g/L",
+       "130–180",
+       ""
+      ],
+      [
+       "Creatinine",
+       "96 µmol/L",
+       "60–110",
+       ""
+      ],
+      [
+       "Glucose",
+       "11.2 mmol/L",
+       "4.0–7.8",
+       "H"
+      ],
+      [
+       "Total cholesterol",
+       "6.1 mmol/L",
+       "<5.0",
+       "H"
+      ]
+     ],
+     "text": "Normal Hb and kidneys matter before antithrombotics and angiography."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "High-sensitivity troponin T",
+      "x": [
+       "Arrival",
+       "3 h"
+      ],
+      "unit": "ng/L",
+      "series": [
+       {
+        "name": "Desmond",
+        "values": [
+         8,
+         9
+        ]
+       },
+       {
+        "name": "99th centile cut-off",
+        "values": [
+         14,
+         14
+        ]
+       }
+      ],
+      "caption": "Both values sit **below the 99th centile** and do not rise: no necrosis, so unstable angina, not NSTEMI."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Clinical picture plus ECG plus a **flat, normal troponin** confirms Desmond has unstable angina rather than an NSTEMI."
+    },
+    {
+     "type": "flow",
+     "title": "Chest pain at rest: the sorting pathway",
+     "nodes": [
+      "ECG within 10 minutes",
+      "ST elevation → STEMI → primary PCI",
+      "No ST elevation → serial high-sensitivity troponin",
+      "Troponin rises → NSTEMI",
+      "Troponin normal → unstable angina",
+      "Both NSTE-ACS → GRACE risk score"
+     ],
+     "caption": "The ECG and troponin are sorting tools; the history raised the alarm."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "GRACE score (6-month mortality risk)",
+      "min": 0,
+      "max": 200,
+      "unit": "points",
+      "bands": [
+       [
+        0,
+        88,
+        "Low (≤1.5%)",
+        "ok"
+       ],
+       [
+        88,
+        118,
+        "Intermediate",
+        "warn"
+       ],
+       [
+        118,
+        200,
+        "High (>3%)",
+        "bad"
+       ]
+      ],
+      "value": 132,
+      "label": "Desmond 132",
+      "caption": "Age, heart rate, ST depression and prior MI push Desmond into the **high-risk** band: early angiography."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's **GRACE score of 132** is high, so he is for early angiography rather than conservative care."
+    },
+    {
+     "type": "trap",
+     "text": "Do not send a rest-pain patient for an **exercise tolerance test** or CTCA first. Those are for stable symptoms."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (aspirin 300 mg plus a second antiplatelet and fondaparinux) and 'next step' questions driven by GRACE risk, plus driving advice.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Pain still 6/10 after GTN.",
+      "SpO2 97% on air.",
+      "No bleeding history; eGFR 78."
+     ],
+     "vitals": {
+      "HR": "98 bpm",
+      "BP": "146/88 mmHg",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Desmond's saturations are 97% on air. Which does he NOT need?",
+     "o": [
+      "Aspirin 300 mg",
+      "Fondaparinux",
+      "High-flow oxygen",
+      "Ticagrelor"
+     ],
+     "a": 2,
+     "r": "Oxygen only if **SpO2 below 94%**. Routine oxygen in a non-hypoxic patient gives no benefit."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond gets **aspirin 300 mg** plus **ticagrelor**, **fondaparinux**, GTN and morphine for pain, and no oxygen at 97%."
+    },
+    {
+     "type": "flow",
+     "title": "Initial management of unstable angina",
+     "nodes": [
+      "Aspirin 300 mg now",
+      "Plus clopidogrel or ticagrelor (DAPT)",
+      "Fondaparinux (LMWH if unsuitable)",
+      "GTN ± morphine for pain",
+      "Oxygen only if SpO2 <94%",
+      "GRACE score → invasive or conservative"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "His GRACE is high, so Desmond goes for **coronary angiography plus PCI within 24 to 72 hours** rather than conservative care."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "coronary",
+      "title": "Angiogram: culprit lesion",
+      "artery": "LAD",
+      "caption": "A ruptured plaque in the proximal **LAD** with non-occlusive thrombus; flow is reduced but preserved."
+     },
+     "text": "Desmond's angiogram the next morning; a stent restores full flow."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Without treatment, Desmond's partial thrombus could **occlude** fully: MI, arrhythmia, heart failure or shock."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "On discharge: lifelong aspirin, ticagrelor for **12 months**, high-intensity statin, beta-blocker, ACE inhibitor."
+    },
+    {
+     "type": "ask",
+     "q": "Desmond drives lorries for a living. What do you tell him?",
+     "o": [
+      "Drive as normal once pain-free",
+      "Inform DVLA and stop driving until assessed",
+      "Only avoid driving at night",
+      "Wait 1 week then drive"
+     ],
+     "a": 1,
+     "r": "He holds a **Group 2** licence, which has stricter standards. He must inform the DVLA and stop driving until assessed."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Desmond's care follows **NICE NG185**, with the **GRACE** score steering timing and **DVLA** standards for his job."
+    },
+    {
+     "type": "trap",
+     "text": "Thrombolysis is for STEMI when PCI is not available in time. It has **no role** in unstable angina or NSTEMI."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the mechanism of unstable angina (plaque rupture with partial thrombus), why troponin stays normal, and how antiplatelets and fondaparinux act.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's LAD plaque **ruptured**, platelets piled on and a **partial** thrombus narrowed the lumen without blocking it."
+    },
+    {
+     "type": "flow",
+     "title": "From plaque to unstable angina",
+     "nodes": [
+      "Lipid-rich plaque with thin fibrous cap",
+      "Cap ruptures or erodes",
+      "Exposed collagen and tissue factor",
+      "Platelet aggregation + coagulation",
+      "Partial, non-occlusive thrombus",
+      "Ischaemia at rest, no necrosis"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond's flow drop was **too small or too brief** to kill myocytes, so no troponin leaked out."
+    },
+    {
+     "type": "ask",
+     "q": "Why did Desmond's troponin stay normal?",
+     "o": [
+      "Troponin takes 24 hours to rise",
+      "Ischaemia did not cause myocyte necrosis",
+      "The thrombus fully occluded the artery",
+      "Troponin is cleared by the kidneys"
+     ],
+     "a": 1,
+     "r": "Troponin is released when myocytes **die**. No necrosis, no troponin: that is the definition of unstable angina."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's unstable plaque could **propagate** thrombus to full occlusion at any time: high short-term MI risk."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Aspirin and ticagrelor block **platelets**; fondaparinux blocks **factor Xa** in the clotting cascade: two pathways, one thrombus."
+    },
+    {
+     "type": "compare",
+     "title": "What each drug blocks",
+     "head": [
+      "Drug",
+      "Target",
+      "Effect"
+     ],
+     "rows": [
+      [
+       "Aspirin",
+       "COX-1 (irreversible)",
+       "Less thromboxane A2, less platelet activation"
+      ],
+      [
+       "Clopidogrel / ticagrelor",
+       "**P2Y12** ADP receptor",
+       "Less ADP-driven platelet aggregation"
+      ],
+      [
+       "Fondaparinux",
+       "**Factor Xa** (via antithrombin)",
+       "Less thrombin and fibrin"
+      ],
+      [
+       "GTN",
+       "Nitric oxide donor",
+       "Venodilation, less preload and oxygen demand"
+      ]
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "The exam likes **'partial thrombus, no necrosis'** for unstable angina versus **'complete occlusion'** for STEMI."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What blood result separates unstable angina from NSTEMI?",
+   "o": [
+    "Creatine kinase raised",
+    "D-dimer raised",
+    "Troponin normal",
+    "Troponin raised"
+   ],
+   "a": 2,
+   "r": "Unstable angina has a **normal troponin**; NSTEMI has a raised one."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the main risk factor for unstable angina in the notes?",
+   "o": [
+    "Female sex",
+    "Previous ischaemic heart disease",
+    "Recent long-haul flight",
+    "Young age"
+   ],
+   "a": 1,
+   "r": "**Previous IHD** is the main risk factor."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which pain pattern fits unstable angina?",
+   "o": [
+    "Pain only on exertion, eased by rest",
+    "Pain at rest or crescendo, not eased by GTN",
+    "Pleuritic pain worse lying flat",
+    "Tearing pain to the back"
+   ],
+   "a": 1,
+   "r": "Rest, new-onset or **crescendo** pain is unstable; exertional pain eased by rest is stable."
+  },
+  {
+   "d": "investigation",
+   "q": "How quickly should the ECG be done in suspected ACS?",
+   "o": [
+    "Within 10 minutes",
+    "Within 1 hour",
+    "Within 4 hours",
+    "Next morning"
+   ],
+   "a": 0,
+   "r": "An ECG **within 10 minutes** of arrival picks out STEMI."
+  },
+  {
+   "d": "investigation",
+   "q": "Which score guides early invasive versus conservative management?",
+   "o": [
+    "CHA2DS2-VASc",
+    "CURB-65",
+    "GRACE",
+    "Wells"
+   ],
+   "a": 2,
+   "r": "**GRACE** stratifies risk in NSTE-ACS."
+  },
+  {
+   "d": "management",
+   "q": "What is the first-line anticoagulant in unstable angina?",
+   "o": [
+    "Apixaban",
+    "Fondaparinux",
+    "Unfractionated heparin",
+    "Warfarin"
+   ],
+   "a": 1,
+   "r": "**Fondaparinux** first-line; LMWH if unsuitable."
+  },
+  {
+   "d": "management",
+   "q": "When is oxygen given in unstable angina?",
+   "o": [
+    "Always, at 15 L/min",
+    "Only if SpO2 below 94%",
+    "Only if SpO2 below 88%",
+    "Never"
+   ],
+   "a": 1,
+   "r": "Oxygen only if **hypoxic (<94%)**."
+  },
+  {
+   "d": "management",
+   "q": "How long is the second antiplatelet continued after unstable angina?",
+   "o": [
+    "1 month",
+    "3 months",
+    "12 months",
+    "Lifelong"
+   ],
+   "a": 2,
+   "r": "Aspirin lifelong; second antiplatelet for **12 months**."
+  },
+  {
+   "d": "science",
+   "q": "Which describes the thrombus in unstable angina?",
+   "o": [
+    "Complete occlusive thrombus",
+    "Fat embolus",
+    "No thrombus, fixed stenosis only",
+    "Partial non-occlusive thrombus"
+   ],
+   "a": 3,
+   "r": "Plaque rupture with **partial** thrombus; complete occlusion is STEMI."
+  },
+  {
+   "d": "science",
+   "q": "What does fondaparinux inhibit?",
+   "o": [
+    "COX-1",
+    "Factor Xa",
+    "P2Y12 receptor",
+    "Vitamin K epoxide reductase"
+   ],
+   "a": 1,
+   "r": "Fondaparinux is a **factor Xa inhibitor**."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man has had central chest pain at rest for 30 minutes. Over the past week he has had chest tightness on climbing fewer stairs than usual. He had a myocardial infarction 4 years ago. His pulse rate is 96 bpm and BP 148/86 mmHg. His ECG shows T-wave inversion in V4 to V6. High-sensitivity troponin is normal at presentation and at 3 hours.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Aortic dissection",
+    "Non-ST elevation myocardial infarction",
+    "ST elevation myocardial infarction",
+    "Stable angina",
+    "Unstable angina"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about chest pain: is it ACS, and if so which type?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "central chest pain at rest",
+      "climbing fewer stairs than usual",
+      "myocardial infarction 4 years ago",
+      "T-wave inversion in V4 to V6",
+      "normal at presentation and at 3 hours"
+     ],
+     "x": "Rest pain after a **crescendo** week in a man with prior MI, ischaemic ECG change, and **two normal troponins**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "ACS without troponin rise: **unstable angina**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No tearing pain to the back, no pulse or BP difference."
+      ],
+      [
+       1,
+       "NSTEMI needs a **raised** troponin; his is normal twice."
+      ],
+      [
+       2,
+       "No ST elevation on his ECG."
+      ],
+      [
+       3,
+       "Stable angina is exertional and eased by rest; his pain is **at rest** and crescendo."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Unstable angina.** Rule: ACS picture + normal serial troponin = unstable angina."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 59 year old woman with type 2 diabetes comes to the Emergency Department with 25 minutes of central chest heaviness at rest, radiating to her jaw. She is sweaty. Her pulse rate is 102 bpm, BP 150/92 mmHg and oxygen saturation 97% breathing air.",
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "12-lead ECG",
+    "Chest X-ray",
+    "CT coronary angiography",
+    "Exercise tolerance test",
+    "Serum D-dimer"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the **initial** test, so think of what must happen in the first 10 minutes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "central chest heaviness at rest",
+      "radiating to her jaw",
+      "She is sweaty"
+     ],
+     "x": "Rest pain with radiation and sweating: suspected ACS."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "ECG within 10 minutes to look for ST elevation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Useful later, but does not identify STEMI or guide immediate treatment."
+      ],
+      [
+       2,
+       "First-line for **stable** chest pain, not an acute rest-pain presentation."
+      ],
+      [
+       3,
+       "Unsafe in suspected ACS and no longer used to diagnose angina."
+      ],
+      [
+       4,
+       "For suspected PE with a low Wells score; nothing here suggests PE."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. 12-lead ECG.** Rule: suspected ACS = **ECG within 10 minutes** first, then troponin."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 71 year old man has had chest pain at rest for 1 hour. His ECG shows ST depression in V3 to V6. Troponin is normal at 0 and 3 hours. His oxygen saturation is 96% breathing air, pulse rate 90 bpm and BP 138/80 mmHg. He has no history of bleeding and his renal function is normal.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Alteplase infusion",
+    "Aspirin 300 mg, ticagrelor and fondaparinux",
+    "High-flow oxygen and GTN",
+    "Oral apixaban",
+    "Primary PCI within 120 minutes"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of an ACS with normal troponin: think antithrombotics."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ST depression in V3 to V6",
+      "Troponin is normal at 0 and 3 hours",
+      "96% breathing air",
+      "no history of bleeding"
+     ],
+     "x": "Unstable angina, not hypoxic, safe to anticoagulate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "DAPT plus fondaparinux."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Thrombolysis is for STEMI only; no role here."
+      ],
+      [
+       3,
+       "A DOAC for AF and VTE; not the ACS anticoagulant, and antiplatelets are missing."
+      ],
+      [
+       2,
+       "Oxygen only if SpO2 <94%; GTN is symptom relief only."
+      ],
+      [
+       4,
+       "Primary PCI is for STEMI; he gets angiography within 72 hours if high risk."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Aspirin 300 mg, ticagrelor and fondaparinux.** Rule: unstable angina = **aspirin 300 mg + P2Y12 inhibitor + fondaparinux**; oxygen only if <94%."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 62 year old woman is admitted with unstable angina. She is started on aspirin, ticagrelor and fondaparinux. A student asks why ticagrelor is added to aspirin.",
+   "q": "Which is the mechanism of action of ticagrelor?",
+   "o": [
+    "Cyclo-oxygenase-1 inhibition",
+    "Factor Xa inhibition",
+    "Glycoprotein IIb/IIIa blockade",
+    "P2Y12 ADP receptor blockade",
+    "Vitamin K antagonism"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: match the drug to its target."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "aspirin, ticagrelor and fondaparinux",
+      "why ticagrelor is added to aspirin"
+     ],
+     "x": "Three drugs, three targets; the question wants ticagrelor's."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Ticagrelor blocks the platelet **P2Y12** ADP receptor."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is aspirin."
+      ],
+      [
+       1,
+       "That is fondaparinux."
+      ],
+      [
+       2,
+       "That is abciximab or tirofiban, not ticagrelor."
+      ],
+      [
+       4,
+       "That is warfarin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. P2Y12 ADP receptor blockade.** Rule: aspirin = COX-1, clopidogrel/ticagrelor = P2Y12, fondaparinux = factor Xa."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man has had central chest tightness at rest for 45 minutes, radiating to his left arm. He has had angina for 3 years, but over the past fortnight it has come on with less exertion. His pulse rate is 98 bpm, BP 154/88 mmHg and oxygen saturation 97% breathing air. His ECG shows ST depression in V4 to V6. Serial troponin is below the 99th centile and unchanged.",
+   "labs": [
+    [
+     "hs-Troponin T (0 h)",
+     "7 ng/L",
+     "<14",
+     ""
+    ],
+    [
+     "hs-Troponin T (3 h)",
+     "7 ng/L",
+     "<14",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Non-ST elevation myocardial infarction",
+    "Pericarditis",
+    "ST elevation myocardial infarction",
+    "Unstable angina",
+    "Vasospastic angina"
+   ],
+   "a": 3,
+   "e": "Rest and crescendo pain with ST depression but a normal, unchanged troponin is unstable angina. A troponin rise would make it NSTEMI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Chest pain diagnosis: decide ACS or not, then which ACS."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chest tightness at rest",
+      "less exertion",
+      "ST depression in V4 to V6",
+      "below the 99th centile and unchanged"
+     ],
+     "x": "Crescendo then rest pain, ischaemic ECG, **normal unchanging troponin**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Unstable angina."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "NSTEMI needs a troponin **rise**; his stays normal."
+      ],
+      [
+       1,
+       "Pericarditis is sharp, positional and gives saddle ST elevation."
+      ],
+      [
+       2,
+       "No ST elevation."
+      ],
+      [
+       4,
+       "Vasospasm causes transient ST **elevation**, often in younger smokers, without a crescendo exertional history."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Unstable angina.** Rule: troponin normal and flat = unstable angina."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old woman with type 2 diabetes has had three episodes of central chest heaviness at rest in the past 24 hours, each lasting 15 to 20 minutes. She is sweaty and nauseated during them. Her ECG is normal. High-sensitivity troponin is normal at 0 and 3 hours.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Gastro-oesophageal reflux disease",
+    "Non-ST elevation myocardial infarction",
+    "Panic attack",
+    "Stable angina",
+    "Unstable angina"
+   ],
+   "a": 4,
+   "e": "Recurrent rest pain with sweating is ACS; a normal ECG is allowed in unstable angina, and normal troponins exclude NSTEMI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis with a **normal ECG**: do not let it reassure you."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "chest heaviness at rest",
+      "sweaty and nauseated",
+      "Her ECG is normal",
+      "normal at 0 and 3 hours"
+     ],
+     "x": "Recurrent rest pain with autonomic features; normal ECG and troponin."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Unstable angina: the ECG can be normal."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Rest pain with sweating in a diabetic is cardiac until proven otherwise."
+      ],
+      [
+       1,
+       "Troponin is normal twice."
+      ],
+      [
+       2,
+       "A diagnosis of exclusion; her risk profile and sweating point to ACS."
+      ],
+      [
+       3,
+       "Her episodes are **at rest**, so not stable."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Unstable angina.** Rule: a normal ECG never excludes unstable angina; the history does the work."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man has had 30 minutes of central chest pain at rest. He had a coronary stent 5 years ago. His temperature is 36.8°C, pulse rate 92 bpm and BP 146/84 mmHg. His ECG is shown (see item resources). High-sensitivity troponin is 6 ng/L at presentation and 6 ng/L at 3 hours (reference <14).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "12-lead ECG",
+    "layout": "12lead",
+    "rhythm": "sinus",
+    "rate": 92,
+    "leads": {
+     "V4": "st_dep",
+     "V5": "st_dep",
+     "V6": "st_dep",
+     "I": "t_inv",
+     "aVL": "t_inv"
+    },
+    "caption": "ST depression V4 to V6, T-wave inversion I and aVL."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pericarditis",
+    "Non-ST elevation myocardial infarction",
+    "Pulmonary embolism",
+    "Stable angina",
+    "Unstable angina"
+   ],
+   "a": 4,
+   "e": "Lateral ST depression with a normal unchanged troponin in a man with known IHD is unstable angina; NSTEMI needs a troponin rise.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "ECG-based diagnosis: read the ECG, then use the troponin."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "central chest pain at rest",
+      "coronary stent 5 years ago",
+      "6 ng/L at presentation and 6 ng/L at 3 hours"
+     ],
+     "x": "Lateral **ST depression** with T inversion; known IHD; normal troponin."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Unstable angina."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pericarditis gives widespread **saddle ST elevation** and PR depression."
+      ],
+      [
+       1,
+       "His troponin is normal and flat."
+      ],
+      [
+       2,
+       "No breathlessness, hypoxia or risk factors; ECG shows lateral ischaemia."
+      ],
+      [
+       3,
+       "His pain is at rest."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Unstable angina.** Rule: ST depression/T inversion + normal troponin = unstable angina."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old woman with unstable angina is admitted to the cardiology ward. She has had chest pain at rest. Her ECG shows ST depression in V4 to V6.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on serial blood tests?",
+   "o": [
+    "Elevated serum amylase",
+    "Normal high-sensitivity troponin",
+    "Raised creatine kinase",
+    "Raised D-dimer",
+    "Raised high-sensitivity troponin"
+   ],
+   "a": 1,
+   "e": "Unstable angina is ischaemia without necrosis, so troponin stays normal; a raised troponin would mean NSTEMI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question: what defines this condition on bloods?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unstable angina",
+      "chest pain at rest",
+      "ST depression in V4 to V6"
+     ],
+     "x": "The diagnosis is given; recall its defining blood result."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Troponin stays **normal**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       3,
+       "D-dimer is for VTE; not a feature of unstable angina."
+      ],
+      [
+       2,
+       "CK rises with muscle necrosis, which does not happen here."
+      ],
+      [
+       4,
+       "A raised troponin would make it NSTEMI."
+      ],
+      [
+       0,
+       "Amylase is for pancreatitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Normal high-sensitivity troponin.** Rule: unstable angina is defined by the **absence** of a troponin rise."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man is admitted with unstable angina and started on dual antiplatelet therapy and fondaparinux. On day 2 he develops severe central chest pain and sweating. His pulse rate is 110 bpm and BP 100/64 mmHg. His ECG now shows ST elevation in V1 to V4.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely explanation?",
+   "o": [
+    "Acute pericarditis",
+    "Aortic dissection",
+    "Gastrointestinal bleed from antiplatelets",
+    "Progression to myocardial infarction",
+    "Pulmonary embolism"
+   ],
+   "a": 3,
+   "e": "Anterior ST elevation in a patient with unstable angina means the partial thrombus has occluded the LAD: progression to MI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A complication question: what happens when unstable angina gets worse?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unstable angina",
+      "severe central chest pain and sweating",
+      "ST elevation in V1 to V4"
+     ],
+     "x": "Partial thrombus has **propagated** to occlude the LAD."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Progression to MI (anterior STEMI)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pericarditis gives widespread, not territorial, ST elevation."
+      ],
+      [
+       1,
+       "Dissection gives tearing back pain and pulse deficits."
+      ],
+      [
+       2,
+       "Bleeding would cause melaena or haematemesis, not ST elevation."
+      ],
+      [
+       4,
+       "PE does not give anterior ST elevation in a coronary territory."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Progression to myocardial infarction.** Rule: the key danger of unstable angina is **progression to full MI**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man has had central chest pain lasting 20 minutes at rest. He has hypertension and smokes 20 cigarettes a day. He had a myocardial infarction 3 years ago. His pulse rate is 88 bpm and BP 150/90 mmHg. His ECG shows T-wave inversion in II, III and aVF.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most important risk factor for his presentation?",
+   "o": [
+    "Hypertension",
+    "Male sex",
+    "Previous ischaemic heart disease",
+    "Recent viral illness",
+    "Smoking"
+   ],
+   "a": 2,
+   "e": "Previous IHD is the main risk factor for unstable angina; smoking and hypertension matter but are weaker.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A risk factor question: pick the **most important** one."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "myocardial infarction 3 years ago",
+      "T-wave inversion in II, III and aVF",
+      "at rest"
+     ],
+     "x": "Rest pain with inferior T inversion: unstable angina in a man with prior MI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Previous ischaemic heart disease."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A risk factor, but the notes name previous IHD as the main one."
+      ],
+      [
+       1,
+       "A non-modifiable factor, but weaker than established IHD."
+      ],
+      [
+       3,
+       "Not given and not a main risk factor."
+      ],
+      [
+       4,
+       "Important, but **established IHD** is the strongest predictor."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Previous ischaemic heart disease.** Rule: in unstable angina, **previous IHD** is the main risk factor."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 61 year old man has had 30 minutes of central chest pain at rest. His pulse rate is 94 bpm and BP 142/86 mmHg. His ECG shows ST depression in V4 to V6. A doctor needs to decide whether this is unstable angina or a myocardial infarction.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "CT coronary angiography",
+    "Echocardiogram",
+    "Exercise tolerance test",
+    "Serial high-sensitivity troponin",
+    "Serum creatine kinase"
+   ],
+   "a": 3,
+   "e": "Serial high-sensitivity troponin separates the two: normal in unstable angina, rising in NSTEMI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks which test separates two diagnoses: think of what defines each."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chest pain at rest",
+      "ST depression in V4 to V6",
+      "unstable angina or a myocardial infarction"
+     ],
+     "x": "No ST elevation; UA vs NSTEMI comes down to necrosis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Serial high-sensitivity troponin."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For stable chest pain; does not distinguish UA from NSTEMI."
+      ],
+      [
+       1,
+       "Shows wall motion but does not define necrosis."
+      ],
+      [
+       2,
+       "Unsafe in suspected ACS."
+      ],
+      [
+       4,
+       "Less sensitive and specific than troponin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Serial high-sensitivity troponin.** Rule: UA vs NSTEMI = **troponin** (normal vs raised)."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 72 year old woman has unstable angina. Her troponin is normal at 0 and 3 hours. Her pulse rate is 104 bpm and BP 112/70 mmHg. She had a myocardial infarction 2 years ago and her ECG shows ST depression.",
+   "labs": [
+    [
+     "hs-Troponin T (0 h)",
+     "9 ng/L",
+     "<14",
+     ""
+    ],
+    [
+     "hs-Troponin T (3 h)",
+     "10 ng/L",
+     "<14",
+     ""
+    ],
+    [
+     "eGFR",
+     "64 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate tool to decide between early angiography and conservative management?",
+   "o": [
+    "CHA2DS2-VASc score",
+    "CURB-65 score",
+    "GRACE score",
+    "HAS-BLED score",
+    "Wells score"
+   ],
+   "a": 2,
+   "e": "The GRACE score stratifies risk in unstable angina and NSTEMI to guide early invasive versus conservative management.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A risk-stratification question in NSTE-ACS."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unstable angina",
+      "Her troponin is normal",
+      "myocardial infarction 2 years ago",
+      "ECG shows ST depression"
+     ],
+     "x": "Choosing invasive vs conservative in UA/NSTEMI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "GRACE score."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Stroke risk in atrial fibrillation."
+      ],
+      [
+       1,
+       "Pneumonia severity."
+      ],
+      [
+       3,
+       "Bleeding risk on anticoagulation, not ACS timing."
+      ],
+      [
+       4,
+       "Probability of PE or DVT."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. GRACE score.** Rule: NSTE-ACS risk = **GRACE**; high risk → angiography within 72 hours."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man has unstable angina. He has ongoing chest pain at rest. His pulse rate is 96 bpm, BP 144/88 mmHg and oxygen saturation 98% breathing air. He has no bleeding history and normal renal function. He has been given aspirin 300 mg and ticagrelor.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "138 g/L",
+     "130–180",
+     ""
+    ],
+    [
+     "Platelets",
+     "246 ×10⁹/L",
+     "150–400",
+     ""
+    ],
+    [
+     "eGFR",
+     "82 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate anticoagulant?",
+   "o": [
+    "Intravenous alteplase",
+    "Oral apixaban",
+    "Oral warfarin",
+    "Subcutaneous fondaparinux",
+    "Unfractionated heparin infusion"
+   ],
+   "a": 3,
+   "e": "Fondaparinux is the first-line anticoagulant alongside DAPT; thrombolysis has no role outside STEMI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An anticoagulant question once DAPT is already given."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unstable angina",
+      "no bleeding history and normal renal function",
+      "aspirin 300 mg and ticagrelor"
+     ],
+     "x": "Unstable angina with normal kidneys: standard anticoagulation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Fondaparinux."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A thrombolytic for STEMI, not an anticoagulant for UA."
+      ],
+      [
+       1,
+       "A DOAC for AF/VTE, not ACS."
+      ],
+      [
+       2,
+       "Slow onset; no role in acute ACS."
+      ],
+      [
+       4,
+       "Reserved for high renal or bleeding risk or imminent PCI; fondaparinux is first-line."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Subcutaneous fondaparinux.** Rule: ACS anticoagulant = **fondaparinux** (LMWH if unsuitable)."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 69 year old woman with unstable angina has been stabilised on aspirin, clopidogrel and fondaparinux. Her pulse rate is 90 bpm and BP 136/82 mmHg. Her GRACE score indicates high risk.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Coronary angiography with PCI within 72 hours",
+    "Discharge with outpatient CT coronary angiogram",
+    "Exercise tolerance test before discharge",
+    "Immediate thrombolysis",
+    "Primary PCI within 120 minutes"
+   ],
+   "a": 0,
+   "e": "High-risk unstable angina needs coronary angiography with PCI within 24 to 72 hours; primary PCI and thrombolysis are STEMI treatments.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after stabilisation: the GRACE result decides."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unstable angina",
+      "GRACE score indicates high risk"
+     ],
+     "x": "High-risk NSTE-ACS."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Early angiography plus PCI within 24 to 72 hours."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Discharging high-risk ACS is unsafe."
+      ],
+      [
+       2,
+       "Unsafe and outdated in ACS."
+      ],
+      [
+       3,
+       "Thrombolysis is not used in NSTE-ACS."
+      ],
+      [
+       4,
+       "That timing is for STEMI."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Coronary angiography with PCI within 72 hours.** Rule: high GRACE = **angiography ± PCI within 72 h**; low risk = conservative."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 57 year old bus driver is ready for discharge after treatment for unstable angina. He had a stent inserted 2 days ago and is pain-free. His pulse rate is 64 bpm and BP 128/78 mmHg. He asks when he can return to work.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate advice?",
+   "o": [
+    "Drive after 24 hours if pain-free",
+    "Drive buses immediately but not cars",
+    "Inform DVLA and stop driving until assessed",
+    "No restriction as he is now stented",
+    "Return to driving when he feels ready"
+   ],
+   "a": 2,
+   "e": "Group 2 (bus and lorry) licence holders must inform the DVLA and stop driving until assessed; their standards are stricter.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A driving-advice question: note the licence type."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bus driver",
+      "unstable angina",
+      "stent inserted 2 days ago"
+     ],
+     "x": "Group 2 (vocational) driver after ACS."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Inform DVLA and stop driving until assessed."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Far too soon, especially for a Group 2 licence."
+      ],
+      [
+       1,
+       "Group 2 standards are **stricter**, not looser."
+      ],
+      [
+       3,
+       "A stent does not remove the DVLA requirement."
+      ],
+      [
+       4,
+       "Not his decision alone; DVLA standards apply."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Inform DVLA and stop driving until assessed.** Rule: after ACS, **inform DVLA**; Group 2 has stricter standards."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 65 year old man has unstable angina. His ECG shows ST depression in V4 to V6 and his troponin remains normal. An angiogram shows a ruptured plaque in the left anterior descending artery.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his presentation?",
+   "o": [
+    "Complete occlusive thrombus with myocyte necrosis",
+    "Coronary artery vasospasm without plaque",
+    "Fixed stenosis with no thrombus",
+    "Paradoxical embolus through a PFO",
+    "Partial non-occlusive thrombus on a ruptured plaque"
+   ],
+   "a": 4,
+   "e": "Plaque rupture with a partial thrombus reduces flow without causing necrosis, so troponin stays normal; complete occlusion causes STEMI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: link the troponin and angiogram findings."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "troponin remains normal",
+      "ruptured plaque"
+     ],
+     "x": "Plaque rupture, ischaemia but **no necrosis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Partial, non-occlusive thrombus."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is STEMI; troponin would rise."
+      ],
+      [
+       1,
+       "Prinzmetal angina, with transient ST **elevation**."
+      ],
+      [
+       2,
+       "That is stable angina, on exertion only."
+      ],
+      [
+       3,
+       "A rare cause of MI, not of plaque-rupture ACS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Partial non-occlusive thrombus on a ruptured plaque.** Rule: UA = rupture + partial thrombus, no necrosis."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is unstable angina, and what separates it from NSTEMI?",
+    "tip": "Exam thinking: the troponin is the decider.",
+    "points": [
+     {
+      "p": "ACS from plaque rupture with partial thrombosis",
+      "k": [
+       [
+        "plaque"
+       ],
+       [
+        "partial",
+        "non-occlusive"
+       ]
+      ],
+      "why": "Complete occlusion is STEMI."
+     },
+     {
+      "p": "No myocardial necrosis",
+      "k": [
+       [
+        "necrosis",
+        "no damage",
+        "no infarct",
+        "muscle death"
+       ]
+      ],
+      "why": "No necrosis is the defining feature."
+     },
+     {
+      "p": "Troponin remains normal (raised in NSTEMI)",
+      "k": [
+       [
+        "troponin",
+        "trop"
+       ],
+       [
+        "normal",
+        "not raised",
+        "negative"
+       ]
+      ],
+      "why": "Serial troponin is how the stem tells you."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the classic presentation of unstable angina.",
+    "tip": "Exam thinking: rest or crescendo pain is the clue.",
+    "points": [
+     {
+      "p": "Central chest pain at rest",
+      "k": [
+       [
+        "rest"
+       ]
+      ],
+      "why": "Stable angina is on exertion only."
+     },
+     {
+      "p": "New onset or crescendo pattern",
+      "k": [
+       [
+        "crescendo",
+        "new onset",
+        "worsening",
+        "increasing"
+       ]
+      ],
+      "why": "Pain on less and less exertion."
+     },
+     {
+      "p": "Not relieved by rest or GTN",
+      "k": [
+       [
+        "gtn",
+        "nitrate",
+        "glyceryl"
+       ]
+      ],
+      "why": "GTN response does not rule ACS in or out."
+     },
+     {
+      "p": "Radiation to arm or jaw, sweating, nausea, SOB",
+      "k": [
+       [
+        "arm",
+        "jaw",
+        "sweat",
+        "nausea",
+        "breath",
+        "sob"
+       ]
+      ],
+      "why": "Diabetics and elderly may present atypically."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who gets unstable angina, and what is the main risk factor?",
+    "tip": "Exam thinking: look for prior IHD in the stem.",
+    "points": [
+     {
+      "p": "Previous ischaemic heart disease",
+      "k": [
+       [
+        "ihd",
+        "ischaemic heart",
+        "previous mi",
+        "angina",
+        "stent",
+        "coronary"
+       ]
+      ],
+      "why": "The notes name this as the main risk factor."
+     },
+     {
+      "p": "Other vascular risk factors: smoking, diabetes, hypertension, hyperlipidaemia",
+      "k": [
+       [
+        "smok",
+        "diabet",
+        "hypertens",
+        "cholesterol",
+        "lipid"
+       ]
+      ],
+      "why": "These add up but are weaker."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell stable angina, unstable angina, NSTEMI and STEMI apart?",
+    "tip": "Exam thinking: pain pattern, then ECG, then troponin.",
+    "points": [
+     {
+      "p": "Stable: exertional pain eased by rest or GTN",
+      "k": [
+       [
+        "stable"
+       ],
+       [
+        "exert",
+        "exercise"
+       ]
+      ],
+      "why": "Normal troponin, usually normal ECG."
+     },
+     {
+      "p": "Unstable: rest pain, normal troponin",
+      "k": [
+       [
+        "unstable"
+       ],
+       [
+        "normal"
+       ]
+      ],
+      "why": "ECG may be normal."
+     },
+     {
+      "p": "NSTEMI: raised troponin, no ST elevation",
+      "k": [
+       [
+        "nstemi"
+       ],
+       [
+        "raised",
+        "elevated",
+        "positive"
+       ]
+      ],
+      "why": "ST depression or T inversion common."
+     },
+     {
+      "p": "STEMI: ST elevation or new LBBB",
+      "k": [
+       [
+        "stemi"
+       ],
+       [
+        "st elevation",
+        "lbbb",
+        "elevation"
+       ]
+      ],
+      "why": "Goes straight to primary PCI."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of unstable angina?",
+    "tip": "Exam thinking: the big one is progression to MI.",
+    "points": [
+     {
+      "p": "Progression to full MI",
+      "k": [
+       [
+        "mi",
+        "infarct"
+       ]
+      ],
+      "why": "Thrombus propagates to complete occlusion."
+     },
+     {
+      "p": "Arrhythmias",
+      "k": [
+       [
+        "arrhythm",
+        "vf",
+        "vt"
+       ]
+      ],
+      "why": "Ischaemic myocardium is irritable."
+     },
+     {
+      "p": "Heart failure and cardiogenic shock",
+      "k": [
+       [
+        "heart failure",
+        "shock",
+        "lvf"
+       ]
+      ],
+      "why": "From extensive ischaemia or infarction."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which investigations do you do in suspected unstable angina, and what do they show?",
+    "tip": "Exam thinking: ECG first, then serial troponin.",
+    "points": [
+     {
+      "p": "ECG within 10 minutes",
+      "k": [
+       [
+        "ecg"
+       ],
+       [
+        "10",
+        "ten"
+       ]
+      ],
+      "why": "Picks out STEMI first."
+     },
+     {
+      "p": "ECG: ST depression, T-wave inversion or normal",
+      "k": [
+       [
+        "st depression",
+        "t wave",
+        "t-wave",
+        "inversion",
+        "normal"
+       ]
+      ],
+      "why": "A normal ECG does not exclude it."
+     },
+     {
+      "p": "Serial troponin stays normal",
+      "k": [
+       [
+        "troponin",
+        "trop"
+       ]
+      ],
+      "why": "Distinguishes it from NSTEMI."
+     },
+     {
+      "p": "CT coronary angiography is the first-line test for (stable) angina",
+      "k": [
+       [
+        "ct",
+        "ctca",
+        "angiograph"
+       ]
+      ],
+      "why": "Not the acute test for rest pain."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is severity assessed, and what does it decide?",
+    "tip": "Exam thinking: name the score and the decision.",
+    "points": [
+     {
+      "p": "GRACE score",
+      "k": [
+       [
+        "grace"
+       ]
+      ],
+      "why": "Predicts mortality in NSTE-ACS."
+     },
+     {
+      "p": "Guides early invasive vs conservative management",
+      "k": [
+       [
+        "invasive",
+        "angiograph",
+        "pci"
+       ],
+       [
+        "conservative",
+        "medical"
+       ]
+      ],
+      "why": "High risk → angiography within 72 h."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the initial management of unstable angina?",
+    "tip": "Exam thinking: two antiplatelets, one anticoagulant, oxygen only if hypoxic.",
+    "points": [
+     {
+      "p": "Aspirin 300 mg immediately",
+      "k": [
+       [
+        "aspirin"
+       ],
+       [
+        "300"
+       ]
+      ],
+      "why": "Loading dose."
+     },
+     {
+      "p": "Plus clopidogrel or ticagrelor (DAPT)",
+      "k": [
+       [
+        "clopidogrel",
+        "ticagrelor",
+        "p2y12"
+       ]
+      ],
+      "why": "Dual antiplatelet therapy."
+     },
+     {
+      "p": "Fondaparinux first-line (LMWH if unsuitable)",
+      "k": [
+       [
+        "fondaparinux"
+       ]
+      ],
+      "why": "The anticoagulant."
+     },
+     {
+      "p": "GTN and morphine for pain",
+      "k": [
+       [
+        "gtn",
+        "morphine",
+        "nitrate"
+       ]
+      ],
+      "why": "Symptom control only."
+     },
+     {
+      "p": "Oxygen only if SpO2 below 94%",
+      "k": [
+       [
+        "oxygen",
+        "o2"
+       ],
+       [
+        "94"
+       ]
+      ],
+      "why": "Routine oxygen is a classic wrong answer."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What decides definitive management, and what is the long-term plan?",
+    "tip": "Exam thinking: risk decides timing; discharge drugs are secondary prevention.",
+    "points": [
+     {
+      "p": "Low risk: conservative management",
+      "k": [
+       [
+        "low"
+       ],
+       [
+        "conservative",
+        "medical"
+       ]
+      ],
+      "why": "Medical therapy and review."
+     },
+     {
+      "p": "High risk: angiography plus PCI within 24 to 72 hours",
+      "k": [
+       [
+        "angiograph",
+        "pci"
+       ],
+       [
+        "72",
+        "24"
+       ]
+      ],
+      "why": "Not primary PCI, which is for STEMI."
+     },
+     {
+      "p": "Lifelong aspirin, second antiplatelet for 12 months",
+      "k": [
+       [
+        "12",
+        "twelve",
+        "year"
+       ]
+      ],
+      "why": "Classic duration question."
+     },
+     {
+      "p": "High-intensity statin, beta-blocker, ACE inhibitor",
+      "k": [
+       [
+        "statin"
+       ],
+       [
+        "beta",
+        "ace"
+       ]
+      ],
+      "why": "Secondary prevention."
+     },
+     {
+      "p": "Inform DVLA; Group 2 stricter",
+      "k": [
+       [
+        "dvla",
+        "driv"
+       ]
+      ],
+      "why": "Bus and lorry drivers face stricter standards."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does troponin stay normal in unstable angina, and why is it still high-risk?",
+    "tip": "Exam thinking: ischaemia without necrosis, but an unstable plaque.",
+    "points": [
+     {
+      "p": "Plaque rupture or erosion triggers platelet aggregation and partial thrombus",
+      "k": [
+       [
+        "rupture",
+        "erosion"
+       ],
+       [
+        "platelet",
+        "thromb"
+       ]
+      ],
+      "why": "Transient or partial flow reduction."
+     },
+     {
+      "p": "Flow drop too small or brief to cause necrosis",
+      "k": [
+       [
+        "necrosis",
+        "cell death",
+        "infarct"
+       ]
+      ],
+      "why": "No myocyte death, no troponin release."
+     },
+     {
+      "p": "Thrombus can propagate to complete occlusion: MI",
+      "k": [
+       [
+        "propagat",
+        "occlu",
+        "progress"
+       ]
+      ],
+      "why": "Significant short-term MI risk."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why are dual antiplatelets and an anticoagulant used together?",
+    "tip": "Exam thinking: two complementary pathways.",
+    "points": [
+     {
+      "p": "Aspirin plus P2Y12 inhibitor reduce platelet aggregation",
+      "k": [
+       [
+        "platelet"
+       ]
+      ],
+      "why": "At the plaque rupture site."
+     },
+     {
+      "p": "Fondaparinux inhibits factor Xa in the coagulation cascade",
+      "k": [
+       [
+        "xa",
+        "factor 10",
+        "factor ten"
+       ]
+      ],
+      "why": "Limits thrombus propagation."
+     },
+     {
+      "p": "Complementary pathways: platelets and coagulation",
+      "k": [
+       [
+        "complement",
+        "both",
+        "two pathway",
+        "different pathway"
+       ]
+      ],
+      "why": "Platelet plug plus fibrin mesh."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "ACS": "Acute coronary syndrome: unstable angina, NSTEMI or STEMI, all from a sudden coronary plaque event.",
+  "unstable angina": "Ischaemic chest pain at rest or crescendo, with a normal troponin: ischaemia without necrosis.",
+  "stable angina": "Predictable chest pain on exertion, eased by rest or GTN, from a fixed coronary narrowing.",
+  "NSTEMI": "Non-ST elevation myocardial infarction: ACS with a raised troponin but no ST elevation.",
+  "STEMI": "ST elevation myocardial infarction: complete coronary occlusion causing full-thickness infarction.",
+  "crescendo": "Angina that becomes more frequent, longer or triggered by less effort over days to weeks.",
+  "troponin": "Cardiac muscle protein released when myocytes die; raised in MI, normal in unstable angina.",
+  "99th centile": "The upper reference limit for troponin; values above it indicate myocardial injury.",
+  "plaque rupture": "Tearing of an atheroma's fibrous cap, exposing clot-promoting material to blood.",
+  "thrombus": "A blood clot formed inside a vessel.",
+  "necrosis": "Death of cells; in the heart it releases troponin.",
+  "ST depression": "Downward shift of the ST segment on ECG, a sign of subendocardial ischaemia.",
+  "T-wave inversion": "Upside-down T waves on ECG, which can indicate ischaemia.",
+  "LBBB": "Left bundle branch block; when new with chest pain it is treated like STEMI.",
+  "GRACE score": "Risk score in ACS predicting mortality, used to choose early angiography or conservative care.",
+  "GTN": "Glyceryl trinitrate: a nitrate spray or tablet that dilates veins and coronary arteries to ease angina.",
+  "DAPT": "Dual antiplatelet therapy: aspirin plus a P2Y12 inhibitor such as clopidogrel or ticagrelor.",
+  "P2Y12": "Platelet ADP receptor blocked by clopidogrel and ticagrelor to reduce platelet aggregation.",
+  "clopidogrel": "P2Y12 inhibitor antiplatelet given with aspirin in ACS.",
+  "ticagrelor": "Reversible P2Y12 inhibitor antiplatelet given with aspirin in ACS.",
+  "fondaparinux": "Subcutaneous factor Xa inhibitor; first-line anticoagulant in unstable angina and NSTEMI.",
+  "LMWH": "Low molecular weight heparin, e.g. enoxaparin; an injectable anticoagulant.",
+  "factor Xa": "Clotting factor that converts prothrombin to thrombin; target of fondaparinux.",
+  "PCI": "Percutaneous coronary intervention: balloon and stent via a catheter to open a coronary artery.",
+  "coronary angiography": "Catheter test injecting dye into the coronary arteries to show narrowing or clot.",
+  "CT coronary angiography": "CT scan with contrast showing coronary arteries; first-line test for stable chest pain.",
+  "secondary prevention": "Treatment after an event to stop another: antiplatelets, statin, beta-blocker, ACE inhibitor.",
+  "high-intensity statin": "Statin at a dose that cuts LDL by over 40%, e.g. atorvastatin 80 mg.",
+  "DVLA": "The UK licensing agency that patients must inform about conditions affecting driving.",
+  "Group 2": "Vocational driving licence (lorries and buses) with stricter medical standards.",
+  "cardiogenic shock": "Low blood pressure and poor perfusion because the heart cannot pump enough.",
+  "LAD": "Left anterior descending artery; supplies the front of the heart and the septum.",
+  "thrombolysis": "Clot-dissolving drugs such as alteplase; used only in STEMI when PCI is not timely.",
+  "morphine": "Opioid painkiller used for ongoing ischaemic chest pain.",
+  "hs-Troponin": "High-sensitivity troponin assay, repeated after a few hours to look for a rise."
+ }
+}

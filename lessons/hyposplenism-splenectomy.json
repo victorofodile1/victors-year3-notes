@@ -1,0 +1,2108 @@
+{
+ "id": "hyposplenism-splenectomy",
+ "patient": {
+  "name": "Arjun Patel",
+  "age": 23,
+  "sex": "M",
+  "setting": "Emergency Department (resus)",
+  "complaint": "Fever, rigors and vomiting that started 8 hours ago",
+  "background": [
+   "Splenectomy 14 months ago after a motorbike crash on the A13",
+   "Stopped his daily penicillin V 3 months ago",
+   "Pneumococcal vaccine given after surgery; no booster yet",
+   "Delivery driver, otherwise well"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect a febrile patient with a splenectomy scar or sickle cell disease: 'Which is the most likely diagnosis/organism?' (OPSI, Streptococcus pneumoniae), or 'most likely blood film finding' (Howell-Jolly bodies).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Arjun, 23: fever and **rigors** since this morning.",
+      "Headache, muscle aches, vomited twice.",
+      "Now drowsy and mottled."
+     ],
+     "vitals": {
+      "T": "39.6°C",
+      "HR": "128 bpm",
+      "BP": "86/50 mmHg",
+      "RR": "28 /min",
+      "SpO2": "94% on air",
+      "GCS": "14"
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Midline laparotomy scar: **splenectomy** 14 months ago after trauma.",
+      "He stopped his penicillin V 3 months ago."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Without a spleen, Arjun cannot clear **encapsulated bacteria** well."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Arjun's cause is the commonest: **splenectomy** after trauma. Sickle cell and coeliac disease cause functional hyposplenism."
+    },
+    {
+     "type": "ask",
+     "q": "Arjun is asplenic, febrile and hypotensive. What is the most likely diagnosis?",
+     "o": [
+      "Gastroenteritis",
+      "Influenza",
+      "Overwhelming post-splenectomy infection",
+      "Viral meningitis"
+     ],
+     "a": 2,
+     "r": "Fever in an asplenic patient is an emergency: this is **OPSI**, classically pneumococcal sepsis."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Arjun is **14 months** post-splenectomy, inside the highest-risk window, and off prophylaxis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Time since splenectomy",
+      "min": 0,
+      "max": 60,
+      "unit": "months",
+      "bands": [
+       [
+        0,
+        24,
+        "Highest OPSI risk (first 2 years)",
+        "bad"
+       ],
+       [
+        24,
+        60,
+        "Risk lower but lifelong",
+        "warn"
+       ]
+      ],
+      "value": 14,
+      "label": "Arjun 14 months",
+      "caption": "Risk never falls to zero, but peaks in the first two years."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Before today Arjun was **asymptomatic**: his risk only shows as severe sepsis, or as **Howell-Jolly bodies** on a film."
+    },
+    {
+     "type": "compare",
+     "title": "'Some Killers Have Pretty Nice Capsules'",
+     "head": [
+      "Organism",
+      "Type",
+      "Protected by"
+     ],
+     "rows": [
+      [
+       "**Streptococcus pneumoniae**",
+       "Gram-positive diplococcus",
+       "Pneumococcal vaccine, penicillin V"
+      ],
+      [
+       "Klebsiella pneumoniae",
+       "Gram-negative rod",
+       "Prompt antibiotics"
+      ],
+      [
+       "Haemophilus influenzae",
+       "Gram-negative coccobacillus",
+       "Hib vaccine"
+      ],
+      [
+       "Pseudomonas aeruginosa",
+       "Gram-negative rod",
+       "Prompt antibiotics"
+      ],
+      [
+       "Neisseria meningitidis",
+       "Gram-negative diplococcus",
+       "Meningococcal vaccine"
+      ],
+      [
+       "Cryptococcus neoformans",
+       "Encapsulated yeast",
+       "Antifungals if infected"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Arjun's sepsis is the main danger; asplenic patients also have more **DVT/PE**, pneumonia and a falsely **raised HbA1c**."
+    },
+    {
+     "type": "trap",
+     "text": "Do not call fever in an asplenic patient 'just a virus'. Even mild fever needs **urgent assessment and antibiotics**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most likely finding on blood film?' (Howell-Jolly bodies) or a confirmation question; in the septic patient, labs show DIC and blood cultures grow Gram-positive diplococci.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which single test best shows splenic dysfunction?",
+     "o": [
+      "Abdominal ultrasound",
+      "Blood film",
+      "Haemoglobin electrophoresis",
+      "Serum immunoglobulins"
+     ],
+     "a": 1,
+     "r": "A **blood film** showing **Howell-Jolly bodies** is the gold standard marker of hyposplenism."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Arjun's **FBC** goes off with cultures, and his **immunisation record** is checked: no pneumococcal booster yet."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods on arrival",
+     "rows": [
+      [
+       "WCC",
+       "24.6 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Platelets",
+       "48 ×10⁹/L",
+       "150–400",
+       "L"
+      ],
+      [
+       "PT",
+       "22 s",
+       "10–13",
+       "H"
+      ],
+      [
+       "Fibrinogen",
+       "0.8 g/L",
+       "1.5–4.0",
+       "L"
+      ],
+      [
+       "D-dimer",
+       "Markedly raised",
+       "<0.5 mg/L",
+       "H"
+      ],
+      [
+       "Lactate",
+       "5.2 mmol/L",
+       "<2.0",
+       "H"
+      ]
+     ],
+     "text": "Septic shock with **DIC**: low platelets, long PT, low fibrinogen."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Arjun's **blood film** shows **Howell-Jolly bodies**, confirming he has no working spleen."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Lactate",
+      "min": 0,
+      "max": 10,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        0,
+        2,
+        "Normal",
+        "ok"
+       ],
+       [
+        2,
+        4,
+        "Raised: hypoperfusion",
+        "warn"
+       ],
+       [
+        4,
+        10,
+        "Severe: septic shock",
+        "bad"
+       ]
+      ],
+      "value": 5.2,
+      "label": "Arjun 5.2",
+      "caption": "Lactate above 4 with hypotension: septic shock."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Microbiology, 14 hours later",
+     "rows": [
+      [
+       "Blood culture",
+       "Gram-positive diplococci",
+       "No growth",
+       "H"
+      ],
+      [
+       "Identification",
+       "Streptococcus pneumoniae",
+       "",
+       ""
+      ],
+      [
+       "Sensitivity",
+       "Penicillin and ceftriaxone sensitive",
+       "",
+       ""
+      ]
+     ],
+     "text": "Pneumococcus: the classic OPSI organism."
+    },
+    {
+     "type": "pearl",
+     "text": "Take blood cultures, but **never delay antibiotics** for them in a febrile asplenic patient."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (immediate IV antibiotics) for the febrile asplenic patient, and prevention questions: pneumococcal vaccine 2 weeks before elective splenectomy, daily penicillin V (erythromycin if allergic), boosters and an alert card.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "What is the immediate priority for Arjun?",
+     "o": [
+      "Await blood culture results",
+      "Immediate IV antibiotics",
+      "Oral penicillin V restart",
+      "Urgent CT abdomen"
+     ],
+     "a": 1,
+     "r": "Suspected sepsis in an asplenic patient: **immediate IV antibiotics**, within the hour."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Arjun gets **IV broad-spectrum antibiotics** in resus, alongside the Sepsis Six."
+    },
+    {
+     "type": "flow",
+     "title": "First hour for Arjun",
+     "nodes": [
+      "Oxygen and IV access",
+      "Blood cultures, lactate, FBC, clotting",
+      "IV broad-spectrum antibiotic (e.g. ceftriaxone)",
+      "IV fluid bolus",
+      "Monitor urine output; call ICU if shocked"
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Response to treatment",
+      "x": [
+       "0 h",
+       "2 h",
+       "6 h",
+       "24 h"
+      ],
+      "unit": "mmol/L",
+      "series": [
+       {
+        "name": "Lactate",
+        "values": [
+         5.2,
+         3.9,
+         2.2,
+         1.1
+        ]
+       }
+      ],
+      "caption": "Lactate clearing with antibiotics, fluids and vasopressor support on ICU."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "For an **elective** splenectomy the pneumococcal vaccine is given **2 weeks before**. Long-term, Arjun restarts daily **penicillin V**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Before discharge: pneumococcal booster plan (**5-yearly**), annual flu, Hib and meningococcal vaccines, and an **alert card**."
+    },
+    {
+     "type": "compare",
+     "title": "Arjun's prevention plan",
+     "head": [
+      "Measure",
+      "When"
+     ],
+     "rows": [
+      [
+       "Pneumococcal vaccine",
+       "2 weeks before elective surgery (2 weeks after if emergency); booster every 5 years"
+      ],
+      [
+       "Influenza vaccine",
+       "Every year"
+      ],
+      [
+       "Hib and meningococcal vaccines",
+       "Once, plus routine schedule up to date"
+      ],
+      [
+       "Penicillin V (erythromycin if allergic)",
+       "Daily, at least in the highest-risk period, often lifelong"
+      ],
+      [
+       "Alert card and education",
+       "Seek urgent help with any fever"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Arjun stopped his penicillin V himself. Adherence teaching and a **rescue course** of antibiotics at home matter as much as the prescription."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Arjun's vaccines follow the **Green Book** asplenia chapter and British Society for Haematology guidance."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied science: why the spleen protects against encapsulated bacteria (IgM, opsonisation, phagocytosis), why Howell-Jolly bodies appear (loss of pitting), why OPSI kills (DIC) and why sickle cell causes autosplenectomy.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Arjun's mother asks why losing an organ he 'didn't need' nearly killed him.",
+      "You explain the spleen as a filter and an antibody factory."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Arjun has lost his main **IgM** source and the macrophages that eat poorly opsonised, encapsulated bacteria."
+    },
+    {
+     "type": "flow",
+     "title": "Why capsules matter without a spleen",
+     "nodes": [
+      "Polysaccharide capsule hides bacteria from complement",
+      "Needs IgM opsonisation to be recognised",
+      "Spleen makes IgM and filters blood",
+      "No spleen: bacteria multiply in blood",
+      "Fulminant sepsis within hours"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Arjun's red cells keep their **nuclear remnants** because no spleen is 'pitting' them out."
+    },
+    {
+     "type": "ask",
+     "q": "Why do Howell-Jolly bodies appear after splenectomy?",
+     "o": [
+      "Haemoglobin polymerises",
+      "Red cell membranes lose spectrin",
+      "The spleen no longer pits out nuclear remnants",
+      "Vitamin B12 deficiency develops"
+     ],
+     "a": 2,
+     "r": "The spleen normally removes nuclear remnants (**pitting**). Without it, Howell-Jolly bodies stay in circulating red cells."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Arjun's OPSI moved fast and caused **DIC**: this is why it carries a high mortality without immediate treatment."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Unlike Arjun, people with **sickle cell disease** lose splenic function through repeated infarction, usually by early childhood."
+    },
+    {
+     "type": "pearl",
+     "text": "Red cells survive longer after splenectomy, so **HbA1c reads high** for a given glucose: interpret diabetes control carefully."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which organism is the classic cause of OPSI?",
+   "o": [
+    "Escherichia coli",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae",
+    "Streptococcus pyogenes"
+   ],
+   "a": 2,
+   "r": "Pneumococcal sepsis is the classic OPSI."
+  },
+  {
+   "d": "diagnosis",
+   "q": "When is OPSI risk greatest after splenectomy?",
+   "o": [
+    "First 2 weeks",
+    "First 2 years",
+    "After 10 years",
+    "Only in old age"
+   ],
+   "a": 1,
+   "r": "Risk is highest in the first two years."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which condition causes functional hyposplenism by autosplenectomy?",
+   "o": [
+    "Hereditary spherocytosis",
+    "Iron deficiency",
+    "Sickle cell disease",
+    "Thalassaemia trait"
+   ],
+   "a": 2,
+   "r": "Recurrent splenic infarction in sickle cell disease."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the inheritance of hereditary spherocytosis, treated by splenectomy?",
+   "o": [
+    "Autosomal dominant",
+    "Autosomal recessive",
+    "Mitochondrial",
+    "X-linked recessive"
+   ],
+   "a": 0,
+   "r": "Hereditary spherocytosis is autosomal dominant."
+  },
+  {
+   "d": "investigation",
+   "q": "Which blood film finding indicates hyposplenism?",
+   "o": [
+    "Bite cells",
+    "Howell-Jolly bodies",
+    "Schistocytes",
+    "Smudge cells"
+   ],
+   "a": 1,
+   "r": "Howell-Jolly bodies are nuclear remnants not removed by the spleen."
+  },
+  {
+   "d": "investigation",
+   "q": "What first-line checks are done in an asplenic patient?",
+   "o": [
+    "Bone marrow biopsy",
+    "CT abdomen",
+    "FBC and immunisation status",
+    "Serum IgE"
+   ],
+   "a": 2,
+   "r": "FBC and confirmation of immunisation status."
+  },
+  {
+   "d": "management",
+   "q": "When is the pneumococcal vaccine given before elective splenectomy?",
+   "o": [
+    "2 days before",
+    "2 weeks before",
+    "2 months before",
+    "On the day of surgery"
+   ],
+   "a": 1,
+   "r": "Two weeks beforehand."
+  },
+  {
+   "d": "management",
+   "q": "Which daily antibiotic prophylaxis is used after splenectomy?",
+   "o": [
+    "Amoxicillin weekly",
+    "Co-trimoxazole",
+    "Doxycycline",
+    "Phenoxymethylpenicillin (penicillin V)"
+   ],
+   "a": 3,
+   "r": "Penicillin V daily; erythromycin if allergic."
+  },
+  {
+   "d": "management",
+   "q": "How often is the pneumococcal booster given?",
+   "o": [
+    "Every year",
+    "Every 5 years",
+    "Every 10 years",
+    "Never"
+   ],
+   "a": 1,
+   "r": "Every 5 years, plus an annual flu vaccine."
+  },
+  {
+   "d": "science",
+   "q": "Which antibody produced by the spleen is key to opsonising encapsulated bacteria?",
+   "o": [
+    "IgA",
+    "IgD",
+    "IgE",
+    "IgM"
+   ],
+   "a": 3,
+   "r": "Splenic IgM opsonises encapsulated bacteria."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is hyposplenism and what causes it?",
+    "tip": "Exam thinking: a splenectomy scar, sickle cell or coeliac disease in the stem means 'no working spleen'.",
+    "points": [
+     {
+      "p": "Reduced or absent splenic function, impairing defence against encapsulated bacteria",
+      "k": [
+       [
+        "encapsulat",
+        "capsul"
+       ]
+      ],
+      "why": "The defect is specific: encapsulated organisms."
+     },
+     {
+      "p": "Commonest cause: splenectomy, for trauma or haematological disease",
+      "k": [
+       [
+        "splenectomy"
+       ],
+       [
+        "trauma",
+        "haematolog",
+        "hematolog",
+        "itp",
+        "spherocyt"
+       ]
+      ],
+      "why": "Trauma is the commonest reason."
+     },
+     {
+      "p": "Functional hyposplenism: sickle cell disease (autosplenectomy)",
+      "k": [
+       [
+        "sickle"
+       ]
+      ],
+      "why": "Repeated splenic infarction."
+     },
+     {
+      "p": "Functional hyposplenism: coeliac disease",
+      "k": [
+       [
+        "coeliac",
+        "celiac"
+       ]
+      ],
+      "why": "Look for Howell-Jolly bodies with iron deficiency."
+     },
+     {
+      "p": "Therapeutic splenectomy in hereditary spherocytosis (autosomal dominant)",
+      "k": [
+       [
+        "spherocyt"
+       ]
+      ],
+      "why": "Family history plus haemolysis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does OPSI present and why is it an emergency?",
+    "tip": "Exam thinking: fever + no spleen = sepsis until proven otherwise.",
+    "points": [
+     {
+      "p": "Fever in an asplenic patient is a medical emergency",
+      "k": [
+       [
+        "fever",
+        "febrile"
+       ],
+       [
+        "emergency",
+        "urgent"
+       ]
+      ],
+      "why": "Even if they look well initially."
+     },
+     {
+      "p": "Rapidly progressive sepsis, often with DIC",
+      "k": [
+       [
+        "sepsis",
+        "septic",
+        "dic",
+        "coagul"
+       ]
+      ],
+      "why": "Can kill within hours."
+     },
+     {
+      "p": "Risk greatest in the first two years after splenectomy",
+      "k": [
+       [
+        "2 year",
+        "two year",
+        "first year",
+        "2 yr"
+       ]
+      ],
+      "why": "But risk is lifelong."
+     },
+     {
+      "p": "Classic organism: Streptococcus pneumoniae",
+      "k": [
+       [
+        "pneumococc",
+        "pneumoniae",
+        "strep"
+       ]
+      ],
+      "why": "Gram-positive diplococci on culture."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which encapsulated organisms threaten asplenic patients?",
+    "tip": "Exam thinking: 'Some Killers Have Pretty Nice Capsules'.",
+    "points": [
+     {
+      "p": "Streptococcus pneumoniae",
+      "k": [
+       [
+        "pneumococc",
+        "strep"
+       ]
+      ],
+      "why": "The commonest OPSI organism."
+     },
+     {
+      "p": "Haemophilus influenzae",
+      "k": [
+       [
+        "haemophilus",
+        "hib",
+        "influenzae"
+       ]
+      ],
+      "why": "Hib vaccine protects."
+     },
+     {
+      "p": "Neisseria meningitidis",
+      "k": [
+       [
+        "neisseria",
+        "meningococc",
+        "meningitidis"
+       ]
+      ],
+      "why": "Meningococcal vaccine protects."
+     },
+     {
+      "p": "Klebsiella pneumoniae, Pseudomonas aeruginosa, Cryptococcus neoformans",
+      "k": [
+       [
+        "klebsiella",
+        "pseudomonas",
+        "cryptococc"
+       ]
+      ],
+      "why": "The rest of the mnemonic."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What other complications follow splenectomy?",
+    "tip": "Exam thinking: not every post-splenectomy question is about infection.",
+    "points": [
+     {
+      "p": "Pneumococcal and other sepsis",
+      "k": [
+       [
+        "sepsis",
+        "pneumococc"
+       ]
+      ],
+      "why": "The most common serious complication."
+     },
+     {
+      "p": "DVT and pulmonary embolism",
+      "k": [
+       [
+        "dvt",
+        "thrombo",
+        "embol",
+        "pe"
+       ]
+      ],
+      "why": "Platelets rise after splenectomy."
+     },
+     {
+      "p": "Pneumonia and haemorrhage",
+      "k": [
+       [
+        "pneumonia",
+        "haemorrhag",
+        "bleed"
+       ]
+      ],
+      "why": "Early post-operative risks."
+     },
+     {
+      "p": "Raised HbA1c from longer red cell survival",
+      "k": [
+       [
+        "hba1c",
+        "glycat",
+        "glycosyl"
+       ]
+      ],
+      "why": "HbA1c overestimates glycaemia."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you confirm hyposplenism and what else do you check?",
+    "tip": "Exam thinking: 'most likely finding on blood film' = Howell-Jolly bodies.",
+    "points": [
+     {
+      "p": "Gold standard: blood film with Howell-Jolly bodies",
+      "k": [
+       [
+        "howell",
+        "jolly"
+       ]
+      ],
+      "why": "Siderocytes may also be seen."
+     },
+     {
+      "p": "FBC",
+      "k": [
+       [
+        "fbc",
+        "full blood count",
+        "blood count"
+       ]
+      ],
+      "why": "Thrombocytosis is common after splenectomy."
+     },
+     {
+      "p": "Confirm immunisation status",
+      "k": [
+       [
+        "immunis",
+        "immuniz",
+        "vaccin"
+       ]
+      ],
+      "why": "Check pneumococcal, Hib, meningococcal and flu."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage a febrile asplenic patient?",
+    "tip": "Exam thinking: the answer is never 'wait and see'.",
+    "points": [
+     {
+      "p": "Immediate IV broad-spectrum antibiotics",
+      "k": [
+       [
+        "iv",
+        "intravenous"
+       ],
+       [
+        "antibiotic",
+        "ceftriaxone",
+        "cefotaxime"
+       ]
+      ],
+      "why": "Within the hour; do not wait for results."
+     },
+     {
+      "p": "Sepsis Six: oxygen, cultures, fluids, lactate, urine output",
+      "k": [
+       [
+        "culture",
+        "fluid",
+        "lactate",
+        "sepsis six"
+       ]
+      ],
+      "why": "Cultures must not delay antibiotics."
+     },
+     {
+      "p": "Escalate to critical care if shocked",
+      "k": [
+       [
+        "icu",
+        "itu",
+        "critical care",
+        "intensive"
+       ]
+      ],
+      "why": "OPSI can progress to DIC and shock."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What prevents infection around and after splenectomy?",
+    "tip": "Exam thinking: timing of the vaccine and the name of the antibiotic are the usual answers.",
+    "points": [
+     {
+      "p": "Pneumococcal vaccine 2 weeks before elective splenectomy",
+      "k": [
+       [
+        "pneumococc"
+       ],
+       [
+        "2 week",
+        "two week",
+        "14 day"
+       ]
+      ],
+      "why": "Two weeks after surgery if it was an emergency."
+     },
+     {
+      "p": "Daily penicillin V (erythromycin if allergic)",
+      "k": [
+       [
+        "penicillin",
+        "phenoxymethyl"
+       ]
+      ],
+      "why": "Lifelong or at least in the highest-risk period."
+     },
+     {
+      "p": "5-yearly pneumococcal booster and annual influenza vaccine",
+      "k": [
+       [
+        "5 year",
+        "five year",
+        "5-year",
+        "annual",
+        "yearly",
+        "influenza",
+        "flu"
+       ]
+      ],
+      "why": "Flu predisposes to secondary pneumococcal infection."
+     },
+     {
+      "p": "Hib and meningococcal vaccines; routine childhood vaccines up to date",
+      "k": [
+       [
+        "hib",
+        "haemophilus",
+        "meningococc"
+       ]
+      ],
+      "why": "Cover the other encapsulated organisms."
+     },
+     {
+      "p": "Education and an alert card",
+      "k": [
+       [
+        "card",
+        "educat",
+        "bracelet"
+       ]
+      ],
+      "why": "Seek urgent help with any fever."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does the spleen protect against encapsulated organisms?",
+    "tip": "Exam thinking: name IgM and phagocytosis.",
+    "points": [
+     {
+      "p": "Mechanical filtration of blood",
+      "k": [
+       [
+        "filter",
+        "filtrat"
+       ]
+      ],
+      "why": "Removes abnormal red cells and bacteria."
+     },
+     {
+      "p": "Produces opsonising antibodies, especially IgM",
+      "k": [
+       [
+        "igm"
+       ]
+      ],
+      "why": "IgM coats polysaccharide capsules."
+     },
+     {
+      "p": "Phagocytosis of poorly opsonised encapsulated bacteria",
+      "k": [
+       [
+        "phagocyt",
+        "macrophage"
+       ]
+      ],
+      "why": "Capsules resist complement without help."
+     },
+     {
+      "p": "Loss means fulminant sepsis",
+      "k": [
+       [
+        "sepsis",
+        "fulminant",
+        "opsi"
+       ]
+      ],
+      "why": "OPSI carries high mortality."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do Howell-Jolly bodies and functional asplenia in sickle cell occur?",
+    "tip": "Exam thinking: 'pitting' and 'autosplenectomy' are the key words.",
+    "points": [
+     {
+      "p": "Howell-Jolly bodies are nuclear remnants normally pitted out by the spleen",
+      "k": [
+       [
+        "pit",
+        "nuclear",
+        "remnant"
+       ]
+      ],
+      "why": "Their presence marks hyposplenism."
+     },
+     {
+      "p": "Sickle cell: recurrent splenic infarction from vaso-occlusion",
+      "k": [
+       [
+        "infarct",
+        "vaso-occlu",
+        "vasoocclu",
+        "occlu"
+       ]
+      ],
+      "why": "The spleen shrinks and fibroses."
+     },
+     {
+      "p": "Autosplenectomy by early childhood",
+      "k": [
+       [
+        "autosplenectomy",
+        "childhood",
+        "atroph"
+       ]
+      ],
+      "why": "So children with sickle cell take penicillin V."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Hyposplenism": "Reduced splenic function, raising the risk of infection with encapsulated bacteria.",
+  "Asplenia": "Absence of the spleen, surgical or functional.",
+  "Splenectomy": "Surgical removal of the spleen.",
+  "Functional hyposplenism": "A spleen that is present but does not work, as in sickle cell or coeliac disease.",
+  "Autosplenectomy": "Shrinking and loss of function of the spleen from repeated infarction in sickle cell disease.",
+  "OPSI": "Overwhelming post-splenectomy infection: fulminant sepsis, usually pneumococcal, in an asplenic patient.",
+  "Encapsulated bacteria": "Bacteria with a polysaccharide capsule that resists phagocytosis unless coated by antibody.",
+  "Howell-Jolly bodies": "Nuclear remnants inside red cells, seen on a blood film when the spleen is absent or not working.",
+  "Siderocytes": "Red cells containing iron granules, seen when splenic function is lost.",
+  "Pitting": "The spleen's removal of inclusions such as nuclear remnants from red cells.",
+  "Blood film": "A stained smear of blood examined under the microscope.",
+  "Opsonisation": "Coating of bacteria with antibody or complement so phagocytes can engulf them.",
+  "IgM": "The first antibody made in an immune response; the spleen is a major source.",
+  "Phagocytosis": "Engulfing and destroying microbes by white cells such as macrophages.",
+  "Streptococcus pneumoniae": "Encapsulated Gram-positive diplococcus; the commonest cause of OPSI.",
+  "Gram-positive diplococci": "Paired purple-staining cocci on Gram stain, typical of pneumococcus.",
+  "Haemophilus influenzae": "Encapsulated Gram-negative coccobacillus; type b is prevented by the Hib vaccine.",
+  "Neisseria meningitidis": "Encapsulated Gram-negative diplococcus causing meningitis and septicaemia.",
+  "Klebsiella pneumoniae": "Encapsulated Gram-negative rod causing pneumonia and sepsis.",
+  "Cryptococcus neoformans": "Encapsulated yeast causing meningitis in immunocompromised patients.",
+  "Hib": "Haemophilus influenzae type b, and the vaccine against it.",
+  "Penicillin V": "Phenoxymethylpenicillin: the oral daily prophylaxis after splenectomy.",
+  "Phenoxymethylpenicillin": "Penicillin V, oral daily antibiotic prophylaxis against pneumococcus.",
+  "Erythromycin": "Macrolide antibiotic used for prophylaxis if penicillin-allergic.",
+  "Pneumococcal vaccine": "Vaccine against Streptococcus pneumoniae, given 2 weeks before elective splenectomy and boosted every 5 years.",
+  "Alert card": "A card carried by asplenic patients telling clinicians they are at high risk of sepsis.",
+  "Green Book": "UK guidance on immunisation against infectious disease.",
+  "DIC": "Disseminated intravascular coagulation: widespread clotting that uses up platelets and clotting factors, causing bleeding.",
+  "Sepsis Six": "Oxygen, blood cultures, IV antibiotics, IV fluids, lactate and urine output within one hour.",
+  "Lactate": "Blood marker of tissue hypoperfusion; above 4 mmol/L suggests septic shock.",
+  "Septic shock": "Sepsis with hypotension needing vasopressors and a raised lactate.",
+  "Hereditary spherocytosis": "Autosomal dominant red cell membrane defect causing haemolysis; splenectomy can help.",
+  "Sickle cell disease": "Inherited haemoglobin disorder where sickled cells block small vessels, infarcting the spleen.",
+  "Coeliac disease": "Gluten-sensitive enteropathy that can cause functional hyposplenism.",
+  "HbA1c": "Glycated haemoglobin; reads high after splenectomy because red cells live longer.",
+  "Thrombocytosis": "Raised platelet count, common after splenectomy and a risk for thrombosis.",
+  "ITP": "Immune thrombocytopenia, a haematological reason for splenectomy.",
+  "Vaso-occlusion": "Blockage of small vessels by sickled red cells, causing infarction and pain."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "An 8 year old boy with sickle cell disease has had three episodes of pneumococcal bacteraemia. His pulse rate is 96 bpm and BP 104/62 mmHg today. His spleen is not palpable and abdominal ultrasound shows a small, shrunken, calcified spleen. His blood film shows Howell-Jolly bodies.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely explanation for his recurrent infections?",
+   "o": [
+    "Autosplenectomy from recurrent splenic infarction",
+    "Complement deficiency",
+    "Hypogammaglobulinaemia",
+    "Neutropenia",
+    "Splenic sequestration crisis"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Explanation question: link the disease to the infections."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sickle cell disease",
+      "pneumococcal bacteraemia",
+      "small, shrunken, calcified spleen",
+      "Howell-Jolly bodies"
+     ],
+     "x": "Sickle cell, encapsulated organism, tiny spleen, Howell-Jolly bodies."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Repeated infarction has destroyed the spleen: **functional asplenia (autosplenectomy)**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Complement deficiency causes Neisseria infections, not shrunken spleens."
+      ],
+      [
+       2,
+       "Antibody deficiency would not explain Howell-Jolly bodies."
+      ],
+      [
+       3,
+       "Neutropenia causes Gram-negative and fungal infections."
+      ],
+      [
+       4,
+       "Sequestration gives an enlarging spleen and falling Hb."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Autosplenectomy.** Rule: sickle cell + Howell-Jolly bodies + pneumococcus = functional asplenia."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 45 year old woman has a splenectomy for immune thrombocytopenia. Six months later her GP reviews her and wants to confirm that she has no residual splenic function before planning long-term prophylaxis.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Abdominal ultrasound",
+    "Blood film",
+    "Bone marrow biopsy",
+    "Haemoglobin electrophoresis",
+    "Serum immunoglobulins"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation to confirm splenic dysfunction."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "no residual splenic function"
+     ],
+     "x": "Post-splenectomy, checking function rather than anatomy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Gold standard: **blood film** for Howell-Jolly bodies."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Ultrasound shows anatomy, not function."
+      ],
+      [
+       2,
+       "Marrow biopsy is not needed."
+      ],
+      [
+       3,
+       "Electrophoresis diagnoses haemoglobinopathies."
+      ],
+      [
+       4,
+       "Immunoglobulins do not show splenic function."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Blood film.** Rule: Howell-Jolly bodies = no working spleen."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 30 year old man had an emergency splenectomy after a fall from scaffolding. He is recovering well and is being prepared for discharge. He has no allergies. His vaccinations have been given.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate long-term prophylaxis?",
+   "o": [
+    "Annual pneumococcal vaccine only",
+    "Daily phenoxymethylpenicillin",
+    "No antibiotic needed once vaccinated",
+    "Oral amoxicillin only when febrile",
+    "Weekly azithromycin"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Long-term prophylaxis after splenectomy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "emergency splenectomy",
+      "no allergies",
+      "vaccinations have been given"
+     ],
+     "x": "Asplenic, not allergic, vaccinated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Daily **penicillin V (phenoxymethylpenicillin)** plus vaccines."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pneumococcal boosters are 5-yearly, and vaccines alone are not enough."
+      ],
+      [
+       2,
+       "Vaccines do not cover all serotypes; antibiotics are still advised."
+      ],
+      [
+       3,
+       "A rescue pack is extra, not a replacement."
+      ],
+      [
+       4,
+       "Azithromycin is not the standard."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Daily penicillin V.** Rule: no spleen = daily penicillin V (erythromycin if allergic)."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 26 year old woman had a splenectomy for trauma 2 years ago. A routine blood film shows small, round, dark purple inclusions within some red cells.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism for this finding?",
+   "o": [
+    "Abnormal haemoglobin polymerisation",
+    "Iron accumulation in mitochondria",
+    "Loss of splenic pitting of nuclear remnants",
+    "Oxidative denaturation of haemoglobin",
+    "Red cell membrane spectrin defect"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of a blood film finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "round, dark purple inclusions within some red cells"
+     ],
+     "x": "No spleen; nuclear remnants in red cells."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "These are **Howell-Jolly bodies**: the spleen no longer **pits** out nuclear remnants."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Polymerisation causes sickle cells."
+      ],
+      [
+       1,
+       "Mitochondrial iron gives ring sideroblasts in marrow."
+      ],
+      [
+       3,
+       "Oxidative denaturation gives Heinz bodies (G6PD deficiency)."
+      ],
+      [
+       4,
+       "Spectrin defects give spherocytes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Loss of pitting.** Rule: Howell-Jolly bodies = spleen not removing nuclear remnants."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 28 year old man had a splenectomy after a road traffic collision 18 months ago. He has had fever, rigors and confusion for 6 hours. His temperature is 39.8°C, pulse rate 132 bpm, BP 82/48 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 93% breathing air. There is a non-blanching rash on his legs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pyelonephritis",
+    "Infective endocarditis",
+    "Influenza",
+    "Overwhelming post-splenectomy infection",
+    "Toxic shock syndrome"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: fever and shock in a patient without a spleen."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "18 months ago",
+      "6 hours",
+      "BP 82/48 mmHg",
+      "non-blanching rash"
+     ],
+     "x": "Asplenic, inside 2 years, rapid septic shock with DIC rash."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Rapidly progressive sepsis in an asplenic patient = **OPSI**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No urinary symptoms or loin pain."
+      ],
+      [
+       1,
+       "Endocarditis is subacute, with murmurs and embolic signs."
+      ],
+      [
+       2,
+       "Influenza does not cause septic shock with DIC in 6 hours."
+      ],
+      [
+       4,
+       "Toxic shock needs a tampon or wound source and a diffuse red rash."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. OPSI.** Rule: asplenic + fever = OPSI until proven otherwise."
+    }
+   ],
+   "e": "Fever, shock and a purpuric rash within hours in a man who had a splenectomy 18 months ago is overwhelming post-splenectomy infection. Influenza would not progress this fast."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old woman who had a splenectomy for trauma develops sudden fever, rigors and hypotension. Her temperature is 39.4°C, pulse rate 124 bpm and BP 88/54 mmHg. She stopped taking her penicillin V a year ago.",
+   "labs": [
+    [
+     "Blood culture Gram stain",
+     "Gram-positive diplococci",
+     "No growth",
+     "H"
+    ],
+    [
+     "WCC",
+     "22.1 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "Lactate",
+     "4.6 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Escherichia coli",
+    "Haemophilus influenzae",
+    "Neisseria meningitidis",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism: read the Gram stain and the host."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "stopped taking her penicillin V",
+      "sudden fever, rigors and hypotension"
+     ],
+     "x": "Asplenic, no prophylaxis, Gram-positive diplococci."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Gram-positive diplococci in OPSI = **Streptococcus pneumoniae**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "E. coli is a Gram-negative rod."
+      ],
+      [
+       1,
+       "H. influenzae is a Gram-negative coccobacillus."
+      ],
+      [
+       2,
+       "N. meningitidis is a Gram-negative diplococcus."
+      ],
+      [
+       3,
+       "S. aureus forms Gram-positive clusters."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Streptococcus pneumoniae.** Rule: OPSI + Gram-positive diplococci = pneumococcus."
+    }
+   ],
+   "e": "Pneumococcus, a Gram-positive diplococcus, is the classic cause of OPSI. Meningococcus is a Gram-negative diplococcus."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 20 year old woman with sickle cell disease attends her haematology review. She is well. Her pulse rate is 78 bpm and BP 112/70 mmHg. Her spleen is not palpable.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on her blood film?",
+   "o": [
+    "Bite cells",
+    "Blast cells",
+    "Howell-Jolly bodies",
+    "Schistocytes",
+    "Smudge cells"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Blood film finding: what has sickle cell done to her spleen?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sickle cell disease",
+      "spleen is not palpable"
+     ],
+     "x": "Adult with sickle cell: autosplenectomy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Functional asplenia gives **Howell-Jolly bodies** (plus sickle cells)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bite cells occur in G6PD deficiency."
+      ],
+      [
+       1,
+       "Blasts suggest acute leukaemia."
+      ],
+      [
+       3,
+       "Schistocytes mean microangiopathic haemolysis."
+      ],
+      [
+       4,
+       "Smudge cells suggest CLL."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Howell-Jolly bodies.** Rule: sickle cell adult = autosplenectomy = Howell-Jolly bodies."
+    }
+   ],
+   "e": "By adulthood, sickle cell disease has usually caused autosplenectomy, so the film shows Howell-Jolly bodies. Schistocytes suggest microangiopathic haemolysis."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old woman has 1 year of bloating, loose pale stools and tiredness. She has lost 4 kg. Her blood film shows Howell-Jolly bodies and microcytic red cells. She has never had abdominal surgery.",
+   "labs": [
+    [
+     "Hb",
+     "104 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "74 fL",
+     "80–100",
+     "L"
+    ],
+    [
+     "Ferritin",
+     "6 µg/L",
+     "15–150",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her hyposplenism?",
+   "o": [
+    "Coeliac disease",
+    "Crohn's disease",
+    "Hereditary spherocytosis",
+    "Irritable bowel syndrome",
+    "Sickle cell disease"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of hyposplenism without surgery."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bloating, loose pale stools",
+      "Howell-Jolly bodies and microcytic red cells",
+      "never had abdominal surgery"
+     ],
+     "x": "Malabsorption, iron deficiency and functional hyposplenism."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Functional hyposplenism with malabsorption = **coeliac disease**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Crohn's does not typically cause hyposplenism."
+      ],
+      [
+       2,
+       "Spherocytosis causes splenomegaly, not hyposplenism, and spherocytes on film."
+      ],
+      [
+       3,
+       "IBS does not cause weight loss, iron deficiency or film changes."
+      ],
+      [
+       4,
+       "Sickle cell would show sickle cells and a lifelong history."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Coeliac disease.** Rule: malabsorption + Howell-Jolly bodies = coeliac."
+    }
+   ],
+   "e": "Malabsorption with iron deficiency and Howell-Jolly bodies in a woman with no surgery suggests coeliac disease causing functional hyposplenism."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 30 year old man had a splenectomy aged 12 for anaemia and recurrent jaundice. His father and sister also had their spleens removed for the same condition. His blood film before surgery showed small, round red cells without central pallor.",
+   "labs": [],
+   "visual": null,
+   "q": "Which condition was the most likely reason for his splenectomy?",
+   "o": [
+    "Beta thalassaemia major",
+    "G6PD deficiency",
+    "Hereditary spherocytosis",
+    "Immune thrombocytopenia",
+    "Sickle cell disease"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Underlying condition: the family pattern and the film."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "anaemia and recurrent jaundice",
+      "father and sister",
+      "small, round red cells without central pallor"
+     ],
+     "x": "Haemolysis, autosomal dominant pattern, spherocytes."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hereditary spherocytosis** (autosomal dominant) is treated with splenectomy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Thalassaemia is recessive with target cells."
+      ],
+      [
+       1,
+       "G6PD is X-linked with episodic haemolysis and bite cells."
+      ],
+      [
+       3,
+       "ITP causes low platelets, not jaundice, and is not familial."
+      ],
+      [
+       4,
+       "Sickle cell causes autosplenectomy, not therapeutic splenectomy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Hereditary spherocytosis.** Rule: familial haemolysis + spherocytes = splenectomy candidate."
+    }
+   ],
+   "e": "Haemolysis with spherocytes passing from parent to child is hereditary spherocytosis, an autosomal dominant cause of therapeutic splenectomy."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old man with type 2 diabetes had a splenectomy 3 years ago. His HbA1c is 64 mmol/mol, but his home capillary glucose readings are mostly 5 to 7 mmol/L. He takes his metformin every day. His ferritin and haemoglobin are normal.",
+   "labs": [
+    [
+     "HbA1c",
+     "64 mmol/mol",
+     "<48",
+     "H"
+    ],
+    [
+     "Hb",
+     "148 g/L",
+     "130–180",
+     ""
+    ],
+    [
+     "Ferritin",
+     "96 µg/L",
+     "30–400",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely explanation for his HbA1c?",
+   "o": [
+    "Haemolytic anaemia",
+    "Iron deficiency",
+    "Non-adherence to treatment",
+    "Prolonged red cell survival after splenectomy",
+    "Recent blood transfusion"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Explanation: why does HbA1c disagree with glucose?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy 3 years ago",
+      "HbA1c is 64 mmol/mol",
+      "mostly 5 to 7 mmol/L",
+      "ferritin and haemoglobin are normal"
+     ],
+     "x": "High HbA1c, normal glucose, asplenic, no anaemia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Red cells live longer after splenectomy, so they glycate more: **falsely high HbA1c**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Haemolysis shortens red cell life and lowers HbA1c."
+      ],
+      [
+       1,
+       "Ferritin is normal."
+      ],
+      [
+       2,
+       "He takes metformin daily and glucose readings are normal."
+      ],
+      [
+       4,
+       "Transfusion would lower HbA1c and his Hb is normal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Prolonged red cell survival.** Rule: splenectomy = HbA1c reads high."
+    }
+   ],
+   "e": "After splenectomy red cells survive longer and accumulate more glycation, so HbA1c overestimates glycaemia. Haemolysis would do the opposite."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 40 year old man has a splenectomy after a splenic rupture. His pulse rate is 82 bpm and BP 128/76 mmHg on day 7 after surgery. He is well and mobilising.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on his full blood count?",
+   "o": [
+    "Lymphopenia",
+    "Neutropenia",
+    "Pancytopenia",
+    "Thrombocytopenia",
+    "Thrombocytosis"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely FBC result after splenectomy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "day 7 after surgery"
+     ],
+     "x": "Spleen gone; platelets no longer pooled in it."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Thrombocytosis** is expected, which is why DVT and PE risk rises."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Lymphocytes tend to rise, not fall."
+      ],
+      [
+       1,
+       "Neutrophils are normal or raised."
+      ],
+      [
+       2,
+       "Pancytopenia suggests marrow failure or hypersplenism."
+      ],
+      [
+       3,
+       "Low platelets suggest hypersplenism or DIC."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Thrombocytosis.** Rule: post-splenectomy platelets rise, so watch for VTE."
+    }
+   ],
+   "e": "The spleen normally pools about a third of platelets, so platelet counts rise after splenectomy, adding to DVT and PE risk."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 27 year old woman who had a splenectomy develops fever, confusion and a purpuric rash 8 hours after feeling unwell. Her pulse rate is 136 bpm and BP 78/40 mmHg. She is bleeding from her cannula site.",
+   "labs": [
+    [
+     "Platelets",
+     "32 ×10⁹/L",
+     "150–400",
+     "L"
+    ],
+    [
+     "Lactate",
+     "6.1 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on her coagulation screen?",
+   "o": [
+    "Isolated raised APTT",
+    "Normal coagulation screen",
+    "Prolonged PT, low fibrinogen, raised D-dimer",
+    "Raised fibrinogen with normal PT",
+    "Raised platelets with normal PT"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely investigation result in this emergency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "purpuric rash",
+      "bleeding from her cannula site"
+     ],
+     "x": "OPSI with bleeding and purpura: consumption of clotting factors."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "OPSI often brings **DIC**: long PT, low fibrinogen, high D-dimer, low platelets."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Isolated APTT rise suggests haemophilia or heparin."
+      ],
+      [
+       1,
+       "Bleeding and purpura make a normal screen unlikely."
+      ],
+      [
+       3,
+       "Fibrinogen is consumed in DIC, so it falls."
+      ],
+      [
+       4,
+       "Platelets are consumed, so they fall."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. DIC pattern.** Rule: OPSI + bleeding = DIC."
+    }
+   ],
+   "e": "OPSI is rapidly progressive sepsis often complicated by DIC, giving a prolonged PT, low fibrinogen and raised D-dimer."
+  },
+  {
+   "d": "management",
+   "stem": "A 48 year old woman with immune thrombocytopenia is listed for an elective laparoscopic splenectomy in 6 weeks. She has never had a pneumococcal vaccine.",
+   "labs": [],
+   "visual": null,
+   "q": "When is the most appropriate time to give the pneumococcal vaccine?",
+   "o": [
+    "At the time of surgery",
+    "Day 1 after surgery",
+    "Only if febrile after surgery",
+    "Two weeks after surgery",
+    "Two weeks before surgery"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Timing of vaccination for an elective operation."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "elective laparoscopic splenectomy",
+      "never had a pneumococcal vaccine"
+     ],
+     "x": "Planned surgery, unvaccinated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Give the pneumococcal vaccine **2 weeks before** elective splenectomy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Too late for a good antibody response before the spleen goes."
+      ],
+      [
+       1,
+       "Post-operative dosing is for emergencies, not elective cases."
+      ],
+      [
+       2,
+       "Vaccination is preventive, not reactive."
+      ],
+      [
+       3,
+       "Two weeks after is the emergency splenectomy timing."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Two weeks before.** Rule: elective = 2 weeks before; emergency = 2 weeks after."
+    }
+   ],
+   "e": "For elective splenectomy, pneumococcal vaccine is given 2 weeks beforehand so the spleen can help mount a response. Two weeks after is used when surgery is an emergency."
+  },
+  {
+   "d": "management",
+   "stem": "A 35 year old man has had a splenectomy for trauma. He has a documented anaphylactic reaction to penicillin. He is being discharged and needs long-term antibiotic prophylaxis.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate antibiotic?",
+   "o": [
+    "Amoxicillin",
+    "Co-trimoxazole",
+    "Doxycycline",
+    "Erythromycin",
+    "Phenoxymethylpenicillin"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Prophylaxis choice, with an allergy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "anaphylactic reaction to penicillin",
+      "long-term antibiotic prophylaxis"
+     ],
+     "x": "Asplenic, penicillin anaphylaxis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Penicillin-allergic = **erythromycin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amoxicillin is a penicillin."
+      ],
+      [
+       1,
+       "Co-trimoxazole is not standard prophylaxis here."
+      ],
+      [
+       2,
+       "Doxycycline is not the recommended alternative."
+      ],
+      [
+       4,
+       "Penicillin V would cause anaphylaxis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Erythromycin.** Rule: penicillin V first; erythromycin if allergic."
+    }
+   ],
+   "e": "Daily penicillin V is standard after splenectomy; with penicillin allergy, erythromycin is used instead."
+  },
+  {
+   "d": "management",
+   "stem": "A 31 year old woman who had a splenectomy 4 years ago attends the emergency department. She has had a temperature of 38.5°C and shivers for 3 hours. On arrival her pulse rate is 112 bpm and BP 104/66 mmHg. She looks unwell but is alert.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Admit for observation and repeat bloods in 6 hours",
+    "Immediate intravenous broad-spectrum antibiotics",
+    "Oral amoxicillin and GP review in 48 hours",
+    "Paracetamol and safety-net advice",
+    "Wait for blood culture results before treating"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of fever without a spleen."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy 4 years ago",
+      "38.5°C and shivers",
+      "pulse rate is 112 bpm"
+     ],
+     "x": "Asplenic, febrile, tachycardic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Fever in an asplenic patient = **immediate IV antibiotics**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Observation risks fulminant OPSI."
+      ],
+      [
+       2,
+       "Oral antibiotics and a 48 hour wait are unsafe."
+      ],
+      [
+       3,
+       "Reassurance misses an emergency."
+      ],
+      [
+       4,
+       "Never delay antibiotics for cultures."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Immediate IV antibiotics.** Rule: no spleen + fever = IV antibiotics now."
+    }
+   ],
+   "e": "Fever in an asplenic patient is a medical emergency needing immediate IV antibiotics; OPSI can kill within hours, so waiting for cultures is unsafe."
+  },
+  {
+   "d": "science",
+   "stem": "A 22 year old man had a splenectomy after a sports injury. He asks why he is at particular risk of pneumococcal infection, given that his white cell count is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his increased risk?",
+   "o": [
+    "Impaired neutrophil production in the bone marrow",
+    "Loss of splenic IgM production and phagocytosis of poorly opsonised bacteria",
+    "Loss of T-cell maturation",
+    "Reduced complement synthesis",
+    "Reduced IgE production"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: what did the spleen do against capsules?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "splenectomy",
+      "pneumococcal infection",
+      "white cell count is normal"
+     ],
+     "x": "Encapsulated organism; normal white cell count."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The spleen makes **IgM** and its macrophages clear poorly opsonised encapsulated bacteria."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Neutrophil production is in the marrow and his count is normal."
+      ],
+      [
+       2,
+       "T-cells mature in the thymus."
+      ],
+      [
+       3,
+       "Complement is made in the liver."
+      ],
+      [
+       4,
+       "IgE is for allergy and parasites."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Loss of IgM and splenic phagocytosis.** Rule: no spleen = poor opsonisation of capsules."
+    }
+   ],
+   "e": "The spleen produces opsonising IgM and phagocytoses poorly opsonised encapsulated bacteria; losing it leaves pneumococcus unchecked. Complement is made in the liver."
+  }
+ ]
+}

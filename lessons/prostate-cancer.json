@@ -1,0 +1,2216 @@
+{
+ "id": "prostate-cancer",
+ "patient": {
+  "name": "Errol Campbell",
+  "age": 67,
+  "sex": "M",
+  "setting": "GP surgery, then the urology clinic and oncology ward",
+  "complaint": "Three months of low back pain and losing weight without trying",
+  "background": [
+   "Jamaican heritage; retired electrician in Brixton",
+   "Brother treated for prostate cancer at 62",
+   "Type 2 diabetes on metformin",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an older man, a hard irregular prostate and a high PSA, or a man with known prostate cancer and back pain or leg weakness (bone metastases, cord compression).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Errol, 67: dull **low back pain** for 3 months, worse at night.",
+      "Lost **6 kg** without trying.",
+      "Mild nocturia, but no real change in his stream.",
+      "His brother had prostate cancer."
+     ],
+     "vitals": {
+      "T": "36.8°C",
+      "HR": "80 bpm",
+      "BP": "136/82 mmHg",
+      "RR": "14 /min"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Errol has two risk factors already: **Afro-Caribbean** heritage and a strong family history."
+    },
+    {
+     "type": "story",
+     "points": [
+      "DRE: **hard, irregular, asymmetric** right lobe.",
+      "The **central sulcus cannot be felt**.",
+      "Tender over L3 on spinal percussion.",
+      "Legs: normal power and sensation."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "What is the most likely diagnosis?",
+     "o": [
+      "Benign prostatic hyperplasia",
+      "Chronic prostatitis",
+      "Multiple myeloma",
+      "Prostate cancer"
+     ],
+     "a": 3,
+     "r": "A **hard, irregular, asymmetric** prostate with loss of the sulcus, weight loss and bone pain is prostate cancer until proven otherwise."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Errol's tumour sits in the **peripheral zone**, which is the part a finger on DRE can feel."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "His PSA comes back **markedly** raised. Note his stream is fine: cancer does not usually cause early obstruction."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Errol's PSA",
+      "min": 0,
+      "max": 60,
+      "unit": "µg/L",
+      "bands": [
+       [
+        0,
+        4,
+        "normal (<4)",
+        "ok"
+       ],
+       [
+        4,
+        10,
+        "raised",
+        "warn"
+       ],
+       [
+        10,
+        60,
+        "markedly raised",
+        "bad"
+       ]
+      ],
+      "value": 48,
+      "label": "Errol 48",
+      "caption": "BPH gives a normal or mildly raised PSA. A PSA of 48 with a hard gland points to cancer."
+     }
+    },
+    {
+     "type": "compare",
+     "title": "BPH or prostate cancer?",
+     "head": [
+      "Feature",
+      "BPH",
+      "Prostate cancer"
+     ],
+     "rows": [
+      [
+       "Zone",
+       "Transition",
+       "Peripheral (>75%)"
+      ],
+      [
+       "DRE",
+       "Smooth, firm, enlarged",
+       "Hard, irregular, asymmetric, sulcus lost"
+      ],
+      [
+       "PSA",
+       "Normal or mildly raised",
+       "Markedly raised"
+      ],
+      [
+       "Early LUTS",
+       "Common",
+       "Not typical"
+      ],
+      [
+       "Red flags",
+       "None",
+       "Weight loss, bone pain, clot retention"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Errol's night-time back pain is a warning of **osteoblastic spinal metastases**, the route to cord compression."
+    },
+    {
+     "type": "trap",
+     "text": "Back pain plus new **leg weakness, sensory loss or bladder or bowel change** in prostate cancer is **metastatic spinal cord compression** until proven otherwise."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate next investigation?' (2WW referral with multiparametric MRI), 'Which confirms the diagnosis?' (biopsy with Gleason grading) and 'Which investigation for suspected cord compression?' (urgent MRI spine).",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Errol's hard prostate meets NICE criteria for an urgent **2-week-wait** referral, with a PSA sent alongside."
+    },
+    {
+     "type": "ask",
+     "q": "What is the first imaging test after referral?",
+     "o": [
+      "Bone scan",
+      "CT chest, abdomen and pelvis",
+      "Multiparametric MRI prostate",
+      "TRUS biopsy straight away"
+     ],
+     "a": 2,
+     "r": "**Multiparametric MRI** comes first; the PI-RADS score decides whether a biopsy is needed."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "PI-RADS score on MRI",
+      "min": 1,
+      "max": 5,
+      "unit": "",
+      "bands": [
+       [
+        1,
+        2.5,
+        "1–2 low",
+        "ok"
+       ],
+       [
+        2.5,
+        3.5,
+        "3 equivocal",
+        "warn"
+       ],
+       [
+        3.5,
+        5,
+        "4–5 high",
+        "bad"
+       ]
+      ],
+      "value": 5,
+      "label": "Errol PI-RADS 5",
+      "caption": "PI-RADS 3 or above means biopsy."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Errol's PI-RADS 5 lesion is biopsied: **Gleason 4 + 4 = 8**, which is high grade."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Gleason score",
+      "min": 6,
+      "max": 10,
+      "unit": "",
+      "bands": [
+       [
+        6,
+        6.5,
+        "≤6 low",
+        "ok"
+       ],
+       [
+        6.5,
+        7.5,
+        "7 intermediate",
+        "warn"
+       ],
+       [
+        7.5,
+        10,
+        "8–10 high",
+        "bad"
+       ]
+      ],
+      "value": 8,
+      "label": "Errol 4+4=8",
+      "caption": "The first number is the most common pattern. Higher scores mean worse prognosis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Three tools run Errol's work-up: **NICE referral** criteria, **PI-RADS** on MRI and **Gleason** grading on biopsy."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Bone is the commonest site of spread, so Errol is staged with **CT and a bone scan**."
+    },
+    {
+     "type": "labs",
+     "title": "Errol's staging bloods and scans",
+     "rows": [
+      [
+       "PSA",
+       "48 µg/L",
+       "<4",
+       "H"
+      ],
+      [
+       "ALP",
+       "312 U/L",
+       "30–130",
+       "H"
+      ],
+      [
+       "Adjusted calcium",
+       "2.38 mmol/L",
+       "2.20–2.60",
+       ""
+      ],
+      [
+       "Creatinine",
+       "94 µmol/L",
+       "60–110",
+       ""
+      ],
+      [
+       "Bone scan",
+       "Hot spots L3, L4 and pelvis",
+       "",
+       ""
+      ]
+     ],
+     "text": "A high ALP with normal calcium fits **osteoblastic** metastases."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Errol ever goes into retention, check **creatinine**; after treatment his PSA tracks response; and new leg signs mean **urgent MRI spine**."
+    },
+    {
+     "type": "pearl",
+     "text": "Do not measure PSA within **48 hours** of ejaculation or vigorous exercise, or during a UTI or prostatitis."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?' across the spectrum: active surveillance for low risk, radical prostatectomy for fit high-risk localised disease, ADT with anti-androgen cover for metastatic disease, and urgent MRI with decompression for cord compression.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Errol has Gleason 8 with bone metastases. What is the main treatment?",
+     "o": [
+      "Active surveillance",
+      "Androgen deprivation therapy",
+      "Brachytherapy",
+      "Radical prostatectomy"
+     ],
+     "a": 1,
+     "r": "Metastatic (advanced) disease is treated with **androgen deprivation therapy**; surgery and brachytherapy are for localised disease."
+    },
+    {
+     "type": "flow",
+     "title": "Choosing treatment",
+     "nodes": [
+      "Low grade, low PSA, localised: active surveillance",
+      "Low risk but life expectancy <10 years: watchful waiting",
+      "Fit, high-risk localised (Gleason ≥8, PSA >20, >T2c): radical prostatectomy (RALP)",
+      "T2N0M0: radiotherapy or brachytherapy",
+      "Advanced or metastatic: ADT"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "If Errol's cancer had been small and low grade, he would have been offered **active surveillance** instead."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Had Errol's high-grade cancer been confined to the prostate, a fit man like him would be offered **RALP**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "With bone metastases, Errol starts **goserelin**, covered by an anti-androgen first so the flare does not hit his spine."
+    },
+    {
+     "type": "trap",
+     "text": "Starting goserelin **without** anti-androgen cover in a man with spinal metastases can cause flare, bone pain and **cord compression**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Errol's PSA on androgen deprivation",
+      "x": [
+       "Start",
+       "1 mo",
+       "3 mo",
+       "6 mo",
+       "12 mo"
+      ],
+      "unit": "µg/L",
+      "series": [
+       {
+        "name": "PSA",
+        "values": [
+         48,
+         22,
+         6,
+         1.8,
+         0.9
+        ]
+       }
+      ],
+      "caption": "PSA is used to monitor response; a later rise suggests progression."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Fourteen months later: worse back pain for a week.",
+      "Today: legs feel heavy; he stumbles on the stairs.",
+      "Numb from the waist down; has not passed urine since morning."
+     ],
+     "vitals": {
+      "HR": "88 bpm",
+      "BP": "142/86 mmHg"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "What must happen now?",
+     "o": [
+      "Increase his analgesia and review in a week",
+      "Outpatient bone scan",
+      "Physiotherapy referral",
+      "Urgent MRI whole spine"
+     ],
+     "a": 3,
+     "r": "New leg weakness, sensory level and retention in a man with spinal metastases is **MSCC**: urgent MRI spine."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Errol's MRI shows cord compression at T12. He gets dexamethasone and is reviewed for **surgical decompression** or radiotherapy."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Science questions ask why prostate metastases are osteoblastic, why PSA is not cancer-specific, why Gleason predicts prognosis and why goserelin causes a tumour flare.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Errol's cancer grew in the **peripheral zone**, which explains the hard nodule on DRE and why his stream stayed normal."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Errol's PSA of 48 reflects glandular disruption by cancer, but PSA also rises with **BPH, prostatitis and instrumentation**."
+    },
+    {
+     "type": "ask",
+     "q": "Which of these would also raise PSA in a man without cancer?",
+     "o": [
+      "Finasteride",
+      "Recent prostate biopsy",
+      "Six weeks of abstinence",
+      "Tamsulosin"
+     ],
+     "a": 1,
+     "r": "Instrumentation, biopsy, prostatitis, UTI and ejaculation all raise PSA. Finasteride **lowers** it."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Errol's pattern 4 means fused, poorly formed glands: **less normal architecture, worse prognosis**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Errol's bone scan lit up because his tumour **stimulates osteoblasts**, giving sclerotic, not lytic, lesions."
+    },
+    {
+     "type": "compare",
+     "title": "Bone metastases",
+     "head": [
+      "",
+      "Prostate",
+      "Breast (typical)"
+     ],
+     "rows": [
+      [
+       "Type",
+       "Osteoblastic (sclerotic)",
+       "Osteolytic"
+      ],
+      [
+       "X-ray",
+       "Dense white patches",
+       "Punched-out holes"
+      ],
+      [
+       "Calcium",
+       "Often normal",
+       "Often high"
+      ],
+      [
+       "ALP",
+       "High",
+       "May be high"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Goserelin first **stimulates** then switches off pituitary GnRH receptors, so Errol needed anti-androgen cover."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Testosterone after starting goserelin",
+      "x": [
+       "Day 0",
+       "Day 3",
+       "Week 1",
+       "Week 2",
+       "Week 4"
+      ],
+      "unit": "nmol/L",
+      "series": [
+       {
+        "name": "Testosterone",
+        "values": [
+         15,
+         26,
+         18,
+         6,
+         1
+        ]
+       }
+      ],
+      "caption": "The early **surge** is the tumour flare; castrate levels follow once receptors downregulate."
+     }
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "In which zone do most prostate adenocarcinomas arise?",
+   "o": [
+    "Central zone",
+    "Transition zone",
+    "Peripheral zone",
+    "Periurethral zone"
+   ],
+   "a": 2,
+   "r": "Over **75%** arise in the peripheral zone."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a recognised risk factor for prostate cancer?",
+   "o": [
+    "Vasectomy",
+    "BRCA2 mutation",
+    "Smoking",
+    "Mumps orchitis"
+   ],
+   "a": 1,
+   "r": "**BRCA1/2** and Afro-Caribbean ethnicity increase risk."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What type of bone metastases does prostate cancer cause?",
+   "o": [
+    "Osteolytic",
+    "Osteoblastic",
+    "Mixed lytic only",
+    "Osteoporotic"
+   ],
+   "a": 1,
+   "r": "**Osteoblastic (sclerotic)** lesions, unlike lytic breast metastases."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the upper limit of normal PSA used in the notes?",
+   "o": [
+    "1 ng/mL",
+    "2 ng/mL",
+    "4 ng/mL",
+    "10 ng/mL"
+   ],
+   "a": 2,
+   "r": "PSA is normal below **4 ng/mL**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line imaging for suspected prostate cancer?",
+   "o": [
+    "Bone scan",
+    "Multiparametric MRI prostate",
+    "CT abdomen",
+    "Transabdominal ultrasound"
+   ],
+   "a": 1,
+   "r": "**mpMRI**, scored with PI-RADS."
+  },
+  {
+   "d": "investigation",
+   "q": "At what PI-RADS score is biopsy indicated?",
+   "o": [
+    "1 or above",
+    "2 or above",
+    "3 or above",
+    "Only 5"
+   ],
+   "a": 2,
+   "r": "PI-RADS **≥3** means biopsy."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard investigation for suspected spinal cord compression?",
+   "o": [
+    "CT spine",
+    "Plain X-ray spine",
+    "Bone scan",
+    "Urgent MRI spine"
+   ],
+   "a": 3,
+   "r": "**Urgent MRI spine**."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line treatment for fit men with high-risk localised disease?",
+   "o": [
+    "Active surveillance",
+    "Radical prostatectomy (RALP)",
+    "Goserelin alone",
+    "TURP"
+   ],
+   "a": 1,
+   "r": "**RALP** is favoured over open surgery."
+  },
+  {
+   "d": "management",
+   "q": "Which drug is given before goserelin to prevent tumour flare?",
+   "o": [
+    "Finasteride",
+    "Cyproterone acetate",
+    "Tamsulosin",
+    "Tamoxifen"
+   ],
+   "a": 1,
+   "r": "An anti-androgen (**flutamide or cyproterone acetate**)."
+  },
+  {
+   "d": "science",
+   "q": "Why does goserelin cause a tumour flare?",
+   "o": [
+    "It blocks androgen receptors",
+    "It initially stimulates GnRH receptors",
+    "It inhibits 5-alpha-reductase",
+    "It causes hypercalcaemia"
+   ],
+   "a": 1,
+   "r": "An initial **testosterone surge** before downregulation."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old Afro-Caribbean man has a 2 month history of low back pain that wakes him at night and 5 kg weight loss. His urinary stream is normal. Digital rectal examination shows a hard, irregular, asymmetric prostate with loss of the median sulcus. His pulse rate is 82 bpm and BP 140/84 mmHg.",
+   "labs": [
+    [
+     "PSA",
+     "56 µg/L",
+     "<4",
+     "H"
+    ],
+    [
+     "ALP",
+     "290 U/L",
+     "30–130",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Benign prostatic hyperplasia",
+    "Bladder cancer",
+    "Chronic prostatitis",
+    "Multiple myeloma",
+    "Prostate cancer"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question: the DRE description and PSA usually decide it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Afro-Caribbean",
+      "wakes him at night",
+      "5 kg weight loss",
+      "hard, irregular, asymmetric prostate",
+      "loss of the median sulcus"
+     ],
+     "x": "Risk group, red flags (night pain, weight loss), and a malignant-feeling gland with markedly raised PSA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Prostate cancer** with probable bone metastases."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "BPH gives a smooth, firm gland and obstructive LUTS."
+      ],
+      [
+       1,
+       "Bladder cancer presents with painless haematuria; the prostate is normal."
+      ],
+      [
+       2,
+       "Prostatitis gives pelvic pain and a tender, boggy gland."
+      ],
+      [
+       3,
+       "Myeloma causes bone pain but not an abnormal prostate, and PSA would be normal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Prostate cancer.** Rule: hard and irregular with a lost sulcus = cancer; smooth = BPH."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 74 year old man with prostate cancer and known spinal metastases has had worsening thoracic back pain for a week. Today he has bilateral leg weakness and numbness below the umbilicus. He has not passed urine for 8 hours. His temperature is 36.9°C, pulse rate 90 bpm and BP 148/88 mmHg.",
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Bone scan",
+    "CT head",
+    "Nerve conduction studies",
+    "Plain X-ray of the thoracic spine",
+    "Urgent MRI whole spine"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An investigation question in an emergency: which test shows the cord?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "known spinal metastases",
+      "bilateral leg weakness",
+      "numbness below the umbilicus",
+      "not passed urine for 8 hours"
+     ],
+     "x": "Spinal metastases plus weakness, a sensory level and retention: metastatic spinal cord compression."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent MRI whole spine.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A bone scan shows metastases but not cord compression."
+      ],
+      [
+       1,
+       "The signs are spinal (sensory level), not cerebral."
+      ],
+      [
+       2,
+       "These assess peripheral nerves, not the cord."
+      ],
+      [
+       3,
+       "X-ray can miss compression and cannot show the cord."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Urgent MRI whole spine.** Rule: suspected MSCC = MRI within hours."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 61 year old man has a PSA of 5.2 µg/L. MRI shows a PI-RADS 3 lesion confined to the prostate. Biopsy shows Gleason 3 + 3 = 6 adenocarcinoma in one core. Staging shows no spread. He is fit and works full time. His pulse rate is 70 bpm and BP 130/80 mmHg.",
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Active surveillance",
+    "Androgen deprivation therapy",
+    "Docetaxel chemotherapy",
+    "Radical prostatectomy",
+    "Transurethral resection of the prostate"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: grade and stage decide it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5.2 µg/L",
+      "confined to the prostate",
+      "Gleason 3 + 3 = 6",
+      "no spread"
+     ],
+     "x": "Low grade, low PSA, localised."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Active surveillance**: regular PSA, MRI and repeat biopsy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "ADT is for advanced or metastatic disease."
+      ],
+      [
+       2,
+       "Chemotherapy is for metastatic disease."
+      ],
+      [
+       3,
+       "Radical surgery is for high-risk localised disease (Gleason ≥8, PSA >20)."
+      ],
+      [
+       4,
+       "TURP treats BPH obstruction, not cancer."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Active surveillance.** Rule: low risk = surveillance; high-risk localised = RALP; metastatic = ADT."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 71 year old man with prostate cancer has pain in his lower back. X-ray of the lumbar spine shows dense white areas in L2 and L4. His ALP is 340 U/L (30–130) and adjusted calcium 2.41 mmol/L (2.20–2.60).",
+   "visual": null,
+   "q": "Which is the most likely mechanism of the bone lesions?",
+   "o": [
+    "Decreased bone mineralisation from vitamin D deficiency",
+    "Increased osteoclast activity from PTH-related peptide",
+    "Malignant plasma cell infiltration",
+    "Oestrogen deficiency",
+    "Tumour-driven stimulation of osteoblast activity"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question explaining a finding: dense, white (sclerotic) lesions."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "prostate cancer",
+      "dense white areas",
+      "ALP is 340 U/L",
+      "2.41 mmol/L"
+     ],
+     "x": "Sclerotic lesions, high ALP, normal calcium: osteoblastic metastases."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Tumour cells **stimulate osteoblasts**, laying down new abnormal bone."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is osteomalacia, with low calcium and Looser zones."
+      ],
+      [
+       1,
+       "That causes lytic lesions and hypercalcaemia."
+      ],
+      [
+       2,
+       "That is myeloma, which gives lytic lesions."
+      ],
+      [
+       3,
+       "That causes osteoporosis, not dense patches."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tumour-driven stimulation of osteoblast activity.** Prostate = blastic; breast and myeloma = lytic."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man has a 3 month history of tiredness and 4 kg weight loss. Digital rectal examination shows a hard, nodular, irregular prostate. His temperature is 36.7°C, pulse rate 78 bpm and BP 138/82 mmHg.",
+   "labs": [
+    [
+     "PSA",
+     "34 µg/L",
+     "<4",
+     "H"
+    ],
+    [
+     "Haemoglobin",
+     "118 g/L",
+     "130–180",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Benign prostatic hyperplasia",
+    "Bladder cancer",
+    "Chronic prostatitis",
+    "Prostate cancer",
+    "Rectal carcinoma"
+   ],
+   "a": 3,
+   "e": "A hard, irregular prostate with weight loss and a PSA of 34 is prostate cancer. BPH gives a smooth gland and a normal or mildly raised PSA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis from the DRE and the PSA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "4 kg weight loss",
+      "hard, nodular, irregular prostate"
+     ],
+     "x": "Weight loss, malignant-feeling prostate, PSA markedly raised."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Prostate cancer.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "BPH is smooth, with normal or mildly raised PSA."
+      ],
+      [
+       1,
+       "Bladder cancer gives haematuria and a normal prostate."
+      ],
+      [
+       2,
+       "Prostatitis is painful, with a tender gland."
+      ],
+      [
+       4,
+       "A rectal tumour is felt in the rectal wall, not as a hard prostate, and PSA would be normal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Prostate cancer.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old Black British man has a PSA of 16 µg/L (<4) on a routine check. He has no urinary symptoms. His brother had prostate cancer at 58. His pulse rate is 72 bpm and BP 134/80 mmHg.",
+   "visual": null,
+   "q": "Which is the most likely finding on digital rectal examination?",
+   "o": [
+    "Boggy, exquisitely tender prostate",
+    "Hard, irregular, asymmetric prostate with loss of the central sulcus",
+    "Normal rectal examination with an empty rectum",
+    "Smooth, firm, symmetrically enlarged prostate",
+    "Soft rectal mass separate from the prostate"
+   ],
+   "a": 1,
+   "e": "Peripheral zone cancer is felt on DRE as a hard, irregular, asymmetric gland with loss of the sulcus. Smooth enlargement is BPH.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question: predict the DRE from the risk and PSA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Black British",
+      "PSA of 16 µg/L",
+      "no urinary symptoms",
+      "brother had prostate cancer"
+     ],
+     "x": "High-risk ethnicity and family history, markedly raised PSA, no obstruction: peripheral zone cancer."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hard, irregular, asymmetric prostate**, central sulcus lost."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is acute prostatitis."
+      ],
+      [
+       2,
+       "A PSA of 16 with this risk profile makes an abnormal gland likely."
+      ],
+      [
+       3,
+       "That is BPH, which would give LUTS and a normal or mildly raised PSA."
+      ],
+      [
+       4,
+       "That suggests a rectal lesion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Hard, irregular, asymmetric prostate.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 75 year old man with prostate cancer has 2 months of lumbar back pain. Neurological examination of the legs is normal. His pulse rate is 76 bpm and BP 142/84 mmHg.",
+   "labs": [
+    [
+     "ALP",
+     "268 U/L",
+     "30–130",
+     "H"
+    ],
+    [
+     "Adjusted calcium",
+     "2.36 mmol/L",
+     "2.20–2.60",
+     ""
+    ],
+    [
+     "PSA",
+     "62 µg/L",
+     "<4",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on X-ray of the lumbar spine?",
+   "o": [
+    "Diffuse osteopenia",
+    "Lytic, punched-out lesions",
+    "Sclerotic (osteoblastic) lesions",
+    "Subperiosteal erosions",
+    "Syndesmophytes"
+   ],
+   "a": 2,
+   "e": "Prostate bone metastases are osteoblastic (sclerotic) with a raised ALP. Lytic punched-out lesions suggest myeloma or breast cancer.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question: what do prostate bone metastases look like?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "prostate cancer",
+      "lumbar back pain"
+     ],
+     "x": "Prostate cancer with back pain, raised ALP, normal calcium."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Sclerotic (osteoblastic) metastases.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Osteopenia is osteoporosis or osteomalacia, not metastases."
+      ],
+      [
+       1,
+       "Lytic lesions are typical of myeloma and breast metastases."
+      ],
+      [
+       3,
+       "These are seen in hyperparathyroidism."
+      ],
+      [
+       4,
+       "These are seen in ankylosing spondylitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Sclerotic (osteoblastic) lesions.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old man with prostate cancer and bone metastases has had increasing back pain for 2 weeks. For 2 days he has had difficulty walking and reduced sensation in both legs. He has new urinary incontinence. Power is 3/5 in both legs. His pulse rate is 88 bpm and BP 150/90 mmHg.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Guillain-Barré syndrome",
+    "Hypercalcaemia",
+    "Ischaemic stroke",
+    "Metastatic spinal cord compression",
+    "Peripheral neuropathy"
+   ],
+   "a": 3,
+   "e": "Back pain with bilateral leg weakness, sensory loss and incontinence in a man with prostate bone metastases is metastatic spinal cord compression.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a man with known metastases and new neurology."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bone metastases",
+      "increasing back pain",
+      "difficulty walking",
+      "reduced sensation in both legs",
+      "new urinary incontinence"
+     ],
+     "x": "Bone metastases, back pain, bilateral weakness, sensory loss and bladder dysfunction."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Metastatic spinal cord compression.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "GBS is an ascending neuropathy after infection, without back pain or a sensory level."
+      ],
+      [
+       1,
+       "Hypercalcaemia causes confusion and constipation, not focal leg weakness."
+      ],
+      [
+       2,
+       "Stroke is sudden and usually one-sided."
+      ],
+      [
+       4,
+       "Neuropathy is slow, distal and does not cause new incontinence."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Metastatic spinal cord compression.** Urgent MRI spine next."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man with metastatic prostate cancer started goserelin 6 days ago. He was not given any other new drug. He now has worsening bone pain in his spine and pelvis and difficulty passing urine. His temperature is 36.8°C, pulse rate 84 bpm and BP 140/86 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "2.44 mmol/L",
+     "2.20–2.60",
+     ""
+    ],
+    [
+     "Urine dipstick",
+     "Negative",
+     "Negative",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of his symptoms?",
+   "o": [
+    "Castration-resistant progression",
+    "Hypercalcaemia of malignancy",
+    "Opioid-induced urinary retention",
+    "Tumour flare from goserelin",
+    "Urinary tract infection"
+   ],
+   "a": 3,
+   "e": "Goserelin without anti-androgen cover causes a transient tumour flare: bone pain, bladder obstruction and risk of cord compression.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: link the timing to the new drug."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started goserelin 6 days ago",
+      "not given any other new drug",
+      "worsening bone pain",
+      "difficulty passing urine"
+     ],
+     "x": "A GnRH agonist started days ago with no anti-androgen cover, then bone pain and obstruction."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Tumour flare** from the initial testosterone surge."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Resistance develops over months to years, not 6 days."
+      ],
+      [
+       1,
+       "His calcium is normal, and prostate metastases are blastic."
+      ],
+      [
+       2,
+       "He has not started an opioid."
+      ],
+      [
+       4,
+       "There is no fever, and the dipstick is negative."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Tumour flare from goserelin.** Prevent with flutamide or cyproterone acetate first."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 59 year old White British man asks about his risk of prostate cancer. His sister developed breast cancer at 38 and genetic testing found a pathogenic variant. He has tested positive for the same variant. He does not smoke. His pulse rate is 66 bpm and BP 128/78 mmHg.",
+   "visual": null,
+   "q": "Which is the most likely factor increasing his risk?",
+   "o": [
+    "BRCA2 mutation",
+    "HNPCC mismatch repair defect",
+    "Previous vasectomy",
+    "Smoking",
+    "Undescended testis"
+   ],
+   "a": 0,
+   "e": "BRCA1 and BRCA2 mutations increase prostate cancer risk, along with Afro-Caribbean ethnicity. Undescended testis is a testicular cancer risk.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A risk-factor question: what does the family history mean?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "breast cancer at 38",
+      "pathogenic variant",
+      "tested positive for the same variant"
+     ],
+     "x": "Early breast cancer in a sister with a shared pathogenic variant: a BRCA mutation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**BRCA2** (BRCA1 also raises risk)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Lynch syndrome is linked mainly to colorectal and endometrial cancer, not early breast cancer."
+      ],
+      [
+       2,
+       "Vasectomy is not an established risk factor."
+      ],
+      [
+       3,
+       "He does not smoke, and smoking is not a key risk factor here."
+      ],
+      [
+       4,
+       "That is a testicular cancer risk factor."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. BRCA2 mutation.**"
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 66 year old man has a hard nodule in the left lobe of his prostate on digital rectal examination. He has no urinary symptoms. He has been referred on the 2-week-wait pathway.",
+   "labs": [
+    [
+     "PSA",
+     "9.4 µg/L",
+     "<4",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Bone scan",
+    "CT chest, abdomen and pelvis",
+    "Multiparametric MRI prostate",
+    "Repeat PSA in 6 months",
+    "Transrectal ultrasound-guided biopsy"
+   ],
+   "a": 2,
+   "e": "First-line for suspected prostate cancer is multiparametric MRI scored with PI-RADS; biopsy follows if PI-RADS is 3 or more.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation after a 2WW referral."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hard nodule",
+      "2-week-wait"
+     ],
+     "x": "Suspected cancer: image first to decide on and target biopsy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Multiparametric MRI prostate**, scored with PI-RADS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Staging comes after the diagnosis is confirmed."
+      ],
+      [
+       1,
+       "CT is for staging, not first-line."
+      ],
+      [
+       3,
+       "A hard nodule and raised PSA need urgent work-up now."
+      ],
+      [
+       4,
+       "Biopsy follows MRI, guided by PI-RADS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Multiparametric MRI prostate.**"
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 63 year old man has a PSA of 11 µg/L (<4) and a firm nodule on digital rectal examination. Multiparametric MRI of the prostate shows a PI-RADS 4 lesion in the right peripheral zone. His pulse rate is 74 bpm and BP 132/84 mmHg.",
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Bone scan",
+    "CT abdomen and pelvis",
+    "Prostate biopsy",
+    "Repeat multiparametric MRI in 3 months",
+    "Serum free-to-total PSA ratio"
+   ],
+   "a": 2,
+   "e": "PI-RADS 3 or more leads to prostate biopsy, which confirms the diagnosis and gives the Gleason score. Bone scan and CT stage it.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming the diagnosis means tissue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "11 µg/L",
+      "PI-RADS 4",
+      "peripheral zone"
+     ],
+     "x": "PI-RADS 3 or above means biopsy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Prostate biopsy** (transperineal or TRUS), graded by Gleason."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A bone scan stages spread; it does not confirm cancer."
+      ],
+      [
+       1,
+       "CT stages; it does not give histology."
+      ],
+      [
+       3,
+       "PI-RADS 4 needs biopsy now, not repeat imaging."
+      ],
+      [
+       4,
+       "PSA ratios do not give a tissue diagnosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Prostate biopsy.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 60 year old man has prostate cancer confined to the prostate. Biopsy shows Gleason 4 + 4 = 8. His PSA is 24 µg/L (<4). CT and bone scan show no spread. He is fit and plays tennis weekly. His pulse rate is 64 bpm and BP 126/78 mmHg.",
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Active surveillance",
+    "Androgen deprivation therapy alone",
+    "Docetaxel chemotherapy",
+    "Robot-assisted radical prostatectomy",
+    "Watchful waiting"
+   ],
+   "a": 3,
+   "e": "Fit men with high-risk localised disease (Gleason ≥8 or PSA >20) are offered radical prostatectomy, preferably robot-assisted.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: grade, PSA, stage and fitness."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confined to the prostate",
+      "Gleason 4 + 4 = 8",
+      "24 µg/L",
+      "no spread",
+      "fit"
+     ],
+     "x": "High-risk localised disease (Gleason ≥8, PSA >20) in a fit man."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Radical prostatectomy**, favouring RALP."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Surveillance is for low-grade, low-PSA disease."
+      ],
+      [
+       1,
+       "ADT is for advanced disease."
+      ],
+      [
+       2,
+       "Chemotherapy is for metastatic disease."
+      ],
+      [
+       4,
+       "Watchful waiting is for low-risk disease with short life expectancy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Robot-assisted radical prostatectomy.** Warn about incontinence and erectile dysfunction."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 73 year old man has newly diagnosed prostate cancer with multiple bone metastases on bone scan. The oncology team plans to start goserelin. He has back pain but normal neurology. His pulse rate is 80 bpm and BP 138/82 mmHg.",
+   "labs": [
+    [
+     "PSA",
+     "88 µg/L",
+     "<4",
+     "H"
+    ],
+    [
+     "ALP",
+     "410 U/L",
+     "30–130",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate drug to give before starting goserelin?",
+   "o": [
+    "Cyproterone acetate",
+    "Dexamethasone",
+    "Finasteride",
+    "Tamsulosin",
+    "Zoledronic acid"
+   ],
+   "a": 0,
+   "e": "An anti-androgen (cyproterone acetate or flutamide) is started before goserelin to block the effect of the initial testosterone surge.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management detail: what prevents the GnRH agonist flare?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "multiple bone metastases",
+      "start goserelin",
+      "back pain but normal neurology"
+     ],
+     "x": "Spinal metastases mean a flare could cause cord compression."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "An **anti-androgen** first: cyproterone acetate or flutamide."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Dexamethasone is for established cord compression, not flare prevention."
+      ],
+      [
+       2,
+       "Finasteride is a BPH drug and does not block androgen receptors."
+      ],
+      [
+       3,
+       "Tamsulosin treats LUTS, not flare."
+      ],
+      [
+       4,
+       "A bisphosphonate protects bone but does not stop the testosterone surge."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cyproterone acetate.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "An 84 year old man with severe heart failure and COPD has prostate cancer found after a raised PSA. Biopsy shows Gleason 3 + 3 = 6 and staging shows localised disease. His PSA is 6.1 µg/L (<4). His life expectancy is estimated at under 5 years.",
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Brachytherapy",
+    "Docetaxel chemotherapy",
+    "Goserelin",
+    "Radical prostatectomy",
+    "Watchful waiting"
+   ],
+   "a": 4,
+   "e": "Low-risk prostate cancer with significant comorbidity or life expectancy under 10 years is managed by watchful waiting.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: weigh the cancer against the man."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe heart failure and COPD",
+      "Gleason 3 + 3 = 6",
+      "localised",
+      "under 5 years"
+     ],
+     "x": "Low-risk disease with major comorbidity and short life expectancy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Watchful waiting**: treat symptoms if they appear."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Radiotherapy carries morbidity with little benefit at this risk and life expectancy."
+      ],
+      [
+       1,
+       "Chemotherapy is for metastatic disease."
+      ],
+      [
+       2,
+       "ADT is for advanced disease."
+      ],
+      [
+       3,
+       "He is not fit and has low-risk disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Watchful waiting.**"
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 70 year old man with metastatic prostate cancer starts leuprorelin. Blood tests on day 3 show a testosterone level higher than before treatment. By week 4 his testosterone is at castrate levels.",
+   "labs": [
+    [
+     "Testosterone day 0",
+     "14 nmol/L",
+     "8.6–29",
+     ""
+    ],
+    [
+     "Testosterone day 3",
+     "27 nmol/L",
+     "8.6–29",
+     ""
+    ],
+    [
+     "Testosterone week 4",
+     "0.6 nmol/L",
+     "8.6–29",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of the early rise in testosterone?",
+   "o": [
+    "Blockade of androgen receptors on tumour cells",
+    "Inhibition of 5-alpha-reductase",
+    "Initial stimulation of pituitary GnRH receptors",
+    "Loss of negative feedback from oestrogen",
+    "Testicular Leydig cell hyperplasia"
+   ],
+   "a": 2,
+   "e": "GnRH agonists first stimulate pituitary receptors (LH and testosterone surge, the flare) and then downregulate them, giving castrate testosterone.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question explaining a lab pattern."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "leuprorelin",
+      "day 3",
+      "higher than before treatment",
+      "castrate levels"
+     ],
+     "x": "A GnRH agonist first stimulates then downregulates receptors."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Initial GnRH receptor stimulation** gives an LH and testosterone surge (flare)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is bicalutamide's action and lowers androgen effect."
+      ],
+      [
+       1,
+       "That is finasteride; it lowers DHT, not raises testosterone."
+      ],
+      [
+       3,
+       "Leuprorelin does not act on oestrogen feedback."
+      ],
+      [
+       4,
+       "Leydig cells do not grow in 3 days."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Initial stimulation of pituitary GnRH receptors.**"
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is prostate cancer, where does it arise and who gets it?",
+    "tip": "Exam thinking: zone and risk factors are classic recall.",
+    "points": [
+     {
+      "p": "Usually adenocarcinoma; commonest cancer in UK men",
+      "k": [
+       [
+        "adenocarcinoma"
+       ]
+      ],
+      "why": "Not squamous."
+     },
+     {
+      "p": "Peripheral zone (>75%)",
+      "k": [
+       [
+        "peripheral"
+       ]
+      ],
+      "why": "BPH is transition zone."
+     },
+     {
+      "p": "Afro-Caribbean ethnicity",
+      "k": [
+       [
+        "afro",
+        "black",
+        "caribbean"
+       ]
+      ],
+      "why": "Biggest demographic risk."
+     },
+     {
+      "p": "BRCA1 and BRCA2",
+      "k": [
+       [
+        "brca"
+       ]
+      ],
+      "why": "A family history of early breast cancer is the stem clue."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does prostate cancer present and how is it different from BPH?",
+    "tip": "Exam thinking: the DRE description gives it away.",
+    "points": [
+     {
+      "p": "Hard, irregular, asymmetric prostate with loss of central sulcus",
+      "k": [
+       [
+        "hard",
+        "irregular",
+        "asymmetr",
+        "craggy"
+       ]
+      ],
+      "why": "BPH is smooth."
+     },
+     {
+      "p": "Markedly raised PSA",
+      "k": [
+       [
+        "psa"
+       ]
+      ],
+      "why": "BPH is normal or mildly raised."
+     },
+     {
+      "p": "Weight loss, clot retention",
+      "k": [
+       [
+        "weight",
+        "clot"
+       ]
+      ],
+      "why": "Systemic red flags."
+     },
+     {
+      "p": "Does not typically cause acute urinary retention or early LUTS",
+      "k": [
+       [
+        "not",
+        "no",
+        "rare"
+       ]
+      ],
+      "why": "Unlike BPH."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features of advanced disease and its complications?",
+    "tip": "Exam thinking: back pain in a man with prostate cancer = bone metastases.",
+    "points": [
+     {
+      "p": "Osteoblastic bone metastases, often spine",
+      "k": [
+       [
+        "osteoblastic",
+        "sclerotic",
+        "blastic"
+       ]
+      ],
+      "why": "Raised ALP, normal calcium."
+     },
+     {
+      "p": "Metastatic spinal cord compression",
+      "k": [
+       [
+        "cord",
+        "mscc"
+       ]
+      ],
+      "why": "Emergency."
+     },
+     {
+      "p": "Pathological fractures and back pain",
+      "k": [
+       [
+        "fracture",
+        "back pain"
+       ]
+      ],
+      "why": "Bone mets weaken bone."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the signs of metastatic spinal cord compression?",
+    "tip": "Exam thinking: any new neurology plus back pain in metastatic cancer.",
+    "points": [
+     {
+      "p": "Limb weakness and difficulty walking",
+      "k": [
+       [
+        "weak",
+        "walking",
+        "power"
+       ]
+      ],
+      "why": "Usually both legs."
+     },
+     {
+      "p": "Sensory loss",
+      "k": [
+       [
+        "sensory",
+        "sensation",
+        "numb"
+       ]
+      ],
+      "why": "Look for a sensory level."
+     },
+     {
+      "p": "Bladder or bowel dysfunction",
+      "k": [
+       [
+        "bladder",
+        "bowel",
+        "incontinen",
+        "retention"
+       ]
+      ],
+      "why": "A late, serious sign."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What can raise PSA apart from cancer?",
+    "tip": "Exam thinking: delay the test if any are present.",
+    "points": [
+     {
+      "p": "BPH",
+      "k": [
+       [
+        "bph",
+        "benign prostatic",
+        "hyperplasia"
+       ]
+      ],
+      "why": "Mild rise."
+     },
+     {
+      "p": "Prostatitis or UTI",
+      "k": [
+       [
+        "prostatitis",
+        "uti",
+        "infection"
+       ]
+      ],
+      "why": "Wait 6 weeks."
+     },
+     {
+      "p": "Recent ejaculation or vigorous exercise",
+      "k": [
+       [
+        "ejacul",
+        "exercise"
+       ]
+      ],
+      "why": "Wait 48 hours."
+     },
+     {
+      "p": "Instrumentation, catheter, retention",
+      "k": [
+       [
+        "instrument",
+        "catheter",
+        "biopsy",
+        "retention"
+       ]
+      ],
+      "why": "Mechanical disruption."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the diagnostic pathway for suspected prostate cancer?",
+    "tip": "Exam thinking: MRI comes before biopsy.",
+    "points": [
+     {
+      "p": "2WW referral with PSA for a hard, irregular prostate",
+      "k": [
+       [
+        "2ww",
+        "two week",
+        "2-week",
+        "urgent"
+       ]
+      ],
+      "why": "NICE criteria."
+     },
+     {
+      "p": "Multiparametric MRI prostate scored with PI-RADS",
+      "k": [
+       [
+        "mri"
+       ],
+       [
+        "pi-rads",
+        "pirads",
+        "pi rads"
+       ]
+      ],
+      "why": "1 very low to 5 very high."
+     },
+     {
+      "p": "PI-RADS ≥3: biopsy (transperineal or TRUS)",
+      "k": [
+       [
+        "biopsy"
+       ]
+      ],
+      "why": "Confirms the diagnosis."
+     },
+     {
+      "p": "Gleason grading",
+      "k": [
+       [
+        "gleason"
+       ]
+      ],
+      "why": "Two areas added together."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is the Gleason score built and interpreted?",
+    "tip": "Exam thinking: the first number is the most common pattern.",
+    "points": [
+     {
+      "p": "Two areas each scored out of 5 and added",
+      "k": [
+       [
+        "5",
+        "five",
+        "two",
+        "add"
+       ]
+      ],
+      "why": "First = most common pattern."
+     },
+     {
+      "p": "≤6 low, 7 intermediate, 8–10 high",
+      "k": [
+       [
+        "6"
+       ],
+       [
+        "8",
+        "10"
+       ]
+      ],
+      "why": "Higher = worse prognosis."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is prostate cancer staged and monitored, and what is the test for cord compression?",
+    "tip": "Exam thinking: bone is the commonest spread site.",
+    "points": [
+     {
+      "p": "CT and bone scan for staging",
+      "k": [
+       [
+        "bone scan",
+        "isotope",
+        "scintigraph"
+       ]
+      ],
+      "why": "Osteoblastic lesions show as hot spots."
+     },
+     {
+      "p": "PSA every 6–12 months for 5 years after prostatectomy",
+      "k": [
+       [
+        "psa"
+       ],
+       [
+        "monitor",
+        "recurrence",
+        "follow",
+        "6"
+       ]
+      ],
+      "why": "Also tracks response."
+     },
+     {
+      "p": "Urgent MRI spine for suspected MSCC",
+      "k": [
+       [
+        "mri"
+       ],
+       [
+        "spine",
+        "spinal"
+       ]
+      ],
+      "why": "Gold standard."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is localised prostate cancer managed?",
+    "tip": "Exam thinking: low risk = watch; high risk and fit = cut.",
+    "points": [
+     {
+      "p": "Low grade, low PSA: active surveillance",
+      "k": [
+       [
+        "active surveillance",
+        "surveillance"
+       ]
+      ],
+      "why": "PSA, MRI, repeat biopsy."
+     },
+     {
+      "p": "Low risk, life expectancy <10 years: watchful waiting",
+      "k": [
+       [
+        "watchful"
+       ]
+      ],
+      "why": "Treat symptoms only."
+     },
+     {
+      "p": "Fit, high-risk localised (Gleason ≥8, PSA >20, >T2c): radical prostatectomy, RALP",
+      "k": [
+       [
+        "prostatectomy",
+        "ralp"
+       ]
+      ],
+      "why": "Side effects: incontinence, erectile dysfunction."
+     },
+     {
+      "p": "Radiotherapy or brachytherapy for T2N0M0; risk of proctitis",
+      "k": [
+       [
+        "radiotherapy",
+        "brachytherapy"
+       ]
+      ],
+      "why": "Proctitis: bloody diarrhoea, tenesmus."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is advanced disease managed, and how is cord compression treated?",
+    "tip": "Exam thinking: never start goserelin without cover.",
+    "points": [
+     {
+      "p": "Androgen deprivation therapy: GnRH agonist (goserelin, leuprorelin) or anti-androgen (bicalutamide)",
+      "k": [
+       [
+        "goserelin",
+        "leuprorelin",
+        "bicalutamide",
+        "adt",
+        "androgen deprivation"
+       ]
+      ],
+      "why": "Androgen-dependent growth."
+     },
+     {
+      "p": "Anti-androgen cover first: flutamide or cyproterone acetate",
+      "k": [
+       [
+        "flutamide",
+        "cyproterone"
+       ]
+      ],
+      "why": "Prevents tumour flare."
+     },
+     {
+      "p": "MSCC: urgent MRI spine, surgical decompression",
+      "k": [
+       [
+        "decompress",
+        "surgery",
+        "surgical"
+       ]
+      ],
+      "why": "Plus steroids and radiotherapy in practice."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why are prostate metastases osteoblastic, and why does goserelin cause a flare?",
+    "tip": "Exam thinking: blastic = prostate; lytic = breast or myeloma.",
+    "points": [
+     {
+      "p": "Tumour stimulates osteoblast activity, giving sclerotic lesions",
+      "k": [
+       [
+        "osteoblast"
+       ]
+      ],
+      "why": "Breast mets are typically lytic."
+     },
+     {
+      "p": "GnRH agonists first stimulate then downregulate pituitary receptors",
+      "k": [
+       [
+        "stimulat"
+       ],
+       [
+        "downregulat",
+        "down-regulat",
+        "suppress",
+        "desensiti"
+       ]
+      ],
+      "why": "Testosterone surge first."
+     },
+     {
+      "p": "Gleason reflects loss of glandular architecture",
+      "k": [
+       [
+        "architecture",
+        "disorganis",
+        "differentiat"
+       ]
+      ],
+      "why": "More disorganised = worse prognosis."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "adenocarcinoma": "Cancer arising from glandular epithelium; the usual type of prostate cancer.",
+  "peripheral zone": "The outer posterior part of the prostate, felt on DRE, where most cancers arise.",
+  "transition zone": "The part of the prostate surrounding the urethra, where BPH arises.",
+  "central sulcus": "The groove between the two prostate lobes; lost when cancer spreads across the gland.",
+  "median sulcus": "Another name for the central sulcus of the prostate.",
+  "DRE": "Digital rectal examination: feeling the prostate through the rectal wall.",
+  "PSA": "Prostate specific antigen: a serine protease from prostate cells; normal below 4.",
+  "BRCA2": "A tumour suppressor gene; mutations raise the risk of breast, ovarian and prostate cancer.",
+  "BRCA1": "A tumour suppressor gene; mutations raise breast, ovarian and prostate cancer risk.",
+  "2WW": "Two-week-wait: NICE urgent referral pathway for suspected cancer.",
+  "multiparametric MRI": "MRI combining several sequences to find and score suspicious prostate lesions.",
+  "mpMRI": "Multiparametric MRI of the prostate.",
+  "PI-RADS": "Prostate Imaging Reporting and Data System: scores MRI lesions 1 to 5; 3 or above means biopsy.",
+  "TRUS": "Transrectal ultrasound, used to guide prostate biopsy.",
+  "transperineal biopsy": "Prostate biopsy through the skin between scrotum and anus, with lower infection risk.",
+  "Gleason score": "Sum of the two commonest histological patterns (each 1 to 5); 8 to 10 is high grade.",
+  "bone scan": "Isotope scan showing areas of high bone turnover, such as metastases.",
+  "osteoblastic": "Bone-forming; prostate metastases lay down dense, sclerotic bone.",
+  "sclerotic": "Dense and white on X-ray.",
+  "osteolytic": "Bone-destroying; lytic lesions look like holes on X-ray.",
+  "ALP": "Alkaline phosphatase: an enzyme raised when bone turnover is high.",
+  "MSCC": "Metastatic spinal cord compression: an oncological emergency causing back pain and leg weakness.",
+  "spinal cord compression": "Pressure on the cord causing weakness, sensory loss and bladder or bowel dysfunction.",
+  "active surveillance": "Monitoring low-risk cancer with PSA, MRI and biopsy, treating only if it progresses.",
+  "watchful waiting": "Treating symptoms only, for men whose cancer is unlikely to shorten their life.",
+  "radical prostatectomy": "Surgical removal of the whole prostate and seminal vesicles.",
+  "RALP": "Robot-assisted laparoscopic prostatectomy.",
+  "brachytherapy": "Radiotherapy given by implanting radioactive seeds in the prostate.",
+  "proctitis": "Inflammation of the rectum, e.g. after radiotherapy: bloody diarrhoea and tenesmus.",
+  "tenesmus": "A constant feeling of needing to open the bowels.",
+  "androgen deprivation therapy": "Treatment that removes or blocks testosterone to slow prostate cancer.",
+  "ADT": "Androgen deprivation therapy.",
+  "GnRH agonist": "Drug that first stimulates, then switches off, the pituitary's GnRH receptors.",
+  "goserelin": "A GnRH agonist implant used for advanced prostate cancer.",
+  "leuprorelin": "A GnRH agonist used for advanced prostate cancer.",
+  "bicalutamide": "An anti-androgen that blocks androgen receptors.",
+  "anti-androgen": "Drug that blocks androgen receptors, e.g. bicalutamide, flutamide, cyproterone.",
+  "flutamide": "An anti-androgen used to cover the goserelin flare.",
+  "cyproterone acetate": "An anti-androgen used to prevent tumour flare when starting a GnRH agonist.",
+  "tumour flare": "Temporary worsening of cancer from the testosterone surge when a GnRH agonist starts.",
+  "clot retention": "Inability to pass urine because blood clots block the urethra.",
+  "TNM": "Tumour, Node, Metastasis staging system, e.g. T2N0M0."
+ }
+}

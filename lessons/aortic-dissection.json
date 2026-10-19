@@ -1,0 +1,2068 @@
+{
+ "id": "aortic-dissection",
+ "patient": {
+  "name": "Kwame Asante",
+  "age": 61,
+  "sex": "M",
+  "setting": "Emergency Department (resus)",
+  "complaint": "Sudden tearing chest pain going through to his back, 40 minutes ago",
+  "background": [
+   "Hypertension for 15 years, poorly controlled (often misses amlodipine)",
+   "Ex-smoker, 30 pack years",
+   "Bus driver from Lewisham",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with sudden tearing chest pain to the back and a BP difference between arms, with ACS, PE and ruptured AAA as distractors. Complications (tamponade, AR murmur, limb or spinal ischaemia) are asked as 'most likely finding'.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kwame, 61, lifting boxes when pain struck.",
+      "**Tearing** central chest pain, worst at the very start.",
+      "Pain goes straight through to **between his shoulder blades**.",
+      "Sweaty, grey, frightened."
+     ],
+     "vitals": {
+      "HR": "108 bpm",
+      "BP": "R arm 182/96 mmHg",
+      "RR": "22 /min",
+      "SpO2": "96% on air",
+      "T": "36.6°C"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Which feature of Kwame's pain most points away from ACS?",
+     "o": [
+      "Central location",
+      "Maximal at onset and tearing",
+      "Sweating",
+      "Tachycardia"
+     ],
+     "a": 1,
+     "r": "ACS pain builds over minutes and is crushing. Pain that is **maximal at onset**, tearing and goes to the back is dissection."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A tear in the intima lets blood split the aortic wall. Where the tear sits (**ascending or descending**) decides whether Kwame needs a surgeon tonight."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's long-standing, poorly controlled **hypertension** is the commonest association. In a tall young patient, think **Marfan's**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Left arm BP is **146/80 mmHg**: 36 mmHg lower than the right.",
+      "Left radial pulse is weaker and delayed against the right.",
+      "New soft **early diastolic murmur** at the left sternal edge.",
+      "Legs: femoral pulses present and equal."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Systolic BP difference between arms",
+      "min": 0,
+      "max": 50,
+      "unit": "mmHg",
+      "bands": [
+       [
+        0,
+        10,
+        "normal",
+        "ok"
+       ],
+       [
+        10,
+        20,
+        "borderline",
+        "warn"
+       ],
+       [
+        20,
+        50,
+        "dissection sign",
+        "bad"
+       ]
+      ],
+      "value": 36,
+      "label": "Kwame 36",
+      "caption": "A difference **over 20 mmHg** between arms is a key sign of dissection."
+     },
+     "text": "Always measure the BP in **both arms** in tearing chest pain."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame has the full picture: sudden tearing pain to the interscapular region and an arm BP gap of **36 mmHg**. His CXR will be checked for a widened mediastinum."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "**Radio-radial** delay plus a new diastolic murmur means the ascending aorta is involved: this looks like **type A**."
+    },
+    {
+     "type": "compare",
+     "title": "Stanford type A vs type B",
+     "head": [
+      "",
+      "Type A",
+      "Type B"
+     ],
+     "rows": [
+      [
+       "Where",
+       "Ascending aorta or arch",
+       "Descending, distal to left subclavian"
+      ],
+      [
+       "Pulse sign",
+       "Radio-radial delay",
+       "Radio-femoral delay"
+      ],
+      [
+       "Extra signs",
+       "New AR murmur, ischaemic ECG, neuro signs",
+       "Limb, renal, gut ischaemia"
+      ],
+      [
+       "Treatment",
+       "IV labetalol then **immediate surgery**",
+       "IV labetalol and morphine (**medical**)"
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "12-lead ECG in resus",
+      "layout": "12lead",
+      "rhythm": "sinus_tachy",
+      "rate": 108,
+      "leads": {
+       "II": "st_elev",
+       "III": "st_elev",
+       "aVF": "st_elev",
+       "I": "st_dep",
+       "aVL": "st_dep"
+      },
+      "caption": "Inferior ST elevation: the dissection flap has reached the **right coronary ostium**."
+     },
+     "text": "Type A can cause a 'STEMI'. Thrombolysis here could be fatal."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Kwame already has two complications: **aortic regurgitation** and coronary malperfusion. Watch for tamponade: falling BP, raised JVP, muffled heart sounds."
+    },
+    {
+     "type": "trap",
+     "text": "Inferior STEMI with tearing back pain and an arm BP gap is **dissection until proven otherwise**. Do not give thrombolysis, heparin or loading antiplatelets before the aorta is imaged."
+    },
+    {
+     "type": "pearl",
+     "text": "Ruptured AAA = abdominal or back pain, **pulsatile mass**, shock. Dissection = **tearing chest pain to the interscapular region**, pulse deficit."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (CT aortic angiogram) and the twist 'he is too unstable for CT' (transoesophageal echo). Bedside: BP in both arms.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's bedside work-up starts at the door: **BP in both arms**, then FBC and U&Es (and a group and save for theatre)."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods in resus",
+     "rows": [
+      [
+       "Hb",
+       "131 g/L",
+       "130–180",
+       ""
+      ],
+      [
+       "WCC",
+       "11.8 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "104 µmol/L",
+       "60–110",
+       ""
+      ],
+      [
+       "Urea",
+       "6.9 mmol/L",
+       "2.5–7.8",
+       ""
+      ],
+      [
+       "Troponin T",
+       "64 ng/L",
+       "<14",
+       "H"
+      ]
+     ],
+     "text": "A raised troponin does not make this ACS: the flap is starving the RCA. Normal creatinine for now; recheck if anuria or loin pain."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Portable CXR: **widened mediastinum**.",
+      "Kwame is stable enough for the scanner: BP 170/92 mmHg on the right.",
+      "Consultant asks for the gold-standard scan."
+     ],
+     "vitals": {
+      "BP": "170/92 mmHg",
+      "HR": "104 bpm"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Which scan will confirm Kwame's diagnosis?",
+     "o": [
+      "CT aortic angiogram",
+      "CT pulmonary angiogram",
+      "Echocardiogram (transthoracic)",
+      "Repeat chest X-ray"
+     ],
+     "a": 0,
+     "r": "A **CT aortic angiogram** shows the intimal flap and false lumen and how far it extends. CTPA is timed for the pulmonary arteries, not the aorta."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's CT aortic angiogram shows a **false lumen in the ascending aorta** extending into the arch: Stanford **type A**."
+    },
+    {
+     "type": "flow",
+     "title": "Imaging pathway in suspected dissection",
+     "nodes": [
+      "Tearing chest/back pain + pulse deficit",
+      "BP both arms, ECG, bloods, CXR",
+      "Stable → CT aortic angiogram",
+      "Unstable → transoesophageal echo (TOE)",
+      "False lumen → classify A or B"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Kwame had become **hypotensive** before the scan, a **TOE** in resus or theatre would answer the question without moving him."
+    },
+    {
+     "type": "trap",
+     "text": "A **normal CXR does not exclude** dissection, and a D-dimer cannot confirm it. If you suspect it, image the aorta."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': type A gets IV labetalol then immediate open surgery; stable type B gets IV labetalol plus opioid analgesia. Distractors are thrombolysis, heparin and stenting for type A.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Kwame has a type A dissection, BP 170/92 mmHg. What is the immediate drug?",
+     "o": [
+      "IV alteplase",
+      "IV GTN alone",
+      "IV labetalol",
+      "IV unfractionated heparin"
+     ],
+     "a": 2,
+     "r": "**IV labetalol** lowers heart rate and dP/dt first. A vasodilator alone causes reflex tachycardia; clot-busting drugs can kill."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame has **type A**, so he is a surgical emergency: IV labetalol now and straight to theatre for an **aortic root replacement**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kwame on IV labetalol",
+      "x": [
+       "0 min",
+       "15 min",
+       "30 min",
+       "60 min"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Systolic BP (mmHg)",
+        "values": [
+         182,
+         158,
+         132,
+         118
+        ]
+       },
+       {
+        "name": "Heart rate (bpm)",
+        "values": [
+         108,
+         88,
+         72,
+         62
+        ]
+       }
+      ],
+      "caption": "Heart rate and BP both come down, reducing shear on the torn wall while theatre is prepared."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "IV morphine for pain; arterial line placed.",
+      "Cardiothoracic surgeons accept him for **open repair**.",
+      "Cross-match sent; anaesthetist reviews."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Kwame's flap had been only in the **descending** aorta and he was stable, he would be managed medically: **IV labetalol** and **IV morphine**."
+    },
+    {
+     "type": "flow",
+     "title": "Treatment by Stanford type",
+     "nodes": [
+      "Confirmed dissection",
+      "IV labetalol + IV morphine for all",
+      "Type A → immediate open surgery (aortic root replacement)",
+      "Type B stable → medical BP control",
+      "Type B with complications → surgery/intervention",
+      "ICU with continuous BP monitoring"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "After theatre Kwame goes to **ICU** with an arterial line for continuous BP monitoring."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kwame's care follows ESC guidance on aortic dissection and NICE guidance on suspected acute aortic syndromes."
+    },
+    {
+     "type": "trap",
+     "text": "Thrombolysis, heparin and dual antiplatelets are the deadly distractors. A type A dissection is **not** managed medically or by waiting."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why beta-blockers come first, why Marfan's predisposes (fibrillin-1), and why type A causes an early diastolic murmur or ischaemia.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "In Kwame, pulsatile blood forced through the tear split the **media**, creating a false lumen that ran up to the aortic root."
+    },
+    {
+     "type": "flow",
+     "title": "From tear to complications",
+     "nodes": [
+      "Weakened media (hypertension, Marfan's)",
+      "Intimal tear",
+      "Blood dissects into the media: false lumen",
+      "Propagates proximally or distally",
+      "Branch vessels compressed: organ ischaemia"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's media was weakened by years of **hypertension**. In Marfan's the defect is **fibrillin-1**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Labetalol slowed Kwame's heart and blunted each pressure surge (**dP/dt**), so less shear force drove the flap further."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame's root dissection distorted the **valve annulus** (new AR murmur) and compromised the **right coronary ostium** (inferior ST elevation)."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "coronary",
+      "title": "Ostium compromised by the flap",
+      "artery": "RCA",
+      "caption": "Type A flaps most often involve the **right coronary** ostium, so the 'STEMI' is usually inferior."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "Marfan's = autosomal dominant, **fibrillin-1** (FBN1) gene. Tall, long fingers, lens dislocation, aortic root dilatation."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which Stanford type involves the ascending aorta?",
+   "o": [
+    "Type A",
+    "Type B",
+    "Type I only",
+    "Type III"
+   ],
+   "a": 0,
+   "r": "**Type A** involves the ascending aorta or arch and is a surgical emergency."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the strongest risk factor for aortic dissection?",
+   "o": [
+    "Diabetes",
+    "Hypertension",
+    "Marfan's syndrome",
+    "Smoking"
+   ],
+   "a": 2,
+   "r": "Hypertension is the commonest association, but **Marfan's** is the strongest risk factor."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What BP difference between the arms is a key sign?",
+   "o": [
+    ">5 mmHg",
+    ">10 mmHg",
+    ">20 mmHg",
+    ">50 mmHg"
+   ],
+   "a": 2,
+   "r": "A pulse deficit or BP difference **over 20 mmHg** between arms."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which murmur suggests a type A dissection?",
+   "o": [
+    "Early diastolic at left sternal edge",
+    "Ejection systolic at right second intercostal space",
+    "Mid-diastolic at apex",
+    "Pansystolic at apex"
+   ],
+   "a": 0,
+   "r": "New **aortic regurgitation**: early diastolic, loudest at the left sternal edge."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Hypotension, raised JVP and muffled heart sounds in type A suggest what?",
+   "o": [
+    "Aortic stenosis",
+    "Cardiac tamponade",
+    "Tension pneumothorax",
+    "Right heart failure"
+   ],
+   "a": 1,
+   "r": "Beck's triad: blood in the pericardium causing **tamponade**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard diagnostic investigation?",
+   "o": [
+    "Chest X-ray",
+    "CT aortic angiogram",
+    "D-dimer",
+    "Transthoracic echo"
+   ],
+   "a": 1,
+   "r": "**CT aortic angiogram** shows the false lumen."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test is used instead of CT if the patient is unstable?",
+   "o": [
+    "Cardiac MRI",
+    "Coronary angiogram",
+    "Transoesophageal echocardiography",
+    "V/Q scan"
+   ],
+   "a": 2,
+   "r": "**TOE** can be done at the bedside or in theatre."
+  },
+  {
+   "d": "management",
+   "q": "What is the definitive treatment of type A dissection?",
+   "o": [
+    "Endovascular stent",
+    "IV labetalol alone",
+    "Open surgery (aortic root replacement)",
+    "Thrombolysis"
+   ],
+   "a": 2,
+   "r": "Type A is always surgical: IV labetalol first, then **immediate open surgery**."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line treatment for a stable type B dissection?",
+   "o": [
+    "Emergency open repair",
+    "IV heparin",
+    "IV labetalol and morphine",
+    "Oral aspirin"
+   ],
+   "a": 2,
+   "r": "Stable type B is managed **medically** with BP control and opioid analgesia."
+  },
+  {
+   "d": "science",
+   "q": "Which protein is defective in Marfan's syndrome?",
+   "o": [
+    "Collagen type III",
+    "Elastin",
+    "Fibrillin-1",
+    "Lamin A"
+   ],
+   "a": 2,
+   "r": "**Fibrillin-1** defects weaken the aortic media. Collagen III is vascular Ehlers-Danlos."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old man has sudden severe chest pain that began while he was gardening. He describes it as tearing and it radiates to between his shoulder blades. He has hypertension. His pulse rate is 112 bpm. BP is 178/94 mmHg in the right arm and 142/82 mmHg in the left arm. There is a soft early diastolic murmur at the left sternal edge.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pericarditis",
+    "Aortic dissection",
+    "Inferior myocardial infarction",
+    "Pulmonary embolism",
+    "Ruptured abdominal aortic aneurysm"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about acute chest pain: think of the killers (ACS, PE, dissection, tamponade, pneumothorax, oesophageal rupture)."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden severe chest pain",
+      "tearing",
+      "between his shoulder blades",
+      "hypertension",
+      "142/82 mmHg in the left arm",
+      "early diastolic murmur"
+     ],
+     "x": "Sudden tearing pain to the interscapular region, hypertensive, a **36 mmHg** arm BP gap and new AR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Tearing pain + arm BP difference over 20 mmHg + AR murmur: **type A aortic dissection**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pericarditis is sharp, positional and eased by sitting forward; no pulse deficit."
+      ],
+      [
+       2,
+       "MI pain builds and is crushing; it does not cause an arm BP gap or AR."
+      ],
+      [
+       3,
+       "PE gives pleuritic pain, breathlessness and hypoxia, not a pulse deficit."
+      ],
+      [
+       4,
+       "Ruptured AAA gives abdominal or back pain, a pulsatile mass and shock."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Aortic dissection.** Rule: tearing pain to the back + arm BP gap over 20 mmHg = dissection."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 57 year old woman has sudden tearing chest pain radiating to her back. She has hypertension. Her pulse rate is 104 bpm and BP 168/90 mmHg. Her ECG shows sinus tachycardia only. The emergency doctor suspects an aortic dissection and wants a quick bedside test that supports it before imaging.",
+   "q": "Which is the most appropriate initial bedside investigation?",
+   "o": [
+    "Bilateral arm blood pressures",
+    "CT aortic angiogram",
+    "D-dimer",
+    "Exercise tolerance test",
+    "MRI of the aorta"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the initial **bedside** test, not the diagnostic one."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "quick bedside test",
+      "before imaging",
+      "sudden tearing chest pain"
+     ],
+     "x": "Bedside means at the trolley, in minutes, with no transfer."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Measure the **BP in both arms**: a gap over 20 mmHg supports dissection."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CT aortic angiogram is the gold standard but it is imaging, not bedside."
+      ],
+      [
+       2,
+       "D-dimer cannot confirm or localise a dissection."
+      ],
+      [
+       3,
+       "An exercise test in suspected dissection is dangerous."
+      ],
+      [
+       4,
+       "MRI is slow and off the unit; not bedside."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bilateral arm blood pressures.** Bedside first, then CT aortic angiogram to confirm."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man has a CT aortic angiogram for sudden tearing back pain. It shows a dissection flap starting distal to the left subclavian artery and extending to the renal arteries. The ascending aorta is normal. His pulse rate is 96 bpm and BP 172/98 mmHg. Urine output is normal and his legs are warm with normal pulses.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Emergency open aortic root replacement",
+    "IV alteplase",
+    "IV labetalol and IV morphine",
+    "IV unfractionated heparin",
+    "Oral amlodipine and discharge"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: decide **type A or B**, then stable or complicated."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "distal to the left subclavian artery",
+      "ascending aorta is normal",
+      "BP 172/98 mmHg",
+      "Urine output is normal",
+      "legs are warm with normal pulses"
+     ],
+     "x": "Descending only = **type B**. No limb, renal or gut ischaemia = **uncomplicated**. Hypertensive."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Stable type B: medical BP control with **IV labetalol** and opioid analgesia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Open root replacement is for type A; his ascending aorta is normal."
+      ],
+      [
+       1,
+       "Thrombolysis would extend the bleed into the wall."
+      ],
+      [
+       3,
+       "Heparin is for thrombosis, not a torn aorta."
+      ],
+      [
+       4,
+       "Oral treatment and discharge ignores an acute aortic emergency needing ICU."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV labetalol and IV morphine.** Type B stable = medical; surgery only for complications."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 59 year old man with a type A aortic dissection is given IV labetalol in the emergency department while theatre is being prepared. His pulse rate falls from 110 bpm to 64 bpm and his BP from 180/96 mmHg to 116/70 mmHg. A medical student asks why a beta-blocker is given before surgery.",
+   "q": "Which is the most likely mechanism of benefit?",
+   "o": [
+    "Blocks platelet aggregation on the flap",
+    "Dilates the coronary arteries",
+    "Increases collagen cross-linking in the media",
+    "Lowers heart rate and the rate of rise of aortic pressure",
+    "Seals the intimal tear"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: what does a beta-blocker physically do to the aorta?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "IV labetalol",
+      "pulse rate falls",
+      "before surgery"
+     ],
+     "x": "Rate and pressure both fall: the drug acts on the force of each heartbeat."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Beta-blockade lowers heart rate and **dP/dt**, reducing shear stress and limiting propagation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Labetalol is not an antiplatelet; antiplatelets are dangerous here."
+      ],
+      [
+       1,
+       "Beta-blockers do not dilate coronaries; they reduce demand."
+      ],
+      [
+       2,
+       "No drug rapidly strengthens the media."
+      ],
+      [
+       4,
+       "Only surgery repairs the tear."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: beta-blocker first, so each beat pushes the flap less (lower dP/dt)."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man has sudden, severe chest pain that was maximal at onset and radiates to his back between the shoulder blades. He has poorly controlled hypertension. His pulse rate is 110 bpm, BP 176/92 mmHg in the right arm and 148/84 mmHg in the left arm, and oxygen saturation 96% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute coronary syndrome",
+    "Aortic dissection",
+    "Oesophageal rupture",
+    "Pericarditis",
+    "Pulmonary embolism"
+   ],
+   "a": 1,
+   "e": "Pain maximal at onset radiating to the interscapular region with an arm BP gap of 28 mmHg is aortic dissection. ACS pain builds up and gives no pulse deficit.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of acute chest pain: sort the killers."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "maximal at onset",
+      "between the shoulder blades",
+      "poorly controlled hypertension",
+      "148/84 mmHg in the left arm"
+     ],
+     "x": "Instant-onset interscapular pain, hypertensive, systolic gap **28 mmHg**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Arm BP gap over 20 mmHg with tearing back pain: **aortic dissection**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "ACS pain builds and is crushing, with no arm BP difference."
+      ],
+      [
+       2,
+       "Oesophageal rupture follows vomiting, with surgical emphysema."
+      ],
+      [
+       3,
+       "Pericarditis is sharp, positional and eased by leaning forward."
+      ],
+      [
+       4,
+       "PE gives pleuritic pain and hypoxia; saturations are 96%."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Aortic dissection.** Always check both arms in tearing chest pain."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old woman is admitted with sudden tearing chest pain radiating to her back. A CT aortic angiogram shows a false lumen in the ascending aorta. Her pulse rate is 104 bpm and BP 150/50 mmHg. There is a radio-radial delay.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely additional finding on auscultation of the heart?",
+   "o": [
+    "Early diastolic murmur at the left sternal edge",
+    "Ejection systolic murmur radiating to the carotids",
+    "Mid-diastolic murmur at the apex",
+    "Pansystolic murmur radiating to the axilla",
+    "Pericardial friction rub"
+   ],
+   "a": 0,
+   "e": "Type A dissection distorts the aortic valve annulus, causing acute aortic regurgitation: an early diastolic murmur loudest at the left sternal edge. The wide pulse pressure fits.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question: which murmur fits this dissection?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "false lumen in the ascending aorta",
+      "BP 150/50 mmHg",
+      "radio-radial delay"
+     ],
+     "x": "Ascending aorta = **type A**. Wide pulse pressure (100 mmHg) suggests regurgitation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Type A + AR: **early diastolic murmur, left sternal edge**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Ejection systolic to the carotids is aortic stenosis."
+      ],
+      [
+       2,
+       "Mid-diastolic at the apex is mitral stenosis."
+      ],
+      [
+       3,
+       "Pansystolic to the axilla is mitral regurgitation."
+      ],
+      [
+       4,
+       "A rub suggests pericarditis, not a valve lesion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Type A dissection + new early diastolic murmur = acute AR."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old man has sudden tearing pain between his shoulder blades. His pulse rate is 98 bpm and BP 184/100 mmHg in both arms. The right radial pulse is felt clearly before the right femoral pulse. A CT aortic angiogram shows a false lumen beginning beyond the left subclavian artery; the ascending aorta is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Abdominal aortic aneurysm",
+    "Coarctation of the aorta",
+    "Stanford type A aortic dissection",
+    "Stanford type B aortic dissection",
+    "Takayasu arteritis"
+   ],
+   "a": 3,
+   "e": "A false lumen in the descending aorta distal to the left subclavian, with radio-femoral delay, is Stanford type B. Type A involves the ascending aorta.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question that wants the subtype."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden tearing pain",
+      "radial pulse is felt clearly before the right femoral pulse",
+      "beyond the left subclavian artery",
+      "ascending aorta is normal"
+     ],
+     "x": "Radio-femoral delay + descending false lumen + normal ascending aorta."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Descending only: **Stanford type B**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "An AAA is infrarenal and has no false lumen; sudden tearing pain points to dissection."
+      ],
+      [
+       1,
+       "Coarctation gives radio-femoral delay but is congenital, with no acute pain or false lumen."
+      ],
+      [
+       2,
+       "Type A needs ascending aorta involvement; it is normal here."
+      ],
+      [
+       4,
+       "Takayasu is a young woman's large-vessel vasculitis with chronic symptoms."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Stanford type B.** Radio-femoral = B; radio-radial = A."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 60 year old woman with hypertension has sudden severe chest pain radiating to her back. She is pale and sweaty. BP is 174/90 mmHg in the right arm and 140/80 mmHg in the left arm. Her ECG shows sinus tachycardia. A portable chest X-ray is taken.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on the chest X-ray?",
+   "o": [
+    "Bilateral hilar lymphadenopathy",
+    "Free air under the diaphragm",
+    "Kerley B lines",
+    "Lobar consolidation",
+    "Widened mediastinum"
+   ],
+   "a": 4,
+   "e": "In aortic dissection the classic chest X-ray finding is a widened mediastinum. A normal film does not exclude it.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question on the chest X-ray."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden severe chest pain radiating to her back",
+      "174/90 mmHg in the right arm",
+      "140/80 mmHg in the left arm"
+     ],
+     "x": "Tearing-type pain to the back with a **34 mmHg** arm gap: dissection."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Dilated, dissected aorta: **widened mediastinum**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "BHL is sarcoidosis or lymphoma."
+      ],
+      [
+       1,
+       "Free air means a perforated viscus."
+      ],
+      [
+       2,
+       "Kerley B lines mean pulmonary oedema."
+      ],
+      [
+       3,
+       "Consolidation is pneumonia; no fever or cough."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Widened mediastinum.** Then confirm with a CT aortic angiogram."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man is in resus with a confirmed type A aortic dissection. Over 20 minutes he becomes drowsy. His pulse rate is 128 bpm and BP has fallen to 78/60 mmHg. His JVP is raised to the earlobe and his heart sounds are quiet. His chest is clear and trachea central.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Acute aortic regurgitation",
+    "Cardiac tamponade",
+    "Myocardial infarction",
+    "Tension pneumothorax",
+    "Ventricular septal rupture"
+   ],
+   "a": 1,
+   "e": "Hypotension, raised JVP and muffled heart sounds (Beck's triad) in type A dissection is cardiac tamponade from rupture into the pericardium. Tension pneumothorax would deviate the trachea.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which complication of his dissection fits these new signs?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type A aortic dissection",
+      "78/60 mmHg",
+      "JVP is raised",
+      "heart sounds are quiet",
+      "trachea central"
+     ],
+     "x": "Hypotension + raised JVP + muffled heart sounds = **Beck's triad**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Type A ruptured into the pericardium: **cardiac tamponade**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AR gives an early diastolic murmur and wide pulse pressure, not quiet heart sounds."
+      ],
+      [
+       2,
+       "MI could drop BP but does not muffle heart sounds."
+      ],
+      [
+       3,
+       "Tension pneumothorax deviates the trachea and silences one side."
+      ],
+      [
+       4,
+       "VSR follows MI, with a loud pansystolic murmur."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Cardiac tamponade.** Type A + Beck's triad = tamponade."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man is being treated for a type B aortic dissection. Two hours later he cannot move either leg and has lost sensation below the umbilicus. His pulse rate is 92 bpm and BP 138/80 mmHg. Both femoral pulses are present and the feet are warm.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his leg weakness?",
+   "o": [
+    "Cauda equina syndrome",
+    "Guillain-Barré syndrome",
+    "Hypokalaemic periodic paralysis",
+    "Spinal cord ischaemia",
+    "Transverse myelitis"
+   ],
+   "a": 3,
+   "e": "A dissection that compromises spinal artery branches causes spinal cord ischaemia and paraparesis. Warm feet with pulses make limb ischaemia unlikely.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely cause' question: link the new deficit to the dissection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type B aortic dissection",
+      "cannot move either leg",
+      "lost sensation below the umbilicus",
+      "feet are warm"
+     ],
+     "x": "Sudden paraparesis with a sensory level during a descending dissection; limbs perfused."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Branch vessel (spinal artery) malperfusion: **spinal cord ischaemia**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cauda equina gives saddle anaesthesia and back pain from disc prolapse, not a T10 level."
+      ],
+      [
+       1,
+       "GBS ascends over days after an infection."
+      ],
+      [
+       2,
+       "Hypokalaemic paralysis has no sensory level."
+      ],
+      [
+       4,
+       "Transverse myelitis develops over hours to days, often post-infective."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Spinal cord ischaemia.** Complications depend on the branch compromised."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 55 year old man has sudden tearing chest pain radiating to his back. His pulse rate is 100 bpm and BP 162/90 mmHg in the right arm and 136/82 mmHg in the left. He is alert and stable. Chest X-ray shows a widened mediastinum.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "138 g/L",
+     "130–180",
+     ""
+    ],
+    [
+     "Creatinine",
+     "88 µmol/L",
+     "60–110",
+     ""
+    ],
+    [
+     "Troponin T",
+     "11 ng/L",
+     "<14",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Coronary angiography",
+    "CT aortic angiogram",
+    "CT pulmonary angiogram",
+    "Repeat troponin at 3 hours",
+    "Transthoracic echocardiogram"
+   ],
+   "a": 1,
+   "e": "In a stable patient with suspected dissection, CT aortic angiogram is the gold standard and shows the false lumen. CTPA is timed for pulmonary arteries.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic investigation for suspected dissection in a **stable** patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden tearing chest pain",
+      "136/82 mmHg in the left",
+      "alert and stable",
+      "widened mediastinum"
+     ],
+     "x": "Classic features, arm gap 26 mmHg, widened mediastinum, and he is stable for the scanner."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CT aortic angiogram**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coronary angiography is for ACS; normal troponin and a dissection risk."
+      ],
+      [
+       2,
+       "CTPA is for PE; contrast timing misses the aorta."
+      ],
+      [
+       3,
+       "A repeat troponin chases ACS, delaying the real diagnosis."
+      ],
+      [
+       4,
+       "TTE poorly sees the descending aorta and cannot rule it out."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. CT aortic angiogram.** Stable = CT; unstable = TOE."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old woman has sudden chest pain radiating to her back and collapses in the emergency department. Her pulse rate is 130 bpm and BP 76/48 mmHg despite fluids. There is a new early diastolic murmur. The team feels she is too unstable to go to the CT scanner.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "104 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Lactate",
+     "5.2 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Cardiac MRI",
+    "CT aortic angiogram",
+    "Exercise ECG",
+    "Transoesophageal echocardiography",
+    "Ventilation-perfusion scan"
+   ],
+   "a": 3,
+   "e": "When dissection is suspected but the patient is too unstable for CT, transoesophageal echocardiography can be done at the bedside or in theatre.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks to confirm the diagnosis in an **unstable** patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "radiating to her back",
+      "76/48 mmHg",
+      "new early diastolic murmur",
+      "too unstable to go to the CT scanner"
+     ],
+     "x": "Shocked, likely type A with AR, and cannot leave resus."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bedside imaging of the aorta: **transoesophageal echo**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cardiac MRI is long and away from resus."
+      ],
+      [
+       1,
+       "CT is the gold standard but she is too unstable to travel."
+      ],
+      [
+       2,
+       "Exercise testing is absurd and dangerous here."
+      ],
+      [
+       4,
+       "A V/Q scan is for PE."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. TOE.** Unstable suspected dissection = TOE instead of CT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 62 year old man has a CT aortic angiogram showing a dissection flap in the ascending aorta extending into the arch. His pulse rate is 112 bpm and BP 186/100 mmHg. He has been given IV morphine.",
+   "labs": [
+    [
+     "Troponin T",
+     "22 ng/L",
+     "<14",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "96 µmol/L",
+     "60–110",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial drug treatment?",
+   "o": [
+    "IV alteplase",
+    "IV glyceryl trinitrate alone",
+    "IV labetalol",
+    "IV unfractionated heparin",
+    "Oral amlodipine"
+   ],
+   "a": 2,
+   "e": "In type A dissection, IV labetalol is given first to lower heart rate and BP while surgery is arranged. A vasodilator alone causes reflex tachycardia; anticoagulants and thrombolysis are dangerous.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial **drug** for an ascending (type A) dissection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ascending aorta",
+      "pulse rate is 112 bpm",
+      "BP 186/100 mmHg",
+      "IV morphine"
+     ],
+     "x": "Type A, tachycardic, hypertensive, already has analgesia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Lower rate and pressure with **IV labetalol**, then immediate surgery."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Thrombolysis can cause catastrophic bleeding."
+      ],
+      [
+       1,
+       "GTN alone triggers reflex tachycardia and raises dP/dt."
+      ],
+      [
+       3,
+       "Heparin worsens bleeding into the wall; mild troponin rise is malperfusion."
+      ],
+      [
+       4,
+       "Oral amlodipine is far too slow."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV labetalol.** Beta-blocker first, every time."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 65 year old woman has a type A aortic dissection confirmed on CT aortic angiogram. She has had IV morphine and IV labetalol. Her pulse rate is now 66 bpm and BP 118/72 mmHg. There is a new early diastolic murmur.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Admit to a medical ward on oral beta-blocker",
+    "Coronary angiography",
+    "Emergency open surgery with aortic root replacement",
+    "Repeat CT in 48 hours",
+    "Thrombolysis"
+   ],
+   "a": 2,
+   "e": "Type A dissection is always managed surgically: after IV labetalol, immediate open surgery with aortic root replacement. Controlled BP does not make it safe to wait.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The next step after drugs for a **type A** dissection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type A aortic dissection",
+      "IV labetalol",
+      "BP 118/72 mmHg",
+      "new early diastolic murmur"
+     ],
+     "x": "Ascending, now rate-controlled, with acute AR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Type A is surgical: **immediate open repair (aortic root replacement)**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Medical management is only for stable type B."
+      ],
+      [
+       1,
+       "Coronary angiography delays surgery and risks extending the flap."
+      ],
+      [
+       3,
+       "Waiting 48 hours risks rupture and tamponade."
+      ],
+      [
+       4,
+       "Thrombolysis is contraindicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Type A = labetalol then theatre; type B = labetalol and morphine."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old man has a CT aortic angiogram for sudden tearing back pain. It shows a dissection confined to the descending thoracic aorta. His pulse rate is 94 bpm and BP 170/96 mmHg. His legs are warm with palpable pulses and urine output is normal.",
+   "labs": [
+    [
+     "Creatinine",
+     "102 µmol/L",
+     "60–110",
+     ""
+    ],
+    [
+     "Lactate",
+     "1.4 mmol/L",
+     "<2.0",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Aspirin 300 mg",
+    "Emergency open aortic repair",
+    "IV labetalol and IV morphine",
+    "IV unfractionated heparin",
+    "Thrombolysis with alteplase"
+   ],
+   "a": 2,
+   "e": "Uncomplicated type B dissection is managed medically with IV beta-blocker and opioid analgesia in ICU. Surgery is reserved for complications.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: type A or B, complicated or not?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confined to the descending thoracic aorta",
+      "BP 170/96 mmHg",
+      "legs are warm with palpable pulses",
+      "urine output is normal"
+     ],
+     "x": "Descending only = type B. Normal limbs, kidneys and lactate = uncomplicated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Medical**: IV labetalol and IV morphine, ICU."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspirin may worsen bleeding into the wall."
+      ],
+      [
+       1,
+       "Open repair is for type A or complicated type B."
+      ],
+      [
+       3,
+       "Heparin is for arterial thrombosis, not dissection."
+      ],
+      [
+       4,
+       "Thrombolysis is contraindicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Stable type B = BP control + analgesia; surgery for complications."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 56 year old man has a type A aortic dissection. He has a new early diastolic murmur at the left sternal edge. His pulse rate is 106 bpm and BP 164/52 mmHg. His ECG shows ST elevation in leads II, III and aVF.",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "ECG (see item resources)",
+    "layout": "12lead",
+    "rhythm": "sinus_tachy",
+    "rate": 106,
+    "leads": {
+     "II": "st_elev",
+     "III": "st_elev",
+     "aVF": "st_elev",
+     "aVL": "st_dep"
+    },
+    "caption": "Inferior ST elevation."
+   },
+   "q": "Which is the most likely mechanism of his ECG changes?",
+   "o": [
+    "Coronary artery spasm from cocaine",
+    "Coronary ostial compromise by the dissection",
+    "Pericardial inflammation",
+    "Plaque rupture in the left anterior descending artery",
+    "Right ventricular strain from pulmonary embolism"
+   ],
+   "a": 1,
+   "e": "In type A dissection the flap can compress or extend into the coronary ostia (most often the right), causing ischaemia: here inferior ST elevation. The same root dissection distorts the valve, causing AR.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why does this dissection cause a 'STEMI'?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type A aortic dissection",
+      "new early diastolic murmur",
+      "ST elevation in leads II, III and aVF"
+     ],
+     "x": "Root involvement (AR murmur) plus inferior (RCA territory) ST elevation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The flap has compromised the **coronary ostium**: malperfusion, not plaque rupture."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No cocaine history; spasm does not explain the AR murmur."
+      ],
+      [
+       2,
+       "Pericarditis gives widespread saddle ST elevation, not territorial."
+      ],
+      [
+       3,
+       "LAD occlusion gives anterior (V1–V4) changes, not inferior."
+      ],
+      [
+       4,
+       "PE strain gives right axis and T inversion in V1–V3."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Type A root dissection = AR (annulus) + ischaemia (coronary ostia)."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is an aortic dissection and how do the Stanford types differ?",
+    "tip": "Exam thinking: the type decides surgery or medicine.",
+    "points": [
+     {
+      "p": "Intimal tear, blood tracks between layers creating a false lumen",
+      "k": [
+       [
+        "tear"
+       ],
+       [
+        "false lumen",
+        "between layers",
+        "media"
+       ]
+      ],
+      "why": "The false lumen is what CT shows."
+     },
+     {
+      "p": "Type A: ascending aorta or arch, surgical emergency",
+      "k": [
+       [
+        "type a"
+       ],
+       [
+        "ascending",
+        "arch"
+       ]
+      ],
+      "why": "Any ascending involvement is type A."
+     },
+     {
+      "p": "Type B: descending aorta distal to the left subclavian, usually medical",
+      "k": [
+       [
+        "type b"
+       ],
+       [
+        "descending",
+        "subclavian"
+       ]
+      ],
+      "why": "Surgery in type B only for complications."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the main risk factors for aortic dissection?",
+    "tip": "Exam thinking: commonest association vs strongest risk factor.",
+    "points": [
+     {
+      "p": "Hypertension: commonest association",
+      "k": [
+       [
+        "hypertension",
+        "high blood pressure",
+        "high bp",
+        "htn"
+       ]
+      ],
+      "why": "Most exam patients are older hypertensive men."
+     },
+     {
+      "p": "Marfan's syndrome: strongest risk factor",
+      "k": [
+       [
+        "marfan"
+       ]
+      ],
+      "why": "Tall young patient with chest pain: think Marfan's."
+     },
+     {
+      "p": "Other connective tissue disorders and existing aortic aneurysm",
+      "k": [
+       [
+        "connective tissue",
+        "ehlers",
+        "aneurysm"
+       ]
+      ],
+      "why": "Ehlers-Danlos and pre-existing aneurysm also count."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the classic presentation of aortic dissection.",
+    "tip": "Exam thinking: onset and radiation separate it from ACS.",
+    "points": [
+     {
+      "p": "Sudden severe tearing chest pain, maximal at onset",
+      "k": [
+       [
+        "tearing",
+        "ripping"
+       ],
+       [
+        "sudden",
+        "maximal",
+        "onset"
+       ]
+      ],
+      "why": "ACS builds over minutes."
+     },
+     {
+      "p": "Radiates to the interscapular region / back",
+      "k": [
+       [
+        "interscapular",
+        "back",
+        "shoulder blade"
+       ]
+      ],
+      "why": "Ruptured AAA is abdominal and back pain with a pulsatile mass."
+     },
+     {
+      "p": "Pulse deficit or BP difference over 20 mmHg between arms",
+      "k": [
+       [
+        "pulse deficit",
+        "difference",
+        "both arms",
+        "between arms",
+        "gap"
+       ],
+       [
+        "20"
+       ]
+      ],
+      "why": "The single most useful bedside sign."
+     },
+     {
+      "p": "Collapse; CXR widened mediastinum",
+      "k": [
+       [
+        "mediastin"
+       ]
+      ],
+      "why": "A normal CXR does not exclude it."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which signs tell you it is type A rather than type B?",
+    "tip": "Exam thinking: which pulses are delayed against which?",
+    "points": [
+     {
+      "p": "Type A: radio-radial delay",
+      "k": [
+       [
+        "radio-radial",
+        "radioradial",
+        "radio radial"
+       ]
+      ],
+      "why": "Both arms compared."
+     },
+     {
+      "p": "Type A: new early diastolic (AR) murmur",
+      "k": [
+       [
+        "diastolic",
+        "aortic regurgitation",
+        "ar murmur",
+        "regurg"
+       ]
+      ],
+      "why": "Loudest at the left sternal edge."
+     },
+     {
+      "p": "Type B: radio-femoral delay",
+      "k": [
+       [
+        "radio-femoral",
+        "radiofemoral",
+        "radio femoral"
+       ]
+      ],
+      "why": "Coarctation also causes this, but chronically."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What complications can aortic dissection cause?",
+    "tip": "Exam thinking: which branch is compromised predicts the symptom.",
+    "points": [
+     {
+      "p": "Cardiac tamponade: hypotension, raised JVP, muffled heart sounds",
+      "k": [
+       [
+        "tamponade"
+       ]
+      ],
+      "why": "Beck's triad in type A."
+     },
+     {
+      "p": "Aortic regurgitation and heart failure",
+      "k": [
+       [
+        "regurg",
+        "heart failure",
+        "cardiac failure"
+       ]
+      ],
+      "why": "Raised JVP, crackles, S3."
+     },
+     {
+      "p": "Myocardial ischaemia from coronary dissection",
+      "k": [
+       [
+        "coronary",
+        "ischaemi",
+        "mi",
+        "stemi"
+       ]
+      ],
+      "why": "Do not thrombolyse."
+     },
+     {
+      "p": "Paraparesis (spinal/carotid), renal (anuria, loin pain), mesenteric (abdominal pain), limb ischaemia",
+      "k": [
+       [
+        "parapar",
+        "spinal",
+        "renal",
+        "anuria",
+        "mesenteric",
+        "limb",
+        "stroke"
+       ]
+      ],
+      "why": "Malperfusion of branch vessels."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the diagnostic investigation, and what if the patient is unstable?",
+    "tip": "Exam thinking: stable or not decides CT vs TOE.",
+    "points": [
+     {
+      "p": "CT aortic angiogram (gold standard) shows the false lumen",
+      "k": [
+       [
+        "ct"
+       ],
+       [
+        "angio"
+       ]
+      ],
+      "why": "Not CTPA."
+     },
+     {
+      "p": "Unstable: transoesophageal echocardiography",
+      "k": [
+       [
+        "transoesophageal",
+        "toe",
+        "tee",
+        "trans-oesophageal"
+       ]
+      ],
+      "why": "Bedside or theatre."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which bedside tests are done first?",
+    "tip": "Exam thinking: bedside before imaging.",
+    "points": [
+     {
+      "p": "Bilateral arm blood pressures",
+      "k": [
+       [
+        "both arms",
+        "bilateral",
+        "each arm",
+        "two arms"
+       ]
+      ],
+      "why": "Gap over 20 mmHg."
+     },
+     {
+      "p": "FBC and U&Es",
+      "k": [
+       [
+        "fbc",
+        "full blood count",
+        "u&e",
+        "urea",
+        "electrolytes",
+        "renal function"
+       ]
+      ],
+      "why": "Baseline for theatre and renal malperfusion."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is a type A dissection managed?",
+    "tip": "Exam thinking: drug first, then theatre, then ICU.",
+    "points": [
+     {
+      "p": "IV labetalol first",
+      "k": [
+       [
+        "labetalol",
+        "beta-blocker",
+        "beta blocker"
+       ]
+      ],
+      "why": "Lower HR and dP/dt."
+     },
+     {
+      "p": "Immediate open surgery: aortic root replacement",
+      "k": [
+       [
+        "surgery",
+        "surgical",
+        "root replacement",
+        "open repair"
+       ]
+      ],
+      "why": "Type A is always surgical."
+     },
+     {
+      "p": "ICU with continuous BP monitoring",
+      "k": [
+       [
+        "icu",
+        "intensive care",
+        "itu"
+       ]
+      ],
+      "why": "Arterial line."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is a stable type B dissection managed?",
+    "tip": "Exam thinking: medical unless complicated.",
+    "points": [
+     {
+      "p": "IV beta-blocker (labetalol) to control BP and prevent propagation",
+      "k": [
+       [
+        "labetalol",
+        "beta-blocker",
+        "beta blocker"
+       ]
+      ],
+      "why": "BP control is the treatment."
+     },
+     {
+      "p": "Opioid analgesia (IV morphine)",
+      "k": [
+       [
+        "morphine",
+        "opioid",
+        "opiate"
+       ]
+      ],
+      "why": "Pain drives BP up."
+     },
+     {
+      "p": "Surgery reserved for complications",
+      "k": [
+       [
+        "complication"
+       ]
+      ],
+      "why": "e.g. limb, renal or gut ischaemia."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do hypertension and Marfan's cause dissection, and why are beta-blockers given?",
+    "tip": "Exam thinking: weak media plus high shear.",
+    "points": [
+     {
+      "p": "They weaken the aortic media (Marfan's: defective fibrillin-1)",
+      "k": [
+       [
+        "media",
+        "wall"
+       ],
+       [
+        "weak"
+       ]
+      ],
+      "why": "Predisposes to intimal tears."
+     },
+     {
+      "p": "Fibrillin-1 defect in Marfan's",
+      "k": [
+       [
+        "fibrillin"
+       ]
+      ],
+      "why": "Autosomal dominant FBN1."
+     },
+     {
+      "p": "Beta-blockers reduce heart rate and dP/dt, reducing shear stress",
+      "k": [
+       [
+        "dp/dt",
+        "shear",
+        "rate of rise"
+       ]
+      ],
+      "why": "Used even pre-op in type A."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does type A dissection cause aortic regurgitation or myocardial ischaemia?",
+    "tip": "Exam thinking: root anatomy.",
+    "points": [
+     {
+      "p": "Root involvement distorts the aortic valve annulus: acute AR",
+      "k": [
+       [
+        "annulus",
+        "valve"
+       ]
+      ],
+      "why": "Early diastolic murmur."
+     },
+     {
+      "p": "Compresses the coronary ostia: ischaemia",
+      "k": [
+       [
+        "ostia",
+        "ostium",
+        "coronary"
+       ]
+      ],
+      "why": "Usually RCA, so inferior changes."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Intima": "The innermost lining layer of an artery wall.",
+  "Media": "The middle, muscular and elastic layer of the artery wall that bears pressure.",
+  "False lumen": "A new channel of blood inside the aortic wall, created when blood splits the layers.",
+  "Stanford type A": "Dissection involving the ascending aorta or arch; a surgical emergency.",
+  "Stanford type B": "Dissection limited to the descending aorta, distal to the left subclavian; usually managed medically.",
+  "Marfan's syndrome": "Autosomal dominant connective tissue disorder from fibrillin-1 defects: tall, long limbs, lens dislocation, aortic root dilatation.",
+  "Fibrillin-1": "A connective tissue protein that supports elastic fibres; defective in Marfan's syndrome.",
+  "Interscapular": "Between the shoulder blades.",
+  "Pulse deficit": "A pulse that is weaker, delayed or absent compared with the same pulse on the other side.",
+  "Radio-radial delay": "One radial pulse arriving later than the other; points to type A dissection.",
+  "Radio-femoral delay": "The femoral pulse arriving after the radial; seen in type B dissection and coarctation.",
+  "Widened mediastinum": "A broadened central shadow on chest X-ray, here from a dilated dissected aorta.",
+  "Aortic regurgitation": "Leak back through the aortic valve in diastole, causing an early diastolic murmur.",
+  "Early diastolic murmur": "A soft blowing murmur just after S2; loudest at the left sternal edge in aortic regurgitation.",
+  "Left sternal edge": "The area just left of the breastbone where aortic regurgitation is best heard.",
+  "Cardiac tamponade": "Blood or fluid in the pericardium compressing the heart and stopping it filling.",
+  "Beck's triad": "Hypotension, raised JVP and muffled heart sounds: the signs of cardiac tamponade.",
+  "JVP": "Jugular venous pressure; a raised JVP shows high right-sided filling pressure.",
+  "Third heart sound": "Low-pitched extra sound in early diastole, a sign of heart failure.",
+  "Paraparesis": "Weakness of both legs, here from spinal cord ischaemia.",
+  "Malperfusion": "Inadequate blood supply to an organ because its branch artery is compressed by the flap.",
+  "Coronary ostia": "The openings of the coronary arteries in the aortic root.",
+  "CT aortic angiogram": "Contrast CT timed for the aorta; the gold-standard test, showing the false lumen.",
+  "TOE": "Transoesophageal echocardiography: ultrasound probe in the oesophagus, used when the patient is too unstable for CT.",
+  "CTPA": "CT pulmonary angiogram; timed for the pulmonary arteries to look for PE, not dissection.",
+  "Labetalol": "An IV alpha and beta-blocker used first to lower heart rate and BP in dissection.",
+  "dP/dt": "The rate of rise of arterial pressure with each heartbeat; lowering it reduces shear on the aortic wall.",
+  "Shear stress": "The dragging force of flowing blood on the vessel wall.",
+  "Aortic root replacement": "Open surgery replacing the dissected aortic root and ascending aorta with a graft.",
+  "Reflex tachycardia": "A rise in heart rate when a vasodilator lowers BP; why beta-blockade comes first.",
+  "Thrombolysis": "Clot-busting drug treatment such as alteplase; contraindicated in aortic dissection.",
+  "ICU": "Intensive care unit, where all dissection patients go for continuous BP monitoring.",
+  "Ruptured AAA": "Burst abdominal aortic aneurysm: abdominal or back pain, pulsatile mass and shock.",
+  "Coarctation": "A congenital narrowing of the aorta causing radio-femoral delay and upper limb hypertension."
+ }
+}

@@ -1,0 +1,464 @@
+{
+  "id": "dementias",
+  "patient": {
+    "name": "Doreen Fitzgerald",
+    "age": 78,
+    "sex": "F",
+    "setting": "GP surgery, then memory clinic",
+    "complaint": "Two years of slowly worsening memory, brought in by her daughter",
+    "background": ["Hypertension on amlodipine", "Amitriptyline 25 mg at night for back pain", "Widowed, lives alone in Lewisham", "Still drives to the shops"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' where the tempo and first symptom name the subtype: gradual memory loss (Alzheimer's), stepwise with vascular risk (vascular), behaviour first in a younger patient (FTD), fluctuation, hallucinations and parkinsonism (Lewy body).",
+      "steps": [
+        { "type": "story", "points": ["Doreen, 78, brought in by her daughter Siobhan.", "Two years of **slowly** worsening memory: repeats questions, misplaces keys.", "Last month she got lost walking home from church.", "Unpaid bills; she has stopped cooking proper meals.", "No sudden drops, no falls, no hallucinations."], "vitals": { "T": "36.6°C", "HR": "68 bpm", "BP": "142/84 mmHg" } },
+        { "type": "notes", "src": 0, "lead": "Doreen's problem is **progressive** and now affects daily life (bills, cooking, getting lost): that is dementia, not normal ageing." },
+        { "type": "ask", "q": "Doreen's decline has been smooth and gradual over two years, memory first. Which subtype fits best?", "o": ["Alzheimer's disease", "Dementia with Lewy bodies", "Frontotemporal dementia", "Vascular dementia"], "a": 0, "r": "**Gradual, progressive** memory-led decline in an older woman is Alzheimer's. Vascular is stepwise; FTD is behaviour first in younger people." },
+        { "type": "notes", "src": 1, "lead": "Doreen's history matches the **Alzheimer's** pattern: gradual, memory first. She has had no TIAs or strokes to suggest vascular dementia." },
+        { "type": "compare", "title": "The four subtypes at a glance", "head": ["Subtype", "Tempo", "First feature", "Clue in the stem"], "rows": [["Alzheimer's", "Gradual, progressive", "Memory loss", "Older; Down syndrome if young"], ["Vascular", "**Stepwise**", "Varies", "TIAs/strokes, focal signs"], ["Frontotemporal", "Relatively rapid", "**Personality/behaviour**", "Younger; memory preserved"], ["Lewy body", "Fluctuating", "Cognition fluctuates", "Hallucinations, parkinsonism"]] },
+        { "type": "notes", "src": 2, "lead": "Doreen has none of the Lewy body triad and no early disinhibition, so the signature features point away from DLB and FTD." },
+        { "type": "trap", "text": "If a stem has fluctuating confusion, **visual hallucinations** and parkinsonism, never pick **haloperidol** for agitation: Lewy body patients get severe rigidity and higher mortality." },
+        { "type": "story", "points": ["Siobhan asks: could this just be **depression**?", "Doreen says her mood is fine; she still enjoys her grandchildren.", "No urinary incontinence; she walks normally.", "She tries hard on questions but cannot recall them."] },
+        { "type": "notes", "src": 3, "lead": "Doreen's mood is normal and her gait and bladder are fine, so **pseudodementia** and **normal pressure hydrocephalus** are unlikely mimics." },
+        { "type": "flow", "title": "Naming the dementia from the stem", "nodes": ["Progressive cognitive decline affecting daily life", "Exclude mimics: delirium, depression, NPH", "Gradual, memory first → Alzheimer's", "Stepwise with vascular risk → vascular", "Behaviour first, younger → FTD", "Fluctuation, hallucinations, parkinsonism → DLB"], "caption": "Tempo plus first symptom names the subtype." },
+        { "type": "pearl", "text": "**Down syndrome** is a strong risk factor for **early-onset Alzheimer's**: a 40 to 50 year old with Down syndrome who is losing skills has Alzheimer's until proven otherwise." }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (a cognitive tool plus confusion screen bloods), or 'diagnostic investigation' where DaTscan is the answer for Lewy body dementia.",
+      "steps": [
+        { "type": "story", "points": ["GP does a **MoCA**, then an MMSE at the memory clinic.", "Doreen scores **19/30** on the MMSE.", "Lost points on recall, orientation to date and the clock task."] },
+        { "type": "visual", "visual": { "kind": "scale", "title": "MMSE score", "min": 0, "max": 30, "unit": "/30", "bands": [[0, 10, "severe (<10)", "bad"], [10, 21, "moderate", "warn"], [21, 27, "mild", "warn"], [27, 30, "normal", "ok"]], "value": 19, "label": "Doreen 19", "caption": "Moderate impairment. Below 10 is severe Alzheimer's, where memantine comes in." } },
+        { "type": "notes", "src": 1, "lead": "Doreen gets a **validated cognitive tool** plus a **confusion screen** to exclude reversible causes before anyone calls it dementia." },
+        { "type": "labs", "title": "Doreen's confusion screen", "rows": [["Haemoglobin", "128 g/L", "115–165", ""], ["Sodium", "139 mmol/L", "135–145", ""], ["Adjusted calcium", "2.34 mmol/L", "2.20–2.60", ""], ["TSH", "2.1 mU/L", "0.4–4.0", ""], ["Vitamin B12", "412 ng/L", "200–900", ""], ["Glucose", "5.6 mmol/L", "3.5–7.8", ""]], "text": "All normal: no hypothyroidism, B12 deficiency, hypercalcaemia or hyponatraemia to treat." },
+        { "type": "notes", "src": 0, "lead": "There is no single blood test for Alzheimer's: Doreen's diagnosis is **clinical**, supported by imaging." },
+        { "type": "ask", "q": "Doreen has an MRI brain. Which finding fits Alzheimer's?", "o": ["Frontotemporal atrophy", "Hippocampal and cortical atrophy", "Multiple lacunar infarcts", "Normal scan"], "a": 1, "r": "**Hippocampal (medial temporal) and cortical atrophy** is Alzheimer's. Infarcts suggest vascular; frontotemporal atrophy suggests FTD." },
+        { "type": "notes", "src": 2, "lead": "Doreen's MRI shows **hippocampal atrophy**. A DaTscan would only be needed if Lewy body dementia were suspected." },
+        { "type": "notes", "src": 3, "lead": "Doreen walks well and is continent. If she had 'wet, wobbly, wacky' features, an **LP** (and then a VP shunt) would be the route." },
+        { "type": "trap", "text": "Do not jump to a scan first. The **initial** step is a cognitive assessment tool with bloods; imaging and DaTscan come after." }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?': an AChE inhibitor for mild to moderate Alzheimer's, memantine if MMSE <10 or AChE inhibitors are not tolerated, and never antipsychotics in Lewy body dementia.",
+      "steps": [
+        { "type": "story", "points": ["Diagnosis: **Alzheimer's disease**, moderate (MMSE 19).", "ECG: sinus rhythm 68 bpm, normal QT, no heart block.", "Siobhan asks what can slow things down."], "vitals": { "HR": "68 bpm", "BP": "142/84 mmHg" } },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Heart rate before an AChE inhibitor", "min": 30, "max": 110, "unit": "bpm", "bands": [[30, 50, "<50: contraindicated", "bad"], [50, 60, "caution", "warn"], [60, 100, "safe", "ok"]], "value": 68, "label": "Doreen 68", "caption": "AChE inhibitors slow the heart: check the ECG for bradycardia, heart block and long QT first." } },
+        { "type": "ask", "q": "Doreen's ECG is normal. What is first-line drug treatment?", "o": ["Donepezil", "Haloperidol", "Memantine", "Sertraline"], "a": 0, "r": "An **AChE inhibitor** (donepezil, galantamine or rivastigmine) is first line for Alzheimer's. Memantine is for severe disease or intolerance." },
+        { "type": "notes", "src": 0, "lead": "Doreen starts **donepezil**; her normal ECG means no contraindication. Warn her about nausea, diarrhoea and slow pulse." },
+        { "type": "story", "points": ["Medication review: **amitriptyline** 25 mg at night.", "It is strongly anticholinergic and worsens cognition.", "Switched to paracetamol and physiotherapy for her back."] },
+        { "type": "notes", "src": 1, "lead": "Doreen's **amitriptyline** is stopped, and she and Siobhan get cognitive stimulation therapy, carer support and advance care planning." },
+        { "type": "flow", "title": "Alzheimer's drug ladder", "nodes": ["Care and support for everyone", "Stop anticholinergics (e.g. amitriptyline)", "Mild to moderate → AChE inhibitor (donepezil)", "MMSE <10 or AChE intolerance → memantine", "Behaviour: non-drug measures first"], "caption": "Drugs slow progression; they do not cure it." },
+        { "type": "notes", "src": 2, "lead": "Had Doreen had Lewy body or frontotemporal dementia, the plan would differ: **no antipsychotics** in DLB, behavioural measures in FTD." },
+        { "type": "notes", "src": "guidelines", "lead": "Doreen still drives, so under **DVLA** rules she must tell the DVLA and have a driving assessment; NICE guides the rest of her care." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Doreen's MMSE over three years", "x": ["Diagnosis", "Year 1", "Year 2", "Year 3"], "unit": "/30", "series": [{ "name": "MMSE", "values": [19, 17, 13, 9] }], "caption": "MMSE falls below 10 in year 3: memantine is added (severe Alzheimer's)." } },
+        { "type": "pearl", "text": "**Memantine** is an NMDA antagonist: think of it for MMSE **<10** or when bradycardia or heart block rule out an AChE inhibitor. Its side effect is constipation." }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions on mechanism: plaques and tangles in Alzheimer's, alpha-synuclein in Lewy body, TDP-43 or tau in FTD, or why AChE inhibitors help.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Doreen's hippocampal atrophy comes from **amyloid-beta plaques** and **tau tangles**, and her memory loss from losing cholinergic neurons." },
+        { "type": "flow", "title": "From plaques to donepezil", "nodes": ["Extracellular amyloid-beta plaques", "Intracellular tau neurofibrillary tangles", "Synaptic loss and hippocampal atrophy", "Loss of cholinergic neurons (nucleus basalis of Meynert)", "AChE inhibitor keeps more acetylcholine in the synapse"] },
+        { "type": "ask", "q": "How does donepezil help Doreen's memory?", "o": ["Blocks NMDA receptors", "Clears amyloid plaques", "Increases synaptic acetylcholine", "Reverses tau tangles"], "a": 2, "r": "It inhibits **acetylcholinesterase**, so more acetylcholine stays in the synapse. It is symptomatic: it does not remove plaques or tangles." },
+        { "type": "notes", "src": 1, "lead": "Doreen's decline is smooth. A patient with **vascular** dementia drops a step with each new infarct." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Gradual vs stepwise decline", "x": ["Year 0", "Year 1", "Year 2", "Year 3", "Year 4"], "unit": "MMSE /30", "series": [{ "name": "Alzheimer's (Doreen)", "values": [26, 23, 21, 18, 15] }, { "name": "Vascular dementia", "values": [26, 26, 20, 20, 14] }], "caption": "Alzheimer's slides; vascular dementia drops with each stroke, then plateaus." } },
+        { "type": "notes", "src": 2, "lead": "Lewy body dementia shares **alpha-synuclein** with Parkinson's, which is why the substantia nigra is hit and antipsychotics are so dangerous." },
+        { "type": "notes", "src": 3, "lead": "FTD spares the posterior cortex, so memory holds up early while personality goes: the opposite of Doreen's pattern." },
+        { "type": "compare", "title": "Which protein, which dementia?", "head": ["Subtype", "Pathology", "Where"], "rows": [["Alzheimer's", "Amyloid-beta plaques + tau tangles", "Hippocampus, cortex"], ["Vascular", "Cumulative ischaemia", "Infarcts, small vessels"], ["Lewy body", "**Alpha-synuclein**", "Cortex + substantia nigra"], ["Frontotemporal", "**TDP-43** or tau", "Frontal and temporal lobes"]] },
+        { "type": "story", "points": ["Two years on, Doreen is admitted with a **UTI**.", "Suddenly much more confused, drowsy, then agitated at night.", "Siobhan: 'She was never this bad last week.'"], "vitals": { "T": "38.3°C", "HR": "104 bpm", "BP": "118/70 mmHg" } },
+        { "type": "notes", "src": 4, "lead": "Doreen's sudden worsening is **delirium on top of dementia**: treat the UTI and look for the cause, do not just call it progression." },
+        { "type": "trap", "text": "An **acute** change in someone with dementia is delirium until proven otherwise. Dementia is slow; delirium is sudden and fluctuating." }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "What is the core triad of dementia with Lewy bodies?", "o": ["Fluctuating cognition, visual hallucinations, parkinsonism", "Gait disturbance, incontinence, dementia", "Memory loss, aphasia, apraxia", "Stepwise decline, focal signs, TIAs"], "a": 0, "r": "**Fluctuating cognition, visual hallucinations and parkinsonism.** The second option is normal pressure hydrocephalus." },
+    { "d": "diagnosis", "q": "Which gene is linked to frontotemporal dementia and ALS?", "o": ["APOE4", "C9orf72", "HTT", "SOD1 only"], "a": 1, "r": "**C9orf72** links FTD with amyotrophic lateral sclerosis." },
+    { "d": "diagnosis", "q": "What is the classic triad of normal pressure hydrocephalus?", "o": ["Headache, vomiting, papilloedema", "Tremor, rigidity, bradykinesia", "Urinary incontinence, gait disturbance, dementia", "Visual hallucinations, falls, fluctuation"], "a": 2, "r": "'**Wet, wobbly and wacky**': incontinence, gait and dementia." },
+    { "d": "diagnosis", "q": "How does depressive pseudodementia usually differ on the MMSE?", "o": ["MMSE is normal despite apparent impairment", "MMSE is below 10", "MMSE falls stepwise", "MMSE cannot be done"], "a": 0, "r": "In **pseudodementia** the MMSE is typically normal despite the patient seeming impaired." },
+    { "d": "investigation", "q": "Which scan is diagnostic for dementia with Lewy bodies?", "o": ["CT head", "DaTscan (SPECT)", "EEG", "PET-CT body"], "a": 1, "r": "**DaTscan** shows reduced dopamine transporter uptake in DLB." },
+    { "d": "investigation", "q": "How is normal pressure hydrocephalus investigated?", "o": ["DaTscan", "EEG", "Lumbar puncture", "Nerve conduction studies"], "a": 2, "r": "**Lumbar puncture**; it is treated with a ventriculoperitoneal shunt." },
+    { "d": "management", "q": "What is first-line drug treatment for mild to moderate Alzheimer's?", "o": ["Acetylcholinesterase inhibitor", "Antipsychotic", "Memantine", "SSRI"], "a": 0, "r": "**Donepezil, galantamine or rivastigmine.** Memantine is for severe disease (MMSE <10) or intolerance." },
+    { "d": "management", "q": "Which is a contraindication to an AChE inhibitor?", "o": ["Constipation", "Hypertension", "Sinus bradycardia below 50 bpm", "Type 2 diabetes"], "a": 2, "r": "AChE inhibitors slow the heart: avoid in **bradycardia <50**, unpaced second/third-degree block or long QT." },
+    { "d": "management", "q": "Which drug must be avoided in dementia with Lewy bodies?", "o": ["Donepezil", "Haloperidol", "Memantine", "Rivastigmine"], "a": 1, "r": "**Antipsychotics/haloperidol** worsen parkinsonism and increase mortality in DLB." },
+    { "d": "science", "q": "Which protein forms Lewy bodies?", "o": ["Alpha-synuclein", "Amyloid-beta", "Prion protein", "TDP-43"], "a": 0, "r": "**Alpha-synuclein** aggregates; TDP-43 is FTD; amyloid-beta is Alzheimer's." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 74 year old man is brought to the GP by his wife. Over the past year his memory and attention vary greatly from day to day. He describes seeing small children playing in the living room. He has recently fallen twice and his wife says he shouts and kicks in his sleep. On examination he has a mild resting tremor and cogwheel rigidity in both arms.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Alzheimer's disease", "Delirium", "Dementia with Lewy bodies", "Frontotemporal dementia", "Vascular dementia"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis question in an older man with cognitive change: decide the dementia subtype from the tempo and the extra features." },
+        { "t": "Pick out the clues", "clues": ["vary greatly from day to day", "seeing small children", "fallen twice", "shouts and kicks in his sleep", "cogwheel rigidity"], "x": "**Fluctuating cognition**, Lilliputian **visual hallucinations**, **parkinsonism**, falls and REM sleep behaviour disorder." },
+        { "t": "Make your own answer before looking", "x": "The full core triad plus REM sleep disorder: **dementia with Lewy bodies**." },
+        { "t": "Rule out the others", "elim": [[0, "Alzheimer's is smooth memory decline without hallucinations or parkinsonism early."], [1, "Delirium is acute (hours to days), not a year-long pattern."], [3, "FTD starts with personality change in younger patients."], [4, "Vascular dementia is stepwise with focal signs and vascular history."]] },
+        { "t": "Commit", "x": "**C. Dementia with Lewy bodies.** Rule: fluctuation + hallucinations + parkinsonism = DLB, and never give haloperidol." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 76 year old woman sees her GP because her son is worried about her memory. Over 18 months she has become forgetful, repeats herself and has missed appointments. She is otherwise well and takes no regular medicines. Neurological examination is normal. Her pulse rate is 72 bpm and BP 136/80 mmHg.",
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["Cognitive assessment tool with confusion screen bloods", "CT head", "DaTscan", "Lumbar puncture", "MRI brain"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "'Initial' investigation in suspected dementia: what does the GP do first?" },
+        { "t": "Pick out the clues", "clues": ["Over 18 months", "forgetful, repeats herself", "Neurological examination is normal"], "x": "Gradual memory decline with no focal signs: possible Alzheimer's, but reversible causes must be excluded first." },
+        { "t": "Make your own answer before looking", "x": "A **validated cognitive tool** (e.g. MoCA, MMSE, 6CIT) plus **confusion screen bloods** (TFTs, B12, calcium, U&Es, glucose)." },
+        { "t": "Rule out the others", "elim": [[1, "CT comes later, to support the diagnosis; it is not the first step."], [2, "DaTscan is for suspected Lewy body dementia; no parkinsonism or hallucinations here."], [3, "LP is for suspected normal pressure hydrocephalus; she has no gait or bladder change."], [4, "MRI supports the diagnosis after first-line assessment, not before."]] },
+        { "t": "Commit", "x": "**A. Cognitive assessment tool with confusion screen bloods.** Rule: test cognition and exclude reversible causes before imaging." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 79 year old man has been diagnosed with Alzheimer's disease at the memory clinic. His MMSE score is 22/30. He lives with his wife and is managing most daily tasks. His pulse rate is 74 bpm and BP 138/82 mmHg. An ECG shows sinus rhythm with a normal PR and QT interval.",
+      "q": "Which is the most appropriate initial drug treatment?",
+      "o": ["Amitriptyline", "Donepezil", "Haloperidol", "Memantine", "Sertraline"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial drug treatment for a confirmed Alzheimer's diagnosis." },
+        { "t": "Pick out the clues", "clues": ["Alzheimer's disease", "MMSE score is 22/30", "pulse rate is 74 bpm", "normal PR and QT interval"], "x": "Mild to moderate disease; a normal heart rate and ECG mean no contraindication to an AChE inhibitor." },
+        { "t": "Make your own answer before looking", "x": "First line: an **acetylcholinesterase inhibitor**, so donepezil." },
+        { "t": "Rule out the others", "elim": [[0, "Amitriptyline is anticholinergic and worsens cognition; it should be stopped."], [2, "Antipsychotics are not used to slow Alzheimer's and carry risk."], [3, "Memantine is for MMSE <10 or AChE inhibitor intolerance."], [4, "SSRIs are for depression or FTD behaviour, not Alzheimer's cognition."]] },
+        { "t": "Commit", "x": "**B. Donepezil.** Rule: Alzheimer's with MMSE above 10 and a safe ECG = AChE inhibitor." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "An 83 year old woman with a 6 year history of gradually progressive memory loss dies of pneumonia. Before death her MRI brain showed marked bilateral hippocampal and generalised cortical atrophy. A post-mortem examination of her brain is performed.",
+      "q": "Which is the most likely histological finding?",
+      "o": ["Alpha-synuclein Lewy bodies in the substantia nigra", "Amyloid-beta plaques and tau neurofibrillary tangles", "Multiple lacunar infarcts", "Spongiform change", "TDP-43 inclusions in the frontal lobes"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "A pathology question: name the subtype first, then its histology." },
+        { "t": "Pick out the clues", "clues": ["gradually progressive memory loss", "hippocampal and generalised cortical atrophy"], "x": "Slow memory-led decline with hippocampal atrophy: **Alzheimer's disease**." },
+        { "t": "Make your own answer before looking", "x": "Alzheimer's = **extracellular amyloid-beta plaques** and **intracellular hyperphosphorylated tau tangles**." },
+        { "t": "Rule out the others", "elim": [[0, "Alpha-synuclein Lewy bodies are DLB or Parkinson's."], [2, "Lacunar infarcts are vascular dementia, with stepwise decline."], [3, "Spongiform change is prion disease, which is rapid."], [4, "TDP-43 in the frontal lobes is FTD, with behaviour first."]] },
+        { "t": "Commit", "x": "**B. Amyloid-beta plaques and tau tangles.** Rule: plaques outside, tangles inside, hippocampus first." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 74 year old woman is brought to her GP by her husband. Over 2 years she has become increasingly forgetful, repeats the same questions and recently got lost driving to her sister's house. She has no history of stroke. Her temperature is 36.7°C, pulse rate 70 bpm and BP 134/80 mmHg. Neurological examination is normal. Her MMSE score is 21/30.",
+      "labs": [["TSH", "1.8 mU/L", "0.4–4.0", ""], ["Vitamin B12", "380 ng/L", "200–900", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Alzheimer's disease", "Dementia with Lewy bodies", "Depressive pseudodementia", "Frontotemporal dementia", "Vascular dementia"],
+      "a": 0,
+      "e": "Gradual, progressive memory-led decline with a normal examination and normal reversible-cause bloods is Alzheimer's. Vascular dementia would be stepwise with vascular history.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis: use tempo and first symptom to name the subtype." },
+        { "t": "Pick out the clues", "clues": ["Over 2 years", "increasingly forgetful", "got lost driving", "no history of stroke", "Neurological examination is normal"], "x": "Slow, progressive memory and orientation loss, no vascular history, no focal or parkinsonian signs." },
+        { "t": "Make your own answer before looking", "x": "Gradual memory-first decline in an older woman: **Alzheimer's disease**." },
+        { "t": "Rule out the others", "elim": [[1, "No fluctuation, hallucinations or parkinsonism."], [2, "Pseudodementia has low mood and a typically normal MMSE."], [3, "FTD starts with behaviour in younger patients, memory preserved."], [4, "No stepwise decline, TIAs or focal signs."]] },
+        { "t": "Commit", "x": "**A. Alzheimer's disease.** Rule: smooth, memory-first decline = Alzheimer's." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 79 year old man has hypertension, type 2 diabetes and two previous TIAs. His daughter says his memory dropped suddenly after each 'funny turn' and then stayed the same for months (see item resources for his MMSE trend). His pulse rate is 78 bpm and BP 168/94 mmHg. He has a mild left pronator drift.",
+      "labs": [["HbA1c", "64 mmol/mol", "<48", "H"], ["Total cholesterol", "6.4 mmol/L", "<5.0", "H"]],
+      "visual": { "kind": "trend", "title": "MMSE over 3 years", "x": ["Year 0", "Year 1", "Year 2", "Year 3"], "unit": "/30", "series": [{ "name": "MMSE", "values": [27, 22, 22, 17] }], "caption": "Drops with each event, then plateaus." },
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Alzheimer's disease", "Dementia with Lewy bodies", "Frontotemporal dementia", "Normal pressure hydrocephalus", "Vascular dementia"],
+      "a": 4,
+      "e": "Stepwise decline after TIAs, vascular risk factors and a focal sign point to vascular dementia from cumulative ischaemic damage. Alzheimer's declines smoothly.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis: is the decline smooth, stepwise, fluctuating or behaviour-led?" },
+        { "t": "Pick out the clues", "clues": ["two previous TIAs", "dropped suddenly after each 'funny turn'", "stayed the same for months", "mild left pronator drift"], "x": "**Stepwise** decline, vascular risk, and a **focal neurological sign**." },
+        { "t": "Make your own answer before looking", "x": "Stepwise decline on a background of TIAs: **vascular dementia**." },
+        { "t": "Rule out the others", "elim": [[0, "Alzheimer's declines smoothly without focal signs."], [1, "No fluctuation, hallucinations or parkinsonism."], [2, "FTD is behaviour first in younger patients."], [3, "NPH needs gait disturbance and urinary incontinence."]] },
+        { "t": "Commit", "x": "**E. Vascular dementia.** Rule: steps + strokes/TIAs + focal signs = vascular." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 56 year old man is brought to the GP by his wife. Over 12 months he has made rude comments to strangers, spent their savings on impulse buys and started binge eating sweets. He shows no concern about these changes. He can recall recent events well. His father died of motor neurone disease. His pulse rate is 76 bpm and BP 128/78 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Alzheimer's disease", "Dementia with Lewy bodies", "Frontotemporal dementia", "Normal pressure hydrocephalus", "Vascular dementia"],
+      "a": 2,
+      "e": "Early disinhibition, impulsivity and binge eating with preserved memory in a younger man with a family history of MND (C9orf72) is frontotemporal dementia.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis: personality change in a man in his fifties." },
+        { "t": "Pick out the clues", "clues": ["56 year old man", "rude comments to strangers", "impulse buys", "binge eating sweets", "recall recent events well", "motor neurone disease"], "x": "Younger, **disinhibition**, impulsivity, compulsive eating, memory preserved, family history of ALS/MND." },
+        { "t": "Make your own answer before looking", "x": "Behaviour first, memory spared: **frontotemporal dementia** (C9orf72 links it to ALS)." },
+        { "t": "Rule out the others", "elim": [[0, "Alzheimer's starts with memory loss, usually in older people."], [1, "No fluctuation, hallucinations or parkinsonism."], [3, "No gait or bladder problem."], [4, "No vascular history or stepwise decline."]] },
+        { "t": "Commit", "x": "**C. Frontotemporal dementia.** Rule: young + behaviour first + memory preserved = FTD." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 72 year old man has a 1 year history of confusion that is much worse on some days than others. He sees small animals on his bedroom floor that are not there. He has become slow and stiff, has constipation and feels dizzy when he stands up.",
+      "labs": [],
+      "visual": null,
+      "q": "Which additional feature is most likely in this patient?",
+      "o": ["Early urinary incontinence", "Hyperorality and binge eating", "REM sleep behaviour disorder", "Stepwise deterioration", "Upper motor neurone facial weakness"],
+      "a": 2,
+      "e": "Fluctuating cognition, Lilliputian hallucinations, parkinsonism and autonomic features are dementia with Lewy bodies, which commonly comes with REM sleep behaviour disorder.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A 'most likely feature' question: name the condition first, then pick its associated feature." },
+        { "t": "Pick out the clues", "clues": ["much worse on some days than others", "sees small animals", "slow and stiff", "constipation", "dizzy when he stands up"], "x": "Fluctuation, visual hallucinations, parkinsonism and **autonomic dysfunction**: DLB." },
+        { "t": "Make your own answer before looking", "x": "DLB other features: **REM sleep disorder**, falls, anosmia, autonomic dysfunction." },
+        { "t": "Rule out the others", "elim": [[0, "Early incontinence with gait change is NPH."], [1, "Hyperorality and binge eating are FTD."], [3, "Stepwise deterioration is vascular dementia."], [4, "UMN facial weakness suggests stroke."]] },
+        { "t": "Commit", "x": "**C. REM sleep behaviour disorder.** Rule: DLB = triad plus REM sleep disorder, falls, anosmia, autonomic signs." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 48 year old man with Down syndrome lives in supported accommodation. Over 1 year his carers have noticed he has lost skills such as dressing himself, gets lost in the building and has become forgetful and irritable. He is not low in mood and sleeps well.",
+      "labs": [["TSH", "2.6 mU/L", "0.4–4.0", ""], ["Free T4", "14 pmol/L", "10–22", ""], ["Vitamin B12", "420 ng/L", "200–900", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Depressive pseudodementia", "Early-onset Alzheimer's disease", "Frontotemporal dementia", "Hypothyroidism", "Vascular dementia"],
+      "a": 1,
+      "e": "Down syndrome is a strong risk factor for early-onset Alzheimer's. Normal thyroid tests exclude hypothyroidism, and normal mood makes pseudodementia unlikely.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of cognitive decline in a younger adult with a key risk factor." },
+        { "t": "Pick out the clues", "clues": ["48 year old man with Down syndrome", "lost skills", "gets lost in the building", "not low in mood"], "x": "**Down syndrome** plus progressive loss of skills and memory; normal mood and thyroid tests." },
+        { "t": "Make your own answer before looking", "x": "Down syndrome is a strong risk factor for **early-onset Alzheimer's** (extra APP gene on chromosome 21)." },
+        { "t": "Rule out the others", "elim": [[0, "Mood is normal, so depression is unlikely."], [2, "FTD is behaviour first with memory preserved."], [3, "TSH and free T4 are normal."], [4, "No vascular history or stepwise pattern."]] },
+        { "t": "Commit", "x": "**B. Early-onset Alzheimer's disease.** Rule: Down syndrome + losing skills in the 40s = Alzheimer's." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 77 year old woman is admitted after a fall. For a year her family have noticed confusion that comes and goes, and she sees people in the room who are not there. On the ward she is agitated at night and is given haloperidol. The next day she is severely rigid and drowsy. Her temperature is 37.1°C, pulse rate 92 bpm and BP 128/76 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely underlying diagnosis?",
+      "o": ["Alzheimer's disease", "Dementia with Lewy bodies", "Frontotemporal dementia", "Normal pressure hydrocephalus", "Vascular dementia"],
+      "a": 1,
+      "e": "Fluctuating confusion, visual hallucinations and falls, then severe rigidity after haloperidol (neuroleptic sensitivity), point to dementia with Lewy bodies.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Underlying diagnosis: the reaction to a drug is the big clue." },
+        { "t": "Pick out the clues", "clues": ["confusion that comes and goes", "sees people in the room", "given haloperidol", "severely rigid"], "x": "Fluctuating cognition, hallucinations, falls, and **severe sensitivity to an antipsychotic**." },
+        { "t": "Make your own answer before looking", "x": "Antipsychotics worsen parkinsonism and raise mortality in **dementia with Lewy bodies**." },
+        { "t": "Rule out the others", "elim": [[0, "Alzheimer's does not fluctuate or cause early hallucinations."], [2, "FTD is behaviour first in younger people."], [3, "NPH is gait, incontinence and dementia."], [4, "Vascular dementia is stepwise with focal signs."]] },
+        { "t": "Commit", "x": "**B. Dementia with Lewy bodies.** Rule: fluctuation + hallucinations + bad reaction to haloperidol = DLB." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 71 year old man has an 18 month history of fluctuating cognition and vivid visual hallucinations of small people. He has mild bradykinesia and rigidity. His MMSE score is 23/30. A CT head shows mild generalised atrophy only.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["CT head with contrast", "DaTscan (SPECT)", "EEG", "Lumbar puncture", "MRI brain"],
+      "a": 1,
+      "e": "A DaTscan (SPECT) is diagnostic for dementia with Lewy bodies, showing reduced dopamine transporter uptake. LP is for NPH.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Diagnostic' investigation: the test that confirms the suspected subtype." },
+        { "t": "Pick out the clues", "clues": ["fluctuating cognition", "visual hallucinations of small people", "mild bradykinesia and rigidity"], "x": "The DLB triad; CT has not helped." },
+        { "t": "Make your own answer before looking", "x": "DLB is confirmed with a **DaTscan (SPECT)**." },
+        { "t": "Rule out the others", "elim": [[0, "Contrast CT adds nothing for DLB."], [2, "EEG is for seizures."], [3, "LP is for suspected NPH."], [4, "MRI shows atrophy but does not confirm DLB."]] },
+        { "t": "Commit", "x": "**B. DaTscan (SPECT).** Rule: suspected Lewy body dementia = DaTscan." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 76 year old woman has a 2 year history of gradually worsening memory. Her MMSE score is 20/30. Neurological examination is normal. Investigations:",
+      "labs": [["Sodium", "140 mmol/L", "135–145", ""], ["Adjusted calcium", "2.36 mmol/L", "2.20–2.60", ""], ["TSH", "1.9 mU/L", "0.4–4.0", ""], ["Vitamin B12", "450 ng/L", "200–900", ""]],
+      "visual": null,
+      "q": "Which is the most likely finding on MRI brain?",
+      "o": ["Atrophy of the hippocampi and cortex", "Frontotemporal atrophy sparing the posterior cortex", "Multiple lacunar infarcts", "Normal appearance", "Ventricular enlargement with normal sulci"],
+      "a": 0,
+      "e": "Gradual memory-first decline with reversible causes excluded is Alzheimer's, which shows cortical and hippocampal atrophy. Infarcts suggest vascular dementia.",
+      "steps": [
+        { "t": "Read the question line first", "x": "An imaging finding: name the subtype first." },
+        { "t": "Pick out the clues", "clues": ["gradually worsening memory", "Neurological examination is normal"], "x": "Smooth memory decline; bloods exclude reversible causes: **Alzheimer's**." },
+        { "t": "Make your own answer before looking", "x": "Alzheimer's: **cortical and hippocampal atrophy** on CT/MRI." },
+        { "t": "Rule out the others", "elim": [[1, "Frontotemporal atrophy is FTD."], [2, "Lacunar infarcts are vascular dementia."], [3, "A dementia this advanced usually shows atrophy."], [4, "Big ventricles with normal sulci suggest NPH."]] },
+        { "t": "Commit", "x": "**A. Atrophy of the hippocampi and cortex.** Rule: Alzheimer's = hippocampal atrophy; vascular = infarcts; FTD = frontotemporal atrophy." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 78 year old woman has a new diagnosis of Alzheimer's disease. Her MMSE score is 20/30. She takes ramipril for hypertension. Her pulse rate is 72 bpm and BP 136/82 mmHg. An ECG shows sinus rhythm with normal intervals.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial drug treatment?",
+      "o": ["Donepezil", "Haloperidol", "Memantine", "Quetiapine", "Sertraline"],
+      "a": 0,
+      "e": "First-line drug treatment for Alzheimer's is an acetylcholinesterase inhibitor such as donepezil. Memantine is for MMSE <10 or intolerance.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial drug treatment for Alzheimer's." },
+        { "t": "Pick out the clues", "clues": ["Alzheimer's disease", "MMSE score is 20/30", "normal intervals"], "x": "Moderate disease; ECG safe for an AChE inhibitor." },
+        { "t": "Make your own answer before looking", "x": "**AChE inhibitor**: donepezil." },
+        { "t": "Rule out the others", "elim": [[1, "Antipsychotics do not treat cognition."], [2, "Memantine is for MMSE <10 or AChE intolerance."], [3, "Quetiapine is an antipsychotic, not a cognitive treatment."], [4, "No depression is described."]] },
+        { "t": "Commit", "x": "**A. Donepezil.** Rule: MMSE above 10 and normal ECG = AChE inhibitor first." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "An 81 year old man with Alzheimer's disease is reviewed in the memory clinic. He feels light-headed. His pulse rate is 44 bpm and BP 118/70 mmHg. An ECG shows sinus bradycardia with a normal PR interval. His MMSE score is 18/30.",
+      "labs": [["Potassium", "4.3 mmol/L", "3.5–5.3", ""], ["TSH", "2.2 mU/L", "0.4–4.0", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate drug treatment for his dementia?",
+      "o": ["Amitriptyline", "Donepezil", "Galantamine", "Memantine", "Rivastigmine"],
+      "a": 3,
+      "e": "Sinus bradycardia below 50 bpm contraindicates AChE inhibitors, so memantine (an NMDA antagonist) is used instead.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A drug choice where the observations matter." },
+        { "t": "Pick out the clues", "clues": ["Alzheimer's disease", "pulse rate is 44 bpm", "sinus bradycardia"], "x": "Heart rate **below 50**: a contraindication to AChE inhibitors." },
+        { "t": "Make your own answer before looking", "x": "AChE inhibitors not suitable, so **memantine**." },
+        { "t": "Rule out the others", "elim": [[0, "Amitriptyline is anticholinergic and worsens cognition."], [1, "Donepezil would slow his heart further."], [2, "Galantamine is an AChE inhibitor too."], [4, "Rivastigmine is also an AChE inhibitor."]] },
+        { "t": "Commit", "x": "**D. Memantine.** Rule: bradycardia <50, heart block or long QT = avoid AChE inhibitors." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 58 year old man has frontotemporal dementia diagnosed 6 months ago. His wife struggles with his impulsive spending and disinhibited behaviour at home. He is not distressed or aggressive. His pulse rate is 70 bpm and BP 130/80 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Donepezil", "Haloperidol", "Memantine", "Non-drug behavioural and environmental measures", "Rivastigmine"],
+      "a": 3,
+      "e": "FTD has no licensed drug treatment: first line is behavioural interventions and environmental modification, with SSRIs sometimes for behaviour.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management of behaviour in a named subtype." },
+        { "t": "Pick out the clues", "clues": ["frontotemporal dementia", "impulsive spending", "not distressed or aggressive"], "x": "FTD behaviour, with no risk that needs drugs." },
+        { "t": "Make your own answer before looking", "x": "FTD: **behavioural interventions and environmental modification**." },
+        { "t": "Rule out the others", "elim": [[0, "AChE inhibitors are not licensed for FTD."], [1, "Antipsychotics are not first line for behaviour."], [2, "Memantine is for Alzheimer's and DLB."], [4, "Rivastigmine is an AChE inhibitor; not for FTD."]] },
+        { "t": "Commit", "x": "**D. Non-drug behavioural and environmental measures.** Rule: FTD has no licensed drug." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 77 year old woman with Alzheimer's disease is started on donepezil. Her daughter asks how it works. Her memory loss is thought to reflect loss of cholinergic neurons in the nucleus basalis of Meynert.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely mechanism by which this drug improves her symptoms?",
+      "o": ["Blocks NMDA glutamate receptors", "Clears amyloid-beta plaques", "Increases synaptic acetylcholine", "Increases striatal dopamine", "Reverses tau hyperphosphorylation"],
+      "a": 2,
+      "e": "Donepezil inhibits acetylcholinesterase, so more acetylcholine remains in the synapse to offset cholinergic neuron loss. It is symptomatic; memantine blocks NMDA receptors.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of a named drug." },
+        { "t": "Pick out the clues", "clues": ["donepezil", "loss of cholinergic neurons"], "x": "Cholinergic loss is the target." },
+        { "t": "Make your own answer before looking", "x": "Acetylcholinesterase inhibitor: **more acetylcholine** in the synapse." },
+        { "t": "Rule out the others", "elim": [[0, "That is memantine."], [1, "Donepezil does not remove plaques."], [3, "That is levodopa, for Parkinson's."], [4, "Donepezil does not act on tau."]] },
+        { "t": "Commit", "x": "**C. Increases synaptic acetylcholine.** Rule: AChE inhibitors are symptomatic, not disease-modifying." }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      { "d": "diagnosis", "q": "What is dementia, and what are its four main subtypes?", "tip": "Exam thinking: progressive and affecting daily life, then name the subtype.", "points": [
+        { "p": "Progressive impairment of intellect, memory and personality", "k": [["progressive"], ["memory", "cognit", "intellect"]], "why": "Sudden change is delirium, not dementia." },
+        { "p": "Alzheimer's disease", "k": [["alzheimer"]], "why": "The commonest subtype." },
+        { "p": "Vascular dementia", "k": [["vascular"]], "why": "Stepwise, with TIAs/strokes." },
+        { "p": "Frontotemporal dementia", "k": [["frontotemporal", "ftd"]], "why": "Younger, behaviour first." },
+        { "p": "Dementia with Lewy bodies", "k": [["lewy", "dlb"]], "why": "On a spectrum with Parkinson's disease dementia." }
+      ] },
+      { "d": "diagnosis", "q": "How does each subtype classically present? Give tempo and first feature.", "tip": "Exam thinking: the tempo word in the stem is often the answer.", "points": [
+        { "p": "Alzheimer's: gradual progressive decline, memory first", "k": [["alzheimer"], ["gradual", "progressive", "slow"]], "why": "Down syndrome is a strong risk factor for early onset." },
+        { "p": "Vascular: stepwise decline with TIAs/strokes and focal signs", "k": [["vascular"], ["step"]], "why": "Look for hypertension, diabetes, AF or previous stroke." },
+        { "p": "FTD: relatively rapid, younger, personality first, memory preserved", "k": [["frontotemporal", "ftd"], ["personality", "behaviour", "behavior", "disinhib"]], "why": "Linked to C9orf72 and ALS." },
+        { "p": "DLB: fluctuating cognition", "k": [["lewy", "dlb"], ["fluctuat"]], "why": "Often underdiagnosed." }
+      ] },
+      { "d": "diagnosis", "q": "What is the core triad of dementia with Lewy bodies, and what else comes with it?", "tip": "Exam thinking: two of the triad in a stem should make you say DLB.", "points": [
+        { "p": "Fluctuating cognition", "k": [["fluctuat"]], "why": "Good and bad days." },
+        { "p": "Visual hallucinations (small people or animals)", "k": [["hallucinat"]], "why": "Lilliputian hallucinations are the classic." },
+        { "p": "Parkinsonism", "k": [["parkinson", "rigid", "bradykines"]], "why": "Typically appears later." },
+        { "p": "REM sleep disorder, falls, anosmia, autonomic dysfunction", "k": [["rem", "sleep", "fall", "anosmia", "autonomic"]], "why": "Constipation and postural dizziness are autonomic clues." }
+      ] },
+      { "d": "diagnosis", "q": "What are the signature features of frontotemporal dementia?", "tip": "Exam thinking: a younger patient with personality change and good memory.", "points": [
+        { "p": "Early disinhibition and impulsivity", "k": [["disinhib", "impuls"]], "why": "Rude comments, spending, inappropriate behaviour." },
+        { "p": "Mood swings, compulsivity, binge eating", "k": [["compuls", "binge", "eating", "mood"]], "why": "Hyperorality is a classic stem detail." },
+        { "p": "Memory relatively preserved", "k": [["memory"], ["preserv", "spared", "normal", "intact"]], "why": "The opposite of Alzheimer's." },
+        { "p": "C9orf72 gene, linked to ALS", "k": [["c9orf72", "als", "motor neurone", "amyotrophic"]], "why": "A family history of MND is a clue." }
+      ] },
+      { "d": "diagnosis", "q": "Which conditions mimic dementia, and how do you tell them apart?", "tip": "Exam thinking: depression and NPH are the classic mimics.", "points": [
+        { "p": "Depressive pseudodementia: MMSE typically normal despite apparent impairment", "k": [["pseudo", "depress"], ["mmse", "normal"]], "why": "Psychomotor slowing, poor concentration, self-neglect." },
+        { "p": "Normal pressure hydrocephalus: urinary incontinence, gait disturbance, dementia", "k": [["hydroceph", "nph"], ["incontin", "wet"], ["gait", "wobbl"]], "why": "'Wet, wobbly and wacky'." },
+        { "p": "Delirium can be superimposed on dementia", "k": [["delirium"]], "why": "Acute change = delirium until proven otherwise." }
+      ] },
+      { "d": "investigation", "q": "What is the first-line assessment for suspected dementia?", "tip": "Exam thinking: test cognition and exclude reversible causes before imaging.", "points": [
+        { "p": "Validated cognitive tool: MMSE, MoCA, 6CIT, Mini-Cog, TYM", "k": [["mmse", "moca", "6cit", "mini-cog", "cognitive"]], "why": "MMSE below 10 = severe." },
+        { "p": "Confusion screen bloods: FBC, U&Es, LFTs, TFTs, B12/folate, calcium, glucose", "k": [["tft", "thyroid", "b12", "haematinic", "calcium", "bloods", "blood test"]], "why": "Excludes reversible causes." },
+        { "p": "Diagnosis is clinical, supported by imaging", "k": [["clinical"]], "why": "No single gold-standard test." }
+      ] },
+      { "d": "investigation", "q": "What does imaging show in each subtype, and which scan is diagnostic for DLB?", "tip": "Exam thinking: match the scan finding to the subtype.", "points": [
+        { "p": "Alzheimer's: cortical and hippocampal atrophy", "k": [["hippocamp", "medial temporal"]], "why": "Medial temporal lobe first." },
+        { "p": "Vascular: infarcts", "k": [["infarct", "white matter", "lacun"]], "why": "White matter hypodensities on CT." },
+        { "p": "FTD: frontotemporal atrophy", "k": [["frontotemporal", "frontal"], ["atroph"]], "why": "Posterior cortex spared." },
+        { "p": "DLB: DaTscan (SPECT) is diagnostic", "k": [["datscan", "spect", "dat scan"]], "why": "Shows reduced dopamine transporter uptake." },
+        { "p": "NPH: lumbar puncture, treated with VP shunt", "k": [["lumbar", "lp"]], "why": "Large ventricles out of proportion to atrophy." }
+      ] },
+      { "d": "management", "q": "How is Alzheimer's treated with drugs, and what stops you using an AChE inhibitor?", "tip": "Exam thinking: check the pulse and ECG in the stem.", "points": [
+        { "p": "First line: AChE inhibitor (donepezil, galantamine, rivastigmine)", "k": [["donepezil", "galantamine", "rivastigmine", "acetylcholinesterase", "ache"]], "why": "Slows progression; symptomatic." },
+        { "p": "Contraindicated: bradycardia <50, unpaced 2nd/3rd-degree heart block, long QT", "k": [["brady", "heart block", "qt"]], "why": "They slow the heart." },
+        { "p": "Side effects: nausea, diarrhoea, bradycardia, salivation, incontinence", "k": [["diarrh", "nausea", "vomit", "saliva", "brady"]], "why": "Cholinergic effects." },
+        { "p": "Memantine if MMSE <10 or AChE inhibitors not tolerated", "k": [["memantine"]], "why": "NMDA antagonist; causes constipation." },
+        { "p": "Stop anticholinergics such as amitriptyline", "k": [["amitriptyline", "anticholinergic"]], "why": "They worsen cognition." }
+      ] },
+      { "d": "management", "q": "How do you manage DLB and FTD, and what applies to all dementias?", "tip": "Exam thinking: haloperidol in DLB is the classic wrong answer.", "points": [
+        { "p": "DLB: memory clinic, AChE inhibitor, memantine for moderate-severe", "k": [["lewy", "dlb"], ["donepezil", "ache", "acetylcholinesterase", "rivastigmine", "memory clinic"]], "why": "AChE inhibitors can help hallucinations." },
+        { "p": "Avoid antipsychotics/haloperidol in DLB", "k": [["antipsychotic", "haloperidol"]], "why": "Worsen parkinsonism and increase mortality." },
+        { "p": "FTD: behavioural and environmental measures; no licensed drug; SSRIs may help", "k": [["behaviour", "behavior", "environment", "ssri"]], "why": "AChE inhibitors are not for FTD." },
+        { "p": "All: care and support, carer help, driving assessment (DVLA)", "k": [["carer", "support", "driv", "dvla"]], "why": "Drugs reserved for severe behavioural cases." }
+      ] },
+      { "d": "science", "q": "What is the pathology behind each dementia subtype?", "tip": "Exam thinking: match the protein to the subtype.", "points": [
+        { "p": "Alzheimer's: extracellular amyloid-beta plaques, intracellular tau tangles", "k": [["amyloid"], ["tau", "tangle"]], "why": "Cholinergic loss in the nucleus basalis of Meynert explains why AChE inhibitors help." },
+        { "p": "Vascular: cumulative ischaemic damage", "k": [["ischaem", "infarct"]], "why": "Hence stepwise decline." },
+        { "p": "DLB: alpha-synuclein aggregates, including substantia nigra", "k": [["synuclein"]], "why": "Shared with Parkinson's." },
+        { "p": "FTD: TDP-43 or tau, frontal and temporal atrophy sparing posterior cortex", "k": [["tdp"]], "why": "Why memory is preserved early." }
+      ] }
+    ]
+  },
+  "glossary": {
+    "Dementia": "A progressive decline in memory, thinking and personality that interferes with daily life.",
+    "Alzheimer's disease": "The commonest dementia: gradual memory-led decline from amyloid plaques and tau tangles.",
+    "Vascular dementia": "Dementia from cumulative ischaemic brain damage, causing stepwise decline.",
+    "Frontotemporal dementia": "Dementia of the frontal and temporal lobes, with early personality change and preserved memory.",
+    "FTD": "Frontotemporal dementia.",
+    "DLB": "Dementia with Lewy bodies: fluctuating cognition, visual hallucinations and parkinsonism.",
+    "Lewy bodies": "Clumps of misfolded alpha-synuclein protein inside neurons.",
+    "Parkinsonism": "Slowness, rigidity and tremor, as seen in Parkinson's disease.",
+    "Lilliputian": "Hallucinations of small people or animals, classic in Lewy body dementia.",
+    "REM sleep disorder": "Acting out dreams (shouting, kicking) because normal REM sleep paralysis is lost.",
+    "Anosmia": "Loss of the sense of smell.",
+    "Disinhibition": "Loss of social restraint: rude, impulsive or inappropriate behaviour.",
+    "Constructional apraxia": "Inability to copy or draw shapes, such as interlocking pentagons, despite normal strength.",
+    "C9orf72": "A gene whose repeat expansion causes frontotemporal dementia and ALS.",
+    "ALS": "Amyotrophic lateral sclerosis, the commonest form of motor neurone disease.",
+    "Pseudodementia": "Depression that looks like dementia; the MMSE is typically normal.",
+    "Normal pressure hydrocephalus": "Enlarged ventricles causing incontinence, gait disturbance and dementia: wet, wobbly and wacky.",
+    "NPH": "Normal pressure hydrocephalus.",
+    "VP shunt": "Ventriculoperitoneal shunt: a tube draining CSF from the brain's ventricles to the abdomen.",
+    "MMSE": "Mini-Mental State Examination, scored out of 30; below 10 is severe impairment.",
+    "MoCA": "Montreal Cognitive Assessment, a 30-point screen that is more sensitive for mild impairment.",
+    "6CIT": "Six-item Cognitive Impairment Test, a short screen used in primary care.",
+    "Confusion screen": "Blood tests to find reversible causes of confusion, such as thyroid, B12, calcium and glucose.",
+    "DaTscan": "A SPECT scan of dopamine transporter uptake; reduced in Lewy body dementia and Parkinson's.",
+    "SPECT": "Single-photon emission CT, a nuclear medicine scan of function or blood flow.",
+    "Hippocampal atrophy": "Shrinkage of the memory centres of the medial temporal lobe, typical of Alzheimer's.",
+    "Acetylcholinesterase inhibitor": "A drug that blocks acetylcholine breakdown, such as donepezil, galantamine or rivastigmine.",
+    "AChE inhibitors": "Acetylcholinesterase inhibitors such as donepezil, galantamine and rivastigmine.",
+    "Donepezil": "An acetylcholinesterase inhibitor, first-line drug for Alzheimer's disease.",
+    "Rivastigmine": "An acetylcholinesterase inhibitor, available as a patch, used in Alzheimer's and Lewy body dementia.",
+    "Galantamine": "An acetylcholinesterase inhibitor used for mild to moderate Alzheimer's.",
+    "Memantine": "An NMDA glutamate receptor antagonist for severe Alzheimer's or AChE inhibitor intolerance.",
+    "NMDA": "A glutamate receptor; overstimulation damages neurons, which memantine blocks.",
+    "Haloperidol": "A typical antipsychotic; dangerous in Lewy body dementia.",
+    "Anticholinergic": "A drug that blocks acetylcholine, such as amitriptyline; worsens memory and confusion.",
+    "Amyloid-beta": "A protein fragment that clumps into plaques outside neurons in Alzheimer's.",
+    "Tau": "A protein that becomes hyperphosphorylated and forms tangles inside neurons.",
+    "Neurofibrillary tangles": "Clumps of hyperphosphorylated tau inside neurons in Alzheimer's.",
+    "Nucleus basalis of Meynert": "A group of cholinergic neurons whose loss underlies memory deficits in Alzheimer's.",
+    "Alpha-synuclein": "The protein that misfolds into Lewy bodies in DLB and Parkinson's disease.",
+    "TDP-43": "A protein that aggregates in many cases of frontotemporal dementia and ALS.",
+    "Substantia nigra": "A midbrain area of dopamine neurons; its loss causes parkinsonism.",
+    "Delirium": "An acute, fluctuating disturbance of attention and awareness, often from infection or drugs.",
+    "Down syndrome": "Trisomy 21; the extra amyloid precursor gene causes early-onset Alzheimer's.",
+    "DVLA": "The UK Driver and Vehicle Licensing Agency, which must be told about a dementia diagnosis.",
+    "Cognitive stimulation therapy": "Group activities and exercises that keep memory and thinking active in mild to moderate dementia."
+  }
+}

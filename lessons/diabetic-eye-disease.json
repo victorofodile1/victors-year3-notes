@@ -1,0 +1,2085 @@
+{
+ "id": "diabetic-eye-disease",
+ "patient": {
+  "name": "Balvinder Kaur",
+  "age": 58,
+  "sex": "F",
+  "setting": "Diabetic eye screening, then hospital eye clinic",
+  "complaint": "Abnormal annual retinal screening photographs and slowly blurring reading vision",
+  "background": [
+   "Type 2 diabetes for 18 years, HbA1c usually above 75 mmol/mol",
+   "Hypertension, often above target",
+   "Missed her last two screening appointments",
+   "Runs a dry cleaner's in Southall"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with fundoscopy findings to grade (microaneurysms only, dot-blot haemorrhages and exudates, 4-2-1, new vessels, macular exudates), or sudden floaters and vision loss in a diabetic (vitreous haemorrhage).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Balvinder, 58, has had **type 2 diabetes for 18 years**.",
+      "HbA1c usually above 75; BP often 160/90.",
+      "Missed **two** screening appointments.",
+      "Reading small print has become **blurry** over months."
+     ],
+     "vitals": {
+      "BP": "164/92 mmHg",
+      "HR": "78 bpm",
+      "CBG": "13.8 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Balvinder's blurred vision after 18 years of diabetes points to a **microvascular complication** in her retina."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Her biggest risk is **18 years of diabetes**; poor control and uncontrolled BP add to it."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Retinopathy is **silent early**, which is why missed screening matters. The grade comes from what is seen on fundoscopy."
+    },
+    {
+     "type": "compare",
+     "title": "Grading diabetic retinopathy",
+     "head": [
+      "Stage",
+      "What you see",
+      "Action"
+     ],
+     "rows": [
+      [
+       "Mild NPDR (R1)",
+       "**Microaneurysms only**",
+       "Annual screening, risk factors"
+      ],
+      [
+       "Moderate NPDR (R2)",
+       "Dot-blot haemorrhages, hard exudates, cotton wool spots, venous beading",
+       "Monitor, optimise risk factors"
+      ],
+      [
+       "Severe NPDR",
+       "**4-2-1 rule**",
+       "Refer; consider laser"
+      ],
+      [
+       "Proliferative (R3)",
+       "**New vessels**",
+       "Urgent PRP ± anti-VEGF"
+      ],
+      [
+       "Maculopathy (M1)",
+       "Exudates/oedema at macula",
+       "Intravitreal anti-VEGF"
+      ]
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Screening photos: **new vessels on the optic disc**.",
+      "Many dot-blot haemorrhages and cotton wool spots.",
+      "Ring of **hard exudates** next to the fovea."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which finding makes Balvinder's retinopathy proliferative?",
+     "o": [
+      "Cotton wool spots",
+      "Dot-blot haemorrhages",
+      "Hard exudates",
+      "New vessels on the disc"
+     ],
+     "a": 3,
+     "r": "**Neovascularisation** defines proliferative disease. The others occur in non-proliferative retinopathy."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Balvinder has **both**: proliferative retinopathy (new vessels) and **maculopathy**, which explains her blurred central vision."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Balvinder's retinopathy grade",
+      "min": 0,
+      "max": 3,
+      "unit": "",
+      "bands": [
+       [
+        0,
+        1,
+        "R0 none",
+        "ok"
+       ],
+       [
+        1,
+        2,
+        "R1–R2 NPDR",
+        "warn"
+       ],
+       [
+        2,
+        3,
+        "R3 proliferative",
+        "bad"
+       ]
+      ],
+      "value": 3,
+      "label": "Balvinder R3A M1",
+      "caption": "R3A (active new vessels) plus M1 maculopathy: urgent referral."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Balvinder's new vessels are fragile: if they bleed she risks **vitreous haemorrhage** and **retinal detachment**."
+    },
+    {
+     "type": "trap",
+     "text": "Do not confuse **cotton wool spots** (infarcts) or hard exudates with proliferative disease. Only **new vessels** make it proliferative."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?': annual digital retinal photography for screening, fundoscopy first in clinic, OCT for macular oedema, fluorescein angiography in severe disease, and B-scan ultrasound when vitreous haemorrhage hides the retina.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Balvinder's disease was found by **annual digital retinal photography**; in clinic she has **fundoscopy** and an **OCT** of the macula."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Balvinder's central macular thickness (OCT)",
+      "min": 150,
+      "max": 600,
+      "unit": "µm",
+      "bands": [
+       [
+        150,
+        300,
+        "Normal",
+        "ok"
+       ],
+       [
+        300,
+        400,
+        "Thickened",
+        "warn"
+       ],
+       [
+        400,
+        600,
+        "Marked oedema",
+        "bad"
+       ]
+      ],
+      "value": 470,
+      "label": "Balvinder 470",
+      "caption": "OCT confirms macular oedema: the cause of her central blur."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "**Retinal photography and OCT** are the gold standard. Balvinder is graded **R3A M1**: active proliferative disease with clinically significant maculopathy."
+    },
+    {
+     "type": "labs",
+     "title": "Balvinder's bloods in clinic",
+     "rows": [
+      [
+       "HbA1c",
+       "82 mmol/mol",
+       "<48 target",
+       "H"
+      ],
+      [
+       "Total cholesterol",
+       "6.4 mmol/L",
+       "<5.0",
+       "H"
+      ],
+      [
+       "eGFR",
+       "54 mL/min/1.73m²",
+       ">60",
+       "L"
+      ],
+      [
+       "Urine ACR",
+       "38 mg/mmol",
+       "<3",
+       "H"
+      ]
+     ],
+     "text": "Poor control, high lipids and nephropathy: the same microvascular disease in her kidneys."
+    },
+    {
+     "type": "ask",
+     "q": "The ophthalmologist wants to map ischaemic retina and new vessels before laser. Which test?",
+     "o": [
+      "B-scan ultrasound",
+      "CT orbits",
+      "Fluorescein angiography",
+      "Visual field test"
+     ],
+     "a": 2,
+     "r": "**Fluorescein angiography** shows the vasculature, leaking new vessels and ischaemia, and guides treatment."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Balvinder has **fluorescein angiography**. If a bleed later hides her retina, a **B-scan ultrasound** checks for detachment."
+    },
+    {
+     "type": "pearl",
+     "text": "Fundal view obscured by blood in a diabetic? The answer is **B-scan ultrasonography**, not fundoscopy or OCT."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?': risk factor control for mild NPDR, urgent pan-retinal photocoagulation (± anti-VEGF) for proliferative disease, intravitreal anti-VEGF for maculopathy, and vitrectomy for non-clearing vitreous haemorrhage or detachment risk.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "For Balvinder, tighter **glucose, BP and lipid** control slows everything. On its own it is enough only for mild NPDR."
+    },
+    {
+     "type": "ask",
+     "q": "Balvinder has active new vessels (R3A). What is the definitive treatment?",
+     "o": [
+      "Annual screening only",
+      "Oral aspirin",
+      "Pan-retinal laser photocoagulation",
+      "Topical steroid drops"
+     ],
+     "a": 2,
+     "r": "Proliferative disease needs urgent **pan-retinal photocoagulation**, with anti-VEGF added for better outcomes."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Balvinder has **PRP** for her new vessels and **intravitreal ranibizumab** for her maculopathy. She is warned about **night vision and peripheral field loss**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Balvinder's macula on monthly anti-VEGF",
+      "x": [
+       "Start",
+       "Month 1",
+       "Month 2",
+       "Month 3",
+       "Month 6"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Central thickness (µm ÷10)",
+        "values": [
+         47,
+         39,
+         33,
+         29,
+         27
+        ]
+       },
+       {
+        "name": "Acuity (letters ÷2)",
+        "values": [
+         28,
+         31,
+         34,
+         36,
+         37
+        ]
+       }
+      ],
+      "caption": "Oedema falls and vision improves over the loading injections."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Four months later: sudden **shower of floaters** in the right eye.",
+      "Then a **dark curtain** over her vision.",
+      "Red reflex dull; no fundal view."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Balvinder needs **immediate ophthalmology**. If the haemorrhage does not clear or the retina is at risk, she needs a **vitrectomy**."
+    },
+    {
+     "type": "flow",
+     "title": "Diabetic eye disease: who gets what",
+     "nodes": [
+      "All: glucose, BP and lipid control",
+      "Mild NPDR → annual screening",
+      "Severe NPDR / PDR → urgent pan-retinal laser ± anti-VEGF",
+      "Maculopathy → intravitreal anti-VEGF",
+      "Non-clearing vitreous haemorrhage or detachment → vitrectomy"
+     ],
+     "caption": "Sudden vision loss in a diabetic = same-day eye referral."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Balvinder's care follows the **NHS Diabetic Eye Screening Programme** and **NICE NG28**: annual screening and fast-track referral for R3 or M1."
+    },
+    {
+     "type": "trap",
+     "text": "**Mild NPDR** does not need laser. It goes back to the GP for risk factor control and annual screening."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why microaneurysms form (pericyte loss), why ischaemic retina grows new vessels (VEGF), why maculopathy blurs central vision (blood-retinal barrier breakdown), and how PRP and anti-VEGF work.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Years of high glucose killed Balvinder's capillary **pericytes**: walls weaken into microaneurysms, then capillaries close and the retina becomes **ischaemic**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Her ischaemic retina pours out **VEGF**: the new vessels on her disc are fragile, and that is what bled."
+    },
+    {
+     "type": "flow",
+     "title": "From glucose to blindness",
+     "nodes": [
+      "Hyperglycaemia damages pericytes and endothelium",
+      "Microaneurysms and capillary occlusion",
+      "Retinal ischaemia",
+      "VEGF release",
+      "Fragile new vessels → haemorrhage, fibrosis, detachment"
+     ],
+     "caption": "PRP and anti-VEGF both act at the VEGF step."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Balvinder's leaky **blood-retinal barrier** let fluid into her macula, so her **central** vision blurred first."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "**Ranibizumab** blocks VEGF; **PRP** burns ischaemic peripheral retina so less VEGF is made, at the cost of peripheral and night vision."
+    },
+    {
+     "type": "ask",
+     "q": "Why does Balvinder's PRP reduce new vessel growth?",
+     "o": [
+      "It cauterises each new vessel",
+      "It destroys ischaemic retina, reducing VEGF",
+      "It lowers intraocular pressure",
+      "It seals the macula"
+     ],
+     "a": 1,
+     "r": "PRP destroys **ischaemic peripheral retina**, removing the **VEGF** stimulus."
+    },
+    {
+     "type": "pearl",
+     "text": "Cotton wool spots are **retinal infarcts** (axoplasmic stasis); hard exudates are **lipid** leaked from damaged vessels."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most important risk factor for diabetic retinopathy?",
+   "o": [
+    "Duration of diabetes",
+    "Female sex",
+    "Myopia",
+    "Smoking"
+   ],
+   "a": 0,
+   "r": "**Duration of diabetes**, then poor control and hypertension."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which finding alone defines mild NPDR?",
+   "o": [
+    "Cotton wool spots",
+    "Hard exudates",
+    "Microaneurysms",
+    "New vessels"
+   ],
+   "a": 2,
+   "r": "**Microaneurysms only**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What does the 4-2-1 rule define?",
+   "o": [
+    "Maculopathy",
+    "Mild NPDR",
+    "Proliferative retinopathy",
+    "Severe NPDR"
+   ],
+   "a": 3,
+   "r": "**Severe NPDR**: 4 quadrants haemorrhages, 2 venous beading, 1 IRMA."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the most common cause of vision loss in diabetic eye disease?",
+   "o": [
+    "Cataract",
+    "Maculopathy",
+    "Retinal detachment",
+    "Vitreous haemorrhage"
+   ],
+   "a": 1,
+   "r": "**Diabetic maculopathy** (macular oedema)."
+  },
+  {
+   "d": "investigation",
+   "q": "How is diabetic retinopathy screened for?",
+   "o": [
+    "Annual digital retinal photography",
+    "Five-yearly fundoscopy",
+    "Fluorescein angiography",
+    "Visual field testing"
+   ],
+   "a": 0,
+   "r": "**Annual digital retinal photography**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test is used when vitreous haemorrhage obscures the fundus?",
+   "o": [
+    "B-scan ultrasonography",
+    "CT head",
+    "OCT",
+    "Tonometry"
+   ],
+   "a": 0,
+   "r": "**B-scan ultrasound** checks the retina is not detached."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line treatment for diabetic maculopathy?",
+   "o": [
+    "Intravitreal anti-VEGF",
+    "Oral steroids",
+    "Pan-retinal photocoagulation alone",
+    "Vitrectomy"
+   ],
+   "a": 0,
+   "r": "**Intravitreal anti-VEGF**, e.g. ranibizumab."
+  },
+  {
+   "d": "management",
+   "q": "Which is a side effect of pan-retinal photocoagulation?",
+   "o": [
+    "Central vision loss",
+    "Night vision loss",
+    "Ptosis",
+    "Raised IOP"
+   ],
+   "a": 1,
+   "r": "**Reduced night vision** and peripheral field loss (~50%)."
+  },
+  {
+   "d": "management",
+   "q": "When is vitrectomy indicated?",
+   "o": [
+    "Microaneurysms only",
+    "Mild NPDR",
+    "Non-clearing vitreous haemorrhage",
+    "Raised HbA1c"
+   ],
+   "a": 2,
+   "r": "Non-resolving **vitreous haemorrhage** or detachment risk."
+  },
+  {
+   "d": "science",
+   "q": "Which molecule drives new vessel growth in proliferative retinopathy?",
+   "o": [
+    "Angiotensin II",
+    "Insulin",
+    "TNF-alpha",
+    "VEGF"
+   ],
+   "a": 3,
+   "r": "Ischaemic retina releases **VEGF**."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is diabetic retinopathy, who gets it, and how does it present?",
+    "tip": "Exam thinking: duration is the top risk factor; early disease is silent.",
+    "points": [
+     {
+      "p": "Microvascular complication of diabetes damaging the retina",
+      "k": [
+       [
+        "microvascular",
+        "retina"
+       ]
+      ],
+      "why": "Same process as nephropathy and neuropathy."
+     },
+     {
+      "p": "Biggest risk factor: duration of diabetes",
+      "k": [
+       [
+        "duration",
+        "how long",
+        "years"
+       ]
+      ],
+      "why": "Then poor glycaemic control and hypertension."
+     },
+     {
+      "p": "Poor glycaemic control and hypertension",
+      "k": [
+       [
+        "glycaemic",
+        "glucose",
+        "hba1c",
+        "control"
+       ],
+       [
+        "hypertension",
+        "bp",
+        "blood pressure"
+       ]
+      ],
+      "why": "Both modifiable."
+     },
+     {
+      "p": "Asymptomatic early; later blurred vision, floaters, vision loss",
+      "k": [
+       [
+        "asymptomatic",
+        "silent",
+        "no symptoms"
+       ]
+      ],
+      "why": "Hence annual screening."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How is non-proliferative retinopathy graded on fundoscopy?",
+    "tip": "Exam thinking: name the lesion that moves each grade up.",
+    "points": [
+     {
+      "p": "Mild: microaneurysms only",
+      "k": [
+       [
+        "microaneurysm"
+       ]
+      ],
+      "why": "R1."
+     },
+     {
+      "p": "Moderate: dot-blot haemorrhages, hard exudates, cotton wool spots, venous beading",
+      "k": [
+       [
+        "dot",
+        "blot"
+       ],
+       [
+        "exudate",
+        "cotton wool",
+        "beading"
+       ]
+      ],
+      "why": "Cotton wool spots are retinal infarcts."
+     },
+     {
+      "p": "Severe: 4-2-1 rule",
+      "k": [
+       [
+        "4-2-1",
+        "4 2 1",
+        "421",
+        "four"
+       ]
+      ],
+      "why": "4 quadrants haemorrhages, 2 venous beading, 1 IRMA."
+     },
+     {
+      "p": "IRMA = intraretinal microvascular abnormality",
+      "k": [
+       [
+        "irma",
+        "intraretinal"
+       ]
+      ],
+      "why": "The '1' of 4-2-1."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What defines proliferative retinopathy and diabetic maculopathy, and which causes the most vision loss?",
+    "tip": "Exam thinking: new vessels = proliferative; central blur = macula.",
+    "points": [
+     {
+      "p": "PDR: retinal neovascularisation",
+      "k": [
+       [
+        "new vessel",
+        "neovascular"
+       ]
+      ],
+      "why": "Risk of bleeding, fibrosis, detachment."
+     },
+     {
+      "p": "Maculopathy: macular oedema with central vision loss",
+      "k": [
+       [
+        "macula"
+       ],
+       [
+        "oedema",
+        "edema",
+        "central"
+       ]
+      ],
+      "why": "Can occur at any stage."
+     },
+     {
+      "p": "Maculopathy is the commonest cause of vision loss",
+      "k": [
+       [
+        "most common",
+        "commonest"
+       ]
+      ],
+      "why": "Not proliferative disease."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do vitreous haemorrhage and retinal detachment present in a diabetic?",
+    "tip": "Exam thinking: sudden vision loss in a diabetic is an emergency.",
+    "points": [
+     {
+      "p": "Vitreous haemorrhage: floaters, dark streaks, curtain, red opacity",
+      "k": [
+       [
+        "floater",
+        "streak",
+        "curtain"
+       ]
+      ],
+      "why": "Fragile new vessels rupture."
+     },
+     {
+      "p": "Retinal detachment: serrated grey retina",
+      "k": [
+       [
+        "grey",
+        "gray",
+        "serrated"
+       ]
+      ],
+      "why": "Can be hidden by blood."
+     },
+     {
+      "p": "Sudden vision loss = emergency",
+      "k": [
+       [
+        "sudden"
+       ],
+       [
+        "emergency",
+        "urgent",
+        "immediate"
+       ]
+      ],
+      "why": "Immediate ophthalmology referral."
+     },
+     {
+      "p": "Blood obscures the fundal view",
+      "k": [
+       [
+        "obscur",
+        "no view",
+        "can't see",
+        "cannot see"
+       ]
+      ],
+      "why": "So detachment is hard to diagnose clinically."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What are the screening, first-line and gold-standard investigations for diabetic eye disease?",
+    "tip": "Exam thinking: screening versus clinic versus macula.",
+    "points": [
+     {
+      "p": "Screening: annual digital retinal photography",
+      "k": [
+       [
+        "annual",
+        "yearly"
+       ],
+       [
+        "photo"
+       ]
+      ],
+      "why": "NHS Diabetic Eye Screening Programme."
+     },
+     {
+      "p": "First-line in clinic: fundoscopy",
+      "k": [
+       [
+        "fundoscop",
+        "ophthalmoscop"
+       ]
+      ],
+      "why": "Dilated examination."
+     },
+     {
+      "p": "Gold standard: retinal imaging (photography and OCT)",
+      "k": [
+       [
+        "imaging",
+        "photo"
+       ],
+       [
+        "oct",
+        "optical coherence"
+       ]
+      ],
+      "why": "OCT assesses macular oedema."
+     },
+     {
+      "p": "Grades R0–R3 (R3A active, R3S stable) and M0/M1",
+      "k": [
+       [
+        "r0",
+        "r1",
+        "r2",
+        "r3",
+        "m1",
+        "m0"
+       ]
+      ],
+      "why": "M1 = exudates near the fovea."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which second-line investigations are used, and when?",
+    "tip": "Exam thinking: angiography maps vessels; ultrasound sees through blood.",
+    "points": [
+     {
+      "p": "Fluorescein angiography in severe disease",
+      "k": [
+       [
+        "fluorescein",
+        "angiograph"
+       ]
+      ],
+      "why": "Shows neovascularisation and ischaemia; guides treatment."
+     },
+     {
+      "p": "B-scan ultrasound when vitreous haemorrhage obscures the view",
+      "k": [
+       [
+        "b-scan",
+        "b scan",
+        "ultrasound"
+       ]
+      ],
+      "why": "Excludes retinal detachment."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is non-proliferative retinopathy managed?",
+    "tip": "Exam thinking: mild NPDR does not need laser.",
+    "points": [
+     {
+      "p": "Tight glycaemic control",
+      "k": [
+       [
+        "glyc",
+        "glucose",
+        "hba1c",
+        "sugar"
+       ]
+      ],
+      "why": "Slows progression."
+     },
+     {
+      "p": "BP and lipid control",
+      "k": [
+       [
+        "bp",
+        "blood pressure",
+        "hypertension"
+       ],
+       [
+        "lipid",
+        "statin",
+        "cholesterol"
+       ]
+      ],
+      "why": "Modifiable risk factors."
+     },
+     {
+      "p": "Mild NPDR: back to GP, monitored with screening",
+      "k": [
+       [
+        "gp",
+        "monitor",
+        "screening",
+        "conservative"
+       ]
+      ],
+      "why": "Treat risk factors, re-screen."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How are proliferative retinopathy, maculopathy and vitreous haemorrhage treated?",
+    "tip": "Exam thinking: laser for new vessels, injections for the macula, surgery for blood.",
+    "points": [
+     {
+      "p": "Severe NPDR/PDR: urgent pan-retinal laser photocoagulation",
+      "k": [
+       [
+        "pan-retinal",
+        "panretinal",
+        "prp",
+        "laser"
+       ]
+      ],
+      "why": "Side effects: night vision and peripheral field loss."
+     },
+     {
+      "p": "Anti-VEGF added in PDR",
+      "k": [
+       [
+        "vegf",
+        "ranibizumab",
+        "aflibercept"
+       ]
+      ],
+      "why": "Better outcomes than laser alone."
+     },
+     {
+      "p": "Maculopathy: intravitreal anti-VEGF (ranibizumab) first-line",
+      "k": [
+       [
+        "intravitreal",
+        "injection",
+        "ranibizumab",
+        "anti-vegf"
+       ]
+      ],
+      "why": "Same as wet AMD."
+     },
+     {
+      "p": "Vitrectomy for non-clearing haemorrhage or detachment risk",
+      "k": [
+       [
+        "vitrectomy"
+       ]
+      ],
+      "why": "Observation first if the bleed is small."
+     },
+     {
+      "p": "Immediate referral for R3, vitreous haemorrhage or detachment",
+      "k": [
+       [
+        "immediate",
+        "urgent",
+        "same day",
+        "same-day"
+       ]
+      ],
+      "why": "Sight-threatening."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does hyperglycaemia damage the retina and lead to new vessels?",
+    "tip": "Exam thinking: pericytes → ischaemia → VEGF.",
+    "points": [
+     {
+      "p": "Damages capillary pericytes and endothelial cells",
+      "k": [
+       [
+        "pericyte",
+        "endotheli"
+       ]
+      ],
+      "why": "Weakened walls form microaneurysms."
+     },
+     {
+      "p": "Capillary occlusion and retinal ischaemia",
+      "k": [
+       [
+        "occlu",
+        "ischaemi",
+        "ischemi"
+       ]
+      ],
+      "why": "Cotton wool spots are infarcts."
+     },
+     {
+      "p": "Ischaemia releases VEGF, driving neovascularisation",
+      "k": [
+       [
+        "vegf"
+       ]
+      ],
+      "why": "New vessels are fragile."
+     },
+     {
+      "p": "Fragile vessels bleed: vitreous haemorrhage, fibrosis, detachment",
+      "k": [
+       [
+        "bleed",
+        "haemorrhage",
+        "rupture",
+        "detach"
+       ]
+      ],
+      "why": "Tractional detachment from fibrosis."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does maculopathy cause central vision loss, and how do anti-VEGF and PRP work?",
+    "tip": "Exam thinking: barrier, VEGF, ischaemic retina.",
+    "points": [
+     {
+      "p": "Blood-retinal barrier breakdown → fluid leaks into the macula",
+      "k": [
+       [
+        "barrier",
+        "leak"
+       ]
+      ],
+      "why": "Macular oedema blurs central vision."
+     },
+     {
+      "p": "Anti-VEGF blocks VEGF signalling: less leakage and neovascularisation",
+      "k": [
+       [
+        "block",
+        "inhibit"
+       ],
+       [
+        "vegf"
+       ]
+      ],
+      "why": "E.g. ranibizumab."
+     },
+     {
+      "p": "PRP destroys ischaemic peripheral retina, reducing VEGF",
+      "k": [
+       [
+        "destroy",
+        "burn",
+        "ablat"
+       ],
+       [
+        "ischaemi",
+        "periph",
+        "vegf"
+       ]
+      ],
+      "why": "At the cost of peripheral and night vision."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Diabetic retinopathy": "Damage to the retinal blood vessels caused by long-standing diabetes.",
+  "NPDR": "Non-proliferative diabetic retinopathy: vessel damage without new vessel growth.",
+  "PDR": "Proliferative diabetic retinopathy: new vessels growing on the retina or disc.",
+  "Microaneurysms": "Tiny outpouchings of weakened retinal capillaries; the earliest sign of retinopathy.",
+  "dot-blot haemorrhages": "Small round bleeds within the deeper layers of the retina.",
+  "hard exudates": "Yellow lipid deposits leaked from damaged retinal vessels.",
+  "cotton wool spots": "Fluffy white patches from small retinal infarcts (nerve fibre layer ischaemia).",
+  "venous beading": "Sausage-like irregular dilation of retinal veins; a sign of ischaemia.",
+  "IRMA": "Intraretinal microvascular abnormality: abnormal shunt vessels within the retina in severe NPDR.",
+  "4-2-1 rule": "Criteria for severe NPDR: haemorrhages in 4 quadrants, venous beading in 2, IRMA in 1.",
+  "neovascularisation": "Growth of new, fragile blood vessels.",
+  "maculopathy": "Diabetic damage at the macula, usually oedema or exudates, threatening central vision.",
+  "macula": "Central part of the retina responsible for detailed vision.",
+  "fovea": "Pit at the centre of the macula with the sharpest vision.",
+  "macular oedema": "Fluid build-up in the macula that blurs central vision.",
+  "Vitreous haemorrhage": "Bleeding into the vitreous gel, causing floaters or sudden vision loss.",
+  "vitreous": "Clear gel filling the back of the eye.",
+  "Retinal detachment": "Separation of the retina from the underlying layer; an emergency.",
+  "red reflex": "Orange-red glow seen through the pupil with an ophthalmoscope; dull when blood fills the vitreous.",
+  "Floaters": "Moving specks or strands in the vision from debris or blood in the vitreous.",
+  "fundoscopy": "Examination of the back of the eye with an ophthalmoscope.",
+  "OCT": "Optical coherence tomography: a cross-sectional scan of the retina that measures macular thickness.",
+  "Fluorescein angiography": "Dye injected into a vein and photographed in the retina to show leaking, blocked or new vessels.",
+  "B-scan ultrasonography": "Ultrasound of the eye used to see the retina when blood blocks the view.",
+  "digital retinal photography": "Photographs of the retina used in annual diabetic eye screening.",
+  "R3A": "Active proliferative retinopathy on screening; needs urgent referral.",
+  "R3S": "Stable, treated proliferative retinopathy.",
+  "M1": "Screening grade for maculopathy needing referral, such as exudates near the fovea.",
+  "pan-retinal laser photocoagulation": "Laser burns to the peripheral retina to stop new vessel growth.",
+  "PRP": "Pan-retinal photocoagulation.",
+  "VEGF": "Vascular endothelial growth factor: signal released by ischaemic tissue that drives new vessel growth.",
+  "anti-VEGF": "Drugs injected into the eye that block VEGF, reducing leakage and new vessels.",
+  "ranibizumab": "An anti-VEGF drug given by intravitreal injection.",
+  "Intravitreal": "Injected directly into the vitreous of the eye.",
+  "Vitrectomy": "Surgery to remove the vitreous gel, blood or scar tissue.",
+  "pericytes": "Support cells around capillaries; their loss weakens vessel walls.",
+  "blood-retinal barrier": "Tight junctions in retinal vessels that stop fluid and protein leaking into the retina.",
+  "wet AMD": "Neovascular age-related macular degeneration, also treated with anti-VEGF.",
+  "HbA1c": "Glycated haemoglobin; reflects average glucose over 2 to 3 months.",
+  "ACR": "Urine albumin:creatinine ratio; screens for diabetic nephropathy."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 61 year old man with type 2 diabetes for 14 years attends diabetic eye screening. He has no visual symptoms. Retinal photographs show retinal haemorrhages in all four quadrants, venous beading in two quadrants and an intraretinal microvascular abnormality in one quadrant. There are no new vessels.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hypertensive retinopathy",
+    "Mild non-proliferative diabetic retinopathy",
+    "Moderate non-proliferative diabetic retinopathy",
+    "Proliferative diabetic retinopathy",
+    "Severe non-proliferative diabetic retinopathy"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Grade the retinopathy from the photo findings."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 14 years",
+      "all four quadrants",
+      "venous beading in two quadrants",
+      "intraretinal microvascular abnormality in one quadrant",
+      "no new vessels"
+     ],
+     "x": "Haemorrhages 4, venous beading 2, IRMA 1 = the **4-2-1 rule**; no new vessels."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Severe NPDR**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hypertensive retinopathy gives AV nipping, flame haemorrhages and papilloedema, not the 4-2-1 pattern."
+      ],
+      [
+       1,
+       "Mild NPDR is microaneurysms only."
+      ],
+      [
+       2,
+       "Moderate NPDR has fewer lesions and does not meet 4-2-1."
+      ],
+      [
+       3,
+       "Proliferative disease needs new vessels; there are none."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Severe NPDR.** Rule: 4-2-1 without new vessels = severe NPDR."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 45 year old woman was diagnosed with type 2 diabetes 3 months ago. She has no visual symptoms. Her visual acuity is 6/6 in both eyes. She asks how her eyes will be checked for diabetic damage.",
+   "q": "Which is the most appropriate method of screening?",
+   "o": [
+    "Annual digital retinal photography",
+    "Annual visual field testing",
+    "Fluorescein angiography every 2 years",
+    "OCT only if symptoms develop",
+    "Visual acuity check at each GP visit"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Screening test for diabetic retinopathy in an asymptomatic patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes 3 months ago",
+      "no visual symptoms",
+      "6/6 in both eyes"
+     ],
+     "x": "Retinopathy is **asymptomatic early**, and normal acuity does not exclude it."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Annual digital retinal photography** (NHS Diabetic Eye Screening Programme)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Field testing is for glaucoma or neurological loss."
+      ],
+      [
+       2,
+       "Fluorescein angiography is invasive and for severe disease."
+      ],
+      [
+       3,
+       "Waiting for symptoms misses treatable disease."
+      ],
+      [
+       4,
+       "Acuity stays normal until late; it is not a screening test for retinopathy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Annual digital retinal photography.** Rule: every diabetic over 12 gets annual retinal photos."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 52 year old man with proliferative diabetic retinopathy treated with laser had a vitreous haemorrhage in his left eye 3 months ago. It has not cleared and his vision remains hand movements only. B-scan ultrasound shows fibrovascular bands pulling on the retina.",
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Continue observation for 6 more months",
+    "Oral aspirin",
+    "Repeat B-scan in 1 year",
+    "Topical steroid drops",
+    "Vitrectomy"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step for a non-clearing vitreous haemorrhage."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "has not cleared",
+      "hand movements only",
+      "fibrovascular bands pulling on the retina"
+     ],
+     "x": "Haemorrhage not resolving, severe vision loss and **traction**: risk of detachment."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Vitrectomy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Observation has failed and traction risks detachment."
+      ],
+      [
+       1,
+       "Aspirin does not clear blood and is not a treatment for this."
+      ],
+      [
+       2,
+       "A year's delay risks permanent vision loss."
+      ],
+      [
+       3,
+       "Steroid drops do not treat vitreous haemorrhage."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Vitrectomy.** Rule: observe first; vitrectomy if not clearing or detachment risk."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 49 year old woman has pan-retinal laser photocoagulation for proliferative diabetic retinopathy. Six months later the new vessels on her optic disc have regressed. She now finds it hard to see when driving at dusk.",
+   "q": "Which is the most likely mechanism by which the treatment caused regression of the new vessels?",
+   "o": [
+    "Cauterisation of each new vessel",
+    "Destruction of ischaemic peripheral retina reducing VEGF",
+    "Improved glycaemic control",
+    "Lowering of intraocular pressure",
+    "Sealing of the blood-retinal barrier at the macula"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of a treatment for proliferative retinopathy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pan-retinal laser photocoagulation",
+      "new vessels on her optic disc have regressed",
+      "hard to see when driving at dusk"
+     ],
+     "x": "PRP treats the peripheral retina, not the disc vessels directly; poor night vision is its side effect."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "It destroys **ischaemic peripheral retina**, so less **VEGF** is released."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "PRP burns peripheral retina, not each new vessel on the disc."
+      ],
+      [
+       2,
+       "Laser does not change glucose."
+      ],
+      [
+       3,
+       "PRP does not treat pressure."
+      ],
+      [
+       4,
+       "Barrier sealing is the anti-VEGF effect at the macula."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Destruction of ischaemic retina reducing VEGF.** Rule: no ischaemic retina, no VEGF, no new vessels."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old man with type 1 diabetes for 8 years has his annual retinal screening. He has no visual symptoms. Photographs show several microaneurysms in both eyes. There are no haemorrhages, exudates or new vessels. His pulse rate is 72 bpm and BP 128/80 mmHg.",
+   "labs": [
+    [
+     "HbA1c",
+     "58 mmol/mol",
+     "<48 target",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hypertensive retinopathy",
+    "Mild non-proliferative diabetic retinopathy",
+    "Moderate non-proliferative diabetic retinopathy",
+    "Proliferative diabetic retinopathy",
+    "Severe non-proliferative diabetic retinopathy"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Grade the retinopathy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes for 8 years",
+      "no visual symptoms",
+      "several microaneurysms",
+      "no haemorrhages, exudates or new vessels"
+     ],
+     "x": "**Microaneurysms only**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Mild NPDR** (R1)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "BP is normal and there is no AV nipping or flame haemorrhage."
+      ],
+      [
+       2,
+       "Moderate needs haemorrhages, exudates or cotton wool spots."
+      ],
+      [
+       3,
+       "No new vessels."
+      ],
+      [
+       4,
+       "No 4-2-1 features."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Mild NPDR.** Rule: microaneurysms only = mild."
+    }
+   ],
+   "e": "Microaneurysms alone define mild non-proliferative diabetic retinopathy (R1); moderate disease adds haemorrhages, exudates or cotton wool spots."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 55 year old woman with type 2 diabetes for 12 years has retinal screening. She has no visual symptoms. Photographs show dot-blot haemorrhages in two quadrants, scattered hard exudates away from the macula and two cotton wool spots. There are no new vessels and no venous beading.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Central retinal vein occlusion",
+    "Diabetic maculopathy",
+    "Mild non-proliferative diabetic retinopathy",
+    "Moderate non-proliferative diabetic retinopathy",
+    "Proliferative diabetic retinopathy"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Grade the retinopathy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dot-blot haemorrhages in two quadrants",
+      "hard exudates away from the macula",
+      "two cotton wool spots",
+      "no new vessels"
+     ],
+     "x": "More than microaneurysms, but not 4-2-1 and no new vessels. Exudates spare the macula."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Moderate NPDR**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CRVO gives sudden vision loss with widespread flame haemorrhages in one eye."
+      ],
+      [
+       1,
+       "The exudates are away from the macula."
+      ],
+      [
+       2,
+       "Mild is microaneurysms only."
+      ],
+      [
+       4,
+       "No new vessels."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Moderate NPDR.** Rule: haemorrhages + exudates + cotton wool spots without 4-2-1 = moderate."
+    }
+   ],
+   "e": "Dot-blot haemorrhages, hard exudates and cotton wool spots without 4-2-1 features or new vessels is moderate NPDR."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man with type 2 diabetes for 20 years has not attended screening for 4 years. Fundoscopy shows fine, irregular new vessels arising from the optic disc, with widespread blot haemorrhages. His temperature is 36.6°C, pulse rate 80 bpm and BP 168/96 mmHg.",
+   "labs": [
+    [
+     "HbA1c",
+     "88 mmol/mol",
+     "<48 target",
+     "H"
+    ],
+    [
+     "eGFR",
+     "48 mL/min/1.73m²",
+     ">60",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hypertensive retinopathy",
+    "Papilloedema",
+    "Proliferative diabetic retinopathy",
+    "Retinal detachment",
+    "Severe non-proliferative diabetic retinopathy"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis from fundoscopy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 20 years",
+      "not attended screening for 4 years",
+      "new vessels arising from the optic disc"
+     ],
+     "x": "**New vessels** = proliferative."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Proliferative diabetic retinopathy** (R3)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hypertensive retinopathy does not cause disc new vessels."
+      ],
+      [
+       1,
+       "Papilloedema is a swollen disc, not new vessels."
+      ],
+      [
+       3,
+       "Detachment gives a grey, elevated retina."
+      ],
+      [
+       4,
+       "Severe NPDR has no new vessels."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Proliferative diabetic retinopathy.** Rule: new vessels anywhere = proliferative."
+    }
+   ],
+   "e": "New vessels at the disc define proliferative diabetic retinopathy; severe NPDR has no neovascularisation."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 59 year old woman with type 2 diabetes has 3 months of gradually blurred central vision in her right eye. Straight lines look slightly bent. Fundoscopy shows a ring of hard exudates around the fovea. There are no new vessels. An OCT scan is performed (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "scale",
+    "title": "Central macular thickness on OCT",
+    "min": 150,
+    "max": 600,
+    "unit": "µm",
+    "bands": [
+     [
+      150,
+      300,
+      "Normal",
+      "ok"
+     ],
+     [
+      300,
+      400,
+      "Thickened",
+      "warn"
+     ],
+     [
+      400,
+      600,
+      "Marked oedema",
+      "bad"
+     ]
+    ],
+    "value": 470,
+    "label": "470 µm",
+    "caption": "Central retina markedly thickened."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cataract",
+    "Diabetic maculopathy",
+    "Proliferative diabetic retinopathy",
+    "Retinal detachment",
+    "Vitreous haemorrhage"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of central vision loss in a diabetic."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "gradually blurred central vision",
+      "Straight lines look slightly bent",
+      "ring of hard exudates around the fovea",
+      "OCT scan"
+     ],
+     "x": "Central blur, distortion, foveal exudates and a thick macula on OCT."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Diabetic maculopathy** (macular oedema)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cataract gives generalised glare and blur without foveal exudates."
+      ],
+      [
+       2,
+       "No new vessels."
+      ],
+      [
+       3,
+       "Detachment gives a curtain and flashes, not foveal exudates."
+      ],
+      [
+       4,
+       "Haemorrhage is sudden with floaters."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Diabetic maculopathy.** Rule: central blur + exudates at the fovea = maculopathy, the commonest cause of diabetic vision loss."
+    }
+   ],
+   "e": "Gradual central blur with distortion, exudates near the fovea and macular thickening on OCT is diabetic maculopathy."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 50 year old man with proliferative diabetic retinopathy wakes with a sudden shower of dark floaters in his left eye, followed by dark streaks and a reddish haze over his vision. There is no pain. The red reflex is reduced and the fundus cannot be seen. His pulse rate is 84 bpm and BP 152/90 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute angle closure glaucoma",
+    "Central retinal artery occlusion",
+    "Diabetic maculopathy",
+    "Posterior vitreous detachment alone",
+    "Vitreous haemorrhage"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of sudden painless vision loss in a diabetic."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "proliferative diabetic retinopathy",
+      "sudden shower of dark floaters",
+      "dark streaks and a reddish haze",
+      "fundus cannot be seen"
+     ],
+     "x": "Fragile new vessels + sudden floaters and red haze + no fundal view."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Vitreous haemorrhage**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Angle closure is painful with a red eye and mid-dilated pupil."
+      ],
+      [
+       1,
+       "CRAO gives a pale retina with a cherry-red spot, not floaters."
+      ],
+      [
+       2,
+       "Maculopathy is gradual central blur."
+      ],
+      [
+       3,
+       "PVD alone gives floaters and flashes but the fundus is visible."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Vitreous haemorrhage.** Rule: PDR + sudden floaters + no fundal view = vitreous haemorrhage."
+    }
+   ],
+   "e": "Fragile new vessels in PDR bleed into the vitreous: sudden floaters, dark streaks and a red haze with no fundal view."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 47 year old woman has type 1 diabetes diagnosed at age 12. She asks which factor most increases her risk of developing diabetic retinopathy. She is a non-smoker. Her HbA1c is 54 mmol/mol.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most important risk factor for diabetic retinopathy?",
+   "o": [
+    "Duration of diabetes",
+    "Female sex",
+    "Hyperlipidaemia",
+    "Myopia",
+    "Smoking"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most important risk factor."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes diagnosed at age 12",
+      "most increases her risk"
+     ],
+     "x": "35 years of diabetes."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Duration of diabetes**; then glycaemic control and hypertension."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Sex is not the main risk factor."
+      ],
+      [
+       2,
+       "Lipids worsen exudates but are not the most important."
+      ],
+      [
+       3,
+       "Myopia is, if anything, slightly protective."
+      ],
+      [
+       4,
+       "Smoking is a weaker factor and she does not smoke."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Duration of diabetes.** Rule: the longer the diabetes, the higher the risk."
+    }
+   ],
+   "e": "Duration of diabetes is the most important risk factor for diabetic retinopathy, followed by poor glycaemic control and hypertension."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 57 year old man with proliferative diabetic retinopathy has sudden loss of vision in his right eye with dense floaters. The red reflex is absent and the retina cannot be seen on fundoscopy. His temperature is 36.8°C, pulse rate 82 bpm and BP 146/88 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "B-scan ultrasonography",
+    "CT orbits",
+    "Fluorescein angiography",
+    "Optical coherence tomography",
+    "Visual field testing"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation when the fundus is obscured."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "proliferative diabetic retinopathy",
+      "sudden loss of vision",
+      "retina cannot be seen"
+     ],
+     "x": "Likely **vitreous haemorrhage**; you must know whether the retina is detached underneath."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**B-scan ultrasonography**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CT does not assess retinal attachment well."
+      ],
+      [
+       2,
+       "Angiography needs a clear view of the retina."
+      ],
+      [
+       3,
+       "OCT also needs a clear optical path."
+      ],
+      [
+       4,
+       "Field testing does not show the cause."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. B-scan ultrasonography.** Rule: blood hides the retina → ultrasound."
+    }
+   ],
+   "e": "When vitreous haemorrhage obscures the fundus, B-scan ultrasonography checks the retina is not detached; OCT and angiography need a clear view."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 60 year old woman with type 2 diabetes has blurred central vision in her left eye. Screening photographs show hard exudates within one disc diameter of the fovea. The ophthalmologist wants to assess whether there is macular oedema and how thick the retina is.",
+   "labs": [
+    [
+     "HbA1c",
+     "71 mmol/mol",
+     "<48 target",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "B-scan ultrasonography",
+    "Fluorescein angiography",
+    "Gonioscopy",
+    "Optical coherence tomography",
+    "Tonometry"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation to measure macular oedema."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "blurred central vision",
+      "hard exudates within one disc diameter of the fovea",
+      "how thick the retina is"
+     ],
+     "x": "Suspected **maculopathy** (M1)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**OCT** measures macular thickness and oedema."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Ultrasound is for an obscured fundus."
+      ],
+      [
+       1,
+       "Angiography maps vessels and ischaemia in severe disease, not thickness."
+      ],
+      [
+       2,
+       "Gonioscopy examines the drainage angle in glaucoma."
+      ],
+      [
+       4,
+       "Tonometry measures pressure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. OCT.** Rule: macular oedema = OCT."
+    }
+   ],
+   "e": "OCT specifically assesses macular oedema and retinal thickness; fluorescein angiography is for mapping vessels and ischaemia in severe disease."
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man with type 2 diabetes has new vessels on the optic disc in both eyes on screening (R3A). His vision is 6/9 in both eyes and there is no macular oedema. His pulse rate is 76 bpm and BP 150/88 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Annual screening and optimise HbA1c",
+    "Oral aspirin",
+    "Topical steroid drops",
+    "Urgent pan-retinal laser photocoagulation",
+    "Vitrectomy"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of proliferative retinopathy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "new vessels on the optic disc",
+      "R3A",
+      "no macular oedema"
+     ],
+     "x": "Active proliferative disease without maculopathy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent pan-retinal laser photocoagulation** (anti-VEGF may be added)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Risk factor control alone is for mild NPDR."
+      ],
+      [
+       1,
+       "Aspirin does not treat retinopathy."
+      ],
+      [
+       2,
+       "Steroid drops do not treat new vessels."
+      ],
+      [
+       4,
+       "Vitrectomy is for non-clearing haemorrhage or detachment risk."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Urgent PRP.** Rule: new vessels = laser now."
+    }
+   ],
+   "e": "Proliferative diabetic retinopathy needs urgent pan-retinal laser photocoagulation, with intravitreal anti-VEGF added for better outcomes."
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old woman with type 2 diabetes has clinically significant diabetic macular oedema in her right eye on OCT. Her vision has fallen to 6/24. There are no new vessels. Her HbA1c is 66 mmol/mol.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate first-line treatment for her eye?",
+   "o": [
+    "Intravitreal anti-VEGF injection",
+    "Observation and repeat OCT in 1 year",
+    "Oral prednisolone",
+    "Pan-retinal laser photocoagulation",
+    "Vitrectomy"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "First-line treatment for diabetic maculopathy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "clinically significant diabetic macular oedema",
+      "fallen to 6/24",
+      "no new vessels"
+     ],
+     "x": "Maculopathy with falling vision, no proliferative disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Intravitreal anti-VEGF** (e.g. ranibizumab)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Observation risks permanent central vision loss."
+      ],
+      [
+       2,
+       "Oral steroids do not treat diabetic macular oedema."
+      ],
+      [
+       3,
+       "PRP is for new vessels and can worsen central vision."
+      ],
+      [
+       4,
+       "Vitrectomy is for haemorrhage or traction."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Intravitreal anti-VEGF.** Rule: maculopathy = anti-VEGF injections."
+    }
+   ],
+   "e": "First-line treatment for diabetic maculopathy is intravitreal anti-VEGF such as ranibizumab; PRP is for proliferative disease."
+  },
+  {
+   "d": "management",
+   "stem": "A 46 year old man with type 2 diabetes for 6 years has his first abnormal retinal screen showing microaneurysms only in both eyes (R1M0). His vision is normal. His temperature is 36.7°C, pulse rate 78 bpm and BP 148/92 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Intravitreal anti-VEGF",
+    "Optimise glucose, BP and lipids and continue annual screening",
+    "Pan-retinal laser photocoagulation",
+    "Same-day ophthalmology referral",
+    "Vitrectomy"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of mild NPDR."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "microaneurysms only",
+      "R1M0",
+      "vision is normal",
+      "BP 148/92 mmHg"
+     ],
+     "x": "Mild NPDR, no maculopathy, BP above target."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Conservative**: back to GP to optimise glucose, BP and lipids, with annual screening."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anti-VEGF is for maculopathy."
+      ],
+      [
+       2,
+       "Laser is for severe NPDR or PDR."
+      ],
+      [
+       3,
+       "Same-day referral is for R3, haemorrhage or detachment."
+      ],
+      [
+       4,
+       "Vitrectomy is for haemorrhage or traction."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Optimise risk factors and annual screening.** Rule: mild NPDR = modify risk factors."
+    }
+   ],
+   "e": "Mild NPDR is managed conservatively by the GP with glycaemic, BP and lipid control and annual screening."
+  },
+  {
+   "d": "science",
+   "stem": "A 40 year old woman with type 1 diabetes for 15 years has retinal screening. Photographs show multiple tiny red dots at the posterior pole, which are the earliest lesions of her retinopathy.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of these lesions?",
+   "o": [
+    "Deposition of lipid from leaky vessels",
+    "Infarction of the nerve fibre layer",
+    "Loss of capillary pericytes weakening the vessel wall",
+    "Rupture of new vessels into the vitreous",
+    "VEGF-driven neovascularisation"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of the earliest retinopathy lesion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes for 15 years",
+      "multiple tiny red dots",
+      "earliest lesions"
+     ],
+     "x": "Tiny red dots as the earliest lesion = **microaneurysms**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Hyperglycaemia damages **pericytes**, weakening capillary walls so they bulge."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Lipid deposition makes hard exudates."
+      ],
+      [
+       1,
+       "Nerve fibre layer infarcts are cotton wool spots."
+      ],
+      [
+       3,
+       "That is vitreous haemorrhage."
+      ],
+      [
+       4,
+       "Neovascularisation is a late, proliferative change."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Loss of pericytes.** Rule: pericyte loss → microaneurysms → ischaemia → VEGF."
+    }
+   ],
+   "e": "Hyperglycaemia damages capillary pericytes and endothelium, weakening the wall into microaneurysms, the earliest sign of retinopathy."
+  }
+ ]
+}

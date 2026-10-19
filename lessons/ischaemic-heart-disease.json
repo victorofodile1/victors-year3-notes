@@ -1,0 +1,763 @@
+{
+  "id": "ischaemic-heart-disease",
+  "patient": {
+    "name": "Rajesh Patel",
+    "age": 63,
+    "sex": "M",
+    "setting": "GP surgery, then rapid access chest pain clinic",
+    "complaint": "Tight chest when climbing the stairs to his flat, easing with rest",
+    "background": [
+      "Type 2 diabetes on metformin",
+      "Hypertension on ramipril",
+      "Smoker, 30 pack-years",
+      "Father died of a heart attack aged 58",
+      "Taxi driver in Wembley"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with exertional chest tightness relieved by rest or GTN (stable angina), rest or worsening pain with a normal troponin (unstable angina), or rest pain with deep T inversion in V2–V3 (Wellens).",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Rajesh, 63, gets **tight chest pain** climbing two flights of stairs.",
+            "It spreads to his **left arm and jaw**.",
+            "It goes after **3 minutes of rest**, every time.",
+            "Getting worse over 2 months; never at rest."
+          ],
+          "vitals": {
+            "HR": "78 bpm",
+            "BP": "146/88 mmHg",
+            "RR": "15 /min",
+            "SpO2": "97% on air"
+          }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Rajesh's pain is **ischaemia**: atherosclerotic coronary arteries cannot deliver enough blood when his heart works harder."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Rajesh has almost every **risk factor**: smoking, hypertension, diabetes and a father with an early MI."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Rajesh ticks all **three** typical features: constricting pain, brought on by exertion, relieved by rest within minutes."
+        },
+        {
+          "type": "ask",
+          "q": "Rajesh's pain is constricting, exertional and relieved by rest. Which label fits?",
+          "o": [
+            "Atypical chest pain",
+            "Non-anginal chest pain",
+            "Typical angina",
+            "Unstable angina"
+          ],
+          "a": 2,
+          "r": "All **three** features = **typical angina**. Two = atypical; one or none = non-anginal. It is predictable, so not unstable."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Rajesh's pain is **predictable** and only on exertion: **stable angina**. Pain at rest or rapidly worsening would make it unstable."
+        },
+        {
+          "type": "compare",
+          "title": "Stable angina vs unstable angina vs NSTEMI",
+          "head": ["Feature", "Stable angina", "Unstable angina", "NSTEMI"],
+          "rows": [
+            ["Pain", "Exertion only, predictable", "At rest or worsening", "At rest, prolonged"],
+            ["Plaque", "Fixed, stable", "Ruptured, no infarction", "Ruptured, infarction"],
+            ["Troponin", "Normal", "**Normal**", "**Raised**"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "If Rajesh came in after pain **at rest** with deep or biphasic T waves in **V2–V3**, think **Wellens**: a critical proximal LAD stenosis."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "ecg",
+            "title": "Contrast: Wellens pattern (pain free)",
+            "layout": "12lead",
+            "rhythm": "sinus",
+            "rate": 72,
+            "leads": { "V2": "t_inv", "V3": "t_inv" },
+            "caption": "Deeply inverted T waves in V2–V3 after rest pain, with no ST elevation: Wellens syndrome, a warning of critical proximal LAD stenosis."
+          },
+          "text": "Rajesh's own resting ECG is **normal**. This is what would worry you."
+        },
+        {
+          "type": "trap",
+          "text": "A **normal resting ECG** does not exclude angina. Stable angina is a clinical diagnosis backed by imaging, and most resting ECGs are normal between attacks."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial (or diagnostic) investigation?' for suspected stable angina: CT coronary angiography first, functional imaging second, invasive coronary angiography as the gold standard.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Rajesh first has a 12-lead ECG. Correct lead placement matters: V4 in the **5th intercostal space, mid-clavicular line**."
+        },
+        {
+          "type": "labs",
+          "title": "Rajesh's clinic tests",
+          "rows": [
+            ["12-lead ECG", "Sinus rhythm, no ST change", "Normal", ""],
+            ["Haemoglobin", "142 g/L", "130–180", ""],
+            ["HbA1c", "62 mmol/mol", "<48", "H"],
+            ["Total cholesterol", "6.4 mmol/L", "<5.0", "H"],
+            ["LDL cholesterol", "4.2 mmol/L", "<3.0", "H"]
+          ],
+          "text": "Normal ECG and Hb; poorly controlled diabetes and high LDL. No rest pain, so no troponin needed."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Rajesh's first-line test is **CT coronary angiography**. Troponin is only for suspected MI, which he does not have."
+        },
+        {
+          "type": "ask",
+          "q": "Rajesh's CT coronary angiogram shows stenoses of uncertain significance. What next?",
+          "o": [
+            "Exercise tolerance test",
+            "Functional imaging (e.g. stress echo)",
+            "Repeat CT coronary angiography",
+            "Serial troponin"
+          ],
+          "a": 1,
+          "r": "When CTCA is inconclusive, **functional imaging** shows whether the narrowing causes ischaemia. Troponin is for MI."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Rajesh's **stress echo** shows an inducible anterior **regional wall motion abnormality**: the narrowing is causing ischaemia."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Because symptoms persist on drugs, Rajesh has **invasive coronary angiography**, the gold standard, used third-line."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "coronary",
+            "title": "Rajesh's angiogram",
+            "artery": "LAD",
+            "caption": "Tight proximal LAD stenosis, plus significant disease in the circumflex and RCA: three-vessel disease."
+          }
+        },
+        {
+          "type": "flow",
+          "title": "Investigating suspected stable angina",
+          "nodes": [
+            "Typical or atypical angina symptoms",
+            "Resting 12-lead ECG and bloods",
+            "First-line: CT coronary angiography",
+            "Inconclusive: functional imaging (stress echo, MRI, perfusion)",
+            "Gold standard: invasive coronary angiography"
+          ],
+          "caption": "Non-invasive first; invasive angiography when revascularisation is being considered."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?' (GTN plus aspirin and statin plus beta-blocker or CCB), the asthmatic who cannot have a beta-blocker, the forbidden beta-blocker plus verapamil combination, and CABG vs PCI.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Rajesh gets **GTN spray** for attacks, **aspirin and atorvastatin** for prognosis, and **bisoprolol** for symptoms. He has no asthma, so a beta-blocker is fine."
+        },
+        {
+          "type": "compare",
+          "title": "Symptom drugs vs prognosis drugs",
+          "head": ["Drug", "Job", "Key side effect"],
+          "rows": [
+            ["GTN", "Relieves an attack", "Headache, dizziness"],
+            ["Bisoprolol / atenolol", "Prevents attacks (symptomatic)", "Sexual dysfunction"],
+            ["Aspirin", "**Prognosis**: antiplatelet", "GI bleeding"],
+            ["Atorvastatin", "**Prognosis**: plaque stabilisation", "Myalgia"]
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "Rajesh still gets angina on bisoprolol. Which drug must NOT be added?",
+          "o": [
+            "Amlodipine",
+            "Felodipine",
+            "Isosorbide mononitrate",
+            "Verapamil"
+          ],
+          "a": 3,
+          "r": "**Beta-blocker + verapamil** risks bradycardia, AV block and complete heart block. Add a dihydropyridine such as felodipine instead."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Rajesh adds **felodipine** to bisoprolol: the optimum combination. Never verapamil with a beta-blocker."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "If Rajesh still had angina on two drugs while awaiting revascularisation, a third drug such as **isosorbide mononitrate** would be added, dosed asymmetrically to avoid tolerance."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Rajesh's angina attacks per week",
+            "x": ["Diagnosis", "Bisoprolol", "+ Felodipine", "After CABG"],
+            "unit": "attacks/week",
+            "series": [
+              { "name": "Angina attacks", "values": [9, 6, 4, 0] }
+            ],
+            "caption": "Drugs reduce attacks; revascularisation removes them. Aspirin and statin are for survival, not symptoms."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Rajesh is **over 65 soon, diabetic, with three-vessel disease**: **CABG** gives him a survival advantage over PCI."
+        },
+        {
+          "type": "flow",
+          "title": "Stable angina treatment ladder",
+          "nodes": [
+            "All: GTN + aspirin + statin + lifestyle",
+            "Step 1: beta-blocker or rate-limiting CCB",
+            "Step 2: beta-blocker + dihydropyridine CCB (felodipine)",
+            "Step 3: add nitrate, ivabradine, nicorandil or ranolazine",
+            "Refractory: revascularisation (CABG or PCI)"
+          ],
+          "caption": "Asthma: no beta-blocker, so use diltiazem or verapamil."
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Rajesh's BP of 146/88 is above target. As a diabetic, the notes give him a lower target of **135/85**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Rajesh's systolic BP against target",
+            "min": 110,
+            "max": 170,
+            "unit": "mmHg",
+            "bands": [
+              [110, 135, "At diabetic target", "ok"],
+              [135, 140, "Above diabetic target", "warn"],
+              [140, 170, "Above general target", "bad"]
+            ],
+            "value": 146,
+            "label": "Rajesh 146",
+            "caption": "General target <140/90; diabetics 135/85 in the notes."
+          }
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "Rajesh's care follows **NICE** stable angina and ACS guidance, and NICE hypertension targets."
+        },
+        {
+          "type": "trap",
+          "text": "Asthma or regular beta-agonist use? **No beta-blocker**. Choose a rate-limiting CCB (diltiazem or verapamil)."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions on drug mechanisms: how nitrates relieve angina (venodilation, reduced preload), how beta-blockers reduce oxygen demand, why nitrate tolerance needs a nitrate-free interval, and why aspirin and statins improve survival.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Rajesh's **fixed plaque** lets enough blood through at rest but not on the stairs, so his pain is predictable and reproducible."
+        },
+        {
+          "type": "flow",
+          "title": "Why exertion causes Rajesh's pain",
+          "nodes": [
+            "Stable atherosclerotic plaque narrows the lumen",
+            "Exertion raises heart rate and contractility",
+            "Myocardial oxygen demand exceeds supply",
+            "Ischaemia: constricting chest pain",
+            "Rest lowers demand: pain settles in minutes"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Bisoprolol slows Rajesh's heart, lowering **oxygen demand** and lengthening **diastole**, when the coronaries fill."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Rajesh's GTN works mainly by **venodilation**, cutting preload and so cardiac work, plus some coronary dilation."
+        },
+        {
+          "type": "ask",
+          "q": "Why must Rajesh's isosorbide mononitrate be taken at 8am and 2pm, not twice evenly?",
+          "o": [
+            "To avoid headache at night",
+            "To avoid hypotension on standing",
+            "To give a nitrate-free interval and prevent tolerance",
+            "To match peak absorption with meals"
+          ],
+          "a": 2,
+          "r": "Continuous nitrate exposure causes **tolerance**; an asymmetric regimen leaves a nitrate-free interval overnight."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Rajesh's aspirin and atorvastatin do not stop his pain. They **stabilise plaques and prevent thrombosis**, which reduces his chance of dying."
+        },
+        {
+          "type": "pearl",
+          "text": "**Supply vs demand**: beta-blockers and rate-limiting CCBs cut demand; nitrates cut preload and dilate coronaries; revascularisation restores supply."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which are the three features of typical anginal pain?", "o": ["Constricting, exertional, relieved by rest/GTN", "Pleuritic, positional, sharp", "Sharp, at rest, lasting hours", "Tearing, radiating to the back, sudden"], "a": 0, "r": "**Constricting** pain, brought on by **exertion**, relieved by **rest or GTN** within minutes." },
+    { "d": "diagnosis", "q": "Unstable angina differs from NSTEMI because it has:", "o": ["Normal troponin", "Pain at rest", "Plaque rupture", "ST depression"], "a": 0, "r": "Unstable angina: plaque rupture without infarction, so **troponin is normal**." },
+    { "d": "diagnosis", "q": "Deep T wave inversion in V2–V3 after rest pain suggests:", "o": ["Critical proximal LAD stenosis", "Inferior STEMI", "Pericarditis", "RCA occlusion"], "a": 0, "r": "**Wellens syndrome**: critical proximal LAD stenosis." },
+    { "d": "investigation", "q": "First-line diagnostic test for suspected stable angina:", "o": ["Coronary angiogram", "CT coronary angiography", "Exercise ECG", "Stress echo"], "a": 1, "r": "**CTCA** first; functional imaging second; invasive angiogram is gold standard." },
+    { "d": "investigation", "q": "Where is lead V4 placed?", "o": ["4th intercostal space, left sternal edge", "4th intercostal space, right sternal edge", "5th intercostal space, anterior axillary line", "5th intercostal space, mid-clavicular line"], "a": 3, "r": "V4: **5th intercostal space, mid-clavicular line**." },
+    { "d": "management", "q": "Which two drugs give prognostic benefit in stable angina?", "o": ["Aspirin and atorvastatin", "Bisoprolol and GTN", "GTN and felodipine", "Isosorbide mononitrate and nicorandil"], "a": 0, "r": "**Aspirin and a statin** reduce mortality; the others treat symptoms." },
+    { "d": "management", "q": "Which combination must never be given?", "o": ["Aspirin and statin", "Beta-blocker and felodipine", "Beta-blocker and verapamil", "GTN and aspirin"], "a": 2, "r": "**Beta-blocker + verapamil**: bradycardia, AV block, complete heart block." },
+    { "d": "management", "q": "Who gains a survival advantage from CABG over PCI?", "o": ["Asthmatics", "Over 65, diabetics or complex 3-vessel disease", "Single-vessel disease under 50", "Patients with unstable angina"], "a": 1, "r": "CABG beats PCI for **over 65s, diabetics, complex 3-vessel disease**." },
+    { "d": "science", "q": "How do nitrates mainly relieve angina?", "o": ["Increasing contractility", "Increasing heart rate", "Inhibiting platelets", "Venodilation reducing preload"], "a": 3, "r": "**Venodilation** lowers preload and oxygen demand; coronary dilation helps too." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 66 year old man has a 3 month history of central chest tightness that comes on when he walks uphill and radiates to his jaw. It goes within 5 minutes of stopping. He has never had pain at rest. He smokes and has hypertension. His pulse rate is 74 bpm and BP 148/86 mmHg. His resting ECG is normal.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Aortic dissection", "Gastro-oesophageal reflux disease", "Musculoskeletal chest pain", "Stable angina", "Unstable angina"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "A chest pain diagnosis: check the three typical angina features and the pattern." },
+        { "t": "Pick out the clues", "clues": ["central chest tightness", "when he walks uphill", "radiates to his jaw", "goes within 5 minutes of stopping", "never had pain at rest"], "x": "Constricting, exertional, relieved by rest: **all three** typical features, and predictable." },
+        { "t": "Make your own answer before looking", "x": "Predictable exertional ischaemia from a fixed plaque: **stable angina**." },
+        { "t": "Rule out the others", "elim": [[0, "Dissection is sudden tearing pain to the back."], [1, "Reflux relates to meals and lying flat, not exertion."], [2, "MSK pain is reproducible on pressing the chest wall."], [4, "Unstable angina means rest or rapidly worsening pain."]] },
+        { "t": "Commit", "x": "**D. Stable angina.** A normal resting ECG does not exclude it." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 58 year old woman with type 2 diabetes has a 6 week history of chest heaviness on exertion, relieved by rest. She has no pain at rest. Her pulse rate is 80 bpm and BP 138/82 mmHg. Her resting ECG is normal.",
+      "labs": [["Haemoglobin", "128 g/L", "115–165", ""], ["HbA1c", "58 mmol/mol", "<48", "H"]],
+      "q": "Which is the most appropriate initial diagnostic investigation?",
+      "o": ["CT coronary angiography", "Exercise tolerance test", "Invasive coronary angiography", "Serial troponin", "Stress echocardiography"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "First diagnostic test for suspected stable angina." },
+        { "t": "Pick out the clues", "clues": ["chest heaviness on exertion, relieved by rest", "no pain at rest", "resting ECG is normal"], "x": "Stable angina symptoms, no ACS features." },
+        { "t": "Make your own answer before looking", "x": "First-line: **CT coronary angiography**." },
+        { "t": "Rule out the others", "elim": [[1, "Exercise ECG is no longer the first-line test."], [2, "Invasive angiography is gold standard but third-line."], [3, "Troponin is for suspected MI; she has no rest pain."], [4, "Functional imaging is second-line, if CTCA is inconclusive."]] },
+        { "t": "Commit", "x": "**A. CT coronary angiography.** CTCA → functional imaging → invasive angiography." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 64 year old man with stable angina still has chest pain on exertion despite bisoprolol 10 mg daily, aspirin and atorvastatin. He uses his GTN spray several times a week. His pulse rate is 58 bpm and BP 132/80 mmHg.",
+      "q": "Which drug is contraindicated as an add-on for this patient?",
+      "o": ["Amlodipine", "Felodipine", "Isosorbide mononitrate", "Modified-release nifedipine", "Verapamil"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "A contraindication question: find the dangerous combination." },
+        { "t": "Pick out the clues", "clues": ["despite bisoprolol 10 mg daily", "pulse rate is 58 bpm"], "x": "Already on a **beta-blocker**, and already slow." },
+        { "t": "Make your own answer before looking", "x": "**Verapamil** with a beta-blocker risks bradycardia, AV block, complete heart block." },
+        { "t": "Rule out the others", "elim": [[0, "Amlodipine is a dihydropyridine: a safe add-on."], [1, "Felodipine is the preferred add-on."], [2, "A long-acting nitrate is a valid third drug."], [3, "MR nifedipine is a listed dihydropyridine add-on."]] },
+        { "t": "Commit", "x": "**E. Verapamil.** Beta-blocker + verapamil = never." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 70 year old woman with stable angina uses a sublingual glyceryl trinitrate spray when chest pain comes on while gardening. The pain resolves within 2 minutes but she gets a throbbing headache. Her pulse rate is 76 bpm and BP 128/76 mmHg.",
+      "q": "Which is the main mechanism by which the spray relieves her pain?",
+      "o": ["Increased myocardial contractility", "Inhibition of platelet aggregation", "Reduced heart rate", "Stabilisation of the atherosclerotic plaque", "Venodilation reducing preload"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of a named drug: GTN." },
+        { "t": "Pick out the clues", "clues": ["glyceryl trinitrate", "resolves within 2 minutes", "throbbing headache"], "x": "Fast relief plus vasodilator headache: a **nitrate**." },
+        { "t": "Make your own answer before looking", "x": "Nitric oxide → **venodilation** → lower preload → lower oxygen demand." },
+        { "t": "Rule out the others", "elim": [[0, "More contractility would raise demand."], [1, "That is aspirin."], [2, "That is a beta-blocker; nitrates can raise heart rate."], [3, "That is a statin, giving prognostic benefit."]] },
+        { "t": "Commit", "x": "**E. Venodilation reducing preload.** Plus coronary vasodilation." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 61 year old woman with type 2 diabetes has a 2 month history of a heavy, squeezing feeling across her chest and into her left arm when she hurries for the bus. It eases within a few minutes of standing still. She has no pain at rest. Her pulse rate is 82 bpm and BP 150/90 mmHg. Chest wall palpation is non-tender.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Costochondritis", "Gastro-oesophageal reflux disease", "Pericarditis", "Stable angina", "Unstable angina"],
+      "a": 3,
+      "e": "Constricting pain on exertion relieved by rest within minutes, predictable and never at rest, in a diabetic: stable angina. Unstable angina needs rest or worsening pain.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of exertional chest pain." },
+        { "t": "Pick out the clues", "clues": ["type 2 diabetes", "heavy, squeezing feeling", "when she hurries for the bus", "eases within a few minutes", "no pain at rest"], "x": "Risk factor plus all three typical angina features." },
+        { "t": "Make your own answer before looking", "x": "**Stable angina**." },
+        { "t": "Rule out the others", "elim": [[0, "Costochondritis is tender on palpation; hers is not."], [1, "Reflux links to meals and lying, not exertion."], [2, "Pericarditis is sharp, pleuritic, better sitting forward."], [4, "No rest pain or rapid worsening."]] },
+        { "t": "Commit", "x": "**D. Stable angina.** Three features: constricting, exertional, relieved by rest/GTN." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 67 year old man with known angina has had three episodes of chest pain at rest in the last 2 days, each lasting 10 minutes. He is now pain free. His pulse rate is 84 bpm and BP 142/84 mmHg. His ECG shows ST depression in V4–V6.",
+      "labs": [["High-sensitivity troponin T (0 h)", "8 ng/L", "<14", ""], ["High-sensitivity troponin T (3 h)", "9 ng/L", "<14", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Non-ST elevation myocardial infarction", "Pericarditis", "ST elevation myocardial infarction", "Stable angina", "Unstable angina"],
+      "a": 4,
+      "e": "New rest pain in a patient with angina, ischaemic ECG changes and a normal, flat troponin is unstable angina: plaque rupture without infarction. A raised troponin would make it NSTEMI.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis in an ACS picture: the troponin decides." },
+        { "t": "Pick out the clues", "clues": ["known angina", "chest pain at rest", "ST depression in V4–V6"], "x": "Pain now at rest with ischaemic ECG; troponins normal and unchanged." },
+        { "t": "Make your own answer before looking", "x": "Rest pain, no infarction: **unstable angina**." },
+        { "t": "Rule out the others", "elim": [[0, "NSTEMI needs a raised troponin."], [1, "Pericarditis gives saddle ST elevation and pleuritic pain."], [2, "No ST elevation."], [3, "Pain at rest is no longer stable."]] },
+        { "t": "Commit", "x": "**E. Unstable angina.** Rest pain + normal troponin = unstable angina." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 55 year old man had 30 minutes of central chest pain at rest yesterday, now resolved. He is pain free in the Emergency Department. His pulse rate is 70 bpm and BP 136/82 mmHg. His ECG (see item resources) shows deeply inverted T waves in V2 and V3 with no ST elevation.",
+      "labs": [["High-sensitivity troponin T", "16 ng/L", "<14", "H"]],
+      "visual": { "kind": "ecg", "title": "ECG in the Emergency Department", "layout": "12lead", "rhythm": "sinus", "rate": 70, "leads": { "V2": "t_inv", "V3": "t_inv" }, "caption": "Deep T wave inversion in V2–V3, pain free." },
+      "q": "Which is the most likely underlying lesion?",
+      "o": ["Circumflex artery occlusion", "Coronary artery vasospasm", "Critical proximal LAD stenosis", "Left main stem occlusion", "Right coronary artery occlusion"],
+      "a": 2,
+      "e": "Rest pain followed by deep or biphasic T waves in V2–V3 is Wellens syndrome, which signals critical proximal LAD stenosis and a high risk of anterior MI.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which artery and lesion: read the ECG territory." },
+        { "t": "Pick out the clues", "clues": ["chest pain at rest", "pain free", "deeply inverted T waves in V2 and V3", "no ST elevation"], "x": "Rest pain + deep T inversion V2–V3 when pain free: **Wellens**." },
+        { "t": "Make your own answer before looking", "x": "**Critical proximal LAD stenosis**." },
+        { "t": "Rule out the others", "elim": [[0, "Circumflex disease shows in the lateral leads (I, aVL, V5–V6)."], [1, "Vasospasm gives transient ST elevation during pain."], [3, "Left main occlusion causes widespread changes and shock."], [4, "RCA disease affects inferior leads II, III, aVF."]] },
+        { "t": "Commit", "x": "**C. Critical proximal LAD stenosis.** Wellens = V2–V3 T waves = LAD." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 59 year old man who smokes reports intermittent chest discomfort over the past month. His GP suspects angina. His pulse rate is 76 bpm and BP 144/88 mmHg. Cardiovascular examination is normal.",
+      "labs": [],
+      "visual": null,
+      "q": "Which additional feature would most support a diagnosis of stable angina?",
+      "o": ["Pain lasting several hours at rest", "Pain relieved by GTN within minutes", "Pain reproduced by pressing on the chest wall", "Pain worse lying flat", "Pain worse on deep inspiration"],
+      "a": 1,
+      "e": "Relief by rest or GTN within minutes is one of the three typical anginal features. Hours of rest pain suggests MI; positional or pleuritic pain suggests pericarditis or reflux.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which feature fits angina best?" },
+        { "t": "Pick out the clues", "clues": ["smokes", "suspects angina", "examination is normal"], "x": "Risk factor, suspected angina, normal examination: look for a typical feature." },
+        { "t": "Make your own answer before looking", "x": "Constricting, exertional, **relieved by rest or GTN within minutes**." },
+        { "t": "Rule out the others", "elim": [[0, "Hours of rest pain suggests MI, not stable angina."], [2, "Chest wall tenderness is musculoskeletal."], [3, "Lying flat worsens reflux and pericarditis."], [4, "Pleuritic pain suggests pericarditis, PE or pleurisy."]] },
+        { "t": "Commit", "x": "**B. Pain relieved by GTN within minutes.** One of the three typical features." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 72 year old woman with long-standing angina has increasing breathlessness on exertion and swollen ankles over 2 months. Her pulse rate is 92 bpm and BP 118/76 mmHg. She has had two previous myocardial infarctions.",
+      "labs": [["NT-proBNP", "2400 ng/L", "<400", "H"]],
+      "visual": null,
+      "q": "Which is the most likely finding on examination?",
+      "o": ["Bibasal crackles and raised JVP", "Collapsing pulse", "Pericardial friction rub", "Radio-femoral delay", "Slow-rising pulse"],
+      "a": 0,
+      "e": "Ischaemic heart disease is the commonest cause of heart failure; examination may show signs of heart failure such as crackles, raised JVP and oedema.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Examination finding in a patient with IHD." },
+        { "t": "Pick out the clues", "clues": ["long-standing angina", "breathlessness on exertion", "swollen ankles", "two previous myocardial infarctions"], "x": "IHD with damaged myocardium and fluid overload: heart failure." },
+        { "t": "Make your own answer before looking", "x": "**Bibasal crackles and a raised JVP**." },
+        { "t": "Rule out the others", "elim": [[1, "Collapsing pulse is aortic regurgitation."], [2, "A rub is pericarditis."], [3, "Radio-femoral delay is coarctation."], [4, "Slow-rising pulse is aortic stenosis."]] },
+        { "t": "Commit", "x": "**A. Bibasal crackles and raised JVP.** IHD exam may show heart failure or arrhythmia." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 64 year old man has had chest pain on minimal exertion and once at rest over the past week, each episode under 15 minutes. He is pain free now. His pulse rate is 78 bpm and BP 140/86 mmHg. A diagnosis of unstable angina rather than NSTEMI is made.",
+      "labs": [],
+      "visual": null,
+      "q": "Which finding is most likely to have led to this distinction?",
+      "o": ["Normal serial troponin", "Pain at rest", "Pain under 15 minutes", "ST depression on ECG", "T wave inversion on ECG"],
+      "a": 0,
+      "e": "Unstable angina and NSTEMI share rest pain and ST depression or T inversion. Only the troponin separates them: normal in unstable angina, raised in NSTEMI.",
+      "steps": [
+        { "t": "Read the question line first", "x": "What separates unstable angina from NSTEMI?" },
+        { "t": "Pick out the clues", "clues": ["minimal exertion and once at rest", "unstable angina rather than NSTEMI"], "x": "Both are ACS; one has infarction, one does not." },
+        { "t": "Make your own answer before looking", "x": "No infarction = **normal troponin**." },
+        { "t": "Rule out the others", "elim": [[1, "Rest pain occurs in both."], [2, "Duration does not define the diagnosis."], [3, "ST depression occurs in both."], [4, "T inversion occurs in both."]] },
+        { "t": "Commit", "x": "**A. Normal serial troponin.** Unstable angina = plaque rupture, no infarction." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 60 year old man has exertional chest tightness relieved by rest. CT coronary angiography shows a 60% stenosis in the left anterior descending artery of uncertain functional significance. His pulse rate is 72 bpm and BP 134/80 mmHg.",
+      "labs": [["High-sensitivity troponin T", "6 ng/L", "<14", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate next investigation?",
+      "o": ["24 hour ambulatory ECG", "Repeat CT coronary angiography", "Serial troponin", "Stress echocardiography", "Transthoracic echocardiography at rest"],
+      "a": 3,
+      "e": "When CTCA is inconclusive, functional imaging (stress echo, cardiac MRI or perfusion scan) shows whether the stenosis causes ischaemia, as regional wall motion abnormalities.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next test after an inconclusive first-line test." },
+        { "t": "Pick out the clues", "clues": ["CT coronary angiography", "uncertain functional significance"], "x": "Anatomy known; need to know if it causes **ischaemia**." },
+        { "t": "Make your own answer before looking", "x": "Second-line **functional imaging**: stress echo." },
+        { "t": "Rule out the others", "elim": [[0, "Holter is for palpitations or arrhythmia."], [1, "Repeating anatomy adds nothing functional."], [2, "Troponin is for suspected MI."], [4, "A resting echo will not show inducible ischaemia."]] },
+        { "t": "Commit", "x": "**D. Stress echocardiography.** Inconclusive CTCA → functional imaging." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 68 year old woman has angina that remains limiting despite bisoprolol, felodipine and isosorbide mononitrate. Stress perfusion imaging shows a large area of reversible anterior ischaemia. Revascularisation is being considered. Her pulse rate is 60 bpm and BP 128/74 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the gold-standard investigation to plan treatment?",
+      "o": ["Cardiac MRI", "CT coronary angiography", "Exercise tolerance test", "Invasive coronary angiography", "Myocardial perfusion scan"],
+      "a": 3,
+      "e": "Invasive coronary angiography is the gold standard, used third-line after non-invasive testing, and maps the anatomy for PCI or CABG.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Gold standard, to plan revascularisation." },
+        { "t": "Pick out the clues", "clues": ["remains limiting despite", "reversible anterior ischaemia", "Revascularisation is being considered"], "x": "Refractory symptoms, proven ischaemia, heading for PCI/CABG." },
+        { "t": "Make your own answer before looking", "x": "**Invasive coronary angiography**." },
+        { "t": "Rule out the others", "elim": [[0, "Cardiac MRI is functional imaging, second-line."], [1, "CTCA is first-line, not the gold standard."], [2, "Exercise testing is not used to plan revascularisation."], [4, "Perfusion imaging is already done."]] },
+        { "t": "Commit", "x": "**D. Invasive coronary angiography.** Gold standard, third-line." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 57 year old woman has stable angina. She has poorly controlled asthma and uses a salbutamol inhaler several times a day. She already takes aspirin and atorvastatin and has a GTN spray. Her pulse rate is 88 bpm and BP 136/82 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate drug to prevent her angina attacks?",
+      "o": ["Atenolol", "Bisoprolol", "Diltiazem", "Nicorandil", "Propranolol"],
+      "a": 2,
+      "e": "Beta-blockers are contraindicated in asthma and with beta-agonist use, so a rate-limiting calcium channel blocker (diltiazem or verapamil) is first-line instead.",
+      "steps": [
+        { "t": "Read the question line first", "x": "First-line symptomatic drug, with a contraindication hidden in the stem." },
+        { "t": "Pick out the clues", "clues": ["poorly controlled asthma", "salbutamol inhaler several times a day"], "x": "Asthma + beta-agonist: **no beta-blocker**." },
+        { "t": "Make your own answer before looking", "x": "Rate-limiting CCB: **diltiazem** (or verapamil)." },
+        { "t": "Rule out the others", "elim": [[0, "Atenolol is a beta-blocker: bronchospasm."], [1, "Bisoprolol is still a beta-blocker."], [3, "Nicorandil is a third-line add-on."], [4, "Non-selective propranolol is worst in asthma."]] },
+        { "t": "Commit", "x": "**C. Diltiazem.** Asthma = rate-limiting CCB instead of a beta-blocker." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 62 year old man with stable angina still has exertional pain despite bisoprolol 10 mg daily. He takes aspirin and atorvastatin and uses GTN. His pulse rate is 56 bpm and BP 138/84 mmHg. He has no asthma or heart failure.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Add felodipine", "Add verapamil", "Refer for CABG", "Stop bisoprolol and start ivabradine", "Switch bisoprolol to isosorbide mononitrate"],
+      "a": 0,
+      "e": "If a beta-blocker alone is insufficient, add a long-acting dihydropyridine CCB, felodipine preferred. Verapamil with a beta-blocker risks complete heart block.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step when a beta-blocker alone fails." },
+        { "t": "Pick out the clues", "clues": ["despite bisoprolol 10 mg daily", "pulse rate is 56 bpm"], "x": "Maximal beta-blocker, already bradycardic." },
+        { "t": "Make your own answer before looking", "x": "Add a dihydropyridine CCB: **felodipine**." },
+        { "t": "Rule out the others", "elim": [[1, "Verapamil + beta-blocker = heart block risk."], [2, "Revascularisation is for symptoms despite optimal drugs."], [3, "Ivabradine is a third-line add-on, not a swap."], [4, "Nitrates are third-line add-ons, not a replacement."]] },
+        { "t": "Commit", "x": "**A. Add felodipine.** Bisoprolol + felodipine is the optimum combination." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 69 year old man with type 2 diabetes has angina despite three antianginal drugs. Invasive coronary angiography shows significant stenoses in the LAD, circumflex and right coronary arteries. His pulse rate is 62 bpm and BP 132/78 mmHg.",
+      "labs": [["HbA1c", "64 mmol/mol", "<48", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate definitive management?",
+      "o": ["Add a fourth antianginal drug", "Coronary artery bypass grafting", "Percutaneous coronary intervention", "Ranolazine", "Thrombolysis"],
+      "a": 1,
+      "e": "Revascularisation is the last resort for refractory angina; CABG has a survival advantage over PCI in patients over 65, diabetics and complex three-vessel disease. He has all three.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Definitive management: revascularisation, so CABG or PCI?" },
+        { "t": "Pick out the clues", "clues": ["69 year old", "type 2 diabetes", "despite three antianginal drugs", "LAD, circumflex and right coronary arteries"], "x": "Over 65, diabetic, **three-vessel** disease, refractory." },
+        { "t": "Make your own answer before looking", "x": "**CABG**." },
+        { "t": "Rule out the others", "elim": [[0, "He is refractory; definitive treatment is now needed."], [2, "PCI loses to CABG in this group."], [3, "Ranolazine is just another add-on drug."], [4, "Thrombolysis is for STEMI only."]] },
+        { "t": "Commit", "x": "**B. Coronary artery bypass grafting.** Over 65, diabetic or 3-vessel = CABG." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 60 year old man with stable angina starts bisoprolol. Over the next month his resting pulse rate falls from 84 bpm to 60 bpm and BP is 128/78 mmHg. He can now walk twice as far before getting chest pain.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely mechanism of his improvement?",
+      "o": ["Coronary artery vasodilation", "Increased preload", "Plaque regression", "Reduced oxygen demand and longer diastolic filling", "Reduced platelet aggregation"],
+      "a": 3,
+      "e": "Beta-blockers reduce heart rate and contractility, lowering myocardial oxygen demand, and prolong diastole, when the coronary arteries fill.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of a beta-blocker in angina." },
+        { "t": "Pick out the clues", "clues": ["starts bisoprolol", "falls from 84 bpm to 60 bpm", "walk twice as far"], "x": "Slower heart, more exercise before ischaemia." },
+        { "t": "Make your own answer before looking", "x": "**Lower demand** and **longer diastole**." },
+        { "t": "Rule out the others", "elim": [[0, "Coronary vasodilation is dihydropyridines and nitrates."], [1, "Raising preload would increase demand."], [2, "Statins stabilise plaques; beta-blockers do not."], [4, "That is aspirin."]] },
+        { "t": "Commit", "x": "**D. Reduced oxygen demand and longer diastolic filling.**" }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is ischaemic heart disease, and what are its risk factors?",
+        "tip": "Exam thinking: the stem stacks risk factors to point at the coronaries.",
+        "points": [
+          { "p": "Reduced myocardial blood flow from coronary atherosclerosis", "k": [["atherosclero", "plaque"]], "why": "Leads to ischaemia and infarction." },
+          { "p": "Smoking and hypertension", "k": [["smok"], ["hypertens", "blood pressure"]], "why": "Both modifiable." },
+          { "p": "Diabetes and hyperlipidaemia", "k": [["diabet"], ["lipid", "cholesterol"]], "why": "Diabetics may have atypical symptoms." },
+          { "p": "Family history", "k": [["family"]], "why": "Premature MI in a first-degree relative." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the three typical features of anginal pain, and its associated symptoms?",
+        "tip": "Exam thinking: count the features in the stem.",
+        "points": [
+          { "p": "Constricting pain in chest, neck, arm or jaw", "k": [["constrict", "tight", "squeez", "heavy"]], "why": "Radiation to arm or jaw." },
+          { "p": "Brought on by exertion", "k": [["exert", "exercise"]], "why": "Demand exceeds supply." },
+          { "p": "Relieved by rest or GTN within minutes", "k": [["rest", "gtn"]], "why": "Not relieved = think MI." },
+          { "p": "Breathlessness, fatigue, palpitations, sweating", "k": [["breath", "fatigue", "palpitation", "sweat"]], "why": "Exam may show heart failure or arrhythmia." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How do stable angina, unstable angina and Wellens syndrome differ?",
+        "tip": "Exam thinking: pattern of pain, troponin, then the ECG.",
+        "points": [
+          { "p": "Stable: predictable exertional pain, stable fixed plaque", "k": [["stable"], ["predictable", "exert", "fixed"]], "why": "Relieved by rest/GTN." },
+          { "p": "Unstable: rest or worsening pain, plaque rupture without infarction", "k": [["unstable"], ["rest", "worsen"]], "why": "An ACS." },
+          { "p": "Unstable angina has a normal troponin", "k": [["troponin"], ["normal", "negative"]], "why": "Raised troponin = NSTEMI." },
+          { "p": "Wellens: rest pain, deep/biphasic T waves V2–V3, critical proximal LAD stenosis", "k": [["v2", "v3", "lad"]], "why": "High risk of anterior MI." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is the order of investigations for suspected stable angina, and when is troponin used?",
+        "tip": "Exam thinking: 'initial' vs 'gold standard' have different answers.",
+        "points": [
+          { "p": "First-line: CT coronary angiography", "k": [["ct"], ["coronary", "angio"]], "why": "Not the exercise ECG." },
+          { "p": "Second-line: functional imaging (stress echo, cardiac MRI, perfusion scan)", "k": [["stress", "functional", "perfusion", "mri"]], "why": "Shows regional wall motion abnormalities." },
+          { "p": "Gold standard: invasive coronary angiogram, third-line", "k": [["invasive", "gold", "catheter", "angiogram"]], "why": "Used when revascularisation is planned." },
+          { "p": "Troponin only if MI suspected", "k": [["troponin"]], "why": "Stable angina has normal troponin." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "Where are the six chest leads and four limb leads placed?",
+        "tip": "Exam thinking: V1 and V2 sit either side of the sternum in the 4th space.",
+        "points": [
+          { "p": "V1: 4th ICS right sternal edge; V2: 4th ICS left sternal edge", "k": [["4th", "fourth"], ["sternal", "sternum"]], "why": "Most common misplacement is too high." },
+          { "p": "V3: midway between V2 and V4", "k": [["midway", "between"]], "why": "Placed after V4." },
+          { "p": "V4: 5th ICS mid-clavicular line", "k": [["mid-clavicular", "midclavicular", "mid clavicular"]], "why": "The anchor for V5 and V6." },
+          { "p": "V5: 5th ICS anterior axillary; V6: 5th ICS mid-axillary", "k": [["axillary"]], "why": "Same horizontal level as V4." },
+          { "p": "Limb leads: RA, LA, RL, LL on the four limbs", "k": [["limb", "arm", "leg"]], "why": "RL is the neutral (earth) lead." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is the first-line drug treatment for stable angina, and what if the patient has asthma?",
+        "tip": "Exam thinking: split drugs into symptom relief and prognosis.",
+        "points": [
+          { "p": "GTN for acute attacks (headache, dizziness)", "k": [["gtn", "nitrate"]], "why": "Sublingual spray or tablet." },
+          { "p": "Aspirin and a statin for prognosis", "k": [["aspirin", "antiplatelet"], ["statin", "atorvastatin"]], "why": "Reduce mortality." },
+          { "p": "Beta-blocker (bisoprolol/atenolol) or rate-limiting CCB", "k": [["beta", "bisoprolol", "atenolol"]], "why": "Symptom prevention." },
+          { "p": "Asthma: no beta-blocker, use diltiazem or verapamil", "k": [["diltiazem", "verapamil", "ccb", "calcium"]], "why": "Beta-agonist use too." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is added if a beta-blocker alone fails, what must never be combined, and what comes third?",
+        "tip": "Exam thinking: verapamil next to a beta-blocker is always the wrong answer.",
+        "points": [
+          { "p": "Add a dihydropyridine CCB: felodipine preferred (or amlodipine, MR nifedipine)", "k": [["felodipine", "amlodipine", "nifedipine"]], "why": "Bisoprolol + felodipine is optimum." },
+          { "p": "Never beta-blocker + verapamil: bradycardia, AV block, complete heart block", "k": [["verapamil"]], "why": "Switch verapamil to a beta-blocker." },
+          { "p": "Third: long-acting nitrate (ISMN), ivabradine, nicorandil or ranolazine", "k": [["isosorbide", "ismn", "nitrate", "ivabradine", "nicorandil", "ranolazine"]], "why": "Nicorandil: anal ulceration." },
+          { "p": "Asymmetric nitrate dosing to avoid tolerance", "k": [["asymmetric", "tolerance", "nitrate-free"]], "why": "e.g. 8am and 2pm." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "When is revascularisation used, who gets CABG rather than PCI, and what is the BP target?",
+        "tip": "Exam thinking: over 65, diabetic, three vessels = CABG.",
+        "points": [
+          { "p": "Revascularisation (CABG or PCI) is the last resort for refractory angina", "k": [["cabg", "pci", "revascular"]], "why": "After optimal medical therapy." },
+          { "p": "CABG survival advantage: over 65, diabetics, complex 3-vessel disease", "k": [["65", "diabet", "3-vessel", "three"]], "why": "Any one tips it to CABG." },
+          { "p": "BP target <140/90, or 135/85 in diabetics", "k": [["140", "135"]], "why": "Per the notes and NICE." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does a fixed plaque cause exertional pain, and how do beta-blockers, CCBs and nitrates help?",
+        "tip": "Exam thinking: every drug either lowers demand or improves supply.",
+        "points": [
+          { "p": "Fixed plaque limits coronary flow reserve; demand outstrips supply on exertion", "k": [["demand", "reserve", "supply"]], "why": "Hence predictable, reproducible pain." },
+          { "p": "Beta-blockers: lower HR and contractility, longer diastole", "k": [["rate", "contractil", "diastol"]], "why": "Coronaries fill in diastole." },
+          { "p": "CCBs: dihydropyridines vasodilate; verapamil/diltiazem slow the heart", "k": [["vasodilat", "dihydropyridine", "verapamil", "diltiazem"]], "why": "Two subclasses, two mechanisms." },
+          { "p": "Nitrates: venodilation (less preload), coronary vasodilation; tolerance needs a nitrate-free interval", "k": [["venodilat", "preload"]], "why": "Headache is a vasodilator effect." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do aspirin and statins improve prognosis rather than symptoms?",
+        "tip": "Exam thinking: prognosis = stop the plaque rupturing and clotting.",
+        "points": [
+          { "p": "Statins lower LDL and stabilise plaques, slowing progression", "k": [["statin"], ["ldl", "stabil", "cholesterol"]], "why": "Less rupture." },
+          { "p": "Aspirin prevents thrombus on a ruptured plaque", "k": [["aspirin", "antiplatelet"], ["thromb", "clot", "platelet"]], "why": "Prevents MI." },
+          { "p": "Together give mortality benefit", "k": [["mortality", "prognos", "survival", "death"]], "why": "Neither relieves angina." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "Ischaemic heart disease": "Reduced blood supply to the heart muscle from narrowed coronary arteries.",
+    "IHD": "Ischaemic heart disease: coronary atherosclerosis causing angina or infarction.",
+    "Atherosclerosis": "Build-up of fatty, fibrous plaque in artery walls that narrows the lumen.",
+    "Stable angina": "Predictable chest pain on exertion, relieved by rest or GTN, from a fixed plaque.",
+    "Unstable angina": "Chest pain at rest or worsening, from plaque rupture without infarction; troponin normal.",
+    "NSTEMI": "Non-ST elevation MI: partial occlusion with raised troponin but no ST elevation.",
+    "STEMI": "ST elevation MI: complete coronary occlusion with full-thickness infarction.",
+    "Wellens syndrome": "Rest chest pain with deep or biphasic T waves in V2–V3, signalling critical proximal LAD stenosis.",
+    "Troponin": "Heart muscle protein released into blood when myocytes die; raised in MI.",
+    "GTN": "Glyceryl trinitrate: fast-acting nitrate spray or tablet for angina attacks.",
+    "LAD": "Left anterior descending artery: supplies the anterior wall and septum.",
+    "RCA": "Right coronary artery: supplies the inferior wall and usually the AV node.",
+    "Circumflex": "Branch of the left coronary artery supplying the lateral wall.",
+    "CTCA": "CT coronary angiography: first-line non-invasive scan of the coronary arteries.",
+    "CT coronary angiography": "CT scan with contrast showing coronary narrowing; first-line test for stable angina.",
+    "Functional imaging": "Tests showing whether a narrowing causes ischaemia: stress echo, cardiac MRI, perfusion scan.",
+    "Stress echo": "Ultrasound of the heart during exercise or drug stress, looking for wall motion abnormalities.",
+    "Regional wall motion abnormality": "A segment of heart muscle that moves poorly, showing ischaemia or scar.",
+    "Coronary angiogram": "Invasive X-ray of the coronaries with contrast via a catheter; the gold standard.",
+    "Perfusion scan": "Nuclear scan showing areas of reduced blood flow to the myocardium under stress.",
+    "Bisoprolol": "Cardioselective beta-blocker reducing heart rate and contractility.",
+    "Rate-limiting CCB": "Calcium channel blocker that slows the heart (verapamil, diltiazem).",
+    "Dihydropyridine": "Calcium channel blocker that mainly dilates vessels (amlodipine, felodipine, nifedipine).",
+    "Felodipine": "Long-acting dihydropyridine CCB; preferred add-on to a beta-blocker in angina.",
+    "Verapamil": "Rate-limiting CCB; never combine with a beta-blocker because of heart block.",
+    "Diltiazem": "Rate-limiting CCB used for angina when beta-blockers are contraindicated.",
+    "Isosorbide mononitrate": "Long-acting oral nitrate; needs asymmetric dosing to avoid tolerance.",
+    "Nitrate tolerance": "Loss of nitrate effect with continuous exposure; prevented by a nitrate-free interval.",
+    "Ivabradine": "Drug slowing the sinus node to reduce heart rate; a third-line angina add-on.",
+    "Nicorandil": "Potassium channel opener for angina; side effects include headache, flushing and anal ulceration.",
+    "Ranolazine": "Antianginal add-on drug used when other agents are insufficient.",
+    "CABG": "Coronary artery bypass grafting: surgery using grafts to bypass blocked coronary arteries.",
+    "PCI": "Percutaneous coronary intervention: balloon and stent via a catheter to open a narrowed artery.",
+    "Revascularisation": "Restoring coronary blood flow by PCI or CABG.",
+    "Preload": "The filling of the ventricles before contraction; lowered by venodilation.",
+    "Venodilation": "Widening of veins, which pools blood and reduces preload.",
+    "Atorvastatin": "Statin that lowers LDL and stabilises plaques, giving prognostic benefit.",
+    "Prognostic benefit": "A drug effect that improves survival rather than just symptoms.",
+    "Biphasic T wave": "A T wave with an up and a down part; seen in Wellens syndrome.",
+    "Intercostal space": "The gap between two ribs, used as a landmark for ECG electrode placement.",
+    "Mid-clavicular line": "Vertical line through the midpoint of the clavicle; V4 sits on it in the 5th space.",
+    "Three-vessel disease": "Significant narrowing in all three main coronary arteries (LAD, circumflex, RCA)."
+  }
+}

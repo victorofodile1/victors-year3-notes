@@ -1,0 +1,315 @@
+{
+  "id": "alcoholic-hepatitis",
+  "patient": {
+    "name": "Declan Murphy",
+    "age": 47,
+    "sex": "M",
+    "setting": "Emergency Department",
+    "complaint": "Yellow eyes, right upper abdominal pain and fever for 10 days",
+    "background": [
+      "Drinks about 1 litre of vodka a day (~40 units) for 15 years",
+      "Recent heavy binge after losing his job",
+      "Lives alone in Camden; poor diet",
+      "No known liver diagnosis; no regular medicines"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a heavy drinker who has jaundice, fever and tender hepatomegaly, and LFTs with an AST:ALT ratio of 2 or more; or a complication question (Wernicke's, encephalopathy, Dupuytren's).",
+      "steps": [
+        {"type": "story", "points": ["Declan, 47, drinks **~40 units a day**.", "10 days of **yellow eyes** and dark urine.", "Dull **right upper quadrant pain**; off his food.", "Feverish and exhausted after a two-week binge."], "vitals": {"T": "38.1°C", "HR": "108 bpm", "BP": "112/70 mmHg", "RR": "18 /min", "SpO2": "97% on air"}},
+        {"type": "notes", "src": 0, "lead": "A heavy drinker with sudden liver illness after a binge: **acute alcoholic hepatitis**, an inflammatory injury on top of chronic alcohol use."},
+        {"type": "visual", "visual": {"kind": "abdomen", "title": "Where Declan hurts", "regions": ["RUQ", "epigastric"], "caption": "Tender, enlarged liver in the right upper quadrant extending into the epigastrium."}},
+        {"type": "story", "points": ["Deeply **jaundiced**; liver edge 4 cm below the costal margin, **tender**.", "Spider naevi on chest; palmar erythema.", "Mild shifting dullness.", "Both ring fingers held bent: thick palmar cords."]},
+        {"type": "notes", "src": 1, "lead": "Declan has the full set: jaundice, **tender hepatomegaly**, fever, RUQ pain and anorexia with a clear alcohol history, plus early ascites."},
+        {"type": "labs", "title": "Declan's LFTs", "rows": [["AST", "246 IU/L", "10–40", "H"], ["ALT", "98 IU/L", "10–50", "H"], ["Bilirubin", "255 µmol/L", "<17", "H"], ["ALP", "168 IU/L", "25–115", "H"], ["GGT", "880 IU/L", "1–78", "H"], ["Albumin", "27 g/L", "35–50", "L"]], "text": "AST is 2.5 times ALT: the alcohol pattern."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "AST:ALT ratio", "min": 0, "max": 4, "unit": "", "bands": [[0, 1, "ALT-dominant: viral, NAFLD", "ok"], [1, 2, "Indeterminate", "warn"], [2, 4, "Alcohol pattern", "bad"]], "value": 2.5, "label": "Declan 2.5", "caption": "A ratio of 2:1 or more points to alcohol. Viral hepatitis is ALT-dominant with far higher numbers."}},
+        {"type": "notes", "src": 2, "lead": "Declan's AST of 246 against ALT of 98 gives a ratio of **2.5**: the hallmark of alcoholic hepatitis."},
+        {"type": "compare", "title": "Alcoholic hepatitis vs its look-alikes", "head": ["Feature", "Alcoholic hepatitis", "Viral hepatitis", "Cholangitis"], "rows": [["Transaminases", "Modest, rarely >300; **AST:ALT ≥2**", "ALT in the **thousands**", "Mild rise"], ["ALP / GGT", "GGT very high, ALP mild", "Mild", "**ALP high** (obstructive)"], ["Clue", "Heavy drinking, binge", "Travel, sexual or IV drug risk", "Charcot's triad, gallstones"], ["Liver", "Tender hepatomegaly", "Tender", "Dilated ducts on USS"]]},
+        {"type": "ask", "q": "Overnight Declan becomes confused, unsteady and has nystagmus. What must be given urgently?", "o": ["Intravenous glucose", "Intravenous thiamine", "Oral lactulose", "Oral prednisolone"], "a": 1, "r": "Confusion, ataxia and eye signs in a drinker is **Wernicke's encephalopathy**: give **IV thiamine** urgently."},
+        {"type": "notes", "src": 3, "lead": "Declan's confusion could be **Wernicke's** (thiamine) or **hepatic encephalopathy**: both are emergencies. His palm cords are **Dupuytren's contracture**."},
+        {"type": "trap", "text": "Very high transaminases (in the thousands) do **not** fit alcoholic hepatitis. Think viral, ischaemic or paracetamol hepatitis instead."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' with LFTs (AST:ALT ratio), INR as the severity marker, liver ultrasound to exclude obstruction, and Maddrey's discriminant function of 32 or more to decide on steroids.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Declan's diagnosis is clinical plus LFTs: AST:ALT above 2, high bilirubin, mild ALP rise. His **INR** tells you how sick his liver is."},
+        {"type": "labs", "title": "Bloods on admission", "rows": [["INR", "2.0", "0.8–1.2", "H"], ["Prothrombin time", "19 s", "control 12 s", "H"], ["WBC", "16.2 ×10⁹/L", "4.0–11.0", "H"], ["Neutrophils", "13.1 ×10⁹/L", "2.0–7.5", "H"], ["MCV", "106 fL", "80–100", "H"], ["Glucose", "4.2 mmol/L", "4.0–7.8", ""], ["Hepatitis B sAg / HCV Ab", "Negative", "Negative", ""]], "text": "Neutrophilia is common in alcoholic hepatitis, but always look for infection too."},
+        {"type": "notes", "src": 1, "lead": "Declan's glucose, FBC, U&Es and **viral screen** exclude other causes, and a **liver ultrasound** looks for obstruction, cirrhosis and ascites."},
+        {"type": "ask", "q": "Ultrasound shows a bright, enlarged liver with no dilated ducts. Which score decides if Declan needs steroids?", "o": ["CURB-65", "Glasgow-Blatchford score", "Maddrey's discriminant function", "Ranson criteria"], "a": 2, "r": "**Maddrey's DF** (from PT and bilirubin) of 32 or more means severe disease: consider prednisolone."},
+        {"type": "flow", "title": "Calculating Declan's Maddrey score", "nodes": ["PT 19 s minus control 12 s = 7 s", "4.6 × 7 = 32.2", "Bilirubin 255 µmol/L ÷ 17.1 = 14.9 mg/dL", "32.2 + 14.9 = **47**", "47 ≥ 32 → severe alcoholic hepatitis"], "caption": "MDF = 4.6 × (patient PT − control PT) + bilirubin in mg/dL."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Maddrey's discriminant function", "min": 0, "max": 80, "unit": "", "bands": [[0, 32, "Not severe", "ok"], [32, 80, "Severe: consider steroids", "bad"]], "value": 47, "label": "Declan 47", "caption": "A score of 32 or more predicts high short-term mortality."}},
+        {"type": "notes", "src": 2, "lead": "Declan's **MDF of 47** is well above 32: severe disease, so steroids are considered."},
+        {"type": "pearl", "text": "The **INR / prothrombin time** is the best quick marker of acute synthetic failure. Albumin falls slowly, so it reflects chronic disease."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?': IV thiamine first in any drinker, alcohol cessation always, and prednisolone only if Maddrey's DF is 32 or more with no infection or GI bleeding.",
+      "steps": [
+        {"type": "ask", "q": "Declan's glucose is 4.2 and he looks malnourished. What goes in first?", "o": ["Intravenous 10% glucose", "Intravenous thiamine", "Oral chlordiazepoxide only", "Oral rifaximin"], "a": 1, "r": "**IV thiamine** (Pabrinex) first, so glucose does not tip him into Wernicke's."},
+        {"type": "notes", "src": 0, "lead": "Declan's plan: **stop alcohol**, IV thiamine, high-protein diet and vitamin supplements. He needs withdrawal cover as he stops."},
+        {"type": "story", "points": ["Chest clear; urine and blood cultures negative.", "Diagnostic ascitic tap: neutrophils 60 cells/mm³.", "No haematemesis or melaena.", "Day 2: no infection or bleeding found."], "vitals": {"T": "37.6°C", "HR": "96 bpm", "BP": "116/72 mmHg"}},
+        {"type": "notes", "src": 1, "lead": "With **MDF 47** and no infection or GI bleed, Declan starts **prednisolone**."},
+        {"type": "flow", "title": "Severe alcoholic hepatitis: steroid decision", "nodes": ["Thiamine, abstinence, nutrition for everyone", "Calculate Maddrey's DF", "DF < 32 → supportive care", "DF ≥ 32 → screen for infection and GI bleed", "None present → prednisolone"], "caption": "Infection and GI bleeding are the contraindications to check before steroids."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Declan's bilirubin on prednisolone", "x": ["Day 0", "Day 7", "Day 14", "Day 28"], "unit": "µmol/L", "series": [{"name": "Bilirubin", "values": [255, 190, 130, 70]}], "caption": "A falling bilirubin by day 7 shows he is responding to steroids."}},
+        {"type": "trap", "text": "Do not start **prednisolone** in someone with active infection (SBP, pneumonia) or a **GI bleed**. Treat those first."},
+        {"type": "notes", "src": 2, "lead": "Declan's ascites is treated with **diuretics**; any encephalopathy with **lactulose**. If he reaches end-stage, **transplant** needs proven abstinence."},
+        {"type": "notes", "src": "guidelines", "lead": "Declan's care follows **NICE NG50** and **BSG** alcohol-related liver disease guidance: assess severity, treat complications, support abstinence."},
+        {"type": "pearl", "text": "**Alcohol abstinence** is the single intervention that most improves Declan's long-term survival."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why AST exceeds ALT (pyridoxal-5-phosphate deficiency), why glucose without thiamine precipitates Wernicke's, and what Maddrey's DF measures.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Declan's liver breaks alcohol down via **alcohol dehydrogenase** and **CYP2E1**, making **acetaldehyde** and free radicals that injure hepatocytes."},
+        {"type": "flow", "title": "From vodka to inflamed liver", "nodes": ["Ethanol", "Alcohol dehydrogenase / CYP2E1", "Acetaldehyde + reactive oxygen species", "Lipid peroxidation, hepatocyte injury", "Neutrophil inflammation: alcoholic hepatitis"]},
+        {"type": "notes", "src": 1, "lead": "Declan's ALT is low relative to AST because he lacks **pyridoxal-5-phosphate** (B6), and mitochondrial damage releases extra AST."},
+        {"type": "ask", "q": "Why is glucose before thiamine dangerous for Declan?", "o": ["Glucose raises ammonia", "Glucose metabolism uses up the remaining thiamine", "Glucose causes hypokalaemia", "Glucose worsens jaundice"], "a": 1, "r": "Thiamine is a **cofactor for glucose metabolism**; a glucose load burns the last thiamine and tips him into Wernicke's."},
+        {"type": "notes", "src": 2, "lead": "Declan absorbs thiamine poorly and has depleted liver stores, so his brain cannot metabolise glucose: **Wernicke's** risk."},
+        {"type": "notes", "src": 3, "lead": "Declan's PT measures **synthetic** function; his bilirubin measures **injury**. Together (MDF) they estimate his short-term mortality."},
+        {"type": "notes", "src": 4, "lead": "If Declan keeps drinking, repeated inflammation lays down fibrosis and he will develop **cirrhosis**; episodes like this can decompensate an existing one."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "Which LFT pattern is the hallmark of alcoholic hepatitis?", "o": ["ALT above 1000 IU/L", "AST:ALT ratio of 2:1 or greater", "Isolated raised ALP", "Normal transaminases"], "a": 1, "r": "**AST:ALT ≥2** is the hallmark."},
+    {"d": "diagnosis", "q": "Which vitamin deficiency causes Wernicke-Korsakoff syndrome?", "o": ["B1 (thiamine)", "B6 (pyridoxine)", "B12 (cobalamin)", "Folate"], "a": 0, "r": "**Thiamine (B1)** deficiency; give urgent IV replacement."},
+    {"d": "diagnosis", "q": "Which hand sign is associated with alcohol excess?", "o": ["Dupuytren's contracture", "Heberden's nodes", "Splinter haemorrhages", "Swan neck deformity"], "a": 0, "r": "**Dupuytren's**: fixed flexion of the 4th/5th fingers, often bilateral."},
+    {"d": "diagnosis", "q": "Alcohol history + jaundice + confusion suggests what?", "o": ["Alcoholic hepatitis with encephalopathy", "Biliary colic", "Gilbert's syndrome", "Simple fatty liver"], "a": 0, "r": "A **medical emergency**: alcoholic hepatitis with encephalopathy."},
+    {"d": "investigation", "q": "Which value is the main marker of severity in alcoholic hepatitis?", "o": ["ALP", "GGT", "INR", "MCV"], "a": 2, "r": "**INR** (prothrombin time) reflects synthetic failure."},
+    {"d": "investigation", "q": "What Maddrey's discriminant function indicates severe disease?", "o": ["≥ 8", "≥ 20", "≥ 32", "≥ 50"], "a": 2, "r": "**MDF ≥32** = severe; consider steroids."},
+    {"d": "investigation", "q": "Which two values are used to calculate Maddrey's DF?", "o": ["ALT and ALP", "Albumin and INR", "Bilirubin and prothrombin time", "Creatinine and sodium"], "a": 2, "r": "**Prothrombin time and bilirubin**."},
+    {"d": "management", "q": "Which drug is given first-line to prevent Wernicke's encephalopathy?", "o": ["Intravenous thiamine", "Lactulose", "Oral folic acid", "Vitamin K"], "a": 0, "r": "**IV thiamine** (Pabrinex), before any glucose."},
+    {"d": "management", "q": "Which contraindication must be excluded before prednisolone?", "o": ["Active infection", "Ascites", "Hypoalbuminaemia", "Jaundice"], "a": 0, "r": "**Active infection** and **GI bleeding** contraindicate steroids."},
+    {"d": "science", "q": "Why is ALT lower than AST in alcoholic hepatitis?", "o": ["ALT is cleared by the kidney", "Pyridoxal-5-phosphate deficiency", "Biliary obstruction", "Haemolysis"], "a": 1, "r": "**Pyridoxal-5-phosphate (B6)** is needed more for ALT synthesis."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is alcoholic hepatitis and how does it present?", "tip": "Exam thinking: a heavy drinker with fever, jaundice and a tender liver.", "points": [
+        {"p": "Acute inflammation of the liver from excessive alcohol, on a chronic background", "k": [["inflam", "hepatitis"], ["alcohol"]], "why": "Often after a binge."},
+        {"p": "Jaundice", "k": [["jaundice", "yellow", "icter"]], "why": "Bilirubin often very high."},
+        {"p": "Tender hepatomegaly with RUQ pain", "k": [["hepatomegaly", "tender liver", "enlarged liver", "ruq"]], "why": "Tender liver separates it from simple fatty liver."},
+        {"p": "Fever, anorexia, fatigue", "k": [["fever", "pyrexia", "anorexia", "fatigue"]], "why": "Fever can occur without infection, but always look for one."},
+        {"p": "May precipitate decompensation of cirrhosis (ascites, encephalopathy)", "k": [["cirrho", "decompensat", "ascites"]], "why": "Signs of chronic liver disease may also be present."}]},
+      {"d": "diagnosis", "q": "Which blood pattern points to alcoholic hepatitis?", "tip": "Exam thinking: compare AST with ALT, and look at GGT and MCV.", "points": [
+        {"p": "AST:ALT ratio of 2:1 or greater", "k": [["ast"], ["2", "two", "ratio"]], "why": "The hallmark; transaminases rarely exceed 300."},
+        {"p": "Raised GGT", "k": [["ggt", "gamma"]], "why": "Marker of alcohol use."},
+        {"p": "Raised bilirubin, mildly raised ALP", "k": [["bilirubin"]], "why": "ALP only mildly raised, unlike obstruction."},
+        {"p": "Hypoalbuminaemia and raised INR", "k": [["albumin", "inr", "prothrombin"]], "why": "INR marks severity."}]},
+      {"d": "diagnosis", "q": "Which complications and associated signs must you recognise in alcoholic hepatitis?", "tip": "Exam thinking: a confused drinker needs thiamine before anything else.", "points": [
+        {"p": "Wernicke-Korsakoff syndrome from thiamine (B1) deficiency", "k": [["wernicke", "korsakoff"]], "why": "Confusion, ataxia, ophthalmoplegia/nystagmus."},
+        {"p": "Urgent thiamine replacement", "k": [["thiamine", "pabrinex", "b1"]], "why": "Give before glucose."},
+        {"p": "Hepatic encephalopathy: jaundice + confusion = emergency", "k": [["encephalopathy"]], "why": "Treat with lactulose."},
+        {"p": "Dupuytren's contracture of 4th/5th fingers", "k": [["dupuytren"]], "why": "Fixed flexion, uncorrectable passively, often bilateral."}]},
+      {"d": "diagnosis", "q": "How do you tell alcoholic hepatitis from viral hepatitis and cholangitis on LFTs?", "tip": "Exam thinking: the size and pattern of the enzymes decides it.", "points": [
+        {"p": "Viral hepatitis: ALT in the thousands, ALT greater than AST", "k": [["viral"], ["alt", "thousand", "1000"]], "why": "Alcoholic transaminases are modest."},
+        {"p": "Cholangitis/obstruction: ALP and GGT dominant with dilated ducts", "k": [["alp", "obstruct", "duct"]], "why": "Charcot's triad: fever, jaundice, RUQ pain."},
+        {"p": "Alcoholic hepatitis: modest transaminases, AST ≥2× ALT, high GGT", "k": [["ast"], ["ggt", "2", "ratio"]], "why": "Plus a clear alcohol history."}]},
+      {"d": "investigation", "q": "Which investigations confirm alcoholic hepatitis and exclude other causes?", "tip": "Exam thinking: clinical picture plus LFTs, then rule out the rest.", "points": [
+        {"p": "LFTs: AST and ALT raised with AST:ALT >2, bilirubin up, ALP mildly up", "k": [["lft", "liver function", "ast"]], "why": "Diagnosis is clinical plus LFT pattern plus history."},
+        {"p": "INR and albumin", "k": [["inr", "prothrombin", "clotting"]], "why": "INR is the severity marker."},
+        {"p": "FBC (neutrophilia), glucose, U&Es", "k": [["fbc", "blood count", "neutrophil", "wcc", "wbc"]], "why": "Neutrophilia is common; screen for infection."},
+        {"p": "Viral hepatitis screen", "k": [["viral", "hepatitis b", "hepatitis c", "hbsag"]], "why": "Excludes another cause."},
+        {"p": "Liver ultrasound", "k": [["ultrasound", "uss"]], "why": "Excludes biliary obstruction, shows cirrhosis or ascites."}]},
+      {"d": "investigation", "q": "How is severity assessed and what cut-off changes management?", "tip": "Exam thinking: one score, one number.", "points": [
+        {"p": "Maddrey's discriminant function", "k": [["maddrey", "discriminant", "mdf"]], "why": "The standard severity score in the notes."},
+        {"p": "Calculated from prothrombin time and bilirubin", "k": [["prothrombin", "pt", "inr"], ["bilirubin"]], "why": "4.6 × (PT − control) + bilirubin (mg/dL)."},
+        {"p": "Score ≥32 = severe; consider steroids", "k": [["32"]], "why": "Predicts high short-term mortality."}]},
+      {"d": "management", "q": "What is the first-line management of alcoholic hepatitis?", "tip": "Exam thinking: what everyone gets, before any steroid decision.", "points": [
+        {"p": "Alcohol cessation", "k": [["stop", "cessation", "abstin", "abstain"]], "why": "Improves long-term survival more than anything else."},
+        {"p": "IV thiamine to prevent Wernicke's", "k": [["thiamine", "pabrinex"]], "why": "Give before glucose."},
+        {"p": "Supportive: high-protein diet and vitamin supplements", "k": [["protein", "nutrition", "diet", "vitamin"]], "why": "Most patients are malnourished."}]},
+      {"d": "management", "q": "When do you give steroids, when not, and how are complications managed?", "tip": "Exam thinking: score first, contraindications second.", "points": [
+        {"p": "Prednisolone if Maddrey's DF ≥32", "k": [["prednisolone", "steroid"]], "why": "Severe disease only."},
+        {"p": "Contraindicated by active infection or GI bleeding", "k": [["infection", "sepsis"], ["bleed", "haemorrh"]], "why": "Screen for both first."},
+        {"p": "Diuretics for ascites, lactulose for encephalopathy", "k": [["diuretic", "spironolactone"], ["lactulose"]], "why": "Treat complications as they arise."},
+        {"p": "Liver transplant is definitive for end-stage disease", "k": [["transplant"]], "why": "Requires specialist referral and abstinence."}]},
+      {"d": "science", "q": "How does alcohol injure the liver, and why is the AST:ALT ratio raised?", "tip": "Exam thinking: name the metabolite and the vitamin.", "points": [
+        {"p": "Alcohol dehydrogenase and CYP2E1 generate acetaldehyde and reactive oxygen species", "k": [["acetaldehyde", "reactive oxygen", "ros", "free radical"]], "why": "Cause lipid peroxidation and hepatocyte injury."},
+        {"p": "Pyridoxal-5-phosphate (B6) deficiency reduces ALT synthesis more than AST", "k": [["pyridox", "b6"]], "why": "The main reason ALT stays low."},
+        {"p": "Mitochondrial injury releases mitochondrial AST", "k": [["mitochondri"]], "why": "Adds to the AST rise."},
+        {"p": "Ongoing inflammation and fibrogenesis lead to cirrhosis", "k": [["cirrho", "fibro"]], "why": "With continued drinking."}]},
+      {"d": "science", "q": "Why does alcohol excess cause Wernicke's, and what does Maddrey's DF measure?", "tip": "Exam thinking: thiamine is a cofactor; PT and bilirubin are two different functions.", "points": [
+        {"p": "Alcohol impairs thiamine absorption and depletes liver stores", "k": [["absor", "stores", "deplet"]], "why": "Poor diet adds to it."},
+        {"p": "Thiamine is a cofactor for cerebral glucose metabolism; glucose without thiamine precipitates Wernicke's", "k": [["cofactor", "glucose"]], "why": "Hence thiamine before glucose."},
+        {"p": "MDF: prothrombin time (synthesis) + bilirubin (injury) estimates short-term mortality", "k": [["mortality", "prognos", "synthetic"]], "why": "Guides steroid therapy."}]}
+    ]
+  },
+  "glossary": {
+    "Alcoholic hepatitis": "Acute inflammation of the liver caused by heavy alcohol use, often after a binge.",
+    "Hepatomegaly": "Enlarged liver, felt below the right costal margin.",
+    "Jaundice": "Yellow skin and eyes from raised bilirubin.",
+    "RUQ": "Right upper quadrant of the abdomen, where the liver and gallbladder lie.",
+    "AST": "Aspartate aminotransferase: liver (and muscle) enzyme, typically at least twice ALT in alcoholic hepatitis.",
+    "ALT": "Alanine aminotransferase: a liver-specific enzyme; very high levels suggest viral or toxic hepatitis.",
+    "AST:ALT ratio": "AST divided by ALT; a value of 2 or more is the hallmark of alcohol-related liver injury.",
+    "ALP": "Alkaline phosphatase: enzyme raised mainly in biliary obstruction and bone disease.",
+    "GGT": "Gamma-glutamyl transferase: liver enzyme induced by alcohol, raised in heavy drinkers.",
+    "Bilirubin": "Yellow breakdown product of haemoglobin, cleared by the liver; high levels cause jaundice.",
+    "INR": "International normalised ratio: measures clotting time; raised when the liver cannot make clotting factors.",
+    "Prothrombin time": "Time for blood to clot via the extrinsic pathway; prolonged in liver synthetic failure.",
+    "PT": "Prothrombin time: clotting test used, with bilirubin, in Maddrey's discriminant function.",
+    "Hypoalbuminaemia": "Low blood albumin, from poor liver synthesis or malnutrition.",
+    "Maddrey's Discriminant Function": "Severity score from prothrombin time and bilirubin; 32 or more means severe alcoholic hepatitis.",
+    "MDF": "Maddrey's discriminant function, the severity score that guides steroid use.",
+    "Wernicke's encephalopathy": "Acute brain dysfunction from thiamine deficiency: confusion, ataxia and eye movement problems.",
+    "Wernicke-Korsakoff syndrome": "Wernicke's encephalopathy progressing to Korsakoff's permanent memory loss with confabulation.",
+    "Thiamine": "Vitamin B1, a cofactor for glucose metabolism; deficiency causes Wernicke's encephalopathy.",
+    "Pabrinex": "Brand of intravenous high-dose B vitamins including thiamine, used in alcohol-dependent patients.",
+    "Dupuytren's contracture": "Thickening of the palmar fascia causing fixed flexion of the ring and little fingers.",
+    "Hepatic encephalopathy": "Confusion and drowsiness from toxins such as ammonia that a failing liver cannot clear.",
+    "Asterixis": "Flapping tremor of outstretched hands, seen in hepatic encephalopathy.",
+    "Spider naevi": "Small red spots with radiating vessels on the upper body, a sign of chronic liver disease.",
+    "Palmar erythema": "Reddening of the palms, a sign of chronic liver disease.",
+    "Ascites": "Fluid in the peritoneal cavity, often from portal hypertension.",
+    "Cirrhosis": "End-stage scarring of the liver with nodules, causing portal hypertension and liver failure.",
+    "Decompensation": "When chronic liver disease tips into failure: ascites, jaundice, encephalopathy or variceal bleeding.",
+    "Prednisolone": "Oral corticosteroid used in severe alcoholic hepatitis when Maddrey's DF is 32 or more.",
+    "Lactulose": "Osmotic laxative that reduces ammonia absorption, used for hepatic encephalopathy.",
+    "Neutrophilia": "Raised neutrophil count, common in alcoholic hepatitis even without infection.",
+    "MCV": "Mean cell volume; a raised MCV (macrocytosis) is common with heavy alcohol use.",
+    "Acetaldehyde": "Toxic first breakdown product of alcohol that damages liver cells.",
+    "Alcohol dehydrogenase": "Liver enzyme that converts ethanol to acetaldehyde.",
+    "CYP2E1": "Cytochrome P450 enzyme induced by chronic drinking; metabolises alcohol and makes free radicals.",
+    "Reactive oxygen species": "Unstable oxygen molecules that damage cell membranes, proteins and DNA.",
+    "Lipid peroxidation": "Free-radical damage to fats in cell membranes, injuring hepatocytes.",
+    "Pyridoxal-5-phosphate": "Active vitamin B6; needed more for ALT than AST synthesis, so its deficiency lowers ALT.",
+    "Fibrogenesis": "The laying down of scar tissue (collagen) in an injured organ.",
+    "Chlordiazepoxide": "Long-acting benzodiazepine used to cover alcohol withdrawal.",
+    "NICE NG50": "NICE guideline on assessing and managing cirrhosis in people over 16."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 52 year old man has a 1 week history of yellow skin, fever and right upper quadrant pain. He drinks 30 units of alcohol a day. His liver is enlarged and tender. His temperature is 38.0°C and pulse rate 104 bpm.",
+      "labs": [["AST", "210 IU/L", "10–40", "H"], ["ALT", "85 IU/L", "10–50", "H"], ["Bilirubin", "190 µmol/L", "<17", "H"], ["ALP", "150 IU/L", "25–115", "H"], ["GGT", "720 IU/L", "1–78", "H"]],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute pancreatitis", "Alcoholic fatty liver", "Alcoholic hepatitis", "Gallstone cholangitis", "Hepatitis A"],
+      "a": 2,
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis of jaundice in a drinker: decide the liver pattern."},
+        {"t": "Pick out the clues", "clues": ["yellow skin, fever and right upper quadrant pain", "30 units of alcohol a day", "enlarged and tender"], "x": "Jaundice, fever, **tender hepatomegaly** in a heavy drinker; labs show AST 2.5× ALT and high GGT."},
+        {"t": "Make your own answer before looking", "x": "**Alcoholic hepatitis**."},
+        {"t": "Rule out the others", "elim": [[0, "Pancreatitis gives epigastric pain to the back and a high amylase."], [1, "Fatty liver is usually asymptomatic: no fever, jaundice or tenderness."], [3, "Cholangitis has an obstructive picture with ALP dominant."], [4, "Hepatitis A gives ALT in the thousands, ALT greater than AST."]]},
+        {"t": "Commit", "x": "**C. Alcoholic hepatitis.** Rule: drinker + fever + tender liver + AST:ALT ≥2."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 44 year old woman with alcoholic hepatitis is admitted with jaundice. The team wants a single blood test that best reflects how severely her liver's synthetic function is impaired right now.",
+      "q": "Which is the most appropriate investigation?",
+      "o": ["ALP", "ALT", "Amylase", "GGT", "Prothrombin time"],
+      "a": 4,
+      "steps": [
+        {"t": "Read the question line first", "x": "Asks for a marker of **synthetic** function, acutely."},
+        {"t": "Pick out the clues", "clues": ["alcoholic hepatitis", "synthetic function", "right now"], "x": "Synthesis means clotting factors or albumin; 'right now' favours the fast-changing one."},
+        {"t": "Make your own answer before looking", "x": "**Prothrombin time / INR**, also used in Maddrey's DF."},
+        {"t": "Rule out the others", "elim": [[0, "ALP reflects biliary obstruction."], [1, "ALT reflects hepatocyte damage, not synthesis."], [2, "Amylase is for pancreatitis."], [3, "GGT reflects alcohol use and cholestasis."]]},
+        {"t": "Commit", "x": "**E. Prothrombin time.** Rule: enzymes show damage; PT/INR shows function."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 49 year old man has alcoholic hepatitis. He has received intravenous thiamine and stopped drinking. His Maddrey's discriminant function is 48. Chest X-ray, urine culture and blood cultures are clear, ascitic neutrophils are 40 cells/mm³, and there is no gastrointestinal bleeding.",
+      "q": "Which is the most appropriate next step in management?",
+      "o": ["Intravenous terlipressin", "Liver transplant referral", "N-acetylcysteine", "Oral prednisolone", "Ursodeoxycholic acid"],
+      "a": 3,
+      "steps": [
+        {"t": "Read the question line first", "x": "Next step after supportive care: is a steroid indicated?"},
+        {"t": "Pick out the clues", "clues": ["intravenous thiamine and stopped drinking", "discriminant function is 48", "blood cultures are clear", "no gastrointestinal bleeding"], "x": "MDF ≥32 = severe; infection and bleeding excluded."},
+        {"t": "Make your own answer before looking", "x": "**Prednisolone**."},
+        {"t": "Rule out the others", "elim": [[0, "Terlipressin is for variceal bleeding."], [1, "Transplant is for end-stage disease after a period of abstinence."], [2, "NAC is for paracetamol overdose."], [4, "Ursodeoxycholic acid is for PBC, not alcoholic hepatitis."]]},
+        {"t": "Commit", "x": "**D. Oral prednisolone.** Rule: MDF ≥32, no infection, no bleed = steroid."}
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 40 year old man who drinks heavily is found confused and malnourished. A doctor gives intravenous 5% glucose for a capillary glucose of 3.6 mmol/L. An hour later he is ataxic and has ophthalmoplegia.",
+      "q": "Which is the most likely mechanism of his deterioration?",
+      "o": ["Glucose metabolism uses up remaining thiamine", "Glucose raises serum ammonia", "Hyperglycaemia causes osmotic demyelination", "Insulin drives potassium into cells", "Lactic acidosis directly damages neurons"],
+      "a": 0,
+      "steps": [
+        {"t": "Read the question line first", "x": "A mechanism: why did glucose make him worse?"},
+        {"t": "Pick out the clues", "clues": ["drinks heavily", "malnourished", "intravenous 5% glucose", "ataxic and has ophthalmoplegia"], "x": "Thiamine-depleted drinker given glucose, then **Wernicke's** signs."},
+        {"t": "Make your own answer before looking", "x": "Thiamine is a cofactor for glucose metabolism; the glucose load used it up."},
+        {"t": "Rule out the others", "elim": [[1, "Glucose does not raise ammonia."], [2, "Osmotic demyelination follows rapid sodium correction."], [3, "Hypokalaemia causes weakness and arrhythmia, not ophthalmoplegia."], [4, "This is not lactic acidosis; it is thiamine depletion."]]},
+        {"t": "Commit", "x": "**A. Glucose uses up remaining thiamine.** Rule: thiamine before glucose in drinkers."}
+      ]
+    }
+  ],
+  "practice": [
+    {"d": "diagnosis", "stem": "A 46 year old man has a 2 week history of jaundice, right upper quadrant pain and poor appetite. He has drunk two bottles of wine a day for 10 years and recently increased this. His liver is enlarged and tender. His temperature is 38.2°C, pulse rate 106 bpm, BP 114/72 mmHg and oxygen saturation 97% breathing air.", "labs": [["AST", "232 IU/L", "10–40", "H"], ["ALT", "94 IU/L", "10–50", "H"], ["Bilirubin", "176 µmol/L", "<17", "H"], ["ALP", "160 IU/L", "25–115", "H"], ["Amylase", "60 U/L", "<220", ""]], "visual": null, "q": "Which is the most likely diagnosis?", "o": ["Acute cholangitis", "Acute cholecystitis", "Acute pancreatitis", "Alcoholic hepatitis", "Hepatocellular carcinoma"], "a": 3, "e": "Jaundice, fever and tender hepatomegaly in a heavy drinker with AST:ALT above 2 is alcoholic hepatitis. Cholangitis would show an obstructive pattern with a high ALP.", "steps": [
+      {"t": "Read the question line first", "x": "Diagnosis: fever and jaundice in a drinker."},
+      {"t": "Pick out the clues", "clues": ["jaundice, right upper quadrant pain and poor appetite", "two bottles of wine a day", "recently increased", "enlarged and tender"], "x": "Heavy drinking with a recent increase; tender hepatomegaly; labs: AST:ALT ~2.5, normal amylase."},
+      {"t": "Make your own answer before looking", "x": "**Alcoholic hepatitis**."},
+      {"t": "Rule out the others", "elim": [[0, "Cholangitis has an ALP-dominant obstructive picture and dilated ducts."], [1, "Cholecystitis has Murphy's sign and rarely deep jaundice."], [2, "Amylase is normal."], [4, "HCC is a mass with weight loss, not an acute febrile illness."]]},
+      {"t": "Commit", "x": "**D. Alcoholic hepatitis.** Rule: AST:ALT ≥2 + tender liver + alcohol."}]},
+    {"d": "diagnosis", "stem": "A 51 year old woman is admitted with jaundice and a tender enlarged liver. She has drunk heavily for many years and stopped 3 days ago. Her mean cell volume is 104 fL and GGT is 640 IU/L. She has no history of travel, intravenous drug use or new medicines.", "labs": [], "visual": null, "q": "Which is the most likely finding on her liver function tests?", "o": ["ALP rise greater than transaminase rise", "ALT above 1000 IU/L", "AST:ALT ratio 2:1 or greater", "Isolated unconjugated bilirubin rise", "Normal transaminases"], "a": 2, "e": "Alcoholic hepatitis gives modest transaminases with AST at least twice ALT. ALT in the thousands suggests viral, ischaemic or paracetamol hepatitis.", "steps": [
+      {"t": "Read the question line first", "x": "A 'most likely finding' question: predict the LFT pattern."},
+      {"t": "Pick out the clues", "clues": ["tender enlarged liver", "drunk heavily for many years", "mean cell volume is 104 fL", "GGT is 640 IU/L"], "x": "Macrocytosis and a high GGT confirm alcohol; tender liver means hepatitis."},
+      {"t": "Make your own answer before looking", "x": "**AST:ALT ≥2**."},
+      {"t": "Rule out the others", "elim": [[0, "An ALP-dominant pattern is cholestatic/obstructive."], [1, "ALT in the thousands is viral or toxic hepatitis."], [3, "Isolated unconjugated bilirubin is Gilbert's or haemolysis."], [4, "A tender, inflamed liver will raise transaminases."]]},
+      {"t": "Commit", "x": "**C. AST:ALT 2:1 or greater.** The hallmark of alcoholic hepatitis."}]},
+    {"d": "diagnosis", "stem": "A 43 year old man with alcoholic hepatitis became confused on the ward 2 days after admission. He is unsteady on his feet and has horizontal nystagmus with bilateral lateral rectus weakness. He was given intravenous glucose overnight for a low capillary glucose. He has no flapping tremor. His temperature is 37.1°C, pulse rate 92 bpm and BP 128/78 mmHg.", "labs": [], "visual": null, "q": "Which is the most likely cause of his confusion?", "o": ["Alcohol withdrawal delirium", "Hepatic encephalopathy", "Hypoglycaemia", "Subdural haematoma", "Wernicke's encephalopathy"], "a": 4, "e": "Confusion, ataxia and ophthalmoplegia after glucose without thiamine is Wernicke's encephalopathy. Hepatic encephalopathy causes a flapping tremor, not eye signs.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of confusion in a drinker with hepatitis."},
+      {"t": "Pick out the clues", "clues": ["unsteady on his feet", "horizontal nystagmus", "lateral rectus weakness", "intravenous glucose overnight", "no flapping tremor"], "x": "Classic triad: confusion, ataxia, ophthalmoplegia, after glucose."},
+      {"t": "Make your own answer before looking", "x": "**Wernicke's encephalopathy** (thiamine deficiency)."},
+      {"t": "Rule out the others", "elim": [[0, "Withdrawal causes tremor, sweating, tachycardia and hallucinations, not ophthalmoplegia."], [1, "Hepatic encephalopathy causes asterixis, which is absent."], [2, "He has been given glucose."], [3, "Subdural would give headache and focal signs, not this triad."]]},
+      {"t": "Commit", "x": "**E. Wernicke's encephalopathy.** Rule: thiamine before glucose."}]},
+    {"d": "diagnosis", "stem": "A 55 year old man with alcoholic hepatitis has had difficulty gripping for a year. Both ring and little fingers are held flexed at the metacarpophalangeal joints and cannot be straightened passively. A thick cord is palpable in each palm.", "labs": [], "visual": null, "q": "Which is the most likely finding?", "o": ["Clubbing", "Dupuytren's contracture", "Heberden's nodes", "Koilonychia", "Swan neck deformity"], "a": 1, "e": "Fixed flexion of the 4th/5th fingers with a palpable palmar cord, often bilateral, is Dupuytren's contracture, associated with alcohol excess. Swan neck is rheumatoid.", "steps": [
+      {"t": "Read the question line first", "x": "Name the hand sign."},
+      {"t": "Pick out the clues", "clues": ["alcoholic hepatitis", "ring and little fingers", "cannot be straightened passively", "thick cord"], "x": "Fixed, passively uncorrectable flexion of the 4th/5th fingers with a palmar cord."},
+      {"t": "Make your own answer before looking", "x": "**Dupuytren's contracture**."},
+      {"t": "Rule out the others", "elim": [[0, "Clubbing affects nail beds, not flexion."], [2, "Heberden's nodes are DIP osteophytes in osteoarthritis."], [3, "Koilonychia is spoon nails in iron deficiency."], [4, "Swan neck is a rheumatoid deformity."]]},
+      {"t": "Commit", "x": "**B. Dupuytren's contracture.**"}]},
+    {"d": "diagnosis", "stem": "A 58 year old man with known alcohol-related cirrhosis has been stable for a year. After a 3 week binge he has deepening jaundice, a tender enlarged liver, fever and increasing abdominal swelling. His temperature is 38.0°C, pulse rate 102 bpm and BP 108/66 mmHg. There is no haematemesis or melaena.", "labs": [["AST", "198 IU/L", "10–40", "H"], ["ALT", "72 IU/L", "10–50", "H"], ["Ascitic neutrophils", "70 cells/mm³", "<250", ""], ["Alpha-fetoprotein", "6 kU/L", "<10", ""]], "visual": null, "q": "Which is the most likely cause of his decompensation?", "o": ["Alcoholic hepatitis", "Hepatocellular carcinoma", "Portal vein thrombosis", "Spontaneous bacterial peritonitis", "Variceal haemorrhage"], "a": 0, "e": "A binge with fever, tender hepatomegaly and AST:ALT above 2 has caused acute alcoholic hepatitis, precipitating decompensation. Ascitic neutrophils below 250 exclude SBP.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of decompensation in cirrhosis."},
+      {"t": "Pick out the clues", "clues": ["3 week binge", "tender enlarged liver", "fever", "no haematemesis or melaena"], "x": "Recent binge, tender liver, AST:ALT ~2.7; ascitic neutrophils normal, AFP normal."},
+      {"t": "Make your own answer before looking", "x": "**Alcoholic hepatitis** on cirrhosis."},
+      {"t": "Rule out the others", "elim": [[1, "AFP is normal and there is no mass or weight loss."], [2, "PVT would not explain the binge, fever and AST pattern."], [3, "Ascitic neutrophils are below 250 cells/mm³."], [4, "No haematemesis or melaena."]]},
+      {"t": "Commit", "x": "**A. Alcoholic hepatitis.** It commonly decompensates existing cirrhosis."}]},
+    {"d": "diagnosis", "stem": "A 39 year old woman has 10 days of jaundice, nausea and right upper quadrant discomfort. She drinks about 8 units of alcohol a day. Her liver is tender and 3 cm enlarged. Her temperature is 37.9°C and pulse rate 98 bpm. Hepatitis serology and autoantibodies are negative.", "labs": [["AST", "180 IU/L", "10–40", "H"], ["ALT", "70 IU/L", "10–50", "H"], ["GGT", "910 IU/L", "1–78", "H"], ["Bilirubin", "140 µmol/L", "<17", "H"], ["MCV", "103 fL", "80–100", "H"]], "visual": null, "q": "Which is the most likely diagnosis?", "o": ["Acute hepatitis B", "Alcoholic hepatitis", "Autoimmune hepatitis", "Non-alcoholic fatty liver disease", "Primary biliary cholangitis"], "a": 1, "e": "Jaundice and a tender liver with AST:ALT above 2, very high GGT and macrocytosis in a daily drinker is alcoholic hepatitis. Negative serology and autoantibodies exclude viral and autoimmune causes.", "steps": [
+      {"t": "Read the question line first", "x": "Diagnosis of hepatitic jaundice."},
+      {"t": "Pick out the clues", "clues": ["8 units of alcohol a day", "liver is tender", "Hepatitis serology and autoantibodies are negative"], "x": "Daily drinking, tender liver; labs: AST:ALT 2.6, GGT very high, macrocytosis."},
+      {"t": "Make your own answer before looking", "x": "**Alcoholic hepatitis**."},
+      {"t": "Rule out the others", "elim": [[0, "Serology is negative and ALT would be far higher."], [2, "Autoantibodies are negative."], [3, "NAFLD is ALT-dominant and not febrile and jaundiced."], [4, "PBC is cholestatic (ALP), AMA positive, in older women."]]},
+      {"t": "Commit", "x": "**B. Alcoholic hepatitis.**"}]},
+    {"d": "investigation", "stem": "A 50 year old man is admitted with alcoholic hepatitis. His team needs to decide whether he should receive corticosteroids. His temperature is 37.4°C, pulse rate 96 bpm and BP 118/74 mmHg.", "labs": [["Prothrombin time", "20 s", "control 12 s", "H"], ["Bilirubin", "290 µmol/L", "<17", "H"], ["Albumin", "26 g/L", "35–50", "L"]], "visual": null, "q": "Which is the most appropriate assessment to guide this decision?", "o": ["Child-Pugh score", "Glasgow-Blatchford score", "Maddrey's discriminant function", "Ranson criteria", "Serum ammonia"], "a": 2, "e": "Maddrey's discriminant function (prothrombin time and bilirubin) of 32 or more indicates severe alcoholic hepatitis and prompts steroids. Here it is about 54. Child-Pugh grades cirrhosis.", "steps": [
+      {"t": "Read the question line first", "x": "Which score guides steroids in alcoholic hepatitis?"},
+      {"t": "Pick out the clues", "clues": ["alcoholic hepatitis", "whether he should receive corticosteroids"], "x": "Steroid decision = severity score from PT and bilirubin."},
+      {"t": "Make your own answer before looking", "x": "**Maddrey's DF**: 4.6 × 8 + 17 = ~54, severe."},
+      {"t": "Rule out the others", "elim": [[0, "Child-Pugh grades cirrhosis severity."], [1, "Glasgow-Blatchford is for upper GI bleeding."], [3, "Ranson is for pancreatitis."], [4, "Ammonia does not guide steroid therapy."]]},
+      {"t": "Commit", "x": "**C. Maddrey's DF.** Rule: ≥32 = consider prednisolone."}]},
+    {"d": "investigation", "stem": "A 45 year old man who drinks heavily has jaundice, fever and a tender enlarged liver. His AST is 190 IU/L, ALT 80 IU/L and ALP 170 IU/L. The team wants to exclude biliary obstruction and look for cirrhosis and ascites.", "labs": [], "visual": null, "q": "Which is the most appropriate initial imaging?", "o": ["CT abdomen with contrast", "Endoscopic retrograde cholangiopancreatography", "Liver biopsy", "Magnetic resonance cholangiopancreatography", "Ultrasound of the liver"], "a": 4, "e": "Liver ultrasound is the first-line imaging in alcoholic hepatitis: it excludes duct dilatation and shows cirrhosis and ascites. MRCP and ERCP are for confirmed obstruction.", "steps": [
+      {"t": "Read the question line first", "x": "Initial imaging, not definitive."},
+      {"t": "Pick out the clues", "clues": ["drinks heavily", "tender enlarged liver", "exclude biliary obstruction", "cirrhosis and ascites"], "x": "Fast, safe, bedside answer to all three."},
+      {"t": "Make your own answer before looking", "x": "**Liver ultrasound**."},
+      {"t": "Rule out the others", "elim": [[0, "CT is not first-line and uses contrast and radiation."], [1, "ERCP is invasive and therapeutic, for proven stones."], [2, "Biopsy is not routine and is risky with a raised INR."], [3, "MRCP follows an ultrasound showing dilated ducts."]]},
+      {"t": "Commit", "x": "**E. Liver ultrasound.**"}]},
+    {"d": "management", "stem": "A 48 year old man who drinks heavily is brought to the Emergency Department confused and jaundiced. He is thin and unkempt. His temperature is 37.5°C, pulse rate 104 bpm, BP 120/76 mmHg and capillary glucose 3.9 mmol/L. He has a tender enlarged liver.", "labs": [], "visual": null, "q": "Which is the most appropriate initial management?", "o": ["Intravenous 10% glucose", "Intravenous thiamine", "Oral lactulose", "Oral prednisolone", "Oral rifaximin"], "a": 1, "e": "IV thiamine comes first in any confused, malnourished drinker, before glucose, to prevent Wernicke's encephalopathy. Prednisolone waits for a Maddrey score and infection screen.", "steps": [
+      {"t": "Read the question line first", "x": "Initial management: the first drug."},
+      {"t": "Pick out the clues", "clues": ["drinks heavily", "confused and jaundiced", "thin and unkempt", "capillary glucose 3.9 mmol/L"], "x": "Malnourished drinker, confused, borderline glucose: thiamine-depleted."},
+      {"t": "Make your own answer before looking", "x": "**IV thiamine** first."},
+      {"t": "Rule out the others", "elim": [[0, "Glucose before thiamine can precipitate Wernicke's."], [2, "Lactulose treats encephalopathy, but thiamine comes first."], [3, "Steroids need a Maddrey score and no infection."], [4, "Rifaximin is add-on encephalopathy prophylaxis."]]},
+      {"t": "Commit", "x": "**B. Intravenous thiamine.**"}]},
+    {"d": "management", "stem": "A 53 year old man has severe alcoholic hepatitis with a Maddrey's discriminant function of 44. He has a productive cough. His temperature is 38.6°C, pulse rate 112 bpm, BP 104/64 mmHg and respiratory rate 24 breaths per minute. Chest X-ray shows right lower zone consolidation.", "labs": [], "visual": null, "q": "Which is the most appropriate management?", "o": ["Intravenous antibiotics and withhold prednisolone", "Intravenous terlipressin", "Liver transplant referral", "Oral prednisolone alone", "Oral rifaximin"], "a": 0, "e": "MDF 44 would normally prompt prednisolone, but active infection (pneumonia) is a contraindication. Treat the infection and withhold steroids.", "steps": [
+      {"t": "Read the question line first", "x": "Severe disease, but check contraindications."},
+      {"t": "Pick out the clues", "clues": ["discriminant function of 44", "productive cough", "38.6°C", "right lower zone consolidation"], "x": "Severe hepatitis plus **active infection**."},
+      {"t": "Make your own answer before looking", "x": "Treat pneumonia; **no steroids** while infected."},
+      {"t": "Rule out the others", "elim": [[1, "Terlipressin is for variceal bleeding or hepatorenal syndrome."], [2, "Transplant is not for acute alcoholic hepatitis with active drinking."], [3, "Steroids are contraindicated by active infection."], [4, "Rifaximin is for encephalopathy."]]},
+      {"t": "Commit", "x": "**A. IV antibiotics, withhold prednisolone.** Rule: infection or GI bleed = no steroids."}]},
+    {"d": "management", "stem": "A 47 year old man is recovering from alcoholic hepatitis. His bilirubin is falling after a course of prednisolone. He asks what will make the biggest difference to whether he survives the next few years.", "labs": [], "visual": null, "q": "Which is the most appropriate long-term management?", "o": ["Cholestyramine", "Complete abstinence from alcohol", "Liver transplant", "Long-term prednisolone", "Propranolol"], "a": 1, "e": "Alcohol cessation is essential and is the main determinant of long-term survival. Transplant is reserved for end-stage disease after proven abstinence.", "steps": [
+      {"t": "Read the question line first", "x": "Long-term management that most improves survival."},
+      {"t": "Pick out the clues", "clues": ["recovering from alcoholic hepatitis", "biggest difference", "next few years"], "x": "Acute episode settled; the cause must be removed."},
+      {"t": "Make your own answer before looking", "x": "**Abstinence from alcohol**."},
+      {"t": "Rule out the others", "elim": [[0, "Cholestyramine treats pruritus only."], [2, "Transplant needs abstinence and end-stage disease."], [3, "Steroids are a short course, not long-term."], [4, "Propranolol prevents variceal bleeding in cirrhosis."]]},
+      {"t": "Commit", "x": "**B. Complete abstinence.**"}]},
+    {"d": "science", "stem": "A 50 year old man who drinks heavily has jaundice and tender hepatomegaly. His AST is 240 IU/L and ALT 90 IU/L. A student asks why the ALT is so much lower than the AST.", "labs": [], "visual": null, "q": "Which is the most likely mechanism?", "o": ["Biliary obstruction releasing AST", "Deficiency of pyridoxal-5-phosphate reducing ALT synthesis", "Haemolysis releasing AST from red cells", "Increased renal clearance of ALT", "Skeletal muscle injury releasing AST"], "a": 1, "e": "Pyridoxal-5-phosphate (vitamin B6) is needed more for ALT synthesis than AST, and alcohol-damaged mitochondria release extra AST, giving AST:ALT ≥2.", "steps": [
+      {"t": "Read the question line first", "x": "Explain the AST:ALT ratio."},
+      {"t": "Pick out the clues", "clues": ["drinks heavily", "AST is 240 IU/L and ALT 90 IU/L", "ALT is so much lower"], "x": "Ratio ~2.7: the alcohol pattern."},
+      {"t": "Make your own answer before looking", "x": "**B6 (pyridoxal-5-phosphate) deficiency** plus mitochondrial AST release."},
+      {"t": "Rule out the others", "elim": [[0, "Obstruction raises ALP and GGT, not AST selectively."], [2, "Nothing suggests haemolysis."], [3, "ALT is not cleared by the kidney in this way."], [4, "No muscle injury is described."]]},
+      {"t": "Commit", "x": "**B. Pyridoxal-5-phosphate deficiency.**"}]}
+  ]
+}

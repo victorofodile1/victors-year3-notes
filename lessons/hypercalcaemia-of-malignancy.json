@@ -1,0 +1,2152 @@
+{
+ "id": "hypercalcaemia-of-malignancy",
+ "patient": {
+  "name": "Kenneth Murray",
+  "age": 68,
+  "sex": "M",
+  "setting": "Acute Medical Unit",
+  "complaint": "Two weeks of confusion, constipation, thirst and passing lots of urine",
+  "background": [
+   "Smoked 30 a day for 50 years",
+   "Lost 7 kg in 3 months; cough with blood-streaked sputum",
+   "Takes bendroflumethiazide for hypertension",
+   "Lives with his wife in Bermondsey"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely cause' with confusion, constipation and polyuria in a smoker or cancer patient, plus high calcium and a low PTH.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kenneth, 68, heavy smoker, losing weight.",
+      "Wife says he is **muddled** and sleeping all day.",
+      "**Constipated**, off his food, tummy ache.",
+      "Thirsty and passing urine all night."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "102 bpm",
+      "BP": "106/64 mmHg",
+      "RR": "18 /min",
+      "SpO2": "95% on air",
+      "GCS": "14"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kenneth has the groans (abdominal pain, constipation) and the **psychiatric moans** (confusion), plus polyuria, polydipsia and dehydration."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods on admission",
+     "rows": [
+      [
+       "Adjusted calcium",
+       "3.42 mmol/L",
+       "2.20–2.60",
+       "H"
+      ],
+      [
+       "Phosphate",
+       "0.68 mmol/L",
+       "0.80–1.50",
+       "L"
+      ],
+      [
+       "PTH",
+       "0.4 pmol/L",
+       "1.6–6.9",
+       "L"
+      ],
+      [
+       "Urea",
+       "12.8 mmol/L",
+       "2.5–7.8",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "148 µmol/L",
+       "60–120",
+       "H"
+      ],
+      [
+       "ALP",
+       "118 IU/L",
+       "30–130",
+       ""
+      ]
+     ],
+     "text": "High calcium with a **suppressed PTH**: the parathyroids have switched off, so the calcium is coming from elsewhere."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Adjusted calcium",
+      "min": 1.8,
+      "max": 4.0,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        1.8,
+        2.2,
+        "low",
+        "warn"
+       ],
+       [
+        2.2,
+        2.6,
+        "normal",
+        "ok"
+       ],
+       [
+        2.6,
+        3.0,
+        "mild",
+        "warn"
+       ],
+       [
+        3.0,
+        3.5,
+        "moderate",
+        "bad"
+       ],
+       [
+        3.5,
+        4.0,
+        "severe",
+        "bad"
+       ]
+      ],
+      "value": 3.42,
+      "label": "Kenneth 3.42",
+      "caption": "Above 3.0 and symptomatic: this needs IV fluids, not just stopping drugs."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A low PTH with high calcium in a smoker losing weight means **malignancy**, through PTHrP or bone metastases."
+    },
+    {
+     "type": "ask",
+     "q": "Kenneth's calcium is 3.42 and PTH 0.4 pmol/L. Which is most likely?",
+     "o": [
+      "Familial hypocalciuric hypercalcaemia",
+      "Hypercalcaemia of malignancy",
+      "Primary hyperparathyroidism",
+      "Vitamin D deficiency"
+     ],
+     "r": "**Suppressed PTH** rules out primary hyperparathyroidism (PTH high or inappropriately normal). His smoking and weight loss point to cancer.",
+     "a": 1
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kenneth's smoking, haemoptysis and weight loss fit **squamous cell lung cancer**, the tumour noted for PTHrP secretion."
+    },
+    {
+     "type": "compare",
+     "title": "Malignancy vs primary hyperparathyroidism",
+     "head": [
+      "Feature",
+      "Malignancy",
+      "Primary hyperparathyroidism"
+     ],
+     "rows": [
+      [
+       "PTH",
+       "**Low (suppressed)**",
+       "High or inappropriately normal"
+      ],
+      [
+       "Phosphate",
+       "Low (PTHrP)",
+       "Low"
+      ],
+      [
+       "Onset",
+       "Fast, symptomatic",
+       "Slow, often incidental"
+      ],
+      [
+       "Calcium",
+       "Often above 3.0",
+       "Usually mildly raised"
+      ],
+      [
+       "Clue in stem",
+       "Weight loss, smoker, known cancer",
+       "Well, renal stones, older woman"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kenneth's creatinine is already up: he is sliding from **dehydration** to **acute kidney injury**. Arrhythmias and coma come next if untreated."
+    },
+    {
+     "type": "trap",
+     "text": "A low phosphate is not a clue to the cause: it occurs in both PTHrP-mediated malignancy and primary hyperparathyroidism. The **PTH** decides."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' where the answer is PTH (to separate malignancy from hyperparathyroidism), an ECG, CT for the primary, or protein electrophoresis if myeloma is suspected.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kenneth's **PTH of 0.4** is the key test: suppressed, unlike primary hyperparathyroidism. His low phosphate fits PTHrP."
+    },
+    {
+     "type": "ask",
+     "q": "Which test should run alongside Kenneth's calcium and PTH straight away?",
+     "o": [
+      "Bone scan",
+      "ECG",
+      "Echocardiogram",
+      "Serum ACE"
+     ],
+     "r": "An **ECG** looks for the short QT and arrhythmias that hypercalcaemia causes.",
+     "a": 1
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Kenneth's 12-lead ECG",
+      "layout": "12lead",
+      "rhythm": "sinus_tachy",
+      "rate": 102,
+      "leads": {},
+      "caption": "Sinus tachycardia with a **short QT interval**: the T wave follows almost straight after the QRS."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kenneth's ECG shows a **shortened QT**, the characteristic hypercalcaemia change."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Kenneth's chest X-ray",
+      "findings": [
+       {
+        "type": "mass",
+        "side": "right",
+        "zone": "middle"
+       },
+       {
+        "type": "hilar",
+        "side": "right"
+       }
+      ],
+      "caption": "Right perihilar mass: a likely central squamous cell carcinoma."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kenneth needs a **CT** to stage the mass. If he had back pain, anaemia and high protein, **protein electrophoresis** would look for myeloma."
+    },
+    {
+     "type": "pearl",
+     "text": "Low PTH + high calcium = malignancy until proven otherwise. High or normal PTH + high calcium = **primary hyperparathyroidism**."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' with a calcium above 3: IV 0.9% saline first, then IV bisphosphonate; denosumab if renal function is poor.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Kenneth is confused with a calcium of 3.42. What comes first?",
+     "o": [
+      "Intravenous 0.9% saline",
+      "Intravenous furosemide",
+      "Intravenous zoledronic acid",
+      "Oral fluids only"
+     ],
+     "r": "**Rehydration with IV 0.9% saline** is first-line. Bisphosphonate is the second step, once he is rehydrated.",
+     "a": 0
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kenneth is above 3.0 and symptomatic, so **IV 0.9% saline** at about 3 to 4 L a day. His **bendroflumethiazide is stopped**."
+    },
+    {
+     "type": "flow",
+     "title": "Lowering Kenneth's calcium",
+     "nodes": [
+      "Stop thiazide, lithium, calcium and vitamin D",
+      "IV 0.9% saline, 3–4 L/day",
+      "Then IV bisphosphonate (zoledronic acid)",
+      "Significant renal impairment → denosumab instead",
+      "Severe or refractory → calcitonin plus steroids"
+     ],
+     "caption": "Fluids first, always. Then switch off the osteoclasts."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "After 24 hours of fluids, Kenneth's creatinine is 102, so he can have **zoledronic acid**. If it stayed high, **denosumab** would be safer."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kenneth's calcium on treatment",
+      "x": [
+       "Day 0",
+       "Day 1",
+       "Day 2",
+       "Day 4",
+       "Day 7"
+      ],
+      "unit": "mmol/L",
+      "series": [
+       {
+        "name": "Adjusted calcium",
+        "values": [
+         3.42,
+         3.15,
+         2.98,
+         2.71,
+         2.52
+        ]
+       }
+      ],
+      "caption": "Fluids lower it a little; zoledronic acid (given day 1) takes 2 to 4 days to work fully."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kenneth responds. If he had not, **calcitonin plus steroids** would lower his calcium quickly."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kenneth's plan follows **NICE CKS** and the **BNF** bisphosphonate dosing, which is adjusted to renal function."
+    },
+    {
+     "type": "trap",
+     "text": "Do not give the bisphosphonate before rehydration, or in significant renal impairment. Do not reach for **furosemide** first: it worsens dehydration."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the mechanism of hypercalcaemia (PTHrP vs osteolysis), why PTH is low, how bisphosphonates or denosumab work, or why the QT shortens.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kenneth's tumour makes **PTHrP**, which acts on the PTH receptor. His own PTH is switched off by the high calcium."
+    },
+    {
+     "type": "flow",
+     "title": "How PTHrP raises calcium",
+     "nodes": [
+      "Squamous cell tumour secretes PTHrP",
+      "PTHrP binds the PTH receptor",
+      "Bone: osteoclastic resorption ↑",
+      "Kidney: calcium reabsorption ↑, phosphate excretion ↑",
+      "High calcium suppresses native PTH"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kenneth's calcium is humoral. In **myeloma** or breast metastases, tumour **RANKL and IL-6** dissolve the bone locally instead."
+    },
+    {
+     "type": "ask",
+     "q": "Which describes how zoledronic acid lowers Kenneth's calcium?",
+     "o": [
+      "Blocks PTHrP at its receptor",
+      "Increases renal calcium excretion",
+      "Induces osteoclast apoptosis",
+      "Neutralises RANKL"
+     ],
+     "r": "Bisphosphonates bind **hydroxyapatite**, are taken up by osteoclasts and trigger their **apoptosis**. Neutralising RANKL is denosumab.",
+     "a": 2
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kenneth gets a bisphosphonate because his kidneys recovered. **Denosumab** is a RANKL antibody, not cleared by the kidneys."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kenneth's high calcium **shortens the cardiac action potential**, which is why his QT is short."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What mnemonic describes hypercalcaemia symptoms?",
+   "o": [
+    "ABCDE",
+    "MUDPILES",
+    "Stones, bones, groans and psychiatric moans",
+    "Three Ds"
+   ],
+   "r": "Kidney stones, bone pain, abdominal pain, confusion.",
+   "a": 2
+  },
+  {
+   "d": "diagnosis",
+   "q": "How does squamous cell lung cancer cause hypercalcaemia?",
+   "o": [
+    "Ectopic ACTH",
+    "Ectopic PTH",
+    "PTHrP secretion",
+    "Vitamin D production"
+   ],
+   "r": "**PTHrP** secretion (humoral hypercalcaemia).",
+   "a": 2
+  },
+  {
+   "d": "diagnosis",
+   "q": "How does multiple myeloma cause hypercalcaemia?",
+   "o": [
+    "Calcitriol production",
+    "Direct osteolytic bone destruction",
+    "PTHrP secretion",
+    "Reduced renal excretion only"
+   ],
+   "r": "Myeloma causes **osteolysis**, not PTHrP.",
+   "a": 1
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the PTH level in hypercalcaemia of malignancy?",
+   "o": [
+    "High",
+    "Inappropriately normal",
+    "Low (suppressed)",
+    "Very high"
+   ],
+   "r": "PTH is **suppressed** by the high calcium.",
+   "a": 2
+  },
+  {
+   "d": "investigation",
+   "q": "Which ECG change does hypercalcaemia cause?",
+   "o": [
+    "Long QT",
+    "Peaked T waves",
+    "Short QT",
+    "ST elevation"
+   ],
+   "r": "A **shortened QT interval**.",
+   "a": 2
+  },
+  {
+   "d": "investigation",
+   "q": "Which test is added if myeloma is suspected?",
+   "o": [
+    "Bone densitometry",
+    "Mammography",
+    "Protein electrophoresis",
+    "Serum ACE"
+   ],
+   "r": "**Protein electrophoresis** looks for a paraprotein.",
+   "a": 2
+  },
+  {
+   "d": "management",
+   "q": "First-line management of symptomatic hypercalcaemia of malignancy?",
+   "o": [
+    "IV 0.9% saline",
+    "IV furosemide",
+    "Oral bisphosphonate",
+    "Subcutaneous calcitonin"
+   ],
+   "r": "**Rehydration with IV 0.9% saline**, 3 to 4 L/day.",
+   "a": 0
+  },
+  {
+   "d": "management",
+   "q": "Which drug replaces a bisphosphonate in significant renal impairment?",
+   "o": [
+    "Calcitonin",
+    "Cinacalcet",
+    "Denosumab",
+    "Pamidronate"
+   ],
+   "r": "**Denosumab**, a RANKL inhibitor, is renally safe.",
+   "a": 2
+  },
+  {
+   "d": "management",
+   "q": "Which drug should be stopped in hypercalcaemia?",
+   "o": [
+    "Amlodipine",
+    "Bendroflumethiazide",
+    "Furosemide",
+    "Ramipril"
+   ],
+   "r": "Thiazides raise calcium; stop them (also lithium, calcium and vitamin D).",
+   "a": 1
+  },
+  {
+   "d": "science",
+   "q": "How does denosumab work?",
+   "o": [
+    "Binds hydroxyapatite",
+    "Blocks the PTH receptor",
+    "Monoclonal antibody against RANKL",
+    "Stimulates calcitonin release"
+   ],
+   "r": "It blocks **RANKL**, stopping osteoclast maturation and activation.",
+   "a": 2
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old woman with breast cancer treated 3 years ago has a 2 week history of thirst, polyuria, constipation and new back pain. She is drowsy. Her pulse rate is 104 bpm and BP 108/66 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.36 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "Phosphate",
+     "1.1 mmol/L",
+     "0.80–1.50",
+     ""
+    ],
+    [
+     "PTH",
+     "0.5 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "132 µmol/L",
+     "45–90",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Adrenal insufficiency",
+    "Familial hypocalciuric hypercalcaemia",
+    "Hypercalcaemia of malignancy",
+    "Primary hyperparathyroidism",
+    "Tertiary hyperparathyroidism"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: a high calcium, so look at the PTH."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "breast cancer treated 3 years ago",
+      "thirst, polyuria, constipation",
+      "new back pain",
+      "drowsy"
+     ],
+     "x": "Previous breast cancer, new back pain (bone metastases?), classic hypercalcaemia symptoms."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "High calcium with **suppressed PTH**: **hypercalcaemia of malignancy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Rare cause of mild hypercalcaemia, with low sodium and high potassium."
+      ],
+      [
+       1,
+       "Lifelong, mild, asymptomatic, with normal PTH."
+      ],
+      [
+       3,
+       "PTH would be high or inappropriately normal."
+      ],
+      [
+       4,
+       "Follows chronic kidney disease, with a high PTH."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Hypercalcaemia of malignancy.** High calcium + low PTH + cancer."
+    }
+   ],
+   "a": 2
+  },
+  {
+   "d": "investigation",
+   "stem": "A 70 year old man has a 3 week history of confusion and constipation. He smokes 20 cigarettes a day and has lost weight. His pulse rate is 96 bpm and BP 118/72 mmHg. His adjusted calcium is 3.2 mmol/L and phosphate is low.",
+   "q": "Which is the most appropriate investigation to distinguish the cause of his hypercalcaemia?",
+   "o": [
+    "Bone scan",
+    "Parathyroid hormone",
+    "Serum ACE",
+    "Urinary calcium",
+    "Vitamin D"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'distinguish the cause' question: which test splits the two big causes?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smokes 20 cigarettes a day and has lost weight",
+      "phosphate is low"
+     ],
+     "x": "Malignancy and primary hyperparathyroidism cause 90%; both lower phosphate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**PTH**: suppressed in malignancy, high or normal in hyperparathyroidism."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Finds metastases but does not identify the mechanism."
+      ],
+      [
+       2,
+       "For sarcoidosis, a rarer cause."
+      ],
+      [
+       3,
+       "Used for familial hypocalciuric hypercalcaemia."
+      ],
+      [
+       4,
+       "Not the key test; vitamin D toxicity is rare."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Parathyroid hormone.** PTH is the confirmatory test."
+    }
+   ],
+   "a": 1,
+   "labs": []
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old man with squamous cell lung cancer is drowsy and dehydrated. His temperature is 36.8°C, pulse rate 108 bpm and BP 98/60 mmHg. His mucous membranes are dry.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.5 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "PTH",
+     "0.3 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "155 µmol/L",
+     "60–120",
+     "H"
+    ]
+   ],
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous 0.9% sodium chloride",
+    "Intravenous furosemide",
+    "Intravenous zoledronic acid",
+    "Oral prednisolone",
+    "Subcutaneous denosumab"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of high calcium: what comes first?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "drowsy and dehydrated",
+      "BP 98/60 mmHg",
+      "mucous membranes are dry"
+     ],
+     "x": "Symptomatic, calcium 3.5, dehydrated with a pre-renal AKI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "First-line: **rehydration with IV 0.9% saline**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Worsens dehydration; not first-line."
+      ],
+      [
+       2,
+       "The second step, after rehydration."
+      ],
+      [
+       3,
+       "Steroids (with calcitonin) are for severe refractory cases."
+      ],
+      [
+       4,
+       "An alternative to bisphosphonate, not before fluids."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Intravenous 0.9% sodium chloride.** Fluids first, bisphosphonate second."
+    }
+   ],
+   "a": 0
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old man with squamous cell lung cancer has an adjusted calcium of 3.3 mmol/L, low phosphate and a PTH of 0.4 pmol/L (1.6–6.9). His pulse rate is 92 bpm and BP 124/76 mmHg.",
+   "q": "Which is the most likely mechanism of his low PTH?",
+   "o": [
+    "Negative feedback from high calcium on the parathyroids",
+    "Parathyroid gland infiltration by tumour",
+    "PTHrP blocking PTH synthesis directly",
+    "Renal failure reducing PTH production",
+    "Vitamin D deficiency"
+   ],
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why is PTH suppressed?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "squamous cell lung cancer",
+      "PTH of 0.4 pmol/L"
+     ],
+     "x": "The tumour makes PTHrP, which raises calcium by acting on the PTH receptor."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The parathyroids sense the high calcium and **switch off PTH output**: negative feedback."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Rare; not the reason PTH is low."
+      ],
+      [
+       2,
+       "PTHrP mimics PTH; the suppression is via calcium."
+      ],
+      [
+       3,
+       "Renal failure raises PTH (secondary hyperparathyroidism)."
+      ],
+      [
+       4,
+       "Would raise PTH and lower calcium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Negative feedback from high calcium on the parathyroids.** The axis senses hypercalcaemia."
+    }
+   ],
+   "a": 0,
+   "labs": []
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man has a 2 week history of confusion, abdominal pain and constipation. He has lost 8 kg in 2 months and has a cough. He smokes 25 cigarettes a day. His pulse rate is 104 bpm and BP 112/68 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.38 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "Phosphate",
+     "0.7 mmol/L",
+     "0.80–1.50",
+     "L"
+    ],
+    [
+     "PTH",
+     "0.4 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "142 µmol/L",
+     "60–120",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Addison's disease",
+    "Familial hypocalciuric hypercalcaemia",
+    "Hypercalcaemia of malignancy",
+    "Primary hyperparathyroidism",
+    "Sarcoidosis"
+   ],
+   "e": "Symptomatic hypercalcaemia with a suppressed PTH in a smoker with weight loss is hypercalcaemia of malignancy. Primary hyperparathyroidism has a high or inappropriately normal PTH.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: high calcium, so check the PTH and the story."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confusion, abdominal pain and constipation",
+      "lost 8 kg",
+      "smokes 25 cigarettes a day"
+     ],
+     "x": "Groans and moans; smoker with weight loss and cough."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Calcium 3.38 with **suppressed PTH**: malignancy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Can raise calcium mildly, but would give hyponatraemia and hyperkalaemia."
+      ],
+      [
+       1,
+       "Mild, asymptomatic, normal PTH."
+      ],
+      [
+       3,
+       "PTH would be high or normal."
+      ],
+      [
+       4,
+       "Possible low PTH, but weight loss in a heavy smoker points to cancer."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Hypercalcaemia of malignancy.** High calcium + low PTH."
+    }
+   ],
+   "a": 2,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man has a 3 week history of thirst, polyuria and lethargy. He has haemoptysis and a chest X-ray shows a central mass in the right lung. There are no bone lesions on imaging. His pulse rate is 98 bpm and BP 122/74 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.25 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "Phosphate",
+     "0.66 mmol/L",
+     "0.80–1.50",
+     "L"
+    ],
+    [
+     "PTH",
+     "0.6 pmol/L",
+     "1.6–6.9",
+     "L"
+    ]
+   ],
+   "q": "Which is the most likely cause of his hypercalcaemia?",
+   "o": [
+    "Bone metastases",
+    "Ectopic ACTH secretion",
+    "Parathyroid adenoma",
+    "PTHrP secretion by the tumour",
+    "Tumour production of calcitriol"
+   ],
+   "e": "A central lung mass (squamous cell carcinoma) with no bone lesions, low phosphate and suppressed PTH points to PTHrP. Bone metastases need lytic lesions.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'cause' question: which mechanism fits the tumour and the bloods?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemoptysis",
+      "central mass in the right lung",
+      "no bone lesions"
+     ],
+     "x": "Central lung mass in a smoker = **squamous cell carcinoma**; no bone disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Low phosphate, low PTH, no metastases: **PTHrP**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "There are no bone lesions."
+      ],
+      [
+       1,
+       "Small cell; gives hypokalaemia and Cushing's, not hypercalcaemia."
+      ],
+      [
+       2,
+       "PTH would be high."
+      ],
+      [
+       4,
+       "A lymphoma mechanism, not squamous lung cancer."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. PTHrP secretion by the tumour.** Squamous cell lung cancer = PTHrP."
+    }
+   ],
+   "a": 3,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old woman with metastatic breast cancer is confused and has abdominal pain. Her adjusted calcium is 3.6 mmol/L. Her pulse rate is 88 bpm and BP 116/70 mmHg. An ECG is performed (see item resources).",
+   "visual": {
+    "kind": "ecg",
+    "title": "12-lead ECG",
+    "layout": "12lead",
+    "rhythm": "sinus",
+    "rate": 88,
+    "leads": {},
+    "caption": "Sinus rhythm; the T wave sits close to the QRS."
+   },
+   "q": "Which is the most likely finding on her ECG?",
+   "o": [
+    "Delta waves",
+    "Peaked T waves",
+    "Prolonged QT interval",
+    "Shortened QT interval",
+    "U waves"
+   ],
+   "e": "Hypercalcaemia shortens the cardiac action potential, giving a short QT. A long QT occurs with hypocalcaemia; peaked T waves are hyperkalaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An ECG finding question: link the electrolyte to the ECG."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "metastatic breast cancer",
+      "adjusted calcium is 3.6 mmol/L"
+     ],
+     "x": "Severe hypercalcaemia of malignancy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "High calcium: **short QT**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Wolff-Parkinson-White."
+      ],
+      [
+       1,
+       "Hyperkalaemia."
+      ],
+      [
+       2,
+       "Hypocalcaemia, not hypercalcaemia."
+      ],
+      [
+       4,
+       "Hypokalaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Shortened QT interval.** High calcium = short QT."
+    }
+   ],
+   "a": 3,
+   "labs": []
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man has a 2 month history of severe back pain, tiredness and recurrent chest infections. He is constipated and thirsty. His pulse rate is 92 bpm and BP 128/80 mmHg.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "94 g/L",
+     "130–170",
+     "L"
+    ],
+    [
+     "Adjusted calcium",
+     "3.1 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "Total protein",
+     "98 g/L",
+     "60–80",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "188 µmol/L",
+     "60–120",
+     "H"
+    ],
+    [
+     "PTH",
+     "0.7 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "ALP",
+     "82 IU/L",
+     "30–130",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely underlying malignancy?",
+   "o": [
+    "Multiple myeloma",
+    "Prostate cancer",
+    "Renal cell carcinoma",
+    "Small cell lung cancer",
+    "Squamous cell lung cancer"
+   ],
+   "e": "Bone pain, anaemia, infections, renal impairment and a high total protein with hypercalcaemia and normal ALP is multiple myeloma, which causes hypercalcaemia by direct osteolysis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which cancer? Use the extra bloods."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe back pain",
+      "recurrent chest infections",
+      "constipated and thirsty"
+     ],
+     "x": "CRAB: calcium high, renal impairment, anaemia, bone pain; high protein (paraprotein)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Multiple myeloma**: osteolytic hypercalcaemia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Sclerotic metastases with a high ALP; no high protein."
+      ],
+      [
+       2,
+       "Haematuria and a loin mass; no paraprotein."
+      ],
+      [
+       3,
+       "SIADH and ectopic ACTH, rarely hypercalcaemia."
+      ],
+      [
+       4,
+       "PTHrP, but not anaemia, infections and high protein."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Multiple myeloma.** Hypercalcaemia + anaemia + renal failure + high protein."
+    }
+   ],
+   "a": 0,
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old woman with known lung cancer has a calcium of 3.3 mmol/L and a suppressed PTH. She has been more tired and confused for 10 days. Her pulse rate is 96 bpm and BP 110/68 mmHg.",
+   "q": "Which additional symptom is she most likely to report?",
+   "o": [
+    "Constipation",
+    "Diarrhoea",
+    "Perioral tingling",
+    "Tetany",
+    "Weight gain"
+   ],
+   "e": "Constipation (the 'groans') is classic hypercalcaemia, with polyuria, polydipsia and anorexia. Tetany and perioral tingling are hypocalcaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A symptom question: what does high calcium do?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "calcium of 3.3 mmol/L",
+      "tired and confused"
+     ],
+     "x": "Hypercalcaemia of malignancy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Stones, bones, groans and moans: **constipation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Hypercalcaemia slows the gut, causing constipation."
+      ],
+      [
+       2,
+       "Hypocalcaemia."
+      ],
+      [
+       3,
+       "Hypocalcaemia (carpopedal spasm)."
+      ],
+      [
+       4,
+       "Malignancy and anorexia cause weight loss."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Constipation.** High calcium slows smooth muscle."
+    }
+   ],
+   "a": 0,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man with squamous cell lung cancer has an adjusted calcium of 3.7 mmol/L. Over 3 days he has become more drowsy and his urine output has fallen. His pulse rate is 112 bpm and BP 92/58 mmHg.",
+   "labs": [
+    [
+     "Urea",
+     "21 mmol/L",
+     "2.5–7.8",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "290 µmol/L",
+     "60–120",
+     "H"
+    ],
+    [
+     "Creatinine 1 month ago",
+     "92 µmol/L",
+     "60–120",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Acute kidney injury",
+    "Hepatic encephalopathy",
+    "Hyperkalaemia",
+    "Nephrotic syndrome",
+    "SIADH"
+   ],
+   "e": "Untreated hypercalcaemia causes polyuria and dehydration that progress to acute kidney injury: creatinine has tripled. SIADH would cause hyponatraemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A complication question: what do the new bloods show?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "calcium of 3.7 mmol/L",
+      "urine output has fallen",
+      "BP 92/58 mmHg"
+     ],
+     "x": "Creatinine 92 → 290 and falling urine output."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Dehydration progressing to **acute kidney injury**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No liver disease; drowsiness is from calcium and uraemia."
+      ],
+      [
+       2,
+       "Not given; it is not the main complication."
+      ],
+      [
+       3,
+       "Needs proteinuria and oedema."
+      ],
+      [
+       4,
+       "A small cell feature with low sodium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute kidney injury.** Confusion and dehydration → AKI → arrhythmia → coma."
+    }
+   ],
+   "a": 0,
+   "visual": null
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old woman has a 1 month history of back pain, tiredness and thirst. She has no known cancer. Her pulse rate is 84 bpm and BP 132/80 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.0 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "PTH",
+     "0.6 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "Haemoglobin",
+     "98 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Total protein",
+     "94 g/L",
+     "60–80",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "160 µmol/L",
+     "45–90",
+     "H"
+    ]
+   ],
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Bone densitometry",
+    "Mammography",
+    "Serum ACE",
+    "Serum protein electrophoresis",
+    "Thyroid ultrasound"
+   ],
+   "e": "Low PTH, anaemia, renal impairment and high protein suggest myeloma: protein electrophoresis looks for a paraprotein. Densitometry is for osteoporosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation: the PTH is done, so find the cancer."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "back pain, tiredness and thirst",
+      "no known cancer"
+     ],
+     "x": "Suppressed PTH = malignancy; anaemia + renal failure + high protein = **myeloma**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Serum protein electrophoresis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For osteoporosis; does not find myeloma."
+      ],
+      [
+       1,
+       "Breast cancer is possible, but the bloods point to myeloma."
+      ],
+      [
+       2,
+       "Sarcoidosis; does not fit anaemia and high protein."
+      ],
+      [
+       4,
+       "Parathyroid imaging is for hyperparathyroidism; PTH is low."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Serum protein electrophoresis.** Suspected myeloma = electrophoresis."
+    }
+   ],
+   "a": 3,
+   "visual": null
+  },
+  {
+   "d": "investigation",
+   "stem": "A 62 year old man is confused and constipated. His adjusted calcium is 3.4 mmol/L. He smokes and has lost weight. His pulse rate is 100 bpm and BP 114/70 mmHg.",
+   "q": "Which is the most appropriate investigation to confirm the cause of his hypercalcaemia?",
+   "o": [
+    "Bone scan",
+    "Chest X-ray",
+    "Parathyroid hormone",
+    "Serum phosphate",
+    "Technetium sestamibi scan"
+   ],
+   "e": "PTH is the key confirmatory test: suppressed in malignancy, raised or inappropriately normal in primary hyperparathyroidism. Phosphate is low in both.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'confirm the cause' question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smokes and has lost weight",
+      "adjusted calcium is 3.4 mmol/L"
+     ],
+     "x": "Probably malignant, but the test that confirms the mechanism comes first."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**PTH**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Finds metastases but does not confirm the mechanism."
+      ],
+      [
+       1,
+       "May show a tumour, but does not confirm why calcium is high."
+      ],
+      [
+       3,
+       "Low in both PTHrP and hyperparathyroidism."
+      ],
+      [
+       4,
+       "Localises a parathyroid adenoma once PTH is high."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Parathyroid hormone.** Low PTH = malignancy."
+    }
+   ],
+   "a": 2,
+   "labs": [],
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 68 year old woman with metastatic breast cancer is drowsy. Her adjusted calcium is 3.5 mmol/L. She takes bendroflumethiazide. Her temperature is 36.7°C, pulse rate 106 bpm and BP 100/62 mmHg. Her mucous membranes are dry.",
+   "labs": [
+    [
+     "Creatinine",
+     "118 µmol/L",
+     "45–90",
+     "H"
+    ],
+    [
+     "Potassium",
+     "3.8 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous 0.9% sodium chloride",
+    "Intravenous furosemide",
+    "Intravenous pamidronate",
+    "Oral fluids and review in 1 week",
+    "Subcutaneous calcitonin"
+   ],
+   "e": "Symptomatic hypercalcaemia above 3.0 needs IV 0.9% saline first (and the thiazide stopped). Bisphosphonates come after rehydration.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: severity and hydration."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "drowsy",
+      "adjusted calcium is 3.5 mmol/L",
+      "mucous membranes are dry",
+      "bendroflumethiazide"
+     ],
+     "x": "Above 3.0, symptomatic and dry. Stop the thiazide."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV 0.9% saline**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Dehydrates her further."
+      ],
+      [
+       2,
+       "Second step, after rehydration."
+      ],
+      [
+       3,
+       "Only for mild asymptomatic hypercalcaemia below 3.0."
+      ],
+      [
+       4,
+       "Reserved for severe refractory cases."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Intravenous 0.9% sodium chloride.** Fluids before bisphosphonate."
+    }
+   ],
+   "a": 0,
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old man with squamous cell lung cancer has received 4 litres of intravenous 0.9% saline over 24 hours. His adjusted calcium has fallen from 3.4 to 3.1 mmol/L. He is less drowsy. His pulse rate is 88 bpm and BP 126/76 mmHg.",
+   "labs": [
+    [
+     "Creatinine",
+     "96 µmol/L",
+     "60–120",
+     ""
+    ],
+    [
+     "eGFR",
+     "68 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Intravenous furosemide",
+    "Intravenous zoledronic acid",
+    "Oral alendronic acid",
+    "Oral prednisolone",
+    "Parathyroidectomy"
+   ],
+   "e": "After rehydration, an IV bisphosphonate (zoledronic acid or pamidronate) inhibits osteoclasts. His renal function is normal, so no need for denosumab.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step: fluids are done, what comes second?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "4 litres of intravenous 0.9% saline",
+      "fallen from 3.4 to 3.1 mmol/L"
+     ],
+     "x": "Rehydrated, calcium still raised, kidneys fine."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV bisphosphonate**: zoledronic acid."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not part of standard management."
+      ],
+      [
+       2,
+       "An osteoporosis drug; too slow and weak here."
+      ],
+      [
+       3,
+       "Steroids (with calcitonin) are for severe or refractory cases."
+      ],
+      [
+       4,
+       "For primary hyperparathyroidism; PTH is suppressed here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Intravenous zoledronic acid.** Second step after fluids."
+    }
+   ],
+   "a": 1,
+   "visual": null
+  },
+  {
+   "d": "management",
+   "stem": "A 75 year old woman with metastatic renal cell carcinoma has an adjusted calcium of 3.3 mmol/L despite 48 hours of intravenous 0.9% saline. Her pulse rate is 84 bpm and BP 130/78 mmHg.",
+   "labs": [
+    [
+     "Creatinine",
+     "265 µmol/L",
+     "45–90",
+     "H"
+    ],
+    [
+     "eGFR",
+     "16 mL/min/1.73m²",
+     ">60",
+     "L"
+    ]
+   ],
+   "q": "Which is the most appropriate treatment to lower her calcium?",
+   "o": [
+    "Cinacalcet",
+    "Denosumab",
+    "Intravenous pamidronate",
+    "Intravenous zoledronic acid",
+    "Oral bendroflumethiazide"
+   ],
+   "e": "Bisphosphonates are contraindicated in significant renal impairment; denosumab (RANKL inhibitor) is renally safe and preferred.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Second-line treatment: check the kidneys first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "despite 48 hours of intravenous 0.9% saline",
+      "renal cell carcinoma"
+     ],
+     "x": "Rehydrated but still high; eGFR 16 is significant renal impairment."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Denosumab**, not a bisphosphonate."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A calcimimetic for hyperparathyroidism; PTH is not the driver."
+      ],
+      [
+       2,
+       "A bisphosphonate: contraindicated with this eGFR."
+      ],
+      [
+       3,
+       "A bisphosphonate: contraindicated with this eGFR."
+      ],
+      [
+       4,
+       "Raises calcium; it should be stopped."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Denosumab.** Renal impairment = denosumab."
+    }
+   ],
+   "a": 1,
+   "visual": null
+  },
+  {
+   "d": "science",
+   "stem": "A 70 year old man with hypercalcaemia of malignancy is given intravenous zoledronic acid after rehydration. His pulse rate is 82 bpm and BP 128/78 mmHg. His calcium falls to normal over 4 days.",
+   "q": "Which is the most likely mechanism of action of this drug?",
+   "o": [
+    "Activation of the calcium-sensing receptor",
+    "Binding hydroxyapatite and inducing osteoclast apoptosis",
+    "Blocking PTHrP at the PTH receptor",
+    "Increasing renal calcium excretion",
+    "Monoclonal antibody against RANKL"
+   ],
+   "e": "Bisphosphonates bind bone hydroxyapatite, are ingested by osteoclasts and induce their apoptosis, reducing resorption. Anti-RANKL is denosumab.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A drug mechanism question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "zoledronic acid",
+      "falls to normal over 4 days"
+     ],
+     "x": "A bisphosphonate; the slow fall fits osteoclast suppression."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Binds **hydroxyapatite**, taken up by osteoclasts, causes **apoptosis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cinacalcet."
+      ],
+      [
+       2,
+       "No drug in routine use does this."
+      ],
+      [
+       3,
+       "That is the effect of saline (and loop diuretics)."
+      ],
+      [
+       4,
+       "Denosumab."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Binding hydroxyapatite and inducing osteoclast apoptosis.**"
+    }
+   ],
+   "a": 1,
+   "labs": [],
+   "visual": null
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is hypercalcaemia of malignancy, and what are its two main mechanisms?",
+    "tip": "Exam thinking: humoral vs local bone.",
+    "points": [
+     {
+      "p": "Raised calcium from cancer, usually osteoclast-mediated bone resorption",
+      "k": [
+       [
+        "osteoclast",
+        "bone resorption",
+        "cancer",
+        "malignan"
+       ]
+      ],
+      "why": "Bone is where the calcium comes from."
+     },
+     {
+      "p": "PTHrP secretion by the tumour",
+      "k": [
+       [
+        "pthrp",
+        "pth-related",
+        "parathyroid hormone related",
+        "parathyroid hormone-related"
+       ]
+      ],
+      "why": "Squamous cell lung cancer is the classic."
+     },
+     {
+      "p": "Direct osteolysis by bone metastases",
+      "k": [
+       [
+        "osteoly",
+        "metasta",
+        "lytic"
+       ]
+      ],
+      "why": "Myeloma and breast cancer."
+     },
+     {
+      "p": "With primary hyperparathyroidism, causes 90% of hypercalcaemia",
+      "k": [
+       [
+        "90",
+        "hyperparathyroid"
+       ]
+      ],
+      "why": "So PTH is the test that separates them."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which cancers cause hypercalcaemia, and by which mechanism?",
+    "tip": "Exam thinking: myeloma is not PTHrP.",
+    "points": [
+     {
+      "p": "Lung cancer, especially squamous cell: PTHrP",
+      "k": [
+       [
+        "squamous"
+       ]
+      ],
+      "why": "Small cell causes SIADH and ACTH instead."
+     },
+     {
+      "p": "Breast cancer: bone metastases",
+      "k": [
+       [
+        "breast"
+       ]
+      ],
+      "why": "Local osteolysis."
+     },
+     {
+      "p": "Multiple myeloma: direct osteolytic bone destruction",
+      "k": [
+       [
+        "myeloma"
+       ]
+      ],
+      "why": "Not PTHrP."
+     },
+     {
+      "p": "Renal cancer: PTHrP",
+      "k": [
+       [
+        "renal",
+        "kidney"
+       ]
+      ],
+      "why": "Renal cell carcinoma is another PTHrP tumour."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the symptoms and the key biochemical clue?",
+    "tip": "Exam thinking: stones, bones, groans and psychiatric moans.",
+    "points": [
+     {
+      "p": "Stones, bones, groans, psychiatric moans",
+      "k": [
+       [
+        "stone"
+       ],
+       [
+        "bone"
+       ],
+       [
+        "groan",
+        "abdominal"
+       ],
+       [
+        "moan",
+        "confus",
+        "psychiatric"
+       ]
+      ],
+      "why": "Kidney stones, bone pain, abdominal pain, confusion."
+     },
+     {
+      "p": "Polyuria and polydipsia",
+      "k": [
+       [
+        "polyuria",
+        "polydipsia",
+        "thirst"
+       ]
+      ],
+      "why": "Calcium causes nephrogenic diabetes insipidus."
+     },
+     {
+      "p": "Constipation, anorexia, lethargy, dehydration, weakness",
+      "k": [
+       [
+        "constipat",
+        "anorexi",
+        "letharg",
+        "dehydrat",
+        "weak"
+       ]
+      ],
+      "why": "Constipation is the commonest stem symptom."
+     },
+     {
+      "p": "Low (suppressed) PTH",
+      "k": [
+       [
+        "pth"
+       ],
+       [
+        "low",
+        "suppress"
+       ]
+      ],
+      "why": "Primary hyperparathyroidism has a high or normal PTH."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What complications occur if it is left untreated?",
+    "tip": "Exam thinking: rising creatinine in a stem is AKI.",
+    "points": [
+     {
+      "p": "Worsening confusion and dehydration",
+      "k": [
+       [
+        "confus",
+        "dehydrat"
+       ]
+      ],
+      "why": "Polyuria drives the dehydration."
+     },
+     {
+      "p": "Acute kidney injury",
+      "k": [
+       [
+        "aki",
+        "kidney injury",
+        "renal failure"
+       ]
+      ],
+      "why": "Look for creatinine rising from baseline."
+     },
+     {
+      "p": "Cardiac arrhythmias",
+      "k": [
+       [
+        "arrhythm"
+       ]
+      ],
+      "why": "Short QT."
+     },
+     {
+      "p": "Coma",
+      "k": [
+       [
+        "coma"
+       ]
+      ],
+      "why": "The end point of untreated disease."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which investigations confirm the diagnosis and find the cause?",
+    "tip": "Exam thinking: PTH first, then look for the cancer.",
+    "points": [
+     {
+      "p": "PTH: suppressed in malignancy",
+      "k": [
+       [
+        "pth",
+        "parathyroid hormone"
+       ]
+      ],
+      "why": "High or normal in primary hyperparathyroidism."
+     },
+     {
+      "p": "Raised calcium with low phosphate",
+      "k": [
+       [
+        "phosphate"
+       ]
+      ],
+      "why": "Low phosphate in both; not discriminating."
+     },
+     {
+      "p": "ECG: shortened QT",
+      "k": [
+       [
+        "ecg"
+       ],
+       [
+        "qt"
+       ]
+      ],
+      "why": "Do it alongside the bloods."
+     },
+     {
+      "p": "CT to find the cancer",
+      "k": [
+       [
+        "ct"
+       ]
+      ],
+      "why": "Staging the primary."
+     },
+     {
+      "p": "Protein electrophoresis if myeloma suspected",
+      "k": [
+       [
+        "electrophoresis"
+       ]
+      ],
+      "why": "Looks for a paraprotein."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage mild and significant hypercalcaemia of malignancy?",
+    "tip": "Exam thinking: fluids first, always.",
+    "points": [
+     {
+      "p": "Mild (<3.0, asymptomatic): stop thiazides, lithium, calcium and vitamin D; oral fluids",
+      "k": [
+       [
+        "thiazide",
+        "bendroflumethiazide",
+        "lithium"
+       ]
+      ],
+      "why": "Calcium-raising drugs come off first."
+     },
+     {
+      "p": "Significant: IV 0.9% saline, about 3–4 L/day",
+      "k": [
+       [
+        "saline",
+        "0.9",
+        "sodium chloride"
+       ]
+      ],
+      "why": "This is the first-line answer in the exam."
+     },
+     {
+      "p": "Then IV bisphosphonate: zoledronic acid or pamidronate",
+      "k": [
+       [
+        "bisphosphonate",
+        "zoledron",
+        "pamidron"
+       ]
+      ],
+      "why": "Only after rehydration."
+     },
+     {
+      "p": "Significant renal impairment: denosumab",
+      "k": [
+       [
+        "denosumab"
+       ]
+      ],
+      "why": "Bisphosphonates are contraindicated."
+     },
+     {
+      "p": "Severe or refractory: calcitonin plus steroids",
+      "k": [
+       [
+        "calcitonin"
+       ]
+      ],
+      "why": "Acts fast but briefly."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does PTHrP raise calcium, and why is PTH low?",
+    "tip": "Exam thinking: PTHrP mimics PTH.",
+    "points": [
+     {
+      "p": "PTHrP acts on the PTH receptor: osteoclast resorption and renal calcium reabsorption",
+      "k": [
+       [
+        "receptor",
+        "mimic"
+       ],
+       [
+        "osteoclast",
+        "reabsor",
+        "bone"
+       ]
+      ],
+      "why": "Same actions as PTH."
+     },
+     {
+      "p": "Suppresses phosphate reabsorption, so phosphate is low",
+      "k": [
+       [
+        "phosphate"
+       ]
+      ],
+      "why": "Mimics primary hyperparathyroidism."
+     },
+     {
+      "p": "Native PTH is suppressed by negative feedback from high calcium",
+      "k": [
+       [
+        "feedback",
+        "suppress",
+        "switch"
+       ]
+      ],
+      "why": "The axis senses the calcium."
+     },
+     {
+      "p": "Metastases release calcium via RANKL and IL-6 activating osteoclasts",
+      "k": [
+       [
+        "rankl",
+        "il-6",
+        "il6",
+        "cytokine"
+       ]
+      ],
+      "why": "Local osteolysis."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How do bisphosphonates and denosumab work, and why does the QT shorten?",
+    "tip": "Exam thinking: drug mechanism and ECG physiology.",
+    "points": [
+     {
+      "p": "Bisphosphonates bind hydroxyapatite, are ingested by osteoclasts and cause apoptosis",
+      "k": [
+       [
+        "hydroxyapatite",
+        "apoptosis"
+       ]
+      ],
+      "why": "Effect builds over 2 to 4 days."
+     },
+     {
+      "p": "Denosumab is a monoclonal antibody against RANKL",
+      "k": [
+       [
+        "rankl"
+       ]
+      ],
+      "why": "Blocks osteoclast maturation and activation."
+     },
+     {
+      "p": "Denosumab is renally safe (not cleared by kidneys)",
+      "k": [
+       [
+        "renal",
+        "kidney"
+       ]
+      ],
+      "why": "So it is preferred in renal impairment."
+     },
+     {
+      "p": "High calcium shortens the cardiac action potential: short QT",
+      "k": [
+       [
+        "action potential"
+       ]
+      ],
+      "why": "Low calcium does the opposite."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "hypercalcaemia": "A raised blood calcium, above about 2.6 mmol/L.",
+  "adjusted calcium": "Total calcium corrected for the albumin level; the value used to make decisions.",
+  "PTH": "Parathyroid hormone: raises calcium via bone, kidney and vitamin D activation.",
+  "PTHrP": "Parathyroid hormone-related protein: made by some tumours, acts on the PTH receptor to raise calcium.",
+  "primary hyperparathyroidism": "Overactive parathyroid (usually an adenoma) causing high calcium with high or normal PTH.",
+  "osteoclast": "Bone cell that breaks down bone and releases calcium.",
+  "osteolysis": "Destruction of bone, as by metastases or myeloma.",
+  "osteolytic": "Causing bone destruction, seen as lytic lesions on imaging.",
+  "bone resorption": "Breakdown of bone by osteoclasts, releasing calcium into the blood.",
+  "metastases": "Secondary deposits of cancer spread from the original site.",
+  "multiple myeloma": "Cancer of plasma cells causing bone destruction, anaemia, renal failure and a paraprotein.",
+  "paraprotein": "A single abnormal antibody made in excess by a plasma cell clone, as in myeloma.",
+  "squamous cell lung cancer": "Central lung cancer strongly linked to smoking and known for PTHrP secretion.",
+  "renal cell carcinoma": "The commonest kidney cancer; can secrete PTHrP.",
+  "RANKL": "Signal molecule that drives osteoclast formation and activation.",
+  "IL-6": "Interleukin 6, a cytokine that activates osteoclasts in myeloma and metastases.",
+  "hydroxyapatite": "The calcium phosphate mineral that makes bone hard.",
+  "bisphosphonate": "Drug that binds bone and kills osteoclasts, reducing bone resorption.",
+  "zoledronic acid": "Potent IV bisphosphonate used after rehydration in hypercalcaemia of malignancy.",
+  "pamidronate": "IV bisphosphonate used in hypercalcaemia of malignancy.",
+  "denosumab": "Monoclonal antibody against RANKL; lowers calcium and is safe in renal impairment.",
+  "calcitonin": "Hormone that rapidly but briefly lowers calcium; used with steroids in severe cases.",
+  "bendroflumethiazide": "Thiazide diuretic that reduces calcium excretion; stop it in hypercalcaemia.",
+  "thiazides": "Diuretics that raise blood calcium by reducing its renal excretion.",
+  "lithium": "Mood stabiliser that can raise calcium and PTH.",
+  "polyuria": "Passing large volumes of urine.",
+  "polydipsia": "Excessive thirst and drinking.",
+  "QT interval": "ECG time from start of QRS to end of T wave; short in hypercalcaemia.",
+  "action potential": "The electrical cycle of a heart cell; hypercalcaemia shortens it.",
+  "protein electrophoresis": "Blood test separating proteins to detect a paraprotein band in myeloma.",
+  "AKI": "Acute kidney injury: a rapid fall in kidney function with rising creatinine.",
+  "phosphate": "Mineral excreted more under PTH or PTHrP action, so it falls.",
+  "ALP": "Alkaline phosphatase: raised by bone building; often normal in myeloma.",
+  "haemoptysis": "Coughing up blood.",
+  "eGFR": "Estimated glomerular filtration rate: a measure of kidney function.",
+  "CT": "Computed tomography: cross-sectional X-ray imaging used to find and stage cancer.",
+  "apoptosis": "Programmed cell death."
+ }
+}

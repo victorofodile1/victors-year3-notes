@@ -1,0 +1,2255 @@
+{
+ "id": "septic-arthritis",
+ "patient": {
+  "name": "Patricia Mensah",
+  "age": 68,
+  "sex": "F",
+  "setting": "Emergency Department",
+  "complaint": "Hot, swollen right knee and fever for 2 days; cannot walk on it",
+  "background": [
+   "Rheumatoid arthritis for 15 years",
+   "Takes methotrexate weekly and prednisolone 5 mg daily",
+   "Right knee steroid injection 3 weeks ago",
+   "Lives alone in Lewisham; no drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a single hot, swollen joint and fever, or 'Which is the most likely causative organism?' where age, IV drug use or sexual history picks the bug.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Patricia, 68, has **rheumatoid arthritis** on methotrexate and prednisolone.",
+      "Two days of a **hot, swollen right knee**.",
+      "She cannot bear weight; she feels shivery and sweaty.",
+      "Knee injected with steroid 3 weeks ago."
+     ],
+     "vitals": {
+      "T": "38.9°C",
+      "HR": "112 bpm",
+      "BP": "98/60 mmHg",
+      "RR": "20 /min",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A single hot knee plus fever: think **septic arthritis** first. In an older patient the likeliest organism is **Staph aureus**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia has three risk factors: **RA**, immunosuppression with **methotrexate and steroids**, and a recent joint **injection**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Right knee: **hot, red, tense effusion**.",
+      "Any passive movement is agonising; range of movement markedly reduced.",
+      "Other joints at her usual RA baseline.",
+      "She is sweaty, with low-normal blood pressure."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Hot, swollen, immobile, tender joint, unable to weight-bear, plus **systemic signs** (fever, sweating, BP 98/60): the classic picture."
+    },
+    {
+     "type": "ask",
+     "q": "Patricia's RA usually flares in her hands. What is the safest working diagnosis for this knee?",
+     "o": [
+      "Gout",
+      "RA flare",
+      "Septic arthritis",
+      "Osteoarthritis"
+     ],
+     "a": 2,
+     "r": "A single hot joint with fever in an immunosuppressed patient is **septic arthritis until proven otherwise**. Never call it an RA flare without aspirating."
+    },
+    {
+     "type": "trap",
+     "text": "Do not blame a hot joint on the patient's known arthritis. RA patients on **methotrexate or steroids** are exactly the ones who get septic joints, and steroids can blunt the fever."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "The organism follows the patient: **IV drug use** points to Pseudomonas, a recent sore throat or skin infection to Strep, a young sexually active patient to **gonococcus**."
+    },
+    {
+     "type": "compare",
+     "title": "Who gets which organism",
+     "head": [
+      "Patient",
+      "Likely organism",
+      "Clue in the stem"
+     ],
+     "rows": [
+      [
+       "Elderly, RA, prosthetic joint",
+       "Staphylococcus aureus (MSSA)",
+       "Most common overall"
+      ],
+      [
+       "IV drug user",
+       "Pseudomonas aeruginosa",
+       "Confusion, sweating"
+      ],
+      [
+       "After pharyngitis, trauma, skin infection",
+       "Streptococcus species",
+       "Preceding infection"
+      ],
+      [
+       "Young, sexually active",
+       "Neisseria gonorrhoeae",
+       "Urethritis; Gram-negative diplococci"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Patricia is an adult, but if a **child** came in limping, Kocher's criteria would sort septic arthritis from transient synovitis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Kocher's criteria (child with a limp)",
+      "min": 0,
+      "max": 4,
+      "unit": "points",
+      "bands": [
+       [
+        0,
+        1,
+        "0–1: low (≤3%)",
+        "ok"
+       ],
+       [
+        1,
+        2.5,
+        "2: 40%",
+        "warn"
+       ],
+       [
+        2.5,
+        4,
+        "3–4: 93–99%",
+        "bad"
+       ]
+      ],
+      "value": 3,
+      "label": "Example child: 3 points",
+      "caption": "One point each: non-weight bearing, fever >38.5°C, WCC >12×10⁹/L, ESR >40 mm/hr. Three points means a 93% probability."
+     },
+     "text": "Count the four criteria; each point sharply raises the probability."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kocher's criteria are the named rule to know for **children**: score 0 to 4, higher is more likely septic."
+    },
+    {
+     "type": "pearl",
+     "text": "A child with a new limp, fever above 38.5°C and refusal to bear weight is **septic arthritis** until aspirated. Transient synovitis is the diagnosis of exclusion."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (joint aspiration before antibiotics) or a synovial fluid result to interpret against crystals.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Patricia is febrile and the registrar wants to start IV antibiotics now. What should happen first?",
+     "o": [
+      "Blood cultures only",
+      "Joint aspiration for Gram stain and culture",
+      "MRI of the knee",
+      "Plain X-ray of the knee"
+     ],
+     "a": 1,
+     "r": "**Aspirate first**, then give antibiotics, so the culture identifies the organism. Antibiotics first can sterilise the fluid."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's knee is aspirated under **sterile** conditions before her first antibiotic dose. Culture of that fluid is the **gold standard**."
+    },
+    {
+     "type": "labs",
+     "title": "Synovial fluid and bloods",
+     "rows": [
+      [
+       "Synovial fluid appearance",
+       "Turbid, yellow",
+       "Clear, straw",
+       "H"
+      ],
+      [
+       "Synovial WCC",
+       "85,000 /mm³",
+       "<200",
+       "H"
+      ],
+      [
+       "Neutrophils",
+       "94%",
+       "<25%",
+       "H"
+      ],
+      [
+       "Crystals",
+       "None seen",
+       "None",
+       ""
+      ],
+      [
+       "Gram stain",
+       "Gram-positive cocci in clusters",
+       "None",
+       "H"
+      ],
+      [
+       "CRP",
+       "212 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "WCC (blood)",
+       "17.8 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ]
+     ],
+     "text": "Purulent fluid, neutrophils above 90%, no crystals and cocci in clusters: **Staph aureus** septic arthritis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Synovial fluid white cell count",
+      "min": 0,
+      "max": 100000,
+      "unit": "/mm³",
+      "bands": [
+       [
+        0,
+        2000,
+        "normal or OA",
+        "ok"
+       ],
+       [
+        2000,
+        10000,
+        "inflammatory (RA, gout)",
+        "warn"
+       ],
+       [
+        10000,
+        100000,
+        "septic: usually >10,000",
+        "bad"
+       ]
+      ],
+      "value": 85000,
+      "label": "Patricia 85,000",
+      "caption": "Septic fluid usually has a WCC above 10,000/mm³ (can reach 100,000) with neutrophils above 90%."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia's fluid is purulent with **94% neutrophils**. A negative Gram stain would **not** have excluded infection: it is negative in 30 to 50%."
+    },
+    {
+     "type": "compare",
+     "title": "Reading the aspirate",
+     "head": [
+      "Fluid",
+      "Crystals",
+      "Most likely"
+     ],
+     "rows": [
+      [
+       "Turbid, neutrophils >90%, Gram stain or culture positive",
+       "None",
+       "Septic arthritis"
+      ],
+      [
+       "Inflammatory, culture negative",
+       "Negatively birefringent needles",
+       "Gout"
+      ],
+      [
+       "Inflammatory, culture negative",
+       "Positively birefringent rhomboids",
+       "Pseudogout"
+      ],
+      [
+       "Clear, low WCC",
+       "None",
+       "Osteoarthritis"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Crystals do not rule out infection: gout and sepsis can coexist. And a **negative Gram stain** never excludes septic arthritis; wait for culture and treat on clinical grounds."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' with the answer IV flucloxacillin after aspiration, vancomycin if penicillin allergic or MRSA risk, and washout when it fails to settle.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Patricia's knee cartilage is being destroyed by the hour. Treat it as an **emergency**: analgesia, rest the joint, act fast."
+    },
+    {
+     "type": "flow",
+     "title": "Suspected septic joint: the order matters",
+     "nodes": [
+      "Urgent orthopaedic review",
+      "Aspirate the joint (sterile)",
+      "Send for urgent Gram stain and culture",
+      "Start IV flucloxacillin",
+      "Washout or drainage of the joint",
+      "IV ≥2 weeks, then oral 4–6 weeks"
+     ],
+     "caption": "Aspiration comes before the first antibiotic dose; do not let it delay antibiotics for long."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia has **no penicillin allergy** and no MRSA history, so after aspiration she starts **IV flucloxacillin**."
+    },
+    {
+     "type": "ask",
+     "q": "If Patricia had a history of anaphylaxis to penicillin, which IV antibiotic would replace flucloxacillin?",
+     "o": [
+      "Amoxicillin",
+      "Co-amoxiclav",
+      "Vancomycin",
+      "Benzylpenicillin"
+     ],
+     "a": 2,
+     "r": "**Vancomycin** covers Staph aureus including MRSA and is not a beta-lactam. The other three are all penicillins."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Antibiotics alone are not enough: the pus must come out. Patricia goes for **joint washout/drainage**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Patricia's response to treatment",
+      "x": [
+       "Day 0",
+       "Day 2",
+       "Day 4",
+       "Day 7",
+       "Day 14"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "CRP (mg/L)",
+        "values": [
+         212,
+         180,
+         96,
+         38,
+         9
+        ]
+       },
+       {
+        "name": "Blood WCC (×10⁹/L)",
+        "values": [
+         17.8,
+         15.2,
+         11.4,
+         8.6,
+         7.1
+        ]
+       }
+      ],
+      "caption": "CRP falling and fever settling means it is working. If fevers continue and CRP does not fall, go back for washout."
+     },
+     "text": "Her fever settled by day 4. Track inflammatory markers to decide if treatment is working."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Had Patricia's fever and CRP not settled, or the effusion kept coming back after aspiration, she would need **(repeat) surgical washout**."
+    },
+    {
+     "type": "pearl",
+     "text": "Course length is a favourite: IV antibiotics for **at least 2 weeks**, then oral for a further **4 to 6 weeks**."
+    },
+    {
+     "type": "trap",
+     "text": "Do not inject steroid into a hot joint until infection is excluded. Patricia's recent injection may be how the bacteria got in."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the route of infection, why cartilage is destroyed so fast, or why a prosthetic joint infection is so hard to clear (biofilm).",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's bacteria probably arrived by **direct inoculation** from her steroid injection; blood-borne spread is the other common route."
+    },
+    {
+     "type": "flow",
+     "title": "How a septic joint destroys cartilage",
+     "nodes": [
+      "Bacteria enter the joint",
+      "Bacteria multiply in synovial fluid",
+      "Intense neutrophil influx",
+      "Bacterial toxins and host proteases released",
+      "Articular cartilage degraded within days",
+      "Irreversible joint damage"
+     ],
+     "caption": "The host's own enzymes do much of the damage, which is why speed matters."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "This is why Patricia's knee is an emergency: **proteolytic enzymes** and toxins chew through cartilage fast."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Patricia had a **knee replacement**, bacteria could hide in a **biofilm** on the metal, out of reach of antibiotics and neutrophils."
+    },
+    {
+     "type": "ask",
+     "q": "Why does a prosthetic joint infection often need surgery rather than antibiotics alone?",
+     "o": [
+      "Antibiotics cannot enter synovial fluid",
+      "Biofilm on the implant shields the bacteria",
+      "The prosthesis causes an allergy",
+      "Prosthetic infections are always fungal"
+     ],
+     "a": 1,
+     "r": "A **biofilm** on the implant surface protects bacteria from antibiotics and immune cells, so washout or revision is often needed."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kocher's criteria combine **systemic inflammation** (fever, ESR, WCC) with **function** (non-weight bearing) to estimate pre-test probability in children."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Gonococcal arthritis starts as a **disseminated** infection: flitting joint pains, tenosynovitis and skin pustules, then settles in one joint."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Synovial neutrophil percentage",
+      "min": 0,
+      "max": 100,
+      "unit": "%",
+      "bands": [
+       [
+        0,
+        25,
+        "normal",
+        "ok"
+       ],
+       [
+        25,
+        90,
+        "inflammatory",
+        "warn"
+       ],
+       [
+        90,
+        100,
+        "septic",
+        "bad"
+       ]
+      ],
+      "value": 94,
+      "label": "Patricia 94%",
+      "caption": "A neutrophil-dominated fluid is the intense response that releases cartilage-destroying enzymes."
+     }
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which joint is most commonly affected by septic arthritis?",
+   "o": [
+    "Hip",
+    "Knee",
+    "Shoulder",
+    "Wrist"
+   ],
+   "a": 1,
+   "r": "The **knee** is the commonest site."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism most commonly causes septic arthritis in elderly patients?",
+   "o": [
+    "Escherichia coli",
+    "Neisseria gonorrhoeae",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus"
+   ],
+   "a": 3,
+   "r": "**Staph aureus**, especially MSSA."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism is the commonest cause in young, sexually active patients?",
+   "o": [
+    "Neisseria gonorrhoeae",
+    "Staphylococcus epidermidis",
+    "Streptococcus pneumoniae",
+    "Chlamydia trachomatis"
+   ],
+   "a": 0,
+   "r": "**Gonococcus**: Gram-negative diplococci, often with urethritis."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is NOT one of Kocher's criteria?",
+   "o": [
+    "Fever >38.5°C",
+    "ESR >40 mm/hr",
+    "CRP >20 mg/L",
+    "Non-weight bearing"
+   ],
+   "a": 2,
+   "r": "The four are non-weight bearing, fever >38.5°C, WCC >12×10⁹/L and ESR >40. CRP is not one."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard investigation for septic arthritis?",
+   "o": [
+    "Blood cultures",
+    "CRP",
+    "MRI",
+    "Joint aspiration with culture"
+   ],
+   "a": 3,
+   "r": "**Synovial fluid culture** from aspiration confirms it."
+  },
+  {
+   "d": "investigation",
+   "q": "In roughly what proportion of septic arthritis is the Gram stain negative?",
+   "o": [
+    "Under 5%",
+    "30–50%",
+    "70–80%",
+    "Over 90%"
+   ],
+   "a": 1,
+   "r": "Negative in **30 to 50%**, so it cannot exclude infection."
+  },
+  {
+   "d": "management",
+   "q": "What is the first-line empirical antibiotic?",
+   "o": [
+    "Oral amoxicillin",
+    "IV ceftriaxone",
+    "IV flucloxacillin",
+    "IV gentamicin"
+   ],
+   "a": 2,
+   "r": "**IV flucloxacillin**; vancomycin if penicillin allergic or MRSA risk."
+  },
+  {
+   "d": "management",
+   "q": "How long is the usual antibiotic course?",
+   "o": [
+    "5 days oral",
+    "2 weeks oral",
+    "At least 2 weeks IV, then 4–6 weeks oral",
+    "6 months IV"
+   ],
+   "a": 2,
+   "r": "At least **2 weeks IV**, then **4 to 6 weeks oral**."
+  },
+  {
+   "d": "science",
+   "q": "Why are prosthetic joints especially vulnerable to persistent infection?",
+   "o": [
+    "Bacteria form biofilms on the implant",
+    "Implants raise synovial glucose",
+    "Metal blocks neutrophil chemotaxis",
+    "Implants are always colonised at surgery"
+   ],
+   "a": 0,
+   "r": "**Biofilm** protects bacteria from antibiotics and immune defences."
+  },
+  {
+   "d": "science",
+   "q": "What mainly destroys the cartilage in septic arthritis?",
+   "o": [
+    "Urate crystals",
+    "Pannus formation",
+    "Bacterial toxins and host proteolytic enzymes",
+    "Osteophytes"
+   ],
+   "a": 2,
+   "r": "Neutrophil and bacterial **enzymes** degrade cartilage rapidly."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man has a 2 day history of a painful, swollen left knee. He has rheumatoid arthritis and takes methotrexate. He cannot bear weight. His temperature is 38.7°C. The knee is hot and red with a large effusion, and passive movement is very painful. Synovial fluid is turbid. No crystals are seen.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Gout",
+    "Osteoarthritis",
+    "Pseudogout",
+    "Rheumatoid arthritis flare",
+    "Septic arthritis"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for a diagnosis of a single hot joint: infection versus crystals versus flare."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rheumatoid arthritis and takes methotrexate",
+      "cannot bear weight",
+      "38.7°C",
+      "hot and red",
+      "turbid",
+      "No crystals are seen"
+     ],
+     "x": "Immunosuppressed RA patient, fever, hot immobile joint, turbid fluid, no crystals."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Fever plus one hot joint in an immunosuppressed patient: **septic arthritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No crystals were seen; gout needs negatively birefringent needles."
+      ],
+      [
+       1,
+       "OA does not cause fever or turbid fluid."
+      ],
+      [
+       2,
+       "No crystals; pseudogout needs positively birefringent rhomboids."
+      ],
+      [
+       3,
+       "An RA flare is usually polyarticular; fever plus a single turbid joint is infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Septic arthritis.** Rule: monoarthritis + fever + no crystals = septic until proven otherwise."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 45 year old woman has a 1 day history of a hot, swollen right knee. She is unable to bear weight. Her temperature is 38.4°C and pulse rate 104 bpm. She has not yet received any antibiotics.",
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Blood cultures",
+    "CRP",
+    "Joint aspiration for Gram stain and culture",
+    "MRI of the right knee",
+    "Plain X-ray of the right knee"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the initial investigation, so pick the test that both diagnoses and must come before antibiotics."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hot, swollen right knee",
+      "unable to bear weight",
+      "38.4°C",
+      "not yet received any antibiotics"
+     ],
+     "x": "Acute hot joint with fever; the stem stresses no antibiotics yet."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Aspirate the joint** before antibiotics so culture can grow the organism."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Useful, but they do not sample the joint and are not the key first test."
+      ],
+      [
+       1,
+       "Supports infection but cannot confirm it or identify the organism."
+      ],
+      [
+       3,
+       "Slow and not needed to diagnose a septic joint."
+      ],
+      [
+       4,
+       "Normal early; it shows damage only late."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Joint aspiration for Gram stain and culture.** Rule: aspirate first, then antibiotics."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old woman has septic arthritis of the right knee. Synovial fluid has been sent for Gram stain and culture. She has no drug allergies and no history of MRSA. Her temperature is 38.6°C and BP 112/70 mmHg.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intra-articular methylprednisolone",
+    "IV flucloxacillin",
+    "IV vancomycin",
+    "Oral doxycycline",
+    "Oral flucloxacillin"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management after aspiration: choose the empirical antibiotic and route."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Synovial fluid has been sent",
+      "no drug allergies",
+      "no history of MRSA"
+     ],
+     "x": "Fluid already sent, so start antibiotics now; no allergy, no MRSA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Empirical **IV flucloxacillin** to cover Staph aureus."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Steroid into an infected joint worsens infection."
+      ],
+      [
+       2,
+       "Reserved for penicillin allergy or MRSA risk; she has neither."
+      ],
+      [
+       3,
+       "Oral and wrong spectrum; septic arthritis needs IV anti-staphylococcal cover."
+      ],
+      [
+       4,
+       "Oral is for step-down after at least 2 weeks IV."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IV flucloxacillin.** Vancomycin only if penicillin allergic or MRSA risk."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 58 year old man has septic arthritis of the left knee. Aspiration is delayed for 5 days. An X-ray at 3 weeks shows loss of joint space. His temperature on arrival was 38.8°C.",
+   "q": "Which is the most likely mechanism of his joint damage?",
+   "o": [
+    "Bacterial toxins and host proteolytic enzymes degrading cartilage",
+    "Deposition of monosodium urate crystals",
+    "Formation of osteophytes from abnormal loading",
+    "Pannus invading bone at the joint margins",
+    "Reduced blood supply causing avascular necrosis"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why did the cartilage go so fast?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "septic arthritis",
+      "delayed for 5 days",
+      "loss of joint space"
+     ],
+     "x": "Known septic joint, treatment delayed, rapid cartilage loss."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Neutrophil influx releases **proteolytic enzymes**; bacteria release toxins; cartilage is digested."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "That is gout; no crystals here."
+      ],
+      [
+       2,
+       "That is osteoarthritis, a slow process."
+      ],
+      [
+       3,
+       "That is rheumatoid arthritis."
+      ],
+      [
+       4,
+       "AVN affects bone, not cartilage, and is not caused by infection here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bacterial toxins and host proteolytic enzymes degrading cartilage.** That is why septic arthritis is an emergency."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old woman has a 2 day history of a painful, swollen right knee and rigors. She has rheumatoid arthritis treated with methotrexate and prednisolone. Her temperature is 38.9°C, pulse rate 114 bpm and BP 96/58 mmHg. The knee is hot with a tense effusion and she cannot bear weight.\n\nInvestigations:",
+   "labs": [
+    [
+     "Synovial WCC",
+     "92,000 /mm³",
+     "<200",
+     "H"
+    ],
+    [
+     "Synovial neutrophils",
+     "95%",
+     "<25%",
+     "H"
+    ],
+    [
+     "Crystals",
+     "None seen",
+     "None",
+     ""
+    ],
+    [
+     "Gram stain",
+     "Gram-positive cocci",
+     "None",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Gout",
+    "Pseudogout",
+    "Reactive arthritis",
+    "Rheumatoid arthritis flare",
+    "Septic arthritis"
+   ],
+   "a": 4,
+   "e": "Fever, hypotension and a single hot joint with neutrophilic fluid and no crystals is septic arthritis. An RA flare would not give organisms on Gram stain.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a single hot joint with systemic upset."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "methotrexate and prednisolone",
+      "38.9°C",
+      "BP 96/58 mmHg",
+      "cannot bear weight"
+     ],
+     "x": "Immunosuppressed, febrile, hypotensive, monoarthritis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Fever, sepsis and turbid neutrophilic fluid with cocci: **septic arthritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No crystals; gout gives negatively birefringent needles."
+      ],
+      [
+       1,
+       "No crystals; pseudogout gives positively birefringent rhomboids."
+      ],
+      [
+       2,
+       "Follows a gut or genital infection; fluid is sterile and it is rarely this septic."
+      ],
+      [
+       3,
+       "RA flares are polyarticular and do not give rigors with Gram-positive cocci."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Septic arthritis.** Don't call it an RA flare in a febrile immunosuppressed patient."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 78 year old man has a 3 day history of a hot, swollen left knee. He has type 2 diabetes. His temperature is 38.5°C and pulse rate 102 bpm. Synovial fluid is purulent. Gram stain shows Gram-positive cocci in clusters.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Escherichia coli",
+    "Neisseria gonorrhoeae",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus",
+    "Streptococcus pyogenes"
+   ],
+   "a": 3,
+   "e": "Gram-positive cocci in clusters in an elderly patient is Staphylococcus aureus, the commonest cause. Streptococci form chains.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: use age and Gram stain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "78 year old man",
+      "purulent",
+      "Gram-positive cocci in clusters"
+     ],
+     "x": "Elderly patient; cocci in clusters."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Clusters in an older adult: **Staph aureus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A Gram-negative rod; an uncommon cause."
+      ],
+      [
+       1,
+       "Gram-negative diplococci in young, sexually active adults."
+      ],
+      [
+       2,
+       "Gram-negative rod linked to IV drug use."
+      ],
+      [
+       4,
+       "Gram-positive cocci in chains, after throat or skin infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Staphylococcus aureus.** The commonest cause overall, especially in the elderly."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 22 year old man has a 2 day history of a hot, swollen right knee. A week earlier he had dysuria and a urethral discharge. He has had flitting pains in his wrists and a few pustules on his hands. His temperature is 38.2°C. Synovial fluid Gram stain shows Gram-negative diplococci.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Chlamydia trachomatis",
+    "Neisseria gonorrhoeae",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus",
+    "Streptococcus pyogenes"
+   ],
+   "a": 1,
+   "e": "Urethritis, migratory polyarthralgia, skin lesions and Gram-negative diplococci are disseminated gonococcal infection. Chlamydia causes a sterile reactive arthritis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question in a young man."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "22 year old man",
+      "urethral discharge",
+      "flitting pains",
+      "pustules",
+      "Gram-negative diplococci"
+     ],
+     "x": "Young, urethritis, migratory arthralgia, skin pustules, Gram-negative diplococci."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Disseminated gonococcal infection: **Neisseria gonorrhoeae**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Causes reactive arthritis with sterile fluid; not seen as diplococci."
+      ],
+      [
+       2,
+       "Gram-negative rods, in IV drug users."
+      ],
+      [
+       3,
+       "Gram-positive cocci in clusters."
+      ],
+      [
+       4,
+       "Gram-positive cocci in chains."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Neisseria gonorrhoeae.** Commonest cause in young, sexually active patients."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old man who injects heroin has a 3 day history of a painful, swollen right knee. He is confused and sweating. His temperature is 39.1°C, pulse rate 122 bpm and BP 94/60 mmHg. Synovial fluid is turbid and the Gram stain shows Gram-negative bacilli.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Escherichia coli",
+    "Neisseria gonorrhoeae",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus",
+    "Streptococcus pyogenes"
+   ],
+   "a": 2,
+   "e": "In an IV drug user, Gram-negative bacilli point to Pseudomonas aeruginosa. Staph aureus would be Gram-positive cocci.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: risk factor plus Gram stain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "injects heroin",
+      "confused and sweating",
+      "Gram-negative bacilli"
+     ],
+     "x": "IV drug use, confusion, sweating, Gram-negative rods."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "IVDU with Gram-negative bacilli: **Pseudomonas aeruginosa**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gram-negative too, but not the classic IVDU organism."
+      ],
+      [
+       1,
+       "Gram-negative diplococci, not bacilli."
+      ],
+      [
+       3,
+       "Gram-positive cocci, not Gram-negative bacilli."
+      ],
+      [
+       4,
+       "Gram-positive cocci in chains."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Pseudomonas aeruginosa.** Pseudomonas in IV drug users, often with confusion and sweating."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 6 year old boy has a 2 day history of a limp and now refuses to walk on his right leg. His temperature is 39.0°C and pulse rate 128 bpm. The right hip is held flexed and any movement is painful.\n\nInvestigations:",
+   "labs": [
+    [
+     "WCC",
+     "18.4 ×10⁹/L",
+     "4.5–13.5",
+     "H"
+    ],
+    [
+     "ESR",
+     "62 mm/hr",
+     "<20",
+     "H"
+    ],
+    [
+     "CRP",
+     "148 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Juvenile idiopathic arthritis",
+    "Perthes disease",
+    "Septic arthritis",
+    "Slipped capital femoral epiphysis",
+    "Transient synovitis"
+   ],
+   "a": 2,
+   "e": "This child meets all four Kocher criteria (non-weight bearing, fever >38.5°C, WCC >12, ESR >40), giving a 99% probability of septic arthritis. Transient synovitis scores 0 to 1.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A limping child: use Kocher's criteria."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6 year old boy",
+      "refuses to walk",
+      "39.0°C"
+     ],
+     "x": "Non-weight bearing, fever >38.5°C, WCC >12, ESR >40: all four."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Kocher 4/4 means a 99% probability: **septic arthritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Chronic arthritis over at least 6 weeks; not an acute febrile hip."
+      ],
+      [
+       1,
+       "Painless or mild limp over weeks, afebrile, normal markers."
+      ],
+      [
+       3,
+       "Overweight adolescents, afebrile."
+      ],
+      [
+       4,
+       "Usually afebrile, weight bearing, normal markers: Kocher 0 to 1."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Septic arthritis.** Kocher 4/4 = 99%; transient synovitis scores low."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 41 year old woman has a 4 day history of a hot, swollen left knee. Ten days ago she had a sore throat with fever that settled without treatment. Her temperature is 38.3°C and pulse rate 106 bpm. Synovial fluid is turbid and the Gram stain shows Gram-positive cocci in chains.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Neisseria gonorrhoeae",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus",
+    "Staphylococcus epidermidis",
+    "Streptococcus pyogenes"
+   ],
+   "a": 4,
+   "e": "Gram-positive cocci in chains after a recent pharyngitis point to Streptococcus. Staph aureus forms clusters.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: preceding infection plus Gram stain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sore throat",
+      "Gram-positive cocci in chains"
+     ],
+     "x": "Recent pharyngitis; cocci in chains."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Streptococcus species after pharyngitis: **Streptococcus pyogenes**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gram-negative diplococci."
+      ],
+      [
+       1,
+       "Gram-negative bacilli, in IV drug users."
+      ],
+      [
+       2,
+       "Cocci in clusters, not chains."
+      ],
+      [
+       3,
+       "Coagulase-negative clusters, mainly prosthetic joints."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Streptococcus pyogenes.** Chains = strep; clusters = staph."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 59 year old man has a 1 day history of a hot, swollen right knee. He is unable to bear weight. His temperature is 38.6°C, pulse rate 108 bpm and BP 124/76 mmHg. The doctor plans to start IV antibiotics.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Blood cultures",
+    "CT of the right knee",
+    "Joint aspiration with Gram stain and culture",
+    "MRI of the right knee",
+    "Serum urate"
+   ],
+   "a": 2,
+   "e": "Joint aspiration for Gram stain and culture is gold standard and must precede antibiotics. Serum urate can be normal in acute gout and never excludes sepsis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation before antibiotics."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hot, swollen right knee",
+      "38.6°C",
+      "plans to start IV antibiotics"
+     ],
+     "x": "Hot joint, fever, antibiotics about to start."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Aspirate the joint **first**, then give antibiotics."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Helpful but do not replace sampling the joint."
+      ],
+      [
+       1,
+       "Not needed for diagnosis."
+      ],
+      [
+       3,
+       "Delays treatment and does not identify the organism."
+      ],
+      [
+       4,
+       "Normal or high in gout and does not exclude infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Joint aspiration with Gram stain and culture.** Gold standard, and done before antibiotics."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 66 year old woman has a 2 day history of a hot, swollen left knee. Her temperature is 38.4°C. Synovial fluid is turbid and yellow with no crystals. The Gram stain is negative.\n\nInvestigations:",
+   "labs": [
+    [
+     "Synovial WCC",
+     "68,000 /mm³",
+     "<200",
+     "H"
+    ],
+    [
+     "Synovial neutrophils",
+     "93%",
+     "<25%",
+     "H"
+    ],
+    [
+     "Crystals",
+     "None seen",
+     "None",
+     ""
+    ],
+    [
+     "Gram stain",
+     "No organisms seen",
+     "None",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate interpretation of these results?",
+   "o": [
+    "Gout is the likely diagnosis",
+    "Infection is excluded by the negative Gram stain",
+    "Osteoarthritis is the likely diagnosis",
+    "Repeat aspiration is needed before any treatment",
+    "Septic arthritis remains likely; await culture"
+   ],
+   "a": 4,
+   "e": "Purulent fluid with neutrophils above 90% and a high WCC is septic arthritis until culture says otherwise; the Gram stain is negative in 30 to 50% of cases.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An interpretation question: does a negative Gram stain exclude infection?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "38.4°C",
+      "turbid and yellow",
+      "no crystals",
+      "Gram stain is negative"
+     ],
+     "x": "Fever; purulent fluid with very high neutrophils; no crystals; Gram stain negative."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Purulent fluid means **septic arthritis** is still likely; culture will decide."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gout needs needle-shaped crystals; none were seen."
+      ],
+      [
+       1,
+       "Gram stain is negative in 30 to 50% of septic joints."
+      ],
+      [
+       2,
+       "OA fluid is clear with a low WCC."
+      ],
+      [
+       3,
+       "Treat now on clinical grounds; do not delay for repeat tests."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Septic arthritis remains likely; await culture.** Gram stain misses 30 to 50%."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old woman has septic arthritis of the right knee. The joint has been aspirated and fluid sent for culture. She had anaphylaxis to amoxicillin 10 years ago. Her temperature is 38.7°C, pulse rate 110 bpm and BP 108/66 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "IV benzylpenicillin",
+    "IV co-amoxiclav",
+    "IV flucloxacillin",
+    "IV vancomycin",
+    "Oral clarithromycin"
+   ],
+   "a": 3,
+   "e": "Penicillin anaphylaxis rules out flucloxacillin, benzylpenicillin and co-amoxiclav; IV vancomycin covers Staph aureus including MRSA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management with a penicillin allergy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "aspirated and fluid sent",
+      "anaphylaxis to amoxicillin"
+     ],
+     "x": "Aspiration done; true penicillin anaphylaxis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Swap flucloxacillin for **IV vancomycin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A penicillin: contraindicated after anaphylaxis."
+      ],
+      [
+       1,
+       "Contains amoxicillin: contraindicated."
+      ],
+      [
+       2,
+       "First line normally, but it is a penicillin."
+      ],
+      [
+       4,
+       "Oral and inadequate for a septic joint."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. IV vancomycin.** Vancomycin if penicillin allergic or MRSA risk."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 61 year old man has septic arthritis of the left knee caused by Staphylococcus aureus. He had a joint washout and has now completed 2 weeks of IV flucloxacillin. His fever has settled and his CRP has fallen from 240 to 12 mg/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Continue IV flucloxacillin for a further 6 months",
+    "Inject intra-articular steroid",
+    "Repeat joint washout",
+    "Stop antibiotics now",
+    "Switch to oral antibiotics for a further 4–6 weeks"
+   ],
+   "a": 4,
+   "e": "After at least 2 weeks of IV antibiotics with clinical and biochemical response, step down to oral antibiotics for a further 4 to 6 weeks.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after an IV course."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "washout",
+      "completed 2 weeks of IV flucloxacillin",
+      "fever has settled",
+      "CRP has fallen"
+     ],
+     "x": "Responding well after 2 weeks IV."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Step down to **oral antibiotics for 4 to 6 weeks**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Far too long; switch to oral once improving."
+      ],
+      [
+       1,
+       "Steroid into a recently infected joint is wrong."
+      ],
+      [
+       2,
+       "Not needed: he has responded."
+      ],
+      [
+       3,
+       "Too short: he needs another 4 to 6 weeks orally."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Switch to oral antibiotics for a further 4–6 weeks.** At least 2 weeks IV, then 4 to 6 weeks oral."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old woman with a right total knee replacement has septic arthritis of that knee. She has had IV vancomycin for 6 days and three aspirations, but the effusion keeps returning. Her temperature is 38.4°C, pulse rate 104 bpm and BP 118/72 mmHg.\n\nInvestigations:",
+   "labs": [
+    [
+     "CRP (day 1)",
+     "198 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "CRP (day 6)",
+     "186 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Add oral rifampicin and review in 2 weeks",
+    "Inject intra-articular steroid",
+    "Repeat aspiration daily",
+    "Surgical washout of the joint",
+    "Switch to oral antibiotics"
+   ],
+   "a": 3,
+   "e": "Persistent effusion despite serial aspirations, continuing fever and a static CRP, especially with a prosthesis, are indications for surgical washout.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step when treatment is failing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "total knee replacement",
+      "three aspirations",
+      "effusion keeps returning",
+      "38.4°C"
+     ],
+     "x": "Prosthetic joint; persistent effusion despite serial aspirations; ongoing fever; CRP not falling."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Orthopaedic **surgical washout**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Waiting does not deal with the persistent collection."
+      ],
+      [
+       1,
+       "Contraindicated in infection."
+      ],
+      [
+       2,
+       "Serial aspirations have already failed."
+      ],
+      [
+       4,
+       "Step-down is only after response; she is not improving."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Surgical washout of the joint.** Washout if not improving, especially with a prosthesis."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 76 year old man had a left total hip replacement 8 months ago. He now has a third episode of septic arthritis of that hip with the same Staphylococcus organism, despite completing full antibiotic courses each time. His temperature is 37.9°C and pulse rate 96 bpm.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism for the persistent infection?",
+   "o": [
+    "Antibiotics cannot cross into synovial fluid",
+    "Bacterial biofilm on the implant surface",
+    "Haematogenous seeding from infective endocarditis",
+    "Hypersensitivity reaction to the metal implant",
+    "Urate crystal deposition around the implant"
+   ],
+   "a": 1,
+   "e": "Bacteria form biofilms on prosthetic surfaces, evading antibiotics and host defences, so infection recurs despite full courses.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism question about a prosthetic joint."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "total hip replacement",
+      "third episode",
+      "same Staphylococcus organism",
+      "despite completing full antibiotic courses"
+     ],
+     "x": "Implant, same organism recurring, antibiotics keep failing."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bacteria in a **biofilm** on the implant evade antibiotics and immune cells."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Antibiotics do reach synovial fluid; that is how most septic joints are cured."
+      ],
+      [
+       2,
+       "Possible in theory, but recurrent infection only at the implant points to biofilm."
+      ],
+      [
+       3,
+       "That is aseptic loosening, not recurrent infection."
+      ],
+      [
+       4,
+       "That is gout, not infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bacterial biofilm on the implant surface.** Why prosthetic joints often need surgery."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is septic arthritis, which joint is commonest, and what is the commonest organism?",
+    "tip": "Exam thinking: knee plus Staph aureus is the default answer.",
+    "points": [
+     {
+      "p": "Infection of the joint space",
+      "k": [
+       [
+        "infection",
+        "infected",
+        "bacterial"
+       ],
+       [
+        "joint"
+       ]
+      ],
+      "why": "A medical emergency, not just inflammation."
+     },
+     {
+      "p": "Knee most commonly affected",
+      "k": [
+       [
+        "knee"
+       ]
+      ],
+      "why": "Hip is the classic site in children."
+     },
+     {
+      "p": "Staphylococcus aureus (MSSA), especially in the elderly",
+      "k": [
+       [
+        "staph",
+        "aureus",
+        "mssa"
+       ]
+      ],
+      "why": "Gram-positive cocci in clusters."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors for septic arthritis?",
+    "tip": "Exam thinking: the stem hides a risk factor; spot it.",
+    "points": [
+     {
+      "p": "IV drug use",
+      "k": [
+       [
+        "iv drug",
+        "ivdu",
+        "inject",
+        "pwid",
+        "heroin"
+       ]
+      ],
+      "why": "Points to Pseudomonas in the notes."
+     },
+     {
+      "p": "Pre-existing joint disease such as RA",
+      "k": [
+       [
+        "rheumatoid",
+        "ra ",
+        "joint disease",
+        "arthritis"
+       ]
+      ],
+      "why": "Especially when on methotrexate or steroids."
+     },
+     {
+      "p": "Prosthetic joints",
+      "k": [
+       [
+        "prosthe",
+        "replacement",
+        "implant"
+       ]
+      ],
+      "why": "Biofilm makes it hard to clear."
+     },
+     {
+      "p": "Immunosuppression (methotrexate, steroids)",
+      "k": [
+       [
+        "immunosupp",
+        "methotrexate",
+        "steroid"
+       ]
+      ],
+      "why": "Steroids can mask fever."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does septic arthritis present in an adult, and in a child?",
+    "tip": "Exam thinking: one hot joint + fever = aspirate.",
+    "points": [
+     {
+      "p": "High fever and systemic signs (hypotension, sweating)",
+      "k": [
+       [
+        "fever",
+        "pyrex",
+        "temperature",
+        "hypotens",
+        "sweat"
+       ]
+      ],
+      "why": "Can be blunted by steroids."
+     },
+     {
+      "p": "Hot, swollen, red, tender joint",
+      "k": [
+       [
+        "hot",
+        "swollen",
+        "swelling",
+        "erythem",
+        "red"
+       ]
+      ],
+      "why": "Usually monoarticular."
+     },
+     {
+      "p": "Reduced range of movement, unable to weight-bear",
+      "k": [
+       [
+        "weight",
+        "range of movement",
+        "immobile",
+        "rom",
+        "movement"
+       ]
+      ],
+      "why": "Pain on any passive movement is typical."
+     },
+     {
+      "p": "Children: new-onset limp",
+      "k": [
+       [
+        "limp"
+       ]
+      ],
+      "why": "Use Kocher's criteria."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are Kocher's criteria and what does each score mean?",
+    "tip": "Exam thinking: count the four, then match the probability.",
+    "points": [
+     {
+      "p": "Non-weight bearing",
+      "k": [
+       [
+        "weight"
+       ]
+      ],
+      "why": "The functional criterion."
+     },
+     {
+      "p": "Fever above 38.5°C",
+      "k": [
+       [
+        "fever",
+        "temperature",
+        "pyrex"
+       ],
+       [
+        "38.5"
+       ]
+      ],
+      "why": "Not 38.0."
+     },
+     {
+      "p": "WCC above 12 ×10⁹/L",
+      "k": [
+       [
+        "wcc",
+        "white cell",
+        "wbc"
+       ],
+       [
+        "12"
+       ]
+      ],
+      "why": "Blood WCC, not synovial."
+     },
+     {
+      "p": "ESR above 40 mm/hr",
+      "k": [
+       [
+        "esr"
+       ],
+       [
+        "40"
+       ]
+      ],
+      "why": "CRP is not part of the original four."
+     },
+     {
+      "p": "0 = very low, 1 = 3%, 2 = 40%, 3 = 93%, 4 = 99%",
+      "k": [
+       [
+        "93",
+        "99",
+        "40%"
+       ]
+      ],
+      "why": "Used to separate septic arthritis from transient synovitis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which organism do you suspect in an IV drug user, after a sore throat, and in a young sexually active adult?",
+    "tip": "Exam thinking: the risk factor picks the bug.",
+    "points": [
+     {
+      "p": "IV drug user: Pseudomonas aeruginosa (confusion, sweating)",
+      "k": [
+       [
+        "pseudomonas"
+       ]
+      ],
+      "why": "Gram-negative bacilli."
+     },
+     {
+      "p": "After pharyngitis, trauma or soft tissue infection: Streptococcus",
+      "k": [
+       [
+        "strep"
+       ]
+      ],
+      "why": "Gram-positive cocci in chains."
+     },
+     {
+      "p": "Young, sexually active: Neisseria gonorrhoeae (urethritis; Gram-negative diplococci)",
+      "k": [
+       [
+        "gonorr",
+        "gonococ",
+        "neisseria"
+       ]
+      ],
+      "why": "Migratory polyarthralgia, tenosynovitis and skin lesions first."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the gold-standard investigation, and when and where is it done?",
+    "tip": "Exam thinking: aspirate before antibiotics.",
+    "points": [
+     {
+      "p": "Joint aspiration (arthrocentesis) with synovial fluid culture",
+      "k": [
+       [
+        "aspirat",
+        "arthrocentesis",
+        "tap"
+       ]
+      ],
+      "why": "Also send Gram stain and crystal microscopy."
+     },
+     {
+      "p": "Done before antibiotics",
+      "k": [
+       [
+        "before"
+       ],
+       [
+        "antibiotic",
+        "abx"
+       ]
+      ],
+      "why": "Antibiotics can sterilise the culture."
+     },
+     {
+      "p": "Sterile setting, e.g. theatre",
+      "k": [
+       [
+        "sterile",
+        "theatre",
+        "aseptic"
+       ]
+      ],
+      "why": "Avoid introducing organisms."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What does septic synovial fluid look like, and what bloods do you send?",
+    "tip": "Exam thinking: a negative Gram stain does not exclude it.",
+    "points": [
+     {
+      "p": "Purulent, yellow, turbid fluid",
+      "k": [
+       [
+        "purulent",
+        "turbid",
+        "yellow",
+        "pus"
+       ]
+      ],
+      "why": "Cloudy from neutrophils."
+     },
+     {
+      "p": "High WCC, neutrophils >90%, usually >10,000/mm³ (up to 100,000)",
+      "k": [
+       [
+        "neutrophil",
+        "wcc",
+        "white cell"
+       ],
+       [
+        "90",
+        "10,000",
+        "10000",
+        "100,000"
+       ]
+      ],
+      "why": "Inflammatory arthritis is lower."
+     },
+     {
+      "p": "Gram stain negative in 30–50%",
+      "k": [
+       [
+        "gram"
+       ],
+       [
+        "30",
+        "50",
+        "negative"
+       ]
+      ],
+      "why": "Culture is the gold standard."
+     },
+     {
+      "p": "Bloods: CRP and WBC",
+      "k": [
+       [
+        "crp",
+        "wbc",
+        "wcc",
+        "inflammatory marker"
+       ]
+      ],
+      "why": "Also used to track response."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the first-line management of septic arthritis, including antibiotics and duration?",
+    "tip": "Exam thinking: aspirate, then IV fluclox; vanc if allergic or MRSA.",
+    "points": [
+     {
+      "p": "Urgent orthopaedic review",
+      "k": [
+       [
+        "ortho"
+       ]
+      ],
+      "why": "They aspirate and wash out."
+     },
+     {
+      "p": "Aspirate first, before antibiotics",
+      "k": [
+       [
+        "aspirat"
+       ]
+      ],
+      "why": "Then do not delay antibiotics."
+     },
+     {
+      "p": "IV flucloxacillin empirically",
+      "k": [
+       [
+        "fluclox"
+       ]
+      ],
+      "why": "Covers Staph aureus."
+     },
+     {
+      "p": "IV vancomycin if penicillin allergic or MRSA risk",
+      "k": [
+       [
+        "vanc"
+       ]
+      ],
+      "why": "Not a beta-lactam."
+     },
+     {
+      "p": "IV at least 2 weeks, then oral 4–6 weeks",
+      "k": [
+       [
+        "2 week",
+        "two week",
+        "2 wk"
+       ],
+       [
+        "4",
+        "6",
+        "four",
+        "six"
+       ]
+      ],
+      "why": "A favourite numbers question."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When do you wash out the joint, and what supportive care is given?",
+    "tip": "Exam thinking: failing to settle or prosthetic = washout.",
+    "points": [
+     {
+      "p": "Joint washout or drainage is part of definitive management",
+      "k": [
+       [
+        "washout",
+        "wash out",
+        "drain",
+        "lavage"
+       ]
+      ],
+      "why": "Pus must be removed."
+     },
+     {
+      "p": "Washout if fevers continue or markers do not settle",
+      "k": [
+       [
+        "fever",
+        "crp",
+        "marker",
+        "not improv",
+        "fail"
+       ]
+      ],
+      "why": "Orthopaedic review."
+     },
+     {
+      "p": "Washout if effusion persists despite serial aspirations, especially prosthetic joint",
+      "k": [
+       [
+        "persist",
+        "serial",
+        "prosthe",
+        "recur"
+       ]
+      ],
+      "why": "Biofilm."
+     },
+     {
+      "p": "Analgesia and initial immobilisation",
+      "k": [
+       [
+        "analges",
+        "pain relief",
+        "immobil",
+        "splint",
+        "rest"
+       ]
+      ],
+      "why": "Delay risks irreversible joint damage."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How do bacteria reach the joint, and why does the joint get destroyed so fast?",
+    "tip": "Exam thinking: three routes, then enzymes.",
+    "points": [
+     {
+      "p": "Haematogenous spread",
+      "k": [
+       [
+        "haematogen",
+        "hematogen",
+        "blood"
+       ]
+      ],
+      "why": "The commonest route."
+     },
+     {
+      "p": "Direct inoculation (trauma, surgery, injection)",
+      "k": [
+       [
+        "direct",
+        "inocul",
+        "injection",
+        "trauma",
+        "surgery"
+       ]
+      ],
+      "why": "Why you never inject a hot joint."
+     },
+     {
+      "p": "Contiguous spread from adjacent osteomyelitis",
+      "k": [
+       [
+        "contiguous",
+        "osteomyelitis",
+        "adjacent"
+       ]
+      ],
+      "why": "Common in children."
+     },
+     {
+      "p": "Neutrophil response; toxins and proteolytic enzymes degrade cartilage",
+      "k": [
+       [
+        "enzyme",
+        "protease",
+        "proteolytic",
+        "toxin"
+       ]
+      ],
+      "why": "Irreversible damage within days."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why are prosthetic joints vulnerable, and why does gonococcal arthritis present differently?",
+    "tip": "Exam thinking: biofilm; disseminated infection first.",
+    "points": [
+     {
+      "p": "Biofilm on implant evades antibiotics and immunity",
+      "k": [
+       [
+        "biofilm"
+       ]
+      ],
+      "why": "Often needs surgery."
+     },
+     {
+      "p": "Gonococcus: disseminated infection with migratory polyarthralgia, tenosynovitis, dermatitis, then one joint",
+      "k": [
+       [
+        "migrat",
+        "flitting",
+        "tenosynov",
+        "dermatitis",
+        "dissemin",
+        "skin"
+       ]
+      ],
+      "why": "Then localises to a single joint."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Septic arthritis": "Bacterial infection inside a joint space; a medical emergency because cartilage is destroyed quickly.",
+  "Staphylococcus aureus": "Gram-positive coccus in clusters; the commonest cause of septic arthritis.",
+  "MSSA": "Meticillin-sensitive Staphylococcus aureus, treatable with flucloxacillin.",
+  "MRSA": "Meticillin-resistant Staphylococcus aureus; needs vancomycin rather than flucloxacillin.",
+  "Pseudomonas aeruginosa": "Gram-negative bacillus; linked to septic arthritis in IV drug users.",
+  "Neisseria gonorrhoeae": "Gram-negative diplococcus causing gonorrhoea; commonest septic arthritis cause in young sexually active adults.",
+  "Gonococcal arthritis": "Joint infection from disseminated gonorrhoea, often after migratory joint pains and skin lesions.",
+  "Gram-negative diplococci": "Paired bean-shaped bacteria that stain pink; classic for Neisseria.",
+  "Gram stain": "Rapid microscopy stain separating bacteria into Gram-positive (purple) and Gram-negative (pink).",
+  "Kocher's criteria": "Four-point score (non-weight bearing, fever, WCC, ESR) estimating septic arthritis risk in a limping child.",
+  "Transient synovitis": "Self-limiting, non-infective hip inflammation in children, often after a viral illness.",
+  "Arthrocentesis": "Needle aspiration of fluid from a joint.",
+  "Joint aspiration": "Drawing synovial fluid out of a joint with a needle for testing.",
+  "Synovial fluid": "The lubricating fluid inside a joint; sampled to look for infection or crystals.",
+  "Washout": "Surgical flushing of an infected joint to remove pus and bacteria.",
+  "Flucloxacillin": "Penicillinase-resistant penicillin active against Staph aureus; first-line for septic arthritis.",
+  "Vancomycin": "Glycopeptide antibiotic used for MRSA or penicillin allergy.",
+  "Biofilm": "A slimy layer of bacteria stuck to a surface that shields them from antibiotics and immune cells.",
+  "Haematogenous": "Spread through the bloodstream.",
+  "Direct inoculation": "Bacteria introduced straight into the joint by trauma, surgery or injection.",
+  "Osteomyelitis": "Infection of bone, which can spread into an adjacent joint.",
+  "Tenosynovitis": "Inflammation of a tendon sheath.",
+  "Polyarthralgia": "Pain in several joints.",
+  "Effusion": "Excess fluid within a joint.",
+  "ESR": "Erythrocyte sedimentation rate; a non-specific marker of inflammation.",
+  "CRP": "C-reactive protein; an inflammatory marker that rises in infection and falls with treatment.",
+  "WCC": "White cell count.",
+  "Methotrexate": "Disease-modifying drug for RA that suppresses the immune system.",
+  "Urethritis": "Inflammation of the urethra, causing dysuria and discharge.",
+  "Epididymitis": "Inflammation of the epididymis, behind the testis.",
+  "Orchitis": "Inflammation of the testis.",
+  "Pharyngitis": "Sore throat from inflammation of the pharynx.",
+  "Negatively birefringent": "Crystal optics on polarised light typical of urate crystals in gout.",
+  "Monoarthritis": "Arthritis affecting a single joint."
+ }
+}

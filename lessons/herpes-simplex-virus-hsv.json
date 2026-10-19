@@ -1,0 +1,677 @@
+{
+ "id": "herpes-simplex-virus-hsv",
+ "patient": {
+  "name": "Zainab Rahman",
+  "age": 27,
+  "sex": "F",
+  "setting": "Sexual health clinic, then antenatal clinic",
+  "complaint": "Painful genital sores and burning on passing urine for 3 days; 35 weeks pregnant",
+  "background": [
+   "First pregnancy, 35 weeks, uncomplicated so far",
+   "Never had cold sores or genital sores before",
+   "Partner gets cold sores; recent oral sex",
+   "Works as a pharmacist in Tower Hamlets; no known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with painful grouped vesicles or ulcers after a tingling prodrome, against painless syphilis; plus questions on keratitis (dendritic ulcer), erythema multiforme, encephalitis and neonatal herpes.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Zainab, 27, is **35 weeks pregnant**.",
+      "Two days of **tingling and burning** in the vulva, then sores appeared.",
+      "Passing urine is agony (**dysuria**).",
+      "She feels feverish and achy."
+     ],
+     "vitals": {
+      "T": "37.9°C",
+      "HR": "92 bpm",
+      "BP": "112/70 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Painful vesicles on mucosa point to **HSV**. Her partner's cold sores are **HSV-1**, which can cause genital disease too."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Zainab's risk is **sexual contact**; pregnancy also mildly suppresses immunity."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Exam: **grouped vesicles on a red base** on both labia.",
+      "Some have burst into shallow, very **painful ulcers**.",
+      "Tender, swollen inguinal lymph nodes.",
+      "No painless chancre; no discharge."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Zainab has the full picture: **prodrome**, grouped vesicles becoming painful ulcers, **lymphadenopathy** and **dysuria**."
+    },
+    {
+     "type": "compare",
+     "title": "Genital ulcer: herpes or syphilis?",
+     "head": ["Feature", "Genital herpes", "Primary syphilis"],
+     "rows": [
+      ["Pain", "**Painful**, burning", "**Painless**"],
+      ["Lesions", "Multiple grouped vesicles, then ulcers", "Single firm chancre"],
+      ["Prodrome", "Tingling or burning first", "None"],
+      ["Organism", "HSV-1 or HSV-2", "Treponema pallidum"]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Zainab has painful grouped vesicles and ulcers after a tingling prodrome. Which is the most likely diagnosis?",
+     "o": ["Chancroid", "Genital herpes", "Genital warts", "Primary syphilis"],
+     "a": 1,
+     "r": "**Painful grouped vesicles** after a prodrome = genital herpes. Syphilis is painless; warts are painless growths."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Recurrent herpes: how often is there a prodrome?",
+      "min": 0,
+      "max": 100,
+      "unit": "%",
+      "bands": [[0, 50, "no warning", "warn"], [50, 100, "tingling or burning first", "ok"]],
+      "value": 50,
+      "label": "about 50%",
+      "caption": "About **half** of recurrences give a tingling warning. Zainab is told to **abstain from sex** until the prodrome and lesions fully resolve."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "HSV can also hit the eye (**dendritic ulcer**), trigger **erythema multiforme**, or infect Zainab's baby if she has a primary infection within **6 weeks** of birth."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "For Zainab, the big worry is **neonatal herpes**. Keratitis and rare **herpes encephalitis** are the other complications to know."
+    },
+    {
+     "type": "trap",
+     "text": "A **painless** genital ulcer is syphilis until proven otherwise. Herpes ulcers are **painful**."
+    },
+    {
+     "type": "pearl",
+     "text": "HSV-1 = classically cold sores, HSV-2 = classically genital, but **either type can cause disease at either site** (oral sex spreads HSV-1 to the genitals)."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?' with **HSV PCR (NAAT) on a lesion swab** as the answer, or a typical cold sore where no test is needed.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Zainab's grouped vesicles are classic, so the diagnosis is made **clinically** and treatment starts today."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Because she is pregnant, typing matters for her birth plan.",
+      "A swab is rubbed firmly over the base of an ulcer.",
+      "Sent for HSV PCR; syphilis and HIV tests are offered."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The swab goes for **NAAT/PCR**, the most effective test, confirming HSV and its type."
+    },
+    {
+     "type": "ask",
+     "q": "Which test best confirms HSV from Zainab's ulcer?",
+     "o": ["Bacterial culture of the ulcer", "Dark-ground microscopy", "HSV PCR on a lesion swab", "HSV serology"],
+     "a": 2,
+     "r": "**PCR (NAAT) on a lesion swab** is the most effective test. Dark-ground microscopy is for syphilis; serology does not prove the lesion is herpes."
+    },
+    {
+     "type": "labs",
+     "title": "Zainab's results",
+     "rows": [
+      ["HSV PCR (lesion swab)", "HSV-1 DNA detected", "Not detected", "H"],
+      ["HSV-2 PCR", "Not detected", "Not detected", ""],
+      ["Syphilis serology", "Negative", "Negative", ""],
+      ["HIV antigen/antibody", "Negative", "Negative", ""]
+     ],
+     "text": "Genital **HSV-1**, from her partner's cold sores via oral sex. No HSV antibodies before: a **primary** infection."
+    },
+    {
+     "type": "flow",
+     "title": "Testing a suspected herpes lesion",
+     "nodes": [
+      "Grouped painful vesicles or ulcers",
+      "Classic: diagnose clinically and treat",
+      "Ambiguous, recurrent or pregnant: swab the lesion",
+      "HSV PCR (NAAT) confirms and types",
+      "Screen for other STIs"
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Do not wait for the PCR before starting aciclovir. Typical lesions are treated on **clinical** grounds."
+    },
+    {
+     "type": "pearl",
+     "text": "Gold standard = **PCR on a lesion swab**. First-line = **clinical**. Learn both, because the lead-in tells you which one they want."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?' with oral aciclovir for genital or oral herpes, topical aciclovir (no steroids) for keratitis, and elective caesarean for primary genital herpes within 6 weeks of delivery.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Zainab starts **oral aciclovir 400 mg three times daily for 5 days**, with paracetamol, hygiene advice and no sex until healed."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Zainab on oral aciclovir",
+      "x": ["Day 0", "Day 2", "Day 4", "Day 7", "Day 10"],
+      "unit": "",
+      "series": [
+       {"name": "Pain score (0-10)", "values": [9, 6, 3, 1, 0]},
+       {"name": "Open lesions", "values": [8, 7, 4, 1, 0]}
+      ],
+      "caption": "Pain and lesions settle over a week. Aciclovir shortens the episode but **does not clear latent virus**."
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "When did Zainab's primary infection start?",
+      "min": 24,
+      "max": 42,
+      "unit": "weeks",
+      "bands": [[24, 34, "more than 6 weeks before birth", "ok"], [34, 42, "within 6 weeks of birth: plan caesarean", "bad"]],
+      "value": 35,
+      "label": "Zainab 35 weeks",
+      "caption": "A primary episode within **6 weeks** of delivery carries the highest neonatal risk."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Zainab's primary episode is within 6 weeks of birth: **oral aciclovir** plus an **elective caesarean**. If she declines, **intrapartum IV aciclovir**."
+    },
+    {
+     "type": "ask",
+     "q": "Zainab declines a caesarean section. Which is the most appropriate alternative?",
+     "o": ["Induction of labour now", "Intrapartum IV aciclovir", "No treatment in labour", "Topical aciclovir in labour"],
+     "a": 1,
+     "r": "If caesarean is declined, give **intrapartum IV aciclovir** to reduce the risk of neonatal transmission."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Three weeks later Zainab rubs her eye; it becomes **red, painful and watery**.",
+      "Light hurts and vision is blurred.",
+      "Fluorescein shows a branching **dendritic ulcer**."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Zainab's **herpes simplex keratitis** needs **topical aciclovir** and urgent eye review. **No topical steroid** drops."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Zainab's care follows the **BASHH genital herpes** guideline and **NICE CKS** for oral and genital herpes."
+    },
+    {
+     "type": "trap",
+     "text": "Never give **topical steroids** for a red eye until a dendritic ulcer is excluded. Steroids can make HSV keratitis much worse."
+    },
+    {
+     "type": "pearl",
+     "text": "Oral or genital herpes = **oral aciclovir 400 mg TDS, 5 days**. Valaciclovir or famciclovir are alternatives."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions on latency (trigeminal ganglion for HSV-1, sacral ganglia for HSV-2), reactivation triggers, why vesicles form, why encephalitis hits the temporal lobes, or why caesarean protects the baby.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Zainab's HSV now hides **latent** in her **sacral ganglia**. Stress, illness or UV can reactivate it, so recurrences are likely."
+    },
+    {
+     "type": "flow",
+     "title": "Latency and reactivation",
+     "nodes": [
+      "Primary infection of skin or mucosa",
+      "Virus travels up the sensory nerve",
+      "Latent in ganglion (trigeminal or sacral)",
+      "Trigger: stress, illness, UV, immunosuppression",
+      "Virus travels back down: recurrent lesions"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Zainab's blisters formed because infected **keratinocytes swell and degenerate**, splitting the epidermis. When they burst, painful ulcers remain."
+    },
+    {
+     "type": "ask",
+     "q": "Where does the virus lie latent after Zainab's genital infection?",
+     "o": ["Bone marrow", "Sacral ganglia", "Skin keratinocytes", "Trigeminal ganglion"],
+     "a": 1,
+     "r": "Genital HSV becomes latent in the **sacral ganglia**; oral HSV-1 in the **trigeminal ganglion**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If HSV reached Zainab's brain, it would favour the **temporal lobes**, spreading along olfactory and trigeminal tracts."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Zainab later developed target lesions on her hands after a recurrence, that is **erythema multiforme**: a hypersensitivity reaction to HSV antigens."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Zainab's caesarean stops her baby touching **infected genital secretions** in the birth canal."
+    },
+    {
+     "type": "pearl",
+     "text": "HSV is a **double-stranded DNA virus**. Latency explains why antivirals treat episodes but never cure."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {"d": "diagnosis", "q": "Which HSV type classically causes cold sores?", "o": ["HSV-1", "HSV-2", "HHV-6", "HHV-8"], "a": 0, "r": "**HSV-1** classically oral; **HSV-2** classically genital; either can affect either site."},
+  {"d": "diagnosis", "q": "What do herpes lesions classically look like?", "o": ["Grouped vesicles on an erythematous base", "Painless indurated ulcer", "Silvery scaly plaques", "Umbilicated papules"], "a": 0, "r": "**Grouped vesicles on a red base** that rupture into painful ulcers."},
+  {"d": "diagnosis", "q": "What is seen on fluorescein staining in HSV keratitis?", "o": ["Dendritic ulcer", "Hypopyon", "Ring abscess", "Subconjunctival haemorrhage"], "a": 0, "r": "A branching **dendritic ulcer**."},
+  {"d": "diagnosis", "q": "What lesion is the hallmark of erythema multiforme?", "o": ["Bullae on the trunk", "Purpura on the legs", "Target lesions with three concentric rings", "Vesicles in a dermatome"], "a": 2, "r": "**Target lesions with three rings**, typically on the hands and feet; HSV-1 is the commonest trigger."},
+  {"d": "investigation", "q": "What is the most effective test to confirm HSV?", "o": ["Blood culture", "HSV PCR (NAAT) on a lesion swab", "Skin biopsy", "Tzanck smear"], "a": 1, "r": "**NAAT/PCR** on a lesion swab."},
+  {"d": "investigation", "q": "How is a typical cold sore usually diagnosed?", "o": ["Clinically", "CT scan", "HSV serology", "Viral culture"], "a": 0, "r": "**Clinically**, from the characteristic grouped vesicles."},
+  {"d": "management", "q": "What is the first-line oral treatment for genital herpes?", "o": ["Aciclovir 400 mg TDS for 5 days", "Amoxicillin 500 mg TDS", "Doxycycline 100 mg BD", "Fluconazole 150 mg once"], "a": 0, "r": "**Oral aciclovir 400 mg three times daily for 5 days**."},
+  {"d": "management", "q": "What must be avoided in herpes simplex keratitis?", "o": ["Artificial tears", "Eye patch", "Topical aciclovir", "Topical steroids"], "a": 3, "r": "**Topical steroids** can worsen the ulcer; treat with topical aciclovir."},
+  {"d": "management", "q": "How is primary genital herpes within 6 weeks of delivery managed?", "o": ["Induction of labour", "No treatment", "Oral aciclovir plus elective caesarean section", "Topical aciclovir only"], "a": 2, "r": "**Oral aciclovir + elective caesarean**; intrapartum IV aciclovir if caesarean is declined."},
+  {"d": "science", "q": "Where does HSV-1 lie latent?", "o": ["Dorsal root ganglia of the thorax", "Geniculate ganglion", "Sacral ganglia", "Trigeminal ganglion"], "a": 3, "r": "HSV-1: **trigeminal ganglion**; HSV-2: **sacral ganglia**."}
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 22 year old woman has a 4 day history of painful vulval sores and burning on passing urine. She had tingling in the area for a day before they appeared. She has a new sexual partner. Examination shows multiple grouped vesicles and shallow ulcers on a red base on both labia, with tender inguinal lymphadenopathy.",
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Behçet's disease", "Genital herpes", "Lichen sclerosus", "Primary syphilis", "Vulvovaginal candidiasis"],
+   "a": 1,
+   "steps": [
+    {"t": "Read the question line first", "x": "A genital lesion diagnosis: is it painful or painless, single or multiple?"},
+    {"t": "Pick out the clues", "clues": ["painful vulval sores", "burning on passing urine", "tingling in the area for a day", "new sexual partner", "multiple grouped vesicles", "tender inguinal lymphadenopathy"], "x": "Prodrome, painful grouped vesicles, dysuria, nodes, sexual risk."},
+    {"t": "Make your own answer before looking", "x": "**Genital herpes**."},
+    {"t": "Rule out the others", "elim": [[0, "Behçet's gives recurrent oral and genital ulcers with eye or skin disease, no vesicles."], [2, "Lichen sclerosus is itchy white plaques, not acute vesicles."], [3, "Syphilis gives a single painless chancre."], [4, "Candida causes itch and white discharge, not vesicles."]]},
+    {"t": "Commit", "x": "**B. Genital herpes.** Painful + grouped vesicles + prodrome."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old woman who is 36 weeks pregnant has a 2 day history of painful genital ulcers. She has never had genital sores before. Her temperature is 37.8°C, pulse rate 94 bpm and BP 114/72 mmHg. The obstetric team need the diagnosis confirmed to plan her delivery.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": ["HSV PCR on a lesion swab", "HSV type-specific serology", "Skin biopsy", "Syphilis serology", "Viral culture of urine"],
+   "a": 0,
+   "steps": [
+    {"t": "Read the question line first", "x": "The test that **confirms** HSV, not a screening test."},
+    {"t": "Pick out the clues", "clues": ["36 weeks pregnant", "painful genital ulcers", "never had genital sores before", "need the diagnosis confirmed"], "x": "Likely primary genital herpes near term: confirmation changes the birth plan."},
+    {"t": "Make your own answer before looking", "x": "**PCR (NAAT) on a lesion swab**."},
+    {"t": "Rule out the others", "elim": [[1, "Serology helps decide primary versus recurrent but does not prove the ulcer is HSV."], [2, "Biopsy is invasive and unnecessary."], [3, "Syphilis serology is a useful screen, but syphilis ulcers are painless."], [4, "Urine culture does not detect HSV in ulcers."]]},
+    {"t": "Commit", "x": "**A. HSV PCR on a lesion swab.** The most effective test."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 26 year old woman who is 37 weeks pregnant has primary genital herpes confirmed by PCR, which started 1 week ago. She is taking oral aciclovir. Her temperature is 37.2°C, pulse rate 84 bpm and BP 118/74 mmHg. She has been offered an elective caesarean section but declines it and wishes to labour vaginally.",
+   "q": "Which is the most appropriate management?",
+   "o": ["Elective caesarean section regardless", "Induction of labour today", "Intrapartum IV aciclovir", "No further treatment", "Topical aciclovir in labour"],
+   "a": 2,
+   "steps": [
+    {"t": "Read the question line first", "x": "Management when caesarean is declined."},
+    {"t": "Pick out the clues", "clues": ["37 weeks pregnant", "primary genital herpes", "started 1 week ago", "declines it"], "x": "Primary infection within 6 weeks of birth; she has capacity and declines surgery."},
+    {"t": "Make your own answer before looking", "x": "**Intrapartum IV aciclovir**."},
+    {"t": "Rule out the others", "elim": [[0, "A capacitous woman can decline surgery; you cannot override her."], [1, "Induction does not reduce transmission."], [3, "Without treatment the neonatal risk is high."], [4, "Topical aciclovir gives no systemic protection."]]},
+    {"t": "Commit", "x": "**C. Intrapartum IV aciclovir.** The alternative to caesarean."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 19 year old man has a 2 day history of a cluster of painful blisters on his lower lip, which burst to form shallow ulcers. A skin sample shows the blisters lie within the epidermis, and the epidermal cells are swollen with multinucleated giant cells.",
+   "q": "Which is the most likely mechanism of the blister formation?",
+   "o": ["Antibodies against desmoglein 3", "Antibodies against hemidesmosomes", "Bacterial toxin cleaving desmoglein 1", "Keratinocyte ballooning degeneration", "Vasculitis of dermal vessels"],
+   "a": 3,
+   "steps": [
+    {"t": "Read the question line first", "x": "A mechanism question about vesicles."},
+    {"t": "Pick out the clues", "clues": ["cluster of painful blisters on his lower lip", "burst to form shallow ulcers", "within the epidermis", "multinucleated giant cells"], "x": "Cold sore; intraepidermal blisters with viral cytopathic change."},
+    {"t": "Make your own answer before looking", "x": "HSV causes **keratinocyte ballooning degeneration**, forming intraepidermal blisters."},
+    {"t": "Rule out the others", "elim": [[0, "Anti-desmoglein 3 is pemphigus vulgaris, not acute grouped lip vesicles."], [1, "Anti-hemidesmosome is bullous pemphigoid: tense subepidermal blisters in the elderly."], [2, "Staph toxin causes impetigo or scalded skin, with no giant cells."], [4, "Vasculitis causes purpura, not vesicles."]]},
+    {"t": "Commit", "x": "**D. Ballooning degeneration.** Virus damages keratinocytes."}
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old man has a 3 day history of painful sores on his penis and burning when passing urine. He felt tingling before they appeared. His temperature is 37.8°C and pulse rate 88 bpm. He has had two new sexual partners this month. There are grouped shallow ulcers on a red base and tender inguinal lymph nodes.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Chancroid", "Genital herpes", "Genital warts", "Primary syphilis", "Scabies"],
+   "a": 1,
+   "e": "Painful grouped ulcers after a tingling prodrome, with dysuria and tender nodes, is genital herpes. Syphilis is painless and single.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Painful or painless genital ulcer?"},
+    {"t": "Pick out the clues", "clues": ["painful sores", "burning when passing urine", "tingling before they appeared", "grouped shallow ulcers on a red base", "tender inguinal lymph nodes"], "x": "Classic HSV: prodrome, pain, grouping, dysuria, nodes."},
+    {"t": "Make your own answer before looking", "x": "**Genital herpes**."},
+    {"t": "Rule out the others", "elim": [[0, "Chancroid gives a deep, ragged single ulcer, rare in the UK, without a vesicle stage."], [2, "Warts are painless growths."], [3, "Syphilis is a single painless chancre."], [4, "Scabies causes itchy burrows and papules."]]},
+    {"t": "Commit", "x": "**B. Genital herpes.**"}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 35 year old woman has tingling on her upper lip for a day, followed by a cluster of small painful blisters. She has had similar episodes after colds and sunny holidays. She is otherwise well. Her temperature is 37.0°C.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": ["Coxsackie A virus", "Epstein-Barr virus", "Herpes simplex virus type 1", "Human papillomavirus", "Varicella zoster virus"],
+   "a": 2,
+   "e": "Recurrent cold sores triggered by illness and UV, with a tingling prodrome, are classically HSV-1 reactivating from the trigeminal ganglion.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Organism for recurrent lip blisters."},
+    {"t": "Pick out the clues", "clues": ["tingling on her upper lip", "cluster of small painful blisters", "after colds and sunny holidays"], "x": "Prodrome, grouped vesicles, triggers: illness and UV."},
+    {"t": "Make your own answer before looking", "x": "**HSV-1** reactivation."},
+    {"t": "Rule out the others", "elim": [[0, "Coxsackie causes hand, foot and mouth in children, not recurrent lip sores."], [1, "EBV causes glandular fever."], [3, "HPV causes warts."], [4, "VZV gives a dermatomal rash, rarely recurrent on the lip."]]},
+    {"t": "Commit", "x": "**C. HSV-1.** Classic cold sore."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 41 year old man has a 2 day history of a painful red left eye, watering, sensitivity to light and blurred vision. He has a cold sore on his lip. He does not wear contact lenses. His pulse rate is 76 bpm and BP 124/80 mmHg. Fluorescein is applied to the eye.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on fluorescein staining?",
+   "o": ["Dendritic ulcer", "Diffuse punctate staining only", "Large round central ulcer", "No staining", "Vertical linear scratches"],
+   "a": 0,
+   "e": "HSV keratitis gives a branching dendritic ulcer on fluorescein. A round ulcer suggests bacterial keratitis (contact lenses); linear scratches suggest a foreign body under the lid.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Predict the fluorescein finding."},
+    {"t": "Pick out the clues", "clues": ["painful red left eye", "sensitivity to light", "cold sore on his lip", "does not wear contact lenses"], "x": "Painful red eye, photophobia, active HSV."},
+    {"t": "Make your own answer before looking", "x": "**Dendritic ulcer** of HSV keratitis."},
+    {"t": "Rule out the others", "elim": [[1, "Punctate staining fits dry eye, not HSV."], [2, "A round ulcer suggests bacterial keratitis, usually in lens wearers."], [3, "Corneal infection with pain and photophobia will stain."], [4, "Linear scratches suggest a foreign body under the lid."]]},
+    {"t": "Commit", "x": "**A. Dendritic ulcer.**"}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 23 year old woman has a 2 day history of a rash on her palms and the backs of her hands. The lesions are round with three concentric rings: a dark centre, a pale ring and a red outer ring. A week ago she had a cold sore. She takes no medicines. Her temperature is 37.2°C and pulse rate 80 bpm.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely trigger of her rash?",
+   "o": ["Amoxicillin", "Carbamazepine", "Herpes simplex virus type 1", "Parvovirus B19", "Streptococcus pyogenes"],
+   "a": 2,
+   "e": "Target lesions with three rings on the hands after a cold sore are erythema multiforme, most commonly triggered by HSV-1.",
+   "steps": [
+    {"t": "Read the question line first", "x": "What triggered the rash?"},
+    {"t": "Pick out the clues", "clues": ["palms and the backs of her hands", "three concentric rings", "A week ago she had a cold sore", "She takes no medicines"], "x": "Target lesions (erythema multiforme) after HSV; no drug trigger."},
+    {"t": "Make your own answer before looking", "x": "**HSV-1**, the commonest trigger of erythema multiforme."},
+    {"t": "Rule out the others", "elim": [[0, "She takes no medicines."], [1, "She takes no medicines; drugs trigger SJS more than EM."], [3, "Parvovirus causes slapped cheek."], [4, "Strep causes scarlet fever or erythema nodosum."]]},
+    {"t": "Commit", "x": "**C. HSV-1.** Cold sore, then target lesions."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old man has a 3 day history of fever, headache and strange behaviour. Today he had a seizure. He is confused and smells odd things. His temperature is 38.9°C, pulse rate 104 bpm and BP 136/84 mmHg. MRI shows changes in the left temporal lobe.",
+   "labs": [["CSF white cells", "88 /mm³ (lymphocytes)", "<5", "H"], ["CSF protein", "0.8 g/L", "0.15–0.45", "H"], ["CSF glucose", "3.4 mmol/L (plasma 5.6)", "≥60% of plasma", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Bacterial meningitis", "Herpes simplex encephalitis", "Migraine with aura", "Subarachnoid haemorrhage", "Temporal lobe glioma"],
+   "a": 1,
+   "e": "Fever, behaviour change, seizures, olfactory symptoms and temporal lobe changes with lymphocytic CSF and normal glucose are HSV encephalitis, a rare but severe complication.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Diagnosis of an acute febrile brain illness."},
+    {"t": "Pick out the clues", "clues": ["strange behaviour", "had a seizure", "smells odd things", "left temporal lobe", "38.9°C"], "x": "Encephalitis (brain function change) localised to the temporal lobe."},
+    {"t": "Make your own answer before looking", "x": "**Herpes simplex encephalitis**."},
+    {"t": "Rule out the others", "elim": [[0, "Bacterial meningitis gives neutrophils and low CSF glucose."], [2, "Migraine does not cause fever and CSF pleocytosis."], [3, "SAH is a sudden thunderclap headache."], [4, "A glioma is not acute with fever and CSF lymphocytes."]]},
+    {"t": "Commit", "x": "**B. HSV encephalitis.** Temporal lobe + fever + confusion."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 9 day old baby boy is lethargic and feeding poorly, with vesicles on his scalp and around his eye. He had a seizure this morning. His mother had painful genital ulcers for the first time at 38 weeks and delivered vaginally. His temperature is 38.4°C and pulse rate 182 bpm.",
+   "labs": [["CRP", "34 mg/L", "<5", "H"], ["ALT", "210 U/L", "<40", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Erythema toxicum", "Group B streptococcal sepsis", "Impetigo", "Neonatal herpes simplex infection", "Neonatal varicella"],
+   "a": 3,
+   "e": "Skin, eye and mouth vesicles with encephalitis and sepsis after a vaginal birth to a mother with primary genital herpes within 6 weeks of delivery is neonatal HSV.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Diagnosis in a sick neonate with vesicles."},
+    {"t": "Pick out the clues", "clues": ["vesicles on his scalp and around his eye", "had a seizure", "painful genital ulcers for the first time at 38 weeks", "delivered vaginally"], "x": "Primary maternal HSV within 6 weeks of birth, vaginal delivery, vesicles plus encephalitis."},
+    {"t": "Make your own answer before looking", "x": "**Neonatal herpes simplex infection**."},
+    {"t": "Rule out the others", "elim": [[0, "Erythema toxicum is a harmless rash in a well baby."], [1, "GBS sepsis does not cause vesicles; the maternal history points to HSV."], [2, "Impetigo gives honey-crusted lesions in a well child."], [4, "Varicella needs maternal chickenpox, not genital ulcers."]]},
+    {"t": "Commit", "x": "**D. Neonatal HSV.** Maternal primary infection near term."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 38 year old man with HIV has a 3 week history of painful perianal ulcers that are not typical in appearance. His temperature is 37.6°C, pulse rate 86 bpm and BP 128/76 mmHg. Syphilis serology is negative.",
+   "labs": [["CD4 count", "160 cells/mm³", "500–1500", "L"], ["Syphilis serology", "Negative", "Negative", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": ["Dark-ground microscopy", "HSV IgG serology", "HSV PCR (NAAT) on a lesion swab", "Skin biopsy for histology", "Urine microscopy"],
+   "a": 2,
+   "e": "PCR (NAAT) on a lesion swab is the most effective test and supports the diagnosis in atypical or recurrent presentations, common when immunosuppressed.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Confirmatory test for an atypical ulcer."},
+    {"t": "Pick out the clues", "clues": ["HIV", "painful perianal ulcers", "not typical in appearance", "Syphilis serology is negative"], "x": "Immunosuppressed, painful, atypical: HSV likely, needs confirming."},
+    {"t": "Make your own answer before looking", "x": "**HSV PCR on a lesion swab**."},
+    {"t": "Rule out the others", "elim": [[0, "Dark-ground microscopy is for syphilis, already negative."], [1, "IgG shows past infection, not the cause of this ulcer."], [3, "Biopsy is second-line if PCR is negative."], [4, "Urine microscopy will not diagnose an ulcer."]]},
+    {"t": "Commit", "x": "**C. HSV PCR.** Gold standard on a lesion swab."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 29 year old woman sees her GP with tingling on her lower lip followed by a cluster of painful vesicles on a red base. She has had identical episodes twice a year for 10 years. She is otherwise well, and the lesions look classic.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": ["Bacterial swab", "HSV serology", "Lesion biopsy", "No investigation: clinical diagnosis", "Viral PCR of blood"],
+   "a": 3,
+   "e": "HSV is usually diagnosed clinically from characteristic grouped vesicles. PCR on a swab is reserved for ambiguous or atypical lesions.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Initial investigation for a typical cold sore."},
+    {"t": "Pick out the clues", "clues": ["tingling on her lower lip", "cluster of painful vesicles on a red base", "identical episodes twice a year", "the lesions look classic"], "x": "Classic recurrent HSV-1."},
+    {"t": "Make your own answer before looking", "x": "**Clinical diagnosis**, no test."},
+    {"t": "Rule out the others", "elim": [[0, "A bacterial swab looks for the wrong organism."], [1, "Serology does not diagnose an episode."], [2, "Biopsy is never needed for a classic cold sore."], [4, "Blood PCR is for systemic disease such as neonatal HSV."]]},
+    {"t": "Commit", "x": "**D. Clinical diagnosis.** Swab only if atypical."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 25 year old woman has her first episode of genital herpes, with painful vulval ulcers and dysuria for 2 days. She is not pregnant and has no allergies. Her temperature is 37.6°C, pulse rate 86 bpm and BP 116/72 mmHg. She is passing urine.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": ["Aciclovir 400 mg oral three times daily for 5 days", "Aciclovir IV 10 mg/kg three times daily", "Benzathine penicillin IM", "Ceftriaxone IM single dose", "Topical hydrocortisone"],
+   "a": 0,
+   "e": "First-line treatment is oral aciclovir 400 mg TDS for 5 days, with analgesia, hygiene and abstinence until healed. IV aciclovir is for encephalitis or neonatal infection.",
+   "steps": [
+    {"t": "Read the question line first", "x": "First-line treatment for genital herpes."},
+    {"t": "Pick out the clues", "clues": ["first episode of genital herpes", "not pregnant", "pulse rate 86 bpm", "She is passing urine"], "x": "Uncomplicated, not pregnant, no retention: outpatient treatment."},
+    {"t": "Make your own answer before looking", "x": "**Oral aciclovir 400 mg TDS for 5 days**."},
+    {"t": "Rule out the others", "elim": [[1, "IV is for severe disease such as encephalitis."], [2, "Penicillin treats syphilis."], [3, "Ceftriaxone treats gonorrhoea."], [4, "Steroids do not treat a virus."]]},
+    {"t": "Commit", "x": "**A. Oral aciclovir.**"}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 32 year old woman who is 36 weeks pregnant has a 3 day history of painful genital ulcers. PCR confirms HSV-2, and serology shows this is a primary infection. Her temperature is 37.5°C, pulse rate 90 bpm and BP 120/76 mmHg. She wants to do what is safest for her baby.",
+   "labs": [["HSV-2 PCR (lesion swab)", "Detected", "Not detected", "H"], ["HSV IgG", "Negative", "Negative", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": ["Elective caesarean section with oral aciclovir", "Induction of labour at 37 weeks", "IV aciclovir for the baby only after birth", "Planned vaginal delivery with no treatment", "Topical aciclovir only"],
+   "a": 0,
+   "e": "Primary genital herpes within 6 weeks of delivery: oral aciclovir plus elective caesarean, which avoids contact with infected genital secretions in the birth canal.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Delivery plan for HSV in late pregnancy."},
+    {"t": "Pick out the clues", "clues": ["36 weeks pregnant", "primary infection", "safest for her baby"], "x": "Primary episode within 6 weeks of delivery."},
+    {"t": "Make your own answer before looking", "x": "**Oral aciclovir + elective caesarean**."},
+    {"t": "Rule out the others", "elim": [[1, "Induction still means vaginal delivery through infected secretions."], [2, "Waiting until after birth misses prevention."], [3, "Highest risk of neonatal herpes."], [4, "Topical treatment does not protect the baby."]]},
+    {"t": "Commit", "x": "**A. Elective caesarean with oral aciclovir.**"}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 45 year old woman has a painful, red, watering right eye with photophobia for 2 days. She had a cold sore last week. Her pulse rate is 72 bpm and BP 126/78 mmHg. Fluorescein staining shows a branching dendritic ulcer on the cornea.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Oral prednisolone", "Topical aciclovir", "Topical chloramphenicol", "Topical dexamethasone", "Topical ketorolac"],
+   "a": 1,
+   "e": "Herpes simplex keratitis is treated first-line with topical aciclovir. Topical steroids such as dexamethasone can worsen the ulcer.",
+   "steps": [
+    {"t": "Read the question line first", "x": "First-line treatment for HSV keratitis."},
+    {"t": "Pick out the clues", "clues": ["painful, red, watering right eye", "photophobia", "cold sore last week", "branching dendritic ulcer"], "x": "Dendritic ulcer = HSV keratitis."},
+    {"t": "Make your own answer before looking", "x": "**Topical aciclovir**; no steroids."},
+    {"t": "Rule out the others", "elim": [[0, "Steroids worsen HSV keratitis."], [2, "Chloramphenicol is antibacterial and will not treat HSV."], [3, "Topical steroids can make the ulcer much worse."], [4, "An NSAID drop does not treat the virus."]]},
+    {"t": "Commit", "x": "**B. Topical aciclovir.** Never steroids on a dendritic ulcer."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 30 year old woman has recurrent cold sores on the same part of her upper lip two or three times a year, usually after a cold or sunbathing. Each episode starts with tingling at the site. Her pulse rate is 70 bpm and BP 118/74 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Where does the virus most likely lie latent between episodes?",
+   "o": ["Dorsal root ganglion of T4", "Geniculate ganglion", "Sacral ganglia", "Skin keratinocytes of the lip", "Trigeminal ganglion"],
+   "a": 4,
+   "e": "HSV-1 establishes latency in the trigeminal ganglion and travels back down the nerve when reactivated by illness, stress or UV, causing recurrences at the same site.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Site of HSV-1 latency."},
+    {"t": "Pick out the clues", "clues": ["recurrent cold sores", "same part of her upper lip", "after a cold or sunbathing", "starts with tingling"], "x": "Same-site recurrences after triggers: reactivation from a sensory ganglion."},
+    {"t": "Make your own answer before looking", "x": "**Trigeminal ganglion**."},
+    {"t": "Rule out the others", "elim": [[0, "T4 dorsal root ganglion is a VZV shingles site, not the lip."], [1, "Geniculate ganglion is linked with Ramsay Hunt (VZV)."], [2, "Sacral ganglia are the site for genital HSV-2."], [3, "Latency is in neurons, not skin cells."]]},
+    {"t": "Commit", "x": "**E. Trigeminal ganglion.**"}
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {"d": "diagnosis", "q": "What is HSV, and which types cause which disease?", "tip": "Exam thinking: classic site for each type, then the caveat.", "points": [
+    {"p": "Viral infection causing painful vesicular lesions on skin or mucosa", "k": [["virus", "viral"], ["vesic", "blister"]], "why": "Pain distinguishes it from syphilis."},
+    {"p": "HSV-1: classically oral herpes (cold sores)", "k": [["hsv-1", "hsv1", "type 1"], ["oral", "cold sore", "lip", "mouth"]], "why": "Latent in the trigeminal ganglion."},
+    {"p": "HSV-2: classically genital herpes", "k": [["hsv-2", "hsv2", "type 2"], ["genital"]], "why": "Latent in the sacral ganglia."},
+    {"p": "Either type can cause disease at either site", "k": [["either", "both", "any site"]], "why": "Oral sex spreads HSV-1 to the genitals."}
+   ]},
+   {"d": "diagnosis", "q": "How does genital herpes present?", "tip": "Exam thinking: the order of events.", "points": [
+    {"p": "Burning or tingling prodrome", "k": [["prodrom", "tingl", "burning"]], "why": "Present in about 50% of recurrences."},
+    {"p": "Grouped vesicles on an erythematous base", "k": [["grouped", "cluster"], ["vesic", "blister"]], "why": "Classic appearance."},
+    {"p": "Rupture into painful ulcers", "k": [["ulcer"], ["pain"]], "why": "Painless ulcer = think syphilis."},
+    {"p": "Local lymphadenopathy and dysuria", "k": [["lymph", "node"], ["dysuria", "urin"]], "why": "Dysuria can cause retention."}
+   ]},
+   {"d": "diagnosis", "q": "What triggers recurrence, and what advice is given about sex?", "tip": "Exam thinking: reactivation of latent virus.", "points": [
+    {"p": "Stress or intercurrent illness", "k": [["stress", "illness", "cold", "fever"]], "why": "Classic triggers."},
+    {"p": "Immunosuppression and UV exposure", "k": [["immunosupp", "uv", "sun"]], "why": "Also risk factors."},
+    {"p": "Abstain from sex until prodrome and lesions fully resolve", "k": [["abstain", "avoid sex", "no sex", "avoid sexual"]], "why": "Reduces transmission."}
+   ]},
+   {"d": "diagnosis", "q": "How does HSV keratitis present and what does fluorescein show?", "tip": "Exam thinking: painful red eye plus one stain finding.", "points": [
+    {"p": "Painful red eye", "k": [["pain"], ["red"]], "why": "Unlike conjunctivitis, it is painful."},
+    {"p": "Photophobia, foreign body sensation, blurred vision", "k": [["photophob", "light", "foreign body", "blur"]], "why": "Corneal involvement."},
+    {"p": "Dendritic ulcer on fluorescein staining", "k": [["dendrit"]], "why": "Branching ulcer is pathognomonic."}
+   ]},
+   {"d": "diagnosis", "q": "What is erythema multiforme and how is it linked to HSV?", "tip": "Exam thinking: the lesion and the trigger.", "points": [
+    {"p": "Target lesions with three concentric rings", "k": [["target"], ["three", "3", "ring"]], "why": "Distinguishes from urticaria."},
+    {"p": "Typically on the hands and feet", "k": [["hand", "feet", "foot", "palm"]], "why": "Acral distribution."},
+    {"p": "Most commonly triggered by HSV-1", "k": [["hsv", "herpes"]], "why": "Often after a cold sore."}
+   ]},
+   {"d": "diagnosis", "q": "What is neonatal herpes, how is it caught, and what other severe complication should you know?", "tip": "Exam thinking: timing of maternal infection.", "points": [
+    {"p": "Vesicles on skin, eye or mouth with encephalitis and sepsis", "k": [["vesic", "skin", "eye"], ["encephalitis", "sepsis", "seizure"]], "why": "High mortality."},
+    {"p": "Transmitted during delivery if mother has primary infection within 6 weeks of birth", "k": [["6", "six"], ["primary", "deliver", "birth"]], "why": "Hence elective caesarean."},
+    {"p": "Rare but severe herpes encephalitis (temporal lobes)", "k": [["encephalitis"]], "why": "Fever, confusion, seizures, behaviour change."}
+   ]},
+   {"d": "investigation", "q": "How is HSV diagnosed, and what is the gold standard test?", "tip": "Exam thinking: first-line versus confirmatory.", "points": [
+    {"p": "Usually clinical, from characteristic grouped vesicles", "k": [["clinical"]], "why": "Treat without waiting."},
+    {"p": "NAAT/PCR on a lesion swab is most effective", "k": [["pcr", "naat"], ["swab", "lesion"]], "why": "Swab the base of an ulcer."},
+    {"p": "PCR supports diagnosis in ambiguous or recurrent presentations", "k": [["ambiguous", "atypical", "recurrent", "unclear"]], "why": "Also used in pregnancy and immunosuppression."}
+   ]},
+   {"d": "management", "q": "What is the first-line treatment for oral or genital herpes, with dose and alternatives?", "tip": "Exam thinking: drug, dose, frequency, duration.", "points": [
+    {"p": "Oral aciclovir 400 mg three times daily for 5 days", "k": [["aciclovir", "acyclovir"], ["400"]], "why": "TDS for 5 days."},
+    {"p": "Valaciclovir or famciclovir as alternatives", "k": [["valaciclovir", "famciclovir"]], "why": "Less frequent dosing."},
+    {"p": "Supportive: paracetamol or ibuprofen, hygiene, avoid sex until healed", "k": [["paracetamol", "ibuprofen", "analges", "hygiene", "avoid sex"]], "why": "Symptom relief and transmission."}
+   ]},
+   {"d": "management", "q": "How do you manage HSV keratitis and primary genital herpes near delivery?", "tip": "Exam thinking: one drug to give, one to avoid, one operation.", "points": [
+    {"p": "Keratitis: topical aciclovir", "k": [["topical", "eye drop", "ointment"], ["aciclovir", "antiviral", "ganciclovir"]], "why": "First-line for the eye."},
+    {"p": "Avoid topical steroids", "k": [["steroid"]], "why": "They worsen the ulcer."},
+    {"p": "Primary genital herpes within 6 weeks of delivery: oral aciclovir plus elective caesarean", "k": [["caesarean", "c-section", "cesarean", "section"]], "why": "Avoids contact with genital secretions."},
+    {"p": "If caesarean declined: intrapartum IV aciclovir", "k": [["iv", "intravenous", "intrapartum"]], "why": "Reduces neonatal transmission."}
+   ]},
+   {"d": "science", "q": "Why does HSV recur, and where does it hide?", "tip": "Exam thinking: virus type, site of latency, route back.", "points": [
+    {"p": "Double-stranded DNA virus that becomes latent in sensory nerve ganglia", "k": [["laten"], ["ganglia", "ganglion", "nerve"]], "why": "Antivirals cannot clear latent virus."},
+    {"p": "HSV-1: trigeminal ganglion; HSV-2: sacral ganglia", "k": [["trigeminal"], ["sacral"]], "why": "Geniculate ganglion is VZV (Ramsay Hunt)."},
+    {"p": "Reactivation travels back down the nerve to cause recurrent lesions", "k": [["down", "back", "reactivat"]], "why": "Same site each time."}
+   ]},
+   {"d": "science", "q": "Why do vesicles form, why does encephalitis hit the temporal lobes, and why does caesarean protect?", "tip": "Exam thinking: three mechanisms.", "points": [
+    {"p": "Keratinocyte ballooning degeneration causes intraepidermal blisters that rupture to ulcers", "k": [["balloon", "keratinocyte", "intraepidermal"]], "why": "Multinucleated giant cells on cytology."},
+    {"p": "Encephalitis spreads along olfactory or trigeminal tracts to the temporal lobes", "k": [["olfactory", "trigeminal"]], "why": "Hence smell disturbance and temporal MRI changes."},
+    {"p": "Caesarean avoids contact with infected genital secretions in vaginal delivery", "k": [["secretion", "birth canal", "contact", "vaginal"]], "why": "Transmission is by direct contact."},
+    {"p": "Erythema multiforme is a hypersensitivity reaction to HSV antigens", "k": [["hypersensitiv"]], "why": "Not active infection of the skin lesions."}
+   ]}
+  ]
+ },
+ "glossary": {
+  "HSV": "Herpes simplex virus: a double-stranded DNA virus causing painful vesicles; types 1 and 2.",
+  "HSV-1": "Herpes simplex virus type 1: classically causes cold sores; latent in the trigeminal ganglion.",
+  "HSV-2": "Herpes simplex virus type 2: classically causes genital herpes; latent in the sacral ganglia.",
+  "Cold sore": "Recurrent HSV blisters on or around the lip.",
+  "Vesicle": "Small fluid-filled blister under 5 mm.",
+  "Prodrome": "Early warning symptoms, such as tingling or burning, before lesions appear.",
+  "Lymphadenopathy": "Enlarged lymph nodes.",
+  "Dysuria": "Pain or burning on passing urine.",
+  "Latency": "A dormant state in which the virus persists in nerve cells without causing disease.",
+  "Reactivation": "Latent virus becoming active again and causing a recurrence.",
+  "Trigeminal ganglion": "Sensory nerve cluster of cranial nerve V; site of HSV-1 latency.",
+  "Sacral ganglia": "Sensory nerve clusters at the base of the spine; site of HSV-2 latency.",
+  "Primary infection": "The first-ever infection with HSV, with no existing antibodies; usually the most severe.",
+  "NAAT": "Nucleic acid amplification test, such as PCR, that detects viral DNA.",
+  "PCR": "Polymerase chain reaction: amplifies viral DNA from a swab to confirm and type HSV.",
+  "Aciclovir": "Antiviral that blocks herpes DNA replication; 400 mg TDS for 5 days for oral or genital herpes.",
+  "Valaciclovir": "Prodrug of aciclovir with better absorption, so fewer daily doses.",
+  "Famciclovir": "Alternative oral antiviral for herpes infections.",
+  "TDS": "Three times a day.",
+  "Herpes simplex keratitis": "HSV infection of the cornea causing a painful red eye and a dendritic ulcer.",
+  "Dendritic ulcer": "Branching corneal ulcer seen with fluorescein; the sign of HSV keratitis.",
+  "Fluorescein": "Orange dye that stains damaged cornea green under blue light.",
+  "Photophobia": "Pain or discomfort on exposure to light.",
+  "Erythema multiforme": "Hypersensitivity rash with target lesions on the hands and feet, most often triggered by HSV-1.",
+  "Target lesion": "Round skin lesion with three concentric rings: dark centre, pale ring, red outer ring.",
+  "Neonatal herpes": "HSV infection of a newborn caught during delivery; can cause encephalitis and sepsis.",
+  "Herpes encephalitis": "HSV infection of the brain, typically the temporal lobes; causes fever, confusion and seizures.",
+  "Encephalitis": "Inflammation of the brain tissue, causing altered behaviour, confusion or seizures.",
+  "Temporal lobe": "Part of the brain involved in memory, smell and behaviour; targeted by HSV encephalitis.",
+  "Elective caesarean section": "A planned surgical delivery before labour starts.",
+  "Intrapartum": "During labour and delivery.",
+  "Ballooning degeneration": "Swelling and breakdown of virus-infected keratinocytes that splits the epidermis into blisters.",
+  "Keratinocyte": "The main cell of the epidermis.",
+  "Type IV hypersensitivity": "Delayed, T-cell-mediated immune reaction.",
+  "Primary syphilis": "Treponema pallidum infection causing a single painless genital ulcer (chancre).",
+  "BASHH": "British Association for Sexual Health and HIV, which writes UK sexual health guidelines.",
+  "Multinucleated giant cells": "Fused infected cells with several nuclei, seen in herpes virus infections."
+ }
+}

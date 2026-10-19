@@ -1,0 +1,2295 @@
+{
+ "id": "respiratory-failure",
+ "patient": {
+  "name": "Patricia Doherty",
+  "age": 71,
+  "sex": "F",
+  "setting": "Emergency Department (resus)",
+  "complaint": "Two days of worsening breathlessness, now drowsy and confused",
+  "background": [
+   "COPD, FEV1 38% predicted; ex-smoker, 50 pack-years",
+   "Two COPD admissions last winter",
+   "Home inhalers: tiotropium and salbutamol",
+   "Lives alone in Lewisham"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect an arterial gas in the stem and 'Which is the most likely diagnosis?' or 'most likely cause': PaO2 <8 kPa makes it respiratory failure, the PaCO2 (above or below 6 kPa) decides type 1 or type 2.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Patricia, 71, **COPD**: 3 days of green sputum and more wheeze.",
+      "Paramedics gave **15 L/min oxygen** via non-rebreather mask.",
+      "On the way in she became **drowsy and muddled**.",
+      "Daughter says she is 'never usually like this'."
+     ],
+     "vitals": {
+      "T": "37.9°C",
+      "HR": "108 bpm",
+      "BP": "146/88 mmHg",
+      "RR": "28 /min",
+      "SpO2": "99% on 15 L",
+      "GCS": "13"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's lungs are failing at both jobs: getting **oxygen in** and getting **CO2 out**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Pursed-lip breathing, using her neck muscles.",
+      "Warm hands, bounding pulse.",
+      "A **coarse flap** when she holds her arms out.",
+      "Wheeze throughout, coarse crackles at the right base."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Patricia has a coarse flap of her outstretched hands. What does it point to here?",
+     "o": [
+      "Benzodiazepine toxicity",
+      "CO2 retention",
+      "Hypoglycaemia",
+      "Hypoxaemia alone"
+     ],
+     "a": 1,
+     "r": "**Asterixis** in a COPD patient on high-flow oxygen means **CO2 retention**. Hypoxaemia alone causes cyanosis and confusion, not a flap."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia shows the classic set: breathless, confused, drowsy and tachypnoeic, plus the **flap** that signals rising CO2."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia's **COPD** is the commonest cause of **type 2** failure; a pneumonia patient with healthy lungs would more likely be type 1."
+    },
+    {
+     "type": "compare",
+     "title": "Type 1 vs type 2 respiratory failure",
+     "head": [
+      "Feature",
+      "Type 1",
+      "Type 2"
+     ],
+     "rows": [
+      [
+       "PaO2",
+       "**<8 kPa**",
+       "**<8 kPa**"
+      ],
+      [
+       "PaCO2",
+       "Normal or low",
+       "**>6 kPa**"
+      ],
+      [
+       "Problem",
+       "Oxygenation (V/Q mismatch)",
+       "Ventilation (hypoventilation)"
+      ],
+      [
+       "Classic causes",
+       "Pneumonia, pulmonary oedema, PE, ARDS",
+       "**COPD**, opioid overdose, neuromuscular disease"
+      ],
+      [
+       "Oxygen target",
+       "94–98%",
+       "88–92%"
+      ]
+     ]
+    },
+    {
+     "type": "flow",
+     "title": "Naming the failure from the gas",
+     "nodes": [
+      "PaO2 <8 kPa?",
+      "Yes: respiratory failure",
+      "Now look at PaCO2",
+      "≤6 kPa: type 1 (oxygenation)",
+      ">6 kPa: type 2 (ventilation)"
+     ],
+     "caption": "Two numbers, two questions. The PaCO2 decides the type."
+    },
+    {
+     "type": "pearl",
+     "text": "A saturation of **99% on 15 L** does not mean safe. Oxygen hides a rising CO2: **drowsiness plus a flap** means check an arterial gas now."
+    },
+    {
+     "type": "trap",
+     "text": "Drowsy plus flap in COPD is not 'just confusion from infection'. Think **CO2 narcosis** first, especially after uncontrolled oxygen."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (arterial blood gas) or 'initial investigation to find the cause' (chest X-ray; CTPA only when PE is suspected).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Patricia is drowsy with a flap. Which test confirms respiratory failure and its type?",
+     "o": [
+      "Arterial blood gas",
+      "Chest X-ray",
+      "Peak expiratory flow",
+      "Pulse oximetry"
+     ],
+     "a": 0,
+     "r": "Only an **ABG** gives PaO2, PaCO2 and pH. Oximetry misses CO2 completely."
+    },
+    {
+     "type": "labs",
+     "title": "Arterial blood gas on 15 L/min oxygen",
+     "rows": [
+      [
+       "pH",
+       "7.24",
+       "7.35–7.45",
+       "L"
+      ],
+      [
+       "PaO2",
+       "15.2 kPa",
+       "10–13 (on air)",
+       "H"
+      ],
+      [
+       "PaCO2",
+       "9.4 kPa",
+       "4.7–6.0",
+       "H"
+      ],
+      [
+       "HCO3-",
+       "33 mmol/L",
+       "22–26",
+       "H"
+      ],
+      [
+       "Lactate",
+       "1.3 mmol/L",
+       "<2.0",
+       ""
+      ]
+     ],
+     "text": "High PaCO2 with acidosis: **acute-on-chronic type 2**. The raised bicarbonate shows she retains CO2 chronically."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's gas is the proof: **PaCO2 9.4 kPa** and **pH 7.24**. Her PaO2 looks fine only because she is on 15 L."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "PaCO2",
+      "min": 3,
+      "max": 12,
+      "unit": "kPa",
+      "bands": [
+       [
+        3,
+        4.7,
+        "low (hyperventilating)",
+        "warn"
+       ],
+       [
+        4.7,
+        6,
+        "normal",
+        "ok"
+       ],
+       [
+        6,
+        12,
+        "above 6 kPa: type 2",
+        "bad"
+       ]
+      ],
+      "value": 9.4,
+      "label": "Patricia 9.4",
+      "caption": "Well above 6 kPa: hypercapnic (type 2) respiratory failure."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Now find why: Patricia needs a **chest X-ray**, bloods (FBC, CRP, U&E) and an ECG."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Patricia's chest X-ray",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "right",
+        "zone": "lower"
+       }
+      ],
+      "caption": "Right lower zone consolidation on hyperinflated lungs: an infective exacerbation of COPD."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "ECG: sinus tachycardia 108 bpm, no acute changes.",
+      "WCC 14.6, CRP 92: infection.",
+      "No pleuritic pain or calf swelling: **no CTPA** needed."
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "A normal SpO2 never excludes type 2 failure, and a venous gas cannot give you the PaO2. The **arterial** gas is the gold standard."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': controlled oxygen to the right target, then 'next step' NIV when pH is 7.25–7.35 in type 2, and intubation if NIV fails.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Patricia's PaCO2 is 9.4 kPa on 15 L. What do you do with her oxygen now?",
+     "o": [
+      "Keep 15 L/min non-rebreather",
+      "Stop all oxygen",
+      "Switch to a 28% Venturi mask, target 88–92%",
+      "Switch to nasal cannulae, target 94–98%"
+     ],
+     "a": 2,
+     "r": "She is a **CO2 retainer**: give controlled oxygen to **88–92%**. Never stop oxygen in a hypoxic patient."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Breathless, confused, abnormal gas: Patricia gets **oxygen immediately**, but controlled, not 15 L."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Oxygen saturation target for Patricia",
+      "min": 80,
+      "max": 100,
+      "unit": "%",
+      "bands": [
+       [
+        80,
+        88,
+        "too low",
+        "bad"
+       ],
+       [
+        88,
+        92,
+        "COPD target 88–92%",
+        "ok"
+       ],
+       [
+        92,
+        100,
+        "too high for a CO2 retainer",
+        "warn"
+       ]
+      ],
+      "value": 99,
+      "label": "On 15 L: 99%",
+      "caption": "99% is too high for Patricia. Titrate down into the 88–92% band."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's target is **88–92%**, and her cause is treated: antibiotics for the consolidation (plus nebulisers and steroids for the COPD exacerbation)."
+    },
+    {
+     "type": "story",
+     "points": [
+      "28% Venturi mask: SpO2 now 90%.",
+      "Nebulised salbutamol and ipratropium; oral prednisolone 30 mg.",
+      "Antibiotics started for the right lower zone consolidation.",
+      "Repeat ABG after 1 hour: **pH 7.29**, PaCO2 8.6 kPa."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "pH after 1 hour of treatment",
+      "min": 7.0,
+      "max": 7.6,
+      "unit": "",
+      "bands": [
+       [
+        7.0,
+        7.25,
+        "below 7.25: severe, low threshold to intubate",
+        "bad"
+       ],
+       [
+        7.25,
+        7.35,
+        "7.25–7.35: NIV range",
+        "warn"
+       ],
+       [
+        7.35,
+        7.45,
+        "normal",
+        "ok"
+       ],
+       [
+        7.45,
+        7.6,
+        "alkalaemia",
+        "warn"
+       ]
+      ],
+      "value": 7.29,
+      "label": "Patricia 7.29",
+      "caption": "Still acidotic despite full medical treatment: start NIV."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia's **pH 7.29** with type 2 failure after an hour of treatment is the textbook trigger for **NIV**."
+    },
+    {
+     "type": "flow",
+     "title": "Escalation in type 2 respiratory failure",
+     "nodes": [
+      "Controlled oxygen 88–92% + treat the cause",
+      "Repeat ABG at 1 hour",
+      "pH 7.25–7.35 and PaCO2 high: NIV (BiPAP)",
+      "Repeat ABG on NIV",
+      "Worsening or no better: intubation and ventilation"
+     ],
+     "caption": "Decide the ceiling of care early, before NIV starts."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Had Patricia's pH fallen on NIV or her GCS dropped, the next step would be **intubation and mechanical ventilation**. Repeat gases track her."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Patricia's gases on NIV",
+      "x": [
+       "Arrival",
+       "1 h",
+       "2 h NIV",
+       "6 h NIV",
+       "24 h"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "pH",
+        "values": [
+         7.24,
+         7.29,
+         7.32,
+         7.37,
+         7.39
+        ]
+       },
+       {
+        "name": "PaCO2 (kPa)",
+        "values": [
+         9.4,
+         8.6,
+         7.8,
+         6.9,
+         6.5
+        ]
+       }
+      ],
+      "caption": "pH rises as PaCO2 falls: NIV is working, no intubation needed."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Patricia's care follows the two rules examiners test: **88–92%** target for CO2 retainers and **NIV for pH 7.25–7.35**."
+    },
+    {
+     "type": "trap",
+     "text": "NIV treats **type 2** acidotic failure. It is not the answer for type 1 failure from pneumonia, and a normal pH with a high CO2 (compensated) does not need it."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why PaCO2 stays normal in type 1, why COPD patients get lower oxygen targets, and how NIV clears CO2.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's consolidated right base is perfused but not ventilated: **V/Q mismatch** lowers her oxygen."
+    },
+    {
+     "type": "flow",
+     "title": "Why type 1 keeps a normal CO2",
+     "nodes": [
+      "Fluid or pus fills some alveoli",
+      "Blood passes unventilated alveoli (V/Q mismatch)",
+      "O2 transfer falls: PaO2 drops",
+      "CO2 diffuses about 20 times faster than O2",
+      "Healthy alveoli clear CO2: PaCO2 normal or low"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia's real problem is ventilation: her COPD airways and tiring muscles cannot move enough air to **clear CO2**."
+    },
+    {
+     "type": "ask",
+     "q": "Why did Patricia's CO2 rise on 15 L of oxygen?",
+     "o": [
+      "High oxygen suppressed her ventilation",
+      "Oxygen increased her CO2 production",
+      "Oxygen damaged her alveoli",
+      "Oxygen caused bronchospasm"
+     ],
+     "a": 0,
+     "r": "In a chronic CO2 retainer, uncontrolled oxygen **suppresses ventilation** (loss of hypoxic drive), so CO2 climbs."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia relies partly on **hypoxic drive**, so the paramedics' 15 L pushed her CO2 up. Hence **88–92%**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "BiPAP pushed more air into Patricia with each breath and splinted her alveoli open, so her **PaCO2 fell**."
+    },
+    {
+     "type": "compare",
+     "title": "BiPAP pressures",
+     "head": [
+      "Pressure",
+      "What it does",
+      "Effect"
+     ],
+     "rows": [
+      [
+       "Inspiratory (IPAP)",
+       "Augments each tidal volume",
+       "More CO2 blown off"
+      ],
+      [
+       "Expiratory (EPAP)",
+       "Keeps alveoli open",
+       "Better gas exchange, less work"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Patricia's flap and drowsiness are a **CO2 encephalopathy**; both settled as her PaCO2 came down."
+    },
+    {
+     "type": "pearl",
+     "text": "The exam loves the mechanism of a normal PaCO2 in type 1: **CO2 diffuses more readily than O2**, so healthy alveoli compensate."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which arterial gas defines type 1 respiratory failure?",
+   "o": [
+    "PaO2 <8 kPa, PaCO2 >6 kPa",
+    "PaO2 <8 kPa, PaCO2 normal or low",
+    "PaO2 >10 kPa, PaCO2 >6 kPa",
+    "pH <7.35 with HCO3 <22"
+   ],
+   "a": 1,
+   "r": "Type 1 is **hypoxaemia (<8 kPa) without hypercapnia**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the most important cause of type 2 respiratory failure?",
+   "o": [
+    "ARDS",
+    "COPD",
+    "Pneumonia",
+    "Pulmonary embolism"
+   ],
+   "a": 1,
+   "r": "**COPD** is the classic cause; the others usually cause type 1."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which sign specifically suggests CO2 retention?",
+   "o": [
+    "Asterixis",
+    "Clubbing",
+    "Pinpoint pupils",
+    "Tracheal deviation"
+   ],
+   "a": 0,
+   "r": "A coarse **flapping tremor** reflects CO2 encephalopathy."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a cause of type 2 rather than type 1 respiratory failure?",
+   "o": [
+    "ARDS",
+    "Opioid overdose",
+    "Pulmonary embolism",
+    "Pulmonary oedema"
+   ],
+   "a": 1,
+   "r": "**Opioids** depress respiratory drive, causing hypoventilation and a high CO2."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard investigation for respiratory failure?",
+   "o": [
+    "Arterial blood gas",
+    "Chest X-ray",
+    "Pulse oximetry",
+    "Spirometry"
+   ],
+   "a": 0,
+   "r": "The **ABG** gives PaO2, PaCO2 and pH."
+  },
+  {
+   "d": "investigation",
+   "q": "Which first-line test identifies the underlying cause?",
+   "o": [
+    "Bronchoscopy",
+    "Chest X-ray",
+    "Lung biopsy",
+    "MRI chest"
+   ],
+   "a": 1,
+   "r": "A **chest X-ray** (with bloods and ECG) looks for pneumonia, oedema or pneumothorax."
+  },
+  {
+   "d": "management",
+   "q": "What saturation target is used in a patient at risk of CO2 retention?",
+   "o": [
+    "85–88%",
+    "88–92%",
+    "94–98%",
+    "98–100%"
+   ],
+   "a": 1,
+   "r": "**88–92%** for COPD or CO2 retainers; 94–98% for everyone else."
+  },
+  {
+   "d": "management",
+   "q": "At what pH is NIV indicated in type 2 respiratory failure?",
+   "o": [
+    "7.15–7.20",
+    "7.25–7.35",
+    "7.35–7.45",
+    "Above 7.45"
+   ],
+   "a": 1,
+   "r": "**NIV for pH 7.25–7.35** with a high CO2 despite initial treatment."
+  },
+  {
+   "d": "management",
+   "q": "What is the next step when type 2 failure worsens on NIV?",
+   "o": [
+    "High-flow oxygen",
+    "Intubation and mechanical ventilation",
+    "Oral steroids",
+    "Stop all oxygen"
+   ],
+   "a": 1,
+   "r": "Failure of NIV means **intubation and ventilation** (if within the ceiling of care)."
+  },
+  {
+   "d": "science",
+   "q": "Why is PaCO2 usually normal in type 1 respiratory failure?",
+   "o": [
+    "CO2 diffuses more readily than O2",
+    "CO2 production falls",
+    "The kidneys excrete CO2",
+    "Ventilation stops"
+   ],
+   "a": 0,
+   "r": "**CO2 diffuses about 20 times faster**, so working alveoli still clear it."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "Define type 1 and type 2 respiratory failure with the gas cut-offs.",
+    "tip": "Exam thinking: PaO2 first, then PaCO2 decides the type.",
+    "points": [
+     {
+      "p": "Type 1: PaO2 <8 kPa with normal or low PaCO2",
+      "k": [
+       [
+        "type 1",
+        "type one",
+        "type i"
+       ],
+       [
+        "8"
+       ]
+      ],
+      "why": "Pure oxygenation failure."
+     },
+     {
+      "p": "Type 2: PaO2 <8 kPa with PaCO2 >6 kPa",
+      "k": [
+       [
+        "type 2",
+        "type two",
+        "type ii"
+       ],
+       [
+        "6"
+       ]
+      ],
+      "why": "Hypercapnic ventilatory failure."
+     },
+     {
+      "p": "Failure to maintain oxygenation and/or ventilation",
+      "k": [
+       [
+        "oxygenation",
+        "oxygen"
+       ],
+       [
+        "ventilation",
+        "co2",
+        "carbon dioxide"
+       ]
+      ],
+      "why": "Leads to hypoxaemia and hypercapnia."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "List the causes of type 1 respiratory failure.",
+    "tip": "Exam thinking: these are lung problems with intact ventilation.",
+    "points": [
+     {
+      "p": "Pneumonia",
+      "k": [
+       [
+        "pneumonia"
+       ]
+      ],
+      "why": "Consolidation causes V/Q mismatch."
+     },
+     {
+      "p": "Pulmonary oedema",
+      "k": [
+       [
+        "oedema",
+        "edema",
+        "heart failure"
+       ]
+      ],
+      "why": "Fluid in alveoli impairs diffusion."
+     },
+     {
+      "p": "Pulmonary embolism",
+      "k": [
+       [
+        "embol",
+        "pe"
+       ]
+      ],
+      "why": "Ventilated but unperfused lung; CO2 is often low from hyperventilation."
+     },
+     {
+      "p": "ARDS",
+      "k": [
+       [
+        "ards",
+        "acute respiratory distress"
+       ]
+      ],
+      "why": "Diffuse alveolar damage."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "List the causes of type 2 respiratory failure.",
+    "tip": "Exam thinking: anything that stops air moving in and out.",
+    "points": [
+     {
+      "p": "COPD (most important)",
+      "k": [
+       [
+        "copd",
+        "chronic obstructive"
+       ]
+      ],
+      "why": "Increased airway resistance and dead space."
+     },
+     {
+      "p": "Drug overdose, especially opioids",
+      "k": [
+       [
+        "opioid",
+        "opiate",
+        "overdose",
+        "morphine",
+        "heroin"
+       ]
+      ],
+      "why": "Reduced respiratory drive."
+     },
+     {
+      "p": "Neuromuscular disease, e.g. motor neurone disease",
+      "k": [
+       [
+        "neuromuscular",
+        "motor neurone",
+        "mnd",
+        "guillain",
+        "myasthenia"
+       ]
+      ],
+      "why": "Weak respiratory muscles."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the clinical features of respiratory failure, and which sign suggests CO2 retention?",
+    "tip": "Exam thinking: a drowsy COPD patient with a flap is CO2 retention.",
+    "points": [
+     {
+      "p": "Breathlessness and tachypnoea",
+      "k": [
+       [
+        "breathless",
+        "dyspnoea",
+        "tachypnoea",
+        "short of breath"
+       ]
+      ],
+      "why": "Earliest features."
+     },
+     {
+      "p": "Confusion, drowsiness, altered mental state",
+      "k": [
+       [
+        "confus",
+        "drows",
+        "mental"
+       ]
+      ],
+      "why": "Severe cases show altered consciousness."
+     },
+     {
+      "p": "Cyanosis",
+      "k": [
+       [
+        "cyanos"
+       ]
+      ],
+      "why": "A sign of hypoxaemia."
+     },
+     {
+      "p": "Asterixis (flap) from CO2 retention",
+      "k": [
+       [
+        "asterixis",
+        "flap"
+       ]
+      ],
+      "why": "Specific to hypercapnia here."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the gold-standard investigation and what does it show?",
+    "tip": "Exam thinking: only the arterial gas gives you the PaCO2 and PaO2 together.",
+    "points": [
+     {
+      "p": "Arterial blood gas (ABG)",
+      "k": [
+       [
+        "abg",
+        "arterial"
+       ]
+      ],
+      "why": "Pulse oximetry misses CO2."
+     },
+     {
+      "p": "Low PaO2, variably raised PaCO2",
+      "k": [
+       [
+        "pao2",
+        "po2",
+        "oxygen"
+       ],
+       [
+        "paco2",
+        "pco2",
+        "co2"
+       ]
+      ],
+      "why": "The PaCO2 tells you the type."
+     },
+     {
+      "p": "Acidosis depending on type and severity",
+      "k": [
+       [
+        "acid",
+        "ph"
+       ]
+      ],
+      "why": "A raised bicarbonate means chronic retention."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which tests look for the underlying cause?",
+    "tip": "Exam thinking: confirm with ABG, then find the cause.",
+    "points": [
+     {
+      "p": "Chest X-ray",
+      "k": [
+       [
+        "x-ray",
+        "xray",
+        "cxr",
+        "radiograph"
+       ]
+      ],
+      "why": "Pneumonia, oedema, pneumothorax."
+     },
+     {
+      "p": "Blood tests",
+      "k": [
+       [
+        "blood",
+        "fbc",
+        "crp"
+       ]
+      ],
+      "why": "Infection markers, renal function."
+     },
+     {
+      "p": "ECG",
+      "k": [
+       [
+        "ecg",
+        "electrocardiogram"
+       ]
+      ],
+      "why": "Arrhythmia, ischaemia, right heart strain."
+     },
+     {
+      "p": "CT (CTPA) if PE suspected",
+      "k": [
+       [
+        "ct",
+        "ctpa"
+       ]
+      ],
+      "why": "Only when the stem suggests PE."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What oxygen targets do you use, and how do you treat the cause?",
+    "tip": "Exam thinking: who is at risk of CO2 retention decides the target.",
+    "points": [
+     {
+      "p": "94–98% for most patients",
+      "k": [
+       [
+        "94"
+       ]
+      ],
+      "why": "Standard target."
+     },
+     {
+      "p": "88–92% for COPD or CO2 retention risk",
+      "k": [
+       [
+        "88"
+       ]
+      ],
+      "why": "Give via Venturi mask (24–28%)."
+     },
+     {
+      "p": "Antibiotics for infection",
+      "k": [
+       [
+        "antibiotic"
+       ]
+      ],
+      "why": "Treat pneumonia or infective exacerbation."
+     },
+     {
+      "p": "Diuretics for pulmonary oedema; anticoagulation for PE",
+      "k": [
+       [
+        "diuretic",
+        "furosemide",
+        "anticoag"
+       ]
+      ],
+      "why": "Cause-specific treatment."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When is NIV used, and what if it fails?",
+    "tip": "Exam thinking: the pH decides NIV versus intubation.",
+    "points": [
+     {
+      "p": "NIV (BiPAP) for type 2 failure with pH 7.25–7.35",
+      "k": [
+       [
+        "niv",
+        "bipap",
+        "non-invasive",
+        "nippv"
+       ],
+       [
+        "7.25",
+        "7.35"
+       ]
+      ],
+      "why": "Classically an acute exacerbation of COPD."
+     },
+     {
+      "p": "Not responding to NIV: intubation and mechanical ventilation",
+      "k": [
+       [
+        "intubat",
+        "mechanical ventilation",
+        "invasive"
+       ]
+      ],
+      "why": "Severe or refractory cases."
+     },
+     {
+      "p": "Monitor with repeat ABGs",
+      "k": [
+       [
+        "repeat"
+       ],
+       [
+        "abg",
+        "gas"
+       ]
+      ],
+      "why": "Shows whether NIV is working."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does type 1 failure occur and why is CO2 normal?",
+    "tip": "Exam thinking: V/Q mismatch plus the diffusion advantage of CO2.",
+    "points": [
+     {
+      "p": "V/Q mismatch or diffusion impairment",
+      "k": [
+       [
+        "v/q",
+        "vq",
+        "ventilation-perfusion",
+        "ventilation perfusion",
+        "diffusion"
+       ]
+      ],
+      "why": "Fluid or consolidation in alveoli."
+     },
+     {
+      "p": "CO2 diffuses more readily than O2",
+      "k": [
+       [
+        "diffus",
+        "soluble"
+       ]
+      ],
+      "why": "Healthy alveoli clear CO2 adequately."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does type 2 occur, why is oxygen limited in COPD, and how does NIV help?",
+    "tip": "Exam thinking: it is all about ventilation.",
+    "points": [
+     {
+      "p": "Alveolar hypoventilation: inadequate minute ventilation",
+      "k": [
+       [
+        "hypoventilation",
+        "minute ventilation"
+       ]
+      ],
+      "why": "Drive, muscles or airway resistance."
+     },
+     {
+      "p": "COPD retainers rely on hypoxic drive; high O2 suppresses ventilation",
+      "k": [
+       [
+        "hypoxic drive",
+        "suppress"
+       ]
+      ],
+      "why": "Hence 88–92%."
+     },
+     {
+      "p": "NIV: inspiratory pressure augments tidal volume, expiratory pressure keeps alveoli open",
+      "k": [
+       [
+        "tidal volume",
+        "inspiratory"
+       ]
+      ],
+      "why": "Clears CO2."
+     },
+     {
+      "p": "Asterixis reflects CO2 metabolic encephalopathy",
+      "k": [
+       [
+        "encephalopathy"
+       ]
+      ],
+      "why": "Affects the reticular activating system and motor pathways."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Respiratory failure": "Failure of the lungs to keep blood oxygen up and/or carbon dioxide down, defined by PaO2 below 8 kPa.",
+  "Type 1": "Respiratory failure with low oxygen but normal or low carbon dioxide: an oxygenation problem.",
+  "Type 2": "Respiratory failure with low oxygen and carbon dioxide above 6 kPa: a ventilation problem.",
+  "Hypoxaemia": "Abnormally low oxygen level in arterial blood.",
+  "Hypercapnia": "Abnormally high carbon dioxide level in arterial blood.",
+  "PaO2": "Partial pressure of oxygen in arterial blood; below 8 kPa defines respiratory failure.",
+  "PaCO2": "Partial pressure of carbon dioxide in arterial blood; normal about 4.7 to 6.0 kPa.",
+  "ABG": "Arterial blood gas: a sample from an artery giving pH, PaO2, PaCO2 and bicarbonate.",
+  "kPa": "Kilopascal, the unit used for blood gas pressures in the UK.",
+  "Asterixis": "A coarse flapping tremor of the outstretched hands, seen with CO2 retention and liver failure.",
+  "Cyanosis": "Blue discolouration of the lips or skin from low blood oxygen.",
+  "Tachypnoea": "Abnormally fast breathing rate.",
+  "COPD": "Chronic obstructive pulmonary disease: smoking-related fixed airflow obstruction, the commonest cause of type 2 failure.",
+  "ARDS": "Acute respiratory distress syndrome: widespread inflammatory lung injury causing severe type 1 failure.",
+  "PE": "Pulmonary embolism: a clot blocking a pulmonary artery.",
+  "Pulmonary oedema": "Fluid in the lung alveoli, usually from left heart failure.",
+  "Motor neurone disease": "Progressive degeneration of motor neurones that can weaken breathing muscles and cause type 2 failure.",
+  "V/Q mismatch": "Mismatch between air reaching alveoli (ventilation) and blood flowing past them (perfusion), lowering oxygen transfer.",
+  "Hypoventilation": "Breathing too little air per minute to clear carbon dioxide.",
+  "Minute ventilation": "Total volume of air breathed per minute: tidal volume times breathing rate.",
+  "Dead space": "Airway or lung that is ventilated but takes no part in gas exchange.",
+  "Hypoxic drive": "Breathing stimulated by low oxygen, relied on partly by chronic CO2 retainers.",
+  "CO2 retainer": "A patient, usually with severe COPD, whose blood CO2 runs chronically high.",
+  "NIV": "Non-invasive ventilation: breathing support through a tight face mask without a tube in the airway.",
+  "NIPPV": "Non-invasive positive pressure ventilation, another name for NIV.",
+  "BiPAP": "Bilevel positive airway pressure: NIV with a higher pressure on breathing in and a lower one on breathing out.",
+  "IPAP": "Inspiratory positive airway pressure on BiPAP; it boosts each breath to blow off CO2.",
+  "EPAP": "Expiratory positive airway pressure on BiPAP; it holds alveoli open.",
+  "Tidal volume": "Volume of air moved in or out in one normal breath.",
+  "Venturi mask": "Oxygen mask delivering a fixed percentage of oxygen, such as 24% or 28%, used for CO2 retainers.",
+  "Non-rebreather mask": "Mask with a reservoir bag giving high-concentration oxygen at 15 L/min.",
+  "Intubation": "Passing a tube into the trachea so a machine can ventilate the lungs.",
+  "CTPA": "CT pulmonary angiogram: contrast CT of the lung arteries to diagnose pulmonary embolism.",
+  "Metabolic encephalopathy": "Brain dysfunction from a chemical disturbance such as high CO2, causing confusion and a flap.",
+  "Reticular activating system": "Brainstem network that keeps us awake; CO2 retention depresses it, causing drowsiness.",
+  "Ceiling of care": "The agreed highest level of treatment for a patient, for example ward-based NIV but not intubation."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man with COPD has 3 days of increasing breathlessness and a cough productive of green sputum. He is drowsy and has a coarse flapping tremor. His temperature is 37.6°C, pulse rate 104 bpm, BP 150/90 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 82% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.31",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaO2",
+     "6.8 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "8.2 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "30 mmol/L",
+     "22–26",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Metabolic acidosis with respiratory compensation",
+    "Metabolic alkalosis",
+    "Respiratory alkalosis",
+    "Type 1 respiratory failure",
+    "Type 2 respiratory failure"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis from a blood gas: is PaO2 below 8 kPa, and is PaCO2 above 6 kPa?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "COPD",
+      "drowsy",
+      "coarse flapping tremor"
+     ],
+     "x": "PaO2 6.8 (<8) = respiratory failure. PaCO2 8.2 (>6) = hypercapnia. COPD, drowsiness and a flap all fit CO2 retention."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Low oxygen and high CO2 with acidosis in COPD: **type 2 respiratory failure**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "The pH is low but the CO2 is high, so the acidosis is respiratory, not metabolic."
+      ],
+      [
+       1,
+       "pH is acidotic; the raised bicarbonate is renal compensation for chronic CO2 retention."
+      ],
+      [
+       2,
+       "Alkalosis needs pH above 7.45 and a low CO2."
+      ],
+      [
+       3,
+       "Type 1 needs a normal or low PaCO2; this is 8.2 kPa."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Type 2 respiratory failure.** Rule: PaO2 <8 kPa + PaCO2 >6 kPa = type 2."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 74 year old woman with COPD is brought in confused and drowsy after 2 days of increasing breathlessness. She has a flapping tremor. Her pulse rate is 98 bpm, BP 138/80 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 93% on 2 L/min oxygen via nasal cannulae.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Arterial blood gas",
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "Peak expiratory flow",
+    "Spirometry"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic investigation: which test proves respiratory failure and tells you the type?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "COPD",
+      "confused and drowsy",
+      "flapping tremor",
+      "93% on 2 L/min oxygen"
+     ],
+     "x": "A COPD patient who is drowsy with a flap is retaining CO2. A reassuring SpO2 says nothing about CO2."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Only the **arterial blood gas** measures PaCO2, PaO2 and pH."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "The X-ray finds the cause, but cannot confirm respiratory failure."
+      ],
+      [
+       2,
+       "CTPA is only for suspected PE; nothing here suggests it."
+      ],
+      [
+       3,
+       "Peak flow is for asthma monitoring and is unsafe to rely on in a drowsy patient."
+      ],
+      [
+       4,
+       "Spirometry diagnoses COPD when stable, not acute failure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Arterial blood gas.** Rule: drowsy COPD patient = ABG, whatever the saturation."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 68 year old man with an acute exacerbation of COPD has received 28% oxygen via Venturi mask, nebulised salbutamol and ipratropium, oral prednisolone and antibiotics. One hour later his respiratory rate is 26 breaths per minute and oxygen saturation 89%.",
+   "labs": [
+    [
+     "pH",
+     "7.30",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaO2",
+     "7.9 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "8.1 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "31 mmol/L",
+     "22–26",
+     "H"
+    ]
+   ],
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "High-flow oxygen via non-rebreather mask",
+    "Intravenous aminophylline",
+    "Intubation and mechanical ventilation",
+    "Non-invasive ventilation",
+    "Repeat nebulised salbutamol only"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after full medical treatment: look at the pH."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute exacerbation of COPD",
+      "One hour later"
+     ],
+     "x": "Type 2 failure with pH 7.30 despite optimal medical treatment for an hour."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "pH 7.25–7.35 with high CO2: **NIV**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "High-flow oxygen would worsen hypercapnia; target stays 88–92% and sats are 89%."
+      ],
+      [
+       1,
+       "Aminophylline is not the next step for persistent acidosis."
+      ],
+      [
+       2,
+       "Intubation is for NIV failure or pH that is falling below 7.25 with deterioration."
+      ],
+      [
+       4,
+       "He has already had nebulisers; the acidosis needs ventilatory support."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Non-invasive ventilation.** Rule: type 2, pH 7.25–7.35 after initial treatment = NIV."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 78 year old woman with severe COPD is given 15 L/min oxygen via non-rebreather mask by paramedics. Over 40 minutes she becomes increasingly drowsy. Her oxygen saturation is 99%. An arterial gas shows PaCO2 10.2 kPa (4.7–6.0) and pH 7.21 (7.35–7.45).",
+   "q": "Which is the most likely mechanism of her rising PaCO2?",
+   "o": [
+    "Increased carbon dioxide production",
+    "Loss of hypoxic drive to breathe",
+    "Metabolic alkalosis",
+    "Oxygen toxicity to the alveoli",
+    "Pulmonary embolism"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why did CO2 rise after oxygen was given?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe COPD",
+      "15 L/min oxygen",
+      "increasingly drowsy",
+      "PaCO2 10.2 kPa"
+     ],
+     "x": "A chronic CO2 retainer given uncontrolled high-flow oxygen, then CO2 narcosis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "She relies on **hypoxic drive**; high oxygen suppresses ventilation and CO2 climbs."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Oxygen does not increase CO2 production."
+      ],
+      [
+       2,
+       "The pH is 7.21: this is acidosis, not alkalosis."
+      ],
+      [
+       3,
+       "Oxygen toxicity takes much longer and causes lung injury, not acute hypercapnia."
+      ],
+      [
+       4,
+       "PE causes type 1 failure with a low CO2."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Loss of hypoxic drive.** Rule: COPD + high-flow oxygen + drowsy = CO2 retention; target 88–92%."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old man has 4 days of fever, cough and right-sided pleuritic chest pain. He has no past medical history. His temperature is 38.9°C, pulse rate 112 bpm, BP 118/72 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 86% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.47",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaO2",
+     "7.1 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "3.9 kPa",
+     "4.7–6.0",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "24 mmol/L",
+     "22–26",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Compensated metabolic alkalosis",
+    "Hyperventilation syndrome",
+    "Normal arterial blood gas",
+    "Type 1 respiratory failure",
+    "Type 2 respiratory failure"
+   ],
+   "a": 3,
+   "e": "PaO2 7.1 kPa (<8) with a low PaCO2 is type 1 respiratory failure, here from pneumonia. The low CO2 and mild alkalosis come from tachypnoea, not anxiety.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Name the gas abnormality: start with the PaO2."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fever, cough",
+      "no past medical history"
+     ],
+     "x": "PaO2 below 8 = respiratory failure. PaCO2 low, so not type 2. Pneumonia in healthy lungs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Type 1 respiratory failure** from pneumonia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bicarbonate is normal; the alkalosis is respiratory from tachypnoea."
+      ],
+      [
+       1,
+       "Hyperventilation syndrome has a normal PaO2; this patient is hypoxaemic."
+      ],
+      [
+       2,
+       "PaO2 of 7.1 kPa is far from normal."
+      ],
+      [
+       4,
+       "Type 2 needs PaCO2 above 6 kPa."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Type 1 respiratory failure.** Rule: low O2, low or normal CO2 = type 1."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old man is found unresponsive in a hostel room. He has pinpoint pupils and needle track marks on both forearms. His pulse rate is 58 bpm, BP 104/66 mmHg, respiratory rate 6 breaths per minute and oxygen saturation 81% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.22",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaO2",
+     "7.4 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "9.1 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "25 mmol/L",
+     "22–26",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of his respiratory failure?",
+   "o": [
+    "Acute asthma",
+    "Guillain-Barré syndrome",
+    "Opioid toxicity",
+    "Pneumonia",
+    "Pulmonary embolism"
+   ],
+   "a": 2,
+   "e": "Pinpoint pupils, track marks and a respiratory rate of 6 give type 2 failure from reduced respiratory drive: opioid toxicity. Normal bicarbonate shows it is acute.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: decide the type first, then match it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pinpoint pupils",
+      "needle track marks",
+      "respiratory rate 6"
+     ],
+     "x": "High CO2 with a very slow rate = hypoventilation from depressed drive. Pupils and track marks point to opioids."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Acute type 2 failure from **opioid toxicity**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Asthma gives a fast respiratory rate and wheeze, not a rate of 6 with miosis."
+      ],
+      [
+       1,
+       "Guillain-Barré causes type 2 failure but over days with ascending weakness, not pinpoint pupils."
+      ],
+      [
+       3,
+       "Pneumonia causes type 1 with fever and tachypnoea."
+      ],
+      [
+       4,
+       "PE causes type 1 failure with a low CO2."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Opioid toxicity.** Rule: slow breathing + high CO2 + pinpoint pupils = opioids."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man with COPD is admitted with an infective exacerbation. He is drowsy. His pulse rate is 106 bpm, BP 144/86 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 88% on 28% oxygen. His arterial PaCO2 is 9.6 kPa (4.7–6.0).",
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Asterixis",
+    "Cold, clammy peripheries",
+    "Pinpoint pupils",
+    "Spider naevi",
+    "Tracheal deviation"
+   ],
+   "a": 0,
+   "e": "CO2 retention causes asterixis (a coarse flap) and warm, vasodilated peripheries. Pinpoint pupils would suggest opioids, not CO2.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An examination finding: which sign goes with a high CO2?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "COPD",
+      "drowsy",
+      "PaCO2 is 9.6 kPa"
+     ],
+     "x": "Hypercapnia in COPD: a CO2 encephalopathy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A coarse **flapping tremor** (asterixis)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CO2 vasodilates: peripheries are warm with a bounding pulse."
+      ],
+      [
+       2,
+       "Pinpoint pupils suggest opioid toxicity, not COPD."
+      ],
+      [
+       3,
+       "Spider naevi point to chronic liver disease."
+      ],
+      [
+       4,
+       "Tracheal deviation suggests tension pneumothorax or collapse."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Asterixis.** Rule: CO2 retention = flap, warm hands, bounding pulse, drowsiness."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man with motor neurone disease has 2 months of morning headaches, daytime sleepiness and breathlessness when lying flat. His pulse rate is 88 bpm, BP 128/76 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 89% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.33",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaO2",
+     "7.6 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "7.4 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "31 mmol/L",
+     "22–26",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hyperventilation syndrome",
+    "Metabolic acidosis",
+    "Pulmonary embolism",
+    "Type 1 respiratory failure",
+    "Type 2 respiratory failure"
+   ],
+   "a": 4,
+   "e": "Weak respiratory muscles cause hypoventilation: PaO2 <8 kPa with PaCO2 >6 kPa is type 2 respiratory failure. Morning headaches are classic of nocturnal CO2 retention.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis from the gas, in a neuromuscular patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "motor neurone disease",
+      "morning headaches",
+      "daytime sleepiness"
+     ],
+     "x": "Low O2, high CO2. Neuromuscular weakness causes hypoventilation, worse at night."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Type 2 respiratory failure** from MND."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hyperventilation lowers CO2; this CO2 is high."
+      ],
+      [
+       1,
+       "The acidosis is respiratory (high CO2) and the bicarbonate is raised, not low."
+      ],
+      [
+       2,
+       "PE causes type 1 with a low CO2 and sudden onset."
+      ],
+      [
+       3,
+       "Type 1 needs a normal or low PaCO2."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Type 2 respiratory failure.** Rule: neuromuscular disease is a classic type 2 cause."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old woman with ischaemic heart disease wakes at night acutely breathless. She has bibasal crackles and a raised JVP. Her pulse rate is 118 bpm, BP 168/96 mmHg, respiratory rate 32 breaths per minute and oxygen saturation 84% breathing air. Chest X-ray (see item resources).",
+   "labs": [
+    [
+     "PaO2",
+     "7.0 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "4.1 kPa",
+     "4.7–6.0",
+     "L"
+    ]
+   ],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "pulm_oedema"
+     },
+     {
+      "type": "cardiomegaly"
+     }
+    ],
+    "caption": "Bilateral perihilar shadowing and cardiomegaly."
+   },
+   "q": "Which is the most likely cause of her respiratory failure?",
+   "o": [
+    "Acute exacerbation of COPD",
+    "Motor neurone disease",
+    "Opioid toxicity",
+    "Pneumothorax",
+    "Pulmonary oedema"
+   ],
+   "a": 4,
+   "e": "Type 1 failure (low O2, low CO2) with crackles, raised JVP and bilateral perihilar shadowing is pulmonary oedema. COPD, opioids and MND cause type 2.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: type first, then the clinical picture."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ischaemic heart disease",
+      "bibasal crackles",
+      "raised JVP"
+     ],
+     "x": "Low O2, low CO2 = type 1. Heart disease, crackles, JVP and the X-ray = fluid in the alveoli."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Type 1 failure from **pulmonary oedema**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "COPD gives type 2 with a high CO2 and wheeze."
+      ],
+      [
+       1,
+       "MND causes slow type 2 hypoventilation."
+      ],
+      [
+       2,
+       "Opioids cause type 2 with a slow respiratory rate."
+      ],
+      [
+       3,
+       "Pneumothorax gives unilateral absent breath sounds and a visible lung edge."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Pulmonary oedema.** Rule: pneumonia, oedema, PE and ARDS are the type 1 causes."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man who has smoked 40 cigarettes a day for 45 years has 3 days of worsening breathlessness and wheeze. He has a barrel chest and uses pursed-lip breathing. His temperature is 37.4°C, pulse rate 100 bpm, BP 140/84 mmHg, respiratory rate 25 breaths per minute and oxygen saturation 84% breathing air.",
+   "labs": [
+    [
+     "pH",
+     "7.30",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaO2",
+     "7.1 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "8.4 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "HCO3-",
+     "31 mmol/L",
+     "22–26",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of his respiratory failure?",
+   "o": [
+    "Acute exacerbation of COPD",
+    "Anxiety-related hyperventilation",
+    "Interstitial lung disease",
+    "Pulmonary embolism",
+    "Pulmonary oedema"
+   ],
+   "a": 0,
+   "e": "Type 2 failure with a raised bicarbonate in a heavy smoker with wheeze, barrel chest and pursed lips is an acute exacerbation of COPD, the most important type 2 cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Underlying cause: decide the type, then match the history."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smoked 40 cigarettes a day for 45 years",
+      "wheeze",
+      "barrel chest",
+      "pursed-lip breathing"
+     ],
+     "x": "High CO2 with chronic compensation (HCO3 31) in a heavy smoker with hyperinflation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Type 2 failure from an **acute exacerbation of COPD**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Hyperventilation gives a low CO2 and normal PaO2."
+      ],
+      [
+       2,
+       "Interstitial lung disease causes type 1 failure with fine crackles."
+      ],
+      [
+       3,
+       "PE causes type 1 failure with a low CO2."
+      ],
+      [
+       4,
+       "Pulmonary oedema causes type 1 failure with crackles and raised JVP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute exacerbation of COPD.** Rule: COPD is the most important cause of type 2."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 52 year old woman has 3 days of fever and productive cough. Her temperature is 38.6°C, pulse rate 108 bpm, BP 116/70 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 87% breathing air. An arterial gas confirms type 1 respiratory failure.",
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation to identify the cause?",
+   "o": [
+    "Bronchoscopy",
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "Spirometry",
+    "Ventilation-perfusion scan"
+   ],
+   "a": 1,
+   "e": "Once the ABG confirms respiratory failure, a chest X-ray is the first-line test for the cause; fever and productive cough suggest pneumonia. CTPA is only for suspected PE.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The failure is confirmed; now the first test for the cause."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fever and productive cough",
+      "confirms type 1 respiratory failure"
+     ],
+     "x": "Infection is the likely cause; the gas is already done."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Chest X-ray** plus bloods."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchoscopy is invasive and not first-line."
+      ],
+      [
+       2,
+       "CTPA is for suspected PE: no pleuritic pain, leg swelling or risk factors given."
+      ],
+      [
+       3,
+       "Spirometry is for chronic airway disease, not acute illness."
+      ],
+      [
+       4,
+       "V/Q scanning is a PE test, used when CTPA is unsuitable."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Chest X-ray.** Rule: ABG confirms the failure, CXR finds the cause."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 38 year old woman has sudden breathlessness and right pleuritic chest pain 4 days after a long-haul flight. Her left calf is swollen. Her pulse rate is 118 bpm, BP 122/78 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 89% breathing air. Her chest X-ray is normal.",
+   "labs": [
+    [
+     "PaO2",
+     "7.3 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "3.6 kPa",
+     "4.7–6.0",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to identify the cause of her respiratory failure?",
+   "o": [
+    "Bronchoscopy",
+    "Cardiac MRI",
+    "CT pulmonary angiogram",
+    "High-resolution CT chest",
+    "Spirometry"
+   ],
+   "a": 2,
+   "e": "Type 1 failure with a normal chest X-ray, pleuritic pain, recent flight and a swollen calf means suspected PE, so CT pulmonary angiogram is the test.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which test finds the cause, given a normal X-ray?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-haul flight",
+      "left calf is swollen",
+      "chest X-ray is normal"
+     ],
+     "x": "Type 1 failure, DVT and a clear X-ray: think PE."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CT pulmonary angiogram**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchoscopy looks at airways, not pulmonary arteries."
+      ],
+      [
+       1,
+       "Cardiac MRI is not used to diagnose acute PE."
+      ],
+      [
+       3,
+       "HRCT is for interstitial lung disease, without contrast in the arteries."
+      ],
+      [
+       4,
+       "Spirometry does not diagnose acute PE."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. CTPA.** Rule: CT is the additional test when PE is suspected."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old man with known COPD and previous hypercapnic admissions has an infective exacerbation. He is alert. His pulse rate is 102 bpm, BP 138/82 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 83% breathing air.",
+   "visual": null,
+   "q": "Which is the most appropriate initial oxygen therapy?",
+   "o": [
+    "High-flow oxygen 15 L/min via non-rebreather mask",
+    "Intubation and mechanical ventilation",
+    "Nasal cannula oxygen targeting 94–98%",
+    "Non-invasive ventilation",
+    "Venturi mask oxygen targeting 88–92%"
+   ],
+   "a": 4,
+   "e": "A known CO2 retainer needs controlled oxygen via Venturi mask to 88–92%. High-flow oxygen or a 94–98% target risks worsening hypercapnia; NIV needs a gas showing acidosis first.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial oxygen: who is at risk of CO2 retention?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "known COPD",
+      "previous hypercapnic admissions",
+      "He is alert",
+      "83% breathing air"
+     ],
+     "x": "Hypoxic, so oxygen now; a CO2 retainer, so controlled oxygen."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Venturi mask** (24–28%) to **88–92%**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Uncontrolled high flow suppresses ventilation and raises CO2."
+      ],
+      [
+       1,
+       "He is alert; intubation is for NIV failure."
+      ],
+      [
+       2,
+       "94–98% is the target for patients without CO2 risk."
+      ],
+      [
+       3,
+       "NIV comes after a gas shows pH 7.25–7.35 despite treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Venturi mask targeting 88–92%.** Rule: COPD retainer = 88–92%."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 24 year old woman with no past medical history has 2 days of fever and cough. Chest X-ray shows left lower zone consolidation. Her temperature is 38.7°C, pulse rate 110 bpm, BP 112/70 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 87% breathing air.",
+   "labs": [
+    [
+     "PaO2",
+     "7.4 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "4.0 kPa",
+     "4.7–6.0",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate oxygen prescription?",
+   "o": [
+    "Intubation and mechanical ventilation",
+    "Non-invasive ventilation",
+    "Oxygen targeting 88–92%",
+    "Oxygen targeting 94–98%",
+    "Room air with repeat gas in 1 hour"
+   ],
+   "a": 3,
+   "e": "Type 1 failure in a young woman with no CO2 retention risk: oxygen to 94–98%, plus antibiotics for the pneumonia. 88–92% is only for patients at risk of hypercapnia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An oxygen target: is she at risk of CO2 retention?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no past medical history",
+      "left lower zone consolidation"
+     ],
+     "x": "Type 1 failure from pneumonia; no COPD, low CO2."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Oxygen to **94–98%**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Intubation is for refractory failure; she has not had oxygen yet."
+      ],
+      [
+       1,
+       "NIV is for type 2 acidotic failure."
+      ],
+      [
+       2,
+       "88–92% is for CO2 retainers only."
+      ],
+      [
+       4,
+       "Withholding oxygen in a hypoxic patient is unsafe."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Oxygen targeting 94–98%.** Rule: no CO2 risk = 94–98%."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 69 year old woman with COPD has been on non-invasive ventilation for 2 hours for type 2 respiratory failure. She is now increasingly drowsy with a GCS of 8. For full escalation. Her pulse rate is 124 bpm, BP 96/58 mmHg and respiratory rate 32 breaths per minute.",
+   "labs": [
+    [
+     "pH",
+     "7.18",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "11.4 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "PaO2",
+     "7.2 kPa",
+     "10–13",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Continue NIV and repeat the arterial gas in 4 hours",
+    "High-flow oxygen 15 L/min",
+    "Intravenous aminophylline",
+    "Intubation and mechanical ventilation",
+    "Oral prednisolone"
+   ],
+   "a": 3,
+   "e": "Worsening acidosis and falling GCS despite NIV means NIV has failed; she is for full escalation, so intubation and mechanical ventilation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after NIV: is it working?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "for 2 hours",
+      "GCS of 8",
+      "For full escalation"
+     ],
+     "x": "pH falling and CO2 rising on NIV, GCS 8: NIV failure, and no ceiling on care."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Intubation and mechanical ventilation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Waiting 4 hours on failing NIV risks arrest."
+      ],
+      [
+       1,
+       "High-flow oxygen worsens hypercapnia and does not ventilate."
+      ],
+      [
+       2,
+       "Aminophylline will not reverse established ventilatory failure."
+      ],
+      [
+       4,
+       "Steroids treat the exacerbation but not the immediate failure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Intubation and mechanical ventilation.** Rule: severe, not responding to NIV = intubate."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 45 year old man with lobar pneumonia has an oxygen saturation of 86% breathing air. His respiratory rate is 28 breaths per minute. An arterial gas shows PaO2 7.2 kPa (10–13) and PaCO2 4.3 kPa (4.7–6.0).",
+   "visual": null,
+   "q": "Which is the most likely explanation for his PaCO2 not being raised?",
+   "o": [
+    "Carbon dioxide diffuses more readily than oxygen",
+    "Hypoxic drive suppresses ventilation",
+    "Increased dead space ventilation",
+    "Reduced carbon dioxide production",
+    "Renal excretion of carbon dioxide"
+   ],
+   "a": 0,
+   "e": "In type 1 failure, V/Q mismatch impairs oxygen transfer, but CO2 diffuses much more readily, so the remaining alveoli and tachypnoea keep PaCO2 normal or low.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism: why is CO2 normal when O2 is low?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "lobar pneumonia",
+      "PaO2 7.2 kPa",
+      "PaCO2 4.3 kPa"
+     ],
+     "x": "Type 1 failure from consolidation: V/Q mismatch."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CO2 diffuses more readily than O2**, so ventilated alveoli clear it."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Hypoxic drive matters in COPD retainers and raises CO2 when lost."
+      ],
+      [
+       2,
+       "More dead space raises CO2 rather than keeping it low."
+      ],
+      [
+       3,
+       "Fever increases, not reduces, CO2 production."
+      ],
+      [
+       4,
+       "The kidneys handle bicarbonate; CO2 is cleared by the lungs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. CO2 diffuses more readily.** Rule: type 1 = V/Q mismatch with CO2 cleared."
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,716 @@
+{
+  "id": "pancreatic-cancer",
+  "patient": {
+    "name": "Desmond Clarke",
+    "age": 68,
+    "sex": "M",
+    "setting": "GP surgery, then hepatobiliary clinic",
+    "complaint": "Yellow skin, itching and dark urine for 2 weeks, with weight loss",
+    "background": [
+      "Smoker, 40 pack-years",
+      "Type 2 diabetes diagnosed 6 months ago",
+      "BMI 31 a year ago",
+      "Retired bus driver in Brixton"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with painless obstructive jaundice, weight loss and back pain in an older smoker, often with new-onset diabetes or a palpable gallbladder (Courvoisier's sign).",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Desmond, 68, noticed his eyes turning **yellow**.",
+            "Intense **itching**, **dark urine**, pale greasy stools.",
+            "No abdominal colic; a dull ache going **into his back**.",
+            "Lost **9 kg** in 3 months without trying."
+          ],
+          "vitals": {
+            "T": "36.8°C",
+            "HR": "84 bpm",
+            "BP": "132/80 mmHg",
+            "RR": "15 /min",
+            "SpO2": "97% on air"
+          }
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond has **painless obstructive jaundice** with weight loss and back pain: the head-of-pancreas picture."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond smokes, is overweight and has **diabetes that started at 67**: late-onset diabetes is a recognised red flag."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "abdomen",
+            "title": "Where Desmond's ache is",
+            "regions": ["epigastric", "RUQ"],
+            "caption": "Vague epigastric ache boring into the back: retroperitoneal spread. The jaundice itself is painless."
+          }
+        },
+        {
+          "type": "story",
+          "points": [
+            "Jaundiced, with scratch marks.",
+            "A **smooth, non-tender mass** below the right costal margin.",
+            "It moves with breathing: the gallbladder.",
+            "No hepatomegaly or ascites."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Desmond's painless palpable gallbladder with jaundice is **Courvoisier's sign**: a pancreatic head tumour, not stones."
+        },
+        {
+          "type": "ask",
+          "q": "Which is the most likely cause of Desmond's jaundice?",
+          "o": ["Choledocholithiasis", "Hepatitis A", "Pancreatic head adenocarcinoma", "Primary biliary cholangitis"],
+          "a": 2,
+          "r": "Painless jaundice, weight loss, new diabetes and **Courvoisier's sign** point to a **pancreatic head** tumour. Stones are painful and the gallbladder is fibrosed."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Most tumours like Desmond's are **ductal adenocarcinomas**, and most arise in the **head**, which is why the bile duct blocks."
+        },
+        {
+          "type": "compare",
+          "title": "Jaundice: stones vs pancreatic cancer",
+          "head": ["Feature", "Gallstone in CBD", "Pancreatic head cancer"],
+          "rows": [
+            ["Pain", "Colicky RUQ pain", "**Painless** (or dull back pain)"],
+            ["Gallbladder", "Fibrosed, not palpable", "**Palpable, non-tender**"],
+            ["Weight loss", "No", "**Yes**"],
+            ["Other clues", "Fever if cholangitis", "New diabetes, Trousseau's, smoker"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Desmond has no **hepatomegaly, ascites or cachexia** yet, which would suggest liver metastases and late disease."
+        },
+        {
+          "type": "trap",
+          "text": "**Trousseau's syndrome** (migratory thrombophlebitis, red tender veins in different places) in an older smoker is a pancreatic cancer clue, not a primary clotting disorder."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (pancreatic protocol CT), 'initial investigation' (LFTs, ultrasound), and CA 19-9 as the tumour marker used to monitor disease.",
+      "steps": [
+        {
+          "type": "labs",
+          "title": "Desmond's bloods",
+          "rows": [
+            ["Bilirubin", "186 µmol/L", "<17", "H"],
+            ["ALP", "684 IU/L", "30–130", "H"],
+            ["γGT", "520 IU/L", "9–40", "H"],
+            ["ALT", "96 IU/L", "10–50", "H"],
+            ["Haemoglobin", "112 g/L", "130–170", "L"],
+            ["Glucose", "13.8 mmol/L", "4.0–7.8", "H"],
+            ["CA 19-9", "1,240 U/mL", "<37", "H"]
+          ],
+          "text": "Cholestatic LFTs (ALP and γGT far higher than ALT), anaemia and hyperglycaemia."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond's first tests fit: **cholestatic LFTs**, high glucose, anaemia, and a very high **CA 19-9**. His ultrasound shows a dilated bile duct."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "CA 19-9",
+            "min": 0,
+            "max": 1500,
+            "unit": "U/mL",
+            "bands": [[0, 37, "normal", "ok"], [37, 300, "raised (also in cholestasis)", "warn"], [300, 1500, "markedly raised", "bad"]],
+            "value": 1240,
+            "label": "Desmond 1,240",
+            "caption": "CA 19-9 supports the diagnosis and is used to monitor progression, but it is also raised by cholestasis."
+          }
+        },
+        {
+          "type": "ask",
+          "q": "Desmond is 68 with weight loss and jaundice. Which scan defines the tumour?",
+          "o": ["Abdominal X-ray", "MRI brain", "Pancreatic protocol CT", "Repeat ultrasound"],
+          "a": 2,
+          "r": "**Pancreatic protocol high-resolution CT** is the key diagnostic and staging scan."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond is over 60 with weight loss and back pain, so he needs a **pancreatic protocol CT within 2 weeks**."
+        },
+        {
+          "type": "story",
+          "points": [
+            "CT: 3 cm mass in the **pancreatic head**.",
+            "Both the CBD and pancreatic duct are dilated: **double duct sign**.",
+            "No liver metastases; vessels not encased."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Desmond's CT plus **endoscopic ultrasound-guided biopsy** confirm and stage his tumour: it looks **resectable**."
+        },
+        {
+          "type": "flow",
+          "title": "Investigating painless jaundice",
+          "nodes": [
+            "LFTs: cholestatic pattern",
+            "Ultrasound: dilated ducts, no stones",
+            "Pancreatic protocol CT (within 2 weeks if ≥60 + weight loss)",
+            "EUS ± biopsy for tissue and staging",
+            "CA 19-9 baseline for monitoring"
+          ],
+          "caption": "Ultrasound first, CT to diagnose and stage, EUS for tissue."
+        },
+        {
+          "type": "trap",
+          "text": "CA 19-9 is **not** a screening test: it rises in cholestasis and chronic pancreatitis. Its main use is **monitoring** disease."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' choosing between Whipple's for a resectable head tumour, ERCP and stent for jaundice, pancreatin for steatorrhoea, and FOLFIRINOX or gemcitabine for advanced disease.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Desmond's head-of-pancreas tumour is resectable. Which operation?",
+          "o": ["Distal pancreatectomy", "Laparoscopic cholecystectomy", "Pancreaticoduodenectomy (Whipple)", "Total gastrectomy"],
+          "a": 2,
+          "r": "Head tumours need a **Whipple** (pancreaticoduodenectomy). Distal pancreatectomy is for body or tail tumours."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Desmond has a **Whipple procedure**, then **adjuvant chemotherapy** (e.g. gemcitabine) to reduce recurrence."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Had Desmond's tumour been locally advanced or metastatic, **FOLFIRINOX** or gemcitabine-based chemotherapy would replace surgery."
+        },
+        {
+          "type": "flow",
+          "title": "Pancreatic cancer management",
+          "nodes": [
+            "CT staging and MDT",
+            "Resectable head tumour → Whipple + adjuvant gemcitabine",
+            "Locally advanced/metastatic → FOLFIRINOX or gemcitabine",
+            "Jaundice → ERCP + biliary stent",
+            "Symptoms → opioids, pancreatin, nutrition"
+          ]
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Desmond's bilirubin",
+            "x": ["Clinic", "Week 1", "Stent", "Week 3", "Pre-op"],
+            "unit": "µmol/L",
+            "series": [
+              { "name": "Bilirubin", "values": [186, 220, 230, 90, 34] }
+            ],
+            "caption": "Bilirubin climbs until an ERCP stent relieves the obstruction, then falls before surgery."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond gets an **ERCP and biliary stent** for his jaundice, **pancreatin** with meals for his pale greasy stools, and analgesia."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "If Desmond spikes a **fever** with jaundice and RUQ pain after stenting, it is **cholangitis**: urgent antibiotics and ERCP."
+        },
+        {
+          "type": "pearl",
+          "text": "Steatorrhoea in pancreatic cancer = not enough lipase reaching the gut. Treat with **pancreatic enzyme replacement (pancreatin)**, not loperamide."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why the jaundice is obstructive with pale stools, why steatorrhoea occurs, why the gallbladder is palpable (Courvoisier's law), and why Trousseau's or diabetes appear.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Desmond's tumour grew silently in the **retroperitoneum**, surrounded by **desmoplastic stroma**, and had spread along nerves before he noticed anything."
+        },
+        {
+          "type": "flow",
+          "title": "Why Desmond turned yellow",
+          "nodes": [
+            "Tumour in the head of the pancreas",
+            "Compresses the distal common bile duct",
+            "Conjugated bilirubin cannot reach the gut",
+            "Backs up into blood: jaundice, itch, dark urine",
+            "No bile in the gut: pale stools"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond's pale greasy stools come from **no bile** and **too little pancreatic lipase** reaching the duodenum."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond's healthy gallbladder could distend behind the blockage. A stone-scarred gallbladder is **fibrotic** and cannot: **Courvoisier's law**."
+        },
+        {
+          "type": "ask",
+          "q": "Why does Trousseau's syndrome occur in pancreatic cancer?",
+          "o": ["Dehydration", "Immobility alone", "Tumour-derived tissue factor and mucin", "Vitamin K deficiency"],
+          "a": 2,
+          "r": "A **paraneoplastic hypercoagulable state** driven by tumour **tissue factor and mucin**."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Desmond's diabetes 6 months before diagnosis is likely **paraneoplastic**: tumour factors disturbing **islet cell** function."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "What is the most common type of pancreatic cancer?", "o": ["Acinar cell carcinoma", "Ductal adenocarcinoma", "Insulinoma", "Lymphoma"], "a": 1, "r": "**Pancreatic ductal adenocarcinoma**, usually in the head." },
+    { "d": "diagnosis", "q": "What is Courvoisier's sign?", "o": ["Bruising around the umbilicus", "Migratory thrombophlebitis", "Painful palpable gallbladder", "Painless palpable gallbladder with jaundice"], "a": 3, "r": "**Painless palpable gallbladder + jaundice** suggests malignant obstruction." },
+    { "d": "diagnosis", "q": "What is the double duct sign?", "o": ["Dilated CBD and pancreatic duct", "Gas in the biliary tree", "Two gallstones in the CBD", "Two pancreatic ducts"], "a": 0, "r": "**CBD + pancreatic duct dilatation**: head-of-pancreas tumour." },
+    { "d": "diagnosis", "q": "Which is a recognised paraneoplastic association?", "o": ["Hypercalcaemia only", "Late-onset diabetes", "Myasthenia gravis", "SIADH only"], "a": 1, "r": "**Late-onset diabetes** (>50 years)." },
+    { "d": "investigation", "q": "What is the key diagnostic imaging test?", "o": ["Abdominal X-ray", "Barium meal", "MRCP", "Pancreatic protocol CT"], "a": 3, "r": "**Pancreatic protocol high-resolution CT.**" },
+    { "d": "investigation", "q": "Which tumour marker is used to monitor pancreatic cancer?", "o": ["AFP", "CA 125", "CA 19-9", "CEA"], "a": 2, "r": "**CA 19-9**; AFP is liver, CA 125 ovary, CEA colorectal." },
+    { "d": "management", "q": "What is the operation for a resectable pancreatic head tumour?", "o": ["Distal pancreatectomy", "Hartmann's procedure", "Ivor Lewis oesophagectomy", "Whipple procedure"], "a": 3, "r": "**Whipple (pancreaticoduodenectomy)**, then adjuvant gemcitabine." },
+    { "d": "management", "q": "How is obstructive jaundice palliated?", "o": ["Cholecystectomy", "ERCP and biliary stent", "Oral steroids", "Ursodeoxycholic acid"], "a": 1, "r": "**ERCP + biliary stent.**" },
+    { "d": "management", "q": "How is steatorrhoea treated?", "o": ["Loperamide", "Low-fat diet only", "Pancreatin", "Vancomycin"], "a": 2, "r": "**Pancreatic enzyme replacement** (pancreatin)." },
+    { "d": "science", "q": "What drives Trousseau's syndrome?", "o": ["Hyperviscosity", "Platelet deficiency", "Tumour-derived tissue factor/mucin", "Vitamin K deficiency"], "a": 2, "r": "Paraneoplastic **hypercoagulable** state." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 71 year old man has a 3 week history of jaundice, itching, dark urine and pale stools. He has lost 8 kg in 2 months and has dull back pain. He smokes 20 cigarettes a day. His temperature is 36.9°C, pulse rate 80 bpm and BP 136/82 mmHg. A smooth, non-tender mass is palpable in the right upper quadrant.",
+      "labs": [["Bilirubin", "164 µmol/L", "<17", "H"], ["ALP", "612 IU/L", "30–130", "H"], ["ALT", "88 IU/L", "10–50", "H"]],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute cholecystitis", "Cancer of the head of the pancreas", "Choledocholithiasis", "Hepatocellular carcinoma", "Primary sclerosing cholangitis"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis question about jaundice: pre-hepatic, hepatic or obstructive, and if obstructive, stone or tumour?" },
+        { "t": "Pick out the clues", "clues": ["jaundice, itching, dark urine and pale stools", "lost 8 kg", "dull back pain", "smokes 20 cigarettes a day", "smooth, non-tender mass"], "x": "Obstructive jaundice, weight loss, back pain, smoker, **Courvoisier's sign**." },
+        { "t": "Make your own answer before looking", "x": "**Pancreatic head cancer.**" },
+        { "t": "Rule out the others", "elim": [[0, "Cholecystitis is painful, febrile, with a tender gallbladder."], [2, "A stone causes painful jaundice and a fibrosed, impalpable gallbladder."], [3, "HCC gives hepatomegaly in cirrhosis, not a palpable gallbladder."], [4, "PSC is a younger patient with ulcerative colitis."]] },
+        { "t": "Commit", "x": "**B.** Painless jaundice + palpable gallbladder + weight loss = pancreatic head cancer." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 66 year old woman has painless jaundice and 6 kg weight loss. Her pulse rate is 78 bpm and BP 128/76 mmHg. Abdominal ultrasound shows a dilated common bile duct with no gallstones.",
+      "labs": [["Bilirubin", "142 µmol/L", "<17", "H"], ["ALP", "540 IU/L", "30–130", "H"]],
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["CA 19-9", "ERCP", "HIDA scan", "MRI brain", "Pancreatic protocol CT"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnostic investigation after ultrasound." },
+        { "t": "Pick out the clues", "clues": ["painless jaundice", "6 kg weight loss", "dilated common bile duct with no gallstones"], "x": "Malignant obstruction until proven otherwise." },
+        { "t": "Make your own answer before looking", "x": "**Pancreatic protocol CT.**" },
+        { "t": "Rule out the others", "elim": [[0, "CA 19-9 supports and monitors; it does not diagnose."], [1, "ERCP is for stenting, not first diagnosis."], [2, "HIDA assesses gallbladder function."], [3, "No neurological reason to scan the brain."]] },
+        { "t": "Commit", "x": "**E.** CT diagnoses and stages; EUS biopsy gives tissue." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 64 year old man has a 2.5 cm adenocarcinoma in the head of the pancreas. CT shows no metastases and no vascular involvement. He is fit for surgery. His pulse rate is 76 bpm and BP 130/80 mmHg.",
+      "labs": [["Bilirubin", "48 µmol/L", "<17", "H"]],
+      "q": "Which is the most appropriate management?",
+      "o": ["Distal pancreatectomy", "FOLFIRINOX alone", "Palliative biliary stent only", "Pancreaticoduodenectomy then adjuvant chemotherapy", "Radiotherapy alone"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "Management: resectable or not?" },
+        { "t": "Pick out the clues", "clues": ["head of the pancreas", "no metastases and no vascular involvement", "fit for surgery"], "x": "Resectable head tumour, fit patient." },
+        { "t": "Make your own answer before looking", "x": "**Whipple + adjuvant gemcitabine.**" },
+        { "t": "Rule out the others", "elim": [[0, "Distal pancreatectomy is for body/tail tumours."], [1, "FOLFIRINOX is for locally advanced or metastatic disease."], [2, "Stenting alone is palliative; he is curable."], [4, "Radiotherapy alone is not curative."]] },
+        { "t": "Commit", "x": "**D.** Resectable head = Whipple." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 69 year old man with pancreatic head cancer has pale, offensive, floating stools that are hard to flush. His pulse rate is 82 bpm and BP 124/78 mmHg. He has lost weight despite eating.",
+      "labs": [["Faecal elastase", "95 µg/g", ">200", "L"], ["Bilirubin", "120 µmol/L", "<17", "H"]],
+      "q": "Which is the most likely mechanism of his stool change?",
+      "o": ["Bacterial overgrowth from stasis", "Bile salt malabsorption in the ileum", "Coeliac disease", "Reduced pancreatic lipase reaching the duodenum", "Villous atrophy from chemotherapy"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of a symptom." },
+        { "t": "Pick out the clues", "clues": ["pancreatic head cancer", "pale, offensive, floating stools"], "x": "Steatorrhoea; low faecal elastase = exocrine insufficiency." },
+        { "t": "Make your own answer before looking", "x": "**Not enough lipase** reaching the gut (plus no bile)." },
+        { "t": "Rule out the others", "elim": [[0, "Not the main mechanism here."], [1, "Ileal bile salt loss follows ileal disease or resection."], [2, "No evidence of coeliac disease."], [4, "No chemotherapy described."]] },
+        { "t": "Commit", "x": "**D.** Treat with pancreatin." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 70 year old woman has a 1 month history of painless jaundice, pruritus and dark urine. She has lost 7 kg. She smokes and has a history of chronic pancreatitis. Her temperature is 36.8°C, pulse rate 78 bpm and BP 134/80 mmHg. Her abdomen is soft and non-tender.",
+      "labs": [["Bilirubin", "150 µmol/L", "<17", "H"], ["ALP", "590 IU/L", "30–130", "H"], ["γGT", "480 IU/L", "9–40", "H"], ["ALT", "70 IU/L", "10–50", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Alcoholic hepatitis", "Ascending cholangitis", "Choledocholithiasis", "Gilbert's syndrome", "Pancreatic cancer"],
+      "a": 4,
+      "e": "Painless obstructive jaundice with weight loss in an older smoker with chronic pancreatitis is pancreatic (head) cancer. Stones are painful; cholangitis is febrile.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of jaundice." },
+        { "t": "Pick out the clues", "clues": ["painless jaundice, pruritus and dark urine", "lost 7 kg", "smokes", "chronic pancreatitis"], "x": "Obstructive, painless, weight loss, two risk factors." },
+        { "t": "Make your own answer before looking", "x": "**Pancreatic cancer.**" },
+        { "t": "Rule out the others", "elim": [[0, "Alcoholic hepatitis gives a hepatitic picture and tender liver."], [1, "No fever or pain."], [2, "CBD stones are painful."], [3, "Gilbert's is mild unconjugated jaundice with normal ALP."]] },
+        { "t": "Commit", "x": "**E. Pancreatic cancer.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 74 year old man has painless jaundice, dark urine and pale stools for 3 weeks. He has lost weight and has back pain. His temperature is 36.7°C, pulse rate 74 bpm and BP 138/84 mmHg. His abdomen is soft.",
+      "labs": [["Bilirubin", "176 µmol/L", "<17", "H"], ["ALP", "650 IU/L", "30–130", "H"]],
+      "visual": null,
+      "q": "Which is the most likely finding on abdominal examination?",
+      "o": ["Caput medusae", "Murphy's sign", "Palpable non-tender gallbladder", "Pulsatile epigastric mass", "Rovsing's sign"],
+      "a": 2,
+      "e": "Courvoisier's sign, a painless palpable gallbladder with jaundice, suggests a pancreatic head tumour. Murphy's sign is cholecystitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A finding question: name the diagnosis first." },
+        { "t": "Pick out the clues", "clues": ["painless jaundice, dark urine and pale stools", "lost weight", "back pain"], "x": "Pancreatic head cancer." },
+        { "t": "Make your own answer before looking", "x": "**Courvoisier's sign.**" },
+        { "t": "Rule out the others", "elim": [[0, "Portal hypertension from cirrhosis."], [1, "Cholecystitis: painful, febrile."], [3, "Abdominal aortic aneurysm."], [4, "Appendicitis."]] },
+        { "t": "Commit", "x": "**C.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 65 year old man has had three episodes of painful, red, tender cords in different veins of his arms and legs over 2 months. He has lost 6 kg and has new epigastric pain radiating to his back. His pulse rate is 88 bpm and BP 128/78 mmHg.",
+      "labs": [["Haemoglobin", "118 g/L", "130–170", "L"], ["Glucose", "11.2 mmol/L", "4.0–7.8", "H"]],
+      "visual": null,
+      "q": "Which is the most likely underlying diagnosis?",
+      "o": ["Antiphospholipid syndrome", "Behçet's disease", "Factor V Leiden", "Pancreatic adenocarcinoma", "Varicose veins"],
+      "a": 3,
+      "e": "Migratory thrombophlebitis (Trousseau's syndrome) with weight loss, back pain and hyperglycaemia points to pancreatic adenocarcinoma.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Underlying diagnosis behind recurrent thrombophlebitis." },
+        { "t": "Pick out the clues", "clues": ["red, tender cords in different veins", "lost 6 kg", "epigastric pain radiating to his back"], "x": "**Trousseau's syndrome** + weight loss + back pain." },
+        { "t": "Make your own answer before looking", "x": "**Pancreatic adenocarcinoma.**" },
+        { "t": "Rule out the others", "elim": [[0, "APS: younger, miscarriages, no weight loss."], [1, "Behçet's: oral and genital ulcers."], [2, "Factor V Leiden: inherited DVT, no weight loss."], [4, "Varicose veins do not cause migratory phlebitis or weight loss."]] },
+        { "t": "Commit", "x": "**D.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 67 year old woman was diagnosed with type 2 diabetes 4 months ago. She has lost 10 kg despite a normal appetite and has nausea and vague abdominal pain. She is not overweight. Her pulse rate is 82 bpm and BP 124/76 mmHg.",
+      "labs": [["HbA1c", "74 mmol/mol", "<48", "H"], ["ALP", "180 IU/L", "30–130", "H"]],
+      "visual": null,
+      "q": "Which is the most likely cause of her presentation?",
+      "o": ["Coeliac disease", "Hyperthyroidism", "Latent autoimmune diabetes in adults", "Pancreatic cancer", "Poorly controlled type 2 diabetes"],
+      "a": 3,
+      "e": "New-onset diabetes over 50 with weight loss and abdominal pain is a red flag for pancreatic cancer; NICE advises pancreatic protocol CT within 2 weeks if 60 or over.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A cause question: what explains diabetes and weight loss together?" },
+        { "t": "Pick out the clues", "clues": ["67 year old", "diagnosed with type 2 diabetes 4 months ago", "lost 10 kg", "vague abdominal pain", "not overweight"], "x": "Late-onset diabetes, weight loss, lean, abdominal symptoms." },
+        { "t": "Make your own answer before looking", "x": "**Pancreatic cancer** (paraneoplastic diabetes)." },
+        { "t": "Rule out the others", "elim": [[0, "Coeliac gives diarrhoea and anaemia, not new diabetes."], [1, "Hyperthyroidism gives tremor and palpitations."], [2, "LADA does not explain abdominal pain and raised ALP."], [4, "Poor control alone does not cause pain and a raised ALP."]] },
+        { "t": "Commit", "x": "**D.** New diabetes + weight loss over 60 = urgent CT." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 72 year old man has painless jaundice and weight loss. His pulse rate is 76 bpm and BP 130/78 mmHg. A pancreatic protocol CT is performed.",
+      "labs": [["Bilirubin", "198 µmol/L", "<17", "H"], ["CA 19-9", "860 U/mL", "<37", "H"]],
+      "visual": null,
+      "q": "Which is the most likely finding on CT?",
+      "o": ["Dilated CBD and pancreatic duct", "Gallstone in the cystic duct", "Gas in the biliary tree", "Pancreatic calcification only", "Thickened gallbladder wall"],
+      "a": 0,
+      "e": "A pancreatic head tumour compresses both the common bile duct and pancreatic duct, giving the double duct sign.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A finding question on CT." },
+        { "t": "Pick out the clues", "clues": ["painless jaundice and weight loss", "pancreatic protocol CT"], "x": "Pancreatic head cancer." },
+        { "t": "Make your own answer before looking", "x": "**Double duct sign.**" },
+        { "t": "Rule out the others", "elim": [[1, "Cystic duct stone = cholecystitis."], [2, "Pneumobilia = gallstone ileus or sphincterotomy."], [3, "Calcification alone = chronic pancreatitis."], [4, "Wall thickening = cholecystitis."]] },
+        { "t": "Commit", "x": "**A. Double duct sign.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 68 year old man has a mass in the head of the pancreas causing obstructive jaundice. His pulse rate is 80 bpm and BP 132/82 mmHg. Endoscopic ultrasound-guided biopsy is taken.",
+      "labs": [["CA 19-9", "540 U/mL", "<37", "H"]],
+      "visual": null,
+      "q": "Which is the most likely histological type?",
+      "o": ["Acinar cell carcinoma", "Ductal adenocarcinoma", "Insulinoma", "Lymphoma", "Squamous cell carcinoma"],
+      "a": 1,
+      "e": "Most pancreatic cancers are ductal adenocarcinomas arising from exocrine ductal epithelium, with a dense desmoplastic stroma.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Histology: the commonest type." },
+        { "t": "Pick out the clues", "clues": ["head of the pancreas", "obstructive jaundice"], "x": "Classic exocrine pancreatic cancer." },
+        { "t": "Make your own answer before looking", "x": "**Ductal adenocarcinoma.**" },
+        { "t": "Rule out the others", "elim": [[0, "Rare."], [2, "Neuroendocrine; causes hypoglycaemia."], [3, "Rare in the pancreas."], [4, "Not a pancreatic epithelial type."]] },
+        { "t": "Commit", "x": "**B.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 63 year old man has 3 months of weight loss, new-onset diabetes and back pain. He is not jaundiced. His pulse rate is 84 bpm and BP 126/78 mmHg.",
+      "labs": [["Glucose", "14.2 mmol/L", "4.0–7.8", "H"], ["Haemoglobin", "121 g/L", "130–170", "L"]],
+      "visual": null,
+      "q": "Which is the most appropriate investigation?",
+      "o": ["Abdominal X-ray", "CA 125", "Pancreatic protocol CT within 2 weeks", "Repeat HbA1c in 3 months", "Upper GI endoscopy"],
+      "a": 2,
+      "e": "Age 60 or over with weight loss and new-onset diabetes or back pain warrants a pancreatic protocol CT within 2 weeks.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Investigation for suspected cancer." },
+        { "t": "Pick out the clues", "clues": ["63 year old", "weight loss, new-onset diabetes and back pain"], "x": "Meets the NICE suspected pancreatic cancer criteria." },
+        { "t": "Make your own answer before looking", "x": "**Pancreatic protocol CT within 2 weeks.**" },
+        { "t": "Rule out the others", "elim": [[0, "Cannot show a pancreatic mass."], [1, "CA 125 is the ovarian marker."], [3, "Delay is unsafe with red flags."], [4, "OGD looks at the stomach, not the pancreas."]] },
+        { "t": "Commit", "x": "**C.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 61 year old woman had a Whipple procedure for pancreatic adenocarcinoma and is completing adjuvant gemcitabine. Her pulse rate is 72 bpm and BP 122/76 mmHg. The oncologist wants a blood test to monitor for recurrence.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate blood test?",
+      "o": ["Alpha-fetoprotein", "CA 125", "CA 19-9", "Carcinoembryonic antigen", "Chromogranin A"],
+      "a": 2,
+      "e": "CA 19-9 is the tumour marker associated with pancreatic cancer and is used to monitor disease progression and recurrence.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A monitoring blood test." },
+        { "t": "Pick out the clues", "clues": ["pancreatic adenocarcinoma", "monitor for recurrence"], "x": "Need the pancreatic tumour marker." },
+        { "t": "Make your own answer before looking", "x": "**CA 19-9.**" },
+        { "t": "Rule out the others", "elim": [[0, "AFP: hepatocellular carcinoma."], [1, "CA 125: ovarian cancer."], [3, "CEA: colorectal cancer."], [4, "Chromogranin A: neuroendocrine tumours."]] },
+        { "t": "Commit", "x": "**C. CA 19-9.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 79 year old man has metastatic pancreatic head cancer with liver metastases. He has worsening jaundice and severe itching. His temperature is 36.8°C, pulse rate 78 bpm and BP 128/76 mmHg. He wants to stay at home as long as possible.",
+      "labs": [["Bilirubin", "264 µmol/L", "<17", "H"], ["ALP", "720 IU/L", "30–130", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate management of his jaundice?",
+      "o": ["Cholecystectomy", "ERCP and biliary stent", "Liver transplant", "Oral prednisolone", "Whipple procedure"],
+      "a": 1,
+      "e": "Obstructive jaundice from pancreatic cancer is palliated with ERCP and biliary stent insertion. Whipple's is only for resectable disease.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Symptom management in advanced disease." },
+        { "t": "Pick out the clues", "clues": ["metastatic pancreatic head cancer", "worsening jaundice and severe itching"], "x": "Unresectable, obstructive jaundice." },
+        { "t": "Make your own answer before looking", "x": "**ERCP + biliary stent.**" },
+        { "t": "Rule out the others", "elim": [[0, "Does not relieve a CBD obstruction."], [2, "Not for metastatic cancer."], [3, "Steroids do not relieve mechanical obstruction."], [4, "Metastatic disease is not resectable."]] },
+        { "t": "Commit", "x": "**B.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 66 year old woman with locally advanced pancreatic cancer has pale, greasy, foul-smelling stools that float and continued weight loss. Her pulse rate is 80 bpm and BP 118/72 mmHg.",
+      "labs": [["Faecal elastase", "80 µg/g", ">200", "L"], ["Albumin", "31 g/L", "35–50", "L"]],
+      "visual": null,
+      "q": "Which is the most appropriate treatment for her stools?",
+      "o": ["Cholestyramine", "Loperamide", "Metronidazole", "Pancreatin with meals", "Ursodeoxycholic acid"],
+      "a": 3,
+      "e": "Steatorrhoea from pancreatic exocrine insufficiency is treated with pancreatic enzyme replacement therapy (pancreatin) with meals.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Treatment of a symptom." },
+        { "t": "Pick out the clues", "clues": ["pale, greasy, foul-smelling stools that float", "continued weight loss"], "x": "Steatorrhoea; low faecal elastase confirms exocrine insufficiency." },
+        { "t": "Make your own answer before looking", "x": "**Pancreatin.**" },
+        { "t": "Rule out the others", "elim": [[0, "Treats bile acid diarrhoea."], [1, "Slows the gut but does not fix malabsorption."], [2, "No infection."], [4, "Used in PBC and gallstones."]] },
+        { "t": "Commit", "x": "**D.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 70 year old man with an unresectable pancreatic head tumour had a biliary stent 3 months ago. He now has rigors, jaundice and right upper quadrant pain. His temperature is 39.0°C, pulse rate 116 bpm and BP 100/62 mmHg.",
+      "labs": [["Bilirubin", "140 µmol/L", "<17", "H"], ["White cell count", "19.8 x10⁹/L", "4.0–11.0", "H"], ["CRP", "220 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Increase his morphine", "IV antibiotics and urgent ERCP", "Oral antibiotics at home", "Start FOLFIRINOX", "Whipple procedure"],
+      "a": 1,
+      "e": "Fever, jaundice and RUQ pain with a blocked stent is acute cholangitis from malignant biliary obstruction: urgent antibiotics and ERCP.",
+      "steps": [
+        { "t": "Read the question line first", "x": "An emergency next step." },
+        { "t": "Pick out the clues", "clues": ["biliary stent 3 months ago", "rigors, jaundice and right upper quadrant pain", "BP 100/62 mmHg"], "x": "Charcot's triad with sepsis: blocked stent, cholangitis." },
+        { "t": "Make your own answer before looking", "x": "**IV antibiotics + urgent ERCP.**" },
+        { "t": "Rule out the others", "elim": [[0, "Does not treat sepsis."], [2, "He is septic; needs IV treatment."], [3, "Chemotherapy in sepsis is dangerous."], [4, "Unresectable tumour."]] },
+        { "t": "Commit", "x": "**B.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 72 year old woman has painless jaundice and a palpable, non-tender gallbladder. Her pulse rate is 78 bpm and BP 134/80 mmHg. A student asks why a gallstone blocking the bile duct would not usually cause the same sign.",
+      "labs": [["Bilirubin", "170 µmol/L", "<17", "H"]],
+      "visual": null,
+      "q": "Which is the most likely explanation?",
+      "o": ["Gallstones cause cholangitis that shrinks the duct", "Gallstones dissolve before the gallbladder distends", "Pancreatic tumours secrete fluid into the gallbladder", "Stone-diseased gallbladders are fibrotic and cannot distend", "Tumours block the cystic duct directly"],
+      "a": 3,
+      "e": "Courvoisier's law: chronic gallstone disease scars the gallbladder so it cannot distend; a palpable gallbladder in jaundice suggests malignant obstruction.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism behind Courvoisier's law." },
+        { "t": "Pick out the clues", "clues": ["painless jaundice", "palpable, non-tender gallbladder", "gallstone blocking the bile duct"], "x": "Courvoisier's sign versus stone obstruction." },
+        { "t": "Make your own answer before looking", "x": "**Stone-scarred gallbladders are fibrotic and non-distensible.**" },
+        { "t": "Rule out the others", "elim": [[0, "Cholangitis does not explain gallbladder size."], [1, "Gallstones do not dissolve quickly."], [2, "Tumours do not secrete into the gallbladder."], [4, "The tumour blocks the distal CBD, not the cystic duct."]] },
+        { "t": "Commit", "x": "**D.**" }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is the commonest type and site of pancreatic cancer, and what are the risk factors?",
+        "tip": "Exam thinking: older smoker with new diabetes.",
+        "points": [
+          { "p": "Pancreatic ductal adenocarcinoma", "k": [["ductal", "adenocarcinoma"]], "why": "Most common type." },
+          { "p": "Most often in the head, causing obstructive jaundice", "k": [["head"]], "why": "Compresses the distal CBD." },
+          { "p": "Smoking, chronic pancreatitis, diabetes, obesity, family history", "k": [["smok", "chronic pancreatitis", "obes", "family"]], "why": "Smoking is the biggest modifiable one." },
+          { "p": "Late-onset diabetes over 50 (paraneoplastic)", "k": [["diabet"]], "why": "A red flag." },
+          { "p": "High red meat intake", "k": [["red meat", "meat"]], "why": "Dietary risk factor in the notes." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Describe the classic presentation of a pancreatic head tumour.",
+        "tip": "Exam thinking: painless jaundice plus weight loss.",
+        "points": [
+          { "p": "Painless obstructive jaundice", "k": [["painless"], ["jaundice"]], "why": "Stones are painful." },
+          { "p": "Pruritus, dark urine, pale fatty stools (steatorrhoea)", "k": [["prurit", "itch", "dark urine", "pale", "steatorr"]], "why": "Obstructive pattern." },
+          { "p": "Back pain and weight loss", "k": [["back"], ["weight"]], "why": "Very classic." },
+          { "p": "Vague abdominal pain and recent-onset diabetes", "k": [["vague", "abdominal pain", "diabet"]], "why": "Non-specific early." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are Courvoisier's sign, Trousseau's syndrome and the double duct sign?",
+        "tip": "Exam thinking: three named signs, one cancer.",
+        "points": [
+          { "p": "Courvoisier's: painless palpable gallbladder + jaundice", "k": [["courvoisier", "palpable"]], "why": "Gallstones rarely cause it." },
+          { "p": "Trousseau's: migratory thrombophlebitis", "k": [["trousseau", "migratory", "thrombophlebitis"]], "why": "Hypercoagulable state." },
+          { "p": "Double duct sign: dilated CBD and pancreatic duct", "k": [["double duct", "both duct", "pancreatic duct"]], "why": "Seen on CT or MRCP." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the complications and late signs of pancreatic cancer?",
+        "tip": "Exam thinking: late disease signs suggest metastases.",
+        "points": [
+          { "p": "Liver metastases: hepatomegaly, ascites", "k": [["liver", "hepatomegaly", "ascites", "metasta"]], "why": "Late disease." },
+          { "p": "Obstructive jaundice and malnutrition/cachexia", "k": [["malnutrition", "cachexia", "jaundice"]], "why": "Needs stenting and nutrition." },
+          { "p": "VTE including Trousseau's", "k": [["vte", "thrombo", "dvt", "clot"]], "why": "Hypercoagulable." },
+          { "p": "Duodenal obstruction", "k": [["duodenal", "gastric outlet", "vomit"]], "why": "Head tumours sit on the duodenum." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What are the initial investigations, and which test diagnoses and stages pancreatic cancer?",
+        "tip": "Exam thinking: bloods and ultrasound first, CT to diagnose.",
+        "points": [
+          { "p": "LFTs (raised bilirubin, ALP/γGT), glucose, anaemia", "k": [["lft", "bilirubin", "alp"]], "why": "Cholestatic pattern." },
+          { "p": "Abdominal ultrasound first imaging", "k": [["ultrasound", "uss"]], "why": "Shows dilated ducts, no stones." },
+          { "p": "Pancreatic protocol CT: diagnosis and staging", "k": [["ct"]], "why": "Within 2 weeks if ≥60 with weight loss + symptoms." },
+          { "p": "EUS ± biopsy for tissue and staging", "k": [["eus", "endoscopic ultrasound", "biopsy"]], "why": "Histological confirmation." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is CA 19-9 used for, and who needs a CT within 2 weeks?",
+        "tip": "Exam thinking: monitoring marker; the NICE age rule.",
+        "points": [
+          { "p": "CA 19-9: tumour marker used to monitor progression", "k": [["ca 19-9", "ca19-9", "ca 19 9", "ca199"]], "why": "Also raised in cholestasis." },
+          { "p": "Age 60 or over with weight loss", "k": [["60"], ["weight"]], "why": "The NICE trigger." },
+          { "p": "Plus diarrhoea, back pain, abdominal pain, nausea, vomiting, constipation or new diabetes", "k": [["diarrhoea", "back pain", "diabet", "nausea", "constipation"]], "why": "Any one with weight loss." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is resectable and unresectable pancreatic cancer treated?",
+        "tip": "Exam thinking: resectable or not decides everything.",
+        "points": [
+          { "p": "Resectable head tumour: Whipple (pancreaticoduodenectomy)", "k": [["whipple", "pancreaticoduodenectomy"]], "why": "Only curative option." },
+          { "p": "Adjuvant chemotherapy (gemcitabine) after surgery", "k": [["gemcitabine", "adjuvant"]], "why": "Reduces recurrence." },
+          { "p": "Locally advanced/metastatic: FOLFIRINOX or gemcitabine-based", "k": [["folfirinox", "gemcitabine"]], "why": "Not surgery." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How are jaundice, pain, steatorrhoea and cholangitis managed in pancreatic cancer?",
+        "tip": "Exam thinking: one treatment per symptom.",
+        "points": [
+          { "p": "Jaundice: ERCP + biliary stent", "k": [["ercp", "stent"]], "why": "Palliates obstruction." },
+          { "p": "Pain: opioids (morphine)", "k": [["opioid", "morphine"]], "why": "Back pain is often severe." },
+          { "p": "Steatorrhoea: pancreatic enzyme replacement (pancreatin)", "k": [["pancreatin", "enzyme replacement", "creon", "pert"]], "why": "With meals." },
+          { "p": "Fever + jaundice + RUQ pain: cholangitis, urgent antibiotics + ERCP", "k": [["cholangitis", "antibiotic"]], "why": "Blocked stent or duct." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does pancreatic cancer present late and cause obstructive jaundice and steatorrhoea?",
+        "tip": "Exam thinking: location and what it blocks.",
+        "points": [
+          { "p": "Retroperitoneal location and non-specific early symptoms", "k": [["retroperiton", "non-specific", "silent"]], "why": "Presents late." },
+          { "p": "Dense desmoplastic stroma, early perineural/lymphovascular invasion", "k": [["desmoplas", "perineural", "lymphovascular"]], "why": "Explains back pain and early spread." },
+          { "p": "Compresses distal CBD: post-hepatic jaundice, pale stools, dark urine", "k": [["cbd", "bile duct", "compress"]], "why": "Conjugated hyperbilirubinaemia." },
+          { "p": "Steatorrhoea from reduced pancreatic lipase reaching the duodenum", "k": [["lipase"]], "why": "Exocrine insufficiency." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Explain Courvoisier's law, Trousseau's syndrome and new-onset diabetes in pancreatic cancer.",
+        "tip": "Exam thinking: one mechanism per sign.",
+        "points": [
+          { "p": "Courvoisier: stone-diseased gallbladders are fibrotic and non-distensible", "k": [["fibro", "scar", "distens"]], "why": "So a palpable one suggests malignancy." },
+          { "p": "Trousseau's: paraneoplastic hypercoagulability from tissue factor/mucin", "k": [["tissue factor", "mucin", "hypercoag"]], "why": "Migratory thrombophlebitis." },
+          { "p": "Diabetes: paraneoplastic, tumour factors affecting islet cells", "k": [["islet", "paraneoplastic"]], "why": "Not just beta-cell destruction." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "pancreatic ductal adenocarcinoma": "The commonest pancreatic cancer, arising from the cells lining the pancreatic ducts.",
+    "adenocarcinoma": "Cancer arising from glandular epithelium.",
+    "head of the pancreas": "The part of the pancreas in the curve of the duodenum, next to the bile duct.",
+    "obstructive jaundice": "Yellowing from blocked bile flow, with dark urine, pale stools and itch.",
+    "painless jaundice": "Jaundice without biliary colic, a classic sign of malignant obstruction.",
+    "pruritus": "Itching, caused here by retained bile salts.",
+    "steatorrhoea": "Pale, greasy, floating stools from fat malabsorption.",
+    "Courvoisier's sign": "A painless palpable gallbladder with jaundice, suggesting malignancy rather than stones.",
+    "Courvoisier's law": "In jaundice, a palpable non-tender gallbladder is unlikely to be due to gallstones.",
+    "Trousseau's syndrome": "Migratory thrombophlebitis from a cancer-driven hypercoagulable state.",
+    "migratory thrombophlebitis": "Inflamed, clotted superficial veins appearing in different places over time.",
+    "double duct sign": "Dilation of both the common bile duct and pancreatic duct on imaging.",
+    "paraneoplastic": "Caused by substances a tumour releases, not by the tumour's local growth.",
+    "cachexia": "Severe wasting of muscle and fat in chronic illness such as cancer.",
+    "ascites": "Fluid collecting in the peritoneal cavity.",
+    "hepatomegaly": "An enlarged liver.",
+    "CA 19-9": "A tumour marker linked to pancreatic cancer, used mainly to monitor disease.",
+    "pancreatic protocol CT": "A multiphase CT designed to show the pancreas, tumour and nearby vessels.",
+    "EUS": "Endoscopic ultrasound: a scope-mounted ultrasound used to image and biopsy the pancreas.",
+    "endoscopic ultrasound": "Ultrasound from inside the gut, allowing pancreatic biopsy.",
+    "Whipple procedure": "Pancreaticoduodenectomy: removal of the pancreatic head, duodenum, bile duct and gallbladder.",
+    "pancreaticoduodenectomy": "The Whipple operation for pancreatic head tumours.",
+    "adjuvant chemotherapy": "Chemotherapy given after surgery to reduce the risk of recurrence.",
+    "gemcitabine": "A chemotherapy drug used for pancreatic cancer.",
+    "FOLFIRINOX": "Combination chemotherapy (folinic acid, fluorouracil, irinotecan, oxaliplatin) for advanced pancreatic cancer.",
+    "biliary stent": "A tube placed in the bile duct, usually at ERCP, to relieve obstruction.",
+    "ERCP": "Endoscopic retrograde cholangiopancreatography: endoscopic access to the bile duct for stenting.",
+    "pancreatin": "Pancreatic enzyme replacement taken with meals to treat steatorrhoea.",
+    "pancreatic enzyme replacement therapy": "Oral pancreatic enzymes (e.g. pancreatin) to replace missing digestive enzymes.",
+    "faecal elastase": "A stool test for pancreatic exocrine function; low means insufficiency.",
+    "desmoplastic stroma": "Dense fibrous tissue that surrounds pancreatic tumour cells.",
+    "perineural invasion": "Tumour spreading along nerves, causing back pain.",
+    "retroperitoneal": "Lying behind the peritoneum, at the back of the abdomen.",
+    "γGT": "Gamma-glutamyl transferase, a liver enzyme raised with ALP in cholestasis.",
+    "ALP": "Alkaline phosphatase, raised in bile duct obstruction.",
+    "cholestatic": "Describing a pattern of reduced bile flow: ALP and γGT raised more than ALT.",
+    "acute cholangitis": "Infection of an obstructed bile duct: fever, jaundice and RUQ pain."
+  }
+}

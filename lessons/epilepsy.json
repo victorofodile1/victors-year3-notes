@@ -1,0 +1,455 @@
+{
+  "id": "epilepsy",
+  "patient": {
+    "name": "Priya Raman",
+    "age": 19,
+    "sex": "F",
+    "setting": "Emergency Department, then first seizure clinic",
+    "complaint": "Collapsed with generalised shaking in her halls after an all-night revision session",
+    "background": ["Second-year UCL student", "On the combined oral contraceptive pill", "Mother has epilepsy", "Drinks at weekends; little sleep during exams"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' where the description of the event names the seizure type: morning jerks in a teenager (JME), staring spells in a child (absence), lip-smacking and déjà vu (temporal), a Jacksonian march (frontal), or pelvic thrusting with closed eyes (non-epileptic).",
+      "steps": [
+        { "type": "story", "points": ["Priya, 19, found collapsed by her flatmate at 8 am.", "Witnessed: went **stiff**, then **rhythmic jerking** of all limbs for 2 minutes.", "Eyes **open**; bit the side of her tongue; wet herself.", "Confused and drowsy for 40 minutes afterwards.", "She had been awake all night revising."], "vitals": { "T": "36.9°C", "HR": "96 bpm", "BP": "124/76 mmHg", "RR": "16 /min", "SpO2": "98% on air", "GCS": "14", "CBG": "5.2 mmol/L" } },
+        { "type": "ask", "q": "Priya had a similar collapse 6 months ago. Does she have epilepsy?", "o": ["No: she needs three seizures", "No: one seizure was provoked by alcohol", "Yes: two unprovoked seizures", "Yes: any single seizure counts"], "a": 2, "r": "Epilepsy is a tendency to **recurrent unprovoked seizures**, generally diagnosed after **two or more**. Sleep deprivation is a trigger, not a provoking cause like hypoglycaemia." },
+        { "type": "notes", "src": 0, "lead": "This is Priya's **second unprovoked** seizure, so she meets the working definition of epilepsy." },
+        { "type": "notes", "src": 1, "lead": "Stiffening then rhythmic jerking, eyes open and **postictal confusion**: Priya's event is a classic **generalised tonic-clonic** seizure." },
+        { "type": "story", "points": ["On questioning: for a year, **morning jerks** of her arms.", "She often **drops her toothbrush** or spills tea soon after waking.", "Flatmates notice brief blank stares at breakfast.", "All worse after nights out or no sleep."] },
+        { "type": "notes", "src": 2, "lead": "Myoclonic jerks, absences and a GTCS, **1 to 2 hours after waking**, triggered by sleep loss and alcohol: Priya has **juvenile myoclonic epilepsy**." },
+        { "type": "compare", "title": "Epileptic seizure vs mimics", "head": ["Feature", "Epileptic (GTCS)", "Non-epileptic attack", "Vasovagal syncope"], "rows": [["Eyes", "**Open**", "**Closed**", "Open or closed"], ["Movements", "Tonic then clonic, fixed head", "Pelvic thrusting, side-to-side head", "Brief jerks only"], ["Duration", "1 to 3 min", "Often >3 min", "Seconds"], ["Afterwards", "**Prolonged confusion**", "Weeping", "**Rapid recovery**"]] },
+        { "type": "notes", "src": 3, "lead": "Priya's eyes were open and she was confused for 40 minutes: not NEAD and not syncope. She takes no quinolones." },
+        { "type": "flow", "title": "Name the seizure from the story", "nodes": ["Stiff, then jerking, open eyes, confused after → GTCS", "Brief shock-like jerks, aware → myoclonic", "Sudden drop, no jerking → atonic", "Blank stare seconds, child → absence", "Lip-smacking, déjà vu, epigastric aura → temporal focal", "March up the limb → frontal focal"] },
+        { "type": "trap", "text": "A few jerks during a faint do **not** make it a seizure. **Rapid recovery** with a short post-ictal period points to vasovagal syncope." }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (capillary glucose in an active seizure), and EEG or MRI as the tests that support the diagnosis or find a structural cause.",
+      "steps": [
+        { "type": "ask", "q": "Priya is still drowsy in ED. Which test do you check first?", "o": ["Capillary blood glucose", "CT head", "EEG", "MRI brain"], "a": 0, "r": "**Capillary glucose** first: hypoglycaemia is a reversible cause of seizures and must be excluded immediately." },
+        { "type": "notes", "src": 1, "lead": "Priya's capillary glucose is 5.2 mmol/L and her electrolytes are normal: no metabolic cause for the seizure." },
+        { "type": "labs", "title": "Priya's ED bloods", "rows": [["Glucose", "5.2 mmol/L", "3.5–7.8", ""], ["Sodium", "139 mmol/L", "135–145", ""], ["Adjusted calcium", "2.38 mmol/L", "2.20–2.60", ""], ["Magnesium", "0.84 mmol/L", "0.70–1.00", ""], ["CK", "410 U/L", "25–200", "H"], ["β-hCG", "Negative", "", ""]], "text": "Normal glucose and electrolytes; raised CK from muscle activity. Pregnancy test matters for drug choice." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Capillary glucose", "min": 0, "max": 12, "unit": "mmol/L", "bands": [[0, 4, "hypoglycaemia: treat first", "bad"], [4, 7.8, "normal", "ok"], [7.8, 12, "high", "warn"]], "value": 5.2, "label": "Priya 5.2", "caption": "Normal, so this is not a hypoglycaemic seizure." } },
+        { "type": "notes", "src": 0, "lead": "In clinic, Priya's story is the diagnosis; her **EEG** shows generalised polyspike-and-wave, supporting JME." },
+        { "type": "notes", "src": 2, "lead": "Priya's examination is normal, but an **MRI brain** looks for any structural cause now epilepsy is suspected." },
+        { "type": "trap", "text": "A normal EEG does **not** exclude epilepsy. The diagnosis is **clinical**: a good eyewitness account matters more than any single test." }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?': IV lorazepam 4 mg for status epilepticus, then phenytoin or levetiracetam; first-line AEDs by seizure type; and avoiding valproate in women of childbearing age.",
+      "steps": [
+        { "type": "story", "points": ["In ED, Priya starts **seizing again**.", "Still generalised jerking at **5 minutes**; IV cannula in.", "Airway supported, oxygen given, glucose already normal."], "vitals": { "HR": "128 bpm", "BP": "146/90 mmHg", "SpO2": "93% on 15L O2" } },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Seizure duration", "min": 0, "max": 30, "unit": "min", "bands": [[0, 5, "self-limiting", "ok"], [5, 20, "status: benzodiazepine", "warn"], [20, 30, "refractory: ITU", "bad"]], "value": 6, "label": "Priya 6 min", "caption": "Over 5 minutes is status epilepticus: treat now." } },
+        { "type": "ask", "q": "Priya has IV access and is still seizing at 6 minutes. What do you give?", "o": ["Buccal midazolam", "IV lorazepam 4 mg", "IV phenytoin", "Oral levetiracetam"], "a": 1, "r": "**IV lorazepam 4 mg**, repeated once if needed. Buccal midazolam is for prehospital; phenytoin is second line." },
+        { "type": "notes", "src": 3, "lead": "Priya stops after one dose of **IV lorazepam**. If two doses failed, IV phenytoin or levetiracetam would follow, then ITU." },
+        { "type": "flow", "title": "Convulsive status epilepticus", "nodes": ["ABC, oxygen, check glucose", "IV lorazepam 4 mg (prehospital: buccal midazolam / PR diazepam)", "Repeat lorazepam once after 5 to 10 min", "IV phenytoin, levetiracetam or valproate", "Refractory: ITU and general anaesthesia"], "caption": "Pregnant with pre-eclampsia? IV magnesium sulphate instead." },
+        { "type": "notes", "src": 0, "lead": "Priya has a generalised epilepsy with **myoclonic** jerks, so **levetiracetam** is first choice: valproate is avoided as she could become pregnant." },
+        { "type": "notes", "src": 1, "lead": "Second-line options like **carbamazepine** are for focal seizures; it would also make Priya's pill unreliable, so an IUS would be advised." },
+        { "type": "notes", "src": 2, "lead": "Priya should take **5 mg folic acid** if planning pregnancy, avoid two AEDs, and know about side effects. Withdrawal only after **2 years** seizure-free." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Priya's seizures per month", "x": ["Before", "Month 1", "Month 3", "Month 6", "Month 12"], "unit": "", "series": [{ "name": "Myoclonic days", "values": [12, 6, 2, 0, 0] }, { "name": "GTCS", "values": [1, 0, 0, 0, 0] }], "caption": "Levetiracetam plus sleep and alcohol advice controls her JME." } },
+        { "type": "notes", "src": "guidelines", "lead": "NICE guides Priya's drug choice; under **DVLA** rules she must stop driving and tell the DVLA until seizure-free for the required time." },
+        { "type": "pearl", "text": "**Valproate** is the classic wrong answer for a young woman: highly teratogenic. Absence = **ethosuximide**; myoclonic = **levetiracetam**; focal and GTCS = lamotrigine or levetiracetam." }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: the mechanism of benzodiazepines, phenytoin, lamotrigine or valproate, why temporal seizures cause auras, or why status becomes resistant to benzodiazepines.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Priya's seizures are **generalised**: hypersynchronous discharges involve both hemispheres from the start." },
+        { "type": "notes", "src": 1, "lead": "Unlike Priya, a patient with **mesial temporal sclerosis** has focal seizures with déjà vu and epigastric auras from the hippocampus." },
+        { "type": "ask", "q": "How did lorazepam stop Priya's seizure?", "o": ["Blocks NMDA receptors", "Blocks sodium channels", "Enhances GABA-A chloride influx", "Inhibits T-type calcium channels"], "a": 2, "r": "Benzodiazepines **enhance GABA-A** chloride influx, hyperpolarising neurons. Phenytoin and lamotrigine block sodium channels." },
+        { "type": "notes", "src": 2, "lead": "Lorazepam worked on Priya's **GABA-A** receptors. Lamotrigine and phenytoin calm **sodium channels**; valproate does both but is teratogenic." },
+        { "type": "compare", "title": "How the AEDs work", "head": ["Drug", "Main target", "Key side effect"], "rows": [["Lorazepam", "**GABA-A** chloride influx", "Respiratory depression"], ["Phenytoin", "Voltage-gated **Na⁺** channels", "Gum hyperplasia, arrhythmias IV"], ["Lamotrigine", "Voltage-gated Na⁺ channels", "Rash, Stevens-Johnson"], ["Valproate", "↑GABA, blocks Na⁺/Ca²⁺", "Teratogenic, weight gain, tremor"], ["Topiramate", "Several", "Weight loss, renal stones"]] },
+        { "type": "notes", "src": 3, "lead": "Every minute Priya kept seizing, more **GABA-A receptors** were pulled inside the neurons: that is why lorazepam is given at 5 minutes, not 30." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Benzodiazepine response vs seizure duration", "x": ["5 min", "15 min", "30 min", "60 min"], "unit": "% responding", "series": [{ "name": "Seizures stopped by benzodiazepine", "values": [85, 65, 40, 20] }], "caption": "Illustrative: response falls as GABA-A receptors internalise. Treat early." } }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Epilepsy is generally diagnosed after how many unprovoked seizures?", "o": ["One", "Two or more", "Three or more", "Five or more"], "a": 1, "r": "**Two or more** unprovoked seizures." },
+    { "d": "diagnosis", "q": "What is the triad of juvenile myoclonic epilepsy?", "o": ["Absences, atonic drops, headache", "Myoclonic jerks, absences, GTCS", "Myoclonic jerks, déjà vu, dysphasia", "Tonic spasms, developmental delay, hypsarrhythmia"], "a": 1, "r": "**Myoclonic jerks, absences and GTCS**, 1 to 2 hours after waking." },
+    { "d": "diagnosis", "q": "Which feature suggests a non-epileptic attack rather than epilepsy?", "o": ["Eyes open", "Pelvic thrusting with closed eyes", "Postictal confusion", "Tongue bitten"], "a": 1, "r": "**Pelvic thrusting, mobile head, closed eyes, >3 minutes, postictal weeping.**" },
+    { "d": "diagnosis", "q": "Which lobe gives déjà vu, lip-smacking and an epigastric aura?", "o": ["Frontal", "Occipital", "Parietal", "Temporal"], "a": 3, "r": "**Temporal lobe** focus, often mesial temporal sclerosis." },
+    { "d": "investigation", "q": "What must be checked promptly in status epilepticus?", "o": ["Capillary blood glucose", "CT head", "EEG", "Prolactin"], "a": 0, "r": "**Capillary glucose** to exclude hypoglycaemia." },
+    { "d": "investigation", "q": "What is the gold standard for diagnosing epilepsy?", "o": ["Clinical diagnosis supported by EEG", "CT head", "MRI alone", "Serum prolactin"], "a": 0, "r": "**Clinical diagnosis supported by EEG**; MRI looks for a structural cause." },
+    { "d": "management", "q": "What is first-line treatment for convulsive status epilepticus in hospital?", "o": ["IV lorazepam 4 mg", "IV phenytoin", "Oral levetiracetam", "PR diazepam"], "a": 0, "r": "**IV lorazepam 4 mg**, up to two doses." },
+    { "d": "management", "q": "What is first-line for absence seizures?", "o": ["Carbamazepine", "Ethosuximide", "Lamotrigine", "Phenytoin"], "a": 1, "r": "**Ethosuximide.** Carbamazepine can worsen absences." },
+    { "d": "management", "q": "Which AED is preferred in pregnancy?", "o": ["Lamotrigine", "Phenytoin", "Sodium valproate", "Topiramate"], "a": 0, "r": "**Lamotrigine with 5 mg folic acid**; avoid dual therapy." },
+    { "d": "science", "q": "How do phenytoin and lamotrigine work?", "o": ["Block voltage-gated sodium channels", "Enhance GABA-A receptors", "Inhibit carbonic anhydrase", "Block NMDA receptors"], "a": 0, "r": "**Voltage-gated sodium channel** blockade reduces repetitive firing." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 26 year old man is brought to the Emergency Department after collapsing at work. A colleague says he cried out, went rigid and then had rhythmic jerking of all four limbs for 2 minutes with his eyes open. He was incontinent of urine and was confused for 30 minutes afterwards. He had a similar episode 4 months ago. His capillary glucose is 5.6 mmol/L.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Cardiac syncope", "Generalised tonic-clonic seizure", "Non-epileptic attack disorder", "Transient ischaemic attack", "Vasovagal syncope"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of a collapse with movements: seizure, syncope or non-epileptic attack?" },
+        { "t": "Pick out the clues", "clues": ["went rigid", "rhythmic jerking of all four limbs", "eyes open", "confused for 30 minutes afterwards", "similar episode 4 months ago"], "x": "**Tonic then clonic** phase, open eyes, prolonged **postictal confusion**, recurrent." },
+        { "t": "Make your own answer before looking", "x": "**Generalised tonic-clonic seizure** (and two unprovoked events = epilepsy)." },
+        { "t": "Rule out the others", "elim": [[0, "Cardiac syncope is brief with rapid recovery, often on exertion."], [2, "NEAD has closed eyes, pelvic thrusting and weeping, not confusion."], [3, "A TIA gives focal loss of function, not jerking and collapse."], [4, "Vasovagal syncope recovers rapidly with a short post-ictal period."]] },
+        { "t": "Commit", "x": "**B. Generalised tonic-clonic seizure.** Rule: prolonged confusion afterwards = seizure, not syncope." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 42 year old woman has had three episodes over 6 months of a rising epigastric feeling, a smell of burning and lip-smacking, after which she cannot find her words. Between episodes her neurological examination is normal. Her pulse rate is 72 bpm and BP 122/78 mmHg. Routine bloods are normal.",
+      "q": "Which is the most appropriate investigation to look for a structural cause?",
+      "o": ["CT angiography", "EEG", "Lumbar puncture", "MRI brain", "Serum prolactin"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "Looking for a **structural** cause, not confirming seizures." },
+        { "t": "Pick out the clues", "clues": ["rising epigastric feeling", "smell of burning", "lip-smacking", "cannot find her words"], "x": "Temporal lobe focal seizures: think **mesial temporal sclerosis** or a lesion." },
+        { "t": "Make your own answer before looking", "x": "**MRI brain**, once epilepsy is suspected, to look for a structural cause." },
+        { "t": "Rule out the others", "elim": [[0, "CT angiography is for vascular lesions such as aneurysms."], [1, "EEG supports the diagnosis but does not show structure."], [2, "LP is for infection; she is well between episodes."], [4, "Prolactin is unreliable and shows no structure."]] },
+        { "t": "Commit", "x": "**D. MRI brain.** Rule: EEG supports the diagnosis; MRI finds the cause." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 17 year old girl has a 1 year history of brief jerks of her arms in the mornings, causing her to drop things. Last week she had a generalised tonic-clonic seizure after a sleepover. An EEG shows generalised polyspike-and-wave discharges. She is not sexually active but may want children in future.",
+      "q": "Which is the most appropriate first-line treatment?",
+      "o": ["Carbamazepine", "Ethosuximide", "Levetiracetam", "Phenytoin", "Sodium valproate"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "First-line AED: identify the seizure type and the patient's sex and age." },
+        { "t": "Pick out the clues", "clues": ["brief jerks of her arms in the mornings", "generalised tonic-clonic seizure after a sleepover", "17 year old girl"], "x": "Juvenile myoclonic epilepsy in a girl of childbearing potential." },
+        { "t": "Make your own answer before looking", "x": "Myoclonic: **levetiracetam** preferred; avoid valproate." },
+        { "t": "Rule out the others", "elim": [[0, "Carbamazepine can worsen myoclonic seizures; it is for focal epilepsy."], [1, "Ethosuximide treats absences only."], [3, "Phenytoin is not first line and can worsen myoclonus."], [4, "Valproate is teratogenic; avoid in females of childbearing age."]] },
+        { "t": "Commit", "x": "**C. Levetiracetam.** Rule: young woman with myoclonic epilepsy = levetiracetam, never valproate first." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 30 year old man is in convulsive status epilepticus. The first dose of IV lorazepam is given after 40 minutes of continuous seizure activity because of delayed IV access, and it has little effect. Doctors note that benzodiazepines work less well the longer a seizure lasts.",
+      "q": "Which is the most likely mechanism for reduced benzodiazepine response?",
+      "o": ["Hepatic enzyme induction", "Hypoglycaemia", "Internalisation of GABA-A receptors", "Rapid renal clearance of lorazepam", "Tolerance from previous use"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism: why do benzodiazepines fail in prolonged status?" },
+        { "t": "Pick out the clues", "clues": ["after 40 minutes", "little effect", "the longer a seizure lasts"], "x": "Resistance grows with **time**, not with drug dose or past exposure." },
+        { "t": "Make your own answer before looking", "x": "Progressive **internalisation of GABA-A receptors**, so fewer targets for benzodiazepines." },
+        { "t": "Rule out the others", "elim": [[0, "Enzyme induction takes days, not minutes."], [1, "Hypoglycaemia causes seizures but does not explain benzodiazepine failure."], [3, "Lorazepam is cleared by the liver, slowly."], [4, "Nothing suggests previous benzodiazepine use."]] },
+        { "t": "Commit", "x": "**C. Internalisation of GABA-A receptors.** Rule: treat status early, before the receptors disappear." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 17 year old boy has a generalised tonic-clonic seizure the morning after a party where he drank alcohol and slept little. For a year he has had sudden jerks of his arms within an hour of waking, making him spill his cereal. His pulse rate is 88 bpm and BP 122/74 mmHg. Neurological examination is normal.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Absence epilepsy", "Juvenile myoclonic epilepsy", "Non-epileptic attack disorder", "Temporal lobe epilepsy", "Vasovagal syncope"],
+      "a": 1,
+      "e": "Morning myoclonic jerks and a GTCS triggered by alcohol and sleep deprivation in a teenager is juvenile myoclonic epilepsy.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis: which epilepsy syndrome?" },
+        { "t": "Pick out the clues", "clues": ["17 year old boy", "drank alcohol and slept little", "sudden jerks of his arms within an hour of waking"], "x": "Adolescent, **morning myoclonic jerks**, GTCS after sleep loss and alcohol." },
+        { "t": "Make your own answer before looking", "x": "**Juvenile myoclonic epilepsy.**" },
+        { "t": "Rule out the others", "elim": [[0, "Absence epilepsy is brief staring in younger children."], [2, "NEAD would not cause morning myoclonus."], [3, "Temporal lobe seizures give auras and automatisms."], [4, "Syncope does not cause morning jerks."]] },
+        { "t": "Commit", "x": "**B. Juvenile myoclonic epilepsy.** Rule: teenager + morning jerks + triggers = JME." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 34 year old woman has episodes of a rising feeling in her stomach and intense déjà vu. Her husband sees her stare, smack her lips and fiddle with her clothes for a minute. Afterwards she cannot find her words for several minutes and does not remember the event. She had prolonged febrile convulsions as a child.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Absence seizure", "Focal seizure of frontal lobe origin", "Focal seizure of temporal lobe origin", "Non-epileptic attack disorder", "Panic attack"],
+      "a": 2,
+      "e": "Epigastric aura, déjà vu, automatisms, impaired awareness and postictal dysphasia are temporal lobe focal seizures, often from mesial temporal sclerosis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of a seizure type: localise it." },
+        { "t": "Pick out the clues", "clues": ["rising feeling in her stomach", "déjà vu", "smack her lips", "cannot find her words", "prolonged febrile convulsions"], "x": "Epigastric aura, déjà vu, **automatisms**, postictal dysphasia; febrile convulsions suggest hippocampal sclerosis." },
+        { "t": "Make your own answer before looking", "x": "**Temporal lobe** focal impaired-awareness seizure." },
+        { "t": "Rule out the others", "elim": [[0, "Absences last seconds, in children, with no aura."], [1, "Frontal seizures give bizarre posturing or a Jacksonian march."], [3, "NEAD has no aura and no postictal dysphasia."], [4, "Panic attacks do not cause automatisms or amnesia."]] },
+        { "t": "Commit", "x": "**C. Temporal lobe focal seizure.** Rule: déjà vu + lip-smacking + dysphasia = temporal." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 7 year old girl's teacher reports that she 'switches off' many times a day, staring blankly for about 10 seconds and then carrying on as if nothing happened. She occasionally blinks rapidly during episodes. An episode is triggered in clinic by hyperventilation. Examination between episodes is normal.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Absence seizures", "Atonic seizures", "Focal impaired-awareness seizures", "Juvenile myoclonic epilepsy", "Myoclonic seizures"],
+      "a": 0,
+      "e": "Abrupt, brief blank staring many times a day in a child, triggered by hyperventilation, with a normal examination between episodes, is absence seizures.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Seizure type in a child." },
+        { "t": "Pick out the clues", "clues": ["7 year old girl", "staring blankly for about 10 seconds", "carrying on as if nothing happened", "triggered in clinic by hyperventilation"], "x": "Brief abrupt **blank staring**, instant recovery, hyperventilation trigger." },
+        { "t": "Make your own answer before looking", "x": "**Absence seizures**: treat with ethosuximide." },
+        { "t": "Rule out the others", "elim": [[1, "Atonic seizures are sudden drops."], [2, "Focal seizures last longer, with auras and postictal confusion."], [3, "JME starts in adolescence with morning jerks."], [4, "Myoclonic seizures are jerks, not staring."]] },
+        { "t": "Commit", "x": "**A. Absence seizures.** Rule: child + 10 second stares + hyperventilation = absence." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 45 year old man has episodes where his right hand starts jerking, then the jerking spreads up his forearm to his shoulder and the right side of his face over a minute. He remains aware throughout. Afterwards his right arm is weak for an hour. His pulse rate is 74 bpm and BP 132/84 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which brain region is the seizure most likely to arise from?",
+      "o": ["Cerebellum", "Frontal lobe", "Occipital lobe", "Parietal lobe", "Temporal lobe"],
+      "a": 1,
+      "e": "Clonic movement marching from the hand proximally (a Jacksonian march) arises from the motor cortex of the frontal lobe; the postictal weakness is Todd's paresis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Localise the seizure focus." },
+        { "t": "Pick out the clues", "clues": ["right hand starts jerking", "spreads up his forearm to his shoulder", "remains aware"], "x": "A **Jacksonian march**: focal aware motor seizure." },
+        { "t": "Make your own answer before looking", "x": "Motor cortex: **frontal lobe** (left)." },
+        { "t": "Rule out the others", "elim": [[0, "The cerebellum does not generate seizures."], [2, "Occipital seizures give visual phenomena."], [3, "Parietal seizures give sensory symptoms."], [4, "Temporal seizures give déjà vu, auras and automatisms."]] },
+        { "t": "Commit", "x": "**B. Frontal lobe.** Rule: Jacksonian march = frontal focus." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 23 year old man is brought to the Emergency Department after a witnessed collapse with generalised shaking lasting 2 minutes. He has a history of epilepsy. The witness is unsure whether this was a seizure or a faint. On examination he has a bitten lateral tongue.",
+      "labs": [],
+      "visual": null,
+      "q": "Which additional feature would most strongly support an epileptic seizure?",
+      "o": ["Closed eyes resisting opening", "Pelvic thrusting", "Prolonged postictal confusion", "Side-to-side head movements", "Weeping afterwards"],
+      "a": 2,
+      "e": "Prolonged postictal confusion and drowsiness are typical after a generalised tonic-clonic seizure. Closed eyes, pelvic thrusting, mobile head movements and weeping suggest a non-epileptic attack.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which finding fits a true epileptic seizure?" },
+        { "t": "Pick out the clues", "clues": ["generalised shaking lasting 2 minutes", "history of epilepsy", "bitten lateral tongue"], "x": "Likely a **GTCS**; look for the option that matches it." },
+        { "t": "Make your own answer before looking", "x": "GTCS: eyes open, fixed head, **postictal confusion/drowsiness**." },
+        { "t": "Rule out the others", "elim": [[0, "Closed eyes suggest NEAD."], [1, "Pelvic thrusting suggests NEAD."], [3, "Mobile head movements suggest NEAD."], [4, "Postictal weeping suggests NEAD."]] },
+        { "t": "Commit", "x": "**C. Prolonged postictal confusion.** Rule: rapid recovery = syncope; weeping = NEAD; confusion = seizure." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 31 year old woman with well-controlled focal epilepsy on lamotrigine has a breakthrough generalised seizure. She has not had a seizure for 3 years. Three days ago she started an antibiotic for a urinary infection. She has taken every dose of lamotrigine and is sleeping well. Her temperature is 36.8°C, pulse rate 84 bpm and BP 118/76 mmHg.",
+      "labs": [["Glucose", "5.4 mmol/L", "3.5–7.8", ""], ["Sodium", "138 mmol/L", "135–145", ""], ["Adjusted calcium", "2.40 mmol/L", "2.20–2.60", ""]],
+      "visual": null,
+      "q": "Which is the most likely cause of her seizure?",
+      "o": ["Ciprofloxacin", "Hypoglycaemia", "Hyponatraemia", "Missed doses", "Sleep deprivation"],
+      "a": 0,
+      "e": "Quinolones such as ciprofloxacin lower the seizure threshold. Her glucose and sodium are normal, she is adherent and sleeping well.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Cause of a breakthrough seizure: go through the triggers." },
+        { "t": "Pick out the clues", "clues": ["started an antibiotic for a urinary infection", "taken every dose", "sleeping well"], "x": "New drug; adherent; rested; bloods normal." },
+        { "t": "Make your own answer before looking", "x": "A **quinolone** such as ciprofloxacin lowers the seizure threshold." },
+        { "t": "Rule out the others", "elim": [[1, "Glucose is 5.4 mmol/L."], [2, "Sodium is 138 mmol/L."], [3, "She has taken every dose."], [4, "She is sleeping well."]] },
+        { "t": "Commit", "x": "**A. Ciprofloxacin.** Rule: quinolones lower the seizure threshold." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 54 year old man with type 1 diabetes is brought to the Emergency Department having a generalised tonic-clonic seizure that has lasted 6 minutes. His temperature is 36.4°C, pulse rate 124 bpm, BP 152/90 mmHg and oxygen saturation 92% on 15 L oxygen. Investigations:",
+      "labs": [["Venous pH", "7.31", "7.35–7.45", "L"], ["Lactate", "4.2 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["Capillary blood glucose", "CT head", "EEG", "Lumbar puncture", "MRI brain"],
+      "a": 0,
+      "e": "In status epilepticus, capillary blood glucose is checked promptly to exclude hypoglycaemia, a quickly reversible cause, especially in a diabetic patient.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Initial' investigation in an active seizure." },
+        { "t": "Pick out the clues", "clues": ["type 1 diabetes", "has lasted 6 minutes"], "x": "Status epilepticus in a patient at high risk of **hypoglycaemia**." },
+        { "t": "Make your own answer before looking", "x": "**Capillary blood glucose** now." },
+        { "t": "Rule out the others", "elim": [[1, "CT comes after the seizure is controlled."], [2, "EEG is not an emergency test here."], [3, "LP is unsafe during a seizure and not first."], [4, "MRI is for a structural cause later."]] },
+        { "t": "Commit", "x": "**A. Capillary blood glucose.** Rule: in any seizure, check glucose first. The raised lactate is from muscle activity." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 23 year old woman attends the first seizure clinic after a second unprovoked generalised tonic-clonic seizure. Both events were witnessed and well described. Neurological examination is normal and routine bloods are normal.",
+      "labs": [],
+      "visual": null,
+      "q": "Which investigation would best support the diagnosis and help classify the epilepsy?",
+      "o": ["CT head", "EEG", "MRI brain", "Serum prolactin", "Tilt table test"],
+      "a": 1,
+      "e": "Epilepsy is a clinical diagnosis supported by EEG, which also helps classify the seizure type. MRI looks for a structural cause.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Support the diagnosis and **classify**: which test shows electrical activity?" },
+        { "t": "Pick out the clues", "clues": ["second unprovoked", "well described", "Neurological examination is normal"], "x": "Clinically epilepsy; now support and classify it." },
+        { "t": "Make your own answer before looking", "x": "**EEG**: clinical diagnosis supported by EEG." },
+        { "t": "Rule out the others", "elim": [[0, "CT is for acute structural problems."], [2, "MRI shows structure, not seizure type."], [3, "Prolactin is unreliable and does not classify."], [4, "Tilt table is for syncope."]] },
+        { "t": "Commit", "x": "**B. EEG.** Rule: EEG supports and classifies; MRI looks for a cause." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 28 year old man with epilepsy is brought to the Emergency Department. He has been having a generalised tonic-clonic seizure for 7 minutes. IV access is in place and his capillary glucose is 6.1 mmol/L. His pulse rate is 130 bpm, BP 150/92 mmHg and oxygen saturation 94% on 15 L oxygen.",
+      "labs": [["Capillary glucose", "6.1 mmol/L", "4.0–7.8", ""]],
+      "visual": { "kind": "scale", "title": "Seizure duration", "min": 0, "max": 30, "unit": "min", "bands": [[0, 5, "self-limiting", "ok"], [5, 20, "status", "warn"], [20, 30, "refractory", "bad"]], "value": 7, "label": "7 min", "caption": "Beyond 5 minutes: status epilepticus." },
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Buccal midazolam", "IV levetiracetam", "IV lorazepam 4 mg", "IV phenytoin", "Oral sodium valproate"],
+      "a": 2,
+      "e": "Convulsive status with IV access is treated with IV lorazepam 4 mg, up to two doses. Buccal midazolam is prehospital; phenytoin and levetiracetam are second line.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial treatment of an ongoing seizure in hospital." },
+        { "t": "Pick out the clues", "clues": ["for 7 minutes", "IV access is in place", "capillary glucose is 6.1 mmol/L"], "x": "**Status epilepticus**; IV access; glucose normal." },
+        { "t": "Make your own answer before looking", "x": "**IV lorazepam 4 mg.**" },
+        { "t": "Rule out the others", "elim": [[0, "Buccal midazolam is for no IV access, e.g. prehospital."], [1, "Second line after two benzodiazepine doses."], [3, "Second line after two benzodiazepine doses."], [4, "Oral valproate is maintenance, not acute."]] },
+        { "t": "Commit", "x": "**C. IV lorazepam 4 mg.** Rule: IV access = lorazepam; no access = buccal midazolam or PR diazepam." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 40 year old woman is in convulsive status epilepticus in the Emergency Department. She has received two doses of IV lorazepam 4 mg, 10 minutes apart, and is still seizing. Her capillary glucose is 5.8 mmol/L. Her pulse rate is 134 bpm and BP 158/96 mmHg.",
+      "labs": [["Capillary glucose", "5.8 mmol/L", "4.0–7.8", ""], ["Sodium", "137 mmol/L", "135–145", ""]],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Buccal midazolam", "General anaesthesia", "IV lorazepam third dose", "IV phenytoin", "PR diazepam"],
+      "a": 3,
+      "e": "If two doses of benzodiazepine fail, give a second-line agent: IV phenytoin (or levetiracetam or valproate). General anaesthesia in ITU is for refractory status after this.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step after first-line has failed." },
+        { "t": "Pick out the clues", "clues": ["two doses of IV lorazepam", "still seizing"], "x": "Benzodiazepine maximum reached." },
+        { "t": "Make your own answer before looking", "x": "Second line: **IV phenytoin**." },
+        { "t": "Rule out the others", "elim": [[0, "Another benzodiazepine; the maximum is two doses."], [1, "Reserved for refractory status after second-line drugs."], [2, "Maximum is two doses."], [4, "Another benzodiazepine, and a prehospital route."]] },
+        { "t": "Commit", "x": "**D. IV phenytoin.** Rule: two benzodiazepines, then phenytoin/levetiracetam/valproate, then ITU." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 22 year old woman has generalised tonic-clonic epilepsy. She and her partner plan to start a family next year. She asks which medicine is safest. Her pulse rate is 76 bpm and BP 116/72 mmHg. Pregnancy test is negative.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate treatment?",
+      "o": ["Carbamazepine", "Lamotrigine with folic acid 5 mg", "Phenytoin", "Sodium valproate", "Topiramate"],
+      "a": 1,
+      "e": "Lamotrigine with high-dose folic acid (5 mg) is preferred when planning pregnancy. Valproate is highly teratogenic and phenytoin interferes with folate.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Drug choice when planning pregnancy." },
+        { "t": "Pick out the clues", "clues": ["generalised tonic-clonic epilepsy", "plan to start a family"], "x": "GTCS first line is lamotrigine or levetiracetam; pregnancy planning." },
+        { "t": "Make your own answer before looking", "x": "**Lamotrigine + 5 mg folic acid**, monotherapy." },
+        { "t": "Rule out the others", "elim": [[0, "Carbamazepine is second line for focal seizures."], [2, "Phenytoin interferes with folate metabolism."], [3, "Valproate is highly teratogenic."], [4, "Topiramate is teratogenic and not first line."]] },
+        { "t": "Commit", "x": "**B. Lamotrigine with folic acid 5 mg.** Rule: pregnancy = lamotrigine, 5 mg folate, one drug only." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 35 year old man's convulsive status epilepticus stops 2 minutes after IV lorazepam is given. A student asks how the drug ended the seizure.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely mechanism of action?",
+      "o": ["Blocks NMDA glutamate receptors", "Blocks T-type calcium channels", "Blocks voltage-gated sodium channels", "Inhibits GABA transaminase", "Potentiates GABA-A receptor chloride influx"],
+      "a": 4,
+      "e": "Benzodiazepines potentiate GABA-A receptor-mediated chloride influx, hyperpolarising neurons. Phenytoin and lamotrigine block sodium channels; ethosuximide blocks T-type calcium channels.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of a benzodiazepine." },
+        { "t": "Pick out the clues", "clues": ["IV lorazepam"], "x": "Lorazepam is a **benzodiazepine**." },
+        { "t": "Make your own answer before looking", "x": "Enhances **GABA-A** chloride influx: neurons hyperpolarise." },
+        { "t": "Rule out the others", "elim": [[0, "NMDA blockade is ketamine or memantine."], [1, "T-type calcium channel blockade is ethosuximide."], [2, "Sodium channel blockade is phenytoin and lamotrigine."], [3, "GABA transaminase inhibition is vigabatrin."]] },
+        { "t": "Commit", "x": "**E. Potentiates GABA-A receptor chloride influx.**" }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      { "d": "diagnosis", "q": "What is epilepsy, and when is it diagnosed?", "tip": "Exam thinking: one seizure is not epilepsy.", "points": [
+        { "p": "Tendency to recurrent unprovoked seizures", "k": [["unprovoked", "recurrent"]], "why": "Provoked seizures (hypoglycaemia, alcohol withdrawal) are not epilepsy." },
+        { "p": "Diagnosed after two or more unprovoked seizures", "k": [["two", "2"]], "why": "After a first seizure: urgent neurology clinic." },
+        { "p": "Abnormal electrical activity in the brain", "k": [["electrical", "discharge"]], "why": "Hypersynchronous cortical discharges." }
+      ] },
+      { "d": "diagnosis", "q": "Describe the main generalised seizure types.", "tip": "Exam thinking: the description of the event is the answer.", "points": [
+        { "p": "Tonic-clonic: stiffening then rhythmic jerking, eyes open, postictal confusion", "k": [["tonic"], ["clonic", "jerk"]], "why": "May follow an aura." },
+        { "p": "Myoclonic: brief shock-like jerks, consciousness kept", "k": [["myoclon"]], "why": "Often bilateral." },
+        { "p": "Atonic: sudden loss of tone, drop attack", "k": [["atonic", "drop"]], "why": "No jerking." },
+        { "p": "Absence: abrupt brief blank staring, normal between", "k": [["absence", "staring", "stare"]], "why": "Children; triggered by hyperventilation." }
+      ] },
+      { "d": "diagnosis", "q": "How do temporal and frontal lobe focal seizures present?", "tip": "Exam thinking: localise from the symptoms.", "points": [
+        { "p": "Temporal: epigastric aura, déjà vu, automatisms (lip-smacking)", "k": [["temporal"], ["deja", "déjà", "epigastric", "lip", "automatism"]], "why": "Most common cause of complex partial seizures." },
+        { "p": "Temporal: postictal dysphasia, smell/taste hallucinations", "k": [["dysphasia", "olfactory", "smell", "gustatory", "taste"]], "why": "Mesial temporal or hippocampal damage." },
+        { "p": "Frontal: bizarre posturing, hyperkinetic, Jacksonian march", "k": [["frontal"], ["jackson", "posturing", "hyperkinetic", "march"]], "why": "Clonic movement spreading up a limb." },
+        { "p": "Focal aware keeps awareness; impaired-awareness has no recollection", "k": [["aware"]], "why": "The old 'simple' and 'complex' partial." }
+      ] },
+      { "d": "diagnosis", "q": "What is juvenile myoclonic epilepsy and what triggers it?", "tip": "Exam thinking: teenager, mornings, after a party.", "points": [
+        { "p": "Triad: myoclonic jerks, absences, GTCS", "k": [["myoclon"], ["absence"], ["tonic", "gtcs"]], "why": "Adolescent onset." },
+        { "p": "1 to 2 hours after waking", "k": [["waking", "morning", "wake"]], "why": "Dropping things at breakfast is the stem detail." },
+        { "p": "Triggered by sleep deprivation, alcohol, photic stimulation", "k": [["sleep", "alcohol", "photic", "flash"]], "why": "Lifestyle advice is part of treatment." }
+      ] },
+      { "d": "diagnosis", "q": "How do you tell a seizure from a non-epileptic attack and from syncope?", "tip": "Exam thinking: eyes, movements, duration and recovery.", "points": [
+        { "p": "NEAD: pelvic thrusting, mobile head, closed eyes, >3 minutes, weeping", "k": [["pelvic", "closed", "weep", "thrust"]], "why": "More common in women, linked to stress or a family history of epilepsy." },
+        { "p": "Syncope: rapid recovery, short post-ictal period", "k": [["syncope", "faint"], ["rapid", "quick", "short"]], "why": "A few jerks can occur in syncope." },
+        { "p": "Quinolones like ciprofloxacin lower the seizure threshold", "k": [["cipro", "quinolone"]], "why": "Classic breakthrough seizure cause." }
+      ] },
+      { "d": "investigation", "q": "How is epilepsy investigated?", "tip": "Exam thinking: glucose first in an active seizure.", "points": [
+        { "p": "Gold standard: clinical diagnosis supported by EEG", "k": [["eeg"]], "why": "A normal EEG does not exclude epilepsy." },
+        { "p": "Bloods: glucose and electrolytes", "k": [["electrolyte", "sodium", "calcium", "u&e", "blood"]], "why": "Look for a provoking cause." },
+        { "p": "Status: capillary glucose promptly", "k": [["glucose", "cbg", "sugar"]], "why": "Exclude hypoglycaemia and hypoxia first." },
+        { "p": "MRI brain for a structural cause", "k": [["mri"]], "why": "Second line once epilepsy is suspected." }
+      ] },
+      { "d": "management", "q": "How do you treat convulsive status epilepticus, step by step?", "tip": "Exam thinking: check if IV access exists and how many doses are given.", "points": [
+        { "p": "IV lorazepam 4 mg, up to two doses", "k": [["lorazepam"]], "why": "Prehospital: buccal midazolam or PR diazepam." },
+        { "p": "Then IV phenytoin, levetiracetam or valproate", "k": [["phenytoin", "levetiracetam", "valproate"]], "why": "Phenytoin also for uncontrolled seizures after head injury." },
+        { "p": "Refractory: ITU and general anaesthesia", "k": [["itu", "icu", "anaesthe", "anesthe", "intensive"]], "why": "After second-line failure." },
+        { "p": "Eclampsia: IV magnesium sulphate", "k": [["magnesium"]], "why": "Not standard AEDs." }
+      ] },
+      { "d": "management", "q": "Which AED is first line for each seizure type, and what happens after a first seizure?", "tip": "Exam thinking: seizure type plus sex and age decide the drug.", "points": [
+        { "p": "First seizure: urgent outpatient neurology, discharge; no AED usually", "k": [["neurolog", "first seizure clinic", "specialist"]], "why": "AEDs only started before review in exceptional cases." },
+        { "p": "Focal and GTCS: lamotrigine or levetiracetam", "k": [["lamotrigine", "levetiracetam"]], "why": "Focal second line: carbamazepine." },
+        { "p": "Myoclonic: levetiracetam; avoid valproate in childbearing age", "k": [["myoclon"], ["levetiracetam"]], "why": "Valproate is avoided in both males and females of childbearing age." },
+        { "p": "Absence: ethosuximide", "k": [["ethosuximide"]], "why": "Tonic or atonic: lamotrigine." }
+      ] },
+      { "d": "management", "q": "How is epilepsy managed long term, including pregnancy, withdrawal and side effects?", "tip": "Exam thinking: valproate in a woman is the classic wrong answer.", "points": [
+        { "p": "Pregnancy: lamotrigine with 5 mg folic acid, avoid dual therapy", "k": [["lamotrigine"], ["folic", "folate"]], "why": "Phenytoin interferes with folate; breastfeeding is safe." },
+        { "p": "Consider withdrawal if seizure-free over 2 years, taper over 2 to 3 months", "k": [["2 year", "two year"]], "why": "Driving rules (DVLA) also apply." },
+        { "p": "Lamotrigine: rash, Stevens-Johnson", "k": [["rash", "stevens"]], "why": "Stop if a rash appears." },
+        { "p": "Valproate: weight gain, teratogenic, tremor; topiramate: weight loss, stones", "k": [["teratogen", "weight", "tremor", "stone"]], "why": "Phenytoin: gum hyperplasia, hirsutism, folate depletion." },
+        { "p": "Carbamazepine interacts with contraception: IUS preferred", "k": [["carbamazepine"], ["contracep", "pill", "ius", "mirena"]], "why": "Enzyme inducer." }
+      ] },
+      { "d": "science", "q": "How do the main AEDs work, and why does status get harder to treat with time?", "tip": "Exam thinking: GABA-A for benzodiazepines, sodium channels for phenytoin and lamotrigine.", "points": [
+        { "p": "Benzodiazepines enhance GABA-A chloride influx", "k": [["gaba"]], "why": "Hyperpolarises neurons." },
+        { "p": "Phenytoin and lamotrigine block voltage-gated sodium channels", "k": [["sodium", "na+", "na channel"]], "why": "Reduce repetitive high-frequency firing." },
+        { "p": "Valproate increases GABA and blocks Na/Ca channels", "k": [["valproate"]], "why": "Broad but teratogenic." },
+        { "p": "Prolonged status internalises GABA-A receptors", "k": [["internali"]], "why": "So benzodiazepines must be given early." },
+        { "p": "Temporal seizures often arise from mesial temporal sclerosis (hippocampus)", "k": [["sclerosis", "hippocamp"]], "why": "Explains psychic and autonomic auras." }
+      ] }
+    ]
+  },
+  "glossary": {
+    "Epilepsy": "A tendency to recurrent unprovoked seizures, usually diagnosed after two or more.",
+    "Seizure": "A burst of abnormal, hypersynchronous electrical activity in the brain causing symptoms.",
+    "GTCS": "Generalised tonic-clonic seizure: stiffening then rhythmic jerking with loss of consciousness.",
+    "Tonic": "The stiffening phase of a seizure, with sustained muscle contraction.",
+    "Clonic": "The rhythmic jerking phase of a seizure.",
+    "Postictal": "The recovery period after a seizure, often with confusion and drowsiness.",
+    "Aura": "A warning sensation at the start of a focal seizure, such as an epigastric feeling.",
+    "Myoclonic": "Brief, shock-like muscle jerks without loss of consciousness.",
+    "Atonic": "A seizure with sudden loss of muscle tone causing a drop attack.",
+    "Absence": "A brief generalised seizure with blank staring, typical in children.",
+    "Automatisms": "Repetitive purposeless movements during a seizure, such as lip-smacking or fiddling.",
+    "Focal aware": "A focal seizure where the person stays aware throughout.",
+    "Focal impaired-awareness": "A focal seizure where awareness is lost and the person cannot recall it.",
+    "Jacksonian march": "Clonic jerking that spreads up a limb, from a frontal motor cortex focus.",
+    "Todd's paresis": "Temporary weakness of a limb after a focal motor seizure.",
+    "Déjà vu": "A strong feeling of having lived a moment before; a temporal lobe aura.",
+    "Dysphasia": "Difficulty producing or understanding speech.",
+    "JME": "Juvenile myoclonic epilepsy: morning jerks, absences and GTCS in teenagers.",
+    "Juvenile myoclonic epilepsy": "A generalised epilepsy of adolescence with morning myoclonic jerks, absences and tonic-clonic seizures.",
+    "Mesial temporal sclerosis": "Scarring of the hippocampus, a common cause of temporal lobe epilepsy.",
+    "NEAD": "Non-epileptic attack disorder: seizure-like events with a psychological, not electrical, cause.",
+    "Non-epileptic attack disorder": "Seizure-like attacks from psychological distress, with closed eyes and pelvic thrusting.",
+    "Syncope": "A brief loss of consciousness from reduced brain blood flow, with rapid recovery.",
+    "Status epilepticus": "A seizure lasting over 5 minutes, or repeated seizures without recovery in between.",
+    "EEG": "Electroencephalogram: records the brain's electrical activity through scalp electrodes.",
+    "AED": "Antiepileptic drug.",
+    "AEDs": "Antiepileptic drugs.",
+    "Lorazepam": "A benzodiazepine given IV first line for status epilepticus.",
+    "Buccal midazolam": "A benzodiazepine given inside the cheek when there is no IV access.",
+    "Phenytoin": "A sodium channel blocking AED given IV as second line in status epilepticus.",
+    "Levetiracetam": "A broad-spectrum AED, first choice for myoclonic seizures and safe in women.",
+    "Lamotrigine": "A sodium channel blocking AED, preferred in pregnancy; can cause a serious rash.",
+    "Sodium valproate": "A broad-spectrum AED that is highly teratogenic and avoided in women of childbearing age.",
+    "Ethosuximide": "A T-type calcium channel blocker, first line for absence seizures.",
+    "Carbamazepine": "A second-line AED for focal seizures; an enzyme inducer that weakens hormonal contraception.",
+    "Topiramate": "An AED that causes weight loss, kidney stones and cognitive slowing.",
+    "Teratogenic": "Able to cause birth defects when taken in pregnancy.",
+    "Stevens-Johnson syndrome": "A rare, severe blistering skin and mucosal reaction to drugs such as lamotrigine.",
+    "Gum hyperplasia": "Overgrowth of the gums, a side effect of long-term phenytoin.",
+    "GABA-A": "The main inhibitory brain receptor; benzodiazepines boost its chloride current.",
+    "Hyperpolarisation": "Making a neuron's inside more negative so it is less likely to fire.",
+    "Ketogenic diet": "A high-fat, very low-carbohydrate diet that can reduce seizures in some patients.",
+    "Ciprofloxacin": "A quinolone antibiotic that lowers the seizure threshold.",
+    "IUS": "Intrauterine system (e.g. Mirena), the contraception of choice with enzyme-inducing AEDs.",
+    "Magnesium sulphate": "The treatment for eclamptic seizures in pre-eclampsia.",
+    "DVLA": "The UK Driver and Vehicle Licensing Agency, which sets driving rules after seizures."
+  }
+}

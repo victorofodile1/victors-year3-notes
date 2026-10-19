@@ -1,0 +1,2513 @@
+{
+ "id": "chronic-kidney-disease",
+ "patient": {
+  "name": "Rajesh Varma",
+  "age": 64,
+  "sex": "M",
+  "setting": "GP surgery, then renal clinic over the following years",
+  "complaint": "Abnormal kidney function found on routine diabetes bloods",
+  "background": [
+   "Type 2 diabetes for 15 years on metformin",
+   "Hypertension on amlodipine",
+   "Background diabetic retinopathy",
+   "Ex-smoker; owns a newsagent in Harrow"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely cause' in a patient with diabetes or hypertension and a low eGFR, and questions on its complications: anaemia, secondary or tertiary hyperparathyroidism and bone disease.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Rajesh, 64, has **type 2 diabetes** and hypertension.",
+      "Annual bloods: **eGFR 41**; it was 58 two years ago.",
+      "Feels completely well; no urinary symptoms.",
+      "Retinopathy on his last eye screen."
+     ],
+     "vitals": {
+      "BP": "152/90 mmHg",
+      "HR": "76 bpm"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh feels fine, which is typical: CKD is often **found incidentally** and is defined by damage or reduced function for **3 months or more**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "With long-standing diabetes and retinopathy, **diabetic nephropathy** is the likely cause; his hypertension adds to it."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh's urine ACR comes back raised: **persistent albuminuria** is evidence of kidney damage on its own."
+    },
+    {
+     "type": "ask",
+     "q": "Rajesh has proteinuria but no haematuria and retinopathy. Which cause is most likely?",
+     "o": [
+      "Diabetic nephropathy",
+      "IgA nephropathy",
+      "Polycystic kidney disease",
+      "Renal artery stenosis"
+     ],
+     "a": 0,
+     "r": "**Diabetic nephropathy**: proteinuria without haematuria and gradual decline, usually with retinopathy. IgA gives haematuria."
+    },
+    {
+     "type": "compare",
+     "title": "Common causes of CKD",
+     "head": [
+      "Cause",
+      "Clues"
+     ],
+     "rows": [
+      [
+       "**Diabetic nephropathy** (leading)",
+       "Long-standing diabetes, retinopathy, proteinuria without haematuria"
+      ],
+      [
+       "Hypertensive nephrosclerosis",
+       "Long-standing high BP, bland urine"
+      ],
+      [
+       "Glomerulonephritis",
+       "Haematuria + proteinuria"
+      ],
+      [
+       "Polycystic kidney disease",
+       "Family history, big cystic kidneys"
+      ],
+      [
+       "Obstruction",
+       "Prostate symptoms, hydronephrosis"
+      ]
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Eight years on: Rajesh's eGFR is **18**.",
+      "Tired, itchy, nauseated; ankles swollen.",
+      "Pale; breathless climbing stairs.",
+      "Soft systolic flow murmur."
+     ],
+     "vitals": {
+      "BP": "164/94 mmHg",
+      "HR": "96 bpm"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh now has **late features**: fatigue, pruritus, nausea, oedema and hypertension, with a high potassium and creatinine."
+    },
+    {
+     "type": "labs",
+     "title": "Rajesh at eGFR 18",
+     "rows": [
+      [
+       "Hb",
+       "96 g/L",
+       "130–180",
+       "L"
+      ],
+      [
+       "MCV",
+       "88 fL",
+       "80–100",
+       ""
+      ],
+      [
+       "Potassium",
+       "5.8 mmol/L",
+       "3.5–5.3",
+       "H"
+      ],
+      [
+       "Adjusted calcium",
+       "2.04 mmol/L",
+       "2.2–2.6",
+       "L"
+      ],
+      [
+       "Phosphate",
+       "2.1 mmol/L",
+       "0.8–1.5",
+       "H"
+      ],
+      [
+       "PTH",
+       "38 pmol/L",
+       "1.6–6.9",
+       "H"
+      ]
+     ],
+     "text": "Normocytic anaemia, low calcium, high phosphate and high PTH: **anaemia of CKD** and **secondary hyperparathyroidism**."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Rajesh's bones are at risk of **fragility fractures** from secondary hyperparathyroidism, and his vessels from calcification."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Rajesh's pallor, flow murmur and Hb of 96 are **anaemia from low EPO**; his metformin must stop at this level of kidney function."
+    },
+    {
+     "type": "trap",
+     "text": "In CKD, **secondary** hyperparathyroidism has **low or normal calcium** with high PTH. **Tertiary** has **high calcium** with high PTH, after years of stimulation."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (early morning urine ACR) and staging questions using eGFR. Remember that CKD needs abnormal results on two occasions 90 days apart.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh gives an **early morning urine sample** for ACR: the first-line test for kidney damage."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Urine ACR",
+      "min": 0,
+      "max": 80,
+      "unit": "mg/mmol",
+      "bands": [
+       [
+        0,
+        3,
+        "normal",
+        "ok"
+       ],
+       [
+        3,
+        30,
+        "raised (microalbuminuria)",
+        "warn"
+       ],
+       [
+        30,
+        70,
+        "significant proteinuria",
+        "bad"
+       ],
+       [
+        70,
+        80,
+        "refer nephrology",
+        "bad"
+       ]
+      ],
+      "value": 42,
+      "label": "Rajesh 42",
+      "caption": "Above 30 mg/mmol: ACE inhibitor plus SGLT-2 inhibitor, whatever the diabetes status."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's eGFR was 41 and then 39 **three months apart**, with proteinuria: that confirms CKD, and the proteinuria worsens his outlook."
+    },
+    {
+     "type": "ask",
+     "q": "Rajesh's eGFR is 39 on two tests 90 days apart. Which stage?",
+     "o": [
+      "G2",
+      "G3a",
+      "G3b",
+      "G4"
+     ],
+     "a": 2,
+     "r": "eGFR **30 to 44** is **G3b**. G3a is 45 to 59."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "CKD stage by eGFR",
+      "min": 0,
+      "max": 100,
+      "unit": "mL/min/1.73m²",
+      "bands": [
+       [
+        0,
+        15,
+        "G5",
+        "bad"
+       ],
+       [
+        15,
+        30,
+        "G4",
+        "bad"
+       ],
+       [
+        30,
+        45,
+        "G3b",
+        "warn"
+       ],
+       [
+        45,
+        60,
+        "G3a",
+        "warn"
+       ],
+       [
+        60,
+        90,
+        "G2 (needs damage)",
+        "ok"
+       ],
+       [
+        90,
+        100,
+        "G1 (needs damage)",
+        "ok"
+       ]
+      ],
+      "value": 39,
+      "label": "Rajesh 39",
+      "caption": "Stages 1 and 2 count only with other evidence of kidney damage."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "At eGFR 39 Rajesh is **stage 3b**; eight years later, at 18, he is **stage 4**, heading for stage 5."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh's **renal ultrasound** shows small kidneys on both sides; and his eGFR is checked fasting, as a big steak the night before can skew it."
+    },
+    {
+     "type": "trap",
+     "text": "One low eGFR is not CKD. It could be **AKI** or dehydration. You need **two results 90 days apart** (or other evidence of damage)."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?': ACE inhibitor (plus SGLT-2 inhibitor) for proteinuria, statin for everyone, iron before EPO for anaemia, phosphate restriction then sevelamer, and dialysis or transplant for end-stage disease.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's ACR is 42 and his BP is 152/90, so he starts an **ACE inhibitor** and an **SGLT-2 inhibitor**, aiming below 140/90."
+    },
+    {
+     "type": "ask",
+     "q": "Which is the best first antihypertensive for Rajesh, with ACR 42?",
+     "o": [
+      "Amlodipine dose increase",
+      "Bendroflumethiazide",
+      "Doxazosin",
+      "Ramipril"
+     ],
+     "a": 3,
+     "r": "With proteinuria, an **ACE inhibitor** is first-line: it lowers intraglomerular pressure and proteinuria."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh also starts **atorvastatin**, and stops buying naproxen for his back."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Rajesh's eGFR over the years",
+      "x": [
+       "Year 0",
+       "Year 2",
+       "Year 4",
+       "Year 6",
+       "Year 8"
+      ],
+      "unit": "mL/min/1.73m²",
+      "series": [
+       {
+        "name": "eGFR",
+        "values": [
+         58,
+         41,
+         34,
+         26,
+         18
+        ]
+       }
+      ]
+     },
+     "text": "Treatment slows the fall but does not reverse it: CKD is **irreversible**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh's anaemia is treated with **iron first**, then **SC erythropoietin**; his high phosphate gets dietary restriction, then **sevelamer**."
+    },
+    {
+     "type": "flow",
+     "title": "Treating anaemia of CKD",
+     "nodes": [
+      "Check ferritin and iron",
+      "Correct iron first (oral ferrous sulphate, or IV iron)",
+      "Then SC erythropoietin (e.g. darbepoetin alfa)",
+      "Transfuse only if Hb < 70 on renal replacement therapy"
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "**EPO does not work without iron.** The exam answer for anaemia of CKD with a low ferritin is iron first, not EPO."
+    },
+    {
+     "type": "story",
+     "points": [
+      "At eGFR 9, Rajesh starts **haemodialysis** three times a week.",
+      "Listed for a transplant; screened for TB and other infections.",
+      "Two years later he receives a kidney from his brother."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh's **transplant** is definitive. He now watches for rejection, has yearly skin checks, and his gums are monitored on ciclosporin."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Rajesh does not have ADPKD, but if he did, **tolvaptan** could slow its progression."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Rajesh was referred to nephrology when his eGFR fell below 30; staging and his ACR guided every drug decision along the way."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Science questions ask why CKD causes anaemia (low EPO) and bone disease (loss of 1-alpha-hydroxylation, phosphate retention), and how ACE inhibitors and SGLT-2 inhibitors protect the kidney.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Each year Rajesh loses more **nephrons**, so filtration, hormone production and fluid and salt balance all decline together."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh's failing kidneys make less **erythropoietin**, so his marrow makes fewer red cells: a **normocytic** anaemia."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh's kidneys cannot activate vitamin D or excrete phosphate, so his calcium falls, phosphate rises and **PTH climbs**."
+    },
+    {
+     "type": "flow",
+     "title": "From CKD to bone disease",
+     "nodes": [
+      "Loss of renal 1-alpha-hydroxylase",
+      "Low calcitriol → less calcium absorbed",
+      "Phosphate retained",
+      "Low calcium + high phosphate → PTH rises (secondary)",
+      "Bone resorption, fractures, vascular calcification",
+      "Years later: autonomous PTH, high calcium (tertiary)"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why does Rajesh need alfacalcidol rather than plain vitamin D?",
+     "o": [
+      "Alfacalcidol is cheaper",
+      "His gut cannot absorb vitamin D",
+      "His kidneys cannot 1-alpha-hydroxylate vitamin D",
+      "His liver cannot 25-hydroxylate vitamin D"
+     ],
+     "a": 2,
+     "r": "**Alfacalcidol** is already 1-alpha-hydroxylated, so it does not need the kidney to activate it."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh's ramipril **dilates the efferent arteriole** and his SGLT-2 inhibitor narrows the afferent: both lower glomerular pressure and protein leak."
+    },
+    {
+     "type": "trap",
+     "text": "Do not mix up the arterioles: ACE inhibitors **dilate the efferent**; SGLT-2 inhibitors **constrict the afferent** (tubuloglomerular feedback). Both reduce hyperfiltration."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the leading cause of CKD?",
+   "o": [
+    "Diabetic nephropathy",
+    "Glomerulonephritis",
+    "Hypertensive nephrosclerosis",
+    "Polycystic kidney disease"
+   ],
+   "a": 0,
+   "r": "**Diabetic nephropathy**, followed by hypertensive nephrosclerosis."
+  },
+  {
+   "d": "diagnosis",
+   "q": "How long must kidney damage or reduced function last to define CKD?",
+   "o": [
+    "1 week",
+    "4 weeks",
+    "3 months",
+    "12 months"
+   ],
+   "a": 2,
+   "r": "**3 months or more**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which result pattern fits tertiary hyperparathyroidism?",
+   "o": [
+    "High PTH, high calcium",
+    "High PTH, low calcium",
+    "Low PTH, high calcium",
+    "Low PTH, low calcium"
+   ],
+   "a": 0,
+   "r": "**Tertiary**: autonomous PTH, so high PTH **and** high calcium."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line investigation for suspected CKD damage?",
+   "o": [
+    "24-hour urine collection",
+    "Early morning urine ACR",
+    "Renal biopsy",
+    "Urine microscopy"
+   ],
+   "a": 1,
+   "r": "**Early morning urine ACR**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which eGFR range is CKD stage 3b?",
+   "o": [
+    "15–29",
+    "30–44",
+    "45–59",
+    "60–89"
+   ],
+   "a": 1,
+   "r": "**G3b: 30 to 44**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which ultrasound finding is typical of CKD?",
+   "o": [
+    "Bilateral hydronephrosis",
+    "Bilaterally shrunken kidneys",
+    "Enlarged echogenic kidneys",
+    "Single large kidney"
+   ],
+   "a": 1,
+   "r": "**Bilaterally shrunken kidneys** separate CKD from AKI."
+  },
+  {
+   "d": "management",
+   "q": "Which drug is first-line for CKD with proteinuria?",
+   "o": [
+    "ACE inhibitor",
+    "Calcium channel blocker",
+    "Loop diuretic",
+    "Thiazide diuretic"
+   ],
+   "a": 0,
+   "r": "**ACE inhibitor** (or ARB), plus an SGLT-2 inhibitor if ACR >30."
+  },
+  {
+   "d": "management",
+   "q": "What must be corrected before starting erythropoietin?",
+   "o": [
+    "Folate",
+    "Iron",
+    "Magnesium",
+    "Vitamin D"
+   ],
+   "a": 1,
+   "r": "**Iron (ferritin)** first: EPO fails without iron."
+  },
+  {
+   "d": "management",
+   "q": "Which non-calcium phosphate binder is used in CKD?",
+   "o": [
+    "Alendronic acid",
+    "Calcium acetate",
+    "Cinacalcet",
+    "Sevelamer"
+   ],
+   "a": 3,
+   "r": "**Sevelamer**; calcium binders risk hypercalcaemia and vascular calcification."
+  },
+  {
+   "d": "science",
+   "q": "Why does CKD cause anaemia?",
+   "o": [
+    "B12 malabsorption",
+    "Haemolysis",
+    "Low erythropoietin production",
+    "Marrow infiltration"
+   ],
+   "a": 2,
+   "r": "Less **erythropoietin** from peritubular fibroblasts: normocytic anaemia."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is CKD and what are its main causes?",
+    "tip": "Exam thinking: irreversible, 3 months, usually diabetes or hypertension.",
+    "points": [
+     {
+      "p": "Progressive, irreversible decline in kidney function",
+      "k": [
+       [
+        "irreversib",
+        "progressive",
+        "permanent"
+       ]
+      ],
+      "why": "Unlike AKI, which can recover."
+     },
+     {
+      "p": "Damage or reduced function for 3 months or more",
+      "k": [
+       [
+        "3 month",
+        "three month",
+        "90 day",
+        "3 or more month"
+       ]
+      ],
+      "why": "Two tests 90 days apart."
+     },
+     {
+      "p": "Diabetic nephropathy: leading cause, proteinuria without haematuria",
+      "k": [
+       [
+        "diabet"
+       ]
+      ],
+      "why": "Usually with retinopathy."
+     },
+     {
+      "p": "Hypertensive nephrosclerosis",
+      "k": [
+       [
+        "hypertens",
+        "high bp",
+        "blood pressure"
+       ]
+      ],
+      "why": "Second commonest."
+     },
+     {
+      "p": "Glomerulonephritis, polycystic kidney disease, obstruction",
+      "k": [
+       [
+        "glomerulo",
+        "polycystic",
+        "adpkd",
+        "obstruct"
+       ]
+      ],
+      "why": "Haematuria suggests glomerulonephritis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does CKD present, and what counts as evidence of kidney damage?",
+    "tip": "Exam thinking: early CKD is silent; damage is in the urine or the biopsy.",
+    "points": [
+     {
+      "p": "Often asymptomatic, found incidentally on bloods",
+      "k": [
+       [
+        "asymptom",
+        "incidental",
+        "routine"
+       ]
+      ],
+      "why": "Most exam stems start with routine bloods."
+     },
+     {
+      "p": "High potassium, creatinine and urea",
+      "k": [
+       [
+        "potassium",
+        "creatinine",
+        "urea"
+       ]
+      ],
+      "why": "Hyperkalaemia needs urgent checking."
+     },
+     {
+      "p": "Late: fatigue, pruritus, nausea, oedema, hypertension, pallor",
+      "k": [
+       [
+        "fatigue",
+        "tired",
+        "prurit",
+        "itch",
+        "nausea",
+        "oedema",
+        "edema",
+        "pallor"
+       ]
+      ],
+      "why": "Uraemic symptoms."
+     },
+     {
+      "p": "Damage: persistent haematuria, albuminuria or proteinuria",
+      "k": [
+       [
+        "haematuria",
+        "hematuria",
+        "albumin",
+        "protein"
+       ]
+      ],
+      "why": "Needed to call stage 1 or 2."
+     },
+     {
+      "p": "Hereditary kidney disease or biopsy-proven chronic GN",
+      "k": [
+       [
+        "heredit",
+        "genetic",
+        "biopsy"
+       ]
+      ],
+      "why": "Also count as damage."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of CKD?",
+    "tip": "Exam thinking: blood, bones, heart and electrolytes.",
+    "points": [
+     {
+      "p": "Anaemia from low EPO: fatigue, pallor, flow murmur",
+      "k": [
+       [
+        "anaemi",
+        "anemi",
+        "epo",
+        "erythropoietin"
+       ]
+      ],
+      "why": "Normocytic."
+     },
+     {
+      "p": "Hypocalcaemia and hyperphosphataemia",
+      "k": [
+       [
+        "calcium",
+        "hypocal",
+        "phosphat"
+       ]
+      ],
+      "why": "Dietary phosphate restriction first."
+     },
+     {
+      "p": "Secondary then tertiary hyperparathyroidism, fragility fractures",
+      "k": [
+       [
+        "parathyroid",
+        "pth"
+       ]
+      ],
+      "why": "Tertiary: high PTH with high calcium."
+     },
+     {
+      "p": "CKD-mineral bone disease including osteomalacia",
+      "k": [
+       [
+        "bone",
+        "osteomalac",
+        "mineral",
+        "fracture"
+       ]
+      ],
+      "why": "Bone pain, proximal myopathy, waddling gait."
+     },
+     {
+      "p": "Cardiovascular disease and vascular calcification",
+      "k": [
+       [
+        "cardiovasc",
+        "cvd",
+        "heart",
+        "vascular calc",
+        "ihd"
+       ]
+      ],
+      "why": "IHD is the commonest cause of death on haemodialysis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell secondary from tertiary hyperparathyroidism in CKD?",
+    "tip": "Exam thinking: look at the calcium.",
+    "points": [
+     {
+      "p": "Secondary: high PTH with low or normal calcium",
+      "k": [
+       [
+        "secondary"
+       ],
+       [
+        "low",
+        "normal"
+       ]
+      ],
+      "why": "Appropriate response to low calcium."
+     },
+     {
+      "p": "Tertiary: high PTH with high calcium",
+      "k": [
+       [
+        "tertiary"
+       ],
+       [
+        "high",
+        "hypercal",
+        "raised"
+       ]
+      ],
+      "why": "Autonomous glands after years of stimulation."
+     },
+     {
+      "p": "Tertiary: abdominal pain, constipation",
+      "k": [
+       [
+        "abdominal",
+        "constipat",
+        "pain"
+       ]
+      ],
+      "why": "Symptoms of hypercalcaemia."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is CKD diagnosed and what is the first-line test?",
+    "tip": "Exam thinking: ACR first; eGFR below 60 twice, 90 days apart.",
+    "points": [
+     {
+      "p": "Early morning urine ACR first-line",
+      "k": [
+       [
+        "acr",
+        "albumin:creatinine",
+        "albumin creatinine",
+        "albumin-creatinine"
+       ]
+      ],
+      "why": "Urine dip is the confirmatory test."
+     },
+     {
+      "p": "eGFR < 60 on 2 occasions 90 days apart",
+      "k": [
+       [
+        "60"
+       ],
+       [
+        "90",
+        "3 month",
+        "three month",
+        "twice",
+        "two"
+       ]
+      ],
+      "why": "Or evidence of kidney damage."
+     },
+     {
+      "p": "Proteinuria marks a worse prognosis",
+      "k": [
+       [
+        "prognos",
+        "worse"
+       ]
+      ],
+      "why": "Also guides ACE inhibitor use."
+     },
+     {
+      "p": "Renal ultrasound: bilaterally shrunken kidneys suggest CKD over AKI",
+      "k": [
+       [
+        "ultrasound",
+        "uss",
+        "scan"
+       ],
+       [
+        "small",
+        "shrunk",
+        "shrink"
+       ]
+      ],
+      "why": "ADPKD and diabetes can keep kidneys large."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is CKD staged by eGFR?",
+    "tip": "Exam thinking: 90, 60, 45, 30, 15.",
+    "points": [
+     {
+      "p": "G1 > 90 and G2 60–89, only with evidence of damage",
+      "k": [
+       [
+        "90"
+       ],
+       [
+        "damage",
+        "evidence",
+        "protein",
+        "haematuria"
+       ]
+      ],
+      "why": "Normal eGFR alone is not CKD."
+     },
+     {
+      "p": "G3a 45–59",
+      "k": [
+       [
+        "3a"
+       ],
+       [
+        "45"
+       ]
+      ],
+      "why": "Most CKD in primary care."
+     },
+     {
+      "p": "G3b 30–44",
+      "k": [
+       [
+        "3b"
+       ],
+       [
+        "30"
+       ]
+      ],
+      "why": "Higher CV risk."
+     },
+     {
+      "p": "G4 15–29",
+      "k": [
+       [
+        "4"
+       ],
+       [
+        "15",
+        "29"
+       ]
+      ],
+      "why": "Refer if eGFR < 30."
+     },
+     {
+      "p": "G5 < 15: established renal disease",
+      "k": [
+       [
+        "5"
+       ],
+       [
+        "15"
+       ]
+      ],
+      "why": "Plan for dialysis or transplant."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What other tests and pitfalls matter when assessing CKD?",
+    "tip": "Exam thinking: formula names, false readings, transplant screening.",
+    "points": [
+     {
+      "p": "Cockcroft-Gault: age, gender, creatinine, weight for creatinine clearance",
+      "k": [
+       [
+        "cockcroft"
+       ]
+      ],
+      "why": "Used for drug dosing."
+     },
+     {
+      "p": "MDRD: Creatinine, Age, Gender, Ethnicity (CAGE)",
+      "k": [
+       [
+        "mdrd",
+        "cage"
+       ]
+      ],
+      "why": "Basis of reported eGFR."
+     },
+     {
+      "p": "Large muscle mass or red meat the night before skews eGFR",
+      "k": [
+       [
+        "muscle",
+        "meat"
+       ]
+      ],
+      "why": "Raises creatinine without kidney damage."
+     },
+     {
+      "p": "Pre-transplant screening includes TB testing",
+      "k": [
+       [
+        "tb",
+        "tubercul",
+        "mycobact"
+       ]
+      ],
+      "why": "Immunosuppression can reactivate latent TB."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the first-line management of CKD and when do you start an ACE inhibitor?",
+    "tip": "Exam thinking: the ACR number decides it.",
+    "points": [
+     {
+      "p": "Control diabetes and BP, target 140/90 (lower if proteinuria)",
+      "k": [
+       [
+        "140"
+       ],
+       [
+        "90"
+       ]
+      ],
+      "why": "Tighter if ACR is raised."
+     },
+     {
+      "p": "ACE inhibitor (ramipril) or ARB, especially with proteinuria",
+      "k": [
+       [
+        "ace",
+        "ramipril",
+        "lisinopril",
+        "arb"
+       ]
+      ],
+      "why": "Lowers intraglomerular pressure."
+     },
+     {
+      "p": "Diabetes: start if ACR > 3 (classically > 2.5 men, > 3.5 women)",
+      "k": [
+       [
+        "2.5",
+        "3.5",
+        "3 mg",
+        "> 3",
+        ">3"
+       ]
+      ],
+      "why": "Regular ACR screening in all diabetics."
+     },
+     {
+      "p": "ACR > 30 any patient: ACE inhibitor plus SGLT-2 inhibitor",
+      "k": [
+       [
+        "sglt",
+        "dapagliflozin",
+        "empagliflozin",
+        "flozin"
+       ]
+      ],
+      "why": "Renoprotective regardless of glucose."
+     },
+     {
+      "p": "Statin for all; avoid nephrotoxins such as NSAIDs",
+      "k": [
+       [
+        "statin",
+        "atorvastatin"
+       ]
+      ],
+      "why": "Cardiovascular disease is the main killer."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How are the anaemia and bone disease of CKD treated?",
+    "tip": "Exam thinking: always iron before EPO; always diet before binders.",
+    "points": [
+     {
+      "p": "Iron first (oral ferrous sulphate or IV iron)",
+      "k": [
+       [
+        "iron",
+        "ferrous"
+       ]
+      ],
+      "why": "Check ferritin."
+     },
+     {
+      "p": "Then SC erythropoietin (darbepoetin alfa)",
+      "k": [
+       [
+        "epo",
+        "erythropoietin",
+        "darbepoetin",
+        "epoetin"
+       ]
+      ],
+      "why": "Transfuse only if Hb < 70 on RRT."
+     },
+     {
+      "p": "Low-phosphate diet first, then sevelamer",
+      "k": [
+       [
+        "phosphate",
+        "sevelamer",
+        "diet"
+       ]
+      ],
+      "why": "Calcium binders risk hypercalcaemia and calcification."
+     },
+     {
+      "p": "Vitamin D: correct deficiency (D2/D3); alfacalcidol for secondary HPT in ESRD",
+      "k": [
+       [
+        "alfacalcidol",
+        "calcitriol",
+        "vitamin d",
+        "ergocalciferol",
+        "cholecalciferol"
+       ]
+      ],
+      "why": "Alfacalcidol needs no renal activation."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the definitive treatment for end-stage CKD and its key risks?",
+    "tip": "Exam thinking: transplant, dialysis first, drug side effects.",
+    "points": [
+     {
+      "p": "Kidney transplant is definitive",
+      "k": [
+       [
+        "transplant"
+       ]
+      ],
+      "why": "Acute rejection is commonest in the first few months."
+     },
+     {
+      "p": "Haemodialysis or peritoneal dialysis before that",
+      "k": [
+       [
+        "dialysis"
+       ]
+      ],
+      "why": "IHD is the commonest cause of death on haemodialysis."
+     },
+     {
+      "p": "Skin cancer risk 3 to 5 times higher after transplant",
+      "k": [
+       [
+        "skin"
+       ]
+      ],
+      "why": "Yearly skin checks."
+     },
+     {
+      "p": "Ciclosporin: gum hypertrophy, hypertrichosis, nephrotoxicity",
+      "k": [
+       [
+        "ciclosporin",
+        "cyclosporin",
+        "gingival",
+        "gum",
+        "hypertrichosis"
+       ]
+      ],
+      "why": "A classic drug side-effect question."
+     },
+     {
+      "p": "Tolvaptan slows ADPKD progression",
+      "k": [
+       [
+        "tolvaptan"
+       ]
+      ],
+      "why": "A vasopressin receptor antagonist."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does CKD cause anaemia and bone disease?",
+    "tip": "Exam thinking: the kidney is an endocrine organ: EPO and activated vitamin D.",
+    "points": [
+     {
+      "p": "Less EPO from peritubular fibroblasts: normocytic anaemia",
+      "k": [
+       [
+        "epo",
+        "erythropoietin"
+       ]
+      ],
+      "why": "Iron deficiency can coexist."
+     },
+     {
+      "p": "Loss of renal 1-alpha-hydroxylation: low calcitriol, low calcium",
+      "k": [
+       [
+        "1-alpha",
+        "1 alpha",
+        "alpha-hydrox",
+        "alpha hydrox",
+        "calcitriol"
+       ]
+      ],
+      "why": "Less calcium absorbed from the gut."
+     },
+     {
+      "p": "Phosphate retention suppresses calcitriol and stimulates PTH",
+      "k": [
+       [
+        "phosphat"
+       ]
+      ],
+      "why": "Drives vascular calcification."
+     },
+     {
+      "p": "Secondary then tertiary hyperparathyroidism and renal bone disease",
+      "k": [
+       [
+        "pth",
+        "parathyroid"
+       ]
+      ],
+      "why": "Fragility fractures."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How do ACE inhibitors and SGLT-2 inhibitors slow CKD progression?",
+    "tip": "Exam thinking: name the arteriole each one acts on.",
+    "points": [
+     {
+      "p": "ACE inhibitors/ARBs dilate the efferent arteriole",
+      "k": [
+       [
+        "efferent"
+       ]
+      ],
+      "why": "Lowers intraglomerular pressure."
+     },
+     {
+      "p": "Reduce proteinuria and nephron loss, even if normotensive",
+      "k": [
+       [
+        "protein",
+        "nephron"
+       ]
+      ],
+      "why": "Why they are used in normotensive proteinuric CKD."
+     },
+     {
+      "p": "SGLT-2 inhibitors constrict the afferent arteriole via tubuloglomerular feedback",
+      "k": [
+       [
+        "afferent",
+        "tubuloglomerular"
+       ]
+      ],
+      "why": "Renoprotection independent of glucose."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "CKD": "Chronic kidney disease: kidney damage or reduced function lasting 3 months or more.",
+  "eGFR": "Estimated glomerular filtration rate, calculated from creatinine, age and sex; used to stage CKD.",
+  "GFR": "Glomerular filtration rate: how much blood the kidneys filter each minute.",
+  "ACR": "Albumin:creatinine ratio on a urine sample; the first-line test for kidney damage.",
+  "Microalbuminuria": "Small amounts of albumin in the urine, an early sign of kidney damage, especially in diabetes.",
+  "Proteinuria": "Protein in the urine; a marker of kidney damage and worse prognosis.",
+  "Haematuria": "Blood in the urine.",
+  "Diabetic nephropathy": "Kidney damage from long-standing diabetes; the leading cause of CKD.",
+  "Hypertensive nephrosclerosis": "Scarring of the kidney's small vessels from long-standing high blood pressure.",
+  "Glomerulonephritis": "Inflammation of the glomeruli, often causing blood and protein in the urine.",
+  "ADPKD": "Autosomal dominant polycystic kidney disease: inherited cysts that enlarge the kidneys.",
+  "ESRD": "End-stage renal disease: kidney failure needing dialysis or transplant.",
+  "Established renal disease": "CKD stage 5, with eGFR below 15.",
+  "Cockcroft-Gault": "A formula using age, sex, weight and creatinine to estimate creatinine clearance for drug dosing.",
+  "MDRD": "An eGFR equation using creatinine, age, gender and ethnicity.",
+  "Erythropoietin": "A kidney hormone that tells the bone marrow to make red cells.",
+  "EPO": "Erythropoietin, the kidney hormone that drives red cell production; given by injection in CKD anaemia.",
+  "Darbepoetin alfa": "A long-acting synthetic erythropoietin given by subcutaneous injection.",
+  "Ferritin": "A blood protein that reflects iron stores; must be adequate before EPO works.",
+  "Normocytic anaemia": "Low haemoglobin with normal-sized red cells.",
+  "PTH": "Parathyroid hormone: raises blood calcium by acting on bone, kidney and gut.",
+  "Secondary hyperparathyroidism": "High PTH in response to low calcium, as in CKD.",
+  "Tertiary hyperparathyroidism": "Autonomous high PTH with high calcium after years of secondary hyperparathyroidism.",
+  "Hyperphosphataemia": "High blood phosphate because failing kidneys cannot excrete it.",
+  "Phosphate binder": "A drug taken with meals to bind dietary phosphate in the gut.",
+  "Sevelamer": "A non-calcium phosphate binder used for hyperphosphataemia in CKD.",
+  "Alfacalcidol": "Activated (1-alpha-hydroxylated) vitamin D that does not need the kidney to work.",
+  "Calcitriol": "The active form of vitamin D (1,25-dihydroxyvitamin D), made in the kidney.",
+  "1-alpha-hydroxylation": "The kidney step that converts vitamin D into its active form, calcitriol.",
+  "CKD-mineral bone disease": "Bone and mineral problems in CKD: abnormal calcium, phosphate, PTH and vitamin D, fractures and calcification.",
+  "Osteomalacia": "Soft bones from poor mineralisation, causing bone pain, proximal myopathy and a waddling gait.",
+  "Vascular calcification": "Calcium deposits in artery walls, raising cardiovascular risk in CKD.",
+  "Fragility fracture": "A fracture from a fall from standing height or less.",
+  "Pruritus": "Itching; common in advanced CKD.",
+  "ACE inhibitor": "A drug such as ramipril that dilates the efferent arteriole and reduces proteinuria.",
+  "SGLT-2 inhibitor": "A drug such as dapagliflozin that makes the kidney excrete glucose and protects against CKD progression.",
+  "Efferent arteriole": "The small artery leaving the glomerulus; dilating it lowers glomerular pressure.",
+  "Afferent arteriole": "The small artery bringing blood into the glomerulus.",
+  "Tubuloglomerular feedback": "The kidney's reflex in which sodium delivery to the distal tubule adjusts afferent arteriole tone.",
+  "Haemodialysis": "Filtering the blood through a machine, usually three times a week.",
+  "Peritoneal dialysis": "Dialysis using the lining of the abdomen as the filter, with fluid exchanged through a catheter.",
+  "Ciclosporin": "An immunosuppressant used after transplant; causes gum overgrowth, excess hair and nephrotoxicity.",
+  "Gingival hypertrophy": "Overgrowth of the gums, a side effect of ciclosporin.",
+  "Hypertrichosis": "Excess hair growth, a side effect of ciclosporin.",
+  "Tolvaptan": "A vasopressin receptor blocker that slows cyst growth in ADPKD.",
+  "Sodium bicarbonate": "An alkali used to correct metabolic acidosis in CKD."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old woman with long-standing hypertension has had increasing tiredness and itching for 6 months. Her eGFR was 26 mL/min/1.73m² four months ago and is 24 mL/min/1.73m² today. Renal ultrasound shows two small kidneys. Her pulse rate is 82 bpm and BP 158/92 mmHg.",
+   "labs": [
+    [
+     "Hb",
+     "101 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Potassium",
+     "5.6 mmol/L",
+     "3.5–5.3",
+     "H"
+    ],
+    [
+     "Phosphate",
+     "1.8 mmol/L",
+     "0.8–1.5",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute kidney injury stage 2",
+    "Chronic kidney disease stage 3b",
+    "Chronic kidney disease stage 4",
+    "Chronic kidney disease stage 5",
+    "Renal artery stenosis"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis with a stage: decide acute or chronic, then the eGFR band."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing hypertension",
+      "6 months",
+      "four months ago",
+      "24 mL/min/1.73m² today",
+      "two small kidneys"
+     ],
+     "x": "Low eGFR on two tests over 90 days apart, **small kidneys**, anaemia and high phosphate: chronic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "eGFR 15 to 29 = **CKD stage 4**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Stable over 4 months with small kidneys: not acute."
+      ],
+      [
+       1,
+       "Stage 3b is 30 to 44."
+      ],
+      [
+       3,
+       "Stage 5 is below 15."
+      ],
+      [
+       4,
+       "RAS might cause CKD but the question asks the diagnosis and there is no ACE inhibitor trigger or bruit."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. CKD stage 4.** Rule: 90, 60, 45, 30, 15: 24 sits in 15 to 29."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 48 year old man with end-stage kidney disease from IgA nephropathy is on haemodialysis. He is being assessed for a kidney transplant. He was born in Somalia and moved to the UK 10 years ago. He has no cough or night sweats.",
+   "q": "Which infection is most important to screen for before transplantation?",
+   "o": [
+    "Helicobacter pylori",
+    "Hepatitis E",
+    "Mycobacterium tuberculosis",
+    "Streptococcus pyogenes",
+    "Toxoplasma gondii"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Pre-transplant screening: which infection reactivates with immunosuppression?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemodialysis",
+      "kidney transplant",
+      "born in Somalia",
+      "no cough or night sweats"
+     ],
+     "x": "Heavy immunosuppression ahead, from a TB-endemic country, no active symptoms: **latent TB** risk."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Screen for **Mycobacterium tuberculosis** (e.g. IGRA)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "H. pylori is not a standard transplant screen priority."
+      ],
+      [
+       1,
+       "Hepatitis E is not routine pre-transplant screening; hepatitis B and C are."
+      ],
+      [
+       3,
+       "Strep. pyogenes is an acute infection, not latent."
+      ],
+      [
+       4,
+       "Toxoplasma is more relevant in heart transplants."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Mycobacterium tuberculosis.** Rule: pre-transplant screening includes TB."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old man has CKD stage 3a from hypertensive nephrosclerosis. He takes ramipril and amlodipine. His BP is 132/80 mmHg and his pulse rate is 70 bpm. His 10 year cardiovascular risk has not been calculated. He has no history of heart disease.",
+   "labs": [
+    [
+     "eGFR",
+     "52 mL/min/1.73m²",
+     ">60",
+     "L"
+    ],
+    [
+     "ACR",
+     "12 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "Total cholesterol",
+     "5.2 mmol/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "q": "Which is the most appropriate additional medication?",
+   "o": [
+    "Aspirin",
+    "Atorvastatin",
+    "Bendroflumethiazide",
+    "Ezetimibe",
+    "Spironolactone"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Additional medication in CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "CKD stage 3a",
+      "ramipril and amlodipine",
+      "BP is 132/80 mmHg",
+      "no history of heart disease"
+     ],
+     "x": "BP already at target, already on ACE inhibitor; CV prevention is missing."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "All CKD patients start a **statin**: **atorvastatin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspirin is not for primary prevention."
+      ],
+      [
+       2,
+       "BP is already controlled."
+      ],
+      [
+       3,
+       "Ezetimibe is second-line to a statin."
+      ],
+      [
+       4,
+       "Spironolactone risks hyperkalaemia with ramipril and is not indicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Atorvastatin.** Rule: every CKD patient gets a statin."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 52 year old woman with type 2 diabetes and an ACR of 48 mg/mmol is started on ramipril. Her BP is normal. Six months later her ACR has fallen to 22 mg/mmol.",
+   "q": "Which is the most likely mechanism by which ramipril reduced her albuminuria?",
+   "o": [
+    "Afferent arteriolar vasoconstriction",
+    "Dilatation of the efferent arteriole",
+    "Improved glycaemic control",
+    "Increased tubular reabsorption of albumin",
+    "Reduced hepatic albumin synthesis"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of ACE inhibitor renoprotection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ACR of 48 mg/mmol",
+      "started on ramipril",
+      "BP is normal",
+      "fallen to 22 mg/mmol"
+     ],
+     "x": "Proteinuria fell even though BP was normal: a **glomerular** effect."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Less angiotensin II → **efferent arteriole dilates** → lower intraglomerular pressure."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Afferent vasoconstriction is how SGLT-2 inhibitors act."
+      ],
+      [
+       2,
+       "Ramipril does not lower glucose."
+      ],
+      [
+       3,
+       "Albumin reabsorption is not the mechanism."
+      ],
+      [
+       4,
+       "ACE inhibitors do not affect liver albumin production."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Efferent arteriole dilatation.** Rule: ACE inhibitor = efferent; SGLT-2 inhibitor = afferent."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 67 year old man with type 2 diabetes has routine bloods. His eGFR was 52 mL/min/1.73m² four months ago and is 49 mL/min/1.73m² today. He feels well. His pulse rate is 74 bpm and BP 138/84 mmHg.",
+   "labs": [
+    [
+     "Creatinine",
+     "136 µmol/L",
+     "60–120",
+     "H"
+    ],
+    [
+     "ACR",
+     "6 mg/mmol",
+     "<3",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute kidney injury",
+    "Chronic kidney disease stage 2",
+    "Chronic kidney disease stage 3a",
+    "Chronic kidney disease stage 3b",
+    "Normal age-related decline"
+   ],
+   "a": 2,
+   "e": "eGFR 45 to 59 on two tests more than 90 days apart, with albuminuria, is CKD stage 3a.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis and stage."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "52 mL/min/1.73m² four months ago",
+      "49 mL/min/1.73m² today",
+      "feels well"
+     ],
+     "x": "Stable eGFR under 60 for over 3 months, and raised ACR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CKD stage 3a** (45 to 59)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Stable over 4 months: not acute."
+      ],
+      [
+       1,
+       "Stage 2 is 60 to 89."
+      ],
+      [
+       3,
+       "Stage 3b is 30 to 44."
+      ],
+      [
+       4,
+       "eGFR below 60 with albuminuria is CKD, not normal ageing."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. CKD stage 3a.** Rule: 45 to 59 = 3a; 30 to 44 = 3b."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 44 year old woman has had type 1 diabetes for 25 years. She has proliferative retinopathy. Her eGFR has fallen from 78 to 51 mL/min/1.73m² over 4 years. Urine dipstick shows protein 3+ and no blood. Her pulse rate is 72 bpm and BP 134/82 mmHg.",
+   "labs": [
+    [
+     "ACR",
+     "64 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "HbA1c",
+     "71 mmol/mol",
+     "<48",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her chronic kidney disease?",
+   "o": [
+    "Diabetic nephropathy",
+    "IgA nephropathy",
+    "Lupus nephritis",
+    "Polycystic kidney disease",
+    "Renal artery stenosis"
+   ],
+   "a": 0,
+   "e": "Long-standing diabetes, retinopathy, proteinuria without haematuria and gradual decline are diabetic nephropathy, the leading cause of CKD.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes for 25 years",
+      "proliferative retinopathy",
+      "over 4 years",
+      "protein 3+ and no blood"
+     ],
+     "x": "Microvascular disease elsewhere, proteinuria **without haematuria**, gradual decline."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Diabetic nephropathy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "IgA nephropathy causes **haematuria**, often after infections."
+      ],
+      [
+       2,
+       "Lupus nephritis gives haematuria and systemic features."
+      ],
+      [
+       3,
+       "Polycystic kidneys: family history, flank pain, large cystic kidneys."
+      ],
+      [
+       4,
+       "RAS: bland urine, ACE inhibitor creatinine jump."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Diabetic nephropathy.** Rule: diabetes + retinopathy + proteinuria without blood."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 73 year old man with CKD stage 4 has 3 months of tiredness and breathlessness on exertion. He is pale and has a soft ejection systolic murmur. His pulse rate is 98 bpm and BP 146/84 mmHg.",
+   "labs": [
+    [
+     "Hb",
+     "89 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "MCV",
+     "87 fL",
+     "80–100",
+     ""
+    ],
+    [
+     "Ferritin",
+     "210 µg/L",
+     "30–400",
+     ""
+    ],
+    [
+     "B12",
+     "380 ng/L",
+     ">200",
+     ""
+    ],
+    [
+     "Reticulocytes",
+     "Low",
+     "",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of his anaemia?",
+   "o": [
+    "Autoimmune haemolysis",
+    "Folate deficiency",
+    "Iron deficiency",
+    "Myelodysplasia",
+    "Reduced erythropoietin production"
+   ],
+   "a": 4,
+   "e": "Normocytic anaemia with normal iron, B12 and low reticulocytes in advanced CKD is from reduced erythropoietin.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of anaemia in CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "CKD stage 4",
+      "tiredness and breathlessness on exertion",
+      "pale",
+      "soft ejection systolic murmur"
+     ],
+     "x": "Normocytic, normal ferritin and B12, low retics: **underproduction**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Low EPO** from the failing kidney."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Haemolysis gives high reticulocytes and jaundice."
+      ],
+      [
+       1,
+       "Folate deficiency causes macrocytosis."
+      ],
+      [
+       2,
+       "Ferritin is normal and MCV is not low."
+      ],
+      [
+       3,
+       "Myelodysplasia is possible in the elderly, but CKD stage 4 explains it."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Reduced erythropoietin.** Rule: CKD + normocytic anaemia + normal iron = low EPO."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 56 year old woman has been on haemodialysis for 9 years. She has 2 months of abdominal pain and constipation. Her pulse rate is 76 bpm and BP 142/88 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "2.84 mmol/L",
+     "2.2–2.6",
+     "H"
+    ],
+    [
+     "Phosphate",
+     "1.9 mmol/L",
+     "0.8–1.5",
+     "H"
+    ],
+    [
+     "PTH",
+     "96 pmol/L",
+     "1.6–6.9",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hypercalcaemia of malignancy",
+    "Milk-alkali syndrome",
+    "Primary hyperparathyroidism",
+    "Secondary hyperparathyroidism",
+    "Tertiary hyperparathyroidism"
+   ],
+   "a": 4,
+   "e": "After years of CKD-driven secondary hyperparathyroidism, autonomous glands cause high PTH with high calcium: tertiary hyperparathyroidism.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of hypercalcaemia in a dialysis patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemodialysis for 9 years",
+      "abdominal pain and constipation"
+     ],
+     "x": "Long-standing CKD; calcium **high**, PTH very high, phosphate high."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Tertiary hyperparathyroidism**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Malignancy suppresses PTH."
+      ],
+      [
+       1,
+       "Milk-alkali suppresses PTH and gives alkalosis."
+      ],
+      [
+       2,
+       "Primary usually has **low** phosphate and no CKD background."
+      ],
+      [
+       3,
+       "Secondary has low or normal calcium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tertiary hyperparathyroidism.** Rule: CKD + high PTH + high calcium = tertiary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old man has CKD stage 4 from diabetic nephropathy. He has aching bones and has had a wrist fracture after a minor fall. His pulse rate is 80 bpm and BP 150/86 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which set of results is most likely?",
+   "o": [
+    "Calcium high, phosphate high, PTH low",
+    "Calcium high, phosphate low, PTH high",
+    "Calcium low, phosphate high, PTH high",
+    "Calcium low, phosphate low, PTH low",
+    "Calcium normal, phosphate normal, PTH low"
+   ],
+   "a": 2,
+   "e": "CKD reduces calcitriol and phosphate excretion, so calcium falls, phosphate rises and PTH rises: secondary hyperparathyroidism and renal bone disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Predict the bone biochemistry in CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "CKD stage 4",
+      "aching bones",
+      "wrist fracture after a minor fall"
+     ],
+     "x": "Fragility fracture from **CKD-mineral bone disease**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Low calcium, high phosphate, high PTH**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "High calcium with low PTH suggests malignancy or vitamin D excess."
+      ],
+      [
+       1,
+       "That is primary hyperparathyroidism."
+      ],
+      [
+       3,
+       "Low PTH with low calcium is hypoparathyroidism."
+      ],
+      [
+       4,
+       "Normal bloods with low PTH do not fit CKD bone disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Low calcium, high phosphate, high PTH.** Rule: CKD = secondary hyperparathyroidism."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old woman is found to have a creatinine of 310 µmol/L. She has no previous results. She has itching and nocturia. Her pulse rate is 78 bpm and BP 160/94 mmHg.",
+   "labs": [
+    [
+     "Hb",
+     "98 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Adjusted calcium",
+     "2.06 mmol/L",
+     "2.2–2.6",
+     "L"
+    ],
+    [
+     "Phosphate",
+     "1.9 mmol/L",
+     "0.8–1.5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which additional finding most strongly suggests chronic rather than acute kidney disease?",
+   "o": [
+    "Bilateral hydronephrosis on ultrasound",
+    "Bilaterally small kidneys on ultrasound",
+    "Hyperkalaemia",
+    "Muddy brown casts on urine microscopy",
+    "Raised urea"
+   ],
+   "a": 1,
+   "e": "Bilaterally shrunken kidneys on ultrasound mark CKD; hypocalcaemia and anaemia support it. The other findings occur in AKI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which finding says chronic, not acute?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no previous results",
+      "itching and nocturia",
+      "BP 160/94 mmHg"
+     ],
+     "x": "No baseline; anaemia, low calcium and high phosphate already hint at chronicity."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Bilaterally small kidneys** on ultrasound."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hydronephrosis suggests obstruction, often acute."
+      ],
+      [
+       2,
+       "Hyperkalaemia occurs in both."
+      ],
+      [
+       3,
+       "Muddy brown casts are ATN (acute)."
+      ],
+      [
+       4,
+       "Urea is raised in both."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bilaterally small kidneys.** Rule: shrunken kidneys = chronic."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 55 year old man with type 2 diabetes for 8 years attends his annual review. His eGFR is 74 mL/min/1.73m². He has no symptoms. His pulse rate is 72 bpm and BP 136/82 mmHg.",
+   "labs": [
+    [
+     "HbA1c",
+     "58 mmol/mol",
+     "<48",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "98 µmol/L",
+     "60–120",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to detect early diabetic kidney damage?",
+   "o": [
+    "24-hour urine protein collection",
+    "Early morning urine albumin:creatinine ratio",
+    "Renal biopsy",
+    "Renal ultrasound",
+    "Urine microscopy"
+   ],
+   "a": 1,
+   "e": "Early morning urine ACR is first-line for detecting kidney damage (albuminuria), screened regularly in all diabetics.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Screening test for diabetic kidney damage."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 8 years",
+      "annual review",
+      "eGFR is 74",
+      "no symptoms"
+     ],
+     "x": "eGFR near normal; damage would show first as **albuminuria**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Early morning urine ACR**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "24-hour collections are cumbersome and not first-line."
+      ],
+      [
+       2,
+       "Biopsy is invasive and not for screening."
+      ],
+      [
+       3,
+       "Ultrasound shows structure, not early albuminuria."
+      ],
+      [
+       4,
+       "Microscopy looks for cells and casts, not albumin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Early morning urine ACR.** Rule: CKD first-line test = ACR."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 62 year old woman has an eGFR of 54 mL/min/1.73m² on routine bloods. She has never had kidney function tested before. She is well, with no urinary symptoms and a normal urine dipstick. Her pulse rate is 70 bpm and BP 128/78 mmHg.",
+   "labs": [
+    [
+     "ACR",
+     "2 mg/mmol",
+     "<3",
+     ""
+    ],
+    [
+     "Potassium",
+     "4.6 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next step to confirm whether she has chronic kidney disease?",
+   "o": [
+    "CT of the kidneys",
+    "Isotope GFR study",
+    "Renal biopsy",
+    "Renal ultrasound now",
+    "Repeat eGFR in 3 months"
+   ],
+   "a": 4,
+   "e": "CKD needs an eGFR below 60 on two occasions 90 days apart (or other evidence of damage). Her ACR and dipstick are normal, so repeat the eGFR.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "eGFR of 54",
+      "never had kidney function tested before",
+      "normal urine dipstick"
+     ],
+     "x": "One low eGFR, no evidence of damage: not yet CKD."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Repeat eGFR at 90 days**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CT adds contrast risk and no diagnostic value here."
+      ],
+      [
+       1,
+       "Isotope GFR is rarely needed."
+      ],
+      [
+       2,
+       "Biopsy is for unexplained or active disease."
+      ],
+      [
+       3,
+       "Ultrasound does not establish chronicity of a single value."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Repeat eGFR in 3 months.** Rule: CKD = two results 90 days apart."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 61 year old man with type 2 diabetes has CKD stage 3a. He takes metformin and amlodipine. His pulse rate is 76 bpm and BP 148/88 mmHg.",
+   "labs": [
+    [
+     "eGFR",
+     "48 mL/min/1.73m²",
+     ">60",
+     "L"
+    ],
+    [
+     "ACR",
+     "36 mg/mmol",
+     "<3",
+     "H"
+    ],
+    [
+     "Potassium",
+     "4.7 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate additional medication?",
+   "o": [
+    "Bendroflumethiazide",
+    "Doxazosin",
+    "Furosemide",
+    "Ramipril",
+    "Spironolactone"
+   ],
+   "a": 3,
+   "e": "With an ACR above 30 mg/mmol an ACE inhibitor is started (plus an SGLT-2 inhibitor), because it reduces intraglomerular pressure and proteinuria.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next drug in proteinuric CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes",
+      "CKD stage 3a",
+      "metformin and amlodipine",
+      "BP 148/88 mmHg"
+     ],
+     "x": "ACR 36 (>30), BP above target, no ACE inhibitor yet."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**ACE inhibitor: ramipril** (and an SGLT-2 inhibitor)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A thiazide does not reduce proteinuria."
+      ],
+      [
+       1,
+       "Doxazosin is a late add-on."
+      ],
+      [
+       2,
+       "Furosemide is for fluid overload."
+      ],
+      [
+       4,
+       "Spironolactone is a fourth-line add-on with hyperkalaemia risk."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Ramipril.** Rule: proteinuric CKD = ACE inhibitor first."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old woman with CKD stage 4 is tired and breathless on exertion. She is not on dialysis. Her pulse rate is 94 bpm and BP 138/80 mmHg.",
+   "labs": [
+    [
+     "Hb",
+     "92 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "84 fL",
+     "80–100",
+     ""
+    ],
+    [
+     "Ferritin",
+     "38 µg/L",
+     "30–400",
+     ""
+    ],
+    [
+     "Transferrin saturation",
+     "12%",
+     "20–50",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial treatment for her anaemia?",
+   "o": [
+    "Blood transfusion",
+    "Darbepoetin alfa",
+    "Folic acid",
+    "Oral ferrous sulphate",
+    "Vitamin B12 injection"
+   ],
+   "a": 3,
+   "e": "Iron stores must be corrected first (oral ferrous sulphate, or IV iron if insufficient); erythropoietin works poorly when iron is low.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial treatment of anaemia in CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "CKD stage 4",
+      "tired and breathless on exertion",
+      "not on dialysis"
+     ],
+     "x": "Ferritin 38 and transferrin saturation 12%: **iron-deficient**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Iron first**: oral ferrous sulphate."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Transfusion is for Hb < 70 on renal replacement therapy."
+      ],
+      [
+       1,
+       "EPO comes after iron is replete."
+      ],
+      [
+       2,
+       "No macrocytosis or folate deficiency."
+      ],
+      [
+       4,
+       "B12 is not low."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Oral ferrous sulphate.** Rule: correct iron before EPO."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man with CKD stage 5 on haemodialysis has itching. He has followed a low-phosphate diet for 3 months. He takes calcium acetate. His pulse rate is 78 bpm and BP 144/86 mmHg.",
+   "labs": [
+    [
+     "Phosphate",
+     "2.2 mmol/L",
+     "0.8–1.5",
+     "H"
+    ],
+    [
+     "Adjusted calcium",
+     "2.71 mmol/L",
+     "2.2–2.6",
+     "H"
+    ],
+    [
+     "PTH",
+     "28 pmol/L",
+     "1.6–6.9",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate change to his treatment?",
+   "o": [
+    "Add alendronic acid",
+    "Increase calcium acetate",
+    "Start calcium carbonate",
+    "Start oral cholecalciferol",
+    "Switch to sevelamer"
+   ],
+   "a": 4,
+   "e": "With high phosphate despite diet and hypercalcaemia on a calcium binder, switch to sevelamer, a non-calcium binder that avoids hypercalcaemia and vascular calcification.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Change in phosphate management."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemodialysis",
+      "low-phosphate diet for 3 months",
+      "calcium acetate"
+     ],
+     "x": "Phosphate still high despite diet; calcium is **high** on a calcium-based binder."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Switch to a **non-calcium binder: sevelamer**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bisphosphonates do not lower phosphate and are avoided in advanced CKD."
+      ],
+      [
+       1,
+       "More calcium worsens hypercalcaemia and calcification."
+      ],
+      [
+       2,
+       "Calcium carbonate is another calcium binder."
+      ],
+      [
+       3,
+       "Vitamin D raises calcium and phosphate absorption."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Switch to sevelamer.** Rule: diet first, then sevelamer; avoid calcium binders if calcium is high."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old woman with CKD stage 4 has a low adjusted calcium, high phosphate and a raised PTH. Her 25-hydroxyvitamin D level is normal. Her pulse rate is 76 bpm and BP 140/84 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "2.02 mmol/L",
+     "2.2–2.6",
+     "L"
+    ],
+    [
+     "Phosphate",
+     "1.9 mmol/L",
+     "0.8–1.5",
+     "H"
+    ],
+    [
+     "PTH",
+     "31 pmol/L",
+     "1.6–6.9",
+     "H"
+    ],
+    [
+     "25-hydroxyvitamin D",
+     "68 nmol/L",
+     ">50",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her hypocalcaemia?",
+   "o": [
+    "Excess urinary calcium loss",
+    "Hepatic failure to 25-hydroxylate vitamin D",
+    "Parathyroid gland failure",
+    "Reduced dietary calcium intake",
+    "Reduced renal 1-alpha-hydroxylation of vitamin D"
+   ],
+   "a": 4,
+   "e": "The failing kidney cannot 1-alpha-hydroxylate vitamin D, so calcitriol and gut calcium absorption fall. Her 25-hydroxyvitamin D is normal, so the liver step is intact.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of hypocalcaemia in CKD."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "CKD stage 4",
+      "low adjusted calcium",
+      "raised PTH",
+      "25-hydroxyvitamin D level is normal"
+     ],
+     "x": "Liver step fine; PTH is responding; the kidney step fails."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Loss of renal 1-alpha-hydroxylation**: low calcitriol."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CKD reduces, not increases, urinary calcium loss."
+      ],
+      [
+       1,
+       "25-hydroxyvitamin D is normal, so the liver is working."
+      ],
+      [
+       2,
+       "PTH is high, so the glands are working."
+      ],
+      [
+       3,
+       "Diet is not the main driver in CKD."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Reduced 1-alpha-hydroxylation.** Rule: CKD bone disease starts with low calcitriol."
+    }
+   ]
+  }
+ ]
+}

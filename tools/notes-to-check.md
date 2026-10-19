@@ -1,0 +1,149 @@
+# Notes to double-check
+
+While writing the 217 lessons, the helper agents flagged these statements in the original notes as possibly wrong or out of date. The notes were NOT changed. The lessons follow the notes, so fixing a note here may also need a lesson tweak.
+
+## Pilot lessons
+- DKA: "40 mmol potassium over 4 hours (~20 mmol/hour)" is actually 10 mmol/hour.
+- ACS: "fondaparinux pending immediate PCI" is the reverse of NICE (fondaparinux when angiography is not immediate; heparin for immediate PCI).
+- Pneumonia: "repeat chest X-ray 6 weeks after for all" goes beyond NICE (only for persistent symptoms or higher cancer risk).
+
+- AAA: "open repair first-line" for all — NICE favours EVAR for ruptured AAA in women and men over 70.
+- Acid-base: IV bicarbonate for salicylates listed before charcoal — order muddled.
+- Acid-base: hypocalcaemia listed as a cause of respiratory alkalosis — it is a result, not a cause.
+- Acute bronchitis: NICE NG120 antibiotic criteria are more nuanced than "age >80" alone.
+- Acute pancreatitis: "mild jaundice" as a pseudocyst feature is unusual.
+- Allergic disorder: IgE CMPA diagnosed with "skin prick/patch testing" — patch testing is not for IgE allergy.
+- Anaemia: "2x baseline creatinine" in the HUS triad is doubtful.
+- Anal fissure: "12 o'clock" posterior midline (usually 6 o'clock in lithotomy); acute/chronic cut-off "1 week" (NICE: 6 weeks).
+- Anaphylaxis: tryptase "ideally 4–12h" — RCUK/NICE: as soon as possible after treatment, then at 1–2h (no later than 4h).
+- Ankylosing spondylitis: uveitis treated with cyclopentolate alone (topical steroids are mainstay); "IL-17 if biologics unsuitable" (secukinumab is a biologic).
+- Anti-platelet therapy: "LMWH 12–18 h before surgery" — last dose usually 24 h before.
+- Anticoagulant therapy and CFS filed under "Mental Health - Prevention" — looks miscategorised.
+- Anticoagulant: "Major bleeding (INR >8 or any major bleed)" muddled — any major bleed qualifies regardless of INR.
+- Aortic valve disease: "peak gradient >40mmHg" for severe AS should be mean gradient; root thresholds (4.5/5.4/5.5 cm, 3-monthly) are AAA surveillance numbers; Austin Flint listed under acute AR (classically chronic severe AR); "bioprosthetic: older patients under 75" odd.
+- Appendicitis: appendicular abscess "urgent appendicectomy" contradicts "drainage, interval surgery" elsewhere; appendix mass "confirmed by ultrasound showing an abscess" mixes up mass and abscess.
+- Arrhythmias: adrenaline bradycardia dose "2-10 micrograms" missing "/min"; "DOAC... echo instead if score 0" reads oddly.
+- Arterial ulcer: recall gives ABPI <0.6 as diagnostic but notes say <0.8 (NICE uses <0.9 for PAD).
+- Asbestos: mesothelioma "CT may show right-sided anterior hyperdense structure; can carry significant family history" is unclear and doubtful.
+- Asthma: "FEV1/FVC (<70% predicted)" should be ratio <0.7; "First step: SABA + low-dose beclometasone" doesn't match NICE 2024 (as-needed ICS/formoterol first).
+- B12: intrinsic factor antibodies are most specific for pernicious anaemia, not for B12 deficiency itself.
+- BPH: "most common cause of nocturia" overstated.
+- Bladder cancer: 2-week-wait wording "and/or" — NICE: non-visible haematuria with either dysuria or raised WCC, age ≥60.
+- Breast cancer: aromatase inhibitor "rare HSP" looks wrong; imaging "<40 ultrasound / >35 mammogram" overlaps.
+- Breast cyst: "Clear/bloody aspirate: monitor" — a bloody aspirate normally needs cytology/further assessment.
+- Bronchiectasis: 14 days ciprofloxacin as standard community exacerbation treatment — NICE uses cipro only for Pseudomonas; a recall answer gives macrolides for Pseudomonas (should be inhaled aminoglycosides).
+- CKD: osteomalacia "treated with alendronic acid" — should be vitamin D; bisphosphonates generally avoided in advanced CKD.
+- COPD: GOLD A–D out of date (GOLD 2023 merged C and D into E); stage 4 "FEV1/FVC <50% predicted" odd; "hypoxic drive" oversimplified; ABG subsection mixes in DLCO and V/Q.
+- Cardiac arrest: "up to 3 shocks in quick succession initially" — RCUK uses 3 stacked shocks only for witnessed, monitored arrest; otherwise one shock then CPR.
+- Cardiac failure: PND listed under right-sided HF (it is left-sided); "IV iron if Hb under 150 g/L" omits ferritin/TSAT criteria; HFpEF first-line given as "empagliflozin plus spironolactone".
+- Cellulitis: doxycycline and clindamycin called "macrolides"; "second-line clarithromycin/doxycycline with metronidazole" is NICE's regimen for infection near eyes/nose, not general second-line.
+- Cholecystitis: blood tests listed as "second-line" investigation is odd but not wrong.
+- Cirrhosis: A1AT deficiency "diagnosed with spirometry" (it's serum A1AT level/genotype); Budd-Chiari listed as complication (it's a cause); "endoscopic ultrasound" for complications (upper GI endoscopy is standard).
+- Coeliac: macrocytic anaemia listed first — iron deficiency is the more typical anaemia.
+- Colorectal: 8 cm cut-off for AP resection more generous than current practice.
+- Conjunctivitis: viral "most common overall (80%)" vs allergic "most common UK subtype" conflict.
+- Constipation: Movicol called a "stimulant" (it's osmotic macrogol); hypercalcaemia listed as complication (it's a cause).
+- Crystal arthropathy: NSAIDs contraindicated with "HFpEF history" — concern is heart failure generally (mainly HFrEF); Lesch-Nyhan listed as a "complication" of gout (it is a cause).
+- Cushing's: increased pigmentation not limited to ACTH-dependent causes.
+- DVT: unprovoked DVT "6 months" — NICE says 3 months then consider extending; pregnancy ultrasound point filed under examination.
+- Dehydration: SIADH listed as complication (doubtful — low volume triggers appropriate ADH rise); NG29 is NICE's children's guideline (adult is CG174).
+- Dementias: FTD shows constructional apraxia (interlocking pentagons) — typical Lewy body / visuospatial sign.
+- Depression: early morning waking called "pathognomonic" — typical, not pathognomonic.
+- Diabetes: Staph aureus said not to be the main diabetic foot organism (Pseudomonas named) — S. aureus is commonest; hyperthyroidism named as the main type 1 thyroid link (hypothyroidism is commoner); 3/5 to 2/5 short:long insulin split (50:50 usual).
+- Diabetic eye disease: 4-2-1 rule reads as needing all three (any one is standard); "pre-proliferative" put with mild NPDR (UK uses it for severe NPDR).
+- Diabetic nephropathy: "eGFR after 5 years in Type 1" mixes up ACR screening start with eGFR timing.
+- Diabetic neuropathy: amitriptyline contraindicated in "primary open-angle glaucoma" — the risk is angle-closure.
+- Diverticular disease / obstruction: NICE NG147 is "Diverticular disease: diagnosis and management", not "Suspected acute abdominal pain in adults".
+- Drug overdose: aspirin "early respiratory alkalosis (pH >7.35)" should be >7.45; severe salicylate toxicity usually tachycardia, not "bradycardia"; flumazenil listed with no seizure caution; "NAC 150 mg/kg over 1 hour" is the older 21-hour regimen (many UK trusts now use SNAP).
+- Eczema: "moderate eczema: mild-potency hydrocortisone 1%" — NICE: mild potency for mild, moderate potency for moderate.
+- Encephalitis: HSV "classically bilateral" — usually unilateral or asymmetric.
+- Epididymitis: mumps orchitis placed in the "over 35" group — it's a disease of young men.
+- Epilepsy: phenytoin "most preferred" second-line in status — levetiracetam is now equivalent or preferred.
+- Epistaxis: "Liver disease is more common as an initial presentation" reads oddly; Kiesselbach's often described as fed by five arteries, not four.
+- Ethics and law: all notes sit under Science; the other three domains have no notes.
+- Fibrotic lung disease: sarcoidosis listed as CTD-ILD; N-acetylcysteine no longer recommended.
+- GAD: "circumstantiality" listed as a feature — unusual.
+- GORD: achalasia listed as a complication — it is not.
+- Gangrene: pip-taz for gas gangrene — UK usually benzylpenicillin plus clindamycin.
+- Gastric cancer: 2-week-wait criteria use "or" — NICE requires 55+ with weight loss AND upper abdominal symptoms.
+- HIV: oral hairy leucoplakia listed under acute HIV (it is a later immunosuppression sign); "examination" subsection holds only stool microbiology; PCP "oral co-trimoxazole" — severe PCP usually IV plus steroids.
+- HSV: erythema multiforme called both "Type IV" and "immune complex deposition" (Type III) — contradicts itself.
+- Haemoglobinopathies: G6PD deficiency (X-linked enzyme defect) filed as an autosomal recessive haemoglobinopathy.
+- Haemorrhoids: "Grade 1 definitive = topical hydrocortisone" questionable — NICE conservative first.
+- Hernias: "always open non-mesh" for strangulated hernias is debatable.
+- Hospital-acquired infections: "IV co-amoxiclav" for non-severe HAP — NICE first choice is oral.
+- Hypercalcaemia of malignancy: renal cell carcinoma called "most classically" PTHrP-linked — classic is squamous cell lung cancer.
+- Hyperparathyroidism: notes say "total parathyroidectomy" for primary; usually a solitary adenoma is removed (total is for hyperplasia).
+- Hyperparathyroidism: secondary listed with "raised phosphate" — true in CKD, but low in vitamin D deficiency.
+- Hyperthermia/hypothermia: "renal or oesophageal probe" — probably "rectal".
+- Hypoglycaemia: tachycardia listed as neuroglycopenic — it is autonomic. Impaired awareness put down to autonomic neuropathy alone — mainly from repeated hypos.
+- Hypothyroidism: "start around 25 mcg" for everyone — NICE ~1.6 mcg/kg for most adults <65; 25 mcg for elderly/IHD.
+- IBD: "Crohn's biopsy: increased goblet cells" — usually described as preserved, not increased.
+- IHD: ECG lead placement filed under "examination".
+- Infectious colitis: pseudomembranes seen at sigmoidoscopy/colonoscopy, not proctoscopy.
+- Infective endocarditis: Enterococcus called "beta-haemolytic" (usually gamma/non-haemolytic); TTE "useful for small vegetations" (TOE is better).
+- Influenza: notes say Staph. aureus is "commonly" the post-flu pneumonia cause — Strep. pneumoniae is commonest; Staph. aureus is the classic association.
+- Ischaemic heart disease: "135/85 in diabetics" — NICE uses 140/90 for type 2; 135/85 is the type 1 target.
+- Leukaemia: DIC put under ALL — DIC is the classic sign of APML.
+- Limb ischaemia: "analgesia (e.g. codeine)" — UK practice is usually IV opioid (morphine).
+- Liver failure: King's pH <7.3 "within 24h of ingestion" (usually >24h after, post-resuscitation).
+- Lung cancer: gynaecomastia (hCG) usually linked to large cell, not adenocarcinoma; BTS re-scans 6–8 mm nodules at 3 months (not 12); SVCO dexamethasone usually 16 mg (not 8 mg).
+- Lymphoma: "Burkitt's presents with hyperphosphataemia" is really tumour lysis; excisional biopsy not usually "guided by US/CT".
+- MI: papillary muscle rupture "wide mid-systolic murmur" — acute MR is pan-systolic.
+- MND: riluzole acts "at the neuromuscular synapse" (acts at central glutamatergic synapses); "reduced jaw jerk" in bulbar ALS questionable (brisk in pseudobulbar).
+- MS: "IV interferon beta" — given SC/IM; INO point muddled about lesion side.
+- Malabsorption: anti-endomysial or tTG IgA as first coeliac test — NICE: tTG IgA first, EMA only if weakly positive.
+- Malnutrition: "MUST ≥2, noted in text as 4" (high risk is ≥2); coeliac tested with "IgG" EMA (standard is IgA tTG/EMA); B12 deficiency in alcohol cirrhosis (folate and thiamine more typical).
+- Meningitis: viral CSF "15-500x10^9 lymphocytes/L" — unit should be 10^6/L.
+- Metastatic disease: liver and lung usually commoner metastasis sites than bone.
+- Migraine: says common in 2nd/3rd trimesters (usually improves then); COCP UKMEC 4 only for migraine WITH aura, not "with or without".
+- Myeloma: notes say SPEP "also detects Bence Jones proteins" — these are found in urine or by serum free light chains.
+- Myeloproliferative disorders: "all associated with JAK2" — only ~50–60% of ET/PMF; CALR/MPL cover the rest.
+- Necrotising fasciitis: SGLT-2 link is to Fournier's specifically.
+- Obesity: "400mcg folic acid if BMI >25" — NICE/RCOG advise 5 mg when BMI ≥30. "Aspirin if BMI >35" alone — NICE gives aspirin only with ≥2 moderate pre-eclampsia risk factors.
+- Obstruction: "LBO: flatus tube after sigmoidoscope decompression" is sigmoid volvulus treatment, not LBO in general.
+- Oesophageal cancer: "salty fish" listed as adenocarcinoma risk — usually SCC/nasopharyngeal.
+- Optic neuritis: "IM corticosteroids" — standard is IV.
+- Pancreatic cancer: CA 19-9 "~90% sensitivity/specificity" overstates specificity (closer to 80%); not diagnostic or for screening.
+- Parkinson's: MSA called "asymmetric" (usually symmetrical — notes contradict themselves); patch said to prevent "acute dystonia" (prevents akinesia).
+- Pathological fractures: Ewing's "pain/swelling in groin after trauma" is a non-classic description.
+- Pericardial disease: Kussmaul's sign under tamponade — classically a sign of constrictive pericarditis.
+- Peripheral nerve injuries: common peroneal sensory loss "lateral thigh/leg" — should be lateral leg and dorsum of foot.
+- Peripheral vascular disease: "Acute limb ischaemia: angioplasty" is doubtful — standard UK practice is IV heparin then embolectomy, thrombolysis or bypass.
+- Peripheral vascular disease: "gold standard ABPI plus imaging" is unusual wording.
+- Pituitary: somatostatin analogues called first-line for acromegaly (surgery is); raised calcium under prolactinoma (it's MEN 1); MEN 1 listed with DI and cardiomyopathy; acromegaly "normocytic anaemia, hypothyroidism".
+- Pneumothorax: air-leak referral time given as both 48 h and 3–5 days; "rarely leads to aortic dissection" link doubtful.
+- Polycythaemia: secondary polycythaemia said to progress to myelofibrosis/AML — only PV does.
+- Prostate cancer: "Gleason 3+2, below 3+3" — modern grading starts at 3+3.
+- Psoriasis: ustekinumab called an "IL-23 inhibitor" — it blocks IL-12/23 (p40). Arthritis "classically limited to DIP joints" overstates it.
+- Pulmonary hypertension: cor pulmonale is lung disease "causing PAH" — that's lung-disease PH (group 3), not PAH.
+- Radiculopathies: biceps reflex "C4/C5" (usually C5/C6); L3 with weak hip abduction (usually adduction); gabapentin for sciatica conflicts with NICE NG59.
+- Reactive arthritis: gonorrhoea as a cause is debatable; circinate balanitis usually erosions, not vesicles.
+- Respiratory failure: "hypoxic drive" is a simplification.
+- Rheumatoid arthritis: recall says flexed DIP + hyperextended PIP is Boutonnière — that is swan neck.
+- SLE: methotrexate for "severe disease with prominent organ involvement" — mainly used for skin/joint disease.
+- Sarcoidosis: methotrexate for cardiac disease (steroids first); UK usually uses methotrexate before azathioprine.
+- Screening: FIT starts at 60 — England is lowering to 50.
+- Sepsis: pip-taz already covers anaerobes, so adding metronidazole is redundant.
+- Septic arthritis: Pseudomonas given as the IVDU organism — S. aureus is still commonest in IVDU.
+- Sickle cell: "haemolytic anaemia... preceded by E. coli O157" describes HUS; guideline is NICE CG143 not NG143; recall says "Salmonella Typhi" (classic is non-typhoidal Salmonella); filed under "Venous Thromboembolism" category.
+- Spinal cord compression: "Babinski with perianal sensory loss suggests higher-level compression" doubtful — perianal loss points to conus/cauda equina.
+- Splenectomy: "meningococcal type C" outdated — now MenACWY plus MenB.
+- Stroke: "high-attenuating material filling the sulci" describes SAH, not intracerebral haemorrhage.
+- TB: notes say notify "immediately" but notifiable-diseases notes list TB as routine (within 3 days) — contradiction. "Isoniazid causes optic atrophy with parenteral use" is not a standard side effect.
+- TIA: endarterectomy for stenosis "contralateral to symptoms" is wrong for amaurosis fugax (stenosis is same side as the eye); "right-sided carotid bruit" oddly specific.
+- Tension headache: "improve within at least 1 month" oddly worded.
+- Testicular cancer: beta-hCG "more commonly elevated in seminoma" — raised more often in non-seminoma (the notes contradict themselves elsewhere).
+- Thyroid eye disease: recall says oral prednisolone first-line for a flare; notes say IV steroids (inconsistent).
+- Thyroid nodules: medullary cancer linked to von Hippel-Lindau (it's MEN 2); dysphagia blamed on the recurrent laryngeal nerve.
+- Thyrotoxicosis: recall calls radioiodine first-line definitive; management notes call it second-line (inconsistent).
+- Tonsillitis: Centor cut-off ">3" differs from NICE (3 or more).
+- Transfusion: "Agglutination with anti-A implies A-negative blood" is wrong (cells carry A antigen; RhD separate); "AB patients can only receive AB blood" too strict (AB is universal red cell recipient).
+- UTI: "3+ nitrites" — nitrites are only positive or negative.
+- Unstable angina: notes call CT coronary angiography the "first-line diagnostic investigation" — that applies to stable chest pain, not acute ACS.
+- Urinary tract calculi: uric acid and xanthine stones "not seen on CT KUB" — radiolucent on X-ray but visible on CT; indinavir stones are indinavir crystals, not xanthine.
+- Urticaria: second-line prednisolone 7-day course vs example regimen 5 days.
+- Varicella: "immunocompromised… oral aciclovir within 7 days of exposure/rash onset" muddled (NICE: within 72 h of rash onset, up to 1 week if immunocompromised); ">20 weeks, no rash: check IgG" oddly gestation-limited.
+- Varicose veins: ABPI >0.8 called "normal" (normal is 0.9–1.3).
+- Venous ulcer: "ABPI 0.6–0.8 generally safe to proceed with compression" clashes with its own management (0.8–1.3) and standard practice.
+- Viral hepatitides: infant HBV doses "1–2 and 6 months" (UK: 8, 12, 16 weeks and 1 year); Hep A "usually without fever" doubtful.
