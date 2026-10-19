@@ -1,0 +1,431 @@
+{
+  "id": "deep-vein-thrombosis",
+  "patient": {
+    "name": "Priya Ramanathan",
+    "age": 36,
+    "sex": "F",
+    "setting": "Emergency Department (ambulatory care)",
+    "complaint": "Painful, swollen left calf for 2 days",
+    "background": [
+      "Flew home from Sydney 6 days ago (22-hour journey)",
+      "Takes the combined oral contraceptive pill",
+      "BMI 31 kg/m²",
+      "Accountant in Croydon; no previous clots"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a unilateral swollen calf after a flight, surgery or the pill, set against cellulitis and claudication; or 'Which risk factor most likely caused it?'.",
+      "steps": [
+        {"type": "story", "points": ["Priya, 36, flew home from **Sydney** six days ago.", "Two days of an aching, **tight left calf**.", "Left leg swollen to the knee; worse on walking.", "No breathlessness, chest pain or haemoptysis."], "vitals": {"T": "37.1°C", "HR": "84 bpm", "BP": "124/78 mmHg", "RR": "14 /min", "SpO2": "98% on air"}},
+        {"type": "notes", "src": 0, "lead": "Priya's tight, swollen calf is most likely a **clot in a deep leg vein**; the danger is that it breaks off and travels to her lungs."},
+        {"type": "notes", "src": 1, "lead": "Priya has several **provoking** factors: a 22-hour flight, the **COCP** and obesity."},
+        {"type": "story", "points": ["Left calf **4 cm** bigger than the right.", "Pitting oedema to the knee; warm and mildly red.", "Tender along the deep veins of the calf.", "Dilated superficial veins over the shin."]},
+        {"type": "notes", "src": 2, "lead": "Priya's warm, tender, swollen calf with **pitting oedema** and dilated superficial veins is the textbook picture."},
+        {"type": "compare", "title": "DVT vs its look-alikes", "head": ["Feature", "DVT", "Cellulitis", "Ruptured Baker's cyst"], "rows": [["Fever", "Absent or low-grade", "Often above 38°C, unwell", "Absent"], ["Skin", "Diffuse mild redness, warmth", "**Well-demarcated** spreading erythema", "Bruising around the ankle"], ["Swelling", "Whole calf or leg, pitting, one side", "Local, with skin changes", "Sudden calf pain after knee swelling"], ["Clue in stem", "Flight, surgery, pill, immobility", "Skin break, ulcer, tinea", "Arthritic knee, popliteal lump"]]},
+        {"type": "ask", "q": "Which feature most favours DVT over cellulitis in Priya?", "o": ["Calf tenderness", "Mild warmth", "Recent long-haul flight with pitting oedema", "Redness of the skin"], "a": 2, "r": "Tenderness, warmth and redness occur in both. A **provoking risk factor** plus unilateral pitting oedema without fever points to DVT."},
+        {"type": "notes", "src": 4, "lead": "Priya has no breathlessness or chest pain now, but she must return at once if she develops them: that would be **PE**."},
+        {"type": "trap", "text": "A DVT patient who becomes **breathless, tachycardic or hypoxic** has a PE until proven otherwise. Do not call it anxiety."},
+        {"type": "notes", "src": 3, "lead": "If Priya had an **atrial septal defect**, a leg clot could cross to the left heart and cause a stroke: **paradoxical embolism**."},
+        {"type": "notes", "src": 5, "lead": "Priya's DVT is **provoked**. Had it come from nowhere, especially with weight loss, you would look for **cancer** or **thrombophilia**."},
+        {"type": "pearl", "text": "Exam rule: **unilateral swollen calf + flight, surgery or the pill = DVT**. Fever with demarcated redness = cellulitis. Pain on walking relieved by rest = claudication."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?': the 2-level Wells score decides between D-dimer (score 1 or less) and proximal leg vein ultrasound (score 2 or more).",
+      "steps": [
+        {"type": "flow", "title": "2-level Wells pathway for DVT", "nodes": ["Suspected DVT: calculate the 2-level Wells score", "Score ≥2 (likely) → proximal leg vein ultrasound within 4 h", "No scan within 4 h → D-dimer plus interim DOAC", "Score ≤1 (unlikely) → D-dimer first", "Negative D-dimer in low risk → DVT excluded"], "caption": "The score decides the first test, not the D-dimer."},
+        {"type": "ask", "q": "Priya has calf swelling ≥3 cm, pitting oedema in that leg and deep vein tenderness. What is her Wells score?", "o": ["0 (unlikely)", "1 (unlikely)", "2 (likely)", "3 (likely)"], "a": 3, "r": "One point each for **calf swelling ≥3 cm**, **pitting oedema** and **deep vein tenderness** = 3. A score of 2 or more means DVT likely."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "2-level Wells score for DVT", "min": -2, "max": 9, "unit": "points", "bands": [[-2, 1.5, "≤1 DVT unlikely", "ok"], [1.5, 9, "≥2 DVT likely", "bad"]], "value": 3, "label": "Priya 3", "caption": "Priya is in the 'likely' band, so imaging comes first."}},
+        {"type": "notes", "src": 1, "lead": "Priya scores **3: DVT likely**. She needs a proximal leg vein ultrasound within 4 hours, not a D-dimer as the decider."},
+        {"type": "story", "points": ["It is 9 pm; ultrasound is not available until morning.", "D-dimer sent; first dose of **apixaban** given.", "Booked for ultrasound at 9 am."]},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Hours until the scan", "min": 0, "max": 24, "unit": "h", "bands": [[0, 4, "Within 4 h target", "ok"], [4, 24, "Delayed: give interim DOAC", "bad"]], "value": 12, "label": "Priya 12 h", "caption": "Beyond 4 hours, anticoagulate while waiting."}},
+        {"type": "labs", "title": "Bloods before anticoagulation", "rows": [["D-dimer", "2.8 mg/L FEU", "<0.5", "H"], ["Haemoglobin", "134 g/L", "115–165", ""], ["Platelet count", "268 ×10⁹/L", "150–400", ""], ["eGFR", ">90 mL/min/1.73m²", ">90", ""], ["Prothrombin time", "11.8 s", "10–13", ""], ["APTT", "30 s", "25–35", ""]], "text": "Baseline FBC, renal function and clotting are checked before anticoagulation. The D-dimer is raised but cannot confirm a clot."},
+        {"type": "notes", "src": 0, "lead": "Next morning, **compression ultrasound** shows a non-compressible left popliteal vein: Priya's DVT is confirmed."},
+        {"type": "notes", "src": 2, "lead": "Had Priya's scan been normal with a positive D-dimer, you would **stop apixaban** and **rescan in 1 week**."},
+        {"type": "notes", "src": 3, "lead": "If Priya were pregnant, the test would still be ultrasound (**compression duplex**), with no radiation."},
+        {"type": "trap", "text": "A **negative D-dimer only excludes DVT in a low-probability patient**. D-dimer is also raised after surgery, in pregnancy, infection and cancer."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?': a DOAC first-line, LMWH in pregnancy or special cases, and the duration (3 months provoked, 6 months unprovoked or cancer).",
+      "steps": [
+        {"type": "ask", "q": "Priya's DVT is confirmed. She is well with normal renal function. What is first-line treatment?", "o": ["Apixaban", "Aspirin", "Compression stockings alone", "Unfractionated heparin infusion", "Warfarin alone"], "a": 0, "r": "A **DOAC** (apixaban or rivaroxaban). Aspirin and stockings do not treat a DVT; warfarin always needs LMWH cover at the start."},
+        {"type": "notes", "src": 0, "lead": "Priya continues **apixaban**, a DOAC that blocks factor Xa. No bridging and no INR checks."},
+        {"type": "notes", "src": 1, "lead": "Priya is none of the special cases. In pregnancy, severe renal failure or cancer, **LMWH** or warfarin with LMWH cover would be chosen instead."},
+        {"type": "compare", "title": "Anticoagulants for DVT", "head": ["", "DOAC", "LMWH", "Warfarin"], "rows": [["Examples", "Apixaban, rivaroxaban", "Enoxaparin, dalteparin", "Warfarin"], ["Route", "Oral", "Subcutaneous injection", "Oral"], ["Monitoring", "None routinely", "Not usually", "INR, target 2–3"], ["When", "First-line for most", "Pregnancy, DOAC unsuitable", "DOAC unsuitable; needs LMWH ≥5 days first"]]},
+        {"type": "notes", "src": 2, "lead": "Priya's DVT was **provoked** by a flight (a transient non-surgical factor), so she has **3 months** of apixaban."},
+        {"type": "flow", "title": "How long to anticoagulate", "nodes": ["Provoked by a transient non-surgical factor → 3 months", "Unprovoked → 6 months (longer if recurrent)", "Active cancer → DOAC for 6 months", "Review bleeding risk before stopping"]},
+        {"type": "story", "points": ["Advised to **stop the COCP**; switch to non-oestrogen contraception.", "Given written advice on PE symptoms.", "Review at 3 months to stop apixaban."]},
+        {"type": "notes", "src": 3, "lead": "Priya is told to call 999 for sudden breathlessness or chest pain. Surgical patients get **pneumatic compression** at once and **LMWH 12 hours post-op**."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Priya's calf on apixaban", "x": ["Day 0", "Week 1", "Week 4", "Month 3"], "unit": "cm larger than right", "series": [{"name": "Calf difference", "values": [4, 3, 1, 0.5]}], "caption": "Swelling settles over weeks. Anticoagulation stops new clot forming; the body's own fibrinolysis clears the old clot."}},
+        {"type": "notes", "src": "guidelines", "lead": "Priya's pathway (Wells, a 4-hour scan, interim DOAC, then 3 months of apixaban) follows **NICE NG158**."},
+        {"type": "trap", "text": "Do not treat a DVT with **aspirin** or stockings. Treatment is anticoagulation; aspirin is an antiplatelet for arterial disease."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: which part of Virchow's triad a vignette shows, how DOACs work, and why a DVT leads to PE or post-thrombotic syndrome.",
+      "steps": [
+        {"type": "flow", "title": "Virchow's triad in Priya", "nodes": ["Venous stasis: 22-hour flight", "Hypercoagulability: COCP, obesity", "Endothelial injury: surgery or trauma (none for Priya)", "Slow flow in calf valve pockets", "Coagulation cascade activates → thrombus"]},
+        {"type": "notes", "src": 0, "lead": "Priya ticks two corners of **Virchow's triad**: stasis from the flight and hypercoagulability from oestrogen."},
+        {"type": "notes", "src": 1, "lead": "Priya's red, warm, swollen calf is **inflammation** plus blocked venous outflow from the popliteal clot."},
+        {"type": "notes", "src": 2, "lead": "A popliteal clot is **proximal**, the kind most likely to propagate and **embolise** to Priya's lungs."},
+        {"type": "pearl", "text": "**Proximal** DVTs (popliteal vein and above) carry the highest embolic risk, which is why the scan targets the proximal veins."},
+        {"type": "flow", "title": "Where apixaban acts", "nodes": ["Coagulation cascade triggered", "Factor X → **factor Xa**", "Prothrombin → thrombin", "Fibrinogen → fibrin clot", "Apixaban and rivaroxaban block factor Xa"]},
+        {"type": "ask", "q": "How does apixaban stop Priya's clot growing?", "o": ["Activates antithrombin", "Blocks vitamin K epoxide reductase", "Directly inhibits factor Xa", "Inhibits platelet COX-1"], "a": 2, "r": "Apixaban **directly inhibits factor Xa**. Heparins work via antithrombin, warfarin blocks vitamin K recycling, aspirin blocks COX-1."},
+        {"type": "notes", "src": 3, "lead": "Blocking **factor Xa** means less thrombin is made, so Priya's clot stops extending."},
+        {"type": "notes", "src": 4, "lead": "If Priya's vein valves are left leaky, high venous pressure causes **post-thrombotic syndrome**: aching, swelling, pigmentation and ulcers."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "Which new symptom in a DVT patient suggests pulmonary embolism?", "o": ["Calf erythema", "Dilated superficial veins", "Pitting oedema", "Sudden pleuritic chest pain"], "a": 3, "r": "Sudden breathlessness, **pleuritic chest pain**, collapse or tachycardia mean PE: emergency assessment."},
+    {"d": "diagnosis", "q": "Which cardiac defect lets a leg DVT cause a stroke?", "o": ["Aortic stenosis", "Atrial septal defect", "Mitral regurgitation", "Patent ductus arteriosus"], "a": 1, "r": "An **ASD** lets venous clot cross right to left: **paradoxical embolism**."},
+    {"d": "diagnosis", "q": "An unprovoked DVT in a 65 year old should prompt assessment for which condition?", "o": ["Hypothyroidism", "Malignancy", "Peripheral arterial disease", "Vitamin B12 deficiency"], "a": 1, "r": "Unprovoked or recurrent DVT should prompt a search for **malignancy** or **thrombophilia**."},
+    {"d": "investigation", "q": "Which 2-level Wells score means 'DVT likely'?", "o": ["0 or more", "1 or more", "2 or more", "4 or more"], "a": 2, "r": "**≥2 = likely**: proximal leg vein ultrasound within 4 hours. ≤1 = unlikely: D-dimer."},
+    {"d": "investigation", "q": "Which is the best initial test when the Wells score is 1 or less?", "o": ["D-dimer", "Contrast venography", "CT pulmonary angiogram", "Proximal leg vein ultrasound"], "a": 0, "r": "**D-dimer**: a negative result in a low-risk patient rules out DVT."},
+    {"d": "investigation", "q": "Ultrasound is negative but the D-dimer is positive. What next?", "o": ["Continue anticoagulation for 3 months", "CT pulmonary angiogram", "Discharge with no follow-up", "Stop anticoagulation and rescan in 1 week"], "a": 3, "r": "**Stop anticoagulation and repeat the scan in 1 week** to catch a propagating calf clot."},
+    {"d": "management", "q": "Which is first-line treatment for a confirmed DVT?", "o": ["Apixaban", "Aspirin", "Clopidogrel", "Warfarin alone"], "a": 0, "r": "A **DOAC** (apixaban or rivaroxaban), which inhibits factor Xa."},
+    {"d": "management", "q": "How long is anticoagulation for a DVT provoked by long-haul travel?", "o": ["6 weeks", "3 months", "6 months", "Lifelong"], "a": 1, "r": "Provoked by a transient non-surgical factor: **3 months**. Unprovoked: 6 months."},
+    {"d": "management", "q": "When is prophylactic-dose LMWH started after surgery?", "o": ["At induction of anaesthesia", "12 hours post-op", "48 hours post-op", "Only at discharge"], "a": 1, "r": "**12 hours post-op**, with an intermittent pneumatic compression device straight away."},
+    {"d": "science", "q": "Which long-term complication of DVT comes from venous valve incompetence?", "o": ["Lymphoedema", "Peripheral arterial disease", "Post-thrombotic syndrome", "Raynaud's phenomenon"], "a": 2, "r": "**Post-thrombotic syndrome**: persistent venous hypertension and leaky valves."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is a DVT and why does it matter?", "tip": "Exam thinking: name the clot, the place and the danger.", "points": [
+        {"p": "A blood clot in a deep vein, usually in the leg", "k": [["clot", "thromb"], ["deep vein", "deep veins", "leg"]], "why": "Proximal (popliteal and above) clots matter most."},
+        {"p": "Causes venous obstruction and inflammation", "k": [["obstruct", "inflam", "block"]], "why": "This explains the swelling, warmth and redness."},
+        {"p": "Can embolise to the lungs as a pulmonary embolism", "k": [["pulmonary embol", "PE", "lung"]], "why": "PE is the major life-threatening complication."}
+      ]},
+      {"d": "diagnosis", "q": "List the risk factors for DVT.", "tip": "Exam thinking: the stem usually hides one strong risk factor among weak ones like smoking or alcohol.", "points": [
+        {"p": "Recent long-haul travel", "k": [["travel", "flight", "flying", "flew"]], "why": "Venous stasis from hours of sitting."},
+        {"p": "Recent surgery or prolonged immobility", "k": [["surgery", "operation", "post-op", "immobil", "bed"]], "why": "Even minor surgery in recent weeks counts in the exam."},
+        {"p": "Pregnancy or postpartum", "k": [["pregnan", "postpartum", "post-partum"]], "why": "Use compression duplex ultrasound to investigate."},
+        {"p": "Oestrogen: COCP or HRT", "k": [["cocp", "pill", "hrt", "oestrogen", "estrogen"]], "why": "Stop the COCP after a DVT."},
+        {"p": "Previous VTE, thrombophilia, obesity", "k": [["previous", "thrombophilia", "obes"]], "why": "Cancer is also a major risk factor."}
+      ]},
+      {"d": "diagnosis", "q": "What do you find on examining a leg with a DVT?", "tip": "Exam thinking: one leg, whole calf, pitting, no fever.", "points": [
+        {"p": "Unilateral swollen calf or leg", "k": [["swell", "swollen"], ["unilateral", "one leg", "one-sided", "one side", "calf"]], "why": "Calf ≥3 cm bigger than the other scores a Wells point."},
+        {"p": "Red, warm, tender calf", "k": [["red", "erythema", "warm", "hot"], ["tender"]], "why": "Also seen in cellulitis, so look for fever and demarcation."},
+        {"p": "Pitting oedema", "k": [["pitting", "oedema", "edema"]], "why": "Pitting oedema of the symptomatic leg scores a Wells point."},
+        {"p": "Dilated superficial (collateral) veins", "k": [["superficial vein", "collateral", "dilated vein"]], "why": "Blood diverts around the blocked deep vein."}
+      ]},
+      {"d": "diagnosis", "q": "Which features tell you a DVT has become a PE?", "tip": "Exam thinking: new chest symptoms in a leg patient mean emergency assessment.", "points": [
+        {"p": "Sudden breathlessness", "k": [["breathless", "SOB", "dyspnoea", "short of breath"]], "why": "The most common PE symptom."},
+        {"p": "Pleuritic chest pain", "k": [["pleuritic", "chest pain"]], "why": "Sharp pain worse on inspiration."},
+        {"p": "Tachycardia or hypoxia", "k": [["tachycard", "hypox", "sats", "saturation"]], "why": "Sinus tachycardia is the commonest ECG finding in PE."},
+        {"p": "Collapse", "k": [["collapse", "syncope", "faint"]], "why": "Collapse or hypotension suggests massive PE."}
+      ]},
+      {"d": "diagnosis", "q": "When should a DVT make you look for a hidden cause, and what cause?", "tip": "Exam thinking: no trigger, weight loss or a young patient with recurrence.", "points": [
+        {"p": "Unprovoked DVT", "k": [["unprovoked", "no cause", "no trigger"]], "why": "Unprovoked DVT also changes the duration to 6 months."},
+        {"p": "Recurrent DVT or a young patient", "k": [["recurren", "young"]], "why": "Think thrombophilia."},
+        {"p": "Look for malignancy", "k": [["cancer", "malignan", "tumour"]], "why": "Weight loss or anaemia in the stem points here."},
+        {"p": "Look for thrombophilia", "k": [["thrombophilia", "factor v", "antiphospholipid"]], "why": "Family history of clots is the clue."}
+      ]},
+      {"d": "diagnosis", "q": "How can a leg DVT cause a stroke?", "tip": "Exam thinking: venous clot can only reach the brain through a right-to-left shunt.", "points": [
+        {"p": "Atrial septal defect (or PFO)", "k": [["atrial septal", "ASD", "PFO", "foramen ovale"]], "why": "A bubble-contrast echo shows the shunt."},
+        {"p": "Paradoxical embolism", "k": [["paradoxical"]], "why": "Clot crosses from the right to the left heart, bypassing the lungs."}
+      ]},
+      {"d": "investigation", "q": "Walk through the 2-level Wells pathway for suspected DVT.", "tip": "Exam thinking: the score decides the first test.", "points": [
+        {"p": "Score ≥2 (likely): proximal leg vein ultrasound", "k": [["2", "two", "likely"], ["ultrasound", "USS", "doppler", "scan"]], "why": "The scan should happen within 4 hours."},
+        {"p": "Within 4 hours", "k": [["4 h", "4h", "four hour", "4 hours", "4 hour"]], "why": "The time window is a favourite exam detail."},
+        {"p": "If no scan within 4 h: interim DOAC plus D-dimer", "k": [["interim", "delay", "not available", "while waiting"], ["doac", "apixaban", "rivaroxaban", "anticoag"]], "why": "Do not leave a likely DVT untreated overnight."},
+        {"p": "Score ≤1 (unlikely): D-dimer first", "k": [["d-dimer", "d dimer", "ddimer"]], "why": "D-dimer is sensitive but not specific."},
+        {"p": "Negative D-dimer in low risk rules out DVT", "k": [["negative"], ["rule", "exclud"]], "why": "A positive D-dimer then needs ultrasound."}
+      ]},
+      {"d": "investigation", "q": "What is the gold-standard test, and what if it is negative but the D-dimer is positive?", "tip": "Exam thinking: ultrasound confirms; a negative scan may need repeating.", "points": [
+        {"p": "Compression (proximal leg vein) ultrasound is gold standard", "k": [["compression", "ultrasound", "USS", "duplex", "doppler"]], "why": "A non-compressible vein means clot."},
+        {"p": "Stop anticoagulation", "k": [["stop"]], "why": "No confirmed clot, so no ongoing anticoagulation."},
+        {"p": "Repeat the scan in 1 week", "k": [["repeat", "rescan", "again"], ["week", "7 days", "seven days"]], "why": "Catches a calf clot that propagates proximally."},
+        {"p": "Pregnancy: compression duplex ultrasound", "k": [["pregnan"]], "why": "No radiation needed."}
+      ]},
+      {"d": "management", "q": "What is first-line treatment for DVT, the alternatives, and how long for?", "tip": "Exam thinking: drug first, then the provoked/unprovoked/cancer duration.", "points": [
+        {"p": "DOAC: apixaban or rivaroxaban", "k": [["doac", "apixaban", "rivaroxaban"]], "why": "No INR monitoring needed."},
+        {"p": "If DOAC unsuitable: LMWH or warfarin pathway (pregnancy, severe renal impairment, cancer)", "k": [["lmwh", "low molecular", "enoxaparin", "dalteparin", "warfarin"]], "why": "LMWH is the choice in pregnancy."},
+        {"p": "Warfarin needs LMWH for at least 5 days until INR 2–3", "k": [["5 days", "five days"], ["INR"]], "why": "Warfarin is briefly prothrombotic at the start."},
+        {"p": "Provoked (transient factor): 3 months", "k": [["3 months", "three months"]], "why": "Long-haul travel or minor trauma."},
+        {"p": "Unprovoked: 6 months; active cancer: DOAC 6 months", "k": [["6 months", "six months"]], "why": "Longer if recurrent or ongoing risk."}
+      ]},
+      {"d": "management", "q": "How is VTE prevented in surgical patients?", "tip": "Exam thinking: mechanical straight away, drug 12 hours later.", "points": [
+        {"p": "Intermittent pneumatic compression device immediately", "k": [["pneumatic", "IPC", "compression device", "flowtron"]], "why": "Mechanical prophylaxis has no bleeding risk."},
+        {"p": "Prophylactic-dose LMWH from 12 hours post-op", "k": [["lmwh", "enoxaparin", "dalteparin", "heparin"], ["12", "twelve"]], "why": "Waiting 12 hours limits surgical bleeding."}
+      ]},
+      {"d": "science", "q": "Explain Virchow's triad and why clots form in the calf.", "tip": "Exam thinking: map each stem risk factor to one corner of the triad.", "points": [
+        {"p": "Venous stasis (immobility, travel)", "k": [["stasis"]], "why": "A long flight is pure stasis."},
+        {"p": "Endothelial injury (surgery, trauma)", "k": [["endotheli", "vessel wall", "injury", "damage"]], "why": "Surgery is the classic example."},
+        {"p": "Hypercoagulability (cancer, thrombophilia, oestrogen, pregnancy)", "k": [["hypercoag", "coagulab"]], "why": "The COCP is the classic exam example."},
+        {"p": "Slow flow in valve pockets of calf veins activates the cascade", "k": [["valve"]], "why": "That is why the calf is the commonest site."}
+      ]},
+      {"d": "science", "q": "How do DOACs work, and what long-term problem can follow a DVT?", "tip": "Exam thinking: name the factor, then the valve damage.", "points": [
+        {"p": "Directly inhibit factor Xa", "k": [["xa", "factor 10a", "factor ten"]], "why": "Dabigatran is the exception: a direct thrombin inhibitor."},
+        {"p": "Less thrombin generated, so the clot stops propagating", "k": [["thrombin"]], "why": "They do not dissolve the clot; fibrinolysis does."},
+        {"p": "Post-thrombotic syndrome", "k": [["post-thrombotic", "post thrombotic", "postthrombotic"]], "why": "Aching, swelling, pigmentation and venous ulcers."},
+        {"p": "From venous hypertension and valve incompetence", "k": [["valve", "venous hypertension", "venous pressure"]], "why": "The clot scars the valves it formed on."}
+      ]}
+    ]
+  },
+  "glossary": {
+    "DVT": "Deep vein thrombosis: a blood clot in a deep vein, usually of the leg.",
+    "PE": "Pulmonary embolism: a clot blocking a pulmonary artery, usually travelled from a leg DVT.",
+    "VTE": "Venous thromboembolism: the umbrella term for DVT and PE.",
+    "Virchow's triad": "The three causes of thrombosis: venous stasis, endothelial injury and hypercoagulability.",
+    "Wells score": "A clinical score of DVT probability; 2 or more means DVT likely.",
+    "D-dimer": "A breakdown product of fibrin; sensitive for clot but raised in many other conditions.",
+    "compression ultrasound": "Ultrasound where the probe presses on the vein; a vein that will not compress contains clot.",
+    "duplex ultrasound": "Ultrasound combining an image of the vein with Doppler flow measurement.",
+    "proximal leg vein ultrasound": "Ultrasound of the popliteal and femoral veins, where dangerous clots sit.",
+    "FEU": "Fibrinogen-equivalent units, a unit used to report D-dimer.",
+    "DOAC": "Direct oral anticoagulant, such as apixaban or rivaroxaban; no INR monitoring needed.",
+    "apixaban": "A DOAC that directly inhibits factor Xa; first-line for DVT.",
+    "rivaroxaban": "A DOAC that directly inhibits factor Xa; first-line for DVT.",
+    "LMWH": "Low molecular weight heparin, a subcutaneous anticoagulant such as enoxaparin; used in pregnancy.",
+    "warfarin": "An oral vitamin K antagonist anticoagulant monitored by the INR.",
+    "INR": "International normalised ratio: a measure of warfarin effect; target 2 to 3 for DVT.",
+    "factor Xa": "Activated factor X, the clotting factor that converts prothrombin to thrombin.",
+    "thrombin": "The enzyme that turns fibrinogen into fibrin to form a clot.",
+    "antithrombin": "A natural anticoagulant protein that heparins enhance.",
+    "COCP": "Combined oral contraceptive pill; its oestrogen raises clotting risk.",
+    "HRT": "Hormone replacement therapy; oestrogen-containing HRT raises clotting risk.",
+    "thrombophilia": "An inherited or acquired tendency to form clots, such as factor V Leiden.",
+    "provoked DVT": "A DVT with a clear trigger such as surgery, travel or immobility.",
+    "unprovoked DVT": "A DVT with no clear trigger; prompts a look for cancer or thrombophilia.",
+    "paradoxical embolism": "A venous clot crossing a heart defect to the arterial side, causing a stroke.",
+    "atrial septal defect": "A hole between the two atria that can allow right-to-left passage of clot.",
+    "post-thrombotic syndrome": "Chronic leg aching, swelling, pigmentation and ulcers after DVT from damaged vein valves.",
+    "pitting oedema": "Swelling that keeps a dent after you press it with a finger.",
+    "intermittent pneumatic compression": "Inflatable leg sleeves that squeeze the calves to keep blood moving after surgery.",
+    "popliteal vein": "The deep vein behind the knee; a clot here is a proximal DVT.",
+    "proximal DVT": "A clot in the popliteal vein or above; the highest risk of PE.",
+    "cellulitis": "Bacterial skin infection with fever and spreading, well-demarcated redness.",
+    "Baker's cyst": "A fluid-filled swelling behind the knee; rupture mimics DVT.",
+    "thrombophlebitis": "Inflammation and clot in a superficial vein, felt as a tender red cord.",
+    "pleuritic": "Chest pain that is sharp and worse on breathing in.",
+    "embolise": "When a clot breaks off and travels in the blood to block a vessel elsewhere.",
+    "antiphospholipid syndrome": "An autoimmune thrombophilia causing venous and arterial clots and miscarriages.",
+    "claudication": "Calf pain on walking relieved by rest, from arterial narrowing."
+  },
+  "technique": [
+    {"d": "diagnosis",
+     "stem": "A 41 year old woman has a 3 day history of a painful, swollen right calf. She returned from a flight from Singapore 1 week ago and takes the combined oral contraceptive pill. Her temperature is 37.2°C. Her right calf is 3.5 cm larger than her left, with pitting oedema and tenderness along the deep veins. She is not breathless.",
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Baker's cyst rupture", "Cellulitis", "Deep vein thrombosis", "Gastrocnemius strain", "Superficial thrombophlebitis"],
+     "a": 2,
+     "steps": [
+       {"t": "Read the question line first", "x": "A diagnosis question about a swollen leg: decide clot, infection or musculoskeletal."},
+       {"t": "Pick out the clues", "clues": ["returned from a flight from Singapore 1 week ago", "combined oral contraceptive pill", "temperature is 37.2°C", "3.5 cm larger than her left", "pitting oedema", "tenderness along the deep veins"], "x": "Two **provoking factors** (flight, oestrogen), no fever, whole-calf pitting swelling and deep vein tenderness."},
+       {"t": "Make your own answer before looking", "x": "Unilateral swollen calf after a flight on the pill: **DVT**."},
+       {"t": "Rule out the others", "elim": [[0, "Baker's cyst rupture is sudden calf pain after a knee swelling, often with ankle bruising."], [1, "Cellulitis needs fever and well-demarcated spreading erythema."], [3, "A strain follows exertion and gives localised muscle pain, not pitting oedema."], [4, "Thrombophlebitis is a tender red cord along a superficial vein."]]},
+       {"t": "Commit", "x": "**C. Deep vein thrombosis.** Rule: one swollen calf + flight, surgery or pill = DVT."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 63 year old man has a 2 day history of a swollen, aching left leg. His left ankle was in a plaster cast for 5 weeks until last week. His left calf is 4 cm larger than his right and tender along the deep veins. His pulse rate is 88 bpm, BP 132/80 mmHg and oxygen saturation 98% breathing air. The ultrasound department can scan him within 2 hours.",
+     "q": "Which is the most appropriate initial investigation?",
+     "o": ["CT pulmonary angiogram", "D-dimer", "Magnetic resonance venography", "Proximal leg vein ultrasound", "Serum troponin"],
+     "a": 3,
+     "steps": [
+       {"t": "Read the question line first", "x": "An investigation question for suspected DVT: work out the Wells score first."},
+       {"t": "Pick out the clues", "clues": ["plaster cast for 5 weeks", "4 cm larger than his right", "tender along the deep veins", "within 2 hours"], "x": "Cast immobilisation 1, calf swelling ≥3 cm 1, deep vein tenderness 1: **Wells 3, DVT likely**. A scan is available inside 4 hours."},
+       {"t": "Make your own answer before looking", "x": "Wells ≥2 with a scan inside 4 hours: **proximal leg vein ultrasound**."},
+       {"t": "Rule out the others", "elim": [[0, "CTPA is for suspected PE; he has no chest symptoms and normal saturations."], [1, "D-dimer is first only when Wells is 1 or less, or as an interim test if the scan is delayed."], [2, "MR venography is not a first-line test for leg DVT."], [4, "Troponin has no role in diagnosing DVT."]]},
+       {"t": "Commit", "x": "**D. Proximal leg vein ultrasound.** Rule: Wells ≥2 = scan within 4 hours."}
+     ]},
+    {"d": "management",
+     "stem": "A 29 year old woman has a proximal deep vein thrombosis confirmed on ultrasound. It started 4 days after a 14-hour flight. She is otherwise well, not pregnant and has no history of cancer. Her pulse rate is 78 bpm and BP 118/74 mmHg.",
+     "labs": [["Creatinine", "68 µmol/L", "45–90", ""], ["Platelet count", "240 ×10⁹/L", "150–400", ""]],
+     "q": "Which is the most appropriate management?",
+     "o": ["Apixaban for 3 months", "Apixaban for 6 months", "Aspirin for 3 months", "Lifelong warfarin", "LMWH for 6 weeks"],
+     "a": 0,
+     "steps": [
+       {"t": "Read the question line first", "x": "Management: choose the drug, then the duration."},
+       {"t": "Pick out the clues", "clues": ["4 days after a 14-hour flight", "not pregnant", "no history of cancer", "otherwise well"], "x": "A **provoked** DVT (transient non-surgical factor), no pregnancy, no cancer, normal renal function: a DOAC is suitable."},
+       {"t": "Make your own answer before looking", "x": "**DOAC for 3 months**."},
+       {"t": "Rule out the others", "elim": [[1, "6 months is for unprovoked or cancer-associated DVT."], [2, "Aspirin is not a treatment for DVT."], [3, "Lifelong anticoagulation is for antiphospholipid syndrome or recurrent VTE, not one provoked clot."], [4, "LMWH is for pregnancy or when a DOAC is unsuitable, and 6 weeks is too short."]]},
+       {"t": "Commit", "x": "**A. Apixaban for 3 months.** Rule: provoked = 3 months, unprovoked or cancer = 6 months."}
+     ]},
+    {"d": "science",
+     "stem": "A 47 year old man develops a swollen left calf 5 days after a 20-hour flight. A deep vein thrombosis is confirmed. He has no personal or family history of clots, has had no recent surgery or injury and takes no medication.",
+     "q": "Which is the most likely mechanism of his thrombosis?",
+     "o": ["Antithrombin deficiency", "Endothelial injury", "Hypercoagulability from malignancy", "Platelet activation on a ruptured plaque", "Venous stasis"],
+     "a": 4,
+     "steps": [
+       {"t": "Read the question line first", "x": "A mechanism question: map the risk factor in the stem to Virchow's triad."},
+       {"t": "Pick out the clues", "clues": ["20-hour flight", "no personal or family history of clots", "no recent surgery or injury", "takes no medication"], "x": "The only risk factor is prolonged sitting. No thrombophilia, no injury, no oestrogen."},
+       {"t": "Make your own answer before looking", "x": "Long-haul travel = **venous stasis**."},
+       {"t": "Rule out the others", "elim": [[0, "An inherited thrombophilia is unlikely with no personal or family history."], [1, "Endothelial injury needs surgery or trauma; he has had neither."], [2, "Nothing in the stem suggests cancer."], [3, "Plaque rupture causes arterial thrombosis (MI, stroke), not DVT."]]},
+       {"t": "Commit", "x": "**E. Venous stasis.** Rule: travel and immobility = stasis; surgery = injury; pill, pregnancy, cancer = hypercoagulability."}
+     ]}
+  ],
+  "practice": [
+    {"d": "diagnosis",
+     "stem": "A 66 year old man has a 4 day history of a swollen, aching right leg. He had a right total hip replacement 3 weeks ago. His temperature is 37.4°C, pulse rate 92 bpm, BP 136/82 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 97% breathing air. The whole right leg is swollen with pitting oedema to the thigh and dilated superficial veins. The skin is intact.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Cellulitis", "Deep vein thrombosis", "Lymphoedema", "Prosthetic joint infection", "Ruptured Baker's cyst"],
+     "a": 1,
+     "e": "Recent hip surgery plus a whole swollen leg with pitting oedema and dilated superficial veins is a DVT. Cellulitis needs fever and spreading demarcated erythema.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a swollen leg after surgery."},
+       {"t": "Pick out the clues", "clues": ["total hip replacement 3 weeks ago", "temperature is 37.4°C", "whole right leg is swollen", "pitting oedema to the thigh", "dilated superficial veins"], "x": "Major orthopaedic surgery is a strong **provoking factor**; no fever; collateral superficial veins mean deep venous obstruction."},
+       {"t": "Make your own answer before looking", "x": "Post-op unilateral leg swelling: **DVT**."},
+       {"t": "Rule out the others", "elim": [[0, "No fever, no skin break and no demarcated erythema."], [2, "Lymphoedema is chronic, non-pitting and slowly progressive."], [3, "Joint infection gives a hot painful hip, fever and wound signs, not whole-leg oedema."], [4, "A ruptured Baker's cyst gives sudden calf pain, not thigh swelling after surgery."]]},
+       {"t": "Commit", "x": "**B. Deep vein thrombosis.** Rule: surgery in the last few weeks + one swollen leg = DVT."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 27 year old woman has a deep vein thrombosis of the left leg confirmed on ultrasound. She has not travelled or had surgery. She started the combined oral contraceptive pill 2 months ago. She smokes 5 cigarettes a day and drinks 10 units of alcohol a week. Her BMI is 23 kg/m².",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely risk factor for her DVT?",
+     "o": ["Alcohol intake", "Body mass index", "Combined oral contraceptive pill", "Female sex", "Smoking"],
+     "a": 2,
+     "e": "Oestrogen in the COCP causes hypercoagulability and is a recognised DVT risk factor. Light smoking, modest alcohol and a normal BMI are weak or no risk.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Pick the strongest risk factor among several."},
+       {"t": "Pick out the clues", "clues": ["started the combined oral contraceptive pill 2 months ago", "not travelled or had surgery", "BMI is 23 kg/m²"], "x": "Recent **oestrogen** exposure; the usual provokers are absent; BMI is normal."},
+       {"t": "Make your own answer before looking", "x": "**COCP**: oestrogen-induced hypercoagulability."},
+       {"t": "Rule out the others", "elim": [[0, "10 units a week is not a DVT risk factor."], [1, "A BMI of 23 is normal; obesity would be the risk."], [3, "Female sex alone is not the risk; oestrogen is."], [4, "Smoking is a weak VTE risk compared with oestrogen."]]},
+       {"t": "Commit", "x": "**C. COCP.** Rule: in a young woman, the pill is the risk factor the exam wants."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 52 year old woman was diagnosed with a left popliteal deep vein thrombosis 2 days ago. She now has sudden breathlessness and sharp right-sided chest pain worse on inspiration. Her pulse rate is 118 bpm, BP 112/70 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 91% breathing air.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Acute coronary syndrome", "Musculoskeletal chest pain", "Pericarditis", "Pneumothorax", "Pulmonary embolism"],
+     "a": 4,
+     "e": "A proximal DVT followed by sudden breathlessness, pleuritic pain, tachycardia and hypoxia is a PE, the major complication of DVT. Pneumothorax would not follow a DVT and pericarditis is eased by leaning forward.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of acute chest symptoms in a patient with a known DVT."},
+       {"t": "Pick out the clues", "clues": ["popliteal deep vein thrombosis 2 days ago", "sudden breathlessness", "worse on inspiration", "pulse rate is 118 bpm", "oxygen saturation 91%"], "x": "Proximal DVT + sudden pleuritic pain + **tachycardia and hypoxia**."},
+       {"t": "Make your own answer before looking", "x": "The clot has embolised: **pulmonary embolism**."},
+       {"t": "Rule out the others", "elim": [[0, "ACS gives central crushing pain, not pleuritic pain after a DVT."], [1, "Musculoskeletal pain does not cause hypoxia or tachycardia."], [2, "Pericarditis is positional and eased by sitting forward."], [3, "A pneumothorax has no link to a leg clot and would need a trigger."]]},
+       {"t": "Commit", "x": "**E. Pulmonary embolism.** Rule: DVT + new breathlessness = PE until proven otherwise."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 24 year old man has sudden weakness of his right arm and face. He was diagnosed with a left calf deep vein thrombosis 3 days ago after a long coach journey. His pulse rate is 76 bpm and regular and BP 124/76 mmHg. A bubble-contrast echocardiogram shows right-to-left shunting across the interatrial septum.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely cause of his stroke?",
+     "o": ["Atrial fibrillation", "Carotid artery dissection", "Paradoxical embolism", "Small vessel disease", "Vasculitis"],
+     "a": 2,
+     "e": "A venous clot crossing an atrial septal defect into the arterial circulation is a paradoxical embolism. His pulse is regular, so atrial fibrillation is unlikely.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Cause of a stroke in a young man with a recent DVT."},
+       {"t": "Pick out the clues", "clues": ["24 year old man", "calf deep vein thrombosis 3 days ago", "pulse rate is 76 bpm and regular", "right-to-left shunting across the interatrial septum"], "x": "Young, a venous clot, and a **shunt** across the atrial septum."},
+       {"t": "Make your own answer before looking", "x": "DVT clot crossing an ASD: **paradoxical embolism**."},
+       {"t": "Rule out the others", "elim": [[0, "The pulse is regular."], [1, "Dissection follows neck trauma with neck pain or Horner's syndrome."], [3, "Small vessel disease affects older hypertensive patients."], [4, "Vasculitis has systemic features, none given."]]},
+       {"t": "Commit", "x": "**C. Paradoxical embolism.** Rule: DVT + stroke + ASD = paradoxical embolism."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 59 year old man had a left femoral deep vein thrombosis 2 years ago. He now has aching and heaviness in the left leg that is worse at the end of the day. There is swelling, brown pigmentation and eczema around the medial ankle. Foot pulses are easily palpable. The calf is not tender.",
+     "labs": [], "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Arterial insufficiency", "Cellulitis", "Lymphoedema", "Post-thrombotic syndrome", "Recurrent deep vein thrombosis"],
+     "a": 3,
+     "e": "Chronic aching, swelling and pigmentation years after a DVT is post-thrombotic syndrome from venous hypertension and damaged valves. Palpable pulses exclude arterial disease.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis of a chronic leg problem after a DVT."},
+       {"t": "Pick out the clues", "clues": ["deep vein thrombosis 2 years ago", "worse at the end of the day", "brown pigmentation and eczema around the medial ankle", "Foot pulses are easily palpable", "not tender"], "x": "Chronic **venous hypertension** signs years after a DVT; arterial supply intact; no acute clot features."},
+       {"t": "Make your own answer before looking", "x": "Damaged valves after a DVT: **post-thrombotic syndrome**."},
+       {"t": "Rule out the others", "elim": [[0, "Pulses are palpable; arterial disease gives claudication and cold pale feet."], [1, "Cellulitis is acute with fever and spreading erythema."], [2, "Lymphoedema does not cause haemosiderin pigmentation and venous eczema."], [4, "A new DVT is acute with a tender swollen calf, not a 2-year story."]]},
+       {"t": "Commit", "x": "**D. Post-thrombotic syndrome.** Rule: old DVT + venous skin changes = post-thrombotic syndrome."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 67 year old man has a right calf deep vein thrombosis confirmed on ultrasound. He has not travelled, had surgery or been immobile. He has lost 6 kg over 3 months and has had looser stools for 2 months.",
+     "labs": [["Haemoglobin", "104 g/L", "130–175", "L"], ["MCV", "74 fL", "80–100", "L"], ["Ferritin", "9 µg/L", "30–400", "L"], ["Platelet count", "410 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which is the most likely underlying cause of his DVT?",
+     "o": ["Antiphospholipid syndrome", "Colorectal carcinoma", "Factor V Leiden", "Nephrotic syndrome", "Polycythaemia vera"],
+     "a": 1,
+     "e": "An unprovoked DVT with weight loss, change in bowel habit and iron deficiency anaemia points to occult colorectal cancer. Polycythaemia vera would give a high, not low, haemoglobin.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Cause of an unprovoked DVT."},
+       {"t": "Pick out the clues", "clues": ["not travelled, had surgery or been immobile", "lost 6 kg over 3 months", "looser stools for 2 months"], "x": "**Unprovoked** DVT + weight loss + bowel change + iron deficiency anaemia."},
+       {"t": "Make your own answer before looking", "x": "Malignancy-related hypercoagulability: **colorectal cancer**."},
+       {"t": "Rule out the others", "elim": [[0, "Antiphospholipid syndrome fits younger patients with miscarriages or arterial clots."], [2, "Factor V Leiden presents young with a family history, not weight loss."], [3, "Nephrotic syndrome needs oedema and proteinuria."], [4, "Polycythaemia vera raises the haemoglobin; his is low."]]},
+       {"t": "Commit", "x": "**B. Colorectal carcinoma.** Rule: unprovoked DVT + red flags = look for cancer."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 45 year old woman has a 1 day history of mild aching in her left calf. Her calves measure the same, there is no oedema and no visible veins, but she is tender along the deep veins. She has no cancer, recent surgery or immobilisation. Her pulse rate is 76 bpm and BP 122/76 mmHg. Her 2-level Wells score is 1.",
+     "labs": [], "visual": null,
+     "q": "Which is the most appropriate initial investigation?",
+     "o": ["CT venogram", "D-dimer", "Magnetic resonance venography", "Proximal leg vein ultrasound", "Thrombophilia screen"],
+     "a": 1,
+     "e": "With a Wells score of 1 or less (DVT unlikely), D-dimer comes first; a negative result rules out DVT. Ultrasound first is for a score of 2 or more.",
+     "steps": [
+       {"t": "Read the question line first", "x": "First investigation for suspected DVT: use the Wells score given."},
+       {"t": "Pick out the clues", "clues": ["Her calves measure the same", "no oedema", "Wells score is 1"], "x": "**Wells 1 = DVT unlikely.**"},
+       {"t": "Make your own answer before looking", "x": "Low probability: **D-dimer** first."},
+       {"t": "Rule out the others", "elim": [[0, "CT venography is not a first-line leg DVT test."], [2, "MR venography is not first-line."], [3, "Ultrasound first is for Wells ≥2, or after a positive D-dimer."], [4, "Thrombophilia testing is not a diagnostic test for an acute clot."]]},
+       {"t": "Commit", "x": "**B. D-dimer.** Rule: Wells ≤1 = D-dimer; negative = DVT excluded."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 50 year old man with suspected left leg deep vein thrombosis had a 2-level Wells score of 2. Ultrasound was not available overnight, so he was given rivaroxaban. Today, a proximal leg vein ultrasound is normal. His pulse rate is 72 bpm and BP 130/80 mmHg.",
+     "labs": [["D-dimer", "1.6 mg/L FEU", "<0.5", "H"]],
+     "visual": null,
+     "q": "Which is the most appropriate next step?",
+     "o": ["Continue rivaroxaban for 3 months", "CT pulmonary angiogram", "Discharge with no follow-up", "Repeat D-dimer in 24 hours", "Stop rivaroxaban and repeat ultrasound in 1 week"],
+     "a": 4,
+     "e": "A negative ultrasound with a positive D-dimer means stop anticoagulation and rescan in 1 week. Discharging him would miss a calf clot that propagates.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Next step after a negative scan."},
+       {"t": "Pick out the clues", "clues": ["Wells score of 2", "proximal leg vein ultrasound is normal"], "x": "DVT likely, **scan negative**, **D-dimer positive**."},
+       {"t": "Make your own answer before looking", "x": "**Stop anticoagulation and rescan in 1 week.**"},
+       {"t": "Rule out the others", "elim": [[0, "There is no confirmed clot to treat."], [1, "He has no chest symptoms to suggest PE."], [2, "Positive D-dimer means a clot is not yet excluded."], [3, "Repeating the D-dimer adds nothing; it will still be raised."]]},
+       {"t": "Commit", "x": "**E. Stop and rescan in 1 week.** Rule: scan negative + D-dimer positive = repeat scan at 1 week."}
+     ]},
+    {"d": "management",
+     "stem": "A 38 year old man has a proximal deep vein thrombosis confirmed on ultrasound after a 12-hour coach journey. He is otherwise well with no bleeding history. His pulse rate is 80 bpm and BP 128/78 mmHg.",
+     "labs": [["eGFR", ">90 mL/min/1.73m²", ">90", ""], ["Platelet count", "250 ×10⁹/L", "150–400", ""], ["ALT", "22 U/L", "<40", ""]],
+     "visual": null,
+     "q": "Which is the most appropriate initial management?",
+     "o": ["Apixaban", "Aspirin", "Graduated compression stockings", "Unfractionated heparin infusion", "Warfarin alone"],
+     "a": 0,
+     "e": "A DOAC such as apixaban is first-line for a stable DVT with normal renal and liver function. Warfarin alone is wrong because it needs LMWH cover for at least 5 days.",
+     "steps": [
+       {"t": "Read the question line first", "x": "First-line treatment of a confirmed DVT."},
+       {"t": "Pick out the clues", "clues": ["proximal deep vein thrombosis confirmed", "no bleeding history", "otherwise well"], "x": "Confirmed clot, low bleeding risk, normal kidneys: a **DOAC** is suitable."},
+       {"t": "Make your own answer before looking", "x": "**Apixaban** (or rivaroxaban)."},
+       {"t": "Rule out the others", "elim": [[1, "Aspirin is an antiplatelet; it does not treat VTE."], [2, "Stockings do not treat a DVT."], [3, "UFH infusion is for severe renal failure or massive PE."], [4, "Warfarin must start with LMWH for at least 5 days until INR 2–3."]]},
+       {"t": "Commit", "x": "**A. Apixaban.** Rule: DOAC first-line for DVT."}
+     ]},
+    {"d": "management",
+     "stem": "A 54 year old woman has a left femoral deep vein thrombosis with no identifiable trigger. History, examination and initial tests show no sign of cancer. She has started apixaban and asks how long she will need it.",
+     "labs": [], "visual": null,
+     "q": "Which is the most appropriate duration of anticoagulation?",
+     "o": ["3 months", "6 months", "6 weeks", "Lifelong", "Until the swelling settles"],
+     "a": 1,
+     "e": "An unprovoked DVT is treated for 6 months, longer if recurrent or with ongoing risk. Three months is for a DVT provoked by a transient factor.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Duration question: decide provoked, unprovoked or cancer."},
+       {"t": "Pick out the clues", "clues": ["no identifiable trigger", "no sign of cancer"], "x": "**Unprovoked**, no cancer."},
+       {"t": "Make your own answer before looking", "x": "Unprovoked DVT: **6 months**."},
+       {"t": "Rule out the others", "elim": [[0, "3 months is for a provoked DVT."], [2, "6 weeks is too short for any DVT."], [3, "Lifelong is for antiphospholipid syndrome or recurrent VTE."], [4, "Symptoms are not how duration is decided."]]},
+       {"t": "Commit", "x": "**B. 6 months.** Rule: provoked 3, unprovoked 6, cancer 6."}
+     ]},
+    {"d": "management",
+     "stem": "A 61 year old man has just returned to the ward after an elective open right hemicolectomy. There were no bleeding problems in theatre. His pulse rate is 84 bpm and BP 130/76 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which is the most appropriate immediate VTE prophylaxis?",
+     "o": ["Apixaban started now", "Aspirin 75 mg daily", "Intermittent pneumatic compression device", "No prophylaxis until mobile", "Treatment-dose LMWH"],
+     "a": 2,
+     "e": "Surgical patients get an intermittent pneumatic compression device straight away, with prophylactic-dose LMWH from 12 hours post-op. Treatment-dose LMWH is for an established clot.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Immediate DVT prevention after surgery."},
+       {"t": "Pick out the clues", "clues": ["just returned to the ward", "open right hemicolectomy", "no bleeding problems"], "x": "Straight out of major abdominal surgery: **mechanical** first, drug at 12 hours."},
+       {"t": "Make your own answer before looking", "x": "**Intermittent pneumatic compression** now; LMWH at 12 hours."},
+       {"t": "Rule out the others", "elim": [[0, "A treatment DOAC is not post-op prophylaxis straight after surgery."], [1, "Aspirin is not the standard post-op prophylaxis here."], [3, "Waiting until mobile leaves him unprotected at peak risk."], [4, "Treatment-dose LMWH is for an established clot and risks bleeding."]]},
+       {"t": "Commit", "x": "**C. IPC device.** Rule: mechanical now, prophylactic LMWH from 12 hours post-op."}
+     ]},
+    {"d": "science",
+     "stem": "A 44 year old woman is started on rivaroxaban for a deep vein thrombosis after knee surgery. She asks how the tablet stops the clot getting bigger.",
+     "labs": [], "visual": null,
+     "q": "Which is the mechanism of action of rivaroxaban?",
+     "o": ["Activation of antithrombin", "Direct factor Xa inhibition", "Direct thrombin inhibition", "Inhibition of platelet P2Y12 receptors", "Inhibition of vitamin K epoxide reductase"],
+     "a": 1,
+     "e": "Rivaroxaban and apixaban directly inhibit factor Xa, reducing thrombin generation and clot propagation. Dabigatran is the direct thrombin inhibitor.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Drug mechanism for a DOAC."},
+       {"t": "Pick out the clues", "clues": ["rivaroxaban", "stops the clot getting bigger"], "x": "The **-xaban** ending means anti-**Xa**."},
+       {"t": "Make your own answer before looking", "x": "**Direct factor Xa inhibition**."},
+       {"t": "Rule out the others", "elim": [[0, "Heparins work by activating antithrombin."], [2, "Dabigatran is the direct thrombin inhibitor."], [3, "Clopidogrel blocks P2Y12; it is an antiplatelet."], [4, "That is warfarin."]]},
+       {"t": "Commit", "x": "**B. Direct factor Xa inhibition.** Rule: -xaban = anti-Xa; -gatran = anti-thrombin."}
+     ]}
+  ]
+}

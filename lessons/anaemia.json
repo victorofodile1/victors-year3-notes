@@ -1,0 +1,2596 @@
+{
+ "id": "anaemia",
+ "patient": {
+  "name": "Rajesh Patel",
+  "age": 67,
+  "sex": "M",
+  "setting": "GP surgery, then colorectal clinic",
+  "complaint": "Tiredness and breathlessness on the stairs for 3 months",
+  "background": [
+   "Hypertension on amlodipine",
+   "Takes ibuprofen most days for knee osteoarthritis",
+   "Vegetarian, eats a varied diet",
+   "Retired bus driver in Wembley"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely finding on blood tests': classify by MCV first, then use the clue (koilonychia, neuropathy, jaundice and splenomegaly, a drug or infection trigger, a mechanical valve) to name the type.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Rajesh, 67, is **exhausted** and puffed out on the stairs.",
+      "Occasional palpitations and light-headedness on standing.",
+      "No weight loss, no change in bowel habit.",
+      "Wife says he looks **pale**."
+     ],
+     "vitals": {
+      "T": "36.7°C",
+      "HR": "102 bpm",
+      "BP": "128/74 mmHg",
+      "RR": "16 /min",
+      "SpO2": "98% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's tiredness came on slowly, so he has compensated. **MCV** will sort his anaemia into a group and point to the cause."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Fatigue, breathlessness, palpitations, dizziness and a **tachycardia** of 102: Rajesh has the general symptoms of any anaemia."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Pale conjunctivae; smooth, sore tongue (**glossitis**).",
+      "Nails thin and **spoon-shaped** (koilonychia).",
+      "No jaundice, no splenomegaly, no lymph nodes.",
+      "Abdomen soft, no palpable mass; neurology normal."
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Rajesh's full blood count",
+     "rows": [
+      [
+       "Haemoglobin",
+       "84 g/L",
+       "130–175",
+       "L"
+      ],
+      [
+       "MCV",
+       "68 fL",
+       "80–100",
+       "L"
+      ],
+      [
+       "MCH",
+       "21 pg",
+       "27–33",
+       "L"
+      ],
+      [
+       "White cell count",
+       "6.8 x10⁹/L",
+       "4.0–11.0",
+       ""
+      ],
+      [
+       "Platelets",
+       "452 x10⁹/L",
+       "150–400",
+       "H"
+      ],
+      [
+       "Reticulocytes",
+       "0.6%",
+       "0.5–2.5",
+       ""
+      ]
+     ],
+     "text": "Microcytic, hypochromic anaemia with a reactive thrombocytosis. White cells and platelets are not low, so the marrow is working."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "MCV sorts the anaemia",
+      "min": 55,
+      "max": 125,
+      "unit": "fL",
+      "bands": [
+       [
+        55,
+        80,
+        "microcytic",
+        "bad"
+       ],
+       [
+        80,
+        100,
+        "normocytic",
+        "ok"
+       ],
+       [
+        100,
+        125,
+        "macrocytic",
+        "warn"
+       ]
+      ],
+      "value": 68,
+      "label": "Rajesh 68",
+      "caption": "Below 80: microcytic. Think iron deficiency first."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "What is the most likely cause of Rajesh's anaemia?",
+     "o": [
+      "Anaemia of chronic disease",
+      "B12 deficiency",
+      "Haemolysis",
+      "Iron deficiency"
+     ],
+     "a": 3,
+     "r": "Microcytic with **koilonychia** and glossitis: **iron deficiency**. B12 is macrocytic; haemolysis causes jaundice and a high reticulocyte count."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh's MCV of 68 and koilonychia fit **iron deficiency**. In a 67 year old man on daily ibuprofen, the likely source is **GI blood loss**."
+    },
+    {
+     "type": "compare",
+     "title": "Classify by MCV",
+     "head": [
+      "Group",
+      "MCV",
+      "Main causes",
+      "Clue"
+     ],
+     "rows": [
+      [
+       "Microcytic",
+       "Below 80",
+       "Iron deficiency, sideroblastic",
+       "Koilonychia, blood loss"
+      ],
+      [
+       "Normocytic",
+       "80–100",
+       "Chronic disease, acute bleed, CKD, haemolysis",
+       "Ferritin normal or high in chronic disease"
+      ],
+      [
+       "Macrocytic",
+       "Above 100",
+       "B12 or folate deficiency, hypothyroidism",
+       "B12: neurological signs"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh has no jaundice or splenomegaly and a low reticulocyte count, so he is **not haemolysing**. These are the other types the exam loves."
+    },
+    {
+     "type": "compare",
+     "title": "Haemolytic and other anaemias: the clincher",
+     "head": [
+      "Type",
+      "Clincher in the stem",
+      "Key test or film"
+     ],
+     "rows": [
+      [
+       "Warm AIHA",
+       "CLL, drug (methyldopa), SLE",
+       "DAT positive, IgG, spherocytes"
+      ],
+      [
+       "Cold AIHA",
+       "Mycoplasma, lymphoma, Raynaud's in the cold",
+       "DAT positive, IgM"
+      ],
+      [
+       "G6PD deficiency",
+       "Man, fava beans or nitrofurantoin",
+       "Heinz bodies, bite cells"
+      ],
+      [
+       "Hereditary spherocytosis",
+       "Northern European, family history",
+       "Spherocytes, DAT negative"
+      ],
+      [
+       "MAHA / TTP",
+       "Mechanical valve, confusion, low platelets",
+       "Schistocytes"
+      ],
+      [
+       "Aplastic",
+       "Parvovirus B19, SLE",
+       "Pancytopenia"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Iron deficiency in a **man or a post-menopausal woman** is GI blood loss until proven otherwise. Never just give iron without looking for the source."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (serum ferritin for iron deficiency, bone marrow biopsy for aplastic anaemia) and the next step for iron deficiency over 60 (FIT, then suspected cancer pathway).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which test best confirms Rajesh's iron deficiency?",
+     "o": [
+      "Blood film",
+      "Bone marrow aspirate",
+      "Serum ferritin",
+      "Serum iron"
+     ],
+     "a": 2,
+     "r": "**Serum ferritin** below 30 µg/L diagnoses iron deficiency. Serum iron fluctuates and is low in chronic disease too."
+    },
+    {
+     "type": "labs",
+     "title": "Rajesh's haematinics",
+     "rows": [
+      [
+       "Ferritin",
+       "6 µg/L",
+       "30–400",
+       "L"
+      ],
+      [
+       "Transferrin saturation",
+       "6%",
+       "20–50",
+       "L"
+      ],
+      [
+       "TIBC",
+       "82 µmol/L",
+       "45–72",
+       "H"
+      ],
+      [
+       "Vitamin B12",
+       "410 ng/L",
+       "190–900",
+       ""
+      ],
+      [
+       "Folate",
+       "9.2 µg/L",
+       "3–15",
+       ""
+      ],
+      [
+       "Anti-tTG (coeliac)",
+       "Negative",
+       "Negative",
+       ""
+      ]
+     ],
+     "text": "Low ferritin, low saturation, high TIBC: classic iron deficiency. Normal B12 and folate; coeliac negative."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's ferritin of **6 µg/L** is well below the 30 cut-off: iron deficiency is confirmed."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Serum ferritin",
+      "min": 0,
+      "max": 400,
+      "unit": "µg/L",
+      "bands": [
+       [
+        0,
+        30,
+        "iron deficient",
+        "bad"
+       ],
+       [
+        30,
+        300,
+        "normal",
+        "ok"
+       ],
+       [
+        300,
+        400,
+        "high (inflammation, chronic disease)",
+        "warn"
+       ]
+      ],
+      "value": 6,
+      "label": "Rajesh 6",
+      "caption": "Ferritin is also an acute-phase protein, so it can look normal or high in chronic disease."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh is **over 60** with iron deficiency, so he needs a **FIT** test, and referral on the suspected cancer pathway if it is positive."
+    },
+    {
+     "type": "story",
+     "points": [
+      "FIT: **positive**.",
+      "Two-week-wait colonoscopy: ulcerated mass in the **caecum**.",
+      "Biopsy: adenocarcinoma; CT shows no spread."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "abdomen",
+      "title": "Where the silent bleed was",
+      "regions": [
+       "RIF"
+      ],
+      "caption": "Right-sided (caecal) cancers ooze blood slowly, so they present as iron deficiency rather than a change in bowel habit."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh's white cells and platelets are normal. If he had **pancytopenia**, a **bone marrow aspirate and biopsy** would look for aplastic anaemia."
+    },
+    {
+     "type": "pearl",
+     "text": "Iron deficiency work-up: ferritin, then find the source. Over 60: **FIT**. Also check **coeliac serology**, and upper GI endoscopy where indicated."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (oral ferrous fumarate and treat the cause), what to do if oral iron is not tolerated or surgery is close (IV iron), transfusion when unstable, and specific treatments for warm AIHA and TTP.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "What should Rajesh start now, while his referral goes through?",
+     "o": [
+      "Blood transfusion",
+      "IM vitamin B12",
+      "Oral ferrous fumarate daily",
+      "Oral folic acid"
+     ],
+     "a": 2,
+     "r": "Stable iron deficiency: **daily oral ferrous fumarate**, plus treating the cause. He is not unstable, so no transfusion."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's cancer is the cause to treat; **oral ferrous fumarate** replaces the iron meanwhile. His daily ibuprofen should also stop."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Two weeks later: nausea, black stools and **constipation** on the tablets.",
+      "Surgery for his caecal cancer is booked in **4 weeks**."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "With **under 6 weeks** until his right hemicolectomy, oral iron is too slow. Rajesh gets **IV ferric carboxymaltose 1 g**, repeated a week later."
+    },
+    {
+     "type": "flow",
+     "title": "Iron deficiency treatment",
+     "nodes": [
+      "Find and treat the cause",
+      "Daily oral ferrous fumarate",
+      "Side effects: alternate-day dosing, bulk-forming laxative",
+      "Not tolerated, not absorbing or surgery under 6 weeks: IV iron",
+      "Unstable or very low Hb: transfuse"
+     ],
+     "caption": "Black stools on oral iron are expected; check the patient is otherwise well."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Ten days before surgery: dizzy, **fainted** at home.",
+      "Fresh blood mixed with stool today."
+     ],
+     "vitals": {
+      "HR": "124 bpm",
+      "BP": "86/52 mmHg",
+      "RR": "22 /min",
+      "CBG": "6.1 mmol/L"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Haemoglobin and the transfusion threshold",
+      "min": 40,
+      "max": 160,
+      "unit": "g/L",
+      "bands": [
+       [
+        40,
+        70,
+        "below 70: transfuse",
+        "bad"
+       ],
+       [
+        70,
+        130,
+        "anaemic",
+        "warn"
+       ],
+       [
+        130,
+        160,
+        "normal (men)",
+        "ok"
+       ]
+      ],
+      "value": 61,
+      "label": "Rajesh 61",
+      "caption": "Haemodynamically unstable with Hb 61: transfuse now."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Rajesh is hypotensive with Hb 61 g/L. What does he need?",
+     "o": [
+      "Another dose of IV iron",
+      "Oral iron twice daily",
+      "Red cell transfusion",
+      "Subcutaneous erythropoietin"
+     ],
+     "a": 2,
+     "r": "Severe anaemia with **haemodynamic instability** needs **blood transfusion**. Iron takes weeks to raise the Hb."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh is transfused, then reassessed. In stable normocytic anaemia, give **1 unit** at a time and recheck, aiming for **Hb above 70**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Rajesh's haemoglobin",
+      "x": [
+       "Diagnosis",
+       "IV iron",
+       "Bleed",
+       "After 2 units",
+       "Post-op 6 weeks"
+      ],
+      "unit": "g/L",
+      "series": [
+       {
+        "name": "Hb",
+        "values": [
+         84,
+         88,
+         61,
+         82,
+         118
+        ]
+       }
+      ],
+      "caption": "Transfusion rescues the crisis; iron and removing the cancer restore the Hb."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh's anaemia was blood loss. If he had **warm AIHA** he would get prednisolone; **TTP** needs urgent **plasma exchange**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect 'Which is the most likely mechanism...?' for microcytosis (iron needed for haem), jaundice in haemolysis (unconjugated bilirubin), G6PD (NADPH and glutathione), schistocytes (mechanical shearing) and pancytopenia (stem cell failure).",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "Why Rajesh's cells are small and pale",
+     "nodes": [
+      "Slow GI blood loss",
+      "Iron stores (ferritin) run out",
+      "Too little iron for haem",
+      "Too little haemoglobin per precursor",
+      "Extra divisions: small (microcytic), pale (hypochromic) cells"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's MCV of 68 and MCH of 21 are exactly this: **haem synthesis** has run out of iron."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh has a normal bilirubin and low reticulocytes. In haemolysis, broken-down haem raises **unconjugated bilirubin** and the marrow pours out reticulocytes."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "G6PD makes **NADPH** to keep glutathione working. Without it, an oxidative trigger denatures haemoglobin into **Heinz bodies**."
+    },
+    {
+     "type": "ask",
+     "q": "Which antibody and site of haemolysis is typical of warm AIHA?",
+     "o": [
+      "IgA, in the kidney",
+      "IgE, in the lungs",
+      "IgG, mainly extravascular in the spleen",
+      "IgM, mainly intravascular with complement"
+     ],
+     "a": 2,
+     "r": "**Warm: IgG**, splenic macrophages nibble the cells into **spherocytes**. **Cold: IgM** fixes complement in the cold, giving more intravascular haemolysis."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh does not have AIHA, but the exam tests the **IgG warm vs IgM cold** split and where the cells are destroyed."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "A **mechanical valve**, TTP, HUS or DIC slices red cells as they pass, leaving **schistocytes** on the film. Rajesh's film shows none."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Rajesh's white cells and platelets are normal, so his stem cells are fine. Aplastic anaemia hits **all three lines**: pancytopenia."
+    },
+    {
+     "type": "pearl",
+     "text": "Reactive **thrombocytosis** is common in iron deficiency and active bleeding, as Rajesh's platelets of 452 show. It does not need treating."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What MCV defines a microcytic anaemia?",
+   "o": [
+    "Below 80 fL",
+    "80–100 fL",
+    "Above 100 fL",
+    "Above 120 fL"
+   ],
+   "a": 0,
+   "r": "Microcytic below 80, normocytic 80–100, macrocytic above 100."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which nail sign suggests iron deficiency?",
+   "o": [
+    "Clubbing",
+    "Koilonychia",
+    "Onycholysis",
+    "Splinter haemorrhages"
+   ],
+   "a": 1,
+   "r": "Koilonychia (spoon-shaped nails) is a sign of iron deficiency."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which infection is associated with cold autoimmune haemolytic anaemia?",
+   "o": [
+    "Mycoplasma pneumoniae",
+    "Parvovirus B19",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 0,
+   "r": "Cold AIHA (IgM) is linked to Mycoplasma pneumoniae and lymphoma."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the mode of inheritance of G6PD deficiency?",
+   "o": [
+    "Autosomal dominant",
+    "Autosomal recessive",
+    "Mitochondrial",
+    "X-linked recessive"
+   ],
+   "a": 3,
+   "r": "G6PD deficiency is X-linked recessive, so mostly affects males."
+  },
+  {
+   "d": "investigation",
+   "q": "What serum ferritin level diagnoses iron deficiency?",
+   "o": [
+    "Below 30 µg/L",
+    "Below 100 µg/L",
+    "Above 300 µg/L",
+    "Between 30 and 100 µg/L"
+   ],
+   "a": 0,
+   "r": "Ferritin below 30 µg/L confirms iron deficiency."
+  },
+  {
+   "d": "investigation",
+   "q": "Which blood film finding confirms a microangiopathic mechanism of haemolysis?",
+   "o": [
+    "Heinz bodies",
+    "Pappenheimer bodies",
+    "Schistocytes",
+    "Target cells"
+   ],
+   "a": 2,
+   "r": "Schistocytes (fragmented red cells) confirm mechanical shearing."
+  },
+  {
+   "d": "investigation",
+   "q": "A 66 year old has iron deficiency anaemia. What is the next investigation?",
+   "o": [
+    "Bone marrow biopsy",
+    "CT abdomen",
+    "FIT test",
+    "Haemoglobin electrophoresis"
+   ],
+   "a": 2,
+   "r": "Over 60 with iron deficiency: FIT, then suspected cancer pathway if positive."
+  },
+  {
+   "d": "management",
+   "q": "What is the first-line treatment for iron deficiency anaemia?",
+   "o": [
+    "Blood transfusion",
+    "IV ferric carboxymaltose",
+    "Oral ferrous fumarate daily",
+    "Oral folic acid"
+   ],
+   "a": 2,
+   "r": "Daily oral ferrous fumarate, plus treat the cause."
+  },
+  {
+   "d": "management",
+   "q": "What is the treatment for TTP?",
+   "o": [
+    "Oral iron",
+    "Plasma exchange",
+    "Platelet transfusion",
+    "Splenectomy first"
+   ],
+   "a": 1,
+   "r": "TTP and other MAHA: plasma exchange."
+  },
+  {
+   "d": "science",
+   "q": "Why does aplastic anaemia cause pancytopenia?",
+   "o": [
+    "Autoimmune red cell destruction",
+    "Destruction of pluripotent haematopoietic stem cells",
+    "Iron deficiency",
+    "Splenic sequestration"
+   ],
+   "a": 1,
+   "r": "All three cell lines fail because the stem cells are destroyed or suppressed."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man with chronic lymphocytic leukaemia has a 3 week history of tiredness and breathlessness. He is jaundiced and has splenomegaly. His pulse rate is 106 bpm and BP 124/72 mmHg. Investigations show haemoglobin 78 g/L, raised reticulocytes, raised unconjugated bilirubin and raised LDH. A direct antiglobulin test is positive for IgG and the film shows spherocytes.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "78 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "MCV",
+     "96 fL",
+     "80–100",
+     ""
+    ],
+    [
+     "Reticulocytes",
+     "8.4%",
+     "0.5–2.5",
+     "H"
+    ],
+    [
+     "LDH",
+     "690 U/L",
+     "135–225",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cold autoimmune haemolytic anaemia",
+    "G6PD deficiency",
+    "Hereditary spherocytosis",
+    "Thrombotic thrombocytopenic purpura",
+    "Warm autoimmune haemolytic anaemia"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: is it haemolysis, and if so, which type?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chronic lymphocytic leukaemia",
+      "jaundiced and has splenomegaly",
+      "raised reticulocytes, raised unconjugated bilirubin and raised LDH",
+      "positive for IgG",
+      "spherocytes"
+     ],
+     "x": "Haemolysis screen positive, DAT positive with IgG, on a background of a lymphoproliferative malignancy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Warm autoimmune haemolytic anaemia.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cold AIHA is IgM, linked to Mycoplasma, worse in the cold."
+      ],
+      [
+       1,
+       "G6PD is DAT negative, with Heinz bodies and bite cells after a trigger."
+      ],
+      [
+       2,
+       "Hereditary spherocytosis is DAT negative and lifelong."
+      ],
+      [
+       3,
+       "TTP shows schistocytes and low platelets, not spherocytes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Warm AIHA.** DAT positive + IgG + spherocytes; CLL is the classic cause."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 24 year old man has 3 weeks of tiredness, recurrent nosebleeds and two chest infections. He had a febrile illness with a rash 6 weeks ago. His pulse rate is 104 bpm and BP 118/70 mmHg. He has pallor and scattered bruises. There is no lymphadenopathy or splenomegaly.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "72 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "White cell count",
+     "1.4 x10⁹/L",
+     "4.0–11.0",
+     "L"
+    ],
+    [
+     "Neutrophils",
+     "0.4 x10⁹/L",
+     "2.0–7.5",
+     "L"
+    ],
+    [
+     "Platelets",
+     "18 x10⁹/L",
+     "150–400",
+     "L"
+    ],
+    [
+     "Reticulocytes",
+     "0.1%",
+     "0.5–2.5",
+     "L"
+    ]
+   ],
+   "q": "Which investigation will confirm the diagnosis?",
+   "o": [
+    "Blood cultures",
+    "Bone marrow biopsy",
+    "CT chest, abdomen and pelvis",
+    "Direct antiglobulin test",
+    "Serum ferritin"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirmatory investigation: first name the picture."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "recurrent nosebleeds and two chest infections",
+      "febrile illness with a rash 6 weeks ago",
+      "no lymphadenopathy or splenomegaly"
+     ],
+     "x": "Pancytopenia with low reticulocytes after a viral illness: marrow failure, probably **aplastic anaemia** (parvovirus B19)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bone marrow aspirate, with **bone marrow biopsy** as the confirmatory test (hypocellular marrow)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cultures look for infection, not the cause of pancytopenia."
+      ],
+      [
+       2,
+       "CT looks for lymphoma or spread; there are no nodes or spleen."
+      ],
+      [
+       3,
+       "DAT tests for autoimmune haemolysis, which would raise reticulocytes."
+      ],
+      [
+       4,
+       "Ferritin tests iron stores and cannot explain low white cells and platelets."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bone marrow biopsy.** Pancytopenia + low retics = look at the marrow."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old woman has had black stools for 2 days and collapsed at home. She takes naproxen for arthritis. She is pale and clammy. Her pulse rate is 128 bpm, BP 84/50 mmHg and respiratory rate 24 breaths per minute. Investigations show haemoglobin 58 g/L (115–165).",
+   "labs": [
+    [
+     "Haemoglobin",
+     "58 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "86 fL",
+     "80–100",
+     ""
+    ],
+    [
+     "Urea",
+     "18.4 mmol/L",
+     "2.5–7.8",
+     "H"
+    ]
+   ],
+   "q": "Which is the most appropriate initial management of her anaemia?",
+   "o": [
+    "IM vitamin B12",
+    "IV ferric carboxymaltose",
+    "Oral ferrous fumarate",
+    "Red cell transfusion",
+    "Subcutaneous erythropoietin"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: is she stable?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "black stools for 2 days",
+      "collapsed at home",
+      "pulse rate is 128 bpm, BP 84/50 mmHg",
+      "haemoglobin 58 g/L"
+     ],
+     "x": "Acute GI bleed, normocytic anaemia, **haemodynamically unstable**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Red cell transfusion** (alongside resuscitation and finding the bleed)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "B12 treats macrocytic deficiency anaemia."
+      ],
+      [
+       1,
+       "IV iron works over weeks, too slowly for shock."
+      ],
+      [
+       2,
+       "Oral iron is far too slow."
+      ],
+      [
+       4,
+       "EPO is for CKD-related anaemia and is slow."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Red cell transfusion.** Unstable + severe anaemia = transfuse."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 64 year old man had a mechanical aortic valve replacement 2 years ago. He has 2 months of tiredness and dark urine. His pulse rate is 98 bpm and BP 136/62 mmHg. There is a metallic click and an ejection systolic murmur. The blood film shows fragmented red cells.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "92 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "Reticulocytes",
+     "5.6%",
+     "0.5–2.5",
+     "H"
+    ],
+    [
+     "LDH",
+     "820 U/L",
+     "135–225",
+     "H"
+    ],
+    [
+     "Direct antiglobulin test",
+     "Negative",
+     "Negative",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely mechanism of his anaemia?",
+   "o": [
+    "Antibody-coated red cells removed by the spleen",
+    "Bone marrow stem cell failure",
+    "Complement fixation by IgM in the cold",
+    "Mechanical shearing of red cells",
+    "Oxidative damage from lack of NADPH"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of the anaemia: start with the history."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "mechanical aortic valve replacement",
+      "dark urine",
+      "fragmented red cells"
+     ],
+     "x": "Haemolysis with schistocytes and a negative DAT in a patient with a mechanical valve."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Red cells **sheared** by turbulent flow across the valve: mechanical haemolysis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Antibody-mediated splenic removal is warm AIHA; DAT is negative."
+      ],
+      [
+       1,
+       "Stem cell failure gives low reticulocytes and pancytopenia."
+      ],
+      [
+       2,
+       "IgM cold agglutinins give a positive DAT."
+      ],
+      [
+       4,
+       "Lack of NADPH is G6PD deficiency, with Heinz bodies, not fragments."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Mechanical shearing.** Schistocytes = red cells cut up in the circulation."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 44 year old woman has 4 months of tiredness and breathlessness on exertion. Her periods have been very heavy for a year. Her pulse rate is 98 bpm and BP 118/72 mmHg. She has pale conjunctivae, angular stomatitis and spoon-shaped nails.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "86 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "69 fL",
+     "80–100",
+     "L"
+    ],
+    [
+     "Platelets",
+     "430 x10⁹/L",
+     "150–400",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Anaemia of chronic disease",
+    "Iron deficiency anaemia",
+    "Pernicious anaemia",
+    "Sideroblastic anaemia",
+    "Thalassaemia trait"
+   ],
+   "a": 1,
+   "e": "Microcytic anaemia with koilonychia in a woman with menorrhagia is iron deficiency. Thalassaemia trait is microcytic but does not cause koilonychia or heavy blood loss.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: start with the MCV."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "very heavy for a year",
+      "angular stomatitis",
+      "spoon-shaped nails"
+     ],
+     "x": "Menorrhagia (blood loss) plus koilonychia, with MCV 69."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Iron deficiency anaemia.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Chronic disease is usually normocytic with no blood loss source."
+      ],
+      [
+       2,
+       "Pernicious anaemia is macrocytic."
+      ],
+      [
+       3,
+       "Sideroblastic anaemia is rare, with high ferritin and a cause like lead or isoniazid."
+      ],
+      [
+       4,
+       "Thalassaemia trait has no koilonychia and the Hb is usually only mildly low."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Iron deficiency anaemia.** Microcytic + koilonychia + blood loss."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 59 year old woman with Hashimoto's thyroiditis has 6 months of tiredness and tingling in both feet. Her tongue is sore. She has reduced vibration sense at both ankles. Her pulse rate is 94 bpm and BP 126/78 mmHg.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "88 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "118 fL",
+     "80–100",
+     "H"
+    ],
+    [
+     "Vitamin B12",
+     "92 ng/L",
+     "190–900",
+     "L"
+    ],
+    [
+     "Intrinsic factor antibodies",
+     "Positive",
+     "Negative",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Alcohol-related macrocytosis",
+    "Folate deficiency",
+    "Hypothyroidism-related macrocytosis",
+    "Myelodysplasia",
+    "Pernicious anaemia"
+   ],
+   "a": 4,
+   "e": "Macrocytic anaemia with low B12, neuropathy, glossitis and intrinsic factor antibodies in a woman with another autoimmune disease is pernicious anaemia. Folate deficiency does not cause neurological signs.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a macrocytic anaemia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Hashimoto's thyroiditis",
+      "tingling in both feet",
+      "tongue is sore",
+      "reduced vibration sense"
+     ],
+     "x": "Autoimmune background, neuropathy and glossitis with a high MCV."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pernicious anaemia** (autoimmune B12 deficiency)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Alcohol causes macrocytosis but not low B12 or intrinsic factor antibodies."
+      ],
+      [
+       1,
+       "Folate deficiency does not cause neuropathy."
+      ],
+      [
+       2,
+       "Hypothyroidism gives a mild non-megaloblastic macrocytosis without low B12."
+      ],
+      [
+       3,
+       "Myelodysplasia does not explain low B12 and positive antibodies."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Pernicious anaemia.** B12 deficiency = neurology; folate deficiency does not."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 22 year old student is recovering from an atypical pneumonia treated with clarithromycin. Two weeks later he is tired and jaundiced, and his fingers turn white and painful when he goes outside in the cold. His pulse rate is 100 bpm and BP 120/74 mmHg.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "94 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "MCV",
+     "104 fL",
+     "80–100",
+     "H"
+    ],
+    [
+     "Reticulocytes",
+     "7.2%",
+     "0.5–2.5",
+     "H"
+    ],
+    [
+     "Direct antiglobulin test",
+     "Positive (C3d)",
+     "Negative",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cold autoimmune haemolytic anaemia",
+    "G6PD deficiency",
+    "Hereditary spherocytosis",
+    "Vitamin B12 deficiency",
+    "Warm autoimmune haemolytic anaemia"
+   ],
+   "a": 0,
+   "e": "Haemolysis with a positive DAT and Raynaud's after Mycoplasma pneumonia is cold AIHA (IgM). The raised MCV reflects reticulocytosis, not B12 deficiency.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: haemolysis, then which type."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "atypical pneumonia treated with clarithromycin",
+      "jaundiced",
+      "white and painful when he goes outside in the cold"
+     ],
+     "x": "Mycoplasma infection, Raynaud's in the cold, DAT positive."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cold autoimmune haemolytic anaemia.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "G6PD is DAT negative."
+      ],
+      [
+       2,
+       "Hereditary spherocytosis is DAT negative and lifelong."
+      ],
+      [
+       3,
+       "The macrocytosis is from reticulocytes; B12 does not cause a positive DAT."
+      ],
+      [
+       4,
+       "Warm AIHA is IgG, not linked to Mycoplasma or the cold."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cold AIHA.** Mycoplasma + cold symptoms + DAT positive = IgM."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old woman of Scottish descent has intermittent jaundice, worse when she has a cold. Her father had his spleen removed as a child. She has a palpable spleen. Her pulse rate is 88 bpm and BP 112/70 mmHg. The blood film shows spherocytes and the direct antiglobulin test is negative.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "104 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Reticulocytes",
+     "6.1%",
+     "0.5–2.5",
+     "H"
+    ],
+    [
+     "Bilirubin (unconjugated)",
+     "48 µmol/L",
+     "<21",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "G6PD deficiency",
+    "Gilbert's syndrome",
+    "Hereditary spherocytosis",
+    "Sickle cell disease",
+    "Warm autoimmune haemolytic anaemia"
+   ],
+   "a": 2,
+   "e": "Spherocytes with a negative DAT, splenomegaly and a family history of childhood splenectomy in a Northern European is hereditary spherocytosis (autosomal dominant). Warm AIHA also has spherocytes but a positive DAT.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a lifelong haemolytic picture."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Scottish descent",
+      "intermittent jaundice",
+      "father had his spleen removed as a child",
+      "spherocytes",
+      "direct antiglobulin test is negative"
+     ],
+     "x": "Northern European, autosomal dominant family history, spherocytes, DAT negative."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hereditary spherocytosis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "G6PD is X-linked and shows Heinz bodies and bite cells."
+      ],
+      [
+       1,
+       "Gilbert's causes jaundice but no anaemia or reticulocytosis."
+      ],
+      [
+       3,
+       "Sickle cell gives painful crises and sickle cells on the film."
+      ],
+      [
+       4,
+       "Warm AIHA is DAT positive."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Hereditary spherocytosis.** Spherocytes + DAT negative + family history."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 26 year old man of Mediterranean origin is given nitrofurantoin for a urinary tract infection. Three days later he is tired, jaundiced and passing dark urine. His pulse rate is 108 bpm and BP 122/68 mmHg. The film shows bite cells and Heinz bodies. The direct antiglobulin test is negative.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "82 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "Reticulocytes",
+     "9.0%",
+     "0.5–2.5",
+     "H"
+    ],
+    [
+     "LDH",
+     "740 U/L",
+     "135–225",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cold autoimmune haemolytic anaemia",
+    "G6PD deficiency",
+    "Hereditary spherocytosis",
+    "Paroxysmal nocturnal haemoglobinuria",
+    "Thrombotic thrombocytopenic purpura"
+   ],
+   "a": 1,
+   "e": "Acute haemolysis with Heinz bodies and bite cells after an oxidant drug (nitrofurantoin) in a man is G6PD deficiency (X-linked recessive). TTP would show schistocytes and low platelets.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: what triggered this haemolysis?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "26 year old man of Mediterranean origin",
+      "nitrofurantoin",
+      "bite cells and Heinz bodies",
+      "direct antiglobulin test is negative"
+     ],
+     "x": "Male, oxidant drug, Heinz bodies, DAT negative."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**G6PD deficiency.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cold AIHA is DAT positive."
+      ],
+      [
+       2,
+       "Spherocytosis shows spherocytes, not Heinz bodies."
+      ],
+      [
+       3,
+       "PNH causes morning dark urine and thrombosis, not drug-triggered Heinz bodies."
+      ],
+      [
+       4,
+       "TTP shows schistocytes, low platelets and neurology."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. G6PD deficiency.** Oxidant trigger + Heinz bodies + bite cells."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old woman with long-standing rheumatoid arthritis has 3 months of tiredness. She has active synovitis in both hands. Her pulse rate is 90 bpm and BP 132/80 mmHg. There is no history of blood loss.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "98 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "86 fL",
+     "80–100",
+     ""
+    ],
+    [
+     "Serum iron",
+     "6 µmol/L",
+     "10–30",
+     "L"
+    ],
+    [
+     "Ferritin",
+     "380 µg/L",
+     "30–300",
+     "H"
+    ],
+    [
+     "Transferrin saturation",
+     "12%",
+     "20–50",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Anaemia of chronic disease",
+    "Aplastic anaemia",
+    "Iron deficiency anaemia",
+    "Pernicious anaemia",
+    "Sideroblastic anaemia"
+   ],
+   "a": 0,
+   "e": "Normocytic anaemia with low serum iron, low transferrin saturation but high ferritin in active inflammation is anaemia of chronic disease. Iron deficiency needs a ferritin below 30.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: MCV, then ferritin."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing rheumatoid arthritis",
+      "active synovitis",
+      "no history of blood loss"
+     ],
+     "x": "Chronic inflammation, normocytic, ferritin high but serum iron low."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Anaemia of chronic disease.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Aplastic anaemia causes pancytopenia."
+      ],
+      [
+       2,
+       "Iron deficiency has a low ferritin and is usually microcytic."
+      ],
+      [
+       3,
+       "Pernicious anaemia is macrocytic."
+      ],
+      [
+       4,
+       "Sideroblastic anaemia is microcytic with high serum iron."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Anaemia of chronic disease.** Normocytic, low iron, normal or high ferritin."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 35 year old woman has 2 months of tiredness. She eats a vegan diet and has heavy periods. Her pulse rate is 92 bpm and BP 114/70 mmHg. She has pale conjunctivae. A full blood count shows a microcytic anaemia.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "92 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "72 fL",
+     "80–100",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Bone marrow aspirate",
+    "Haemoglobin electrophoresis",
+    "Serum ferritin",
+    "Serum vitamin B12",
+    "Transferrin saturation"
+   ],
+   "a": 2,
+   "e": "Serum ferritin below 30 µg/L diagnoses iron deficiency anaemia. Transferrin saturation supports it but is less specific.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic test for the most likely cause."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "vegan diet",
+      "heavy periods",
+      "microcytic anaemia"
+     ],
+     "x": "Poor intake plus blood loss with microcytosis: iron deficiency."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Serum ferritin.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Marrow sampling is invasive and not needed for iron deficiency."
+      ],
+      [
+       1,
+       "Electrophoresis is for thalassaemia if ferritin is normal."
+      ],
+      [
+       3,
+       "B12 deficiency is macrocytic."
+      ],
+      [
+       4,
+       "Transferrin saturation is supportive; ferritin is diagnostic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Serum ferritin.** Below 30 µg/L = iron deficiency."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old man has 3 months of tiredness. He has no change in bowel habit, no weight loss and no abdominal pain. His pulse rate is 96 bpm and BP 134/80 mmHg. Abdominal and rectal examinations are normal.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "96 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "MCV",
+     "71 fL",
+     "80–100",
+     "L"
+    ],
+    [
+     "Ferritin",
+     "8 µg/L",
+     "30–400",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Bone marrow biopsy",
+    "Faecal immunochemical test",
+    "Repeat full blood count in 3 months",
+    "Serum CEA",
+    "Ultrasound abdomen"
+   ],
+   "a": 1,
+   "e": "Iron deficiency anaemia over 60 needs a FIT, with referral on the suspected cancer pathway if positive. CEA is not a diagnostic test.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation once iron deficiency is proven."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "68 year old man",
+      "no change in bowel habit",
+      "examinations are normal"
+     ],
+     "x": "Iron deficiency in a man over 60 with no bowel symptoms."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**FIT**, then the suspected cancer pathway if positive."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Marrow biopsy is for unexplained cytopenias, not iron deficiency."
+      ],
+      [
+       2,
+       "Waiting risks missing a cancer."
+      ],
+      [
+       3,
+       "CEA is for monitoring, not diagnosis."
+      ],
+      [
+       4,
+       "Ultrasound does not assess the bowel lumen."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Faecal immunochemical test.** Over 60 + iron deficiency = FIT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 40 year old woman has iron deficiency anaemia from menorrhagia, which is being treated by her gynaecologist. She has not had treatment for the anaemia. Her pulse rate is 88 bpm and BP 118/74 mmHg. She is well and not breathless at rest.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "94 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "73 fL",
+     "80–100",
+     "L"
+    ],
+    [
+     "Ferritin",
+     "7 µg/L",
+     "30–300",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management of her anaemia?",
+   "o": [
+    "IM vitamin B12",
+    "IV ferric carboxymaltose",
+    "Oral ferrous fumarate daily",
+    "Oral folic acid",
+    "Red cell transfusion"
+   ],
+   "a": 2,
+   "e": "Stable iron deficiency anaemia is treated with daily oral ferrous fumarate while the cause is addressed. IV iron is second-line.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of stable iron deficiency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "menorrhagia, which is being treated",
+      "not had treatment for the anaemia",
+      "not breathless at rest"
+     ],
+     "x": "Cause in hand, stable, no prior iron."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Daily oral ferrous fumarate.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "B12 is for macrocytic deficiency."
+      ],
+      [
+       1,
+       "IV iron is second-line."
+      ],
+      [
+       3,
+       "Folate is for macrocytic deficiency."
+      ],
+      [
+       4,
+       "She is stable; transfusion is for instability."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Oral ferrous fumarate daily.** Treat the cause, replace the iron."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 52 year old woman with iron deficiency anaemia started daily oral ferrous fumarate 3 weeks ago. She has stopped taking it because of constipation and abdominal discomfort. She is otherwise well. Her pulse rate is 84 bpm and BP 124/76 mmHg.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "101 g/L",
+     "115–165",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Red cell transfusion",
+    "Stop iron and recheck in 6 months",
+    "Switch to alternate-day oral iron with a bulk-forming laxative",
+    "Switch to IM vitamin B12",
+    "Urgent IV iron infusion today"
+   ],
+   "a": 2,
+   "e": "If oral iron is not tolerated, first switch to every-other-day dosing and add a bulk-forming laxative. IV iron is second-line if this fails.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step when first-line treatment causes side effects."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "stopped taking it because of constipation and abdominal discomfort",
+      "otherwise well"
+     ],
+     "x": "Intolerance, not failure; she is stable."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Alternate-day dosing plus a bulk-forming laxative.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She is stable."
+      ],
+      [
+       1,
+       "Stopping leaves her deficient."
+      ],
+      [
+       3,
+       "B12 is the wrong deficiency."
+      ],
+      [
+       4,
+       "IV iron comes after oral options fail, or before imminent surgery."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Alternate-day iron with a laxative.** Adjust before escalating."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man with iron deficiency anaemia from a sigmoid carcinoma is listed for surgery in 3 weeks. He is tired but stable. His pulse rate is 90 bpm and BP 138/82 mmHg.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "92 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "Ferritin",
+     "11 µg/L",
+     "30–400",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management of his anaemia before surgery?",
+   "o": [
+    "IV ferric carboxymaltose 1 g, repeated 1 week later",
+    "No treatment until after surgery",
+    "Oral ferrous fumarate daily",
+    "Red cell transfusion now",
+    "Subcutaneous erythropoietin"
+   ],
+   "a": 0,
+   "e": "With less than 6 weeks until surgery, IV iron (ferric carboxymaltose 1 g, repeated a week later) replaces stores fast enough. Oral iron is used if surgery is more than 6 weeks away.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Pre-operative anaemia: how long until surgery?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "listed for surgery in 3 weeks",
+      "tired but stable"
+     ],
+     "x": "Under 6 weeks to surgery, stable, iron deficient."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV ferric carboxymaltose 1 g, repeated in 1 week.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Operating anaemic raises transfusion and complication risk."
+      ],
+      [
+       2,
+       "Oral iron is too slow with under 6 weeks."
+      ],
+      [
+       3,
+       "He is stable; transfusion is not first."
+      ],
+      [
+       4,
+       "EPO is not first-line for iron deficiency."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. IV ferric carboxymaltose.** Under 6 weeks to surgery = IV iron."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 30 year old man develops jaundice and dark urine 2 days after eating a meal containing fava beans. His pulse rate is 106 bpm and BP 120/70 mmHg. The blood film shows Heinz bodies and bite cells. The direct antiglobulin test is negative.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "86 g/L",
+     "130–175",
+     "L"
+    ],
+    [
+     "Reticulocytes",
+     "7.8%",
+     "0.5–2.5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his haemolysis?",
+   "o": [
+    "Complement fixation by IgM cold antibodies",
+    "Defective red cell membrane spectrin",
+    "Failure to generate NADPH to protect against oxidative damage",
+    "Mechanical shearing by microthrombi",
+    "Splenic removal of IgG-coated red cells"
+   ],
+   "a": 2,
+   "e": "In G6PD deficiency, red cells cannot make NADPH to regenerate glutathione, so oxidative stress (fava beans) denatures haemoglobin into Heinz bodies; the spleen bites them out, leaving bite cells.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: name the condition, then the enzyme's job."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fava beans",
+      "Heinz bodies and bite cells",
+      "direct antiglobulin test is negative"
+     ],
+     "x": "Oxidant trigger, Heinz bodies, not immune: **G6PD deficiency**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Without G6PD there is no **NADPH**, so glutathione cannot protect against oxidation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "IgM complement fixation is cold AIHA and DAT positive."
+      ],
+      [
+       1,
+       "Spectrin defects cause hereditary spherocytosis."
+      ],
+      [
+       3,
+       "Shearing gives schistocytes, as in TTP."
+      ],
+      [
+       4,
+       "IgG-coated cells are warm AIHA and DAT positive."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Failure to generate NADPH.** G6PD = oxidative haemolysis."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "How is anaemia classified by MCV, with the main causes in each group?",
+    "tip": "Exam thinking: the MCV is the first fork in every anaemia question.",
+    "points": [
+     {
+      "p": "Microcytic (below 80): iron deficiency, sideroblastic",
+      "k": [
+       [
+        "microcytic"
+       ],
+       [
+        "iron"
+       ]
+      ],
+      "why": "Iron deficiency is by far the most common."
+     },
+     {
+      "p": "Normocytic (80–100): chronic disease, acute blood loss, CKD, haemolysis",
+      "k": [
+       [
+        "normocytic"
+       ],
+       [
+        "chronic",
+        "acute",
+        "ckd",
+        "kidney",
+        "haemoly"
+       ]
+      ],
+      "why": "Chronic disease has normal or high ferritin."
+     },
+     {
+      "p": "Macrocytic (above 100): B12 or folate deficiency, hypothyroidism",
+      "k": [
+       [
+        "macrocytic"
+       ],
+       [
+        "b12",
+        "folate"
+       ]
+      ],
+      "why": "Hypothyroidism is non-megaloblastic."
+     },
+     {
+      "p": "General symptoms: fatigue, pallor, breathlessness, palpitations, tachycardia",
+      "k": [
+       [
+        "fatigue",
+        "tired",
+        "pallor",
+        "pale",
+        "breath",
+        "palpitation"
+       ]
+      ],
+      "why": "Severity depends on speed of onset."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the causes, signs and blood results of iron deficiency?",
+    "tip": "Exam thinking: name the source of loss and the nail sign.",
+    "points": [
+     {
+      "p": "Blood loss (GI bleed, menorrhagia), poor intake, malabsorption",
+      "k": [
+       [
+        "blood loss",
+        "bleed",
+        "menorrhagia",
+        "periods"
+       ]
+      ],
+      "why": "In men and post-menopausal women, look for GI loss."
+     },
+     {
+      "p": "Koilonychia (spoon-shaped nails)",
+      "k": [
+       [
+        "koilonychia",
+        "spoon"
+       ]
+      ],
+      "why": "The classic exam sign."
+     },
+     {
+      "p": "Glossitis, conjunctival pallor, angular stomatitis",
+      "k": [
+       [
+        "glossitis",
+        "tongue",
+        "pallor",
+        "angular"
+       ]
+      ],
+      "why": "Developmental delay in children."
+     },
+     {
+      "p": "Low ferritin, low transferrin saturation, high TIBC",
+      "k": [
+       [
+        "ferritin"
+       ],
+       [
+        "low"
+       ]
+      ],
+      "why": "Chronic disease: low saturation but normal or high ferritin."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features of haemolysis, and how do warm and cold AIHA differ?",
+    "tip": "Exam thinking: prove haemolysis, then DAT, then IgG or IgM.",
+    "points": [
+     {
+      "p": "Anaemia with jaundice and splenomegaly",
+      "k": [
+       [
+        "jaundice",
+        "splenomegaly",
+        "spleen"
+       ]
+      ],
+      "why": "Clinical triad of haemolysis."
+     },
+     {
+      "p": "Raised unconjugated bilirubin, LDH and reticulocytes",
+      "k": [
+       [
+        "bilirubin",
+        "ldh",
+        "reticulocyt"
+       ]
+      ],
+      "why": "The haemolysis screen."
+     },
+     {
+      "p": "AIHA: DAT (Coombs) positive, spherocytes",
+      "k": [
+       [
+        "dat",
+        "coombs",
+        "antiglobulin"
+       ]
+      ],
+      "why": "Negative DAT points to a non-immune cause."
+     },
+     {
+      "p": "Warm: IgG, CLL/lymphoma, SLE, drugs (methyldopa, NSAIDs, cephalosporins)",
+      "k": [
+       [
+        "warm"
+       ],
+       [
+        "igg"
+       ]
+      ],
+      "why": "Most common type."
+     },
+     {
+      "p": "Cold: IgM, Mycoplasma, lymphoma, Raynaud's in the cold",
+      "k": [
+       [
+        "cold"
+       ],
+       [
+        "igm",
+        "mycoplasma"
+       ]
+      ],
+      "why": "Raised MCV reflects reticulocytes, not B12 deficiency."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features of pernicious anaemia, G6PD deficiency and hereditary spherocytosis?",
+    "tip": "Exam thinking: each has one clincher in the stem.",
+    "points": [
+     {
+      "p": "Pernicious: autoimmune B12 deficiency (intrinsic factor/parietal cell antibodies)",
+      "k": [
+       [
+        "pernicious"
+       ],
+       [
+        "intrinsic",
+        "parietal",
+        "b12"
+       ]
+      ],
+      "why": "Neuropathy and glossitis; links with Hashimoto's and type 1 diabetes."
+     },
+     {
+      "p": "G6PD: X-linked recessive, triggered by fava beans, nitrofurantoin, primaquine, infection",
+      "k": [
+       [
+        "g6pd"
+       ],
+       [
+        "x-linked",
+        "x linked",
+        "fava",
+        "nitrofurantoin",
+        "primaquine"
+       ]
+      ],
+      "why": "Heinz bodies and bite cells."
+     },
+     {
+      "p": "Hereditary spherocytosis: autosomal dominant, Northern European",
+      "k": [
+       [
+        "spherocytosis"
+       ],
+       [
+        "dominant",
+        "northern",
+        "family"
+       ]
+      ],
+      "why": "Severe cases: childhood splenectomy."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are microangiopathic, aplastic and sideroblastic anaemia, and their classic causes?",
+    "tip": "Exam thinking: schistocytes, pancytopenia, ring sideroblasts.",
+    "points": [
+     {
+      "p": "MAHA: schistocytes from shearing; TTP, HUS, DIC, mechanical valve",
+      "k": [
+       [
+        "schistocyte",
+        "fragment"
+       ]
+      ],
+      "why": "TTP pentad: fever, MAHA, low platelets, AKI, neurology."
+     },
+     {
+      "p": "HUS triad: haemolytic anaemia, thrombocytopenia, raised creatinine",
+      "k": [
+       [
+        "hus"
+       ]
+      ],
+      "why": "Often after E. coli O157 diarrhoea in children."
+     },
+     {
+      "p": "Aplastic: stem cell damage, pancytopenia, after parvovirus B19 or SLE",
+      "k": [
+       [
+        "aplastic",
+        "pancytopenia"
+       ],
+       [
+        "parvovirus",
+        "b19",
+        "sle",
+        "stem"
+       ]
+      ],
+      "why": "Low reticulocytes."
+     },
+     {
+      "p": "Sideroblastic: microcytic with high ferritin, ring sideroblasts; lead or isoniazid",
+      "k": [
+       [
+        "sideroblast"
+       ]
+      ],
+      "why": "Mimics iron deficiency; Pappenheimer bodies."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is iron deficiency confirmed, and how do you investigate the cause over 60?",
+    "tip": "Exam thinking: one number, one test, one pathway.",
+    "points": [
+     {
+      "p": "Serum ferritin below 30 µg/L",
+      "k": [
+       [
+        "ferritin"
+       ],
+       [
+        "30"
+       ]
+      ],
+      "why": "Ferritin is an acute-phase protein, so can be falsely normal."
+     },
+     {
+      "p": "Over 60: FIT test",
+      "k": [
+       [
+        "fit",
+        "faecal immunochemical"
+       ]
+      ],
+      "why": "Right-sided colon cancer bleeds silently."
+     },
+     {
+      "p": "FIT positive: suspected cancer pathway referral",
+      "k": [
+       [
+        "cancer pathway",
+        "two week",
+        "2ww",
+        "2 week",
+        "urgent referral",
+        "colonoscopy"
+       ]
+      ],
+      "why": "Colonoscopy follows."
+     },
+     {
+      "p": "Pancytopenia: bone marrow aspirate, biopsy confirms aplastic anaemia",
+      "k": [
+       [
+        "marrow"
+       ]
+      ],
+      "why": "Biopsy is the confirmatory test."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is iron deficiency anaemia treated, including before surgery?",
+    "tip": "Exam thinking: oral first, adjust for side effects, IV if time is short.",
+    "points": [
+     {
+      "p": "Treat the underlying cause",
+      "k": [
+       [
+        "cause",
+        "underlying",
+        "source"
+       ]
+      ],
+      "why": "Iron alone does not fix a bleeding cancer."
+     },
+     {
+      "p": "Daily oral ferrous fumarate first-line",
+      "k": [
+       [
+        "oral"
+       ],
+       [
+        "ferrous",
+        "iron"
+       ]
+      ],
+      "why": "Black stools are expected."
+     },
+     {
+      "p": "Not tolerated: alternate-day dosing plus bulk-forming laxative",
+      "k": [
+       [
+        "alternate",
+        "every other",
+        "laxative"
+       ]
+      ],
+      "why": "Before going to IV."
+     },
+     {
+      "p": "Second-line: IV iron",
+      "k": [
+       [
+        "iv iron",
+        "intravenous iron",
+        "carboxymaltose",
+        "ferinject"
+       ]
+      ],
+      "why": "For intolerance or malabsorption."
+     },
+     {
+      "p": "Surgery under 6 weeks: IV ferric carboxymaltose 1 g, repeat 1 week later",
+      "k": [
+       [
+        "6 week",
+        "six week",
+        "surgery"
+       ]
+      ],
+      "why": "Over 6 weeks: oral iron is enough."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When is transfusion needed, and how are warm AIHA, cold AIHA and TTP treated?",
+    "tip": "Exam thinking: unstable means blood; each haemolytic type has its own treatment.",
+    "points": [
+     {
+      "p": "Haemodynamic instability with severe anaemia: blood transfusion",
+      "k": [
+       [
+        "transfus",
+        "blood"
+       ]
+      ],
+      "why": "Iron takes weeks."
+     },
+     {
+      "p": "1 unit at a time to keep Hb above 70",
+      "k": [
+       [
+        "70",
+        "one unit",
+        "1 unit"
+       ]
+      ],
+      "why": "Reassess after each unit."
+     },
+     {
+      "p": "Warm AIHA: prednisolone ± rituximab, then immunosuppressants or splenectomy",
+      "k": [
+       [
+        "prednisolone",
+        "steroid"
+       ]
+      ],
+      "why": "Transfuse as needed."
+     },
+     {
+      "p": "Cold AIHA (severe): plasmapheresis",
+      "k": [
+       [
+        "plasmapheresis"
+       ]
+      ],
+      "why": "Keep the patient warm."
+     },
+     {
+      "p": "TTP/MAHA: plasma exchange",
+      "k": [
+       [
+        "plasma exchange"
+       ]
+      ],
+      "why": "An emergency."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does iron deficiency cause small pale cells, and why does haemolysis cause jaundice?",
+    "tip": "Exam thinking: haem synthesis, then haem breakdown.",
+    "points": [
+     {
+      "p": "Iron is needed for haem synthesis",
+      "k": [
+       [
+        "haem",
+        "heme"
+       ]
+      ],
+      "why": "Less haemoglobin per cell."
+     },
+     {
+      "p": "Insufficient haemoglobinisation: microcytic, hypochromic cells",
+      "k": [
+       [
+        "microcytic",
+        "small"
+       ],
+       [
+        "hypochromic",
+        "pale"
+       ]
+      ],
+      "why": "Low MCV and MCH."
+     },
+     {
+      "p": "Haemolysis releases haem, metabolised to unconjugated bilirubin",
+      "k": [
+       [
+        "unconjugated"
+       ]
+      ],
+      "why": "So jaundice without dark bile in the urine."
+     },
+     {
+      "p": "Marrow compensates with reticulocytosis; LDH rises from cell breakdown",
+      "k": [
+       [
+        "reticulocyt"
+       ]
+      ],
+      "why": "Reticulocytes raise the MCV slightly."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Explain the mechanisms of G6PD haemolysis, warm vs cold AIHA, schistocytes and pancytopenia.",
+    "tip": "Exam thinking: one mechanism per type.",
+    "points": [
+     {
+      "p": "G6PD makes NADPH to regenerate glutathione; oxidants cause Heinz bodies",
+      "k": [
+       [
+        "nadph",
+        "glutathione"
+       ]
+      ],
+      "why": "Bite cells: spleen removes the Heinz bodies."
+     },
+     {
+      "p": "Warm AIHA: IgG, extravascular, splenic macrophages make spherocytes",
+      "k": [
+       [
+        "extravascular",
+        "spleen",
+        "splenic",
+        "macrophage"
+       ]
+      ],
+      "why": "Splenectomy is second-line."
+     },
+     {
+      "p": "Cold AIHA: IgM fixes complement, intravascular haemolysis",
+      "k": [
+       [
+        "complement",
+        "intravascular"
+       ]
+      ],
+      "why": "Worse at 0–10°C."
+     },
+     {
+      "p": "Schistocytes: shearing by fibrin/platelet microthrombi",
+      "k": [
+       [
+        "shear",
+        "microthromb",
+        "fibrin"
+       ]
+      ],
+      "why": "TTP, HUS, DIC."
+     },
+     {
+      "p": "Aplastic: pluripotent stem cell destruction, all three lines fail",
+      "k": [
+       [
+        "stem cell",
+        "pluripotent",
+        "three"
+       ]
+      ],
+      "why": "Pancytopenia, not isolated anaemia."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Anaemia": "A haemoglobin level below normal, reducing the blood's oxygen-carrying capacity.",
+  "MCV": "Mean cell volume, the average red cell size; used to classify anaemia.",
+  "MCH": "Mean cell haemoglobin, the average amount of haemoglobin per red cell; low in iron deficiency.",
+  "Microcytic": "Red cells smaller than normal (MCV below 80 fL).",
+  "Normocytic": "Red cells of normal size (MCV 80 to 100 fL).",
+  "Macrocytic": "Red cells larger than normal (MCV above 100 fL).",
+  "Hypochromic": "Red cells paler than normal because they contain less haemoglobin.",
+  "Ferritin": "Protein that stores iron; its blood level reflects iron stores but rises with inflammation.",
+  "Transferrin saturation": "Percentage of the iron-carrying protein transferrin that is loaded with iron.",
+  "TIBC": "Total iron-binding capacity; rises in iron deficiency as the body makes more transferrin.",
+  "Koilonychia": "Thin, spoon-shaped nails seen in iron deficiency.",
+  "Glossitis": "Smooth, red, sore tongue from loss of papillae; seen in iron, B12 and folate deficiency.",
+  "Angular stomatitis": "Cracks at the corners of the mouth, seen in iron deficiency.",
+  "Menorrhagia": "Heavy menstrual bleeding.",
+  "Reticulocytes": "Young red cells released from the marrow; raised when the marrow is compensating.",
+  "Reticulocytosis": "Raised reticulocyte count, showing the marrow is making red cells faster.",
+  "LDH": "Lactate dehydrogenase, an enzyme released from broken cells; raised in haemolysis.",
+  "Unconjugated bilirubin": "Bilirubin not yet processed by the liver; rises when red cells break down.",
+  "Haemolysis": "Premature destruction of red blood cells.",
+  "AIHA": "Autoimmune haemolytic anaemia: antibodies attack the patient's own red cells.",
+  "DAT": "Direct antiglobulin (Coombs) test, which detects antibody or complement on red cells.",
+  "Coombs test": "Another name for the direct antiglobulin test.",
+  "Spherocytes": "Small round red cells without central pallor; seen in warm AIHA and hereditary spherocytosis.",
+  "Schistocytes": "Fragmented red cells from mechanical shearing in damaged vessels.",
+  "Heinz bodies": "Clumps of denatured haemoglobin inside red cells, seen in G6PD deficiency.",
+  "Bite cells": "Red cells with a 'bite' taken out where the spleen removed Heinz bodies.",
+  "Pappenheimer bodies": "Iron-containing granules in red cells, seen in sideroblastic anaemia.",
+  "Ring sideroblasts": "Red cell precursors with iron trapped in a ring around the nucleus; diagnostic of sideroblastic anaemia.",
+  "G6PD": "Glucose-6-phosphate dehydrogenase, an enzyme making NADPH to protect red cells from oxidation.",
+  "NADPH": "Molecule that keeps glutathione in its active, protective form inside red cells.",
+  "Glutathione": "Antioxidant that protects red cells from oxidative damage.",
+  "Pernicious anaemia": "Autoimmune B12 deficiency from antibodies against intrinsic factor or gastric parietal cells.",
+  "Intrinsic factor": "Stomach protein needed to absorb vitamin B12 in the terminal ileum.",
+  "Hereditary spherocytosis": "Inherited red cell membrane defect making cells spherical and fragile; autosomal dominant.",
+  "MAHA": "Microangiopathic haemolytic anaemia: red cells sheared in small damaged vessels.",
+  "TTP": "Thrombotic thrombocytopenic purpura: microthrombi causing MAHA, low platelets, fever, AKI and neurology.",
+  "HUS": "Haemolytic uraemic syndrome: haemolytic anaemia, low platelets and kidney injury.",
+  "DIC": "Disseminated intravascular coagulation: widespread clotting that uses up platelets and clotting factors.",
+  "Aplastic anaemia": "Failure of bone marrow stem cells, causing low red cells, white cells and platelets.",
+  "Pancytopenia": "Low red cells, white cells and platelets together.",
+  "Parvovirus B19": "Virus causing 'slapped cheek' rash that can temporarily stop red cell production.",
+  "Sideroblastic anaemia": "Anaemia where iron is present but cannot be used to make haem.",
+  "Thrombocytosis": "Raised platelet count; often reactive in iron deficiency or bleeding.",
+  "FIT": "Faecal immunochemical test, detecting hidden blood in stool to screen for bowel cancer.",
+  "Ferrous fumarate": "Oral iron tablet, first-line treatment for iron deficiency anaemia.",
+  "Ferric carboxymaltose": "Intravenous iron preparation that replaces iron stores quickly.",
+  "Plasma exchange": "Removing the patient's plasma and replacing it with donor plasma; treatment for TTP.",
+  "Plasmapheresis": "Removing plasma from the blood to clear harmful antibodies.",
+  "Rituximab": "Antibody drug that depletes B cells; used in warm AIHA.",
+  "Splenectomy": "Surgical removal of the spleen.",
+  "Raynaud's phenomenon": "Fingers turning white, blue then red in the cold from blood vessel spasm.",
+  "Mycoplasma pneumoniae": "Bacterium causing atypical pneumonia; associated with cold AIHA.",
+  "CLL": "Chronic lymphocytic leukaemia, a common cause of warm AIHA.",
+  "Anaemia of chronic disease": "Normocytic anaemia in long-term inflammation with low serum iron but normal or high ferritin."
+ }
+}

@@ -1,0 +1,2185 @@
+{
+ "id": "hospital-acquired-infections",
+ "patient": {
+  "name": "Kenneth Okafor",
+  "age": 76,
+  "sex": "M",
+  "setting": "Orthopaedic ward, day 5 after hip surgery",
+  "complaint": "New fever, cough and breathlessness five days after a hip hemiarthroplasty",
+  "background": [
+   "Fractured neck of femur after a fall at home in Catford",
+   "Urinary catheter and peripheral cannula since admission",
+   "Type 2 diabetes on metformin",
+   "Ex-smoker, 30 pack-years"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely causative organism?' in an inpatient: the timing (48 hours or more after admission), the device and recent antibiotics point to the type and the bug.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kenneth, 76, had a hip hemiarthroplasty **5 days ago**.",
+      "Today: fever, productive cough and new breathlessness.",
+      "Catheter still in; wound looks clean and dry.",
+      "Bowels normal; no dysuria."
+     ],
+     "vitals": {
+      "T": "38.6°C",
+      "HR": "104 bpm",
+      "BP": "128/74 mmHg",
+      "RR": "22 /min",
+      "SpO2": "94% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kenneth's fever started **5 days after admission**, well past 48 hours, with no community source: this is hospital-acquired."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Hours after admission when symptoms began",
+      "min": 0,
+      "max": 168,
+      "unit": "h",
+      "bands": [
+       [
+        0,
+        48,
+        "Community-acquired",
+        "ok"
+       ],
+       [
+        48,
+        168,
+        "Hospital-acquired",
+        "bad"
+       ]
+      ],
+      "value": 120,
+      "label": "Kenneth 120 h",
+      "caption": "The 48-hour line decides CAP vs HAP, and so the antibiotic."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kenneth's biggest risk is **being in hospital**, plus surgery, a catheter, a cannula and diabetes."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "New fever and cough on the ward: hospital organisms are more **resistant**, such as MRSA and Gram-negatives."
+    },
+    {
+     "type": "ask",
+     "q": "Kenneth's cough and fever began on day 5. Which diagnosis fits best?",
+     "o": [
+      "Atelectasis",
+      "Community-acquired pneumonia",
+      "Hospital-acquired pneumonia",
+      "Pulmonary embolism"
+     ],
+     "a": 2,
+     "r": "Fever, productive cough and crackles **48 hours or more** after admission is **HAP**. Atelectasis gives low-grade fever in the first day or two."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Portable chest X-ray, day 5",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "right",
+        "zone": "lower"
+       }
+      ],
+      "caption": "New right lower zone consolidation: hospital-acquired pneumonia."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kenneth's RR 22 and SpO2 94% make this **non-severe HAP**. His catheter, wound and future line are other HAI sources to check."
+    },
+    {
+     "type": "compare",
+     "title": "Spot the hospital infection",
+     "head": [
+      "Type",
+      "Clue in the stem",
+      "Usual organism"
+     ],
+     "rows": [
+      [
+       "HAP / VAP",
+       "Cough, fever, new CXR shadow ≥48 h",
+       "Pseudomonas, S. aureus, Gram-negatives"
+      ],
+      [
+       "CAUTI",
+       "Catheter, fever, suprapubic pain",
+       "**E. coli**"
+      ],
+      [
+       "Surgical site",
+       "Red, painful, discharging wound",
+       "S. aureus (MRSA)"
+      ],
+      [
+       "C. difficile",
+       "Diarrhoea after antibiotics",
+       "C. difficile toxins"
+      ],
+      [
+       "Line sepsis",
+       "Central line, rigors, red exit site",
+       "S. aureus, coagulase-negative staph"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Fever on **day 1** of an admission is community-acquired, even on a ward. Use the **48-hour** rule, not where the patient is now."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' with the answer usually blood cultures (and the relevant sample) before antibiotics; the gold standard is a positive culture with the clinical picture.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which must be done before Kenneth's first antibiotic dose?",
+     "o": [
+      "Blood cultures",
+      "CT pulmonary angiogram",
+      "D-dimer",
+      "Echocardiogram"
+     ],
+     "a": 0,
+     "r": "**Blood cultures** (and sputum) go before antibiotics in suspected hospital-acquired infection, so the culture is not sterilised."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kenneth gets blood cultures, a **sputum sample**, a catheter urine sample, FBC, CRP and a CXR before antibiotics start."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods, day 5",
+     "rows": [
+      [
+       "WCC",
+       "16.8 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Neutrophils",
+       "14.2 ×10⁹/L",
+       "2.0–7.5",
+       "H"
+      ],
+      [
+       "CRP",
+       "182 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "Lactate",
+       "1.6 mmol/L",
+       "<2.0",
+       ""
+      ],
+      [
+       "Creatinine",
+       "98 µmol/L",
+       "60–110",
+       ""
+      ]
+     ],
+     "text": "Raised inflammatory markers; normal lactate, so no septic shock."
+    },
+    {
+     "type": "flow",
+     "title": "Sample before you treat",
+     "nodes": [
+      "Find the likely source",
+      "Blood cultures",
+      "Site sample: sputum, catheter urine, wound swab",
+      "Imaging: CXR, or USS/CT for abscess",
+      "Then start empirical antibiotics"
+     ],
+     "caption": "Do not delay antibiotics in sepsis, but take cultures first where possible."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kenneth's diagnosis is confirmed when a **positive culture** matches the clinical picture."
+    },
+    {
+     "type": "labs",
+     "title": "Microbiology, day 7",
+     "rows": [
+      [
+       "Blood cultures",
+       "No growth at 48 h",
+       "No growth",
+       ""
+      ],
+      [
+       "Sputum culture",
+       "Klebsiella pneumoniae",
+       "No pathogen",
+       "H"
+      ],
+      [
+       "Sensitivity",
+       "Sensitive to co-amoxiclav",
+       "",
+       ""
+      ]
+     ],
+     "text": "The culture fits the pneumonia, so treatment continues unchanged."
+    },
+    {
+     "type": "pearl",
+     "text": "In a catheterised patient a **urine dipstick is unreliable**: send a catheter urine sample for culture instead."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' testing the drug: non-severe HAP = co-amoxiclav, severe HAP = piperacillin-tazobactam, first C. difficile = oral vancomycin, recurrence within 12 weeks = fidaxomicin; plus source control.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Kenneth has non-severe HAP. Which antibiotic fits these notes?",
+     "o": [
+      "Co-amoxiclav",
+      "Oral amoxicillin alone",
+      "Oral clarithromycin alone",
+      "Piperacillin-tazobactam"
+     ],
+     "a": 0,
+     "r": "Non-severe HAP: **co-amoxiclav**. Piperacillin-tazobactam is kept for severe HAP (tachypnoea, hypoxia, sepsis)."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kenneth starts **co-amoxiclav** after cultures. Had he been hypoxic at 91% with RR 26, it would be **piperacillin-tazobactam**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Response to co-amoxiclav",
+      "x": [
+       "Day 5",
+       "Day 6",
+       "Day 7",
+       "Day 8",
+       "Day 9"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "CRP (mg/L)",
+        "values": [
+         182,
+         160,
+         104,
+         58,
+         31
+        ]
+       },
+       {
+        "name": "WCC (×10⁹/L)",
+        "values": [
+         16.8,
+         15.2,
+         12.1,
+         9.8,
+         8.9
+        ]
+       }
+      ],
+      "caption": "Pneumonia settling by day 8. Then on day 9 the diarrhoea starts."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 9: Kenneth has **seven watery stools** in 24 hours.",
+      "Lower abdominal cramps; temperature 37.9°C.",
+      "He has been on co-amoxiclav for 4 days.",
+      "Stool sample sent; moved to a **side room**."
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Stool and bloods, day 9",
+     "rows": [
+      [
+       "C. difficile GDH",
+       "Positive",
+       "Negative",
+       "H"
+      ],
+      [
+       "C. difficile toxin",
+       "Positive",
+       "Negative",
+       "H"
+      ],
+      [
+       "WCC",
+       "13.4 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "104 µmol/L",
+       "60–110",
+       ""
+      ]
+     ],
+     "text": "Toxin-positive C. difficile infection after antibiotics."
+    },
+    {
+     "type": "ask",
+     "q": "This is Kenneth's first episode. Which treatment?",
+     "o": [
+      "IV metronidazole",
+      "Oral fidaxomicin",
+      "Oral loperamide",
+      "Oral vancomycin"
+     ],
+     "a": 3,
+     "r": "First episode: **oral vancomycin**. Fidaxomicin is for recurrence within 12 weeks; loperamide is avoided."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Kenneth's diarrhoea comes back **within 12 weeks**, he gets **oral fidaxomicin**, which reduces further recurrence better than vancomycin."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kenneth is **isolated** in a side room; his catheter is removed as soon as he no longer needs it, and staff wash hands each contact."
+    },
+    {
+     "type": "trap",
+     "text": "Alcohol gel does **not** kill C. difficile spores. Use **soap and water** and gloves and apron for C. difficile patients."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Kenneth became febrile and hypotensive, that is **hospital-acquired sepsis**: Sepsis Six within the hour."
+    },
+    {
+     "type": "flow",
+     "title": "Sepsis Six (within 1 hour)",
+     "nodes": [
+      "Give oxygen to target saturations",
+      "Take blood cultures",
+      "Give IV antibiotics",
+      "Give IV fluids",
+      "Measure lactate and FBC",
+      "Measure urine output"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kenneth's care follows **NICE NG139** for preventing healthcare-associated infection and NICE guidance on C. difficile."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied science: why devices cause infection (biofilm), why antibiotics cause C. difficile, how MRSA resists beta-lactams (mecA, PBP2a) and why ventilation leads to Pseudomonas pneumonia.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kenneth's daughter asks why he caught two infections in hospital.",
+      "You explain host, organism and device."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kenneth is a **vulnerable host** (age, surgery, diabetes) exposed to **hospital-adapted**, more resistant flora."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "His **urinary catheter** breaches a barrier and grows a **biofilm**, which shields bacteria from immunity and antibiotics."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kenneth's co-amoxiclav wiped out normal gut flora, letting **C. difficile** spores germinate and release **toxins A and B**."
+    },
+    {
+     "type": "flow",
+     "title": "How antibiotics lead to C. difficile",
+     "nodes": [
+      "Broad-spectrum antibiotic",
+      "Normal gut flora destroyed",
+      "Spores germinate",
+      "Toxins A and B released",
+      "Colitis: diarrhoea, pseudomembranes"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "A wound swab from the next bay grows MRSA. Why does it resist flucloxacillin?",
+     "o": [
+      "Beta-lactamase production",
+      "Efflux pumps",
+      "mecA gene encoding PBP2a",
+      "Reduced porin channels"
+     ],
+     "a": 2,
+     "r": "**mecA** encodes **PBP2a**, a penicillin-binding protein with low affinity for beta-lactams, so cell-wall synthesis continues."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Any S. aureus in Kenneth's wound would need a different drug if it carried **mecA**; flucloxacillin would fail."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Kenneth is not ventilated, but in ICU **micro-aspiration** around the tube cuff seeds the lungs with **Pseudomonas**."
+    },
+    {
+     "type": "pearl",
+     "text": "Ventilator-associated pneumonia's classic organism is **Pseudomonas aeruginosa**, a Gram-negative rod; CAUTI's is **E. coli**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "After how long in hospital is an infection classed as hospital-acquired?",
+   "o": [
+    "12 hours",
+    "24 hours",
+    "48 hours",
+    "7 days"
+   ],
+   "a": 2,
+   "r": "Infection starting 48 hours or more after admission."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the most important risk factor for hospital-acquired infection?",
+   "o": [
+    "Diabetes",
+    "Hospitalisation itself",
+    "Old age",
+    "Smoking"
+   ],
+   "a": 1,
+   "r": "Being in hospital is the biggest single risk, then devices and surgery."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism most commonly causes catheter-associated UTI?",
+   "o": [
+    "Candida albicans",
+    "Escherichia coli",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus"
+   ],
+   "a": 1,
+   "r": "E. coli is the commonest CAUTI organism."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism is the leading cause of ventilator-associated pneumonia?",
+   "o": [
+    "Haemophilus influenzae",
+    "Mycoplasma pneumoniae",
+    "Pseudomonas aeruginosa",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 2,
+   "r": "Pseudomonas aeruginosa, a Gram-negative bacillus."
+  },
+  {
+   "d": "investigation",
+   "q": "What must be sent before starting antibiotics for suspected HAP?",
+   "o": [
+    "Blood cultures and lower respiratory samples",
+    "CT chest",
+    "Procalcitonin",
+    "Urinary pneumococcal antigen"
+   ],
+   "a": 0,
+   "r": "Peripheral blood cultures and respiratory samples first."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold standard for confirming a hospital-acquired infection?",
+   "o": [
+    "Positive culture with the clinical picture",
+    "Raised CRP",
+    "Raised white cell count",
+    "Fever over 38°C"
+   ],
+   "a": 0,
+   "r": "A positive culture combined with the clinical picture."
+  },
+  {
+   "d": "management",
+   "q": "Which antibiotic is used for severe HAP?",
+   "o": [
+    "Amoxicillin",
+    "Co-amoxiclav",
+    "Doxycycline",
+    "Piperacillin-tazobactam"
+   ],
+   "a": 3,
+   "r": "Severe HAP: IV piperacillin-tazobactam; non-severe: co-amoxiclav."
+  },
+  {
+   "d": "management",
+   "q": "What is the first-line treatment for a first episode of C. difficile?",
+   "o": [
+    "IV metronidazole",
+    "Oral fidaxomicin",
+    "Oral vancomycin",
+    "Stop all fluids"
+   ],
+   "a": 2,
+   "r": "Oral vancomycin for the initial episode."
+  },
+  {
+   "d": "management",
+   "q": "Which drug treats C. difficile recurrence within 12 weeks?",
+   "o": [
+    "Clindamycin",
+    "Oral fidaxomicin",
+    "Oral vancomycin",
+    "Rifampicin"
+   ],
+   "a": 1,
+   "r": "Fidaxomicin reduces further recurrence better than vancomycin."
+  },
+  {
+   "d": "science",
+   "q": "How does MRSA resist beta-lactams?",
+   "o": [
+    "Beta-lactamase",
+    "Efflux pump",
+    "mecA encoding PBP2a",
+    "Porin loss"
+   ],
+   "a": 2,
+   "r": "mecA encodes PBP2a, which has low affinity for beta-lactams."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What defines a hospital-acquired infection and who is at risk?",
+    "tip": "Exam thinking: check the day of admission in the stem before naming the infection.",
+    "points": [
+     {
+      "p": "Infection starting 48 hours or more after admission",
+      "k": [
+       [
+        "48"
+       ]
+      ],
+      "why": "Under 48 hours is community-acquired, even on a ward."
+     },
+     {
+      "p": "No evidence of a community source",
+      "k": [
+       [
+        "community",
+        "incubat"
+       ]
+      ],
+      "why": "It was not incubating on arrival."
+     },
+     {
+      "p": "Biggest risk factor: hospitalisation itself",
+      "k": [
+       [
+        "hospitalis",
+        "hospitaliz",
+        "being in hospital",
+        "admission"
+       ]
+      ],
+      "why": "Length of stay increases risk."
+     },
+     {
+      "p": "Devices, surgery and immunosuppression",
+      "k": [
+       [
+        "catheter",
+        "line",
+        "device",
+        "cannula"
+       ],
+       [
+        "surgery",
+        "operat",
+        "immunosupp"
+       ]
+      ],
+      "why": "Each device breaches a barrier."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "List the main types of hospital-acquired infection and the clue for each.",
+    "tip": "Exam thinking: the device or drug in the stem names the infection.",
+    "points": [
+     {
+      "p": "HAP and VAP: cough, fever, breathlessness 48 hours or more after admission",
+      "k": [
+       [
+        "pneumonia",
+        "hap",
+        "vap"
+       ]
+      ],
+      "why": "VAP happens in ventilated ICU patients."
+     },
+     {
+      "p": "CAUTI: dysuria and fever with an indwelling urinary catheter",
+      "k": [
+       [
+        "cauti",
+        "catheter-associated",
+        "catheter associated",
+        "urinary"
+       ]
+      ],
+      "why": "The catheter is the key risk factor."
+     },
+     {
+      "p": "Surgical site infection: red, painful, discharging wound after surgery",
+      "k": [
+       [
+        "surgical site",
+        "wound"
+       ]
+      ],
+      "why": "Often S. aureus, including MRSA."
+     },
+     {
+      "p": "C. difficile: diarrhoea after antibiotics",
+      "k": [
+       [
+        "difficile",
+        "c diff",
+        "cdiff"
+       ]
+      ],
+      "why": "Strongly linked to recent antibiotics."
+     },
+     {
+      "p": "Line sepsis: fever and sepsis from a central venous catheter",
+      "k": [
+       [
+        "line",
+        "central",
+        "cvc",
+        "bloodstream"
+       ]
+      ],
+      "why": "Look for redness or pus at the exit site."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell severe from non-severe hospital-acquired pneumonia?",
+    "tip": "Exam thinking: severity decides the antibiotic.",
+    "points": [
+     {
+      "p": "Severe: tachypnoea, e.g. RR 26",
+      "k": [
+       [
+        "tachypn",
+        "respiratory rate",
+        "rr",
+        "26"
+       ]
+      ],
+      "why": "Raised RR is an early warning sign."
+     },
+     {
+      "p": "Severe: hypoxia, e.g. SpO2 91% on air",
+      "k": [
+       [
+        "hypox",
+        "saturat",
+        "spo2",
+        "91"
+       ]
+      ],
+      "why": "Low saturations on air."
+     },
+     {
+      "p": "Severe: fever and signs of sepsis",
+      "k": [
+       [
+        "sepsis",
+        "septic",
+        "hypotens"
+       ]
+      ],
+      "why": "Sepsis makes it severe."
+     },
+     {
+      "p": "Non-severe: normal saturations and RR, no sepsis",
+      "k": [
+       [
+        "normal",
+        "non-severe",
+        "non severe"
+       ]
+      ],
+      "why": "Non-severe gets co-amoxiclav."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Name the classic organisms of hospital-acquired infection.",
+    "tip": "Exam thinking: 'most likely causative organism' is a favourite lead-in.",
+    "points": [
+     {
+      "p": "Overall: Staphylococcus aureus, especially MRSA",
+      "k": [
+       [
+        "aureus",
+        "mrsa",
+        "staph"
+       ]
+      ],
+      "why": "Common in wounds and lines."
+     },
+     {
+      "p": "VAP/HAP: Pseudomonas aeruginosa",
+      "k": [
+       [
+        "pseudomonas"
+       ]
+      ],
+      "why": "A Gram-negative bacillus."
+     },
+     {
+      "p": "CAUTI: E. coli",
+      "k": [
+       [
+        "coli"
+       ]
+      ],
+      "why": "The commonest CAUTI organism."
+     },
+     {
+      "p": "Antibiotic-associated diarrhoea: Clostridioides difficile",
+      "k": [
+       [
+        "difficile",
+        "c diff",
+        "cdiff"
+       ]
+      ],
+      "why": "Gram-positive spore-forming anaerobe."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What investigations do you send for a suspected hospital-acquired infection?",
+    "tip": "Exam thinking: cultures before antibiotics where possible.",
+    "points": [
+     {
+      "p": "Blood cultures in any suspected hospital-acquired sepsis",
+      "k": [
+       [
+        "blood culture"
+       ]
+      ],
+      "why": "Taken before antibiotics."
+     },
+     {
+      "p": "Urine and sputum culture from the likely source",
+      "k": [
+       [
+        "urine",
+        "sputum",
+        "wound",
+        "swab",
+        "stool"
+       ]
+      ],
+      "why": "Send before antibiotics where possible."
+     },
+     {
+      "p": "Imaging: CXR for pneumonia, USS or CT for abscess",
+      "k": [
+       [
+        "cxr",
+        "x-ray",
+        "xray",
+        "ct",
+        "ultrasound",
+        "uss"
+       ]
+      ],
+      "why": "Imaging finds the source."
+     },
+     {
+      "p": "FBC and CRP",
+      "k": [
+       [
+        "fbc",
+        "crp",
+        "blood count",
+        "white cell"
+       ]
+      ],
+      "why": "Supportive, not diagnostic."
+     },
+     {
+      "p": "Gold standard: positive culture with the clinical picture",
+      "k": [
+       [
+        "culture"
+       ],
+       [
+        "gold",
+        "confirm",
+        "clinical"
+       ]
+      ],
+      "why": "A positive culture alone may be a contaminant."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Which empirical antibiotics are used for HAP?",
+    "tip": "Exam thinking: read the observations to grade severity, then pick the drug.",
+    "points": [
+     {
+      "p": "Non-severe HAP: co-amoxiclav",
+      "k": [
+       [
+        "co-amoxiclav",
+        "coamoxiclav",
+        "co amoxiclav",
+        "augmentin"
+       ]
+      ],
+      "why": "Covers common HAP organisms."
+     },
+     {
+      "p": "Severe HAP: IV piperacillin-tazobactam",
+      "k": [
+       [
+        "piperacillin",
+        "tazocin",
+        "pip-taz",
+        "piptaz"
+       ]
+      ],
+      "why": "Adds anti-Pseudomonas cover."
+     },
+     {
+      "p": "Cultures before antibiotics, then adjust to results",
+      "k": [
+       [
+        "culture"
+       ],
+       [
+        "adjust",
+        "narrow",
+        "sensitiv",
+        "result"
+       ]
+      ],
+      "why": "Broad-spectrum first, then target."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is C. difficile infection treated, first episode and recurrence?",
+    "tip": "Exam thinking: the 12-week window decides vancomycin vs fidaxomicin.",
+    "points": [
+     {
+      "p": "First episode: oral vancomycin",
+      "k": [
+       [
+        "vancomycin"
+       ]
+      ],
+      "why": "Oral, because it acts in the gut lumen."
+     },
+     {
+      "p": "Recurrence within 12 weeks: oral fidaxomicin",
+      "k": [
+       [
+        "fidaxomicin"
+       ]
+      ],
+      "why": "Lower recurrence rate than vancomycin."
+     },
+     {
+      "p": "Isolate the patient",
+      "k": [
+       [
+        "isolat",
+        "side room"
+       ]
+      ],
+      "why": "Spores spread on hands and surfaces."
+     },
+     {
+      "p": "Stop or review the causative antibiotic",
+      "k": [
+       [
+        "stop",
+        "review"
+       ],
+       [
+        "antibiotic"
+       ]
+      ],
+      "why": "Standard NICE advice."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How are hospital-acquired infections controlled and prevented, and what is the emergency?",
+    "tip": "Exam thinking: source control is the answer when antibiotics alone fail.",
+    "points": [
+     {
+      "p": "Source control: remove or replace infected catheter or line, drain abscess",
+      "k": [
+       [
+        "remov",
+        "replace",
+        "drain",
+        "source control"
+       ]
+      ],
+      "why": "Biofilm makes devices hard to sterilise."
+     },
+     {
+      "p": "Hand hygiene and aseptic technique for devices",
+      "k": [
+       [
+        "hand"
+       ],
+       [
+        "hygien",
+        "wash",
+        "aseptic"
+       ]
+      ],
+      "why": "The single most effective prevention."
+     },
+     {
+      "p": "Fever with hypotension = hospital-acquired sepsis: Sepsis Six",
+      "k": [
+       [
+        "sepsis"
+       ],
+       [
+        "six",
+        "6",
+        "fluid",
+        "antibiotic"
+       ]
+      ],
+      "why": "IV antibiotics within the hour."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do indwelling devices and antibiotics predispose to infection?",
+    "tip": "Exam thinking: name the mechanism, biofilm or flora disruption.",
+    "points": [
+     {
+      "p": "Devices breach anatomical barriers",
+      "k": [
+       [
+        "barrier",
+        "breach"
+       ]
+      ],
+      "why": "Skin or urethral defences are bypassed."
+     },
+     {
+      "p": "Devices provide a surface for biofilm",
+      "k": [
+       [
+        "biofilm"
+       ]
+      ],
+      "why": "Biofilm protects bacteria from immunity and antibiotics."
+     },
+     {
+      "p": "Broad-spectrum antibiotics disrupt gut flora so C. difficile spores germinate",
+      "k": [
+       [
+        "flora",
+        "microbio"
+       ],
+       [
+        "spore",
+        "germinat"
+       ]
+      ],
+      "why": "Clindamycin, cephalosporins, co-amoxiclav, quinolones are high risk."
+     },
+     {
+      "p": "C. difficile toxins A and B cause colitis",
+      "k": [
+       [
+        "toxin"
+       ]
+      ],
+      "why": "Pseudomembranous colitis in severe cases."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does MRSA resist beta-lactams, and why does ventilation cause pneumonia?",
+    "tip": "Exam thinking: mecA and micro-aspiration are the key phrases.",
+    "points": [
+     {
+      "p": "mecA gene encodes PBP2a with low affinity for beta-lactams",
+      "k": [
+       [
+        "meca",
+        "pbp2a",
+        "pbp 2a",
+        "penicillin-binding",
+        "penicillin binding"
+       ]
+      ],
+      "why": "So flucloxacillin cannot bind and cell-wall synthesis continues."
+     },
+     {
+      "p": "Micro-aspiration of oropharyngeal secretions around the endotracheal tube cuff",
+      "k": [
+       [
+        "aspirat"
+       ]
+      ],
+      "why": "The cuff does not seal perfectly."
+     },
+     {
+      "p": "Seeds the lungs with hospital flora such as Pseudomonas",
+      "k": [
+       [
+        "pseudomonas",
+        "hospital flora"
+       ]
+      ],
+      "why": "Hence anti-Pseudomonal cover in VAP."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "HAP": "Hospital-acquired pneumonia: pneumonia starting 48 hours or more after admission.",
+  "Hospital-acquired pneumonia": "Pneumonia starting 48 hours or more after hospital admission.",
+  "VAP": "Ventilator-associated pneumonia: pneumonia arising 48 hours or more after intubation.",
+  "Ventilator-associated pneumonia": "Pneumonia arising in a patient on a ventilator, often from Pseudomonas.",
+  "CAUTI": "Catheter-associated urinary tract infection, usually E. coli.",
+  "CAP": "Community-acquired pneumonia: starts outside hospital or within 48 hours of admission.",
+  "HAI": "Hospital-acquired (healthcare-associated) infection.",
+  "Surgical site infection": "Infection of an operation wound causing redness, pain and discharge.",
+  "Line sepsis": "Bloodstream infection arising from a central venous catheter.",
+  "Central venous catheter": "A line placed in a large central vein for drugs, nutrition or monitoring.",
+  "MRSA": "Methicillin-resistant Staphylococcus aureus: resistant to beta-lactams such as flucloxacillin.",
+  "mecA": "Gene that gives MRSA its resistance by encoding PBP2a.",
+  "PBP2a": "Altered penicillin-binding protein with low affinity for beta-lactams, so the cell wall keeps being built.",
+  "Penicillin-binding protein": "Bacterial enzyme that builds the cell wall; the target of beta-lactam antibiotics.",
+  "Beta-lactam": "Antibiotic class including penicillins and cephalosporins that blocks cell-wall synthesis.",
+  "Biofilm": "A slime layer of bacteria on a device surface that shields them from immunity and antibiotics.",
+  "C. difficile": "Clostridioides difficile: spore-forming Gram-positive anaerobe causing antibiotic-associated colitis.",
+  "Clostridioides difficile": "Spore-forming anaerobe that causes diarrhoea and colitis after antibiotics.",
+  "Toxins A and B": "C. difficile toxins that damage the colon lining and cause colitis.",
+  "Pseudomembranous colitis": "Severe C. difficile colitis with yellow plaques on the colon lining.",
+  "GDH": "Glutamate dehydrogenase: a screening stool test for C. difficile, confirmed with a toxin test.",
+  "Fidaxomicin": "Oral macrocyclic antibiotic for recurrent C. difficile; lower recurrence than vancomycin.",
+  "Vancomycin": "Glycopeptide antibiotic; given orally for C. difficile because it stays in the gut.",
+  "Co-amoxiclav": "Amoxicillin with clavulanic acid; used for non-severe hospital-acquired pneumonia.",
+  "Piperacillin-tazobactam": "Broad-spectrum anti-Pseudomonal penicillin with a beta-lactamase inhibitor, for severe HAP.",
+  "Pseudomonas aeruginosa": "Gram-negative rod; classic cause of ventilator-associated pneumonia.",
+  "Empirical antibiotics": "Antibiotics started before culture results, based on the likely organism.",
+  "Source control": "Removing the source of infection, such as an infected line, or draining an abscess.",
+  "Sepsis Six": "Oxygen, blood cultures, IV antibiotics, IV fluids, lactate and urine output within one hour.",
+  "Sepsis": "Life-threatening organ dysfunction caused by a dysregulated response to infection.",
+  "Micro-aspiration": "Small-volume inhalation of secretions, e.g. leaking past an endotracheal tube cuff.",
+  "Endotracheal tube": "A breathing tube passed into the trachea for mechanical ventilation.",
+  "Aseptic technique": "Methods that prevent contamination when inserting or handling devices.",
+  "Isolation": "Nursing an infectious patient in a side room to stop spread.",
+  "Coagulase-negative staphylococci": "Skin staphylococci such as S. epidermidis that colonise lines and form biofilms.",
+  "Atelectasis": "Collapse of small airways, common after surgery, causing low-grade fever in the first 48 hours.",
+  "CRP": "C-reactive protein: a blood marker of inflammation.",
+  "NICE NG139": "NICE guideline on preventing healthcare-associated infections."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old woman is on day 4 of an admission for a stroke. She develops a fever and a cough productive of green sputum. Her temperature is 38.4°C, pulse rate 102 bpm, BP 132/78 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 95% breathing air. There are coarse crackles at the left base.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Atelectasis",
+    "Community-acquired pneumonia",
+    "Hospital-acquired pneumonia",
+    "Pulmonary embolism",
+    "Surgical site infection"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: and the timing is in the first line."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "day 4 of an admission",
+      "fever and a cough productive of green sputum",
+      "coarse crackles at the left base"
+     ],
+     "x": "Day 4 is past 48 hours; infective respiratory picture."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Pneumonia starting 48 hours or more after admission = **hospital-acquired pneumonia**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Atelectasis is early, low-grade and without purulent sputum."
+      ],
+      [
+       1,
+       "CAP must start before or within 48 hours of admission."
+      ],
+      [
+       3,
+       "PE gives pleuritic pain and hypoxia, not purulent sputum and crackles."
+      ],
+      [
+       4,
+       "She has had no operation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Hospital-acquired pneumonia.** Rule: ≥48 h after admission = HAP."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "An 83 year old man has had a long-term urinary catheter for 2 months. He is admitted with new confusion, fever and suprapubic tenderness. His temperature is 38.3°C, pulse rate 98 bpm and BP 126/72 mmHg. A dipstick of urine from the catheter bag shows leucocytes and nitrites.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Blood cultures only",
+    "Catheter urine specimen for culture",
+    "CT kidneys, ureters and bladder",
+    "Renal tract ultrasound",
+    "Repeat urine dipstick"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming the diagnosis means culture from the source."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-term urinary catheter",
+      "fever and suprapubic tenderness",
+      "dipstick of urine from the catheter bag"
+     ],
+     "x": "CAUTI suspected; dipstick unreliable with a catheter."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Gold standard is a **positive culture**: send a catheter urine specimen (ideally after changing the catheter)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Blood cultures help if septic but do not confirm the urinary source alone."
+      ],
+      [
+       2,
+       "CT KUB is for stones or obstruction."
+      ],
+      [
+       3,
+       "Ultrasound looks for obstruction, not infection."
+      ],
+      [
+       4,
+       "Dipsticks are unreliable in catheterised patients."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Catheter urine culture.** Rule: catheter + fever → culture, not dipstick."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 79 year old woman had C. difficile infection 6 weeks ago, treated with oral vancomycin with full recovery. She now has eight watery stools a day and lower abdominal cramps. Stool is positive for C. difficile toxin. Her temperature is 37.8°C, pulse rate 92 bpm and BP 118/70 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Faecal microbiota transplant",
+    "Intravenous metronidazole",
+    "Oral fidaxomicin",
+    "Oral loperamide",
+    "Oral vancomycin"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Treatment of a repeat episode: note the timing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6 weeks ago",
+      "oral vancomycin",
+      "positive for C. difficile toxin"
+     ],
+     "x": "Recurrence within 12 weeks of a first episode."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Recurrence within 12 weeks = **oral fidaxomicin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Faecal transplant is for multiple recurrences."
+      ],
+      [
+       1,
+       "IV metronidazole alone is not first choice."
+      ],
+      [
+       3,
+       "Antimotility drugs are avoided in C. difficile."
+      ],
+      [
+       4,
+       "Vancomycin is for the first episode; fidaxomicin reduces recurrence."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Oral fidaxomicin.** Rule: first = vancomycin; recurrence within 12 weeks = fidaxomicin."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 58 year old man has been intubated and ventilated on ICU for 6 days after a road traffic collision. He develops fever, purulent tracheal secretions and a new infiltrate on chest X-ray. Tracheal aspirate grows Pseudomonas aeruginosa.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism by which this infection developed?",
+   "o": [
+    "Haematogenous spread from a central line",
+    "Inhalation of community aerosols",
+    "Micro-aspiration of secretions around the tube cuff",
+    "Reactivation of a latent infection",
+    "Translocation of gut bacteria"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of ventilator-associated pneumonia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "intubated and ventilated",
+      "6 days",
+      "Pseudomonas aeruginosa"
+     ],
+     "x": "VAP, 48 hours or more after intubation, with hospital flora."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Secretions leak past the **endotracheal tube cuff** and seed the lungs."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Line spread gives bacteraemia, not primary VAP."
+      ],
+      [
+       1,
+       "He has been in ICU for 6 days; this is hospital flora."
+      ],
+      [
+       3,
+       "Pseudomonas is not a latent infection."
+      ],
+      [
+       4,
+       "Gut translocation causes bacteraemia, not this pneumonia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Micro-aspiration around the cuff.** Rule: VAP = micro-aspiration of hospital flora, classically Pseudomonas."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old woman is on day 8 of an admission for cellulitis treated with clindamycin. She develops six episodes of watery diarrhoea a day with lower abdominal cramps. She has not vomited. Her temperature is 38.0°C, pulse rate 100 bpm and BP 116/70 mmHg.",
+   "labs": [
+    [
+     "WCC",
+     "17.2 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "CRP",
+     "96 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "88 µmol/L",
+     "45–90",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Clostridioides difficile infection",
+    "Diverticulitis",
+    "Ischaemic colitis",
+    "Norovirus gastroenteritis",
+    "Ulcerative colitis"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: diarrhoea in an inpatient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "day 8 of an admission",
+      "clindamycin",
+      "watery diarrhoea",
+      "has not vomited"
+     ],
+     "x": "Hospital onset, high-risk antibiotic, watery diarrhoea, raised WCC."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Antibiotic-associated diarrhoea in hospital = **C. difficile infection**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Diverticulitis gives left iliac fossa pain, not watery diarrhoea after antibiotics."
+      ],
+      [
+       2,
+       "Ischaemic colitis gives bloody diarrhoea in vascular patients."
+      ],
+      [
+       3,
+       "Norovirus causes prominent vomiting in ward outbreaks."
+      ],
+      [
+       4,
+       "UC is chronic bloody diarrhoea, not new after clindamycin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. C. difficile infection.** Rule: antibiotics + hospital + diarrhoea = C. difficile."
+    }
+   ],
+   "e": "Watery diarrhoea starting in hospital after clindamycin, with a raised WCC, is C. difficile infection. Norovirus would bring vomiting and affect others on the ward."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man has had a urethral catheter since a prostatectomy 10 days ago. He develops fever, rigors and suprapubic pain. His temperature is 38.7°C, pulse rate 108 bpm, BP 118/70 mmHg and respiratory rate 20 breaths per minute. A catheter urine sample is sent for culture.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Candida albicans",
+    "Enterococcus faecalis",
+    "Escherichia coli",
+    "Proteus mirabilis",
+    "Staphylococcus epidermidis"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: name the infection first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "urethral catheter",
+      "10 days ago",
+      "fever, rigors and suprapubic pain"
+     ],
+     "x": "Catheter in place for days, now urinary sepsis: CAUTI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Commonest CAUTI organism: **Escherichia coli**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Candida is seen with long-term antibiotics or immunosuppression, not first choice."
+      ],
+      [
+       1,
+       "Enterococcus occurs in CAUTI but less often than E. coli."
+      ],
+      [
+       3,
+       "Proteus is linked to stones and long-term catheters, less common."
+      ],
+      [
+       4,
+       "S. epidermidis is a line and prosthesis organism."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Escherichia coli.** Rule: CAUTI = E. coli."
+    }
+   ],
+   "e": "Catheter-associated UTI is most often caused by E. coli. Proteus and Enterococcus occur but are less common; S. epidermidis is a line organism."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 55 year old woman receiving parenteral nutrition through a tunnelled central venous catheter for 3 weeks develops rigors when the line is flushed. The skin around the exit site is red and tender with a small amount of pus. Her chest is clear, the urine dipstick is negative and she has no wound.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Catheter-associated urinary tract infection",
+    "Central line-associated bloodstream infection",
+    "Hospital-acquired pneumonia",
+    "Superficial thrombophlebitis",
+    "Surgical site infection"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: which hospital-acquired infection?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "central venous catheter",
+      "rigors when the line is flushed",
+      "red and tender with a small amount of pus",
+      "chest is clear"
+     ],
+     "x": "Central line, rigors on flushing, exit-site infection; other sources excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Line-related sepsis = **central line-associated bloodstream infection**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Urine dipstick negative and no urinary catheter."
+      ],
+      [
+       2,
+       "Chest is clear."
+      ],
+      [
+       3,
+       "Thrombophlebitis is a peripheral cannula vein problem without rigors on flushing."
+      ],
+      [
+       4,
+       "She has no surgical wound."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Central line-associated bloodstream infection.** Rule: rigors on flushing a line = line sepsis."
+    }
+   ],
+   "e": "Rigors on flushing and pus at the exit site of a central venous catheter is a line-associated bloodstream infection. Other sources have been excluded."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man has been ventilated on ICU for 5 days after a cardiac arrest. He develops a fever, rising oxygen requirements and green tracheal secretions. His temperature is 38.9°C, pulse rate 114 bpm and BP 104/62 mmHg. Tracheal aspirate shows Gram-negative rods.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Haemophilus influenzae",
+    "Legionella pneumophila",
+    "Mycoplasma pneumoniae",
+    "Pseudomonas aeruginosa",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question in a ventilated patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ventilated on ICU for 5 days",
+      "green tracheal secretions",
+      "Gram-negative rods"
+     ],
+     "x": "VAP with a Gram-negative rod."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "VAP's leading organism: **Pseudomonas aeruginosa**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "H. influenzae is a COPD and community organism."
+      ],
+      [
+       1,
+       "Legionella is community, linked to water systems and travel."
+      ],
+      [
+       2,
+       "Mycoplasma is atypical community pneumonia in the young."
+      ],
+      [
+       4,
+       "Strep. pneumoniae is the CAP organism and Gram-positive."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pseudomonas aeruginosa.** Rule: VAP + Gram-negative rods = Pseudomonas."
+    }
+   ],
+   "e": "Ventilator-associated pneumonia with Gram-negative rods is most likely Pseudomonas aeruginosa. Strep. pneumoniae is a Gram-positive CAP organism."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man is 6 days after an open inguinal hernia repair. The wound is red, hot and painful with purulent discharge. A wound swab shows Gram-positive cocci in clusters resistant to flucloxacillin.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Group A Streptococcus",
+    "Methicillin-resistant Staphylococcus aureus",
+    "Methicillin-sensitive Staphylococcus aureus",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus epidermidis"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism in a surgical site infection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6 days after an open inguinal hernia repair",
+      "purulent discharge",
+      "Gram-positive cocci in clusters",
+      "resistant to flucloxacillin"
+     ],
+     "x": "Post-op wound infection; staphylococci; beta-lactam resistant."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Staph resistant to flucloxacillin = **MRSA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Streptococci form chains, not clusters."
+      ],
+      [
+       2,
+       "MSSA would be flucloxacillin-sensitive."
+      ],
+      [
+       3,
+       "Pseudomonas is a Gram-negative rod."
+      ],
+      [
+       4,
+       "S. epidermidis rarely causes purulent wound infection; it colonises lines."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. MRSA.** Rule: clusters + flucloxacillin resistance = MRSA."
+    }
+   ],
+   "e": "Gram-positive cocci in clusters resistant to flucloxacillin in a surgical wound is MRSA. MSSA is flucloxacillin-sensitive and streptococci grow in chains."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old woman develops a cough and fever on day 6 after a laparotomy. Her temperature is 38.8°C, pulse rate 118 bpm, BP 102/64 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 91% breathing air. There is bronchial breathing at the right base. A chest X-ray is shown (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "consolidation",
+      "side": "right",
+      "zone": "lower"
+     }
+    ],
+    "caption": "Right lower zone consolidation."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pulmonary oedema",
+    "Community-acquired pneumonia",
+    "Non-severe hospital-acquired pneumonia",
+    "Pulmonary embolism",
+    "Severe hospital-acquired pneumonia"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis includes a severity: read the observations."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "day 6 after a laparotomy",
+      "respiratory rate 26 breaths per minute",
+      "oxygen saturation 91% breathing air",
+      "bronchial breathing at the right base"
+     ],
+     "x": "Day 6 = hospital-acquired; RR 26 and SpO2 91% = severe."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Tachypnoea and hypoxia make this **severe hospital-acquired pneumonia**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pulmonary oedema is bilateral with no fever."
+      ],
+      [
+       1,
+       "Day 6 is beyond 48 hours."
+      ],
+      [
+       2,
+       "RR 26 and SpO2 91% are severe features."
+      ],
+      [
+       3,
+       "PE gives a clear chest, not focal bronchial breathing and consolidation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Severe HAP.** Rule: ≥48 h + tachypnoea and hypoxia = severe HAP."
+    }
+   ],
+   "e": "Pneumonia on day 6 is hospital-acquired, and RR 26 with SpO2 91% makes it severe. CAP would start before 48 hours."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old man on day 5 of an admission for a hip fracture develops fever and productive cough. His temperature is 38.5°C, pulse rate 106 bpm, BP 122/76 mmHg and oxygen saturation 94% breathing air. The team plans to start empirical antibiotics.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation before starting antibiotics?",
+   "o": [
+    "Blood cultures",
+    "CT pulmonary angiogram",
+    "D-dimer",
+    "Serum procalcitonin",
+    "Urinary Legionella antigen"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation before treatment."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "day 5 of an admission",
+      "fever and productive cough",
+      "plans to start empirical antibiotics"
+     ],
+     "x": "Suspected HAP; antibiotics about to start."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Send **blood cultures** (plus sputum) before antibiotics."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CTPA is for suspected PE."
+      ],
+      [
+       2,
+       "D-dimer is for PE and non-specific after surgery."
+      ],
+      [
+       3,
+       "Procalcitonin does not identify the organism."
+      ],
+      [
+       4,
+       "Legionella antigen is a community test in severe CAP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Blood cultures.** Rule: cultures before antibiotics in hospital-acquired infection."
+    }
+   ],
+   "e": "Peripheral blood cultures and respiratory samples should be sent before antibiotics for HAP so the organism can be identified and treatment narrowed."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 77 year old woman on day 7 of treatment with co-amoxiclav for a hospital-acquired pneumonia develops five episodes of watery diarrhoea in 24 hours and abdominal cramps. She is moved to a side room.",
+   "labs": [
+    [
+     "WCC",
+     "15.1 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "Potassium",
+     "3.3 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "94 µmol/L",
+     "45–90",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Abdominal X-ray",
+    "Blood cultures",
+    "Colonoscopy",
+    "Faecal calprotectin",
+    "Stool C. difficile toxin test"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirm the diagnosis: the specific test for the likely organism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "co-amoxiclav",
+      "watery diarrhoea",
+      "side room"
+     ],
+     "x": "Antibiotic-associated diarrhoea in hospital: C. difficile."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Send a stool sample for **C. difficile** (GDH and toxin)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AXR looks for toxic megacolon, not the diagnosis."
+      ],
+      [
+       1,
+       "Blood cultures do not detect C. difficile colitis."
+      ],
+      [
+       2,
+       "Colonoscopy is unnecessary and risky in colitis."
+      ],
+      [
+       3,
+       "Calprotectin is for inflammatory bowel disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Stool C. difficile toxin.** Rule: antibiotic diarrhoea → stool toxin."
+    }
+   ],
+   "e": "A stool test for C. difficile toxin confirms the diagnosis. Abdominal X-ray only looks for complications such as toxic megacolon."
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man develops a productive cough on day 4 after a hip replacement. His temperature is 38.1°C, pulse rate 96 bpm, BP 134/80 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 96% breathing air. Chest X-ray shows left lower zone consolidation. Blood and sputum cultures have been sent.",
+   "labs": [
+    [
+     "WCC",
+     "14.2 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "CRP",
+     "121 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Lactate",
+     "1.2 mmol/L",
+     "<2.0",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous co-amoxiclav",
+    "Intravenous piperacillin-tazobactam",
+    "Oral amoxicillin",
+    "Oral clarithromycin",
+    "Oral doxycycline"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: grade severity, then choose."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "day 4 after a hip replacement",
+      "respiratory rate 18",
+      "oxygen saturation 96% breathing air",
+      "Blood and sputum cultures have been sent"
+     ],
+     "x": "HAP with normal RR and saturations: non-severe."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Non-severe HAP = **co-amoxiclav**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Piperacillin-tazobactam is for severe HAP."
+      ],
+      [
+       2,
+       "Amoxicillin alone is the CAP choice."
+      ],
+      [
+       3,
+       "Clarithromycin alone is CAP or penicillin allergy."
+      ],
+      [
+       4,
+       "Doxycycline is a CAP alternative."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Co-amoxiclav.** Rule: non-severe HAP = co-amoxiclav; severe = pip-taz."
+    }
+   ],
+   "e": "Non-severe hospital-acquired pneumonia is treated with co-amoxiclav after cultures; piperacillin-tazobactam is reserved for severe HAP."
+  },
+  {
+   "d": "management",
+   "stem": "An 81 year old woman on a care of the elderly ward has her first episode of diarrhoea since admission: seven watery stools a day after a course of ceftriaxone. Stool is positive for C. difficile toxin. Her temperature is 37.6°C, pulse rate 90 bpm and BP 124/72 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous metronidazole",
+    "Oral fidaxomicin",
+    "Oral loperamide",
+    "Oral metronidazole",
+    "Oral vancomycin"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: first or recurrent episode?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "first episode",
+      "ceftriaxone",
+      "positive for C. difficile toxin"
+     ],
+     "x": "First episode of toxin-positive C. difficile."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "First episode = **oral vancomycin**, plus isolation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "IV metronidazole alone is not first-line."
+      ],
+      [
+       1,
+       "Fidaxomicin is for recurrence within 12 weeks."
+      ],
+      [
+       2,
+       "Loperamide risks toxic megacolon."
+      ],
+      [
+       3,
+       "Oral metronidazole is no longer first-line."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Oral vancomycin.** Rule: first C. difficile = oral vancomycin."
+    }
+   ],
+   "e": "The first episode of C. difficile infection is treated with oral vancomycin. Fidaxomicin is used for recurrence within 12 weeks."
+  },
+  {
+   "d": "management",
+   "stem": "A 48 year old man with a tunnelled central venous catheter for chemotherapy has had fevers for 3 days despite IV vancomycin. Blood cultures from the line and a peripheral vein both grow Staphylococcus aureus. The exit site is red. His temperature is 38.6°C, pulse rate 110 bpm and BP 108/66 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Arrange a CT chest",
+    "Change to oral antibiotics",
+    "Flush the line with heparin",
+    "Remove the central venous catheter",
+    "Start antifungal therapy"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step when antibiotics are failing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "central venous catheter",
+      "fevers for 3 days despite IV vancomycin",
+      "both grow Staphylococcus aureus"
+     ],
+     "x": "Line infection with S. aureus not settling on antibiotics."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Source control**: remove the infected line; biofilm protects the bacteria."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "There is no chest source."
+      ],
+      [
+       1,
+       "Oral antibiotics are a step down, not up, in persistent bacteraemia."
+      ],
+      [
+       2,
+       "Flushing does not clear a biofilm infection."
+      ],
+      [
+       4,
+       "Cultures grew S. aureus, not fungi."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Remove the line.** Rule: device infection not responding = source control."
+    }
+   ],
+   "e": "Persistent S. aureus line infection needs the catheter removed, because biofilm protects organisms from antibiotics. Flushing or switching to oral treatment will not clear it."
+  },
+  {
+   "d": "science",
+   "stem": "A 64 year old man has a sternal wound infection after cardiac surgery. The wound swab grows Staphylococcus aureus that is resistant to flucloxacillin and all other beta-lactams.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of this resistance?",
+   "o": [
+    "Altered penicillin-binding protein encoded by mecA",
+    "Beta-lactamase production",
+    "Efflux pump overexpression",
+    "Loss of outer membrane porins",
+    "Methylation of the ribosome"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of resistance in a named organism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Staphylococcus aureus",
+      "resistant to flucloxacillin and all other beta-lactams"
+     ],
+     "x": "Resistance to all beta-lactams in S. aureus = MRSA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "MRSA: **mecA** encodes **PBP2a**, which beta-lactams cannot bind."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Beta-lactamase is overcome by flucloxacillin, which is beta-lactamase stable."
+      ],
+      [
+       2,
+       "Efflux pumps are not the cause of methicillin resistance."
+      ],
+      [
+       3,
+       "Porins are a Gram-negative outer membrane feature."
+      ],
+      [
+       4,
+       "Ribosomal methylation causes macrolide resistance."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. mecA / PBP2a.** Rule: MRSA = altered penicillin-binding protein."
+    }
+   ],
+   "e": "MRSA carries mecA, encoding PBP2a, a penicillin-binding protein with low affinity for beta-lactams. Beta-lactamase alone would not defeat flucloxacillin."
+  }
+ ]
+}

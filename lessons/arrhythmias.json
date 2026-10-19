@@ -1,0 +1,2267 @@
+{
+ "id": "arrhythmias",
+ "patient": {
+  "name": "Winston Clarke",
+  "age": 76,
+  "sex": "M",
+  "setting": "Emergency Department, then the cardiology ward",
+  "complaint": "Two days of fluttering palpitations and breathlessness",
+  "background": [
+   "Hypertension on amlodipine",
+   "Type 2 diabetes on metformin",
+   "Drinks about 30 units of alcohol a week",
+   "Retired bus driver from Brixton; no drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect an ECG or pulse description ('see item resources') and 'Which is the most likely diagnosis/rhythm?': AF vs flutter vs SVT vs VT, the heart blocks, WPW, or a drug cause.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Winston, 76: two days of **fluttering** in his chest.",
+      "Breathless walking to the bus stop; no chest pain.",
+      "Big weekend of drinking at his grandson's wedding.",
+      "No fainting."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "138 bpm (irregular)",
+      "BP": "132/84 mmHg",
+      "RR": "20 /min",
+      "SpO2": "96% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Palpitations and breathlessness are the classic complaint. Winston's binge, hypertension and age are typical **causes** to look for."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Radial pulse **irregularly irregular**, about 120.",
+      "Apex counted at 138: an **apical-radial deficit**.",
+      "JVP: no A wave seen.",
+      "Chest clear; no murmur; no ankle oedema."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Winston's 12-lead ECG",
+      "layout": "12lead",
+      "rhythm": "af",
+      "rate": 138,
+      "caption": "No P waves, irregularly irregular narrow QRS at about 138 bpm: **atrial fibrillation with fast ventricular response**."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Winston has a **narrow-complex tachyarrhythmia** (>100 bpm). Next: name which narrow rhythm."
+    },
+    {
+     "type": "ask",
+     "q": "No P waves, irregularly irregular, narrow QRS at 138. Which rhythm?",
+     "o": [
+      "Atrial fibrillation",
+      "Atrial flutter with 2:1 block",
+      "Supraventricular tachycardia",
+      "Ventricular tachycardia"
+     ],
+     "a": 0,
+     "r": "Irregular + no P waves = **AF**. Flutter and SVT are regular; VT is broad."
+    },
+    {
+     "type": "compare",
+     "title": "Telling the tachycardias apart",
+     "head": [
+      "Rhythm",
+      "QRS",
+      "Regular?",
+      "ECG clue"
+     ],
+     "rows": [
+      [
+       "AF",
+       "Narrow",
+       "**Irregularly irregular**",
+       "No P waves"
+      ],
+      [
+       "Atrial flutter",
+       "Narrow",
+       "Regular",
+       "Sawtooth, **2:1**, rate ~150"
+      ],
+      [
+       "SVT (AVNRT)",
+       "Narrow",
+       "Regular",
+       "Sudden onset and offset"
+      ],
+      [
+       "WPW",
+       "Broad (delta)",
+       "Regular in sinus",
+       "**Delta wave**, short PR"
+      ],
+      [
+       "VT",
+       "**Broad**",
+       "Regular",
+       "~150 bpm, QRS ~160 ms"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "These are the signature ECGs. Winston's matches **AF**; keep the others ready for the distractors."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Winston's **alcohol** excess is a classic AF trigger; rheumatic mitral stenosis is the other one to remember."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Contrast: complete heart block",
+      "layout": "strip",
+      "rhythm": "chb",
+      "rate": 36,
+      "caption": "P waves march through at their own rate with **no relationship** to the slow QRS complexes."
+     },
+     "text": "The bradyarrhythmias are the other half of the topic."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Learn the blocks by the PR interval: long (1st), lengthening (**Wenckebach**), constant with drops (**Mobitz II**), unrelated (**complete**)."
+    },
+    {
+     "type": "ask",
+     "q": "Winston's BP is 132/84 and he has no chest pain or syncope. Is he unstable?",
+     "o": [
+      "No: no adverse features",
+      "Yes: AF is always unstable",
+      "Yes: breathlessness on exertion is shock",
+      "Yes: HR over 100 is an adverse feature"
+     ],
+     "a": 0,
+     "r": "Adverse features are **shock, syncope, heart failure, ischaemia** or chest pain. Winston has none, so drugs, not shocks."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "No adverse features today. If Winston dropped to **BP 70/50** or fainted, he would need **synchronised DC cardioversion**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect the **12-lead ECG** as gold standard, a **24-hour Holter** for intermittent palpitations, and which score (**CHA2DS2-VASc**) guides anticoagulation.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Winston's diagnosis is made on the **12-lead ECG**. Measure the **PR** and **QT** on every trace."
+    },
+    {
+     "type": "labs",
+     "title": "Bloods in ED",
+     "rows": [
+      [
+       "Potassium",
+       "3.3 mmol/L",
+       "3.5–5.3",
+       "L"
+      ],
+      [
+       "Magnesium",
+       "0.68 mmol/L",
+       "0.70–1.00",
+       "L"
+      ],
+      [
+       "TSH",
+       "1.9 mU/L",
+       "0.4–4.0",
+       ""
+      ],
+      [
+       "Hb",
+       "141 g/L",
+       "130–180",
+       ""
+      ],
+      [
+       "eGFR",
+       "72 mL/min/1.73m²",
+       ">60",
+       ""
+      ],
+      [
+       "hs-troponin T",
+       "12 ng/L",
+       "<14",
+       ""
+      ]
+     ],
+     "text": "Low potassium and magnesium after drinking; thyroid normal; no infarct."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Bloods hunt the cause (electrolytes, thyroid) and an **echo** looks for **structural** disease such as mitral stenosis."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Echo: left atrium mildly dilated; LV function normal.",
+      "No mitral stenosis, no significant valve disease."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Winston's AF was captured on the first ECG. If palpitations come and go uncaptured, use a **24-hour Holter**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Winston's CHA2DS2-VASc",
+      "min": 0,
+      "max": 9,
+      "unit": "points",
+      "bands": [
+       [
+        0,
+        1,
+        "0: no anticoagulation",
+        "ok"
+       ],
+       [
+        1,
+        2,
+        "1: men anticoagulate",
+        "warn"
+       ],
+       [
+        2,
+        9,
+        "2+: anticoagulate",
+        "bad"
+       ]
+      ],
+      "value": 4,
+      "label": "Winston 4",
+      "caption": "Age 76 (2) + hypertension (1) + diabetes (1) = 4."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Winston scores **4** on CHA2DS2-VASc, well above the male threshold of 1. **ORBIT**: age 75+ gives 1; otherwise low bleeding risk."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "These are the numbers to know: **CHA2DS2-VASc** (men ≥1, women ≥2), **ORBIT** for bleeding, and QTc limits for long QT."
+    },
+    {
+     "type": "trap",
+     "text": "Do not mix the scores: **CHA2DS2-VASc** decides anticoagulation in AF; ABCD2 is for TIA; ORBIT is bleeding risk."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'next most appropriate step': adverse features → DC cardioversion; otherwise AF rate control, SVT vagal then adenosine, bradycardia atropine, VT amiodarone, torsades magnesium.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "Tachyarrhythmia: what to do first",
+     "nodes": [
+      "Adverse features? (shock, syncope, heart failure, ischaemia)",
+      "Yes → synchronised DC cardioversion, up to 3 shocks",
+      "No, narrow irregular (AF) → rate control",
+      "No, narrow regular (SVT) → vagal manoeuvres, then adenosine",
+      "No, broad regular (VT) → amiodarone"
+     ],
+     "caption": "Adverse features first; then QRS width and regularity choose the drug."
+    },
+    {
+     "type": "ask",
+     "q": "Winston is stable in AF at 138 bpm. He has no asthma. First-line treatment?",
+     "o": [
+      "IV adenosine",
+      "IV amiodarone",
+      "Oral bisoprolol",
+      "Synchronised DC cardioversion"
+     ],
+     "a": 2,
+     "r": "Stable AF: **rate control** with a beta-blocker. Adenosine is for SVT; shocks for adverse features."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Winston starts **bisoprolol**. With asthma he would get **diltiazem or verapamil** instead."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Winston's heart rate on bisoprolol",
+      "x": [
+       "0 h",
+       "6 h",
+       "24 h",
+       "48 h"
+      ],
+      "unit": "bpm",
+      "series": [
+       {
+        "name": "Heart rate",
+        "values": [
+         138,
+         112,
+         94,
+         82
+        ]
+       },
+       {
+        "name": "Target <110",
+        "values": [
+         110,
+         110,
+         110,
+         110
+        ]
+       }
+      ],
+      "caption": "Rate control, not rhythm: he stays in AF but the ventricles slow."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If bisoprolol had not slowed him, **digoxin** is second-line. The SVT and bradycardia ladders are here too."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "With a CHA2DS2-VASc of 4, Winston starts **apixaban**, a DOAC, for life."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 3: chest infection; a junior prescribes **clarithromycin**.",
+      "Day 4: he faints on the ward.",
+      "Monitor: runs of broad complexes **twisting** around the baseline.",
+      "Runs self-terminate; he wakes, pulse present between runs."
+     ],
+     "vitals": {
+      "HR": "84 bpm between runs",
+      "BP": "118/70 mmHg"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Winston's QTc on day 4",
+      "min": 380,
+      "max": 600,
+      "unit": "ms",
+      "bands": [
+       [
+        380,
+        440,
+        "normal (men)",
+        "ok"
+       ],
+       [
+        440,
+        500,
+        "prolonged",
+        "warn"
+       ],
+       [
+        500,
+        600,
+        "high torsades risk",
+        "bad"
+       ]
+      ],
+      "value": 532,
+      "label": "Winston 532 ms",
+      "caption": "Macrolide + low K⁺ and Mg²⁺ pushed his QTc past 500."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Polymorphic VT twisting around the baseline with QTc 532. Which drug?",
+     "o": [
+      "IV adenosine 6 mg",
+      "IV atropine 500 micrograms",
+      "IV magnesium sulphate 2 g",
+      "IV verapamil"
+     ],
+     "a": 2,
+     "r": "Torsades de pointes: **IV magnesium sulphate 2 g**, stop the culprit drug, correct potassium."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Winston gets **magnesium sulphate 2 g IV**, clarithromycin is stopped, and potassium is replaced. Learn the other emergency rules here too."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Ablation is not needed for Winston now. **Radiofrequency ablation** is for refractory AF or **WPW**; VT survivors get an **ICD**."
+    },
+    {
+     "type": "pearl",
+     "text": "Drug pairs: **SVT = vagal + adenosine; AF = rate control; bradycardia = atropine; VT = amiodarone; torsades = magnesium**."
+    },
+    {
+     "type": "trap",
+     "text": "Never give **verapamil** to a broad-complex tachycardia or with a beta-blocker: it can cause complete heart block or arrest."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanisms: re-entry, the bundle of Kent, why AF causes stroke, why QT prolongation causes torsades.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Most tachyarrhythmias are **re-entry** or abnormal **automaticity**. In WPW, the **bundle of Kent** short-circuits the AV node."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Winston's atria fire chaotically, so no P waves form, and the AV node lets impulses through **unpredictably**."
+    },
+    {
+     "type": "flow",
+     "title": "Why AF causes strokes",
+     "nodes": [
+      "Fibrillating atrium does not contract",
+      "Blood stagnates in the left atrial appendage",
+      "Thrombus forms",
+      "Clot embolises to the brain",
+      "Ischaemic stroke: hence anticoagulation"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "This is why Winston's apixaban matters more than his heart rate: **left atrial appendage** stasis causes clot."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Clarithromycin **delayed repolarisation**, triggering **early afterdepolarisations**. Magnesium stabilises the membrane."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Torsades can degenerate into **VF**: no coordinated contraction and **no cardiac output**."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Heart block is the opposite problem: conduction failing at or below the **AV node**, from slow PR to complete dissociation."
+    },
+    {
+     "type": "ask",
+     "q": "Why does AF give an irregularly irregular pulse?",
+     "o": [
+      "An accessory pathway bypasses the AV node",
+      "The AV node conducts chaotic atrial impulses unpredictably",
+      "The SA node fires faster during inspiration",
+      "Ventricular ectopics replace sinus beats"
+     ],
+     "a": 1,
+     "r": "Chaotic atrial activity bombards the **AV node**, which passes impulses through at random intervals."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "ECG features of Wolff-Parkinson-White?",
+   "o": [
+    "Delta wave, short PR, broad QRS",
+    "Long PR, dropped beats",
+    "Sawtooth flutter waves",
+    "ST elevation in V1–V4"
+   ],
+   "a": 0,
+   "r": "**Delta wave** (slurred upstroke), PR <120 ms, broad QRS."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Constant PR with intermittently dropped QRS?",
+   "o": [
+    "Complete heart block",
+    "First-degree block",
+    "Mobitz I (Wenckebach)",
+    "Mobitz II"
+   ],
+   "a": 3,
+   "r": "Constant PR + drops = **Mobitz II**; lengthening PR = Wenckebach."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which drug combination classically causes complete heart block?",
+   "o": [
+    "Amlodipine + ramipril",
+    "Apixaban + aspirin",
+    "Bisoprolol + verapamil",
+    "Metformin + gliclazide"
+   ],
+   "a": 2,
+   "r": "Both block the AV node."
+  },
+  {
+   "d": "diagnosis",
+   "q": "QTc defining long QT in men?",
+   "o": [
+    ">400 ms",
+    ">440 ms",
+    ">500 ms",
+    ">600 ms"
+   ],
+   "a": 1,
+   "r": ">440 ms men, **>460 ms women**."
+  },
+  {
+   "d": "investigation",
+   "q": "Recurrent palpitations, normal resting ECG. Next test?",
+   "o": [
+    "24-hour Holter monitor",
+    "Chest X-ray",
+    "CT coronary angiogram",
+    "Exercise tolerance test"
+   ],
+   "a": 0,
+   "r": "**Holter** captures intermittent arrhythmias."
+  },
+  {
+   "d": "investigation",
+   "q": "CHA2DS2-VASc threshold for anticoagulation in women?",
+   "o": [
+    "≥1",
+    "≥2",
+    "≥3",
+    "≥4"
+   ],
+   "a": 1,
+   "r": "Men **≥1**, women **≥2** (female sex itself scores 1)."
+  },
+  {
+   "d": "management",
+   "q": "First-line drug for SVT after vagal manoeuvres fail?",
+   "o": [
+    "IV adenosine 6 mg",
+    "IV amiodarone",
+    "IV atropine",
+    "Oral bisoprolol"
+   ],
+   "a": 0,
+   "r": "**Adenosine 6 mg**; verapamil if asthmatic."
+  },
+  {
+   "d": "management",
+   "q": "Treatment of torsades de pointes?",
+   "o": [
+    "IV adenosine",
+    "IV amiodarone 300 mg",
+    "IV atropine",
+    "IV magnesium sulphate 2 g"
+   ],
+   "a": 3,
+   "r": "**Magnesium sulphate 2 g IV**."
+  },
+  {
+   "d": "management",
+   "q": "Tachyarrhythmia with BP 70/50. Treatment?",
+   "o": [
+    "IV adenosine",
+    "Oral bisoprolol",
+    "Synchronised DC cardioversion",
+    "Vagal manoeuvres"
+   ],
+   "a": 2,
+   "r": "Adverse features → **synchronised DC cardioversion**, up to 3 shocks."
+  },
+  {
+   "d": "science",
+   "q": "Accessory pathway in WPW?",
+   "o": [
+    "Bachmann's bundle",
+    "Bundle of His",
+    "Bundle of Kent",
+    "Purkinje fibres"
+   ],
+   "a": 2,
+   "r": "The **bundle of Kent** bypasses the AV node."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old woman has had two episodes of dizziness. Her pulse rate is 52 bpm and BP 128/76 mmHg. Her ECG shows a constant PR interval of 180 ms with occasional P waves that are not followed by a QRS complex.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Complete heart block",
+    "First-degree heart block",
+    "Second-degree heart block (Mobitz I)",
+    "Second-degree heart block (Mobitz II)",
+    "Sinus bradycardia"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A rhythm diagnosis: read the ECG description, then match it to the block pattern."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "constant PR interval",
+      "not followed by a QRS complex",
+      "dizziness"
+     ],
+     "x": "Constant PR plus dropped QRS complexes; symptomatic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Constant PR with intermittent drops: **Mobitz II**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "In complete block P and QRS are unrelated; here conducted beats have a constant PR."
+      ],
+      [
+       1,
+       "First-degree block has a long PR but no dropped beats."
+      ],
+      [
+       2,
+       "Wenckebach shows **progressive** PR lengthening before the drop."
+      ],
+      [
+       4,
+       "Every P would be followed by a QRS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Second-degree heart block (Mobitz II).** Rule: watch the PR. Lengthening = Wenckebach; constant = Mobitz II. Mobitz II risks asystole."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 58 year old man has had episodes of palpitations lasting 20 minutes, about three times a week, for 2 months. He is well between episodes. His pulse rate is 76 bpm and regular, BP 130/80 mmHg. A 12-lead ECG in clinic shows sinus rhythm.",
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "24-hour Holter monitor",
+    "Cardiac MRI",
+    "Coronary angiography",
+    "Exercise tolerance test",
+    "Tilt-table test"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An investigation question: the resting ECG missed the rhythm, so how do you catch it?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "episodes of palpitations",
+      "three times a week",
+      "well between episodes",
+      "shows sinus rhythm"
+     ],
+     "x": "Frequent intermittent symptoms and a normal resting ECG."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Capture the arrhythmia: **24-hour Holter**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Not first to capture the rhythm."
+      ],
+      [
+       2,
+       "For coronary disease, not palpitations."
+      ],
+      [
+       3,
+       "Tests for ischaemia, not intermittent rhythm."
+      ],
+      [
+       4,
+       "For vasovagal syncope."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. 24-hour Holter monitor.** Rule: uncaptured recurrent palpitations = ambulatory ECG."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man has chest pain and breathlessness. His temperature is 36.4°C, pulse rate 34 bpm, BP 85/64 mmHg, respiratory rate 15 breaths per minute and oxygen saturation 99% breathing air. His ECG shows complete atrioventricular dissociation.",
+   "q": "Which is the most appropriate medication to give first?",
+   "o": [
+    "IV adenosine",
+    "IV amiodarone",
+    "IV atropine 500 micrograms",
+    "IV isoprenaline infusion",
+    "Oral bisoprolol"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A first-drug question in an unstable patient: identify the rhythm and its adverse features."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pulse rate 34 bpm",
+      "BP 85/64 mmHg",
+      "complete atrioventricular dissociation"
+     ],
+     "x": "Bradycardia with shock (adverse feature) and complete heart block."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Unstable bradycardia: **IV atropine 500 micrograms**, repeat to 3 mg, then pacing."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For SVT; it slows the AV node further."
+      ],
+      [
+       1,
+       "For VT; worsens bradycardia."
+      ],
+      [
+       3,
+       "Second-line if atropine fails."
+      ],
+      [
+       4,
+       "Slows the heart further."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV atropine 500 micrograms.** Rule: brady + adverse features = atropine first."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 45 year old woman on citalopram is given clarithromycin for pneumonia. Two days later she collapses. The monitor shows polymorphic broad-complex tachycardia twisting around the isoelectric line. Her QTc is 540 ms.",
+   "q": "Which is the most likely mechanism of this arrhythmia?",
+   "o": [
+    "Accessory pathway causing re-entry",
+    "AV node conduction failure",
+    "Chaotic atrial re-entry",
+    "Delayed repolarisation causing early afterdepolarisations",
+    "Increased vagal tone"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: name the rhythm, then the electrical process behind it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "citalopram",
+      "clarithromycin",
+      "twisting around the isoelectric line",
+      "QTc is 540 ms"
+     ],
+     "x": "Two QT-prolonging drugs and torsades."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Long QT = delayed repolarisation → **early afterdepolarisations** → torsades."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is WPW."
+      ],
+      [
+       1,
+       "That is heart block."
+      ],
+      [
+       2,
+       "That is AF."
+      ],
+      [
+       4,
+       "Causes bradycardia, not torsades."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Delayed repolarisation causing early afterdepolarisations.** Rule: QT prolongation triggers EADs; magnesium suppresses them."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man has had palpitations and breathlessness for 3 days. He drinks 40 units of alcohol a week. His temperature is 36.8°C, pulse rate 132 bpm (irregularly irregular), BP 138/82 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 96% breathing air. An ECG is recorded (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "12-lead ECG",
+    "layout": "12lead",
+    "rhythm": "af",
+    "rate": 132,
+    "caption": "12-lead ECG on arrival."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Atrial fibrillation",
+    "Atrial flutter",
+    "Multifocal atrial tachycardia",
+    "Supraventricular tachycardia",
+    "Ventricular tachycardia"
+   ],
+   "a": 0,
+   "e": "An irregularly irregular narrow-complex tachycardia without P waves, in a heavy drinker, is atrial fibrillation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely diagnosis?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "40 units of alcohol",
+      "irregularly irregular",
+      "132 bpm"
+     ],
+     "x": "Alcohol, irregular tachycardia, ECG."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**AF**: no P waves, irregularly irregular narrow complexes."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Regular, with sawtooth waves."
+      ],
+      [
+       2,
+       "Has P waves of varying shape."
+      ],
+      [
+       3,
+       "Regular and sudden onset."
+      ],
+      [
+       4,
+       "Broad complex."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Atrial fibrillation.** Irregular + no P = AF."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old woman has palpitations that started suddenly while she was running and stopped abruptly 30 minutes later. She felt lightheaded. Her pulse rate during the episode was 186 bpm and regular, BP 112/70 mmHg. Between episodes her ECG is normal with no delta wave.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Atrial fibrillation",
+    "Sinus tachycardia",
+    "Supraventricular tachycardia",
+    "Ventricular tachycardia",
+    "Wolff-Parkinson-White syndrome"
+   ],
+   "a": 2,
+   "e": "Sudden onset and termination of regular palpitations with lightheadedness is SVT; no delta wave argues against WPW.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely diagnosis?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started suddenly",
+      "stopped abruptly",
+      "186 bpm and regular",
+      "no delta wave"
+     ],
+     "x": "Sudden on, sudden off, regular, fast, young."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**SVT**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Irregularly irregular."
+      ],
+      [
+       1,
+       "Gradual onset and offset with exercise."
+      ],
+      [
+       3,
+       "Rare in a well 27 year old; broad complex."
+      ],
+      [
+       4,
+       "Needs a delta wave on the resting ECG."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Supraventricular tachycardia.** Abrupt onset and termination = SVT."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old man has had recurrent episodes of fast palpitations. His resting ECG shows a PR interval of 100 ms and a slurred upstroke to a broad QRS complex. His pulse rate is 74 bpm and BP 124/72 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Brugada syndrome",
+    "First-degree heart block",
+    "Left bundle branch block",
+    "Long QT syndrome",
+    "Wolff-Parkinson-White syndrome"
+   ],
+   "a": 4,
+   "e": "Short PR (<120 ms), delta wave and broad QRS with paroxysmal SVT is WPW.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely diagnosis?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "PR interval of 100 ms",
+      "slurred upstroke",
+      "broad QRS"
+     ],
+     "x": "Short PR, delta wave, broad QRS, paroxysmal tachycardia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**WPW**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coved ST elevation V1–V2, not a delta wave."
+      ],
+      [
+       1,
+       "PR is long, not short."
+      ],
+      [
+       2,
+       "Broad QRS but normal PR and no delta wave."
+      ],
+      [
+       3,
+       "Prolonged QT, normal PR."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Wolff-Parkinson-White syndrome.** Delta wave = WPW."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 78 year old woman with hypertension and angina was started on verapamil last week. She already takes bisoprolol. She feels faint. Her pulse rate is 32 bpm, BP 92/58 mmHg. An ECG is recorded (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "Rhythm strip",
+    "layout": "strip",
+    "rhythm": "chb",
+    "rate": 32,
+    "caption": "Lead II rhythm strip."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Complete heart block",
+    "First-degree heart block",
+    "Mobitz I",
+    "Sick sinus syndrome",
+    "Sinus bradycardia"
+   ],
+   "a": 0,
+   "e": "Concurrent bisoprolol and verapamil can cause complete heart block: P waves with no relationship to QRS complexes.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely diagnosis?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "verapamil",
+      "bisoprolol",
+      "pulse rate is 32 bpm"
+     ],
+     "x": "Two AV-nodal blockers, profound bradycardia, ECG."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Complete heart block**: P waves and QRS unrelated."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Every P conducts; rate would be normal."
+      ],
+      [
+       2,
+       "Progressive PR lengthening with conducted beats."
+      ],
+      [
+       3,
+       "Alternating brady and tachy; P waves related to QRS."
+      ],
+      [
+       4,
+       "Every P is followed by a QRS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Complete heart block.** Bisoprolol + verapamil = CHB."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old woman with rheumatic mitral stenosis has had palpitations for 2 days. Her pulse rate is 150 bpm and regular, BP 126/78 mmHg. Her ECG shows sawtooth baseline waves at 300 per minute, most obvious in II and V1, with two waves for every QRS.",
+   "labs": [
+    [
+     "Potassium",
+     "4.2 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "TSH",
+     "2.1 mU/L",
+     "0.4–4.0",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Atrial fibrillation",
+    "Atrial flutter",
+    "Sinus tachycardia",
+    "Supraventricular tachycardia",
+    "Ventricular tachycardia"
+   ],
+   "a": 1,
+   "e": "A regular rate of 150 with sawtooth waves in 2:1 ratio is atrial flutter, often secondary to mitral valve disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely diagnosis?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "mitral stenosis",
+      "150 bpm and regular",
+      "sawtooth",
+      "two waves for every QRS"
+     ],
+     "x": "Valvular disease, regular 150, sawtooth 2:1."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Atrial flutter with 2:1 block**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Irregularly irregular, no organised waves."
+      ],
+      [
+       2,
+       "Normal P waves."
+      ],
+      [
+       3,
+       "No sawtooth waves."
+      ],
+      [
+       4,
+       "Broad complexes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Atrial flutter.** Regular 150 = think flutter."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 56 year old man is treated with clarithromycin for a chest infection. He also takes citalopram. On day 3 he collapses. The monitor shows a polymorphic broad-complex tachycardia whose QRS axis twists around the baseline.",
+   "labs": [
+    [
+     "QTc",
+     "548 ms",
+     "<440",
+     "H"
+    ],
+    [
+     "Potassium",
+     "3.2 mmol/L",
+     "3.5–5.3",
+     "L"
+    ],
+    [
+     "Magnesium",
+     "0.62 mmol/L",
+     "0.70–1.00",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Atrial fibrillation with aberrancy",
+    "Monomorphic ventricular tachycardia",
+    "Sinus tachycardia",
+    "Torsades de pointes",
+    "Ventricular fibrillation"
+   ],
+   "a": 3,
+   "e": "Clarithromycin and citalopram prolong the QT and precipitate torsades: polymorphic VT twisting around the isoelectric line.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely diagnosis?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "clarithromycin",
+      "citalopram",
+      "polymorphic",
+      "twists around the baseline"
+     ],
+     "x": "Two QT-prolonging drugs; polymorphic twisting VT."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Torsades de pointes**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Irregular but not twisting polymorphic complexes."
+      ],
+      [
+       1,
+       "QRS complexes look identical."
+      ],
+      [
+       2,
+       "Normal narrow complexes."
+      ],
+      [
+       4,
+       "No clear QRS complexes at all."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Torsades de pointes.** Macrolide + SSRI = long QT = torsades."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 64 year old man has intermittent palpitations. He is otherwise well. His pulse rate is 70 bpm and regular, BP 134/80 mmHg. A 12-lead ECG is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "24-hour Holter monitor",
+    "Carotid Doppler",
+    "Chest X-ray",
+    "Myocardial perfusion scan",
+    "Serum troponin"
+   ],
+   "a": 0,
+   "e": "If the arrhythmia is intermittent and not captured on a 12-lead ECG, a 24-hour Holter monitor is next.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most appropriate next investigation?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "intermittent palpitations",
+      "12-lead ECG is normal"
+     ],
+     "x": "Intermittent symptoms, normal resting ECG."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Holter**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "For carotid stenosis."
+      ],
+      [
+       2,
+       "Does not capture rhythm."
+      ],
+      [
+       3,
+       "For ischaemia."
+      ],
+      [
+       4,
+       "For infarction."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. 24-hour Holter monitor.** Catch it on tape."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old woman is found to be in atrial fibrillation. She has hypertension and type 2 diabetes. She has never had a stroke or heart failure. Her pulse rate is 88 bpm (irregularly irregular) and BP 142/84 mmHg.",
+   "labs": [
+    [
+     "HbA1c",
+     "58 mmol/mol",
+     "<48",
+     "H"
+    ],
+    [
+     "eGFR",
+     "74 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "What is her CHA2DS2-VASc score?",
+   "o": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5"
+   ],
+   "a": 3,
+   "e": "Age 65–74 (1) + female (1) + hypertension (1) + diabetes (1) = 4; above the female threshold of 2, so anticoagulate.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"What is her CHA2DS2-VASc score?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "68 year old woman",
+      "hypertension",
+      "type 2 diabetes",
+      "never had a stroke"
+     ],
+     "x": "Age 65–74 (1), female (1), hypertension (1), diabetes (1)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Score **4**: anticoagulate."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Missed several factors."
+      ],
+      [
+       1,
+       "Counted only two factors."
+      ],
+      [
+       2,
+       "Forgot female sex scores 1."
+      ],
+      [
+       4,
+       "Age 65–74 scores 1, not 2."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. 4.** Age ≥75 or stroke would score 2."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 30 year old woman has regular palpitations that started suddenly an hour ago. She has no chest pain. Her pulse rate is 190 bpm, BP 118/74 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 99% breathing air. A Valsalva manoeuvre has not terminated it. She does not have asthma.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "IV adenosine 6 mg",
+    "IV amiodarone",
+    "IV atropine",
+    "Oral bisoprolol",
+    "Synchronised DC cardioversion"
+   ],
+   "a": 0,
+   "e": "Stable SVT after failed vagal manoeuvres is treated with IV adenosine 6 mg; DC cardioversion is reserved for adverse features.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the next most appropriate step in management?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "regular palpitations",
+      "started suddenly",
+      "190 bpm",
+      "Valsalva manoeuvre has not terminated it",
+      "does not have asthma"
+     ],
+     "x": "Stable SVT, vagal failed, no asthma."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV adenosine 6 mg**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "For VT or AF with heart failure."
+      ],
+      [
+       2,
+       "For bradycardia."
+      ],
+      [
+       3,
+       "Rate control for AF."
+      ],
+      [
+       4,
+       "Only with adverse features."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. IV adenosine 6 mg.** Vagal → adenosine → verapamil."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 66 year old man has palpitations and chest pain. His pulse rate is 170 bpm and regular, BP 72/48 mmHg. He is clammy and drowsy. ECG shows a broad-complex tachycardia with QRS duration 160 ms.",
+   "labs": [
+    [
+     "Potassium",
+     "4.0 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "hs-troponin T",
+     "64 ng/L",
+     "<14",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate immediate management?",
+   "o": [
+    "IV adenosine",
+    "IV amiodarone 300 mg over 20–60 minutes",
+    "IV magnesium sulphate",
+    "IV verapamil",
+    "Synchronised DC cardioversion"
+   ],
+   "a": 4,
+   "e": "VT with adverse features (shock, chest pain) needs urgent synchronised DC cardioversion; amiodarone is for stable VT.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most appropriate immediate management?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "BP 72/48 mmHg",
+      "clammy and drowsy",
+      "broad-complex tachycardia"
+     ],
+     "x": "VT with shock: adverse features."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Synchronised DC cardioversion**, up to 3 shocks."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For narrow-complex SVT."
+      ],
+      [
+       1,
+       "For stable VT."
+      ],
+      [
+       2,
+       "For torsades."
+      ],
+      [
+       3,
+       "Contraindicated in VT."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Synchronised DC cardioversion.** Unstable = shock."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old man is newly diagnosed with atrial fibrillation. He has heart failure and hypertension. His heart rate is controlled on bisoprolol. His pulse rate is 78 bpm and BP 128/76 mmHg. He has no bleeding history.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate long-term management to reduce stroke risk?",
+   "o": [
+    "Apixaban",
+    "Aspirin",
+    "Clopidogrel",
+    "Digoxin",
+    "No treatment"
+   ],
+   "a": 0,
+   "e": "With CHA2DS2-VASc 3 he needs anticoagulation with a DOAC such as apixaban; aspirin is not adequate stroke prevention.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most appropriate long-term management to reduce stroke risk?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heart failure and hypertension",
+      "74 year old",
+      "no bleeding history"
+     ],
+     "x": "CHA2DS2-VASc: CCF 1 + HTN 1 + age 65–74 1 = 3."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**DOAC (apixaban)**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Antiplatelets do not prevent AF stroke adequately."
+      ],
+      [
+       2,
+       "Antiplatelet; not for AF."
+      ],
+      [
+       3,
+       "Rate control, not stroke prevention."
+      ],
+      [
+       4,
+       "CHA2DS2-VASc is 3; anticoagulation needed."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Apixaban.** Score ≥2 → DOAC."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 79 year old woman with atrial fibrillation stopped her apixaban 2 months ago. She presents with sudden right arm weakness and expressive dysphasia. Her pulse rate is 96 bpm (irregularly irregular) and BP 150/86 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her stroke?",
+   "o": [
+    "Carotid plaque rupture",
+    "Cerebral vasculitis",
+    "Hypertensive small vessel lipohyalinosis",
+    "Paradoxical venous embolus",
+    "Thrombus from left atrial appendage stasis embolising to the brain"
+   ],
+   "a": 4,
+   "e": "In AF the fibrillating left atrium, especially the appendage, allows stasis and thrombus that embolises to the brain.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely mechanism of her stroke?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "atrial fibrillation",
+      "stopped her apixaban",
+      "irregularly irregular",
+      "expressive dysphasia"
+     ],
+     "x": "AF off anticoagulation, cortical stroke."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Left atrial appendage** thrombus embolised."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Possible in general, but AF off anticoagulation is the key clue."
+      ],
+      [
+       1,
+       "Rare, no features."
+      ],
+      [
+       2,
+       "Gives lacunar strokes, not cortical dysphasia."
+      ],
+      [
+       3,
+       "Needs a PFO and DVT."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Thrombus from left atrial appendage stasis embolising to the brain.** Stasis → thrombus → embolus."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "How are arrhythmias classified, and what are the narrow and broad-complex tachycardias?",
+    "tip": "Exam thinking: rate first, then QRS width.",
+    "points": [
+     {
+      "p": "Tachy >100 bpm, brady <60 bpm",
+      "k": [
+       [
+        "100"
+       ],
+       [
+        "60"
+       ]
+      ],
+      "why": "Bradyarrhythmias are mostly heart block or sick sinus."
+     },
+     {
+      "p": "Narrow: SVT, AF, atrial flutter",
+      "k": [
+       [
+        "svt",
+        "supraventricular"
+       ],
+       [
+        "af",
+        "fibrillation"
+       ],
+       [
+        "flutter"
+       ]
+      ],
+      "why": "Narrow = supraventricular origin."
+     },
+     {
+      "p": "Broad: VT",
+      "k": [
+       [
+        "vt",
+        "ventricular tachy"
+       ]
+      ],
+      "why": "Treat broad as VT until proven otherwise."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which features tell you AF rather than SVT on history, pulse and ECG?",
+    "tip": "Exam thinking: regularity decides.",
+    "points": [
+     {
+      "p": "AF: irregularly irregular pulse, apical-radial deficit",
+      "k": [
+       [
+        "irregularly irregular"
+       ]
+      ],
+      "why": "Absent A wave on JVP too."
+     },
+     {
+      "p": "AF ECG: absent P waves, narrow complexes",
+      "k": [
+       [
+        "p wave"
+       ]
+      ],
+      "why": "Rheumatic mitral stenosis and alcohol are classic causes."
+     },
+     {
+      "p": "SVT: sudden onset and sudden termination, lightheaded",
+      "k": [
+       [
+        "sudden",
+        "abrupt"
+       ]
+      ],
+      "why": "Regular rhythm."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Give the ECG signatures of WPW, atrial flutter, VT, VF and torsades.",
+    "tip": "Exam thinking: one picture per rhythm.",
+    "points": [
+     {
+      "p": "WPW: delta wave, short PR <120 ms, broad QRS",
+      "k": [
+       [
+        "delta"
+       ]
+      ],
+      "why": "Bundle of Kent."
+     },
+     {
+      "p": "Flutter: 2:1 sawtooth, V1 and II",
+      "k": [
+       [
+        "2:1",
+        "sawtooth"
+       ]
+      ],
+      "why": "Regular rate about 150."
+     },
+     {
+      "p": "VT: ~150 bpm, broad QRS ~160 ms",
+      "k": [
+       [
+        "vt",
+        "ventricular tachy"
+       ],
+       [
+        "broad",
+        "wide"
+       ]
+      ],
+      "why": "Regular broad complex."
+     },
+     {
+      "p": "VF: no clear QRS complexes",
+      "k": [
+       [
+        "vf",
+        "fibrillation"
+       ],
+       [
+        "no",
+        "absent"
+       ]
+      ],
+      "why": "Most common cause of cardiac death."
+     },
+     {
+      "p": "Torsades: polymorphic VT twisting round baseline",
+      "k": [
+       [
+        "torsade",
+        "polymorphic",
+        "twist"
+       ]
+      ],
+      "why": "Long QT trigger."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the ECG of each degree of heart block, and the bundle branch blocks.",
+    "tip": "Exam thinking: follow the PR interval.",
+    "points": [
+     {
+      "p": "First-degree: prolonged PR",
+      "k": [
+       [
+        "first"
+       ],
+       [
+        "prolong",
+        "long"
+       ]
+      ],
+      "why": "All Ps conduct."
+     },
+     {
+      "p": "Mobitz I: PR lengthens until a QRS drops",
+      "k": [
+       [
+        "mobitz i",
+        "wenckebach",
+        "mobitz 1"
+       ]
+      ],
+      "why": "Usually benign."
+     },
+     {
+      "p": "Mobitz II: constant PR, intermittent dropped QRS",
+      "k": [
+       [
+        "mobitz ii",
+        "mobitz 2"
+       ]
+      ],
+      "why": "Risk of asystole."
+     },
+     {
+      "p": "Complete: no P–QRS relationship, cannon A waves",
+      "k": [
+       [
+        "complete",
+        "third"
+       ],
+       [
+        "no relation",
+        "dissociat",
+        "independent",
+        "unrelated"
+       ]
+      ],
+      "why": "Bisoprolol + verapamil can cause it."
+     },
+     {
+      "p": "LBBB: broad QRS, WiLLiaM; RBBB: RSR' V1, MaRRoW",
+      "k": [
+       [
+        "lbbb",
+        "left bundle"
+       ],
+       [
+        "rbbb",
+        "right bundle"
+       ]
+      ],
+      "why": "QRS >120 ms in both."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the adverse features, and which drugs prolong the QT?",
+    "tip": "Exam thinking: adverse features change everything.",
+    "points": [
+     {
+      "p": "Shock, syncope, heart failure, chest pain, ischaemia",
+      "k": [
+       [
+        "shock",
+        "hypotens"
+       ],
+       [
+        "syncope",
+        "faint",
+        "collapse"
+       ]
+      ],
+      "why": "Any one → synchronised DC cardioversion."
+     },
+     {
+      "p": "Asystole risk: CHB broad QRS, Mobitz II, recent asystole, pause >3 s",
+      "k": [
+       [
+        "mobitz",
+        "pause",
+        "asystole"
+       ]
+      ],
+      "why": "Pacing territory."
+     },
+     {
+      "p": "QT prolongers: macrolides (clarithromycin), SSRIs (citalopram)",
+      "k": [
+       [
+        "macrolide",
+        "clarithro",
+        "azithro"
+       ],
+       [
+        "ssri",
+        "citalopram"
+       ]
+      ],
+      "why": "QTc >440 men, >460 women."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which investigations confirm an arrhythmia and find its cause?",
+    "tip": "Exam thinking: ECG, bloods, echo, then Holter.",
+    "points": [
+     {
+      "p": "12-lead ECG: gold standard",
+      "k": [
+       [
+        "ecg",
+        "12 lead",
+        "12-lead"
+       ]
+      ],
+      "why": "Measure PR and QT."
+     },
+     {
+      "p": "Bloods (electrolytes) and echocardiogram",
+      "k": [
+       [
+        "blood",
+        "electrolyte",
+        "potassium"
+       ],
+       [
+        "echo"
+       ]
+      ],
+      "why": "Look for structural disease."
+     },
+     {
+      "p": "24-hour Holter if recurrent and uncaptured",
+      "k": [
+       [
+        "holter",
+        "24 hour",
+        "24-hour",
+        "ambulatory"
+       ]
+      ],
+      "why": "Normal resting ECG does not exclude it."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What makes up CHA2DS2-VASc, what are the thresholds, and what does ORBIT measure?",
+    "tip": "Exam thinking: count the points, compare by sex.",
+    "points": [
+     {
+      "p": "1 each: CCF, hypertension, age 65–74, diabetes, vascular disease, female",
+      "k": [
+       [
+        "hypertens",
+        "htn"
+       ],
+       [
+        "diabet"
+       ]
+      ],
+      "why": "Female sex scores 1."
+     },
+     {
+      "p": "2 each: age ≥75, prior stroke/TIA/thromboembolism",
+      "k": [
+       [
+        "75"
+       ],
+       [
+        "stroke",
+        "tia"
+       ]
+      ],
+      "why": "The two double-scorers."
+     },
+     {
+      "p": "Anticoagulate men ≥1, women ≥2",
+      "k": [
+       [
+        "men",
+        "male"
+       ],
+       [
+        "women",
+        "female"
+       ]
+      ],
+      "why": "NICE AF guidance."
+     },
+     {
+      "p": "ORBIT: bleeding risk (age 75+, anaemia, bleeding, eGFR <60)",
+      "k": [
+       [
+        "orbit"
+       ],
+       [
+        "bleed"
+       ]
+      ],
+      "why": "Replaces HAS-BLED in NICE 2021."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Give the first-line and second-line treatment for AF, SVT and bradycardia.",
+    "tip": "Exam thinking: one ladder per rhythm.",
+    "points": [
+     {
+      "p": "AF: bisoprolol or diltiazem/verapamil; then digoxin",
+      "k": [
+       [
+        "bisoprolol",
+        "beta"
+       ],
+       [
+        "digoxin"
+       ]
+      ],
+      "why": "Avoid beta-blockers in asthma."
+     },
+     {
+      "p": "SVT: vagal manoeuvres, then IV adenosine 6 mg",
+      "k": [
+       [
+        "vagal",
+        "valsalva",
+        "carotid"
+       ],
+       [
+        "adenosine"
+       ]
+      ],
+      "why": "Verapamil if asthmatic."
+     },
+     {
+      "p": "Bradycardia: IV atropine 500 micrograms, up to 3 mg",
+      "k": [
+       [
+        "atropine"
+       ]
+      ],
+      "why": "Then isoprenaline/adrenaline or pacing."
+     },
+     {
+      "p": "Beta-blocker overdose bradycardia: glucagon",
+      "k": [
+       [
+        "glucagon"
+       ]
+      ],
+      "why": "Bypasses the beta receptor."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage unstable tachyarrhythmia, stable VT and torsades in an emergency?",
+    "tip": "Exam thinking: adverse features first.",
+    "points": [
+     {
+      "p": "Adverse features: synchronised DC cardioversion, up to 3 shocks",
+      "k": [
+       [
+        "cardiover",
+        "dc",
+        "shock"
+       ]
+      ],
+      "why": "Synchronised to the R wave."
+     },
+     {
+      "p": "Stable VT: amiodarone 300 mg IV over 20–60 min, then 900 mg over 24 h",
+      "k": [
+       [
+        "amiodarone"
+       ]
+      ],
+      "why": "Verapamil contraindicated."
+     },
+     {
+      "p": "Torsades: IV magnesium sulphate 2 g",
+      "k": [
+       [
+        "magnesium"
+       ]
+      ],
+      "why": "Stop the QT-prolonging drug."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the long-term and definitive management of AF, WPW, VT and complete heart block?",
+    "tip": "Exam thinking: device or ablation for each.",
+    "points": [
+     {
+      "p": "AF: DOAC (apixaban) if CHA2DS2-VASc ≥2; ablation if refractory",
+      "k": [
+       [
+        "doac",
+        "apixaban",
+        "anticoag"
+       ]
+      ],
+      "why": "Ablation still needs anticoagulation."
+     },
+     {
+      "p": "WPW: radiofrequency ablation of the accessory pathway",
+      "k": [
+       [
+        "ablat"
+       ]
+      ],
+      "why": "Sotalol second-line."
+     },
+     {
+      "p": "VT: ICD; no driving 6 months",
+      "k": [
+       [
+        "icd",
+        "defibrillator"
+       ]
+      ],
+      "why": "Secondary prevention."
+     },
+     {
+      "p": "Unstable complete heart block: permanent pacemaker",
+      "k": [
+       [
+        "pacemaker",
+        "pacing"
+       ]
+      ],
+      "why": "Temporary pacing first if needed."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What causes tachyarrhythmias, and why does WPW give a delta wave?",
+    "tip": "Exam thinking: re-entry versus automaticity.",
+    "points": [
+     {
+      "p": "Abnormal automaticity or re-entry circuits",
+      "k": [
+       [
+        "re-entry",
+        "reentry",
+        "re entry",
+        "automaticity"
+       ]
+      ],
+      "why": "AVNRT and flutter are re-entry."
+     },
+     {
+      "p": "WPW: bundle of Kent bypasses the AV node",
+      "k": [
+       [
+        "kent",
+        "accessory"
+       ]
+      ],
+      "why": "Early ventricular activation = delta wave, short PR."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does AF cause stroke, and why does long QT cause torsades?",
+    "tip": "Exam thinking: stasis, and afterdepolarisations.",
+    "points": [
+     {
+      "p": "Stasis in the left atrial appendage forms thrombus that embolises",
+      "k": [
+       [
+        "appendage",
+        "stasis",
+        "thromb",
+        "clot"
+       ]
+      ],
+      "why": "Hence anticoagulation."
+     },
+     {
+      "p": "Delayed repolarisation triggers early afterdepolarisations",
+      "k": [
+       [
+        "afterdepolari",
+        "repolari",
+        "ead"
+       ]
+      ],
+      "why": "Magnesium stabilises the membrane."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Tachyarrhythmia": "An abnormal heart rhythm with a rate above 100 bpm.",
+  "Bradyarrhythmia": "An abnormal heart rhythm with a rate below 60 bpm.",
+  "AF": "Atrial fibrillation: chaotic atrial activity giving an irregularly irregular pulse.",
+  "SVT": "Supraventricular tachycardia: a fast, regular, narrow-complex rhythm from above the ventricles.",
+  "AVNRT": "AV nodal re-entrant tachycardia; the commonest type of SVT.",
+  "VT": "Ventricular tachycardia: a fast, broad-complex rhythm from the ventricles.",
+  "VF": "Ventricular fibrillation: chaotic ventricular activity with no cardiac output.",
+  "Atrial flutter": "A regular atrial re-entry rhythm with sawtooth waves, often 2:1 conduction.",
+  "WPW": "Wolff-Parkinson-White: an accessory pathway causing delta waves and re-entrant tachycardias.",
+  "Delta wave": "A slurred upstroke of the QRS from early ventricular activation via an accessory pathway.",
+  "Bundle of Kent": "The accessory pathway in WPW linking atria and ventricles, bypassing the AV node.",
+  "Torsades de pointes": "Polymorphic VT twisting around the baseline, triggered by a long QT.",
+  "QTc": "QT interval corrected for heart rate.",
+  "Long QT": "QTc above 440 ms in men or 460 ms in women; risks torsades.",
+  "PR interval": "Time from start of P wave to start of QRS.",
+  "Wenckebach": "Mobitz I block: PR lengthens until a beat is dropped.",
+  "Mobitz II": "Second-degree block with constant PR and intermittent dropped QRS; risk of asystole.",
+  "Complete heart block": "Third-degree block: atria and ventricles beat independently.",
+  "Cannon A waves": "Large JVP waves when the atrium contracts against a closed tricuspid valve.",
+  "LBBB": "Left bundle branch block: broad QRS, dominant S in V1, M-shaped R in I/aVL.",
+  "RBBB": "Right bundle branch block: RSR' in V1–3 and slurred S in lateral leads.",
+  "Apical-radial deficit": "Apex rate exceeds radial pulse because some beats are too weak to reach the wrist.",
+  "Irregularly irregular": "No pattern to the beat intervals at all; typical of AF.",
+  "Adverse features": "Shock, syncope, heart failure or ischaemia, which mandate urgent cardioversion.",
+  "Synchronised DC cardioversion": "An electric shock timed to the R wave to restore normal rhythm.",
+  "Vagal manoeuvres": "Valsalva or carotid sinus massage, which slow AV node conduction.",
+  "Valsalva": "Forced expiration against a closed airway to increase vagal tone.",
+  "Adenosine": "IV drug that briefly blocks the AV node; terminates most SVTs.",
+  "Atropine": "Antimuscarinic drug that speeds the heart; first-line for unstable bradycardia.",
+  "Isoprenaline": "Beta-agonist infusion used for bradycardia when atropine fails.",
+  "Amiodarone": "Class III antiarrhythmic used for stable VT and rhythm control in AF.",
+  "Bisoprolol": "Cardioselective beta-blocker used for AF rate control.",
+  "Verapamil": "Non-dihydropyridine calcium channel blocker that slows the AV node.",
+  "Digoxin": "Cardiac glycoside used as second-line AF rate control.",
+  "Reverse tick": "Downsloping ST depression typical of digoxin effect.",
+  "DOAC": "Direct oral anticoagulant, such as apixaban.",
+  "Apixaban": "A DOAC (factor Xa inhibitor) used for stroke prevention in AF.",
+  "CHA2DS2-VASc": "Score estimating stroke risk in AF to decide anticoagulation.",
+  "ORBIT": "Score estimating bleeding risk on anticoagulation.",
+  "Holter": "Portable ECG recording over 24 hours or longer.",
+  "ICD": "Implantable cardioverter-defibrillator; shocks VT or VF automatically.",
+  "Radiofrequency ablation": "Catheter heat destroys the tissue causing an arrhythmia.",
+  "Left atrial appendage": "A pouch off the left atrium where clots form in AF.",
+  "Early afterdepolarisations": "Abnormal depolarisations during repolarisation that trigger torsades.",
+  "Re-entry": "An impulse circling a loop of tissue and repeatedly re-exciting it.",
+  "Sick sinus syndrome": "Sinus node dysfunction causing bradycardia, pauses or alternating brady-tachy.",
+  "Mitral stenosis": "Narrowed mitral valve, usually rheumatic, which enlarges the left atrium and causes AF.",
+  "Glucagon": "Hormone used to treat beta-blocker overdose bradycardia by raising cAMP."
+ }
+}

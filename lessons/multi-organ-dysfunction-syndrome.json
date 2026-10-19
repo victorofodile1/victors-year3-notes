@@ -1,0 +1,757 @@
+{
+ "id": "multi-organ-dysfunction-syndrome",
+ "patient": {
+  "name": "Patricia Doyle",
+  "age": 72,
+  "sex": "F",
+  "setting": "Emergency Department, then Intensive Care Unit",
+  "complaint": "Fever, rigors and yellow skin for 2 days; now drowsy and breathless",
+  "background": [
+   "Metastatic pancreatic cancer; biliary stent placed 3 months ago",
+   "Hypertension on amlodipine",
+   "Lives with her daughter in Lewisham",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect a septic, trauma or pancreatitis patient who then develops failure of several organs (rising creatinine, hypoxaemia, confusion, hypotension), asking 'Which is the most likely diagnosis?' or what process explains the new findings.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Patricia, 72, has **metastatic pancreatic cancer** and a biliary stent.",
+      "Two days of fever, **rigors** and right upper quadrant pain.",
+      "Her daughter noticed **yellow eyes** and new confusion this morning.",
+      "She is breathless and has barely passed urine since yesterday."
+     ],
+     "vitals": {
+      "T": "39.1°C",
+      "HR": "124 bpm",
+      "BP": "84/48 mmHg",
+      "RR": "28 /min",
+      "SpO2": "89% on air",
+      "GCS": "13"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "abdomen",
+      "title": "Where the infection started",
+      "regions": ["RUQ"],
+      "caption": "RUQ pain, fever and jaundice with a blocked stent: **ascending cholangitis**. This is the source of her sepsis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's infected stent caused sepsis. Once **two or more organ systems** fail, sepsis has become **MODS**."
+    },
+    {
+     "type": "labs",
+     "title": "First bloods and gas",
+     "rows": [
+      ["Lactate", "6.2 mmol/L", "0.5–2.0", "H"],
+      ["Creatinine", "248 µmol/L (baseline 78)", "45–90", "H"],
+      ["Urea", "18.4 mmol/L", "2.5–7.8", "H"],
+      ["Bilirubin", "96 µmol/L", "<21", "H"],
+      ["ALT", "140 U/L", "<40", "H"],
+      ["Platelets", "88 ×10⁹/L", "150–400", "L"],
+      ["WCC", "19.8 ×10⁹/L", "4.0–11.0", "H"],
+      ["PaO2 (on air)", "7.4 kPa", "10.0–13.0", "L"]
+     ],
+     "text": "Kidney, liver, lungs, circulation and clotting are all affected. **Lactate 6.2** shows poor tissue perfusion."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia has the classic set: **shock**, renal failure, respiratory failure, hepatic injury, confusion, low urine output and a **raised lactate**."
+    },
+    {
+     "type": "ask",
+     "q": "Patricia has sepsis plus hypotension, AKI, hypoxaemia, jaundice and confusion. Which term best describes her state?",
+     "o": ["Hepatorenal syndrome", "Isolated acute kidney injury", "Multi-organ dysfunction syndrome", "Sepsis without organ dysfunction"],
+     "a": 2,
+     "r": "Failure of **two or more organ systems** from a systemic inflammatory response is MODS. The other labels each explain only part of the picture."
+    },
+    {
+     "type": "compare",
+     "title": "Which of Patricia's organs are failing?",
+     "head": ["System", "Sign of failure", "Patricia"],
+     "rows": [
+      ["Cardiovascular", "Hypotension, shock, raised lactate", "BP 84/48, lactate 6.2"],
+      ["Renal", "Rising creatinine, low urine output", "Creatinine 248, oliguric"],
+      ["Respiratory", "Hypoxaemia on ABG, breathlessness", "PaO2 7.4 kPa, RR 28"],
+      ["Hepatic", "Rising bilirubin, raised ALT", "Bilirubin 96"],
+      ["Neurological", "Confusion, falling GCS", "GCS 13"]
+     ]
+    },
+    {
+     "type": "flow",
+     "title": "From infection to MODS",
+     "nodes": [
+      "Infection (infected biliary stent)",
+      "Systemic inflammatory response",
+      "Microvascular dysfunction",
+      "Reduced tissue perfusion",
+      "First organ fails",
+      "Two or more organs fail = MODS"
+     ],
+     "caption": "Sepsis is the commonest trigger; trauma and major illness (e.g. pancreatitis) do the same."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "With five systems involved, Patricia's risk of death is very high. If her organs keep worsening despite treatment, MODS is progressing."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Number of organ systems failing",
+      "min": 0,
+      "max": 6,
+      "unit": "",
+      "bands": [[0, 1, "no MODS", "ok"], [1, 2, "single organ", "warn"], [2, 6, "MODS: mortality rises sharply", "bad"]],
+      "value": 5,
+      "label": "Patricia 5",
+      "caption": "One failed organ is not MODS. From **two** upwards, each extra organ adds a big step in mortality."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "If the stem lists several failing organs and asks for **one** diagnosis, do not pick 'acute kidney injury' or 'delirium'. Those are parts of the picture; **MODS** is the whole."
+    },
+    {
+     "type": "pearl",
+     "text": "Sepsis plus organ failure = MODS. The three systems hit most often are **respiratory, renal and cardiovascular**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' where the answer is a **lactate** (perfusion) or blood cultures (cause), or a question on which organ-specific test shows which failure.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Resus team takes bloods, an arterial gas and blood cultures.",
+      "A urinary catheter drains only 10 mL in the first hour.",
+      "Portable chest X-ray is requested for her breathlessness."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "No single test 'proves' MODS. Patricia's diagnosis is **clinical**, backed by evidence that each organ is failing."
+    },
+    {
+     "type": "labs",
+     "title": "Arterial blood gas (on 15 L/min oxygen)",
+     "rows": [
+      ["pH", "7.24", "7.35–7.45", "L"],
+      ["PaO2", "8.1 kPa", "10.0–13.0", "L"],
+      ["PaCO2", "4.0 kPa", "4.7–6.0", "L"],
+      ["HCO3⁻", "15 mmol/L", "22–26", "L"],
+      ["Lactate", "6.2 mmol/L", "0.5–2.0", "H"],
+      ["Potassium", "5.4 mmol/L", "3.5–5.3", "H"]
+     ],
+     "text": "**Lactic metabolic acidosis** from poor perfusion, plus hypoxaemia even on high-flow oxygen: respiratory failure."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Patricia's lactate",
+      "min": 0,
+      "max": 10,
+      "unit": "mmol/L",
+      "bands": [[0, 2, "normal", "ok"], [2, 4, "raised", "warn"], [4, 10, "severe hypoperfusion", "bad"]],
+      "value": 6.2,
+      "label": "Patricia 6.2",
+      "caption": "Lactate is the **critical** blood test: it reflects tissue hypoperfusion. Repeat it to see if resuscitation is working."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia gets the full set: **lactate**, FBC, U&Es, LFTs; creatinine, bilirubin and ABG for each organ; blood cultures and imaging to find the cause."
+    },
+    {
+     "type": "compare",
+     "title": "Which test shows which failure?",
+     "head": ["Organ", "Test", "Patricia's result"],
+     "rows": [
+      ["Perfusion", "Lactate", "6.2 mmol/L"],
+      ["Kidney", "Creatinine (U&Es)", "248 µmol/L"],
+      ["Liver", "Bilirubin (LFTs)", "96 µmol/L"],
+      ["Lungs", "Arterial blood gas", "PaO2 8.1 kPa on oxygen"],
+      ["Cause", "Blood cultures, imaging", "Gram-negative bacilli; dilated bile ducts"]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which investigation, taken before antibiotics, is most useful to identify the cause of Patricia's MODS?",
+     "o": ["Blood cultures", "Liver biopsy", "Renal biopsy", "Troponin"],
+     "a": 0,
+     "r": "MODS is usually driven by sepsis, so **blood cultures** (and imaging of the source) find the cause. Biopsies have no place in the acute phase."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Portable chest X-ray",
+      "findings": [{"type": "pulm_oedema", "side": "both"}],
+      "caption": "Bilateral diffuse shadowing with a normal heart size: lung injury from the systemic inflammation (ARDS pattern), not a single pneumonia."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "Lactate is used twice: once to show **how bad** perfusion is, then repeatedly to show **whether resuscitation is working**."
+    },
+    {
+     "type": "trap",
+     "text": "A normal-looking SpO2 on high-flow oxygen does not rule out respiratory failure. Use the **arterial blood gas** to measure hypoxia."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (treat the cause: IV antibiotics), which organ support fits which failure (dialysis, ventilation, vasopressors), and capacity or ceiling-of-care questions in terminal illness.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Sepsis Six started within the hour: oxygen, cultures, fluids, lactate, urine output.",
+      "IV broad-spectrum antibiotics given; gastroenterology plan to replace the blocked stent.",
+      "After 1.5 L of fluid her BP is still 82/50 mmHg."
+     ],
+     "vitals": {
+      "HR": "118 bpm",
+      "BP": "82/50 mmHg",
+      "SpO2": "91% on 15 L/min"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The cause is sepsis, so Patricia's first-line treatment is **IV antibiotics** plus fixing the source (the blocked stent)."
+    },
+    {
+     "type": "ask",
+     "q": "Patricia stays hypotensive after adequate fluids. Which is the most appropriate next step?",
+     "o": ["Further 3 L fluid bolus", "IV furosemide", "Oral antibiotics", "Vasopressor infusion in ICU"],
+     "a": 3,
+     "r": "Cardiovascular failure despite fluids needs **vasopressors** (noradrenaline) in ICU. More fluid will flood her already injured lungs."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "In ICU Patricia gets oxygen, fluids and **noradrenaline**, with continuous monitoring and **repeat lactates**. Each failing organ gets its own support."
+    },
+    {
+     "type": "compare",
+     "title": "Organ support in MODS",
+     "head": ["Failing system", "Support"],
+     "rows": [
+      ["Cardiovascular", "**Vasopressors** (noradrenaline)"],
+      ["Respiratory", "Oxygen, then **mechanical ventilation**"],
+      ["Renal", "**Dialysis** (renal replacement therapy)"],
+      ["All", "Treat the cause; continuous monitoring; repeat lactate"]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Patricia's first 12 hours",
+      "x": ["0 h", "1 h", "3 h", "6 h", "12 h"],
+      "unit": "",
+      "series": [
+       {"name": "Lactate (mmol/L)", "values": [6.2, 5.8, 4.4, 3.6, 3.9]},
+       {"name": "Urine (mL/h)", "values": [10, 8, 12, 5, 0]}
+      ],
+      "caption": "Lactate improves on noradrenaline, but urine output stops: the kidneys keep failing. **Worsening organ function despite treatment** = progression."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 2: anuric, potassium 6.8, needs **dialysis**; intubated for hypoxia.",
+      "Sedated and ventilated, she can no longer make decisions.",
+      "No advance decision or lasting power of attorney exists.",
+      "Her oncologist confirms the cancer is terminal."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia now **lacks capacity** and has a terminal illness. The team must discuss further escalation versus **palliative care** with her daughter."
+    },
+    {
+     "type": "ask",
+     "q": "What is the most appropriate next step about further escalation for Patricia?",
+     "o": ["Ask her daughter to sign a consent form", "Continue all escalation without discussion", "Discuss escalation versus palliative care with her family and team", "Stop all treatment immediately"],
+     "a": 2,
+     "r": "Without capacity, decide in her **best interests** after discussion with family and the team. Family cannot sign consent for her (no LPA)."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Because sepsis is the trigger, Patricia's care follows the **Surviving Sepsis Campaign** and **NICE sepsis** guidance."
+    },
+    {
+     "type": "trap",
+     "text": "Giving more and more fluid to a patient with failing kidneys and lungs causes **fluid overload** and pulmonary oedema. Once fluids fail, move to **vasopressors**."
+    },
+    {
+     "type": "pearl",
+     "text": "Match the support to the organ: kidneys = **dialysis**, lungs = **ventilation**, circulation = **vasopressors**. The cause is treated first (antibiotics for sepsis)."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why organs fail after sepsis, trauma or pancreatitis (systemic inflammation, microvascular dysfunction), why lactate rises, or why organs fail despite a normal BP.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's cholangitis triggered a severe systemic inflammatory response. Microvascular dysfunction starved her organs of blood, and they failed one after another."
+    },
+    {
+     "type": "flow",
+     "title": "Cytokine storm to organ failure",
+     "nodes": [
+      "Cytokine storm (e.g. TNF-alpha, IL-6)",
+      "Widespread endothelial damage",
+      "Capillary leak and microvascular clotting",
+      "Poor microcirculatory flow",
+      "Cells switch to anaerobic metabolism",
+      "Lactate rises; organs fail"
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 2: on noradrenaline her BP is **112/66 mmHg**.",
+      "Yet her lactate is still 3.9 and her kidneys have stopped."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia's BP looks fine, but her **microcirculation** is still damaged, so organs keep failing despite a normal macrocirculation."
+    },
+    {
+     "type": "ask",
+     "q": "Why is Patricia's lactate still raised despite a normal BP?",
+     "o": ["Endothelial damage impairs microcirculatory flow", "Her liver produces too much glucose", "Noradrenaline is metabolised to lactate", "The cancer secretes lactate"],
+     "a": 0,
+     "r": "Cytokine damage to the **endothelium** blocks flow in small vessels, independent of BP. Cells lack oxygen and make lactate."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia's lactate tracks how much of her tissue is still short of oxygen. A falling trend means resuscitation is working."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Patricia's anuric kidneys caused fluid overload, which worsened her lungs. Each failing organ makes the next one worse."
+    },
+    {
+     "type": "flow",
+     "title": "Why one failure leads to another",
+     "nodes": [
+      "Kidneys fail",
+      "Fluid overload",
+      "Pulmonary oedema",
+      "Worse hypoxaemia",
+      "Less oxygen to every organ"
+     ],
+     "caption": "This interconnection is why mortality climbs so steeply with each extra organ."
+    },
+    {
+     "type": "pearl",
+     "text": "Exam phrase: organ failure after pancreatitis, trauma or sepsis is explained by a **systemic inflammatory response (SIRS) with multi-organ dysfunction**, not by one local complication."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {"d": "diagnosis", "q": "What defines multi-organ dysfunction syndrome?", "o": ["Any single organ failure", "Failure of two or more organ systems", "Fever with a raised white cell count", "Infection with a positive blood culture"], "a": 1, "r": "MODS = failure of **two or more** organ systems, usually from a systemic inflammatory response."},
+  {"d": "diagnosis", "q": "What is the most common underlying cause of MODS?", "o": ["Anaphylaxis", "Hypothyroidism", "Sepsis", "Trauma"], "a": 2, "r": "**Sepsis** is the commonest trigger; trauma and major illness also cause it."},
+  {"d": "diagnosis", "q": "Which three systems are most commonly affected in MODS?", "o": ["Cardiovascular, renal and respiratory", "Endocrine, skin and bone", "Gastrointestinal, eye and skin", "Neurological, endocrine and muscle"], "a": 0, "r": "**Respiratory, renal and cardiovascular** failure are the most common."},
+  {"d": "diagnosis", "q": "What happens to mortality as more organs fail?", "o": ["It falls", "It rises sharply from two or more organs", "It rises only after five organs", "It stays the same"], "a": 1, "r": "Mortality rises **sharply** once two or more organ systems have failed."},
+  {"d": "investigation", "q": "Which blood marker is critical for assessing perfusion in MODS?", "o": ["Amylase", "CRP", "Lactate", "Troponin"], "a": 2, "r": "**Lactate** reflects tissue hypoperfusion and is repeated to monitor response."},
+  {"d": "investigation", "q": "What is the gold standard for diagnosing MODS?", "o": ["Bone marrow biopsy", "Clinical diagnosis with evidence of organ dysfunction", "CT of the whole body", "Positive blood culture"], "a": 1, "r": "MODS is a **clinical diagnosis** backed by evidence of organ dysfunction."},
+  {"d": "management", "q": "What organ support is used for renal failure in MODS?", "o": ["Dialysis", "Furosemide", "Mechanical ventilation", "Vasopressors"], "a": 0, "r": "**Dialysis** (renal replacement therapy) supports failed kidneys."},
+  {"d": "management", "q": "What is the first-line treatment of MODS caused by sepsis?", "o": ["Antibiotics", "Dialysis", "Palliative care", "Steroids"], "a": 0, "r": "Treat the underlying cause: **antibiotics** for sepsis."},
+  {"d": "science", "q": "Why can organs fail in MODS even with a normal blood pressure?", "o": ["Antibiotics are toxic to organs", "Endothelial damage impairs microcirculatory flow", "High blood pressure is protective", "The heart pumps too fast"], "a": 1, "r": "Cytokine damage to the **endothelium** impairs microcirculatory flow independent of BP."}
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man is on the surgical ward 1 day after a laparotomy for a perforated sigmoid colon. He is confused and breathless and has passed 40 mL of urine in 4 hours. His temperature is 38.9°C, pulse rate 126 bpm, BP 80/46 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 88% breathing air. His creatinine has risen from 82 to 290 µmol/L and his bilirubin is 74 µmol/L.",
+   "labs": [["Lactate", "5.6 mmol/L", "0.5–2.0", "H"], ["Creatinine", "290 µmol/L", "60–110", "H"], ["Bilirubin", "74 µmol/L", "<21", "H"], ["Platelets", "92 ×10⁹/L", "150–400", "L"]],
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute kidney injury", "Cardiogenic shock", "Hepatorenal syndrome", "Multi-organ dysfunction syndrome", "Pulmonary embolism"],
+   "a": 3,
+   "steps": [
+    {"t": "Read the question line first", "x": "One diagnosis is wanted, so find the label that explains **every** abnormality, not just one."},
+    {"t": "Pick out the clues", "clues": ["perforated sigmoid colon", "confused and breathless", "40 mL of urine in 4 hours", "BP 80/46 mmHg", "creatinine has risen from 82 to 290", "bilirubin is 74"], "x": "Faecal peritonitis gives sepsis. Then circulation, kidneys, lungs, liver and brain all fail."},
+    {"t": "Make your own answer before looking", "x": "Sepsis plus failure of two or more organ systems: **multi-organ dysfunction syndrome**."},
+    {"t": "Rule out the others", "elim": [[0, "AKI is present but explains only the kidneys, not the hypoxia, jaundice or shock."], [1, "Cardiogenic shock follows a heart problem; here there is fever and a septic source."], [2, "Hepatorenal syndrome occurs in advanced liver disease; he has none."], [4, "PE gives hypoxia and shock but not fever, jaundice and a septic source."]]},
+    {"t": "Commit", "x": "**D. MODS.** Rule: several organs failing after sepsis, trauma or pancreatitis = MODS."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 57 year old woman with pyelonephritis is drowsy and hypotensive despite a fluid bolus. Her temperature is 39.4°C, pulse rate 122 bpm and BP 86/50 mmHg. Her creatinine is rising and her urine output has fallen. The team want a single blood test to show how severe her tissue hypoperfusion is and to monitor her response to resuscitation.",
+   "q": "Which is the most appropriate initial investigation?",
+   "o": ["Arterial blood lactate", "Chest X-ray", "Creatine kinase", "D-dimer", "Troponin"],
+   "a": 0,
+   "steps": [
+    {"t": "Read the question line first", "x": "The test must measure **tissue hypoperfusion** and be repeatable to track resuscitation."},
+    {"t": "Pick out the clues", "clues": ["hypotensive despite a fluid bolus", "creatinine is rising", "urine output has fallen", "how severe her tissue hypoperfusion is", "monitor her response to resuscitation"], "x": "Sepsis with shock and kidney failure: MODS. The question asks for the perfusion marker."},
+    {"t": "Make your own answer before looking", "x": "**Lactate**: it rises with anaerobic metabolism and its trend shows response."},
+    {"t": "Rule out the others", "elim": [[1, "Chest X-ray looks for a source; it does not measure perfusion."], [2, "CK is for muscle breakdown (rhabdomyolysis)."], [3, "D-dimer is non-specific and raised in sepsis anyway."], [4, "Troponin assesses myocardial injury, not global perfusion."]]},
+    {"t": "Commit", "x": "**A. Lactate.** Rule: in MODS lactate is the critical perfusion marker, repeated to monitor."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old man with pneumonia is transferred to intensive care. He has received 30 mL/kg of IV crystalloid and IV antibiotics. His pulse rate is 120 bpm, BP 78/44 mmHg (mean arterial pressure 55 mmHg) and urine output is 5 mL per hour. His creatinine is 260 µmol/L and his lactate is 5.0 mmol/L. Bilateral crackles are now heard.",
+   "q": "Which is the next most appropriate step in management?",
+   "o": ["Furosemide infusion", "Hydrocortisone IV", "Noradrenaline infusion", "Oral amoxicillin", "Packed red cell transfusion"],
+   "a": 2,
+   "steps": [
+    {"t": "Read the question line first", "x": "Next step after fluids and antibiotics in a shocked patient with failing organs."},
+    {"t": "Pick out the clues", "clues": ["30 mL/kg of IV crystalloid", "BP 78/44 mmHg", "urine output is 5 mL per hour", "lactate is 5.0 mmol/L", "Bilateral crackles"], "x": "Persistent shock after adequate fluid, kidneys failing, and crackles mean more fluid will harm."},
+    {"t": "Make your own answer before looking", "x": "Cardiovascular failure despite fluids needs a **vasopressor**: noradrenaline."},
+    {"t": "Rule out the others", "elim": [[0, "Furosemide drops BP further and will not work in shocked kidneys."], [1, "Steroids are an add-on only if vasopressors fail, not the next step."], [3, "Oral antibiotics are inappropriate in a critically ill patient on IV therapy."], [4, "No anaemia or bleeding is described."]]},
+    {"t": "Commit", "x": "**C. Noradrenaline.** Rule: circulation failing despite fluids = vasopressors in ICU."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 63 year old woman with severe sepsis from a liver abscess is in intensive care. On a noradrenaline infusion her BP is 118/70 mmHg and pulse rate 96 bpm. Despite this her lactate remains 4.2 mmol/L, she is oliguric and her bilirubin is rising.",
+   "q": "Which is the most likely mechanism of her ongoing organ failure?",
+   "o": ["Anaphylactic mast cell degranulation", "Autoimmune antibody deposition", "Endothelial damage impairing microcirculatory flow", "Left ventricular pump failure", "Obstruction of large arteries by emboli"],
+   "a": 2,
+   "steps": [
+    {"t": "Read the question line first", "x": "A mechanism question: why do organs fail when the BP is normal?"},
+    {"t": "Pick out the clues", "clues": ["severe sepsis", "BP is 118/70 mmHg", "lactate remains 4.2 mmol/L", "oliguric", "bilirubin is rising"], "x": "Normal macrocirculation, but tissue is still hypoxic and organs worsen."},
+    {"t": "Make your own answer before looking", "x": "The cytokine storm damages endothelium, so **microcirculatory flow** fails independent of BP."},
+    {"t": "Rule out the others", "elim": [[0, "Anaphylaxis is an IgE allergic reaction; there is no trigger here."], [1, "Antibody deposition causes vasculitis or glomerulonephritis, not sepsis-driven MODS."], [3, "Pump failure would give a low BP and pulmonary oedema; her BP is normal."], [4, "Large-vessel emboli cause focal ischaemia, not global multi-organ failure."]]},
+    {"t": "Commit", "x": "**C. Endothelial damage.** Rule: in MODS the microcirculation fails even when the BP looks fine."}
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old man is admitted with community-acquired pneumonia. On day 2 he becomes confused and his urine output falls to 10 mL per hour. His temperature is 38.6°C, pulse rate 118 bpm, BP 84/52 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 87% breathing 6 L/min oxygen.",
+   "labs": [["Lactate", "5.1 mmol/L", "0.5–2.0", "H"], ["Creatinine", "236 µmol/L (baseline 90)", "60–110", "H"], ["Bilirubin", "52 µmol/L", "<21", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute urinary retention", "Delirium tremens", "Multi-organ dysfunction syndrome", "Pre-renal acute kidney injury only", "Pulmonary embolism"],
+   "a": 2,
+   "e": "Pneumonia-driven sepsis with failure of the circulation, kidneys, lungs, liver and brain is MODS. AKI is only one part of the picture.",
+   "steps": [
+    {"t": "Read the question line first", "x": "One diagnosis that explains everything."},
+    {"t": "Pick out the clues", "clues": ["community-acquired pneumonia", "becomes confused", "urine output falls to 10 mL per hour", "BP 84/52 mmHg", "oxygen saturation 87%"], "x": "Septic source, then shock, renal, respiratory, liver and neurological failure."},
+    {"t": "Make your own answer before looking", "x": "Two or more organs failing from sepsis: **MODS**."},
+    {"t": "Rule out the others", "elim": [[0, "Retention gives a palpable bladder, not hypoxia and jaundice."], [1, "No alcohol history; DTs do not cause renal and liver failure like this."], [3, "AKI alone ignores the shock, hypoxia and jaundice."], [4, "PE does not explain fever, a pneumonia and rising bilirubin."]]},
+    {"t": "Commit", "x": "**C. MODS.** Several organs failing on top of sepsis."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 48 year old woman has a 3 day history of dysuria and loin pain, then rigors. She is now drowsy, hypotensive and oliguric, with a rising creatinine and an oxygen requirement. She has no history of trauma, allergy or recent surgery.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of her organ failure?",
+   "o": ["Anaphylaxis", "Hypothyroidism", "Major trauma", "Sepsis", "Severe dehydration"],
+   "a": 3,
+   "e": "Urinary infection leading to rigors and then multiple organ failure is MODS triggered by sepsis, the commonest cause.",
+   "steps": [
+    {"t": "Read the question line first", "x": "The cause of her multi-organ failure, not the name of it."},
+    {"t": "Pick out the clues", "clues": ["dysuria and loin pain", "rigors", "drowsy, hypotensive and oliguric", "oxygen requirement", "no history of trauma, allergy or recent surgery"], "x": "A clear infection source followed by failure of several systems."},
+    {"t": "Make your own answer before looking", "x": "Pyelonephritis caused **sepsis**, the commonest trigger of MODS."},
+    {"t": "Rule out the others", "elim": [[0, "No allergen exposure; anaphylaxis gives wheeze and urticaria."], [1, "Hypothyroidism does not cause acute multi-organ failure with rigors."], [2, "There is no trauma."], [4, "Dehydration alone does not explain rigors and hypoxia."]]},
+    {"t": "Commit", "x": "**D. Sepsis.** Sepsis plus organ failure equals MODS."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man has MODS secondary to faecal peritonitis. He is confused and breathless and his urine output is falling. His pulse rate is 124 bpm, BP 82/48 mmHg and respiratory rate 32 breaths per minute. An arterial blood gas is taken breathing 15 L/min oxygen.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on arterial blood gas?",
+   "o": ["Metabolic acidosis with raised lactate", "Metabolic alkalosis with low chloride", "Normal pH with normal lactate", "Respiratory acidosis with normal lactate", "Respiratory alkalosis with high bicarbonate"],
+   "a": 0,
+   "e": "Hypoperfusion drives anaerobic metabolism, giving a lactic metabolic acidosis, usually with hypoxaemia when the lungs are involved.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Predict the gas in a shocked patient with failing organs."},
+    {"t": "Pick out the clues", "clues": ["MODS secondary to faecal peritonitis", "urine output is falling", "BP 82/48 mmHg", "respiratory rate 32"], "x": "Shock means poor tissue perfusion; fast breathing is compensation."},
+    {"t": "Make your own answer before looking", "x": "Anaerobic metabolism makes lactate: **lactic metabolic acidosis**."},
+    {"t": "Rule out the others", "elim": [[1, "Metabolic alkalosis follows vomiting or diuretics, not shock."], [2, "A shocked patient will not have a normal lactate."], [3, "He is tachypnoeic, blowing off CO2; acidosis is metabolic."], [4, "High bicarbonate is the opposite of a lactic acidosis."]]},
+    {"t": "Commit", "x": "**A. Lactic metabolic acidosis.** Raised lactate = poor perfusion."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 26 year old man is in intensive care 2 days after a motorcycle collision with pelvic and femoral fractures. His haemoglobin is stable. His oxygen requirement is rising, his creatinine has doubled and he is newly jaundiced. His temperature is 37.6°C, pulse rate 116 bpm and BP 88/54 mmHg. Chest X-ray shows bilateral diffuse shadowing.",
+   "labs": [],
+   "visual": {"kind": "cxr", "title": "Chest X-ray", "findings": [{"type": "pulm_oedema", "side": "both"}], "caption": "Bilateral diffuse shadowing, normal heart size."},
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute blood loss", "Contrast nephropathy", "Hospital-acquired pneumonia", "Multi-organ dysfunction syndrome", "Tension pneumothorax"],
+   "a": 3,
+   "e": "Major trauma can trigger a systemic inflammatory response; lung, kidney, liver and circulatory failure together is MODS. Stable haemoglobin argues against bleeding.",
+   "steps": [
+    {"t": "Read the question line first", "x": "One diagnosis for failing lungs, kidneys, liver and circulation."},
+    {"t": "Pick out the clues", "clues": ["motorcycle collision", "haemoglobin is stable", "oxygen requirement is rising", "creatinine has doubled", "newly jaundiced", "bilateral diffuse shadowing"], "x": "Trauma is a trigger; several organs now fail together."},
+    {"t": "Make your own answer before looking", "x": "Trauma-driven systemic inflammation with multiple organ failure: **MODS**."},
+    {"t": "Rule out the others", "elim": [[0, "Haemoglobin is stable, so bleeding is unlikely."], [1, "Contrast nephropathy affects the kidney only."], [2, "Pneumonia gives focal consolidation, not liver and kidney failure."], [4, "Tension pneumothorax is one-sided with tracheal deviation."]]},
+    {"t": "Commit", "x": "**D. MODS.** Trauma, like sepsis, can cause it."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old woman with biliary sepsis is reviewed in intensive care. She has needed noradrenaline for 24 hours, is now on dialysis for acute kidney injury and has just been intubated for respiratory failure. Her daughter asks what most affects her chance of survival.",
+   "labs": [["Lactate", "4.8 mmol/L", "0.5–2.0", "H"], ["CRP", "310 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which feature is most strongly associated with mortality?",
+   "o": ["CRP level", "Number of failed organ systems", "Peak temperature", "Sex", "White cell count"],
+   "a": 1,
+   "e": "Mortality in MODS rises sharply with each extra organ system that fails; she has three. Inflammatory markers and fever do not predict death as strongly.",
+   "steps": [
+    {"t": "Read the question line first", "x": "A prognosis question about MODS."},
+    {"t": "Pick out the clues", "clues": ["needed noradrenaline", "on dialysis", "intubated for respiratory failure"], "x": "Cardiovascular, renal and respiratory failure: three systems."},
+    {"t": "Make your own answer before looking", "x": "Mortality rises sharply with the **number of organs failed**."},
+    {"t": "Rule out the others", "elim": [[0, "CRP shows inflammation, not prognosis in MODS."], [2, "Fever height does not predict death."], [3, "Sex is not the key predictor."], [4, "White cell count is non-specific."]]},
+    {"t": "Commit", "x": "**B. Number of failed organ systems.** Two or more = sharp rise."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 59 year old man has MODS from a perforated duodenal ulcer. A medical student asks which organ systems are most commonly involved. His pulse rate is 120 bpm, BP 86/50 mmHg and oxygen saturation 90% on oxygen, and he is oliguric.",
+   "labs": [],
+   "visual": null,
+   "q": "Which combination of organ systems is most commonly affected in this condition?",
+   "o": ["Cardiovascular, renal and respiratory", "Endocrine, skin and bone", "Gastrointestinal, eye and skin", "Musculoskeletal, eye and ear", "Neurological, endocrine and skin"],
+   "a": 0,
+   "e": "Respiratory, renal and cardiovascular failure are the commonest in MODS, matching his hypoxia, oliguria and hypotension.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Which systems fail most often in MODS?"},
+    {"t": "Pick out the clues", "clues": ["BP 86/50 mmHg", "oxygen saturation 90% on oxygen", "oliguric"], "x": "Circulation, lungs and kidneys are failing in this very stem."},
+    {"t": "Make your own answer before looking", "x": "**Cardiovascular, renal and respiratory**."},
+    {"t": "Rule out the others", "elim": [[1, "Endocrine, skin and bone are not typical MODS systems."], [2, "Eye and skin are rarely involved."], [3, "Musculoskeletal, eye and ear are not core organ systems in MODS."], [4, "Neurological can be involved, but endocrine and skin are not common."]]},
+    {"t": "Commit", "x": "**A.** Lungs, kidneys and circulation fail most often."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 79 year old woman with cellulitis becomes hypotensive and confused, with a falling urine output and rising creatinine. Her temperature is 38.8°C, pulse rate 116 bpm and BP 82/50 mmHg. Blood cultures have been taken.",
+   "labs": [["Creatinine", "198 µmol/L (baseline 70)", "45–90", "H"], ["Bilirubin", "38 µmol/L", "<21", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation to assess the severity of tissue hypoperfusion?",
+   "o": ["Blood film", "CT abdomen", "Serum amylase", "Serum lactate", "Urine dipstick"],
+   "a": 3,
+   "e": "Lactate reflects tissue hypoperfusion and is repeated to monitor resuscitation; it is the critical test in MODS.",
+   "steps": [
+    {"t": "Read the question line first", "x": "The test for severity of hypoperfusion."},
+    {"t": "Pick out the clues", "clues": ["hypotensive and confused", "falling urine output", "rising creatinine", "BP 82/50 mmHg"], "x": "Septic shock with organ failure: MODS."},
+    {"t": "Make your own answer before looking", "x": "**Lactate**: high lactate = poor perfusion."},
+    {"t": "Rule out the others", "elim": [[0, "A blood film does not assess perfusion."], [1, "CT abdomen is not indicated; the source is skin."], [2, "Amylase is for pancreatitis."], [4, "Dipstick looks for urine infection, not perfusion."]]},
+    {"t": "Commit", "x": "**D. Lactate.** The critical blood marker in MODS."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 62 year old man develops a fever 4 days after a hip replacement, then hypotension, oliguria and a rising bilirubin. The source of infection is not yet clear. His temperature is 39.0°C, pulse rate 120 bpm and BP 86/48 mmHg. Antibiotics are about to be started.",
+   "labs": [["WCC", "21.4 ×10⁹/L", "4.0–11.0", "H"], ["Lactate", "4.6 mmol/L", "0.5–2.0", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to identify the cause?",
+   "o": ["Blood cultures", "Bone marrow biopsy", "Lumbar puncture", "Serum ferritin", "Thyroid function tests"],
+   "a": 0,
+   "e": "MODS is usually triggered by sepsis; blood cultures before antibiotics (plus imaging) identify the cause and guide treatment.",
+   "steps": [
+    {"t": "Read the question line first", "x": "A test to find the cause, before antibiotics."},
+    {"t": "Pick out the clues", "clues": ["fever 4 days after a hip replacement", "hypotension, oliguria and a rising bilirubin", "source of infection is not yet clear", "about to be started"], "x": "Septic MODS with an unknown source."},
+    {"t": "Make your own answer before looking", "x": "**Blood cultures** before the antibiotics go in."},
+    {"t": "Rule out the others", "elim": [[1, "Marrow biopsy has no role in acute sepsis."], [2, "No meningism; LP is not the first test."], [3, "Ferritin is non-specific in inflammation."], [4, "Thyroid tests do not identify an infection."]]},
+    {"t": "Commit", "x": "**A. Blood cultures.** Find the cause, then treat it."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old woman with pneumonia is hypotensive, oliguric and hypoxic, with a raised lactate and rising creatinine. Her temperature is 38.9°C, pulse rate 122 bpm, BP 86/50 mmHg and oxygen saturation 89% breathing air. Her potassium is 4.9 mmol/L. She has started oxygen and IV fluids.",
+   "labs": [["Lactate", "4.4 mmol/L", "0.5–2.0", "H"], ["Creatinine", "212 µmol/L", "45–90", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate initial management of the underlying cause?",
+   "o": ["Haemodialysis", "IV broad-spectrum antibiotics", "Oral amoxicillin", "Platelet transfusion", "Prednisolone"],
+   "a": 1,
+   "e": "First-line treatment of MODS is treating the cause: IV antibiotics for sepsis. Dialysis is organ support and not needed with a normal potassium.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Treat the cause, not an organ."},
+    {"t": "Pick out the clues", "clues": ["pneumonia", "hypotensive, oliguric and hypoxic", "potassium is 4.9 mmol/L", "started oxygen and IV fluids"], "x": "Septic MODS; supportive steps already begun; no emergency for dialysis."},
+    {"t": "Make your own answer before looking", "x": "**IV antibiotics** treat the sepsis driving MODS."},
+    {"t": "Rule out the others", "elim": [[0, "Dialysis supports kidneys but does not treat the cause; no urgent indication."], [2, "Oral antibiotics are inadequate in a shocked patient."], [3, "No low platelets or bleeding described."], [4, "Steroids do not treat the infection."]]},
+    {"t": "Commit", "x": "**B. IV broad-spectrum antibiotics.** Cause first, then organ support."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 55 year old man in intensive care has MODS from necrotising pancreatitis. He is on noradrenaline and is ventilated. He has passed no urine for 12 hours despite adequate fluids. His pulse rate is 110 bpm and BP 104/62 mmHg on noradrenaline.",
+   "labs": [["Potassium", "6.9 mmol/L", "3.5–5.3", "H"], ["pH", "7.12", "7.35–7.45", "L"], ["Creatinine", "540 µmol/L", "60–110", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate organ support?",
+   "o": ["Calcium resonium", "Furosemide infusion", "IV fluid bolus", "Oral sodium bicarbonate", "Renal replacement therapy"],
+   "a": 4,
+   "e": "Anuric renal failure with hyperkalaemia and acidosis in MODS needs dialysis (renal replacement therapy). Diuretics and resins are too slow or ineffective.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Which organ support fits the failing organ?"},
+    {"t": "Pick out the clues", "clues": ["passed no urine for 12 hours", "despite adequate fluids", "is ventilated"], "x": "Anuric kidneys despite fluid; the labs add potassium 6.9 and pH 7.12, so dangerous hyperkalaemia and acidosis."},
+    {"t": "Make your own answer before looking", "x": "Renal failure in MODS = **dialysis** (renal replacement therapy)."},
+    {"t": "Rule out the others", "elim": [[0, "Resins act slowly and do not fix acidosis or anuria."], [1, "Furosemide will not work in anuric kidneys."], [2, "He has had adequate fluid; more risks overload."], [3, "Oral bicarbonate is inadequate in a ventilated, anuric patient."]]},
+    {"t": "Commit", "x": "**E. Renal replacement therapy.** Kidneys fail = dialysis."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "An 84 year old woman with metastatic lung cancer has MODS from pneumonia despite IV antibiotics and fluids. She is now unresponsive and lacks capacity. She has no advance decision and no lasting power of attorney. Her pulse rate is 128 bpm and BP 76/42 mmHg. Her son and daughter are at the bedside.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": ["Ask her son to sign a consent form", "Continue full escalation without discussion", "Discuss escalation versus palliative care with her family", "Seek an urgent court order", "Transfer to ICU for intubation immediately"],
+   "a": 2,
+   "e": "In terminal illness without capacity, discuss escalation versus palliative care with the family to reach an ethical, best-interests decision. Relatives cannot consent without an LPA.",
+   "steps": [
+    {"t": "Read the question line first", "x": "A decision about ceiling of care."},
+    {"t": "Pick out the clues", "clues": ["metastatic lung cancer", "lacks capacity", "no advance decision and no lasting power of attorney", "son and daughter are at the bedside"], "x": "Terminal illness, no capacity, family available."},
+    {"t": "Make your own answer before looking", "x": "**Discuss escalation versus palliative care with the family** and decide in her best interests."},
+    {"t": "Rule out the others", "elim": [[0, "Relatives cannot consent for an adult without an LPA."], [1, "Escalation needs a best-interests discussion first."], [3, "Courts are for unresolved disputes, not the first step."], [4, "Invasive escalation may not be in her best interests; discuss first."]]},
+    {"t": "Commit", "x": "**C. Discuss with family.** Capacity first, then a shared best-interests decision."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 68 year old man with MODS from peritonitis is on a noradrenaline infusion. His pulse rate is 94 bpm and BP 120/72 mmHg. Despite this his lactate remains raised and his urine output stays low.",
+   "labs": [["Lactate", "4.0 mmol/L", "0.5–2.0", "H"], ["Creatinine", "320 µmol/L", "60–110", "H"]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his persistently raised lactate?",
+   "o": ["Endothelial damage impairing microcirculatory flow", "Excess dietary lactate intake", "Hepatic overproduction of glucose", "Left ventricular pump failure", "Noradrenaline converted to lactate"],
+   "a": 0,
+   "e": "The cytokine storm damages endothelium, impairing microcirculatory flow independent of BP. Tissues stay hypoxic and switch to anaerobic metabolism, making lactate.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Why is lactate high when the BP is normal?"},
+    {"t": "Pick out the clues", "clues": ["noradrenaline infusion", "BP 120/72 mmHg", "lactate remains raised", "urine output stays low"], "x": "Macrocirculation restored; tissues still under-perfused."},
+    {"t": "Make your own answer before looking", "x": "**Microcirculatory** failure from endothelial damage."},
+    {"t": "Rule out the others", "elim": [[1, "Diet does not raise lactate like this."], [2, "Glucose output does not make lactate rise."], [3, "LV failure would cause low BP; his BP is normal."], [4, "Noradrenaline is not metabolised to lactate."]]},
+    {"t": "Commit", "x": "**A. Endothelial damage.** Normal BP does not mean normal perfusion."}
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {"d": "diagnosis", "q": "What is MODS and what usually causes it?", "tip": "Exam thinking: give the number of organs and the trigger.", "points": [
+    {"p": "Failure of two or more organ systems", "k": [["two", "2", "more than one", "multiple"], ["organ"]], "why": "One failed organ is not MODS."},
+    {"p": "Usually from a systemic inflammatory response", "k": [["inflammat", "sirs", "cytokine"]], "why": "SIRS is the phrase exam answers use."},
+    {"p": "Sepsis is the commonest trigger (sepsis + organ failure = MODS)", "k": [["sepsis", "septic", "infection"]], "why": "Trauma and major illness such as pancreatitis also cause it."}
+   ]},
+   {"d": "diagnosis", "q": "Which organ systems are most commonly affected in MODS?", "tip": "Exam thinking: name the top three.", "points": [
+    {"p": "Respiratory", "k": [["respirat", "lung"]], "why": "Hypoxaemia on ABG; may need ventilation."},
+    {"p": "Renal", "k": [["renal", "kidney", "aki"]], "why": "Rising creatinine, low urine output."},
+    {"p": "Cardiovascular", "k": [["cardiovascular", "circulat", "shock", "hypotension", "heart"]], "why": "Hypotension and shock."},
+    {"p": "Hepatic injury also occurs", "k": [["liver", "hepat", "bilirubin"]], "why": "Shown by a rising bilirubin."}
+   ]},
+   {"d": "diagnosis", "q": "How does MODS present at the bedside?", "tip": "Exam thinking: one symptom or sign per organ.", "points": [
+    {"p": "Hypotension, signs of shock", "k": [["hypotens", "shock", "low bp"]], "why": "Cardiovascular failure."},
+    {"p": "Reduced urine output", "k": [["urine", "oligur", "anur"]], "why": "Renal failure."},
+    {"p": "Breathlessness, respiratory distress", "k": [["breathless", "respiratory distress", "dyspn", "hypox"]], "why": "Respiratory failure."},
+    {"p": "Confusion", "k": [["confus", "drows", "gcs", "altered"]], "why": "Brain hypoperfusion."},
+    {"p": "Raised lactate", "k": [["lactate"]], "why": "Shows tissue hypoperfusion."}
+   ]},
+   {"d": "diagnosis", "q": "What happens to prognosis as MODS progresses?", "tip": "Exam thinking: progression and mortality.", "points": [
+    {"p": "Progression = worsening organ function despite treatment", "k": [["worsen", "deteriorat", "progress"], ["despite", "treatment"]], "why": "This is the sign MODS is advancing."},
+    {"p": "Mortality rises sharply once two or more organs fail", "k": [["mortality", "death", "die"], ["two", "2", "more organ", "each"]], "why": "The number of failed organs is the main predictor."}
+   ]},
+   {"d": "diagnosis", "q": "Which processes besides sepsis can trigger MODS?", "tip": "Exam thinking: the vignette may start with a non-infectious insult.", "points": [
+    {"p": "Major trauma", "k": [["trauma", "injury"]], "why": "Treated by injury management."},
+    {"p": "Major illness such as severe pancreatitis", "k": [["pancreatitis", "major illness", "burn"]], "why": "SIRS and multiorgan dysfunction explain new organ failure after pancreatitis."}
+   ]},
+   {"d": "investigation", "q": "How is MODS diagnosed and what is the critical blood test?", "tip": "Exam thinking: gold standard versus key marker.", "points": [
+    {"p": "Clinical diagnosis with evidence of organ dysfunction (gold standard)", "k": [["clinical"], ["organ", "dysfunction"]], "why": "There is no single confirmatory test."},
+    {"p": "Lactate: reflects poor perfusion", "k": [["lactate"]], "why": "Repeat it to monitor resuscitation."},
+    {"p": "FBC, U&Es, LFTs", "k": [["fbc", "u&e", "u&es", "lft", "full blood"]], "why": "Baseline organ function."}
+   ]},
+   {"d": "investigation", "q": "Which test shows failure of each organ, and which find the cause?", "tip": "Exam thinking: match test to organ.", "points": [
+    {"p": "Creatinine for the kidneys", "k": [["creatinine"]], "why": "Plus urine output via catheter."},
+    {"p": "Bilirubin for the liver", "k": [["bilirubin"]], "why": "Rising bilirubin = hepatic injury."},
+    {"p": "Arterial blood gas for respiratory failure (hypoxia)", "k": [["abg", "blood gas", "arterial gas"]], "why": "SpO2 alone underestimates it."},
+    {"p": "Blood cultures and imaging to find the cause", "k": [["culture"], ["imaging", "x-ray", "ct", "scan", "ultrasound"]], "why": "Cultures before antibiotics where possible."}
+   ]},
+   {"d": "management", "q": "What is first-line treatment of MODS, and what supportive care is given?", "tip": "Exam thinking: cause first, then support in ICU.", "points": [
+    {"p": "Treat the cause: antibiotics for sepsis, injury management for trauma", "k": [["antibiotic", "treat the cause", "underlying cause"]], "why": "Antibiotics are the first-line answer for septic MODS."},
+    {"p": "ICU supportive care: oxygen or ventilation, IV fluids, vasopressors", "k": [["icu", "intensive", "critical care"], ["oxygen", "fluid", "vasopressor", "noradrenaline"]], "why": "Vasopressors once fluids fail."},
+    {"p": "Continuous monitoring and repeat lactate", "k": [["monitor", "repeat"], ["lactate"]], "why": "Lactate trend shows response."}
+   ]},
+   {"d": "management", "q": "Which organ support matches which failing organ?", "tip": "Exam thinking: three pairs.", "points": [
+    {"p": "Renal failure: dialysis", "k": [["dialysis", "haemofiltration", "renal replacement", "rrt"]], "why": "Indications include anuria, high potassium, acidosis."},
+    {"p": "Respiratory failure: mechanical ventilation", "k": [["ventilat", "intubat"]], "why": "After oxygen fails."},
+    {"p": "Cardiovascular failure: vasopressors", "k": [["vasopressor", "noradrenaline", "norepinephrine"]], "why": "Restore vascular tone when fluids fail."}
+   ]},
+   {"d": "management", "q": "What do you do about escalation in a patient with MODS and terminal illness?", "tip": "Exam thinking: capacity, then family discussion.", "points": [
+    {"p": "Assess decision-making capacity", "k": [["capacity"]], "why": "Always the first step."},
+    {"p": "If lacking capacity, discuss escalation versus palliative care with the family", "k": [["family", "relative", "next of kin"], ["palliat", "escalat", "ceiling"]], "why": "Aim for an ethically and legally appropriate, unanimous decision; relatives cannot consent without an LPA."}
+   ]},
+   {"d": "science", "q": "Why do organs fail in MODS, even when the BP is normal?", "tip": "Exam thinking: macro versus microcirculation.", "points": [
+    {"p": "Systemic inflammation causes microvascular dysfunction and reduced tissue perfusion", "k": [["microvascul", "microcircul", "perfusion"]], "why": "This is the core pathophysiology."},
+    {"p": "Cytokine storm damages endothelium throughout the body", "k": [["cytokine", "endotheli"]], "why": "Impairs flow independent of BP."},
+    {"p": "Organs are interconnected: e.g. renal failure causes fluid overload, worsening respiratory failure", "k": [["fluid overload", "interconnect", "knock-on", "one organ"]], "why": "Explains why mortality climbs steeply."}
+   ]},
+   {"d": "science", "q": "Why is lactate raised in MODS and why is it repeated?", "tip": "Exam thinking: metabolism and monitoring.", "points": [
+    {"p": "Inadequate tissue oxygen delivery causes a shift to anaerobic metabolism", "k": [["anaerobic"]], "why": "Lactate is the end product."},
+    {"p": "Its trend monitors response to resuscitation", "k": [["trend", "monitor", "response", "repeat"]], "why": "A falling lactate means perfusion is improving."}
+   ]}
+  ]
+ },
+ "glossary": {
+  "MODS": "Multi-organ dysfunction syndrome: failure of two or more organ systems, usually from systemic inflammation such as sepsis.",
+  "SIRS": "Systemic inflammatory response syndrome: a body-wide inflammatory reaction to infection, trauma or major illness.",
+  "Sepsis": "Life-threatening organ dysfunction caused by a dysregulated host response to infection.",
+  "Septic shock": "Sepsis with persistent hypotension despite adequate fluids, needing vasopressors.",
+  "Lactate": "Product of anaerobic metabolism; a raised level shows tissue hypoperfusion.",
+  "Hypoperfusion": "Not enough blood flow to deliver oxygen to tissues.",
+  "Microcirculation": "Blood flow through the smallest vessels (arterioles, capillaries, venules) where oxygen reaches cells.",
+  "Macrocirculation": "Flow in the large vessels, reflected by blood pressure and cardiac output.",
+  "Endothelium": "The single cell layer lining blood vessels; damaged by cytokines in sepsis.",
+  "Cytokine storm": "Excessive release of inflammatory signalling proteins that damages tissues throughout the body.",
+  "Capillary leak": "Fluid escaping from damaged small vessels into tissues, causing oedema and low circulating volume.",
+  "Anaerobic metabolism": "Energy production without oxygen; makes lactate as a by-product.",
+  "Vasopressor": "Drug that constricts blood vessels to raise blood pressure, e.g. noradrenaline.",
+  "Noradrenaline": "First-line vasopressor in septic shock; given by infusion in ICU.",
+  "Dialysis": "Renal replacement therapy that removes waste, potassium, acid and fluid when the kidneys fail.",
+  "Renal replacement therapy": "Dialysis or haemofiltration used to take over kidney function.",
+  "Mechanical ventilation": "A machine breathes for the patient through an endotracheal tube.",
+  "ABG": "Arterial blood gas: measures oxygen, carbon dioxide, pH, bicarbonate and lactate.",
+  "ARDS": "Acute respiratory distress syndrome: inflammatory lung injury with bilateral shadowing and severe hypoxaemia.",
+  "AKI": "Acute kidney injury: a rapid fall in kidney function with rising creatinine or falling urine output.",
+  "Oliguria": "Low urine output, under about 0.5 mL/kg per hour.",
+  "Anuria": "No urine output.",
+  "Creatinine": "Waste product cleared by the kidneys; a rising level means falling kidney function.",
+  "Bilirubin": "Breakdown product of haem cleared by the liver; raised in hepatic injury.",
+  "Hypoxaemia": "Low oxygen level in arterial blood.",
+  "MAP": "Mean arterial pressure; the target in shock is usually 65 mmHg or above.",
+  "ICU": "Intensive care unit, where organ support is given.",
+  "Capacity": "The ability to understand, retain, weigh up information and communicate a decision.",
+  "LPA": "Lasting power of attorney: a legal document letting a named person make decisions if capacity is lost.",
+  "Palliative care": "Care focused on comfort and quality of life rather than cure.",
+  "Ceiling of care": "The agreed upper limit of treatment escalation for a patient.",
+  "Best interests": "The standard for decisions made for an adult who lacks capacity, under the Mental Capacity Act.",
+  "Ascending cholangitis": "Infection of the bile ducts, often from obstruction; classic fever, jaundice and RUQ pain.",
+  "Sepsis Six": "Bundle completed within 1 hour: oxygen, cultures, IV antibiotics, IV fluids, lactate, urine output.",
+  "Faecal peritonitis": "Infection of the peritoneum from bowel contents after a perforation."
+ }
+}

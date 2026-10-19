@@ -1,0 +1,311 @@
+{
+  "id": "ascites",
+  "patient": {
+    "name": "Tomasz Nowak",
+    "age": 61,
+    "sex": "M",
+    "setting": "Emergency Department, then the hepatology ward",
+    "complaint": "Swollen abdomen and breathlessness lying flat for 6 weeks",
+    "background": [
+      "Alcohol-related cirrhosis diagnosed 2 years ago; still drinks 3 cans of lager a day",
+      "Builder from Ealing; trousers no longer fasten",
+      "Takes propranolol",
+      "No known drug allergies"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely finding' with a drinker with abdominal distension and shifting dullness; and the emergency twist of ascites + fever + abdominal pain = spontaneous bacterial peritonitis.",
+      "steps": [
+        {"type": "story", "points": ["Tomasz, 61, has **alcohol-related cirrhosis**.", "Six weeks of a **painless, swelling abdomen**.", "Up 7 kg; ankles puffy.", "Breathless when lying flat; sleeps propped up."], "vitals": {"T": "36.9°C", "HR": "88 bpm", "BP": "106/64 mmHg", "RR": "20 /min", "SpO2": "96% on air"}},
+        {"type": "notes", "src": 0, "lead": "Tomasz's cirrhosis has raised his portal pressure: fluid is collecting in his **peritoneal cavity**."},
+        {"type": "notes", "src": 1, "lead": "**Cirrhosis** is by far the commonest cause; Tomasz's drinking is the driver. Malignancy is the main other cause to consider."},
+        {"type": "visual", "visual": {"kind": "abdomen", "title": "Where the fluid sits", "regions": ["L_flank", "R_flank", "suprapubic"], "caption": "Lying flat, fluid sinks to the flanks: dull flanks, resonant centre (gas-filled bowel floats up)."}},
+        {"type": "story", "points": ["Distended abdomen; everted umbilicus.", "Dull flanks that become resonant when he rolls over: **shifting dullness**.", "Fluid thrill present; dilated superficial veins.", "Spider naevi, palmar erythema, splenomegaly hard to feel."]},
+        {"type": "notes", "src": 2, "lead": "Tomasz shows the classic picture: painless distension, weight gain, breathlessness, **shifting dullness**, a fluid thrill, oedema and other chronic liver disease signs."},
+        {"type": "compare", "title": "Distended abdomen: which F?", "head": ["Feature", "Ascites (fluid)", "Obstruction (flatus)", "Ovarian mass"], "rows": [["Percussion", "**Dull flanks**, resonant centre", "Hyperresonant throughout", "**Dull centre**, resonant flanks"], ["Shifting dullness", "Yes", "No", "No"], ["Other clues", "Liver disease signs", "Vomiting, no flatus, colicky pain", "Pelvic mass, woman"]]},
+        {"type": "ask", "q": "Three days later Tomasz spikes 38.3°C with diffuse abdominal pain and becomes muddled. What must you suspect?", "o": ["Hepatocellular carcinoma", "Peptic ulcer perforation", "Spontaneous bacterial peritonitis", "Variceal bleed"], "a": 2, "r": "Ascites + fever + abdominal pain (and new confusion) = **SBP** until proven otherwise."},
+        {"type": "notes", "src": 3, "lead": "Tomasz now has the triad of ascites, **fever and abdominal pain**: SBP, a medical emergency."},
+        {"type": "notes", "src": 4, "lead": "Infected ascites is the key complication. In Tomasz the only sign may be new confusion or worsening kidneys, so the threshold to tap is low."},
+        {"type": "trap", "text": "SBP can be **subtle**: no peritonism, just fever, confusion or a rise in creatinine. Tap every cirrhotic with ascites who is unwell."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial/diagnostic investigation?': ultrasound to detect ascites, and a diagnostic tap within 8 hours for suspected SBP (neutrophils above 250 cells/mm³); then use the SAAG to find the cause.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Tomasz's **abdominal ultrasound** confirms ascites (and shows a small, nodular liver). It is both the first test and the gold standard for detecting fluid."},
+        {"type": "ask", "q": "Tomasz is febrile with abdominal pain. What is the most important next test?", "o": ["Abdominal X-ray", "CT abdomen", "Diagnostic ascitic tap", "Erect chest X-ray"], "a": 2, "r": "A **diagnostic paracentesis** within 8 hours: the neutrophil count makes or breaks SBP."},
+        {"type": "notes", "src": 1, "lead": "Tomasz has **LFTs, U&Es and INR** sent and a **diagnostic tap within 8 hours** of suspected SBP. A raised INR does not stop a diagnostic tap."},
+        {"type": "labs", "title": "Tomasz's ascitic tap and bloods", "rows": [["Ascitic neutrophils", "620 cells/mm³", "<250", "H"], ["Ascitic albumin", "8 g/L", "", ""], ["Serum albumin", "27 g/L", "35–50", "L"], ["Ascitic Gram stain", "Gram-negative rods", "None seen", ""], ["Creatinine", "118 µmol/L", "60–110", "H"], ["INR", "1.7", "0.8–1.2", "H"]], "text": "Neutrophils above 250 confirm SBP; culture is often negative, so do not wait for it."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Ascitic neutrophil count", "min": 0, "max": 800, "unit": "cells/mm³", "bands": [[0, 250, "Not SBP", "ok"], [250, 800, "SBP: treat now", "bad"]], "value": 620, "label": "Tomasz 620", "caption": "Above 250 cells/mm³ is SBP, whatever the culture shows."}},
+        {"type": "notes", "src": 2, "lead": "Tomasz's neutrophils are **620**: SBP. His SAAG is 27 − 8 g/L = 1.9 g/dL, so his ascites is **portal hypertensive**."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "SAAG (serum minus ascitic albumin)", "min": 0, "max": 3, "unit": "g/dL", "bands": [[0, 1.1, "<1.1: not portal (cancer, TB)", "warn"], [1.1, 3, "≥1.1: portal hypertension", "bad"]], "value": 1.9, "label": "Tomasz 1.9", "caption": "High gradient = transudate from portal hypertension: cirrhosis, Budd-Chiari, right heart failure, constrictive pericarditis."}},
+        {"type": "pearl", "text": "Work the SAAG in g/dL: serum albumin 27 g/L (2.7) minus ascitic 8 g/L (0.8) = **1.9**. Anything **≥1.1** means portal hypertension."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?': salt restriction and spironolactone first-line, large-volume paracentesis with albumin for tense ascites, TIPS if refractory, and IV antibiotics plus albumin for SBP.",
+      "steps": [
+        {"type": "notes", "src": 3, "lead": "Tomasz has SBP: **IV ceftriaxone** now, plus **HAS 1.5 g/kg** in the first 6 hours and **1 g/kg on day 3** to protect his kidneys."},
+        {"type": "flow", "title": "SBP bundle", "nodes": ["Ascites + fever/pain/confusion", "Diagnostic tap within 8 hours", "Neutrophils ≥250 cells/mm³", "IV ceftriaxone", "HAS 1.5 g/kg (first 6 h), 1 g/kg day 3", "Then prophylactic antibiotics"], "caption": "Do not wait for culture to start antibiotics."},
+        {"type": "story", "points": ["Fever settles by day 3; creatinine back to 92.", "Abdomen still **tense**; he cannot lie flat.", "Weight 84 kg; sodium 131 mmol/L."]},
+        {"type": "ask", "q": "Tomasz's tense ascites is splinting his diaphragm. What gives fastest relief?", "o": ["Fluid restriction", "Increase spironolactone", "Large-volume paracentesis with albumin", "TIPS"], "a": 2, "r": "**Large-volume paracentesis** with IV human albumin cover relieves tense ascites within hours."},
+        {"type": "notes", "src": 1, "lead": "Tomasz has 8 litres drained with **HAS cover**, which prevents circulatory dysfunction. He has no DIC, so drainage is safe."},
+        {"type": "notes", "src": 0, "lead": "To stop it re-accumulating Tomasz must **stop alcohol**, cut salt and start **spironolactone 100 mg**, titrating to 400 mg, with furosemide."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Tomasz's weight on diuretics", "x": ["Day 0", "Week 1", "Week 2", "Week 4"], "unit": "kg", "series": [{"name": "Weight", "values": [84, 82.5, 81, 79]}], "caption": "Steady loss of about 0.5 kg a day on spironolactone and salt restriction."}},
+        {"type": "trap", "text": "Watch for **hyperkalaemia** and **hyponatraemia** on spironolactone, and gynaecomastia long-term. Check U&Es regularly."},
+        {"type": "notes", "src": 2, "lead": "If Tomasz's ascites keeps returning despite maximal diuretics, he is referred for **TIPS** (and assessed for transplant)."},
+        {"type": "notes", "src": "guidelines", "lead": "Tomasz's care follows **NICE NG50** and **BSG** ascites guidance, including antibiotic prophylaxis after his SBP."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why fluid collects (hydrostatic and oncotic), why spironolactone is first-line (secondary hyperaldosteronism), what the SAAG means, and why albumin is given with paracentesis.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Tomasz's scarred liver raises **sinusoidal pressure** and makes little albumin: high hydrostatic, low oncotic pressure push fluid into the peritoneum."},
+        {"type": "flow", "title": "Why Tomasz retains salt and water", "nodes": ["Portal hypertension", "Splanchnic vasodilation (nitric oxide)", "Effective arterial underfilling", "RAAS activated: aldosterone up", "Renal sodium and water retention", "More ascites"]},
+        {"type": "notes", "src": 1, "lead": "Tomasz's kidneys sense underfilling and switch on **RAAS**; spironolactone blocks the aldosterone that is holding on to his sodium."},
+        {"type": "notes", "src": 2, "lead": "Tomasz's high SAAG means his fluid is a **transudate** driven by portal pressure, not an exudate from cancer or infection."},
+        {"type": "ask", "q": "How did bacteria reach Tomasz's ascites?", "o": ["Haematogenous spread from the lungs", "Perforation of the bowel", "Translocation across an oedematous gut wall", "Via the paracentesis needle"], "a": 2, "r": "**Bacterial translocation** across an oedematous, hypomotile gut into fluid with poor opsonic activity: hence gut organisms (E. coli)."},
+        {"type": "notes", "src": 3, "lead": "Tomasz's oedematous, sluggish gut lets **gut bacteria translocate** into ascites that has little opsonic defence."},
+        {"type": "notes", "src": 4, "lead": "Drain 8 litres from Tomasz without albumin and his splanchnic bed dilates further: **paracentesis-induced circulatory dysfunction**, renal failure and higher mortality."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "What is the most common cause of ascites?", "o": ["Cirrhosis", "Heart failure", "Nephrotic syndrome", "Tuberculosis"], "a": 0, "r": "**Cirrhosis** with portal hypertension."},
+    {"d": "diagnosis", "q": "Which examination sign is classic for ascites?", "o": ["Central dullness with resonant flanks", "Hyperresonance throughout", "Rebound tenderness", "Shifting dullness"], "a": 3, "r": "**Shifting dullness** (and a fluid thrill)."},
+    {"d": "diagnosis", "q": "Which triad suggests spontaneous bacterial peritonitis?", "o": ["Ascites, fever and abdominal pain", "Fever, jaundice and RUQ pain", "Haematemesis, melaena and shock", "Jaundice, confusion and asterixis"], "a": 0, "r": "**Ascites + fever + abdominal pain** = SBP until proven otherwise."},
+    {"d": "investigation", "q": "Which is the initial and gold-standard test to detect ascites?", "o": ["Abdominal X-ray", "CT abdomen", "Diagnostic laparoscopy", "Ultrasound abdomen"], "a": 3, "r": "**Ultrasound abdomen** is both."},
+    {"d": "investigation", "q": "Which ascitic neutrophil count diagnoses SBP?", "o": ["Above 50 cells/mm³", "Above 100 cells/mm³", "Above 250 cells/mm³", "Above 1000 cells/mm³"], "a": 2, "r": "**>250 cells/mm³**."},
+    {"d": "investigation", "q": "A SAAG of 1.8 g/dL suggests which cause?", "o": ["Pancreatitis", "Peritoneal carcinomatosis", "Portal hypertension", "Tuberculous peritonitis"], "a": 2, "r": "SAAG **≥1.1** = portal hypertension."},
+    {"d": "management", "q": "Which is the first-line diuretic for cirrhotic ascites?", "o": ["Bendroflumethiazide", "Furosemide alone", "Mannitol", "Spironolactone"], "a": 3, "r": "**Spironolactone 100 mg**, titrated to 400 mg, with furosemide."},
+    {"d": "management", "q": "What must be given with large-volume paracentesis?", "o": ["Fresh frozen plasma", "Human albumin solution", "IV furosemide", "Normal saline 1 L"], "a": 1, "r": "**HAS** reduces circulatory dysfunction and mortality."},
+    {"d": "management", "q": "Which is the treatment for refractory ascites?", "o": ["Long-term ceftriaxone", "Octreotide", "Repeated FFP", "TIPS"], "a": 3, "r": "**TIPS**, or transplant assessment."},
+    {"d": "science", "q": "Why is spironolactone effective in cirrhotic ascites?", "o": ["It blocks secondary hyperaldosteronism", "It increases albumin synthesis", "It lowers portal pressure directly", "It reverses splanchnic vasodilation"], "a": 0, "r": "**RAAS** is activated by effective arterial underfilling; spironolactone antagonises aldosterone."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is ascites, and what causes it?", "tip": "Exam thinking: one cause dominates the papers.", "points": [
+        {"p": "Abnormal fluid in the peritoneal cavity", "k": [["fluid"], ["peritone", "abdom"]], "why": "Ultrasound detects as little as 100 mL."},
+        {"p": "Most commonly portal hypertension from cirrhosis", "k": [["portal", "cirrho"]], "why": "Alcohol is the usual cause of the cirrhosis."},
+        {"p": "Malignancy is the other important cause", "k": [["malignan", "cancer", "carcinomatosis"]], "why": "Low SAAG; think ovarian or GI primary."}]},
+      {"d": "diagnosis", "q": "What are the symptoms and examination signs of ascites?", "tip": "Exam thinking: how you prove fluid at the bedside.", "points": [
+        {"p": "Abdominal distension, discomfort and weight gain", "k": [["distension", "distended", "swell"]], "why": "Usually painless."},
+        {"p": "Breathlessness with large-volume ascites", "k": [["breathless", "dyspn", "sob"]], "why": "Diaphragmatic splinting; worse lying flat."},
+        {"p": "Shifting dullness", "k": [["shifting"]], "why": "The classic sign."},
+        {"p": "Fluid thrill", "k": [["thrill"]], "why": "Only in large volumes."},
+        {"p": "Superficial veins, peripheral oedema, chronic liver disease signs", "k": [["vein", "oedema", "edema", "spider", "palmar"]], "why": "Signs of portal hypertension and liver disease."}]},
+      {"d": "diagnosis", "q": "What is the key emergency complication of ascites and how does it present?", "tip": "Exam thinking: ascites plus something new and unwell.", "points": [
+        {"p": "Spontaneous bacterial peritonitis (SBP)", "k": [["sbp", "spontaneous bacterial", "peritonitis"]], "why": "A medical emergency."},
+        {"p": "Ascites, fever and abdominal pain", "k": [["fever", "pyrexi", "temperature"], ["pain", "tender"]], "why": "Classic triad."},
+        {"p": "Abdominal distension and tenderness; can be subtle (confusion, AKI)", "k": [["tender", "confus", "kidney", "aki"]], "why": "Tap any unwell cirrhotic with ascites."}]},
+      {"d": "diagnosis", "q": "How do you tell ascites from other causes of a distended abdomen?", "tip": "Exam thinking: the five Fs, by percussion.", "points": [
+        {"p": "Ascites: dull flanks, resonant centre, shifting dullness", "k": [["flank"], ["dull", "shifting"]], "why": "Gas-filled bowel floats centrally."},
+        {"p": "Obstruction (flatus): hyperresonant, colicky pain, vomiting", "k": [["obstruct", "resonan", "flatus"]], "why": "No shifting dullness."},
+        {"p": "Mass (e.g. ovarian): dull centre, resonant flanks", "k": [["mass", "ovar", "cyst"]], "why": "The reverse of ascites."}]},
+      {"d": "investigation", "q": "Which investigations confirm ascites and diagnose SBP?", "tip": "Exam thinking: image to detect it, tap to diagnose infection.", "points": [
+        {"p": "Ultrasound abdomen: initial and gold standard for detecting ascites", "k": [["ultrasound", "uss"]], "why": "Not CT or X-ray."},
+        {"p": "Bloods: LFTs, U&Es, INR", "k": [["lft", "liver function", "u&e", "inr"]], "why": "Severity and renal function."},
+        {"p": "Diagnostic paracentesis within 8 hours of suspected SBP", "k": [["tap", "paracentesis", "aspirat"], ["8", "eight"]], "why": "Do not delay for clotting."},
+        {"p": "SBP if ascitic neutrophils above 250 cells/mm³", "k": [["250"]], "why": "Treat without waiting for culture."}]},
+      {"d": "investigation", "q": "What is the SAAG, what are the cut-offs, and what does each mean?", "tip": "Exam thinking: subtract, then compare to 1.1.", "points": [
+        {"p": "SAAG = serum albumin minus ascitic albumin", "k": [["serum", "plasma"], ["minus", "subtract", "difference", "gradient"]], "why": "Not a ratio: a subtraction."},
+        {"p": "≥1.1 g/dL = portal hypertension (cirrhosis, Budd-Chiari, right HF, constrictive pericarditis)", "k": [["1.1"], ["portal", "cirrho", "heart failure", "budd"]], "why": "Transudate."},
+        {"p": "<1.1 g/dL = non-portal (peritoneal carcinomatosis, TB)", "k": [["carcinomatosis", "malignan", "cancer", "tb", "tubercul"]], "why": "Exudate."}]},
+      {"d": "management", "q": "What is the first-line management of cirrhotic ascites, with doses?", "tip": "Exam thinking: cause, salt, then one named diuretic.", "points": [
+        {"p": "Treat the cause: stop alcohol, manage cirrhosis", "k": [["alcohol", "cause", "abstin"]], "why": "Abstinence can reverse decompensation."},
+        {"p": "Dietary salt restriction with high-energy, high-protein diet", "k": [["salt", "sodium"]], "why": "Not fluid restriction routinely."},
+        {"p": "Spironolactone 100 mg OD titrated to 400 mg", "k": [["spironolactone"], ["100", "400"]], "why": "First-line diuretic."},
+        {"p": "With furosemide", "k": [["furosemide", "frusemide"]], "why": "Added for effect and to balance potassium."}]},
+      {"d": "management", "q": "How do you manage tense, refractory ascites and SBP?", "tip": "Exam thinking: drain with albumin; shunt if it keeps coming back; antibiotics plus albumin for SBP.", "points": [
+        {"p": "Large-volume paracentesis with IV human albumin solution", "k": [["paracentesis", "drain"], ["albumin", "has"]], "why": "Reduces circulatory dysfunction and mortality."},
+        {"p": "Paracentesis contraindicated in DIC", "k": [["dic", "disseminated"]], "why": "Bleeding gums, high D-dimer, low fibrinogen."},
+        {"p": "Refractory ascites: TIPS", "k": [["tips", "transjugular"]], "why": "Plus transplant assessment."},
+        {"p": "SBP: IV antibiotics such as ceftriaxone", "k": [["ceftriaxone", "antibiotic", "cefotaxime"]], "why": "Start immediately after the tap."},
+        {"p": "SBP: HAS 1.5 g/kg in 6 hours, then 1 g/kg on day 3", "k": [["1.5"], ["albumin", "has"]], "why": "Prevents hepatorenal syndrome."}]},
+      {"d": "science", "q": "Why does portal hypertension cause ascites, and why use spironolactone?", "tip": "Exam thinking: Starling forces, then the kidney.", "points": [
+        {"p": "Raised hydrostatic pressure in the splanchnic/sinusoidal circulation", "k": [["hydrostatic", "sinusoid", "pressure"]], "why": "Fluid is pushed out."},
+        {"p": "Low albumin reduces oncotic pressure", "k": [["oncotic", "albumin"]], "why": "Fluid is not pulled back."},
+        {"p": "Splanchnic vasodilation causes effective arterial underfilling, activating RAAS", "k": [["raas", "renin", "aldosterone"]], "why": "Kidneys retain sodium and water."},
+        {"p": "Spironolactone antagonises aldosterone", "k": [["antagon", "block"]], "why": "Hence first-line."}]},
+      {"d": "science", "q": "How does SBP develop, and why give albumin with large-volume paracentesis?", "tip": "Exam thinking: gut bacteria in; circulating volume out.", "points": [
+        {"p": "Bacterial translocation across an oedematous, hypomotile gut wall", "k": [["translocat"]], "why": "Hence gut organisms: E. coli, Klebsiella."},
+        {"p": "Ascitic fluid has reduced opsonic/antibacterial activity", "k": [["opson", "antibacterial", "low protein"]], "why": "Low-protein ascites is highest risk."},
+        {"p": "Without albumin, fluid removal worsens splanchnic vasodilation and effective circulating volume", "k": [["vasodilat", "circulating", "volume"]], "why": "Paracentesis-induced circulatory dysfunction."},
+        {"p": "High SAAG = transudate from portal pressure; low = exudate", "k": [["transudate", "exudate"]], "why": "The SAAG tells you the mechanism."}]}
+    ]
+  },
+  "glossary": {
+    "Ascites": "Abnormal collection of fluid in the peritoneal cavity, most often from portal hypertension in cirrhosis.",
+    "Peritoneal cavity": "The space between the two layers of peritoneum lining the abdomen and covering the gut.",
+    "Portal hypertension": "Raised pressure in the portal vein, usually from a scarred cirrhotic liver resisting blood flow.",
+    "Cirrhosis": "End-stage liver scarring with nodules, causing portal hypertension and liver failure.",
+    "Shifting dullness": "Flank dullness that moves to the uppermost side becoming resonant when the patient rolls: proves free fluid.",
+    "Fluid thrill": "A tap on one flank felt as a wave on the other, seen in large-volume ascites.",
+    "Everted umbilicus": "Belly button pushed outwards by raised intra-abdominal pressure.",
+    "Spontaneous bacterial peritonitis": "Infection of ascitic fluid without a surgical source, diagnosed by ascitic neutrophils above 250 cells/mm³.",
+    "SBP": "Spontaneous bacterial peritonitis: infected ascites, a medical emergency.",
+    "Secondary peritonitis": "Peritonitis from a surgical source such as perforation; usually polymicrobial with free air.",
+    "Paracentesis": "Putting a needle or drain into the peritoneal cavity to sample or remove ascitic fluid.",
+    "Diagnostic tap": "A small-volume paracentesis to send fluid for cell count, albumin and culture.",
+    "Large-volume paracentesis": "Draining several litres of ascites to relieve tense distension, given with albumin cover.",
+    "SAAG": "Serum-ascites albumin gradient: serum minus ascitic albumin; 1.1 g/dL or more means portal hypertension.",
+    "Transudate": "Low-protein fluid pushed out by pressure, as in portal hypertension.",
+    "Exudate": "High-protein fluid from inflammation or malignancy that leaks through damaged vessels.",
+    "Peritoneal carcinomatosis": "Cancer spread across the peritoneum, causing low-SAAG malignant ascites.",
+    "Budd-Chiari syndrome": "Hepatic vein obstruction causing hepatomegaly, abdominal pain and high-SAAG ascites.",
+    "Constrictive pericarditis": "Stiff, scarred pericardium restricting heart filling, raising venous pressure and causing ascites.",
+    "HAS": "Human albumin solution, given IV to support circulating volume in paracentesis and SBP.",
+    "Human albumin solution": "Intravenous albumin used to protect circulation and kidneys in liver patients.",
+    "Spironolactone": "Aldosterone antagonist diuretic, first-line for cirrhotic ascites.",
+    "Furosemide": "Loop diuretic added to spironolactone for ascites.",
+    "TIPS": "Transjugular intrahepatic portosystemic shunt: a stent linking portal and hepatic veins to lower portal pressure.",
+    "DIC": "Disseminated intravascular coagulation: widespread clotting and bleeding, with high D-dimer and low fibrinogen.",
+    "Ceftriaxone": "Third-generation cephalosporin antibiotic used IV to treat SBP.",
+    "RAAS": "Renin-angiotensin-aldosterone system, which makes the kidneys retain sodium and water.",
+    "Secondary hyperaldosteronism": "High aldosterone driven by low effective circulating volume, as in cirrhosis.",
+    "Splanchnic vasodilation": "Widening of gut blood vessels in cirrhosis, which leaves the rest of the circulation underfilled.",
+    "Effective arterial underfilling": "Arteries feel underfilled despite total body fluid overload, triggering salt and water retention.",
+    "Oncotic pressure": "Pulling pressure of plasma proteins, mainly albumin, that keeps fluid inside vessels.",
+    "Hydrostatic pressure": "Pushing pressure of fluid within vessels that drives it out into tissues.",
+    "Bacterial translocation": "Gut bacteria crossing the bowel wall into lymph nodes, blood or ascites.",
+    "Opsonic activity": "The ability of fluid proteins such as complement to coat bacteria for killing by phagocytes.",
+    "Paracentesis-induced circulatory dysfunction": "Circulatory collapse and renal impairment after large-volume drainage without albumin cover.",
+    "Hepatorenal syndrome": "Kidney failure caused by severe liver disease and splanchnic vasodilation.",
+    "Spider naevi": "Small red spots with radiating vessels on the upper body, a sign of chronic liver disease.",
+    "Palmar erythema": "Red palms, a sign of chronic liver disease.",
+    "NICE NG50": "NICE guideline on assessing and managing cirrhosis in people over 16."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 56 year old man with alcohol-related cirrhosis and ascites has 2 days of diffuse abdominal pain and feeling unwell. His temperature is 38.4°C, pulse rate 104 bpm and BP 102/64 mmHg. His abdomen is distended and diffusely tender with shifting dullness. Erect chest X-ray shows no free air.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute cholecystitis", "Hepatorenal syndrome", "Spontaneous bacterial peritonitis", "Tuberculous peritonitis", "Variceal haemorrhage"],
+      "a": 2,
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis: an unwell patient with known ascites."},
+        {"t": "Pick out the clues", "clues": ["cirrhosis and ascites", "diffuse abdominal pain", "38.4°C", "diffusely tender", "no free air"], "x": "Ascites + fever + abdominal pain; no perforation."},
+        {"t": "Make your own answer before looking", "x": "**SBP**."},
+        {"t": "Rule out the others", "elim": [[0, "Cholecystitis gives localised RUQ pain and Murphy's sign."], [1, "Hepatorenal syndrome is renal failure, not fever and pain."], [3, "TB peritonitis is subacute with weight loss and low SAAG."], [4, "No haematemesis or melaena."]]},
+        {"t": "Commit", "x": "**C. Spontaneous bacterial peritonitis.** Rule: ascites + fever + pain = SBP."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 63 year old woman with cirrhosis and ascites has become confused with a temperature of 37.9°C. A diagnostic paracentesis is performed within 2 hours of arrival.",
+      "q": "Which ascitic fluid result best confirms the suspected diagnosis?",
+      "o": ["Ascitic amylase", "Ascitic glucose", "Ascitic neutrophil count", "Ascitic protein", "Ascitic triglycerides"],
+      "a": 2,
+      "steps": [
+        {"t": "Read the question line first", "x": "Which fluid test confirms SBP?"},
+        {"t": "Pick out the clues", "clues": ["cirrhosis and ascites", "become confused", "37.9°C", "diagnostic paracentesis"], "x": "Subtle SBP: confusion and low-grade fever."},
+        {"t": "Make your own answer before looking", "x": "**Neutrophil count**: above 250 cells/mm³ = SBP."},
+        {"t": "Rule out the others", "elim": [[0, "Amylase is for pancreatic ascites."], [1, "Low glucose suggests secondary peritonitis but does not define SBP."], [3, "Protein helps assess risk, not diagnose SBP."], [4, "Triglycerides identify chylous ascites."]]},
+        {"t": "Commit", "x": "**C. Ascitic neutrophil count.** Rule: >250 = treat."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 59 year old man with alcohol-related cirrhosis has needed large-volume paracentesis every 2 weeks for 3 months. He takes spironolactone 400 mg daily and furosemide, follows a low-salt diet and has stopped drinking. His BP is 110/70 mmHg and pulse rate 80 bpm.",
+      "q": "Which is the most appropriate next step in management?",
+      "o": ["Large-volume paracentesis without albumin", "Liver biopsy", "Oral ciprofloxacin", "Propranolol", "Transjugular intrahepatic portosystemic shunt"],
+      "a": 4,
+      "steps": [
+        {"t": "Read the question line first", "x": "Next step when ascites keeps returning."},
+        {"t": "Pick out the clues", "clues": ["paracentesis every 2 weeks", "spironolactone 400 mg daily and furosemide", "low-salt diet", "stopped drinking"], "x": "Maximal diuretics, salt restriction and abstinence have failed: **refractory ascites**."},
+        {"t": "Make your own answer before looking", "x": "Refer for **TIPS** (and transplant assessment)."},
+        {"t": "Rule out the others", "elim": [[0, "Albumin cover must not be dropped; it prevents circulatory dysfunction."], [1, "Biopsy does not treat ascites."], [2, "Ciprofloxacin is SBP prophylaxis, not ascites control."], [3, "Propranolol is for varices and may worsen refractory ascites."]]},
+        {"t": "Commit", "x": "**E. TIPS.** Rule: refractory ascites = TIPS."}
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 54 year old woman with cirrhosis has 9 litres of tense ascites drained. The registrar gives intravenous human albumin solution during the procedure. A student asks why.",
+      "q": "Which is the main reason albumin is given?",
+      "o": ["Prevents hypoglycaemia", "Prevents paracentesis-induced circulatory dysfunction", "Prevents spontaneous bacterial peritonitis", "Replaces clotting factors", "Reverses hepatic encephalopathy"],
+      "a": 1,
+      "steps": [
+        {"t": "Read the question line first", "x": "Mechanism: why albumin with large-volume drainage?"},
+        {"t": "Pick out the clues", "clues": ["9 litres", "tense ascites drained", "human albumin solution"], "x": "Rapid loss of a large volume in someone already vasodilated."},
+        {"t": "Make your own answer before looking", "x": "Albumin keeps fluid in vessels, preventing **circulatory dysfunction** and renal failure."},
+        {"t": "Rule out the others", "elim": [[0, "Albumin has no effect on glucose."], [2, "Antibiotics, not albumin, prevent SBP."], [3, "Albumin contains no clotting factors; FFP does."], [4, "Lactulose treats encephalopathy."]]},
+        {"t": "Commit", "x": "**B. Prevents circulatory dysfunction.**"}
+      ]
+    }
+  ],
+  "practice": [
+    {"d": "diagnosis", "stem": "A 60 year old man who drinks a bottle of whisky a day has 6 weeks of increasing abdominal swelling. He has palmar erythema and spider naevi. His pulse rate is 86 bpm and BP 112/70 mmHg. His abdomen is distended and nontender.", "labs": [], "visual": null, "q": "Which is the most likely finding on abdominal percussion?", "o": ["Central dullness with resonant flanks", "Hyperresonance throughout", "Pulsatile midline mass", "Shifting dullness", "Visible peristalsis"], "a": 3, "e": "Ascites from alcoholic cirrhosis gives dull flanks that shift when the patient rolls: shifting dullness. Central dullness with resonant flanks suggests a mass such as an ovarian cyst.", "steps": [
+      {"t": "Read the question line first", "x": "Most likely examination finding."},
+      {"t": "Pick out the clues", "clues": ["bottle of whisky a day", "increasing abdominal swelling", "palmar erythema and spider naevi", "nontender"], "x": "Chronic liver disease + painless distension = ascites."},
+      {"t": "Make your own answer before looking", "x": "**Shifting dullness**."},
+      {"t": "Rule out the others", "elim": [[0, "That is the pattern of a large central mass."], [1, "Hyperresonance is gas: obstruction."], [2, "A pulsatile mass is an aneurysm."], [4, "Visible peristalsis is obstruction."]]},
+      {"t": "Commit", "x": "**D. Shifting dullness.**"}]},
+    {"d": "diagnosis", "stem": "A 57 year old woman with cirrhosis and ascites has 1 day of abdominal pain and fever. Her temperature is 38.5°C, pulse rate 110 bpm, BP 98/60 mmHg and oxygen saturation 97% breathing air. Her abdomen is distended and diffusely tender. Erect chest X-ray shows no free air.", "labs": [["Ascitic neutrophils", "540 cells/mm³", "<250", "H"], ["Ascitic Gram stain", "Gram-negative rods", "None", ""], ["Serum amylase", "70 U/L", "<220", ""]], "visual": null, "q": "Which is the most likely diagnosis?", "o": ["Acute appendicitis", "Acute pancreatitis", "Peritoneal carcinomatosis", "Secondary bacterial peritonitis", "Spontaneous bacterial peritonitis"], "a": 4, "e": "Ascites, fever and pain with ascitic neutrophils above 250 and a single Gram-negative organism, with no free air, is SBP. Secondary peritonitis implies a perforation, usually polymicrobial with free air.", "steps": [
+      {"t": "Read the question line first", "x": "Diagnosis in a febrile cirrhotic."},
+      {"t": "Pick out the clues", "clues": ["cirrhosis and ascites", "abdominal pain and fever", "38.5°C", "no free air"], "x": "Classic triad; tap neutrophils 540; single Gram-negative organism."},
+      {"t": "Make your own answer before looking", "x": "**SBP**."},
+      {"t": "Rule out the others", "elim": [[0, "Appendicitis gives RIF pain, not diffuse tenderness with infected ascites."], [1, "Amylase is normal."], [2, "Carcinomatosis is not acute with fever."], [3, "No free air or polymicrobial picture to suggest perforation."]]},
+      {"t": "Commit", "x": "**E. SBP.** Rule: >250 neutrophils, no surgical source."}]},
+    {"d": "diagnosis", "stem": "A 55 year old man has 2 months of abdominal distension. He drank heavily for 20 years. There is shifting dullness and splenomegaly. Ultrasound shows a small nodular liver and ascites. A diagnostic tap is performed.", "labs": [["Serum albumin", "29 g/L", "35–50", "L"], ["Ascitic albumin", "9 g/L", "", ""], ["Ascitic neutrophils", "40 cells/mm³", "<250", ""], ["Ascitic cytology", "No malignant cells", "", ""]], "visual": null, "q": "Which is the most likely cause of his ascites?", "o": ["Cirrhosis with portal hypertension", "Nephrotic syndrome", "Pancreatic ascites", "Peritoneal carcinomatosis", "Tuberculous peritonitis"], "a": 0, "e": "SAAG is 2.9 − 0.9 = 2.0 g/dL (≥1.1), so portal hypertension; with a small nodular liver and splenomegaly in a drinker, it is cirrhosis. Carcinomatosis and TB give a SAAG below 1.1.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of ascites: calculate the SAAG."},
+      {"t": "Pick out the clues", "clues": ["drank heavily", "splenomegaly", "small nodular liver"], "x": "Cirrhosis with portal hypertension; labs: SAAG 2.0, normal neutrophils, negative cytology."},
+      {"t": "Make your own answer before looking", "x": "**Portal hypertension from cirrhosis**."},
+      {"t": "Rule out the others", "elim": [[1, "Nephrotic syndrome gives a low SAAG with heavy proteinuria and normal liver."], [2, "Pancreatic ascites has high amylase and low SAAG."], [3, "Carcinomatosis gives low SAAG and positive cytology."], [4, "TB gives low SAAG and lymphocytes."]]},
+      {"t": "Commit", "x": "**A. Cirrhosis with portal hypertension.** Rule: SAAG ≥1.1 = portal."}]},
+    {"d": "diagnosis", "stem": "A 62 year old man with cirrhosis and ascites has fever and abdominal tenderness. A diagnostic tap shows 780 neutrophils/mm³ and a Gram stain shows Gram-negative rods. There is no free air on erect chest X-ray.", "labs": [], "visual": null, "q": "Which is the most likely causative organism?", "o": ["Candida albicans", "Escherichia coli", "Mycobacterium tuberculosis", "Staphylococcus aureus", "Streptococcus pyogenes"], "a": 1, "e": "SBP is usually caused by gut Gram-negative organisms that translocate across the bowel wall, most commonly E. coli (then Klebsiella).", "steps": [
+      {"t": "Read the question line first", "x": "Organism question."},
+      {"t": "Pick out the clues", "clues": ["cirrhosis and ascites", "780 neutrophils", "Gram-negative rods", "no free air"], "x": "SBP with Gram-negative rods: gut bacteria."},
+      {"t": "Make your own answer before looking", "x": "**E. coli**."},
+      {"t": "Rule out the others", "elim": [[0, "Candida is a yeast, not a Gram-negative rod."], [2, "TB gives lymphocytic, low-SAAG ascites."], [3, "Staph aureus is a Gram-positive coccus."], [4, "Strep pyogenes is a Gram-positive coccus."]]},
+      {"t": "Commit", "x": "**B. Escherichia coli.**"}]},
+    {"d": "diagnosis", "stem": "A 68 year old woman has 3 months of abdominal distension, early satiety and 8 kg weight loss. She drinks no alcohol. There is shifting dullness and no stigmata of chronic liver disease. Her pulse rate is 92 bpm and BP 124/76 mmHg.", "labs": [["Serum albumin", "33 g/L", "35–50", "L"], ["Ascitic albumin", "26 g/L", "", ""], ["Ascitic neutrophils", "90 cells/mm³", "<250", ""]], "visual": null, "q": "Which is the most likely cause of her ascites?", "o": ["Budd-Chiari syndrome", "Cirrhosis", "Constrictive pericarditis", "Peritoneal carcinomatosis", "Right heart failure"], "a": 3, "e": "SAAG is 3.3 − 2.6 = 0.7 g/dL (<1.1), a non-portal cause; with weight loss and early satiety in an older woman, peritoneal carcinomatosis is most likely. The other options all give a high SAAG.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of ascites: SAAG again."},
+      {"t": "Pick out the clues", "clues": ["early satiety and 8 kg weight loss", "drinks no alcohol", "no stigmata of chronic liver disease"], "x": "Weight loss, no liver disease; labs: SAAG 0.7."},
+      {"t": "Make your own answer before looking", "x": "Low SAAG + weight loss = **malignant ascites**."},
+      {"t": "Rule out the others", "elim": [[0, "Budd-Chiari gives high SAAG with hepatomegaly and pain."], [1, "Cirrhosis gives high SAAG and liver stigmata."], [2, "Constrictive pericarditis gives high SAAG and raised JVP."], [4, "Right heart failure gives high SAAG and raised JVP."]]},
+      {"t": "Commit", "x": "**D. Peritoneal carcinomatosis.** Rule: SAAG <1.1 = cancer or TB."}]},
+    {"d": "diagnosis", "stem": "A 64 year old man with cirrhosis has become increasingly breathless over 3 weeks, worse lying flat. His abdomen is tense and grossly distended with shifting dullness. His chest is clear on auscultation. His temperature is 36.8°C, pulse rate 90 bpm, BP 108/68 mmHg and oxygen saturation 95% breathing air.", "labs": [], "visual": null, "q": "Which is the most likely cause of his breathlessness?", "o": ["Hepatopulmonary syndrome", "Large-volume ascites splinting the diaphragm", "Left ventricular failure", "Pneumonia", "Pulmonary embolism"], "a": 1, "e": "Tense, large-volume ascites pushes up and splints the diaphragm, causing breathlessness worse lying flat; it is relieved by paracentesis. The clear chest and absent fever argue against pneumonia and LVF.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of breathlessness in a cirrhotic."},
+      {"t": "Pick out the clues", "clues": ["worse lying flat", "tense and grossly distended", "chest is clear", "36.8°C"], "x": "Tense ascites, clear chest, afebrile."},
+      {"t": "Make your own answer before looking", "x": "**Diaphragmatic splinting** by large-volume ascites."},
+      {"t": "Rule out the others", "elim": [[0, "Hepatopulmonary syndrome causes hypoxia worse sitting up (platypnoea), not orthopnoea with tense ascites."], [2, "LVF gives crackles; the chest is clear."], [3, "No fever and a clear chest."], [4, "PE is sudden with pleuritic pain or tachycardia."]]},
+      {"t": "Commit", "x": "**B. Large-volume ascites.** Relieved by paracentesis."}]},
+    {"d": "investigation", "stem": "A 58 year old man with heavy alcohol use has a distended abdomen. The doctor is unsure whether the distension is fluid or obesity. His pulse rate is 82 bpm and BP 126/80 mmHg.", "labs": [], "visual": null, "q": "Which is the most appropriate initial investigation?", "o": ["Abdominal X-ray", "CT abdomen", "Diagnostic laparoscopy", "MRI abdomen", "Ultrasound abdomen"], "a": 4, "e": "Ultrasound abdomen is both the initial investigation and the gold standard for detecting ascites, and can guide a tap. Abdominal X-ray is poor at showing fluid.", "steps": [
+      {"t": "Read the question line first", "x": "Initial test to confirm fluid."},
+      {"t": "Pick out the clues", "clues": ["heavy alcohol use", "distended abdomen", "fluid or obesity"], "x": "Need to detect ascites."},
+      {"t": "Make your own answer before looking", "x": "**Ultrasound abdomen**."},
+      {"t": "Rule out the others", "elim": [[0, "AXR does not reliably show ascites."], [1, "CT shows it but is not first-line."], [2, "Laparoscopy is invasive."], [3, "MRI is not the first test."]]},
+      {"t": "Commit", "x": "**E. Ultrasound abdomen.**"}]},
+    {"d": "investigation", "stem": "A 61 year old woman with cirrhosis and ascites is admitted with new confusion and abdominal discomfort. Her temperature is 38.0°C, pulse rate 102 bpm and BP 104/62 mmHg. Her INR is 1.8.", "labs": [], "visual": null, "q": "Which is the most appropriate next investigation?", "o": ["Abdominal X-ray", "Blood cultures alone", "CT head", "Diagnostic paracentesis", "Erect chest X-ray"], "a": 3, "e": "Suspected SBP needs a diagnostic ascitic tap within 8 hours; neutrophils above 250 confirm it. A raised INR is not a reason to delay.", "steps": [
+      {"t": "Read the question line first", "x": "Next investigation in suspected SBP."},
+      {"t": "Pick out the clues", "clues": ["cirrhosis and ascites", "new confusion", "38.0°C", "INR is 1.8"], "x": "Fever, confusion, ascites = SBP until proven otherwise."},
+      {"t": "Make your own answer before looking", "x": "**Diagnostic paracentesis** within 8 hours."},
+      {"t": "Rule out the others", "elim": [[0, "AXR does not diagnose SBP."], [1, "Blood cultures help but do not diagnose SBP alone."], [2, "Confusion here is from infection/encephalopathy; CT head is not first."], [4, "Erect CXR looks for perforation but the tap is diagnostic."]]},
+      {"t": "Commit", "x": "**D. Diagnostic paracentesis.** INR is not a contraindication."}]},
+    {"d": "management", "stem": "A 54 year old man with alcohol-related cirrhosis has moderate ascites. He has stopped drinking. His pulse rate is 78 bpm and BP 118/74 mmHg. His sodium, potassium and creatinine are normal.", "labs": [], "visual": null, "q": "Which is the most appropriate first-line drug treatment?", "o": ["Bendroflumethiazide", "Furosemide alone", "Indapamide", "Mannitol", "Spironolactone"], "a": 4, "e": "With salt restriction, spironolactone 100 mg daily (titrated to 400 mg) is the first-line diuretic for cirrhotic ascites, with furosemide added. Furosemide alone is less effective.", "steps": [
+      {"t": "Read the question line first", "x": "First-line drug for ascites."},
+      {"t": "Pick out the clues", "clues": ["alcohol-related cirrhosis", "moderate ascites", "stopped drinking", "potassium and creatinine are normal"], "x": "Normal electrolytes and renal function: safe to start."},
+      {"t": "Make your own answer before looking", "x": "**Spironolactone**."},
+      {"t": "Rule out the others", "elim": [[0, "Thiazides are not used for ascites."], [1, "Furosemide is an add-on, not first-line alone."], [2, "Indapamide is an antihypertensive."], [3, "Mannitol is for raised intracranial pressure."]]},
+      {"t": "Commit", "x": "**E. Spironolactone.**"}]},
+    {"d": "management", "stem": "A 66 year old woman with cirrhosis has tense ascites causing breathlessness and abdominal pain. She is on spironolactone and furosemide. Her pulse rate is 88 bpm and BP 110/68 mmHg. There is no fever and ascitic neutrophils are 60 cells/mm³. Clotting is stable with no bleeding.", "labs": [], "visual": null, "q": "Which is the most appropriate management?", "o": ["Increase spironolactone to 400 mg", "Large-volume paracentesis with human albumin solution", "Large-volume paracentesis without albumin", "Liver transplant", "Transjugular intrahepatic portosystemic shunt"], "a": 1, "e": "Tense, symptomatic ascites needs large-volume paracentesis with IV human albumin cover to prevent circulatory dysfunction. Diuretic changes are too slow; TIPS is for refractory ascites.", "steps": [
+      {"t": "Read the question line first", "x": "Management of tense ascites."},
+      {"t": "Pick out the clues", "clues": ["tense ascites", "breathlessness", "ascitic neutrophils are 60", "no bleeding"], "x": "Symptomatic tense ascites, no SBP, no DIC."},
+      {"t": "Make your own answer before looking", "x": "**LVP with albumin**."},
+      {"t": "Rule out the others", "elim": [[0, "Too slow for tense, symptomatic ascites."], [2, "Without albumin risks circulatory dysfunction."], [3, "Transplant is not the immediate step."], [4, "TIPS is for refractory, recurrent ascites."]]},
+      {"t": "Commit", "x": "**B. LVP with HAS.**"}]},
+    {"d": "management", "stem": "A 59 year old man with cirrhosis and ascites has fever and abdominal pain. A diagnostic tap shows 410 neutrophils/mm³. He weighs 70 kg. His temperature is 38.3°C, pulse rate 106 bpm and BP 100/62 mmHg.", "labs": [["Ascitic neutrophils", "410 cells/mm³", "<250", "H"], ["Creatinine", "128 µmol/L", "60–110", "H"]], "visual": null, "q": "Which is the most appropriate initial management?", "o": ["Intravenous ceftriaxone and human albumin solution", "Large-volume paracentesis", "Oral ciprofloxacin alone", "Oral metronidazole", "Transjugular intrahepatic portosystemic shunt"], "a": 0, "e": "SBP is treated with IV antibiotics (e.g. ceftriaxone) plus HAS 1.5 g/kg in the first 6 hours and 1 g/kg on day 3. Oral ciprofloxacin is prophylaxis after recovery.", "steps": [
+      {"t": "Read the question line first", "x": "Initial management of confirmed SBP."},
+      {"t": "Pick out the clues", "clues": ["410 neutrophils", "70 kg", "38.3°C"], "x": "SBP confirmed; weight given for the albumin dose (105 g); creatinine rising."},
+      {"t": "Make your own answer before looking", "x": "**IV ceftriaxone + HAS**."},
+      {"t": "Rule out the others", "elim": [[1, "Large-volume drainage is not the treatment for infection."], [2, "Oral ciprofloxacin is prophylaxis, not treatment."], [3, "Metronidazole does not cover the usual Gram-negative organisms."], [4, "TIPS is for refractory ascites."]]},
+      {"t": "Commit", "x": "**A. IV ceftriaxone and HAS.**"}]},
+    {"d": "science", "stem": "A 57 year old man with cirrhosis and ascites has a low urinary sodium and high plasma renin and aldosterone despite total body fluid overload. He is started on spironolactone.", "labs": [], "visual": null, "q": "Which is the most likely mechanism of benefit?", "o": ["Antagonises aldosterone, opposing RAAS-driven sodium retention", "Blocks carbonic anhydrase in the proximal tubule", "Blocks NKCC2 in the loop of Henle", "Increases hepatic albumin synthesis", "Reduces portal pressure directly"], "a": 0, "e": "Splanchnic vasodilation causes effective arterial underfilling, activating RAAS (secondary hyperaldosteronism). Spironolactone antagonises aldosterone in the collecting duct. NKCC2 is furosemide's target.", "steps": [
+      {"t": "Read the question line first", "x": "Drug mechanism, applied to cirrhosis."},
+      {"t": "Pick out the clues", "clues": ["low urinary sodium", "high plasma renin and aldosterone", "total body fluid overload"], "x": "Secondary hyperaldosteronism from effective underfilling."},
+      {"t": "Make your own answer before looking", "x": "Spironolactone **antagonises aldosterone**."},
+      {"t": "Rule out the others", "elim": [[1, "Carbonic anhydrase is acetazolamide."], [2, "NKCC2 is furosemide."], [3, "Diuretics do not change albumin synthesis."], [4, "Non-selective beta-blockers lower portal pressure, not spironolactone."]]},
+      {"t": "Commit", "x": "**A. Aldosterone antagonism.**"}]}
+  ]
+}

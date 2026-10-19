@@ -1,0 +1,2063 @@
+{
+ "id": "cardiac-arrest",
+ "patient": {
+  "name": "Graham Whitfield",
+  "age": 64,
+  "sex": "M",
+  "setting": "Acute medical unit, then cardiac catheter lab and ICU",
+  "complaint": "Admitted with central chest pain; collapses on the ward",
+  "background": [
+   "Smoker, 40 pack-years",
+   "Hypertension and high cholesterol",
+   "Taxi driver from Croydon",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect a collapse vignette (unresponsive, agonal gasps, no pulse) and questions on the rhythm (VF, pulseless VT, PEA, asystole) or the likely 4H/4T cause.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Graham, 64, admitted at 07:00 with crushing central chest pain.",
+      "Troponin pending; ECG showed anterior ST depression.",
+      "10:20: nurse finds him slumped in his chair."
+     ],
+     "vitals": {
+      "HR": "112 bpm (07:00)",
+      "BP": "134/82 mmHg (07:00)",
+      "SpO2": "95% on air (07:00)"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Graham's likely **myocardial infarction** is the commonest trigger: ischaemia disrupts the heart's electrical activity."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Shout and shake: **no response**.",
+      "Head tilt, chin lift: only **occasional gasps**.",
+      "No carotid pulse felt in 10 seconds."
+     ],
+     "vitals": {
+      "HR": "no pulse",
+      "BP": "unrecordable",
+      "RR": "agonal gasps"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Collapse, unresponsive, not breathing normally, no pulse: **recognise it and start CPR** now."
+    },
+    {
+     "type": "ask",
+     "q": "Graham is unresponsive with occasional gasps. What do you do?",
+     "o": [
+      "Call the arrest team and start chest compressions",
+      "Check his capillary glucose first",
+      "Give 15 L oxygen and observe",
+      "Put him in the recovery position"
+     ],
+     "a": 0,
+     "r": "**Agonal gasps are not normal breathing.** Unresponsive + not breathing normally = cardiac arrest: call and compress."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Graham's heart has **stopped pumping**: no output, so no consciousness, no breathing, and death within minutes untreated."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Graham's monitor",
+      "layout": "strip",
+      "rhythm": "vf",
+      "caption": "Chaotic, irregular waves with **no clear QRS complexes**: ventricular fibrillation. **Shockable**."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Graham is in **VF**, the commonest initial rhythm, and it is **shockable**."
+    },
+    {
+     "type": "compare",
+     "title": "The four arrest rhythms",
+     "head": [
+      "Rhythm",
+      "ECG",
+      "Shock?",
+      "Key drug timing"
+     ],
+     "rows": [
+      [
+       "VF",
+       "Chaotic, no QRS",
+       "**Yes**",
+       "Adrenaline + amiodarone after 3rd shock"
+      ],
+      [
+       "Pulseless VT",
+       "Broad regular QRS ~150 ms",
+       "**Yes**",
+       "As VF"
+      ],
+      [
+       "PEA",
+       "Organised rhythm, no pulse",
+       "No",
+       "Adrenaline immediately"
+      ],
+      [
+       "Asystole",
+       "Flat line",
+       "No",
+       "Adrenaline immediately"
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Contrast: asystole",
+      "layout": "strip",
+      "rhythm": "asystole",
+      "caption": "No electrical activity. **Non-shockable**: CPR and adrenaline, find the cause."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "A gasping patient is not 'breathing'. **Agonal breaths** are a sign of arrest, not a reason to wait."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'which test identifies the reversible cause': blood gas for potassium, bedside echo for tamponade, temperature for hypothermia.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "While CPR continues, the team runs the **4Hs and 4Ts**. For Graham, **thrombosis** (coronary) is top of the list."
+    },
+    {
+     "type": "flow",
+     "title": "4Hs and 4Ts during CPR",
+     "nodes": [
+      "Hypoxia → airway, oxygen",
+      "Hypovolaemia → fluids, stop bleeding",
+      "Hypo/hyperkalaemia → blood gas, treat K⁺",
+      "Hypothermia → temperature, warm",
+      "Tension pneumothorax / Tamponade → decompress / drain",
+      "Toxins / Thrombosis → antidote / thrombolysis or PCI"
+     ],
+     "caption": "Each H and T has its own fix; finding one changes management."
+    },
+    {
+     "type": "labs",
+     "title": "Venous blood gas during CPR",
+     "rows": [
+      [
+       "pH",
+       "7.11",
+       "7.35–7.45",
+       "L"
+      ],
+      [
+       "Lactate",
+       "8.6 mmol/L",
+       "<2.0",
+       "H"
+      ],
+      [
+       "Potassium",
+       "4.4 mmol/L",
+       "3.5–5.3",
+       ""
+      ],
+      [
+       "Glucose",
+       "9.2 mmol/L",
+       "4.0–7.8",
+       "H"
+      ],
+      [
+       "Hb",
+       "142 g/L",
+       "130–180",
+       ""
+      ]
+     ],
+     "text": "Acidosis from no perfusion. Potassium and Hb normal, so no hyperkalaemia or bleed."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Temperature 36.4°C: not hypothermic.",
+      "Trachea central; equal air entry with bag ventilation.",
+      "No drugs or overdose history; no leg swelling."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Graham's end-tidal CO2 during CPR",
+      "x": [
+       "2 min",
+       "4 min",
+       "6 min",
+       "8 min",
+       "10 min"
+      ],
+      "unit": "kPa",
+      "series": [
+       {
+        "name": "EtCO2",
+        "values": [
+         1.6,
+         1.9,
+         2.1,
+         2.0,
+         5.2
+        ]
+       }
+      ],
+      "caption": "A sudden rise in EtCO2 at 10 minutes signals **ROSC** before the pulse check."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "Exam pattern: the stem hides the cause. **Trauma + deviated trachea** = tension; **dialysis** = potassium; **post-op + swollen leg** = PE."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'next most appropriate step': VF on monitor → **defibrillation**; adrenaline and amiodarone after the 3rd shock; adrenaline immediately in PEA/asystole.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The nurse pulls the **emergency buzzer** (999 outside hospital) and starts compressions at **30:2**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Compression rate",
+      "min": 60,
+      "max": 160,
+      "unit": "/min",
+      "bands": [
+       [
+        60,
+        100,
+        "too slow",
+        "warn"
+       ],
+       [
+        100,
+        120,
+        "target 100–120",
+        "ok"
+       ],
+       [
+        120,
+        160,
+        "too fast: poor filling",
+        "warn"
+       ]
+      ],
+      "value": 110,
+      "label": "Graham 110/min",
+      "caption": "Depth 5–6 cm, full recoil, minimal pauses."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Pads on: the monitor shows VF. What next?",
+     "o": [
+      "Continue CPR and give adrenaline first",
+      "IV amiodarone 300 mg",
+      "Synchronised DC cardioversion",
+      "Unsynchronised shock (defibrillation)"
+     ],
+     "a": 3,
+     "r": "VF is shockable: **defibrillate** straight away. Synchronised shocks are for tachycardias **with a pulse**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Graham gets the **ALS** algorithm: shock at **200 J**, CPR for **2 minutes**, check rhythm, repeat."
+    },
+    {
+     "type": "flow",
+     "title": "Graham's shockable algorithm",
+     "nodes": [
+      "Shock 1 → CPR 2 min",
+      "Shock 2 → CPR 2 min",
+      "Shock 3 → CPR; adrenaline 1 mg + amiodarone 300 mg",
+      "Shock 4 → CPR; ROSC",
+      "Adrenaline every 3–5 min if still arrested"
+     ],
+     "caption": "Amiodarone 150 mg more if still VF after 5 shocks."
+    },
+    {
+     "type": "ask",
+     "q": "After the 3rd shock, Graham is still in VF. Which drugs now?",
+     "o": [
+      "Adenosine 6 mg IV",
+      "Adrenaline 1 mg IV and amiodarone 300 mg IV",
+      "Atropine 3 mg IV",
+      "Magnesium 2 g IV only"
+     ],
+     "a": 1,
+     "r": "After the **3rd shock** in a shockable rhythm: **adrenaline 1 mg** plus **amiodarone 300 mg**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Graham's IV went in easily; had it failed, use **intraosseous** access. After **ROSC**: oxygen, treat the cause, ICU."
+    },
+    {
+     "type": "story",
+     "points": [
+      "ROSC after the 4th shock; 12-lead now shows anterior ST elevation.",
+      "Straight to the cath lab: LAD occlusion stented.",
+      "Then ICU: ventilated, targeted temperature control."
+     ],
+     "vitals": {
+      "HR": "96 bpm",
+      "BP": "104/66 mmHg",
+      "SpO2": "96% on FiO2 0.4"
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Every step for Graham follows the **Resuscitation Council UK ALS** algorithm."
+    },
+    {
+     "type": "trap",
+     "text": "**Adrenaline timing differs**: shockable = after the 3rd shock; non-shockable (PEA, asystole) = **immediately**. Amiodarone is never for PEA or asystole."
+    },
+    {
+     "type": "pearl",
+     "text": "Special cases: pregnant over 20 weeks → **left lateral tilt ~15°**; PE → thrombolyse and continue CPR **60–90 min**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanisms: how defibrillation works, why PEA is not shocked, adrenaline's alpha-1 action, amiodarone as class III.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Every minute without compressions, Graham's brain loses perfusion. **Early CPR** matters more than any drug."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "His ischaemic myocardium went into **VF**. The shock depolarised a **critical mass** at once, letting the **SA node** take back control."
+    },
+    {
+     "type": "flow",
+     "title": "How defibrillation works",
+     "nodes": [
+      "VF: chaotic, disorganised ventricular activity",
+      "No coordinated contraction, no output",
+      "Shock depolarises a critical mass of myocardium",
+      "All cells refractory together",
+      "SA node resumes as dominant pacemaker"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Graham had been in **PEA**, a shock would do nothing: the electrics work but the pump does not, usually from a 4H/4T."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Graham's **adrenaline** squeezed the periphery via **alpha-1**; **amiodarone** (class III) lengthened refractoriness to stop VF recurring."
+    },
+    {
+     "type": "ask",
+     "q": "Why does adrenaline improve the chance of ROSC?",
+     "o": [
+      "Alpha-1 vasoconstriction diverts flow to coronary and cerebral circulations",
+      "Beta-2 bronchodilation improves oxygenation",
+      "It blocks potassium channels",
+      "It directly depolarises the myocardium"
+     ],
+     "a": 0,
+     "r": "**Alpha-1** peripheral vasoconstriction raises aortic diastolic pressure, so more blood reaches the heart and brain."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Two shockable cardiac arrest rhythms?",
+   "o": [
+    "AF and flutter",
+    "Asystole and PEA",
+    "PEA and VF",
+    "VF and pulseless VT"
+   ],
+   "a": 3,
+   "r": "**VF and pulseless VT** respond to defibrillation."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Most common initial rhythm in sudden cardiac arrest?",
+   "o": [
+    "Asystole",
+    "Complete heart block",
+    "PEA",
+    "Ventricular fibrillation"
+   ],
+   "a": 3,
+   "r": "**VF**, usually from ischaemic heart disease."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Organised rhythm on the monitor but no pulse?",
+   "o": [
+    "Asystole",
+    "Pulseless electrical activity",
+    "Pulseless VT",
+    "Sinus rhythm"
+   ],
+   "a": 1,
+   "r": "**PEA**: non-shockable; look for a 4H/4T."
+  },
+  {
+   "d": "investigation",
+   "q": "Which is one of the 4Ts?",
+   "o": [
+    "Tachycardia",
+    "Tamponade",
+    "Thyrotoxicosis",
+    "Trauma"
+   ],
+   "a": 1,
+   "r": "Tension pneumothorax, Toxins, **Tamponade**, Thrombosis."
+  },
+  {
+   "d": "investigation",
+   "q": "Which is one of the 4Hs?",
+   "o": [
+    "Hypertension",
+    "Hypoglycaemia",
+    "Hyponatraemia",
+    "Hypothermia"
+   ],
+   "a": 3,
+   "r": "Hypoxia, Hypovolaemia, Hypo/hyperkalaemia, **Hypothermia**."
+  },
+  {
+   "d": "management",
+   "q": "CPR compression-to-ventilation ratio?",
+   "o": [
+    "15:2",
+    "30:1",
+    "30:2",
+    "5:1"
+   ],
+   "a": 2,
+   "r": "**30:2**, rate 100–120/min, depth 5–6 cm."
+  },
+  {
+   "d": "management",
+   "q": "When is adrenaline given in a shockable arrest?",
+   "o": [
+    "After the 1st shock",
+    "After the 3rd shock",
+    "Before the 1st shock",
+    "Only after ROSC"
+   ],
+   "a": 1,
+   "r": "**After the 3rd shock**, then every 3–5 minutes."
+  },
+  {
+   "d": "management",
+   "q": "Amiodarone dose after the 3rd shock?",
+   "o": [
+    "1 mg",
+    "150 mg",
+    "300 mg",
+    "900 mg"
+   ],
+   "a": 2,
+   "r": "**300 mg**, then 150 mg after 5 shocks."
+  },
+  {
+   "d": "management",
+   "q": "Route if IV access fails during arrest?",
+   "o": [
+    "Endotracheal",
+    "Intramuscular",
+    "Intraosseous",
+    "Subcutaneous"
+   ],
+   "a": 2,
+   "r": "**IO**: proximal humerus or tibia."
+  },
+  {
+   "d": "science",
+   "q": "Receptor through which adrenaline improves ROSC?",
+   "o": [
+    "Alpha-1",
+    "Beta-1",
+    "Beta-2",
+    "Muscarinic M2"
+   ],
+   "a": 0,
+   "r": "**Alpha-1** vasoconstriction diverts flow to heart and brain."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man collapses in the coronary care unit two days after a myocardial infarction. He is unresponsive and has no palpable pulse. The cardiac monitor shows chaotic, irregular deflections of varying amplitude with no identifiable QRS complexes.",
+   "q": "Which is the most likely rhythm?",
+   "o": [
+    "Asystole",
+    "Atrial fibrillation",
+    "Pulseless electrical activity",
+    "Pulseless ventricular tachycardia",
+    "Ventricular fibrillation"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A rhythm question in an arrest: decide shockable or not from the ECG description."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "after a myocardial infarction",
+      "no palpable pulse",
+      "chaotic, irregular deflections",
+      "no identifiable QRS complexes"
+     ],
+     "x": "Post-MI, pulseless, chaotic trace with no QRS."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**VF**: the commonest initial arrest rhythm, shockable."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Asystole is a flat line, not chaotic deflections."
+      ],
+      [
+       1,
+       "AF has narrow QRS complexes and produces a pulse."
+      ],
+      [
+       2,
+       "PEA shows an organised rhythm."
+      ],
+      [
+       3,
+       "Pulseless VT shows regular broad QRS complexes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Ventricular fibrillation.** Rule: no QRS + chaos = VF; regular broad = VT; organised = PEA; flat = asystole."
+    }
+   ],
+   "visual": {
+    "kind": "ecg",
+    "title": "Monitor",
+    "layout": "strip",
+    "rhythm": "vf",
+    "caption": "Rhythm strip at collapse."
+   }
+  },
+  {
+   "d": "investigation",
+   "stem": "A 58 year old man on haemodialysis missed two sessions. He collapses at home and paramedics start CPR. In the Emergency Department the monitor shows a broad, slow complex rhythm without a pulse.",
+   "q": "Which is the most appropriate immediate investigation to identify a reversible cause?",
+   "o": [
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "Serum troponin",
+    "Urine toxicology",
+    "Venous blood gas"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for a test to find the reversible cause. Which H or T does the history point to?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemodialysis",
+      "missed two sessions",
+      "without a pulse"
+     ],
+     "x": "Missed dialysis = hyperkalaemia; PEA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **blood gas** gives potassium in a minute."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Too slow and not the likely cause."
+      ],
+      [
+       1,
+       "Cannot be done during CPR."
+      ],
+      [
+       2,
+       "Does not change immediate management."
+      ],
+      [
+       3,
+       "Toxins not suggested."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Venous blood gas.** Rule: dialysis patient in arrest = check potassium on a gas."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 78 year old woman has a cardiac arrest on the ward and chest compressions are started. The defibrillator pads are attached and the monitor shows ventricular fibrillation.",
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Continue chest compressions (30:2) only",
+    "Defibrillation",
+    "Intravenous adrenaline",
+    "Intravenous amiodarone",
+    "Intubation"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A next-step question in arrest: shockable or not decides it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cardiac arrest",
+      "ventricular fibrillation"
+     ],
+     "x": "Arrest with a shockable rhythm."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Defibrillate**, then CPR for 2 minutes."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "VF needs a shock without delay."
+      ],
+      [
+       2,
+       "Given after the 3rd shock in a shockable rhythm."
+      ],
+      [
+       3,
+       "Also after the 3rd shock."
+      ],
+      [
+       4,
+       "Airway can wait; the shock cannot."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Defibrillation.** Rule: shockable rhythm = shock first, drugs after the 3rd."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old man in VF arrest is defibrillated. After the shock the monitor shows sinus rhythm and he has a pulse.",
+   "q": "Which is the most likely mechanism by which defibrillation restored his rhythm?",
+   "o": [
+    "Blockade of the AV node",
+    "Direct stimulation of beta-1 receptors",
+    "Prolongation of the action potential",
+    "Simultaneous depolarisation of a critical mass of myocardium",
+    "Stimulation of the vagus nerve"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: what does the shock physically do to the myocardium?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "VF arrest",
+      "defibrillated",
+      "sinus rhythm"
+     ],
+     "x": "Shock ends VF and sinus returns."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The shock depolarises a **critical mass** at once; the **SA node** then takes over."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is adenosine."
+      ],
+      [
+       1,
+       "That is adrenaline's inotropic effect."
+      ],
+      [
+       2,
+       "That is amiodarone."
+      ],
+      [
+       4,
+       "That is vagal manoeuvres."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Simultaneous depolarisation of a critical mass of myocardium.** Rule: defib resets the myocardium; it does not 'restart' it."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 61 year old man is waiting in the clinic when he suddenly slumps in his chair. He does not respond to voice or pain. He is making occasional gasping noises. No carotid pulse is felt. Ten minutes earlier his pulse rate was 104 bpm and BP 146/90 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cardiac arrest",
+    "Generalised seizure",
+    "Hypoglycaemia",
+    "Stroke",
+    "Vasovagal syncope"
+   ],
+   "a": 0,
+   "e": "Collapse, unresponsiveness, agonal gasps and no pulse are the triad of cardiac arrest.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely diagnosis?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "does not respond",
+      "occasional gasping noises",
+      "No carotid pulse"
+     ],
+     "x": "Unresponsive, agonal gasps, pulseless."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cardiac arrest**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Tonic-clonic movements, pulse present."
+      ],
+      [
+       2,
+       "Pulse present."
+      ],
+      [
+       3,
+       "Pulse and breathing present."
+      ],
+      [
+       4,
+       "Brief, pulse present, recovers quickly."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cardiac arrest.** Recognise and start CPR."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 55 year old man collapses on the cardiology ward. He is unresponsive and pulseless. A rhythm strip is recorded (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "Rhythm strip",
+    "layout": "strip",
+    "rhythm": "vt",
+    "rate": 160,
+    "caption": "Lead II rhythm strip."
+   },
+   "q": "Which is the most likely rhythm?",
+   "o": [
+    "Asystole",
+    "Atrial flutter",
+    "Pulseless electrical activity",
+    "Pulseless ventricular tachycardia",
+    "Ventricular fibrillation"
+   ],
+   "a": 3,
+   "e": "A regular broad-complex tachycardia (~150 bpm) without a pulse is pulseless VT, a shockable rhythm.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely rhythm?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unresponsive and pulseless",
+      "rhythm strip"
+     ],
+     "x": "Pulseless, broad regular complexes."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pulseless VT**: shockable."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Flat line."
+      ],
+      [
+       1,
+       "Narrow complexes with a pulse."
+      ],
+      [
+       2,
+       "Organised non-VT rhythm."
+      ],
+      [
+       4,
+       "No clear QRS complexes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pulseless ventricular tachycardia.** Broad regular + no pulse = pVT."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old woman collapses on the ward. CPR is started. The monitor shows narrow, regular complexes at 90 per minute, but no pulse is palpable.",
+   "labs": [
+    [
+     "Potassium",
+     "4.6 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Hb",
+     "121 g/L",
+     "115–165",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely rhythm?",
+   "o": [
+    "Asystole",
+    "Pulseless electrical activity",
+    "Pulseless ventricular tachycardia",
+    "Sinus rhythm with ROSC",
+    "Ventricular fibrillation"
+   ],
+   "a": 1,
+   "e": "An organised rhythm without a pulse is PEA, which is non-shockable and usually has a reversible cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely rhythm?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "narrow, regular complexes",
+      "no pulse is palpable"
+     ],
+     "x": "Organised rhythm, no output."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**PEA**: non-shockable."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "There is electrical activity."
+      ],
+      [
+       2,
+       "Broad, fast complexes."
+      ],
+      [
+       3,
+       "No pulse, so no ROSC."
+      ],
+      [
+       4,
+       "Chaotic, no QRS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Pulseless electrical activity.** Adrenaline immediately, find the cause."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old man is brought in after a motorbike crash. He becomes breathless and then loses his pulse. Before arrest his pulse rate was 136 bpm, BP 74/40 mmHg. His trachea is deviated to the left and there are absent breath sounds on the right.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his cardiac arrest?",
+   "o": [
+    "Cardiac tamponade",
+    "Hypovolaemia",
+    "Hypoxia from airway obstruction",
+    "Pulmonary embolism",
+    "Tension pneumothorax"
+   ],
+   "a": 4,
+   "e": "Tracheal deviation away from a silent hemithorax in trauma is a tension pneumothorax, a reversible 4T cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely cause of his cardiac arrest?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "motorbike crash",
+      "trachea is deviated to the left",
+      "absent breath sounds on the right"
+     ],
+     "x": "Trauma, tracheal shift away, silent right chest."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Tension pneumothorax** (a 4T)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Raised JVP and muffled heart sounds, trachea central."
+      ],
+      [
+       1,
+       "Trachea central, no unilateral silent chest."
+      ],
+      [
+       2,
+       "Would not deviate the trachea."
+      ],
+      [
+       3,
+       "No trauma mechanism for tracheal shift."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tension pneumothorax.** Decompress 2nd intercostal space."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 79 year old woman is found unresponsive in her garden on a winter morning. She has no pulse and CPR is started.",
+   "labs": [
+    [
+     "Core temperature",
+     "28.1°C",
+     "36.0–37.5",
+     "L"
+    ],
+    [
+     "Potassium",
+     "4.2 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Glucose",
+     "6.1 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely reversible cause of her cardiac arrest?",
+   "o": [
+    "Hyperkalaemia",
+    "Hypothermia",
+    "Hypovolaemia",
+    "Tension pneumothorax",
+    "Toxins"
+   ],
+   "a": 1,
+   "e": "Exposure and a core temperature of 28°C point to hypothermia, one of the 4Hs.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely reversible cause of her cardiac arrest?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unresponsive in her garden",
+      "winter morning"
+     ],
+     "x": "Exposure in cold and low core temperature."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hypothermia** (a 4H)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Potassium is normal."
+      ],
+      [
+       2,
+       "No bleeding or fluid loss."
+      ],
+      [
+       3,
+       "No chest signs."
+      ],
+      [
+       4,
+       "No drug history."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Hypothermia.** Warm while resuscitating."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 67 year old man is 5 days after a total hip replacement. He becomes suddenly breathless and collapses. His left calf is swollen. Before collapse his pulse rate was 124 bpm, BP 88/56 mmHg and oxygen saturation 84% on air. He is now pulseless with PEA.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his cardiac arrest?",
+   "o": [
+    "Hypokalaemia",
+    "Hypovolaemia",
+    "Tamponade",
+    "Thrombosis (pulmonary embolism)",
+    "Toxins"
+   ],
+   "a": 3,
+   "e": "Post-operative DVT with sudden hypoxia and PEA is a massive PE: a 'thrombosis' T.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely cause of his cardiac arrest?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "total hip replacement",
+      "suddenly breathless",
+      "left calf is swollen",
+      "84% on air"
+     ],
+     "x": "Post-op, DVT, sudden hypoxia, PEA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Massive PE**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No reason for low potassium."
+      ],
+      [
+       1,
+       "Sudden breathlessness and calf swelling point elsewhere."
+      ],
+      [
+       2,
+       "No chest trauma or surgery."
+      ],
+      [
+       4,
+       "No overdose."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Thrombosis (pulmonary embolism).** Thrombolyse and continue CPR 60–90 min."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 34 year old man has a stab wound to the left chest. He becomes pulseless in the Emergency Department; the monitor shows PEA. Before arrest his pulse rate was 128 bpm and BP 76/58 mmHg with distended neck veins and quiet heart sounds. His trachea is central.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate immediate investigation to identify the cause?",
+   "o": [
+    "Bedside focused echocardiography",
+    "Chest X-ray",
+    "CT chest",
+    "ECG 12-lead",
+    "Serum troponin"
+   ],
+   "a": 0,
+   "e": "Penetrating trauma with raised JVP, quiet heart sounds and PEA suggests tamponade; bedside echo confirms it during CPR.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most appropriate immediate investigation to identify the cause?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "stab wound to the left chest",
+      "distended neck veins",
+      "quiet heart sounds",
+      "trachea is central"
+     ],
+     "x": "Beck's triad after penetrating trauma."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Point-of-care echo** to see pericardial fluid."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       2,
+       "Cannot be done during CPR."
+      ],
+      [
+       1,
+       "Slow and poor at showing tamponade."
+      ],
+      [
+       3,
+       "Not possible during arrest and not diagnostic."
+      ],
+      [
+       4,
+       "Irrelevant now."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bedside focused echocardiography.** Then pericardiocentesis or thoracotomy."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 60 year old woman on haemodialysis missed her last two sessions. She collapses and CPR is started. The monitor shows a slow broad-complex rhythm with no pulse.",
+   "labs": [
+    [
+     "Pre-arrest ECG",
+     "Peaked T waves, broad QRS",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate immediate investigation?",
+   "o": [
+    "Blood cultures",
+    "Blood gas for potassium",
+    "Chest X-ray",
+    "CT head",
+    "Urea and electrolytes sent to the lab"
+   ],
+   "a": 1,
+   "e": "Hyperkalaemia is a reversible 4H; a blood gas gives the potassium immediately during CPR.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most appropriate immediate investigation?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemodialysis",
+      "missed her last two sessions",
+      "slow broad-complex"
+     ],
+     "x": "Missed dialysis + broad slow rhythm = hyperkalaemia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Blood gas** potassium."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not immediate."
+      ],
+      [
+       2,
+       "Not the likely cause."
+      ],
+      [
+       3,
+       "Not during CPR."
+      ],
+      [
+       4,
+       "Too slow; a gas gives potassium in a minute."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Blood gas for potassium.** Then calcium, insulin-dextrose."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 66 year old man collapses on the ward. He is unresponsive with no pulse. CPR is started. The defibrillator is attached and shows ventricular fibrillation.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Continue CPR (30:2) and reassess in 2 minutes",
+    "IV adrenaline 1 mg",
+    "IV amiodarone 300 mg",
+    "Synchronised DC cardioversion",
+    "Unsynchronised shock (defibrillation)"
+   ],
+   "a": 4,
+   "e": "VF is shockable: give an unsynchronised shock immediately; drugs come after the third shock.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the next most appropriate step in management?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no pulse",
+      "ventricular fibrillation"
+     ],
+     "x": "Arrest, shockable rhythm."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Defibrillation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Delays the shock."
+      ],
+      [
+       1,
+       "After the 3rd shock in shockable rhythms."
+      ],
+      [
+       2,
+       "After the 3rd shock."
+      ],
+      [
+       3,
+       "For tachycardias with a pulse."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Unsynchronised shock (defibrillation).** Shock, then CPR 2 min."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man is in cardiac arrest. He has received three shocks for ventricular fibrillation and chest compressions have restarted. He remains in VF. IV access is in place.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate drug management now?",
+   "o": [
+    "Adenosine 6 mg IV",
+    "Adrenaline 1 mg IV and amiodarone 300 mg IV",
+    "Adrenaline 1 mg IV only",
+    "Amiodarone 150 mg IV",
+    "Atropine 3 mg IV"
+   ],
+   "a": 1,
+   "e": "After the third shock in VF/pVT, give adrenaline 1 mg and amiodarone 300 mg once compressions restart.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most appropriate drug management now?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "three shocks",
+      "remains in VF"
+     ],
+     "x": "Shockable, after 3rd shock."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Adrenaline 1 mg + amiodarone 300 mg**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For SVT, not arrest."
+      ],
+      [
+       2,
+       "Amiodarone is also given after the 3rd shock."
+      ],
+      [
+       3,
+       "150 mg is the further dose after 5 shocks."
+      ],
+      [
+       4,
+       "No longer used in arrest."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Adrenaline 1 mg IV and amiodarone 300 mg IV.** Then adrenaline every 3–5 min."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 75 year old woman is found in cardiac arrest on the ward. CPR is started. The monitor shows asystole. Before arrest her pulse rate was 48 bpm and BP 82/50 mmHg. IV access is in place.",
+   "labs": [
+    [
+     "Potassium",
+     "4.8 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate drug to give now?",
+   "o": [
+    "Adrenaline 1 mg IV immediately",
+    "Adrenaline after the 3rd cycle",
+    "Amiodarone 300 mg IV",
+    "Atropine 3 mg IV",
+    "Defibrillation"
+   ],
+   "a": 0,
+   "e": "In non-shockable rhythms (PEA, asystole) adrenaline 1 mg is given as soon as access is obtained; no shock or amiodarone.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most appropriate drug to give now?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "asystole",
+      "IV access is in place"
+     ],
+     "x": "Non-shockable rhythm."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Adrenaline 1 mg immediately**, then every 3–5 min."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "That timing is for shockable rhythms."
+      ],
+      [
+       2,
+       "Only for shockable rhythms."
+      ],
+      [
+       3,
+       "Not in the ALS algorithm."
+      ],
+      [
+       4,
+       "Asystole is non-shockable."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Adrenaline 1 mg IV immediately.** No shock, no amiodarone."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 62 year old man is in VF arrest. After the third shock he is given adrenaline 1 mg IV. His pulse rate before arrest was 110 bpm and BP 100/60 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism by which adrenaline improves the chance of ROSC?",
+   "o": [
+    "Alpha-1 mediated peripheral vasoconstriction",
+    "Beta-2 mediated bronchodilation",
+    "Blockade of potassium channels",
+    "Increased vagal tone",
+    "Stimulation of muscarinic receptors"
+   ],
+   "a": 0,
+   "e": "Adrenaline's alpha-1 vasoconstriction diverts flow to the coronary and cerebral circulations, improving the chance of ROSC.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The lead-in is \"Which is the most likely mechanism by which adrenaline improves the chance of ROSC?\" Decide what kind of answer it wants before reading the options."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "VF arrest",
+      "adrenaline 1 mg IV"
+     ],
+     "x": "Adrenaline during CPR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Alpha-1** vasoconstriction redirects flow to coronary and cerebral circulations."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Not the arrest benefit."
+      ],
+      [
+       2,
+       "That is amiodarone."
+      ],
+      [
+       3,
+       "Slows the heart."
+      ],
+      [
+       4,
+       "That is acetylcholine's action."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Alpha-1 mediated peripheral vasoconstriction.** Raises perfusion pressure."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is cardiac arrest and what are its common causes?",
+    "tip": "Exam thinking: the stem gives you the trigger.",
+    "points": [
+     {
+      "p": "Sudden cessation of cardiac output",
+      "k": [
+       [
+        "cessation",
+        "stop",
+        "loss"
+       ],
+       [
+        "output",
+        "circulation"
+       ]
+      ],
+      "why": "Death within minutes untreated."
+     },
+     {
+      "p": "Cardiac disease, arrhythmia, MI",
+      "k": [
+       [
+        "mi",
+        "infarct",
+        "cardiac disease",
+        "arrhythm",
+        "ischaem"
+       ]
+      ],
+      "why": "MI is the commonest."
+     },
+     {
+      "p": "Electrolyte imbalance or drug overdose",
+      "k": [
+       [
+        "electrolyte",
+        "potassium",
+        "overdose",
+        "drug"
+       ]
+      ],
+      "why": "Both are 4H/4T causes."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you recognise cardiac arrest at the bedside?",
+    "tip": "Exam thinking: agonal gasps are not breathing.",
+    "points": [
+     {
+      "p": "Collapsed and unresponsive",
+      "k": [
+       [
+        "unresponsive",
+        "collapse"
+       ]
+      ],
+      "why": "Shout and shake."
+     },
+     {
+      "p": "Not breathing normally; agonal gasps",
+      "k": [
+       [
+        "agonal",
+        "gasp",
+        "not breathing"
+       ]
+      ],
+      "why": "Do not mistake gasps for breathing."
+     },
+     {
+      "p": "No palpable pulse",
+      "k": [
+       [
+        "pulse"
+       ]
+      ],
+      "why": "Check no longer than 10 seconds."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which arrest rhythms are shockable and which are not? Describe each.",
+    "tip": "Exam thinking: the shock decision drives everything.",
+    "points": [
+     {
+      "p": "VF: chaotic, no QRS; commonest",
+      "k": [
+       [
+        "vf",
+        "fibrillation"
+       ]
+      ],
+      "why": "Shockable."
+     },
+     {
+      "p": "Pulseless VT: broad QRS ~150 ms",
+      "k": [
+       [
+        "vt",
+        "ventricular tachy"
+       ]
+      ],
+      "why": "Shockable."
+     },
+     {
+      "p": "PEA: organised rhythm, no pulse",
+      "k": [
+       [
+        "pea",
+        "pulseless electrical"
+       ]
+      ],
+      "why": "Non-shockable."
+     },
+     {
+      "p": "Asystole: no electrical activity",
+      "k": [
+       [
+        "asystole",
+        "flat"
+       ]
+      ],
+      "why": "Non-shockable."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "List the 4Hs and 4Ts.",
+    "tip": "Exam thinking: each one has a clue in the stem.",
+    "points": [
+     {
+      "p": "Hypoxia",
+      "k": [
+       [
+        "hypoxia"
+       ]
+      ],
+      "why": "Airway and oxygen."
+     },
+     {
+      "p": "Hypovolaemia",
+      "k": [
+       [
+        "hypovol"
+       ]
+      ],
+      "why": "Bleeding, fluid loss."
+     },
+     {
+      "p": "Hypo/hyperkalaemia and metabolic",
+      "k": [
+       [
+        "kalaemia",
+        "potassium"
+       ]
+      ],
+      "why": "Dialysis patients."
+     },
+     {
+      "p": "Hypothermia",
+      "k": [
+       [
+        "hypotherm"
+       ]
+      ],
+      "why": "Found outside in winter."
+     },
+     {
+      "p": "Tension pneumothorax, Tamponade",
+      "k": [
+       [
+        "tension",
+        "pneumothorax"
+       ],
+       [
+        "tamponade"
+       ]
+      ],
+      "why": "Trauma clues."
+     },
+     {
+      "p": "Toxins, Thrombosis (PE or MI)",
+      "k": [
+       [
+        "toxin",
+        "overdose"
+       ],
+       [
+        "thromb",
+        "pe",
+        "embol"
+       ]
+      ],
+      "why": "Thrombolysis for PE."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you find the reversible cause during CPR?",
+    "tip": "Exam thinking: fast bedside tests only.",
+    "points": [
+     {
+      "p": "Blood gas: potassium, pH, Hb, glucose",
+      "k": [
+       [
+        "gas",
+        "vbg",
+        "abg"
+       ]
+      ],
+      "why": "Results in a minute."
+     },
+     {
+      "p": "Bedside echo: tamponade, PE, hypovolaemia",
+      "k": [
+       [
+        "echo",
+        "ultrasound"
+       ]
+      ],
+      "why": "Done during the rhythm check."
+     },
+     {
+      "p": "Temperature, trachea, breath sounds, history",
+      "k": [
+       [
+        "temperature",
+        "trachea",
+        "history"
+       ]
+      ],
+      "why": "Clinical clues for hypothermia and tension."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is basic life support: who, ratio, rate and depth?",
+    "tip": "Exam thinking: the numbers are tested.",
+    "points": [
+     {
+      "p": "Call for help (999) and start CPR",
+      "k": [
+       [
+        "999",
+        "help",
+        "call"
+       ]
+      ],
+      "why": "Without delay."
+     },
+     {
+      "p": "30:2",
+      "k": [
+       [
+        "30:2",
+        "30 to 2",
+        "30 2"
+       ]
+      ],
+      "why": "Compressions to breaths."
+     },
+     {
+      "p": "Rate 100–120/min, depth 5–6 cm",
+      "k": [
+       [
+        "100",
+        "120"
+       ],
+       [
+        "5",
+        "6 cm"
+       ]
+      ],
+      "why": "Full recoil."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Describe the ALS algorithm for a shockable rhythm, including drug timing.",
+    "tip": "Exam thinking: count the shocks.",
+    "points": [
+     {
+      "p": "Unsynchronised shock 200 J",
+      "k": [
+       [
+        "shock",
+        "defib"
+       ]
+      ],
+      "why": "Continue CPR while charging."
+     },
+     {
+      "p": "CPR 2 minutes then rhythm check",
+      "k": [
+       [
+        "2 min",
+        "two min",
+        "2-min"
+       ]
+      ],
+      "why": "Minimise pauses."
+     },
+     {
+      "p": "After 3rd shock: adrenaline 1 mg + amiodarone 300 mg",
+      "k": [
+       [
+        "adrenaline",
+        "epinephrine"
+       ],
+       [
+        "amiodarone"
+       ],
+       [
+        "3rd",
+        "third",
+        "three"
+       ]
+      ],
+      "why": "Lidocaine is an alternative."
+     },
+     {
+      "p": "Adrenaline every 3–5 min; amiodarone 150 mg after 5 shocks",
+      "k": [
+       [
+        "3-5",
+        "3–5",
+        "3 to 5"
+       ],
+       [
+        "150"
+       ]
+      ],
+      "why": "Second amiodarone dose."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage a non-shockable rhythm and the special situations?",
+    "tip": "Exam thinking: adrenaline immediately, no shock.",
+    "points": [
+     {
+      "p": "PEA/asystole: CPR 30:2, adrenaline 1 mg immediately, no shock",
+      "k": [
+       [
+        "immediate",
+        "straight away",
+        "as soon"
+       ]
+      ],
+      "why": "No amiodarone."
+     },
+     {
+      "p": "IV fails: intraosseous",
+      "k": [
+       [
+        "intraosseous",
+        "io"
+       ]
+      ],
+      "why": "Humerus or tibia."
+     },
+     {
+      "p": "Pregnant >20 weeks: left lateral tilt ~15°",
+      "k": [
+       [
+        "left lateral",
+        "tilt"
+       ]
+      ],
+      "why": "Relieves aortocaval compression."
+     },
+     {
+      "p": "PE: thrombolysis, CPR 60–90 min",
+      "k": [
+       [
+        "thromboly",
+        "alteplase"
+       ],
+       [
+        "60",
+        "90"
+       ]
+      ],
+      "why": "Prolonged CPR may be warranted."
+     },
+     {
+      "p": "Tension: wide-bore cannula 2nd intercostal space",
+      "k": [
+       [
+        "2nd",
+        "second"
+       ],
+       [
+        "intercostal",
+        "cannula",
+        "decompress"
+       ]
+      ],
+      "why": "Needle decompression."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does defibrillation work, and why is PEA not shocked?",
+    "tip": "Exam thinking: electrics versus pump.",
+    "points": [
+     {
+      "p": "Shock depolarises a critical mass of myocardium; SA node resumes",
+      "k": [
+       [
+        "critical mass",
+        "depolari"
+       ]
+      ],
+      "why": "Wipes out chaotic activity."
+     },
+     {
+      "p": "PEA: organised electrics but no mechanical output; usually a 4H/4T",
+      "k": [
+       [
+        "mechanical",
+        "contract",
+        "pump"
+       ],
+       [
+        "4h",
+        "4t",
+        "revers",
+        "cause"
+       ]
+      ],
+      "why": "Shock will not help."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How do adrenaline and amiodarone work in arrest, and why does the brain suffer so fast?",
+    "tip": "Exam thinking: receptor, class, and perfusion.",
+    "points": [
+     {
+      "p": "Adrenaline: alpha-1 vasoconstriction, flow to heart and brain",
+      "k": [
+       [
+        "alpha"
+       ]
+      ],
+      "why": "Improves ROSC chance."
+     },
+     {
+      "p": "Amiodarone: class III, prolongs action potential and refractory period",
+      "k": [
+       [
+        "class iii",
+        "class 3",
+        "refractory",
+        "action potential"
+       ]
+      ],
+      "why": "For shock-refractory VF/pVT."
+     },
+     {
+      "p": "No output stops cerebral perfusion: hypoxic injury within minutes",
+      "k": [
+       [
+        "hypoxic",
+        "perfusion",
+        "minutes"
+       ]
+      ],
+      "why": "Early CPR beats any drug."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Cardiac arrest": "Sudden cessation of cardiac output, so circulation stops.",
+  "CPR": "Cardiopulmonary resuscitation: chest compressions and rescue breaths.",
+  "BLS": "Basic life support: recognition, calling for help, CPR and defibrillation.",
+  "ALS": "Advanced life support: the hospital algorithm of shocks, drugs and reversible causes.",
+  "ROSC": "Return of spontaneous circulation: a pulse returns.",
+  "Agonal gasps": "Occasional, ineffective gasping breaths seen in cardiac arrest.",
+  "VF": "Ventricular fibrillation: chaotic ventricular activity with no output; shockable.",
+  "Pulseless VT": "Ventricular tachycardia without a pulse; shockable.",
+  "PEA": "Pulseless electrical activity: organised rhythm on the monitor but no pulse.",
+  "Asystole": "No electrical activity of the heart; a flat line.",
+  "Shockable": "Rhythms that respond to defibrillation: VF and pulseless VT.",
+  "Defibrillation": "An unsynchronised shock that depolarises the myocardium to stop VF or pVT.",
+  "Synchronised cardioversion": "A shock timed to the R wave, used for tachycardias with a pulse.",
+  "4Hs and 4Ts": "The reversible causes of arrest to look for during CPR.",
+  "Tension pneumothorax": "Air trapped in the pleural space under pressure, shifting the mediastinum.",
+  "Tamponade": "Fluid or blood in the pericardium compressing the heart.",
+  "Beck's triad": "Hypotension, raised JVP and muffled heart sounds: signs of tamponade.",
+  "Hypovolaemia": "Low circulating blood volume, for example from bleeding.",
+  "Hypothermia": "Core body temperature below 35°C.",
+  "Hyperkalaemia": "High blood potassium, which can cause broad complexes and arrest.",
+  "Intraosseous": "Drug access through a needle into bone marrow.",
+  "IO": "Intraosseous access.",
+  "Adrenaline": "Catecholamine given 1 mg IV in arrest; alpha-1 vasoconstriction improves perfusion.",
+  "Amiodarone": "Class III antiarrhythmic given 300 mg after the 3rd shock in VF/pVT.",
+  "Lidocaine": "Antiarrhythmic used as an alternative to amiodarone in refractory VF.",
+  "Alpha-1 receptor": "Adrenergic receptor on vessels that causes vasoconstriction.",
+  "Class III antiarrhythmic": "Drug that blocks potassium channels, prolonging action potential and refractory period.",
+  "Refractory period": "Time after depolarisation when a cell cannot fire again.",
+  "Critical mass": "Enough myocardium depolarised together to stop chaotic activity.",
+  "SA node": "The heart's natural pacemaker in the right atrium.",
+  "Aortocaval compression": "The pregnant uterus pressing on the aorta and vena cava, reducing venous return.",
+  "Left lateral tilt": "Tilting a pregnant patient about 15° to the left to relieve aortocaval compression.",
+  "Thrombolysis": "Drug breakdown of a clot, such as alteplase for massive PE.",
+  "Alteplase": "A thrombolytic drug used for massive PE and stroke.",
+  "Needle decompression": "Wide-bore cannula into the 2nd intercostal space to release a tension pneumothorax.",
+  "EtCO2": "End-tidal carbon dioxide; a sudden rise during CPR suggests ROSC.",
+  "Hypoxic brain injury": "Brain damage from lack of oxygen, starting within minutes of arrest.",
+  "Post-ROSC care": "Oxygen, treating the cause and ICU support after circulation returns.",
+  "PCI": "Percutaneous coronary intervention: opening a blocked coronary artery with a stent."
+ }
+}

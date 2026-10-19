@@ -1,0 +1,424 @@
+{
+  "id": "vasovagal-syncope",
+  "patient": {
+    "name": "Zara Ahmed",
+    "age": 19,
+    "sex": "F",
+    "setting": "GP surgery phlebotomy room, then the Urgent Treatment Centre",
+    "complaint": "Collapsed with brief loss of consciousness during a blood test",
+    "background": ["First-year law student at Queen Mary, lives in halls", "Skipped breakfast, stood in a hot queue for 40 minutes", "Fainted once before at a vaccination aged 14", "No regular medication; no family history of sudden death"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a young person who faints after standing, heat, pain or a needle, with a prodrome and rapid full recovery; the trap is brief jerking, which tempts you towards seizure.",
+      "steps": [
+        {"type": "story", "points": ["Zara stood 40 minutes in a hot queue, no breakfast.", "As the needle goes in she feels **hot, sick and lightheaded**.", "Her vision narrows to a tunnel; ears ring.", "She slumps from the chair to the floor."]},
+        {"type": "notes", "src": 0, "lead": "A sudden drop in heart rate and BP cut Zara's brain perfusion for a few seconds: a **simple faint**."},
+        {"type": "story", "points": ["Nurse sees her go **pale and sweaty**.", "Both arms jerk for about 5 seconds.", "Eyes open within 20 seconds; talking normally in a minute.", "No tongue biting, no incontinence, **no confusion afterwards**."], "vitals": {"HR": "48 bpm", "BP": "78/44 mmHg", "RR": "16 /min", "SpO2": "99% on air"}},
+        {"type": "notes", "src": 1, "lead": "Zara had the textbook **prodrome**, a classic **trigger** (needle, heat, standing) and a quick, complete recovery."},
+        {"type": "ask", "q": "Her arms jerked for 5 seconds. What makes this a faint, not a seizure?", "o": ["She went pale", "She was sweaty", "There was no post-ictal confusion", "The jerks were bilateral"], "a": 2, "r": "Brief jerks happen in faints too. The **absence of a post-ictal phase** is the key feature that separates it from a seizure."},
+        {"type": "notes", "src": 2, "lead": "Zara's jerks are just a brain briefly short of blood. She was fully herself straight away: **no post-ictal phase**."},
+        {"type": "compare", "title": "Faint vs seizure vs cardiac syncope", "head": ["Feature", "Vasovagal", "Seizure", "Cardiac (arrhythmia)"], "rows": [["Trigger", "Standing, heat, pain, needles", "Often none; sleep loss, flashing lights", "Exertion or none"], ["Warning", "Prodrome: hot, sick, tunnel vision", "Aura (déjà vu, smell)", "None or palpitations"], ["During", "Pale, sweaty, brief jerks", "Tonic-clonic, cyanosis, tongue bitten", "Pale, abrupt collapse"], ["After", "**Rapid full recovery**", "**Post-ictal confusion**", "Rapid recovery"]]},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Time to full recovery", "min": 0, "max": 30, "unit": "min", "bands": [[0, 2, "Faint: seconds to a minute", "ok"], [2, 30, "Prolonged: think seizure or other cause", "bad"]], "value": 1, "label": "Zara 1 min", "caption": "Recovery in seconds to a minute, with no confusion, fits a faint."}},
+        {"type": "notes", "src": 3, "lead": "Zara bumped her elbow on the chair: in vasovagal syncope the real danger is **injury from the fall**."},
+        {"type": "trap", "text": "Fainting **during exertion**, with palpitations, chest pain, or a family history of sudden death is not a simple faint: think cardiac syncope."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (12-lead ECG, to exclude an arrhythmia) or a stem where a typical history and normal ECG mean no further tests are needed.",
+      "steps": [
+        {"type": "ask", "q": "Zara is fully recovered. What test should every patient with transient loss of consciousness have?", "o": ["12-lead ECG", "CT head", "EEG", "Tilt-table test"], "a": 0, "r": "A **12-lead ECG** to exclude an arrhythmic cause. CT and EEG are not routine for a typical faint."},
+        {"type": "notes", "src": 1, "lead": "Zara's **12-lead ECG** and basic bloods (FBC, glucose, U&E) are done at the Urgent Treatment Centre."},
+        {"type": "visual", "visual": {"kind": "ecg", "title": "Zara's 12-lead ECG", "layout": "12lead", "rhythm": "sinus", "rate": 76, "leads": {}, "caption": "Normal sinus rhythm. Normal PR, QRS and QTc: no heart block, pre-excitation, Brugada pattern or long QT."}},
+        {"type": "labs", "title": "Basic bloods", "rows": [["Hb", "128 g/L", "115–165", ""], ["Glucose", "5.1 mmol/L", "4.0–7.8", ""], ["Sodium", "139 mmol/L", "135–145", ""], ["Potassium", "4.2 mmol/L", "3.5–5.3", ""], ["QTc", "412 ms", "<460", ""]], "text": "Nothing to suggest anaemia, hypoglycaemia or an electrolyte cause."},
+        {"type": "notes", "src": 0, "lead": "With a classic story and a normal ECG, Zara's diagnosis is **clinical**. No further tests are needed."},
+        {"type": "flow", "title": "Blackout: what to look for on the ECG", "nodes": ["Heart block or long pauses", "Long or short QT", "Pre-excitation (delta wave)", "Brugada pattern", "LVH or HOCM pattern", "All normal + typical story: vasovagal"], "caption": "The ECG is there to catch dangerous causes."},
+        {"type": "trap", "text": "Do not send a typical faint for **EEG** or **CT head** because of a few jerks. Investigate only when the story is atypical."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate next step?' where the answer is reassurance and discharge with trigger advice, or 'lie down and raise the legs' for a prodrome.",
+      "steps": [
+        {"type": "ask", "q": "Zara starts to feel hot and sick again when she sits up. What should she do?", "o": ["Drink a sugary drink", "Lie down and raise her legs", "Sit with her head between her knees", "Stand up and walk"], "a": 1, "r": "**Lie flat and elevate the legs** to restore cerebral perfusion and stop the faint."},
+        {"type": "notes", "src": 1, "lead": "The nurse lies Zara flat with her **legs raised** on a chair, and the prodrome settles within a minute."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Zara's observations", "x": ["Queue", "Needle", "On floor", "Legs up 2 min", "10 min"], "unit": "", "series": [{"name": "Heart rate (bpm)", "values": [88, 46, 48, 70, 76]}, {"name": "Systolic BP (mmHg)", "values": [112, 72, 78, 104, 110]}], "caption": "Sudden fall in both heart rate and BP, then quick recovery once flat with legs raised."}},
+        {"type": "notes", "src": 0, "lead": "Zara is **reassured** that this is benign and advised to **stay hydrated**, eat beforehand, avoid long standing and overheating, and to lie down for blood tests."},
+        {"type": "notes", "src": 2, "lead": "Zara needs **no medication**: uncomplicated vasovagal syncope is managed with advice alone."},
+        {"type": "flow", "title": "Plan for Zara", "nodes": ["Typical story + normal ECG", "Reassure: benign", "Teach: lie down, legs up at the first warning", "Avoid triggers; fluids and regular meals", "Discharge, no follow-up needed"]},
+        {"type": "notes", "src": "guidelines", "lead": "**NICE CG109**: a typical vasovagal faint with a normal ECG needs no further assessment; explain the diagnosis and discharge."},
+        {"type": "pearl", "text": "A simple faint with a clear trigger and prodrome does **not** stop someone driving under DVLA rules."}
+      ]
+    },
+    "science": {
+      "exam": "Expect 'Which is the mechanism of a vasovagal attack?' (reflex vagal bradycardia plus vasodilation) and applied questions on why legs up helps or why jerks do not mean epilepsy.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "The needle and the heat set off an **exaggerated vagal reflex** in Zara: her heart slowed and her vessels dilated together."},
+        {"type": "flow", "title": "The reflex", "nodes": ["Trigger: standing, heat, pain, needle", "Exaggerated autonomic reflex", "Vagal surge: bradycardia", "Sympathetic withdrawal: vasodilation", "Low cardiac output and SVR: BP falls"]},
+        {"type": "notes", "src": 1, "lead": "Zara's HR fell to 46 and her vessels opened, so BP fell until her brain dropped below the perfusion needed to stay conscious."},
+        {"type": "ask", "q": "Why did raising Zara's legs help?", "o": ["Increased venous return", "Increased vagal tone", "Lower intracranial pressure", "Reduced heart rate"], "a": 0, "r": "Raising the legs increases **venous return**, restoring cardiac output and cerebral perfusion."},
+        {"type": "notes", "src": 2, "lead": "Gravity sends blood pooled in Zara's legs back to her heart, so cardiac output and brain perfusion recover and the episode ends."},
+        {"type": "notes", "src": 3, "lead": "Zara's jerks came from **brief cerebral hypoperfusion**, not an electrical storm, so there was nothing to recover from afterwards."},
+        {"type": "pearl", "text": "BP = cardiac output x SVR. A faint drops **both** (bradycardia and vasodilation), which is why BP falls so fast."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "What causes the loss of consciousness in vasovagal syncope?", "o": ["Abnormal cortical electrical activity", "Cerebral embolus", "Hypoglycaemia", "Transient drop in heart rate and BP"], "a": 3, "r": "A **transient drop in heart rate and blood pressure** reduces cerebral perfusion."},
+    {"d": "diagnosis", "q": "Which symptom is part of the typical vasovagal prodrome?", "o": ["Chest pain", "Déjà vu", "Palpitations on exertion", "Tunnel vision"], "a": 3, "r": "**Tunnel vision**, warmth, nausea, sweating, lightheadedness and ringing ears."},
+    {"d": "diagnosis", "q": "Which feature best distinguishes a faint from a seizure?", "o": ["Brief jerking", "Loss of consciousness", "No post-ictal phase", "Pallor"], "a": 2, "r": "Faints can jerk briefly; **no post-ictal confusion** is the key difference."},
+    {"d": "diagnosis", "q": "What is the main complication of vasovagal syncope?", "o": ["Aspiration", "Injury from a fall", "Stroke", "Sudden cardiac death"], "a": 1, "r": "The main risk is **injury from falling**."},
+    {"d": "investigation", "q": "What is the first-line investigation in suspected vasovagal syncope?", "o": ["12-lead ECG", "CT head", "EEG", "Echocardiogram"], "a": 0, "r": "A **12-lead ECG** to exclude an arrhythmic cause."},
+    {"d": "investigation", "q": "How is vasovagal syncope diagnosed?", "o": ["Clinically, from the history", "EEG", "Holter monitor", "Tilt-table test in all"], "a": 0, "r": "It is a **clinical diagnosis** based on the classic history."},
+    {"d": "management", "q": "What should a patient do at the start of a prodrome?", "o": ["Breathe into a bag", "Lie down and raise the legs", "Stand up and walk", "Take a beta-blocker"], "a": 1, "r": "**Lie down with legs elevated** to restore cerebral perfusion."},
+    {"d": "management", "q": "What drug treatment is needed for uncomplicated vasovagal syncope?", "o": ["Fludrocortisone", "Midodrine", "None", "Propranolol"], "a": 2, "r": "**No pharmacological treatment**: reassurance and trigger avoidance."},
+    {"d": "science", "q": "Which combination causes the BP drop in a vasovagal faint?", "o": ["Bradycardia and vasodilation", "Hypovolaemia and tachycardia", "Tachycardia and vasoconstriction", "Valve obstruction"], "a": 0, "r": "**Parasympathetic bradycardia** plus **sympathetic withdrawal vasodilation**."},
+    {"d": "science", "q": "Why does raising the legs end a faint?", "o": ["It increases vagal tone", "It increases venous return", "It lowers heart rate", "It raises intracranial pressure"], "a": 1, "r": "Raised legs increase **venous return**, restoring cerebral perfusion."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is vasovagal syncope and why does it cause loss of consciousness?", "tip": "Exam thinking: reflex syncope, a simple faint.", "points": [
+        {"p": "Reflex syncope: transient drop in heart rate and blood pressure", "k": [["heart rate", "bradycard", "pulse"], ["blood pressure", "bp", "hypotens"]], "why": "Both fall together."},
+        {"p": "Reduced cerebral perfusion causes brief loss of consciousness", "k": [["cerebral", "brain"]], "why": "Seconds to minutes only."},
+        {"p": "A simple faint, classically after prolonged standing", "k": [["faint", "standing"]], "why": "The commonest cause of syncope."}
+      ]},
+      {"d": "diagnosis", "q": "What prodromal symptoms come before a vasovagal faint?", "tip": "Exam thinking: a warning means a faint; no warning should make you think arrhythmia.", "points": [
+        {"p": "Feeling warm, sweating", "k": [["warm", "hot", "sweat"]], "why": "Autonomic symptoms."},
+        {"p": "Nausea", "k": [["nausea", "sick"]], "why": "Vagal activation."},
+        {"p": "Lightheadedness, dizziness", "k": [["lightheaded", "light-headed", "dizz"]], "why": "Falling cerebral perfusion."},
+        {"p": "Tunnel or blurred vision", "k": [["tunnel", "blurred", "vision"]], "why": "Retina is sensitive to low perfusion."},
+        {"p": "Ringing in the ears", "k": [["ringing", "tinnitus", "ears"]], "why": "Part of the classic prodrome."}
+      ]},
+      {"d": "diagnosis", "q": "What triggers a vasovagal faint?", "tip": "Exam thinking: the trigger is usually in the first line of the stem.", "points": [
+        {"p": "Prolonged standing", "k": [["standing", "stood"]], "why": "Venous pooling in the legs."},
+        {"p": "Heat", "k": [["heat", "hot", "warm"]], "why": "Vasodilation."},
+        {"p": "Emotional stress or pain", "k": [["emotion", "stress", "pain", "fright"]], "why": "Strong autonomic stimuli."},
+        {"p": "Medical procedures such as blood tests", "k": [["needle", "blood test", "venepuncture", "procedure", "injection"]], "why": "A very common exam setting."}
+      ]},
+      {"d": "diagnosis", "q": "How do you tell a vasovagal faint from a seizure?", "tip": "Exam thinking: jerks do not mean epilepsy; what happens afterwards decides it.", "points": [
+        {"p": "Brief convulsions can occur in a faint", "k": [["jerk", "convuls", "twitch", "myoclon"]], "why": "Do not over-call epilepsy."},
+        {"p": "No post-ictal phase: rapid full recovery, no confusion", "k": [["post-ictal", "postictal", "confusion", "recover"]], "why": "The key differentiating feature."},
+        {"p": "Brief LOC: seconds to minutes", "k": [["second", "minute", "brief"]], "why": "Prolonged LOC suggests another cause."}
+      ]},
+      {"d": "diagnosis", "q": "What are the complications and red flags of a blackout?", "tip": "Exam thinking: the faint itself is benign, but a fall is not, and red flags mean cardiac.", "points": [
+        {"p": "Injury from a fall during the faint", "k": [["injur", "fall", "trauma", "fracture"]], "why": "The main risk of vasovagal syncope."},
+        {"p": "Red flag: syncope on exertion", "k": [["exertion", "exercise"]], "why": "Think aortic stenosis or HOCM."},
+        {"p": "Red flag: palpitations, chest pain or family history of sudden death", "k": [["palpitation", "chest pain", "family history", "sudden death"]], "why": "Think arrhythmia."}
+      ]},
+      {"d": "investigation", "q": "What is the first-line investigation, and how is the diagnosis made?", "tip": "Exam thinking: everyone with TLoC gets an ECG; the diagnosis comes from the history.", "points": [
+        {"p": "12-lead ECG to exclude an arrhythmic cause", "k": [["ecg", "electrocardiogram"]], "why": "Look for heart block, long QT, pre-excitation, Brugada."},
+        {"p": "Basic bloods as part of syncope work-up", "k": [["blood", "fbc", "glucose"]], "why": "Anaemia, hypoglycaemia, electrolytes."},
+        {"p": "Clinical diagnosis based on the classic history", "k": [["clinical", "history"]], "why": "No EEG, CT or tilt test needed for a typical faint."}
+      ]},
+      {"d": "management", "q": "How is vasovagal syncope managed, acutely and long term?", "tip": "Exam thinking: the answer is usually 'reassure and discharge'.", "points": [
+        {"p": "At a prodrome: lie down and elevate the legs", "k": [["lie", "lying", "flat"], ["leg"]], "why": "Restores cerebral perfusion and prevents LOC."},
+        {"p": "Reassurance: benign condition", "k": [["reassur", "benign"]], "why": "Discharge with no follow-up if typical."},
+        {"p": "Avoid triggers: prolonged standing, overheating; stay hydrated", "k": [["avoid", "trigger", "hydrat", "fluid"]], "why": "Lifestyle advice is the treatment."},
+        {"p": "No pharmacological treatment for uncomplicated cases", "k": [["no drug", "no medic", "no pharmac", "none", "no treatment"]], "why": "Do not pick fludrocortisone or beta-blockers."}
+      ]},
+      {"d": "science", "q": "What is the mechanism of a vasovagal faint, and why does raising the legs help?", "tip": "Exam thinking: BP = cardiac output x SVR, and a faint drops both.", "points": [
+        {"p": "Exaggerated autonomic (vagal) reflex", "k": [["vagal", "vagus", "autonomic", "reflex"]], "why": "Triggered by standing, pain, emotion, heat."},
+        {"p": "Parasympathetic-mediated bradycardia", "k": [["bradycard", "parasympathetic", "slow heart"]], "why": "Lowers cardiac output."},
+        {"p": "Sympathetic withdrawal causes vasodilation", "k": [["vasodilat", "sympathetic withdrawal", "svr", "vascular resistance"]], "why": "Lowers systemic vascular resistance."},
+        {"p": "Raising legs increases venous return and cerebral perfusion", "k": [["venous return", "preload"]], "why": "Ends the episode."},
+        {"p": "Jerks reflect transient cerebral hypoperfusion, not epileptic activity", "k": [["hypoperfusion", "perfusion", "not epilep"]], "why": "Hence no post-ictal phase."}
+      ]}
+    ]
+  },
+  "glossary": {
+    "Syncope": "Transient loss of consciousness from reduced blood flow to the brain, with spontaneous full recovery.",
+    "Vasovagal": "Involving the vagus nerve and blood vessels: slowing of the heart plus vessel dilation.",
+    "Reflex syncope": "Fainting caused by an inappropriate autonomic reflex; vasovagal is the commonest type.",
+    "Prodrome": "Warning symptoms just before an event, such as feeling hot, sick and lightheaded before a faint.",
+    "Tunnel vision": "Loss of peripheral vision so only the centre remains, a common pre-faint symptom.",
+    "LOC": "Loss of consciousness.",
+    "TLoC": "Transient loss of consciousness: the umbrella term NICE uses for blackouts.",
+    "Post-ictal": "The period of confusion, drowsiness and headache after a seizure; absent after a faint.",
+    "Convulsions": "Involuntary jerking movements; brief ones can occur in faints as well as seizures.",
+    "Myoclonic jerks": "Brief, shock-like muscle twitches; in faints caused by cerebral hypoperfusion.",
+    "Cerebral perfusion": "Blood flow to the brain; consciousness is lost when it falls too low.",
+    "Bradycardia": "A heart rate below 60 bpm.",
+    "Vasodilation": "Widening of blood vessels, which lowers vascular resistance and blood pressure.",
+    "Parasympathetic": "The rest-and-digest part of the autonomic nervous system, carried largely by the vagus nerve.",
+    "Sympathetic withdrawal": "Sudden loss of sympathetic tone to vessels, letting them dilate.",
+    "SVR": "Systemic vascular resistance: the resistance to flow across the body's circulation.",
+    "Cardiac output": "Heart rate multiplied by stroke volume: blood pumped per minute.",
+    "Venous return": "Blood flow back to the heart; raising the legs increases it.",
+    "Venous pooling": "Blood collecting in the leg veins on standing, reducing return to the heart.",
+    "12-lead ECG": "A standard recording of the heart's electrical activity from 12 views; first-line after any blackout.",
+    "QTc": "QT interval corrected for heart rate; a long QTc risks dangerous arrhythmias.",
+    "Brugada": "An inherited sodium channel disorder with a coved ST pattern in V1–V2 and risk of sudden death.",
+    "Delta wave": "A slurred QRS upstroke showing an accessory pathway, as in Wolff-Parkinson-White.",
+    "HOCM": "Hypertrophic obstructive cardiomyopathy, a cause of syncope on exertion.",
+    "Orthostatic hypotension": "A fall in BP of 20 systolic or 10 diastolic within 3 minutes of standing.",
+    "Tilt-table test": "A test tilting the patient upright to provoke reflex syncope; reserved for unclear recurrent cases.",
+    "EEG": "Electroencephalogram: recording of brain electrical activity, used for suspected epilepsy.",
+    "Venepuncture": "Taking blood from a vein, a classic vasovagal trigger.",
+    "Fludrocortisone": "A mineralocorticoid that expands plasma volume; not needed for uncomplicated faints.",
+    "Carotid sinus hypersensitivity": "Syncope from pressure on the neck (shaving, tight collar), usually in older people.",
+    "DVLA": "UK driving licensing agency; a simple faint with a clear trigger needs no driving restriction."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 22 year old man collapses while standing in a crowded, hot underground train. Before collapsing he felt warm, nauseated and his vision went grey. A passenger saw him go pale and his arms twitch for a few seconds. He came round within 30 seconds and was fully orientated straight away.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Cardiac arrhythmia", "Epileptic seizure", "Hypoglycaemia", "Orthostatic hypotension", "Vasovagal syncope"],
+      "a": 4,
+      "steps": [
+        {"t": "Read the question line first", "x": "A diagnosis for a transient loss of consciousness: faint, fit or heart?"},
+        {"t": "Pick out the clues", "clues": ["standing in a crowded, hot underground train", "felt warm, nauseated and his vision went grey", "arms twitch for a few seconds", "fully orientated straight away"], "x": "Classic triggers, a prodrome, brief jerks and no post-ictal phase."},
+        {"t": "Make your own answer before looking", "x": "**Vasovagal syncope**."},
+        {"t": "Rule out the others", "elim": [[0, "Arrhythmias usually have no prodrome and may follow exertion or palpitations."], [1, "A seizure would leave him confused afterwards."], [2, "Hypoglycaemia does not recover in 30 seconds without treatment."], [3, "Orthostatic hypotension follows getting up, often in older people on drugs."]]},
+        {"t": "Commit", "x": "**E. Vasovagal syncope.** Trigger + prodrome + rapid full recovery."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 17 year old girl faints in assembly after standing for 30 minutes. She felt hot and sick beforehand and recovered fully within a minute. She has no palpitations or chest pain, and no family history of sudden death. Her pulse rate is 72 bpm and BP 108/66 mmHg lying and standing.",
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["12-lead ECG", "24-hour ambulatory ECG", "CT head", "EEG", "Tilt-table test"],
+      "a": 0,
+      "steps": [
+        {"t": "Read the question line first", "x": "'Initial' investigation in a blackout."},
+        {"t": "Pick out the clues", "clues": ["standing for 30 minutes", "felt hot and sick", "recovered fully within a minute", "no family history of sudden death"], "x": "A typical faint with no red flags."},
+        {"t": "Make your own answer before looking", "x": "Everyone with a blackout gets a **12-lead ECG** to exclude an arrhythmia."},
+        {"t": "Rule out the others", "elim": [[1, "Ambulatory ECG is for suspected arrhythmia with an abnormal ECG or palpitations."], [2, "CT head is not needed: no head injury or focal signs."], [3, "EEG is for suspected epilepsy."], [4, "Tilt-table testing is for unclear recurrent episodes."]]},
+        {"t": "Commit", "x": "**A. 12-lead ECG.** If normal with a typical story, no more tests."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 25 year old woman has had two faints in a year, both while queuing on hot days. Each time she felt warm, sweaty and lightheaded first, and recovered fully within a minute. Her ECG is normal. She asks what she should do if the warning symptoms start again.",
+      "q": "Which is the most appropriate advice?",
+      "o": ["Breathe into a paper bag", "Drink a sugary drink", "Lie down and raise her legs", "Stand still and wait", "Take propranolol"],
+      "a": 2,
+      "steps": [
+        {"t": "Read the question line first", "x": "Advice for the prodrome."},
+        {"t": "Pick out the clues", "clues": ["queuing on hot days", "warm, sweaty and lightheaded first", "ECG is normal", "warning symptoms start again"], "x": "Recurrent vasovagal syncope with a clear prodrome."},
+        {"t": "Make your own answer before looking", "x": "**Lie down and elevate the legs**."},
+        {"t": "Rule out the others", "elim": [[0, "Paper-bag breathing is not advised, even for hyperventilation."], [1, "This is not hypoglycaemia."], [3, "Staying upright lets the faint happen."], [4, "No drug treatment is needed."]]},
+        {"t": "Commit", "x": "**C. Lie down and raise her legs.** Restores cerebral perfusion and stops LOC."}
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 20 year old man feels faint while giving blood. His pulse rate falls from 84 to 44 bpm and his BP from 118/72 to 76/40 mmHg. He is laid flat and his legs are raised on pillows. Within 2 minutes he feels better and his BP is 106/64 mmHg.",
+      "q": "Which is the most likely mechanism by which raising his legs helped?",
+      "o": ["Decreased vagal tone", "Increased venous return to the heart", "Lowered intracranial pressure", "Reduced cerebral oxygen demand", "Triggered adrenaline release"],
+      "a": 1,
+      "steps": [
+        {"t": "Read the question line first", "x": "A mechanism question about the treatment."},
+        {"t": "Pick out the clues", "clues": ["falls from 84 to 44 bpm", "118/72 to 76/40 mmHg", "legs are raised", "Within 2 minutes"], "x": "Vasovagal bradycardia and hypotension, corrected by legs up."},
+        {"t": "Make your own answer before looking", "x": "Gravity increases **venous return**, raising cardiac output and cerebral perfusion."},
+        {"t": "Rule out the others", "elim": [[0, "Position does not directly switch off vagal tone."], [2, "Intracranial pressure is not the problem."], [3, "Brain oxygen demand does not change."], [4, "No adrenaline surge is needed for this effect."]]},
+        {"t": "Commit", "x": "**B. Increased venous return.** More preload, more output, more brain perfusion."}
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 21 year old woman collapses in the phlebotomy room as a blood sample is taken. She felt sick and hot and her vision blurred just before. She was unconscious for about 20 seconds and was fully alert immediately afterwards. Her pulse rate is 52 bpm and BP 86/52 mmHg on the floor.",
+      "labs": [["Capillary glucose", "5.3 mmol/L", "4.0–7.8", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Cardiac arrhythmia", "Generalised tonic-clonic seizure", "Hypoglycaemia", "Orthostatic hypotension", "Vasovagal syncope"],
+      "a": 4,
+      "e": "A needle trigger, a prodrome and rapid full recovery with bradycardia and hypotension is vasovagal syncope. The normal glucose excludes hypoglycaemia.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis of a brief collapse."},
+        {"t": "Pick out the clues", "clues": ["as a blood sample is taken", "felt sick and hot and her vision blurred", "fully alert immediately afterwards", "pulse rate is 52 bpm"], "x": "Trigger, prodrome, quick recovery, vagal bradycardia."},
+        {"t": "Make your own answer before looking", "x": "**Vasovagal syncope**."},
+        {"t": "Rule out the others", "elim": [[0, "Arrhythmia has no trigger or prodrome like this."], [1, "No post-ictal phase."], [2, "Glucose is normal."], [3, "She was sitting, not standing up."]]},
+        {"t": "Commit", "x": "**E. Vasovagal syncope.** The needle is the classic trigger."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 16 year old boy faints in church after standing for an hour. Witnesses say he went pale and his arms and legs jerked for about 5 seconds. He came round within a minute. His pulse rate is 64 bpm and BP 110/68 mmHg. His mother wants to know if he has epilepsy.",
+      "labs": [],
+      "visual": null,
+      "q": "Which feature would most strongly support vasovagal syncope rather than a seizure?",
+      "o": ["Brief jerking of the limbs", "Cyanosis during the episode", "Lateral tongue biting", "Rapid full recovery with no confusion", "Urinary incontinence"],
+      "a": 3,
+      "e": "Brief jerks occur in faints too; the absence of a post-ictal phase is the key differentiating feature. Lateral tongue biting and cyanosis favour a seizure.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Which single feature separates a faint from a fit?"},
+        {"t": "Pick out the clues", "clues": ["standing for an hour", "went pale", "jerked for about 5 seconds", "came round within a minute"], "x": "Prolonged standing, pallor and brief jerks: a faint, if recovery is clean."},
+        {"t": "Make your own answer before looking", "x": "**No post-ictal phase**: rapid full recovery."},
+        {"t": "Rule out the others", "elim": [[0, "Brief jerks happen in both faints and seizures."], [1, "Cyanosis favours a tonic-clonic seizure."], [2, "Lateral tongue biting favours a seizure."], [4, "Incontinence occurs in both and does not discriminate well."]]},
+        {"t": "Commit", "x": "**D. Rapid full recovery with no confusion.** No post-ictal phase means faint."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 19 year old soldier collapses during a long parade on a hot day after standing to attention for 2 hours. He felt hot, lightheaded and nauseated beforehand. He recovered within a minute of lying on the ground and is now fully orientated. His temperature is 37.1°C, pulse rate 70 bpm and BP 114/70 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Carotid sinus hypersensitivity", "Heat stroke", "Hypoglycaemia", "Orthostatic hypotension", "Vasovagal syncope"],
+      "a": 4,
+      "e": "Prolonged standing in heat with a prodrome and quick recovery is classic vasovagal syncope. Heat stroke would have a high temperature and confusion.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis of a collapse with a clear trigger."},
+        {"t": "Pick out the clues", "clues": ["hot day", "standing to attention for 2 hours", "hot, lightheaded and nauseated", "37.1°C", "fully orientated"], "x": "Prolonged standing plus heat, prodrome, normal temperature."},
+        {"t": "Make your own answer before looking", "x": "**Vasovagal syncope**."},
+        {"t": "Rule out the others", "elim": [[0, "Carotid sinus hypersensitivity is in older people with neck pressure."], [1, "Heat stroke needs a high core temperature and confusion."], [2, "Hypoglycaemia does not resolve on lying down."], [3, "Orthostatic hypotension happens on standing up, not after hours of standing with a vagal prodrome."]]},
+        {"t": "Commit", "x": "**E. Vasovagal syncope.** Prolonged standing in the heat is the textbook trigger."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 24 year old woman has a brief faint after seeing a friend injured. She felt warm and sick beforehand and recovered fully within a minute. She has no palpitations and no family history of sudden death. Her pulse rate is 74 bpm and BP 112/70 mmHg. ECG (see item resources).",
+      "labs": [],
+      "visual": {"kind": "ecg", "title": "12-lead ECG", "layout": "12lead", "rhythm": "sinus", "rate": 74, "leads": {}, "caption": "Normal sinus rhythm with normal intervals."},
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Brugada syndrome", "Complete heart block", "Long QT syndrome", "Vasovagal syncope", "Wolff-Parkinson-White syndrome"],
+      "a": 3,
+      "e": "An emotional trigger, a prodrome and a normal ECG is vasovagal syncope. Each distractor would show a specific ECG abnormality.",
+      "steps": [
+        {"t": "Read the question line first", "x": "A diagnosis, with the ECG to exclude cardiac causes."},
+        {"t": "Pick out the clues", "clues": ["seeing a friend injured", "warm and sick beforehand", "no family history of sudden death", "ECG (see item resources)"], "x": "Emotional trigger and prodrome; the ECG is normal."},
+        {"t": "Make your own answer before looking", "x": "**Vasovagal syncope**."},
+        {"t": "Rule out the others", "elim": [[0, "Brugada shows coved ST elevation in V1–V2."], [1, "Complete heart block shows P waves dissociated from QRS."], [2, "Long QT shows a prolonged QTc."], [4, "WPW shows a short PR and delta waves."]]},
+        {"t": "Commit", "x": "**D. Vasovagal syncope.** Normal ECG plus typical story."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 28 year old man faints while standing at a crowded concert. He felt hot and lightheaded beforehand and came round within 30 seconds. He hit his head on a barrier as he fell. His pulse rate is 68 bpm and BP 118/74 mmHg. His ECG is normal.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the main risk associated with his condition?",
+      "o": ["Aspiration pneumonia", "Injury from a fall", "Myocardial infarction", "Stroke", "Sudden cardiac death"],
+      "a": 1,
+      "e": "Vasovagal syncope is benign; the main risk is injury sustained in the fall.",
+      "steps": [
+        {"t": "Read the question line first", "x": "A complication question: first make the diagnosis."},
+        {"t": "Pick out the clues", "clues": ["standing at a crowded concert", "hot and lightheaded", "came round within 30 seconds", "hit his head on a barrier", "ECG is normal"], "x": "Typical faint; he hurt himself falling."},
+        {"t": "Make your own answer before looking", "x": "**Injury from the fall**."},
+        {"t": "Rule out the others", "elim": [[0, "Aspiration is a risk of prolonged unconsciousness or seizures."], [2, "Vasovagal syncope does not cause MI."], [3, "No vascular mechanism links a faint to stroke."], [4, "Sudden death is a risk of cardiac syncope, and his ECG is normal."]]},
+        {"t": "Commit", "x": "**B. Injury from a fall.** The faint is benign; the floor is not."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 23 year old woman had a brief loss of consciousness while standing in a long, hot queue. She recovered fully within a minute and has a normal examination and ECG. Her pulse rate is 70 bpm and BP 110/68 mmHg. The doctor asks her what she felt just beforehand.",
+      "labs": [],
+      "visual": null,
+      "q": "Which symptom is she most likely to report?",
+      "o": ["Chest pain", "Déjà vu", "Palpitations", "Sudden severe headache", "Tunnel vision and feeling warm"],
+      "a": 4,
+      "e": "The vasovagal prodrome includes tunnel vision, warmth, nausea, sweating and ringing ears. Déjà vu is an epileptic aura; palpitations suggest an arrhythmia.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Which symptom fits the diagnosis?"},
+        {"t": "Pick out the clues", "clues": ["standing in a long, hot queue", "recovered fully within a minute", "normal examination and ECG"], "x": "A typical vasovagal faint."},
+        {"t": "Make your own answer before looking", "x": "The prodrome: **tunnel vision, warmth**, nausea, sweating."},
+        {"t": "Rule out the others", "elim": [[0, "Chest pain suggests cardiac syncope."], [1, "Déjà vu is a temporal lobe aura."], [2, "Palpitations suggest an arrhythmia."], [3, "Sudden headache suggests subarachnoid haemorrhage."]]},
+        {"t": "Commit", "x": "**E. Tunnel vision and feeling warm.** The classic prodrome."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 20 year old man fainted after donating blood. He felt nauseated and sweaty beforehand and recovered completely within a minute. He is now well. His pulse rate is 76 bpm, BP 116/72 mmHg and oxygen saturation 99% breathing air.",
+      "labs": [["Hb", "146 g/L", "130–180", ""], ["Glucose", "5.6 mmol/L", "4.0–7.8", ""]],
+      "visual": null,
+      "q": "Which investigation must be performed before he is discharged?",
+      "o": ["12-lead ECG", "24-hour ambulatory ECG", "CT head", "Echocardiogram", "EEG"],
+      "a": 0,
+      "e": "A 12-lead ECG is first-line in every transient loss of consciousness, to exclude an arrhythmic cause. The others are for specific suspicions.",
+      "steps": [
+        {"t": "Read the question line first", "x": "The one essential test after a blackout."},
+        {"t": "Pick out the clues", "clues": ["after donating blood", "nauseated and sweaty beforehand", "recovered completely within a minute"], "x": "Typical faint; still needs a cardiac screen."},
+        {"t": "Make your own answer before looking", "x": "**12-lead ECG**."},
+        {"t": "Rule out the others", "elim": [[1, "Ambulatory ECG is for suspected arrhythmia."], [2, "CT head is for head injury or focal signs."], [3, "Echo is for a murmur or exertional syncope."], [4, "EEG is for suspected epilepsy."]]},
+        {"t": "Commit", "x": "**A. 12-lead ECG.** Excludes an arrhythmic cause."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "An 18 year old woman fainted at a festival after standing for several hours in the heat. She had a typical prodrome and recovered fully within a minute. She has no cardiac symptoms or family history. Her pulse rate is 68 bpm and BP 108/70 mmHg.",
+      "labs": [["QTc on 12-lead ECG", "418 ms", "<460", ""], ["Glucose", "5.0 mmol/L", "4.0–7.8", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate next investigation?",
+      "o": ["24-hour ambulatory ECG", "CT head", "EEG", "No further investigation", "Tilt-table testing"],
+      "a": 3,
+      "e": "Vasovagal syncope is a clinical diagnosis. With a typical history and a normal ECG, no further investigation is needed.",
+      "steps": [
+        {"t": "Read the question line first", "x": "What next, after a normal ECG?"},
+        {"t": "Pick out the clues", "clues": ["standing for several hours in the heat", "typical prodrome", "recovered fully within a minute", "no cardiac symptoms or family history"], "x": "Typical vasovagal syncope, no red flags; the labs show a normal QTc."},
+        {"t": "Make your own answer before looking", "x": "**No further tests**: it is a clinical diagnosis."},
+        {"t": "Rule out the others", "elim": [[0, "Ambulatory ECG is for suspected arrhythmia."], [1, "CT head is not indicated."], [2, "EEG is for suspected epilepsy."], [4, "Tilt-table testing is for unclear recurrent syncope."]]},
+        {"t": "Commit", "x": "**D. No further investigation.** Typical story + normal ECG = done."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 22 year old student fainted in a hot lecture theatre. She felt hot and sick beforehand, recovered within a minute and has no injuries. Her examination, lying and standing BP and 12-lead ECG are normal. Her pulse rate is 72 bpm and BP 114/70 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate next step in management?",
+      "o": ["Admit for cardiac monitoring", "Reassure and discharge with trigger advice", "Refer for EEG", "Start fludrocortisone", "Start midodrine"],
+      "a": 1,
+      "e": "Typical vasovagal syncope with a normal ECG needs reassurance, trigger avoidance advice and discharge; no drug is needed.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Management after a typical faint."},
+        {"t": "Pick out the clues", "clues": ["hot lecture theatre", "hot and sick beforehand", "recovered within a minute", "12-lead ECG are normal"], "x": "Classic vasovagal syncope with no red flags."},
+        {"t": "Make your own answer before looking", "x": "**Reassure and discharge** with advice."},
+        {"t": "Rule out the others", "elim": [[0, "Monitoring is for suspected cardiac syncope."], [2, "EEG is for suspected epilepsy."], [3, "No drug is needed for uncomplicated faints."], [4, "No drug is needed for uncomplicated faints."]]},
+        {"t": "Commit", "x": "**B. Reassure and discharge.** Avoid triggers, stay hydrated."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 26 year old man is having blood taken. He suddenly says he feels hot, sick and that his vision is going dark. He is pale and sweaty. His pulse rate is 50 bpm and BP 84/50 mmHg. He is still conscious and sitting in the chair.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate immediate management?",
+      "o": ["Give oral glucose", "Intramuscular adrenaline", "Intravenous atropine", "Lie him flat and raise his legs", "Stand him up and walk him around"],
+      "a": 3,
+      "e": "At the prodrome, lying flat with legs elevated restores cerebral perfusion and prevents loss of consciousness. Adrenaline is for anaphylaxis, which would have rash, wheeze or swelling.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Immediate action during a prodrome."},
+        {"t": "Pick out the clues", "clues": ["having blood taken", "feels hot, sick", "vision is going dark", "pulse rate is 50 bpm", "still conscious"], "x": "Vasovagal prodrome with bradycardia and hypotension."},
+        {"t": "Make your own answer before looking", "x": "**Lie flat, legs up**."},
+        {"t": "Rule out the others", "elim": [[0, "This is not hypoglycaemia."], [1, "No rash, wheeze or swelling to suggest anaphylaxis."], [2, "Atropine is not needed: positioning reverses a faint."], [4, "Standing makes the faint more likely."]]},
+        {"t": "Commit", "x": "**D. Lie him flat and raise his legs.**"}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 30 year old woman has had three vasovagal faints in 2 years, each after standing for a long time in warm places, with a clear prodrome and quick full recovery. Her ECG and examination are normal. Her pulse rate is 70 bpm and BP 112/72 mmHg. She asks about long-term treatment.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate long-term management?",
+      "o": ["Bisoprolol", "Fludrocortisone", "Permanent pacemaker", "Sodium valproate", "Trigger avoidance and hydration only"],
+      "a": 4,
+      "e": "Uncomplicated vasovagal syncope needs no pharmacological treatment: reassurance, trigger avoidance and good hydration.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Long-term management."},
+        {"t": "Pick out the clues", "clues": ["standing for a long time in warm places", "clear prodrome", "quick full recovery", "ECG and examination are normal"], "x": "Recurrent but uncomplicated vasovagal syncope."},
+        {"t": "Make your own answer before looking", "x": "**No drugs**: advice only."},
+        {"t": "Rule out the others", "elim": [[0, "Beta-blockers are not effective and are not used."], [1, "Fludrocortisone is not needed for uncomplicated cases."], [2, "Pacemakers are for bradyarrhythmias."], [3, "Valproate is an antiepileptic; this is not epilepsy."]]},
+        {"t": "Commit", "x": "**E. Trigger avoidance and hydration.** Plus lie down at the first warning."}
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 15 year old girl faints at school after standing in assembly. Her pulse rate falls to 42 bpm and BP to 70/40 mmHg before she recovers fully within a minute. Her ECG and blood tests are normal.",
+      "labs": [["Glucose", "5.2 mmol/L", "4.0–7.8", ""]],
+      "visual": null,
+      "q": "Which is the most likely mechanism of her faint?",
+      "o": ["Accessory pathway conduction", "Cerebral vasospasm", "Hypoglycaemia-induced neuroglycopenia", "Reflex vagal bradycardia and vasodilation", "Thromboembolic cerebral ischaemia"],
+      "a": 3,
+      "e": "Vasovagal syncope is an exaggerated autonomic reflex: parasympathetic bradycardia and sympathetic withdrawal vasodilation lower cardiac output and SVR, reducing cerebral perfusion.",
+      "steps": [
+        {"t": "Read the question line first", "x": "A mechanism question."},
+        {"t": "Pick out the clues", "clues": ["standing in assembly", "pulse rate falls to 42 bpm", "70/40 mmHg", "recovers fully within a minute"], "x": "Heart rate and BP fall together, then recover quickly."},
+        {"t": "Make your own answer before looking", "x": "**Reflex vagal bradycardia plus vasodilation**."},
+        {"t": "Rule out the others", "elim": [[0, "An accessory pathway (WPW) causes tachycardia; her ECG is normal."], [1, "Cerebral vasospasm follows subarachnoid haemorrhage."], [2, "Glucose is normal."], [4, "Embolic ischaemia gives focal deficits, not a brief faint."]]},
+        {"t": "Commit", "x": "**D. Reflex vagal bradycardia and vasodilation.** Falls in both cardiac output and SVR."}
+      ]
+    }
+  ]
+}

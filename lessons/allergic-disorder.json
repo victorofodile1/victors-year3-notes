@@ -1,0 +1,2076 @@
+{
+ "id": "allergic-disorder",
+ "patient": {
+  "name": "Fatima Begum",
+  "age": 24,
+  "sex": "F",
+  "setting": "GP surgery, then allergy clinic",
+  "complaint": "Sneezing, runny nose and itchy eyes every summer, now an itchy rash on both hands at work",
+  "background": [
+   "Healthcare assistant at the Royal London; wears gloves all shift",
+   "Eczema as a child; mild asthma (salbutamol as needed)",
+   "Cow's milk allergy as a baby, outgrown by age 3",
+   "Mother has hay fever"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an atopic patient and symptoms soon after a trigger (urticaria, rhinitis, angioedema), or an infant with symptoms after formula; the key is IgE (immediate) versus non-IgE or Type IV (delayed).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Fatima, 24: every May to July, **sneezing** fits and a streaming nose.",
+      "Eyes **red, itchy and watery**; worse on park days.",
+      "Blocked nose wakes her at night.",
+      "No fever; symptoms start within minutes outdoors."
+     ],
+     "vitals": {
+      "T": "36.7°C",
+      "HR": "74 bpm",
+      "RR": "14 /min",
+      "SpO2": "99% on air"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Fatima's year: grass pollen vs symptoms",
+      "x": [
+       "Mar",
+       "Apr",
+       "May",
+       "Jun",
+       "Jul",
+       "Aug",
+       "Sep"
+      ],
+      "unit": "relative level (0 to 10)",
+      "series": [
+       {
+        "name": "Grass pollen",
+        "values": [
+         0,
+         1,
+         6,
+         9,
+         7,
+         3,
+         1
+        ]
+       },
+       {
+        "name": "Fatima's symptom score",
+        "values": [
+         0,
+         1,
+         6,
+         8,
+         7,
+         2,
+         0
+        ]
+       }
+      ],
+      "caption": "Symptoms rise and fall with the grass pollen season: a seasonal, allergen-driven pattern."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Fatima's summer symptoms are an **IgE-mediated** reaction to a harmless allergen, most likely grass pollen."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Eczema, asthma, a past milk allergy and a mother with hay fever: Fatima is **atopic** with a strong family history."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "**Rhinorrhoea**, sneezing and **conjunctival redness** soon after exposure: allergic rhinoconjunctivitis. Her IgE may be raised, but the history is what matters."
+    },
+    {
+     "type": "story",
+     "points": [
+      "New: **itchy, red, cracked skin** on both hands and wrists.",
+      "Exactly where her **latex gloves** sit; started 3 months into the job.",
+      "Appears a day or two after long shifts, not within minutes.",
+      "No lip swelling, wheeze or faintness."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Fatima's glove rash appears 1 to 2 days after exposure. Which reaction type is this?",
+     "o": [
+      "Type I (IgE-mediated)",
+      "Type II (antibody-mediated cytotoxic)",
+      "Type III (immune complex)",
+      "Type IV (delayed, T-cell-mediated)"
+     ],
+     "a": 3,
+     "r": "A delayed rash at the contact site is **allergic contact dermatitis**, a **Type IV** T-cell reaction. Immediate hives or wheeze would be Type I."
+    },
+    {
+     "type": "compare",
+     "title": "Immediate vs delayed allergy",
+     "head": [
+      "Feature",
+      "IgE-mediated (Type I)",
+      "Non-IgE / Type IV"
+     ],
+     "rows": [
+      [
+       "Onset",
+       "**Minutes** to 2 hours",
+       "**Hours to days**"
+      ],
+      [
+       "Examples",
+       "Urticaria, rhinitis, anaphylaxis",
+       "Contact dermatitis, non-IgE CMPA"
+      ],
+      [
+       "Test",
+       "Skin prick, specific IgE (RAST)",
+       "Patch test (contact); elimination and reintroduction (food)"
+      ],
+      [
+       "Risk",
+       "Can cause anaphylaxis",
+       "Not anaphylaxis"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Fatima's own infant **cow's milk allergy**, outgrown by 3, fits the non-IgE pattern; her glove rash points to **patch testing** for contact dermatitis."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Fatima's poorly controlled hay fever can **worsen her asthma**; any systemic reaction raises the risk of **anaphylaxis**."
+    },
+    {
+     "type": "trap",
+     "text": "Hives plus wheeze, stridor or low BP is not 'just an allergy': airway, breathing or circulation compromise means **anaphylaxis**, and IM adrenaline."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?': skin prick or specific IgE (RAST) for immediate allergy, skin patch testing for contact dermatitis, and mast cell tryptase to confirm anaphylaxis.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Fatima's history plus **skin prick testing** (grass pollen, tree pollen, house dust mite, with water and histamine controls) confirms her rhinitis trigger."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Skin prick wheal: grass pollen",
+      "min": 0,
+      "max": 12,
+      "unit": "mm",
+      "bands": [
+       [
+        0,
+        3,
+        "Negative",
+        "ok"
+       ],
+       [
+        3,
+        12,
+        "Positive (3 mm or more above the water control)",
+        "bad"
+       ]
+      ],
+      "value": 8,
+      "label": "Fatima 8 mm",
+      "caption": "Water control 0 mm and histamine control 5 mm, so the test is valid and the grass wheal is clearly positive."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Allergy bloods",
+     "rows": [
+      [
+       "Total IgE",
+       "640 kU/L",
+       "<81",
+       "H"
+      ],
+      [
+       "Specific IgE: grass pollen",
+       "28.4 kUA/L",
+       "<0.35",
+       "H"
+      ],
+      [
+       "Specific IgE: latex",
+       "<0.10 kUA/L",
+       "<0.35",
+       ""
+      ],
+      [
+       "Eosinophils",
+       "0.7 ×10⁹/L",
+       "0.0–0.4",
+       "H"
+      ]
+     ],
+     "text": "Grass-specific IgE is high; latex-specific IgE is negative, so her glove rash is not an IgE latex allergy."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "**RAST** (specific IgE) backs up Fatima's grass allergy. Her eczema and asthma mean low-level positives must be read with caution."
+    },
+    {
+     "type": "trap",
+     "text": "A positive RAST or skin prick only shows **sensitisation**. In atopic patients it can be a **false positive**: always match it to the history."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Fatima's hand rash needs **skin patch testing**, read at **2 to 3 days**; if she ever had anaphylaxis, **mast cell tryptase** would confirm it."
+    },
+    {
+     "type": "flow",
+     "title": "Which allergy test?",
+     "nodes": [
+      "Immediate symptoms (minutes) → skin prick or specific IgE",
+      "Delayed contact rash (days) → skin patch test",
+      "Delayed food symptoms (non-IgE) → elimination then reintroduction",
+      "Suspected anaphylaxis → mast cell tryptase"
+     ]
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' with the allergic rhinitis ladder (oral loratadine, then intranasal steroid, then combination spray), oral antihistamines for urticaria, IM adrenaline for anaphylaxis and extensively hydrolysed formula for CMPA.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Fatima's rhinitis now disturbs her sleep and work. Which is most appropriate initially?",
+     "o": [
+      "Intranasal corticosteroid (mometasone)",
+      "Oral loratadine only",
+      "Oral prednisolone",
+      "Oxymetazoline nasal spray for a month"
+     ],
+     "a": 0,
+     "r": "Moderate to severe rhinitis (affecting sleep or activities) starts with an **intranasal corticosteroid**. Oral loratadine is first line only for mild symptoms."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Fatima avoids triggers (windows closed on high pollen days, swap to **nitrile gloves**). Had her rhinitis been **mild**, **oral loratadine** alone would be first line."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Her symptoms affect sleep, so she starts **intranasal mometasone**; if not controlled after 2 to 4 weeks, she switches to **fluticasone-azelastine**."
+    },
+    {
+     "type": "flow",
+     "title": "Allergic rhinitis ladder",
+     "nodes": [
+      "Allergen avoidance",
+      "Mild: oral non-sedating antihistamine (loratadine)",
+      "Moderate to severe: intranasal corticosteroid",
+      "Still symptomatic after 2 to 4 weeks: intranasal steroid + antihistamine (fluticasone-azelastine)",
+      "Avoid regular decongestant sprays"
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Fatima's nasal symptom score",
+      "x": [
+       "Start",
+       "Week 2",
+       "Week 4",
+       "Week 6",
+       "Week 8"
+      ],
+      "unit": "score out of 10",
+      "series": [
+       {
+        "name": "Mometasone alone",
+        "values": [
+         8,
+         6,
+         6,
+         6,
+         6
+        ]
+       },
+       {
+        "name": "After switch to fluticasone-azelastine",
+        "values": [
+         8,
+         6,
+         6,
+         3,
+         2
+        ]
+       }
+      ],
+      "caption": "Partial response at 4 weeks, so she moves to the combination spray."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Fatima asks for **oxymetazoline** to unblock her nose. Long-term use causes **tachyphylaxis** and **rhinitis medicamentosa**: a few days at most."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Fatima's asthma continues on inhalers, her rhinitis on antihistamine and nasal steroid. Had her milk allergy been today, formula-fed, she would get **extensively hydrolysed formula**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If a reaction ever becomes systemic with airway, breathing or circulation problems, Fatima needs **IM adrenaline**, repeated after **5 minutes** with an IV fluid bolus if no response."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Food allergy in children follows **NICE CG116**; milk allergy in infants follows **iMAP** and its **milk ladder**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the hypersensitivity type (I versus IV), which mediator or cell causes a symptom, why patch tests take days, or why decongestant sprays cause rebound.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Fatima was **sensitised** to grass pollen; each summer the pollen **cross-links** IgE on her mast cells, which then degranulate."
+    },
+    {
+     "type": "flow",
+     "title": "Type I hypersensitivity",
+     "nodes": [
+      "First exposure: allergen-specific IgE made",
+      "IgE binds Fc receptors on mast cells and basophils",
+      "Re-exposure: allergen cross-links IgE",
+      "Degranulation: histamine and other mediators",
+      "Vasodilation, leak, smooth muscle contraction, mucus"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Histamine-driven **vasodilation** and **permeability** give Fatima her runny nose and red eyes; smooth muscle contraction tightens her asthmatic airways."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Her skin prick wheal appears in 15 minutes (**IgE wheal-and-flare**); her glove dermatitis takes days because it is **Type IV** T-cell mediated."
+    },
+    {
+     "type": "ask",
+     "q": "Fatima's childhood milk allergy had negative skin prick and RAST tests. Why?",
+     "o": [
+      "It was lactose intolerance",
+      "It was non-IgE (T-cell) mediated",
+      "Testing was done too early",
+      "The tests measured IgG"
+     ],
+     "a": 1,
+     "r": "**Non-IgE** food allergy is **T-cell mediated**, so IgE tests are negative and diagnosis needs elimination then reintroduction."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Delayed, **T-cell-mediated** milk allergy explains Fatima's negative tests as a baby and why diagnosis was by **elimination and reintroduction**."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Oxymetazoline is an **alpha-agonist**; used for weeks it **downregulates receptors**, so the nose rebounds blocked when it wears off."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What drives most allergic disorders?",
+   "o": [
+    "Complement activation",
+    "IgE-mediated mast cell activation",
+    "IgG immune complexes",
+    "Neutrophil degranulation"
+   ],
+   "a": 1,
+   "r": "**IgE-mediated mast cell** activation and histamine release (Type I)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is a major risk factor for allergic disorders?",
+   "o": [
+    "Atopy",
+    "Male sex",
+    "Smoking",
+    "Vitamin D excess"
+   ],
+   "a": 0,
+   "r": "**Atopy** (eczema, asthma, hay fever) and family history."
+  },
+  {
+   "d": "diagnosis",
+   "q": "By what age do most infants with non-IgE cow's milk allergy become tolerant?",
+   "o": [
+    "6 months",
+    "1 year",
+    "3 years",
+    "10 years"
+   ],
+   "a": 2,
+   "r": "Most non-IgE cases are tolerant by **3 years**, earlier than IgE-mediated allergy."
+  },
+  {
+   "d": "investigation",
+   "q": "How is allergic contact dermatitis to latex or cosmetics diagnosed?",
+   "o": [
+    "Mast cell tryptase",
+    "RAST",
+    "Skin patch testing",
+    "Skin prick testing"
+   ],
+   "a": 2,
+   "r": "**Skin patch testing**, read after **2 to 3 days**."
+  },
+  {
+   "d": "investigation",
+   "q": "What can cause a false positive RAST?",
+   "o": [
+    "Antihistamine use",
+    "Atopic conditions such as eczema",
+    "Recent fasting",
+    "Steroid inhalers"
+   ],
+   "a": 1,
+   "r": "Atopy (eczema, asthma) can give **false positives**."
+  },
+  {
+   "d": "management",
+   "q": "First-line treatment for mild allergic rhinitis not affecting sleep?",
+   "o": [
+    "Intranasal mometasone",
+    "Oral loratadine",
+    "Oral prednisolone",
+    "Oxymetazoline spray"
+   ],
+   "a": 1,
+   "r": "**Oral loratadine** for mild rhinitis."
+  },
+  {
+   "d": "management",
+   "q": "Moderate to severe rhinitis persists after 2 to 4 weeks of intranasal steroid. Next?",
+   "o": [
+    "Fluticasone-azelastine spray",
+    "IM triamcinolone",
+    "Oxymetazoline long term",
+    "Stop treatment"
+   ],
+   "a": 0,
+   "r": "Switch to a combination **intranasal steroid plus antihistamine**."
+  },
+  {
+   "d": "management",
+   "q": "Which formula is tried first in mild to moderate formula-fed CMPA?",
+   "o": [
+    "Amino acid formula",
+    "Extensively hydrolysed formula",
+    "Goat's milk formula",
+    "Soya formula"
+   ],
+   "a": 1,
+   "r": "**Extensively hydrolysed formula** first line."
+  },
+  {
+   "d": "science",
+   "q": "Which hypersensitivity type is allergic contact dermatitis?",
+   "o": [
+    "Type I",
+    "Type II",
+    "Type III",
+    "Type IV"
+   ],
+   "a": 3,
+   "r": "**Type IV**, delayed T-cell mediated, hence the 2 to 3 day patch test."
+  },
+  {
+   "d": "science",
+   "q": "Why does prolonged oxymetazoline cause rebound congestion?",
+   "o": [
+    "Alpha-receptor downregulation",
+    "Histamine release",
+    "IgE sensitisation",
+    "Mucosal infection"
+   ],
+   "a": 0,
+   "r": "**Receptor downregulation** causes rebound vasodilation (rhinitis medicamentosa)."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old man has had sneezing, a runny, itchy nose and red, watery eyes every June and July for 3 years. Symptoms are worse after playing football in the park. He had eczema as a child. He has no fever. Examination shows pale, swollen nasal mucosa and red conjunctivae.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute sinusitis",
+    "Allergic rhinitis",
+    "Nasal polyps",
+    "Rhinitis medicamentosa",
+    "Viral conjunctivitis"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question: is this infection, structural or allergic?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "every June and July",
+      "worse after playing football in the park",
+      "eczema as a child",
+      "no fever",
+      "red conjunctivae"
+     ],
+     "x": "Seasonal, outdoor-triggered, atopic, afebrile, with eye involvement."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Seasonal **allergic rhinitis** (hay fever) to grass pollen."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Follows a cold, with facial pain, purulent discharge and often fever."
+      ],
+      [
+       2,
+       "Persistent blockage and loss of smell, not seasonal sneezing."
+      ],
+      [
+       3,
+       "Needs prolonged decongestant spray use."
+      ],
+      [
+       4,
+       "Would not recur each summer with sneezing."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Allergic rhinitis.** Rule: seasonal + atopy + itch + sneezing = allergic rhinitis."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 32 year old hairdresser has a 4 month history of an itchy, red, scaly rash on both hands. It flares 1 to 2 days after she uses a new hair dye at work and improves on holiday. She has no lip swelling, wheeze or urticaria.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Mast cell tryptase",
+    "Skin biopsy",
+    "Skin patch testing",
+    "Skin prick testing",
+    "Total IgE"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic investigation: first decide the type of allergy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "1 to 2 days after",
+      "new hair dye",
+      "improves on holiday",
+      "no lip swelling, wheeze or urticaria"
+     ],
+     "x": "Delayed rash at the site of contact with a chemical that settles away from work: allergic contact dermatitis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Skin patch testing**, read after 2 to 3 days."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Confirms anaphylaxis, not a contact rash."
+      ],
+      [
+       1,
+       "Not needed to identify the allergen."
+      ],
+      [
+       3,
+       "Tests immediate IgE allergy, not delayed Type IV."
+      ],
+      [
+       4,
+       "Non-specific and does not identify a contact allergen."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Skin patch testing.** Rule: delayed contact rash = Type IV = patch test."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 27 year old woman has seasonal allergic rhinitis. Her sneezing and blocked nose wake her most nights and she has missed work. She has taken oral cetirizine for 2 weeks with little benefit. Examination shows swollen nasal mucosa.",
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Intranasal mometasone",
+    "Oral montelukast",
+    "Oral prednisolone",
+    "Oxymetazoline nasal spray",
+    "Referral for immunotherapy"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: judge the severity first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "wake her most nights",
+      "missed work",
+      "oral cetirizine for 2 weeks",
+      "little benefit"
+     ],
+     "x": "Moderate to severe allergic rhinitis (sleep and work affected), not controlled by an antihistamine."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "An **intranasal corticosteroid** such as mometasone or fluticasone."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Not the next step for rhinitis in UK practice."
+      ],
+      [
+       2,
+       "Reserved for severe, short-term rescue, not routine control."
+      ],
+      [
+       3,
+       "Risks rhinitis medicamentosa; short-term only."
+      ],
+      [
+       4,
+       "Considered only after optimal drug treatment fails."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Intranasal mometasone.** Rule: symptoms affecting sleep or activities = intranasal steroid."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 22 year old woman has a skin prick test for suspected cat allergy. Within 15 minutes a raised, itchy wheal surrounded by redness appears at the cat dander site. The water control is negative and the histamine control positive.",
+   "q": "Which is the most likely mechanism of this reaction?",
+   "o": [
+    "Allergen cross-linking IgE on mast cells",
+    "Antibody-mediated cell lysis",
+    "Complement activation by IgM",
+    "Immune complex deposition",
+    "Sensitised T cells releasing cytokines"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: the timing tells you the hypersensitivity type."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Within 15 minutes",
+      "raised, itchy wheal",
+      "surrounded by redness",
+      "histamine control positive"
+     ],
+     "x": "Immediate wheal-and-flare reaction."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Type I**: allergen cross-links IgE on mast cells, which release histamine."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Type II, e.g. haemolytic transfusion reactions."
+      ],
+      [
+       2,
+       "Not the mechanism of a wheal and flare."
+      ],
+      [
+       3,
+       "Type III, e.g. serum sickness, over days."
+      ],
+      [
+       4,
+       "Type IV, takes 2 to 3 days (patch test)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Allergen cross-linking IgE on mast cells.** Rule: minutes = IgE/mast cell (Type I); days = T cell (Type IV)."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 23 year old man has had sneezing, nasal itch and a clear runny nose every spring for 4 years, with itchy, watery eyes. He has asthma. His temperature is 36.8°C, pulse rate 72 bpm, BP 120/74 mmHg and oxygen saturation 98% breathing air. Nasal mucosa is pale and swollen.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bacterial sinusitis",
+    "Allergic rhinitis",
+    "Common cold",
+    "Nasal polyposis",
+    "Vasomotor rhinitis"
+   ],
+   "a": 1,
+   "e": "Seasonal itchy rhinorrhoea with eye symptoms in an atopic patient is allergic rhinitis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a recurrent nasal problem."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "every spring for 4 years",
+      "itchy, watery eyes",
+      "He has asthma",
+      "pale and swollen"
+     ],
+     "x": "Seasonal, itchy, eye involvement, atopic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Allergic rhinitis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Facial pain and purulent discharge; not seasonal."
+      ],
+      [
+       2,
+       "Lasts about a week; does not recur every spring."
+      ],
+      [
+       3,
+       "Constant blockage and anosmia."
+      ],
+      [
+       4,
+       "Non-allergic, triggered by temperature or smells, without itch."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Allergic rhinitis.** Itch + seasonal + atopy = allergic."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 30 year old woman develops itchy, raised red wheals over her trunk and arms 20 minutes after eating prawns. She has no lip or tongue swelling, wheeze or dizziness. Her pulse rate is 88 bpm, BP 122/78 mmHg, respiratory rate 14 breaths per minute and oxygen saturation 99% breathing air.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute urticaria",
+    "Allergic contact dermatitis",
+    "Anaphylaxis",
+    "Erythema multiforme",
+    "Hereditary angioedema"
+   ],
+   "a": 0,
+   "e": "Wheals soon after shellfish without airway, breathing or circulation compromise is acute urticaria. Anaphylaxis needs ABC involvement.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: is it a skin-only reaction or a systemic emergency?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "itchy, raised red wheals",
+      "20 minutes after eating prawns",
+      "no lip or tongue swelling, wheeze or dizziness",
+      "BP 122/78 mmHg"
+     ],
+     "x": "Immediate IgE skin reaction to shellfish with normal observations and no ABC compromise."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute urticaria**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Delayed rash at a contact site, not wheals after food."
+      ],
+      [
+       2,
+       "Needs airway, breathing or circulation compromise; she has none."
+      ],
+      [
+       3,
+       "Target lesions, often after HSV or drugs."
+      ],
+      [
+       4,
+       "Swelling without urticaria, not food-triggered."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute urticaria.** Hives without ABC problems = urticaria; with ABC problems = anaphylaxis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old woman has an itchy, red, blistering rash on her earlobes and under her watch strap. It began 2 days after she started wearing new costume jewellery. Her temperature is 36.6°C, pulse rate 70 bpm and BP 118/76 mmHg. She has no urticaria elsewhere.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Allergic contact dermatitis",
+    "Atopic eczema",
+    "Cellulitis",
+    "Irritant contact dermatitis",
+    "Urticaria"
+   ],
+   "a": 0,
+   "e": "A delayed itchy rash confined to sites of contact with jewellery is allergic contact dermatitis (Type IV). Urticaria appears within minutes.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a rash with a clear pattern."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "earlobes and under her watch strap",
+      "2 days after",
+      "costume jewellery",
+      "no urticaria elsewhere"
+     ],
+     "x": "Delayed reaction exactly where metal touches skin: nickel allergy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Allergic contact dermatitis** (Type IV, nickel)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Flexural and long-standing, not confined to metal contact sites."
+      ],
+      [
+       2,
+       "Hot, tender, spreading, often febrile; not bilateral at jewellery sites."
+      ],
+      [
+       3,
+       "Due to direct damage (soaps, water), not small metal contact."
+      ],
+      [
+       4,
+       "Transient wheals within minutes, not a delayed blistering rash."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Allergic contact dermatitis.** Contact site + delayed = allergic contact dermatitis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 4 month old boy has had vomiting after feeds, loose stools with mucus, eczema and poor weight gain since he was switched from breast milk to formula at 2 months. He has no urticaria or swelling. His weight has fallen from the 50th to the 9th centile.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Coeliac disease",
+    "Gastro-oesophageal reflux",
+    "IgE-mediated cow's milk allergy",
+    "Non-IgE-mediated cow's milk protein allergy",
+    "Pyloric stenosis"
+   ],
+   "a": 3,
+   "e": "Delayed gut and skin symptoms with faltering growth after starting formula suggest non-IgE CMPA. IgE-mediated allergy gives urticaria or swelling within minutes.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in an infant with symptoms tied to a change of feed."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "switched from breast milk to formula",
+      "vomiting after feeds",
+      "loose stools with mucus",
+      "eczema",
+      "no urticaria or swelling",
+      "50th to the 9th centile"
+     ],
+     "x": "Multi-system delayed symptoms after formula introduction, faltering growth, no immediate IgE features."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Non-IgE-mediated cow's milk protein allergy.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Needs gluten in the diet; he is 4 months old on milk only."
+      ],
+      [
+       1,
+       "Does not explain mucus stools, eczema and the link to formula."
+      ],
+      [
+       2,
+       "Would cause urticaria or swelling within minutes."
+      ],
+      [
+       4,
+       "Projectile vomiting at 2 to 8 weeks, no diarrhoea or eczema."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Non-IgE-mediated cow's milk protein allergy.** After formula + multi-system + delayed = non-IgE CMPA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 35 year old man has had a constantly blocked nose for 3 months. He has used oxymetazoline spray several times a day since a cold 4 months ago, and it now works for only an hour. His pulse rate is 76 bpm and BP 128/80 mmHg. The nasal mucosa is red and swollen.",
+   "visual": null,
+   "q": "Which is the most likely cause of his symptoms?",
+   "o": [
+    "Allergic rhinitis",
+    "Chronic sinusitis",
+    "Deviated nasal septum",
+    "Nasal polyps",
+    "Rhinitis medicamentosa"
+   ],
+   "a": 4,
+   "e": "Prolonged oxymetazoline causes tachyphylaxis and rebound congestion (rhinitis medicamentosa). Allergic rhinitis would be itchy with pale mucosa.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for a cause: what links the timeline to the spray?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "oxymetazoline spray several times a day",
+      "works for only an hour",
+      "red and swollen"
+     ],
+     "x": "Prolonged decongestant use with shrinking benefit (tachyphylaxis) and rebound congestion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Rhinitis medicamentosa** from the decongestant."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Itch, sneezing and seasonal or allergen triggers, with pale mucosa."
+      ],
+      [
+       1,
+       "Facial pain and purulent discharge."
+      ],
+      [
+       2,
+       "Fixed, usually one-sided obstruction that a spray would not relieve at all."
+      ],
+      [
+       3,
+       "Pale grape-like masses and loss of smell."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Rhinitis medicamentosa.** Weeks of decongestant + rebound = rhinitis medicamentosa."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 10 month old girl develops urticaria around her mouth, lip swelling and vomiting 10 minutes after her first taste of cow's milk yoghurt. She has eczema. Her pulse rate is 130 bpm, respiratory rate 30 breaths per minute and oxygen saturation 99% breathing air. There is no wheeze or stridor. BP is normal for age.",
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Gastroenteritis",
+    "IgE-mediated cow's milk allergy",
+    "Lactose intolerance",
+    "Non-IgE-mediated cow's milk allergy",
+    "Viral exanthem"
+   ],
+   "a": 1,
+   "e": "Urticaria and lip swelling within minutes of milk is IgE-mediated cow's milk allergy. Non-IgE allergy is delayed and lacks urticaria.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: timing after the trigger separates IgE from non-IgE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "10 minutes after",
+      "urticaria around her mouth",
+      "lip swelling",
+      "She has eczema",
+      "no wheeze or stridor"
+     ],
+     "x": "Immediate urticaria and angioedema after milk in an atopic infant, no ABC compromise."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IgE-mediated cow's milk allergy.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No fever or contacts and onset 10 minutes after milk."
+      ],
+      [
+       2,
+       "Bloating and diarrhoea, not urticaria and swelling."
+      ],
+      [
+       3,
+       "Delayed onset (hours to days) without urticaria."
+      ],
+      [
+       4,
+       "Fever and generalised rash, not 10 minutes after food."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IgE-mediated cow's milk allergy.** Minutes + urticaria/angioedema = IgE-mediated."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 28 year old woman has had sneezing and itchy eyes every summer since her teens. She wants to know what she is allergic to. She is not taking antihistamines at present. Her pulse rate is 70 bpm and BP 116/72 mmHg.",
+   "labs": [
+    [
+     "Eosinophils",
+     "0.6 ×10⁹/L",
+     "0.0–0.4",
+     "H"
+    ],
+    [
+     "Total IgE",
+     "310 kU/L",
+     "<81",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Mast cell tryptase",
+    "Nasal swab culture",
+    "Skin patch testing",
+    "Skin prick testing",
+    "Total IgE"
+   ],
+   "a": 3,
+   "e": "Skin prick testing with water and histamine controls identifies the IgE allergen. Total IgE is non-specific; patch testing is for contact dermatitis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic investigation for suspected IgE allergy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "every summer",
+      "what she is allergic to",
+      "not taking antihistamines"
+     ],
+     "x": "Seasonal IgE-mediated rhinitis; she is off antihistamines so the test will be valid."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Skin prick testing** with controls."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Confirms anaphylaxis after a severe reaction."
+      ],
+      [
+       1,
+       "For infection, not allergy."
+      ],
+      [
+       2,
+       "For delayed Type IV contact dermatitis."
+      ],
+      [
+       4,
+       "Raised in atopy but does not identify the allergen."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Skin prick testing.** Immediate allergy = skin prick (or specific IgE)."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 26 year old dental nurse has a red, itchy, cracked rash on both hands that appears a day or two after long shifts wearing rubber gloves. She has never had hives, lip swelling or wheeze. Her temperature is 36.7°C and pulse rate 74 bpm.",
+   "labs": [
+    [
+     "Latex-specific IgE",
+     "<0.10 kUA/L",
+     "<0.35",
+     ""
+    ],
+    [
+     "Total IgE",
+     "62 kU/L",
+     "<81",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Latex-specific IgE (RAST)",
+    "Mast cell tryptase",
+    "Skin biopsy",
+    "Skin patch testing",
+    "Skin prick testing to latex"
+   ],
+   "a": 3,
+   "e": "Delayed hand dermatitis under gloves is allergic contact dermatitis, diagnosed by skin patch testing. Prick tests and RAST detect immediate IgE allergy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic investigation: immediate or delayed allergy?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "a day or two after",
+      "rubber gloves",
+      "never had hives, lip swelling or wheeze"
+     ],
+     "x": "Delayed contact rash from rubber chemicals: Type IV."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Skin patch testing**, read after 2 to 3 days."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Tests immediate IgE latex allergy, which she lacks."
+      ],
+      [
+       1,
+       "For anaphylaxis."
+      ],
+      [
+       2,
+       "Does not identify the allergen."
+      ],
+      [
+       4,
+       "For immediate Type I latex allergy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Skin patch testing.** Delayed contact = patch test."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 21 year old student has sneezing and a runny nose on high pollen days. Symptoms do not affect her sleep, studies or sport. Her pulse rate is 68 bpm and BP 114/70 mmHg. She has not tried any treatment.",
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intranasal fluticasone-azelastine",
+    "Intranasal mometasone",
+    "Oral loratadine",
+    "Oral prednisolone",
+    "Oxymetazoline nasal spray"
+   ],
+   "a": 2,
+   "e": "Mild allergic rhinitis not interfering with sleep or activities is treated first with oral loratadine. Intranasal steroids are for moderate to severe symptoms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: grade the severity."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "high pollen days",
+      "do not affect her sleep, studies or sport",
+      "not tried any treatment"
+     ],
+     "x": "Mild intermittent allergic rhinitis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Oral loratadine** (non-sedating antihistamine) plus allergen avoidance."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For persistent symptoms after an intranasal steroid trial."
+      ],
+      [
+       1,
+       "For moderate to severe symptoms."
+      ],
+      [
+       3,
+       "Not for mild rhinitis."
+      ],
+      [
+       4,
+       "Risks rhinitis medicamentosa."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Oral loratadine.** Mild = oral loratadine."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old man has allergic rhinitis that disturbs his sleep. He has used intranasal mometasone correctly every day for 4 weeks with only partial improvement. His pulse rate is 72 bpm and BP 124/78 mmHg.",
+   "labs": [
+    [
+     "Total IgE",
+     "290 kU/L",
+     "<81",
+     "H"
+    ],
+    [
+     "Eosinophils",
+     "0.5 ×10⁹/L",
+     "0.0–0.4",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Add long-term oxymetazoline",
+    "Intranasal fluticasone-azelastine",
+    "Oral loratadine instead of the spray",
+    "Refer for septoplasty",
+    "Stop all treatment"
+   ],
+   "a": 1,
+   "e": "If symptoms persist after 2 to 4 weeks of intranasal steroid, switch to fluticasone-azelastine. Long-term decongestants cause rhinitis medicamentosa.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after an intranasal steroid trial."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "disturbs his sleep",
+      "every day for 4 weeks",
+      "only partial improvement"
+     ],
+     "x": "Moderate to severe rhinitis not controlled after a 2 to 4 week intranasal steroid trial."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Switch to **combined intranasal steroid and antihistamine** (fluticasone-azelastine)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Causes tachyphylaxis and rhinitis medicamentosa."
+      ],
+      [
+       2,
+       "A step down, not up."
+      ],
+      [
+       3,
+       "For a structural deviation, not allergy."
+      ],
+      [
+       4,
+       "He remains symptomatic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Intranasal fluticasone-azelastine.** Steroid spray failed after 2 to 4 weeks → combination spray."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 3 month old formula-fed boy has non-IgE-mediated cow's milk protein allergy with mild eczema, loose stools and reflux. He is gaining weight along the 25th centile. His pulse rate is 140 bpm and he is alert and well hydrated.",
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Amino acid formula",
+    "Extensively hydrolysed formula",
+    "Goat's milk formula",
+    "Lactose-free cow's milk formula",
+    "Soya formula"
+   ],
+   "a": 1,
+   "e": "Mild to moderate formula-fed CMPA is managed with extensively hydrolysed formula. Goat's milk cross-reacts and lactose-free formula still contains milk protein.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of mild to moderate formula-fed CMPA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "formula-fed",
+      "non-IgE-mediated cow's milk protein allergy",
+      "mild eczema",
+      "gaining weight along the 25th centile"
+     ],
+     "x": "Mild to moderate non-IgE CMPA, growing well, formula-fed."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Extensively hydrolysed formula** for a 2 to 6 week elimination trial."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For severe cases or failure of hydrolysed formula."
+      ],
+      [
+       2,
+       "Cross-reacts with cow's milk protein."
+      ],
+      [
+       3,
+       "Still contains cow's milk protein."
+      ],
+      [
+       4,
+       "Not first line under 6 months."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Extensively hydrolysed formula.** Mild to moderate CMPA = extensively hydrolysed formula."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 40 year old woman has a patch test to investigate a rash under her watch strap. The test sites are covered for 48 hours and read at 72 hours, when the nickel site shows an itchy, red, raised reaction. Her pulse rate is 72 bpm and BP 120/78 mmHg.",
+   "visual": null,
+   "q": "Which is the most likely mechanism of this delayed reaction?",
+   "o": [
+    "Antibody-dependent cell lysis",
+    "IgE cross-linking on mast cells",
+    "Immune complex deposition",
+    "Non-specific irritant damage",
+    "Sensitised T-cell-mediated inflammation"
+   ],
+   "a": 4,
+   "e": "Allergic contact dermatitis is a Type IV, T-cell-mediated reaction, which is why patch tests are read after 2 to 3 days.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: the delay is the clue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "patch test",
+      "48 hours",
+      "read at 72 hours",
+      "nickel"
+     ],
+     "x": "A reaction days later at the contact site."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Type IV** delayed hypersensitivity: sensitised **T cells** recruit inflammation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Type II."
+      ],
+      [
+       1,
+       "Type I gives a wheal within 15 minutes."
+      ],
+      [
+       2,
+       "Type III, e.g. serum sickness."
+      ],
+      [
+       3,
+       "Irritant reactions are not immune-mediated and do not need sensitisation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Sensitised T-cell-mediated inflammation.** Days = T cells = Type IV."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is an allergic disorder and what drives it?",
+    "tip": "Exam thinking: name the antibody, the cell and the mediator.",
+    "points": [
+     {
+      "p": "Immune reaction to a normally harmless substance (allergen)",
+      "k": [
+       [
+        "harmless",
+        "allergen"
+       ]
+      ],
+      "why": "Allergy is an inappropriate response."
+     },
+     {
+      "p": "IgE-mediated mast cell activation",
+      "k": [
+       [
+        "ige"
+       ],
+       [
+        "mast"
+       ]
+      ],
+      "why": "Type I hypersensitivity."
+     },
+     {
+      "p": "Histamine release",
+      "k": [
+       [
+        "histamine"
+       ]
+      ],
+      "why": "Main mediator of itch, wheal and rhinorrhoea."
+     },
+     {
+      "p": "Urticaria, allergic rhinitis, asthma, anaphylaxis",
+      "k": [
+       [
+        "urticaria",
+        "rhinitis",
+        "asthma",
+        "anaphyla"
+       ]
+      ],
+      "why": "The common conditions."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who is at risk, and how does an allergic reaction present?",
+    "tip": "Exam thinking: the stem hides atopy and a trigger minutes before.",
+    "points": [
+     {
+      "p": "Atopy: eczema, asthma, hay fever",
+      "k": [
+       [
+        "atop",
+        "eczema",
+        "asthma",
+        "hay fever"
+       ]
+      ],
+      "why": "Plus family history and previous reactions."
+     },
+     {
+      "p": "Symptoms shortly after allergen exposure",
+      "k": [
+       [
+        "shortly",
+        "minutes",
+        "soon",
+        "after"
+       ]
+      ],
+      "why": "Immediate timing suggests IgE."
+     },
+     {
+      "p": "Itch, urticaria, swelling (angioedema)",
+      "k": [
+       [
+        "itch",
+        "urticaria",
+        "hives",
+        "angioedema",
+        "swelling"
+       ]
+      ],
+      "why": "Skin features."
+     },
+     {
+      "p": "Sneezing, rhinorrhoea, watery red eyes, wheeze",
+      "k": [
+       [
+        "sneez",
+        "rhinorr",
+        "runny",
+        "eyes",
+        "wheez"
+       ]
+      ],
+      "why": "Airway and eye features."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do IgE and non-IgE cow's milk protein allergy differ?",
+    "tip": "Exam thinking: timing, tests and age of resolution.",
+    "points": [
+     {
+      "p": "IgE: immediate urticaria or swelling; tested by skin prick or specific IgE",
+      "k": [
+       [
+        "immediate",
+        "minutes",
+        "urticaria"
+       ],
+       [
+        "prick",
+        "rast",
+        "ige"
+       ]
+      ],
+      "why": "Can progress to anaphylaxis."
+     },
+     {
+      "p": "Non-IgE: delayed, multi-system, faltering growth after formula",
+      "k": [
+       [
+        "delay",
+        "hours",
+        "days"
+       ]
+      ],
+      "why": "Can occur in exclusively breastfed infants."
+     },
+     {
+      "p": "Non-IgE diagnosed by 2 to 6 week elimination then reintroduction",
+      "k": [
+       [
+        "eliminat"
+       ],
+       [
+        "reintroduc"
+       ]
+      ],
+      "why": "Improvement then recurrence confirms."
+     },
+     {
+      "p": "Non-IgE usually tolerant by age 3; most CMPA resolves before 5",
+      "k": [
+       [
+        "3",
+        "three"
+       ]
+      ],
+      "why": "Non-IgE resolves earlier than IgE."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of allergic disorders, and when do you refer?",
+    "tip": "Exam thinking: the dangerous one is anaphylaxis.",
+    "points": [
+     {
+      "p": "Anaphylaxis and airway compromise",
+      "k": [
+       [
+        "anaphyla",
+        "airway"
+       ]
+      ],
+      "why": "Needs IM adrenaline."
+     },
+     {
+      "p": "Asthma exacerbation",
+      "k": [
+       [
+        "asthma"
+       ]
+      ],
+      "why": "Uncontrolled rhinitis worsens asthma."
+     },
+     {
+      "p": "Reduced quality of life, chronic symptoms",
+      "k": [
+       [
+        "quality",
+        "chronic"
+       ]
+      ],
+      "why": "Sleep and work disruption."
+     },
+     {
+      "p": "Insect sting with a systemic reaction: allergy specialist referral",
+      "k": [
+       [
+        "sting",
+        "insect",
+        "bite"
+       ]
+      ],
+      "why": "Also faltering growth in CMPA needs paediatric referral."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is an immediate (IgE) allergy confirmed, and what are the pitfalls?",
+    "tip": "Exam thinking: clinical history plus a test, read in context.",
+    "points": [
+     {
+      "p": "Clinical diagnosis plus allergen testing",
+      "k": [
+       [
+        "clinical",
+        "history"
+       ]
+      ],
+      "why": "Testing shows sensitisation only."
+     },
+     {
+      "p": "Skin prick testing with water and histamine controls",
+      "k": [
+       [
+        "prick"
+       ]
+      ],
+      "why": "Wheal read at 15 minutes."
+     },
+     {
+      "p": "RAST (specific IgE) blood test, good for food allergy",
+      "k": [
+       [
+        "rast",
+        "specific ige"
+       ]
+      ],
+      "why": "Useful if skin testing is not possible."
+     },
+     {
+      "p": "False positives in atopic patients",
+      "k": [
+       [
+        "false"
+       ]
+      ],
+      "why": "Eczema and asthma raise IgE."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which test for contact dermatitis, and which confirms anaphylaxis?",
+    "tip": "Exam thinking: delayed reactions need delayed tests.",
+    "points": [
+     {
+      "p": "Skin patch testing for allergic contact dermatitis",
+      "k": [
+       [
+        "patch"
+       ]
+      ],
+      "why": "Latex, cosmetics, nickel."
+     },
+     {
+      "p": "Read after 2 to 3 days",
+      "k": [
+       [
+        "2",
+        "3",
+        "48",
+        "72",
+        "day"
+       ]
+      ],
+      "why": "Type IV is delayed."
+     },
+     {
+      "p": "Mast cell tryptase confirms anaphylaxis",
+      "k": [
+       [
+        "tryptase"
+       ]
+      ],
+      "why": "Rises after mast cell degranulation."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you step up treatment of allergic rhinitis?",
+    "tip": "Exam thinking: severity decides the first step.",
+    "points": [
+     {
+      "p": "Allergen avoidance",
+      "k": [
+       [
+        "avoid"
+       ]
+      ],
+      "why": "Always first."
+     },
+     {
+      "p": "Mild: oral loratadine (non-sedating antihistamine)",
+      "k": [
+       [
+        "loratadine",
+        "cetirizine",
+        "antihistamine"
+       ]
+      ],
+      "why": "Not interfering with sleep or activities."
+     },
+     {
+      "p": "Moderate to severe: intranasal corticosteroid (mometasone or fluticasone)",
+      "k": [
+       [
+        "nasal",
+        "intranasal"
+       ],
+       [
+        "steroid",
+        "mometasone",
+        "fluticasone"
+       ]
+      ],
+      "why": "Affecting sleep or activities."
+     },
+     {
+      "p": "Persisting after 2 to 4 weeks: fluticasone-azelastine combination",
+      "k": [
+       [
+        "azelastine",
+        "combination"
+       ]
+      ],
+      "why": "Steroid plus antihistamine spray."
+     },
+     {
+      "p": "Avoid prolonged decongestants (rhinitis medicamentosa)",
+      "k": [
+       [
+        "decongestant",
+        "oxymetazoline",
+        "medicamentosa"
+       ]
+      ],
+      "why": "Tachyphylaxis and rebound."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage an acute allergic emergency and cow's milk protein allergy?",
+    "tip": "Exam thinking: adrenaline for ABC problems; hydrolysed formula for CMPA.",
+    "points": [
+     {
+      "p": "Anaphylaxis: IM adrenaline",
+      "k": [
+       [
+        "adrenaline",
+        "epinephrine"
+       ]
+      ],
+      "why": "Antihistamines are not first line in anaphylaxis."
+     },
+     {
+      "p": "Repeat after 5 minutes with an IV fluid bolus if no response",
+      "k": [
+       [
+        "5",
+        "five"
+       ]
+      ],
+      "why": "Refractory needs expert help."
+     },
+     {
+      "p": "Formula-fed mild to moderate CMPA: extensively hydrolysed formula",
+      "k": [
+       [
+        "hydrolys"
+       ]
+      ],
+      "why": "Amino acid formula if severe."
+     },
+     {
+      "p": "Milk ladder after 6 months; calcium for breastfeeding mothers avoiding dairy",
+      "k": [
+       [
+        "ladder",
+        "calcium"
+       ]
+      ],
+      "why": "iMAP guidance."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Explain Type I hypersensitivity and how it causes the symptoms.",
+    "tip": "Exam thinking: sensitisation, cross-linking, degranulation, mediators.",
+    "points": [
+     {
+      "p": "Allergen-specific IgE binds Fc receptors on mast cells and basophils",
+      "k": [
+       [
+        "fc",
+        "bind"
+       ],
+       [
+        "mast",
+        "basophil"
+       ]
+      ],
+      "why": "Sensitisation on first exposure."
+     },
+     {
+      "p": "Re-exposure: allergen cross-links IgE, triggering degranulation",
+      "k": [
+       [
+        "cross"
+       ],
+       [
+        "degranulat"
+       ]
+      ],
+      "why": "Histamine and other mediators released."
+     },
+     {
+      "p": "Vasodilation and increased permeability: urticaria, angioedema, rhinorrhoea",
+      "k": [
+       [
+        "vasodilat",
+        "permeab"
+       ]
+      ],
+      "why": "Leaky vessels."
+     },
+     {
+      "p": "Smooth muscle contraction and mucus: bronchospasm",
+      "k": [
+       [
+        "smooth muscle",
+        "bronchospasm",
+        "mucus"
+       ]
+      ],
+      "why": "Wheeze in asthma."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do patch tests take days, and why does rhinitis medicamentosa develop?",
+    "tip": "Exam thinking: T cells are slow; receptors downregulate.",
+    "points": [
+     {
+      "p": "Contact dermatitis is Type IV, delayed T-cell-mediated",
+      "k": [
+       [
+        "type iv",
+        "type 4",
+        "t-cell",
+        "t cell"
+       ]
+      ],
+      "why": "Hence the 2 to 3 day reading."
+     },
+     {
+      "p": "Skin prick shows an immediate IgE wheal-and-flare",
+      "k": [
+       [
+        "wheal",
+        "flare"
+       ]
+      ],
+      "why": "Read at 15 minutes."
+     },
+     {
+      "p": "Non-IgE food allergy is T-cell mediated: negative IgE tests",
+      "k": [
+       [
+        "negative",
+        "elimination"
+       ]
+      ],
+      "why": "So diagnosis is by elimination and reintroduction."
+     },
+     {
+      "p": "Decongestant (alpha-agonist) overuse downregulates receptors: rebound vasodilation",
+      "k": [
+       [
+        "downregulat",
+        "rebound"
+       ]
+      ],
+      "why": "Rhinitis medicamentosa."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Allergen": "A normally harmless substance, such as pollen or milk protein, that triggers an allergic reaction.",
+  "Atopy": "An inherited tendency to make IgE to allergens, causing eczema, asthma and hay fever.",
+  "IgE": "Immunoglobulin E, the antibody that binds mast cells and drives immediate allergic reactions.",
+  "Mast cell": "Tissue immune cell packed with histamine granules that releases them when IgE is cross-linked.",
+  "Basophil": "A blood white cell similar to a mast cell, which also carries IgE and releases histamine.",
+  "Histamine": "Mediator released by mast cells that causes itch, vasodilation, leaky vessels and smooth muscle contraction.",
+  "Degranulation": "Release of stored chemicals, such as histamine, from mast cell or basophil granules.",
+  "Type I hypersensitivity": "Immediate, IgE-mediated allergic reaction within minutes, e.g. hay fever, urticaria, anaphylaxis.",
+  "Type IV hypersensitivity": "Delayed, T-cell-mediated reaction taking 2 to 3 days, e.g. allergic contact dermatitis.",
+  "Urticaria": "Itchy, raised red wheals (hives) caused by histamine release in the skin.",
+  "Angioedema": "Swelling of deeper skin layers, often lips, tongue or eyelids.",
+  "Allergic rhinitis": "IgE-mediated inflammation of the nasal lining causing sneezing, itch and a runny, blocked nose.",
+  "Rhinorrhoea": "A runny nose.",
+  "Conjunctival": "Relating to the conjunctiva, the thin membrane covering the white of the eye.",
+  "Allergic contact dermatitis": "Delayed itchy rash where skin touched an allergen such as nickel, latex or hair dye.",
+  "Skin prick testing": "Allergen drops pricked into forearm skin; a wheal at 15 minutes shows IgE sensitisation.",
+  "Skin patch testing": "Allergens taped to the back and read after 2 to 3 days to diagnose contact dermatitis.",
+  "RAST": "Blood test measuring allergen-specific IgE.",
+  "Specific IgE": "IgE directed against one named allergen, measured in blood (RAST).",
+  "Wheal-and-flare": "A raised swelling with surrounding redness, the immediate IgE skin reaction.",
+  "Mast cell tryptase": "Enzyme released by mast cells; a raised level confirms anaphylaxis has occurred.",
+  "Anaphylaxis": "Severe, life-threatening systemic allergic reaction with airway, breathing or circulation compromise.",
+  "CMPA": "Cow's milk protein allergy: an immune reaction to the proteins in cow's milk.",
+  "Cow's milk protein allergy": "Immune reaction in infants to cow's milk proteins, either IgE or non-IgE mediated.",
+  "Non-IgE-mediated": "An allergy driven by T cells rather than IgE, with delayed symptoms and negative IgE tests.",
+  "Extensively hydrolysed formula": "Infant formula with milk proteins broken into small fragments, first line for CMPA.",
+  "Milk ladder": "A stepwise plan to reintroduce milk, starting with well-baked forms, after 6 months.",
+  "Faltering growth": "Weight gain slower than expected, crossing down centile lines.",
+  "Loratadine": "A non-sedating oral antihistamine; first line for mild allergic rhinitis.",
+  "Cetirizine": "A non-sedating oral antihistamine.",
+  "Antihistamines": "Drugs that block histamine H1 receptors to relieve itch, sneezing and hives.",
+  "Mometasone": "An intranasal corticosteroid used for moderate to severe allergic rhinitis.",
+  "Fluticasone": "A corticosteroid used as a nasal spray for allergic rhinitis.",
+  "Fluticasone-azelastine": "Combined steroid and antihistamine nasal spray for rhinitis not controlled by a steroid spray.",
+  "Azelastine": "An antihistamine nasal spray.",
+  "Intranasal corticosteroid": "A steroid nasal spray that reduces nasal inflammation over days.",
+  "Oxymetazoline": "An alpha-agonist decongestant nasal spray; long-term use causes rebound congestion.",
+  "Decongestant": "A drug that narrows nasal blood vessels to unblock the nose.",
+  "Tachyphylaxis": "A rapidly falling response to a drug with repeated doses.",
+  "Rhinitis medicamentosa": "Rebound nasal congestion caused by overuse of decongestant sprays.",
+  "Sensitisation": "Making IgE to an allergen after first exposure, so later exposure triggers a reaction.",
+  "Adrenaline": "Emergency drug for anaphylaxis, given intramuscularly into the thigh.",
+  "iMAP": "International Milk Allergy in Primary care guideline for diagnosing and managing milk allergy in infants."
+ }
+}

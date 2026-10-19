@@ -1,0 +1,2321 @@
+{
+ "id": "diabetes-mellitus-type-1-and-2",
+ "patient": {
+  "name": "Kwame Mensah",
+  "age": 54,
+  "sex": "M",
+  "setting": "GP surgery, then the practice diabetes clinic",
+  "complaint": "Three months of tiredness, thirst and getting up three times a night to pass urine",
+  "background": [
+   "BMI 32 kg/m², sedentary job as a bus controller in Lewisham",
+   "Hypertension on bendroflumethiazide",
+   "Mother had type 2 diabetes",
+   "Smokes 10 cigarettes a day"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' choosing between type 1, type 2 and MODY from age, weight, onset, ketones and family history, or a complication (neuropathy, gastroparesis, foot ulcer) presented as the diagnosis.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kwame, 54, BMI 32: **tired, thirsty**, up 3 times a night.",
+      "Blurred vision when reading the bus rota.",
+      "Symptoms crept on over **months**; weight unchanged.",
+      "Takes **bendroflumethiazide** for blood pressure."
+     ],
+     "vitals": {
+      "BP": "152/94 mmHg",
+      "HR": "82 bpm",
+      "CBG": "14.2 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's thirst and polyuria are the kidneys losing glucose: a **chronic hyperglycaemic** state, most likely **insulin resistance** (type 2)."
+    },
+    {
+     "type": "compare",
+     "title": "Type 1 vs type 2 vs MODY",
+     "head": [
+      "Feature",
+      "Type 1",
+      "Type 2",
+      "MODY"
+     ],
+     "rows": [
+      [
+       "Age",
+       "Usually young",
+       "Usually older",
+       "**Under 25**"
+      ],
+      [
+       "Body type",
+       "Slim, weight loss",
+       "Obese, sedentary",
+       "Often slim"
+      ],
+      [
+       "Onset",
+       "Rapid, ketosis",
+       "Gradual, often incidental",
+       "Gradual"
+      ],
+      [
+       "Mechanism",
+       "Autoimmune, absolute deficiency",
+       "Resistance + relative deficiency",
+       "Single gene (HNF-1α in MODY 3)"
+      ],
+      [
+       "Treatment",
+       "Insulin",
+       "Metformin + SGLT2i",
+       "**Sulfonylurea**"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame is older, obese, sedentary, with a gradual onset and a family history: the classic **type 2** profile."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Velvety dark skin in both **armpits** and neck.",
+      "Feet: sensation intact; pulses present.",
+      "Urine dip: **glucose 3+**, ketones negative."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame's **acanthosis nigricans** shows insulin resistance, and his **bendroflumethiazide** can worsen hyperglycaemia."
+    },
+    {
+     "type": "ask",
+     "q": "Which feature most supports type 2 rather than type 1 diabetes in Kwame?",
+     "o": [
+      "Acanthosis nigricans",
+      "Blurred vision",
+      "Polyuria",
+      "Thirst"
+     ],
+     "a": 0,
+     "r": "**Acanthosis nigricans** is a sign of insulin resistance (type 2). Polyuria, thirst and blurred vision occur in both."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame now faces type 2 risks: **HHS** acutely, and micro- and macrovascular disease over years; his smoking and BP add to the heart risk."
+    },
+    {
+     "type": "flow",
+     "title": "Complications of diabetes",
+     "nodes": [
+      "Acute: DKA (type 1), HHS (type 2)",
+      "Microvascular: retinopathy, nephropathy, neuropathy",
+      "Macrovascular: MI, stroke, peripheral arterial disease",
+      "Neuropathy + ischaemia → foot ulcer",
+      "Autonomic: gastroparesis, postural hypotension"
+     ],
+     "caption": "Screen for each at diagnosis and yearly."
+    },
+    {
+     "type": "trap",
+     "text": "Do not label a slim 20 year old with a strong three-generation family history and no ketones as type 1 by default: think **MODY**, treated with a sulfonylurea."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect HbA1c and glucose thresholds in an 'Investigations:' block (48 mmol/mol, 7.0 and 11.1 mmol/L), when to repeat a test in an asymptomatic patient, C-peptide and anti-GAD to separate type 1, and urgent CT abdomen in an older patient with weight loss.",
+   "steps": [
+    {
+     "type": "labs",
+     "title": "Kwame's first bloods",
+     "rows": [
+      [
+       "HbA1c",
+       "62 mmol/mol",
+       "<42",
+       "H"
+      ],
+      [
+       "Fasting plasma glucose",
+       "9.8 mmol/L",
+       "<6.1",
+       "H"
+      ],
+      [
+       "eGFR",
+       "78 mL/min/1.73m²",
+       ">60",
+       ""
+      ],
+      [
+       "Total cholesterol",
+       "6.1 mmol/L",
+       "<5.0",
+       "H"
+      ],
+      [
+       "ALT",
+       "48 IU/L",
+       "10–50",
+       ""
+      ],
+      [
+       "Urine ACR",
+       "4.2 mg/mmol",
+       "<3",
+       "H"
+      ]
+     ],
+     "text": "HbA1c and fasting glucose both in the diabetic range; early albuminuria."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "HbA1c",
+      "min": 30,
+      "max": 80,
+      "unit": "mmol/mol",
+      "bands": [
+       [
+        30,
+        42,
+        "Normal",
+        "ok"
+       ],
+       [
+        42,
+        48,
+        "Prediabetes 42–47",
+        "warn"
+       ],
+       [
+        48,
+        80,
+        "Diabetes ≥48",
+        "bad"
+       ]
+      ],
+      "value": 62,
+      "label": "Kwame 62",
+      "caption": "48 mmol/mol (6.5%) is the type 2 diagnostic cut-off."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame is **symptomatic** with HbA1c 62, so one result is enough; without symptoms he would need a **second** abnormal reading."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Suspected type 2, so **HbA1c** first; Kwame also gets baseline **FBC, U&Es, lipids and LFTs**."
+    },
+    {
+     "type": "ask",
+     "q": "Had Kwame been 25, slim and losing weight, which tests separate type 1?",
+     "o": [
+      "C-peptide and anti-GAD antibodies",
+      "Fasting lipids",
+      "Oral glucose tolerance test",
+      "Thyroid function only"
+     ],
+     "a": 0,
+     "r": "**Low C-peptide** and **positive anti-GAD** confirm autoimmune type 1."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame is not over 60 and has no weight loss, so no CT pancreas; **C-peptide and anti-GAD** are kept for doubt about the type."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame's follow-up: **HbA1c every 3–6 months**, yearly urine **ACR**, retinal screening and foot checks. His ACR is already mildly raised."
+    },
+    {
+     "type": "pearl",
+     "text": "**Sickle cell trait** and other haemoglobin variants make HbA1c unreliable: use plasma glucose instead."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (metformin MR plus an SGLT2 inhibitor in type 2; basal-bolus insulin in type 1), the next step when a drug is contraindicated or the eGFR is low, sick day rules, and amitriptyline for painful neuropathy.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame starts **modified-release metformin plus dapagliflozin**. A type 1 patient would instead start **basal-bolus insulin**."
+    },
+    {
+     "type": "ask",
+     "q": "Kwame's BP is 152/94 on bendroflumethiazide. He is Black African. Which antihypertensive is preferred?",
+     "o": [
+      "Amlodipine only",
+      "Doxazosin",
+      "Losartan",
+      "Ramipril"
+     ],
+     "a": 2,
+     "r": "In diabetes use an **ACE inhibitor or ARB**; an **ARB such as losartan** is preferred in Black patients."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If metformin were contraindicated, Kwame would take an SGLT2 inhibitor alone; a **DPP-4 inhibitor** is the usual next add-on."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame's **target HbA1c is 48 mmol/mol** (53 if on a hypoglycaemia-causing drug); he also starts **losartan** for his BP."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kwame's HbA1c on treatment",
+      "x": [
+       "Diagnosis",
+       "3 months",
+       "6 months",
+       "12 months"
+      ],
+      "unit": "mmol/mol",
+      "series": [
+       {
+        "name": "HbA1c",
+        "values": [
+         62,
+         54,
+         50,
+         48
+        ]
+       },
+       {
+        "name": "Target",
+        "values": [
+         48,
+         48,
+         48,
+         48
+        ]
+       }
+      ],
+      "caption": "Checked every 3–6 months; intensify if it rises above 58."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Eight months on: **diarrhoea and vomiting** for 2 days.",
+      "Struggling to keep fluids down.",
+      "Phones the practice nurse for advice."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame **pauses metformin** (lactic acidosis risk) and dapagliflozin while unwell, drinks fluids and checks glucose. A type 1 patient would **never stop insulin**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "eGFR and drug choice",
+      "min": 0,
+      "max": 90,
+      "unit": "mL/min",
+      "bands": [
+       [
+        0,
+        20,
+        "<20: DPP-4 inhibitor",
+        "bad"
+       ],
+       [
+        20,
+        30,
+        "20–30: SGLT2i + DPP-4i",
+        "warn"
+       ],
+       [
+        30,
+        90,
+        "Standard therapy",
+        "ok"
+       ]
+      ],
+      "value": 78,
+      "label": "Kwame 78",
+      "caption": "Kidney function decides the drug as CKD progresses."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Kwame's eGFR of 78 allows standard therapy; with **nephropathy (ACR ≥35)** or heart failure the SGLT2 inhibitor becomes essential."
+    },
+    {
+     "type": "flow",
+     "title": "Type 2 drug pathway",
+     "nodes": [
+      "Lifestyle: diet, exercise, stop smoking",
+      "Metformin MR + SGLT2 inhibitor",
+      "Add DPP-4 inhibitor (or sulfonylurea, pioglitazone, GLP-1 RA)",
+      "BMI ≥37 → semaglutide",
+      "Several oral agents fail → insulin"
+     ],
+     "caption": "Check eGFR, CVD and heart failure at every step."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kwame's care follows **NICE NG28**. He drives buses, so he must tell the **DVLA** and stop Group 2 driving if he ever starts insulin."
+    },
+    {
+     "type": "trap",
+     "text": "**Pioglitazone** is contraindicated in heart failure, and **gliclazide** causes hypoglycaemia: watch for both in the options."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the mechanism of type 1 (T-cell destruction of beta cells), why DKA happens in type 1 but HHS in type 2, how AGEs cause microvascular damage, and how SGLT2 inhibitors work.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's beta cells still work but his tissues **resist insulin**; in type 1, **T cells destroy** the beta cells entirely."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame's **residual insulin** stops ketogenesis, so he risks **HHS**, not DKA."
+    },
+    {
+     "type": "flow",
+     "title": "Why type 1 gets DKA",
+     "nodes": [
+      "No insulin",
+      "Unrestrained lipolysis",
+      "Free fatty acids to liver",
+      "Ketogenesis → ketoacidosis",
+      "Glycosuria → osmotic diuresis → dehydration"
+     ],
+     "caption": "In type 2, a little insulin blocks step 2, so glucose climbs without ketones (HHS)."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Years of high glucose glycate Kwame's proteins into **AGEs**: these damage his retinal, glomerular and nerve vessels. His raised ACR is early nephropathy."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "**Dapagliflozin** blocks **SGLT2** in Kwame's proximal tubule: glucose goes out in the urine, and his heart and kidneys are protected."
+    },
+    {
+     "type": "ask",
+     "q": "Where does dapagliflozin act?",
+     "o": [
+      "Collecting duct",
+      "Distal convoluted tubule",
+      "Loop of Henle",
+      "Proximal convoluted tubule"
+     ],
+     "a": 3,
+     "r": "SGLT2 reabsorbs most filtered glucose in the **proximal tubule**; blocking it causes glycosuria."
+    },
+    {
+     "type": "pearl",
+     "text": "SGLT2 inhibitors cause **glycosuria** and genital thrush, and can cause **euglycaemic DKA**: another reason to pause them when unwell."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which sign suggests insulin resistance?",
+   "o": [
+    "Acanthosis nigricans",
+    "Erythema nodosum",
+    "Psoriasis",
+    "Vitiligo"
+   ],
+   "a": 0,
+   "r": "**Acanthosis nigricans** is a sign of insulin resistance in type 2."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which gene defect is associated with MODY 3?",
+   "o": [
+    "Glucokinase",
+    "HLA-B27",
+    "HNF-1 alpha",
+    "Insulin receptor"
+   ],
+   "a": 2,
+   "r": "**HNF-1 alpha**; MODY is managed with sulfonylureas."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which antihypertensive is a recognised drug cause of hyperglycaemia?",
+   "o": [
+    "Amlodipine",
+    "Bendroflumethiazide",
+    "Doxazosin",
+    "Ramipril"
+   ],
+   "a": 1,
+   "r": "Thiazides such as **bendroflumethiazide** raise glucose."
+  },
+  {
+   "d": "investigation",
+   "q": "What HbA1c confirms type 2 diabetes?",
+   "o": [
+    "≥36 mmol/mol",
+    "≥42 mmol/mol",
+    "≥48 mmol/mol",
+    "≥58 mmol/mol"
+   ],
+   "a": 2,
+   "r": "**≥48 mmol/mol (6.5%)**; 42–47 is prediabetes."
+  },
+  {
+   "d": "investigation",
+   "q": "Which result supports type 1 diabetes?",
+   "o": [
+    "High C-peptide",
+    "Low C-peptide",
+    "Negative anti-GAD",
+    "Raised HDL"
+   ],
+   "a": 1,
+   "r": "**Low C-peptide** and positive anti-GAD."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the fasting plasma glucose threshold for diabetes?",
+   "o": [
+    "≥5.5 mmol/L",
+    "≥6.1 mmol/L",
+    "≥7.0 mmol/L",
+    "≥11.1 mmol/L"
+   ],
+   "a": 2,
+   "r": "Fasting **≥7.0**; random or 2-hour OGTT **≥11.1** mmol/L."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line drug therapy for new type 2 diabetes in the notes?",
+   "o": [
+    "Gliclazide alone",
+    "Insulin glargine",
+    "Metformin MR plus an SGLT2 inhibitor",
+    "Sitagliptin alone"
+   ],
+   "a": 2,
+   "r": "Dual therapy: **MR metformin plus an SGLT2 inhibitor** such as dapagliflozin."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line for painful diabetic neuropathy?",
+   "o": [
+    "Amitriptyline",
+    "Codeine",
+    "Ibuprofen",
+    "Paracetamol"
+   ],
+   "a": 0,
+   "r": "A tricyclic: **amitriptyline**; alternatives pregabalin, duloxetine, gabapentin."
+  },
+  {
+   "d": "management",
+   "q": "What must a type 1 patient never do when unwell?",
+   "o": [
+    "Check ketones",
+    "Drink 3 L of fluid",
+    "Stop insulin",
+    "Test glucose often"
+   ],
+   "a": 2,
+   "r": "**Never stop insulin**: risk of DKA."
+  },
+  {
+   "d": "science",
+   "q": "What is the mechanism of type 1 diabetes?",
+   "o": [
+    "Amyloid deposition in islets",
+    "Insulin receptor mutation",
+    "Peripheral insulin resistance",
+    "T-cell-mediated destruction of beta cells"
+   ],
+   "a": 3,
+   "r": "**T-cell-mediated autoimmune destruction** of islet beta cells."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "How do type 1, type 2 and MODY differ in who gets them and how they present?",
+    "tip": "Exam thinking: age, weight, speed of onset, ketones, family history.",
+    "points": [
+     {
+      "p": "Type 1: young, autoimmune, absolute insulin deficiency",
+      "k": [
+       [
+        "autoimmun",
+        "absolute"
+       ]
+      ],
+      "why": "Beta cells destroyed."
+     },
+     {
+      "p": "Type 1: rapid onset, weight loss, ketosis",
+      "k": [
+       [
+        "rapid",
+        "weight loss",
+        "ketos",
+        "ketone"
+       ]
+      ],
+      "why": "Can present in DKA."
+     },
+     {
+      "p": "Type 2: older, obese, insulin resistance with relative deficiency",
+      "k": [
+       [
+        "resistan"
+       ],
+       [
+        "obes",
+        "older",
+        "relative"
+       ]
+      ],
+      "why": "Increasingly seen in young obese patients."
+     },
+     {
+      "p": "Type 2: gradual, often incidental",
+      "k": [
+       [
+        "gradual",
+        "incidental"
+       ]
+      ],
+      "why": "Picked up on routine bloods."
+     },
+     {
+      "p": "MODY: like type 2 but under 25; HNF-1 alpha in MODY 3",
+      "k": [
+       [
+        "mody"
+       ],
+       [
+        "25",
+        "hnf"
+       ]
+      ],
+      "why": "Treated with a sulfonylurea."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the classic symptoms and signs of diabetes?",
+    "tip": "Exam thinking: the stem lists thirst, nocturia and a skin sign.",
+    "points": [
+     {
+      "p": "Polyuria and polydipsia",
+      "k": [
+       [
+        "polyuria",
+        "urinat",
+        "nocturia"
+       ],
+       [
+        "polydipsia",
+        "thirst"
+       ]
+      ],
+      "why": "Osmotic diuresis from glycosuria."
+     },
+     {
+      "p": "Unexplained weight loss and fatigue",
+      "k": [
+       [
+        "weight"
+       ],
+       [
+        "fatigue",
+        "tired"
+       ]
+      ],
+      "why": "Weight loss suggests type 1, or cancer if over 60."
+     },
+     {
+      "p": "Blurred vision",
+      "k": [
+       [
+        "blur",
+        "vision"
+       ]
+      ],
+      "why": "Osmotic change in the lens."
+     },
+     {
+      "p": "Acanthosis nigricans (insulin resistance)",
+      "k": [
+       [
+        "acanthosis"
+       ]
+      ],
+      "why": "Velvety pigmented skin in flexures."
+     },
+     {
+      "p": "Bendroflumethiazide can cause hyperglycaemia",
+      "k": [
+       [
+        "thiazide",
+        "bendroflumethiazide"
+       ]
+      ],
+      "why": "A recognised drug cause."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the acute and chronic complications of diabetes?",
+    "tip": "Exam thinking: sort by type and by vessel size.",
+    "points": [
+     {
+      "p": "DKA in type 1, HHS in type 2",
+      "k": [
+       [
+        "dka",
+        "ketoacidosis"
+       ],
+       [
+        "hhs",
+        "hyperosmolar"
+       ]
+      ],
+      "why": "Absolute versus relative insulin deficiency."
+     },
+     {
+      "p": "Microvascular: retinopathy, nephropathy, neuropathy",
+      "k": [
+       [
+        "retinopathy"
+       ],
+       [
+        "nephropathy"
+       ],
+       [
+        "neuropathy"
+       ]
+      ],
+      "why": "Screen yearly."
+     },
+     {
+      "p": "Macrovascular: cardiovascular disease",
+      "k": [
+       [
+        "cardiovascular",
+        "cvd",
+        "heart",
+        "stroke",
+        "macrovascular"
+       ]
+      ],
+      "why": "The commonest cause of death."
+     },
+     {
+      "p": "Foot ulceration with ischaemia: urgent secondary care",
+      "k": [
+       [
+        "foot",
+        "ulcer"
+       ]
+      ],
+      "why": "Limb-threatening."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do diabetic peripheral neuropathy and diabetic gastroparesis present?",
+    "tip": "Exam thinking: the complication is often the diagnosis asked for.",
+    "points": [
+     {
+      "p": "Length-dependent glove-and-stocking sensory loss, starting in the legs",
+      "k": [
+       [
+        "glove",
+        "stocking",
+        "length"
+       ]
+      ],
+      "why": "Feet first, then hands."
+     },
+     {
+      "p": "Gastroparesis: delayed gastric emptying",
+      "k": [
+       [
+        "delayed",
+        "gastric emptying",
+        "gastroparesis"
+       ]
+      ],
+      "why": "Impaired vagal tone."
+     },
+     {
+      "p": "Bloating, early satiety, vomiting undigested food",
+      "k": [
+       [
+        "satiety",
+        "undigested",
+        "bloat"
+       ]
+      ],
+      "why": "Vomiting food eaten hours before is the clue."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What are the diagnostic thresholds for diabetes, and when do you need a repeat test?",
+    "tip": "Exam thinking: know 48, 7.0 and 11.1, and when one test is not enough.",
+    "points": [
+     {
+      "p": "HbA1c ≥48 mmol/mol (6.5%)",
+      "k": [
+       [
+        "48",
+        "6.5"
+       ]
+      ],
+      "why": "Type 2 gold standard."
+     },
+     {
+      "p": "Fasting glucose ≥7.0 mmol/L",
+      "k": [
+       [
+        "7.0",
+        "7 mmol",
+        "fasting"
+       ]
+      ],
+      "why": "Fasting plasma glucose."
+     },
+     {
+      "p": "Random or 2-hour OGTT ≥11.1 mmol/L",
+      "k": [
+       [
+        "11.1"
+       ]
+      ],
+      "why": "Random plasma glucose or OGTT."
+     },
+     {
+      "p": "Asymptomatic: second abnormal reading needed",
+      "k": [
+       [
+        "second",
+        "repeat",
+        "two"
+       ]
+      ],
+      "why": "Within 2 weeks if using glucose."
+     },
+     {
+      "p": "HbA1c 42–47 = prediabetes; unreliable in sickle cell trait",
+      "k": [
+       [
+        "42",
+        "prediabet"
+       ],
+       [
+        "sickle",
+        "haemoglobin variant"
+       ]
+      ],
+      "why": "Use glucose when HbA1c is unreliable."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which tests are done at diagnosis, to type the diabetes, and to monitor it?",
+    "tip": "Exam thinking: first-line test differs by suspected type.",
+    "points": [
+     {
+      "p": "Suspected type 1: random plasma glucose; type 2: HbA1c",
+      "k": [
+       [
+        "random"
+       ],
+       [
+        "hba1c"
+       ]
+      ],
+      "why": "Type 1 is too fast for HbA1c to reflect."
+     },
+     {
+      "p": "Baseline FBC, U&Es, lipids, LFTs (+ TFTs in type 1)",
+      "k": [
+       [
+        "u&e",
+        "renal",
+        "lipid",
+        "lft",
+        "fbc",
+        "tft",
+        "thyroid"
+       ]
+      ],
+      "why": "TFTs because of autoimmune overlap."
+     },
+     {
+      "p": "C-peptide low and anti-GAD positive in type 1",
+      "k": [
+       [
+        "c-peptide",
+        "c peptide"
+       ],
+       [
+        "gad"
+       ]
+      ],
+      "why": "Separates type 1 from other types."
+     },
+     {
+      "p": "Over 60 with weight loss: urgent CT abdomen (pancreatic cancer)",
+      "k": [
+       [
+        "ct",
+        "pancrea"
+       ]
+      ],
+      "why": "New diabetes can be the first sign."
+     },
+     {
+      "p": "Monitor HbA1c 3–6 monthly, ACR, retinal screening, feet",
+      "k": [
+       [
+        "acr",
+        "albumin",
+        "retina",
+        "foot",
+        "feet"
+       ]
+      ],
+      "why": "Screens for complications."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is first-line treatment for type 1 and for type 2, with targets?",
+    "tip": "Exam thinking: name the regimen and the numbers.",
+    "points": [
+     {
+      "p": "Type 1: basal-bolus insulin (e.g. detemir + aspart)",
+      "k": [
+       [
+        "basal",
+        "bolus",
+        "detemir",
+        "aspart"
+       ]
+      ],
+      "why": "Long-acting basal plus rapid-acting with meals."
+     },
+     {
+      "p": "Targets 5–7 waking, 4–7 before meals; HbA1c 48",
+      "k": [
+       [
+        "4-7",
+        "4–7",
+        "5-7",
+        "5–7",
+        "48"
+       ]
+      ],
+      "why": "Check 3–6 monthly."
+     },
+     {
+      "p": "Type 2: metformin MR plus SGLT2 inhibitor (dapagliflozin)",
+      "k": [
+       [
+        "metformin"
+       ],
+       [
+        "sglt",
+        "dapagliflozin",
+        "gliflozin"
+       ]
+      ],
+      "why": "First-line dual therapy in the notes."
+     },
+     {
+      "p": "Type 2 HbA1c target 48–53; intensify above 58",
+      "k": [
+       [
+        "53",
+        "58"
+       ]
+      ],
+      "why": "53 if on a hypoglycaemia-causing drug."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the next steps in type 2 and the special situations (BMI, CKD, BP, neuropathy, MODY)?",
+    "tip": "Exam thinking: the comorbidity in the stem picks the drug.",
+    "points": [
+     {
+      "p": "Next step: DPP-4 inhibitor (sitagliptin); others SU, pioglitazone, GLP-1 RA, insulin",
+      "k": [
+       [
+        "dpp",
+        "sitagliptin",
+        "gliptin"
+       ]
+      ],
+      "why": "Pioglitazone is contraindicated in heart failure."
+     },
+     {
+      "p": "BMI ≥37: semaglutide",
+      "k": [
+       [
+        "semaglutide",
+        "glp"
+       ]
+      ],
+      "why": "No weight gain."
+     },
+     {
+      "p": "eGFR <20: DPP-4 inhibitor; 20–30: SGLT2i + DPP-4i",
+      "k": [
+       [
+        "egfr",
+        "ckd",
+        "kidney"
+       ]
+      ],
+      "why": "Kidney function limits choice."
+     },
+     {
+      "p": "Hypertension: ACE inhibitor or ARB (ARB in Black patients)",
+      "k": [
+       [
+        "ace",
+        "arb",
+        "losartan",
+        "ramipril"
+       ]
+      ],
+      "why": "Same BP targets as non-diabetics."
+     },
+     {
+      "p": "Painful neuropathy: amitriptyline",
+      "k": [
+       [
+        "amitriptyline",
+        "tricyclic"
+       ]
+      ],
+      "why": "Alternatives pregabalin, duloxetine, gabapentin."
+     },
+     {
+      "p": "MODY: sulfonylurea",
+      "k": [
+       [
+        "sulfonylurea",
+        "sulphonylurea",
+        "gliclazide"
+       ]
+      ],
+      "why": "MODY 3 is very sensitive to them."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are sick day rules, and how is hyperglycaemia treated in hospital?",
+    "tip": "Exam thinking: insulin stays on; metformin comes off.",
+    "points": [
+     {
+      "p": "Never stop insulin (DKA risk)",
+      "k": [
+       [
+        "insulin"
+       ],
+       [
+        "never stop",
+        "continue",
+        "don't stop",
+        "do not stop"
+       ]
+      ],
+      "why": "Even if not eating."
+     },
+     {
+      "p": "Check blood glucose frequently, drink ≥3 L/day",
+      "k": [
+       [
+        "check",
+        "monitor",
+        "frequent"
+       ],
+       [
+        "fluid",
+        "3 l",
+        "3l",
+        "drink"
+       ]
+      ],
+      "why": "Prevents dehydration."
+     },
+     {
+      "p": "Suspend metformin in diarrhoea/vomiting (lactic acidosis)",
+      "k": [
+       [
+        "metformin"
+       ],
+       [
+        "stop",
+        "suspend",
+        "withhold",
+        "pause"
+       ]
+      ],
+      "why": "Restart when eating and drinking."
+     },
+     {
+      "p": "In hospital: 2–6 units of rapid-acting insulin subcutaneously",
+      "k": [
+       [
+        "2-6",
+        "2–6",
+        "units"
+       ]
+      ],
+      "why": "Correction dose."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the pathophysiology of type 1 and type 2, and why does DKA occur in one and HHS in the other?",
+    "tip": "Exam thinking: absolute versus relative deficiency.",
+    "points": [
+     {
+      "p": "Type 1: T-cell-mediated destruction of beta cells",
+      "k": [
+       [
+        "t-cell",
+        "t cell",
+        "autoimmun"
+       ],
+       [
+        "beta"
+       ]
+      ],
+      "why": "Absolute insulin deficiency."
+     },
+     {
+      "p": "Type 2: insulin resistance with progressive beta-cell dysfunction",
+      "k": [
+       [
+        "resistan"
+       ]
+      ],
+      "why": "Relative deficiency."
+     },
+     {
+      "p": "DKA: no insulin → unrestrained lipolysis and ketogenesis",
+      "k": [
+       [
+        "lipolysis",
+        "ketogenesis",
+        "ketone"
+       ]
+      ],
+      "why": "Typically type 1."
+     },
+     {
+      "p": "HHS: residual insulin blocks ketogenesis; severe hyperglycaemia and osmotic diuresis",
+      "k": [
+       [
+        "residual",
+        "osmotic",
+        "dehydrat"
+       ]
+      ],
+      "why": "Typically type 2."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does chronic hyperglycaemia damage vessels, and how do SGLT2 inhibitors work?",
+    "tip": "Exam thinking: AGEs, then the proximal tubule.",
+    "points": [
+     {
+      "p": "Glycation forms advanced glycation end-products (AGEs)",
+      "k": [
+       [
+        "age",
+        "glycation"
+       ]
+      ],
+      "why": "Damage endothelium, nerves and basement membrane."
+     },
+     {
+      "p": "Macrovascular: accelerated atherosclerosis",
+      "k": [
+       [
+        "atheroscler",
+        "atheroma"
+       ]
+      ],
+      "why": "With dyslipidaemia and hypertension."
+     },
+     {
+      "p": "SGLT2i block glucose reabsorption in the proximal tubule → glycosuria",
+      "k": [
+       [
+        "proximal"
+       ],
+       [
+        "glycosuria",
+        "glucose in urine",
+        "reabsorption"
+       ]
+      ],
+      "why": "Renal and cardiovascular protection beyond glucose lowering."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Hyperglycaemia": "Abnormally high blood glucose.",
+  "HbA1c": "Glycated haemoglobin; reflects average blood glucose over the previous 2 to 3 months.",
+  "polyuria": "Passing large volumes of urine.",
+  "polydipsia": "Excessive thirst and drinking.",
+  "Acanthosis nigricans": "Velvety, dark skin in the neck and armpits; a sign of insulin resistance.",
+  "insulin resistance": "Reduced response of tissues to insulin, so more insulin is needed to control glucose.",
+  "beta cells": "Insulin-producing cells in the pancreatic islets of Langerhans.",
+  "MODY": "Maturity-onset diabetes of the young: single-gene diabetes before 25, often treated with sulfonylureas.",
+  "HNF-1 alpha": "Transcription factor gene whose mutation causes MODY 3.",
+  "C-peptide": "Fragment released with insulin; low in type 1 diabetes because insulin production has failed.",
+  "anti-GAD": "Antibodies to glutamic acid decarboxylase; positive in autoimmune type 1 diabetes.",
+  "OGTT": "Oral glucose tolerance test: glucose measured 2 hours after a 75 g glucose drink.",
+  "prediabetes": "HbA1c 42 to 47 mmol/mol: raised risk of progressing to type 2 diabetes.",
+  "ACR": "Urine albumin:creatinine ratio; screens for diabetic nephropathy.",
+  "eGFR": "Estimated glomerular filtration rate; a measure of kidney function.",
+  "DKA": "Diabetic ketoacidosis: hyperglycaemia, ketosis and acidosis from absolute insulin deficiency.",
+  "HHS": "Hyperosmolar hyperglycaemic state: very high glucose and dehydration without significant ketosis, typically type 2.",
+  "microvascular": "Affecting small vessels: retina, kidney and nerves.",
+  "macrovascular": "Affecting large arteries: coronary, cerebral and peripheral.",
+  "Diabetic neuropathy": "Nerve damage from diabetes, typically glove-and-stocking sensory loss.",
+  "glove-and-stocking": "Sensory loss starting in the feet and hands, the longest nerves first.",
+  "gastroparesis": "Delayed stomach emptying from autonomic nerve damage, causing vomiting and early satiety.",
+  "early satiety": "Feeling full after eating only a small amount.",
+  "AGEs": "Advanced glycation end-products: glucose-modified proteins that damage vessels and nerves.",
+  "basal-bolus": "Insulin regimen of a long-acting daily dose plus rapid-acting doses with meals.",
+  "detemir": "A long-acting basal insulin.",
+  "aspart": "A rapid-acting insulin given with meals.",
+  "metformin": "Biguanide that reduces hepatic glucose output; withheld in vomiting or diarrhoea.",
+  "SGLT-2": "Sodium-glucose co-transporter 2 in the proximal tubule; its inhibitors cause glycosuria.",
+  "dapagliflozin": "An SGLT2 inhibitor used with metformin first-line in type 2 diabetes.",
+  "DPP-4 inhibitor": "Gliptin (e.g. sitagliptin) that prolongs incretin action; weight neutral.",
+  "sitagliptin": "A DPP-4 inhibitor; rarely causes pancreatitis.",
+  "sulfonylureas": "Drugs such as gliclazide that stimulate insulin release; cause hypoglycaemia and weight gain.",
+  "gliclazide": "A sulfonylurea; main risk is hypoglycaemia.",
+  "pioglitazone": "Thiazolidinedione; contraindicated in heart failure and linked to fractures.",
+  "GLP-1 receptor agonist": "Injectable drug (e.g. semaglutide) that boosts insulin release and causes weight loss.",
+  "semaglutide": "A GLP-1 receptor agonist used when BMI is 37 or more.",
+  "tirzepatide": "Dual GIP and GLP-1 receptor agonist used for early-onset type 2 diabetes and weight loss.",
+  "ASCVD": "Atherosclerotic cardiovascular disease, e.g. angina, MI, stroke.",
+  "amitriptyline": "Tricyclic antidepressant used first-line for painful diabetic neuropathy.",
+  "sick day rules": "Advice for illness: keep insulin going, check glucose often, drink fluids, pause metformin and SGLT2 inhibitors.",
+  "lactic acidosis": "Build-up of lactate causing metabolic acidosis; a rare risk of metformin when unwell.",
+  "bendroflumethiazide": "Thiazide diuretic for hypertension that can raise blood glucose.",
+  "losartan": "An angiotensin receptor blocker (ARB).",
+  "ARB": "Angiotensin II receptor blocker, e.g. losartan.",
+  "DVLA": "UK Driver and Vehicle Licensing Agency; must be told about insulin use.",
+  "CGM": "Continuous glucose monitoring with a sensor under the skin."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old woman has a 3 week history of thirst, passing large volumes of urine and 6 kg weight loss. She is slim. Her grandmother has hypothyroidism. Her pulse rate is 98 bpm and BP 112/70 mmHg. Urine dipstick shows glucose 3+ and ketones 2+.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Diabetes insipidus",
+    "Hyperthyroidism",
+    "Maturity-onset diabetes of the young",
+    "Type 1 diabetes mellitus",
+    "Type 2 diabetes mellitus"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question: decide which type of diabetes fits the age, weight, speed and ketones."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "19 year old",
+      "3 week history",
+      "6 kg weight loss",
+      "slim",
+      "ketones 2+"
+     ],
+     "x": "Young, slim, **rapid onset**, weight loss and **ketonuria** = absolute insulin deficiency. Autoimmune family history supports it."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Type 1 diabetes mellitus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Diabetes insipidus gives polyuria without glycosuria or ketones."
+      ],
+      [
+       1,
+       "Hyperthyroidism causes weight loss but not glycosuria and ketonuria."
+      ],
+      [
+       2,
+       "MODY is gradual with no ketosis and a strong multigenerational diabetes history."
+      ],
+      [
+       4,
+       "Type 2 is gradual, in older or obese patients, without ketosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Type 1 diabetes mellitus.** Rule: young + rapid + weight loss + ketones = type 1."
+    }
+   ],
+   "labs": [
+    [
+     "Random plasma glucose",
+     "21.4 mmol/L",
+     "<11.1",
+     "H"
+    ],
+    [
+     "Capillary ketones",
+     "1.4 mmol/L",
+     "<0.6",
+     "H"
+    ],
+    [
+     "Venous pH",
+     "7.38",
+     "7.35–7.45",
+     ""
+    ]
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 52 year old man has an HbA1c checked during an NHS health check. He has no symptoms. His BMI is 31 kg/m². His HbA1c is 50 mmol/mol (reference <42).",
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Fasting lipid profile only",
+    "Oral glucose tolerance test",
+    "Repeat HbA1c",
+    "Start metformin today",
+    "Urine dipstick for glucose"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after one abnormal result in someone without symptoms."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no symptoms",
+      "BMI is 31",
+      "HbA1c is 50 mmol/mol"
+     ],
+     "x": "HbA1c 50 is above 48, but he is **asymptomatic**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **second abnormal reading** is needed: **repeat HbA1c**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Lipids are part of baseline work-up but do not confirm the diagnosis."
+      ],
+      [
+       1,
+       "OGTT is not needed; HbA1c is the type 2 test."
+      ],
+      [
+       3,
+       "Do not treat before the diagnosis is confirmed."
+      ],
+      [
+       4,
+       "Urine glucose is not diagnostic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Repeat HbA1c.** Rule: asymptomatic = two abnormal results to diagnose."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 61 year old woman with type 2 diabetes takes metformin MR and dapagliflozin. She has had diarrhoea and vomiting for 2 days and cannot keep food down. Her temperature is 37.6°C, pulse rate 96 bpm and BP 118/74 mmHg. Her capillary glucose is 11.2 mmol/L.",
+   "q": "Which is the most appropriate advice about her medication?",
+   "o": [
+    "Continue both drugs at the same dose",
+    "Double the metformin dose",
+    "Start gliclazide",
+    "Stop both drugs permanently",
+    "Temporarily withhold metformin and dapagliflozin"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Medication advice during illness: sick day rules."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "metformin MR and dapagliflozin",
+      "diarrhoea and vomiting for 2 days",
+      "cannot keep food down"
+     ],
+     "x": "Dehydrating illness raises **lactic acidosis** risk on metformin and **DKA** risk on SGLT2 inhibitors."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Temporarily withhold** both, drink fluids, check glucose, restart when eating."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Continuing metformin while dehydrated risks lactic acidosis."
+      ],
+      [
+       1,
+       "Doubling worsens the risk."
+      ],
+      [
+       2,
+       "Gliclazide when not eating causes hypoglycaemia."
+      ],
+      [
+       3,
+       "This is temporary; stopping permanently loses control."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Temporarily withhold both.** Rule: sick day = pause metformin (and SGLT2i); never stop insulin."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 23 year old man with type 1 diabetes stops his insulin while he has flu. Two days later he has vomiting, abdominal pain and deep sighing breaths. His blood ketones are 5.8 mmol/L. His 70 year old father with type 2 diabetes has never had ketosis despite glucose readings above 30 mmol/L.",
+   "q": "Which best explains why ketosis develops in the son but not the father?",
+   "o": [
+    "Absolute insulin deficiency allows unrestrained lipolysis",
+    "Excess glucagon secretion in type 2",
+    "Higher glucose levels in type 1",
+    "Insulin resistance in muscle",
+    "Renal ketone retention in type 1"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: why DKA in type 1 and HHS in type 2."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "stops his insulin",
+      "ketones are 5.8 mmol/L",
+      "never had ketosis despite glucose readings above 30 mmol/L"
+     ],
+     "x": "No insulin in the son; the father still has **residual insulin**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Absolute insulin deficiency** allows unrestrained lipolysis and ketogenesis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Glucagon rises in both; residual insulin is what blocks ketogenesis in type 2."
+      ],
+      [
+       2,
+       "The father's glucose is higher; glucose level does not explain ketosis."
+      ],
+      [
+       3,
+       "Insulin resistance explains type 2 hyperglycaemia, not the son's ketosis."
+      ],
+      [
+       4,
+       "The kidney does not retain ketones to cause DKA."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Absolute insulin deficiency.** Rule: a little insulin stops ketones (HHS); none gives DKA."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man has a routine blood test. He has no symptoms. His BMI is 33 kg/m² and he has velvety dark skin in both axillae. His temperature is 36.7°C, pulse rate 76 bpm and BP 146/90 mmHg.",
+   "labs": [
+    [
+     "HbA1c",
+     "54 mmol/mol",
+     "<42",
+     "H"
+    ],
+    [
+     "HbA1c (repeat at 2 weeks)",
+     "56 mmol/mol",
+     "<42",
+     "H"
+    ],
+    [
+     "Fasting plasma glucose",
+     "8.1 mmol/L",
+     "<6.1",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Impaired fasting glucose",
+    "Maturity-onset diabetes of the young",
+    "Prediabetes",
+    "Type 1 diabetes mellitus",
+    "Type 2 diabetes mellitus"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis from bloods and a skin sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no symptoms",
+      "BMI is 33",
+      "velvety dark skin in both axillae"
+     ],
+     "x": "Obese, older, acanthosis nigricans; two HbA1c values ≥48."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Type 2 diabetes mellitus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Fasting glucose of 8.1 is above 7.0, so it is diabetes, not IFG."
+      ],
+      [
+       1,
+       "MODY presents under 25."
+      ],
+      [
+       2,
+       "Prediabetes is HbA1c 42–47."
+      ],
+      [
+       3,
+       "Type 1 is young, slim and rapid with ketones."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Type 2 diabetes mellitus.** Rule: two HbA1c ≥48 when asymptomatic = diabetes."
+    }
+   ],
+   "e": "Two HbA1c results ≥48 mmol/mol in an asymptomatic obese man with acanthosis nigricans confirm type 2 diabetes; 42–47 would be prediabetes."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 21 year old slim woman has raised glucose found at a routine check. Her mother, maternal grandfather and maternal aunt all developed diabetes in their twenties. She has no weight loss and urine ketones are negative. Anti-GAD antibodies are negative.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cystic fibrosis-related diabetes",
+    "Latent autoimmune diabetes in adults",
+    "Maturity-onset diabetes of the young",
+    "Type 1 diabetes mellitus",
+    "Type 2 diabetes mellitus"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which type of diabetes: look at the family pattern."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "21 year old slim woman",
+      "mother, maternal grandfather and maternal aunt",
+      "in their twenties",
+      "ketones are negative",
+      "Anti-GAD antibodies are negative"
+     ],
+     "x": "Young, slim, **three generations** (autosomal dominant), no ketosis, antibody negative."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**MODY** (e.g. HNF-1 alpha, MODY 3)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No cystic fibrosis history."
+      ],
+      [
+       1,
+       "LADA is antibody positive."
+      ],
+      [
+       3,
+       "Type 1 is antibody positive with ketosis and weight loss."
+      ],
+      [
+       4,
+       "Type 2 is older and obese."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. MODY.** Rule: under 25 + autosomal dominant family history + antibody negative = MODY."
+    }
+   ],
+   "e": "Diabetes under 25 with an autosomal dominant family history, no ketosis and negative antibodies is MODY, treated with a sulfonylurea."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old man with type 2 diabetes for 15 years has numbness and burning pain in both feet that has spread up to his mid-calves. He has recently noticed tingling in his fingertips. Vibration sense is absent at both ankles and ankle reflexes are absent. His pulse rate is 80 bpm and BP 138/82 mmHg.",
+   "labs": [
+    [
+     "HbA1c",
+     "71 mmol/mol",
+     "<42",
+     "H"
+    ],
+    [
+     "MCV",
+     "88 fL",
+     "80–100",
+     ""
+    ],
+    [
+     "Vitamin B12",
+     "410 ng/L",
+     "200–900",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Diabetic amyotrophy",
+    "Diabetic peripheral neuropathy",
+    "Mononeuritis multiplex",
+    "Peripheral arterial disease",
+    "Vitamin B12 deficiency"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a complication of diabetes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 15 years",
+      "both feet",
+      "spread up to his mid-calves",
+      "tingling in his fingertips",
+      "Vibration sense is absent"
+     ],
+     "x": "Symmetrical, **length-dependent** sensory loss, legs first then hands: glove-and-stocking."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Diabetic peripheral neuropathy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amyotrophy is painful proximal thigh weakness and wasting."
+      ],
+      [
+       2,
+       "Mononeuritis multiplex affects separate named nerves asymmetrically."
+      ],
+      [
+       3,
+       "PAD gives claudication and absent pulses, not glove-and-stocking loss."
+      ],
+      [
+       4,
+       "B12 deficiency is possible on metformin but the long diabetes history and normal MCV favour diabetic neuropathy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Diabetic peripheral neuropathy.** Rule: long-standing diabetes + glove-and-stocking = diabetic neuropathy."
+    }
+   ],
+   "e": "Symmetrical, length-dependent glove-and-stocking sensory loss starting in the legs is diabetic peripheral neuropathy. A normal MCV and B12 argue against B12 deficiency."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 44 year old woman with type 1 diabetes for 25 years has 4 months of bloating and feeling full after a few mouthfuls. Several times a week she vomits food she ate the previous evening. Her glucose control has become erratic with unexplained hypoglycaemia after meals.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Coeliac disease",
+    "Diabetic gastroparesis",
+    "Gastric outlet obstruction from cancer",
+    "Gastro-oesophageal reflux disease",
+    "Peptic ulcer disease"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a GI complication of diabetes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes for 25 years",
+      "feeling full after a few mouthfuls",
+      "vomits food she ate the previous evening",
+      "erratic"
+     ],
+     "x": "Long-standing diabetes, **early satiety**, vomiting **undigested food**, erratic glucose from delayed absorption."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Diabetic gastroparesis** (autonomic neuropathy)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coeliac is linked to type 1 but gives diarrhoea and weight loss, not vomiting of old food."
+      ],
+      [
+       2,
+       "Cancer is possible, but in long-standing diabetes with erratic glucose, gastroparesis is the best fit."
+      ],
+      [
+       3,
+       "GORD gives heartburn and regurgitation of acid, not undigested food hours later."
+      ],
+      [
+       4,
+       "Peptic ulcer gives epigastric pain related to meals."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Diabetic gastroparesis.** Rule: early satiety + vomiting undigested food in long-standing diabetes."
+    }
+   ],
+   "e": "Long-standing diabetes with early satiety, bloating and vomiting of undigested food is gastroparesis from reduced vagal, acetylcholine-mediated motility."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 59 year old man has hypertension. Six months ago he started a new tablet for his blood pressure. His HbA1c, previously 44 mmol/mol, is now 51 mmol/mol, confirmed on a repeat test. He has no other medical problems.",
+   "labs": [],
+   "visual": null,
+   "q": "Which drug is the most likely cause of his hyperglycaemia?",
+   "o": [
+    "Amlodipine",
+    "Bendroflumethiazide",
+    "Doxazosin",
+    "Losartan",
+    "Ramipril"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely drug cause of hyperglycaemia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "new tablet for his blood pressure",
+      "previously 44 mmol/mol",
+      "now 51 mmol/mol"
+     ],
+     "x": "A new antihypertensive followed by a rise in HbA1c into the diabetic range."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Bendroflumethiazide**: thiazides cause hyperglycaemia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amlodipine does not raise glucose."
+      ],
+      [
+       2,
+       "Doxazosin is glucose neutral."
+      ],
+      [
+       3,
+       "Losartan is preferred in diabetes and does not raise glucose."
+      ],
+      [
+       4,
+       "Ramipril does not cause hyperglycaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bendroflumethiazide.** Rule: thiazides are a recognised drug cause of hyperglycaemia."
+    }
+   ],
+   "e": "Thiazide diuretics such as bendroflumethiazide are a recognised drug cause of hyperglycaemia; ACE inhibitors and ARBs are glucose neutral."
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old woman with type 2 diabetes for 20 years has a painless ulcer on the sole of her right foot over the first metatarsal head. She had not noticed it. The foot is cool with absent pedal pulses and the surrounding skin is red and swollen. Her temperature is 38.1°C, pulse rate 104 bpm and BP 132/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Arterial ulcer without neuropathy",
+    "Charcot neuroarthropathy",
+    "Gouty tophus",
+    "Infected neuroischaemic diabetic foot ulcer",
+    "Venous ulcer"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a foot lesion in long-standing diabetes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 2 diabetes for 20 years",
+      "painless ulcer",
+      "first metatarsal head",
+      "absent pedal pulses",
+      "red and swollen"
+     ],
+     "x": "Painless ulcer at a pressure point = **neuropathy**; absent pulses = **ischaemia**; redness, swelling and fever = infection."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Infected neuroischaemic diabetic foot ulcer**: limb-threatening, needs urgent secondary care."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pure arterial ulcers are painful; this one is painless, so neuropathy is present."
+      ],
+      [
+       1,
+       "Charcot foot is a hot, swollen, deformed foot, usually without an ulcer and with bounding pulses."
+      ],
+      [
+       2,
+       "Gout gives a painful, hot joint, not a painless plantar ulcer."
+      ],
+      [
+       4,
+       "Venous ulcers sit at the medial gaiter area with pulses present."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Infected neuroischaemic diabetic foot ulcer.** Rule: painless + pressure point + absent pulses in diabetes = neuroischaemic ulcer; refer urgently."
+    }
+   ],
+   "e": "A painless ulcer over a pressure point with absent pulses and spreading redness in long-standing diabetes is an infected neuroischaemic foot ulcer, which is limb-threatening."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 28 year old man was diagnosed with type 2 diabetes 6 months ago because of his weight. Despite metformin he has lost 8 kg and his glucose is rising. His BMI is now 22 kg/m². He has vitiligo.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the type of diabetes?",
+   "o": [
+    "C-peptide and anti-GAD antibodies",
+    "Fasting lipid profile",
+    "HbA1c",
+    "Oral glucose tolerance test",
+    "Urine albumin:creatinine ratio"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation to distinguish type 1 from type 2."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "28 year old",
+      "lost 8 kg",
+      "glucose is rising",
+      "vitiligo"
+     ],
+     "x": "Young, weight loss despite treatment, autoimmune vitiligo: probable **type 1** mislabelled as type 2."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Low C-peptide** and **positive anti-GAD** confirm type 1."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Lipids are baseline, not typing."
+      ],
+      [
+       2,
+       "HbA1c confirms diabetes, not its type."
+      ],
+      [
+       3,
+       "OGTT diagnoses diabetes; he already has it."
+      ],
+      [
+       4,
+       "ACR screens for nephropathy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. C-peptide and anti-GAD.** Rule: doubt about type = C-peptide + anti-GAD."
+    }
+   ],
+   "e": "C-peptide (low) and anti-GAD antibodies (positive) distinguish type 1 from other types of diabetes; HbA1c only confirms diabetes."
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old man has new-onset diabetes. He has lost 7 kg in 3 months without trying and has vague upper abdominal discomfort radiating to his back. He has no previous medical history. His temperature is 36.8°C, pulse rate 84 bpm and BP 128/76 mmHg.",
+   "labs": [
+    [
+     "HbA1c",
+     "66 mmol/mol",
+     "<42",
+     "H"
+    ],
+    [
+     "Bilirubin",
+     "15 µmol/L",
+     "<17",
+     ""
+    ],
+    [
+     "ALP",
+     "118 IU/L",
+     "25–115",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Anti-GAD antibodies",
+    "Oral glucose tolerance test",
+    "Repeat HbA1c in 3 months",
+    "Upper GI endoscopy",
+    "Urgent CT abdomen"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation in new diabetes with red flags."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "68 year old",
+      "new-onset diabetes",
+      "lost 7 kg",
+      "radiating to his back"
+     ],
+     "x": "Over 60 with new diabetes and weight loss, plus back-radiating pain."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent CT abdomen** to exclude pancreatic cancer."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anti-GAD types diabetes; it does not find a cancer."
+      ],
+      [
+       1,
+       "The diagnosis is already made."
+      ],
+      [
+       2,
+       "Waiting delays a possible cancer diagnosis."
+      ],
+      [
+       3,
+       "Endoscopy does not image the pancreas."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Urgent CT abdomen.** Rule: over 60 + new diabetes + weight loss = CT pancreas."
+    }
+   ],
+   "e": "New-onset diabetes over 60 with weight loss should prompt an urgent CT abdomen to exclude pancreatic cancer."
+  },
+  {
+   "d": "management",
+   "stem": "A 55 year old woman is newly diagnosed with type 2 diabetes. Her HbA1c is 60 mmol/mol. Her BMI is 30 kg/m², eGFR 82 mL/min/1.73m² and she has no heart failure or cardiovascular disease. Lifestyle advice has been given.",
+   "labs": [
+    [
+     "HbA1c",
+     "60 mmol/mol",
+     "<42",
+     "H"
+    ],
+    [
+     "eGFR",
+     "82 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial drug management?",
+   "o": [
+    "Gliclazide",
+    "Insulin glargine",
+    "Modified-release metformin and dapagliflozin",
+    "Pioglitazone",
+    "Sitagliptin"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "First-line drug treatment of new type 2 diabetes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "newly diagnosed with type 2 diabetes",
+      "eGFR 82",
+      "no heart failure or cardiovascular disease"
+     ],
+     "x": "New type 2, normal kidneys, no contraindications."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**MR metformin plus an SGLT2 inhibitor** (dapagliflozin)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gliclazide causes hypoglycaemia and weight gain; not first-line."
+      ],
+      [
+       1,
+       "Insulin is for when several oral agents fail."
+      ],
+      [
+       3,
+       "Pioglitazone is a later option, avoided in heart failure."
+      ],
+      [
+       4,
+       "Sitagliptin is the usual next add-on, not first-line."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. MR metformin and dapagliflozin.** Rule: first-line type 2 = metformin MR + SGLT2i."
+    }
+   ],
+   "e": "First-line drug therapy for type 2 diabetes in the notes is dual therapy with MR metformin plus an SGLT2 inhibitor such as dapagliflozin."
+  },
+  {
+   "d": "management",
+   "stem": "A 24 year old man with type 1 diabetes on basal-bolus insulin has had a fever and sore throat for 2 days. He is not eating much and asks whether to stop his insulin. His temperature is 38.2°C, pulse rate 98 bpm and BP 122/74 mmHg. His capillary glucose is 14.6 mmol/L and ketones 0.4 mmol/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate advice?",
+   "o": [
+    "Continue insulin, check glucose frequently and drink at least 3 L of fluid a day",
+    "Halve the basal insulin and stop the mealtime insulin",
+    "Start metformin",
+    "Stop all insulin until he is eating",
+    "Stop the basal insulin only"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Sick day advice in type 1 diabetes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "type 1 diabetes on basal-bolus insulin",
+      "not eating much",
+      "asks whether to stop his insulin",
+      "14.6 mmol/L"
+     ],
+     "x": "Intercurrent illness raises glucose even when not eating."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Never stop insulin**: continue, monitor often, drink ≥3 L/day."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Stopping mealtime insulin and halving basal risks DKA."
+      ],
+      [
+       2,
+       "Metformin does not replace insulin in type 1."
+      ],
+      [
+       3,
+       "Stopping insulin causes DKA."
+      ],
+      [
+       4,
+       "Basal insulin must never be stopped."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Continue insulin and monitor.** Rule: sick day rules = insulin never stopped."
+    }
+   ],
+   "e": "Sick day rules: insulin is never stopped in type 1 diabetes (risk of DKA); continue the regimen, check glucose often and drink at least 3 L a day."
+  },
+  {
+   "d": "management",
+   "stem": "A 67 year old man with type 2 diabetes has burning pain and pins and needles in both feet, worse at night and stopping him sleeping. Examination shows glove-and-stocking sensory loss. Foot pulses are normal and there is no ulceration.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial treatment for his pain?",
+   "o": [
+    "Amitriptyline",
+    "Carbamazepine",
+    "Codeine phosphate",
+    "Ibuprofen",
+    "Topical capsaicin"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial treatment of painful diabetic neuropathy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "burning pain and pins and needles in both feet",
+      "worse at night",
+      "glove-and-stocking sensory loss"
+     ],
+     "x": "Painful diabetic peripheral neuropathy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "First-line: **amitriptyline** (alternatives pregabalin, duloxetine, gabapentin)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Carbamazepine is for trigeminal neuralgia."
+      ],
+      [
+       2,
+       "Opioids are not first-line for neuropathic pain."
+      ],
+      [
+       3,
+       "NSAIDs do not help neuropathic pain and harm diabetic kidneys."
+      ],
+      [
+       4,
+       "Capsaicin cream is for localised pain when oral drugs are not tolerated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Amitriptyline.** Rule: painful diabetic neuropathy = tricyclic first."
+    }
+   ],
+   "e": "First-line treatment for painful diabetic peripheral neuropathy is a tricyclic such as amitriptyline; pregabalin, duloxetine or gabapentin are alternatives."
+  },
+  {
+   "d": "science",
+   "stem": "A 57 year old woman with type 2 diabetes starts dapagliflozin alongside metformin. Two weeks later her urine dipstick shows glucose 4+ although her capillary glucose is 7.2 mmol/L. She has also developed vulvovaginal thrush.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the mechanism of action of this drug?",
+   "o": [
+    "Activation of PPAR-gamma receptors",
+    "Blockade of glucose reabsorption in the proximal tubule",
+    "Inhibition of DPP-4 enzyme",
+    "Reduction of hepatic glucose output",
+    "Stimulation of beta-cell insulin release"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of an antidiabetic drug, explaining the urine finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dapagliflozin",
+      "glucose 4+",
+      "capillary glucose is 7.2 mmol/L",
+      "vulvovaginal thrush"
+     ],
+     "x": "Glycosuria with a near-normal blood glucose and genital thrush = **SGLT2 inhibition**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Blocks **glucose reabsorption in the proximal tubule**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "PPAR-gamma activation is pioglitazone."
+      ],
+      [
+       2,
+       "DPP-4 inhibition is sitagliptin."
+      ],
+      [
+       3,
+       "Reduced hepatic output is metformin."
+      ],
+      [
+       4,
+       "Insulin secretion is sulfonylureas."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Proximal tubule glucose reabsorption blocked.** Rule: SGLT2i = glycosuria, with cardio-renal protection."
+    }
+   ],
+   "e": "Dapagliflozin blocks SGLT2 in the proximal tubule, causing glycosuria (and thrush) and giving cardiorenal protection beyond glucose lowering."
+  }
+ ]
+}

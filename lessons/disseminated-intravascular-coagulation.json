@@ -1,0 +1,1021 @@
+{
+ "id": "disseminated-intravascular-coagulation",
+ "patient": {
+  "name": "Kwame Mensah",
+  "age": 66,
+  "sex": "M",
+  "setting": "Acute Medical Unit, day 2 of admission",
+  "complaint": "Admitted with pneumonia and sepsis; now oozing from his cannula sites and gums",
+  "background": [
+   "Type 2 diabetes on metformin",
+   "Retired bus driver from Brixton; ex-smoker",
+   "No previous bleeding problems; not on anticoagulants",
+   "Started IV co-amoxiclav and clarithromycin yesterday"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a septic, obstetric, trauma or cancer patient who suddenly bleeds from several sites with a petechial rash. The distractors are TTP, ITP and liver failure.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kwame, 66, admitted yesterday with **pneumonia and sepsis**.",
+      "Overnight: **oozing from both cannula sites** and his gums.",
+      "His catheter bag has turned pink (**haematuria**).",
+      "He is more breathless and drowsy."
+     ],
+     "vitals": {
+      "T": "38.9°C",
+      "HR": "122 bpm",
+      "BP": "84/48 mmHg",
+      "RR": "28 /min",
+      "SpO2": "90% on 4 L O2",
+      "GCS": "14"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Kwame's admission chest X-ray",
+      "findings": [ { "type": "consolidation", "side": "right", "zone": "lower" } ],
+      "caption": "Right lower zone consolidation: the **pneumonia** that set off his sepsis."
+     },
+     "text": "The trigger is in his chest: severe sepsis from pneumonia."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's sepsis has switched on clotting **everywhere at once**: tiny clots use up his platelets and factors, so now he bleeds."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "**Sepsis** is the most important trigger, and that is Kwame's. Always ask: is this patient septic, pregnant, injured or known to have cancer?"
+    },
+    {
+     "type": "story",
+     "points": [
+      "**Petechiae and purpura** across his legs and trunk.",
+      "Large bruise around an old blood-test site.",
+      "Cool peripheries; urine output falling.",
+      "No splenomegaly; no jaundice."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Bleeding from **several sites**, a petechial rash, shock and failing organs: Kwame has the full picture. His film will show schistocytes."
+    },
+    {
+     "type": "ask",
+     "q": "Kwame is septic and bleeding from several sites with a petechial rash. Which is most likely?",
+     "o": ["Disseminated intravascular coagulation", "Haemophilia A", "Immune thrombocytopenia", "Thrombotic thrombocytopenic purpura"],
+     "a": 0,
+     "r": "A septic patient bleeding from multiple sites is **DIC**. ITP and TTP have normal clotting times; haemophilia is lifelong."
+    },
+    {
+     "type": "compare",
+     "title": "Low platelets and bleeding: which one?",
+     "head": ["Feature", "DIC", "TTP", "ITP", "Liver failure"],
+     "rows": [
+      ["Setting", "Sepsis, obstetric, trauma, cancer", "Fever, neuro signs, AKI", "Otherwise well", "Jaundice, ascites"],
+      ["PT / APTT", "Prolonged", "Normal", "Normal", "Prolonged"],
+      ["Fibrinogen", "Low", "Normal", "Normal", "Low or normal"],
+      ["D-dimer", "High", "Normal or mildly up", "Normal", "Mildly up"],
+      ["Film", "Schistocytes", "Schistocytes", "Normal", "Target cells"]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Schistocytes appear in **both DIC and TTP**. The clotting decides: prolonged PT and APTT with **low fibrinogen** means DIC; TTP clotting is normal."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation to confirm the diagnosis?' (coagulation screen) or 'Which is the most likely finding on blood film?' (schistocytes). Know the full DIC pattern.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's **FBC** shows his platelets have crashed, and the **blood film** is checked for schistocytes."
+    },
+    {
+     "type": "labs",
+     "title": "Kwame's bloods, day 2",
+     "rows": [
+      ["Haemoglobin", "98 g/L", "130–170", "L"],
+      ["Platelets", "34 ×10⁹/L", "150–400", "L"],
+      ["PT", "24 s", "11–14", "H"],
+      ["APTT", "64 s", "25–35", "H"],
+      ["Fibrinogen", "0.8 g/L", "1.5–4.0", "L"],
+      ["D-dimer", "8400 ng/mL", "<500", "H"],
+      ["Blood film", "Schistocytes", "None", ""]
+     ],
+     "text": "Low platelets and fibrinogen, prolonged PT and APTT, very high D-dimer, schistocytes: textbook **DIC**."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's **coagulation screen** confirms it: every part of the DIC pattern is there."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Fibrinogen",
+      "min": 0,
+      "max": 5,
+      "unit": "g/L",
+      "bands": [
+       [0, 1.5, "Low: consumed", "bad"],
+       [1.5, 4, "Normal", "ok"],
+       [4, 5, "High (acute phase)", "warn"]
+      ],
+      "value": 0.8,
+      "label": "Kwame 0.8",
+      "caption": "Fibrinogen is used up making clots. Below **1.5 g/L** in a bleeding patient means cryoprecipitate."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Which result best separates Kwame's DIC from TTP?",
+     "o": ["High LDH", "Low fibrinogen", "Low platelets", "Schistocytes on film"],
+     "a": 1,
+     "r": "**Low fibrinogen** (with prolonged PT/APTT) means clotting factors are being consumed: DIC. The other three occur in TTP too."
+    },
+    {
+     "type": "flow",
+     "title": "The DIC blood pattern",
+     "nodes": [
+      "Platelets ↓",
+      "Fibrinogen ↓",
+      "PT and APTT ↑ (prolonged)",
+      "D-dimer ↑",
+      "Film: schistocytes"
+    ],
+     "caption": "Everything that is used up falls; the breakdown product (D-dimer) rises."
+    },
+    {
+     "type": "pearl",
+     "text": "Repeat the coagulation screen: DIC is **dynamic**. A falling platelet count and fibrinogen over hours matters more than a single value."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': **treat the cause** (antibiotics, delivery, treat the cancer). If actively bleeding, add platelets, FFP and cryoprecipitate.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's DIC will only switch off when the **sepsis** is controlled: his antibiotics are reviewed with microbiology and cultures chased."
+    },
+    {
+     "type": "ask",
+     "q": "Kwame is oozing from several sites. Platelets 34, fibrinogen 0.8. What is needed for his bleeding?",
+     "o": ["IV tranexamic acid", "IV vitamin K alone", "Platelets, FFP and cryoprecipitate", "Protamine"],
+     "a": 2,
+     "r": "Active bleeding in DIC needs the consumed parts replaced: **platelets, FFP and cryoprecipitate** (for fibrinogen)."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame is **actively bleeding**, so he gets platelets, FFP and cryoprecipitate for his fibrinogen of 0.8."
+    },
+    {
+     "type": "flow",
+     "title": "Managing DIC",
+     "nodes": [
+      "Find and treat the trigger",
+      "Sepsis → antibiotics; obstetric → deliver; cancer → treat it",
+      "Actively bleeding? → platelets, FFP, cryoprecipitate",
+      "Not bleeding → do not transfuse just for the numbers",
+      "Support: IV fluids, organ monitoring, repeat clotting"
+     ],
+     "caption": "Blood products buy time; treating the cause is the cure."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame moves to HDU for **IV fluids**, organ support and repeated coagulation profiles."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kwame recovers as the sepsis is treated",
+      "x": ["Day 1", "Day 2", "Day 3", "Day 5", "Day 7"],
+      "unit": "",
+      "series": [
+       { "name": "Platelets (×10⁹/L)", "values": [96, 34, 41, 88, 162] },
+       { "name": "PT (s)", "values": [16, 24, 20, 15, 13] }
+      ],
+      "caption": "Once the infection is controlled, platelets climb and the PT normalises. Products alone would not have done this."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kwame's care follows the **BSH DIC guideline**: treat the cause, and give products for bleeding rather than for lab numbers alone."
+    },
+    {
+     "type": "trap",
+     "text": "**Tranexamic acid** is generally avoided in DIC: blocking fibrinolysis when clots are forming everywhere can worsen thrombosis."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why DIC causes bleeding and clotting together, why schistocytes form, and why the D-dimer is high.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's bacteria trigger **tissue factor** release, which fires the coagulation cascade throughout his small vessels."
+    },
+    {
+     "type": "flow",
+     "title": "From sepsis to bleeding",
+     "nodes": [
+      "Trigger: sepsis, trauma, cancer, obstetric",
+      "Tissue factor released",
+      "Coagulation activated everywhere: microthrombi",
+      "Platelets and factors consumed",
+      "Bleeding plus organ ischaemia"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame clots in his microcirculation yet bleeds from his gums: his platelets and factors are being **used faster than he can make them**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame's red cells are **sliced by fibrin strands** in partly blocked vessels, giving schistocytes: a microangiopathic haemolytic anaemia."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame's D-dimer of 8400 shows his body is **breaking down** the clots; his low fibrinogen shows it is being used up making them."
+    },
+    {
+     "type": "ask",
+     "q": "Why is Kwame's D-dimer so high?",
+     "o": ["Fibrinolysis of fibrin clots", "Liver failure", "Platelet destruction by antibodies", "Reduced renal clearance only"],
+     "a": 0,
+     "r": "D-dimer is a **fibrin breakdown product**: it rises because fibrinolysis is breaking down the widespread clots."
+    },
+    {
+     "type": "pearl",
+     "text": "Think of DIC as **consumption**: whatever clotting uses up falls (platelets, fibrinogen, factors), whatever it produces rises (D-dimer)."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most important trigger of DIC?",
+   "o": ["Malignancy", "Obstetric complications", "Sepsis", "Trauma"],
+   "a": 2,
+   "r": "**Sepsis** is the most important trigger; the others are recognised causes."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which presentation is typical of DIC?",
+   "o": ["Bleeding from multiple sites with petechiae", "Isolated haemarthrosis", "Painless jaundice", "Unilateral leg swelling"],
+   "a": 0,
+   "r": "**Bleeding from multiple sites**, petechiae, purpura, shock and organ dysfunction."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which blood film finding is characteristic of DIC?",
+   "o": ["Howell-Jolly bodies", "Schistocytes", "Spherocytes", "Target cells"],
+   "a": 1,
+   "r": "**Schistocytes** (fragmented red cells)."
+  },
+  {
+   "d": "investigation",
+   "q": "Which is the gold-standard test for DIC?",
+   "o": ["Blood film", "Bone marrow biopsy", "Coagulation screen", "Direct antiglobulin test"],
+   "a": 2,
+   "r": "The **coagulation screen** (PT, APTT, fibrinogen, D-dimer) with platelets."
+  },
+  {
+   "d": "investigation",
+   "q": "Which pattern fits DIC?",
+   "o": [
+    "High fibrinogen, normal D-dimer",
+    "Low fibrinogen, high D-dimer, prolonged PT and APTT",
+    "Low platelets with normal PT and APTT",
+    "Prolonged APTT only"
+   ],
+   "a": 1,
+   "r": "**Low fibrinogen, low platelets, high D-dimer, prolonged PT and APTT.**"
+  },
+  {
+   "d": "management",
+   "q": "What is the first-line treatment of DIC?",
+   "o": ["Heparin infusion", "Platelet transfusion", "Tranexamic acid", "Treat the underlying cause"],
+   "a": 3,
+   "r": "**Treat the cause**: antibiotics for sepsis, delivery for obstetric causes, treat the cancer."
+  },
+  {
+   "d": "management",
+   "q": "Which blood product replaces fibrinogen in a bleeding DIC patient?",
+   "o": ["Cryoprecipitate", "Packed red cells", "Platelets", "Prothrombin complex concentrate"],
+   "a": 0,
+   "r": "**Cryoprecipitate** is the concentrated fibrinogen source."
+  },
+  {
+   "d": "management",
+   "q": "Which blood products are given for active bleeding in DIC?",
+   "o": ["Albumin and red cells only", "Platelets, FFP and cryoprecipitate", "Prothrombin complex and vitamin K", "Tranexamic acid and desmopressin"],
+   "a": 1,
+   "r": "**Platelets, fresh frozen plasma and cryoprecipitate.**"
+  },
+  {
+   "d": "science",
+   "q": "Why does DIC cause bleeding and clotting at the same time?",
+   "o": ["Antibodies destroy platelets", "Factors are consumed faster than replaced", "The liver stops making factors", "Vitamin K is lacking"],
+   "a": 1,
+   "r": "Widespread clotting **consumes** platelets and factors faster than they can be replaced."
+  },
+  {
+   "d": "science",
+   "q": "Which molecule starts the clotting cascade in DIC from sepsis?",
+   "o": ["Antithrombin", "Plasmin", "Protein C", "Tissue factor"],
+   "a": 3,
+   "r": "**Tissue factor** release activates coagulation widely."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old woman is in the intensive care unit with septic shock from a perforated bowel. On day 2 she starts bleeding from her line sites and wound, and has a petechial rash. Her temperature is 38.6°C, pulse rate 118 bpm and BP 86/50 mmHg.",
+   "labs": [
+    ["Platelets", "41 ×10⁹/L", "150–400", "L"],
+    ["PT", "22 s", "11–14", "H"],
+    ["APTT", "58 s", "25–35", "H"],
+    ["Fibrinogen", "0.9 g/L", "1.5–4.0", "L"],
+    ["D-dimer", "6200 ng/mL", "<500", "H"]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Disseminated intravascular coagulation", "Haemophilia A", "Immune thrombocytopenia", "Thrombotic thrombocytopenic purpura", "Vitamin K deficiency"],
+   "a": 0,
+   "steps": [
+    { "t": "Read the question line first", "x": "A diagnosis question about bleeding in a sick patient: read the clotting." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["septic shock", "bleeding from her line sites and wound", "petechial rash", "BP 86/50 mmHg"],
+     "x": "Sepsis trigger, bleeding from several sites. Low platelets and fibrinogen, prolonged PT/APTT, high D-dimer."
+    },
+    { "t": "Make your own answer before looking", "x": "**DIC** triggered by sepsis." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [1, "Haemophilia A is inherited, with an isolated prolonged APTT and normal platelets."],
+      [2, "ITP has low platelets with normal clotting and fibrinogen."],
+      [3, "TTP has normal PT, APTT and fibrinogen."],
+      [4, "Vitamin K deficiency prolongs PT but does not drop platelets or fibrinogen."]
+     ]
+    },
+    { "t": "Commit", "x": "**A. DIC.** Rule: septic + bleeding everywhere + everything consumed = DIC." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 58 year old man with pneumonia and sepsis develops petechiae and bleeding gums. His temperature is 38.4°C, pulse rate 112 bpm and BP 92/58 mmHg. His platelet count is 38 ×10⁹/L and the blood film shows schistocytes. The team must decide between DIC and thrombotic thrombocytopenic purpura.",
+   "q": "Which result would best support DIC rather than TTP?",
+   "o": ["High LDH", "Low fibrinogen", "Low haemoglobin", "Low platelets", "Schistocytes on film"],
+   "a": 1,
+   "steps": [
+    { "t": "Read the question line first", "x": "Which result separates DIC from TTP." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["pneumonia and sepsis", "petechiae and bleeding gums", "platelet count is 38", "schistocytes", "between DIC and thrombotic thrombocytopenic purpura"],
+     "x": "Both cause low platelets and schistocytes. You need the clotting factor result."
+    },
+    { "t": "Make your own answer before looking", "x": "**Low fibrinogen** (and prolonged PT/APTT): factors are consumed in DIC, not in TTP." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "High LDH reflects haemolysis in both."],
+      [2, "Anaemia occurs in both."],
+      [3, "Low platelets occur in both."],
+      [4, "Schistocytes occur in both."]
+     ]
+    },
+    { "t": "Commit", "x": "**B.** Rule: clotting factors decide; DIC consumes fibrinogen, TTP does not." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man with E. coli bacteraemia from a urinary source is on intravenous antibiotics. He is now oozing from cannula sites and has haematuria. His pulse rate is 108 bpm and BP 98/60 mmHg.",
+   "labs": [
+    ["Platelets", "29 ×10⁹/L", "150–400", "L"],
+    ["PT", "23 s", "11–14", "H"],
+    ["Fibrinogen", "0.7 g/L", "1.5–4.0", "L"],
+    ["D-dimer", "7100 ng/mL", "<500", "H"]
+   ],
+   "q": "Which is the most appropriate next step to manage his bleeding?",
+   "o": ["Desmopressin", "Intravenous tranexamic acid", "Intravenous vitamin K", "Platelets, fresh frozen plasma and cryoprecipitate", "Protamine sulfate"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "Management of active bleeding; the cause is already being treated." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["E. coli bacteraemia", "on intravenous antibiotics", "oozing from cannula sites", "haematuria"],
+     "x": "Septic DIC with **active bleeding**: platelets 29, fibrinogen 0.7."
+    },
+    { "t": "Make your own answer before looking", "x": "Replace what has been consumed: **platelets, FFP and cryoprecipitate**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "Desmopressin is for von Willebrand disease or mild haemophilia A."],
+      [1, "Tranexamic acid is generally avoided in DIC; it can worsen thrombosis."],
+      [2, "Vitamin K does not replace platelets or fibrinogen."],
+      [4, "Protamine reverses heparin; he is not on heparin."]
+     ]
+    },
+    { "t": "Commit", "x": "**D.** Rule: treat the cause; if bleeding, give platelets, FFP and cryo." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 33 year old woman has a major placental abruption at 35 weeks. She develops widespread microvascular thrombi but also bleeds from her drip sites and gums. Her platelets and fibrinogen are very low and her D-dimer is very high.",
+   "q": "Which is the most likely mechanism for her bleeding?",
+   "o": [
+    "Antibodies against platelets",
+    "Consumption of platelets and clotting factors by widespread clotting",
+    "Deficiency of factor VIII",
+    "Impaired hepatic synthesis of clotting factors",
+    "Vitamin K antagonism"
+   ],
+   "a": 1,
+   "steps": [
+    { "t": "Read the question line first", "x": "A mechanism question: why she clots and bleeds together." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["placental abruption", "widespread microvascular thrombi", "bleeds from her drip sites and gums", "platelets and fibrinogen are very low"],
+     "x": "An obstetric trigger releases tissue factor; clots everywhere, then bleeding."
+    },
+    { "t": "Make your own answer before looking", "x": "**Consumption**: platelets and factors used up faster than replaced." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "Antibody destruction is ITP, with normal clotting."],
+      [2, "Factor VIII deficiency is haemophilia A, inherited."],
+      [3, "Nothing suggests liver failure; the D-dimer is very high."],
+      [4, "She is not on warfarin and fibrinogen would be normal."]
+     ]
+    },
+    { "t": "Commit", "x": "**B.** Rule: DIC = consumptive coagulopathy." }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old man is admitted with a severe chest infection. On day 3 he develops bruising, bleeding from his gums and blood in his urine. His temperature is 38.7°C, pulse rate 120 bpm and BP 82/46 mmHg. He has a petechial rash on his legs. He is not jaundiced.",
+   "labs": [
+    ["Platelets", "36 ×10⁹/L", "150–400", "L"],
+    ["PT", "25 s", "11–14", "H"],
+    ["APTT", "66 s", "25–35", "H"],
+    ["Fibrinogen", "0.6 g/L", "1.5–4.0", "L"],
+    ["Bilirubin", "15 µmol/L", "<21", ""]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute liver failure", "Disseminated intravascular coagulation", "Haemolytic uraemic syndrome", "Immune thrombocytopenia", "Thrombotic thrombocytopenic purpura"],
+   "a": 1,
+   "e": "Sepsis with bleeding from multiple sites, low platelets and fibrinogen and prolonged PT/APTT is DIC. TTP, HUS and ITP have normal clotting; normal bilirubin argues against liver failure.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis in a septic, bleeding patient." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["severe chest infection", "bruising, bleeding from his gums and blood in his urine", "BP 82/46 mmHg", "petechial rash", "not jaundiced"],
+     "x": "Sepsis, shock, bleeding from several sites, consumption pattern."
+    },
+    { "t": "Make your own answer before looking", "x": "**DIC**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "Liver failure brings jaundice; bilirubin is normal."],
+      [2, "HUS follows bloody diarrhoea with AKI and normal clotting."],
+      [3, "ITP has normal clotting and he is unwell."],
+      [4, "TTP has normal PT, APTT and fibrinogen."]
+     ]
+    },
+    { "t": "Commit", "x": "**B.** Rule: prolonged clotting + low fibrinogen + low platelets in sepsis = DIC." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old woman at 37 weeks of pregnancy has sudden severe abdominal pain and vaginal bleeding from a placental abruption. She then oozes from her cannula sites. Her pulse rate is 128 bpm and BP 84/52 mmHg.",
+   "labs": [
+    ["Platelets", "48 ×10⁹/L", "150–400", "L"],
+    ["PT", "21 s", "11–14", "H"],
+    ["Fibrinogen", "0.9 g/L", "4.0–6.5 (pregnancy)", "L"],
+    ["D-dimer", "9800 ng/mL", "<500", "H"]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her bleeding from the cannula sites?",
+   "o": ["Disseminated intravascular coagulation", "Gestational thrombocytopenia", "Immune thrombocytopenia", "Pre-existing haemophilia carrier state", "Von Willebrand disease"],
+   "a": 0,
+   "e": "Placental abruption is a classic obstetric trigger of DIC; low platelets and fibrinogen, prolonged PT and very high D-dimer confirm it.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Cause of new bleeding in an obstetric emergency." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["placental abruption", "oozes from her cannula sites", "BP 84/52 mmHg"],
+     "x": "Obstetric trigger; consumption pattern. Fibrinogen should be high in pregnancy, so 0.9 is very low."
+    },
+    { "t": "Make your own answer before looking", "x": "**DIC**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [1, "Gestational thrombocytopenia is mild, with normal clotting."],
+      [2, "ITP has normal PT and fibrinogen."],
+      [3, "Carriers do not suddenly develop low fibrinogen and platelets."],
+      [4, "Von Willebrand disease is lifelong, with normal fibrinogen."]
+     ]
+    },
+    { "t": "Commit", "x": "**A.** Rule: abruption + oozing = DIC." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 60 year old man with septic shock develops bleeding from multiple sites. His platelets are 32 ×10⁹/L, PT and APTT are prolonged and fibrinogen is low. His haemoglobin has fallen from 132 to 96 g/L. A blood film is examined.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on the blood film?",
+   "o": ["Bite cells", "Howell-Jolly bodies", "Schistocytes", "Spherocytes", "Target cells"],
+   "a": 2,
+   "e": "In DIC, microthrombi fragment red cells into schistocytes (microangiopathic haemolytic anaemia). Howell-Jolly bodies suggest hyposplenism.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Most likely blood film finding in DIC." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["septic shock", "bleeding from multiple sites", "fibrinogen is low", "haemoglobin has fallen"],
+     "x": "DIC with a falling haemoglobin: red cells are being sheared."
+    },
+    { "t": "Make your own answer before looking", "x": "**Schistocytes**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "Bite cells are oxidative haemolysis, e.g. G6PD deficiency."],
+      [1, "Howell-Jolly bodies mean hyposplenism."],
+      [3, "Spherocytes suggest hereditary spherocytosis or autoimmune haemolysis."],
+      [4, "Target cells suggest liver disease or thalassaemia."]
+     ]
+    },
+    { "t": "Commit", "x": "**C.** Rule: DIC film = schistocytes." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old student has a 12 hour history of fever and headache and now has a spreading non-blanching purpuric rash. He is bleeding from his gums. His temperature is 39.4°C, pulse rate 134 bpm and BP 78/40 mmHg. Clotting tests show low platelets, low fibrinogen and a very high D-dimer.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely trigger of his coagulopathy?",
+   "o": ["Acute promyelocytic leukaemia", "Major trauma", "Metastatic malignancy", "Sepsis", "Snake envenomation"],
+   "a": 3,
+   "e": "Fever, headache, purpuric rash and shock point to meningococcal sepsis, the commonest trigger of DIC.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Asks for the trigger of DIC." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["fever and headache", "non-blanching purpuric rash", "BP 78/40 mmHg", "low platelets, low fibrinogen and a very high D-dimer"],
+     "x": "Meningococcal-type sepsis with DIC."
+    },
+    { "t": "Make your own answer before looking", "x": "**Sepsis**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "APL causes DIC but would not give fever, headache and shock over 12 hours."],
+      [1, "No injury in the history."],
+      [2, "A 19 year old with a 12 hour illness: not metastatic cancer."],
+      [4, "No snake bite."]
+     ]
+    },
+    { "t": "Commit", "x": "**D.** Rule: sepsis is the most important trigger of DIC." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old woman is in intensive care after a major road traffic collision with multiple fractures. On day 1 she starts to ooze from her wounds and line sites. DIC is suspected and a coagulation screen is sent.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely set of results?",
+   "o": [
+    "Isolated low platelets with normal clotting",
+    "Isolated prolonged APTT",
+    "Low fibrinogen, low platelets, high D-dimer, prolonged PT and APTT",
+    "Normal platelets with prolonged PT only",
+    "Raised platelets with normal clotting"
+   ],
+   "a": 2,
+   "e": "DIC consumes platelets and fibrinogen, prolongs PT and APTT and raises D-dimer. Isolated low platelets is ITP; isolated prolonged APTT suggests haemophilia.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Most likely clotting pattern in DIC." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["major road traffic collision", "ooze from her wounds and line sites", "DIC is suspected"],
+     "x": "Trauma is a recognised trigger."
+    },
+    { "t": "Make your own answer before looking", "x": "Everything consumed falls, D-dimer rises, clotting times prolong." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "Normal clotting with low platelets is ITP."],
+      [1, "Isolated prolonged APTT suggests haemophilia or heparin."],
+      [3, "Isolated prolonged PT suggests warfarin or vitamin K deficiency."],
+      [4, "A reactive thrombocytosis with normal clotting is not DIC."]
+     ]
+    },
+    { "t": "Commit", "x": "**C.** Rule: DIC pattern = low fibrinogen, low platelets, high D-dimer, long PT and APTT." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man with metastatic prostate cancer has 1 week of easy bruising and nosebleeds, and now oozes from a blood test site. He has no fever and no neurological symptoms. His pulse rate is 94 bpm and BP 128/76 mmHg.",
+   "labs": [
+    ["Platelets", "52 ×10⁹/L", "150–400", "L"],
+    ["PT", "19 s", "11–14", "H"],
+    ["APTT", "44 s", "25–35", "H"],
+    ["Fibrinogen", "1.0 g/L", "1.5–4.0", "L"],
+    ["D-dimer", "5600 ng/mL", "<500", "H"],
+    ["Bilirubin", "12 µmol/L", "<21", ""],
+    ["Albumin", "36 g/L", "35–50", ""]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute liver failure", "Disseminated intravascular coagulation", "Immune thrombocytopenia", "Thrombotic thrombocytopenic purpura", "Vitamin K deficiency"],
+   "a": 1,
+   "e": "Malignancy is a recognised trigger of DIC, which can be more gradual in cancer. Low fibrinogen and platelets with prolonged clotting and high D-dimer fit; normal bilirubin and albumin argue against liver failure.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of a bleeding tendency in cancer." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["metastatic prostate cancer", "easy bruising and nosebleeds", "oozes from a blood test site", "no neurological symptoms"],
+     "x": "Cancer trigger plus the consumption pattern; liver tests normal."
+    },
+    { "t": "Make your own answer before looking", "x": "**DIC** from malignancy." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "Bilirubin and albumin are normal."],
+      [2, "ITP has normal PT, APTT and fibrinogen."],
+      [3, "TTP has normal clotting, often with neurological signs."],
+      [4, "Vitamin K deficiency does not lower platelets or fibrinogen, or raise D-dimer."]
+     ]
+    },
+    { "t": "Commit", "x": "**B.** Rule: cancer can trigger DIC; check fibrinogen and D-dimer." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 67 year old woman with biliary sepsis develops bleeding from her cannula sites and a petechial rash. Her temperature is 38.5°C, pulse rate 116 bpm and BP 90/56 mmHg. Her platelet count is 44 ×10⁹/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": ["Blood cultures", "Bone marrow biopsy", "Coagulation screen", "Direct antiglobulin test", "Liver function tests"],
+   "a": 2,
+   "e": "A coagulation screen (PT, APTT, fibrinogen, D-dimer) is the gold standard for DIC. Blood cultures find the trigger but do not confirm DIC.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Confirming DIC, not finding the source." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["biliary sepsis", "bleeding from her cannula sites", "petechial rash", "platelet count is 44"],
+     "x": "Septic, bleeding, low platelets: suspect DIC."
+    },
+    { "t": "Make your own answer before looking", "x": "**Coagulation screen**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "Cultures identify the organism, not the coagulopathy."],
+      [1, "Marrow biopsy is not needed for DIC."],
+      [3, "DAT tests for autoimmune haemolysis."],
+      [4, "LFTs assess the liver, not consumption."]
+     ]
+    },
+    { "t": "Commit", "x": "**C.** Rule: DIC is confirmed on the coagulation screen." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 55 year old man with septic shock has bruising and a falling haemoglobin. His PT and APTT are prolonged, fibrinogen is low and D-dimer is high. The haematologist wants to look for evidence of red cell fragmentation.",
+   "labs": [
+    ["Haemoglobin", "88 g/L", "130–170", "L"],
+    ["Platelets", "39 ×10⁹/L", "150–400", "L"],
+    ["LDH", "640 U/L", "<250", "H"]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": ["Blood film", "Direct antiglobulin test", "Haemoglobin electrophoresis", "Reticulocyte count", "Serum haptoglobin"],
+   "a": 0,
+   "e": "A blood film (with the FBC) shows schistocytes, the fragmented red cells of DIC. Haptoglobin and reticulocytes show haemolysis but not fragmentation.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Which test shows red cell fragments." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["septic shock", "falling haemoglobin", "fibrinogen is low", "red cell fragmentation"],
+     "x": "DIC with haemolysis; you want to see schistocytes."
+    },
+    { "t": "Make your own answer before looking", "x": "**Blood film**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [1, "DAT detects antibody-coated red cells."],
+      [2, "Electrophoresis is for haemoglobinopathies."],
+      [3, "Reticulocytes show marrow response, not fragments."],
+      [4, "Low haptoglobin shows haemolysis but not its cause."]
+     ]
+    },
+    { "t": "Commit", "x": "**A.** Rule: FBC and blood film look for schistocytes." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old woman with pyelonephritis and sepsis is found to have DIC on routine bloods. She is not bleeding. Her temperature is 38.8°C, pulse rate 110 bpm and BP 100/62 mmHg.",
+   "labs": [
+    ["Platelets", "62 ×10⁹/L", "150–400", "L"],
+    ["PT", "18 s", "11–14", "H"],
+    ["Fibrinogen", "1.3 g/L", "1.5–4.0", "L"],
+    ["D-dimer", "3900 ng/mL", "<500", "H"]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Fresh frozen plasma transfusion", "Intravenous broad-spectrum antibiotics", "Intravenous tranexamic acid", "Platelet transfusion", "Subcutaneous vitamin K"],
+   "a": 1,
+   "e": "First-line DIC management is treating the cause: IV antibiotics for sepsis. She is not bleeding, so products are not given for the numbers alone.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management of DIC without bleeding." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["pyelonephritis and sepsis", "She is not bleeding", "temperature is 38.8°C"],
+     "x": "Sepsis is the trigger; no active bleeding."
+    },
+    { "t": "Make your own answer before looking", "x": "Treat the cause: **IV antibiotics**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "FFP is for active bleeding, not lab values alone."],
+      [2, "Tranexamic acid can worsen thrombosis in DIC."],
+      [3, "Platelets are for bleeding or very low counts with procedures."],
+      [4, "Vitamin K does not reverse consumption."]
+     ]
+    },
+    { "t": "Commit", "x": "**B.** Rule: DIC first-line = treat the underlying cause." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 40 year old man with septic DIC is bleeding heavily from a central line site despite platelets and fresh frozen plasma. His pulse rate is 118 bpm and BP 94/58 mmHg. His fibrinogen is 0.6 g/L (1.5–4.0).",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate blood product to give next?",
+   "o": ["Cryoprecipitate", "Human albumin solution", "Packed red cells", "Platelets", "Prothrombin complex concentrate"],
+   "a": 0,
+   "e": "Cryoprecipitate is the concentrated source of fibrinogen, used in bleeding DIC with low fibrinogen.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Which product next, after platelets and FFP." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["septic DIC", "bleeding heavily", "despite platelets and fresh frozen plasma", "fibrinogen is 0.6 g/L"],
+     "x": "Fibrinogen is the missing piece."
+    },
+    { "t": "Make your own answer before looking", "x": "**Cryoprecipitate** for fibrinogen replacement." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [1, "Albumin does not help clotting."],
+      [2, "Red cells treat anaemia, not the coagulopathy."],
+      [3, "He has already had platelets; fibrinogen is the gap."],
+      [4, "PCC lacks fibrinogen and is used to reverse warfarin."]
+     ]
+    },
+    { "t": "Commit", "x": "**A.** Rule: low fibrinogen in bleeding DIC = cryoprecipitate." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old woman at 38 weeks of pregnancy has a placental abruption with fetal distress. She is oozing from her cannula sites. Her pulse rate is 124 bpm and BP 90/54 mmHg. Platelets are 56 ×10⁹/L and fibrinogen is low. Blood products have been requested.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate definitive management?",
+   "o": ["Intravenous antibiotics", "Intravenous heparin", "Magnesium sulfate", "Oral prednisolone", "Urgent delivery of the fetus"],
+   "a": 4,
+   "e": "In obstetric DIC the trigger is the placenta, so delivery treats the cause. Blood products support her until then.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Definitive management: remove the trigger." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["38 weeks of pregnancy", "placental abruption", "oozing from her cannula sites", "Blood products have been requested"],
+     "x": "Obstetric DIC; supportive care already under way."
+    },
+    { "t": "Make your own answer before looking", "x": "**Deliver the fetus**." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "No infection is described."],
+      [1, "Heparin would worsen active bleeding."],
+      [2, "Magnesium is for eclampsia."],
+      [3, "Steroids do not treat DIC."]
+     ]
+    },
+    { "t": "Commit", "x": "**E.** Rule: obstetric DIC = deliver; septic DIC = antibiotics." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 62 year old man with septic DIC has a falling haemoglobin, a raised LDH and a low haptoglobin. His blood film shows fragmented red cells. His direct antiglobulin test is negative.",
+   "labs": [
+    ["Haemoglobin", "84 g/L", "130–170", "L"],
+    ["LDH", "720 U/L", "<250", "H"],
+    ["Haptoglobin", "<0.1 g/L", "0.3–2.0", "L"]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his anaemia?",
+   "o": [
+    "Antibody-mediated red cell destruction",
+    "Haemoglobin polymerisation",
+    "Mechanical fragmentation by microthrombi",
+    "Oxidative damage to haemoglobin",
+    "Red cell membrane protein defect"
+   ],
+   "a": 2,
+   "e": "Microthrombi partly block small vessels and shear red cells into schistocytes: a microangiopathic haemolytic anaemia. A negative DAT excludes autoimmune haemolysis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "A mechanism question: why the red cells break." },
+    {
+     "t": "Pick out the clues",
+     "clues": ["septic DIC", "fragmented red cells", "direct antiglobulin test is negative"],
+     "x": "Haemolysis with schistocytes, not antibody-mediated."
+    },
+    { "t": "Make your own answer before looking", "x": "**Mechanical fragmentation by microthrombi** (MAHA)." },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [0, "The DAT is negative."],
+      [1, "Polymerisation is sickle cell disease."],
+      [3, "Oxidative damage is G6PD deficiency, with bite cells."],
+      [4, "Membrane defects are hereditary spherocytosis."]
+     ]
+    },
+    { "t": "Commit", "x": "**C.** Rule: schistocytes = red cells cut by microthrombi." }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is DIC, and why does it cause both clotting and bleeding?",
+    "tip": "Exam thinking: say 'consumption'.",
+    "points": [
+     { "p": "Widespread activation of coagulation", "k": [["widespread", "systemic", "everywhere"], ["coagulation", "clotting"]], "why": "Throughout the microcirculation." },
+     { "p": "Microthrombi form", "k": [["microthromb", "small clots", "thromb"]], "why": "Cause organ ischaemia and dysfunction." },
+     { "p": "Platelets and clotting factors consumed, causing bleeding", "k": [["consum", "used up"]], "why": "A consumptive coagulopathy." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the triggers of DIC?",
+    "tip": "Exam thinking: the stem nearly always shows you the trigger.",
+    "points": [
+     { "p": "Sepsis (most important)", "k": [["sepsis", "septic", "infection"]], "why": "The commonest trigger." },
+     { "p": "Trauma", "k": [["trauma", "injury"]], "why": "Tissue damage releases tissue factor." },
+     { "p": "Malignancy: metastatic cancer or haematological malignancy", "k": [["cancer", "malignan", "leukaemia", "tumour"]], "why": "Acute promyelocytic leukaemia is a classic." },
+     { "p": "Obstetric complications", "k": [["obstetric", "pregnan", "abruption", "placenta"]], "why": "E.g. placental abruption." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does DIC present?",
+    "tip": "Exam thinking: bleeding from several sites at once in a sick patient.",
+    "points": [
+     { "p": "Bleeding from multiple sites: gums, cannula sites, haematuria", "k": [["bleed", "ooz", "haematuria"]], "why": "More than one site is the clue." },
+     { "p": "Petechial rash, purpura, easy bruising", "k": [["petechia", "purpura", "bruis"]], "why": "From low platelets." },
+     { "p": "Hypotension and shock", "k": [["hypotens", "shock"]], "why": "Often from the trigger itself." },
+     { "p": "Breathlessness and organ dysfunction", "k": [["breathless", "organ", "dyspnoea"]], "why": "Microthrombi can cause multi-organ failure." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell DIC from TTP and ITP?",
+    "tip": "Exam thinking: look at the clotting times and fibrinogen.",
+    "points": [
+     { "p": "DIC: prolonged PT and APTT with low fibrinogen", "k": [["pt", "aptt", "fibrinogen", "clotting"]], "why": "Factors are consumed." },
+     { "p": "TTP: schistocytes but normal clotting", "k": [["ttp"], ["normal"]], "why": "Platelet microthrombi without factor consumption." },
+     { "p": "ITP: isolated low platelets, normal film and clotting", "k": [["itp"]], "why": "Antibody destruction of platelets." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which tests confirm DIC, and what pattern do they show?",
+    "tip": "Exam thinking: name all five parts.",
+    "points": [
+     { "p": "Coagulation screen is the gold standard", "k": [["coagulation", "clotting screen", "coag"]], "why": "With fibrinogen and D-dimer." },
+     { "p": "Low fibrinogen", "k": [["fibrinogen"]], "why": "Consumed." },
+     { "p": "Low platelets", "k": [["platelet"]], "why": "Consumed." },
+     { "p": "High D-dimer", "k": [["d-dimer", "d dimer", "ddimer"]], "why": "Fibrinolysis of clots." },
+     { "p": "Prolonged PT and APTT", "k": [["pt", "aptt", "prothrombin"]], "why": "Factors used up." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the first-line test and what does the film show?",
+    "tip": "Exam thinking: the 'most likely film finding' is schistocytes.",
+    "points": [
+     { "p": "FBC and blood film", "k": [["fbc", "full blood count", "film"]], "why": "First-line." },
+     { "p": "Schistocytes (fragmented red cells)", "k": [["schistocyt", "fragment", "helmet"]], "why": "Also seen in TTP and HUS." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the first-line management of DIC, by trigger?",
+    "tip": "Exam thinking: the cure is treating the cause.",
+    "points": [
+     { "p": "Treat the underlying cause", "k": [["cause", "underlying", "trigger"]], "why": "DIC will not settle otherwise." },
+     { "p": "Sepsis: antibiotics", "k": [["antibiotic"]], "why": "With source control." },
+     { "p": "Obstetric: delivery of the fetus", "k": [["deliver"]], "why": "Removes the placental trigger." },
+     { "p": "Malignancy: treat the cancer", "k": [["cancer", "malignan", "chemo"]], "why": "Treat the tumour." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What do you give a patient with DIC who is actively bleeding, and what supportive care?",
+    "tip": "Exam thinking: cryoprecipitate is for fibrinogen.",
+    "points": [
+     { "p": "Platelets", "k": [["platelet"]], "why": "For bleeding with low platelets." },
+     { "p": "Fresh frozen plasma", "k": [["ffp", "fresh frozen", "plasma"]], "why": "Replaces clotting factors." },
+     { "p": "Cryoprecipitate for fibrinogen", "k": [["cryo"]], "why": "Concentrated fibrinogen." },
+     { "p": "Supportive: IV fluids, monitor organs and coagulation", "k": [["fluid", "monitor", "support"]], "why": "Repeat clotting to track progress." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What sets off DIC, and why are schistocytes seen?",
+    "tip": "Exam thinking: tissue factor starts it; microthrombi shred red cells.",
+    "points": [
+     { "p": "Tissue factor release activates the coagulation cascade", "k": [["tissue factor"]], "why": "From sepsis, trauma, cancer or obstetric events." },
+     { "p": "Microthrombi mechanically fragment red cells in partly blocked vessels", "k": [["microthromb", "mechanical", "shear", "fragment"]], "why": "Produces schistocytes." },
+     { "p": "Microangiopathic haemolytic anaemia", "k": [["microangiopathic", "maha"]], "why": "Shared with TTP and HUS." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why is the D-dimer high and the fibrinogen low in DIC?",
+    "tip": "Exam thinking: one is made into clot, the other is clot broken down.",
+    "points": [
+     { "p": "D-dimer reflects increased fibrinolysis of fibrin clots", "k": [["fibrinolysis", "breakdown", "broken down", "plasmin"]], "why": "A fibrin degradation product." },
+     { "p": "Fibrinogen is low from consumption", "k": [["consum", "used up"]], "why": "Turned into fibrin in microthrombi." },
+     { "p": "Factors consumed faster than replaced: no reserve for haemostasis", "k": [["faster", "reserve", "replace"]], "why": "Hence bleeding." }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "DIC": "Disseminated intravascular coagulation: widespread clotting that uses up platelets and factors, causing bleeding.",
+  "disseminated intravascular coagulation": "Widespread activation of clotting in small vessels, consuming platelets and clotting factors and causing bleeding.",
+  "coagulation": "The process of blood clotting through the clotting factor cascade.",
+  "microthrombi": "Tiny clots in small blood vessels that block flow and damage organs.",
+  "consumptive coagulopathy": "Bleeding disorder caused by using up platelets and clotting factors faster than they are made.",
+  "tissue factor": "Protein that starts the extrinsic clotting pathway when exposed to blood.",
+  "fibrinogen": "Clotting protein converted to fibrin to form clots; low in DIC.",
+  "fibrin": "Insoluble protein strands that form the mesh of a blood clot.",
+  "fibrinolysis": "Breakdown of fibrin clots by plasmin.",
+  "D-dimer": "A breakdown product of fibrin clots; high when clots are forming and being broken down.",
+  "PT": "Prothrombin time: tests the extrinsic and common clotting pathways; prolonged in DIC.",
+  "APTT": "Activated partial thromboplastin time: tests the intrinsic and common pathways; prolonged in DIC.",
+  "coagulation screen": "Blood clotting tests: PT, APTT, fibrinogen and often D-dimer.",
+  "schistocytes": "Fragmented red blood cells sheared in damaged small vessels.",
+  "microangiopathic haemolytic anaemia": "Red cell destruction as cells are cut by clots in small vessels, giving schistocytes.",
+  "MAHA": "Microangiopathic haemolytic anaemia: red cells sheared by microthrombi.",
+  "petechiae": "Pinpoint red or purple spots from bleeding into the skin; do not blanch.",
+  "petechial rash": "A rash of tiny non-blanching red spots, typical of low platelets.",
+  "purpura": "Larger purple patches of bleeding under the skin that do not blanch.",
+  "haematuria": "Blood in the urine.",
+  "FFP": "Fresh frozen plasma: replaces all the clotting factors.",
+  "fresh frozen plasma": "Plasma frozen soon after donation, containing all clotting factors.",
+  "cryoprecipitate": "A concentrated blood product rich in fibrinogen, factor VIII and von Willebrand factor.",
+  "platelets": "Small cell fragments that plug damaged vessels; also a transfused blood product.",
+  "TTP": "Thrombotic thrombocytopenic purpura: platelet clots from ADAMTS13 deficiency with normal clotting times.",
+  "ITP": "Immune thrombocytopenia: antibodies destroy platelets; clotting times are normal.",
+  "HUS": "Haemolytic uraemic syndrome: haemolysis, low platelets and AKI, often after E. coli O157 diarrhoea.",
+  "placental abruption": "Separation of the placenta from the uterus before delivery; a classic obstetric DIC trigger.",
+  "acute promyelocytic leukaemia": "A subtype of acute myeloid leukaemia classically complicated by DIC.",
+  "sepsis": "Life-threatening organ dysfunction caused by a dysregulated response to infection.",
+  "septic shock": "Sepsis with low blood pressure needing vasopressors and a raised lactate despite fluids.",
+  "LDH": "Lactate dehydrogenase: an enzyme released when cells, including red cells, break down.",
+  "haptoglobin": "Protein that binds free haemoglobin; falls in haemolysis.",
+  "direct antiglobulin test": "Coombs test: detects antibodies on red cells in autoimmune haemolysis.",
+  "DAT": "Direct antiglobulin (Coombs) test: positive in antibody-mediated haemolysis.",
+  "tranexamic acid": "Drug that blocks fibrinolysis; generally avoided in DIC.",
+  "BSH": "British Society for Haematology: publishes UK haematology guidelines.",
+  "HDU": "High dependency unit: closer monitoring and support than a general ward."
+ }
+}

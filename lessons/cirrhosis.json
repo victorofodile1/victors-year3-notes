@@ -1,0 +1,332 @@
+{
+  "id": "cirrhosis",
+  "patient": {
+    "name": "Gary Whitfield",
+    "age": 58,
+    "sex": "M",
+    "setting": "GP surgery, then the Emergency Department",
+    "complaint": "Tiredness and abnormal liver blood tests, later vomiting blood",
+    "background": [
+      "Drank 50 units a week for 25 years; cut down last year",
+      "Type 2 diabetes, BMI 33",
+      "Black-cab driver from Romford",
+      "No regular medicines apart from metformin"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a drinker (or NAFLD) who has stigmata of chronic liver disease, ascites and splenomegaly; or a cause question (alpha-1 antitrypsin, viral) or a complication (SBP, varices, encephalopathy, hypersplenism).",
+      "steps": [
+        {"type": "story", "points": ["Gary, 58, feels **exhausted** for months.", "Routine bloods: abnormal LFTs, **low platelets**.", "Drinks heavily for 25 years; type 2 diabetes and obese.", "No symptoms of note otherwise."], "vitals": {"HR": "82 bpm", "BP": "118/72 mmHg", "T": "36.7°C"}},
+        {"type": "notes", "src": 0, "lead": "Years of liver injury have scarred Gary's liver into **fibrosis with regenerative nodules**: cirrhosis, the road to portal hypertension and liver failure."},
+        {"type": "notes", "src": 1, "lead": "Gary has two causes stacked: **alcohol** (high MCV, AST:ALT, GGT) and **NAFLD** from diabetes and obesity. A viral screen still matters."},
+        {"type": "story", "points": ["**Spider naevi** on the chest; **palmar erythema**.", "Gynaecomastia; spleen tip palpable.", "Scratch marks on his arms; thick cord in the right palm.", "No ascites yet; no flap."]},
+        {"type": "notes", "src": 2, "lead": "Gary is **compensated** for now: abnormal LFTs, fatigue, spider naevi, palmar erythema, gynaecomastia and splenomegaly, with no ascites or encephalopathy."},
+        {"type": "notes", "src": 3, "lead": "Gary's scratch marks are from **pruritus**; his palm cord is **Dupuytren's**. With little glycogen reserve, he is also prone to **hypoglycaemia**."},
+        {"type": "compare", "title": "Compensated vs decompensated", "head": ["", "Compensated", "Decompensated"], "rows": [["Symptoms", "Often none; fatigue", "Ascites, jaundice, confusion, bleeding"], ["Signs", "Spider naevi, palmar erythema", "Shifting dullness, asterixis, jaundice"], ["Triggers", "None", "**Infection, bleeding, alcohol, constipation**"], ["Prognosis", "Years", "Ascites = poor prognosis"]]},
+        {"type": "ask", "q": "Gary's platelets are 88. His spleen is enlarged. Why are his platelets low?", "o": ["Alcohol marrow toxicity alone", "Hypersplenism", "Immune thrombocytopenia", "Vitamin B12 deficiency"], "a": 1, "r": "Portal hypertension congests the spleen, which **sequesters** platelets: **hypersplenism** (can cause pancytopenia)."},
+        {"type": "notes", "src": 4, "lead": "Gary is at risk of every complication: **SBP**, hypersplenism, ascites (a poor sign) and decompensation triggered by infection, bleeding or even **constipation**."},
+        {"type": "trap", "text": "Do not wait for symptoms. Cirrhosis is often **asymptomatic** early; low platelets and abnormal LFTs in a drinker or diabetic should prompt a fibrosis assessment."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial/diagnostic investigation?': FibroScan first-line, liver biopsy as gold standard, endoscopy for varices, 6-monthly ultrasound and AFP for HCC; and severity by Child-Pugh and MELD.",
+      "steps": [
+        {"type": "labs", "title": "Gary's bloods", "rows": [["AST", "88 IU/L", "10–40", "H"], ["ALT", "46 IU/L", "10–50", ""], ["Bilirubin", "34 µmol/L", "<17", "H"], ["Albumin", "31 g/L", "35–50", "L"], ["INR", "1.4", "0.8–1.2", "H"], ["Platelets", "88 ×10⁹/L", "150–400", "L"], ["MCV", "103 fL", "80–100", "H"]], "text": "Low platelets, low albumin and raised INR point to cirrhosis, not just fatty liver."},
+        {"type": "ask", "q": "Which test should Gary have first to assess his fibrosis?", "o": ["CT abdomen", "FibroScan", "Liver biopsy", "MRCP"], "a": 1, "r": "**FibroScan** (transient elastography) is first-line and non-invasive. Biopsy is the gold standard but invasive."},
+        {"type": "notes", "src": 1, "lead": "Gary's **FibroScan** measures liver stiffness: the stiffer the liver, the more fibrosis."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Gary's FibroScan liver stiffness", "min": 0, "max": 40, "unit": "kPa", "bands": [[0, 7, "Normal", "ok"], [7, 12.5, "Significant fibrosis", "warn"], [12.5, 40, "Cirrhosis likely", "bad"]], "value": 26, "label": "Gary 26 kPa", "caption": "A very stiff liver: cirrhosis is highly likely."}},
+        {"type": "notes", "src": 0, "lead": "A **liver biopsy** is the definitive gold standard, but Gary's FibroScan, bloods and imaging make the diagnosis without one."},
+        {"type": "notes", "src": 2, "lead": "Gary's **ultrasound** shows a nodular liver; he is booked for **endoscopy** to screen for oesophageal varices."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Child-Pugh score", "min": 5, "max": 15, "unit": "points", "bands": [[5, 6.5, "A: well compensated", "ok"], [6.5, 9.5, "B: significant compromise", "warn"], [9.5, 15, "C: decompensated", "bad"]], "value": 7, "label": "Gary 7 (B)", "caption": "Bilirubin, albumin, INR, ascites and encephalopathy each score 1 to 3."}},
+        {"type": "notes", "src": 3, "lead": "Gary is **Child-Pugh B**; his **MELD** guides transplant timing. His **platelets of 88** are the most sensitive clue, and he starts **6-monthly ultrasound and AFP**."},
+        {"type": "pearl", "text": "**FibroScan** first, **biopsy** gold standard. Biopsy is **contraindicated if INR is above 1.5**, so many cirrhotics never have one."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?': treat the cause, propranolol or carvedilol to prevent variceal bleeding, lactulose then rifaximin for encephalopathy, spironolactone for ascites, and in a variceal bleed IV terlipressin plus IV antibiotics then band ligation.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Gary's first treatment is the cause: **stop alcohol** completely and lose weight for his **NAFLD**."},
+        {"type": "story", "points": ["Endoscopy: **medium oesophageal varices**, no bleeding.", "Started on carvedilol.", "Offered alcohol support and dietitian review."]},
+        {"type": "notes", "src": 1, "lead": "Gary's **carvedilol** prevents a first variceal bleed. If he develops encephalopathy he needs **lactulose** (plus rifaximin); for ascites, **spironolactone**."},
+        {"type": "story", "points": ["Eight months later: **vomits a bowl of fresh blood**.", "Pale, clammy, confused.", "Started drinking again at Christmas."], "vitals": {"HR": "124 bpm", "BP": "86/54 mmHg", "RR": "24 /min", "SpO2": "96% on air", "T": "36.4°C"}},
+        {"type": "ask", "q": "Gary is resuscitated with IV access and blood cross-matched. Which drugs must be given now?", "o": ["IV omeprazole alone", "IV terlipressin and IV antibiotics", "Oral propranolol", "Tranexamic acid"], "a": 1, "r": "Suspected variceal bleed: **IV terlipressin** and **IV antibiotics** are both always given, then urgent endoscopy."},
+        {"type": "notes", "src": 3, "lead": "Gary gets **terlipressin and antibiotics**, then **band ligation**. His PT is above 1.5× normal with active bleeding, so he also gets **FFP**."},
+        {"type": "flow", "title": "Variceal bleed pathway", "nodes": ["ABCDE resuscitation, two large-bore cannulae", "IV terlipressin", "IV antibiotics", "Urgent endoscopic band ligation", "Failed? Balloon tamponade or TIPS"], "caption": "Terlipressin and antibiotics go in before endoscopy, in every case."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Gary's haemoglobin", "x": ["Arrival", "6 h", "Post-banding", "Day 3"], "unit": "g/L", "series": [{"name": "Hb", "values": [92, 74, 82, 88]}], "caption": "Hb falls as he haemodilutes, then recovers with transfusion and banding."}},
+        {"type": "trap", "text": "Do not stop the antibiotics because Gary has no fever. In variceal bleeding they **reduce infection, rebleeding and mortality**."},
+        {"type": "notes", "src": 2, "lead": "Gary is now **decompensated**; if he stays abstinent he will be assessed for a **liver transplant**, the only cure."},
+        {"type": "notes", "src": "guidelines", "lead": "Gary's care follows **NICE NG50**, the **Child-Pugh** and **MELD** scores, and **BSG** variceal haemorrhage guidance."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: what drives fibrosis (stellate cells), why portal hypertension causes varices and splenomegaly, why ammonia rises, why platelets fall and how lactulose works.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Alcohol and fat injured Gary's hepatocytes; that injury activated **hepatic stellate cells**, which laid down collagen."},
+        {"type": "flow", "title": "From injury to portal hypertension", "nodes": ["Chronic liver injury", "Stellate cells → myofibroblasts", "Collagen and ECM deposition", "Fibrous septa + regenerative nodules", "Raised intrahepatic resistance: portal hypertension"]},
+        {"type": "notes", "src": 1, "lead": "Gary's portal pressure opened **portosystemic collaterals** (his varices), enlarged his **spleen** and helps make **ascites**."},
+        {"type": "ask", "q": "Gary is confused after his bleed. Why?", "o": ["Blood in the gut is a protein load raising ammonia", "Hypercalcaemia", "Low albumin crosses the blood-brain barrier", "Raised bilirubin is neurotoxic"], "a": 0, "r": "Blood in the gut is digested to **ammonia**, which his failing liver cannot detoxify: **hepatic encephalopathy**."},
+        {"type": "notes", "src": 2, "lead": "Gary's liver makes too little **albumin** and **clotting factors** (raised INR) and cannot clear **ammonia**, so his brain is exposed to it."},
+        {"type": "notes", "src": 3, "lead": "Gary's congested spleen **sequesters** platelets, which is why his platelets fell early: thrombocytopenia is such a sensitive marker."},
+        {"type": "pearl", "text": "**Lactulose** is fermented to acids that lower colonic pH, trapping ammonia as **NH4+** so it is excreted, not absorbed."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "What defines cirrhosis histologically?", "o": ["Fatty change only", "Fibrosis with nodular regeneration", "Granulomas", "Interface hepatitis"], "a": 1, "r": "**Fibrosis and regenerative nodules** distorting the architecture."},
+    {"d": "diagnosis", "q": "Which complication is a recognised trigger for decompensation?", "o": ["Constipation", "Hypercalcaemia", "Hypertension", "Weight gain"], "a": 0, "r": "**Constipation**, infection, bleeding and alcohol all precipitate decompensation."},
+    {"d": "diagnosis", "q": "Which organism most commonly causes SBP in cirrhosis?", "o": ["Escherichia coli", "Pseudomonas aeruginosa", "Staphylococcus aureus", "Streptococcus pyogenes"], "a": 0, "r": "**E. coli**, then Klebsiella pneumoniae."},
+    {"d": "investigation", "q": "Which is the first-line test to assess liver fibrosis?", "o": ["CT abdomen", "FibroScan", "Liver biopsy", "MRCP"], "a": 1, "r": "**FibroScan** (transient elastography)."},
+    {"d": "investigation", "q": "Which is the gold standard for diagnosing cirrhosis?", "o": ["FibroScan", "Liver biopsy", "LFTs", "Ultrasound"], "a": 1, "r": "**Liver biopsy**, contraindicated if INR >1.5."},
+    {"d": "investigation", "q": "How are patients with cirrhosis screened for hepatocellular carcinoma?", "o": ["6-monthly ultrasound and AFP", "Annual CT", "Annual liver biopsy", "CA 19-9"], "a": 0, "r": "**6-monthly ultrasound and AFP**."},
+    {"d": "investigation", "q": "Which lab finding is the most sensitive marker of cirrhosis?", "o": ["Raised ALP", "Raised ALT", "Raised MCV", "Thrombocytopenia"], "a": 3, "r": "**Platelets <150** from hypersplenism."},
+    {"d": "management", "q": "Which drug is used for primary prevention of variceal bleeding?", "o": ["Isosorbide mononitrate", "Omeprazole", "Propranolol", "Terlipressin"], "a": 2, "r": "**Non-selective beta-blocker**: propranolol or carvedilol."},
+    {"d": "management", "q": "What two drugs are always given first-line in a variceal bleed?", "o": ["IV omeprazole and tranexamic acid", "IV terlipressin and IV antibiotics", "Oral propranolol and lactulose", "Vitamin K and platelets"], "a": 1, "r": "**Terlipressin + antibiotics**, then band ligation."},
+    {"d": "science", "q": "Which cells drive hepatic fibrosis?", "o": ["Hepatic stellate cells", "Hepatocytes", "Kupffer cells", "Cholangiocytes"], "a": 0, "r": "Activated **stellate cells** become myofibroblasts and deposit collagen."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is cirrhosis and what are its main causes?", "tip": "Exam thinking: the cause often sits in the stem's social history.", "points": [
+        {"p": "Fibrosis with nodular regeneration distorting the liver architecture", "k": [["fibros"], ["nodul", "regenera"]], "why": "Leads to portal hypertension and liver failure."},
+        {"p": "Alcohol (macrocytosis, high AST:ALT, high GGT)", "k": [["alcohol"]], "why": "The commonest UK cause."},
+        {"p": "Chronic viral hepatitis (especially hepatitis C)", "k": [["viral", "hepatitis c", "hep c", "hcv", "hepatitis b"]], "why": "Ask about IV drug use and transfusions."},
+        {"p": "NAFLD", "k": [["nafld", "fatty", "masld"]], "why": "Diabetes and obesity."},
+        {"p": "Alpha-1 antitrypsin deficiency; sarcoidosis", "k": [["alpha-1", "alpha 1", "a1at", "antitrypsin", "sarcoid"]], "why": "A1AT: young patient with liver and lung disease."}]},
+      {"d": "diagnosis", "q": "What are the symptoms and examination signs of cirrhosis?", "tip": "Exam thinking: hands, face, chest, abdomen.", "points": [
+        {"p": "Often asymptomatic early; fatigue, weight loss, anorexia", "k": [["asymptomatic", "fatigue", "tired", "weight loss"]], "why": "Abnormal LFTs may be the first sign."},
+        {"p": "Spider naevi, palmar erythema, gynaecomastia", "k": [["spider", "palmar", "gynaecomastia", "gynecomastia"]], "why": "Oestrogen excess."},
+        {"p": "Jaundice", "k": [["jaundice", "icter"]], "why": "Late sign."},
+        {"p": "Ascites and splenomegaly from portal hypertension", "k": [["ascites", "splenomegaly"]], "why": "Ascites is a poor prognostic sign."},
+        {"p": "Encephalopathy (confusion), bleeding, peripheral oedema", "k": [["encephalopathy", "confus", "bleed"]], "why": "Signs of decompensation."}]},
+      {"d": "diagnosis", "q": "Which signature features of cirrhosis are easy to miss?", "tip": "Exam thinking: the low sugar, the hand and the scratch marks.", "points": [
+        {"p": "Hypoglycaemia", "k": [["hypoglyc", "low glucose", "low sugar"]], "why": "Reduced glycogen stores and gluconeogenesis."},
+        {"p": "Dupuytren's contracture: palmar nodule to cord with little/ring finger contracture", "k": [["dupuytren"]], "why": "Associated with alcohol."},
+        {"p": "Excoriations from pruritus due to raised bilirubin", "k": [["pruritus", "itch", "excoriat", "scratch"]], "why": "Bile salt retention."}]},
+      {"d": "diagnosis", "q": "What are the complications of cirrhosis?", "tip": "Exam thinking: each has its own number or organism.", "points": [
+        {"p": "SBP: ascitic neutrophils above 250, E. coli and Klebsiella", "k": [["sbp", "spontaneous bacterial", "peritonitis"]], "why": "Gut Gram-negatives."},
+        {"p": "Hypersplenism causing pancytopenia", "k": [["hypersplen", "pancytop"]], "why": "Thrombocytopenia first."},
+        {"p": "Variceal bleeding", "k": [["varic"]], "why": "Portosystemic collaterals."},
+        {"p": "Hepatic encephalopathy", "k": [["encephalopathy"]], "why": "Ammonia; asterixis."},
+        {"p": "Budd-Chiari: hepatomegaly, hypercoagulability, worsening ascites", "k": [["budd"]], "why": "Hepatic vein thrombosis."},
+        {"p": "Decompensation triggers including constipation", "k": [["constipat", "trigger", "precipit"]], "why": "Also infection, bleeding, alcohol."}]},
+      {"d": "investigation", "q": "How is cirrhosis diagnosed? Give the first-line and gold-standard tests.", "tip": "Exam thinking: non-invasive first, invasive gold standard.", "points": [
+        {"p": "FibroScan (transient elastography) first-line", "k": [["fibroscan", "elastograph"]], "why": "Measures stiffness."},
+        {"p": "Liver biopsy is the gold standard", "k": [["biopsy"]], "why": "Contraindicated if INR above 1.5."},
+        {"p": "Ultrasound: nodular liver, ascites", "k": [["ultrasound", "uss"]], "why": "Also for HCC surveillance."},
+        {"p": "LFTs: raised bilirubin, low albumin, raised INR", "k": [["albumin", "inr", "bilirubin"]], "why": "Synthetic function."},
+        {"p": "Endoscopy to screen for varices", "k": [["endoscop", "ogd"]], "why": "Guides beta-blocker or banding."}]},
+      {"d": "investigation", "q": "How is cirrhosis severity assessed, and how do you screen for HCC?", "tip": "Exam thinking: two scores, one surveillance rule.", "points": [
+        {"p": "Child-Pugh score for severity", "k": [["child"]], "why": "Bilirubin, albumin, INR, ascites, encephalopathy."},
+        {"p": "MELD score for severity and transplant priority", "k": [["meld"]], "why": "Bilirubin, INR, creatinine (and sodium)."},
+        {"p": "Severe: albumin <28, prolonged PT, ascites, encephalopathy", "k": [["28", "prolonged", "ascites", "encephalopathy"]], "why": "Markers of decompensation."},
+        {"p": "Thrombocytopenia (platelets <150) most sensitive lab finding", "k": [["platelet", "thrombocytop"]], "why": "Hypersplenism."},
+        {"p": "6-monthly ultrasound and AFP surveillance for HCC", "k": [["afp", "alpha-fetoprotein", "alpha fetoprotein"], ["6", "six"]], "why": "AFP also marks germ-cell tumours."}]},
+      {"d": "management", "q": "What is the long-term management of cirrhosis and its complications?", "tip": "Exam thinking: cause, varices, brain, fluid, infection, cure.", "points": [
+        {"p": "Treat the cause: stop alcohol, antivirals, weight loss", "k": [["alcohol", "abstin", "antiviral", "weight"]], "why": "First-line."},
+        {"p": "Non-selective beta-blocker (propranolol/carvedilol) for primary prevention of variceal bleeding", "k": [["propranolol", "carvedilol", "beta"]], "why": "Lowers portal pressure."},
+        {"p": "Lactulose for encephalopathy; add rifaximin 550 mg BD", "k": [["lactulose"], ["rifaximin"]], "why": "Rifaximin if significant dysfunction."},
+        {"p": "Ascites: salt restriction and spironolactone ± furosemide; LVP with albumin if refractory", "k": [["spironolactone", "salt"]], "why": "First-line for ascites."},
+        {"p": "SBP: immediate antibiotics, then ciprofloxacin/norfloxacin prophylaxis", "k": [["ciprofloxacin", "norfloxacin", "prophyla"]], "why": "Prevents recurrence."},
+        {"p": "Liver transplant is definitive", "k": [["transplant"]], "why": "MELD guides priority."}]},
+      {"d": "management", "q": "How do you manage an acute variceal bleed?", "tip": "Exam thinking: two drugs always, then the scope.", "points": [
+        {"p": "IV terlipressin", "k": [["terlipressin"]], "why": "Splanchnic vasoconstriction."},
+        {"p": "IV antibiotics", "k": [["antibiotic"]], "why": "Always given; reduce mortality."},
+        {"p": "Urgent endoscopic band ligation", "k": [["band", "ligation", "endoscop"]], "why": "After drugs and resuscitation."},
+        {"p": "FFP if PT/APTT above 1.5× normal with active bleeding", "k": [["ffp", "fresh frozen"]], "why": "Correct coagulopathy."}]},
+      {"d": "science", "q": "How does liver injury become cirrhosis and portal hypertension?", "tip": "Exam thinking: name the cell, then follow the pressure.", "points": [
+        {"p": "Hepatic stellate cells activated by chronic injury", "k": [["stellate"]], "why": "The key fibrogenic cell."},
+        {"p": "Transform into myofibroblasts depositing collagen and ECM", "k": [["myofibroblast", "collagen", "ecm", "extracellular"]], "why": "Progressive fibrosis."},
+        {"p": "Fibrous septa and nodules raise intrahepatic vascular resistance", "k": [["resistance"]], "why": "Causes portal hypertension."},
+        {"p": "Portosystemic collaterals (varices, caput medusae), splenomegaly, ascites", "k": [["varic", "collateral", "caput"]], "why": "Splanchnic pressure rises."}]},
+      {"d": "science", "q": "Why do albumin, clotting, ammonia and platelets go wrong in cirrhosis?", "tip": "Exam thinking: synthesis, detoxification and the spleen.", "points": [
+        {"p": "Low albumin synthesis gives oedema and ascites", "k": [["albumin"]], "why": "Low oncotic pressure."},
+        {"p": "Reduced clotting factors give coagulopathy and raised INR", "k": [["clotting", "coagul", "inr"]], "why": "INR tracks synthetic function."},
+        {"p": "Failed detoxification lets ammonia accumulate: encephalopathy", "k": [["ammonia"]], "why": "Lactulose traps it as NH4+."},
+        {"p": "Hypersplenism sequesters platelets: thrombocytopenia", "k": [["splen", "sequest"]], "why": "Why platelets are so sensitive."}]}
+    ]
+  },
+  "glossary": {
+    "Cirrhosis": "Chronic liver disease where fibrosis and regenerative nodules replace normal architecture, causing portal hypertension and liver failure.",
+    "Fibrosis": "Scarring with collagen deposition that stiffens an organ.",
+    "Regenerative nodules": "Clumps of regrowing liver cells surrounded by scar tissue in cirrhosis.",
+    "Portal hypertension": "Raised pressure in the portal vein from resistance to flow through a scarred liver.",
+    "Compensated": "Cirrhosis with no ascites, bleeding, jaundice or encephalopathy.",
+    "Decompensation": "Cirrhosis tipping into failure: ascites, jaundice, encephalopathy or variceal bleeding.",
+    "NAFLD": "Non-alcoholic fatty liver disease, linked to obesity and diabetes; can progress to cirrhosis.",
+    "Alpha-1 antitrypsin deficiency": "Inherited lack of a protease inhibitor causing early emphysema and cirrhosis.",
+    "Spider naevi": "Small red spots with radiating vessels on the upper body, from oestrogen excess in liver disease.",
+    "Palmar erythema": "Reddening of the palms, a sign of chronic liver disease.",
+    "Gynaecomastia": "Breast tissue enlargement in men, from reduced oestrogen breakdown in liver disease.",
+    "Splenomegaly": "Enlarged spleen, in cirrhosis from portal hypertension.",
+    "Hypersplenism": "An enlarged, congested spleen trapping blood cells, causing low platelets or pancytopenia.",
+    "Pancytopenia": "Low red cells, white cells and platelets together.",
+    "Thrombocytopenia": "Low platelet count, the most sensitive lab sign of cirrhosis.",
+    "Dupuytren's contracture": "Thickened palmar fascia pulling the ring and little fingers into fixed flexion.",
+    "Pruritus": "Itching; in liver disease from retained bile salts and bilirubin.",
+    "Excoriations": "Scratch marks on the skin from persistent itching.",
+    "SBP": "Spontaneous bacterial peritonitis: infected ascites with neutrophils above 250, usually E. coli or Klebsiella.",
+    "Budd-Chiari syndrome": "Hepatic vein thrombosis causing hepatomegaly, pain and ascites, linked to hypercoagulable states.",
+    "Ascites": "Fluid in the peritoneal cavity; in cirrhosis a poor prognostic sign.",
+    "Varices": "Dilated collateral veins, usually in the oesophagus, that can bleed catastrophically.",
+    "Caput medusae": "Dilated veins radiating from the umbilicus, a sign of portal hypertension.",
+    "Hepatic encephalopathy": "Confusion, drowsiness and asterixis from ammonia the failing liver cannot clear.",
+    "Asterixis": "Flapping tremor of outstretched hands, seen in hepatic encephalopathy.",
+    "FibroScan": "Transient elastography: an ultrasound-based measure of liver stiffness, first-line for assessing fibrosis.",
+    "Transient elastography": "Non-invasive ultrasound technique measuring liver stiffness in kPa (FibroScan).",
+    "Liver biopsy": "Taking liver tissue for histology; the gold standard for cirrhosis, contraindicated if INR above 1.5.",
+    "Child-Pugh score": "Severity score using bilirubin, albumin, INR, ascites and encephalopathy, graded A to C.",
+    "MELD": "Model for End-Stage Liver Disease: score from bilirubin, INR and creatinine to prioritise transplant.",
+    "INR": "International normalised ratio: clotting time, raised when the liver makes too few clotting factors.",
+    "AFP": "Alpha-fetoprotein: a tumour marker for hepatocellular carcinoma and germ-cell tumours.",
+    "HCC": "Hepatocellular carcinoma: primary liver cancer arising in cirrhosis, screened with ultrasound and AFP.",
+    "METAVIR": "Histological staging system for liver fibrosis, F0 (none) to F4 (cirrhosis).",
+    "Hepatic stellate cells": "Liver cells that store vitamin A and, when activated by injury, become collagen-producing myofibroblasts.",
+    "Myofibroblasts": "Contractile, collagen-producing cells that drive scarring.",
+    "ECM": "Extracellular matrix: the collagen and protein scaffold between cells, excessive in fibrosis.",
+    "Portosystemic collaterals": "Veins linking portal and systemic circulations that open up in portal hypertension.",
+    "Non-selective beta-blocker": "Propranolol or carvedilol, which lower portal pressure to prevent variceal bleeding.",
+    "Carvedilol": "Non-selective beta-blocker with alpha-blocking action, used to prevent first variceal bleeds.",
+    "Propranolol": "Non-selective beta-blocker used to prevent variceal bleeding in cirrhosis.",
+    "Lactulose": "Osmotic laxative that acidifies the colon, trapping ammonia as NH4+ for excretion.",
+    "Rifaximin": "Poorly absorbed antibiotic that reduces ammonia-producing gut bacteria in hepatic encephalopathy.",
+    "Terlipressin": "Vasopressin analogue that constricts splanchnic vessels, lowering portal pressure in variceal bleeding.",
+    "Band ligation": "Endoscopic placement of rubber bands around varices to stop or prevent bleeding.",
+    "FFP": "Fresh frozen plasma: contains clotting factors, given for coagulopathy with active bleeding.",
+    "TIPS": "Transjugular intrahepatic portosystemic shunt: a stent that lowers portal pressure.",
+    "Sengstaken-Blakemore tube": "Balloon tube inflated in the stomach and oesophagus to compress bleeding varices as a bridge.",
+    "NICE NG50": "NICE guideline on assessing and managing cirrhosis in people over 16."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 62 year old man has 2 months of increasing abdominal swelling and ankle oedema. He has drunk 60 units of alcohol a week for 30 years. He has spider naevi, palmar erythema and gynaecomastia. His abdomen is distended with shifting dullness and the spleen is palpable. The liver is not palpable. His temperature is 36.8°C.",
+      "labs": [["Platelets", "84 ×10⁹/L", "150–400", "L"], ["Albumin", "26 g/L", "35–50", "L"], ["INR", "1.6", "0.8–1.2", "H"], ["Bilirubin", "42 µmol/L", "<17", "H"]],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute pancreatitis", "Alcoholic cirrhosis", "Budd-Chiari syndrome", "Nephrotic syndrome", "Right heart failure"],
+      "a": 1,
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis of ascites in a drinker."},
+        {"t": "Pick out the clues", "clues": ["60 units of alcohol a week", "spider naevi, palmar erythema and gynaecomastia", "shifting dullness", "spleen is palpable", "liver is not palpable"], "x": "Chronic liver disease stigmata, ascites, splenomegaly (portal hypertension), shrunken liver; labs: low platelets, low albumin, high INR."},
+        {"t": "Make your own answer before looking", "x": "**Alcoholic cirrhosis** with portal hypertension."},
+        {"t": "Rule out the others", "elim": [[0, "Pancreatitis gives acute epigastric pain and high amylase."], [2, "Budd-Chiari gives tender hepatomegaly, not a shrunken liver."], [3, "Nephrotic syndrome does not cause spider naevi or splenomegaly."], [4, "Right heart failure gives a raised JVP and a large, tender liver."]]},
+        {"t": "Commit", "x": "**B. Alcoholic cirrhosis.** Rule: stigmata + splenomegaly + ascites = cirrhosis with portal hypertension."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 50 year old woman with hepatitis C has a FibroScan suggesting advanced fibrosis. The hepatologist wants to confirm the diagnosis of cirrhosis definitively. Her INR is 1.1 and platelets are 140 ×10⁹/L.",
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["Alpha-fetoprotein", "CT abdomen with contrast", "FibroScan repeated", "Liver biopsy", "Liver function tests"],
+      "a": 3,
+      "steps": [
+        {"t": "Read the question line first", "x": "Asks for the **definitive** (gold-standard) test."},
+        {"t": "Pick out the clues", "clues": ["FibroScan suggesting advanced fibrosis", "definitively", "INR is 1.1"], "x": "First-line test done; INR below 1.5 so biopsy is safe."},
+        {"t": "Make your own answer before looking", "x": "**Liver biopsy**."},
+        {"t": "Rule out the others", "elim": [[0, "AFP is HCC surveillance, not a test for cirrhosis."], [1, "CT suggests cirrhosis but is not definitive."], [2, "Repeating the first-line test does not confirm it."], [4, "LFTs can be normal in compensated cirrhosis."]]},
+        {"t": "Commit", "x": "**D. Liver biopsy.** Rule: FibroScan first, biopsy gold standard (if INR ≤1.5)."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 55 year old man with alcohol-related cirrhosis vomits a large volume of fresh blood. His pulse rate is 128 bpm and BP 84/52 mmHg. He has two large-bore cannulae, blood is being transfused, and he has received intravenous terlipressin and intravenous antibiotics.",
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Elective TIPS in 6 months", "Liver transplant listing", "Oral propranolol now", "Sengstaken-Blakemore tube", "Urgent endoscopic band ligation"],
+      "a": 4,
+      "steps": [
+        {"t": "Read the question line first", "x": "Next step after first-line drugs in a variceal bleed."},
+        {"t": "Pick out the clues", "clues": ["alcohol-related cirrhosis", "large volume of fresh blood", "BP 84/52 mmHg", "terlipressin and intravenous antibiotics"], "x": "Variceal bleed, resuscitated, both drugs given."},
+        {"t": "Make your own answer before looking", "x": "**Urgent endoscopy with band ligation**."},
+        {"t": "Rule out the others", "elim": [[0, "TIPS is rescue for failed endoscopy, not elective months later."], [1, "Transplant is not the acute step."], [2, "Beta-blockers are avoided while shocked; they are for prevention."], [3, "Balloon tamponade is a bridge if endoscopy fails."]]},
+        {"t": "Commit", "x": "**E. Urgent band ligation.** Rule: terlipressin + antibiotics, then scope."}
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 60 year old woman with cirrhosis is admitted with confusion and a flapping tremor. She is started on lactulose titrated to two soft stools a day. A student asks how it works.",
+      "q": "Which is the most likely mechanism of action?",
+      "o": ["Binds bilirubin in the gut", "Increases hepatic urea synthesis", "Kills urease-producing bacteria directly", "Lowers colonic pH, trapping ammonia as ammonium", "Reduces portal pressure"],
+      "a": 3,
+      "steps": [
+        {"t": "Read the question line first", "x": "Drug mechanism in hepatic encephalopathy."},
+        {"t": "Pick out the clues", "clues": ["confusion and a flapping tremor", "lactulose", "two soft stools"], "x": "Hepatic encephalopathy from ammonia."},
+        {"t": "Make your own answer before looking", "x": "Lactulose acidifies the colon: NH3 becomes **NH4+**, which is trapped and excreted."},
+        {"t": "Rule out the others", "elim": [[0, "Lactulose does not bind bilirubin; cholestyramine binds bile acids."], [1, "It does not boost the urea cycle."], [2, "Killing bacteria is rifaximin's role."], [4, "Beta-blockers lower portal pressure."]]},
+        {"t": "Commit", "x": "**D. Lowers colonic pH, trapping ammonia.**"}
+      ]
+    }
+  ],
+  "practice": [
+    {"d": "diagnosis", "stem": "A 59 year old woman with type 2 diabetes and a BMI of 37 has 6 months of fatigue. She drinks no alcohol. She has spider naevi and a palpable spleen. Ultrasound shows a small, irregular, nodular liver. Hepatitis serology is negative. Her pulse rate is 78 bpm and BP 132/84 mmHg.", "labs": [["Platelets", "96 ×10⁹/L", "150–400", "L"], ["Albumin", "32 g/L", "35–50", "L"], ["ALT", "58 IU/L", "10–50", "H"]], "visual": null, "q": "Which is the most likely diagnosis?", "o": ["Acute hepatitis A", "Alcoholic hepatitis", "Cirrhosis", "Gilbert's syndrome", "Primary sclerosing cholangitis"], "a": 2, "e": "A nodular liver, splenomegaly, spider naevi and low platelets in an obese diabetic who does not drink is cirrhosis from NAFLD. Alcoholic hepatitis needs alcohol and an acute febrile illness.", "steps": [
+      {"t": "Read the question line first", "x": "Diagnosis of chronic liver disease."},
+      {"t": "Pick out the clues", "clues": ["type 2 diabetes and a BMI of 37", "drinks no alcohol", "spider naevi and a palpable spleen", "nodular liver"], "x": "NAFLD risk, stigmata, portal hypertension, nodular liver; labs: low platelets and albumin."},
+      {"t": "Make your own answer before looking", "x": "**Cirrhosis** (NAFLD)."},
+      {"t": "Rule out the others", "elim": [[0, "Hepatitis A is acute with very high ALT; serology negative."], [1, "She drinks no alcohol."], [3, "Gilbert's is isolated unconjugated bilirubin with a normal liver."], [4, "PSC is cholestatic (ALP), usually in men with ulcerative colitis."]]},
+      {"t": "Commit", "x": "**C. Cirrhosis.** Low platelets + nodular liver + spleen."}]},
+    {"d": "diagnosis", "stem": "A 63 year old man with alcohol-related cirrhosis is found drowsy and sweaty at home. He has eaten little for 2 days. He has no flapping tremor. His temperature is 36.5°C, pulse rate 104 bpm and BP 124/78 mmHg.", "labs": [["Capillary glucose", "2.3 mmol/L", "4.0–7.8", "L"], ["Sodium", "136 mmol/L", "135–145", ""], ["Ammonia", "45 µmol/L", "<50", ""]], "visual": null, "q": "Which is the most likely cause of his drowsiness?", "o": ["Hepatic encephalopathy", "Hypoglycaemia", "Hyponatraemia", "Subdural haematoma", "Wernicke's encephalopathy"], "a": 1, "e": "Cirrhotic patients are particularly prone to hypoglycaemia (low glycogen stores, impaired gluconeogenesis), especially after fasting. Normal ammonia and no asterixis argue against encephalopathy.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of reduced consciousness in cirrhosis."},
+      {"t": "Pick out the clues", "clues": ["drowsy and sweaty", "eaten little for 2 days", "no flapping tremor"], "x": "Sweaty, drowsy after fasting; labs: glucose 2.3, normal sodium and ammonia."},
+      {"t": "Make your own answer before looking", "x": "**Hypoglycaemia**."},
+      {"t": "Rule out the others", "elim": [[0, "No asterixis and normal ammonia."], [2, "Sodium is normal."], [3, "No head injury or focal signs."], [4, "No ataxia or eye signs."]]},
+      {"t": "Commit", "x": "**B. Hypoglycaemia.** Always check a glucose in a drowsy cirrhotic."}]},
+    {"d": "diagnosis", "stem": "A 66 year old woman with cirrhosis has become increasingly confused over 2 days. She has not opened her bowels for 6 days since starting codeine. She has a flapping tremor. There is no fever, haematemesis or melaena. Her temperature is 36.9°C, pulse rate 84 bpm and BP 118/70 mmHg. Ascitic neutrophils are 30 cells/mm³.", "labs": [], "visual": null, "q": "Which is the most likely precipitant of her decompensation?", "o": ["Constipation", "Hyperkalaemia", "Hypoglycaemia", "Spontaneous bacterial peritonitis", "Variceal haemorrhage"], "a": 0, "e": "Constipation (here from codeine) increases gut ammonia absorption and is a recognised trigger for hepatic encephalopathy. SBP is excluded by ascitic neutrophils below 250.", "steps": [
+      {"t": "Read the question line first", "x": "Find the trigger for encephalopathy."},
+      {"t": "Pick out the clues", "clues": ["not opened her bowels for 6 days", "codeine", "flapping tremor", "no fever, haematemesis or melaena", "neutrophils are 30"], "x": "Encephalopathy; no infection or bleed; severe constipation."},
+      {"t": "Make your own answer before looking", "x": "**Constipation**."},
+      {"t": "Rule out the others", "elim": [[1, "No reason given for hyperkalaemia, and it causes arrhythmia, not a flap."], [2, "Hypoglycaemia does not give asterixis."], [3, "Ascitic neutrophils below 250 exclude SBP."], [4, "No haematemesis or melaena."]]},
+      {"t": "Commit", "x": "**A. Constipation.** Treat with lactulose and stop the codeine."}]},
+    {"d": "diagnosis", "stem": "A 54 year old man with alcohol-related cirrhosis vomits about 500 mL of bright red blood. He has not had previous dyspepsia or retching before the bleed. His pulse rate is 122 bpm, BP 88/56 mmHg and respiratory rate 24 breaths per minute. He has splenomegaly and caput medusae.", "labs": [["Hb", "84 g/L", "130–180", "L"], ["Platelets", "72 ×10⁹/L", "150–400", "L"], ["Urea", "14.2 mmol/L", "2.5–7.8", "H"]], "visual": null, "q": "Which is the most likely cause of his bleeding?", "o": ["Gastric carcinoma", "Mallory-Weiss tear", "Oesophageal varices", "Oesophagitis", "Peptic ulcer"], "a": 2, "e": "Large-volume haematemesis with shock in cirrhosis with signs of portal hypertension is a variceal bleed until proven otherwise. A Mallory-Weiss tear follows retching.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of upper GI bleeding."},
+      {"t": "Pick out the clues", "clues": ["alcohol-related cirrhosis", "500 mL of bright red blood", "BP 88/56 mmHg", "splenomegaly and caput medusae"], "x": "Massive bleed, shock, portal hypertension."},
+      {"t": "Make your own answer before looking", "x": "**Oesophageal varices**."},
+      {"t": "Rule out the others", "elim": [[0, "Gastric cancer gives weight loss and slow bleeding."], [1, "No retching before the bleed."], [3, "Oesophagitis rarely causes massive bleeding."], [4, "No dyspepsia; portal hypertension makes varices far likelier."]]},
+      {"t": "Commit", "x": "**C. Oesophageal varices.**"}]},
+    {"d": "diagnosis", "stem": "A 34 year old man who has never smoked has 1 year of breathlessness on exertion. He drinks 6 units of alcohol a week. He has spider naevi and splenomegaly. Spirometry shows an obstructive pattern and CT chest shows basal panacinar emphysema. Ultrasound shows a nodular liver. Viral hepatitis serology is negative.", "labs": [], "visual": null, "q": "Which is the most likely cause of his cirrhosis?", "o": ["Alpha-1 antitrypsin deficiency", "Haemochromatosis", "Primary biliary cholangitis", "Sarcoidosis", "Wilson's disease"], "a": 0, "e": "Cirrhosis plus basal panacinar emphysema in a young non-smoker is alpha-1 antitrypsin deficiency. Sarcoidosis causes hilar nodes and erythema nodosum, not emphysema.", "steps": [
+      {"t": "Read the question line first", "x": "Cause of cirrhosis."},
+      {"t": "Pick out the clues", "clues": ["34 year old man who has never smoked", "obstructive pattern", "basal panacinar emphysema", "nodular liver"], "x": "Young, non-smoker, liver + lung disease."},
+      {"t": "Make your own answer before looking", "x": "**Alpha-1 antitrypsin deficiency**."},
+      {"t": "Rule out the others", "elim": [[1, "Haemochromatosis gives diabetes, bronze skin, arthropathy; no emphysema."], [2, "PBC is cholestatic, in middle-aged women."], [3, "Sarcoid gives hilar nodes and a restrictive pattern."], [4, "Wilson's gives neuropsychiatric signs and Kayser-Fleischer rings."]]},
+      {"t": "Commit", "x": "**A. Alpha-1 antitrypsin deficiency.** Rule: young + emphysema + cirrhosis."}]},
+    {"d": "diagnosis", "stem": "A 61 year old man with alcohol-related cirrhosis attends clinic. He has palmar erythema, gynaecomastia and Dupuytren's contracture. His abdomen shows mild splenomegaly. His pulse rate is 76 bpm and BP 116/70 mmHg.", "labs": [], "visual": null, "q": "Which is the most likely additional finding on examination?", "o": ["Clubbing with nicotine staining", "Erythema nodosum", "Heberden's nodes", "Spider naevi", "Xanthelasma"], "a": 3, "e": "Spider naevi on the upper body are a classic sign of chronic liver disease, from oestrogen excess, like his palmar erythema and gynaecomastia.", "steps": [
+      {"t": "Read the question line first", "x": "Predict another examination sign."},
+      {"t": "Pick out the clues", "clues": ["alcohol-related cirrhosis", "palmar erythema, gynaecomastia", "splenomegaly"], "x": "Stigmata of chronic liver disease from oestrogen excess."},
+      {"t": "Make your own answer before looking", "x": "**Spider naevi**."},
+      {"t": "Rule out the others", "elim": [[0, "Nicotine staining reflects smoking, not cirrhosis."], [1, "Erythema nodosum suggests sarcoid, IBD or streptococcal infection."], [2, "Heberden's nodes are osteoarthritis."], [4, "Xanthelasma suggests hyperlipidaemia or PBC."]]},
+      {"t": "Commit", "x": "**D. Spider naevi.**"}]},
+    {"d": "investigation", "stem": "A 52 year old man who drinks 40 units of alcohol a week has persistently abnormal LFTs. His platelets are 132 ×10⁹/L. He feels well. The GP wants to assess for advanced liver fibrosis.", "labs": [["ALT", "64 IU/L", "10–50", "H"], ["GGT", "210 IU/L", "1–78", "H"], ["Platelets", "132 ×10⁹/L", "150–400", "L"]], "visual": null, "q": "Which is the most appropriate initial investigation?", "o": ["CT abdomen", "FibroScan (transient elastography)", "Liver biopsy", "MRCP", "Upper GI endoscopy"], "a": 1, "e": "FibroScan is first-line to assess fibrosis non-invasively. Liver biopsy is the gold standard but invasive; endoscopy screens for varices once cirrhosis is diagnosed.", "steps": [
+      {"t": "Read the question line first", "x": "Initial test for fibrosis."},
+      {"t": "Pick out the clues", "clues": ["40 units of alcohol a week", "persistently abnormal LFTs", "assess for advanced liver fibrosis"], "x": "At-risk drinker; need a non-invasive fibrosis test."},
+      {"t": "Make your own answer before looking", "x": "**FibroScan**."},
+      {"t": "Rule out the others", "elim": [[0, "CT does not stage fibrosis."], [2, "Biopsy is gold standard, not first-line."], [3, "MRCP images bile ducts."], [4, "Endoscopy screens for varices after cirrhosis is found."]]},
+      {"t": "Commit", "x": "**B. FibroScan.**"}]},
+    {"d": "investigation", "stem": "A 57 year old woman has compensated cirrhosis from hepatitis C. She feels well. Her pulse rate is 72 bpm and BP 122/76 mmHg. She asks how she will be checked for liver cancer.", "labs": [], "visual": null, "q": "Which is the most appropriate surveillance?", "o": ["6-monthly ultrasound and alpha-fetoprotein", "Annual CT abdomen", "Annual liver biopsy", "CA 19-9 every 3 months", "No surveillance needed"], "a": 0, "e": "Patients with cirrhosis (significant fibrosis) have 6-monthly liver ultrasound and AFP to detect hepatocellular carcinoma early. CA 19-9 is for pancreatic and biliary cancer.", "steps": [
+      {"t": "Read the question line first", "x": "HCC surveillance."},
+      {"t": "Pick out the clues", "clues": ["compensated cirrhosis", "hepatitis C", "checked for liver cancer"], "x": "Cirrhosis = HCC risk."},
+      {"t": "Make your own answer before looking", "x": "**6-monthly ultrasound and AFP**."},
+      {"t": "Rule out the others", "elim": [[1, "CT is for characterising a lesion, not routine surveillance."], [2, "Biopsy is not a surveillance tool."], [3, "CA 19-9 is for pancreatic and biliary cancer."], [4, "All cirrhotics need surveillance."]]},
+      {"t": "Commit", "x": "**A. 6-monthly ultrasound + AFP.**"}]},
+    {"d": "management", "stem": "A 56 year old man with alcohol-related cirrhosis vomits fresh blood. His pulse rate is 118 bpm and BP 92/58 mmHg. Two large-bore cannulae are sited and blood is cross-matched. Endoscopy is arranged.", "labs": [], "visual": null, "q": "Which is the most appropriate initial drug management?", "o": ["Intravenous omeprazole alone", "Intravenous terlipressin and antibiotics", "Oral propranolol", "Sengstaken-Blakemore tube", "Tranexamic acid"], "a": 1, "e": "In suspected variceal bleeding, IV terlipressin and IV antibiotics are both always given before endoscopy. Propranolol is for prevention, not acute bleeding.", "steps": [
+      {"t": "Read the question line first", "x": "Initial drugs in an upper GI bleed in cirrhosis."},
+      {"t": "Pick out the clues", "clues": ["alcohol-related cirrhosis", "vomits fresh blood", "BP 92/58 mmHg", "Endoscopy is arranged"], "x": "Suspected variceal bleed; resuscitation under way."},
+      {"t": "Make your own answer before looking", "x": "**IV terlipressin + IV antibiotics**."},
+      {"t": "Rule out the others", "elim": [[0, "PPIs alone do not treat variceal bleeding."], [2, "Beta-blockers are for prevention, not the shocked patient."], [3, "Balloon tamponade is a bridge if endoscopy fails."], [4, "Tranexamic acid is not recommended in GI bleeding."]]},
+      {"t": "Commit", "x": "**B. Terlipressin and antibiotics.**"}]},
+    {"d": "management", "stem": "A 60 year old man with alcohol-related cirrhosis has a screening endoscopy that shows large oesophageal varices that have never bled. His pulse rate is 84 bpm and BP 124/78 mmHg. He has no asthma.", "labs": [], "visual": null, "q": "Which treatment will best prevent variceal bleeding?", "o": ["Isosorbide mononitrate", "Omeprazole", "Propranolol", "Ranitidine", "Terlipressin"], "a": 2, "e": "A non-selective beta-blocker (propranolol or carvedilol) is primary prevention for varices. Acid suppression does not reduce portal pressure; terlipressin is for acute bleeds.", "steps": [
+      {"t": "Read the question line first", "x": "Primary prevention of variceal bleeding."},
+      {"t": "Pick out the clues", "clues": ["large oesophageal varices", "never bled", "no asthma"], "x": "Primary prevention; no contraindication to beta-blockade."},
+      {"t": "Make your own answer before looking", "x": "**Non-selective beta-blocker**."},
+      {"t": "Rule out the others", "elim": [[0, "Nitrates alone are not recommended."], [1, "PPIs do not lower portal pressure."], [3, "H2 blockers do not lower portal pressure."], [4, "Terlipressin is IV and only for acute bleeding."]]},
+      {"t": "Commit", "x": "**C. Propranolol.**"}]},
+    {"d": "management", "stem": "A 58 year old woman with cirrhosis has had two admissions with hepatic encephalopathy in 3 months despite lactulose producing two to three soft stools daily. Her pulse rate is 80 bpm and BP 112/70 mmHg.", "labs": [["Ammonia", "120 µmol/L", "<50", "H"], ["Bilirubin", "58 µmol/L", "<17", "H"], ["INR", "1.8", "0.8–1.2", "H"]], "visual": null, "q": "Which is the most appropriate next step in management?", "o": ["Add oral rifaximin", "Increase dietary protein restriction", "Long-term metronidazole", "Oral neomycin", "Stop lactulose"], "a": 0, "e": "Recurrent encephalopathy despite lactulose with significant liver dysfunction is treated by adding rifaximin 550 mg BD. Protein restriction is no longer advised.", "steps": [
+      {"t": "Read the question line first", "x": "Next step for recurrent encephalopathy."},
+      {"t": "Pick out the clues", "clues": ["two admissions with hepatic encephalopathy", "despite lactulose", "two to three soft stools daily"], "x": "Lactulose optimised but failing; labs show significant dysfunction (ammonia 120, bilirubin 58, INR 1.8)."},
+      {"t": "Make your own answer before looking", "x": "**Add rifaximin 550 mg BD**."},
+      {"t": "Rule out the others", "elim": [[1, "Protein restriction worsens malnutrition and is not advised."], [2, "Long-term metronidazole causes neuropathy."], [3, "Neomycin is nephrotoxic and ototoxic."], [4, "Lactulose continues alongside rifaximin."]]},
+      {"t": "Commit", "x": "**A. Add rifaximin.**"}]},
+    {"d": "science", "stem": "A 57 year old man with alcohol-related cirrhosis has a platelet count of 78 ×10⁹/L. His white cell count is also low. Ultrasound shows a spleen of 16 cm and reversed portal venous flow. A blood film shows no blasts.", "labs": [], "visual": null, "q": "Which is the most likely mechanism of his thrombocytopenia?", "o": ["Antiplatelet antibody destruction", "Bone marrow infiltration by tumour", "Consumption in disseminated intravascular coagulation", "Splenic sequestration from portal hypertension", "Vitamin B12 deficiency"], "a": 3, "e": "Portal hypertension congests the spleen, which sequesters platelets and other cells (hypersplenism), causing pancytopenia. This is why thrombocytopenia is such a sensitive marker of cirrhosis.", "steps": [
+      {"t": "Read the question line first", "x": "Mechanism of low platelets in cirrhosis."},
+      {"t": "Pick out the clues", "clues": ["platelet count of 78", "white cell count is also low", "spleen of 16 cm", "reversed portal venous flow"], "x": "Pancytopenia with splenomegaly and portal hypertension."},
+      {"t": "Make your own answer before looking", "x": "**Hypersplenism**: splenic sequestration."},
+      {"t": "Rule out the others", "elim": [[0, "ITP has a normal spleen."], [1, "No blasts or abnormal film."], [2, "No bleeding or features of DIC."], [4, "B12 deficiency gives macrocytosis and a normal spleen."]]},
+      {"t": "Commit", "x": "**D. Splenic sequestration.**"}]}
+  ]
+}

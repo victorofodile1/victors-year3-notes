@@ -1,0 +1,2317 @@
+{
+ "id": "transfusion-reactions",
+ "patient": {
+  "name": "Patricia Murray",
+  "age": 74,
+  "sex": "F",
+  "setting": "Orthopaedic ward, day 2 after hip fracture fixation",
+  "complaint": "Rigors, back pain and low blood pressure 15 minutes into her second unit of blood",
+  "background": [
+   "Dynamic hip screw for a left hip fracture 2 days ago",
+   "Post-operative Hb 68 g/L; two units of red cells prescribed",
+   "Three pregnancies; transfused once after a postpartum haemorrhage",
+   "Blood group O RhD positive; mild heart failure on bisoprolol"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a patient who becomes unwell during or after a transfusion: the timing, BP, JVP, temperature and rash decide which reaction it is.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "First unit went in overnight without a problem.",
+      "Second unit started at 09:00 on a busy ward.",
+      "At 09:15 Patricia has **rigors** and **pain in her lower back**.",
+      "She feels hot, breathless and frightened.",
+      "Her catheter bag turns **dark red-brown**."
+     ],
+     "vitals": {
+      "T": "38.9°C",
+      "HR": "124 bpm",
+      "BP": "82/48 mmHg",
+      "RR": "26 /min",
+      "SpO2": "93% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia is mid-transfusion and has **previous transfusion and pregnancies**: the two risk factors in the notes."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Her BP has fallen to **82/48**. Hypotension during a transfusion means **stop it now**, whatever the cause turns out to be."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Patricia's observations during unit 2",
+      "x": [
+       "09:00",
+       "09:05",
+       "09:10",
+       "09:15"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Systolic BP (mmHg)",
+        "values": [
+         128,
+         118,
+         96,
+         82
+        ]
+       },
+       {
+        "name": "Heart rate (bpm)",
+        "values": [
+         84,
+         96,
+         112,
+         124
+        ]
+       }
+      ],
+      "caption": "Within 15 minutes BP falls and pulse climbs as her temperature reaches 38.9°C. Acute reactions happen early, so obs are repeated at 15 minutes."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Fever, rigors, back pain, hypotension and dark urine minutes into a unit. Which reaction?",
+     "o": [
+      "Acute haemolytic reaction",
+      "Febrile non-haemolytic reaction",
+      "Minor allergic reaction",
+      "TACO"
+     ],
+     "a": 0,
+     "r": "Back pain plus **haemoglobinuria** plus shock within minutes is **ABO-incompatible acute haemolysis**. A febrile non-haemolytic reaction does not drop the BP or darken the urine."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia fits the **acute haemolytic** pattern. Learn the others by their distinguishing feature: rash, wheeze, JVP, hypoxia or a late onset."
+    },
+    {
+     "type": "compare",
+     "title": "Telling the reactions apart",
+     "head": [
+      "Reaction",
+      "Fever",
+      "BP",
+      "Key clue"
+     ],
+     "rows": [
+      [
+       "Acute haemolytic",
+       "Yes",
+       "Low",
+       "Back pain, dark urine, minutes in"
+      ],
+      [
+       "Febrile non-haemolytic",
+       "Yes, mild",
+       "Normal",
+       "Fever and chills only"
+      ],
+      [
+       "Minor allergic",
+       "No",
+       "Normal",
+       "Urticaria only"
+      ],
+      [
+       "Anaphylaxis",
+       "**No**",
+       "Low",
+       "Wheeze, angioedema; IgA deficiency"
+      ],
+      [
+       "TACO",
+       "No",
+       "**High**",
+       "Raised JVP, S3, overload"
+      ],
+      [
+       "TRALI",
+       "Can be",
+       "Low",
+       "Normal JVP, hypoxia despite O2, within 6 h"
+      ],
+      [
+       "TA-GvHD",
+       "Yes",
+       "Variable",
+       "Rash, jaundice, pancytopenia, 2 days to 6 weeks"
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Hours after starting the transfusion",
+      "min": 0,
+      "max": 24,
+      "unit": "h",
+      "bands": [
+       [
+        0,
+        6,
+        "0–6 h: haemolytic, allergic, febrile, TACO, TRALI",
+        "bad"
+       ],
+       [
+        6,
+        24,
+        "later",
+        "warn"
+       ]
+      ],
+      "value": 0.25,
+      "label": "Patricia 15 min",
+      "caption": "Almost every reaction appears during or within 6 hours. TA-GvHD is the late one: 2 days to 6 weeks."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "**Hypotension without fever** plus wheeze or angioedema is **anaphylaxis**, not haemolysis. Hypertension with a raised JVP is **TACO**, not TRALI."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Not Patricia's problem, but know them: room-temperature **platelets** grow skin organisms, and stored red cells leak potassium, causing **hyperkalaemia**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which test confirms haemolysis?' (direct antiglobulin test), 'which results fit?' (low Hb and haptoglobin, high LDH and bilirubin) and ABO compatibility questions.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Before any blood test, what is the first thing to do for Patricia?",
+     "o": [
+      "Send a DAT",
+      "Slow the transfusion rate",
+      "Stop the transfusion",
+      "Take blood cultures"
+     ],
+     "a": 2,
+     "r": "**Stop the transfusion immediately**: it comes before investigations for any suspected reaction."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "The nurse clamps the line and keeps the cannula open with saline. **Stopping comes first**, before any test."
+    },
+    {
+     "type": "story",
+     "points": [
+      "The bag label says **group A**; Patricia is **group O**.",
+      "Unit was meant for the patient in the next bay.",
+      "Bag and giving set are sealed and sent to the lab.",
+      "Bloods drawn from the other arm."
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Patricia's haemolysis screen",
+     "rows": [
+      [
+       "Hb",
+       "61 g/L",
+       "115–165",
+       "L"
+      ],
+      [
+       "LDH",
+       "1240 U/L",
+       "135–214",
+       "H"
+      ],
+      [
+       "Bilirubin",
+       "58 µmol/L",
+       "<21",
+       "H"
+      ],
+      [
+       "Haptoglobin",
+       "<0.1 g/L",
+       "0.3–2.0",
+       "L"
+      ],
+      [
+       "Potassium",
+       "5.9 mmol/L",
+       "3.5–5.3",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "142 µmol/L",
+       "45–90",
+       "H"
+      ],
+      [
+       "Direct antiglobulin test",
+       "Positive",
+       "Negative",
+       ""
+      ],
+      [
+       "Urine dipstick",
+       "Blood +++, no red cells on microscopy",
+       "Negative",
+       ""
+      ]
+     ],
+     "text": "Low haptoglobin, high LDH and bilirubin, and a positive DAT: intravascular haemolysis."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's Hb fell despite blood, with every haemolysis marker abnormal and a **positive DAT**. The returned bag confirms the mismatch."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Patricia's haptoglobin",
+      "min": 0,
+      "max": 2.5,
+      "unit": "g/L",
+      "bands": [
+       [
+        0,
+        0.3,
+        "low: haemolysis",
+        "bad"
+       ],
+       [
+        0.3,
+        2.0,
+        "normal",
+        "ok"
+       ],
+       [
+        2.0,
+        2.5,
+        "high",
+        "warn"
+       ]
+      ],
+      "value": 0.05,
+      "label": "Patricia <0.1",
+      "caption": "Haptoglobin mops up free haemoglobin and is used up in intravascular haemolysis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia is **group O** with anti-A and anti-B in her plasma, so she can receive **only group O** red cells. Group A cells were destroyed."
+    },
+    {
+     "type": "compare",
+     "title": "Red cell compatibility",
+     "head": [
+      "Recipient",
+      "Antibodies in plasma",
+      "Can receive red cells from"
+     ],
+     "rows": [
+      [
+       "O",
+       "Anti-A and anti-B",
+       "O only"
+      ],
+      [
+       "A",
+       "Anti-B",
+       "A, O"
+      ],
+      [
+       "B",
+       "Anti-A",
+       "B, O"
+      ],
+      [
+       "AB",
+       "None",
+       "AB, A, B, O"
+      ]
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "Group **O** red cells are the universal donor; group **AB** patients have no anti-A or anti-B, so they are universal red cell recipients."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': always stop the transfusion first, then match the reaction: IM adrenaline, paracetamol, antihistamine, aggressive fluids, furosemide, or oxygen and ICU.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "For Patricia: **stop the transfusion**, then oxygen and IV fluids through a new giving set."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Fever, back pain and hypotension mean **acute haemolysis**: aggressive fluids and close monitoring of vitals and **urine output**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "High-flow oxygen; 500 mL crystalloid bolus, repeated.",
+      "Hourly urine output via her catheter.",
+      "Outreach team and haematologist called; **ICU** review.",
+      "Incident reported: a wrong-patient bedside check error."
+     ],
+     "vitals": {
+      "BP": "98/60 mmHg",
+      "HR": "108 bpm",
+      "SpO2": "97% on 15 L"
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Any suspected transfusion reaction",
+     "nodes": [
+      "Stop the transfusion immediately",
+      "ABCDE: oxygen, IV access, fluids",
+      "Recheck patient ID against the bag",
+      "Identify the reaction type",
+      "Specific treatment for that type",
+      "Return bag to lab, report the incident"
+     ],
+     "caption": "Stopping always comes first; the type of reaction decides the rest."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Patricia needs the **haemolytic** row. Learn each row as a pair: reaction and its one specific treatment."
+    },
+    {
+     "type": "compare",
+     "title": "Specific treatment by reaction",
+     "head": [
+      "Reaction",
+      "Treatment"
+     ],
+     "rows": [
+      [
+       "Acute haemolytic",
+       "Aggressive IV fluids, consider ICU"
+      ],
+      [
+       "Febrile non-haemolytic",
+       "Paracetamol"
+      ],
+      [
+       "Minor allergic",
+       "Pause, antihistamine"
+      ],
+      [
+       "Anaphylaxis",
+       "**IM adrenaline**, steroid, bronchodilator"
+      ],
+      [
+       "TACO",
+       "**IV furosemide**"
+      ],
+      [
+       "TRALI",
+       "Aggressive oxygenation, ICU, fluids for BP"
+      ]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Patricia's neighbour, 85, develops breathlessness, BP 178/96 mmHg and a raised JVP during her third unit. After stopping, what next?",
+     "o": [
+      "IM adrenaline",
+      "IV furosemide",
+      "IV fluid bolus",
+      "Oral chlorphenamine"
+     ],
+     "a": 1,
+     "r": "Hypertension with raised JVP is **TACO**: offload with **IV furosemide**. A fluid bolus would make it worse."
+    },
+    {
+     "type": "trap",
+     "text": "Do not give fluids to TACO or furosemide to TRALI. **JVP and BP** decide: high in TACO, normal JVP and low BP in TRALI."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Patricia's error broke the **ABO compatibility** rules; the **DAT** confirmed the haemolysis."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why ABO mismatch causes intravascular haemolysis, why TRALI is non-cardiogenic oedema, why IgA deficiency causes anaphylaxis, or why febrile reactions happen.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Patricia's **pre-formed IgM anti-A** bound the donor cells within minutes, activating complement and bursting them inside her vessels."
+    },
+    {
+     "type": "flow",
+     "title": "ABO mismatch to shock",
+     "nodes": [
+      "Group A cells into a group O patient",
+      "Recipient IgM anti-A binds the cells",
+      "Complement activation",
+      "Intravascular haemolysis",
+      "Free Hb (dark urine) and mediators",
+      "Fever, hypotension, loin pain, DIC, AKI"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why did Patricia's creatinine rise?",
+     "o": [
+      "Antibiotic toxicity",
+      "Free haemoglobin and hypotension injuring the kidney",
+      "Hyperkalaemia",
+      "Volume overload"
+     ],
+     "a": 1,
+     "r": "Free haemoglobin is toxic to tubules and hypotension cuts renal perfusion: **AKI** is a feared complication of acute haemolysis."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Patricia's fever had come from **donor white-cell cytokines** rather than red cell destruction, it would have been a mild febrile reaction."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "In TRALI, **donor antibodies**, often in FFP, attack the recipient's leukocytes in the lungs, causing capillary leak."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Patricia's heart failure would make her prone to **TACO**: plain volume overload, cardiogenic oedema, **raised JVP and hypertension**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Chest X-ray: TACO or TRALI",
+      "findings": [
+       {
+        "type": "pulm_oedema",
+        "side": "both"
+       }
+      ],
+      "caption": "Both give bilateral pulmonary oedema on X-ray. The bedside JVP and BP, not the film, separate cardiogenic TACO from non-cardiogenic TRALI."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Someone with **IgA deficiency** makes anti-IgA antibodies, so IgA in donor plasma can trigger **anaphylaxis**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the single most concerning sign during a transfusion?",
+   "o": [
+    "Hypotension",
+    "Itchy rash",
+    "Mild fever",
+    "Tachypnoea alone"
+   ],
+   "a": 0,
+   "r": "**Hypotension** is ominous and means stopping the transfusion immediately."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What causes an acute haemolytic transfusion reaction?",
+   "o": [
+    "Anti-IgA antibodies",
+    "ABO incompatibility",
+    "Cytokines from donor white cells",
+    "Volume overload"
+   ],
+   "a": 1,
+   "r": "**ABO incompatibility**: the most serious acute reaction."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which feature points to TACO rather than TRALI?",
+   "o": [
+    "Hypotension",
+    "Hypoxia",
+    "Normal JVP",
+    "Raised JVP and hypertension"
+   ],
+   "a": 3,
+   "r": "TACO = overload: **raised JVP, hypertension, S3**. TRALI: normal JVP, hypotension."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organisms classically contaminate platelet units?",
+   "o": [
+    "E. coli and Klebsiella",
+    "Pseudomonas and Proteus",
+    "Staph epidermidis and Bacillus cereus",
+    "Streptococcus pneumoniae and Haemophilus"
+   ],
+   "a": 2,
+   "r": "Platelets are stored at **room temperature**, ideal for skin organisms."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which patients are most at risk of transfusion-associated GvHD?",
+   "o": [
+    "Immunosuppressed, e.g. Hodgkin lymphoma",
+    "Patients with heart failure",
+    "Patients with IgA deficiency",
+    "Pregnant women"
+   ],
+   "a": 0,
+   "r": "**Immunosuppressed** recipients (e.g. Hodgkin's) cannot reject donor lymphocytes."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test confirms haemolysis in a suspected haemolytic reaction?",
+   "o": [
+    "Blood film",
+    "Direct antiglobulin test",
+    "Ferritin",
+    "Reticulocyte count"
+   ],
+   "a": 1,
+   "r": "The **DAT (direct Coombs)** is positive in a haemolytic reaction."
+  },
+  {
+   "d": "investigation",
+   "q": "A group O patient can receive red cells of which group?",
+   "o": [
+    "A",
+    "AB",
+    "B",
+    "O"
+   ],
+   "a": 3,
+   "r": "Group O plasma has anti-A and anti-B, so only **group O** red cells are safe."
+  },
+  {
+   "d": "management",
+   "q": "What is the specific treatment of TACO?",
+   "o": [
+    "IM adrenaline",
+    "IV fluids",
+    "IV furosemide",
+    "Paracetamol"
+   ],
+   "a": 2,
+   "r": "**IV furosemide** treats volume overload."
+  },
+  {
+   "d": "management",
+   "q": "What is the treatment of a febrile non-haemolytic reaction?",
+   "o": [
+    "Antihistamine",
+    "IM adrenaline",
+    "Furosemide",
+    "Paracetamol"
+   ],
+   "a": 3,
+   "r": "**Paracetamol** for the cytokine-driven fever."
+  },
+  {
+   "d": "science",
+   "q": "Why does IgA deficiency predispose to anaphylaxis with transfusion?",
+   "o": [
+    "Anti-IgA antibodies react with donor IgA",
+    "IgA deficiency lowers complement",
+    "IgA-deficient cells lyse easily",
+    "IgA deficiency causes volume overload"
+   ],
+   "a": 0,
+   "r": "The recipient makes **anti-IgA antibodies** that react with IgA in donor plasma."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What are transfusion reactions, their risk factors, and the most concerning sign?",
+    "tip": "Exam thinking: hypotension during a transfusion means stop now.",
+    "points": [
+     {
+      "p": "Adverse immune or non-immune responses during or after transfusion",
+      "k": [
+       [
+        "immune",
+        "adverse",
+        "reaction"
+       ]
+      ],
+      "why": "Some are minutes in, GvHD is weeks later."
+     },
+     {
+      "p": "Risk factors: previous transfusion, pregnancy",
+      "k": [
+       [
+        "previous transfusion",
+        "prior transfusion",
+        "pregnan"
+       ]
+      ],
+      "why": "Both sensitise the recipient to foreign antigens."
+     },
+     {
+      "p": "Hypotension is the most concerning sign: stop immediately",
+      "k": [
+       [
+        "hypotens",
+        "low bp",
+        "low blood pressure"
+       ]
+      ],
+      "why": "Regardless of the underlying cause."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does an acute haemolytic reaction present and what causes it?",
+    "tip": "Exam thinking: back pain plus dark urine minutes into a unit.",
+    "points": [
+     {
+      "p": "Caused by ABO incompatibility",
+      "k": [
+       [
+        "abo",
+        "incompatib",
+        "wrong blood"
+       ]
+      ],
+      "why": "Usually a bedside identification error."
+     },
+     {
+      "p": "Fever, rigors",
+      "k": [
+       [
+        "fever",
+        "rigor",
+        "pyrex"
+       ]
+      ],
+      "why": "From inflammatory mediators."
+     },
+     {
+      "p": "Back or loin pain, abdominal pain",
+      "k": [
+       [
+        "back",
+        "loin",
+        "abdominal"
+       ]
+      ],
+      "why": "Classic and distinguishing."
+     },
+     {
+      "p": "Haemoglobinuria (dark urine)",
+      "k": [
+       [
+        "haemoglobinuria",
+        "hemoglobinuria",
+        "dark urine",
+        "red urine"
+       ]
+      ],
+      "why": "Free Hb from intravascular haemolysis."
+     },
+     {
+      "p": "Hypotension and breathlessness",
+      "k": [
+       [
+        "hypotens",
+        "shock",
+        "sob",
+        "breathless"
+       ]
+      ],
+      "why": "Can progress to DIC and AKI."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell TACO from TRALI?",
+    "tip": "Exam thinking: check the JVP and the BP.",
+    "points": [
+     {
+      "p": "TACO: breathless, hypertension, raised JVP, S3, no fever",
+      "k": [
+       [
+        "taco"
+       ],
+       [
+        "jvp",
+        "hypertens",
+        "s3",
+        "overload"
+       ]
+      ],
+      "why": "Cardiogenic oedema from volume overload."
+     },
+     {
+      "p": "TRALI: breathless, hypotension, normal JVP, hypoxia unresponsive to oxygen",
+      "k": [
+       [
+        "trali"
+       ],
+       [
+        "hypotens",
+        "hypox",
+        "normal jvp"
+       ]
+      ],
+      "why": "Non-cardiogenic oedema."
+     },
+     {
+      "p": "TRALI occurs within 6 hours, often linked to FFP",
+      "k": [
+       [
+        "6",
+        "six"
+       ],
+       [
+        "hour"
+       ]
+      ],
+      "why": "Plasma-rich products carry donor antibodies."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do febrile non-haemolytic, minor allergic and anaphylactic reactions differ?",
+    "tip": "Exam thinking: fever with stable obs is mild; low BP without fever plus wheeze is anaphylaxis.",
+    "points": [
+     {
+      "p": "Febrile non-haemolytic: fever and chills, common and mild",
+      "k": [
+       [
+        "febrile",
+        "fnhtr",
+        "non-haemolytic",
+        "non haemolytic"
+       ],
+       [
+        "chill",
+        "fever",
+        "mild"
+       ]
+      ],
+      "why": "Cytokines, not red cell destruction."
+     },
+     {
+      "p": "Minor allergic: urticarial rash only",
+      "k": [
+       [
+        "urticari",
+        "hives",
+        "rash"
+       ]
+      ],
+      "why": "Usually mild."
+     },
+     {
+      "p": "Anaphylaxis: angioedema, wheeze, hypotension without fever, urticaria",
+      "k": [
+       [
+        "anaphyla"
+       ],
+       [
+        "angioedema",
+        "wheeze",
+        "without fever",
+        "no fever"
+       ]
+      ],
+      "why": "Life-threatening."
+     },
+     {
+      "p": "IgA deficiency is the key risk factor for anaphylaxis",
+      "k": [
+       [
+        "iga"
+       ]
+      ],
+      "why": "Anti-IgA antibodies."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is transfusion-associated GvHD and what are the other complications of transfusion?",
+    "tip": "Exam thinking: late rash, jaundice and pancytopenia in an immunosuppressed patient.",
+    "points": [
+     {
+      "p": "TA-GvHD: fever, rash, jaundice, pancytopenia",
+      "k": [
+       [
+        "gvhd",
+        "graft"
+       ],
+       [
+        "rash",
+        "jaundice",
+        "pancytopenia"
+       ]
+      ],
+      "why": "Severe, often fatal."
+     },
+     {
+      "p": "2 days to 6 weeks after transfusion, in immunosuppressed or Hodgkin's patients",
+      "k": [
+       [
+        "immunosupp",
+        "hodgkin",
+        "week"
+       ]
+      ],
+      "why": "Donor lymphocytes are not rejected."
+     },
+     {
+      "p": "Bacterial contamination of platelets: Staph epidermidis, Bacillus cereus",
+      "k": [
+       [
+        "epidermidis",
+        "bacillus",
+        "cereus",
+        "platelet"
+       ]
+      ],
+      "why": "Platelets stored at room temperature."
+     },
+     {
+      "p": "Hyperkalaemia from packed red cells",
+      "k": [
+       [
+        "hyperkal",
+        "potassium",
+        "high k"
+       ]
+      ],
+      "why": "Stored cells leak potassium."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What investigations confirm a haemolytic reaction and what do they show?",
+    "tip": "Exam thinking: the DAT is the confirmatory test.",
+    "points": [
+     {
+      "p": "Stop the transfusion first, before investigations",
+      "k": [
+       [
+        "stop"
+       ]
+      ],
+      "why": "First step for any reaction."
+     },
+     {
+      "p": "Haemolysis screen: low Hb, raised LDH and bilirubin, low haptoglobin",
+      "k": [
+       [
+        "ldh",
+        "bilirubin",
+        "haptoglobin"
+       ]
+      ],
+      "why": "Haptoglobin is used up binding free Hb."
+     },
+     {
+      "p": "Positive direct antiglobulin (Coombs) test",
+      "k": [
+       [
+        "dat",
+        "coombs",
+        "antiglobulin"
+       ]
+      ],
+      "why": "Confirms antibody-coated red cells."
+     },
+     {
+      "p": "Cultures if septic; return the bag to the lab to recheck compatibility",
+      "k": [
+       [
+        "culture",
+        "bag",
+        "return",
+        "lab"
+       ]
+      ],
+      "why": "Plus FBC and U&Es."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which red cell groups can each ABO group receive?",
+    "tip": "Exam thinking: O is the universal red cell donor.",
+    "points": [
+     {
+      "p": "Group O red cells are compatible with everyone",
+      "k": [
+       [
+        "o"
+       ],
+       [
+        "universal",
+        "everyone",
+        "all",
+        "anyone"
+       ]
+      ],
+      "why": "O cells carry no A or B antigen."
+     },
+     {
+      "p": "A receives A (or O); B receives B (or O)",
+      "k": [
+       [
+        "a"
+       ],
+       [
+        "b"
+       ]
+      ],
+      "why": "Each group has antibodies to the antigen it lacks."
+     },
+     {
+      "p": "AB patients: AB blood (per the notes)",
+      "k": [
+       [
+        "ab"
+       ]
+      ],
+      "why": "AB plasma has no anti-A or anti-B."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the first step for any reaction, and the management of acute haemolysis?",
+    "tip": "Exam thinking: stop, then fluids and urine output.",
+    "points": [
+     {
+      "p": "Stop the transfusion immediately",
+      "k": [
+       [
+        "stop",
+        "cease",
+        "halt"
+       ]
+      ],
+      "why": "Always first."
+     },
+     {
+      "p": "Supportive: oxygen and IV fluids",
+      "k": [
+       [
+        "oxygen",
+        "o2"
+       ],
+       [
+        "fluid"
+       ]
+      ],
+      "why": "Through a new giving set."
+     },
+     {
+      "p": "Aggressive IV fluids, consider ICU",
+      "k": [
+       [
+        "aggressive",
+        "icu",
+        "intensive"
+       ]
+      ],
+      "why": "Protects the kidneys."
+     },
+     {
+      "p": "Monitor vitals and urine output closely",
+      "k": [
+       [
+        "urine",
+        "monitor"
+       ]
+      ],
+      "why": "AKI is a major complication."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the specific treatment for each other reaction type?",
+    "tip": "Exam thinking: match reaction to one drug.",
+    "points": [
+     {
+      "p": "Anaphylaxis: IM adrenaline, plus steroid and bronchodilator",
+      "k": [
+       [
+        "adrenaline",
+        "epinephrine"
+       ]
+      ],
+      "why": "IM, not IV, on the ward."
+     },
+     {
+      "p": "Febrile non-haemolytic: paracetamol",
+      "k": [
+       [
+        "paracetamol"
+       ]
+      ],
+      "why": "IV or oral."
+     },
+     {
+      "p": "Minor allergic: pause and give antihistamine",
+      "k": [
+       [
+        "antihistamine",
+        "chlorphenamine",
+        "chlorpheniramine"
+       ]
+      ],
+      "why": "Halt the transfusion."
+     },
+     {
+      "p": "TACO: IV furosemide",
+      "k": [
+       [
+        "furosemide",
+        "frusemide",
+        "diuretic"
+       ]
+      ],
+      "why": "Offloads the volume."
+     },
+     {
+      "p": "TRALI: aggressive oxygenation, ICU, fluids for BP",
+      "k": [
+       [
+        "trali"
+       ],
+       [
+        "oxygen",
+        "icu",
+        "ventilat"
+       ]
+      ],
+      "why": "Not diuretics."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does ABO incompatibility cause such a severe reaction?",
+    "tip": "Exam thinking: IgM plus complement equals intravascular haemolysis.",
+    "points": [
+     {
+      "p": "Pre-formed IgM antibodies bind donor red cell antigens",
+      "k": [
+       [
+        "igm",
+        "pre-formed",
+        "preformed"
+       ]
+      ],
+      "why": "No prior exposure needed."
+     },
+     {
+      "p": "Complement activation causes intravascular haemolysis",
+      "k": [
+       [
+        "complement"
+       ],
+       [
+        "intravascular",
+        "haemolys",
+        "hemolys",
+        "lysis"
+       ]
+      ],
+      "why": "Cells burst inside vessels."
+     },
+     {
+      "p": "Free haemoglobin and mediators: fever, hypotension, loin pain, DIC, AKI",
+      "k": [
+       [
+        "dic",
+        "aki",
+        "kidney",
+        "renal",
+        "haemoglobinuria"
+       ]
+      ],
+      "why": "Explains every clinical feature."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the mechanism of TRALI, TACO, febrile and IgA-related reactions?",
+    "tip": "Exam thinking: TRALI is donor antibodies; TACO is plain volume.",
+    "points": [
+     {
+      "p": "TRALI: donor antibodies (often FFP) against recipient leukocytes, neutrophil activation, capillary leak",
+      "k": [
+       [
+        "donor"
+       ],
+       [
+        "leukocyte",
+        "leucocyte",
+        "neutrophil",
+        "white cell"
+       ]
+      ],
+      "why": "Non-cardiogenic pulmonary oedema."
+     },
+     {
+      "p": "TACO: volume overload, cardiogenic oedema, worse with cardiac or renal impairment",
+      "k": [
+       [
+        "volume",
+        "overload",
+        "cardiogenic"
+       ]
+      ],
+      "why": "Raised JVP and hypertension."
+     },
+     {
+      "p": "Febrile: cytokines from donor white cells",
+      "k": [
+       [
+        "cytokine"
+       ]
+      ],
+      "why": "Not red cell destruction."
+     },
+     {
+      "p": "IgA deficiency: anti-IgA antibodies react with donor IgA",
+      "k": [
+       [
+        "anti-iga",
+        "anti iga",
+        "iga"
+       ]
+      ],
+      "why": "Causes anaphylaxis."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "ABO incompatibility": "Transfusion of red cells carrying A or B antigens that the recipient has antibodies against.",
+  "Acute haemolytic reaction": "Rapid destruction of transfused red cells, usually from ABO mismatch; the most serious acute reaction.",
+  "Febrile non-haemolytic reaction": "Common, mild fever and chills during transfusion caused by cytokines from donor white cells.",
+  "Anaphylaxis": "Severe, life-threatening allergic reaction with airway, breathing or circulation compromise.",
+  "Angioedema": "Swelling of the deeper skin layers, often lips, tongue and face.",
+  "Urticaria": "Itchy, raised wheals (hives) on the skin.",
+  "TACO": "Transfusion-associated circulatory overload: pulmonary oedema from too much volume, with raised JVP and hypertension.",
+  "TRALI": "Transfusion-related acute lung injury: non-cardiogenic pulmonary oedema within 6 hours, often after FFP.",
+  "TA-GvHD": "Transfusion-associated graft-versus-host disease: donor lymphocytes attack the recipient, causing rash, jaundice and pancytopenia.",
+  "GvHD": "Graft-versus-host disease: donor immune cells attacking the recipient's tissues.",
+  "Pancytopenia": "Low red cells, white cells and platelets together.",
+  "Haemoglobinuria": "Free haemoglobin in the urine, making it dark red or brown.",
+  "Intravascular haemolysis": "Red cells bursting inside the blood vessels, releasing free haemoglobin.",
+  "Haptoglobin": "Plasma protein that binds free haemoglobin; it falls in intravascular haemolysis.",
+  "LDH": "Lactate dehydrogenase, an enzyme released from damaged cells; raised in haemolysis.",
+  "DAT": "Direct antiglobulin test: detects antibody or complement on red cells; positive in immune haemolysis.",
+  "Coombs test": "Another name for the antiglobulin test.",
+  "IgM": "Large pentameric antibody that fixes complement strongly; anti-A and anti-B are mainly IgM.",
+  "Complement": "Plasma proteins that, once activated, punch holes in cell membranes and drive inflammation.",
+  "IgA deficiency": "Absence of IgA antibody; recipients may make anti-IgA and react to donor plasma.",
+  "FFP": "Fresh frozen plasma, rich in clotting factors and donor antibodies.",
+  "JVP": "Jugular venous pressure; raised in fluid overload.",
+  "S3": "Third heart sound, heard in volume overload and heart failure.",
+  "Hypoxaemia": "Low oxygen in the blood.",
+  "Non-cardiogenic pulmonary oedema": "Fluid in the lungs from leaky capillaries rather than a failing heart.",
+  "Cardiogenic pulmonary oedema": "Fluid in the lungs from raised pressure in an overloaded or failing heart.",
+  "DIC": "Disseminated intravascular coagulation: widespread clotting that uses up factors and causes bleeding.",
+  "AKI": "Acute kidney injury: a rapid fall in kidney function.",
+  "Hyperkalaemia": "High blood potassium; stored red cells leak potassium.",
+  "Staph epidermidis": "Skin commensal that can contaminate room-temperature platelet units.",
+  "Bacillus cereus": "Spore-forming bacterium that can contaminate platelet units.",
+  "Furosemide": "Loop diuretic used to offload fluid in TACO.",
+  "IM adrenaline": "Intramuscular adrenaline, first-line treatment for anaphylaxis.",
+  "Universal donor": "Group O red cells, which lack A and B antigens.",
+  "Rigors": "Violent shaking with chills, often as the temperature rises."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man has a right hemicolectomy and needs a red cell transfusion for blood loss. Ten minutes into the second unit he develops rigors and lower back pain. The urine in his catheter becomes dark. His temperature is 38.6°C, pulse rate 126 bpm, BP 84/52 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 95% breathing air.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute haemolytic transfusion reaction",
+    "Anaphylactic transfusion reaction",
+    "Febrile non-haemolytic transfusion reaction",
+    "Transfusion-associated circulatory overload",
+    "Transfusion-related acute lung injury"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question during a transfusion: match the features to one reaction."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Ten minutes into the second unit",
+      "rigors and lower back pain",
+      "urine in his catheter becomes dark",
+      "38.6°C",
+      "BP 84/52 mmHg"
+     ],
+     "x": "Minutes in, back pain, haemoglobinuria, fever and shock."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute haemolytic reaction** from ABO incompatibility."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Anaphylaxis gives hypotension without fever, with wheeze or angioedema."
+      ],
+      [
+       2,
+       "Febrile non-haemolytic reactions do not drop the BP or cause dark urine."
+      ],
+      [
+       3,
+       "TACO causes hypertension and a raised JVP."
+      ],
+      [
+       4,
+       "TRALI causes severe hypoxia, not back pain and haemoglobinuria."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: back pain + dark urine + shock minutes in = ABO haemolysis."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 55 year old woman develops fever, loin pain and hypotension 20 minutes into a red cell transfusion. The transfusion is stopped. The haematologist wants to confirm whether red cell destruction is taking place.",
+   "q": "Which set of results is most likely?",
+   "o": [
+    "High haptoglobin, high LDH, low bilirubin",
+    "Low haptoglobin, high LDH, high bilirubin",
+    "Low haptoglobin, low LDH, normal bilirubin",
+    "Normal haptoglobin, normal LDH, high bilirubin",
+    "Normal haptoglobin, high LDH, low bilirubin"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which haemolysis screen fits an acute haemolytic reaction?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fever, loin pain and hypotension",
+      "20 minutes into a red cell transfusion",
+      "red cell destruction"
+     ],
+     "x": "Classic intravascular haemolysis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Haptoglobin used up (**low**), LDH released (**high**), bilirubin from Hb breakdown (**high**), plus a positive DAT."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Haptoglobin falls, and bilirubin rises, in haemolysis."
+      ],
+      [
+       2,
+       "LDH rises as cells burst."
+      ],
+      [
+       3,
+       "Haptoglobin and LDH would both be abnormal."
+      ],
+      [
+       4,
+       "Haptoglobin falls and bilirubin rises."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: haemolysis = low haptoglobin, high LDH, high bilirubin, positive DAT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 42 year old woman with sickle cell disease is having a red cell transfusion. After 30 minutes she develops an itchy raised rash on her arms and chest. She has no wheeze, no lip or tongue swelling and no breathlessness. Her temperature is 36.9°C, pulse rate 84 bpm, BP 124/76 mmHg and oxygen saturation 99% breathing air.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Continue the transfusion and give IV furosemide",
+    "Continue the transfusion and observe",
+    "Give IM adrenaline",
+    "Pause the transfusion and give an antihistamine",
+    "Stop the transfusion and give aggressive IV fluids"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: first identify which reaction."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "itchy raised rash",
+      "no wheeze, no lip or tongue swelling",
+      "BP 124/76 mmHg",
+      "36.9°C"
+     ],
+     "x": "Urticaria only, stable obs, no fever: **minor allergic reaction**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Halt the transfusion and give an antihistamine** (chlorphenamine)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Furosemide is for TACO."
+      ],
+      [
+       1,
+       "A reaction always means halting the transfusion first."
+      ],
+      [
+       2,
+       "IM adrenaline is for anaphylaxis: no airway, breathing or BP compromise."
+      ],
+      [
+       4,
+       "Aggressive fluids are for acute haemolysis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: rash alone = minor allergic = halt plus antihistamine."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 79 year old woman with blood group O is given a unit of group A red cells in error. Within minutes she has fever, loin pain, hypotension and dark urine. A positive direct antiglobulin test is found.",
+   "q": "Which is the most likely mechanism of her red cell destruction?",
+   "o": [
+    "Donor anti-leukocyte antibodies activating neutrophils",
+    "Donor lymphocytes attacking recipient tissues",
+    "Pre-formed recipient IgG causing delayed extravascular haemolysis",
+    "Pre-formed recipient IgM activating complement",
+    "Volume overload of the circulation"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of acute ABO haemolysis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "blood group O",
+      "group A red cells",
+      "Within minutes",
+      "dark urine"
+     ],
+     "x": "Group O plasma has anti-A; minutes means pre-formed antibody; dark urine means intravascular lysis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pre-formed IgM** anti-A binds donor cells and activates **complement**: intravascular haemolysis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is TRALI."
+      ],
+      [
+       1,
+       "That is transfusion-associated GvHD."
+      ],
+      [
+       2,
+       "IgG causes delayed, extravascular haemolysis days later."
+      ],
+      [
+       4,
+       "That is TACO."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: ABO = IgM + complement = intravascular haemolysis."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old woman has a postpartum haemorrhage and is transfused red cells. Fifteen minutes into the first unit she feels anxious and has pain in her back and abdomen. Her catheter urine turns dark brown. Her temperature is 38.7°C, pulse rate 130 bpm, BP 78/44 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 94% breathing air.",
+   "labs": [
+    [
+     "Haptoglobin",
+     "<0.1 g/L",
+     "0.3–2.0",
+     "L"
+    ],
+    [
+     "LDH",
+     "980 U/L",
+     "135–214",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute haemolytic transfusion reaction",
+    "Amniotic fluid embolism",
+    "Anaphylactic transfusion reaction",
+    "Febrile non-haemolytic transfusion reaction",
+    "Transfusion-related acute lung injury"
+   ],
+   "a": 0,
+   "e": "Back and abdominal pain, haemoglobinuria, fever and shock minutes into a unit, with low haptoglobin and high LDH, are an acute haemolytic reaction. Anaphylaxis occurs without fever.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a reaction during transfusion."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Fifteen minutes into the first unit",
+      "pain in her back and abdomen",
+      "dark brown",
+      "38.7°C",
+      "BP 78/44 mmHg"
+     ],
+     "x": "Early, loin pain, dark urine, fever, shock."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute haemolytic reaction.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Amniotic fluid embolism happens during labour, with collapse and DIC, not dark urine 15 minutes into a unit."
+      ],
+      [
+       2,
+       "Anaphylaxis gives hypotension without fever and with wheeze or angioedema."
+      ],
+      [
+       3,
+       "Febrile reactions keep a normal BP."
+      ],
+      [
+       4,
+       "TRALI causes severe hypoxia, not haemolysis markers."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: haemolysis markers + loin pain = ABO incompatibility."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 86 year old man with heart failure and chronic kidney disease is given three units of red cells over 6 hours for anaemia. During the third unit he becomes breathless. He has bibasal crackles, a raised JVP and a third heart sound. His temperature is 36.8°C, pulse rate 104 bpm, BP 182/98 mmHg and oxygen saturation 89% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute haemolytic transfusion reaction",
+    "Anaphylactic transfusion reaction",
+    "Febrile non-haemolytic transfusion reaction",
+    "Transfusion-associated circulatory overload",
+    "Transfusion-related acute lung injury"
+   ],
+   "a": 3,
+   "e": "Breathlessness with hypertension, raised JVP and an S3 and no fever is TACO, from volume overload in a patient with cardiac and renal impairment. TRALI has a normal JVP and hypotension.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which reaction? Look at JVP and BP."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heart failure and chronic kidney disease",
+      "three units of red cells over 6 hours",
+      "raised JVP",
+      "third heart sound",
+      "BP 182/98 mmHg"
+     ],
+     "x": "Volume in, a heart that cannot cope, overload signs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**TACO.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No fever, back pain or dark urine."
+      ],
+      [
+       1,
+       "Anaphylaxis causes hypotension, not hypertension."
+      ],
+      [
+       2,
+       "No fever."
+      ],
+      [
+       4,
+       "TRALI has a normal JVP and hypotension."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: high BP + high JVP + S3 = TACO."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old woman with liver disease is given fresh frozen plasma before a procedure. Three hours later she becomes acutely breathless. Her JVP is not raised and heart sounds are normal. Her temperature is 37.9°C, pulse rate 118 bpm, BP 88/54 mmHg and oxygen saturation 82% on 15 L/min oxygen. Chest X-ray (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "pulm_oedema",
+      "side": "both"
+     }
+    ],
+    "caption": "Bilateral diffuse airspace shadowing; heart size normal."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute haemolytic transfusion reaction",
+    "Anaphylactic transfusion reaction",
+    "Bacterial contamination of the unit",
+    "Transfusion-associated circulatory overload",
+    "Transfusion-related acute lung injury"
+   ],
+   "a": 4,
+   "e": "Hypoxia refractory to oxygen, hypotension, a normal JVP and bilateral infiltrates within 6 hours of FFP is TRALI. TACO would give hypertension and a raised JVP.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: breathless after plasma."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fresh frozen plasma",
+      "Three hours later",
+      "JVP is not raised",
+      "BP 88/54 mmHg",
+      "82% on 15 L/min oxygen"
+     ],
+     "x": "FFP, within 6 hours, normal JVP, hypotension, hypoxia despite oxygen."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**TRALI.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No back pain or haemoglobinuria; FFP contains no red cells."
+      ],
+      [
+       1,
+       "No wheeze, angioedema or urticaria."
+      ],
+      [
+       2,
+       "Contamination causes high fever and septic shock, not isolated lung injury."
+      ],
+      [
+       3,
+       "TACO has a raised JVP and hypertension."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Rule: FFP + hypoxia + normal JVP + low BP within 6 h = TRALI."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 47 year old man with myelodysplasia, who has had many previous transfusions, is having a unit of red cells. After 45 minutes he feels cold and shivery. He has no rash, wheeze, back pain or breathlessness. His temperature is 38.2°C, pulse rate 92 bpm, BP 132/80 mmHg and oxygen saturation 98% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute haemolytic transfusion reaction",
+    "Febrile non-haemolytic transfusion reaction",
+    "Minor allergic transfusion reaction",
+    "Transfusion-associated graft-versus-host disease",
+    "Transfusion-related acute lung injury"
+   ],
+   "a": 1,
+   "e": "A mild fever with chills and stable observations in a multiply transfused patient is a febrile non-haemolytic reaction, caused by cytokines from donor white cells. Haemolysis would bring hypotension and back pain.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which reaction, with fever but stable obs?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "many previous transfusions",
+      "cold and shivery",
+      "no rash, wheeze, back pain or breathlessness",
+      "38.2°C",
+      "BP 132/80 mmHg"
+     ],
+     "x": "Isolated fever and chills, normal BP, sensitised patient."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Febrile non-haemolytic reaction.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No hypotension, back pain or dark urine."
+      ],
+      [
+       2,
+       "No urticaria."
+      ],
+      [
+       3,
+       "GvHD is days to weeks later, with rash and jaundice."
+      ],
+      [
+       4,
+       "No hypoxia or breathlessness."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: fever + chills + normal BP = febrile non-haemolytic."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old man with recurrent sinus and chest infections is transfused after a road traffic collision. Within 5 minutes he develops wheeze, lip swelling and widespread hives. His temperature is 36.7°C, pulse rate 132 bpm, BP 72/40 mmHg and oxygen saturation 90% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of this reaction?",
+   "o": [
+    "ABO incompatibility",
+    "Bacterial contamination of the unit",
+    "Donor antibodies against recipient leukocytes",
+    "IgA deficiency",
+    "Volume overload"
+   ],
+   "a": 3,
+   "e": "Anaphylaxis (wheeze, angioedema, hypotension without fever) in a man with recurrent sinopulmonary infections points to IgA deficiency, the key risk factor for anaphylactic transfusion reactions.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Underlying cause: first name the reaction, then its risk factor."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "recurrent sinus and chest infections",
+      "wheeze, lip swelling and widespread hives",
+      "36.7°C",
+      "BP 72/40 mmHg"
+     ],
+     "x": "Anaphylaxis without fever; recurrent mucosal infections hint at IgA deficiency."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IgA deficiency**, with anti-IgA antibodies."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "ABO haemolysis causes fever, loin pain and dark urine."
+      ],
+      [
+       1,
+       "Contamination causes high fever and rigors, not angioedema."
+      ],
+      [
+       2,
+       "That is TRALI: hypoxia, not hives and angioedema."
+      ],
+      [
+       4,
+       "Overload causes hypertension and raised JVP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: transfusion anaphylaxis = think IgA deficiency."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old man is having chemotherapy for Hodgkin lymphoma. Two weeks after a red cell transfusion he develops fever, a widespread red rash, diarrhoea and yellow sclera. His temperature is 38.4°C, pulse rate 108 bpm and BP 112/70 mmHg.",
+   "labs": [
+    [
+     "Hb",
+     "74 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "WCC",
+     "0.8 ×10⁹/L",
+     "4.0–11.0",
+     "L"
+    ],
+    [
+     "Platelets",
+     "18 ×10⁹/L",
+     "150–400",
+     "L"
+    ],
+    [
+     "Bilirubin",
+     "64 µmol/L",
+     "<21",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute haemolytic transfusion reaction",
+    "Bacterial contamination of the unit",
+    "Febrile non-haemolytic transfusion reaction",
+    "Transfusion-associated graft-versus-host disease",
+    "Transfusion-related acute lung injury"
+   ],
+   "a": 3,
+   "e": "Fever, rash, jaundice and pancytopenia 2 days to 6 weeks after transfusion in an immunosuppressed Hodgkin patient is transfusion-associated GvHD. The other reactions occur during or within hours of the transfusion.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: note the timing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Hodgkin lymphoma",
+      "Two weeks after a red cell transfusion",
+      "widespread red rash",
+      "yellow sclera"
+     ],
+     "x": "Immunosuppressed, late onset, rash, jaundice, pancytopenia on bloods."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Transfusion-associated GvHD.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Haemolysis is within minutes and does not cause rash or pancytopenia."
+      ],
+      [
+       1,
+       "Contamination causes fever during or soon after the unit."
+      ],
+      [
+       2,
+       "Febrile reactions are during the transfusion and mild."
+      ],
+      [
+       4,
+       "TRALI is within 6 hours, with hypoxia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: weeks later + rash + jaundice + pancytopenia in Hodgkin's = TA-GvHD."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 61 year old man develops fever, back pain and hypotension 10 minutes into a red cell transfusion. The transfusion is stopped and IV fluids are started. His temperature is 38.5°C, pulse rate 120 bpm and BP 86/50 mmHg.",
+   "labs": [
+    [
+     "Hb",
+     "72 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "Haptoglobin",
+     "0.1 g/L",
+     "0.3–2.0",
+     "L"
+    ],
+    [
+     "Bilirubin",
+     "44 µmol/L",
+     "<21",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm immune haemolysis?",
+   "o": [
+    "Blood film",
+    "Direct antiglobulin test",
+    "Ferritin",
+    "Reticulocyte count",
+    "Serum IgA level"
+   ],
+   "a": 1,
+   "e": "The direct antiglobulin (Coombs) test detects antibody on red cells and is positive in a haemolytic transfusion reaction. A blood film or reticulocyte count shows haemolysis but not its immune cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirmatory test for immune haemolysis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fever, back pain and hypotension",
+      "10 minutes into a red cell transfusion"
+     ],
+     "x": "Acute haemolytic reaction; markers already suggest haemolysis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Direct antiglobulin test.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A film can show spherocytes but does not prove antibody coating."
+      ],
+      [
+       2,
+       "Ferritin assesses iron stores."
+      ],
+      [
+       3,
+       "Reticulocytes rise later and are non-specific."
+      ],
+      [
+       4,
+       "IgA level is for suspected anaphylaxis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: confirm transfusion haemolysis with the DAT."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 38 year old woman with major bleeding needs urgent red cells. Her blood group is A RhD positive. The only red cell units immediately available in the fridge are listed below. Her temperature is 36.4°C, pulse rate 118 bpm and BP 92/58 mmHg.",
+   "labs": [
+    [
+     "Unit 1",
+     "Group AB RhD positive",
+     "",
+     ""
+    ],
+    [
+     "Unit 2",
+     "Group B RhD positive",
+     "",
+     ""
+    ],
+    [
+     "Unit 3",
+     "Group O RhD positive",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which red cell group is ABO compatible for this patient?",
+   "o": [
+    "AB only",
+    "AB or B",
+    "B only",
+    "Either AB or O",
+    "O only"
+   ],
+   "a": 4,
+   "e": "A group A patient has anti-B, so she can receive A or O red cells. Of those available, only group O is compatible. AB and B cells carry the B antigen.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "ABO compatibility for red cells."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Her blood group is A RhD positive",
+      "only red cell units immediately available"
+     ],
+     "x": "Group A plasma contains anti-B."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "She can have A or O; only O is available: **O only**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AB cells carry B antigen."
+      ],
+      [
+       1,
+       "Both carry B antigen."
+      ],
+      [
+       2,
+       "B cells would be haemolysed by her anti-B."
+      ],
+      [
+       3,
+       "AB is incompatible."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Rule: group O red cells are compatible with everyone."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old woman is 20 minutes into a red cell transfusion on the ward. She suddenly feels unwell with rigors. The nurse calls you. Her temperature is 38.8°C, pulse rate 122 bpm, BP 84/50 mmHg and oxygen saturation 95% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Give IM adrenaline",
+    "Give IV furosemide",
+    "Give oral paracetamol and continue",
+    "Slow the transfusion rate",
+    "Stop the transfusion immediately"
+   ],
+   "a": 4,
+   "e": "Hypotension during a transfusion is ominous: stop the transfusion immediately, before investigations or specific treatment. Paracetamol and continuing would be dangerous here.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of a reaction."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "20 minutes into a red cell transfusion",
+      "rigors",
+      "BP 84/50 mmHg"
+     ],
+     "x": "Hypotension during transfusion: the most concerning sign."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Stop the transfusion immediately.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No features of anaphylaxis; and stopping comes first."
+      ],
+      [
+       1,
+       "Furosemide is for TACO with hypertension."
+      ],
+      [
+       2,
+       "Never continue with hypotension."
+      ],
+      [
+       3,
+       "Slowing still gives more incompatible blood."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Rule: any reaction with low BP = stop first."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "An 82 year old man with ischaemic heart disease is on his second unit of red cells. He becomes breathless with bibasal crackles and a raised JVP. The transfusion has been stopped and he is sat upright on oxygen. His temperature is 36.9°C, pulse rate 102 bpm, BP 176/94 mmHg and oxygen saturation 91% on 4 L/min oxygen.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "IM adrenaline",
+    "IV chlorphenamine",
+    "IV fluid bolus",
+    "IV furosemide",
+    "IV hydrocortisone"
+   ],
+   "a": 3,
+   "e": "Hypertension, raised JVP and crackles during transfusion is TACO, treated with IV furosemide. A fluid bolus would worsen the overload.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step, after stopping and oxygen."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ischaemic heart disease",
+      "raised JVP",
+      "BP 176/94 mmHg",
+      "36.9°C"
+     ],
+     "x": "Overload in a weak heart, no fever: TACO."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV furosemide.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No anaphylaxis: BP is high."
+      ],
+      [
+       1,
+       "No urticaria."
+      ],
+      [
+       2,
+       "Fluid worsens overload."
+      ],
+      [
+       4,
+       "Steroids are adjuncts for anaphylaxis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: TACO = furosemide."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 35 year old woman is 10 minutes into a red cell transfusion when she develops wheeze, swelling of her lips and tongue, and an urticarial rash. The transfusion has been stopped. Her temperature is 36.8°C, pulse rate 136 bpm, BP 74/42 mmHg and oxygen saturation 89% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "IM adrenaline",
+    "IV furosemide",
+    "Oral chlorphenamine alone",
+    "Oral paracetamol",
+    "Restart the transfusion more slowly"
+   ],
+   "a": 0,
+   "e": "Wheeze, angioedema and hypotension without fever is anaphylaxis: give IM adrenaline, with steroid, bronchodilator and supportive care. An antihistamine alone is for minor allergic reactions.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after stopping: name the reaction."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "wheeze",
+      "swelling of her lips and tongue",
+      "BP 74/42 mmHg",
+      "36.8°C"
+     ],
+     "x": "Airway, breathing and circulation compromise, no fever: **anaphylaxis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IM adrenaline.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Furosemide is for TACO."
+      ],
+      [
+       2,
+       "An antihistamine alone is for a minor rash only."
+      ],
+      [
+       3,
+       "Paracetamol is for febrile reactions."
+      ],
+      [
+       4,
+       "Never restart after anaphylaxis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: transfusion anaphylaxis = IM adrenaline."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 58 year old man receives fresh frozen plasma from a multiparous female donor. Two hours later he has severe hypoxaemia unresponsive to oxygen, hypotension and a normal JVP. Chest X-ray shows bilateral infiltrates with a normal heart size. His pulse rate is 120 bpm and BP 86/52 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his lung injury?",
+   "o": [
+    "Anti-IgA antibodies reacting with donor IgA",
+    "Donor antibodies reacting with recipient leukocyte antigens",
+    "Donor lymphocytes attacking recipient lung tissue",
+    "Recipient IgM activating complement against donor red cells",
+    "Volume overload raising pulmonary venous pressure"
+   ],
+   "a": 1,
+   "e": "TRALI: donor antibodies (often in FFP, especially from multiparous donors) react with recipient leukocyte antigens, activating neutrophils and causing capillary leak and non-cardiogenic oedema.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of lung injury after plasma."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fresh frozen plasma",
+      "multiparous female donor",
+      "Two hours later",
+      "normal JVP",
+      "normal heart size"
+     ],
+     "x": "TRALI: plasma from a sensitised donor, within 6 hours, non-cardiogenic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Donor antibodies** against recipient **leukocytes** cause neutrophil activation and capillary leak."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is anaphylaxis in IgA deficiency."
+      ],
+      [
+       2,
+       "That is transfusion-associated GvHD, weeks later."
+      ],
+      [
+       3,
+       "That is ABO haemolysis; FFP has no red cells."
+      ],
+      [
+       4,
+       "That is TACO, with a raised JVP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: TRALI = donor antibody vs recipient white cells = leaky lung capillaries."
+    }
+   ]
+  }
+ ]
+}

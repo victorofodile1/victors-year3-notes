@@ -1,0 +1,679 @@
+{
+ "id": "cellulitis",
+ "patient": {
+  "name": "Gloria Bailey",
+  "age": 61,
+  "sex": "F",
+  "setting": "Urgent Treatment Centre",
+  "complaint": "Red, hot, painful left lower leg for 2 days",
+  "background": [
+   "Type 2 diabetes on metformin",
+   "Obesity (BMI 36) with chronic ankle swelling",
+   "Cracked skin and athlete's foot between her left toes",
+   "Says she is 'allergic' to amoxicillin: it gave her diarrhoea"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a unilateral red, hot, swollen, tender lower leg and fever, against DVT, gout and thrombophlebitis; or questions on the organism, Eron class and necrotising fasciitis.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Gloria, 61, noticed her left shin turning **red and hot** 2 days ago.",
+      "It is swollen, sore to touch and spreading.",
+      "She feels shivery and generally unwell (**malaise**).",
+      "Her right leg is normal."
+     ],
+     "vitals": {
+      "T": "38.3°C",
+      "HR": "96 bpm",
+      "BP": "138/82 mmHg",
+      "RR": "16 /min",
+      "SpO2": "98% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "A one-sided red, hot lower leg in a febrile woman: an **acute bacterial infection of the dermis and subcutaneous tissue**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Gloria has almost every risk factor: **obesity**, **oedema**, **diabetes** and **breaks in the skin** from athlete's foot."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Exam: **poorly defined** erythema from ankle to mid-shin, warm and tender.",
+      "Faint **red streaks** run up the inner thigh.",
+      "Cracked, macerated skin between the 4th and 5th toes.",
+      "Calf soft; no blistering, no crepitus; foot pulses present."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Gloria's red streaks are **lymphangitis**. The likely organism is **Streptococcus pyogenes**, then Staphylococcus aureus."
+    },
+    {
+     "type": "compare",
+     "title": "Red, swollen leg: cellulitis or something else?",
+     "head": ["Feature", "Cellulitis", "DVT", "Gout"],
+     "rows": [
+      ["Skin", "Red, hot, poorly defined erythema", "Mild redness at most", "Red, shiny over a joint"],
+      ["Site", "Shin, spreading", "Calf, whole-leg swelling", "Big toe (1st MTP) joint"],
+      ["Fever", "**Yes**, with malaise", "Low-grade or none", "Sometimes"],
+      ["Clue", "Skin break, red streaks", "Immobility, cancer", "Sudden pain overnight"]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Gloria has a hot, red, tender shin with fever and red streaks. Which is the most likely diagnosis?",
+     "o": ["Cellulitis", "Deep vein thrombosis", "Gout", "Venous eczema"],
+     "a": 0,
+     "r": "Unilateral red, warm, tender skin with **fever** and **lymphangitis** is cellulitis. DVT and eczema do not cause fever and red streaks."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Gloria is systemically well (mild fever, normal BP and HR under 100) but has **diabetes and obesity**: **Eron Class IIa**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Eron class: where is Gloria?",
+      "min": 1,
+      "max": 6,
+      "unit": "",
+      "bands": [[1, 2, "I", "ok"], [2, 3, "IIa", "ok"], [3, 4, "IIb", "warn"], [4, 5, "III", "bad"], [5, 6, "IV", "bad"]],
+      "value": 2.5,
+      "label": "Gloria IIa",
+      "caption": "Class I and IIa: oral treatment usually fine. IIb and above: admit and consider IV antibiotics. **Class IV** = sepsis or necrotising fasciitis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Gloria is **diabetic**, so watch for spread to **necrotising fasciitis** or **sepsis**: pain out of proportion, crepitus, dusky skin or falling BP."
+    },
+    {
+     "type": "trap",
+     "text": "Cellulitis is usually **unilateral**. Two red, swollen legs are more likely venous eczema or lipodermatosclerosis, not 'bilateral cellulitis'."
+    },
+    {
+     "type": "pearl",
+     "text": "Classic stem: one red, hot, tender, swollen lower leg, **fever**, poorly defined erythema and a portal of entry (cut, bite, tinea). Answer: **cellulitis**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect a question on whether any test is needed (cellulitis is a **clinical diagnosis**), the expected blood results (raised CRP and WCC), or blood cultures in a systemically unwell patient.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Gloria's diagnosis is made from her history and the look of her leg. No scan or swab is needed to **confirm** it."
+    },
+    {
+     "type": "ask",
+     "q": "What confirms that Gloria has cellulitis?",
+     "o": ["Blood cultures", "Clinical history and examination", "Doppler ultrasound", "Skin biopsy"],
+     "a": 1,
+     "r": "Cellulitis is a **clinical diagnosis**. Blood tests support it; Doppler is only if you also suspect a DVT."
+    },
+    {
+     "type": "labs",
+     "title": "Gloria's bloods",
+     "rows": [
+      ["CRP", "118 mg/L", "<5", "H"],
+      ["WCC", "14.6 ×10⁹/L", "4.0–11.0", "H"],
+      ["Neutrophils", "11.9 ×10⁹/L", "2.0–7.5", "H"],
+      ["Creatinine", "74 µmol/L", "45–90", ""],
+      ["Glucose", "12.8 mmol/L", "4.0–7.8", "H"]
+     ],
+     "text": "Raised **CRP** and **WCC** fit a bacterial infection. High glucose: infection upsets diabetic control."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Gloria's **CRP** and **WCC** are raised. She is not severely unwell, so blood cultures are not needed now."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Gloria's CRP",
+      "min": 0,
+      "max": 300,
+      "unit": "mg/L",
+      "bands": [[0, 5, "normal", "ok"], [5, 100, "raised", "warn"], [100, 300, "high", "bad"]],
+      "value": 118,
+      "label": "Gloria 118",
+      "caption": "A raised CRP supports infection; repeat it if she is not improving."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Which tests for which patient?",
+     "nodes": [
+      "Red, hot, tender leg",
+      "Clinical diagnosis of cellulitis",
+      "Bloods: CRP and WCC",
+      "Systemically unwell or septic?",
+      "Yes: blood cultures before IV antibiotics"
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "A **skin swab** of intact skin is pointless. Blood cultures are for **severe** infection, not for every cellulitis."
+    },
+    {
+     "type": "pearl",
+     "text": "If the stem asks how to **confirm** cellulitis, the answer is clinical diagnosis, not an imaging test."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' with oral flucloxacillin as the answer, then the twists: true penicillin allergy, pregnancy, cat bites (co-amoxiclav), sepsis (IV co-amoxiclav, vancomycin if MRSA).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Gloria says she is **allergic to amoxicillin**.",
+      "On questioning: it only gave her loose stools and nausea.",
+      "No rash, swelling or breathing problems."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Is Gloria's reaction to amoxicillin a penicillin allergy?",
+     "o": ["No: diarrhoea and nausea are side effects", "Yes: avoid all beta-lactams", "Yes: she needs a test dose", "Yes: give IV vancomycin instead"],
+     "a": 0,
+     "r": "Diarrhoea and nausea are **common side effects**, not allergy. She can safely take flucloxacillin."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "So Gloria gets **oral flucloxacillin 500 mg QDS for 5–7 days**, with leg **elevation** and analgesia."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Had Gloria been truly allergic (e.g. rash or anaphylaxis), she would get **clarithromycin** or doxycycline; erythromycin if pregnant."
+    },
+    {
+     "type": "compare",
+     "title": "Which antibiotic?",
+     "head": ["Situation", "Antibiotic"],
+     "rows": [
+      ["Standard cellulitis", "**Oral flucloxacillin** 500 mg QDS, 5–7 days"],
+      ["True penicillin allergy", "Clarithromycin, doxycycline or clindamycin"],
+      ["Pregnant + penicillin allergy", "Oral **erythromycin**"],
+      ["Cat bite / infected insect bite in diabetic", "Oral **co-amoxiclav** (Pasteurella)"],
+      ["Sepsis", "**IV co-amoxiclav** + IV fluids; IV vancomycin if MRSA"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Gloria became septic, she would need **IV co-amoxiclav** and IV fluids; a cat bite would mean **co-amoxiclav** for Pasteurella."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Gloria on oral flucloxacillin",
+      "x": ["Day 0", "Day 2", "Day 4", "Day 7"],
+      "unit": "",
+      "series": [
+       {"name": "CRP (mg/L)", "values": [118, 92, 40, 9]},
+       {"name": "Temperature (°C)", "values": [38.3, 37.6, 36.9, 36.8]}
+      ],
+      "caption": "Fever settles and CRP falls. Redness may look worse in the first 48 hours before improving; draw round the edge to track it."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Gloria's care follows **NICE NG141** (cellulitis and erysipelas) and the **Eron classification** for deciding oral versus IV and admission."
+    },
+    {
+     "type": "trap",
+     "text": "Do not label diarrhoea on amoxicillin as 'penicillin allergy'. It pushes patients onto worse, broader antibiotics."
+    },
+    {
+     "type": "pearl",
+     "text": "Bite (cat, or infected insect bite in a diabetic) = **co-amoxiclav**. Septic = **IV**. MRSA = **vancomycin**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions on the organism and how it gets in, why the skin is red, warm and swollen, why lymphangitis streaks, and why oedema, obesity and diabetes predispose.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Streptococci entered Gloria's skin through the cracks between her toes and set off an **acute inflammatory response** in the dermis."
+    },
+    {
+     "type": "flow",
+     "title": "From a crack in the skin to a red, hot leg",
+     "nodes": [
+      "Break in skin (tinea, cut, bite)",
+      "Strep pyogenes or Staph aureus invade",
+      "Dermis and subcutaneous tissue infected",
+      "Vasodilation, leaky vessels, neutrophils",
+      "Erythema, warmth, swelling, tenderness"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Gloria's red streaks follow her **lymphatic channels** up the leg towards the inguinal nodes."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Gloria's ankle **oedema** and obesity slow lymph drainage and perfusion, so bacteria take hold and clear slowly."
+    },
+    {
+     "type": "ask",
+     "q": "Why does Gloria's chronic ankle oedema make cellulitis more likely?",
+     "o": ["It acidifies the skin", "It impairs lymphatic drainage and local perfusion", "It kills skin flora", "It raises her white cell count"],
+     "a": 1,
+     "r": "Poor **lymphatic drainage** and perfusion predispose to bacterial invasion and slow recovery."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Because Gloria is **diabetic**, infection could spread deeper to the fascia (**necrotising fasciitis**) or into the blood (**sepsis**)."
+    },
+    {
+     "type": "pearl",
+     "text": "Treat the **portal of entry** too: Gloria's athlete's foot needs an antifungal to stop recurrence."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {"d": "diagnosis", "q": "Which layers of skin does cellulitis affect?", "o": ["Dermis and subcutaneous tissue", "Epidermis only", "Fascia and muscle", "Hair follicles only"], "a": 0, "r": "Cellulitis is an **acute bacterial infection of the dermis and subcutaneous tissue**."},
+  {"d": "diagnosis", "q": "What is the most common organism causing cellulitis?", "o": ["Escherichia coli", "Pseudomonas aeruginosa", "Staphylococcus epidermidis", "Streptococcus pyogenes"], "a": 3, "r": "**Strep pyogenes** is most common, followed by **Staph aureus**."},
+  {"d": "diagnosis", "q": "What does red streaking up the limb in cellulitis represent?", "o": ["Lymphangitis", "Necrotising fasciitis", "Thrombophlebitis", "Varicose veins"], "a": 0, "r": "**Lymphangitis**: spread along lymphatics towards regional nodes."},
+  {"d": "diagnosis", "q": "Which Eron class is a patient who is systemically well but has a comorbidity?", "o": ["Class I", "Class IIa", "Class IIb", "Class IV"], "a": 1, "r": "**Class IIa**: systemically well with a comorbidity."},
+  {"d": "diagnosis", "q": "Which serious complication can untreated cellulitis progress to?", "o": ["Erythema nodosum", "Necrotising fasciitis", "Psoriasis", "Vitiligo"], "a": 1, "r": "**Necrotising fasciitis**, or bacteraemia and sepsis."},
+  {"d": "investigation", "q": "How is cellulitis diagnosed?", "o": ["Clinically, on history and examination", "MRI", "Skin biopsy", "Skin swab"], "a": 0, "r": "It is a **clinical diagnosis**."},
+  {"d": "management", "q": "What is the first-line antibiotic for uncomplicated cellulitis?", "o": ["Oral amoxicillin", "Oral flucloxacillin 500 mg QDS for 5–7 days", "Oral nitrofurantoin", "Topical fusidic acid"], "a": 1, "r": "**Oral flucloxacillin 500 mg QDS for 5–7 days**."},
+  {"d": "management", "q": "Which antibiotic covers Pasteurella multocida after a cat bite?", "o": ["Co-amoxiclav", "Flucloxacillin", "Metronidazole", "Trimethoprim"], "a": 0, "r": "Oral **co-amoxiclav** is first-line for cat bites."},
+  {"d": "management", "q": "What is given for a pregnant woman with cellulitis and penicillin allergy?", "o": ["Doxycycline", "Erythromycin", "Flucloxacillin", "Trimethoprim"], "a": 1, "r": "Oral **erythromycin**; doxycycline is avoided in pregnancy."},
+  {"d": "science", "q": "Why are oedema and obesity risk factors for cellulitis?", "o": ["They impair lymphatic drainage and local perfusion", "They increase skin acidity", "They reduce bacterial numbers", "They thicken the epidermis"], "a": 0, "r": "Impaired **perfusion and lymph drainage** predispose to invasion and slow resolution."}
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 54 year old man has a 2 day history of a painful right lower leg after scratching it on a garden fence. His temperature is 38.5°C, pulse rate 98 bpm, BP 132/80 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 98% breathing air. The right shin is swollen, warm and tender with poorly defined erythema. The left leg is normal.",
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Cellulitis", "Deep vein thrombosis", "Gout", "Superficial thrombophlebitis", "Venous eczema"],
+   "a": 0,
+   "steps": [
+    {"t": "Read the question line first", "x": "A red-leg diagnosis question: infection, clot, crystal or skin?"},
+    {"t": "Pick out the clues", "clues": ["after scratching it on a garden fence", "38.5°C", "swollen, warm and tender", "poorly defined erythema", "The left leg is normal"], "x": "Portal of entry, fever, unilateral red hot tender shin."},
+    {"t": "Make your own answer before looking", "x": "**Cellulitis**."},
+    {"t": "Rule out the others", "elim": [[1, "DVT gives calf swelling without fever, a skin break or spreading erythema."], [2, "Gout affects a joint, usually the big toe, not the shin."], [3, "Thrombophlebitis is a tender cord along a vein, without spreading erythema."], [4, "Venous eczema is itchy, scaly, often bilateral and without fever."]]},
+    {"t": "Commit", "x": "**A. Cellulitis.** Unilateral, hot, red, tender + fever + skin break."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 47 year old woman has a 3 day history of a red, hot, swollen left forearm after a cat scratch. Her temperature is 38.2°C, pulse rate 94 bpm and BP 126/78 mmHg. There is poorly defined erythema with red streaks towards the elbow. Blood tests are sent.",
+   "q": "Which is the most likely finding on her blood tests?",
+   "o": ["Low CRP and low WCC", "Normal CRP and raised eosinophils", "Raised CRP and raised WCC", "Raised ESR with low platelets", "Raised uric acid only"],
+   "a": 2,
+   "steps": [
+    {"t": "Read the question line first", "x": "Predict the blood results in a bacterial skin infection."},
+    {"t": "Pick out the clues", "clues": ["red, hot, swollen left forearm", "38.2°C", "poorly defined erythema", "red streaks"], "x": "Cellulitis with lymphangitis: an acute bacterial infection."},
+    {"t": "Make your own answer before looking", "x": "**Raised CRP and raised WCC**."},
+    {"t": "Rule out the others", "elim": [[0, "A bacterial infection raises, not lowers, CRP and WCC."], [1, "Eosinophils rise in allergy and parasites, not cellulitis."], [3, "Low platelets are not a feature of simple cellulitis."], [4, "Uric acid is for gout."]]},
+    {"t": "Commit", "x": "**C. Raised CRP and WCC.** Supports a clinical diagnosis."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 39 year old man has cellulitis of his left lower leg. He is systemically well with no comorbidities. His temperature is 37.9°C, pulse rate 84 bpm and BP 124/76 mmHg. He says he is allergic to penicillin because amoxicillin once gave him diarrhoea and nausea. He has never had a rash or swelling.",
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Clarithromycin", "Clindamycin", "Erythromycin", "Flucloxacillin", "Vancomycin IV"],
+   "a": 3,
+   "steps": [
+    {"t": "Read the question line first", "x": "First-line antibiotic, but check the allergy story."},
+    {"t": "Pick out the clues", "clues": ["systemically well with no comorbidities", "amoxicillin once gave him diarrhoea and nausea", "never had a rash or swelling"], "x": "Eron Class I; the 'allergy' is a side effect."},
+    {"t": "Make your own answer before looking", "x": "Not a true allergy, so **oral flucloxacillin**."},
+    {"t": "Rule out the others", "elim": [[0, "Clarithromycin is for true penicillin allergy."], [1, "Clindamycin is an allergy alternative, and causes C. difficile."], [2, "Erythromycin is for pregnant patients with true allergy."], [4, "IV vancomycin is for MRSA or sepsis."]]},
+    {"t": "Commit", "x": "**D. Flucloxacillin.** Diarrhoea is a side effect, not an allergy."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old woman has a 2 day history of a red, warm, swollen, tender area on her right shin after an insect bite. Her temperature is 38.1°C. The area has poorly defined margins. There is no joint involvement and her calf is soft.",
+   "q": "Which is the most likely mechanism of the redness, warmth and swelling?",
+   "o": ["Acute inflammatory response with vasodilation and increased vascular permeability", "Deep vein clot obstructing venous return", "IgE-mediated allergic reaction", "Lymphatic obstruction by tumour", "Urate crystal deposition"],
+   "a": 0,
+   "steps": [
+    {"t": "Read the question line first", "x": "Mechanism of the classic signs."},
+    {"t": "Pick out the clues", "clues": ["insect bite", "38.1°C", "red, warm, swollen, tender", "poorly defined margins"], "x": "Skin breach, then bacterial cellulitis."},
+    {"t": "Make your own answer before looking", "x": "Bacteria in the dermis trigger **acute inflammation**: vasodilation, leaky vessels, neutrophils."},
+    {"t": "Rule out the others", "elim": [[1, "Clot causes swelling, not fever with spreading erythema; calf is soft."], [2, "Allergy gives itchy wheals, not fever."], [3, "No tumour; this is acute."], [4, "Urate crystals cause gout in a joint."]]},
+    {"t": "Commit", "x": "**A. Acute inflammatory response.** Rubor, calor, tumor, dolor."}
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 57 year old man with type 2 diabetes has a 3 day history of a painful left lower leg. He has a cracked heel. His temperature is 38.6°C, pulse rate 102 bpm, BP 128/78 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 98% breathing air. The left shin is red, hot, swollen and tender with poorly defined margins.",
+   "labs": [["CRP", "96 mg/L", "<5", "H"], ["WCC", "13.8 ×10⁹/L", "4.0–11.0", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Cellulitis", "Deep vein thrombosis", "Lipodermatosclerosis", "Necrotising fasciitis", "Venous eczema"],
+   "a": 0,
+   "e": "Unilateral red, hot, tender shin with fever, raised inflammatory markers and a skin break is cellulitis. Necrotising fasciitis would give pain out of proportion and systemic toxicity.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Most likely diagnosis for a red, hot leg."},
+    {"t": "Pick out the clues", "clues": ["type 2 diabetes", "cracked heel", "38.6°C", "red, hot, swollen and tender", "poorly defined margins"], "x": "Risk factor, portal of entry, fever, classic skin signs."},
+    {"t": "Make your own answer before looking", "x": "**Cellulitis**."},
+    {"t": "Rule out the others", "elim": [[1, "DVT does not give fever with spreading red, hot skin."], [2, "Lipodermatosclerosis is chronic, woody and usually bilateral."], [3, "No crepitus, dusky skin or pain out of proportion; he is stable."], [4, "Venous eczema is itchy, scaly and afebrile."]]},
+    {"t": "Commit", "x": "**A. Cellulitis.**"}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old woman has a 2 day history of a red, hot, tender area on her right calf that started around a small cut from shaving. Her temperature is 38.4°C and pulse rate 96 bpm. There is no pus and no history of animal bites, swimming or recent hospital stay.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": ["Escherichia coli", "Pasteurella multocida", "Pseudomonas aeruginosa", "Staphylococcus epidermidis", "Streptococcus pyogenes"],
+   "a": 4,
+   "e": "Strep pyogenes is the most common cause of cellulitis, ahead of Staph aureus. Pasteurella follows animal bites; Pseudomonas follows water exposure.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Organism question for cellulitis."},
+    {"t": "Pick out the clues", "clues": ["small cut from shaving", "38.4°C", "no pus", "no history of animal bites, swimming or recent hospital stay"], "x": "Simple non-purulent cellulitis with no special exposure."},
+    {"t": "Make your own answer before looking", "x": "**Streptococcus pyogenes**."},
+    {"t": "Rule out the others", "elim": [[0, "E. coli causes UTIs, not typical cellulitis."], [1, "Pasteurella needs a cat or dog bite."], [2, "Pseudomonas follows water exposure or burns."], [3, "Staph epidermidis is a skin commensal causing line infections."]]},
+    {"t": "Commit", "x": "**E. Strep pyogenes.** Most common; Staph aureus second."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man with type 2 diabetes and heart failure has cellulitis of his right lower leg. He feels well in himself. His temperature is 37.8°C, pulse rate 86 bpm, BP 136/80 mmHg, respiratory rate 15 breaths per minute and oxygen saturation 97% breathing air. He is alert and orientated.",
+   "labs": [["CRP", "64 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most likely Eron classification?",
+   "o": ["Class I", "Class IIa", "Class IIb", "Class III", "Class IV"],
+   "a": 1,
+   "e": "Systemically well but with comorbidities (diabetes, heart failure) is Eron Class IIa. Class I needs no comorbidities; IIb needs systemic illness.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Severity class: is he unwell, and does he have comorbidities?"},
+    {"t": "Pick out the clues", "clues": ["type 2 diabetes and heart failure", "feels well in himself", "pulse rate 86 bpm", "alert and orientated"], "x": "Systemically well; comorbidities present."},
+    {"t": "Make your own answer before looking", "x": "**Class IIa**."},
+    {"t": "Rule out the others", "elim": [[0, "Class I has no comorbidities."], [2, "IIb needs systemic illness."], [3, "III needs significant systemic upset or limb threat."], [4, "IV is sepsis or necrotising fasciitis."]]},
+    {"t": "Commit", "x": "**B. Class IIa.** Well + comorbidity."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old woman with poorly controlled diabetes has had cellulitis of her left thigh for 2 days. Over 6 hours she develops severe pain far worse than the visible redness. The skin is now dusky with blisters and crepitus. Her temperature is 39.4°C, pulse rate 132 bpm and BP 88/52 mmHg.",
+   "labs": [["CRP", "340 mg/L", "<5", "H"], ["WCC", "26.1 ×10⁹/L", "4.0–11.0", "H"], ["Creatine kinase", "2400 U/L", "<200", "H"]],
+   "visual": null,
+   "q": "Which is the most likely complication that has developed?",
+   "o": ["Compartment syndrome", "Deep vein thrombosis", "Erysipelas", "Necrotising fasciitis", "Osteomyelitis"],
+   "a": 3,
+   "e": "Pain out of proportion, dusky blistering skin, crepitus and shock in a diabetic with cellulitis means spread to necrotising fasciitis (Eron Class IV). It needs urgent surgery.",
+   "steps": [
+    {"t": "Read the question line first", "x": "A complication of cellulitis in a diabetic."},
+    {"t": "Pick out the clues", "clues": ["poorly controlled diabetes", "far worse than the visible redness", "dusky with blisters and crepitus", "BP 88/52 mmHg"], "x": "Rapid spread, gas in tissue, shock."},
+    {"t": "Make your own answer before looking", "x": "**Necrotising fasciitis**."},
+    {"t": "Rule out the others", "elim": [[0, "Compartment syndrome follows trauma or fracture, without crepitus."], [1, "DVT does not cause crepitus or shock like this."], [2, "Erysipelas is superficial and well demarcated."], [4, "Osteomyelitis is slower and does not cause crepitus."]]},
+    {"t": "Commit", "x": "**D. Necrotising fasciitis.** Pain out of proportion + crepitus."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 28 year old man has a 2 day history of a red, hot, swollen right foot after stepping on a nail. He now has tender red lines running up the inside of his leg and a tender lump in his right groin. His temperature is 38.3°C and pulse rate 98 bpm.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely explanation for the red lines on his leg?",
+   "o": ["Lymphangitis", "Superficial thrombophlebitis", "Varicose veins", "Vasculitis", "Venous eczema"],
+   "a": 0,
+   "e": "Red streaking towards tender regional nodes is lymphangitis: cellulitis spreading along superficial lymphatic channels.",
+   "steps": [
+    {"t": "Read the question line first", "x": "What are the red streaks?"},
+    {"t": "Pick out the clues", "clues": ["stepping on a nail", "tender red lines running up the inside of his leg", "tender lump in his right groin"], "x": "Spreading infection towards the inguinal nodes."},
+    {"t": "Make your own answer before looking", "x": "**Lymphangitis**."},
+    {"t": "Rule out the others", "elim": [[1, "Thrombophlebitis is a firm cord along a vein, without groin nodes."], [2, "Varicose veins are blue, not tender red lines."], [3, "Vasculitis gives purpura, not streaks to a node."], [4, "Eczema is scaly and itchy."]]},
+    {"t": "Commit", "x": "**A. Lymphangitis.** Infection tracking along lymphatics."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 49 year old woman with obesity and chronic leg oedema has a 2 day history of a painful left lower leg and malaise. Her temperature is 38.5°C, pulse rate 100 bpm and BP 134/82 mmHg. The doctor examines the leg.",
+   "labs": [["CRP", "88 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most likely finding on examination of the leg?",
+   "o": ["Bilateral painless erythema", "Poorly defined warm tender erythema", "Pulseless cold white foot", "Silvery scaly plaques", "Target lesions"],
+   "a": 1,
+   "e": "Cellulitis gives poorly defined, warm, tender erythema, usually on one leg.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Predict the examination finding."},
+    {"t": "Pick out the clues", "clues": ["obesity and chronic leg oedema", "painful left lower leg and malaise", "38.5°C"], "x": "Risk factors plus fever and a painful leg: cellulitis."},
+    {"t": "Make your own answer before looking", "x": "**Poorly defined, warm, tender erythema**."},
+    {"t": "Rule out the others", "elim": [[0, "Cellulitis is unilateral and painful."], [2, "That is acute limb ischaemia."], [3, "That is psoriasis."], [4, "Target lesions are erythema multiforme."]]},
+    {"t": "Commit", "x": "**B.** Classic cellulitis skin."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 42 year old man has a 2 day history of a red, hot, tender right shin after a grazed knee. He is systemically well. His temperature is 37.9°C, pulse rate 84 bpm and BP 122/78 mmHg. His calf is soft and non-tender and he has no DVT risk factors. The junior doctor asks which test will confirm the diagnosis.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": ["Blood cultures", "Doppler ultrasound", "MRI of the leg", "No test needed: clinical diagnosis", "Skin biopsy"],
+   "a": 3,
+   "e": "Cellulitis is a clinical diagnosis made on history and examination. Bloods (CRP, WCC) support it; blood cultures are only for severe infection.",
+   "steps": [
+    {"t": "Read the question line first", "x": "How is cellulitis confirmed?"},
+    {"t": "Pick out the clues", "clues": ["red, hot, tender right shin", "systemically well", "calf is soft and non-tender", "no DVT risk factors"], "x": "Classic, mild cellulitis; nothing pointing to DVT or deep infection."},
+    {"t": "Make your own answer before looking", "x": "**Clinical diagnosis**."},
+    {"t": "Rule out the others", "elim": [[0, "Blood cultures are for severe infection; he is well."], [1, "Doppler is for suspected DVT."], [2, "MRI is for suspected deep infection such as osteomyelitis."], [4, "Biopsy is never needed for simple cellulitis."]]},
+    {"t": "Commit", "x": "**D. Clinical diagnosis.** History and examination alone."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 76 year old woman with diabetes has cellulitis of her right leg and is now drowsy. Her temperature is 39.3°C, pulse rate 122 bpm, BP 90/56 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 95% breathing air. IV antibiotics are about to be started.",
+   "labs": [["CRP", "260 mg/L", "<5", "H"], ["WCC", "21.0 ×10⁹/L", "4.0–11.0", "H"], ["Lactate", "3.6 mmol/L", "0.5–2.0", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation before antibiotics?",
+   "o": ["Blood cultures", "D-dimer", "Plain X-ray of the leg", "Skin swab of intact skin", "Uric acid"],
+   "a": 0,
+   "e": "In severe cellulitis or sepsis, take blood cultures before IV antibiotics. A swab of intact skin is useless.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Test before antibiotics in a severely unwell patient."},
+    {"t": "Pick out the clues", "clues": ["now drowsy", "39.3°C", "BP 90/56 mmHg", "IV antibiotics are about to be started"], "x": "Systemically unwell: severe cellulitis with sepsis."},
+    {"t": "Make your own answer before looking", "x": "**Blood cultures**."},
+    {"t": "Rule out the others", "elim": [[1, "D-dimer is for VTE and is raised in infection anyway."], [2, "X-ray does not change immediate care."], [3, "Swabbing intact skin grows nothing useful."], [4, "Uric acid is for gout."]]},
+    {"t": "Commit", "x": "**A. Blood cultures.** Severe cellulitis = cultures, then IV antibiotics."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 45 year old woman has a 2 day history of a red, hot, tender left lower leg. She has no allergies and no comorbidities and is not pregnant. Her temperature is 37.9°C, pulse rate 88 bpm and BP 124/76 mmHg. She is eating and drinking normally.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Clarithromycin oral", "Co-amoxiclav IV", "Flucloxacillin oral", "Fusidic acid topical", "Vancomycin IV"],
+   "a": 2,
+   "e": "Eron Class I cellulitis: oral flucloxacillin 500 mg QDS for 5–7 days with elevation and analgesia.",
+   "steps": [
+    {"t": "Read the question line first", "x": "First-line treatment for mild cellulitis."},
+    {"t": "Pick out the clues", "clues": ["no allergies and no comorbidities", "is not pregnant", "pulse rate 88 bpm", "eating and drinking normally"], "x": "Eron Class I; no reason to deviate."},
+    {"t": "Make your own answer before looking", "x": "**Oral flucloxacillin 500 mg QDS, 5–7 days**."},
+    {"t": "Rule out the others", "elim": [[0, "Clarithromycin is for penicillin allergy."], [1, "IV co-amoxiclav is for sepsis."], [3, "Topical treatment cannot reach the dermis."], [4, "Vancomycin is for MRSA."]]},
+    {"t": "Commit", "x": "**C. Oral flucloxacillin.**"}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old man with type 1 diabetes was bitten on the hand by his cat 2 days ago. The hand is now red, hot and swollen around the bite. His temperature is 38.0°C, pulse rate 92 bpm and BP 130/80 mmHg. He has no allergies.",
+   "labs": [["CRP", "72 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate antibiotic?",
+   "o": ["Clarithromycin", "Co-amoxiclav", "Flucloxacillin", "Metronidazole", "Nitrofurantoin"],
+   "a": 1,
+   "e": "Cat bites need oral co-amoxiclav to cover Pasteurella multocida. Flucloxacillin alone misses Pasteurella.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Antibiotic choice after a bite."},
+    {"t": "Pick out the clues", "clues": ["type 1 diabetes", "bitten on the hand by his cat", "red, hot and swollen around the bite"], "x": "Cat bite cellulitis in a diabetic."},
+    {"t": "Make your own answer before looking", "x": "**Co-amoxiclav** for Pasteurella."},
+    {"t": "Rule out the others", "elim": [[0, "Clarithromycin is the allergy option, with poor Pasteurella cover alone."], [2, "Flucloxacillin does not cover Pasteurella."], [3, "Metronidazole alone covers only anaerobes."], [4, "Nitrofurantoin is for UTIs only."]]},
+    {"t": "Commit", "x": "**B. Co-amoxiclav.** Bite = co-amoxiclav."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 31 year old woman who is 24 weeks pregnant has a 2 day history of a red, hot, tender right lower leg. She had anaphylaxis to penicillin as a child. Her temperature is 37.8°C, pulse rate 90 bpm and BP 112/70 mmHg. She is systemically well.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Clarithromycin", "Co-amoxiclav", "Doxycycline", "Erythromycin", "Flucloxacillin"],
+   "a": 3,
+   "e": "In pregnancy with true penicillin allergy, oral erythromycin is used. Doxycycline is contraindicated in pregnancy; beta-lactams are unsafe after anaphylaxis.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Antibiotic for cellulitis with two twists."},
+    {"t": "Pick out the clues", "clues": ["24 weeks pregnant", "anaphylaxis to penicillin", "systemically well"], "x": "True allergy and pregnancy."},
+    {"t": "Make your own answer before looking", "x": "**Oral erythromycin**."},
+    {"t": "Rule out the others", "elim": [[0, "Clarithromycin is the non-pregnant allergy choice."], [1, "Co-amoxiclav is a penicillin: anaphylaxis risk."], [2, "Doxycycline stains fetal teeth and bone."], [4, "Flucloxacillin is a penicillin."]]},
+    {"t": "Commit", "x": "**D. Erythromycin.** Pregnant + penicillin allergic."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 68 year old man with obesity, chronic lymphoedema of both legs and peripheral vascular disease has his third episode of left leg cellulitis this year. Each episode resolves slowly. His temperature is 38.1°C, pulse rate 94 bpm and BP 140/84 mmHg.",
+   "labs": [["CRP", "84 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his recurrent infection and slow resolution?",
+   "o": ["Autoimmune destruction of the skin", "Impaired lymphatic drainage and local perfusion", "Increased neutrophil numbers in the skin", "Reduced gastric acid", "Vitamin C deficiency"],
+   "a": 1,
+   "e": "Oedema, obesity and vascular disease impair local perfusion and lymphatic drainage, predisposing to bacterial invasion and slowing resolution.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Mechanism behind the risk factors."},
+    {"t": "Pick out the clues", "clues": ["obesity", "chronic lymphoedema", "peripheral vascular disease", "third episode", "resolves slowly"], "x": "All three impair blood or lymph flow."},
+    {"t": "Make your own answer before looking", "x": "**Impaired lymphatic drainage and perfusion**."},
+    {"t": "Rule out the others", "elim": [[0, "Cellulitis is infective, not autoimmune."], [2, "More neutrophils would help, not hinder."], [3, "Gastric acid is irrelevant to skin."], [4, "Scurvy is not suggested."]]},
+    {"t": "Commit", "x": "**B. Impaired lymph drainage and perfusion.**"}
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {"d": "diagnosis", "q": "What is cellulitis and where does it usually occur?", "tip": "Exam thinking: name the layers and the typical site.", "points": [
+    {"p": "Acute bacterial infection", "k": [["bacteri"]], "why": "Not viral, not allergic."},
+    {"p": "Of the dermis and subcutaneous tissue", "k": [["dermis", "subcutaneous"]], "why": "Deeper than erysipelas (upper dermis)."},
+    {"p": "Usually the lower limb, unilateral", "k": [["leg", "lower limb", "shin"], ["unilateral", "one side", "one leg"]], "why": "Bilateral red legs are rarely cellulitis."}
+   ]},
+   {"d": "diagnosis", "q": "What are the risk factors for cellulitis?", "tip": "Exam thinking: anything breaking the skin barrier or reducing perfusion.", "points": [
+    {"p": "Breaks in the skin (wounds, insect bites)", "k": [["break", "cut", "wound", "bite", "crack"]], "why": "The portal of entry."},
+    {"p": "Obesity and oedema", "k": [["obes", "oedema", "edema", "lymphoedema"]], "why": "Impair lymph drainage."},
+    {"p": "Diabetes and peripheral vascular disease", "k": [["diabet", "vascular", "pvd"]], "why": "Impair perfusion and immunity."},
+    {"p": "Chronic skin changes", "k": [["chronic skin", "eczema", "tinea", "athlete"]], "why": "Tinea pedis is a common hidden entry point."}
+   ]},
+   {"d": "diagnosis", "q": "How does cellulitis present, and which organisms cause it?", "tip": "Exam thinking: signs plus the two organisms.", "points": [
+    {"p": "Red, hot, swollen, tender skin", "k": [["red", "erythema"], ["hot", "warm"]], "why": "Classic inflammatory signs."},
+    {"p": "Poorly defined erythema", "k": [["poorly defined", "ill-defined", "poorly demarcated"]], "why": "Sharp margins suggest erysipelas."},
+    {"p": "Fever and malaise", "k": [["fever", "pyrex", "malaise"]], "why": "Distinguishes from DVT and eczema."},
+    {"p": "Lymphangitis: red streaking", "k": [["lymphangitis", "streak"]], "why": "Spread along lymphatics."},
+    {"p": "Strep pyogenes (most common) and Staph aureus", "k": [["strep", "pyogenes"], ["staph", "aureus"]], "why": "Strep first, Staph second."}
+   ]},
+   {"d": "diagnosis", "q": "What is the Eron classification of cellulitis?", "tip": "Exam thinking: well or unwell, comorbid or not.", "points": [
+    {"p": "Class I: no systemic illness, no comorbidities", "k": [["class i", "class 1", "class one"]], "why": "Oral treatment."},
+    {"p": "Class IIa: systemically well with a comorbidity; IIb: unwell with comorbidities", "k": [["iia", "2a"]], "why": "IIb usually needs admission."},
+    {"p": "Class III: significant systemic upset, unstable comorbidity or limb threat", "k": [["iii", "class 3"]], "why": "Confusion, tachycardia, tachypnoea, hypotension."},
+    {"p": "Class IV: sepsis or necrotising fasciitis", "k": [["iv", "class 4"], ["sepsis", "necrotising", "necrotizing"]], "why": "Life-threatening."}
+   ]},
+   {"d": "diagnosis", "q": "What are the complications of cellulitis, and who is most at risk?", "tip": "Exam thinking: the deeper and the systemic spread.", "points": [
+    {"p": "Necrotising fasciitis", "k": [["necrotising", "necrotizing"]], "why": "Pain out of proportion, crepitus: urgent surgery."},
+    {"p": "Bacteraemia and sepsis", "k": [["sepsis", "bacteraem", "septic"]], "why": "Needs IV antibiotics."},
+    {"p": "Higher risk in immunocompromised or diabetic patients", "k": [["immuno", "diabet"]], "why": "Infection extends beyond the dermis."}
+   ]},
+   {"d": "investigation", "q": "How is cellulitis diagnosed and which tests help?", "tip": "Exam thinking: clinical first, bloods to support.", "points": [
+    {"p": "Clinical diagnosis on history and examination (gold standard)", "k": [["clinical", "history", "examination"]], "why": "No imaging needed to confirm."},
+    {"p": "Raised CRP and WCC", "k": [["crp", "wcc", "white cell"]], "why": "Support infection."},
+    {"p": "Blood cultures if severe infection suspected", "k": [["culture"]], "why": "Before IV antibiotics."}
+   ]},
+   {"d": "management", "q": "What is the first-line treatment for cellulitis, with dose and duration?", "tip": "Exam thinking: drug, dose, frequency, duration, supportive care.", "points": [
+    {"p": "Oral flucloxacillin 500 mg QDS", "k": [["flucloxacillin", "fluclox"]], "why": "Covers Strep and Staph."},
+    {"p": "For 5–7 days", "k": [["5", "7", "five", "seven"]], "why": "NICE course length."},
+    {"p": "Or co-amoxiclav for broader cover", "k": [["co-amoxiclav", "coamoxiclav", "augmentin"]], "why": "E.g. near the face or bites."},
+    {"p": "Elevation of the limb and analgesia", "k": [["elevat", "raise"], ["analges", "pain relief", "paracetamol"]], "why": "Reduces swelling."}
+   ]},
+   {"d": "management", "q": "What do you give if the patient is penicillin allergic, or pregnant and allergic?", "tip": "Exam thinking: is it a true allergy?", "points": [
+    {"p": "Clarithromycin, doxycycline or clindamycin", "k": [["clarithromycin", "doxycycline", "clindamycin"]], "why": "Doxycycline is avoided in pregnancy."},
+    {"p": "Pregnant with penicillin allergy: oral erythromycin", "k": [["erythromycin"]], "why": "Safe in pregnancy."},
+    {"p": "Diarrhoea or nausea on amoxicillin is a side effect, not allergy", "k": [["side effect", "not allerg", "not a true", "intoleran"]], "why": "Give flucloxacillin."}
+   ]},
+   {"d": "management", "q": "How do you treat a cat bite, severe cellulitis and cellulitis with sepsis?", "tip": "Exam thinking: escalate by scenario.", "points": [
+    {"p": "Cat bite (or infected insect bite in diabetic): oral co-amoxiclav", "k": [["co-amoxiclav", "coamoxiclav", "augmentin"]], "why": "Covers Pasteurella multocida."},
+    {"p": "Severe: IV antibiotics (e.g. flucloxacillin, co-amoxiclav, ceftriaxone) and urgent surgical review", "k": [["surg"]], "why": "Rule out necrotising fasciitis."},
+    {"p": "Sepsis: IV co-amoxiclav and IV fluids", "k": [["iv", "intravenous"], ["fluid"]], "why": "Plus the Sepsis Six."},
+    {"p": "MRSA suspected or confirmed: IV vancomycin", "k": [["vancomycin"]], "why": "Flucloxacillin does not cover MRSA."}
+   ]},
+   {"d": "science", "q": "Why does cellulitis make the skin red, warm and swollen, and why do red streaks appear?", "tip": "Exam thinking: entry, invasion, inflammation, spread.", "points": [
+    {"p": "Bacteria breach the skin barrier and invade dermis and subcutaneous tissue", "k": [["breach", "break", "enter", "invade"]], "why": "Via a wound, bite or chronic skin change."},
+    {"p": "Acute inflammation: vasodilation, increased vascular permeability, neutrophils", "k": [["vasodilat", "permeab", "neutrophil"]], "why": "Gives erythema, warmth, swelling, tenderness."},
+    {"p": "Lymphangitis: infection spreading along superficial lymphatics to regional nodes", "k": [["lymph"]], "why": "Visible as red streaking."}
+   ]},
+   {"d": "science", "q": "Why do oedema, obesity and diabetes predispose to cellulitis and its spread?", "tip": "Exam thinking: perfusion, drainage, immunity.", "points": [
+    {"p": "Impaired local perfusion and lymphatic drainage", "k": [["perfusion", "lymph", "drainage", "blood flow"]], "why": "Predisposes and slows resolution."},
+    {"p": "In diabetes or immunocompromise, infection extends deeper or into the blood", "k": [["necrotising", "necrotizing", "sepsis", "bacteraem", "deeper"]], "why": "Necrotising fasciitis or sepsis."}
+   ]}
+  ]
+ },
+ "glossary": {
+  "Cellulitis": "Acute bacterial infection of the dermis and subcutaneous tissue, usually of one lower leg.",
+  "Dermis": "The layer of skin under the epidermis, containing vessels, nerves and lymphatics.",
+  "Subcutaneous tissue": "The fatty layer beneath the dermis.",
+  "Erysipelas": "Superficial form of cellulitis of the upper dermis with a sharp, raised edge.",
+  "Erythema": "Redness of the skin from dilated blood vessels.",
+  "Lymphangitis": "Inflammation of lymphatic vessels, seen as red streaks tracking towards lymph nodes.",
+  "Streptococcus pyogenes": "Group A Strep; the most common cause of cellulitis.",
+  "Staphylococcus aureus": "Gram-positive bacterium; the second commonest cause of cellulitis.",
+  "MRSA": "Meticillin-resistant Staphylococcus aureus; resistant to flucloxacillin, treated with vancomycin.",
+  "Pasteurella multocida": "Bacterium from cat and dog mouths that infects bite wounds; covered by co-amoxiclav.",
+  "Eron classification": "Grades cellulitis severity from Class I (well, no comorbidity) to Class IV (sepsis or necrotising fasciitis).",
+  "Necrotising fasciitis": "Rapidly spreading, life-threatening infection of the fascia; pain out of proportion, crepitus, needs surgery.",
+  "Crepitus": "Crackling felt under the skin from gas in the tissues.",
+  "Malaise": "A general feeling of being unwell.",
+  "Bacteraemia": "Bacteria in the bloodstream.",
+  "Sepsis": "Life-threatening organ dysfunction from a dysregulated response to infection.",
+  "Flucloxacillin": "Narrow-spectrum penicillin active against Staph aureus and Strep; first-line for cellulitis.",
+  "Co-amoxiclav": "Amoxicillin with clavulanic acid; broader cover, used for bites and severe cellulitis.",
+  "Clarithromycin": "Macrolide antibiotic used in penicillin allergy.",
+  "Erythromycin": "Macrolide antibiotic; the choice for penicillin-allergic pregnant women.",
+  "Doxycycline": "Tetracycline antibiotic; avoided in pregnancy and young children.",
+  "Clindamycin": "Antibiotic for penicillin allergy; carries a high risk of C. difficile diarrhoea.",
+  "Vancomycin": "IV glycopeptide antibiotic used for MRSA.",
+  "Metronidazole": "Antibiotic that targets anaerobic bacteria.",
+  "QDS": "Four times a day.",
+  "Penicillin allergy": "True immune reaction to penicillin: rash, angioedema or anaphylaxis, not diarrhoea or nausea.",
+  "Tinea pedis": "Athlete's foot: fungal infection between the toes, a common entry point for cellulitis.",
+  "Lymphoedema": "Chronic swelling from poor lymphatic drainage.",
+  "Oedema": "Swelling from excess fluid in the tissues.",
+  "CRP": "C-reactive protein: an inflammatory marker that rises in bacterial infection.",
+  "WCC": "White cell count; raised in bacterial infection.",
+  "DVT": "Deep vein thrombosis: clot in a deep leg vein causing calf swelling and pain.",
+  "Thrombophlebitis": "Inflamed, clotted superficial vein felt as a tender cord.",
+  "Venous eczema": "Itchy, scaly skin on the lower legs from chronic venous hypertension, often bilateral.",
+  "Lipodermatosclerosis": "Chronic hardening and brown-red discolouration of lower-leg skin from venous disease.",
+  "Portal of entry": "The break in the skin through which bacteria get in."
+ }
+}

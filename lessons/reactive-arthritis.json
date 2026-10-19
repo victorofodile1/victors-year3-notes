@@ -1,0 +1,702 @@
+{
+ "id": "reactive-arthritis",
+ "patient": {
+  "name": "Luca Moretti",
+  "age": 27,
+  "sex": "M",
+  "setting": "Emergency Department, then rheumatology",
+  "complaint": "Swollen, painful left knee and right ankle for 5 days, with sore red eyes",
+  "background": [
+   "Barista in Camden; new sexual partner 5 weeks ago",
+   "Stinging on passing urine about 3 weeks ago, now settling",
+   "No previous joint problems",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a young man who has an asymmetrical lower limb arthritis 1 to 4 weeks after dysuria or diarrhoea, plus red eyes, mouth ulcers or a rash on the soles. Psoriatic arthritis, gout, RA and septic arthritis are the distractors.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Luca, 27: **left knee and right ankle** swollen for 5 days.",
+      "Both eyes **red and gritty** since yesterday.",
+      "Dysuria **3 weeks ago** after a new partner.",
+      "Limping; his right heel hurts on standing."
+     ],
+     "vitals": {
+      "T": "37.4°C",
+      "HR": "88 bpm",
+      "BP": "126/78 mmHg",
+      "RR": "14 /min",
+      "SpO2": "99% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Luca's joints flared **3 weeks after** a urethritis: the classic **1 to 4 week** gap of reactive arthritis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Weeks from infection to arthritis",
+      "min": 0,
+      "max": 8,
+      "unit": "weeks",
+      "bands": [[0, 1, "Too soon", "warn"], [1, 4, "Typical: 1 to 4 weeks", "bad"], [4, 8, "Less typical", "warn"]],
+      "value": 3,
+      "label": "Luca 3 weeks",
+      "caption": "Joint symptoms usually begin **1 to 4 weeks** after the GU or GI infection."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Luca is a **young man** with a likely **Chlamydia** urethritis: the most common trigger."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Left knee: warm effusion. Right ankle: swollen.",
+      "Tender **Achilles insertion** and a **sausage-shaped** second toe.",
+      "Painless **mouth ulcers** on his palate."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "**Asymmetrical lower limb oligoarthritis**, **enthesitis** at the heel and **dactylitis**: Luca has the full pattern."
+    },
+    {
+     "type": "ask",
+     "q": "Which feature completes Luca's classic triad?",
+     "o": ["Achilles tendonitis", "Conjunctivitis", "Dactylitis", "Mouth ulcers"],
+     "a": 1,
+     "r": "The triad is **conjunctivitis, urethritis and arthritis**: 'can't see, can't pee, can't climb a tree'."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Luca has the triad. Check his soles and penis for **keratoderma blenorrhagica** and **circinate balanitis**."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Luca's knee is aspirated: **cloudy, high white cells, but no organisms and no crystals**. That sterility separates it from septic arthritis."
+    },
+    {
+     "type": "compare",
+     "title": "Hot swollen knee in a young man",
+     "head": ["Feature", "Reactive arthritis", "Septic arthritis", "Gout"],
+     "rows": [
+      ["Joints", "Asymmetrical, lower limb, oligo", "Usually one joint", "Usually one joint (big toe)"],
+      ["Trigger", "GU/GI infection 1 to 4 weeks before", "Bacteraemia, joint surgery", "Alcohol, diuretics, diet"],
+      ["Extra-articular", "Conjunctivitis, urethritis, rash", "Fever, rigors", "Tophi"],
+      ["Synovial fluid", "Sterile, high WCC, no crystals", "Organisms, very high WCC", "Negatively birefringent needles"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Most episodes settle, but Luca may develop **chronic arthritis**, and if **HLA-B27 positive**, ankylosing spondylitis."
+    },
+    {
+     "type": "trap",
+     "text": "Do not choose **psoriatic arthritis** just because there is dactylitis and a rash. The **preceding infection**, **conjunctivitis** and **rash on the soles** make it reactive arthritis."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' to find the trigger (urine NAAT/STI screen or stool culture), synovial fluid questions where the culture is negative and there are no crystals, and the rule to exclude septic arthritis first.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Luca has a hot, swollen knee and a low-grade fever, so **septic arthritis is excluded first** by aspirating the joint."
+    },
+    {
+     "type": "labs",
+     "title": "Luca's knee aspirate",
+     "rows": [
+      ["Appearance", "Cloudy yellow", "Clear, straw", ""],
+      ["White cell count", "18,000 /mm³", "<200", "H"],
+      ["Gram stain", "No organisms", "", ""],
+      ["Culture", "No growth at 48 h", "", ""],
+      ["Polarised light microscopy", "No crystals", "", ""]
+     ],
+     "text": "Inflammatory but **sterile**, with **no crystals**: not septic arthritis, not gout or pseudogout."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Synovial white cell count",
+      "min": 0,
+      "max": 100000,
+      "unit": "/mm³",
+      "bands": [[0, 2000, "Normal or non-inflammatory", "ok"], [2000, 50000, "Inflammatory", "warn"], [50000, 100000, "Suggests septic", "bad"]],
+      "value": 18000,
+      "label": "Luca 18,000",
+      "caption": "A high count alone cannot rule out sepsis; the **negative Gram stain and culture** are what make it sterile."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "There is no single confirmatory test: Luca's diagnosis is **clinical**, backed by evidence of the preceding infection."
+    },
+    {
+     "type": "ask",
+     "q": "Which test is most likely to identify Luca's trigger?",
+     "o": ["Blood cultures", "First-void urine NAAT for chlamydia", "HLA-B27 typing", "Stool culture"],
+     "a": 1,
+     "r": "After urethritis, the trigger is usually **Chlamydia**: test with a **first-void urine NAAT** (STI screen). Stool culture is for a post-diarrhoeal trigger."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Luca's **CRP and ESR are raised** and his urine NAAT comes back **positive for Chlamydia trachomatis**."
+    },
+    {
+     "type": "pearl",
+     "text": "Match the screen to the story: **dysuria or new partner → urine NAAT/STI screen**; **diarrhoea or food poisoning → stool culture** (Campylobacter, Salmonella, Shigella)."
+    },
+    {
+     "type": "trap",
+     "text": "Do not expect to grow the organism from the joint. In reactive arthritis the **joint is sterile**; a positive joint culture means **septic arthritis**."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (oral NSAID, with rheumatology referral), treating a persisting trigger (doxycycline for chlamydia), and the ladder to intra-articular steroid and sulfasalazine.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Septic arthritis is excluded. What is the most appropriate initial treatment for Luca's joints?",
+     "o": ["Intravenous flucloxacillin", "Naproxen", "Oral prednisolone", "Sulfasalazine"],
+     "a": 1,
+     "r": "**Oral NSAIDs** (ibuprofen or naproxen) are the initial treatment. IV antibiotics are for septic arthritis; sulfasalazine is for chronic disease."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Luca is referred to **rheumatology** and starts **naproxen**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "His Chlamydia is still present, so he gets **doxycycline** (and partner notification). If his knee stays swollen, an **intra-articular steroid** injection is next."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Luca's recovery",
+      "x": ["Day 0", "Week 1", "Week 3", "Week 6", "Month 3"],
+      "unit": "",
+      "series": [
+       { "name": "CRP (mg/L)", "values": [46, 30, 14, 6, 3] },
+       { "name": "Swollen joints", "values": [2, 2, 1, 1, 0] }
+      ],
+      "caption": "Most cases settle over weeks to months with NSAIDs and treating the trigger."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Reactive arthritis treatment ladder",
+     "nodes": ["Exclude septic arthritis", "Oral NSAID + rheumatology referral", "Treat persisting infection (doxycycline for chlamydia)", "Persistent joint: intra-articular corticosteroid", "Severe or chronic: DMARD (sulfasalazine)"]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Luca's arthritis became **severe or chronic**, a **DMARD such as sulfasalazine** would be used."
+    },
+    {
+     "type": "pearl",
+     "text": "Antibiotics treat a **persisting infection**, not the arthritis itself. The joint is sterile, so NSAIDs remain the treatment for the joints."
+    },
+    {
+     "type": "trap",
+     "text": "Do not inject a joint with steroid until **septic arthritis has been excluded**. Steroid into an infected joint is a disaster."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why the joint fluid is sterile despite a high white cell count, how HLA-B27 and molecular mimicry link infection to arthritis, and why enthesitis gives heel pain and dactylitis.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Luca's disease is a **seronegative spondyloarthropathy**, set off by an immune response to a **distant** GU infection."
+    },
+    {
+     "type": "flow",
+     "title": "From urethritis to a swollen knee",
+     "nodes": ["Chlamydia infects the urethra", "Bacterial antigens reach the synovium", "Immune system attacks the antigens", "Inflammation: high white cells in the joint", "No live organisms: culture negative"]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "That is why Luca's aspirate had **18,000 white cells but grew nothing**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Luca is **HLA-B27 positive**, **molecular mimicry** may explain why the response keeps going after the infection has cleared."
+    },
+    {
+     "type": "ask",
+     "q": "Why does Luca have heel pain and a sausage toe?",
+     "o": ["Bacterial infection of the tendon", "Enthesitis", "Gout tophi", "Pure synovitis"],
+     "a": 1,
+     "r": "**Enthesitis**, inflammation where tendons insert into bone, explains Achilles tendonitis, plantar fasciitis and **dactylitis**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Luca's Achilles and toe share this **enthesitis** mechanism with ankylosing spondylitis and psoriatic arthritis."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Repeated episodes of **HLA-B27-driven** inflammation could, in a subset like Luca, progress to **ankylosing spondylitis**."
+    },
+    {
+     "type": "compare",
+     "title": "Seronegative spondyloarthropathies",
+     "head": ["Condition", "Trigger or clue", "Signature feature"],
+     "rows": [
+      ["Reactive arthritis", "GU/GI infection 1 to 4 weeks before", "Conjunctivitis, urethritis, keratoderma"],
+      ["Ankylosing spondylitis", "Young man, chronic", "Inflammatory back pain, sacroiliitis"],
+      ["Psoriatic arthritis", "Psoriasis", "Nail pitting, DIP joints"],
+      ["Enteropathic arthritis", "Crohn's or UC", "Flares with bowel disease"]
+     ]
+    }
+   ]
+  }
+ },
+ "mcq": [
+  { "d": "diagnosis", "q": "What is the classic triad of reactive arthritis?", "o": ["Arthritis, rash, fever", "Conjunctivitis, urethritis, arthritis", "Iritis, back pain, diarrhoea", "Uveitis, mouth ulcers, genital ulcers"], "a": 1, "r": "'Can't see, can't pee, can't climb a tree'." },
+  { "d": "diagnosis", "q": "When do joint symptoms typically start after the triggering infection?", "o": ["Within 24 hours", "1 to 4 weeks", "3 to 6 months", "Over a year"], "a": 1, "r": "**1 to 4 weeks** after the GU or GI infection." },
+  { "d": "diagnosis", "q": "What is the most common cause of reactive arthritis?", "o": ["Campylobacter jejuni", "Chlamydia trachomatis", "Salmonella enteritidis", "Shigella"], "a": 1, "r": "**Chlamydia trachomatis** after urethritis." },
+  { "d": "diagnosis", "q": "Which skin lesion on the soles is fairly specific to reactive arthritis?", "o": ["Erythema nodosum", "Janeway lesions", "Keratoderma blenorrhagica", "Pyoderma gangrenosum"], "a": 2, "r": "**Keratoderma blenorrhagica**: waxy yellow/brown lesions on the soles." },
+  { "d": "diagnosis", "q": "Which joint pattern is typical of reactive arthritis?", "o": ["Asymmetrical lower limb oligoarthritis", "DIP joints of the hands", "First MTP joint only", "Symmetrical small joints of the hands"], "a": 0, "r": "**Asymmetrical oligoarthritis**, usually knees and ankles." },
+  { "d": "investigation", "q": "What are the synovial fluid findings in reactive arthritis?", "o": ["Gram-positive cocci", "Negatively birefringent crystals", "Positively birefringent crystals", "Sterile, high white cell count, no crystals"], "a": 3, "r": "Cloudy, **culture negative, no crystals**, high WCC." },
+  { "d": "investigation", "q": "What must be excluded first in a patient with severe systemic symptoms and a hot joint?", "o": ["Gout", "Osteoarthritis", "Rheumatoid arthritis", "Septic arthritis"], "a": 3, "r": "**Exclude septic arthritis** before calling it reactive arthritis." },
+  { "d": "management", "q": "What is the most appropriate initial management of reactive arthritis?", "o": ["Intra-articular steroid", "Oral NSAID", "Oral prednisolone", "Sulfasalazine"], "a": 1, "r": "**Oral NSAIDs** (ibuprofen or naproxen), plus rheumatology referral." },
+  { "d": "management", "q": "Which antibiotic treats a persisting chlamydial trigger?", "o": ["Ciprofloxacin", "Doxycycline", "Flucloxacillin", "Metronidazole"], "a": 1, "r": "**Doxycycline** for chlamydia." },
+  { "d": "science", "q": "Which HLA type is most strongly linked to reactive arthritis?", "o": ["HLA-B27", "HLA-B51", "HLA-DR3", "HLA-DR4"], "a": 0, "r": "**HLA-B27**; B51 is Behçet's, DR4 is RA." }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is reactive arthritis and when does it start?",
+    "tip": "Exam thinking: the timeline from infection to joint is the key clue.",
+    "points": [
+     { "p": "Also called Reiter's syndrome", "k": [["reiter"]], "why": "Older eponym still seen in papers." },
+     { "p": "Inflammatory arthritis after a genitourinary or gastrointestinal infection", "k": [["genitourinary", "gu", "urethritis", "sti", "sexual"], ["gastrointestinal", "gi", "diarrhoea", "enteric", "gastro"]], "why": "Either route counts." },
+     { "p": "Joint symptoms begin 1 to 4 weeks after the infection", "k": [["1", "one"], ["4", "four"]], "why": "Ask about dysuria or diarrhoea in the past month." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who gets reactive arthritis, and which organisms trigger it?",
+    "tip": "Exam thinking: 'most likely causative organism' is a favourite lead-in.",
+    "points": [
+     { "p": "HLA-B27 association", "k": [["hla-b27", "b27"]], "why": "Raises the risk of chronic disease and AS." },
+     { "p": "Male predominance", "k": [["male", "men", "man"]], "why": "Young men in stems." },
+     { "p": "Most common: Chlamydia trachomatis after urethritis", "k": [["chlamydia"]], "why": "Negative Gram stain, sterile pyuria." },
+     { "p": "Neisseria gonorrhoeae (GU)", "k": [["gonorrh", "neisseria", "gonococc"]], "why": "Gram-negative intracellular diplococci." },
+     { "p": "Post-enteric: Campylobacter, Salmonella, Shigella", "k": [["campylobacter", "salmonella", "shigella"]], "why": "After diarrhoea or vomiting." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the joint and extra-articular features of reactive arthritis.",
+    "tip": "Exam thinking: pattern recognition, lower limb and asymmetrical.",
+    "points": [
+     { "p": "Asymmetrical oligoarthritis, may be migratory", "k": [["asymmetric", "oligo"]], "why": "Can be mono- or polyarticular." },
+     { "p": "Lower limb joints: knees and ankles", "k": [["knee", "ankle", "lower limb"]], "why": "Unlike RA's hands." },
+     { "p": "Painful mouth ulcers and dysuria", "k": [["ulcer", "dysuria", "urin"]], "why": "Mouth ulcers appear in stems." },
+     { "p": "Enthesitis: Achilles tendonitis, plantar fasciitis, heel pain", "k": [["enthesitis", "achilles", "plantar", "heel"]], "why": "Key extra-articular feature." },
+     { "p": "Dactylitis (sausage digits)", "k": [["dactylitis", "sausage"]], "why": "Shared with psoriatic arthritis." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is the classic triad, and which skin and genital signs are signature?",
+    "tip": "Exam thinking: one of these signs is often the clinching detail in the stem.",
+    "points": [
+     { "p": "Conjunctivitis", "k": [["conjunctivitis", "red eye", "can't see"]], "why": "'Can't see'." },
+     { "p": "Urethritis", "k": [["urethritis", "can't pee"]], "why": "'Can't pee'." },
+     { "p": "Arthritis", "k": [["arthritis", "can't climb"]], "why": "'Can't climb a tree'." },
+     { "p": "Keratoderma blenorrhagica: waxy yellow/brown lesions on the soles", "k": [["keratoderma", "sole"]], "why": "Fairly specific to reactive arthritis." },
+     { "p": "Circinate balanitis", "k": [["balanitis"]], "why": "Painless lesions on the penis." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What does the synovial fluid show, and what are the complications?",
+    "tip": "Exam thinking: sterile fluid with a high WCC separates it from septic arthritis.",
+    "points": [
+     { "p": "Cloudy yellow, culture negative, no crystals", "k": [["culture negative", "no growth", "sterile", "negative culture"]], "why": "No crystals excludes gout and pseudogout." },
+     { "p": "High white cell count", "k": [["white cell", "wcc", "leucocyte", "leukocyte"]], "why": "Inflammatory, not infected." },
+     { "p": "Can progress to chronic arthritis", "k": [["chronic"]], "why": "Minority of patients." },
+     { "p": "HLA-B27 positive: can progress to ankylosing spondylitis", "k": [["ankylosing", "spondylitis"]], "why": "Ask about inflammatory back pain later." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is reactive arthritis investigated?",
+    "tip": "Exam thinking: the diagnosis is clinical; the tests find the trigger and exclude sepsis.",
+    "points": [
+     { "p": "Clinical diagnosis supported by evidence of preceding infection", "k": [["clinical"]], "why": "No single confirmatory test." },
+     { "p": "Raised ESR/CRP", "k": [["esr", "crp", "inflammatory marker"]], "why": "Non-specific." },
+     { "p": "Urine test / STI screen for chlamydia", "k": [["urine", "sti", "naat", "chlamydia", "swab"]], "why": "First-void urine NAAT." },
+     { "p": "Stool culture if GI infection suspected", "k": [["stool"]], "why": "Campylobacter, Salmonella, Shigella." },
+     { "p": "Exclude septic arthritis first if systemically unwell", "k": [["septic"]], "why": "Joint aspiration, Gram stain and culture." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Outline the treatment of reactive arthritis, from first-line to refractory disease.",
+    "tip": "Exam thinking: NSAID first; antibiotics only for a persisting infection.",
+    "points": [
+     { "p": "Refer to rheumatology", "k": [["rheumatolog"]], "why": "All patients." },
+     { "p": "Oral NSAIDs (ibuprofen or naproxen)", "k": [["nsaid", "ibuprofen", "naproxen"]], "why": "Most appropriate initial management." },
+     { "p": "Treat persisting infection, e.g. doxycycline for chlamydia", "k": [["doxycycline", "antibiotic"]], "why": "Treats the infection, not the joints." },
+     { "p": "Intra-articular corticosteroid injection for persistent symptoms", "k": [["intra-articular", "intraarticular", "joint injection", "inject"]], "why": "Only once sepsis is excluded." },
+     { "p": "Severe or chronic: DMARD such as sulfasalazine", "k": [["sulfasalazine", "dmard"]], "why": "Refractory disease." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why is the joint fluid sterile despite a high white cell count?",
+    "tip": "Exam thinking: immune reaction to distant bacteria, not joint infection.",
+    "points": [
+     { "p": "Seronegative spondyloarthropathy triggered by immune response to a distant infection", "k": [["seronegative", "spondyloarthr", "distant", "immune"]], "why": "RF negative." },
+     { "p": "Bacterial antigens deposited in the synovium", "k": [["antigen", "component"]], "why": "Not live organisms." },
+     { "p": "Immune-mediated inflammation, not direct infection", "k": [["immune", "not infect", "no infection", "sterile"]], "why": "Explains sterile fluid with high WCC." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does HLA-B27 contribute, and why do enthesitis and progression to AS occur?",
+    "tip": "Exam thinking: molecular mimicry is the mechanism word to know.",
+    "points": [
+     { "p": "Molecular mimicry between bacterial antigens and HLA-B27-presented self-peptides", "k": [["mimicry"]], "why": "Proposed mechanism." },
+     { "p": "Explains autoimmune-like joint and extra-articular inflammation", "k": [["autoimmun", "extra-articular"]], "why": "Eyes, skin, genitals." },
+     { "p": "Enthesitis explains dactylitis, heel pain, Achilles tendonitis", "k": [["enthesitis", "enthesis"]], "why": "Shared with other spondyloarthropathies." },
+     { "p": "Persistent HLA-B27-driven inflammation can progress to AS", "k": [["ankylosing", "spondylitis"]], "why": "In a subset of patients." }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Reactive arthritis": "Sterile inflammatory arthritis starting 1 to 4 weeks after a GU or GI infection.",
+  "Reiter's syndrome": "Older name for reactive arthritis with conjunctivitis and urethritis.",
+  "HLA-B27": "Class I HLA gene variant linked to reactive arthritis and other spondyloarthropathies.",
+  "Seronegative": "Rheumatoid factor negative; describes the spondyloarthropathies.",
+  "Spondyloarthropathy": "Family of HLA-B27 linked arthritides: AS, reactive, psoriatic and enteropathic arthritis.",
+  "Oligoarthritis": "Arthritis affecting two to four joints.",
+  "Migratory": "Moving from one joint to another over time.",
+  "Urethritis": "Inflammation of the urethra causing dysuria and discharge.",
+  "Dysuria": "Pain or stinging on passing urine.",
+  "Sterile pyuria": "White cells in the urine with no growth on standard culture; think chlamydia.",
+  "Conjunctivitis": "Inflammation of the conjunctiva causing red, gritty eyes.",
+  "Enthesitis": "Inflammation where tendons or ligaments insert into bone.",
+  "Enthesis": "The site where a tendon or ligament attaches to bone.",
+  "Dactylitis": "Swelling of a whole finger or toe, giving a 'sausage digit'.",
+  "Achilles tendonitis": "Inflammation of the Achilles tendon, causing heel pain.",
+  "Plantar fasciitis": "Inflammation at the heel insertion of the plantar fascia.",
+  "Keratoderma blenorrhagica": "Waxy yellow-brown thickened lesions on the soles or palms, fairly specific to reactive arthritis.",
+  "Circinate balanitis": "Painless lesions on the glans or prepuce of the penis in reactive arthritis.",
+  "Chlamydia trachomatis": "Obligate intracellular sexually transmitted bacterium; the commonest trigger of reactive arthritis.",
+  "Neisseria gonorrhoeae": "Gram-negative intracellular diplococcus causing gonorrhoea.",
+  "Campylobacter jejuni": "Common cause of bacterial gastroenteritis that can trigger reactive arthritis.",
+  "Salmonella": "Gram-negative bacterium causing food poisoning; a post-enteric trigger.",
+  "Shigella": "Gram-negative bacterium causing bloody diarrhoea; a post-enteric trigger.",
+  "NAAT": "Nucleic acid amplification test; detects chlamydia and gonorrhoea DNA in urine or swabs.",
+  "Gram stain": "Stain that shows bacteria in fluid; negative in reactive arthritis joint fluid.",
+  "Synovial fluid": "Lubricating fluid inside a joint, aspirated for cell count, Gram stain, culture and crystals.",
+  "Septic arthritis": "Bacterial infection inside a joint; an emergency to exclude first.",
+  "Molecular mimicry": "Immune response to a microbe cross-reacts with similar-looking self proteins.",
+  "NSAIDs": "Non-steroidal anti-inflammatory drugs such as ibuprofen and naproxen.",
+  "Doxycycline": "Tetracycline antibiotic; first-line for chlamydia.",
+  "Intra-articular": "Injected directly into a joint.",
+  "Methylprednisolone": "Corticosteroid that can be injected into a joint.",
+  "DMARD": "Disease-modifying antirheumatic drug that suppresses chronic inflammatory arthritis.",
+  "Sulfasalazine": "DMARD used for severe or chronic reactive arthritis.",
+  "ESR": "Erythrocyte sedimentation rate, a non-specific inflammatory marker.",
+  "CRP": "C-reactive protein, an acute-phase inflammatory marker.",
+  "Synovium": "The lining membrane of a joint that produces synovial fluid."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old man has a 1 week history of a painful swollen left knee and right ankle. Two weeks earlier he had pain on passing urine after unprotected sex. Both eyes are red and sticky. There are waxy yellow-brown lesions on the soles of his feet.",
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Behçet's disease", "Disseminated gonococcal infection", "Psoriatic arthritis", "Reactive arthritis", "Septic arthritis"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of arthritis with eye and skin signs in a young man." },
+    { "t": "Pick out the clues", "clues": ["24 year old man", "left knee and right ankle", "Two weeks earlier", "pain on passing urine", "Both eyes are red", "waxy yellow-brown lesions on the soles"], "x": "Asymmetrical lower limb arthritis 2 weeks after urethritis, conjunctivitis and **keratoderma blenorrhagica**." },
+    { "t": "Make your own answer before looking", "x": "Triad plus keratoderma: **reactive arthritis**." },
+    { "t": "Rule out the others", "elim": [[0, "Behçet's gives oral and genital ulcers with uveitis, not keratoderma."], [1, "Disseminated gonococcal infection gives pustular skin lesions, tenosynovitis and fever."], [2, "Psoriatic arthritis needs psoriasis or nail changes and no infective trigger."], [4, "Septic arthritis is usually one joint with fever; no eye or skin signs."]] },
+    { "t": "Commit", "x": "**D. Reactive arthritis.** 'Can't see, can't pee, can't climb a tree.'" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 31 year old woman has a swollen right knee and left heel pain 2 weeks after an episode of bloody diarrhoea following a barbecue. The diarrhoea has now settled. She has no urinary symptoms and no new sexual partners. Knee aspiration shows no organisms and no crystals.",
+   "q": "Which is the most appropriate investigation to identify the trigger?",
+   "o": ["Abdominal CT", "Colonoscopy", "HLA-B27 typing", "Serum urate", "Stool culture"],
+   "a": 4,
+   "steps": [
+    { "t": "Read the question line first", "x": "Find the triggering infection." },
+    { "t": "Pick out the clues", "clues": ["2 weeks after an episode of bloody diarrhoea", "following a barbecue", "no urinary symptoms", "no organisms and no crystals"], "x": "Post-enteric story, sepsis and crystals already excluded." },
+    { "t": "Make your own answer before looking", "x": "**Stool culture** for Campylobacter, Salmonella or Shigella." },
+    { "t": "Rule out the others", "elim": [[0, "CT is not needed for settled food poisoning."], [1, "Colonoscopy is for suspected IBD, which a single episode does not suggest."], [2, "HLA-B27 is a risk marker; it does not identify the trigger."], [3, "Urate is for gout, and there are no crystals."]] },
+    { "t": "Commit", "x": "**E. Stool culture.** Diarrhoea → stool culture; dysuria → urine NAAT." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 29 year old man has reactive arthritis after a chlamydial urethritis, which has been treated with doxycycline. After 6 weeks of naproxen his right knee remains swollen and painful, though his other joints have settled. A repeat knee aspirate shows no organisms and culture is negative.",
+   "q": "Which is the next most appropriate step in management?",
+   "o": ["Adalimumab", "Intra-articular methylprednisolone", "Oral flucloxacillin", "Sulfasalazine", "Total knee replacement"],
+   "a": 1,
+   "steps": [
+    { "t": "Read the question line first", "x": "'Next step' for one persistent joint." },
+    { "t": "Pick out the clues", "clues": ["treated with doxycycline", "6 weeks of naproxen", "right knee remains swollen", "other joints have settled", "culture is negative"], "x": "Infection treated, NSAID tried, one joint left, sepsis excluded." },
+    { "t": "Make your own answer before looking", "x": "**Intra-articular corticosteroid injection.**" },
+    { "t": "Rule out the others", "elim": [[0, "Biologics are not the next step for one persistent joint."], [2, "The joint is sterile; antibiotics will not help."], [3, "Sulfasalazine is for severe or chronic disease, not a single knee at 6 weeks."], [4, "Surgery is far too early and not indicated."]] },
+    { "t": "Commit", "x": "**B. Intra-articular methylprednisolone.** NSAID → treat trigger → joint injection → sulfasalazine." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 26 year old man who is HLA-B27 positive develops a swollen knee and conjunctivitis 3 weeks after chlamydial urethritis. Knee aspiration shows a high white cell count but culture is negative. His arthritis persists after the infection has been treated.",
+   "q": "Which is the most likely mechanism of his persisting arthritis?",
+   "o": ["Anti-CCP antibody production", "IgE-mediated mast cell degranulation", "Immune complex deposition in glomeruli", "Molecular mimicry between bacterial antigens and HLA-B27-presented peptides", "Urate crystal phagocytosis"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "A mechanism question about HLA-B27 and infection." },
+    { "t": "Pick out the clues", "clues": ["HLA-B27 positive", "3 weeks after chlamydial urethritis", "culture is negative", "persists after the infection has been treated"], "x": "Sterile joint, immune response continuing without the organism." },
+    { "t": "Make your own answer before looking", "x": "**Molecular mimicry** with HLA-B27-presented self-peptides." },
+    { "t": "Rule out the others", "elim": [[0, "Anti-CCP antibodies belong to rheumatoid arthritis."], [1, "IgE mast cell release is type I hypersensitivity (allergy)."], [2, "Glomerular immune complexes are lupus or post-strep glomerulonephritis."], [4, "No crystals: not gout."]] },
+    { "t": "Commit", "x": "**D. Molecular mimicry.** Sterile joint + HLA-B27 + distant infection." }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 25 year old man has a 10 day history of a painful swollen right knee and left ankle. Three weeks ago he had dysuria after a new sexual partner. Both eyes are red. His temperature is 37.5°C, pulse rate 90 bpm and BP 124/76 mmHg. There is no rash or nail change.",
+   "labs": [["CRP", "52 mg/L", "<5", "H"], ["Serum urate", "0.30 mmol/L", "0.20–0.42", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Gonococcal septic arthritis", "Gout", "Psoriatic arthritis", "Reactive arthritis", "Rheumatoid arthritis"],
+   "a": 3,
+   "e": "Asymmetrical lower limb arthritis 3 weeks after urethritis, with conjunctivitis: reactive arthritis. Septic arthritis is usually a single hot joint with high fever.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of arthritis after a GU infection." },
+    { "t": "Pick out the clues", "clues": ["right knee and left ankle", "Three weeks ago he had dysuria", "Both eyes are red", "no rash or nail change"], "x": "Triad: conjunctivitis, urethritis, arthritis; timing fits." },
+    { "t": "Make your own answer before looking", "x": "**Reactive arthritis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Gonococcal septic arthritis has fever, pustules and tenosynovitis during, not after, infection."], [1, "Gout is acute monoarthritis; urate normal; no conjunctivitis."], [2, "Psoriatic arthritis needs psoriasis or nail changes."], [4, "RA is symmetrical small-joint polyarthritis."]] },
+    { "t": "Commit", "x": "**D. Reactive arthritis.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 30 year old woman has a swollen left knee and pain under her right heel. Two weeks ago she had diarrhoea and vomiting for 4 days after eating undercooked chicken. Her temperature is 37.3°C, pulse rate 84 bpm and BP 118/74 mmHg. Knee aspirate:",
+   "labs": [["Synovial WCC", "14,000 /mm³", "<200", "H"], ["Gram stain", "No organisms", "", ""], ["Culture", "No growth", "", ""], ["Crystals", "None seen", "", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Enteropathic arthritis", "Gout", "Reactive arthritis", "Septic arthritis", "Systemic lupus erythematosus"],
+   "a": 2,
+   "e": "Arthritis and enthesitis 2 weeks after Campylobacter-type gastroenteritis with sterile, crystal-free inflammatory fluid: post-enteric reactive arthritis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of a hot knee after food poisoning." },
+    { "t": "Pick out the clues", "clues": ["pain under her right heel", "Two weeks ago she had diarrhoea and vomiting", "undercooked chicken"], "x": "Enthesitis; Campylobacter trigger; sterile fluid, no crystals." },
+    { "t": "Make your own answer before looking", "x": "**Reactive arthritis** (post-enteric)." },
+    { "t": "Rule out the others", "elim": [[0, "Enteropathic arthritis needs IBD, not a short self-limiting gastroenteritis."], [1, "No crystals."], [3, "Gram stain and culture are negative."], [4, "SLE gives symmetrical small-joint arthralgia with rash and multisystem features."]] },
+    { "t": "Commit", "x": "**C. Reactive arthritis.** Sterile + no crystals + preceding infection." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 28 year old man develops arthritis of his left knee and conjunctivitis. Four weeks earlier he had urethral discharge and dysuria after unprotected sex. A urethral smear at the time showed white cells but no organisms on Gram stain.",
+   "labs": [["Urine microscopy", "Pyuria", "", ""], ["Standard urine culture", "No growth", "", ""]],
+   "visual": null,
+   "q": "Which is the most likely causative organism of his initial infection?",
+   "o": ["Campylobacter jejuni", "Chlamydia trachomatis", "Escherichia coli", "Neisseria gonorrhoeae", "Staphylococcus aureus"],
+   "a": 1,
+   "e": "Urethritis with a negative Gram stain and sterile pyuria points to Chlamydia trachomatis, the commonest cause of reactive arthritis. Gonorrhoea shows Gram-negative intracellular diplococci.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Organism question: which bug caused the urethritis?" },
+    { "t": "Pick out the clues", "clues": ["urethral discharge and dysuria", "unprotected sex", "no organisms on Gram stain"], "x": "Non-gonococcal urethritis; plus sterile pyuria." },
+    { "t": "Make your own answer before looking", "x": "**Chlamydia trachomatis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Campylobacter is a post-enteric trigger; no diarrhoea."], [2, "E. coli UTI would grow on urine culture."], [3, "Gonorrhoea shows Gram-negative intracellular diplococci on the smear."], [4, "S. aureus causes septic arthritis, not urethritis."]] },
+    { "t": "Commit", "x": "**B. Chlamydia trachomatis.** Negative Gram stain + sterile pyuria = chlamydia." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old man has had a swollen right knee for 2 weeks after an episode of dysuria. He also has gritty red eyes. On examination of his feet there are thickened, waxy, yellow-brown pustular plaques on both soles.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on his feet?",
+   "o": ["Erythema migrans", "Erythema nodosum", "Janeway lesions", "Keratoderma blenorrhagica", "Plaque psoriasis"],
+   "a": 3,
+   "e": "Waxy yellow-brown plaques on the soles in reactive arthritis are keratoderma blenorrhagica. Erythema nodosum is tender red nodules on the shins.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Name the skin finding." },
+    { "t": "Pick out the clues", "clues": ["after an episode of dysuria", "gritty red eyes", "waxy, yellow-brown pustular plaques on both soles"], "x": "Reactive arthritis triad and a sole rash." },
+    { "t": "Make your own answer before looking", "x": "**Keratoderma blenorrhagica.**" },
+    { "t": "Rule out the others", "elim": [[0, "Erythema migrans is an expanding red ring after a tick bite (Lyme)."], [1, "Erythema nodosum is tender red shin nodules."], [2, "Janeway lesions are painless palm/sole macules in endocarditis."], [4, "Psoriasis gives silvery plaques on extensor surfaces; no infective trigger here."]] },
+    { "t": "Commit", "x": "**D. Keratoderma blenorrhagica.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old man has a hot, swollen left knee 3 weeks after a diarrhoeal illness. He is systemically well. His temperature is 37.4°C, pulse rate 82 bpm and BP 130/80 mmHg. His GP suspects reactive arthritis and the knee is aspirated.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on synovial fluid analysis?",
+   "o": ["Calcium pyrophosphate crystals", "Gram-negative intracellular diplococci", "Gram-positive cocci in clusters", "Needle-shaped negatively birefringent crystals", "Sterile fluid with a raised white cell count"],
+   "a": 4,
+   "e": "Reactive arthritis gives cloudy, culture-negative fluid with a high white cell count and no crystals. Organisms mean septic arthritis; crystals mean gout or pseudogout.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Expected synovial fluid in reactive arthritis." },
+    { "t": "Pick out the clues", "clues": ["3 weeks after a diarrhoeal illness", "systemically well", "suspects reactive arthritis"], "x": "Post-enteric, well: inflammatory but sterile." },
+    { "t": "Make your own answer before looking", "x": "**Sterile fluid with a high WCC, no crystals.**" },
+    { "t": "Rule out the others", "elim": [[0, "CPPD crystals mean pseudogout."], [1, "Diplococci mean gonococcal septic arthritis."], [2, "Gram-positive cocci in clusters mean S. aureus septic arthritis."], [3, "Negatively birefringent needles mean gout."]] },
+    { "t": "Commit", "x": "**E. Sterile fluid with a raised white cell count.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 23 year old man has painful mouth ulcers, a swollen right ankle and a sausage-shaped left second toe. Three weeks ago he had bloody diarrhoea that settled without treatment. There are painless shallow lesions on the glans of his penis. His temperature is 37.2°C, pulse rate 78 bpm and BP 122/70 mmHg.",
+   "labs": [["ESR", "38 mm/h", "1–15", "H"], ["Rheumatoid factor", "Negative", "Negative", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Behçet's disease", "Gonococcal arthritis", "Reactive arthritis", "Rheumatoid arthritis", "Ulcerative colitis"],
+   "a": 2,
+   "e": "Post-diarrhoeal arthritis with dactylitis, mouth ulcers and circinate balanitis is reactive arthritis. Behçet's gives painful genital ulcers and recurrent oral ulcers without a dysenteric trigger.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of arthritis with mucocutaneous signs." },
+    { "t": "Pick out the clues", "clues": ["painful mouth ulcers", "sausage-shaped left second toe", "Three weeks ago he had bloody diarrhoea", "painless shallow lesions on the glans"], "x": "Dactylitis, Shigella-type trigger, **circinate balanitis**." },
+    { "t": "Make your own answer before looking", "x": "**Reactive arthritis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Behçet's genital ulcers are painful, usually scrotal, with recurrent oral ulcers."], [1, "Gonococcal arthritis follows GU, not GI, infection, with fever and pustules."], [3, "RF negative; RA is symmetrical small-joint disease."], [4, "The diarrhoea was a single self-limiting episode, not IBD."]] },
+    { "t": "Commit", "x": "**C. Reactive arthritis.** Circinate balanitis + dactylitis + post-dysentery." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 26 year old man has an asymmetrical arthritis of his left knee and right ankle and red eyes. One month ago he had dysuria after a new sexual partner. Knee aspiration showed no organisms and no crystals. He is systemically well.",
+   "labs": [["CRP", "34 mg/L", "<5", "H"], ["ESR", "40 mm/h", "1–15", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to identify the trigger?",
+   "o": ["Blood cultures", "First-void urine NAAT for chlamydia", "HLA-B27 typing", "Rheumatoid factor", "X-ray of the knee"],
+   "a": 1,
+   "e": "After urethritis, screen for chlamydia with a first-void urine NAAT (STI screen). HLA-B27 is a risk marker, not the trigger.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Which test finds the infection that triggered it?" },
+    { "t": "Pick out the clues", "clues": ["dysuria after a new sexual partner", "no organisms and no crystals", "systemically well"], "x": "GU trigger; sepsis already excluded." },
+    { "t": "Make your own answer before looking", "x": "**Urine NAAT / STI screen for chlamydia.**" },
+    { "t": "Rule out the others", "elim": [[0, "Blood cultures look for bacteraemia; he is well."], [2, "HLA-B27 does not identify the trigger."], [3, "RF is for rheumatoid arthritis."], [4, "Knee X-ray is normal early and does not find infection."]] },
+    { "t": "Commit", "x": "**B. First-void urine NAAT for chlamydia.**" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 29 year old man has a 2 day history of a hot, very swollen right knee. He had dysuria 3 weeks ago. He is shivering. His temperature is 38.9°C, pulse rate 118 bpm and BP 104/66 mmHg. He cannot bear weight.",
+   "labs": [["WCC", "17.8 ×10⁹/L", "4.0–11.0", "H"], ["CRP", "190 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": ["HLA-B27 typing", "Knee X-ray", "Serum urate", "Synovial fluid aspiration, Gram stain and culture", "Urine NAAT for chlamydia"],
+   "a": 3,
+   "e": "With fever, rigors and tachycardia, septic arthritis must be excluded first by joint aspiration before attributing the knee to reactive arthritis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial investigation in a febrile hot joint." },
+    { "t": "Pick out the clues", "clues": ["hot, very swollen right knee", "He is shivering", "38.9°C", "pulse rate 118 bpm"], "x": "Systemically unwell: a septic joint until proven otherwise." },
+    { "t": "Make your own answer before looking", "x": "**Aspirate the joint** for Gram stain and culture before antibiotics." },
+    { "t": "Rule out the others", "elim": [[0, "HLA-B27 does not change the immediate plan."], [1, "X-ray is normal early and cannot exclude infection."], [2, "Urate is unreliable in acute gout and does not exclude sepsis."], [4, "Finding chlamydia does not exclude a septic joint."]] },
+    { "t": "Commit", "x": "**D. Synovial fluid aspiration, Gram stain and culture.** Exclude septic arthritis first." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 24 year old man has a swollen left knee and right ankle 3 weeks after a diarrhoeal illness. Knee aspiration shows no organisms and no crystals, and the diarrhoea has resolved. His temperature is 37.3°C, pulse rate 80 bpm and BP 122/78 mmHg. He has no history of peptic ulcer or asthma.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Ibuprofen", "Intra-articular methylprednisolone", "Intravenous flucloxacillin", "Oral prednisolone", "Sulfasalazine"],
+   "a": 0,
+   "e": "Initial management of reactive arthritis is an oral NSAID with rheumatology referral. Joint injection is for persistent symptoms and sulfasalazine for chronic disease.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management, sepsis excluded." },
+    { "t": "Pick out the clues", "clues": ["3 weeks after a diarrhoeal illness", "no organisms and no crystals", "diarrhoea has resolved", "no history of peptic ulcer or asthma"], "x": "Post-enteric reactive arthritis, no NSAID contraindication, infection gone." },
+    { "t": "Make your own answer before looking", "x": "**Oral NSAID.**" },
+    { "t": "Rule out the others", "elim": [[1, "Joint injection is for persistent symptoms after NSAIDs."], [2, "IV antibiotics treat septic arthritis; the joint is sterile."], [3, "Oral steroids are not first-line."], [4, "Sulfasalazine is for severe or chronic disease."]] },
+    { "t": "Commit", "x": "**A. Ibuprofen.** Plus rheumatology referral." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 27 year old man with reactive arthritis of his knee and ankle started naproxen a week ago. His joints are improving. His first-void urine NAAT has come back positive for Chlamydia trachomatis. He has no drug allergies.",
+   "labs": [["Urine NAAT", "Chlamydia trachomatis detected", "Not detected", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate additional management?",
+   "o": ["Ceftriaxone", "Ciprofloxacin", "Doxycycline", "Flucloxacillin", "Metronidazole"],
+   "a": 2,
+   "e": "A persisting chlamydial infection should be treated with doxycycline, with partner notification. Ceftriaxone treats gonorrhoea.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Additional management: treat the trigger." },
+    { "t": "Pick out the clues", "clues": ["positive for Chlamydia trachomatis", "no drug allergies"], "x": "Infection still present." },
+    { "t": "Make your own answer before looking", "x": "**Doxycycline.**" },
+    { "t": "Rule out the others", "elim": [[0, "Ceftriaxone is for gonorrhoea."], [1, "Ciprofloxacin is not first-line for chlamydia."], [3, "Flucloxacillin covers S. aureus, not chlamydia."], [4, "Metronidazole treats anaerobes, trichomonas and BV."]] },
+    { "t": "Commit", "x": "**C. Doxycycline.** Then contact tracing." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old man has had reactive arthritis for 8 months. Despite NSAIDs, treatment of his chlamydial infection and two knee steroid injections, he still has swelling of both knees and an ankle. His pulse rate is 76 bpm and BP 128/80 mmHg.",
+   "labs": [["CRP", "28 mg/L", "<5", "H"], ["ESR", "36 mm/h", "1–15", "H"], ["Repeat urine NAAT", "Not detected", "Not detected", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": ["Adalimumab", "Hydroxychloroquine", "Long-term doxycycline", "Oral prednisolone", "Sulfasalazine"],
+   "a": 4,
+   "e": "Severe or chronic reactive arthritis despite NSAIDs and injections is treated with a DMARD such as sulfasalazine. Infection has cleared, so further antibiotics are pointless.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Next step' in chronic disease." },
+    { "t": "Pick out the clues", "clues": ["8 months", "Despite NSAIDs", "two knee steroid injections", "still has swelling"], "x": "Chronic, refractory; infection cleared." },
+    { "t": "Make your own answer before looking", "x": "**DMARD: sulfasalazine.**" },
+    { "t": "Rule out the others", "elim": [[0, "Biologics are not the next step before a conventional DMARD."], [1, "Hydroxychloroquine is used in RA and lupus, not reactive arthritis."], [2, "The infection has cleared."], [3, "Long-term oral steroids are not the answer for chronic arthritis."]] },
+    { "t": "Commit", "x": "**E. Sulfasalazine.**" }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 25 year old man develops a swollen knee 3 weeks after chlamydial urethritis. His pulse rate is 84 bpm and BP 120/76 mmHg. Knee aspiration shows cloudy fluid with a white cell count of 20,000 /mm³, but Gram stain and culture are negative and no crystals are seen.",
+   "labs": [["Synovial WCC", "20,000 /mm³", "<200", "H"], ["Synovial culture", "No growth", "", ""]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his joint inflammation?",
+   "o": ["Bacterial antigens in the synovium triggering an immune response", "Direct chlamydial infection of the synovium", "Immune complex deposition with complement consumption", "Monosodium urate crystal deposition", "Rheumatoid factor binding IgG in the synovium"],
+   "a": 0,
+   "e": "In reactive arthritis, bacterial antigens deposited in the synovium trigger immune-mediated inflammation: a high WCC but sterile fluid. Direct infection would be septic arthritis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Mechanism behind sterile inflammatory fluid." },
+    { "t": "Pick out the clues", "clues": ["3 weeks after chlamydial urethritis", "white cell count of 20,000", "culture are negative", "no crystals"], "x": "Inflamed but sterile, after a distant infection." },
+    { "t": "Make your own answer before looking", "x": "**Immune response to bacterial antigens** in the synovium." },
+    { "t": "Rule out the others", "elim": [[1, "Direct infection would grow organisms: septic arthritis."], [2, "Immune complex and low complement fit lupus."], [3, "No crystals were seen."], [4, "RF is rheumatoid arthritis; reactive arthritis is seronegative."]] },
+    { "t": "Commit", "x": "**A. Bacterial antigens in the synovium triggering an immune response.**" }
+   ]
+  }
+ ]
+}

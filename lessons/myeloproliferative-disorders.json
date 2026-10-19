@@ -1,0 +1,428 @@
+{
+  "id": "myeloproliferative-disorders",
+  "patient": {
+    "name": "Funmilayo (Funmi) Adeyemi",
+    "age": 62,
+    "sex": "F",
+    "setting": "GP surgery, then haematology clinic",
+    "complaint": "Headaches, burning toes and a brief episode of right hand weakness",
+    "background": [
+      "Raised platelet count noted on a routine blood test last year",
+      "Hypertension on ramipril",
+      "Non-smoker; no recent infection or bleeding",
+      "School administrator in Walthamstow"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' from an FBC pattern: raised Hb means PV, raised platelets ET, and massive splenomegaly with teardrop cells, pancytopenia and a dry tap means primary myelofibrosis. Also 'most likely blood film or marrow finding'.",
+      "steps": [
+        {"type": "story", "points": ["Funmi, 62, sees her GP with **headaches** and lightheadedness.", "Burning, red toes after walking.", "Last month: 20 minutes of right hand weakness, fully resolved.", "Occasional nosebleeds."], "vitals": {"T": "36.8°C", "HR": "76 bpm", "BP": "138/84 mmHg", "SpO2": "98% on air"}},
+        {"type": "labs", "title": "Full blood count and reactive markers", "rows": [["Haemoglobin", "138 g/L", "115–165", ""], ["White cell count", "9.8 ×10⁹/L", "4.0–11.0", ""], ["Platelet count", "1020 ×10⁹/L", "150–400", "H"], ["MCV", "88 fL", "80–100", ""], ["Ferritin", "110 µg/L", "30–400", ""], ["CRP", "3 mg/L", "<5", ""]], "text": "Only the **platelets** are high, and iron and CRP are normal: not a reactive thrombocytosis."},
+        {"type": "notes", "src": 0, "lead": "A persistently raised cell line in a well woman suggests a **myeloproliferative neoplasm**: PV, ET or PMF."},
+        {"type": "notes", "src": 1, "lead": "Funmi's high count was first found on a routine test, which is typical. Her headaches and toe pain are MPN symptoms."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Platelet count", "min": 0, "max": 1500, "unit": "×10⁹/L", "bands": [[0, 150, "Low", "warn"], [150, 450, "Normal", "ok"], [450, 1500, "Thrombocytosis", "bad"]], "value": 1020, "label": "Funmi 1020", "caption": "More than double the upper limit, persistently, with no reactive cause."}},
+        {"type": "compare", "title": "The three classic MPNs", "head": ["Feature", "PV", "ET", "PMF"], "rows": [["Raised line", "**Hb** / haematocrit", "**Platelets**", "None: counts fall"], ["Spleen", "Enlarged", "Normal or mildly enlarged", "**Massive**"], ["Blood film", "Excess red cells", "Giant platelets, clumps", "**Teardrop cells**, leukoerythroblastic"], ["Marrow", "Hypercellular", "Excess megakaryocytes", "Fibrosis, **dry tap**"], ["Signature", "Itch after a bath, plethora", "Erythromelalgia, clots and bleeds", "Fatigue, night sweats, pancytopenia"]]},
+        {"type": "notes", "src": 2, "lead": "Funmi's isolated **platelet** rise points to **ET**. A raised Hb would mean PV; a massive spleen with teardrop cells, PMF."},
+        {"type": "ask", "q": "Funmi has had a TIA and nosebleeds. Which MPN causes both clotting and bleeding?", "o": ["Chronic myeloid leukaemia", "Essential thrombocythaemia", "Polycythaemia vera", "Primary myelofibrosis"], "a": 1, "r": "**ET**: lots of platelets that work badly, so both thrombosis and bleeding."},
+        {"type": "notes", "src": 4, "lead": "Funmi fits **ET** exactly: headache, lightheadedness, **erythromelalgia**, a TIA and nosebleeds from dysfunctional platelets."},
+        {"type": "notes", "src": 3, "lead": "Funmi's TIA shows her **arterial** clot risk. In the long term she could progress to myelofibrosis or acute leukaemia."},
+        {"type": "trap", "text": "A high platelet count is usually **reactive**: iron deficiency, infection, inflammation, bleeding or splenectomy. Check ferritin and CRP before calling it ET."},
+        {"type": "pearl", "text": "Exam rule: **Hb up = PV; platelets up = ET; massive spleen + teardrop cells + dry tap = PMF.**"}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?': FBC pattern first, then JAK2 mutation testing, with bone marrow biopsy as the diagnostic test for myelofibrosis (the aspirate is a dry tap).",
+      "steps": [
+        {"type": "flow", "title": "Working up a raised count", "nodes": ["FBC: which cell line is high?", "Exclude reactive causes (ferritin, CRP)", "Blood film", "JAK2 mutation testing (EPO if Hb high)", "Bone marrow biopsy: confirms, and diagnoses PMF"]},
+        {"type": "notes", "src": 1, "lead": "Funmi's FBC shows the platelet line. Next come the **film**, **JAK2**, LDH and urate."},
+        {"type": "labs", "title": "Haematology work-up", "rows": [["Blood film", "Giant platelets, platelet clumps", "", ""], ["JAK2 V617F mutation", "Detected", "Not detected", ""], ["LDH", "260 U/L", "135–214", "H"], ["Urate", "0.40 mmol/L", "0.15–0.35", "H"]], "text": "Giant platelets and a **JAK2 V617F** mutation: a clonal cause. LDH and urate rise with high cell turnover."},
+        {"type": "notes", "src": 0, "lead": "Funmi's JAK2 is positive and her **marrow** confirms ET. In PMF the biopsy shows **fibrosis** and the aspirate is a dry tap."},
+        {"type": "visual", "visual": {"kind": "abdomen", "title": "If this were PMF: what you would feel", "regions": ["LUQ", "L_flank", "umbilical", "RUQ"], "caption": "Massive hepatosplenomegaly from extramedullary haematopoiesis. Funmi's spleen is not palpable."}},
+        {"type": "ask", "q": "In primary myelofibrosis the marrow aspirate yields no fluid. Why?", "o": ["Marrow is packed with blasts", "Marrow is replaced by fibrosis", "Needle placed in the wrong site", "Patient is dehydrated"], "a": 1, "r": "Collagen **fibrosis** traps the cells: a **dry tap**. A trephine biopsy is needed."},
+        {"type": "trap", "text": "**JAK2** does not tell you which MPN it is. The FBC pattern, film and marrow do."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?': aspirin first-line in ET, hydroxycarbamide if high risk (older or previous thrombosis), and specialist supportive care (transfusion, targeted therapy, stem cell transplant) in PMF.",
+      "steps": [
+        {"type": "visual", "visual": {"kind": "scale", "title": "Age and ET risk", "min": 20, "max": 90, "unit": "years", "bands": [[20, 60, "Lower risk if no previous clot", "ok"], [60, 90, "High risk: cytoreduce", "bad"]], "value": 62, "label": "Funmi 62", "caption": "Over 60 and a TIA: Funmi is high risk on two counts."}},
+        {"type": "ask", "q": "Which drug does every ET patient like Funmi start first?", "o": ["Aspirin", "Imatinib", "Venesection", "Warfarin"], "a": 0, "r": "Low-dose **aspirin** is first-line in ET. Venesection is for PV; imatinib is for CML."},
+        {"type": "notes", "src": 0, "lead": "Funmi starts low-dose **aspirin**. Over 60 with a TIA makes her high risk, so she also starts **hydroxycarbamide**."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Funmi's platelets on hydroxycarbamide", "x": ["Month 0", "Month 1", "Month 2", "Month 3", "Month 6"], "unit": "×10⁹/L", "series": [{"name": "Platelets", "values": [1020, 780, 560, 430, 390]}], "caption": "Platelet production is suppressed back into the normal range."}},
+        {"type": "flow", "title": "ET management", "nodes": ["Low-dose aspirin first-line", "Assess risk: older age or previous thrombosis", "High risk → add hydroxycarbamide", "Monitor FBC; control BP, lipids and smoking"]},
+        {"type": "compare", "title": "Treating each MPN", "head": ["MPN", "Main treatment"], "rows": [["PV", "Venesection to haematocrit below 0.45 + aspirin; hydroxycarbamide if high risk"], ["ET", "**Aspirin**; **hydroxycarbamide** if high risk"], ["PMF", "Specialist supportive: transfusion, cytoreduction, targeted therapy, stem cell transplant"]]},
+        {"type": "notes", "src": 1, "lead": "If Funmi's disease ever became myelofibrosis, care would be specialist and supportive: **transfusion**, targeted therapy, possibly **stem cell transplant**."},
+        {"type": "notes", "src": "guidelines", "lead": "Funmi's aspirin and hydroxycarbamide follow the **British Society for Haematology** guideline on MPNs."},
+        {"type": "trap", "text": "Do not give **imatinib** for a JAK2 MPN. Imatinib targets BCR-ABL in CML."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: the JAK2 V617F mechanism, why ET causes both clots and bleeding, and why myelofibrosis causes massive splenomegaly and teardrop cells.",
+      "steps": [
+        {"type": "flow", "title": "From one mutation to three diseases", "nodes": ["Haematopoietic stem cell gains JAK2 V617F", "JAK-STAT signalling permanently on", "Cells grow without cytokine signals", "The clone overproduces one or more lines", "PV (red cells), ET (platelets), PMF (fibrosis)"]},
+        {"type": "notes", "src": 0, "lead": "Funmi's megakaryocyte clone keeps growing because **JAK-STAT** is stuck on: it no longer needs cytokine signals."},
+        {"type": "notes", "src": 1, "lead": "Funmi's TIA and nosebleeds share one cause: **many platelets that work badly**."},
+        {"type": "ask", "q": "Why does primary myelofibrosis cause massive splenomegaly?", "o": ["Extramedullary haematopoiesis", "Haemolysis", "Portal hypertension", "Splenic lymphoma"], "a": 0, "r": "The scarred marrow cannot make blood, so the **spleen and liver take over**."},
+        {"type": "notes", "src": 2, "lead": "If Funmi's marrow scarred, **PDGF and TGF-beta** would drive the fibrosis and blood production would move to her spleen and liver."},
+        {"type": "pearl", "text": "Teardrop cells (**dacrocytes**) are red cells squeezed out through a scarred marrow: think PMF."},
+        {"type": "notes", "src": 3, "lead": "Funmi's follow-up watches for **transformation**: all three MPNs can progress to myelofibrosis or AML."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "Which mutation is classically associated with the myeloproliferative disorders?", "o": ["BCR-ABL", "BRAF V600E", "JAK2 V617F", "PML-RARA"], "a": 2, "r": "**JAK2 V617F**. BCR-ABL is CML."},
+    {"d": "diagnosis", "q": "Which MPN is suggested by an isolated raised platelet count?", "o": ["Chronic myeloid leukaemia", "Essential thrombocythaemia", "Polycythaemia vera", "Primary myelofibrosis"], "a": 1, "r": "Platelets up = **ET**; Hb up = PV."},
+    {"d": "diagnosis", "q": "Which red cell abnormality is seen in primary myelofibrosis?", "o": ["Dacrocytes", "Schistocytes", "Spherocytes", "Target cells"], "a": 0, "r": "**Dacrocytes** (teardrop poikilocytes), with a leukoerythroblastic picture."},
+    {"d": "diagnosis", "q": "What is erythromelalgia?", "o": ["Burning red hands and feet", "Itching after a bath", "Painless jaundice", "Purple finger tips in the cold"], "a": 0, "r": "**Burning, red hands and feet** from dysfunctional platelets; seen in ET and PV."},
+    {"d": "investigation", "q": "Which is the diagnostic test for primary myelofibrosis?", "o": ["Blood film", "Bone marrow biopsy", "CT abdomen", "JAK2 testing"], "a": 1, "r": "**Bone marrow biopsy** shows fibrosis; the aspirate is a dry tap."},
+    {"d": "investigation", "q": "What happens when the marrow is aspirated in primary myelofibrosis?", "o": ["Blood-stained fluid only", "Dry tap", "Excess blasts", "Normal aspirate"], "a": 1, "r": "A **dry tap**: fibrosis means nothing can be aspirated."},
+    {"d": "management", "q": "Which is first-line therapy in essential thrombocythaemia?", "o": ["Aspirin", "Imatinib", "Venesection", "Warfarin"], "a": 0, "r": "Low-dose **aspirin**."},
+    {"d": "management", "q": "Which drug is used for cytoreduction in high-risk ET?", "o": ["Allopurinol", "Hydroxycarbamide", "Imatinib", "Rituximab"], "a": 1, "r": "**Hydroxycarbamide** suppresses platelet production (inhibits ribonucleotide reductase)."},
+    {"d": "science", "q": "Which cytokines drive marrow fibrosis in myelofibrosis?", "o": ["IL-2 and IFN-gamma", "IL-6 and TNF-alpha", "PDGF and TGF-beta", "EPO and TPO"], "a": 2, "r": "Abnormal clones release **PDGF and TGF-beta**, stimulating fibroblasts."},
+    {"d": "science", "q": "What does JAK2 V617F do to cell signalling?", "o": ["Blocks apoptosis via BCL-2", "Constitutively activates JAK-STAT", "Inactivates p53", "Switches off EPO receptors"], "a": 1, "r": "**Constitutive JAK-STAT activation** drives cytokine-independent growth."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What are the myeloproliferative disorders, and what links them?", "tip": "Exam thinking: name all three and the mutation.", "points": [
+        {"p": "Clonal bone marrow stem cell disorders overproducing one or more lines", "k": [["clon", "neoplas", "stem cell", "marrow"]], "why": "They are blood cancers, not reactive states."},
+        {"p": "Polycythaemia vera (PV)", "k": [["polycythaemia", "polycythemia", "PV"]], "why": "Raised Hb."},
+        {"p": "Essential thrombocythaemia (ET)", "k": [["thrombocyth", "ET"]], "why": "Raised platelets."},
+        {"p": "Primary myelofibrosis (PMF)", "k": [["myelofibrosis", "PMF"]], "why": "Marrow fibrosis and failure."},
+        {"p": "Associated with the JAK2 mutation", "k": [["jak2", "jak 2", "jak"]], "why": "JAK2 V617F."}
+      ]},
+      {"d": "diagnosis", "q": "How do the myeloproliferative disorders present?", "tip": "Exam thinking: often an incidental FBC, then spleen, symptoms and clots.", "points": [
+        {"p": "Often incidental, abnormal blood count", "k": [["incidental", "routine", "blood count", "fbc"]], "why": "Persistently raised counts."},
+        {"p": "Splenomegaly, abdominal fullness, early satiety", "k": [["spleen", "splenomegaly", "satiety", "fullness"]], "why": "Massive in PMF."},
+        {"p": "Fatigue, weight loss, night sweats, cachexia", "k": [["fatigue", "tired", "weight", "night sweat", "cachexia"]], "why": "Constitutional symptoms, prominent in PMF."},
+        {"p": "Headache, pruritus", "k": [["headache", "itch", "prurit"]], "why": "Pruritus after a bath points to PV."},
+        {"p": "Thrombosis or bleeding", "k": [["thromb", "clot", "bleed"]], "why": "Both occur in ET."}
+      ]},
+      {"d": "diagnosis", "q": "How do you tell PV, ET and PMF apart?", "tip": "Exam thinking: read the FBC line by line.", "points": [
+        {"p": "Raised Hb points to PV", "k": [["hb", "haemoglobin", "hemoglobin", "red cell"], ["PV", "vera"]], "why": "Plus itch, plethora, spleen."},
+        {"p": "Raised platelets point to ET", "k": [["platelet"], ["ET", "thrombocyth"]], "why": "Plus giant platelets on the film."},
+        {"p": "Massive spleen, teardrop cells, marrow failure point to PMF", "k": [["teardrop", "dacrocyte", "massive", "marrow failure"]], "why": "Plus dry tap and pancytopenia."}
+      ]},
+      {"d": "diagnosis", "q": "What are the features and complications of essential thrombocythaemia?", "tip": "Exam thinking: clots and bleeds from too many bad platelets.", "points": [
+        {"p": "Overproduction of platelets; JAK2 V617F positive", "k": [["platelet"]], "why": "Giant platelets and clumps on the film."},
+        {"p": "Headache, lightheadedness, syncope, atypical chest pain", "k": [["headache", "lightheaded", "syncope", "chest pain"]], "why": "Microvascular symptoms."},
+        {"p": "Erythromelalgia", "k": [["erythromelalgia", "burning"]], "why": "Burning red hands and feet."},
+        {"p": "Venous and arterial thrombosis: DVT, PE, MI, ischaemic stroke", "k": [["dvt", "pe", "mi", "stroke", "thromb"]], "why": "The serious complications."},
+        {"p": "Bleeding", "k": [["bleed", "haemorrhag", "nosebleed", "epistaxis"]], "why": "Dysfunctional platelets."}
+      ]},
+      {"d": "diagnosis", "q": "What are the features of primary myelofibrosis?", "tip": "Exam thinking: tired, big spleen, low counts, teardrop cells, dry tap.", "points": [
+        {"p": "Fatigue often first, with pallor", "k": [["fatigue", "tired", "pallor"]], "why": "Anaemia from marrow failure."},
+        {"p": "Massive (hepato)splenomegaly", "k": [["spleen", "splenomegaly"]], "why": "Extramedullary haematopoiesis."},
+        {"p": "Pancytopenia: low Hb, platelets and WCC", "k": [["pancytopenia", "low platelet", "anaemia", "anemia", "low wcc"]], "why": "Marrow failure pattern."},
+        {"p": "Teardrop cells (dacrocytes), leukoerythroblastic film", "k": [["teardrop", "dacrocyte", "leukoerythroblastic"]], "why": "Classic film finding."},
+        {"p": "Dry tap on marrow aspiration", "k": [["dry tap"]], "why": "Fibrosis prevents aspiration."}
+      ]},
+      {"d": "investigation", "q": "How do you investigate a suspected myeloproliferative disorder?", "tip": "Exam thinking: FBC tells you which line; marrow confirms.", "points": [
+        {"p": "FBC to see which cell line is high", "k": [["fbc", "full blood count", "blood count"]], "why": "The pattern names the MPN."},
+        {"p": "Blood film", "k": [["film", "smear"]], "why": "Blasts or immature cells suggest malignancy or myelofibrosis."},
+        {"p": "JAK2 mutation testing", "k": [["jak2", "jak 2", "jak"]], "why": "Shows a clonal cause."},
+        {"p": "LDH, urate, EPO (for PV)", "k": [["ldh", "urate", "epo", "erythropoietin"]], "why": "High turnover markers."},
+        {"p": "Bone marrow biopsy: diagnostic for PMF (fibrosis)", "k": [["marrow"], ["biopsy", "trephine"]], "why": "The aspirate is a dry tap."}
+      ]},
+      {"d": "management", "q": "How are ET and primary myelofibrosis treated?", "tip": "Exam thinking: ET = aspirin ± hydroxycarbamide; PMF = supportive and specialist.", "points": [
+        {"p": "ET: low-dose aspirin first-line", "k": [["aspirin"]], "why": "Reduces thrombosis."},
+        {"p": "High risk: hydroxycarbamide to suppress platelets", "k": [["hydroxycarbamide", "hydroxyurea"]], "why": "Older age or previous thrombosis."},
+        {"p": "PMF: transfusion support", "k": [["transfus"]], "why": "For symptomatic anaemia."},
+        {"p": "PMF: cytoreductive or targeted therapy", "k": [["targeted", "cytoreduct", "jak inhibitor", "ruxolitinib"]], "why": "Specialist care."},
+        {"p": "PMF: stem cell transplant", "k": [["stem cell", "transplant", "bmt"]], "why": "The only potentially curative option."}
+      ]},
+      {"d": "science", "q": "How does JAK2 V617F cause disease, and why does ET cause clots and bleeds?", "tip": "Exam thinking: switched-on signalling; too many bad platelets.", "points": [
+        {"p": "Clonal haematopoietic stem cell with JAK2 V617F", "k": [["clon", "stem cell"]], "why": "One cell, many descendants."},
+        {"p": "Constitutive JAK-STAT activation", "k": [["jak-stat", "jak stat", "constitutive", "always on", "switched on"]], "why": "Signalling with no off switch."},
+        {"p": "Cytokine-independent proliferation", "k": [["independ", "without cytokine", "without epo", "autonomous"]], "why": "Hence low EPO in PV."},
+        {"p": "ET: excessive but dysfunctional platelets cause thrombosis and bleeding", "k": [["dysfunction", "abnormal", "bad"], ["platelet"]], "why": "Both risks at once."}
+      ]},
+      {"d": "science", "q": "Why does myelofibrosis develop, and why the massive spleen and teardrop cells?", "tip": "Exam thinking: cytokines scar the marrow; the spleen takes over.", "points": [
+        {"p": "Abnormal clones release PDGF and TGF-beta", "k": [["pdgf", "tgf"]], "why": "Fibroblasts are stimulated."},
+        {"p": "Progressive marrow fibrosis and failure", "k": [["fibros", "scar"], ["fail", "progress"]], "why": "Causes pancytopenia."},
+        {"p": "Extramedullary haematopoiesis in liver and spleen", "k": [["extramedullary", "spleen", "liver"]], "why": "Causes massive hepatosplenomegaly."},
+        {"p": "Teardrop cells released from fibrotic marrow", "k": [["teardrop", "dacrocyte"]], "why": "Squeezed through the scarred marrow."},
+        {"p": "All MPNs can transform to AML or myelofibrosis", "k": [["aml", "leukaemia", "leukemia", "transform"]], "why": "So lifelong follow-up."}
+      ]}
+    ]
+  },
+  "glossary": {
+    "MPN": "Myeloproliferative neoplasm: a clonal marrow disorder overproducing one or more blood cell lines.",
+    "myeloproliferative": "Describes clonal marrow disorders that overproduce blood cells.",
+    "polycythaemia vera": "An MPN with a raised red cell mass, usually JAK2 positive.",
+    "PV": "Polycythaemia vera.",
+    "essential thrombocythaemia": "An MPN with a persistently raised platelet count causing clots and bleeding.",
+    "ET": "Essential thrombocythaemia.",
+    "primary myelofibrosis": "An MPN in which the marrow scars, causing pancytopenia and a massive spleen.",
+    "PMF": "Primary myelofibrosis.",
+    "myelofibrosis": "Scarring of the bone marrow by collagen, leading to marrow failure.",
+    "JAK2": "A signalling enzyme; the V617F mutation switches it permanently on.",
+    "JAK2 V617F": "The point mutation in JAK2 found in most PV and many ET and PMF cases.",
+    "JAK-STAT": "A cell signalling pathway that tells marrow cells to grow.",
+    "constitutive": "Switched on all the time, without needing a signal.",
+    "clonal": "Arising from one abnormal cell that has multiplied.",
+    "haematopoietic stem cell": "A marrow cell that gives rise to all the blood cell lines.",
+    "megakaryocyte": "The large marrow cell that makes platelets.",
+    "thrombocytosis": "A raised platelet count.",
+    "reactive thrombocytosis": "A raised platelet count caused by infection, inflammation, bleeding or iron deficiency.",
+    "erythromelalgia": "Burning pain and redness of the hands and feet from dysfunctional platelets.",
+    "splenomegaly": "An enlarged spleen.",
+    "hepatosplenomegaly": "Enlargement of both the liver and spleen.",
+    "extramedullary haematopoiesis": "Blood cell production outside the marrow, in the liver and spleen.",
+    "dry tap": "A bone marrow aspiration that yields no fluid because the marrow is fibrosed.",
+    "dacrocytes": "Teardrop-shaped red cells seen in myelofibrosis.",
+    "teardrop cells": "Red cells deformed into a teardrop shape squeezing through a scarred marrow.",
+    "poikilocytes": "Red cells with abnormal shapes.",
+    "leukoerythroblastic": "A blood film with immature white and nucleated red cells, from marrow infiltration or fibrosis.",
+    "pancytopenia": "Low red cells, white cells and platelets together.",
+    "blasts": "Immature blood cells; many in the blood suggest acute leukaemia.",
+    "bone marrow biopsy": "A trephine core of marrow, needed to diagnose myelofibrosis.",
+    "trephine": "A core biopsy of bone marrow, used when the aspirate is a dry tap.",
+    "LDH": "Lactate dehydrogenase, raised with high cell turnover.",
+    "urate": "A breakdown product of DNA; raised with high cell turnover.",
+    "hydroxycarbamide": "An oral cytoreductive drug that suppresses blood cell production by inhibiting ribonucleotide reductase.",
+    "cytoreduction": "Using drugs to lower blood cell counts.",
+    "aspirin": "An antiplatelet drug given first-line in ET to reduce clots.",
+    "stem cell transplant": "Replacing the marrow with donor stem cells; the only curative option in PMF.",
+    "PDGF": "Platelet-derived growth factor, which stimulates fibroblasts in myelofibrosis.",
+    "TGF-beta": "Transforming growth factor beta, a cytokine that drives marrow fibrosis.",
+    "AML": "Acute myeloid leukaemia, a possible late transformation of any MPN.",
+    "CML": "Chronic myeloid leukaemia: an MPN driven by BCR-ABL, treated with imatinib.",
+    "BCR-ABL": "The Philadelphia chromosome fusion gene of CML.",
+    "imatinib": "A tyrosine kinase inhibitor that targets BCR-ABL in CML.",
+    "TIA": "Transient ischaemic attack: brief stroke symptoms that fully resolve."
+  },
+  "technique": [
+    {"d": "diagnosis",
+     "stem": "A 71 year old man has 6 months of fatigue, night sweats and early satiety. He has lost 8 kg. He is pale and his spleen is palpable to the right iliac fossa. A blood film shows teardrop-shaped red cells and nucleated red cells. Bone marrow aspiration yields no material.",
+     "labs": [["Haemoglobin", "88 g/L", "130–175", "L"], ["White cell count", "3.1 ×10⁹/L", "4.0–11.0", "L"], ["Platelet count", "96 ×10⁹/L", "150–400", "L"]],
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Aplastic anaemia", "Chronic myeloid leukaemia", "Essential thrombocythaemia", "Polycythaemia vera", "Primary myelofibrosis"],
+     "a": 4,
+     "steps": [
+       {"t": "Read the question line first", "x": "A diagnosis question about a big spleen and low counts."},
+       {"t": "Pick out the clues", "clues": ["fatigue, night sweats and early satiety", "palpable to the right iliac fossa", "teardrop-shaped red cells", "nucleated red cells", "yields no material"], "x": "**Massive splenomegaly**, constitutional symptoms, **dacrocytes**, a leukoerythroblastic film, a **dry tap** and pancytopenia."},
+       {"t": "Make your own answer before looking", "x": "**Primary myelofibrosis**."},
+       {"t": "Rule out the others", "elim": [[0, "Aplastic anaemia has no splenomegaly and a hypocellular marrow that aspirates."], [1, "CML has a very high WCC, not a low one."], [2, "ET has a high platelet count."], [3, "PV has a high Hb."]]},
+       {"t": "Commit", "x": "**E. Primary myelofibrosis.** Rule: massive spleen + teardrop cells + dry tap = PMF."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 66 year old woman has a platelet count of 910 ×10⁹/L on three blood tests over 6 months. She has no infection, bleeding or inflammatory disease. Her ferritin and CRP are normal. Her pulse rate is 74 bpm and BP 134/82 mmHg.",
+     "q": "Which is the most appropriate investigation to look for a clonal cause?",
+     "o": ["BCR-ABL testing only", "Coagulation screen", "CT abdomen", "JAK2 mutation testing", "Repeat FBC in 12 months"],
+     "a": 3,
+     "steps": [
+       {"t": "Read the question line first", "x": "Next test for a persistent thrombocytosis with reactive causes excluded."},
+       {"t": "Pick out the clues", "clues": ["910 ×10⁹/L on three blood tests", "no infection, bleeding or inflammatory disease", "ferritin and CRP are normal"], "x": "**Persistent**, non-reactive thrombocytosis: suspect **ET**."},
+       {"t": "Make your own answer before looking", "x": "**JAK2 mutation testing**."},
+       {"t": "Rule out the others", "elim": [[0, "BCR-ABL is for CML; it may be added, but alone it misses JAK2 MPNs."], [1, "A clotting screen does not identify an MPN."], [2, "CT is not part of the MPN work-up."], [4, "Waiting a year leaves her clot risk untreated."]]},
+       {"t": "Commit", "x": "**D. JAK2 mutation testing.** Rule: persistent unexplained high count = JAK2."}
+     ]},
+    {"d": "management",
+     "stem": "A 44 year old woman has essential thrombocythaemia confirmed by JAK2 testing and bone marrow biopsy. She has never had a thrombosis or bleed. Her pulse rate is 70 bpm and BP 122/76 mmHg.",
+     "labs": [["Platelet count", "680 ×10⁹/L", "150–400", "H"]],
+     "q": "Which is the most appropriate initial management?",
+     "o": ["Aspirin 75 mg daily", "Hydroxycarbamide", "Imatinib", "Venesection", "Warfarin"],
+     "a": 0,
+     "steps": [
+       {"t": "Read the question line first", "x": "First-line treatment of ET."},
+       {"t": "Pick out the clues", "clues": ["44 year old", "essential thrombocythaemia confirmed", "never had a thrombosis or bleed"], "x": "Young, no clots: **low-risk ET**."},
+       {"t": "Make your own answer before looking", "x": "Low-dose **aspirin**."},
+       {"t": "Rule out the others", "elim": [[1, "Hydroxycarbamide is added for high-risk ET (older or previous thrombosis)."], [2, "Imatinib is for CML."], [3, "Venesection is for PV."], [4, "Warfarin is not routine in ET."]]},
+       {"t": "Commit", "x": "**A. Aspirin.** Rule: ET = aspirin; add hydroxycarbamide if high risk."}
+     ]},
+    {"d": "science",
+     "stem": "A 58 year old man with essential thrombocythaemia has had a DVT and now has recurrent nosebleeds and easy bruising. His platelet count is 1300 ×10⁹/L. His clotting screen is normal.",
+     "q": "Which is the most likely mechanism of his combined clotting and bleeding?",
+     "o": ["Acquired vitamin K deficiency", "Excessive but dysfunctional platelets", "Hyperviscosity from excess red cells", "Immune destruction of platelets", "Liver failure"],
+     "a": 1,
+     "steps": [
+       {"t": "Read the question line first", "x": "Mechanism question: why ET causes both clots and bleeds."},
+       {"t": "Pick out the clues", "clues": ["essential thrombocythaemia", "had a DVT", "recurrent nosebleeds and easy bruising", "1300 ×10⁹/L", "clotting screen is normal"], "x": "Clots and bleeds, a very high count, and normal clotting factors."},
+       {"t": "Make your own answer before looking", "x": "Clonal megakaryocytes make **too many platelets that work badly**."},
+       {"t": "Rule out the others", "elim": [[0, "Vitamin K deficiency would prolong the PT."], [2, "Red cell hyperviscosity is PV; his problem is platelets."], [3, "Immune destruction lowers the platelet count."], [4, "Liver failure would derange the clotting screen."]]},
+       {"t": "Commit", "x": "**B. Excessive but dysfunctional platelets.** Rule: ET = too many, poorly working platelets = clots and bleeds."}
+     ]}
+  ],
+  "practice": [
+    {"d": "diagnosis",
+     "stem": "A 60 year old woman has headaches and burning pain in her toes. She had a transient ischaemic attack 2 months ago. Her pulse rate is 78 bpm, BP 136/82 mmHg and oxygen saturation 98% breathing air. Her spleen is not palpable. A JAK2 V617F mutation is detected.",
+     "labs": [["Haemoglobin", "136 g/L", "115–165", ""], ["White cell count", "9.2 ×10⁹/L", "4.0–11.0", ""], ["Platelet count", "1100 ×10⁹/L", "150–400", "H"], ["Ferritin", "140 µg/L", "30–400", ""]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Chronic myeloid leukaemia", "Essential thrombocythaemia", "Iron deficiency anaemia", "Polycythaemia vera", "Reactive thrombocytosis"],
+     "a": 1,
+     "e": "An isolated, very high platelet count with erythromelalgia, a TIA and a JAK2 mutation is essential thrombocythaemia. A normal ferritin and JAK2 positivity argue against a reactive cause.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Diagnosis from an FBC pattern."},
+       {"t": "Pick out the clues", "clues": ["burning pain in her toes", "transient ischaemic attack", "JAK2 V617F mutation is detected"], "x": "Isolated **platelet** rise, erythromelalgia, arterial clot, clonal mutation, normal ferritin."},
+       {"t": "Make your own answer before looking", "x": "**Essential thrombocythaemia**."},
+       {"t": "Rule out the others", "elim": [[0, "CML raises the white count."], [2, "Her Hb and ferritin are normal."], [3, "PV raises the Hb; hers is normal."], [4, "Reactive causes are not JAK2 positive and need a trigger."]]},
+       {"t": "Commit", "x": "**B. Essential thrombocythaemia.** Rule: platelets up + JAK2 = ET."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 69 year old man has 4 months of tiredness, night sweats and left-sided abdominal fullness. He has massive splenomegaly. His blood film shows teardrop cells and a leukoerythroblastic picture. A bone marrow aspirate is attempted.",
+     "labs": [["Haemoglobin", "91 g/L", "130–175", "L"], ["Platelet count", "104 ×10⁹/L", "150–400", "L"]],
+     "visual": null,
+     "q": "Which is the most likely finding on bone marrow aspiration?",
+     "o": ["Dry tap", "Excess plasma cells", "Hypocellular fatty marrow", "More than 20% blasts", "Ringed sideroblasts"],
+     "a": 0,
+     "e": "Primary myelofibrosis replaces the marrow with collagen, so the aspirate is a dry tap and a trephine biopsy is needed. Excess plasma cells mean myeloma.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Most likely marrow finding: work out the diagnosis first."},
+       {"t": "Pick out the clues", "clues": ["night sweats", "massive splenomegaly", "teardrop cells", "leukoerythroblastic picture"], "x": "Classic **primary myelofibrosis**."},
+       {"t": "Make your own answer before looking", "x": "Fibrosed marrow: **dry tap**."},
+       {"t": "Rule out the others", "elim": [[1, "Excess plasma cells mean myeloma."], [2, "A fatty hypocellular marrow is aplastic anaemia, with no big spleen."], [3, "Over 20% blasts means acute leukaemia."], [4, "Ringed sideroblasts mean sideroblastic anaemia or MDS."]]},
+       {"t": "Commit", "x": "**A. Dry tap.** Rule: PMF = dry tap; trephine biopsy shows fibrosis."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 65 year old man has itching after hot baths and a red face. He has never smoked. His pulse rate is 76 bpm, BP 150/92 mmHg and oxygen saturation 98% breathing air. His spleen is palpable. A JAK2 V617F mutation is detected.",
+     "labs": [["Haemoglobin", "196 g/L", "130–175", "H"], ["White cell count", "12.4 ×10⁹/L", "4.0–11.0", "H"], ["Platelet count", "480 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which is the most likely diagnosis?",
+     "o": ["Chronic myeloid leukaemia", "Essential thrombocythaemia", "Polycythaemia vera", "Primary myelofibrosis", "Secondary polycythaemia"],
+     "a": 2,
+     "e": "A dominant Hb rise with aquagenic pruritus, plethora, splenomegaly and JAK2 is polycythaemia vera. The platelet rise is modest; ET does not raise the Hb.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Which MPN: find the dominant line."},
+       {"t": "Pick out the clues", "clues": ["itching after hot baths", "red face", "never smoked", "spleen is palpable", "JAK2 V617F mutation"], "x": "**Hb** is the dominant rise; bath itch, plethora, spleen, no hypoxic cause."},
+       {"t": "Make your own answer before looking", "x": "**Polycythaemia vera**."},
+       {"t": "Rule out the others", "elim": [[0, "CML gives a very high WCC with a left shift."], [1, "ET does not raise the Hb."], [3, "PMF causes anaemia."], [4, "Secondary polycythaemia is JAK2 negative with a hypoxic cause."]]},
+       {"t": "Commit", "x": "**C. Polycythaemia vera.** Rule: Hb up = PV."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 73 year old woman has 5 months of fatigue and weight loss. She has massive splenomegaly and pancytopenia. A bone marrow aspirate is a dry tap and the trephine biopsy shows extensive fibrosis.",
+     "labs": [["Haemoglobin", "86 g/L", "115–165", "L"], ["White cell count", "2.9 ×10⁹/L", "4.0–11.0", "L"], ["Platelet count", "88 ×10⁹/L", "150–400", "L"]],
+     "visual": null,
+     "q": "Which is the most likely finding on her blood film?",
+     "o": ["Bite cells", "Dacrocytes (teardrop cells)", "Schistocytes", "Smudge cells", "Target cells"],
+     "a": 1,
+     "e": "Primary myelofibrosis releases teardrop-shaped poikilocytes (dacrocytes) from the fibrotic marrow, with a leukoerythroblastic picture. Smudge cells mean CLL.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Blood film finding: name the condition first."},
+       {"t": "Pick out the clues", "clues": ["massive splenomegaly", "pancytopenia", "dry tap", "extensive fibrosis"], "x": "**Primary myelofibrosis**."},
+       {"t": "Make your own answer before looking", "x": "**Teardrop cells (dacrocytes)**."},
+       {"t": "Rule out the others", "elim": [[0, "Bite cells are G6PD deficiency."], [2, "Schistocytes are microangiopathic haemolysis (DIC, TTP, HUS)."], [3, "Smudge cells are CLL."], [4, "Target cells are liver disease, thalassaemia or hyposplenism."]]},
+       {"t": "Commit", "x": "**B. Dacrocytes.** Rule: PMF = teardrop cells."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 57 year old man with essential thrombocythaemia has episodes of burning pain and redness in both feet, worse with warmth and after walking, and eased by cooling his feet. His foot pulses are normal. His pulse rate is 72 bpm and BP 130/80 mmHg.",
+     "labs": [["Platelet count", "940 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which is the most likely cause of his foot symptoms?",
+     "o": ["Erythromelalgia", "Gout", "Peripheral neuropathy", "Raynaud's phenomenon", "Venous insufficiency"],
+     "a": 0,
+     "e": "Burning, red feet worse with heat and relieved by cooling in ET is erythromelalgia from dysfunctional platelets. Raynaud's is triggered by cold.",
+     "steps": [
+       {"t": "Read the question line first", "x": "A symptom of an MPN."},
+       {"t": "Pick out the clues", "clues": ["essential thrombocythaemia", "burning pain and redness in both feet", "worse with warmth", "eased by cooling", "foot pulses are normal"], "x": "Heat-triggered **burning red** feet in **ET**."},
+       {"t": "Make your own answer before looking", "x": "**Erythromelalgia**."},
+       {"t": "Rule out the others", "elim": [[1, "Gout is a single hot swollen joint, not both feet episodically."], [2, "Neuropathy is constant numbness or tingling, not red flushing."], [3, "Raynaud's is triggered by cold, with white then blue fingers."], [4, "Venous insufficiency gives swelling and pigmentation, not episodic burning."]]},
+       {"t": "Commit", "x": "**A. Erythromelalgia.** Rule: ET + burning red feet = erythromelalgia."}
+     ]},
+    {"d": "diagnosis",
+     "stem": "A 70 year old man has had primary myelofibrosis for 6 years. Over 3 weeks he has become increasingly tired with fevers and bruising. His pulse rate is 104 bpm, BP 118/70 mmHg and temperature 38.1°C. His blood film shows numerous myeloblasts.",
+     "labs": [["Haemoglobin", "72 g/L", "130–175", "L"], ["White cell count", "46 ×10⁹/L", "4.0–11.0", "H"], ["Platelet count", "22 ×10⁹/L", "150–400", "L"], ["Blasts in blood", "34%", "0%", "H"]],
+     "visual": null,
+     "q": "Which is the most likely explanation?",
+     "o": ["Chronic myeloid leukaemia", "Hydroxycarbamide toxicity", "Increasing marrow fibrosis", "Splenic infarction", "Transformation to acute myeloid leukaemia"],
+     "a": 4,
+     "e": "A rapid fall in Hb and platelets with a rising WCC and over 20% blasts in a long-standing MPN is transformation to AML. Worsening fibrosis would not produce a third of the cells as blasts.",
+     "steps": [
+       {"t": "Read the question line first", "x": "What has happened to a long-standing MPN."},
+       {"t": "Pick out the clues", "clues": ["primary myelofibrosis for 6 years", "Over 3 weeks", "numerous myeloblasts"], "x": "Rapid decline with **blasts above 20%**: falling Hb and platelets, rising WCC."},
+       {"t": "Make your own answer before looking", "x": "**Transformation to AML**."},
+       {"t": "Rule out the others", "elim": [[0, "CML has a very high WCC with all maturing stages, not 34% blasts after PMF."], [1, "Hydroxycarbamide lowers the WCC rather than raising blasts."], [2, "Progressive fibrosis is slow and does not produce many blasts."], [3, "Splenic infarction causes acute LUQ pain."]]},
+       {"t": "Commit", "x": "**E. Transformation to AML.** Rule: MPN + blasts above 20% = AML."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 68 year old man has fatigue, night sweats and massive splenomegaly. His blood film shows teardrop cells. An attempt at bone marrow aspiration yields no material.",
+     "labs": [["Haemoglobin", "94 g/L", "130–175", "L"], ["Platelet count", "110 ×10⁹/L", "150–400", "L"]],
+     "visual": null,
+     "q": "Which is the most appropriate diagnostic investigation?",
+     "o": ["Abdominal ultrasound", "Bone marrow aspirate at another site", "Bone marrow trephine biopsy", "JAK2 mutation testing", "Serum LDH"],
+     "a": 2,
+     "e": "Bone marrow trephine biopsy is the diagnostic test for primary myelofibrosis, showing fibrosis in a collagenous matrix. Another aspirate will also be a dry tap.",
+     "steps": [
+       {"t": "Read the question line first", "x": "The diagnostic test for suspected PMF."},
+       {"t": "Pick out the clues", "clues": ["massive splenomegaly", "teardrop cells", "yields no material"], "x": "Suspected **PMF** with a **dry tap**."},
+       {"t": "Make your own answer before looking", "x": "**Bone marrow trephine biopsy**."},
+       {"t": "Rule out the others", "elim": [[0, "Ultrasound measures the spleen but cannot diagnose fibrosis."], [1, "A fibrosed marrow will be a dry tap wherever you aspirate."], [3, "JAK2 shows a clonal MPN but does not prove fibrosis."], [4, "LDH is a non-specific turnover marker."]]},
+       {"t": "Commit", "x": "**C. Trephine biopsy.** Rule: PMF is diagnosed on marrow biopsy."}
+     ]},
+    {"d": "investigation",
+     "stem": "A 64 year old woman with a known JAK2-positive myeloproliferative disorder has become more tired. She is pale with a large spleen. Her pulse rate is 96 bpm and BP 124/76 mmHg.",
+     "labs": [["Haemoglobin", "89 g/L", "115–165", "L"], ["White cell count", "2.6 ×10⁹/L", "4.0–11.0", "L"], ["Platelet count", "84 ×10⁹/L", "150–400", "L"]],
+     "visual": null,
+     "q": "Which is the most appropriate initial investigation?",
+     "o": ["Blood film", "CT abdomen", "Serum ferritin", "Serum vitamin B12", "Urine Bence Jones protein"],
+     "a": 0,
+     "e": "In new pancytopenia with an MPN, a blood film may show blasts or immature cells, suggesting transformation or myelofibrosis (teardrop cells). It is quick and guides the marrow biopsy.",
+     "steps": [
+       {"t": "Read the question line first", "x": "First test for new pancytopenia in an MPN."},
+       {"t": "Pick out the clues", "clues": ["JAK2-positive myeloproliferative disorder", "large spleen", "more tired"], "x": "Known **MPN** with new **pancytopenia**: transformation or fibrosis?"},
+       {"t": "Make your own answer before looking", "x": "**Blood film**: blasts or teardrop cells."},
+       {"t": "Rule out the others", "elim": [[1, "CT adds nothing to the cause of pancytopenia."], [2, "Ferritin looks for iron deficiency, which does not cause pancytopenia."], [3, "B12 deficiency is not the leading cause here."], [4, "Bence Jones protein is for myeloma."]]},
+       {"t": "Commit", "x": "**A. Blood film.** Rule: pancytopenia in MPN = film for blasts or teardrop cells."}
+     ]},
+    {"d": "management",
+     "stem": "A 74 year old man with essential thrombocythaemia had an ischaemic stroke 6 months ago. He takes aspirin 75 mg daily. His pulse rate is 72 bpm and BP 138/80 mmHg.",
+     "labs": [["Platelet count", "1050 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which is the most appropriate additional treatment?",
+     "o": ["Clopidogrel", "Hydroxycarbamide", "Imatinib", "Splenectomy", "Venesection"],
+     "a": 1,
+     "e": "Older age and a previous thrombosis make this high-risk ET, so cytoreduction with hydroxycarbamide is added to aspirin. Venesection is for PV.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Add-on treatment in ET."},
+       {"t": "Pick out the clues", "clues": ["74 year old", "ischaemic stroke 6 months ago", "takes aspirin 75 mg daily"], "x": "**High-risk ET**: older, previous thrombosis, already on aspirin."},
+       {"t": "Make your own answer before looking", "x": "**Hydroxycarbamide**."},
+       {"t": "Rule out the others", "elim": [[0, "A second antiplatelet does not lower the count and adds bleeding risk."], [2, "Imatinib is for CML."], [3, "Splenectomy raises the platelet count."], [4, "Venesection is for PV."]]},
+       {"t": "Commit", "x": "**B. Hydroxycarbamide.** Rule: high-risk ET = aspirin + hydroxycarbamide."}
+     ]},
+    {"d": "management",
+     "stem": "A 76 year old woman with primary myelofibrosis has increasing breathlessness on exertion and fatigue. She is not fit for intensive treatment. Her pulse rate is 104 bpm and BP 122/70 mmHg.",
+     "labs": [["Haemoglobin", "68 g/L", "115–165", "L"], ["Platelet count", "92 ×10⁹/L", "150–400", "L"]],
+     "visual": null,
+     "q": "Which is the most appropriate management of her symptoms?",
+     "o": ["Allopurinol", "Imatinib", "Red cell transfusion", "Splenectomy", "Venesection"],
+     "a": 2,
+     "e": "Symptomatic anaemia in PMF is managed with transfusion support as part of specialist supportive care. Venesection would worsen her anaemia.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Supportive management in PMF."},
+       {"t": "Pick out the clues", "clues": ["primary myelofibrosis", "breathlessness on exertion", "not fit for intensive treatment"], "x": "**Symptomatic anaemia** (Hb 68) from marrow failure, frail."},
+       {"t": "Make your own answer before looking", "x": "**Red cell transfusion**."},
+       {"t": "Rule out the others", "elim": [[0, "Allopurinol treats high urate, not anaemia."], [1, "Imatinib is for CML."], [3, "Splenectomy is high risk and not first-line in a frail patient."], [4, "Venesection would worsen the anaemia."]]},
+       {"t": "Commit", "x": "**C. Red cell transfusion.** Rule: PMF = supportive care first."}
+     ]},
+    {"d": "management",
+     "stem": "A 49 year old man has high-risk primary myelofibrosis with transfusion-dependent anaemia and massive splenomegaly. He is otherwise fit and well and has a matched sibling. His pulse rate is 88 bpm and BP 126/78 mmHg.",
+     "labs": [], "visual": null,
+     "q": "Which treatment offers the only chance of cure?",
+     "o": ["Allogeneic stem cell transplant", "Hydroxycarbamide", "Regular red cell transfusion", "Splenectomy", "Splenic irradiation"],
+     "a": 0,
+     "e": "Allogeneic stem cell transplant is the only potentially curative treatment for PMF and is considered in fit, younger patients. Transfusion and cytoreduction only control symptoms.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Curative treatment for PMF."},
+       {"t": "Pick out the clues", "clues": ["high-risk primary myelofibrosis", "otherwise fit and well", "matched sibling"], "x": "Young, fit, high-risk, with a **donor**."},
+       {"t": "Make your own answer before looking", "x": "**Allogeneic stem cell transplant**."},
+       {"t": "Rule out the others", "elim": [[1, "Hydroxycarbamide controls counts; it does not cure."], [2, "Transfusion is supportive only."], [3, "Splenectomy relieves symptoms, it does not cure."], [4, "Irradiation is palliative."]]},
+       {"t": "Commit", "x": "**A. Stem cell transplant.** Rule: only curative option in PMF."}
+     ]},
+    {"d": "science",
+     "stem": "A 62 year old woman has essential thrombocythaemia. Testing shows a JAK2 V617F mutation. She asks why her marrow keeps making too many platelets.",
+     "labs": [["Platelet count", "870 ×10⁹/L", "150–400", "H"]],
+     "visual": null,
+     "q": "Which is the most likely mechanism?",
+     "o": ["BCR-ABL fusion tyrosine kinase", "Constitutive JAK-STAT signalling", "Excess thrombopoietin from the liver", "Loss of p53 tumour suppression", "Reactive response to inflammation"],
+     "a": 1,
+     "e": "JAK2 V617F permanently activates JAK-STAT signalling, so the clonal stem cell proliferates without cytokine signals. BCR-ABL is the CML mechanism.",
+     "steps": [
+       {"t": "Read the question line first", "x": "Mechanism of a JAK2 MPN."},
+       {"t": "Pick out the clues", "clues": ["essential thrombocythaemia", "JAK2 V617F mutation", "keeps making too many platelets"], "x": "The mutation is the cause."},
+       {"t": "Make your own answer before looking", "x": "**Constitutive JAK-STAT activation**: cytokine-independent growth."},
+       {"t": "Rule out the others", "elim": [[0, "BCR-ABL is CML."], [2, "The clone does not need extra thrombopoietin."], [3, "p53 loss is not the MPN driver."], [4, "Reactive thrombocytosis is not clonal and not JAK2 positive."]]},
+       {"t": "Commit", "x": "**B. Constitutive JAK-STAT signalling.** Rule: JAK2 V617F = always-on JAK-STAT."}
+     ]}
+  ]
+}

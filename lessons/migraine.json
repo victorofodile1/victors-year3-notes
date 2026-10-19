@@ -1,0 +1,2047 @@
+{
+ "id": "migraine",
+ "patient": {
+  "name": "Sofia Rahman",
+  "age": 26,
+  "sex": "F",
+  "setting": "GP surgery",
+  "complaint": "Recurrent one-sided throbbing headaches with flashing zig-zag lines beforehand",
+  "background": [
+   "Takes the combined oral contraceptive pill",
+   "Mother has 'bad headaches'",
+   "Junior doctor on night shifts in Whitechapel",
+   "Mild asthma as a child, none since age 12"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a recurrent unilateral throbbing headache lasting hours, nausea and photophobia, often with a reversible visual aura; red flags (thunderclap, meningism, persistent deficit) point elsewhere.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Sofia, 26: headaches twice a month for a year.",
+      "**Zig-zag flashing lines** spread across her vision for 20 minutes first.",
+      "Then a **left-sided throbbing** headache, worse on moving.",
+      "Vomits, hides in a **dark, quiet room**; lasts about 14 hours."
+     ],
+     "vitals": {
+      "T": "36.7°C",
+      "HR": "72 bpm",
+      "BP": "116/72 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Recurrent, moderate to severe attacks with nausea and light sensitivity, some with aura: Sofia has a **primary headache disorder**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Sofia's **night shifts** (sleep deprivation), her **mother's headaches** and her **pill** all fit the risk factors and CHOCOLATE triggers."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sofia's headache is **unilateral, throbbing**, worse with movement, light and noise, with vomiting, lasting **4 to 72 hours**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "How long does an attack last?",
+      "min": 0,
+      "max": 96,
+      "unit": "hours",
+      "bands": [
+       [
+        0,
+        4,
+        "under 4 h: think cluster or other",
+        "warn"
+       ],
+       [
+        4,
+        72,
+        "migraine (4–72 h)",
+        "ok"
+       ],
+       [
+        72,
+        96,
+        "over 72 h: status migrainosus",
+        "bad"
+       ]
+      ],
+      "value": 14,
+      "label": "Sofia 14 h",
+      "caption": "Cluster headache lasts 15 minutes to 3 hours; migraine lasts 4 to 72 hours."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Between attacks she feels completely well.",
+      "Neurological examination and fundi normal.",
+      "No neck stiffness; BP 116/72 mmHg."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Sofia's zig-zags come **before** the headache and **fully reverse**, with a normal examination between episodes: classic **aura**. And she is on the **combined pill**."
+    },
+    {
+     "type": "ask",
+     "q": "Sofia has migraine with aura and takes the combined pill. What is the key risk?",
+     "o": [
+      "Deep vein thrombosis only",
+      "Ischaemic stroke",
+      "Medication overuse headache",
+      "Subarachnoid haemorrhage"
+     ],
+     "a": 1,
+     "r": "The COCP plus migraine with aura significantly raises **ischaemic stroke** risk, so it is contraindicated (UKMEC 4)."
+    },
+    {
+     "type": "compare",
+     "title": "Headache types",
+     "head": [
+      "Feature",
+      "Migraine",
+      "Tension-type",
+      "Cluster"
+     ],
+     "rows": [
+      [
+       "Site",
+       "Usually unilateral",
+       "Bilateral, band-like",
+       "Unilateral, around the eye"
+      ],
+      [
+       "Character",
+       "Throbbing",
+       "Pressing, tight",
+       "Severe, boring"
+      ],
+      [
+       "Duration",
+       "4–72 h",
+       "30 min to 7 days",
+       "15 min to 3 h"
+      ],
+      [
+       "With it",
+       "Nausea, photophobia, phonophobia, aura",
+       "Little else",
+       "Red watery eye, ptosis, restless"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Sofia has **no red flags**: no thunderclap onset, meningism or persistent deficit. **IIH** is the key differential if a headache is positional or atypical."
+    },
+    {
+     "type": "trap",
+     "text": "Aura is **positive and spreading** (zig-zags, tingling marching up the arm) and fully reverses. Sudden **negative** loss (a blank field, a dead arm) suggests **TIA**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?': for typical migraine the answer is none (clinical diagnosis); imaging only appears when the stem gives a red flag.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Sofia asks for a brain scan. What does she need?",
+     "o": [
+      "CT head",
+      "Lumbar puncture",
+      "MRI brain",
+      "No imaging: clinical diagnosis"
+     ],
+     "a": 3,
+     "r": "Migraine is a **clinical diagnosis**. With a normal examination and no red flags, imaging is not needed."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sofia's history and normal examination **are** the diagnosis: no routine imaging. Only **red flags** would trigger tests for a secondary cause."
+    },
+    {
+     "type": "flow",
+     "title": "Does this headache need investigating?",
+     "nodes": [
+      "Take the headache history",
+      "Examine: neurology, fundi, BP, neck",
+      "Red flags? (thunderclap, meningism, deficit, papilloedema)",
+      "No → clinical diagnosis, headache diary",
+      "Yes → investigate for a secondary cause"
+     ],
+     "caption": "Sofia goes down the 'No' branch."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Sofia keeps a **headache diary** for 8 weeks.",
+      "Attacks cluster after night shifts and weekend lie-ins.",
+      "Uses painkillers on 4 days a month."
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "A new headache that is **sudden 'worst ever'**, with meningism or a persistent deficit, is not migraine until a **secondary cause** is excluded."
+    },
+    {
+     "type": "pearl",
+     "text": "A **headache diary** (frequency, triggers, painkiller days) supports the diagnosis and spots **medication overuse**."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?': acute attacks get a triptan plus an NSAID or paracetamol; prophylaxis is propranolol or amitriptyline (topiramate avoided in women who could become pregnant); the combined pill is stopped in migraine with aura.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "What is the best acute treatment for Sofia's attacks?",
+     "o": [
+      "Codeine phosphate",
+      "Oral sumatriptan plus ibuprofen",
+      "Oral sumatriptan taken at the start of the aura",
+      "Propranolol daily"
+     ],
+     "a": 1,
+     "r": "**Combination**: triptan plus NSAID or paracetamol, taken once the **headache** starts, not during the aura. Propranolol is prophylaxis."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sofia takes **sumatriptan 50 mg plus ibuprofen 400 mg** when the headache begins, with **metoclopramide** for her vomiting, and avoids her triggers."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Sofia vomits her tablets, she can use **nasal or subcutaneous** sumatriptan. If she becomes pregnant, **paracetamol** is first-line."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Her **combined pill is stopped** (migraine with aura).",
+      "Switched to a **progestogen-only** method after discussion.",
+      "Six months later: attacks up to 5 a month, missing shifts."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sofia's attacks are now frequent and disabling: she starts **propranolol** (her asthma resolved in childhood). **Topiramate** is avoided as she may want children."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Sofia's migraine days per month",
+      "x": [
+       "Before",
+       "Month 1",
+       "Month 2",
+       "Month 3",
+       "Month 4"
+      ],
+      "unit": "days",
+      "series": [
+       {
+        "name": "Migraine days",
+        "values": [
+         5,
+         4,
+         3,
+         2,
+         1
+        ]
+       }
+      ],
+      "caption": "Prophylaxis takes weeks to work; review at 2 to 3 months before calling it a failure."
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Days per month Sofia takes a triptan",
+      "min": 0,
+      "max": 20,
+      "unit": "days",
+      "bands": [
+       [
+        0,
+        10,
+        "acceptable",
+        "ok"
+       ],
+       [
+        10,
+        20,
+        "risk of medication overuse headache",
+        "bad"
+       ]
+      ],
+      "value": 3,
+      "label": "Sofia 3 days",
+      "caption": "Triptans on 10 or more days a month (simple painkillers on 15 or more) risk medication overuse headache."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Migraine management",
+     "nodes": [
+      "Acute: triptan + NSAID or paracetamol",
+      "Vomiting: add metoclopramide or prochlorperazine",
+      "Oral not tolerated: nasal or subcutaneous sumatriptan",
+      "≥2 triptans failed: rimegepant",
+      "Frequent attacks: propranolol or amitriptyline → topiramate or candesartan → rimegepant"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Sofia's plan follows **NICE CG150** and **BASH** guidance: combination acute treatment, prophylaxis for frequent attacks, and review."
+    },
+    {
+     "type": "trap",
+     "text": "Sumatriptan is contraindicated in **ischaemic heart disease, previous stroke or MI, peripheral vascular disease and hypertension**. Check before prescribing."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the trigeminovascular system and CGRP, cortical spreading depression as the cause of aura, and how triptans (5-HT1B/1D agonists) and gepants work.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sofia's pain comes from activated **trigeminal** nerve fibres releasing **CGRP** around meningeal vessels: neurogenic inflammation and vasodilation."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Sofia's zig-zags are a slow wave of **cortical spreading depression** moving across her occipital (visual) cortex, which is why they spread."
+    },
+    {
+     "type": "flow",
+     "title": "From aura to throbbing pain",
+     "nodes": [
+      "Cortical spreading depression (aura)",
+      "Trigeminovascular system activated",
+      "CGRP and neuropeptides released",
+      "Meningeal vasodilation, neurogenic inflammation",
+      "Sensitised pain pathways: throbbing, allodynia"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Sofia's scalp feels sore to brush during attacks: **sensitised** trigeminal and central pathways cause **allodynia**."
+    },
+    {
+     "type": "ask",
+     "q": "How does sumatriptan relieve Sofia's headache?",
+     "o": [
+      "5-HT1B/1D receptor agonism",
+      "Beta-adrenoceptor blockade",
+      "CGRP receptor blockade",
+      "Dopamine D2 antagonism"
+     ],
+     "a": 0,
+     "r": "Triptans are **5-HT1B/1D agonists**: cranial vasoconstriction and less neuropeptide release. Gepants block CGRP; metoclopramide blocks D2."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Sumatriptan constricts Sofia's cranial vessels and stops **neuropeptide** release; rimegepant would block **CGRP** itself."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Sofia is warned: painkillers on too many days a month cause **medication overuse headache**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "How long does a typical migraine attack last?",
+   "o": [
+    "15 minutes to 3 hours",
+    "4 to 72 hours",
+    "Seconds",
+    "Over 1 week"
+   ],
+   "a": 1,
+   "r": "Migraine lasts **4 to 72 hours**. 15 minutes to 3 hours suggests cluster headache."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which mnemonic lists common migraine triggers?",
+   "o": [
+    "CHOCOLATE",
+    "FAST",
+    "SOCRATES",
+    "VINDICATE"
+   ],
+   "a": 0,
+   "r": "**CHOCOLATE**: chocolate, hangovers, orgasms, cheese/caffeine, oral contraceptives, lie-ins, alcohol, travel, exercise."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Why is the combined pill contraindicated in migraine with aura?",
+   "o": [
+    "It causes medication overuse",
+    "It reduces triptan efficacy",
+    "It significantly increases stroke risk",
+    "It triggers cluster headache"
+   ],
+   "a": 2,
+   "r": "Combined oestrogen plus migraine with aura significantly raises **ischaemic stroke** risk."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is the key differential for migraine with atypical, positional features?",
+   "o": [
+    "Cluster headache",
+    "Idiopathic intracranial hypertension",
+    "Tension-type headache",
+    "Trigeminal neuralgia"
+   ],
+   "a": 1,
+   "r": "The notes name **IIH** as the key differential with atypical (positional) features."
+  },
+  {
+   "d": "investigation",
+   "q": "How is migraine diagnosed?",
+   "o": [
+    "Clinically",
+    "CT head",
+    "EEG",
+    "MRI brain"
+   ],
+   "a": 0,
+   "r": "**Clinical diagnosis**; investigate only with red flags."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line acute treatment for migraine?",
+   "o": [
+    "Codeine",
+    "Oral triptan plus NSAID or paracetamol",
+    "Propranolol",
+    "Topiramate"
+   ],
+   "a": 1,
+   "r": "**Combination** of a triptan with an NSAID or paracetamol."
+  },
+  {
+   "d": "management",
+   "q": "Which is first-line migraine prophylaxis in a woman with asthma?",
+   "o": [
+    "Amitriptyline",
+    "Propranolol",
+    "Sumatriptan",
+    "Topiramate"
+   ],
+   "a": 0,
+   "r": "Propranolol is contraindicated in asthma; topiramate is teratogenic. **Amitriptyline** fits."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line acute treatment for migraine in pregnancy?",
+   "o": [
+    "Aspirin 900 mg",
+    "Codeine",
+    "Paracetamol",
+    "Sumatriptan"
+   ],
+   "a": 2,
+   "r": "**Paracetamol** is first-line in pregnancy and breastfeeding."
+  },
+  {
+   "d": "science",
+   "q": "What causes migraine aura?",
+   "o": [
+    "Cerebral vasospasm and infarction",
+    "Cortical spreading depression",
+    "Raised intracranial pressure",
+    "Retinal detachment"
+   ],
+   "a": 1,
+   "r": "**Cortical spreading depression**: a wave of depolarisation then suppressed activity."
+  },
+  {
+   "d": "science",
+   "q": "How do triptans work?",
+   "o": [
+    "5-HT1B/1D receptor agonists",
+    "5-HT3 antagonists",
+    "CGRP receptor antagonists",
+    "COX inhibitors"
+   ],
+   "a": 0,
+   "r": "Triptans are **5-HT1B/1D agonists**: cranial vasoconstriction and reduced neuropeptide release."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old woman has had recurrent headaches for 2 years. Each starts with 20 minutes of shimmering zig-zag lines spreading across her vision, followed by a right-sided throbbing headache with nausea and dislike of light, lasting a day. Her mother has similar headaches. Neurological examination between attacks is normal.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cluster headache",
+    "Idiopathic intracranial hypertension",
+    "Migraine with aura",
+    "Tension-type headache",
+    "Transient ischaemic attack"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a recurrent headache."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "recurrent headaches for 2 years",
+      "zig-zag lines spreading across her vision",
+      "right-sided throbbing headache",
+      "dislike of light, lasting a day",
+      "Her mother has similar headaches"
+     ],
+     "x": "Recurrent, aura then unilateral throbbing pain with photophobia, lasting hours, family history."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Migraine with aura**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cluster lasts 15 minutes to 3 hours, around the eye, with autonomic signs."
+      ],
+      [
+       1,
+       "IIH gives daily positional headache and papilloedema."
+      ],
+      [
+       3,
+       "Tension-type is bilateral and pressing, without aura or vomiting."
+      ],
+      [
+       4,
+       "TIA causes sudden negative symptoms with no headache pattern over years."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Migraine with aura.** Spreading positive visual aura, then unilateral throbbing pain."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old woman has had episodic left-sided throbbing headaches with nausea and photophobia for 5 years, each lasting about 12 hours. She is well between attacks. Her temperature is 36.8°C, pulse rate 70 bpm and BP 118/74 mmHg. Neurological examination and fundoscopy are normal.",
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "CT head",
+    "Erythrocyte sedimentation rate",
+    "Lumbar puncture",
+    "MRI brain",
+    "No investigation required"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation question: does she need any?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "for 5 years",
+      "well between attacks",
+      "fundoscopy are normal"
+     ],
+     "x": "Long-standing, typical pattern, normal examination: no red flags."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**No investigation**: clinical diagnosis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CT is for red flags such as thunderclap headache."
+      ],
+      [
+       1,
+       "ESR is for suspected giant cell arteritis in over-50s."
+      ],
+      [
+       2,
+       "LP is for suspected SAH or meningitis."
+      ],
+      [
+       3,
+       "MRI is not needed without red flags."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. No investigation.** Migraine is a clinical diagnosis."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 28 year old woman has migraine with aura, with attacks twice a month. She takes the combined oral contraceptive pill. She has no other medical problems and does not smoke. Her BP is 114/70 mmHg.",
+   "q": "Which is the most appropriate change to her contraception?",
+   "o": [
+    "Add aspirin to the combined pill",
+    "Continue the combined pill",
+    "Stop the combined pill and offer progestogen-only contraception",
+    "Switch to a higher-oestrogen combined pill",
+    "Switch to the combined vaginal ring"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of contraception in migraine."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "migraine with aura",
+      "combined oral contraceptive pill"
+     ],
+     "x": "Combined oestrogen + aura = raised **stroke** risk."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Stop the COCP**; offer a progestogen-only or non-hormonal method."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspirin does not make oestrogen safe here."
+      ],
+      [
+       1,
+       "Continuing exposes her to stroke risk."
+      ],
+      [
+       3,
+       "More oestrogen means more risk."
+      ],
+      [
+       4,
+       "The ring is still combined oestrogen."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Stop the combined pill.** Any combined oestrogen method is contraindicated."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 22 year old man has migraine. Before each headache he sees a bright flickering spot that slowly expands into a shimmering arc over 20 minutes and then disappears. Neurological examination between attacks is normal.",
+   "q": "Which is the most likely mechanism of his visual symptoms?",
+   "o": [
+    "Cortical spreading depression",
+    "Occlusion of the central retinal artery",
+    "Optic nerve inflammation",
+    "Raised intracranial pressure",
+    "Vasospasm causing occipital infarction"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of aura."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "slowly expands",
+      "over 20 minutes",
+      "then disappears"
+     ],
+     "x": "A slowly spreading, fully reversible positive phenomenon."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cortical spreading depression** across the occipital cortex."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Retinal artery occlusion gives sudden painless monocular loss."
+      ],
+      [
+       2,
+       "Optic neuritis gives painful reduced acuity for days."
+      ],
+      [
+       3,
+       "Raised ICP gives papilloedema and transient obscurations."
+      ],
+      [
+       4,
+       "Infarction would leave a permanent deficit."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cortical spreading depression.**"
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old woman has recurrent headaches for 3 years. Each is a left-sided throbbing pain, worse on climbing stairs, with nausea, vomiting and sensitivity to light and noise. Attacks last 8 to 24 hours. She is well between them. Her temperature is 36.6°C, pulse rate 74 bpm and BP 118/76 mmHg. Neurological examination is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cluster headache",
+    "Medication overuse headache",
+    "Migraine without aura",
+    "Subarachnoid haemorrhage",
+    "Tension-type headache"
+   ],
+   "a": 2,
+   "e": "Recurrent unilateral throbbing headache lasting 4 to 72 hours, worse with activity, with nausea, photophobia and phonophobia, is migraine (here without aura).",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a recurrent headache."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "left-sided throbbing pain",
+      "worse on climbing stairs",
+      "sensitivity to light and noise",
+      "8 to 24 hours"
+     ],
+     "x": "Unilateral, pulsating, worse with movement, photophobia, phonophobia, hours."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Migraine without aura**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cluster lasts under 3 hours with autonomic eye signs."
+      ],
+      [
+       1,
+       "No frequent analgesic use is described."
+      ],
+      [
+       3,
+       "SAH is sudden 'worst ever', not recurrent over years."
+      ],
+      [
+       4,
+       "Tension-type is bilateral, pressing, without vomiting."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Migraine without aura.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old man has 4 episodes over a year in which tingling starts in his right fingers and spreads up his arm over 15 minutes, followed by a throbbing headache with nausea lasting 10 hours. Each resolves completely. His pulse rate is 68 bpm and BP 124/80 mmHg. Examination is normal.",
+   "labs": [
+    [
+     "Capillary glucose",
+     "5.2 mmol/L",
+     "4.0–7.8",
+     ""
+    ],
+    [
+     "Sodium",
+     "139 mmol/L",
+     "135–145",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cervical radiculopathy",
+    "Focal seizure",
+    "Hypoglycaemia",
+    "Migraine with aura",
+    "Transient ischaemic attack"
+   ],
+   "a": 3,
+   "e": "A sensory aura that spreads (marches) over minutes, fully reverses, and is followed by a migrainous headache is migraine with aura. TIA symptoms are sudden and negative.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of transient neurological symptoms with headache."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "spreads up his arm over 15 minutes",
+      "followed by a throbbing headache",
+      "resolves completely"
+     ],
+     "x": "Slow spread, positive symptom, then headache, fully reversible."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Migraine with (sensory) aura**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Radiculopathy gives neck pain and fixed dermatomal symptoms, not headache."
+      ],
+      [
+       1,
+       "Focal seizures spread over seconds, not 15 minutes."
+      ],
+      [
+       2,
+       "Glucose is normal."
+      ],
+      [
+       4,
+       "TIA is sudden onset and negative (numbness, weakness)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Migraine with aura.** Spreading over minutes = aura."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 35 year old woman with migraine has had a headache on most days for 3 months. She takes co-codamol or sumatriptan on about 20 days each month. The headache is worse on waking. Her pulse rate is 72 bpm and BP 120/78 mmHg. Neurological examination and fundoscopy are normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of her daily headache?",
+   "o": [
+    "Brain tumour",
+    "Cluster headache",
+    "Idiopathic intracranial hypertension",
+    "Medication overuse headache",
+    "Tension-type headache"
+   ],
+   "a": 3,
+   "e": "Frequent use of acute migraine treatments (triptans or opioids on 10 or more days a month) causes medication overuse headache, a recognised complication of migraine treatment.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of a change to daily headache."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "with migraine",
+      "about 20 days each month",
+      "most days for 3 months"
+     ],
+     "x": "Painkillers on 20 days a month in a migraine patient."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Medication overuse headache**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Tumour would give progressive symptoms, papilloedema or deficit."
+      ],
+      [
+       1,
+       "Cluster is short attacks around the eye."
+      ],
+      [
+       2,
+       "Fundi are normal."
+      ],
+      [
+       4,
+       "The analgesic overuse is the key clue."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Medication overuse headache.** Stop the overused drug."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old woman started a combined oral contraceptive pill 2 months ago. Since then she has had three episodes of unilateral throbbing headache with vomiting and photophobia, each lasting about a day. She sleeps normally and does not drink alcohol. Her pulse rate is 76 bpm and BP 112/70 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely trigger of her migraine?",
+   "o": [
+    "Alcohol",
+    "Caffeine withdrawal",
+    "Exercise",
+    "Oral contraceptive",
+    "Sleep deprivation"
+   ],
+   "a": 3,
+   "e": "Oral contraceptives are among the CHOCOLATE triggers, and her attacks began after starting the pill; she sleeps normally and does not drink.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Trigger question: what changed?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started a combined oral contraceptive pill 2 months ago",
+      "sleeps normally and does not drink alcohol"
+     ],
+     "x": "New attacks began with the pill; other triggers excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Oral contraceptive**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She does not drink."
+      ],
+      [
+       1,
+       "No caffeine change is described."
+      ],
+      [
+       2,
+       "No link to exercise is given."
+      ],
+      [
+       4,
+       "She sleeps normally."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Oral contraceptive.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old woman has a 6 year history of migraine with visual aura. She sees her GP between attacks for a review. Her temperature is 36.5°C, pulse rate 70 bpm and BP 116/74 mmHg. She feels completely well today.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on neurological examination today?",
+   "o": [
+    "Bilateral papilloedema",
+    "Homonymous hemianopia",
+    "Normal examination",
+    "Right-sided pronator drift",
+    "Unilateral ptosis and miosis"
+   ],
+   "a": 2,
+   "e": "Migraine aura is fully reversible and the neurological examination is normal between episodes. A persistent deficit is a red flag for a secondary cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Finding between attacks."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "between attacks",
+      "feels completely well today"
+     ],
+     "x": "Aura is reversible; interictal exam is normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Normal examination**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Papilloedema suggests IIH or a mass."
+      ],
+      [
+       1,
+       "A fixed field defect means a structural lesion."
+      ],
+      [
+       3,
+       "Drift is a persistent deficit (red flag)."
+      ],
+      [
+       4,
+       "Horner's suggests cluster or carotid dissection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Normal examination.**"
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 40 year old woman with migraine is reviewed after starting a new medication for frequent attacks. She reports tingling in her fingers and has lost 4 kg. She has stopped her contraception. Her pulse rate is 78 bpm and BP 122/76 mmHg.",
+   "labs": [
+    [
+     "Bicarbonate",
+     "19 mmol/L",
+     "22–29",
+     "L"
+    ],
+    [
+     "Sodium",
+     "138 mmol/L",
+     "135–145",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her new symptoms?",
+   "o": [
+    "Amitriptyline",
+    "Candesartan",
+    "Propranolol",
+    "Rimegepant",
+    "Topiramate"
+   ],
+   "a": 4,
+   "e": "Topiramate causes paraesthesia, weight loss and a mild metabolic acidosis, and is teratogenic, so it needs highly effective contraception. Amitriptyline causes weight gain.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which prophylactic causes these effects?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "tingling in her fingers",
+      "lost 4 kg",
+      "stopped her contraception"
+     ],
+     "x": "Paraesthesia, weight loss, low bicarbonate; contraception matters because it is teratogenic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Topiramate**, second-line prophylaxis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amitriptyline causes weight gain and drowsiness."
+      ],
+      [
+       1,
+       "Candesartan causes dizziness and hyperkalaemia."
+      ],
+      [
+       2,
+       "Propranolol causes cold hands and fatigue."
+      ],
+      [
+       3,
+       "Rimegepant is not linked to acidosis or paraesthesia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Topiramate.** And it must not be used without highly effective contraception."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 27 year old woman has recurrent unilateral throbbing headaches with nausea and photophobia, each lasting about 12 hours, for 4 years. Neurological examination and fundoscopy are normal. She asks whether she needs a brain scan. Her pulse rate is 70 bpm and BP 114/72 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "CT head",
+    "Lumbar puncture",
+    "MRI brain with contrast",
+    "No investigation required",
+    "Serum ESR and CRP"
+   ],
+   "a": 3,
+   "e": "Migraine is a clinical diagnosis: with a typical history and normal examination, no investigation is needed. Investigate only for red flags.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation for typical migraine."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "for 4 years",
+      "fundoscopy are normal",
+      "asks whether she needs a brain scan"
+     ],
+     "x": "Typical, long-standing, normal examination."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**No investigation required**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CT is for red flags."
+      ],
+      [
+       1,
+       "LP is for SAH or meningitis."
+      ],
+      [
+       2,
+       "MRI is not routine."
+      ],
+      [
+       4,
+       "Inflammatory markers are for giant cell arteritis in older patients."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. No investigation.**"
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 34 year old woman has had headaches on and off for a year. Some are unilateral and throbbing, others are milder. She is unsure how often they happen, what triggers them, or how many painkillers she takes. Neurological examination is normal.",
+   "labs": [
+    [
+     "ESR",
+     "8 mm/h",
+     "<20",
+     ""
+    ],
+    [
+     "CRP",
+     "2 mg/L",
+     "<5",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next step to support the diagnosis?",
+   "o": [
+    "CT head",
+    "EEG",
+    "Headache diary",
+    "Lumbar puncture",
+    "MRI brain"
+   ],
+   "a": 2,
+   "e": "Migraine is diagnosed clinically; a headache diary records frequency, triggers and painkiller use, supporting the diagnosis and detecting medication overuse.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step to support a clinical diagnosis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unsure how often",
+      "what triggers them",
+      "how many painkillers she takes",
+      "Neurological examination is normal"
+     ],
+     "x": "The information missing is the pattern, not a scan result."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Headache diary**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No red flags for CT."
+      ],
+      [
+       1,
+       "EEG is for seizures."
+      ],
+      [
+       3,
+       "LP is for SAH or meningitis."
+      ],
+      [
+       4,
+       "MRI is not indicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Headache diary.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 25 year old woman has migraine without aura, with attacks twice a month. Paracetamol alone does not help. She has no other medical problems. Her pulse rate is 72 bpm and BP 112/70 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate acute treatment?",
+   "o": [
+    "Oral codeine phosphate",
+    "Oral propranolol",
+    "Oral sumatriptan plus ibuprofen",
+    "Oral topiramate",
+    "Rimegepant"
+   ],
+   "a": 2,
+   "e": "First-line acute treatment is combination therapy: an oral triptan with an NSAID or paracetamol. Propranolol and topiramate are prophylaxis; rimegepant is after two triptans fail.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Acute treatment, not prophylaxis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "attacks twice a month",
+      "Paracetamol alone does not help",
+      "no other medical problems"
+     ],
+     "x": "Infrequent attacks; no triptan contraindication."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Sumatriptan plus an NSAID**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Opioids are avoided in migraine (overuse, nausea)."
+      ],
+      [
+       1,
+       "Propranolol is prophylaxis."
+      ],
+      [
+       3,
+       "Topiramate is prophylaxis and teratogenic."
+      ],
+      [
+       4,
+       "Rimegepant is for when 2 or more triptans have failed."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Sumatriptan plus ibuprofen.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 30 year old woman with migraine vomits within minutes of every attack starting, even after an antiemetic, and brings up her oral sumatriptan. She has no cardiovascular disease. Her pulse rate is 80 bpm and BP 118/74 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Increase the oral sumatriptan dose",
+    "Oral rimegepant",
+    "Rectal paracetamol only",
+    "Start propranolol",
+    "Subcutaneous sumatriptan"
+   ],
+   "a": 4,
+   "e": "When oral treatment is not tolerated, a non-oral triptan (nasal or subcutaneous sumatriptan) is used. A higher oral dose would still be vomited.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step when oral treatment fails because of vomiting."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "vomits within minutes",
+      "brings up her oral sumatriptan",
+      "no cardiovascular disease"
+     ],
+     "x": "Triptan works but cannot be kept down; no contraindication."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Non-oral sumatriptan** (subcutaneous or nasal)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A higher oral dose will be vomited too."
+      ],
+      [
+       1,
+       "Rimegepant is after 2 triptans fail, and is oral."
+      ],
+      [
+       2,
+       "Paracetamol alone is less effective than a triptan."
+      ],
+      [
+       3,
+       "Prophylaxis does not treat the acute attack."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Subcutaneous sumatriptan.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 32 year old woman has migraine with 5 disabling attacks a month despite optimal acute treatment. She has asthma treated with an inhaled corticosteroid. She is not planning a pregnancy but does not use contraception. Her pulse rate is 76 bpm and BP 120/76 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate prophylactic treatment?",
+   "o": [
+    "Amitriptyline",
+    "Propranolol",
+    "Rimegepant",
+    "Sumatriptan daily",
+    "Topiramate"
+   ],
+   "a": 0,
+   "e": "Propranolol is contraindicated in asthma and topiramate is teratogenic in women of childbearing age, so amitriptyline is the first-line choice.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Prophylaxis: check contraindications."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5 disabling attacks a month",
+      "asthma",
+      "does not use contraception"
+     ],
+     "x": "Asthma excludes propranolol; no contraception excludes topiramate."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Amitriptyline**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Contraindicated in asthma."
+      ],
+      [
+       2,
+       "Rimegepant is third-line prophylaxis."
+      ],
+      [
+       3,
+       "Daily triptans cause medication overuse headache."
+      ],
+      [
+       4,
+       "Teratogenic; not without contraception."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Amitriptyline.**"
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 28 year old woman has migraine without aura. Her GP prescribes oral sumatriptan to take at the onset of headache, with ibuprofen. She has no cardiovascular disease. Her pulse rate is 70 bpm and BP 114/72 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the mechanism of action of sumatriptan?",
+   "o": [
+    "Agonism of 5-HT1B/1D receptors",
+    "Antagonism of CGRP receptors",
+    "Antagonism of dopamine D2 receptors",
+    "Blockade of beta-1 adrenoceptors",
+    "Inhibition of cyclo-oxygenase"
+   ],
+   "a": 0,
+   "e": "Triptans are 5-HT1B/1D receptor agonists, causing cranial vasoconstriction and inhibiting trigeminal neuropeptide release. CGRP antagonism is how gepants work.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Drug mechanism question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "oral sumatriptan",
+      "no cardiovascular disease"
+     ],
+     "x": "A triptan; vasoconstriction explains the cardiovascular contraindications."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**5-HT1B/1D agonism**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CGRP antagonism is rimegepant."
+      ],
+      [
+       2,
+       "D2 antagonism is metoclopramide or prochlorperazine."
+      ],
+      [
+       3,
+       "Beta-blockade is propranolol."
+      ],
+      [
+       4,
+       "COX inhibition is ibuprofen."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. 5-HT1B/1D agonism.**"
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "How does migraine typically present?",
+    "tip": "Exam thinking: site, character, duration and associated features.",
+    "points": [
+     {
+      "p": "Unilateral throbbing/pulsating headache",
+      "k": [
+       [
+        "unilateral",
+        "one side",
+        "one-sided"
+       ],
+       [
+        "throb",
+        "pulsat"
+       ]
+      ],
+      "why": "Tension-type is bilateral and pressing."
+     },
+     {
+      "p": "Nausea and vomiting",
+      "k": [
+       [
+        "nausea",
+        "vomit"
+       ]
+      ],
+      "why": "Antiemetics help."
+     },
+     {
+      "p": "Photophobia and phonophobia, worse with movement",
+      "k": [
+       [
+        "photophob",
+        "light"
+       ],
+       [
+        "phonophob",
+        "noise",
+        "sound"
+       ]
+      ],
+      "why": "Classic features."
+     },
+     {
+      "p": "Attacks last 4 to 72 hours",
+      "k": [
+       [
+        "72"
+       ]
+      ],
+      "why": "Cluster: 15 min to 3 h."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is a migraine aura and how does it differ from a TIA?",
+    "tip": "Exam thinking: positive, spreading, reversible.",
+    "points": [
+     {
+      "p": "Precedes the headache",
+      "k": [
+       [
+        "before",
+        "precede",
+        "prior"
+       ]
+      ],
+      "why": "Usually up to 60 minutes."
+     },
+     {
+      "p": "Visual zig-zags, flashing lights, scotoma",
+      "k": [
+       [
+        "zig",
+        "flash",
+        "scotoma",
+        "visual"
+       ]
+      ],
+      "why": "Most common type."
+     },
+     {
+      "p": "Tingling or speech disturbance",
+      "k": [
+       [
+        "tingl",
+        "speech",
+        "paraesthes"
+       ]
+      ],
+      "why": "Sensory aura marches over minutes."
+     },
+     {
+      "p": "Fully reversible, normal examination between episodes",
+      "k": [
+       [
+        "reversib",
+        "normal",
+        "resolve"
+       ]
+      ],
+      "why": "TIA is sudden and negative."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors and triggers for migraine?",
+    "tip": "Exam thinking: CHOCOLATE.",
+    "points": [
+     {
+      "p": "Sleep deprivation and family history",
+      "k": [
+       [
+        "sleep"
+       ],
+       [
+        "family"
+       ]
+      ],
+      "why": "Shift work is a common stem clue."
+     },
+     {
+      "p": "Hormonal fluctuation and pregnancy",
+      "k": [
+       [
+        "hormon",
+        "pregnan",
+        "menstrua"
+       ]
+      ],
+      "why": "Menstrual migraine needs targeted strategies."
+     },
+     {
+      "p": "CHOCOLATE: chocolate, hangovers, orgasms, cheese/caffeine, oral contraceptives, lie-ins, alcohol, travel, exercise",
+      "k": [
+       [
+        "chocolate",
+        "cheese",
+        "caffeine",
+        "contracepti",
+        "alcohol",
+        "lie-in"
+       ]
+      ],
+      "why": "The mnemonic is examined."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Why is the combined pill contraindicated in migraine?",
+    "tip": "Exam thinking: the contraception question.",
+    "points": [
+     {
+      "p": "Significantly increased risk of stroke",
+      "k": [
+       [
+        "stroke"
+       ]
+      ],
+      "why": "Ischaemic stroke, especially with aura."
+     },
+     {
+      "p": "Offer progestogen-only or non-hormonal contraception",
+      "k": [
+       [
+        "progestogen",
+        "progesterone",
+        "pop",
+        "iud",
+        "coil",
+        "implant"
+       ]
+      ],
+      "why": "No oestrogen."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the key differentials and red flags in a patient with headache?",
+    "tip": "Exam thinking: when is it not migraine?",
+    "points": [
+     {
+      "p": "Idiopathic intracranial hypertension, especially with positional headache",
+      "k": [
+       [
+        "intracranial hypertension",
+        "iih"
+       ]
+      ],
+      "why": "Look for papilloedema and obesity."
+     },
+     {
+      "p": "Sudden 'worst ever' headache",
+      "k": [
+       [
+        "sudden",
+        "worst",
+        "thunderclap"
+       ]
+      ],
+      "why": "SAH."
+     },
+     {
+      "p": "Meningism",
+      "k": [
+       [
+        "mening",
+        "neck stiff"
+       ]
+      ],
+      "why": "Meningitis or SAH."
+     },
+     {
+      "p": "Persistent neurological deficit",
+      "k": [
+       [
+        "deficit",
+        "persistent"
+       ]
+      ],
+      "why": "Secondary cause: investigate."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is migraine investigated?",
+    "tip": "Exam thinking: the answer is usually 'none'.",
+    "points": [
+     {
+      "p": "Clinical diagnosis is the gold standard; no routine imaging",
+      "k": [
+       [
+        "clinical",
+        "no imaging",
+        "no scan",
+        "none"
+       ]
+      ],
+      "why": "Typical history plus normal exam."
+     },
+     {
+      "p": "Investigate for a secondary cause only with red flags",
+      "k": [
+       [
+        "red flag",
+        "secondary"
+       ]
+      ],
+      "why": "E.g. CT for thunderclap headache."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the acute treatment of a migraine attack, including when oral treatment fails?",
+    "tip": "Exam thinking: combination, timing, route.",
+    "points": [
+     {
+      "p": "Triptan (e.g. oral sumatriptan) plus NSAID or paracetamol",
+      "k": [
+       [
+        "triptan"
+       ],
+       [
+        "nsaid",
+        "ibuprofen",
+        "aspirin",
+        "paracetamol"
+       ]
+      ],
+      "why": "Ibuprofen 400 mg, aspirin 900 mg or paracetamol 1 g."
+     },
+     {
+      "p": "Take the triptan once the headache starts, not during aura",
+      "k": [
+       [
+        "headache start",
+        "onset of headache",
+        "not during aura",
+        "not in aura",
+        "after aura"
+       ]
+      ],
+      "why": "Taken in aura it works less well."
+     },
+     {
+      "p": "Metoclopramide or prochlorperazine for nausea/vomiting",
+      "k": [
+       [
+        "metoclopramide",
+        "prochlorperazine"
+       ]
+      ],
+      "why": "Extrapyramidal effects, more in young women."
+     },
+     {
+      "p": "Oral not tolerated: nasal or subcutaneous sumatriptan",
+      "k": [
+       [
+        "nasal",
+        "subcutaneous",
+        "injection"
+       ]
+      ],
+      "why": "Bypasses vomiting."
+     },
+     {
+      "p": "Pregnancy: paracetamol; 2 or more triptans failed: rimegepant",
+      "k": [
+       [
+        "rimegepant",
+        "gepant",
+        "cgrp"
+       ]
+      ],
+      "why": "Paracetamol first-line in pregnancy."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When is sumatriptan contraindicated?",
+    "tip": "Exam thinking: it is a vasoconstrictor.",
+    "points": [
+     {
+      "p": "Ischaemic heart disease or previous MI",
+      "k": [
+       [
+        "ischaemic heart",
+        "ihd",
+        "angina",
+        "mi",
+        "myocardial"
+       ]
+      ],
+      "why": "Coronary vasoconstriction."
+     },
+     {
+      "p": "Previous stroke",
+      "k": [
+       [
+        "stroke"
+       ]
+      ],
+      "why": "Cerebral vasoconstriction."
+     },
+     {
+      "p": "Peripheral vascular disease and hypertension",
+      "k": [
+       [
+        "peripheral",
+        "pvd"
+       ],
+       [
+        "hypertension",
+        "blood pressure",
+        "bp"
+       ]
+      ],
+      "why": "Uncontrolled hypertension especially."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the prophylaxis ladder for migraine and the key contraindications?",
+    "tip": "Exam thinking: check asthma and pregnancy potential in the stem.",
+    "points": [
+     {
+      "p": "First-line: propranolol or amitriptyline",
+      "k": [
+       [
+        "propranolol"
+       ],
+       [
+        "amitriptyline"
+       ]
+      ],
+      "why": "Amitriptyline helps comorbid depression."
+     },
+     {
+      "p": "Propranolol contraindicated in asthma (and caution in diabetes, Raynaud's)",
+      "k": [
+       [
+        "asthma"
+       ]
+      ],
+      "why": "Bronchospasm."
+     },
+     {
+      "p": "Second-line: topiramate or candesartan",
+      "k": [
+       [
+        "topiramate",
+        "candesartan"
+       ]
+      ],
+      "why": "Third-line: rimegepant."
+     },
+     {
+      "p": "Topiramate is teratogenic: avoid in women of childbearing age",
+      "k": [
+       [
+        "teratogen",
+        "pregnan",
+        "childbearing"
+       ]
+      ],
+      "why": "Needs highly effective contraception."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the pathophysiology of migraine pain and aura?",
+    "tip": "Exam thinking: trigeminovascular, CGRP, spreading depression.",
+    "points": [
+     {
+      "p": "Activation of the trigeminovascular system",
+      "k": [
+       [
+        "trigemin"
+       ]
+      ],
+      "why": "The core pain pathway."
+     },
+     {
+      "p": "CGRP release causes neurogenic inflammation and meningeal vasodilation",
+      "k": [
+       [
+        "cgrp",
+        "calcitonin"
+       ]
+      ],
+      "why": "Target of gepants."
+     },
+     {
+      "p": "Aura is cortical spreading depression",
+      "k": [
+       [
+        "spreading depression",
+        "cortical spreading"
+       ]
+      ],
+      "why": "Wave of depolarisation then suppression."
+     },
+     {
+      "p": "Sensitisation causes throbbing pain and allodynia",
+      "k": [
+       [
+        "sensitis",
+        "allodynia"
+       ]
+      ],
+      "why": "Scalp tenderness during attacks."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How do triptans and CGRP inhibitors work, and what complication can frequent treatment cause?",
+    "tip": "Exam thinking: receptor names and the overuse trap.",
+    "points": [
+     {
+      "p": "Triptans: 5-HT1B/1D agonists",
+      "k": [
+       [
+        "5-ht1",
+        "5ht1",
+        "serotonin"
+       ]
+      ],
+      "why": "Not 5-HT3 (that is ondansetron)."
+     },
+     {
+      "p": "Cause cranial vasoconstriction and inhibit trigeminal neuropeptide release",
+      "k": [
+       [
+        "vasoconstrict"
+       ]
+      ],
+      "why": "Hence cardiovascular contraindications."
+     },
+     {
+      "p": "CGRP inhibitors (rimegepant) block CGRP",
+      "k": [
+       [
+        "cgrp"
+       ],
+       [
+        "block",
+        "inhibit",
+        "antagon"
+       ]
+      ],
+      "why": "Neurogenic inflammation mediator."
+     },
+     {
+      "p": "Medication overuse headache",
+      "k": [
+       [
+        "overuse"
+       ]
+      ],
+      "why": "Triptans on 10 or more days a month."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Migraine": "A primary headache disorder with recurrent attacks of moderate to severe headache, often with nausea and light sensitivity.",
+  "Aura": "Fully reversible neurological symptoms, usually visual, that precede a migraine headache.",
+  "Scotoma": "A patch of lost or altered vision.",
+  "Photophobia": "Discomfort or pain caused by light.",
+  "Phonophobia": "Discomfort caused by sound.",
+  "Primary headache": "A headache disorder that is not caused by another condition, such as migraine or cluster headache.",
+  "Secondary headache": "A headache caused by another condition, such as haemorrhage, infection or raised pressure.",
+  "CHOCOLATE": "Mnemonic for migraine triggers: chocolate, hangovers, orgasms, cheese/caffeine, oral contraceptives, lie-ins, alcohol, travel, exercise.",
+  "COCP": "Combined oral contraceptive pill, containing oestrogen and progestogen.",
+  "Combined oral contraceptive pill": "Oestrogen plus progestogen pill; contraindicated in migraine with aura because of stroke risk.",
+  "Progestogen-only": "Contraception without oestrogen, such as the progestogen-only pill, implant or hormonal coil.",
+  "UKMEC": "UK criteria grading how safe each contraceptive is for a given condition; 4 means unacceptable risk.",
+  "IIH": "Idiopathic intracranial hypertension: raised brain pressure without a mass, causing headache and papilloedema.",
+  "Idiopathic intracranial hypertension": "Raised intracranial pressure without a mass, usually in young overweight women; a key migraine differential.",
+  "Papilloedema": "Swelling of the optic discs from raised intracranial pressure.",
+  "Meningism": "Neck stiffness, photophobia and headache from meningeal irritation.",
+  "Thunderclap": "A sudden severe headache reaching maximum intensity within a minute; suggests subarachnoid haemorrhage.",
+  "Cluster headache": "Severe unilateral headache around the eye lasting 15 minutes to 3 hours, with a red watery eye.",
+  "Tension-type headache": "A bilateral, pressing, band-like headache without vomiting or aura.",
+  "Triptan": "A 5-HT1B/1D agonist used to treat acute migraine attacks.",
+  "Sumatriptan": "The commonest triptan, taken orally, nasally or by subcutaneous injection.",
+  "Rimegepant": "An oral CGRP receptor antagonist (gepant) for acute treatment or prevention of migraine.",
+  "CGRP": "Calcitonin gene-related peptide: a neuropeptide driving neurogenic inflammation and vasodilation in migraine.",
+  "Metoclopramide": "A dopamine antagonist antiemetic that also speeds gastric emptying.",
+  "Prochlorperazine": "A dopamine antagonist antiemetic.",
+  "Extrapyramidal side effects": "Drug-induced movement problems such as dystonia, more likely in young women on dopamine antagonists.",
+  "Propranolol": "A non-selective beta-blocker; first-line migraine prophylaxis, contraindicated in asthma.",
+  "Amitriptyline": "A tricyclic antidepressant used at low dose for migraine prophylaxis.",
+  "Topiramate": "An anticonvulsant used as second-line migraine prophylaxis; teratogenic.",
+  "Candesartan": "An angiotensin receptor blocker used as second-line migraine prophylaxis.",
+  "Prophylaxis": "Regular treatment taken to reduce the frequency of attacks.",
+  "Teratogenic": "Able to cause birth defects when taken in pregnancy.",
+  "Trigeminovascular system": "Trigeminal nerve fibres supplying meningeal blood vessels; their activation drives migraine pain.",
+  "Cortical spreading depression": "A slow wave of neuronal depolarisation then suppressed activity across the cortex; the cause of aura.",
+  "Allodynia": "Pain from a normally painless touch, such as brushing the hair.",
+  "Neurogenic inflammation": "Inflammation caused by neuropeptides released from sensory nerve endings.",
+  "Medication overuse headache": "Chronic daily headache caused by frequent use of acute headache treatments.",
+  "Headache diary": "A record of attacks, triggers and painkiller use that supports the diagnosis.",
+  "Status migrainosus": "A migraine attack lasting more than 72 hours.",
+  "TIA": "Transient ischaemic attack: sudden, brief, negative focal neurological symptoms from ischaemia."
+ }
+}

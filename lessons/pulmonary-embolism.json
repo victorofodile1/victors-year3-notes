@@ -1,0 +1,2461 @@
+{
+ "id": "pulmonary-embolism",
+ "patient": {
+  "name": "Daniel Okafor",
+  "age": 47,
+  "sex": "M",
+  "setting": "Emergency Department",
+  "complaint": "Sudden breathlessness and sharp right-sided chest pain this morning",
+  "background": [
+   "Flew back from Lagos 5 days ago (7-hour flight after a long drive)",
+   "Right calf swollen and sore for 3 days",
+   "BMI 33 kg/m²; smokes 10 a day",
+   "Bus driver in Lewisham; no previous clots"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with sudden pleuritic pain, tachycardia and hypoxia after a flight, surgery or pregnancy, often with a clear chest, a normal CXR and sinus tachycardia; or a collapsed patient with massive PE.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Daniel, 47, flew back from **Lagos** 5 days ago.",
+      "Right calf swollen and sore for 3 days.",
+      "This morning: sudden breathlessness and **sharp right chest pain** on breathing in.",
+      "Coughed up a streak of blood."
+     ],
+     "vitals": {
+      "T": "37.6°C",
+      "HR": "112 bpm",
+      "BP": "128/80 mmHg",
+      "RR": "26 /min",
+      "SpO2": "92% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Daniel's calf clot has most likely travelled to his **pulmonary arteries**. The flight and obesity make it a **provoked** PE."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Right calf swollen, tender and pitting.",
+      "Chest clear: no crackles, normal percussion.",
+      "Heart sounds normal; JVP not raised yet."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Daniel has the full picture: **pleuritic pain**, tachycardia, tachypnoea, hypoxia, low-grade fever, haemoptysis, and a swollen calf first."
+    },
+    {
+     "type": "compare",
+     "title": "PE vs the other causes of pleuritic pain",
+     "head": [
+      "Feature",
+      "PE",
+      "Pneumonia",
+      "Pneumothorax"
+     ],
+     "rows": [
+      [
+       "Onset",
+       "Sudden",
+       "Over days",
+       "Sudden"
+      ],
+      [
+       "Chest exam",
+       "Usually **clear**",
+       "Crackles, bronchial breathing",
+       "Reduced breath sounds, hyper-resonant"
+      ],
+      [
+       "CXR",
+       "Usually normal",
+       "Consolidation",
+       "Absent lung markings"
+      ],
+      [
+       "Clue in stem",
+       "Calf swelling, flight, surgery, pregnancy",
+       "Fever, purulent sputum",
+       "Tall thin young man, COPD"
+      ]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which feature in Daniel most points to PE rather than pneumonia?",
+     "o": [
+      "Low-grade fever",
+      "Pleuritic chest pain",
+      "Swollen calf before the chest pain",
+      "Tachypnoea"
+     ],
+     "a": 2,
+     "r": "Fever, pleuritic pain and tachypnoea occur in both. A **swollen calf followed by chest symptoms** is the classic PE pattern."
+    },
+    {
+     "type": "pearl",
+     "text": "**Hypoxia and tachycardia with a clear chest** and a normal CXR: think PE."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Systolic BP and massive PE",
+      "min": 50,
+      "max": 160,
+      "unit": "mmHg",
+      "bands": [
+       [
+        50,
+        90,
+        "Below 90 for >15 min: massive PE",
+        "bad"
+       ],
+       [
+        90,
+        160,
+        "Haemodynamically stable",
+        "ok"
+       ]
+      ],
+      "value": 128,
+      "label": "Daniel 128",
+      "caption": "Daniel is stable for now. Sustained hypotension or collapse changes the whole plan."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Daniel's BP of 128/80 means this is **not yet massive**. Watch for systolic below 90 for over 15 minutes, or collapse."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Daniel later needs heparin, a falling platelet count with new clots means **HIT**: stop heparin and switch, e.g. to argatroban."
+    },
+    {
+     "type": "trap",
+     "text": "A normal chest X-ray does **not** exclude PE. It is usually normal; its job is to exclude other causes."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial/diagnostic investigation?': the 2-level Wells score decides D-dimer (4 or less) versus CTPA (more than 4), with V/Q scan when CTPA is unsuitable. Also 'most likely ECG/ABG finding'.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "2-level Wells pathway for PE",
+     "nodes": [
+      "Suspected PE: calculate the 2-level Wells score",
+      "Score >4 (likely) → CTPA",
+      "CTPA unsuitable (pregnancy, AKI, iodine allergy) → V/Q scan",
+      "Score ≤4 (unlikely) → D-dimer",
+      "D-dimer positive → CTPA; negative → PE excluded"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Daniel has clinical DVT signs, PE is the most likely diagnosis, and his HR is 112. What is his Wells score?",
+     "o": [
+      "3",
+      "4.5",
+      "6",
+      "7.5"
+     ],
+     "a": 3,
+     "r": "**DVT signs 3 + PE most likely 3 + HR >100 1.5 = 7.5.** Above 4, so PE likely."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "2-level Wells score for PE",
+      "min": 0,
+      "max": 12.5,
+      "unit": "points",
+      "bands": [
+       [
+        0,
+        4,
+        "≤4 PE unlikely",
+        "ok"
+       ],
+       [
+        4,
+        12.5,
+        ">4 PE likely",
+        "bad"
+       ]
+      ],
+      "value": 7.5,
+      "label": "Daniel 7.5",
+      "caption": "PE likely: straight to imaging, no D-dimer."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Daniel scores **7.5: PE likely**, so he goes straight to **CTPA**, the gold-standard imaging."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Had Daniel scored 4 or less, a **D-dimer** would come first: negative excludes PE, positive leads to CTPA."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Daniel fails **PERC** (HR 112, SpO2 92%, swollen leg), so PE cannot be ruled out at the bedside. **PESI** later decides outpatient care."
+    },
+    {
+     "type": "labs",
+     "title": "Arterial blood gas on air and bloods",
+     "rows": [
+      [
+       "pH",
+       "7.49",
+       "7.35–7.45",
+       "H"
+      ],
+      [
+       "PaO2",
+       "8.1 kPa",
+       "10–13",
+       "L"
+      ],
+      [
+       "PaCO2",
+       "3.9 kPa",
+       "4.7–6.0",
+       "L"
+      ],
+      [
+       "HCO3-",
+       "23 mmol/L",
+       "22–26",
+       ""
+      ],
+      [
+       "Troponin T",
+       "38 ng/L",
+       "<14",
+       "H"
+      ],
+      [
+       "NT-proBNP",
+       "620 ng/L",
+       "<125",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "82 µmol/L",
+       "60–110",
+       ""
+      ]
+     ],
+     "text": "Low PaO2, low PaCO2, high pH: **respiratory alkalosis** from hyperventilation. Troponin and BNP rise with right heart strain."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Daniel's 12-lead ECG",
+      "layout": "12lead",
+      "rhythm": "sinus_tachy",
+      "rate": 112,
+      "leads": {
+       "III": "t_inv",
+       "V1": "t_inv",
+       "V2": "t_inv",
+       "V3": "t_inv"
+      },
+      "caption": "Sinus tachycardia with T inversion in III and V1–V3: right heart strain. A deep S in I and Q in III would complete S1Q3T3."
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Daniel's chest X-ray",
+      "findings": [],
+      "caption": "Clear lung fields. Usually normal in PE, but it excludes pneumothorax and pneumonia."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Daniel's normal CXR, **sinus tachycardia** with T inversion in V1–V3 and respiratory alkalosis all fit PE with right heart strain."
+    },
+    {
+     "type": "story",
+     "points": [
+      "CTPA within the hour.",
+      "Filling defects in **both main pulmonary arteries**.",
+      "Right ventricle dilated: RV strain."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Daniel's CTPA was immediate. If pregnant with leg signs: **duplex USS** first. If scanning is delayed: interim **rivaroxaban**."
+    },
+    {
+     "type": "trap",
+     "text": "Do not send a D-dimer when Wells is **above 4**. A negative D-dimer cannot exclude PE in a high-probability patient."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': thrombolysis (alteplase) for the hypotensive patient, a DOAC for the stable one, outpatient rivaroxaban for low PESI, and UFH or LMWH in special cases.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Back from CTPA, Daniel **collapses** on the trolley.",
+      "BP **82/50 mmHg** for 20 minutes despite fluids.",
+      "JVP raised to the earlobe; parasternal heave."
+     ],
+     "vitals": {
+      "HR": "132 bpm",
+      "BP": "82/50 mmHg",
+      "RR": "32 /min",
+      "SpO2": "86% on 15 L"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Daniel has a confirmed PE and is now persistently hypotensive. What is the next step?",
+     "o": [
+      "IV alteplase",
+      "Oral apixaban",
+      "Subcutaneous LMWH",
+      "Surgical embolectomy first"
+     ],
+     "a": 0,
+     "r": "Persistent hypotension = **massive PE**: thrombolyse. Embolectomy is only if thrombolysis is unsuitable."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "ABCDE, 15 L oxygen, then **IV alteplase with IV UFH**. Daniel has no CNS bleed, recent surgery, trauma or bleeding disorder."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Daniel after alteplase",
+      "x": [
+       "0 min",
+       "30 min",
+       "1 h",
+       "2 h",
+       "6 h"
+      ],
+      "unit": "mmHg / bpm",
+      "series": [
+       {
+        "name": "Systolic BP",
+        "values": [
+         82,
+         94,
+         104,
+         112,
+         120
+        ]
+       },
+       {
+        "name": "Heart rate",
+        "values": [
+         132,
+         120,
+         108,
+         100,
+         92
+        ]
+       }
+      ],
+      "caption": "Thrombolysis breaks up the clot, RV afterload falls and the BP recovers."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "PE management by severity",
+     "nodes": [
+      "ABCDE; high-flow oxygen if hypoxic",
+      "Unstable (massive) → IV alteplase + IV UFH",
+      "Thrombolysis unsuitable → embolectomy or catheter therapy",
+      "Stable → DOAC (apixaban or rivaroxaban)",
+      "PESI class I–II → outpatient rivaroxaban"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Once stable, Daniel moves to a **DOAC**. LMWH, warfarin with LMWH bridging, or UFH are for special cases."
+    },
+    {
+     "type": "compare",
+     "title": "Which anticoagulant, when",
+     "head": [
+      "Situation",
+      "Choice"
+     ],
+     "rows": [
+      [
+       "Stable, normal renal function",
+       "**DOAC** (apixaban, rivaroxaban)"
+      ],
+      [
+       "Pregnancy or DOAC unsuitable",
+       "LMWH"
+      ],
+      [
+       "Severe renal failure / ESRF",
+       "Unfractionated heparin"
+      ],
+      [
+       "Antiphospholipid syndrome",
+       "Lifelong warfarin (LMWH until INR 2–3)"
+      ],
+      [
+       "Massive PE",
+       "Alteplase + IV UFH"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Daniel's PE was **provoked** by the journey, so at least **3 months**. Antiphospholipid syndrome would mean lifelong warfarin."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Daniel's care follows **NICE NG158**, with Wells, PERC and the BTS-backed **PESI** guiding tests and where he is treated."
+    },
+    {
+     "type": "trap",
+     "text": "Do not thrombolyse a **stable** patient. Alteplase is for hypotension or collapse; its bleeding risk is serious."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why PE causes hypoxaemia with a low PaCO2, why it causes obstructive shock, and why S1Q3T3 or T inversion in V1–V3 appear.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "From leg to lung",
+     "nodes": [
+      "Virchow's triad → DVT in the calf",
+      "Clot embolises via the IVC and right heart",
+      "Lodges in the pulmonary arteries",
+      "Ventilated but unperfused lung: V/Q mismatch",
+      "Hypoxaemia → hyperventilation → low PaCO2"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Daniel's calf clot formed from **stasis** on the journey, with obesity adding to it: **Virchow's triad**."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Daniel's PaO2 8.1 and PaCO2 3.9 are **V/Q mismatch** plus hyperventilation: a respiratory alkalosis."
+    },
+    {
+     "type": "ask",
+     "q": "Why is Daniel's PaCO2 low?",
+     "o": [
+      "Hyperventilation",
+      "Metabolic compensation",
+      "Reduced CO2 production",
+      "Shunting through the clot"
+     ],
+     "a": 0,
+     "r": "Hypoxia and lung receptors drive **hyperventilation**, which blows off CO2: respiratory alkalosis."
+    },
+    {
+     "type": "flow",
+     "title": "Why Daniel collapsed",
+     "nodes": [
+      "Clot blocks the pulmonary arteries",
+      "Pulmonary vascular resistance rises",
+      "RV afterload rises → RV dilates and fails",
+      "LV filling falls",
+      "Cardiac output falls → obstructive shock"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Daniel's collapse is **obstructive shock**: the clot raised pulmonary resistance until his right ventricle failed."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Daniel's T inversion in V1–V3 is his **strained right ventricle**, the same reason S1Q3T3 appears."
+    },
+    {
+     "type": "pearl",
+     "text": "S1Q3T3 is classic but **uncommon**. The most likely ECG finding in PE is **sinus tachycardia**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which acid-base disturbance is typical of PE?",
+   "o": [
+    "Metabolic acidosis",
+    "Metabolic alkalosis",
+    "Respiratory acidosis",
+    "Respiratory alkalosis"
+   ],
+   "a": 3,
+   "r": "Hyperventilation lowers PaCO2: **respiratory alkalosis**, with a low PaO2."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What defines a massive PE?",
+   "o": [
+    "Bilateral clots on CTPA",
+    "D-dimer above 5 mg/L",
+    "SpO2 below 94%",
+    "Systolic BP below 90 mmHg for over 15 minutes"
+   ],
+   "a": 3,
+   "r": "**Persistent hypotension <90 mmHg for >15 minutes**, or collapse."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which drug replaces heparin in heparin-induced thrombocytopenia?",
+   "o": [
+    "Alteplase",
+    "Argatroban",
+    "Tranexamic acid",
+    "Warfarin"
+   ],
+   "a": 1,
+   "r": "Stop heparin and switch to a non-heparin anticoagulant such as **argatroban**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the next test when the 2-level PE Wells score is 4 or less?",
+   "o": [
+    "CT pulmonary angiogram",
+    "D-dimer",
+    "Echocardiogram",
+    "V/Q scan"
+   ],
+   "a": 1,
+   "r": "**D-dimer** first: negative excludes PE; positive means CTPA."
+  },
+  {
+   "d": "investigation",
+   "q": "Which imaging is used when CTPA is unsuitable, e.g. in AKI or iodine allergy?",
+   "o": [
+    "Chest X-ray",
+    "MR angiogram",
+    "Pulmonary angiography",
+    "V/Q scan"
+   ],
+   "a": 3,
+   "r": "A **V/Q scan** avoids iodinated contrast."
+  },
+  {
+   "d": "investigation",
+   "q": "Which is the most common ECG finding in PE?",
+   "o": [
+    "Right bundle branch block",
+    "S1Q3T3",
+    "Sinus tachycardia",
+    "ST elevation in V1–V4"
+   ],
+   "a": 2,
+   "r": "**Sinus tachycardia**. S1Q3T3 is classic but less common."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line treatment for a massive PE?",
+   "o": [
+    "IV alteplase plus IV UFH",
+    "Oral apixaban",
+    "Subcutaneous LMWH",
+    "Surgical embolectomy"
+   ],
+   "a": 0,
+   "r": "**Thrombolysis with alteplase (or tenecteplase) plus IV UFH.** Embolectomy if thrombolysis is unsuitable."
+  },
+  {
+   "d": "management",
+   "q": "Which anticoagulant is used for PE in end-stage renal failure?",
+   "o": [
+    "Apixaban",
+    "Dabigatran",
+    "Rivaroxaban",
+    "Unfractionated heparin"
+   ],
+   "a": 3,
+   "r": "**UFH** is third-line, for severe renal insufficiency or ESRF."
+  },
+  {
+   "d": "management",
+   "q": "How long is anticoagulation in antiphospholipid syndrome after PE?",
+   "o": [
+    "3 months",
+    "6 months",
+    "12 months",
+    "Lifelong"
+   ],
+   "a": 3,
+   "r": "**Lifelong warfarin**, starting with LMWH until INR 2–3."
+  },
+  {
+   "d": "science",
+   "q": "Why does PE cause hypoxaemia?",
+   "o": [
+    "Alveolar hypoventilation",
+    "Diffusion block",
+    "Low inspired oxygen",
+    "V/Q mismatch"
+   ],
+   "a": 3,
+   "r": "Ventilated but unperfused lung units: **V/Q mismatch**."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is a PE and what are its provoking risk factors?",
+    "tip": "Exam thinking: find the one risk factor the stem hides.",
+    "points": [
+     {
+      "p": "A clot in the pulmonary arteries, usually a DVT embolised from the leg",
+      "k": [
+       [
+        "clot",
+        "thromb",
+        "embol"
+       ],
+       [
+        "pulmonary arter",
+        "lung",
+        "dvt",
+        "leg"
+       ]
+      ],
+      "why": "Look for the swollen calf in the stem."
+     },
+     {
+      "p": "Recent surgery, immobility, long-haul flight",
+      "k": [
+       [
+        "surgery",
+        "operation",
+        "immobil",
+        "flight",
+        "travel",
+        "flying"
+       ]
+      ],
+      "why": "Surgery in the last few weeks counts."
+     },
+     {
+      "p": "Pregnancy or postpartum; COCP or HRT",
+      "k": [
+       [
+        "pregnan",
+        "postpartum",
+        "cocp",
+        "pill",
+        "hrt",
+        "oestrogen"
+       ]
+      ],
+      "why": "Pregnancy also changes which scan you use."
+     },
+     {
+      "p": "Cancer, previous VTE, thrombophilia, obesity",
+      "k": [
+       [
+        "cancer",
+        "malignan",
+        "previous",
+        "thrombophilia",
+        "obes"
+       ]
+      ],
+      "why": "Cancer extends treatment to 6 months."
+     },
+     {
+      "p": "Antiphospholipid syndrome",
+      "k": [
+       [
+        "antiphospholipid",
+        "APS"
+       ]
+      ],
+      "why": "Means lifelong warfarin."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does PE present, including the signs of right heart strain?",
+    "tip": "Exam thinking: sudden, pleuritic, hypoxic, with a clear chest.",
+    "points": [
+     {
+      "p": "Sudden breathlessness and pleuritic chest pain",
+      "k": [
+       [
+        "breathless",
+        "SOB",
+        "dyspnoea",
+        "short of breath"
+       ],
+       [
+        "pleuritic",
+        "chest pain"
+       ]
+      ],
+      "why": "The commonest presenting pair."
+     },
+     {
+      "p": "Tachycardia, tachypnoea, hypoxia",
+      "k": [
+       [
+        "tachycard",
+        "tachypn",
+        "hypox",
+        "sats"
+       ]
+      ],
+      "why": "Hypoxia out of proportion to the chest findings."
+     },
+     {
+      "p": "Haemoptysis, syncope, low-grade fever",
+      "k": [
+       [
+        "haemoptysis",
+        "hemoptysis",
+        "blood",
+        "syncope",
+        "fever"
+       ]
+      ],
+      "why": "Low-grade fever can mislead you towards pneumonia."
+     },
+     {
+      "p": "Signs of DVT: swollen painful calf",
+      "k": [
+       [
+        "calf",
+        "leg"
+       ]
+      ],
+      "why": "Swollen calf then chest symptoms is the classic pattern."
+     },
+     {
+      "p": "Right heart strain: raised JVP, parasternal heave, loud P2",
+      "k": [
+       [
+        "jvp",
+        "heave",
+        "p2"
+       ]
+      ],
+      "why": "These suggest a large clot."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What defines a massive PE?",
+    "tip": "Exam thinking: the BP decides thrombolysis.",
+    "points": [
+     {
+      "p": "Systolic BP below 90 mmHg",
+      "k": [
+       [
+        "90"
+       ]
+      ],
+      "why": "Shock from RV failure."
+     },
+     {
+      "p": "For more than 15 minutes, or collapse",
+      "k": [
+       [
+        "15",
+        "fifteen",
+        "collapse"
+       ]
+      ],
+      "why": "Transient dips do not count."
+     },
+     {
+      "p": "With RV strain",
+      "k": [
+       [
+        "rv",
+        "right ventric",
+        "right heart"
+       ]
+      ],
+      "why": "Bedside echo shows a dilated RV."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which complication of PE treatment lowers the platelets, and how is it managed?",
+    "tip": "Exam thinking: heparin a few days ago + falling platelets + new clots.",
+    "points": [
+     {
+      "p": "Heparin-induced thrombocytopenia (HIT)",
+      "k": [
+       [
+        "heparin-induced",
+        "heparin induced",
+        "HIT"
+       ]
+      ],
+      "why": "Typically 5 to 10 days after starting heparin."
+     },
+     {
+      "p": "Stop heparin promptly and get haematology review",
+      "k": [
+       [
+        "stop",
+        "cease",
+        "cessation"
+       ],
+       [
+        "heparin"
+       ]
+      ],
+      "why": "Do not give platelets or more heparin."
+     },
+     {
+      "p": "Switch to argatroban",
+      "k": [
+       [
+        "argatroban"
+       ]
+      ],
+      "why": "A non-heparin direct thrombin inhibitor."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which conditions mimic PE, and what feature tells you it is PE instead?",
+    "tip": "Exam thinking: each mimic has one sign PE lacks.",
+    "points": [
+     {
+      "p": "Pneumonia: fever, productive cough, crackles, consolidation on CXR",
+      "k": [
+       [
+        "pneumonia"
+       ]
+      ],
+      "why": "PE usually has a clear chest and a normal CXR."
+     },
+     {
+      "p": "Pneumothorax: reduced breath sounds, hyper-resonance",
+      "k": [
+       [
+        "pneumothorax"
+       ]
+      ],
+      "why": "The CXR shows absent lung markings."
+     },
+     {
+      "p": "ACS: central crushing pain, ST changes",
+      "k": [
+       [
+        "acs",
+        "mi",
+        "myocardial",
+        "coronary"
+       ]
+      ],
+      "why": "PE pain is pleuritic."
+     },
+     {
+      "p": "Pericarditis: pain eased sitting forward, saddle ST elevation",
+      "k": [
+       [
+        "pericarditis"
+       ]
+      ],
+      "why": "Positional pain points away from PE."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Walk through the 2-level Wells pathway for PE, with the scores.",
+    "tip": "Exam thinking: the score decides CTPA or D-dimer.",
+    "points": [
+     {
+      "p": "Items: PE most likely +3, clinical DVT signs +3, HR >100 +1.5",
+      "k": [
+       [
+        "3",
+        "three"
+       ],
+       [
+        "1.5"
+       ]
+      ],
+      "why": "Recent surgery or immobilisation also scores 1.5."
+     },
+     {
+      "p": "Score >4 (likely): CTPA",
+      "k": [
+       [
+        "ctpa",
+        "ct pulmonary",
+        "ct angiogram"
+       ]
+      ],
+      "why": "CTPA is the gold-standard imaging."
+     },
+     {
+      "p": "Score ≤4 (unlikely): D-dimer first",
+      "k": [
+       [
+        "d-dimer",
+        "d dimer",
+        "ddimer"
+       ]
+      ],
+      "why": "Positive → CTPA; negative → PE excluded."
+     },
+     {
+      "p": "CTPA unsuitable (pregnancy, AKI, iodine allergy): V/Q scan",
+      "k": [
+       [
+        "v/q",
+        "vq",
+        "ventilation"
+       ]
+      ],
+      "why": "Avoids iodinated contrast."
+     },
+     {
+      "p": "Delay to scan: interim treatment-dose anticoagulation",
+      "k": [
+       [
+        "interim",
+        "delay",
+        "while waiting"
+       ]
+      ],
+      "why": "For example rivaroxaban."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What do the PERC rule and PESI score do?",
+    "tip": "Exam thinking: PERC rules out; PESI decides the setting.",
+    "points": [
+     {
+      "p": "PERC excludes PE only if all criteria met",
+      "k": [
+       [
+        "perc"
+       ],
+       [
+        "all",
+        "every",
+        "exclud",
+        "rule"
+       ]
+      ],
+      "why": "Age <50, HR <100, SpO2 >94%, no leg swelling, haemoptysis, surgery, VTE or oestrogen."
+     },
+     {
+      "p": "PESI identifies low-risk patients",
+      "k": [
+       [
+        "pesi"
+       ]
+      ],
+      "why": "Recommended by the BTS."
+     },
+     {
+      "p": "PESI class 1–2: outpatient rivaroxaban",
+      "k": [
+       [
+        "outpatient",
+        "home",
+        "ambulatory"
+       ]
+      ],
+      "why": "Avoids admission for stable, low-risk PE."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What do the CXR, ECG and ABG show in PE?",
+    "tip": "Exam thinking: 'most likely finding' means the common one, not the classic one.",
+    "points": [
+     {
+      "p": "CXR usually normal (excludes other causes)",
+      "k": [
+       [
+        "normal",
+        "clear"
+       ]
+      ],
+      "why": "A normal CXR with hypoxia is a PE clue."
+     },
+     {
+      "p": "ECG: sinus tachycardia most commonly",
+      "k": [
+       [
+        "sinus tachy",
+        "tachycardia"
+       ]
+      ],
+      "why": "The usual right answer to 'most likely ECG finding'."
+     },
+     {
+      "p": "S1Q3T3 classic but less common; T inversion V1–V3",
+      "k": [
+       [
+        "s1q3t3",
+        "s1 q3 t3",
+        "t wave",
+        "t inversion",
+        "v1"
+       ]
+      ],
+      "why": "Both reflect RV strain."
+     },
+     {
+      "p": "ABG: low PaO2, low PaCO2 (respiratory alkalosis)",
+      "k": [
+       [
+        "pao2",
+        "po2",
+        "hypox",
+        "oxygen"
+       ],
+       [
+        "paco2",
+        "pco2",
+        "co2",
+        "alkalosis"
+       ]
+      ],
+      "why": "Troponin and BNP may also rise."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage a massive PE?",
+    "tip": "Exam thinking: hypotension = thrombolyse.",
+    "points": [
+     {
+      "p": "ABCDE with 15 L oxygen via non-rebreathe if hypoxic",
+      "k": [
+       [
+        "abcde",
+        "oxygen",
+        "o2",
+        "15"
+       ]
+      ],
+      "why": "Resuscitate first."
+     },
+     {
+      "p": "Thrombolysis: IV alteplase (or tenecteplase)",
+      "k": [
+       [
+        "alteplase",
+        "tenecteplase",
+        "thromboly"
+       ]
+      ],
+      "why": "First-line for massive or unstable PE."
+     },
+     {
+      "p": "Plus IV unfractionated heparin",
+      "k": [
+       [
+        "unfractionated",
+        "ufh"
+       ]
+      ],
+      "why": "UFH can be stopped quickly if bleeding."
+     },
+     {
+      "p": "Contraindications: CNS bleed, recent trauma or surgery, bleeding disorder, haemorrhagic stroke ever",
+      "k": [
+       [
+        "bleed",
+        "haemorrhag",
+        "hemorrhag",
+        "surgery",
+        "trauma"
+       ]
+      ],
+      "why": "Then consider embolectomy."
+     },
+     {
+      "p": "If thrombolysis unsuitable: embolectomy or catheter intervention",
+      "k": [
+       [
+        "embolectomy",
+        "catheter"
+       ]
+      ],
+      "why": "A specialist procedure."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you anticoagulate a stable PE, and for how long?",
+    "tip": "Exam thinking: drug by situation, then duration by cause.",
+    "points": [
+     {
+      "p": "First-line DOAC: apixaban or rivaroxaban",
+      "k": [
+       [
+        "doac",
+        "apixaban",
+        "rivaroxaban"
+       ]
+      ],
+      "why": "For stable patients with normal renal function."
+     },
+     {
+      "p": "LMWH if DOAC unsuitable (pregnancy, cancer, renal impairment)",
+      "k": [
+       [
+        "lmwh",
+        "low molecular",
+        "enoxaparin",
+        "dalteparin"
+       ]
+      ],
+      "why": "LMWH is the choice in pregnancy."
+     },
+     {
+      "p": "UFH in severe renal failure / ESRF",
+      "k": [
+       [
+        "unfractionated",
+        "ufh"
+       ]
+      ],
+      "why": "Third-line."
+     },
+     {
+      "p": "Provoked: at least 3 months; active cancer: 6 months",
+      "k": [
+       [
+        "3 months",
+        "three months"
+       ],
+       [
+        "6 months",
+        "six months"
+       ]
+      ],
+      "why": "Unprovoked may need longer."
+     },
+     {
+      "p": "Antiphospholipid syndrome: lifelong warfarin",
+      "k": [
+       [
+        "lifelong",
+        "life-long",
+        "indefinite"
+       ]
+      ],
+      "why": "Recurrence on warfarin: target INR 3–4."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does PE cause hypoxaemia, a low PaCO2 and obstructive shock?",
+    "tip": "Exam thinking: V/Q mismatch for the gas, RV afterload for the shock.",
+    "points": [
+     {
+      "p": "V/Q mismatch: ventilated but unperfused units",
+      "k": [
+       [
+        "v/q",
+        "vq",
+        "ventilation",
+        "perfusion"
+       ]
+      ],
+      "why": "Bronchoconstricting mediators worsen it."
+     },
+     {
+      "p": "Hyperventilation lowers PaCO2: respiratory alkalosis",
+      "k": [
+       [
+        "hyperventilat"
+       ]
+      ],
+      "why": "So a normal or low PaCO2 with hypoxia."
+     },
+     {
+      "p": "Raised pulmonary vascular resistance increases RV afterload",
+      "k": [
+       [
+        "resistance",
+        "afterload"
+       ]
+      ],
+      "why": "The RV cannot cope with a sudden rise."
+     },
+     {
+      "p": "RV strain and failure cause obstructive shock",
+      "k": [
+       [
+        "right heart",
+        "rv",
+        "right ventric"
+       ],
+       [
+        "fail",
+        "strain",
+        "shock"
+       ]
+      ],
+      "why": "Tricuspid regurgitation may appear."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do S1Q3T3 and T inversion in V1–V3 appear in PE?",
+    "tip": "Exam thinking: both ECG signs mean the right ventricle is struggling.",
+    "points": [
+     {
+      "p": "Acute right ventricular strain",
+      "k": [
+       [
+        "right ventric",
+        "rv",
+        "right heart"
+       ],
+       [
+        "strain"
+       ]
+      ],
+      "why": "V1–V3 sit over the right ventricle."
+     },
+     {
+      "p": "From the sudden rise in pulmonary vascular resistance",
+      "k": [
+       [
+        "resistance",
+        "pressure",
+        "afterload"
+       ]
+      ],
+      "why": "Rare in small peripheral clots."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "PE": "Pulmonary embolism: a clot blocking a pulmonary artery, usually from a leg DVT.",
+  "DVT": "Deep vein thrombosis: a clot in a deep leg vein; the usual source of PE.",
+  "VTE": "Venous thromboembolism: the umbrella term for DVT and PE.",
+  "massive PE": "PE with systolic BP below 90 mmHg for over 15 minutes, or collapse.",
+  "Wells score": "A clinical score of PE probability; above 4 means PE likely.",
+  "PERC": "Pulmonary embolism rule-out criteria; if all eight are met, PE can be excluded without testing.",
+  "PESI": "Pulmonary Embolism Severity Index; classes 1 to 2 can be treated as outpatients.",
+  "D-dimer": "A fibrin breakdown product; sensitive but not specific, so used to rule PE out.",
+  "CTPA": "CT pulmonary angiogram: contrast CT of the pulmonary arteries; the gold-standard test.",
+  "V/Q scan": "Ventilation/perfusion scan; shows lung areas that are ventilated but not perfused.",
+  "V/Q mismatch": "Air reaching lung units that get no blood flow, so oxygen is not picked up.",
+  "S1Q3T3": "Deep S wave in lead I, Q wave and inverted T in lead III; a sign of RV strain.",
+  "right heart strain": "Overload of the right ventricle from a sudden rise in pulmonary pressure.",
+  "RV": "Right ventricle, which pumps blood into the pulmonary arteries.",
+  "obstructive shock": "Shock from a physical block to blood flow, such as a massive PE.",
+  "afterload": "The resistance a ventricle must pump against.",
+  "parasternal heave": "A lifting impulse beside the sternum from an enlarged right ventricle.",
+  "JVP": "Jugular venous pressure; raised when the right heart is failing.",
+  "P2": "The pulmonary component of the second heart sound; loud in pulmonary hypertension.",
+  "pleuritic": "Sharp chest pain worse on breathing in or coughing.",
+  "haemoptysis": "Coughing up blood.",
+  "respiratory alkalosis": "High blood pH from a low PaCO2 caused by breathing too fast.",
+  "PaO2": "Partial pressure of oxygen in arterial blood.",
+  "PaCO2": "Partial pressure of carbon dioxide in arterial blood.",
+  "ABG": "Arterial blood gas: measures pH, oxygen and carbon dioxide in arterial blood.",
+  "BNP": "B-type natriuretic peptide, released by stretched ventricles.",
+  "troponin": "A heart muscle protein released when heart cells are damaged or strained.",
+  "thrombolysis": "Drug treatment that dissolves a clot, such as alteplase.",
+  "alteplase": "A recombinant tissue plasminogen activator that breaks down clots.",
+  "tenecteplase": "A clot-busting tissue plasminogen activator given as a single bolus.",
+  "embolectomy": "Surgical or catheter removal of a clot from an artery.",
+  "DOAC": "Direct oral anticoagulant such as apixaban or rivaroxaban.",
+  "apixaban": "A DOAC that directly inhibits factor Xa.",
+  "rivaroxaban": "A DOAC that directly inhibits factor Xa; used for outpatient PE treatment.",
+  "LMWH": "Low molecular weight heparin, a subcutaneous anticoagulant; used in pregnancy.",
+  "UFH": "Unfractionated heparin; an IV anticoagulant used in renal failure and with thrombolysis.",
+  "unfractionated heparin": "An IV anticoagulant with a short half-life that can be reversed quickly.",
+  "INR": "International normalised ratio, used to monitor warfarin; target 2 to 3.",
+  "HIT": "Heparin-induced thrombocytopenia: an immune reaction causing low platelets and new clots.",
+  "argatroban": "A direct thrombin inhibitor used instead of heparin in HIT.",
+  "antiphospholipid syndrome": "An autoimmune clotting disorder needing lifelong warfarin after VTE.",
+  "ESRF": "End-stage renal failure.",
+  "Virchow's triad": "Venous stasis, endothelial injury and hypercoagulability: the three causes of thrombosis.",
+  "provoked PE": "A PE with an identifiable trigger such as surgery, travel or pregnancy.",
+  "tachypnoea": "A fast breathing rate."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 39 year old woman has sudden breathlessness and sharp left-sided chest pain that is worse on deep breathing. She flew back from Hong Kong 4 days ago and takes the combined oral contraceptive pill. Her left calf has been aching for 2 days. Her temperature is 37.5°C, pulse rate 116 bpm, BP 122/76 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 92% breathing air. Her chest is clear on auscultation.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pericarditis",
+    "Community-acquired pneumonia",
+    "Musculoskeletal chest pain",
+    "Pneumothorax",
+    "Pulmonary embolism"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about acute pleuritic chest pain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden breathlessness",
+      "worse on deep breathing",
+      "flew back from Hong Kong 4 days ago",
+      "combined oral contraceptive pill",
+      "left calf has been aching",
+      "oxygen saturation 92%",
+      "chest is clear"
+     ],
+     "x": "Two **VTE risk factors**, calf symptoms, sudden pleuritic pain, tachycardia and **hypoxia with a clear chest**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Calf then chest after a flight on the pill: **pulmonary embolism**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pericarditis pain eases sitting forward and does not cause hypoxia like this."
+      ],
+      [
+       1,
+       "Pneumonia evolves over days with productive cough and crackles; the chest is clear."
+      ],
+      [
+       2,
+       "Musculoskeletal pain does not cause tachycardia and hypoxia."
+      ],
+      [
+       3,
+       "Pneumothorax gives reduced breath sounds on one side, not a clear chest and calf pain."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Pulmonary embolism.** Rule: risk factor + sudden pleuritic pain + hypoxia + clear chest = PE."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 56 year old man has sudden breathlessness and pleuritic chest pain 10 days after a right knee replacement. His right calf is swollen and tender. His pulse rate is 108 bpm, BP 134/82 mmHg and oxygen saturation 93% breathing air. PE is the most likely diagnosis. His renal function is normal and he has no allergies.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "D-dimer",
+    "Echocardiogram",
+    "Ventilation/perfusion scan"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic test for suspected PE: calculate the Wells score."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "10 days after a right knee replacement",
+      "right calf is swollen and tender",
+      "pulse rate is 108 bpm",
+      "PE is the most likely diagnosis",
+      "renal function is normal",
+      "no allergies"
+     ],
+     "x": "DVT signs 3 + PE most likely 3 + HR >100 1.5 + recent surgery 1.5 = **9: PE likely**. Nothing stops contrast."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Wells >4 with no contraindication: **CTPA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CXR is usually normal in PE; it excludes other causes but cannot diagnose PE."
+      ],
+      [
+       2,
+       "D-dimer is for Wells ≤4; it cannot exclude PE when probability is high."
+      ],
+      [
+       3,
+       "Echo shows RV strain but is for the unstable patient, not the diagnostic test here."
+      ],
+      [
+       4,
+       "V/Q is for when CTPA is unsuitable: pregnancy, AKI or iodine allergy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. CTPA.** Rule: Wells >4 = CTPA; V/Q only if CTPA unsuitable."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 68 year old woman with metastatic breast cancer on chemotherapy has breathlessness. CTPA shows a segmental pulmonary embolism. Her pulse rate is 96 bpm, BP 128/80 mmHg and oxygen saturation 95% breathing air. Her renal function is normal and she has no bleeding history.",
+   "labs": [
+    [
+     "Creatinine",
+     "64 µmol/L",
+     "45–90",
+     ""
+    ],
+    [
+     "Platelet count",
+     "210 ×10⁹/L",
+     "150–400",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Aspirin for 6 months",
+    "DOAC for 3 months",
+    "DOAC for 6 months",
+    "IV alteplase",
+    "No anticoagulation"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: choose the drug, then the duration."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "metastatic breast cancer on chemotherapy",
+      "BP 128/80 mmHg",
+      "renal function is normal",
+      "no bleeding history"
+     ],
+     "x": "**Active cancer**, haemodynamically stable, DOAC suitable."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Cancer-associated PE: **DOAC for 6 months**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspirin does not treat VTE."
+      ],
+      [
+       1,
+       "3 months is for provoked PE without active cancer."
+      ],
+      [
+       3,
+       "Alteplase is for massive PE with hypotension; she is stable."
+      ],
+      [
+       4,
+       "Confirmed PE always needs anticoagulation unless contraindicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. DOAC for 6 months.** Rule: active cancer with PE = 6 months."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 44 year old woman has sudden breathlessness 2 weeks after a hysterectomy. Her pulse rate is 120 bpm and BP 110/70 mmHg. CTPA confirms a large pulmonary embolism. ECG (see item resources) shows sinus tachycardia with a deep S wave in lead I, a Q wave and inverted T wave in lead III, and T inversion in V1–V3.",
+   "visual": {
+    "kind": "ecg",
+    "title": "ECG",
+    "layout": "12lead",
+    "rhythm": "sinus_tachy",
+    "rate": 120,
+    "leads": {
+     "III": "t_inv",
+     "V1": "t_inv",
+     "V2": "t_inv",
+     "V3": "t_inv"
+    },
+    "caption": "Sinus tachycardia, T inversion in III and V1–V3."
+   },
+   "q": "Which is the most likely mechanism of these ECG changes?",
+   "o": [
+    "Acute right ventricular strain",
+    "Hyperkalaemia",
+    "Left ventricular hypertrophy",
+    "Pericardial inflammation",
+    "Right coronary artery occlusion"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: explain the ECG in a confirmed PE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "large pulmonary embolism",
+      "deep S wave in lead I",
+      "inverted T wave in lead III",
+      "T inversion in V1–V3"
+     ],
+     "x": "**S1Q3T3** plus T inversion over the right ventricle (V1–V3) in a large PE."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Sudden rise in pulmonary resistance: **acute RV strain**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Hyperkalaemia gives peaked T waves and wide QRS."
+      ],
+      [
+       2,
+       "LVH gives tall left-sided voltages and lateral strain."
+      ],
+      [
+       3,
+       "Pericarditis gives widespread saddle ST elevation."
+      ],
+      [
+       4,
+       "RCA occlusion gives inferior ST elevation, not this pattern after surgery."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute right ventricular strain.** Rule: S1Q3T3 and V1–V3 T inversion = RV strain."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old woman has sudden breathlessness and right-sided pleuritic chest pain 3 weeks after a caesarean section. Her temperature is 37.4°C, pulse rate 118 bpm, BP 116/72 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 93% breathing air. Her chest is clear.",
+   "labs": [
+    [
+     "Troponin T",
+     "18 ng/L",
+     "<14",
+     "H"
+    ],
+    [
+     "CRP",
+     "12 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [],
+    "caption": "Clear lung fields."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Community-acquired pneumonia",
+    "Musculoskeletal chest pain",
+    "Pericarditis",
+    "Peripartum cardiomyopathy",
+    "Pulmonary embolism"
+   ],
+   "a": 4,
+   "e": "Postpartum, sudden pleuritic pain, tachycardia and hypoxia with a clear chest and normal CXR is PE. A slightly raised troponin reflects RV strain, not an MI.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of sudden pleuritic chest pain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 weeks after a caesarean section",
+      "sudden breathlessness",
+      "pleuritic chest pain",
+      "pulse rate 118 bpm",
+      "oxygen saturation 93%",
+      "chest is clear"
+     ],
+     "x": "**Postpartum** after surgery, sudden pleuritic pain, hypoxia, clear chest, CXR clear."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pulmonary embolism**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pneumonia would show crackles and consolidation."
+      ],
+      [
+       1,
+       "Musculoskeletal pain does not cause hypoxia."
+      ],
+      [
+       2,
+       "Pericarditis is positional and does not cause hypoxia."
+      ],
+      [
+       3,
+       "Peripartum cardiomyopathy gives heart failure: orthopnoea, crackles, oedema on CXR."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Pulmonary embolism.** Rule: postpartum + sudden pleuritic pain + hypoxia + normal CXR = PE."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 61 year old man has sudden breathlessness 2 weeks after a laparoscopic cholecystectomy. His left calf is swollen. His pulse rate is 112 bpm, BP 130/80 mmHg and oxygen saturation 92% breathing air. CTPA later confirms a pulmonary embolism.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on his ECG?",
+   "o": [
+    "Atrial fibrillation",
+    "Left bundle branch block",
+    "S1Q3T3 pattern",
+    "Sinus tachycardia",
+    "ST elevation in V1–V4"
+   ],
+   "a": 3,
+   "e": "The most common ECG finding in PE is sinus tachycardia. S1Q3T3 is the classic textbook sign but is much less common.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Most likely' ECG finding: the commonest, not the most famous."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "2 weeks after a laparoscopic cholecystectomy",
+      "left calf is swollen",
+      "pulse rate is 112 bpm",
+      "confirms a pulmonary embolism"
+     ],
+     "x": "Confirmed PE with a **HR of 112**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Sinus tachycardia**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "AF can occur with PE but is far less common."
+      ],
+      [
+       1,
+       "LBBB is not a feature of PE."
+      ],
+      [
+       2,
+       "S1Q3T3 is classic but uncommon; the trap answer."
+      ],
+      [
+       4,
+       "Anterior ST elevation means STEMI, not PE."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Sinus tachycardia.** Rule: most common ECG in PE = sinus tachycardia."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old woman has sudden breathlessness and pleuritic chest pain 5 days after a long-haul flight. CTPA confirms bilateral pulmonary emboli. She is breathing fast. An arterial blood gas is taken breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely arterial blood gas finding?",
+   "o": [
+    "Low PaO2 and low PaCO2 (respiratory alkalosis)",
+    "Metabolic acidosis with a raised anion gap",
+    "Metabolic alkalosis with a raised bicarbonate",
+    "Normal arterial blood gas",
+    "Raised PaCO2 (respiratory acidosis)"
+   ],
+   "a": 0,
+   "e": "V/Q mismatch causes hypoxaemia, and hyperventilation lowers PaCO2, giving a respiratory alkalosis with a low PaO2. A raised PaCO2 would mean exhaustion or another cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Predict the ABG in PE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bilateral pulmonary emboli",
+      "breathing fast",
+      "breathing air"
+     ],
+     "x": "V/Q mismatch and **hyperventilation**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Low PaO2, low PaCO2: **respiratory alkalosis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Lactic acidosis only appears in shock; she is not shocked."
+      ],
+      [
+       2,
+       "Nothing here causes bicarbonate retention."
+      ],
+      [
+       3,
+       "Bilateral PE with tachypnoea will not give a normal gas."
+      ],
+      [
+       4,
+       "A raised PaCO2 means hypoventilation, the opposite of what PE causes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Low PaO2 and low PaCO2.** Rule: PE = low O2, low CO2, respiratory alkalosis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man collapses on the ward 8 days after a hip fracture repair. His pulse rate is 134 bpm, BP 78/48 mmHg for 25 minutes despite fluids, respiratory rate 32 breaths per minute and oxygen saturation 84% on 15 L oxygen. His JVP is raised and his chest is clear. ECG (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "ECG",
+    "layout": "12lead",
+    "rhythm": "sinus_tachy",
+    "rate": 134,
+    "leads": {
+     "III": "t_inv",
+     "V1": "t_inv",
+     "V2": "t_inv",
+     "V3": "t_inv"
+    },
+    "caption": "Sinus tachycardia with T inversion in III and V1–V3."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cardiac tamponade",
+    "Cardiogenic shock from myocardial infarction",
+    "Massive pulmonary embolism",
+    "Septic shock",
+    "Tension pneumothorax"
+   ],
+   "a": 2,
+   "e": "Post-op collapse with persistent hypotension, hypoxia, raised JVP, a clear chest and RV strain on ECG is a massive PE. Tension pneumothorax would give absent breath sounds on one side.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of shock after surgery."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "8 days after a hip fracture repair",
+      "BP 78/48 mmHg for 25 minutes",
+      "oxygen saturation 84% on 15 L",
+      "JVP is raised",
+      "chest is clear"
+     ],
+     "x": "Post-op, **hypotension >15 minutes**, severe hypoxia, raised JVP, clear chest, RV strain ECG."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Obstructive shock: **massive PE**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Tamponade gives muffled heart sounds and small complexes, with no reason here."
+      ],
+      [
+       1,
+       "Cardiogenic shock from MI gives ST elevation and pulmonary oedema with crackles."
+      ],
+      [
+       3,
+       "Sepsis gives fever, warm peripheries and a low JVP."
+      ],
+      [
+       4,
+       "Tension pneumothorax gives unilateral absent breath sounds and tracheal deviation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Massive PE.** Rule: post-op collapse + hypoxia + raised JVP + clear chest = massive PE."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old woman has a pulmonary embolism confirmed on CTPA. She has not travelled, had surgery or taken oestrogen. She has had three miscarriages and a DVT 2 years ago. Her pulse rate is 98 bpm and BP 124/78 mmHg.",
+   "labs": [
+    [
+     "Platelet count",
+     "118 ×10⁹/L",
+     "150–400",
+     "L"
+    ],
+    [
+     "APTT",
+     "48 s",
+     "25–35",
+     "H"
+    ],
+    [
+     "Prothrombin time",
+     "12 s",
+     "10–13",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of her PE?",
+   "o": [
+    "Antiphospholipid syndrome",
+    "Factor V Leiden",
+    "Nephrotic syndrome",
+    "Polycythaemia vera",
+    "Protein C deficiency"
+   ],
+   "a": 0,
+   "e": "Recurrent VTE, recurrent miscarriage, mild thrombocytopenia and a prolonged APTT (lupus anticoagulant) point to antiphospholipid syndrome. Factor V Leiden does not prolong the APTT or lower platelets.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The cause behind an unprovoked PE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "three miscarriages",
+      "a DVT 2 years ago",
+      "not travelled, had surgery or taken oestrogen"
+     ],
+     "x": "Recurrent VTE + recurrent miscarriage + **low platelets** + **prolonged APTT**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Antiphospholipid syndrome**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Factor V Leiden does not prolong the APTT or lower platelets."
+      ],
+      [
+       2,
+       "Nephrotic syndrome needs oedema and proteinuria."
+      ],
+      [
+       3,
+       "Polycythaemia vera raises haemoglobin, often with high platelets."
+      ],
+      [
+       4,
+       "Protein C deficiency does not prolong the APTT."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Antiphospholipid syndrome.** Rule: VTE + miscarriages + long APTT = APS; treat with lifelong warfarin."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old woman is being treated with unfractionated heparin for a pulmonary embolism. On day 7 she develops a painful swollen left arm. Her pulse rate is 90 bpm and BP 136/80 mmHg.",
+   "labs": [
+    [
+     "Platelet count (day 1)",
+     "260 ×10⁹/L",
+     "150–400",
+     ""
+    ],
+    [
+     "Platelet count (day 7)",
+     "85 ×10⁹/L",
+     "150–400",
+     "L"
+    ],
+    [
+     "Haemoglobin",
+     "122 g/L",
+     "115–165",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her low platelet count?",
+   "o": [
+    "Disseminated intravascular coagulation",
+    "Heparin-induced thrombocytopenia",
+    "Immune thrombocytopenic purpura",
+    "Thrombotic thrombocytopenic purpura",
+    "Vitamin K deficiency"
+   ],
+   "a": 1,
+   "e": "A platelet fall of more than half about a week into heparin with a new thrombosis is HIT. Stop heparin and switch to argatroban with haematology input.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of new thrombocytopenia during PE treatment."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unfractionated heparin",
+      "On day 7",
+      "painful swollen left arm"
+     ],
+     "x": "Heparin for 7 days, platelets fallen by over 50%, **new thrombosis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**HIT**: stop heparin, switch to argatroban."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "DIC needs a trigger like sepsis, with bleeding and deranged clotting."
+      ],
+      [
+       2,
+       "ITP causes bleeding, not new thrombosis, and is not timed to heparin."
+      ],
+      [
+       3,
+       "TTP has haemolytic anaemia, fever, renal and neuro signs; her Hb is normal."
+      ],
+      [
+       4,
+       "Vitamin K deficiency raises the INR; it does not lower platelets."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. HIT.** Rule: heparin 5–10 days + platelets halve + new clot = HIT."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 42 year old man has 2 days of mild pleuritic chest pain after a game of football. He has no leg swelling, haemoptysis or previous VTE. His pulse rate is 88 bpm, BP 126/78 mmHg and oxygen saturation 97% breathing air. An alternative diagnosis is as likely as PE. His 2-level Wells score is 0.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation for pulmonary embolism?",
+   "o": [
+    "CT pulmonary angiogram",
+    "D-dimer",
+    "Echocardiogram",
+    "Serum troponin",
+    "Ventilation/perfusion scan"
+   ],
+   "a": 1,
+   "e": "A Wells score of 4 or less means PE unlikely, so D-dimer comes first: negative excludes PE, positive leads to CTPA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "First test for possible PE: use the Wells score."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no leg swelling",
+      "pulse rate is 88 bpm",
+      "An alternative diagnosis is as likely as PE",
+      "Wells score is 0"
+     ],
+     "x": "**Wells 0 = PE unlikely.**"
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**D-dimer** first."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CTPA first is for Wells >4, or after a positive D-dimer."
+      ],
+      [
+       2,
+       "Echo is for the unstable patient."
+      ],
+      [
+       3,
+       "Troponin does not diagnose PE."
+      ],
+      [
+       4,
+       "V/Q is for when CTPA is needed but unsuitable."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. D-dimer.** Rule: Wells ≤4 = D-dimer; negative = PE excluded."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 66 year old man has sudden breathlessness and pleuritic chest pain 9 days after a bowel resection. His right calf is swollen. His pulse rate is 110 bpm and oxygen saturation 92% breathing air. His 2-level Wells score is 9.",
+   "labs": [
+    [
+     "Creatinine",
+     "298 µmol/L",
+     "60–110",
+     "H"
+    ],
+    [
+     "eGFR",
+     "19 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Creatinine 1 week ago",
+     "92 µmol/L",
+     "60–110",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "CT pulmonary angiogram",
+    "D-dimer",
+    "Echocardiogram",
+    "Magnetic resonance pulmonary angiogram",
+    "Ventilation/perfusion scan"
+   ],
+   "a": 4,
+   "e": "PE is likely (Wells 9) but he has an acute kidney injury, so iodinated contrast for CTPA is unsuitable; a V/Q scan is used instead.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnostic imaging for PE: check for reasons to avoid CTPA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "9 days after a bowel resection",
+      "Wells score is 9"
+     ],
+     "x": "**PE likely**, and creatinine has tripled in a week: **AKI**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "CTPA unsuitable in AKI: **V/Q scan**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CTPA contrast risks worsening his AKI."
+      ],
+      [
+       1,
+       "D-dimer cannot exclude PE when Wells is above 4."
+      ],
+      [
+       2,
+       "Echo supports RV strain but does not confirm PE in a stable patient."
+      ],
+      [
+       3,
+       "MR angiography is not a standard PE test."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. V/Q scan.** Rule: CTPA unsuitable (pregnancy, AKI, iodine allergy) = V/Q."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old woman has a confirmed pulmonary embolism. Twenty minutes after arrival her pulse rate is 136 bpm, BP 80/50 mmHg despite fluids, and oxygen saturation 86% on 15 L oxygen. She has no history of bleeding, stroke or recent surgery.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Catheter-directed embolectomy",
+    "Intravenous alteplase",
+    "Oral apixaban",
+    "Subcutaneous LMWH",
+    "Unfractionated heparin infusion alone"
+   ],
+   "a": 1,
+   "e": "Persistent hypotension makes this a massive PE: thrombolyse with IV alteplase (plus IV UFH). Embolectomy is reserved for when thrombolysis is contraindicated or fails.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of an unstable PE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "BP 80/50 mmHg despite fluids",
+      "oxygen saturation 86% on 15 L",
+      "no history of bleeding, stroke or recent surgery"
+     ],
+     "x": "**Massive PE** with no thrombolysis contraindications."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Thrombolysis: IV alteplase** (with IV UFH)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Embolectomy is second choice, for when thrombolysis is unsuitable."
+      ],
+      [
+       2,
+       "A DOAC is for stable PE."
+      ],
+      [
+       3,
+       "LMWH is too slow and not for massive PE."
+      ],
+      [
+       4,
+       "Heparin alone stops new clot but does not clear the obstruction."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IV alteplase.** Rule: PE + hypotension = thrombolyse."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 45 year old man has a small pulmonary embolism confirmed on CTPA after a long-haul flight. He feels well and wants to go home. His pulse rate is 84 bpm, BP 132/84 mmHg and oxygen saturation 97% breathing air. His PESI score is class I.",
+   "labs": [
+    [
+     "Creatinine",
+     "78 µmol/L",
+     "60–110",
+     ""
+    ],
+    [
+     "Platelet count",
+     "232 ×10⁹/L",
+     "150–400",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Admit for intravenous alteplase",
+    "Admit for unfractionated heparin infusion",
+    "Discharge with no anticoagulation",
+    "Outpatient rivaroxaban",
+    "Outpatient warfarin alone"
+   ],
+   "a": 3,
+   "e": "A stable PE with PESI class I–II can be treated as an outpatient with rivaroxaban. Warfarin alone is wrong because it needs LMWH cover at the start.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Setting and drug for a stable PE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "small pulmonary embolism",
+      "feels well",
+      "BP 132/84 mmHg",
+      "PESI score is class I"
+     ],
+     "x": "Stable, **low-risk PESI**, normal kidneys."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Outpatient rivaroxaban**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Alteplase is only for massive PE."
+      ],
+      [
+       1,
+       "UFH is for renal failure or alongside thrombolysis."
+      ],
+      [
+       2,
+       "A confirmed PE must be anticoagulated."
+      ],
+      [
+       4,
+       "Warfarin needs LMWH for at least 5 days until INR 2–3."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Outpatient rivaroxaban.** Rule: PESI 1–2 = home on rivaroxaban."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man on haemodialysis for end-stage renal failure has a pulmonary embolism confirmed on V/Q scan. He is haemodynamically stable with a pulse rate of 94 bpm and BP 142/86 mmHg.",
+   "labs": [
+    [
+     "eGFR",
+     "6 mL/min/1.73m²",
+     ">90",
+     "L"
+    ],
+    [
+     "Potassium",
+     "5.2 mmol/L",
+     "3.5–5.3",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate anticoagulant?",
+   "o": [
+    "Apixaban",
+    "Dabigatran",
+    "Fondaparinux",
+    "Rivaroxaban",
+    "Unfractionated heparin"
+   ],
+   "a": 4,
+   "e": "In severe renal insufficiency or ESRF, unfractionated heparin is used because it is not renally cleared and can be monitored and reversed. DOACs and fondaparinux accumulate in renal failure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Anticoagulant choice in a special case."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "haemodialysis for end-stage renal failure",
+      "haemodynamically stable"
+     ],
+     "x": "**ESRF**: avoid renally cleared drugs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Unfractionated heparin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Apixaban is first-line only with adequate renal function."
+      ],
+      [
+       1,
+       "Dabigatran is mostly renally cleared."
+      ],
+      [
+       2,
+       "Fondaparinux accumulates in renal failure."
+      ],
+      [
+       3,
+       "Rivaroxaban is avoided in ESRF."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. UFH.** Rule: severe renal failure = unfractionated heparin."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 48 year old woman has sudden breathlessness after a long-haul flight. CTPA confirms a pulmonary embolism. Her chest X-ray is normal.",
+   "labs": [
+    [
+     "pH",
+     "7.48",
+     "7.35–7.45",
+     "H"
+    ],
+    [
+     "PaO2",
+     "8.4 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "3.8 kPa",
+     "4.7–6.0",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her hypoxaemia?",
+   "o": [
+    "Alveolar hypoventilation",
+    "Diffusion limitation across a thickened membrane",
+    "Low inspired oxygen concentration",
+    "Right-to-left intracardiac shunt",
+    "Ventilation/perfusion mismatch"
+   ],
+   "a": 4,
+   "e": "The clot leaves lung units ventilated but unperfused: V/Q mismatch. Hypoventilation would raise the PaCO2, but hers is low.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of low oxygen in PE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confirms a pulmonary embolism",
+      "chest X-ray is normal"
+     ],
+     "x": "Blocked perfusion with normal lungs; the ABG shows a **low PaCO2**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**V/Q mismatch**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hypoventilation would raise PaCO2; hers is low."
+      ],
+      [
+       1,
+       "Diffusion limitation is fibrosis, with an abnormal CXR."
+      ],
+      [
+       2,
+       "She is breathing air at normal altitude."
+      ],
+      [
+       3,
+       "A cardiac shunt is not described; the clot is in the lungs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. V/Q mismatch.** Rule: PE = ventilated but unperfused lung."
+    }
+   ]
+  }
+ ]
+}

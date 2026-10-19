@@ -1,0 +1,639 @@
+{
+  "id": "mesenteric-adenitis",
+  "patient": {
+    "name": "Tobi Adeyemi",
+    "age": 10,
+    "sex": "M",
+    "setting": "Paediatric Emergency Department",
+    "complaint": "Right lower abdominal pain for 18 hours",
+    "background": [
+      "Sore throat and a cold 5 days ago",
+      "Younger sister had the same cold",
+      "Previously well; fully immunised",
+      "Year 5 pupil in Hackney; no allergies"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a child or young adult who has RIF pain after a viral illness or sore throat, but is not very unwell: mild fever, preserved appetite, minimal guarding.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Tobi, 10, has **right lower abdominal pain** since last night.",
+            "He had a **sore throat and cold** 5 days ago.",
+            "Mild nausea, vomited once, but he **ate toast** this morning.",
+            "He is chatting and playing on his mum's phone."
+          ],
+          "vitals": { "T": "37.8°C", "HR": "104 bpm", "BP": "104/62 mmHg", "RR": "20 /min", "SpO2": "99% on air" }
+        },
+        {
+          "type": "visual",
+          "visual": { "kind": "abdomen", "title": "Where Tobi's pain is", "regions": ["RIF", "umbilical"], "caption": "RIF pain with some generalised tenderness: appendicitis must be considered, but the overall picture is milder." }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Tobi's mesenteric **lymph nodes** may be reacting to last week's infection, like neck glands swelling with a sore throat."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Mild tenderness across the abdomen, worst in the **RIF**.",
+            "**Minimal guarding**; no rebound; hops on the spot without much pain.",
+            "Tender **cervical lymph nodes**; throat still red.",
+            "Testes normal; no rash; urine dipstick negative."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Recent sore throat, low-grade fever, **preserved appetite** and minimal guarding: Tobi fits **mesenteric adenitis** better than appendicitis."
+        },
+        {
+          "type": "ask",
+          "q": "Which feature of Tobi's story most favours mesenteric adenitis over appendicitis?",
+          "o": ["Nausea", "Pain in the RIF", "Preserved appetite after a recent sore throat", "Temperature of 37.8°C"],
+          "a": 2,
+          "r": "A **preceding viral illness** with **preserved appetite** points to mesenteric adenitis. Appendicitis usually brings anorexia."
+        },
+        {
+          "type": "compare",
+          "title": "Mesenteric adenitis vs appendicitis",
+          "head": ["Feature", "Mesenteric adenitis", "Appendicitis"],
+          "rows": [
+            ["Before the pain", "**URTI, sore throat or gastroenteritis**", "Usually nothing"],
+            ["Appetite", "**Preserved**", "Lost (anorexia)"],
+            ["Tenderness", "Generalised, minimal guarding", "Localised RIF, guarding, rebound"],
+            ["Looks", "Well, mildly unwell", "More toxic, worsening"],
+            ["CRP / WCC", "Mildly raised", "Often clearly raised"],
+            ["Appendix on imaging", "**Normal**", "Enlarged, inflamed"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Tobi's challenge is the classic one: is this **appendicitis**? His milder picture says probably not, but you prove it."
+        },
+        {
+          "type": "trap",
+          "text": "Do not diagnose mesenteric adenitis in a child who is **toxic**, has **localised peritonism**, or is getting worse. Treat that as appendicitis until proven otherwise."
+        },
+        {
+          "type": "pearl",
+          "text": "Mesenteric adenitis is a **diagnosis of exclusion**: the exam rewards picking it only when the stem gives a viral prodrome AND a mild picture."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (ultrasound in a child, CT in an older patient) or which result supports the diagnosis: enlarged mesenteric nodes with a normal appendix.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Tobi gets bloods and, as a child, an **ultrasound**: it should show enlarged mesenteric nodes and a **normal appendix**."
+        },
+        {
+          "type": "labs",
+          "title": "Tobi's bloods",
+          "rows": [
+            ["WCC", "12.1 x10^9/L", "4.5–13.5", ""],
+            ["Lymphocytes", "4.8 x10^9/L", "1.5–6.5", ""],
+            ["CRP", "22 mg/L", "<5", "H"],
+            ["Sodium", "138 mmol/L", "135–145", ""],
+            ["Urea", "4.2 mmol/L", "2.5–6.5", ""]
+          ],
+          "text": "Only a mild inflammatory response: fits mesenteric adenitis."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale", "title": "Tobi's CRP", "min": 0, "max": 200, "unit": "mg/L",
+            "bands": [[0, 5, "normal", "ok"], [5, 50, "mildly raised", "warn"], [50, 200, "marked: think appendicitis or abscess", "bad"]],
+            "value": 22, "label": "Tobi 22",
+            "caption": "Mildly raised. A high or rising CRP would push you back towards appendicitis."
+          }
+        },
+        {
+          "type": "ask",
+          "q": "Which is the most appropriate imaging for Tobi?",
+          "o": ["Abdominal X-ray", "CT abdomen and pelvis", "MRI abdomen", "Ultrasound abdomen"],
+          "a": 3,
+          "r": "**Ultrasound in children**: no radiation and it can show the nodes and the appendix. CT is for older patients."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Ultrasound: a **cluster of enlarged mesenteric nodes** in the RIF.",
+            "Appendix seen: **4 mm, compressible, normal**.",
+            "Small amount of free fluid; no collection."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Tobi's diagnosis is **clinical**, made safer now that the scan has excluded appendicitis."
+        },
+        {
+          "type": "trap",
+          "text": "Enlarged nodes alone do not prove the diagnosis; the **normal appendix** is what lets you send the child home."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' where the answer is conservative: analgesia, fluids and safety-netting. Antibiotics and appendicectomy are the classic wrong options.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Tobi's ultrasound shows enlarged nodes and a normal appendix. What next?",
+          "o": ["Appendicectomy", "Conservative management", "IV antibiotics", "Oral antibiotics"],
+          "a": 1,
+          "r": "It is **self-limiting**: no medication, no surgery."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Tobi needs **no antibiotics and no operation**: the nodes will settle as the infection clears."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Tobi goes home with **paracetamol or ibuprofen**, plenty of fluids and clear safety-netting advice."
+        },
+        {
+          "type": "flow",
+          "title": "Safety-netting for Tobi's parents",
+          "nodes": [
+            "Simple analgesia and fluids at home",
+            "Expect improvement over a few days",
+            "Return if pain becomes constant or moves to the RIF and worsens",
+            "Return if fever rises, he stops eating or vomits repeatedly",
+            "Return if he looks unwell or will not walk"
+          ],
+          "caption": "Safety-netting catches the appendicitis that was missed."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend", "title": "Tobi's recovery", "x": ["Day 1", "Day 2", "Day 3", "Day 4", "Day 6"], "unit": "pain score /10",
+            "series": [{ "name": "Pain", "values": [5, 4, 2, 1, 0] }],
+            "caption": "Steady improvement fits a self-limiting reactive process. Worsening pain means come back."
+          }
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "Tobi's assessment follows **NICE CKS** on abdominal pain in children: think of appendicitis and safety-net."
+        },
+        {
+          "type": "trap",
+          "text": "Antibiotics are a wrong answer even if Yersinia is suspected: the illness is **self-limiting** and treated conservatively."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions on the mechanism (reactive lymphoid hyperplasia), the classic organism (Yersinia enterocolitica), why it mimics appendicitis and why it settles on its own.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Tobi's nodes have swollen through **reactive lymphoid hyperplasia** after his viral illness."
+        },
+        {
+          "type": "flow",
+          "title": "From sore throat to RIF pain",
+          "nodes": [
+            "Viral (or Yersinia) infection",
+            "Antigen drains to mesenteric lymph nodes",
+            "Reactive lymphoid hyperplasia",
+            "Enlarged, tender nodes near the terminal ileum",
+            "RIF pain that mimics appendicitis"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Tobi's pain is in the RIF because the nodes draining the lymphoid-rich **terminal ileum** sit there; his **appendix is normal**."
+        },
+        {
+          "type": "ask",
+          "q": "Which organism is classically associated with mesenteric adenitis?",
+          "o": ["Clostridioides difficile", "Helicobacter pylori", "Staphylococcus aureus", "Yersinia enterocolitica"],
+          "a": 3,
+          "r": "**Yersinia enterocolitica** is the classic bacterial trigger; most cases are viral."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Tobi gets better on his own because his nodes are **reacting**, not primarily infected."
+        },
+        {
+          "type": "pearl",
+          "text": "**Yersinia** can mimic appendicitis so closely it is called '**pseudoappendicitis**'."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which condition does mesenteric adenitis classically mimic?", "o": ["Appendicitis", "Intussusception", "Testicular torsion", "Urinary tract infection"], "a": 0, "r": "It classically mimics **appendicitis**." },
+    { "d": "diagnosis", "q": "Which history most often comes before mesenteric adenitis?", "o": ["Abdominal trauma", "Recent antibiotics", "Recent sore throat or URTI", "Travel to the tropics"], "a": 2, "r": "A **recent viral illness, URTI or sore throat**, or a gastroenteritis-type illness." },
+    { "d": "diagnosis", "q": "Who is most commonly affected?", "o": ["Children and young people", "Elderly men", "Pregnant women", "Smokers over 50"], "a": 0, "r": "Most common in **children** (and adults) after an infection." },
+    { "d": "diagnosis", "q": "Which feature is typical of mesenteric adenitis rather than appendicitis?", "o": ["Localised rebound tenderness", "Marked anorexia", "Preserved appetite", "Toxic appearance"], "a": 2, "r": "**Preserved appetite**, minimal guarding and a less toxic appearance." },
+    { "d": "investigation", "q": "Which imaging is first choice in a child with suspected mesenteric adenitis?", "o": ["Abdominal X-ray", "CT abdomen", "MRI abdomen", "Ultrasound"], "a": 3, "r": "**Ultrasound** in children; CT in older patients." },
+    { "d": "investigation", "q": "Which imaging finding supports mesenteric adenitis?", "o": ["Enlarged nodes with a normal appendix", "Free gas under the diaphragm", "Non-compressible appendix", "Target sign"], "a": 0, "r": "**Enlarged mesenteric lymph nodes with a normal appendix**." },
+    { "d": "investigation", "q": "How is mesenteric adenitis confirmed?", "o": ["Biopsy of the nodes", "Blood culture", "Clinical diagnosis after excluding appendicitis", "Stool PCR"], "a": 2, "r": "It is a **clinical diagnosis**, often made after excluding appendicitis." },
+    { "d": "management", "q": "What is the mainstay of management?", "o": ["Appendicectomy", "Conservative care with analgesia and safety-netting", "IV antibiotics", "Oral steroids"], "a": 1, "r": "**Conservative**: no medication or surgery; analgesia, fluids, safety-netting." },
+    { "d": "science", "q": "Which is the underlying pathology?", "o": ["Granulomatous inflammation", "Primary bacterial abscess", "Reactive lymphoid hyperplasia", "Transmural necrosis"], "a": 2, "r": "**Reactive lymphoid hyperplasia** of the mesenteric nodes." },
+    { "d": "science", "q": "Which organism is classically linked to mesenteric adenitis?", "o": ["Escherichia coli O157", "Shigella sonnei", "Streptococcus pneumoniae", "Yersinia enterocolitica"], "a": 3, "r": "**Yersinia enterocolitica**." }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is mesenteric adenitis, who gets it, and what triggers it?",
+        "tip": "Exam thinking: the trigger in the history is the biggest clue.",
+        "points": [
+          { "p": "Inflammation of the mesenteric lymph nodes, usually right lower abdomen", "k": [["lymph", "node"], ["mesenter"]], "why": "Nodes near the terminal ileum." },
+          { "p": "Most common in children (and adults) after an infection", "k": [["child", "young", "kid", "paediatric"]], "why": "Children are the classic stem." },
+          { "p": "Follows a viral illness, URTI, sore throat or gastroenteritis", "k": [["viral", "virus", "urti", "sore throat", "cold", "gastroenteritis", "tonsil"]], "why": "Ask about the week before the pain." },
+          { "p": "Bacteria: Yersinia, Campylobacter, Salmonella", "k": [["yersinia", "campylobacter", "salmonella"]], "why": "Yersinia is the classic one." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does mesenteric adenitis present?",
+        "tip": "Exam thinking: an RIF pain stem where the child is not very unwell.",
+        "points": [
+          { "p": "RIF pain mimicking appendicitis", "k": [["rif", "right iliac", "right lower"]], "why": "Often with generalised mild tenderness." },
+          { "p": "Mild or low-grade fever (or afebrile)", "k": [["fever", "temperature", "pyrex", "afebrile", "low-grade", "low grade"]], "why": "High fever and toxicity suggest appendicitis." },
+          { "p": "Minimal guarding and preserved appetite", "k": [["guarding", "appetite", "eating", "hungry"]], "why": "Anorexia is typical of appendicitis." },
+          { "p": "Nausea, vomiting, malaise", "k": [["nausea", "vomit", "malaise"]], "why": "Non-specific features that do not exclude it." },
+          { "p": "Inflammatory markers only mildly raised; self-limiting", "k": [["mild", "slight", "self-limit", "self limit"]], "why": "A high CRP should worry you." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Which features distinguish mesenteric adenitis from appendicitis?",
+        "tip": "Exam thinking: the key diagnostic challenge, tested again and again.",
+        "points": [
+          { "p": "Preceding viral illness or sore throat", "k": [["viral", "sore throat", "urti", "infection", "cold"]], "why": "Appendicitis usually has no prodrome." },
+          { "p": "Less dramatic peritonism, minimal guarding", "k": [["periton", "guarding", "rebound"]], "why": "Localised rebound favours appendicitis." },
+          { "p": "Less toxic appearance", "k": [["toxic", "well", "unwell"]], "why": "A sick child is appendicitis until proven otherwise." },
+          { "p": "Appendix normal on imaging", "k": [["normal appendix", "appendix normal", "appendix is normal", "normal"]], "why": "The finding that confirms the call." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "How is mesenteric adenitis investigated and confirmed?",
+        "tip": "Exam thinking: ultrasound for children, CT for older patients.",
+        "points": [
+          { "p": "Clinical diagnosis, often after excluding appendicitis", "k": [["clinical", "exclu"]], "why": "There is no single confirmatory test." },
+          { "p": "Bloods: FBC, CRP, U&Es showing a mild inflammatory response", "k": [["fbc", "crp", "blood"]], "why": "Markedly raised markers point elsewhere." },
+          { "p": "Ultrasound in children", "k": [["ultrasound", "uss"]], "why": "No radiation." },
+          { "p": "CT in older patients", "k": [["ct", "computed"]], "why": "Better views in adults." },
+          { "p": "Shows enlarged mesenteric nodes, sometimes mesenteric thickening, normal appendix", "k": [["enlarged", "large", "swollen"], ["appendix"]], "why": "Nodes plus normal appendix." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is mesenteric adenitis managed?",
+        "tip": "Exam thinking: antibiotics and surgery are the classic wrong answers.",
+        "points": [
+          { "p": "Conservative: no medication or surgery", "k": [["conservative", "no surgery", "no antibiotic", "no medication", "self-limit"]], "why": "It settles on its own." },
+          { "p": "Analgesia", "k": [["analges", "paracetamol", "ibuprofen", "pain relief"]], "why": "Simple analgesia is enough." },
+          { "p": "Fluids", "k": [["fluid", "hydrat", "drink"]], "why": "Especially if vomiting." },
+          { "p": "Observation and safety-netting", "k": [["safety", "observ", "return", "review"]], "why": "Return if pain worsens or becomes constant." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "What is the pathophysiology of mesenteric adenitis and why does it settle by itself?",
+        "tip": "Exam thinking: reactive, not primary.",
+        "points": [
+          { "p": "Reactive lymphoid hyperplasia of the mesenteric nodes", "k": [["reactive", "hyperplasia"]], "why": "Nodes enlarge in response to infection elsewhere." },
+          { "p": "Triggered by preceding viral (occasionally Yersinia enterocolitica) infection", "k": [["viral", "virus", "yersinia"]], "why": "Yersinia is the classic bacterial cause." },
+          { "p": "Self-limiting because it is a reactive process, not a primary infection or surgical problem", "k": [["reactive", "not primary", "not infect", "not surgical", "secondary"]], "why": "So it needs no antibiotics or surgery." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does mesenteric adenitis mimic appendicitis, and what tells them apart on imaging?",
+        "tip": "Exam thinking: the anatomy of lymph drainage explains the pain site.",
+        "points": [
+          { "p": "Right lower quadrant nodes drain the lymphoid-rich terminal ileum", "k": [["terminal ileum", "ileum", "ileal"]], "why": "The terminal ileum has abundant Peyer's patches." },
+          { "p": "So the pain sits in the RIF, like appendicitis", "k": [["rif", "right lower", "right iliac"]], "why": "Same site, different organ." },
+          { "p": "The appendix itself stays structurally normal, confirmed on imaging", "k": [["normal"], ["appendix"]], "why": "Enlarged nodes plus normal appendix." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Which organisms trigger mesenteric adenitis, and which is the classic one?",
+        "tip": "Exam thinking: 'pseudoappendicitis' is Yersinia.",
+        "points": [
+          { "p": "Most cases follow a viral infection", "k": [["viral", "virus"]], "why": "URTI, sore throat or gastroenteritis." },
+          { "p": "Classic bacterium: Yersinia enterocolitica", "k": [["yersinia"]], "why": "Causes 'pseudoappendicitis'." },
+          { "p": "Also Campylobacter and Salmonella", "k": [["campylobacter", "salmonella"]], "why": "After a gastroenteritis-type illness." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "mesenteric adenitis": "Inflammation of the lymph nodes in the mesentery, usually causing right lower abdominal pain after an infection.",
+    "mesentery": "The fold of tissue that attaches the bowel to the back of the abdomen and carries its vessels and lymph nodes.",
+    "mesenteric lymph nodes": "Lymph nodes in the mesentery that drain the bowel.",
+    "lymphadenopathy": "Enlarged lymph nodes.",
+    "reactive lymphoid hyperplasia": "Enlargement of lymph nodes as they respond to infection, without being primarily infected.",
+    "terminal ileum": "The last part of the small bowel, joining the caecum in the right lower abdomen; rich in lymphoid tissue.",
+    "Peyer's patches": "Clusters of lymphoid tissue in the wall of the ileum.",
+    "Yersinia enterocolitica": "A Gram-negative bacterium spread by contaminated food that can cause mesenteric adenitis and 'pseudoappendicitis'.",
+    "Yersinia": "A genus of Gram-negative bacteria; Yersinia enterocolitica is the classic trigger of mesenteric adenitis.",
+    "Campylobacter": "A common bacterial cause of gastroenteritis, often from undercooked poultry.",
+    "Salmonella": "A bacterium causing food poisoning, often from eggs or poultry.",
+    "pseudoappendicitis": "Illness that mimics appendicitis, classically from Yersinia mesenteric adenitis.",
+    "appendicitis": "Inflammation of the appendix; the main condition mesenteric adenitis mimics.",
+    "appendicectomy": "Surgical removal of the appendix.",
+    "RIF": "Right iliac fossa: the right lower part of the abdomen.",
+    "right lower quadrant": "The right lower quarter of the abdomen, overlapping the RIF.",
+    "URTI": "Upper respiratory tract infection, such as a cold or sore throat.",
+    "gastroenteritis": "Infection of the gut causing diarrhoea and vomiting.",
+    "peritonism": "Signs of peritoneal irritation: guarding, rigidity, rebound and pain on movement.",
+    "guarding": "Involuntary tensing of the abdominal muscles when a tender area is pressed.",
+    "rebound tenderness": "Pain on sudden release of pressure on the abdomen; a sign of peritonitis.",
+    "anorexia": "Loss of appetite; common in appendicitis but not in mesenteric adenitis.",
+    "low-grade fever": "A mildly raised temperature, roughly 37.5 to 38.3°C.",
+    "self-limiting": "Gets better on its own without treatment.",
+    "diagnosis of exclusion": "A diagnosis made only once other likely causes have been ruled out.",
+    "safety-netting": "Telling patients or parents which symptoms mean they should seek help again, and how.",
+    "cervical lymph nodes": "Lymph nodes in the neck; often enlarged after a sore throat.",
+    "CRP": "C-reactive protein: a blood marker that rises with inflammation or infection.",
+    "WCC": "White cell count; raised in infection and inflammation.",
+    "free fluid": "Fluid seen in the abdomen on imaging; a small amount can be normal or reactive."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 9 year old girl has a 1 day history of right lower abdominal pain. She had a sore throat and runny nose last week. She has felt sick but ate her lunch. Her temperature is 37.7°C and pulse rate 100 bpm. She is mildly tender in the right iliac fossa and around the umbilicus with minimal guarding and no rebound. Her tonsils are red.",
+      "labs": [["WCC", "11.6 x10^9/L", "4.5–13.5", ""], ["CRP", "16 mg/L", "<5", "H"]],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute appendicitis", "Gastroenteritis", "Mesenteric adenitis", "Testicular torsion", "Urinary tract infection"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "RIF pain in a child: appendicitis versus its mimics." },
+        { "t": "Pick out the clues", "clues": ["sore throat and runny nose last week", "ate her lunch", "37.7°C", "minimal guarding and no rebound", "tonsils are red"], "x": "Viral prodrome, preserved appetite, low-grade fever, little peritonism, mild CRP rise." },
+        { "t": "Make your own answer before looking", "x": "**Mesenteric adenitis.**" },
+        { "t": "Rule out the others", "elim": [[0, "Appendicitis brings anorexia, localised guarding and rebound."], [1, "Gastroenteritis needs diarrhoea, which she does not have."], [3, "Testicular torsion cannot occur in a girl."], [4, "UTI gives dysuria and frequency; nothing suggests it."]] },
+        { "t": "Commit", "x": "**C. Mesenteric adenitis.** Rule: viral prodrome + RIF pain + mild picture." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 24 year old man has a 2 day history of right lower abdominal pain and loose stools after a barbecue a week ago. His temperature is 37.9°C, pulse rate 94 bpm and BP 124/78 mmHg. He is tender in the right iliac fossa with mild guarding. Appendicitis cannot be excluded clinically and the surgical team want imaging.",
+      "labs": [["CRP", "34 mg/L", "<5", "H"]],
+      "q": "Which is the most appropriate imaging investigation?",
+      "o": ["Abdominal X-ray", "CT abdomen and pelvis", "Diagnostic laparoscopy", "MRI pelvis", "Plain chest X-ray"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Imaging choice depends on age." },
+        { "t": "Pick out the clues", "clues": ["24 year old man", "after a barbecue a week ago", "Appendicitis cannot be excluded clinically"], "x": "An adult with possible Yersinia or Campylobacter adenitis versus appendicitis." },
+        { "t": "Make your own answer before looking", "x": "Older patient: **CT abdomen and pelvis** to look for nodes and a normal appendix." },
+        { "t": "Rule out the others", "elim": [[0, "AXR cannot show nodes or the appendix."], [2, "Laparoscopy is an operation, not first imaging."], [3, "MRI is used mainly in pregnancy or children when ultrasound fails."], [4, "A chest X-ray does not assess RIF pain."]] },
+        { "t": "Commit", "x": "**B. CT abdomen and pelvis.** Rule: ultrasound in children, CT in adults." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "An 8 year old boy has 1 day of mild right lower abdominal pain after a cold. He is eating and drinking. His temperature is 37.6°C and pulse rate 98 bpm. He has mild generalised tenderness without guarding. Ultrasound shows several enlarged mesenteric lymph nodes and a normal, compressible appendix.",
+      "labs": [["CRP", "14 mg/L", "<5", "H"]],
+      "q": "Which is the most appropriate management?",
+      "o": ["Analgesia, fluids and safety-netting at home", "Emergency appendicectomy", "IV antibiotics", "Laparoscopy", "Oral co-amoxiclav"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "Management once the diagnosis is made." },
+        { "t": "Pick out the clues", "clues": ["after a cold", "eating and drinking", "without guarding", "enlarged mesenteric lymph nodes and a normal, compressible appendix"], "x": "Mesenteric adenitis confirmed by a normal appendix; well child." },
+        { "t": "Make your own answer before looking", "x": "**Conservative**: analgesia, fluids, safety-netting." },
+        { "t": "Rule out the others", "elim": [[1, "The appendix is normal."], [2, "It is self-limiting; no antibiotics."], [3, "No indication for an operation."], [4, "Oral antibiotics are not needed either."]] },
+        { "t": "Commit", "x": "**A.** Rule: mesenteric adenitis = no drugs, no surgery." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 12 year old boy has right iliac fossa pain 4 days after a viral upper respiratory tract infection. Ultrasound shows enlarged mesenteric lymph nodes and a normal appendix. His mother asks why his glands are swollen and whether they are infected.",
+      "q": "Which is the most likely underlying mechanism?",
+      "o": ["Abscess formation within the nodes", "Bacterial peritonitis", "Faecolith obstruction of the appendix", "Granulomatous ileal inflammation", "Lymphoid hyperplasia reacting to recent infection"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of the enlarged nodes." },
+        { "t": "Pick out the clues", "clues": ["4 days after a viral upper respiratory tract infection", "enlarged mesenteric lymph nodes", "normal appendix"], "x": "Nodes reacting to a recent viral infection; appendix not involved." },
+        { "t": "Make your own answer before looking", "x": "**Reactive lymphoid hyperplasia.**" },
+        { "t": "Rule out the others", "elim": [[0, "An abscess would be a primary infection, with a sick child."], [1, "Peritonitis gives rigidity and toxicity."], [2, "Faecolith obstruction causes appendicitis; his appendix is normal."], [3, "Granulomas suggest Crohn's disease or TB."]] },
+        { "t": "Commit", "x": "**E.** Rule: reactive, not primary, which is why it settles alone." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "An 11 year old boy has an 18 hour history of right lower abdominal pain. He had a sore throat 5 days ago. He is hungry and asking for food. His temperature is 37.8°C, pulse rate 102 bpm and BP 102/64 mmHg. He has mild tenderness in the right iliac fossa and around the umbilicus, with minimal guarding. He has tender cervical lymph nodes.",
+      "labs": [["WCC", "12.3 x10^9/L", "4.5–13.5", ""], ["CRP", "20 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute appendicitis", "Henoch-Schönlein purpura", "Mesenteric adenitis", "Pyelonephritis", "Urinary tract infection"],
+      "a": 2,
+      "e": "RIF pain after a sore throat, with a preserved appetite, low-grade fever, minimal guarding and a mild CRP rise, is mesenteric adenitis. Appendicitis brings anorexia and localised peritonism.",
+      "steps": [
+        { "t": "Read the question line first", "x": "RIF pain in a child: weigh appendicitis against its mimics." },
+        { "t": "Pick out the clues", "clues": ["sore throat 5 days ago", "hungry and asking for food", "37.8°C", "minimal guarding", "tender cervical lymph nodes"], "x": "Viral prodrome, preserved appetite, mild picture, lymphadenopathy elsewhere." },
+        { "t": "Make your own answer before looking", "x": "**Mesenteric adenitis.**" },
+        { "t": "Rule out the others", "elim": [[0, "Appendicitis causes anorexia and localised guarding."], [1, "HSP needs a purpuric rash on the legs and buttocks."], [3, "Pyelonephritis gives loin pain, high fever and urinary symptoms."], [4, "No urinary symptoms are given."]] },
+        { "t": "Commit", "x": "**C. Mesenteric adenitis.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 14 year old girl has 2 days of right lower abdominal pain following a week of cough and coryza. Her temperature is 37.6°C, pulse rate 96 bpm and BP 110/68 mmHg. She is mildly tender in the right iliac fossa without rebound. Her pregnancy test is negative. Ultrasound shows a cluster of enlarged mesenteric lymph nodes, a normal appendix and normal ovaries.",
+      "labs": [["CRP", "18 mg/L", "<5", "H"], ["Urine βhCG", "negative", "negative", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute appendicitis", "Crohn's disease", "Lymphoma", "Mesenteric adenitis", "Ovarian cyst"],
+      "a": 3,
+      "e": "A preceding URTI, mild RIF tenderness, enlarged mesenteric nodes and a normal appendix and ovaries mean mesenteric adenitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis with an imaging result: use it." },
+        { "t": "Pick out the clues", "clues": ["following a week of cough and coryza", "without rebound", "enlarged mesenteric lymph nodes", "normal appendix and normal ovaries"], "x": "Viral prodrome + enlarged nodes + normal appendix." },
+        { "t": "Make your own answer before looking", "x": "**Mesenteric adenitis.**" },
+        { "t": "Rule out the others", "elim": [[0, "The appendix is normal on ultrasound."], [1, "Crohn's is chronic, with diarrhoea, weight loss and a thickened ileum."], [2, "Lymphoma causes painless, persistent nodes with B symptoms."], [4, "Ovaries are normal."]] },
+        { "t": "Commit", "x": "**D. Mesenteric adenitis.** Rule: nodes + normal appendix." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 16 year old boy has right lower abdominal pain and diarrhoea 5 days after eating undercooked pork at a family gathering. Ultrasound shows enlarged mesenteric lymph nodes with a normal appendix. Stool culture on a cold-enrichment medium grows a Gram-negative bacillus.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely causative organism?",
+      "o": ["Clostridioides difficile", "Escherichia coli O157", "Shigella sonnei", "Staphylococcus aureus", "Yersinia enterocolitica"],
+      "a": 4,
+      "e": "Yersinia enterocolitica, from undercooked pork and grown at low temperatures, is the classic bacterial cause of mesenteric adenitis ('pseudoappendicitis').",
+      "steps": [
+        { "t": "Read the question line first", "x": "Organism question: match the source and the lab clue." },
+        { "t": "Pick out the clues", "clues": ["undercooked pork", "enlarged mesenteric lymph nodes with a normal appendix", "cold-enrichment medium", "Gram-negative bacillus"], "x": "Pork + grows in the cold + mesenteric adenitis." },
+        { "t": "Make your own answer before looking", "x": "**Yersinia enterocolitica.**" },
+        { "t": "Rule out the others", "elim": [[0, "C. difficile follows antibiotics and is Gram-positive."], [1, "E. coli O157 causes bloody diarrhoea and HUS."], [2, "Shigella causes dysentery, not pseudoappendicitis."], [3, "S. aureus causes rapid toxin vomiting; it is Gram-positive."]] },
+        { "t": "Commit", "x": "**E. Yersinia enterocolitica.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 10 year old boy has 1 day of right lower abdominal pain. He had a cold last week. His temperature is 37.7°C, pulse rate 100 bpm and BP 100/62 mmHg. He is mildly tender in the right iliac fossa. The team are trying to decide between mesenteric adenitis and appendicitis.",
+      "labs": [],
+      "visual": null,
+      "q": "Which additional feature would most favour mesenteric adenitis?",
+      "o": ["Anorexia and repeated vomiting", "Localised rebound tenderness", "Migration of pain to the RIF", "Preserved appetite", "Rising CRP over 24 hours"],
+      "a": 3,
+      "e": "Preserved appetite is typical of mesenteric adenitis. Anorexia, migratory pain, localised rebound and a rising CRP all favour appendicitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which single feature tips the balance?" },
+        { "t": "Pick out the clues", "clues": ["He had a cold last week", "37.7°C", "mildly tender"], "x": "Already a viral prodrome and a mild picture." },
+        { "t": "Make your own answer before looking", "x": "**Preserved appetite.**" },
+        { "t": "Rule out the others", "elim": [[0, "Anorexia and vomiting favour appendicitis."], [1, "Localised rebound means peritonism: appendicitis."], [2, "Migration from umbilicus to RIF is classic appendicitis."], [4, "A rising CRP suggests progressing appendicitis."]] },
+        { "t": "Commit", "x": "**D. Preserved appetite.** Rule: a hungry child rarely has appendicitis." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 27 year old woman has 2 days of right lower abdominal pain following a week of diarrhoea. Her pregnancy test is negative. She has mild right iliac fossa tenderness without rebound. A CT abdomen and pelvis is performed because appendicitis cannot be excluded.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely CT finding if the diagnosis is mesenteric adenitis?",
+      "o": ["Appendix 11 mm with periappendiceal fat stranding", "Enlarged mesenteric lymph nodes with a normal appendix", "Free fluid in the pouch of Douglas only", "Pneumoperitoneum", "Terminal ileal stricture with proximal dilatation"],
+      "a": 1,
+      "e": "Mesenteric adenitis shows enlarged mesenteric lymph nodes, sometimes mesenteric thickening, with a normal appendix. A thick, stranded appendix is appendicitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Imaging finding of the named diagnosis." },
+        { "t": "Pick out the clues", "clues": ["following a week of diarrhoea", "without rebound", "appendicitis cannot be excluded"], "x": "Post-gastroenteritis adenitis versus appendicitis." },
+        { "t": "Make your own answer before looking", "x": "**Enlarged mesenteric nodes, normal appendix.**" },
+        { "t": "Rule out the others", "elim": [[0, "A thick, stranded appendix is appendicitis."], [2, "Isolated pelvic fluid suggests a gynaecological cause."], [3, "Free gas means a perforated viscus."], [4, "A stricture suggests Crohn's disease."]] },
+        { "t": "Commit", "x": "**B.** Rule: the normal appendix makes the diagnosis." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 19 year old man has 2 days of right lower abdominal pain and nausea after a week of a sore throat. He is eating normally. His temperature is 37.9°C, pulse rate 92 bpm and BP 126/76 mmHg. He has mild generalised tenderness, worst in the right iliac fossa, without rebound. Urinalysis is normal.",
+      "labs": [["WCC", "10.9 x10^9/L", "4.0–11.0", ""], ["CRP", "26 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute appendicitis", "Mesenteric adenitis", "Pelvic abscess", "Right ureteric colic", "Terminal ileitis from Crohn's disease"],
+      "a": 1,
+      "e": "A young man with a preceding sore throat, preserved appetite, low-grade fever, generalised mild tenderness and mildly raised CRP has mesenteric adenitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "RIF pain in a young adult: appendicitis or a mimic?" },
+        { "t": "Pick out the clues", "clues": ["after a week of a sore throat", "eating normally", "37.9°C", "mild generalised tenderness", "Urinalysis is normal"], "x": "Viral prodrome, preserved appetite, mild picture, normal urine." },
+        { "t": "Make your own answer before looking", "x": "**Mesenteric adenitis.**" },
+        { "t": "Rule out the others", "elim": [[0, "Appendicitis is more localised, with anorexia and guarding."], [2, "A pelvic abscess follows surgery or appendicitis, with swinging fever."], [3, "Ureteric colic is loin-to-groin pain with haematuria."], [4, "Crohn's is chronic, with diarrhoea and weight loss."]] },
+        { "t": "Commit", "x": "**B. Mesenteric adenitis.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 7 year old girl has 1 day of right lower abdominal pain after a cold. She is eating a little. Her temperature is 37.6°C. She is mildly tender in the right iliac fossa without rebound. Her urine dipstick is normal. The surgical registrar wants to exclude appendicitis with imaging.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial imaging investigation?",
+      "o": ["Abdominal X-ray", "CT abdomen and pelvis", "Diagnostic laparoscopy", "Ultrasound abdomen", "Urine culture only"],
+      "a": 3,
+      "e": "Ultrasound is the imaging of choice in children: no radiation, and it can show enlarged mesenteric nodes and a normal appendix. CT is for older patients.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Imaging in a child." },
+        { "t": "Pick out the clues", "clues": ["7 year old girl", "after a cold", "without rebound", "exclude appendicitis with imaging"], "x": "A child with suspected mesenteric adenitis; imaging needed." },
+        { "t": "Make your own answer before looking", "x": "**Ultrasound abdomen.**" },
+        { "t": "Rule out the others", "elim": [[0, "AXR does not show nodes or the appendix."], [1, "CT carries radiation; reserved for older patients."], [2, "Laparoscopy is surgery, not first imaging."], [4, "The dipstick is normal and urine culture is not imaging."]] },
+        { "t": "Commit", "x": "**D. Ultrasound.** Rule: children get ultrasound first." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 9 year old boy has right lower abdominal pain 4 days after a sore throat. He is eating normally and his temperature is 37.7°C. He has minimal guarding. Blood tests and an ultrasound are performed to help distinguish mesenteric adenitis from appendicitis.",
+      "labs": [["WCC", "12.0 x10^9/L", "4.5–13.5", ""]],
+      "visual": null,
+      "q": "Which result would most support mesenteric adenitis?",
+      "o": ["CRP 210 mg/L", "Free gas under the diaphragm", "Mildly raised CRP with a normal appendix on ultrasound", "Non-compressible 9 mm appendix", "Target sign on ultrasound"],
+      "a": 2,
+      "e": "Mesenteric adenitis shows only a mild inflammatory response and a normal appendix with enlarged nodes. A non-compressible 9 mm appendix is appendicitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which result fits the diagnosis?" },
+        { "t": "Pick out the clues", "clues": ["4 days after a sore throat", "eating normally", "minimal guarding"], "x": "Classic mild mesenteric adenitis." },
+        { "t": "Make your own answer before looking", "x": "**Mildly raised inflammatory markers and a normal appendix.**" },
+        { "t": "Rule out the others", "elim": [[0, "A CRP of 210 suggests appendicitis with complication or another serious cause."], [1, "Free gas means perforation."], [3, "A non-compressible appendix over 6 mm is appendicitis."], [4, "A target sign is intussusception."]] },
+        { "t": "Commit", "x": "**C.** Rule: mild markers + normal appendix." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 12 year old girl has right lower abdominal pain 3 days after an upper respiratory tract infection. She is eating and drinking. Her temperature is 37.5°C, pulse rate 94 bpm and BP 108/66 mmHg. Ultrasound shows enlarged mesenteric lymph nodes and a normal appendix. She is comfortable after paracetamol.",
+      "labs": [["CRP", "15 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Appendicectomy", "Conservative management and safety-netting", "Diagnostic laparoscopy", "IV ceftriaxone and metronidazole", "Oral amoxicillin"],
+      "a": 1,
+      "e": "Mesenteric adenitis is self-limiting and managed conservatively with analgesia, fluids and safety-netting. Antibiotics and surgery are not indicated.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Management after the diagnosis is confirmed." },
+        { "t": "Pick out the clues", "clues": ["eating and drinking", "enlarged mesenteric lymph nodes and a normal appendix", "comfortable after paracetamol"], "x": "Well child, confirmed mesenteric adenitis." },
+        { "t": "Make your own answer before looking", "x": "**Conservative management and safety-netting.**" },
+        { "t": "Rule out the others", "elim": [[0, "The appendix is normal."], [2, "No need to operate."], [3, "IV antibiotics are for appendicitis or sepsis."], [4, "Oral antibiotics are not needed."]] },
+        { "t": "Commit", "x": "**B.** Rule: self-limiting = supportive care." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 22 year old man has 2 days of right lower abdominal pain after a week of diarrhoea. His temperature is 37.8°C and pulse rate 90 bpm. CT abdomen and pelvis shows enlarged mesenteric lymph nodes with mild mesenteric thickening and a normal appendix.",
+      "labs": [["CRP", "30 mg/L", "<5", "H"], ["WCC", "10.6 x10^9/L", "4.0–11.0", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate next step in management?",
+      "o": ["Colonoscopy", "Laparoscopic appendicectomy", "Oral ciprofloxacin", "Repeat CT in 48 hours", "Supportive care with analgesia and fluids"],
+      "a": 4,
+      "e": "Mesenteric adenitis after gastroenteritis is treated supportively. A normal appendix means no appendicectomy; antibiotics are not needed.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step after a CT diagnosis." },
+        { "t": "Pick out the clues", "clues": ["after a week of diarrhoea", "enlarged mesenteric lymph nodes", "normal appendix"], "x": "Post-gastroenteritis mesenteric adenitis in an adult." },
+        { "t": "Make your own answer before looking", "x": "**Supportive care**: analgesia, fluids, safety-netting." },
+        { "t": "Rule out the others", "elim": [[0, "Colonoscopy is not needed for a self-limiting illness."], [1, "The appendix is normal."], [2, "Antibiotics are not needed; it settles alone."], [3, "Repeat imaging is only for clinical deterioration."]] },
+        { "t": "Commit", "x": "**E. Supportive care.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 6 year old boy is being discharged after a diagnosis of mesenteric adenitis. He had a cold last week. Ultrasound showed enlarged mesenteric nodes and a normal appendix. He is eating and his pain is mild. His mother asks what she should look out for at home.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate advice?",
+      "o": ["Avoid school for 2 weeks", "Complete a 7 day antibiotic course", "No follow-up is ever needed", "Return if the pain worsens or becomes constant", "Start a low-fibre diet"],
+      "a": 3,
+      "e": "Safety-netting is part of supportive management: return if pain worsens, becomes constant, or fever or vomiting increase, in case appendicitis was missed.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Discharge advice: what makes the plan safe?" },
+        { "t": "Pick out the clues", "clues": ["being discharged", "normal appendix", "what she should look out for"], "x": "Supportive care needs safety-netting." },
+        { "t": "Make your own answer before looking", "x": "**Return if the pain worsens or becomes constant.**" },
+        { "t": "Rule out the others", "elim": [[0, "No need to isolate for 2 weeks."], [1, "Antibiotics are not indicated."], [2, "Safety-netting is always needed in case it is appendicitis."], [4, "Diet has no role."]] },
+        { "t": "Commit", "x": "**D.** Rule: conservative care always comes with a safety-net." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 13 year old girl has right iliac fossa pain a week after a viral illness. Ultrasound shows enlarged lymph nodes in the right lower quadrant mesentery and a normal appendix. Her father asks why the pain is in the same place as appendicitis.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely explanation for the site of her pain?",
+      "o": ["Inflammation spreading from the appendix", "Nodes draining the lymphoid-rich terminal ileum lie in the right lower quadrant", "Psoas muscle irritation by the caecum", "Referred pain from the right ureter", "Visceral pain from the caecum via T10"],
+      "a": 1,
+      "e": "The right lower quadrant mesenteric nodes drain the lymphoid-rich terminal ileum, so they enlarge most and cause RIF pain; the appendix stays normal.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Applied anatomy: why the RIF?" },
+        { "t": "Pick out the clues", "clues": ["a week after a viral illness", "right lower quadrant mesentery", "normal appendix"], "x": "Reactive nodes in the RIF; appendix not involved." },
+        { "t": "Make your own answer before looking", "x": "Nodes draining the **terminal ileum** (rich lymphoid tissue) sit in the RIF." },
+        { "t": "Rule out the others", "elim": [[0, "The appendix is normal."], [2, "Psoas irritation is a sign of retrocaecal appendicitis."], [3, "Ureteric pain radiates loin to groin."], [4, "Visceral midgut pain is felt at the umbilicus (T10), not the RIF."]] },
+        { "t": "Commit", "x": "**B.** Rule: terminal ileum lymphoid tissue explains the mimic." }
+      ]
+    }
+  ]
+}

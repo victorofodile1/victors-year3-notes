@@ -1,0 +1,2116 @@
+{
+ "id": "respiratory-arrest",
+ "patient": {
+  "name": "Liam Doherty",
+  "age": 34,
+  "sex": "M",
+  "setting": "Hostel in Camden, then ambulance and Emergency Department resus",
+  "complaint": "Found unresponsive and barely breathing by hostel staff",
+  "background": [
+   "Known heroin use; recently released from prison",
+   "Ate a takeaway an hour before",
+   "No known medical history",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely cause?' with an unresponsive patient who is not breathing but has a pulse, often with pinpoint pupils (opioids) or signs after intubation (oesophageal tube).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Hostel staff find Liam slumped on his bed at 22:00.",
+      "He does not respond to voice or pain.",
+      "Lips are **blue**; chest barely moves.",
+      "A used syringe lies on the floor."
+     ],
+     "vitals": {
+      "HR": "54 bpm",
+      "RR": "3 /min",
+      "SpO2": "71% on air",
+      "GCS": "3/15"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Liam is not breathing adequately but has a carotid pulse of 54. What is this?",
+     "o": [
+      "Cardiac arrest",
+      "Respiratory arrest",
+      "Simple faint",
+      "Status epilepticus"
+     ],
+     "a": 1,
+     "r": "Not breathing **with a pulse** is respiratory arrest. Cardiac arrest has **no pulse**."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Liam still has a pulse, but without breathing his oxygen will run out and his heart will stop next."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Respiratory rate",
+      "min": 0,
+      "max": 30,
+      "unit": "/min",
+      "bands": [
+       [
+        0,
+        8,
+        "Inadequate / arrest",
+        "bad"
+       ],
+       [
+        8,
+        12,
+        "Slow",
+        "warn"
+       ],
+       [
+        12,
+        20,
+        "Normal",
+        "ok"
+       ],
+       [
+        20,
+        30,
+        "Fast",
+        "warn"
+       ]
+      ],
+      "value": 3,
+      "label": "Liam 3/min",
+      "caption": "A rate of 3 is not effective breathing: treat as respiratory arrest."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Liam is **apnoeic** in all but name: unresponsive, minimal chest movement, cyanosed, SpO2 71% and GCS 3."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Paramedic opens his eyelids: **pinpoint pupils**.",
+      "Track marks on both forearms.",
+      "Capillary glucose 5.8 mmol/L."
+     ],
+     "vitals": {
+      "CBG": "5.8 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Pinpoint pupils plus slow breathing in a heroin user: **opioid overdose**. Later in resus, watch for the other signature, **oesophageal intubation**."
+    },
+    {
+     "type": "compare",
+     "title": "Respiratory arrest vs cardiac arrest",
+     "head": [
+      "Feature",
+      "Respiratory arrest",
+      "Cardiac arrest"
+     ],
+     "rows": [
+      [
+       "Breathing",
+       "Absent or ineffective",
+       "Absent or agonal gasps"
+      ],
+      [
+       "Central pulse",
+       "**Present** (at first)",
+       "**Absent**"
+      ],
+      [
+       "First action",
+       "Open airway, ventilate",
+       "CPR 30:2, defibrillate if shockable"
+      ],
+      [
+       "Untreated",
+       "Becomes cardiac arrest",
+       "Death"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Opioids are one of many causes; others include choking, sedatives, alcohol, severe asthma, COPD, brainstem stroke and head injury."
+    },
+    {
+     "type": "trap",
+     "text": "Do not start chest compressions on someone with a **pulse**. Ventilate, and check the pulse every 2 minutes in case it is lost."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which investigation confirms correct tracheal tube placement?' (capnography) and 'Which is the most appropriate initial investigation?' (ABG) after the airway is secured.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Liam vomits in the ambulance; GCS stays 3.",
+      "In resus the team decides to **intubate**.",
+      "Because he has just eaten, an **LMA** is not suitable."
+     ],
+     "vitals": {
+      "HR": "62 bpm",
+      "SpO2": "88% with bag-valve mask"
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "After the tube goes in, SpO2 **falls to 79%**.",
+      "No breath sounds at either lung base.",
+      "His **abdomen swells** with each squeeze of the bag."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which test confirms whether Liam's tube is in the trachea?",
+     "o": [
+      "Chest X-ray",
+      "Pulse oximetry",
+      "Waveform capnography",
+      "Watching the chest rise"
+     ],
+     "a": 2,
+     "r": "**Capnography**: exhaled CO2 only comes from ventilated lungs. A flat trace means the tube is in the oesophagus."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Liam's capnograph shows **no CO2 waveform**: the tube is in his oesophagus. It is removed, he is re-oxygenated and re-intubated."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "End-tidal CO2 after intubation",
+      "x": [
+       "Breath 1",
+       "Breath 2",
+       "Breath 3",
+       "Breath 4",
+       "Breath 5"
+      ],
+      "unit": "kPa",
+      "series": [
+       {
+        "name": "Tube in oesophagus",
+        "values": [
+         1.2,
+         0.4,
+         0.1,
+         0,
+         0
+        ]
+       },
+       {
+        "name": "Tube in trachea",
+        "values": [
+         5.6,
+         5.4,
+         5.3,
+         5.3,
+         5.2
+        ]
+       }
+      ],
+      "caption": "A trace that fades to zero is oesophageal; a sustained trace is tracheal."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Arterial blood gas (after re-intubation, on 100% O2)",
+     "rows": [
+      [
+       "pH",
+       "7.18",
+       "7.35–7.45",
+       "L"
+      ],
+      [
+       "pCO2",
+       "9.8 kPa",
+       "4.7–6.0",
+       "H"
+      ],
+      [
+       "pO2",
+       "21.0 kPa",
+       "10–13",
+       ""
+      ],
+      [
+       "HCO3-",
+       "26 mmol/L",
+       "22–26",
+       ""
+      ],
+      [
+       "Lactate",
+       "2.9 mmol/L",
+       "<2",
+       "H"
+      ]
+     ],
+     "text": "Acute respiratory acidosis: CO2 has built up while he was not breathing."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Liam's **ABG** shows how poorly he ventilated; a **toxicology screen** and paracetamol level are sent because overdose is suspected."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "pCO2 on ABG",
+      "min": 3,
+      "max": 12,
+      "unit": "kPa",
+      "bands": [
+       [
+        3,
+        4.7,
+        "Low",
+        "warn"
+       ],
+       [
+        4.7,
+        6,
+        "Normal",
+        "ok"
+       ],
+       [
+        6,
+        12,
+        "Hypercapnia",
+        "bad"
+       ]
+      ],
+      "value": 9.8,
+      "label": "Liam 9.8",
+      "caption": "High CO2 confirms hypoventilation (type 2 failure)."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "Low SpO2 + absent air entry at both bases + a **distended abdomen** after intubation = oesophageal tube until capnography proves otherwise."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': open the airway (jaw thrust if C-spine risk), ventilate with oxygen, and give IV naloxone if opioids are the cause.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "Unresponsive, not breathing normally, pulse present",
+     "nodes": [
+      "Call for help",
+      "Open airway: head tilt-chin lift (jaw thrust if C-spine)",
+      "Remove visible obstruction; oropharyngeal airway",
+      "Bag-valve-mask ventilation with high-flow oxygen",
+      "Check pulse; treat the cause (naloxone for opioids)"
+     ],
+     "caption": "Airway, breathing, then the cause."
+    },
+    {
+     "type": "ask",
+     "q": "Liam was found on his bed with no trauma. How should the paramedic open his airway?",
+     "o": [
+      "Head tilt-chin lift",
+      "Jaw thrust",
+      "Nasopharyngeal airway first",
+      "Surgical airway"
+     ],
+     "a": 0,
+     "r": "No neck injury, so **head tilt-chin lift**. Jaw thrust is used when **cervical spine** injury is a concern."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Liam's airway is opened, vomit suctioned, an **oropharyngeal airway** inserted, and he is ventilated by **bag-valve mask** with high-flow oxygen."
+    },
+    {
+     "type": "ask",
+     "q": "He is being ventilated and still has a pulse. Which drug now?",
+     "o": [
+      "IV flumazenil",
+      "IV naloxone",
+      "IV thiamine",
+      "Oral naltrexone"
+     ],
+     "a": 1,
+     "r": "**Naloxone** reverses opioid respiratory depression. Naltrexone is for relapse prevention; flumazenil is for benzodiazepines."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Liam gets **IV naloxone 400 micrograms** while ventilation continues. A sedation-related airway obstruction would instead need an airway adjunct."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Response to naloxone",
+      "x": [
+       "0 min",
+       "2 min",
+       "5 min",
+       "10 min",
+       "30 min"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Respiratory rate (/min)",
+        "values": [
+         3,
+         8,
+         14,
+         16,
+         15
+        ]
+       },
+       {
+        "name": "SpO2 (%)",
+        "values": [
+         71,
+         84,
+         94,
+         97,
+         97
+        ]
+       }
+      ],
+      "caption": "Breathing returns within minutes."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Naloxone wears off faster than many opioids. Keep watching: Liam may **re-sedate** and need repeat doses or an infusion."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Liam's care follows the **Resuscitation Council UK** basic life support and airway guidance: airway, ventilation, pulse check, then the cause."
+    },
+    {
+     "type": "pearl",
+     "text": "In a non-fasted patient a **laryngeal mask** gives poor protection from aspiration: a cuffed tracheal tube is safer."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why opioids stop breathing (mu receptors in the brainstem), why capnography works, and why respiratory arrest leads to cardiac arrest.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Heroin acts on **mu-opioid receptors** in Liam's brainstem, so rising CO2 no longer drives him to breathe."
+    },
+    {
+     "type": "ask",
+     "q": "Why did Liam's heart rate fall to 54 before treatment?",
+     "o": [
+      "Direct opioid toxicity to the SA node",
+      "Hyperkalaemia",
+      "Myocardial hypoxia",
+      "Vagal stimulation by vomiting"
+     ],
+     "a": 2,
+     "r": "Progressive **hypoxaemia** starves the myocardium, causing bradyarrhythmias and then cardiac arrest."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Left alone, Liam's falling oxygen and rising CO2 would have slowed his heart into arrest."
+    },
+    {
+     "type": "flow",
+     "title": "From respiratory to cardiac arrest",
+     "nodes": [
+      "Apnoea",
+      "Hypoxaemia and hypercapnia",
+      "Myocardial hypoxia",
+      "Bradycardia",
+      "Cardiac arrest (PEA or asystole)"
+     ],
+     "caption": "The usual pattern in children, whose arrests are mostly respiratory first."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Liam's floppy, unconscious pharynx let his tongue fall back: the same reason **sedated** or anaesthetised patients need an airway adjunct."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Only Liam's lungs return CO2, so a tube in his oesophagus showed **no end-tidal CO2**."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Every minute Liam was hypoxic risked **brain injury**: the reason fast airway opening and ventilation matter most."
+    },
+    {
+     "type": "pearl",
+     "text": "Bradycardia in a hypoxic child is a **pre-arrest** sign: fix the airway and oxygenate first."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the key clinical difference between respiratory arrest and cardiac arrest?",
+   "o": [
+    "Cyanosis is absent in respiratory arrest",
+    "GCS is normal in respiratory arrest",
+    "A pulse may be present in respiratory arrest",
+    "Pupils are dilated in respiratory arrest"
+   ],
+   "a": 2,
+   "r": "In respiratory arrest a **pulse may still be present**; cardiac arrest has no pulse."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which triad after intubation suggests oesophageal intubation?",
+   "o": [
+    "High SpO2, wheeze, bradycardia",
+    "Low SpO2, absent basal air entry, distended abdomen",
+    "Low SpO2, unilateral air entry, tracheal deviation",
+    "Normal SpO2, stridor, fever"
+   ],
+   "a": 1,
+   "r": "Low SpO2, **no air entry at both bases** and a **distended abdomen**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Pinpoint pupils with slow breathing most suggest which cause?",
+   "o": [
+    "Alcohol",
+    "Benzodiazepines",
+    "Opioids",
+    "Tricyclic antidepressants"
+   ],
+   "a": 2,
+   "r": "**Opioid overdose** gives miosis and respiratory depression."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Why is a laryngeal mask airway unsuitable in a non-fasted patient?",
+   "o": [
+    "It cannot be used with oxygen",
+    "It gives poor protection against reflux of gastric contents",
+    "It needs a neuromuscular blocker",
+    "It worsens C-spine injury"
+   ],
+   "a": 1,
+   "r": "An **LMA** does not seal the airway against **aspiration**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which investigation confirms correct tracheal tube placement?",
+   "o": [
+    "Auscultation",
+    "Capnography",
+    "Chest X-ray",
+    "Pulse oximetry"
+   ],
+   "a": 1,
+   "r": "**Capnography** detects end-tidal CO2, only produced by ventilated lungs."
+  },
+  {
+   "d": "investigation",
+   "q": "Which first-line test assesses oxygenation and ventilation?",
+   "o": [
+    "ABG",
+    "Chest X-ray",
+    "Peak flow",
+    "Spirometry"
+   ],
+   "a": 0,
+   "r": "An **ABG** gives pO2, pCO2 and pH."
+  },
+  {
+   "d": "management",
+   "q": "Which airway manoeuvre is preferred if cervical spine injury is suspected?",
+   "o": [
+    "Head tilt-chin lift",
+    "Jaw thrust",
+    "Neck extension",
+    "Recovery position"
+   ],
+   "a": 1,
+   "r": "**Jaw thrust** opens the airway without moving the neck."
+  },
+  {
+   "d": "management",
+   "q": "What is the antidote for opioid-induced respiratory arrest?",
+   "o": [
+    "Flumazenil",
+    "Naloxone",
+    "Naltrexone",
+    "Physostigmine"
+   ],
+   "a": 1,
+   "r": "**Naloxone**, given alongside ventilation."
+  },
+  {
+   "d": "management",
+   "q": "Which simple airway adjunct is used after general anaesthesia when tone is lost?",
+   "o": [
+    "Cricothyroidotomy",
+    "Oropharyngeal airway",
+    "Tracheostomy",
+    "Tracheal tube"
+   ],
+   "a": 1,
+   "r": "An **oropharyngeal airway** holds the tongue off the back of the throat."
+  },
+  {
+   "d": "science",
+   "q": "Through which receptor do opioids cause respiratory depression?",
+   "o": [
+    "Delta",
+    "GABA-A",
+    "Kappa",
+    "Mu"
+   ],
+   "a": 3,
+   "r": "**Mu-opioid receptor** agonism in the brainstem respiratory centres."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is respiratory arrest and how does it differ from cardiac arrest?",
+    "tip": "Exam thinking: check the pulse. Pulse present = respiratory arrest.",
+    "points": [
+     {
+      "p": "Failure of breathing, so no oxygen delivery",
+      "k": [
+       [
+        "breath",
+        "ventilat",
+        "apnoea",
+        "apnea"
+       ]
+      ],
+      "why": "Ineffective breathing (e.g. RR 3) counts too."
+     },
+     {
+      "p": "A pulse may still be present at first",
+      "k": [
+       [
+        "pulse"
+       ]
+      ],
+      "why": "Cardiac arrest has no pulse."
+     },
+     {
+      "p": "Untreated, it progresses to cardiac arrest",
+      "k": [
+       [
+        "cardiac arrest",
+        "heart stop"
+       ]
+      ],
+      "why": "Through hypoxic bradycardia."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does a patient in respiratory arrest look?",
+    "tip": "Exam thinking: unresponsive and not breathing, but the pulse is there.",
+    "points": [
+     {
+      "p": "Apnoea / not breathing",
+      "k": [
+       [
+        "apnoea",
+        "apnea",
+        "not breathing",
+        "no breathing"
+       ]
+      ],
+      "why": "Look, listen and feel for no more than 10 seconds."
+     },
+     {
+      "p": "Unresponsive",
+      "k": [
+       [
+        "unresponsive",
+        "unconscious",
+        "gcs"
+       ]
+      ],
+      "why": "Altered GCS from hypoxia or the cause."
+     },
+     {
+      "p": "Reduced or absent chest movement",
+      "k": [
+       [
+        "chest"
+       ]
+      ],
+      "why": "See-saw movement suggests obstruction."
+     },
+     {
+      "p": "Cyanosis and low SpO2",
+      "k": [
+       [
+        "cyanos",
+        "blue",
+        "spo2",
+        "saturation"
+       ]
+      ],
+      "why": "Central cyanosis is a late sign."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the causes of respiratory arrest?",
+    "tip": "Exam thinking: sort them into airway, brain and lung.",
+    "points": [
+     {
+      "p": "Airway obstruction: choking, foreign body, the tongue",
+      "k": [
+       [
+        "obstruct",
+        "chok",
+        "foreign body",
+        "tongue"
+       ]
+      ],
+      "why": "The tongue is the commonest cause in the unconscious."
+     },
+     {
+      "p": "CNS depression: opioids, sedatives, alcohol",
+      "k": [
+       [
+        "opioid",
+        "heroin",
+        "sedative",
+        "alcohol",
+        "benzo"
+       ]
+      ],
+      "why": "Opioids are the classic exam cause."
+     },
+     {
+      "p": "Respiratory failure: severe asthma, COPD exacerbation",
+      "k": [
+       [
+        "asthma",
+        "copd"
+       ]
+      ],
+      "why": "Tiring patients with a falling RR are about to arrest."
+     },
+     {
+      "p": "Neurological: brainstem stroke, head injury",
+      "k": [
+       [
+        "stroke",
+        "head injury",
+        "brainstem"
+       ]
+      ],
+      "why": "Damage to the respiratory centre."
+     },
+     {
+      "p": "Trauma, sedation and anaesthesia",
+      "k": [
+       [
+        "trauma",
+        "anaesthe",
+        "anesthe",
+        "sedation"
+       ]
+      ],
+      "why": "Loss of airway tone after GA."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which features point to opioid overdose, and which to oesophageal intubation?",
+    "tip": "Exam thinking: two signature vignettes from the notes.",
+    "points": [
+     {
+      "p": "Opioid: pinpoint pupils",
+      "k": [
+       [
+        "pinpoint",
+        "miosis",
+        "constricted"
+       ]
+      ],
+      "why": "Plus track marks or a PCA pump in the stem."
+     },
+     {
+      "p": "Opioid: slow or absent breathing",
+      "k": [
+       [
+        "slow",
+        "absent",
+        "depress",
+        "low rate"
+       ]
+      ],
+      "why": "RR often under 8."
+     },
+     {
+      "p": "Oesophageal tube: low SpO2",
+      "k": [
+       [
+        "spo2",
+        "saturation",
+        "hypox",
+        "desaturat"
+       ]
+      ],
+      "why": "Falls after intubation."
+     },
+     {
+      "p": "Oesophageal tube: absent air entry at both bases",
+      "k": [
+       [
+        "air entry",
+        "breath sounds"
+       ]
+      ],
+      "why": "Bilateral, unlike endobronchial intubation (one side)."
+     },
+     {
+      "p": "Oesophageal tube: distended abdomen",
+      "k": [
+       [
+        "abdom",
+        "stomach",
+        "distend"
+       ]
+      ],
+      "why": "Air is going into the stomach."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Why is a laryngeal mask airway unsuitable in some patients?",
+    "tip": "Exam thinking: 'just eaten' or 'not fasted' in the stem.",
+    "points": [
+     {
+      "p": "Poor protection against reflux of gastric contents",
+      "k": [
+       [
+        "reflux",
+        "aspirat",
+        "gastric",
+        "vomit"
+       ]
+      ],
+      "why": "It sits above the larynx and does not seal the trachea."
+     },
+     {
+      "p": "Unsuitable in non-fasted patients",
+      "k": [
+       [
+        "fast",
+        "eaten",
+        "full stomach"
+       ]
+      ],
+      "why": "Use a cuffed tracheal tube instead."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you confirm correct tracheal tube placement, and why does it work?",
+    "tip": "Exam thinking: not the CXR, not auscultation.",
+    "points": [
+     {
+      "p": "Waveform capnography",
+      "k": [
+       [
+        "capnograph",
+        "etco2",
+        "end-tidal",
+        "end tidal"
+       ]
+      ],
+      "why": "The gold standard for detecting oesophageal intubation."
+     },
+     {
+      "p": "CO2 is only reliably exhaled from ventilated lungs, not the oesophagus",
+      "k": [
+       [
+        "lung",
+        "oesophag",
+        "esophag"
+       ]
+      ],
+      "why": "A trace that fades to zero means the oesophagus."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What are the first-line investigations once the airway is secured?",
+    "tip": "Exam thinking: the ABG measures how well they ventilate.",
+    "points": [
+     {
+      "p": "ABG to assess oxygenation and ventilation",
+      "k": [
+       [
+        "abg",
+        "arterial blood gas",
+        "blood gas"
+       ]
+      ],
+      "why": "Raised pCO2 with acidosis shows hypoventilation."
+     },
+     {
+      "p": "Bloods and toxicology screen if overdose suspected",
+      "k": [
+       [
+        "toxicolog",
+        "tox screen",
+        "drug screen",
+        "paracetamol"
+       ]
+      ],
+      "why": "Mixed overdoses are common."
+     },
+     {
+      "p": "Imaging guided by the suspected cause",
+      "k": [
+       [
+        "imaging",
+        "ct",
+        "x-ray",
+        "xray"
+       ]
+      ],
+      "why": "E.g. CT head for head injury or stroke."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the emergency steps for an unresponsive patient who is not breathing but has a pulse?",
+    "tip": "Exam thinking: airway first; jaw thrust if the neck may be injured.",
+    "points": [
+     {
+      "p": "Call for help",
+      "k": [
+       [
+        "help",
+        "999",
+        "2222",
+        "emergency team"
+       ]
+      ],
+      "why": "Early senior and airway support."
+     },
+     {
+      "p": "Head tilt-chin lift, or jaw thrust if C-spine concern",
+      "k": [
+       [
+        "head tilt",
+        "chin lift",
+        "jaw thrust"
+       ]
+      ],
+      "why": "Jaw thrust avoids moving the neck."
+     },
+     {
+      "p": "Remove visible obstruction; insert oropharyngeal airway",
+      "k": [
+       [
+        "oropharyngeal",
+        "guedel",
+        "opa",
+        "obstruction",
+        "suction"
+       ]
+      ],
+      "why": "Do not blind finger sweep."
+     },
+     {
+      "p": "Ventilate: bag-valve mask (or mouth-to-mask) with high-flow oxygen",
+      "k": [
+       [
+        "bag",
+        "bvm",
+        "mask",
+        "ventilat"
+       ]
+      ],
+      "why": "About 10 breaths a minute."
+     },
+     {
+      "p": "Check circulation / pulse",
+      "k": [
+       [
+        "pulse",
+        "circulation"
+       ]
+      ],
+      "why": "If the pulse is lost, start CPR."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What specific treatment is given in opioid-induced respiratory arrest, and what else after anaesthesia?",
+    "tip": "Exam thinking: naloxone does not replace ventilation.",
+    "points": [
+     {
+      "p": "Naloxone alongside ventilatory support",
+      "k": [
+       [
+        "naloxone"
+       ]
+      ],
+      "why": "IV route acts fastest; repeat if needed as it wears off."
+     },
+     {
+      "p": "After GA: simple airway adjunct (oropharyngeal airway) for lost tone",
+      "k": [
+       [
+        "oropharyngeal",
+        "guedel",
+        "adjunct",
+        "opa"
+       ]
+      ],
+      "why": "Loss of airway smooth muscle tone causes obstruction."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do opioids stop breathing, and why does respiratory arrest lead to cardiac arrest?",
+    "tip": "Exam thinking: name the receptor and the site; then hypoxia causes bradycardia.",
+    "points": [
+     {
+      "p": "Mu-opioid receptor agonism in brainstem respiratory centres",
+      "k": [
+       [
+        "mu"
+       ],
+       [
+        "brainstem",
+        "medulla",
+        "respiratory centre",
+        "respiratory center"
+       ]
+      ],
+      "why": "Not kappa or delta."
+     },
+     {
+      "p": "Blunted ventilatory response to hypercapnia",
+      "k": [
+       [
+        "hypercapni",
+        "co2",
+        "carbon dioxide"
+       ]
+      ],
+      "why": "Rising CO2 no longer drives breathing."
+     },
+     {
+      "p": "Hypoxaemia causes myocardial hypoxia, then bradyarrhythmia and cardiac arrest",
+      "k": [
+       [
+        "hypox"
+       ],
+       [
+        "brady",
+        "myocard",
+        "heart"
+       ]
+      ],
+      "why": "Respiratory-then-cardiac pattern, especially in children."
+     },
+     {
+      "p": "Delay causes cerebral hypoxia and brain injury",
+      "k": [
+       [
+        "brain",
+        "cerebral"
+       ]
+      ],
+      "why": "The main reason to act fast."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Apnoea": "Absence of breathing.",
+  "Respiratory arrest": "Breathing has stopped or is ineffective while the heart may still be beating.",
+  "Cardiac arrest": "The heart stops pumping effectively, so there is no central pulse.",
+  "Cyanosis": "Blue discolouration of lips and skin from low blood oxygen.",
+  "GCS": "Glasgow Coma Scale, 3 to 15: eye, verbal and motor responses.",
+  "Pinpoint pupils": "Very small (miotic) pupils, classic of opioid toxicity and pontine haemorrhage.",
+  "Miosis": "Constriction of the pupil.",
+  "Naloxone": "An opioid receptor antagonist that rapidly reverses opioid respiratory depression.",
+  "Naltrexone": "An oral opioid antagonist used for relapse prevention, not for acute overdose.",
+  "Flumazenil": "A benzodiazepine antagonist; not used for opioids.",
+  "Head tilt-chin lift": "The standard manoeuvre to open the airway by tilting the head back and lifting the chin.",
+  "Jaw thrust": "Lifting the jaw forward from behind its angles to open the airway without moving the neck.",
+  "Cervical spine": "The neck vertebrae; injury is a concern after trauma, so the neck is not tilted.",
+  "Oropharyngeal airway": "A curved plastic (Guedel) tube placed in the mouth to stop the tongue blocking the airway.",
+  "Guedel": "Another name for an oropharyngeal airway.",
+  "Bag-valve mask": "A hand-squeezed bag and face mask used to ventilate a patient with oxygen.",
+  "BVM": "Bag-valve mask.",
+  "Laryngeal mask airway": "A supraglottic airway that sits over the larynx; quick to insert but does not protect against aspiration.",
+  "LMA": "Laryngeal mask airway.",
+  "Tracheal tube": "A cuffed tube passed through the vocal cords into the trachea; seals and protects the airway.",
+  "Oesophageal intubation": "A tracheal tube wrongly placed in the oesophagus, so the stomach, not the lungs, is ventilated.",
+  "Capnography": "Continuous measurement and waveform of exhaled CO2; confirms the tube is in the trachea.",
+  "End-tidal CO2": "The CO2 level at the end of each breath out; absent if the tube is in the oesophagus.",
+  "ABG": "Arterial blood gas: pH, pO2, pCO2 and bicarbonate from an arterial sample.",
+  "Hypercapnia": "A raised level of carbon dioxide in the blood.",
+  "Hypoxaemia": "A low level of oxygen in the blood.",
+  "Respiratory acidosis": "Low pH caused by CO2 retention from inadequate ventilation.",
+  "Mu-opioid receptor": "The opioid receptor responsible for analgesia and for respiratory depression in the brainstem.",
+  "Toxicology screen": "Blood or urine tests for drugs taken in overdose.",
+  "Aspiration": "Inhaling stomach contents or fluid into the lungs.",
+  "Bradyarrhythmia": "A slow abnormal heart rhythm.",
+  "PEA": "Pulseless electrical activity: organised ECG rhythm but no pulse.",
+  "Track marks": "Scars along veins from repeated injection drug use.",
+  "PCA": "Patient-controlled analgesia: a pump that lets the patient give themselves opioid doses.",
+  "Cerebral hypoxia": "Lack of oxygen to the brain, causing injury within minutes.",
+  "Re-sedation": "Return of opioid toxicity once short-acting naloxone wears off."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old man is found collapsed in a public toilet. He is unresponsive to pain. His pulse rate is 56 bpm, BP 98/60 mmHg, respiratory rate 2 breaths per minute and oxygen saturation 70% breathing air. His pupils are pinpoint and there are track marks on both arms. His capillary glucose is 6.1 mmol/L.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Alcohol intoxication",
+    "Cardiac arrest",
+    "Hypoglycaemic coma",
+    "Opioid-induced respiratory arrest",
+    "Status epilepticus"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis in an unresponsive patient: is there a pulse, and what is the cause?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pulse rate is 56 bpm",
+      "respiratory rate 2 breaths per minute",
+      "pupils are pinpoint",
+      "track marks",
+      "6.1 mmol/L"
+     ],
+     "x": "Pulse present, breathing failed, miosis and IV drug use, normal glucose."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Respiratory arrest from opioid overdose**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Alcohol does not cause pinpoint pupils."
+      ],
+      [
+       1,
+       "He has a pulse, so this is not cardiac arrest."
+      ],
+      [
+       2,
+       "Glucose is normal."
+      ],
+      [
+       4,
+       "No seizure activity is described."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Opioid-induced respiratory arrest.** Pulse present + RR tiny + pinpoint pupils."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 58 year old woman is intubated in the Emergency Department after a respiratory arrest. After intubation her oxygen saturation falls from 90% to 78%. There is no air entry at either lung base and her abdomen becomes distended with each ventilation.",
+   "q": "Which is the most appropriate investigation to confirm the position of the tube?",
+   "o": [
+    "Arterial blood gas",
+    "Auscultation over the stomach",
+    "Chest X-ray",
+    "Pulse oximetry",
+    "Waveform capnography"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming tube position: think what is reliable and immediate."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "After intubation",
+      "falls from 90% to 78%",
+      "no air entry at either lung base",
+      "abdomen becomes distended"
+     ],
+     "x": "The classic picture of **oesophageal intubation**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Capnography**: no exhaled CO2 means the tube is not in the lungs."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "ABG shows the effect, not the tube position."
+      ],
+      [
+       1,
+       "Auscultation is unreliable."
+      ],
+      [
+       2,
+       "CXR is slow and cannot exclude oesophageal placement."
+      ],
+      [
+       3,
+       "Oximetry lags and does not show the position."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Waveform capnography.** No trace, wrong place."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man collapses in the outpatient waiting room. He does not respond to voice or pain and is not breathing. A carotid pulse is clearly palpable at 64 bpm. Help has been called. There is no history of trauma.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Airway opening with head tilt-chin lift",
+    "Chest compressions (30:2)",
+    "Defibrillation",
+    "Intravenous adrenaline",
+    "Intravenous naloxone"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Initial' management of an unresponsive, non-breathing patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "is not breathing",
+      "carotid pulse is clearly palpable",
+      "Help has been called",
+      "no history of trauma"
+     ],
+     "x": "Pulse present = respiratory arrest; no trauma means the neck can be tilted."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Open the airway: **head tilt-chin lift**, then ventilate."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "He has a pulse, so no compressions."
+      ],
+      [
+       2,
+       "Defibrillation is for pulseless VF or VT."
+      ],
+      [
+       3,
+       "Adrenaline is for cardiac arrest."
+      ],
+      [
+       4,
+       "No clue suggests opioids; the airway comes first anyway."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Head tilt-chin lift.** Airway before anything else."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 45 year old woman with cancer pain takes an extra dose of oral morphine. Two hours later she is drowsy with a respiratory rate of 5 breaths per minute and pinpoint pupils. Her arterial pCO2 is 8.9 kPa, but her breathing does not increase.",
+   "q": "Which is the most likely mechanism of her respiratory depression?",
+   "o": [
+    "Agonism at mu-opioid receptors in the brainstem",
+    "Blockade of nicotinic receptors at the neuromuscular junction",
+    "Enhancement of GABA-A receptor activity",
+    "Inhibition of acetylcholinesterase",
+    "Stimulation of peripheral chemoreceptors"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A drug mechanism question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "oral morphine",
+      "pinpoint pupils",
+      "pCO2 is 8.9 kPa",
+      "breathing does not increase"
+     ],
+     "x": "An opioid with a blunted response to high CO2."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Mu-opioid receptor agonism** in the brainstem respiratory centres."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Nicotinic blockade is neuromuscular blockers: she would be paralysed, not miotic."
+      ],
+      [
+       2,
+       "GABA-A enhancement is benzodiazepines."
+      ],
+      [
+       3,
+       "Acetylcholinesterase inhibition is organophosphates."
+      ],
+      [
+       4,
+       "Chemoreceptor stimulation would increase breathing."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Brainstem mu-receptor agonism.** Reduces the drive to breathe from CO2."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old man is found collapsed on a hospital ward. He does not respond to voice or pain. There are no chest movements. His pulse rate is 50 bpm and BP 94/58 mmHg; oxygen saturation is 72% breathing air. His capillary glucose is 6.4 mmol/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cardiac arrest",
+    "Hypoglycaemia",
+    "Respiratory arrest",
+    "Status epilepticus",
+    "Vasovagal syncope"
+   ],
+   "a": 2,
+   "e": "Unresponsive and not breathing with a pulse present is respiratory arrest. Cardiac arrest has no pulse.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in an unresponsive patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "does not respond to voice or pain",
+      "no chest movements",
+      "pulse rate is 50 bpm",
+      "6.4 mmol/L"
+     ],
+     "x": "Not breathing, pulse present, glucose normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Respiratory arrest**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "He has a pulse and a BP."
+      ],
+      [
+       1,
+       "Glucose is normal."
+      ],
+      [
+       3,
+       "No seizure activity."
+      ],
+      [
+       4,
+       "A faint recovers quickly and breathing continues."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Respiratory arrest.** Pulse present, breathing absent."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old woman is on day 1 after a hip replacement with morphine patient-controlled analgesia. She is found difficult to rouse. Her pulse rate is 58 bpm, BP 104/66 mmHg, respiratory rate 5 breaths per minute and oxygen saturation 84% breathing air. Her pupils are pinpoint.",
+   "labs": [
+    [
+     "Capillary glucose",
+     "6.8 mmol/L",
+     "4.0–7.8",
+     ""
+    ],
+    [
+     "pCO2",
+     "8.4 kPa",
+     "4.7–6.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her respiratory depression?",
+   "o": [
+    "Hypoglycaemia",
+    "Opioid toxicity",
+    "Pulmonary embolism",
+    "Sepsis",
+    "Stroke"
+   ],
+   "a": 1,
+   "e": "A slow respiratory rate with pinpoint pupils on a morphine PCA is opioid toxicity, heading for respiratory arrest. PE causes tachypnoea, not bradypnoea.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question for slow breathing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "morphine patient-controlled analgesia",
+      "difficult to rouse",
+      "respiratory rate 5 breaths per minute",
+      "pupils are pinpoint"
+     ],
+     "x": "Opioid source, CNS depression, miosis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Opioid toxicity** from the PCA."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Glucose is normal."
+      ],
+      [
+       2,
+       "PE causes fast breathing and tachycardia."
+      ],
+      [
+       3,
+       "Sepsis gives tachypnoea, fever and tachycardia."
+      ],
+      [
+       4,
+       "Stroke gives focal signs, not pinpoint pupils with a PCA."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Opioid toxicity.** Stop the PCA, support ventilation, give naloxone."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 55 year old man is intubated in the Emergency Department after a respiratory arrest. Five minutes later his oxygen saturation is 76% and falling. There are no breath sounds at either lung base, and his abdomen is distended. The trachea is central.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his deterioration?",
+   "o": [
+    "Aspiration pneumonitis",
+    "Bronchospasm",
+    "Oesophageal intubation",
+    "Right main bronchus intubation",
+    "Tension pneumothorax"
+   ],
+   "a": 2,
+   "e": "Low SpO2, absent air entry at both bases and a distended abdomen after intubation is the classic triad of oesophageal intubation. Right main bronchus intubation gives absent breath sounds on the left only.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause for deterioration just after intubation."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "intubated",
+      "76% and falling",
+      "no breath sounds at either lung base",
+      "abdomen is distended",
+      "trachea is central"
+     ],
+     "x": "Bilateral absent air entry plus a filling stomach."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Oesophageal intubation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspiration gives crackles and develops over hours."
+      ],
+      [
+       1,
+       "Bronchospasm gives wheeze and high airway pressure, not a distended abdomen."
+      ],
+      [
+       3,
+       "Right main bronchus intubation silences the left side only."
+      ],
+      [
+       4,
+       "Tension pneumothorax is one-sided with tracheal deviation and hypotension."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Oesophageal intubation.** Confirm with capnography and re-intubate."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 48 year old man chokes on a piece of steak in a restaurant. He clutches his throat, then becomes unresponsive. He is not breathing and his lips are blue. Paramedics arrive 2 minutes later.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Absent carotid pulse",
+    "Bilateral wheeze",
+    "Fixed dilated pupils",
+    "Palpable carotid pulse",
+    "Pinpoint pupils"
+   ],
+   "a": 3,
+   "e": "Early in respiratory arrest from airway obstruction, the heart is still beating, so a pulse is palpable. Without treatment it will progress to cardiac arrest.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An examination finding: think about the timeline."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chokes on a piece of steak",
+      "not breathing",
+      "lips are blue",
+      "2 minutes later"
+     ],
+     "x": "Airway obstruction causing respiratory arrest, seen early."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Respiratory arrest: a **pulse is still present** initially."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Pulse loss comes later, once hypoxia stops the heart."
+      ],
+      [
+       1,
+       "No air is moving, so no wheeze is heard."
+      ],
+      [
+       2,
+       "Fixed dilated pupils suggest prolonged arrest or brain death."
+      ],
+      [
+       4,
+       "Pinpoint pupils are opioids; there is no drug history."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Palpable carotid pulse.** Respiratory arrest comes before cardiac arrest."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 39 year old woman is in the recovery room after a general anaesthetic. She is unresponsive and snoring loudly, then goes silent. Her chest and abdomen move in a see-saw pattern but no air is felt at her mouth. A jaw thrust immediately restores airflow. Her pulse rate is 96 bpm and BP 128/74 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of her respiratory arrest?",
+   "o": [
+    "Bronchospasm",
+    "Opioid-induced respiratory depression",
+    "Pulmonary embolism",
+    "Residual neuromuscular blockade",
+    "Upper airway obstruction by the tongue"
+   ],
+   "a": 4,
+   "e": "Loss of pharyngeal muscle tone under anaesthesia lets the tongue obstruct the airway: snoring, then see-saw breathing, relieved by a jaw thrust.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question after anaesthesia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "after a general anaesthetic",
+      "snoring loudly, then goes silent",
+      "see-saw pattern",
+      "jaw thrust immediately restores airflow"
+     ],
+     "x": "Breathing effort with no airflow: obstruction, fixed by lifting the jaw."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Upper airway obstruction** from loss of tone."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchospasm gives wheeze, not snoring, and jaw thrust would not fix it."
+      ],
+      [
+       1,
+       "Opioids reduce effort; she is making strong efforts."
+      ],
+      [
+       2,
+       "PE does not cause snoring or see-saw breathing."
+      ],
+      [
+       3,
+       "Residual blockade gives weak effort, not obstruction relieved by jaw thrust."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tongue obstruction.** Hold the airway open and insert an oropharyngeal airway."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old woman with severe COPD has been on the ward for 2 days with an exacerbation. She is now increasingly drowsy. Her respiratory rate has fallen from 30 to 7 breaths per minute. Her pulse rate is 110 bpm and BP 146/82 mmHg.",
+   "labs": [
+    [
+     "pH",
+     "7.16",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "pCO2",
+     "11.8 kPa",
+     "4.7–6.0",
+     "H"
+    ],
+    [
+     "pO2",
+     "7.2 kPa",
+     "10–13",
+     "L"
+    ],
+    [
+     "HCO3-",
+     "33 mmol/L",
+     "22–26",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her impending respiratory arrest?",
+   "o": [
+    "Hypercapnic respiratory failure",
+    "Hypoglycaemia",
+    "Pneumothorax",
+    "Pulmonary embolism",
+    "Stroke"
+   ],
+   "a": 0,
+   "e": "A falling respiratory rate with drowsiness and a pCO2 of 11.8 kPa in COPD is exhausted, hypercapnic (type 2) respiratory failure: a cause of respiratory arrest.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "What is causing her to stop breathing?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe COPD",
+      "increasingly drowsy",
+      "fallen from 30 to 7"
+     ],
+     "x": "A tiring COPD patient; the ABG shows high CO2 and acidosis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hypercapnic respiratory failure** (CO2 narcosis)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No glucose problem is suggested; CO2 explains the drowsiness."
+      ],
+      [
+       2,
+       "Pneumothorax gives sudden pain and one-sided signs."
+      ],
+      [
+       3,
+       "PE gives a low pCO2, not a high one."
+      ],
+      [
+       4,
+       "No focal neurological signs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Hypercapnic respiratory failure.** A falling RR in a tired patient is a pre-arrest sign."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 44 year old man has been intubated after a respiratory arrest from a heroin overdose. The anaesthetist sees the tube pass through the vocal cords. His pulse rate is 88 bpm and BP 118/72 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which finding most reliably confirms correct tracheal placement of the tube?",
+   "o": [
+    "Bilateral chest rise",
+    "Condensation in the tube",
+    "Normal oxygen saturation",
+    "Sustained end-tidal CO2 waveform",
+    "Tube depth of 22 cm at the teeth"
+   ],
+   "a": 3,
+   "e": "A sustained end-tidal CO2 trace on capnography confirms tracheal placement, as CO2 only comes reliably from ventilated lungs. Chest rise and condensation can occur with an oesophageal tube.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which single finding is most reliable?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "intubated",
+      "sees the tube pass through the vocal cords"
+     ],
+     "x": "Even visual confirmation needs objective proof."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A sustained **capnography** trace."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Chest rise can be misleading."
+      ],
+      [
+       1,
+       "Condensation also occurs in oesophageal tubes."
+      ],
+      [
+       2,
+       "SpO2 may stay normal for minutes after preoxygenation."
+      ],
+      [
+       4,
+       "Depth helps avoid bronchial intubation, not oesophageal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Sustained end-tidal CO2.** The gold standard."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 26 year old woman is ventilated with a bag-valve mask after being found apnoeic following a suspected overdose. She now has a pulse rate of 98 bpm, BP 112/70 mmHg and oxygen saturation 92% on high-flow oxygen.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation to assess her ventilation?",
+   "o": [
+    "Arterial blood gas",
+    "Chest X-ray",
+    "CT head",
+    "Peak expiratory flow",
+    "Spirometry"
+   ],
+   "a": 0,
+   "e": "An ABG is first-line, giving pCO2 (ventilation), pO2 and pH. Pulse oximetry does not show CO2 retention.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial test for ventilation."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "found apnoeic",
+      "suspected overdose",
+      "92% on high-flow oxygen"
+     ],
+     "x": "SpO2 looks acceptable on oxygen but says nothing about CO2."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**ABG**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CXR looks for aspiration but does not measure ventilation."
+      ],
+      [
+       2,
+       "CT head is guided by suspected head injury or stroke."
+      ],
+      [
+       3,
+       "Peak flow needs a conscious, cooperative patient."
+      ],
+      [
+       4,
+       "Spirometry also needs cooperation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. ABG.** Plus a toxicology screen for the overdose."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 31 year old man is found unresponsive in a park. His respiratory rate is 3 breaths per minute, pulse rate 60 bpm, BP 100/64 mmHg and oxygen saturation 74% breathing air. His pupils are pinpoint. His airway has been opened and bag-valve-mask ventilation with high-flow oxygen started.",
+   "labs": [
+    [
+     "Capillary glucose",
+     "5.9 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Intramuscular glucagon",
+    "Intravenous flumazenil",
+    "Intravenous naloxone",
+    "Intravenous thiamine",
+    "Oral naltrexone"
+   ],
+   "a": 2,
+   "e": "Opioid-induced respiratory arrest: naloxone is given alongside ventilation. Naltrexone is oral and for relapse prevention; flumazenil reverses benzodiazepines.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next' step: airway and breathing are already done."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "respiratory rate is 3 breaths per minute",
+      "pupils are pinpoint",
+      "bag-valve-mask ventilation with high-flow oxygen started"
+     ],
+     "x": "Opioid toxicity, already being ventilated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV naloxone**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Glucagon treats hypoglycaemia or beta-blocker overdose."
+      ],
+      [
+       1,
+       "Flumazenil reverses benzodiazepines and can cause seizures."
+      ],
+      [
+       3,
+       "Thiamine is for Wernicke's encephalopathy."
+      ],
+      [
+       4,
+       "Naltrexone is oral maintenance therapy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV naloxone.** Keep ventilating until breathing returns."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 24 year old motorcyclist is thrown from his bike at speed. He is unresponsive with noisy, obstructed breathing and then stops breathing. His pulse rate is 118 bpm and BP 108/70 mmHg. There is a scalp laceration and his neck cannot be assessed.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Head tilt-chin lift",
+    "Intravenous naloxone",
+    "Jaw thrust",
+    "Laryngeal mask airway insertion",
+    "Surgical cricothyroidotomy"
+   ],
+   "a": 2,
+   "e": "With a possible cervical spine injury the airway is opened with a jaw thrust, which avoids moving the neck. Head tilt-chin lift is used when there is no C-spine concern.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of an obstructed airway in trauma."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "motorcyclist",
+      "noisy, obstructed breathing",
+      "stops breathing",
+      "neck cannot be assessed"
+     ],
+     "x": "High-energy trauma: assume C-spine injury."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Jaw thrust**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Head tilt moves the neck: avoid with possible C-spine injury."
+      ],
+      [
+       1,
+       "No opioid features; the airway comes first."
+      ],
+      [
+       3,
+       "An LMA comes after the airway is opened, and is poor protection in a non-fasted patient."
+      ],
+      [
+       4,
+       "Surgical airway is a last resort if other methods fail."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Jaw thrust.** Airway with C-spine protection."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 52 year old man had a large meal 1 hour ago and then collapses after a fall. He is unresponsive and not breathing, with a pulse rate of 70 bpm and BP 124/80 mmHg. He is being ventilated with a bag-valve mask and has vomited once. An anaesthetist arrives to secure his airway.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate airway to protect against aspiration?",
+   "o": [
+    "Bag-valve-mask ventilation alone",
+    "Cuffed tracheal tube",
+    "Laryngeal mask airway",
+    "Nasopharyngeal airway",
+    "Oropharyngeal airway"
+   ],
+   "a": 1,
+   "e": "In a non-fasted patient a laryngeal mask gives poor protection against reflux of gastric contents; a cuffed tracheal tube seals the trachea.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which airway protects against aspiration?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "large meal 1 hour ago",
+      "has vomited once",
+      "anaesthetist arrives"
+     ],
+     "x": "Full stomach and a skilled operator available."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **cuffed tracheal tube**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "BVM inflates the stomach and offers no protection."
+      ],
+      [
+       2,
+       "An LMA gives poor protection against gastric reflux."
+      ],
+      [
+       3,
+       "A nasopharyngeal airway keeps the airway open but does not protect it."
+      ],
+      [
+       4,
+       "An oropharyngeal airway keeps the airway open but does not protect it."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Cuffed tracheal tube.** Then confirm with capnography."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 3 year old boy chokes on a grape and stops breathing. Over the next 3 minutes his heart rate falls from 140 to 50 bpm before the grape is removed. His oxygen saturation is 60%.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his falling heart rate?",
+   "o": [
+    "Coronary artery thrombosis",
+    "Hyperkalaemia",
+    "Myocardial hypoxia causing bradyarrhythmia",
+    "Tension pneumothorax",
+    "Vasovagal reflex"
+   ],
+   "a": 2,
+   "e": "Respiratory arrest causes progressive hypoxaemia and hypercapnia; myocardial hypoxia causes bradycardia and then cardiac arrest, the typical pattern in children.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism: why does the heart slow?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 year old",
+      "stops breathing",
+      "falls from 140 to 50 bpm",
+      "60%"
+     ],
+     "x": "A child with airway obstruction and worsening hypoxia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Myocardial hypoxia** causing bradycardia: respiratory-then-cardiac arrest."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coronary thrombosis is not a cause in a healthy child."
+      ],
+      [
+       1,
+       "Nothing suggests hyperkalaemia."
+      ],
+      [
+       3,
+       "No trauma or ventilation to cause a pneumothorax."
+      ],
+      [
+       4,
+       "A vagal reflex is sudden, not a progressive fall with hypoxia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Myocardial hypoxia.** In children, fix the airway and the heart often recovers."
+    }
+   ]
+  }
+ ]
+}

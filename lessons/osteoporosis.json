@@ -1,0 +1,761 @@
+{
+  "id": "osteoporosis",
+  "patient": {
+    "name": "Brenda Kowalski",
+    "age": 72,
+    "sex": "F",
+    "setting": "Fracture clinic, then GP follow-up",
+    "complaint": "Painful, swollen right wrist after tripping on the kerb",
+    "background": [
+      "Menopause at 49; never took HRT",
+      "Asthma with several prednisolone courses a year",
+      "Smokes 10 a day; BMI 18.2",
+      "Takes lorazepam at night for sleep; two falls this year",
+      "Lives alone in Lewisham"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect an older woman or a steroid user with a fracture after a low-impact fall; the twist is that the bloods are normal, which separates osteoporosis from osteomalacia, Paget's and myeloma.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Brenda, 72, tripped on a kerb and landed on her **outstretched hand**.",
+            "Right wrist swollen, tender, with a 'dinner fork' deformity.",
+            "X-ray: **distal radius fracture**, dorsally displaced (Colles').",
+            "A fall from standing height should not break a healthy bone."
+          ],
+          "vitals": { "T": "36.6°C", "HR": "84 bpm", "BP": "138/80 mmHg", "RR": "14 /min", "SpO2": "97% on air" }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "A fracture from a fall at standing height or less is a **fragility fracture**: Brenda's bones have lost density and strength."
+        },
+        {
+          "type": "ask",
+          "q": "Which feature of Brenda's history most strongly suggests her fracture is a fragility fracture?",
+          "o": ["Dorsal displacement on X-ray", "Fall from standing height", "Right-hand dominance", "Swelling of the wrist"],
+          "a": 1,
+          "r": "A **low-impact fall** (standing height or less) that breaks a bone defines a fragility fracture. Displacement and swelling happen with any fracture."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Brenda collects risk factors: **age, postmenopausal**, repeated **steroid** courses for asthma, smoking and a **BMI under 18.5**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Brenda's BMI",
+            "min": 15,
+            "max": 35,
+            "unit": "kg/m²",
+            "bands": [[15, 18.5, "Underweight: risk factor", "bad"], [18.5, 25, "Healthy", "ok"], [25, 35, "Overweight", "warn"]],
+            "value": 18.2,
+            "label": "Brenda 18.2",
+            "caption": "A BMI below **18.5** is a listed risk factor and is entered into FRAX."
+          }
+        },
+        {
+          "type": "story",
+          "points": [
+            "She has lost **4 cm in height** over five years.",
+            "Upper back is rounded (**kyphosis**); mid-thoracic spine mildly tender.",
+            "She thought the back ache was 'just age'.",
+            "No weight loss, no bone pain elsewhere, no muscle weakness."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Osteoporosis is silent until a bone breaks. Brenda's wrist is the obvious fracture, but her height loss suggests silent **vertebral collapse** too."
+        },
+        {
+          "type": "labs",
+          "title": "Brenda's bone profile",
+          "rows": [
+            ["Calcium (adjusted)", "2.38 mmol/L", "2.20–2.60", ""],
+            ["Phosphate", "1.05 mmol/L", "0.80–1.50", ""],
+            ["ALP", "112 U/L", "30–130", ""],
+            ["PTH", "4.1 pmol/L", "1.6–6.9", ""],
+            ["25-OH vitamin D", "62 nmol/L", ">50", ""],
+            ["eGFR", "68 mL/min/1.73m²", ">60", ""]
+          ],
+          "text": "Everything is **normal**. That is exactly what primary osteoporosis looks like."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Brenda's **normal** calcium, phosphate, ALP and PTH point to osteoporosis, not osteomalacia."
+        },
+        {
+          "type": "compare",
+          "title": "Osteoporosis vs its bone mimics",
+          "head": ["Feature", "Osteoporosis", "Osteomalacia", "Paget's disease", "Myeloma"],
+          "rows": [
+            ["Problem", "Too little bone, normal mineral", "Poorly mineralised bone", "Chaotic remodelling", "Lytic plasma cell tumour"],
+            ["Calcium", "Normal", "Low or normal", "Normal", "**High**"],
+            ["Phosphate", "Normal", "**Low**", "Normal", "Normal or high"],
+            ["ALP", "Normal (rises after fracture)", "**High**", "**Very high**", "Normal"],
+            ["Clue", "Fragility fracture", "Bone pain, proximal weakness", "Bone pain, big skull, deafness", "Anaemia, renal failure, back pain"]
+          ]
+        },
+        {
+          "type": "trap",
+          "text": "A raised ALP in the first weeks after a fracture is **healing bone**, not osteomalacia. Look at calcium and phosphate too before you change the diagnosis."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' where the answer is DEXA after a fragility fracture, FRAX or QFracture for an at-risk person with no fracture, or no test at all when bisphosphonate can be started straight away.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Brenda is 72 with a fragility fracture. What is the most appropriate next step to assess her bones?",
+          "o": ["Bone profile only", "DEXA scan", "FRAX score, then decide", "Plain X-ray of the hip"],
+          "a": 1,
+          "r": "Over 50 with a fragility fracture, you **skip FRAX** and go straight to **DEXA**. Brenda is under 75, so she still needs the scan."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Without a fracture, Brenda would start with **FRAX or QFracture**: a 10-year fracture probability using her age, BMI, steroids and smoking."
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "These two risk calculators are the gatekeepers to DEXA and treatment for everyone over 40 without a fracture."
+        },
+        {
+          "type": "flow",
+          "title": "Who needs a DEXA?",
+          "nodes": [
+            "At-risk adult over 40, no fracture → FRAX or QFracture",
+            "Low risk → lifestyle advice, reassess within 5 years",
+            "Intermediate risk (>10%) → DEXA",
+            "High risk → bisphosphonate without DEXA",
+            "Over 50 with fragility fracture → skip FRAX: DEXA or straight to treatment"
+          ],
+          "caption": "Brenda's wrist fracture moves her straight to the last box."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Brenda is **72**, not ≥75, and her fracture is the wrist, not a vertebra, so she does **not** qualify to skip the DEXA."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "The DEXA compares Brenda's hip and spine density with a young adult reference: the **T score**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Brenda's DEXA T score (lumbar spine)",
+            "min": -4,
+            "max": 1,
+            "unit": "SD",
+            "bands": [[-4, -2.5, "Osteoporosis (below -2.5)", "bad"], [-2.5, -1, "Osteopenia", "warn"], [-1, 1, "Normal", "ok"]],
+            "value": -3.1,
+            "label": "Brenda -3.1",
+            "caption": "A T score below **-2.5** confirms osteoporosis."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Brenda's bloods were **normal**, which is expected. In a man, you would also check **testosterone** for a secondary cause."
+        },
+        {
+          "type": "pearl",
+          "text": "**T score** compares with a healthy young adult and defines osteoporosis (below -2.5). Osteopenia is -1 to -2.5. Do not mix it up with the Z score, which compares with the same age."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' where the answer is an oral bisphosphonate (alendronic acid), including straight away for anyone on long-term steroids, with denosumab when bisphosphonates are contraindicated.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Brenda's T score is -3.1 and her eGFR is 68. What is the first-line drug treatment?",
+          "o": ["Alendronic acid", "Denosumab", "Hormone replacement therapy", "Teriparatide"],
+          "a": 0,
+          "r": "An **oral bisphosphonate** is first-line. Denosumab is for when bisphosphonates are contraindicated; teriparatide is a specialist option."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Brenda starts **alendronic acid** weekly, plus calcium and vitamin D, weight-bearing exercise and help to stop smoking."
+        },
+        {
+          "type": "flow",
+          "title": "How Brenda takes alendronic acid",
+          "nodes": [
+            "Once a week, first thing in the morning",
+            "Empty stomach, large glass of plain water",
+            "Sit or stand upright",
+            "Stay upright and wait ≥30 minutes before food or other drugs",
+            "Book a dental check-up"
+          ],
+          "caption": "Every step protects her **oesophagus**; the dentist protects her **jaw**."
+        },
+        {
+          "type": "trap",
+          "text": "Oesophageal stricture or **CKD stage 4** rules out oral bisphosphonates. The stem will mention dysphagia or a low eGFR to push you to denosumab."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "If Brenda could not take bisphosphonates, she would have **denosumab** injected under the skin **every 6 months**."
+        },
+        {
+          "type": "ask",
+          "q": "Brenda has had two falls this year and takes lorazepam at night. Which single measure most reduces her short-term fracture risk?",
+          "o": ["Adding vitamin D", "Hip protectors", "Starting denosumab", "Stopping lorazepam"],
+          "a": 3,
+          "r": "Drugs take months to work; **stopping the benzodiazepine** cuts falls now. Fewer falls means fewer fractures in the short term."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Brenda's lorazepam is tapered off, her steroid exposure means bone protection is essential, and her alendronic acid is reviewed at **5 years**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Brenda's lumbar spine T score on alendronic acid",
+            "x": ["Start", "Year 1", "Year 3", "Year 5"],
+            "unit": "SD",
+            "series": [ { "name": "T score", "values": [-3.1, -2.9, -2.6, -2.4] } ],
+            "caption": "Steady gain over 5 years: time to reassess fracture risk and consider a **drug holiday**."
+          }
+        },
+        {
+          "type": "compare",
+          "title": "Bone drugs at a glance",
+          "head": ["Drug", "Route", "Role", "Key issue"],
+          "rows": [
+            ["Alendronic acid / risedronate", "Oral, weekly", "**First-line**", "Oesophagitis, jaw osteonecrosis"],
+            ["Denosumab", "Subcutaneous, 6-monthly", "Bisphosphonate contraindicated or severe", "Do not miss doses"],
+            ["Zoledronic acid", "IV, yearly", "Specialist", "Acute flu-like reaction"],
+            ["Teriparatide", "Subcutaneous, daily", "Specialist, severe disease", "Builds bone (PTH analogue)"]
+          ]
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions on why steroids or menopause thin bone, or on how alendronic acid and denosumab work at the osteoclast.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "In Brenda's bones, **osteoclasts** remove bone faster than osteoblasts lay it down; what is left is normally mineralised but thin."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Bone mass across a woman's life",
+            "x": ["20", "30", "45", "55", "65", "75"],
+            "unit": "% of peak bone mass",
+            "series": [ { "name": "Bone mass", "values": [92, 100, 97, 86, 79, 72] } ],
+            "caption": "Peak around 30, then a steep fall after **menopause** as oestrogen is lost."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Brenda has both hits: no **oestrogen** to brake her osteoclasts, and repeated **prednisolone** courses."
+        },
+        {
+          "type": "ask",
+          "q": "How do Brenda's prednisolone courses thin her bones?",
+          "o": ["Increase osteoblast lifespan", "Increase vitamin D activation", "Reduce intestinal calcium absorption", "Reduce osteoclast activity"],
+          "a": 2,
+          "r": "Glucocorticoids **reduce calcium absorption**, shorten osteoblast life and **increase** osteoclast activity: all three thin bone."
+        },
+        {
+          "type": "flow",
+          "title": "How the two main drugs stop osteoclasts",
+          "nodes": [
+            "Bisphosphonate binds hydroxyapatite in bone",
+            "Osteoclast resorbs bone and swallows the drug",
+            "Osteoclast apoptosis: resorption falls",
+            "Denosumab: antibody binds RANKL",
+            "RANK cannot be activated: osteoclasts do not form"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Brenda's alendronic acid works from inside the osteoclast; denosumab would block the **RANK-RANKL** signal before osteoclasts mature."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Her wrist will heal, but a **hip fracture** is the big danger: it costs independence and carries high mortality."
+        },
+        {
+          "type": "pearl",
+          "text": "Osteoporosis = **less** bone, normal mineral. Osteomalacia = **soft** bone, poor mineralisation. That single difference explains why the bone profile is normal in one and abnormal in the other."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which is the most common fracture after a fall on an outstretched hand in osteoporosis?", "o": ["Colles' fracture", "Neck of femur fracture", "Scaphoid fracture", "Supracondylar fracture"], "a": 0, "r": "A dorsally displaced **distal radius (Colles')** fracture is a classic fragility fracture." },
+    { "d": "diagnosis", "q": "Which bone profile is typical of primary osteoporosis?", "o": ["High calcium, low phosphate", "Low calcium, high ALP", "Low phosphate, high PTH", "Normal calcium, phosphate and PTH"], "a": 3, "r": "Bloods are **normal** in osteoporosis; abnormal results point to osteomalacia or another cause." },
+    { "d": "diagnosis", "q": "Which drug is listed as a risk factor for osteoporosis?", "o": ["Amlodipine", "Carbamazepine", "Metformin", "Ramipril"], "a": 1, "r": "**Carbamazepine** (an enzyme inducer) and long-term steroids raise osteoporosis risk." },
+    { "d": "investigation", "q": "What DEXA T score defines osteoporosis?", "o": ["Above -1", "Between -1 and -2.5", "Below -2.5", "Below -4"], "a": 2, "r": "A T score **below -2.5** is osteoporosis; -1 to -2.5 is osteopenia." },
+    { "d": "investigation", "q": "What does FRAX estimate?", "o": ["Bone mineral density at the hip", "Lifetime risk of falls", "Ten-year probability of a major osteoporotic or hip fracture", "Vitamin D deficiency risk"], "a": 2, "r": "**FRAX** (or QFracture) gives the 10-year probability of a hip or major osteoporotic fracture." },
+    { "d": "investigation", "q": "Above what FRAX risk (intermediate) should a DEXA scan be arranged?", "o": ["1%", "5%", "10%", "50%"], "a": 2, "r": "Intermediate risk (**>10%**) leads to DEXA; high risk can go straight to a bisphosphonate." },
+    { "d": "management", "q": "Which is the first-line drug treatment for osteoporosis?", "o": ["Calcitonin", "Denosumab", "Oral alendronic acid", "Teriparatide"], "a": 2, "r": "An **oral bisphosphonate** (alendronic acid or risedronate) is first-line." },
+    { "d": "management", "q": "Which rare complication of bisphosphonates means patients need regular dental check-ups?", "o": ["Gingival hyperplasia", "Osteonecrosis of the jaw", "Oral candidiasis", "Tooth discolouration"], "a": 1, "r": "**Osteonecrosis of the jaw** is rare but serious; dental review lowers the risk." },
+    { "d": "management", "q": "How often is denosumab given?", "o": ["Daily", "Weekly", "Every 6 months", "Every 5 years"], "a": 2, "r": "**Denosumab** is a subcutaneous injection every 6 months." },
+    { "d": "science", "q": "What is the mechanism of action of denosumab?", "o": ["Binds hydroxyapatite and causes osteoclast apoptosis", "Monoclonal antibody against RANKL", "PTH analogue that stimulates osteoblasts", "Selective oestrogen receptor modulator"], "a": 1, "r": "Denosumab binds **RANKL**, blocking RANK activation and osteoclast formation." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 68 year old woman has sudden mid-back pain after lifting a shopping bag. She has lost 5 cm in height over 4 years. She went through the menopause at 47. There is tenderness over T10. Her temperature is 36.7°C, pulse rate 78 bpm and BP 142/84 mmHg.",
+      "labs": [
+        ["Calcium (adjusted)", "2.41 mmol/L", "2.20–2.60", ""],
+        ["Phosphate", "1.10 mmol/L", "0.80–1.50", ""],
+        ["ALP", "98 U/L", "30–130", ""],
+        ["PTH", "3.8 pmol/L", "1.6–6.9", ""]
+      ],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Multiple myeloma", "Osteomalacia", "Osteoporotic vertebral fracture", "Paget's disease of bone", "Spinal metastasis"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis of back pain in an older woman: look at the trauma level and the bone profile." },
+        { "t": "Pick out the clues", "clues": ["after lifting a shopping bag", "lost 5 cm in height", "menopause at 47", "tenderness over T10"], "x": "Trivial trigger, height loss, early menopause, focal vertebral tenderness, and a **completely normal** bone profile." },
+        { "t": "Make your own answer before looking", "x": "Low-impact vertebral collapse with normal bloods: **osteoporotic vertebral fracture**." },
+        { "t": "Rule out the others", "elim": [[0, "Myeloma usually raises calcium and causes anaemia or renal impairment."], [1, "Osteomalacia gives low phosphate and a high ALP."], [3, "Paget's gives a very high ALP."], [4, "Metastases often raise calcium or ALP and come with weight loss or a known cancer."]] },
+        { "t": "Commit", "x": "**C. Osteoporotic vertebral fracture.** Rule: fragility fracture + normal bone profile = osteoporosis." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 63 year old woman has a fractured distal radius after slipping on a wet floor at home. She has no other medical history and takes no regular medication. Her calcium, phosphate, ALP and PTH are normal.",
+      "q": "Which is the most appropriate investigation to assess for osteoporosis?",
+      "o": ["Bone profile repeated in 6 weeks", "DEXA scan", "FRAX score alone", "Isotope bone scan", "MRI of the spine"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "'Investigation to assess for osteoporosis': the test that measures bone density." },
+        { "t": "Pick out the clues", "clues": ["63 year old", "fractured distal radius", "slipping on a wet floor"], "x": "Over 50 with a **fragility fracture**, under 75, and not a vertebral fracture." },
+        { "t": "Make your own answer before looking", "x": "Over 50 with a fragility fracture: skip FRAX, go to **DEXA**. She is not ≥75, so she still needs the scan." },
+        { "t": "Rule out the others", "elim": [[0, "Bloods are normal in osteoporosis and cannot diagnose it."], [2, "FRAX is skipped once a fragility fracture has occurred over 50."], [3, "An isotope bone scan looks for metastases or Paget's, not density."], [4, "MRI shows vertebral oedema, not bone mineral density."]] },
+        { "t": "Commit", "x": "**B. DEXA scan.** Rule: over 50 + fragility fracture = DEXA, unless she is ≥75, has a vertebral fracture or is on high-dose steroids." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 66 year old man with polymyalgia rheumatica is started on prednisolone 15 mg daily, which will be needed for at least a year. He has no other medical history. His eGFR is 74 mL/min/1.73m² and he has no swallowing problems.",
+      "q": "Which is the most appropriate management to protect his bones?",
+      "o": ["Alendronic acid now", "Calcium supplements alone", "DEXA scan before deciding", "FRAX score in 3 months", "Testosterone replacement"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "A management question: bone protection for someone starting long-term steroids." },
+        { "t": "Pick out the clues", "clues": ["66 year old man", "prednisolone 15 mg daily", "at least a year", "no swallowing problems"], "x": "Man over 50, prednisolone ≥7.5 mg for ≥3 months, no contraindication to oral bisphosphonate." },
+        { "t": "Make your own answer before looking", "x": "Long-term steroids: start bone protection **immediately** with **alendronic acid**; no DEXA needed first." },
+        { "t": "Rule out the others", "elim": [[1, "Calcium alone does not protect against steroid bone loss."], [2, "A DEXA would only delay a drug he needs anyway."], [3, "Waiting 3 months means losing bone at the fastest point."], [4, "Testosterone is only checked in men; it is not bone protection here."]] },
+        { "t": "Commit", "x": "**A. Alendronic acid now.** Rule: ≥50 on ≥7.5 mg prednisolone for ≥3 months = bisphosphonate straight away." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 70 year old woman with osteoporosis is started on weekly oral alendronic acid. She asks how the tablet will strengthen her bones.",
+      "q": "Which is the most likely mechanism of action?",
+      "o": ["Binds RANKL and blocks osteoclast formation", "Blocks oestrogen receptors in bone", "Increases intestinal calcium absorption", "Is taken up by osteoclasts and triggers their apoptosis", "Stimulates osteoblasts as a PTH analogue"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism question about a named drug: match drug to target." },
+        { "t": "Pick out the clues", "clues": ["oral alendronic acid"], "x": "Alendronic acid is a **bisphosphonate**." },
+        { "t": "Make your own answer before looking", "x": "Bisphosphonates bind hydroxyapatite, osteoclasts ingest them and undergo **apoptosis**." },
+        { "t": "Rule out the others", "elim": [[0, "That is denosumab."], [1, "Blocking oestrogen would worsen bone loss."], [2, "That is vitamin D's action."], [4, "That is teriparatide."]] },
+        { "t": "Commit", "x": "**D. Taken up by osteoclasts and triggers apoptosis.** Bisphosphonate kills the osteoclast; denosumab stops it forming." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 74 year old woman falls from standing onto her right side and cannot bear weight. Her right leg is shortened and externally rotated. She has COPD and takes several courses of prednisolone a year. Her temperature is 36.5°C, pulse rate 92 bpm and BP 148/86 mmHg.",
+      "labs": [
+        ["Calcium (adjusted)", "2.36 mmol/L", "2.20–2.60", ""],
+        ["Phosphate", "1.02 mmol/L", "0.80–1.50", ""],
+        ["ALP", "104 U/L", "30–130", ""]
+      ],
+      "visual": null,
+      "q": "Which is the most likely underlying cause of her fracture?",
+      "o": ["Multiple myeloma", "Osteomalacia", "Osteoporosis", "Paget's disease of bone", "Primary hyperparathyroidism"],
+      "a": 2,
+      "e": "A hip fracture from a standing fall with steroid exposure and a normal bone profile is an osteoporotic fragility fracture. Osteomalacia would have low phosphate and high ALP.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Underlying cause of her fracture': what made the bone break so easily?" },
+        { "t": "Pick out the clues", "clues": ["falls from standing", "shortened and externally rotated", "prednisolone"], "x": "Low-impact hip fracture in an older woman on repeated steroids; bone profile **normal**." },
+        { "t": "Make your own answer before looking", "x": "Fragility fracture with normal bloods: **osteoporosis**." },
+        { "t": "Rule out the others", "elim": [[0, "Myeloma raises calcium and causes anaemia and renal failure."], [1, "Osteomalacia gives low phosphate and raised ALP."], [3, "Paget's gives a markedly raised ALP."], [4, "Hyperparathyroidism raises the calcium."]] },
+        { "t": "Commit", "x": "**C. Osteoporosis.** Rule: low-trauma fracture + steroids + normal bloods." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 66 year old woman notices she has become shorter and her clothes fit differently. She has had intermittent upper back ache for a year. She went through the menopause at 50 and smokes. There is a smooth thoracic kyphosis with mild tenderness over two vertebrae. Her pulse rate is 72 bpm and BP 136/82 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely cause of her loss of height?",
+      "o": ["Ankylosing spondylitis", "Degenerative disc disease", "Scheuermann's disease", "Spinal metastases", "Vertebral compression fractures"],
+      "a": 4,
+      "e": "Height loss and kyphosis in a postmenopausal smoker are due to osteoporotic vertebral compression fractures. Ankylosing spondylitis affects young men with morning stiffness.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Cause of her loss of height': what has happened to her spine?" },
+        { "t": "Pick out the clues", "clues": ["become shorter", "menopause at 50", "smokes", "thoracic kyphosis"], "x": "Postmenopausal smoker with height loss, kyphosis and vertebral tenderness." },
+        { "t": "Make your own answer before looking", "x": "Silent **vertebral compression (fragility) fractures** from osteoporosis." },
+        { "t": "Rule out the others", "elim": [[0, "Ankylosing spondylitis starts in young men with inflammatory back pain."], [1, "Disc degeneration causes little height loss and no kyphosis like this."], [2, "Scheuermann's is an adolescent kyphosis."], [3, "Metastases would come with weight loss, night pain or a known primary."]] },
+        { "t": "Commit", "x": "**E. Vertebral compression fractures.** Height loss + kyphosis in an older woman = osteoporotic vertebral collapse." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 58 year old woman has a wrist fracture after tripping on a step. She has epilepsy treated for many years with an enzyme-inducing drug. She has no other medical history, does not smoke and drinks no alcohol. Her BMI is 24.",
+      "visual": null,
+      "q": "Which drug is the most likely contributor to her fracture?",
+      "o": ["Carbamazepine", "Ethosuximide", "Gabapentin", "Lamotrigine", "Levetiracetam"],
+      "a": 0,
+      "e": "Carbamazepine is an enzyme inducer and a recognised risk factor for osteoporosis. The other antiepileptics listed are not enzyme inducers.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A risk factor question: which drug causes osteoporosis?" },
+        { "t": "Pick out the clues", "clues": ["wrist fracture after tripping", "enzyme-inducing drug"], "x": "Fragility fracture and long-term **enzyme-inducing** antiepileptic." },
+        { "t": "Make your own answer before looking", "x": "The enzyme inducer is **carbamazepine**, listed as an osteoporosis risk factor." },
+        { "t": "Rule out the others", "elim": [[1, "Ethosuximide is not an enzyme inducer."], [2, "Gabapentin is not an enzyme inducer."], [3, "Lamotrigine is not an enzyme inducer."], [4, "Levetiracetam is not an enzyme inducer."]] },
+        { "t": "Commit", "x": "**A. Carbamazepine.** Steroids and carbamazepine are the drug risk factors to remember." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 71 year old woman is seen 2 days after an osteoporotic hip fracture was confirmed. She is otherwise well. Her temperature is 36.9°C, pulse rate 86 bpm and BP 132/78 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely blood test finding?",
+      "o": ["High calcium and low phosphate", "High PTH and low calcium", "Low calcium and low phosphate", "Low vitamin D and high ALP", "Normal calcium, phosphate and PTH"],
+      "a": 4,
+      "e": "Bloods are normal in osteoporosis (ALP may rise a little after a fracture). Low calcium and phosphate suggest osteomalacia; high calcium with low phosphate suggests hyperparathyroidism.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Most likely blood test finding' in a confirmed osteoporotic fracture." },
+        { "t": "Pick out the clues", "clues": ["osteoporotic hip fracture", "otherwise well"], "x": "Primary osteoporosis, no other illness." },
+        { "t": "Make your own answer before looking", "x": "Calcium, phosphate and PTH are **normal**." },
+        { "t": "Rule out the others", "elim": [[0, "That is primary hyperparathyroidism."], [1, "That is secondary hyperparathyroidism, as in vitamin D deficiency."], [2, "That is osteomalacia."], [3, "That is vitamin D deficiency or osteomalacia."]] },
+        { "t": "Commit", "x": "**E. Normal calcium, phosphate and PTH.** Abnormal bone bloods mean a different diagnosis." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 55 year old woman has a hip and spine DEXA scan after her mother had a hip fracture. She had an early menopause and smokes. She has never had a fracture. Her lowest T score is -2.9 at the femoral neck.",
+      "labs": [
+        ["Calcium (adjusted)", "2.44 mmol/L", "2.20–2.60", ""],
+        ["ALP", "88 U/L", "30–130", ""],
+        ["Femoral neck T score", "-2.9", "> -1.0", "L"]
+      ],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Normal bone density", "Osteomalacia", "Osteopenia", "Osteoporosis", "Paget's disease of bone"],
+      "a": 3,
+      "e": "A T score below -2.5 defines osteoporosis, even without a fracture. Osteopenia is -1 to -2.5.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis from a DEXA number: place the T score." },
+        { "t": "Pick out the clues", "clues": ["early menopause", "smokes", "T score is -2.9"], "x": "Risk factors plus a T score **below -2.5**." },
+        { "t": "Make your own answer before looking", "x": "T score < -2.5 = **osteoporosis**." },
+        { "t": "Rule out the others", "elim": [[0, "Normal is above -1."], [1, "Osteomalacia is a mineralisation problem with abnormal bloods."], [2, "Osteopenia is -1 to -2.5; -2.9 is below that."], [4, "Paget's raises ALP; this is normal."]] },
+        { "t": "Commit", "x": "**D. Osteoporosis.** A fracture is not needed: the T score alone defines it." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 79 year old man has a vertebral fragility fracture. He has asthma that is poorly controlled and has needed frequent courses of oral steroids for 10 years. He also has rheumatoid arthritis and drinks 30 units of alcohol a week. His pulse rate is 80 bpm and BP 128/76 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely main contributor to his osteoporosis?",
+      "o": ["Asthma inhalers", "Long-term oral glucocorticoids", "Male sex", "Rheumatoid nodules", "Tall stature"],
+      "a": 1,
+      "e": "Repeated oral glucocorticoids are the major driver here: they cut osteoblast activity and calcium absorption and boost osteoclasts. Male sex is protective, not a risk factor.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Main contributor': the strongest cause in the stem." },
+        { "t": "Pick out the clues", "clues": ["poorly controlled", "frequent courses of oral steroids for 10 years"], "x": "Years of oral steroids in poorly controlled asthma." },
+        { "t": "Make your own answer before looking", "x": "**Long-term oral glucocorticoids** are the biggest driver." },
+        { "t": "Rule out the others", "elim": [[0, "Inhaled steroids carry far less bone risk than repeated oral courses."], [2, "Men have higher peak bone mass; male sex is not the risk."], [3, "Nodules are a feature of RA, not a cause of bone loss."], [4, "Tall stature is not a risk factor; low BMI is."]] },
+        { "t": "Commit", "x": "**B. Long-term oral glucocorticoids.** Poorly controlled asthma matters because of the steroids it brings." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 62 year old woman asks about her bone health. Her mother had a hip fracture, she smokes and she has rheumatoid arthritis. She has never had a fracture and takes no steroids. Her pulse rate is 70 bpm and BP 130/80 mmHg.",
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["DEXA scan", "FRAX score", "Isotope bone scan", "Serum ALP", "X-ray of the thoracic spine"],
+      "a": 1,
+      "e": "An at-risk adult over 40 with no fracture starts with FRAX (or QFracture). DEXA follows only if the 10-year risk is intermediate.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Initial investigation' for someone at risk with no fracture." },
+        { "t": "Pick out the clues", "clues": ["mother had a hip fracture", "rheumatoid arthritis", "never had a fracture"], "x": "Risk factors entered into FRAX, but **no fragility fracture**." },
+        { "t": "Make your own answer before looking", "x": "First step is a **FRAX** 10-year risk score." },
+        { "t": "Rule out the others", "elim": [[0, "DEXA comes after FRAX if risk is intermediate."], [2, "An isotope scan looks for metastases or Paget's."], [3, "ALP is normal in osteoporosis."], [4, "X-ray is insensitive for density and shows only established fractures."]] },
+        { "t": "Commit", "x": "**B. FRAX score.** No fracture = FRAX first; fracture over 50 = skip FRAX." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 45 year old woman on long-term prednisolone for lupus has a rib fracture after coughing. She needs assessment for osteoporosis. Her calcium, phosphate and ALP are normal.",
+      "labs": [
+        ["Calcium (adjusted)", "2.39 mmol/L", "2.20–2.60", ""],
+        ["Phosphate", "1.12 mmol/L", "0.80–1.50", ""],
+        ["ALP", "95 U/L", "30–130", ""]
+      ],
+      "visual": null,
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["Bone profile", "CT of the chest", "DEXA scan", "PET scan", "Vitamin D level"],
+      "a": 2,
+      "e": "DEXA measures bone mineral density and gives the T score that diagnoses osteoporosis. Blood tests are normal in osteoporosis, so they cannot diagnose it.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Diagnostic investigation' for osteoporosis: the gold standard." },
+        { "t": "Pick out the clues", "clues": ["long-term prednisolone", "rib fracture after coughing"], "x": "Steroid user with a fragility fracture." },
+        { "t": "Make your own answer before looking", "x": "The gold standard is a **DEXA scan** (T score)." },
+        { "t": "Rule out the others", "elim": [[0, "The bone profile is normal in osteoporosis."], [1, "CT shows the fracture, not a density score."], [3, "PET is for cancer staging."], [4, "Vitamin D supports care but does not diagnose osteoporosis."]] },
+        { "t": "Commit", "x": "**C. DEXA scan.** Gold standard for diagnosis: DEXA, T score < -2.5." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 69 year old woman has osteoporosis confirmed on DEXA with a T score of -3.0. She has no swallowing problems. Her eGFR is 72 mL/min/1.73m². Her pulse rate is 76 bpm and BP 134/78 mmHg.",
+      "visual": null,
+      "q": "Which is the most appropriate first-line treatment?",
+      "o": ["Alendronic acid", "Denosumab", "Raloxifene", "Teriparatide", "Zoledronic acid"],
+      "a": 0,
+      "e": "Oral bisphosphonates (alendronic acid or risedronate) are first-line. Denosumab is used when bisphosphonates are contraindicated; zoledronic acid and teriparatide are specialist options.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'First-line treatment' for confirmed osteoporosis." },
+        { "t": "Pick out the clues", "clues": ["T score of -3.0", "no swallowing problems", "eGFR is 72"], "x": "Osteoporosis with **no contraindication** to oral bisphosphonates." },
+        { "t": "Make your own answer before looking", "x": "Oral bisphosphonate: **alendronic acid**." },
+        { "t": "Rule out the others", "elim": [[1, "Denosumab is second-line when bisphosphonates cannot be used."], [2, "Raloxifene is not first-line in the notes."], [3, "Teriparatide is a specialist option for severe disease."], [4, "Zoledronic acid is a specialist IV option."]] },
+        { "t": "Commit", "x": "**A. Alendronic acid.** No stricture and eGFR fine = oral bisphosphonate." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 77 year old woman with osteoporosis has CKD stage 4 and an oesophageal stricture that was dilated last year. Her DEXA T score is -3.4. Her pulse rate is 68 bpm and BP 150/88 mmHg.",
+      "labs": [
+        ["eGFR", "22 mL/min/1.73m²", ">60", "L"],
+        ["Calcium (adjusted)", "2.30 mmol/L", "2.20–2.60", ""]
+      ],
+      "visual": null,
+      "q": "Which is the most appropriate treatment?",
+      "o": ["Alendronic acid", "Calcium supplements alone", "Denosumab", "Hormone replacement therapy", "Risedronate"],
+      "a": 2,
+      "e": "Oral bisphosphonates are contraindicated by oesophageal stricture and CKD stage 4, so denosumab (6-monthly subcutaneous RANKL inhibitor) is used.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Treatment when the first-line drug cannot be used." },
+        { "t": "Pick out the clues", "clues": ["CKD stage 4", "oesophageal stricture", "T score is -3.4"], "x": "Both contraindications to oral bisphosphonates, and severe disease." },
+        { "t": "Make your own answer before looking", "x": "Second-line: **denosumab** subcutaneously every 6 months." },
+        { "t": "Rule out the others", "elim": [[0, "Alendronic acid is contraindicated by the stricture and CKD 4."], [1, "Calcium alone is not enough for a T score of -3.4."], [3, "HRT is not used to treat osteoporosis at 77."], [4, "Risedronate is also an oral bisphosphonate, so also contraindicated."]] },
+        { "t": "Commit", "x": "**C. Denosumab.** Stricture or CKD 4 = no oral bisphosphonate." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "An 81 year old woman with osteoporosis has had three falls in two months. She takes alendronic acid, calcium and vitamin D, and lorazepam at night for sleep, which was started 4 months ago. She is not dizzy on standing.",
+      "visual": null,
+      "q": "Which is the most effective measure to reduce her short-term fracture risk?",
+      "o": ["Add denosumab", "Increase vitamin D dose", "Start a drug holiday", "Stop lorazepam", "Switch to zoledronic acid"],
+      "a": 3,
+      "e": "Stopping a benzodiazepine in someone with osteoporosis and recent falls is the most effective way to cut short-term fracture risk. Bone drugs take months to change fracture risk.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Short-term' fracture risk: what works now, not over years?" },
+        { "t": "Pick out the clues", "clues": ["three falls in two months", "lorazepam at night"], "x": "Recurrent falls since a **benzodiazepine** was started." },
+        { "t": "Make your own answer before looking", "x": "**Stop the lorazepam** (taper) to prevent falls." },
+        { "t": "Rule out the others", "elim": [[0, "Adding denosumab to a bisphosphonate is not done and works slowly."], [1, "Vitamin D is already given; more will not stop falls quickly."], [2, "A holiday is after 3 to 5 years and would raise risk."], [4, "Switching drugs does not tackle the falls."]] },
+        { "t": "Commit", "x": "**D. Stop lorazepam.** No fall, no fracture." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 54 year old woman went through the menopause 2 years ago. A DEXA scan shows a T score of -2.7 at the lumbar spine. Her calcium, phosphate and PTH are normal.",
+      "labs": [
+        ["Calcium (adjusted)", "2.42 mmol/L", "2.20–2.60", ""],
+        ["PTH", "4.0 pmol/L", "1.6–6.9", ""]
+      ],
+      "visual": null,
+      "q": "Which is the most likely mechanism of her bone loss?",
+      "o": ["Defective mineralisation of osteoid", "Increased osteoclast activity from oestrogen loss", "Increased PTH secretion", "Mutation in type 1 collagen", "Reduced vitamin D activation by the kidney"],
+      "a": 1,
+      "e": "Oestrogen normally restrains osteoclasts; after menopause, resorption outpaces formation. Defective mineralisation is osteomalacia.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism question: why does menopause cause osteoporosis?" },
+        { "t": "Pick out the clues", "clues": ["menopause 2 years ago", "T score of -2.7", "calcium, phosphate and PTH are normal"], "x": "Postmenopausal osteoporosis with normal bloods." },
+        { "t": "Make your own answer before looking", "x": "Loss of oestrogen removes the brake on **osteoclasts**." },
+        { "t": "Rule out the others", "elim": [[0, "That is osteomalacia; mineralisation is normal in osteoporosis."], [2, "PTH is normal here."], [3, "Collagen mutation is osteogenesis imperfecta."], [4, "That is CKD-related bone disease; her bloods are normal."]] },
+        { "t": "Commit", "x": "**B. Increased osteoclast activity from oestrogen loss.**" }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is osteoporosis and how does it usually present?",
+        "tip": "Exam thinking: it is silent until a bone breaks.",
+        "points": [
+          { "p": "Reduced bone mineral density, so fragile bones and higher fracture risk", "k": [["density", "bmd", "bone mass"]], "why": "Mineralisation is normal; there is just less bone." },
+          { "p": "Asymptomatic until a fracture", "k": [["asymptomatic", "silent", "no symptoms"]], "why": "The stem usually opens with the fracture." },
+          { "p": "Fragility fracture after a low-impact fall", "k": [["fragility", "low impact", "low-impact", "minimal trauma", "standing height"]], "why": "A fall from standing height or less." },
+          { "p": "Vertebral collapse causing height loss and kyphosis", "k": [["vertebra", "spine", "height", "kyphosis"]], "why": "Often found when the patient is 'shrinking'." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Which are the three common osteoporotic fracture sites?",
+        "tip": "Exam thinking: name the bone, then picture the fall.",
+        "points": [
+          { "p": "Vertebrae", "k": [["vertebra", "spine", "spinal"]], "why": "Often silent; height loss and kyphosis." },
+          { "p": "Hip (neck of femur)", "k": [["hip", "femur", "femoral"]], "why": "Highest morbidity and mortality." },
+          { "p": "Distal radius (Colles' fracture)", "k": [["radius", "colles", "wrist"]], "why": "Fall on an outstretched hand." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "List the risk factors for osteoporosis in the notes.",
+        "tip": "Exam thinking: the stem hides a steroid course or a drug in the history.",
+        "points": [
+          { "p": "Older age, White ethnicity, postmenopausal", "k": [["age", "older", "elderly", "menopaus", "white"]], "why": "Oestrogen loss is the big one in women." },
+          { "p": "Long-term steroids (including poorly controlled asthma)", "k": [["steroid", "prednisolone", "glucocorticoid"]], "why": "≥7.5 mg for ≥3 months means bone protection." },
+          { "p": "Carbamazepine", "k": [["carbamazepine"]], "why": "An enzyme-inducing antiepileptic." },
+          { "p": "Low BMI (<18.5)", "k": [["bmi", "underweight", "low weight"]], "why": "Entered into FRAX." },
+          { "p": "CKD, rheumatoid arthritis, smoking, alcohol, sedentary life", "k": [["ckd", "kidney", "renal", "rheumatoid", "smok", "alcohol", "sedentary"]], "why": "CKD impairs vitamin D activation; RA is in FRAX." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Which blood result pattern points to osteoporosis rather than osteomalacia?",
+        "tip": "Exam thinking: normal bloods are the answer, not a red herring.",
+        "points": [
+          { "p": "Calcium, phosphate and PTH are normal in osteoporosis", "k": [["normal"]], "why": "Any abnormality suggests a different diagnosis." },
+          { "p": "Osteomalacia gives low calcium/phosphate and high ALP", "k": [["osteomalacia"]], "why": "Poor mineralisation, usually from vitamin D deficiency." },
+          { "p": "ALP may rise briefly after a fracture", "k": [["alp", "alkaline"]], "why": "Healing bone, not a change in diagnosis." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is the gold-standard investigation and what result defines osteoporosis?",
+        "tip": "Exam thinking: know the number and which score it is.",
+        "points": [
+          { "p": "DEXA scan", "k": [["dexa", "dxa"]], "why": "Measures bone mineral density at the hip and spine." },
+          { "p": "T score below -2.5", "k": [["2.5"]], "why": "-1 to -2.5 is osteopenia." },
+          { "p": "T score compares with a young adult reference", "k": [["young", "reference", "peak"]], "why": "The Z score compares with the same age." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "Who gets FRAX first, and who skips straight to DEXA or treatment?",
+        "tip": "Exam thinking: has there already been a fragility fracture?",
+        "points": [
+          { "p": "At-risk over-40s with no fracture: FRAX or QFracture", "k": [["frax", "qfracture"]], "why": "10-year hip or major fracture probability." },
+          { "p": "Intermediate risk (>10%): DEXA; high risk: bisphosphonate", "k": [["intermediate", "10"], ["dexa", "dxa"]], "why": "Low risk: lifestyle advice, reassess within 5 years." },
+          { "p": "Over 50 with a fragility fracture: skip FRAX", "k": [["skip", "straight", "no frax", "without frax"]], "why": "Go straight to DEXA or treatment." },
+          { "p": "No DEXA needed: vertebral fracture, women ≥75 after a fracture, or long-term steroids", "k": [["vertebra", "75", "steroid", "prednisolone"]], "why": "Prednisolone ≥7.5 mg/day for ≥3 months in those ≥50." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is first-line treatment, and how must it be taken?",
+        "tip": "Exam thinking: name the drug, then the oesophagus rules.",
+        "points": [
+          { "p": "Oral bisphosphonate: alendronic acid or risedronate", "k": [["alendron", "risedron", "bisphosphonate"]], "why": "Inhibits osteoclasts." },
+          { "p": "Early morning, upright, large glass of water", "k": [["upright", "sitting", "standing"]], "why": "Prevents oesophageal irritation and ulcers." },
+          { "p": "Stay upright ≥30 minutes before food", "k": [["30"]], "why": "Food also blocks absorption." },
+          { "p": "Contraindicated in oesophageal stricture and CKD stage 4", "k": [["stricture", "ckd", "renal", "kidney"]], "why": "Then denosumab is used." },
+          { "p": "Dental check-ups: osteonecrosis of the jaw", "k": [["jaw", "dental", "osteonecrosis"]], "why": "Rare but serious." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What are the second-line and long-term management steps?",
+        "tip": "Exam thinking: steroids, falls and the 5-year review.",
+        "points": [
+          { "p": "Denosumab subcutaneously every 6 months if bisphosphonate contraindicated", "k": [["denosumab"]], "why": "Specialist options: zoledronic acid, teriparatide." },
+          { "p": "Long-term steroids: start bone protection immediately", "k": [["steroid", "prednisolone", "glucocorticoid"]], "why": "Do not wait for a DEXA." },
+          { "p": "Drug holiday after 3 to 5 years", "k": [["holiday"]], "why": "Reassess fracture risk after 5 years of alendronate." },
+          { "p": "Stop benzodiazepines in recent fallers", "k": [["benzodiazepine", "lorazepam", "diazepam"]], "why": "Most effective way to cut short-term fracture risk." },
+          { "p": "Lifestyle: weight-bearing exercise, stop smoking, less alcohol, falls prevention, calcium and vitamin D", "k": [["exercise", "smok", "alcohol", "fall", "calcium", "vitamin d"]], "why": "Given alongside every drug." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do menopause and glucocorticoids cause osteoporosis?",
+        "tip": "Exam thinking: name the cell each one acts on.",
+        "points": [
+          { "p": "Resorption by osteoclasts outpaces formation by osteoblasts", "k": [["osteoclast"], ["osteoblast", "formation"]], "why": "Mineralisation stays normal." },
+          { "p": "Oestrogen loss removes the brake on osteoclasts", "k": [["oestrogen", "estrogen"]], "why": "Bone loss accelerates after menopause." },
+          { "p": "Steroids reduce osteoblast activity and lifespan and raise osteoclast activity", "k": [["steroid", "glucocorticoid"], ["osteoblast"]], "why": "Hits both sides of remodelling." },
+          { "p": "Steroids reduce intestinal calcium absorption", "k": [["calcium"], ["absor", "gut", "intestin"]], "why": "A favourite mechanism distractor." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "How do bisphosphonates and denosumab work?",
+        "tip": "Exam thinking: apoptosis vs RANKL.",
+        "points": [
+          { "p": "Bisphosphonates bind hydroxyapatite", "k": [["hydroxyapatite", "bind bone", "bone surface"]], "why": "They concentrate where bone is resorbed." },
+          { "p": "Osteoclasts ingest them and undergo apoptosis", "k": [["apoptosis", "die", "death"]], "why": "Resorption falls." },
+          { "p": "Denosumab: monoclonal antibody against RANKL", "k": [["rankl", "rank"]], "why": "Blocks RANK-RANKL, so osteoclasts do not form." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "Osteoporosis": "Low bone mineral density and weak bone microarchitecture, making bones break easily.",
+    "Bone mineral density": "Amount of mineral per area of bone, measured by DEXA.",
+    "BMD": "Bone mineral density: how much mineral is packed into bone, measured by DEXA.",
+    "Fragility fracture": "A fracture from a fall at standing height or less, which healthy bone would survive.",
+    "Colles' fracture": "Dorsally displaced fracture of the distal radius after a fall on an outstretched hand.",
+    "Distal radius": "The wrist end of the radius, a common fragility fracture site.",
+    "Kyphosis": "Forward curvature of the upper spine, often from vertebral compression fractures.",
+    "Vertebral collapse": "Compression fracture of a vertebral body, causing back pain and height loss.",
+    "Osteomalacia": "Soft bones from poor mineralisation, usually vitamin D deficiency; low calcium or phosphate and high ALP.",
+    "Paget's disease": "Disordered, excessive bone remodelling giving bone pain and a very high ALP.",
+    "Bone profile": "Blood panel of calcium, phosphate, ALP and albumin.",
+    "ALP": "Alkaline phosphatase, an enzyme that rises when bone formation is active, such as healing fractures.",
+    "PTH": "Parathyroid hormone, which raises blood calcium; normal in osteoporosis.",
+    "DEXA": "Dual-energy X-ray absorptiometry: a low-dose scan of hip and spine that measures bone density.",
+    "DXA": "Another abbreviation for DEXA, the bone density scan.",
+    "T score": "Bone density compared with a young adult reference, in standard deviations; below -2.5 is osteoporosis.",
+    "Z score": "Bone density compared with people of the same age and sex.",
+    "Osteopenia": "Bone density below normal but not osteoporotic: T score between -1 and -2.5.",
+    "FRAX": "Online tool giving the 10-year probability of a hip or major osteoporotic fracture.",
+    "QFracture": "UK fracture risk calculator, an alternative to FRAX.",
+    "Bisphosphonate": "Drug that binds bone mineral and kills osteoclasts, slowing bone loss.",
+    "Alendronic acid": "Weekly oral bisphosphonate; first-line treatment for osteoporosis.",
+    "Alendronate": "Another name for alendronic acid.",
+    "Risedronate": "Oral bisphosphonate, an alternative first-line option.",
+    "Zoledronic acid": "Yearly intravenous bisphosphonate used by specialists.",
+    "Denosumab": "Monoclonal antibody against RANKL, injected under the skin every 6 months.",
+    "Teriparatide": "Daily injected PTH analogue that builds new bone; specialist use.",
+    "RANKL": "Signal protein that binds RANK on osteoclast precursors and makes them mature.",
+    "Osteoclast": "Bone cell that dissolves and resorbs bone.",
+    "Osteoblast": "Bone cell that lays down new bone.",
+    "Hydroxyapatite": "The calcium phosphate mineral that makes bone hard.",
+    "Trabecular": "The spongy inner bone made of struts, lost early in osteoporosis.",
+    "Osteonecrosis of the jaw": "Rare death of jaw bone linked to bisphosphonates and denosumab, often after dental work.",
+    "Drug holiday": "A planned break from a bisphosphonate after 3 to 5 years of treatment.",
+    "Glucocorticoids": "Steroid drugs such as prednisolone; long-term use thins bone.",
+    "Prednisolone": "Oral glucocorticoid; ≥7.5 mg a day for ≥3 months needs bone protection.",
+    "Carbamazepine": "Enzyme-inducing antiepileptic that raises osteoporosis risk.",
+    "Lorazepam": "Benzodiazepine sedative that increases falls in older people.",
+    "Benzodiazepine": "Sedative drug class that causes drowsiness and falls in older people.",
+    "CKD": "Chronic kidney disease; impairs vitamin D activation and stage 4 rules out oral bisphosphonates.",
+    "eGFR": "Estimated glomerular filtration rate, a measure of kidney function.",
+    "Oesophageal stricture": "Narrowing of the oesophagus; a contraindication to oral bisphosphonates.",
+    "BMI": "Body mass index, weight in kg divided by height in metres squared."
+  }
+}

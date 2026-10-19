@@ -1,0 +1,2360 @@
+{
+ "id": "cardiac-failure",
+ "patient": {
+  "name": "Desmond Clarke",
+  "age": 74,
+  "sex": "M",
+  "setting": "Emergency Department, then cardiology ward and heart failure clinic",
+  "complaint": "Three weeks of worsening breathlessness, now unable to lie flat",
+  "background": [
+   "Inferior MI in 2019, stented",
+   "Hypertension and type 2 diabetes",
+   "Ex-smoker, 40 pack-years",
+   "Retired bus driver from Lewisham, lives with his wife"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with orthopnoea, PND, ankle swelling and bibasal crackles in an older patient with ischaemic heart disease, or 'Which is the most likely finding on examination?'.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Desmond, 74, brought in by his wife at 3 am.",
+      "Three weeks: breathless on the stairs, now **sleeps on four pillows**.",
+      "Woke tonight **gasping for breath**, coughing pink frothy sputum.",
+      "Shoes no longer fit; weight up 4 kg."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "112 bpm",
+      "BP": "168/94 mmHg",
+      "RR": "28 /min",
+      "SpO2": "86% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's heart can no longer keep up with demand, so fluid **backs up** into his lungs and legs."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "His old **MI**, hypertension and diabetes are the classic routes to heart failure; coronary disease is the commonest cause."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Fine **bibasal crackles** to the mid zones.",
+      "Apex beat **displaced** to the anterior axillary line.",
+      "JVP raised 6 cm; pitting oedema to the knees.",
+      "Liver edge palpable 3 cm below the costal margin."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond has **both** sides: crackles, frothy sputum and a displaced apex (left), plus raised JVP, hepatomegaly and leg oedema (right)."
+    },
+    {
+     "type": "compare",
+     "title": "Left-sided vs right-sided heart failure",
+     "head": [
+      "Feature",
+      "Left-sided",
+      "Right-sided"
+     ],
+     "rows": [
+      [
+       "Where fluid backs up",
+       "Lungs (pulmonary congestion)",
+       "Systemic veins"
+      ],
+      [
+       "Symptoms",
+       "Breathlessness, orthopnoea, PND",
+       "Ankle swelling, weight gain"
+      ],
+      [
+       "Signs",
+       "Crackles, displaced apex, pink frothy sputum",
+       "Raised JVP, hepatomegaly, peripheral oedema"
+      ],
+      [
+       "Classic cause",
+       "Ischaemic heart disease, AS, MR, hypertension",
+       "Left HF, long-standing COPD"
+      ]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which bedside finding in Desmond would most worry you about prognosis?",
+     "o": [
+      "Ankle oedema",
+      "Bibasal crackles",
+      "Pulsus alternans",
+      "Raised JVP"
+     ],
+     "a": 2,
+     "r": "**Pulsus alternans** (alternating strong and weak beats) reflects severe LV impairment and is a poor prognostic sign."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond's long-standing left failure has dragged his right ventricle down too: one side failing worsens the other."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Whether Desmond has **HFrEF** or **HFpEF** decides his drugs, and only the echo can tell."
+    },
+    {
+     "type": "trap",
+     "text": "Pink frothy sputum and crackles are not pneumonia: **no fever**, bilateral signs and orthopnoea point to pulmonary oedema."
+    },
+    {
+     "type": "pearl",
+     "text": "High-output failure (thyrotoxicosis, pregnancy, severe anaemia) has a **normal echo** with preserved EF: treat the cause."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (BNP) and 'Which investigation confirms the diagnosis?' (transthoracic echo), with BNP and CXR findings in the stem.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "In a stable patient with suspected heart failure, which test comes first?",
+     "o": [
+      "Cardiac MRI",
+      "Coronary angiogram",
+      "Serum BNP",
+      "Transthoracic echo"
+     ],
+     "a": 2,
+     "r": "**BNP** is first-line; a raised BNP leads on to the echo. A low BNP makes heart failure very unlikely."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond's NT-proBNP comes back at 4,800 ng/L: high strain on his ventricles, and well above the referral cut-off."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "NT-proBNP (ng/L)",
+      "min": 0,
+      "max": 5000,
+      "unit": "ng/L",
+      "bands": [
+       [
+        0,
+        400,
+        "Heart failure unlikely",
+        "ok"
+       ],
+       [
+        400,
+        2000,
+        "Raised: echo within 6 weeks",
+        "warn"
+       ],
+       [
+        2000,
+        5000,
+        "High: echo within 2 weeks",
+        "bad"
+       ]
+      ],
+      "value": 4800,
+      "label": "Desmond 4,800",
+      "caption": "NICE cut-offs: under 400 makes heart failure unlikely; over 2,000 needs urgent echo."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Bloods on arrival",
+     "rows": [
+      [
+       "NT-proBNP",
+       "4,800 ng/L",
+       "<400",
+       "H"
+      ],
+      [
+       "Troponin T",
+       "22 ng/L",
+       "<14",
+       "H"
+      ],
+      [
+       "Sodium",
+       "134 mmol/L",
+       "135–145",
+       "L"
+      ],
+      [
+       "Potassium",
+       "4.6 mmol/L",
+       "3.5–5.3",
+       ""
+      ],
+      [
+       "Creatinine",
+       "118 µmol/L",
+       "60–110",
+       "H"
+      ],
+      [
+       "Hb",
+       "128 g/L",
+       "130–180",
+       "L"
+      ]
+     ],
+     "text": "A small, flat troponin from strain; no acute MI on ECG."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Desmond's portable chest X-ray",
+      "findings": [
+       {
+        "type": "pulm_oedema",
+        "side": "both"
+       },
+       {
+        "type": "cardiomegaly",
+        "side": "both"
+       },
+       {
+        "type": "effusion",
+        "side": "both",
+        "zone": "lower"
+       }
+      ],
+      "caption": "Bat-wing alveolar oedema, cardiomegaly and blunted costophrenic angles."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's ECG shows old inferior Q waves; his CXR has **bat-wing** oedema, Kerley B lines, cardiomegaly and bilateral effusions."
+    },
+    {
+     "type": "flow",
+     "title": "CXR in heart failure: A to E",
+     "nodes": [
+      "A: alveolar oedema (bat wing)",
+      "B: Kerley B lines",
+      "C: cardiomegaly",
+      "D: upper lobe diversion",
+      "E: effusions, fluid in horizontal fissure"
+     ],
+     "caption": "A handy order to describe the film."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Once stable, Desmond's **transthoracic echo** shows an EF of **30%** with an akinetic inferior wall: **HFrEF**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Ejection fraction",
+      "min": 10,
+      "max": 70,
+      "unit": "%",
+      "bands": [
+       [
+        10,
+        40,
+        "Reduced (HFrEF)",
+        "bad"
+       ],
+       [
+        40,
+        50,
+        "Mildly reduced",
+        "warn"
+       ],
+       [
+        50,
+        70,
+        "Preserved (HFpEF)",
+        "ok"
+       ]
+      ],
+      "value": 30,
+      "label": "Desmond 30%",
+      "caption": "Under 40% is HFrEF; under 35% opens the door to device therapy."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Back at clinic Desmond is comfortable at rest but breathless walking to the shop: **NYHA class III**."
+    },
+    {
+     "type": "trap",
+     "text": "BNP **rules out**, echo **rules in**. A raised BNP alone does not confirm heart failure (AF, renal failure and age raise it too)."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' for acute pulmonary oedema (sit up, oxygen, IV furosemide), and drug-sequencing questions for chronic HFrEF ('Which medication improves prognosis?').",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Desmond is hypoxic with frothy sputum and BP 168/94. What do you give first?",
+     "o": [
+      "IV furosemide",
+      "Oral bisoprolol",
+      "Oral ramipril",
+      "Thrombolysis"
+     ],
+     "a": 0,
+     "r": "Sit him up, high-flow oxygen and **IV furosemide**. Beta-blockers are not started in acute decompensation."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Desmond is sat upright on high-flow oxygen, given **IV furosemide 80 mg**, and with systolic BP over 100, an **IV GTN** infusion."
+    },
+    {
+     "type": "flow",
+     "title": "Acute pulmonary oedema",
+     "nodes": [
+      "Sit upright + high-flow oxygen",
+      "IV furosemide 40–120 mg",
+      "Systolic BP >100: IV GTN",
+      "No response: CPAP (or BiPAP if hypercapnic)",
+      "Hypotensive with poor LV: IV inotropes"
+     ],
+     "caption": "Furosemide relieves symptoms but does not improve mortality."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Desmond's first 48 hours",
+      "x": [
+       "0 h",
+       "6 h",
+       "24 h",
+       "48 h"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "SpO2 on air (%)",
+        "values": [
+         86,
+         90,
+         94,
+         96
+        ]
+       },
+       {
+        "name": "Weight (kg)",
+        "values": [
+         92,
+         91,
+         89,
+         87
+        ]
+       }
+      ],
+      "caption": "Diuresis of 5 kg and oxygenation recovers."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "With **HFrEF** confirmed, Desmond starts **ramipril** and **bisoprolol** at low dose, with oral furosemide for symptoms."
+    },
+    {
+     "type": "compare",
+     "title": "The big 4 for HFrEF",
+     "head": [
+      "Drug class",
+      "Example",
+      "Watch for"
+     ],
+     "rows": [
+      [
+       "ACE inhibitor",
+       "Ramipril",
+       "Dry cough, hyperkalaemia, AKI"
+      ],
+      [
+       "Beta-blocker",
+       "Bisoprolol",
+       "Bradycardia; start low, go slow"
+      ],
+      [
+       "MRA",
+       "Spironolactone / eplerenone",
+       "Hyperkalaemia, AKI, gynaecomastia"
+      ],
+      [
+       "SGLT2 inhibitor",
+       "Dapagliflozin / empagliflozin",
+       "UTI and genital infection"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond adds **eplerenone** and **dapagliflozin**. Three months later he is still NYHA III, so ramipril is swapped to **sacubitril-valsartan**."
+    },
+    {
+     "type": "ask",
+     "q": "Desmond's EF stays 30% on optimal drugs and his QRS is 160 ms (LBBB). What next?",
+     "o": [
+      "Add digoxin",
+      "CRT with defibrillator",
+      "Heart transplant listing",
+      "Single-chamber pacemaker"
+     ],
+     "a": 1,
+     "r": "EF under 35% with a wide QRS despite optimal therapy is the indication for **CRT** plus a defibrillator (CRT-D)."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "With EF under 35% and a broad QRS, Desmond is referred for a **CRT-D** device."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond gets his **annual flu jab** and a **single pneumococcal** vaccine to avoid infections that tip him into failure."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Desmond's care follows **NICE NG106** and the ESC guideline, with NYHA class used to track how he is doing."
+    },
+    {
+     "type": "trap",
+     "text": "**Furosemide** helps symptoms only. In 'which drug improves prognosis' questions, pick the ACE inhibitor, beta-blocker, MRA or SGLT2 inhibitor."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why oedema forms, why BNP rises, why EF is preserved in HFpEF, or why ACE inhibitors cause a cough.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's scarred inferior wall lowers output, so RAAS and the **sympathetic system** switch on, which in the long run makes things worse."
+    },
+    {
+     "type": "flow",
+     "title": "The vicious cycle",
+     "nodes": [
+      "MI scar: low cardiac output",
+      "Kidneys sense low perfusion: RAAS on",
+      "Salt and water retention, vasoconstriction",
+      "Higher preload and afterload",
+      "More wall stress and remodelling"
+     ],
+     "caption": "The big 4 each break a link in this cycle."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's high left atrial pressure pushes fluid into his alveoli; high systemic venous pressure swells his legs and liver."
+    },
+    {
+     "type": "ask",
+     "q": "What mainly causes the oedema in Desmond's legs?",
+     "o": [
+      "Increased capillary permeability",
+      "Low plasma oncotic pressure",
+      "Lymphatic obstruction",
+      "Raised capillary hydrostatic pressure"
+     ],
+     "a": 3,
+     "r": "Right-sided congestion raises **systemic venous and capillary hydrostatic pressure**, forcing fluid out. His albumin is normal."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond's stretched ventricles pour out **BNP**, which is why a normal level would have made heart failure unlikely."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond's ventricle cannot squeeze (**systolic**, HFrEF). In HFpEF the ventricle squeezes normally but is stiff and fills poorly."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Each of Desmond's tablets blocks a harmful pathway: angiotensin II, adrenaline, aldosterone, or salt retention via SGLT2."
+    },
+    {
+     "type": "pearl",
+     "text": "ACE inhibitors block breakdown of **bradykinin**, causing a dry cough. Switching to an ARB (or sacubitril-valsartan) avoids it."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which is the most common cause of heart failure?",
+   "o": [
+    "Coronary artery disease",
+    "Hyperthyroidism",
+    "Pregnancy",
+    "Viral myocarditis"
+   ],
+   "a": 0,
+   "r": "**Coronary artery disease** is the commonest cause, followed by hypertension and valve disease."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which sign is a poor prognostic sign in heart failure?",
+   "o": [
+    "Ankle oedema",
+    "Pulsus alternans",
+    "Pulsus paradoxus",
+    "Slow-rising pulse"
+   ],
+   "a": 1,
+   "r": "**Pulsus alternans** reflects severe LV impairment. Pulsus paradoxus suggests tamponade."
+  },
+  {
+   "d": "diagnosis",
+   "q": "HFpEF is heart failure with an ejection fraction above what?",
+   "o": [
+    "30%",
+    "35%",
+    "40%",
+    "50%"
+   ],
+   "a": 3,
+   "r": "The notes define **HFpEF** as preserved EF above **50%**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line investigation for suspected heart failure?",
+   "o": [
+    "Chest X-ray",
+    "ECG",
+    "Serum BNP",
+    "Transthoracic echo"
+   ],
+   "a": 2,
+   "r": "**BNP** first; it has a high negative predictive value."
+  },
+  {
+   "d": "investigation",
+   "q": "Which investigation confirms heart failure?",
+   "o": [
+    "Cardiac catheterisation",
+    "Chest X-ray",
+    "Serum BNP",
+    "Transthoracic echocardiogram"
+   ],
+   "a": 3,
+   "r": "**TTE** is the gold standard: EF and structural abnormality."
+  },
+  {
+   "d": "investigation",
+   "q": "Symptoms at rest, unable to do any activity without discomfort. Which NYHA class?",
+   "o": [
+    "I",
+    "II",
+    "III",
+    "IV"
+   ],
+   "a": 3,
+   "r": "**Class IV** is symptoms at rest."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line drug treatment of acute pulmonary oedema?",
+   "o": [
+    "IV furosemide",
+    "IV morphine",
+    "Oral bisoprolol",
+    "Oral ramipril"
+   ],
+   "a": 0,
+   "r": "Sit up, high-flow oxygen, **IV furosemide 40–120 mg**."
+  },
+  {
+   "d": "management",
+   "q": "A patient with HFrEF is still symptomatic on the big 4. What is the next step?",
+   "o": [
+    "Add amlodipine",
+    "Stop the beta-blocker",
+    "Switch ACE inhibitor to sacubitril-valsartan",
+    "Switch SGLT2 inhibitor to metformin"
+   ],
+   "a": 2,
+   "r": "Replace the ACE inhibitor with an **ARNI** (sacubitril-valsartan)."
+  },
+  {
+   "d": "management",
+   "q": "Which device is indicated when EF is below 35%?",
+   "o": [
+    "Implantable loop recorder",
+    "CRT device with defibrillator",
+    "Single-chamber pacemaker",
+    "Ventricular assist device"
+   ],
+   "a": 1,
+   "r": "**Cardiac resynchronisation therapy** plus a defibrillator."
+  },
+  {
+   "d": "science",
+   "q": "Why do ACE inhibitors cause a dry cough?",
+   "o": [
+    "Bradykinin accumulation",
+    "Hyperkalaemia",
+    "Pulmonary oedema",
+    "Raised aldosterone"
+   ],
+   "a": 0,
+   "r": "ACE breaks down **bradykinin**; blocking it lets bradykinin build up."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is heart failure and what are its main causes?",
+    "tip": "Exam thinking: an older patient with a past MI and new breathlessness is heart failure until proven otherwise.",
+    "points": [
+     {
+      "p": "Heart cannot pump enough blood to meet the body's demands",
+      "k": [
+       [
+        "pump",
+        "cardiac output",
+        "demand"
+       ]
+      ],
+      "why": "It leads to congestion plus poor tissue perfusion."
+     },
+     {
+      "p": "Coronary artery disease is the commonest cause",
+      "k": [
+       [
+        "coronary",
+        "ischaemic",
+        "ihd",
+        "cad"
+       ]
+      ],
+      "why": "A previous MI in the stem is a big clue."
+     },
+     {
+      "p": "Hypertension",
+      "k": [
+       [
+        "hypertension",
+        "high blood pressure"
+       ]
+      ],
+      "why": "Also a classic cause of HFpEF."
+     },
+     {
+      "p": "Valvular disease (aortic stenosis, mitral regurgitation)",
+      "k": [
+       [
+        "valv",
+        "stenosis",
+        "regurgitation"
+       ]
+      ],
+      "why": "A murmur in the stem points to valve disease as the cause."
+     },
+     {
+      "p": "Diabetes",
+      "k": [
+       [
+        "diabet"
+       ]
+      ],
+      "why": "Listed in the notes as a risk factor."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the symptoms and signs of left-sided heart failure?",
+    "tip": "Exam thinking: left = lungs.",
+    "points": [
+     {
+      "p": "Breathlessness, orthopnoea and PND",
+      "k": [
+       [
+        "orthopnoea",
+        "orthopnea",
+        "pnd",
+        "paroxysmal",
+        "lying flat"
+       ]
+      ],
+      "why": "Orthopnoea and PND point to heart over lung causes."
+     },
+     {
+      "p": "Bibasal crackles / pulmonary oedema",
+      "k": [
+       [
+        "crackle",
+        "crepitation",
+        "pulmonary oedema",
+        "pulmonary edema"
+       ]
+      ],
+      "why": "Bilateral and basal, without fever."
+     },
+     {
+      "p": "Displaced apex beat",
+      "k": [
+       [
+        "apex",
+        "displaced"
+       ]
+      ],
+      "why": "Reflects a dilated left ventricle."
+     },
+     {
+      "p": "Pink frothy sputum",
+      "k": [
+       [
+        "frothy",
+        "pink"
+       ]
+      ],
+      "why": "Classic of acute pulmonary oedema."
+     },
+     {
+      "p": "Cyanosis",
+      "k": [
+       [
+        "cyanos"
+       ]
+      ],
+      "why": "Severe hypoxaemia from alveolar fluid."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the signs of right-sided heart failure, and what causes it?",
+    "tip": "Exam thinking: right = systemic veins; think of the lungs or the left heart as the cause.",
+    "points": [
+     {
+      "p": "Raised JVP",
+      "k": [
+       [
+        "jvp",
+        "jugular"
+       ]
+      ],
+      "why": "The most specific sign of right-sided congestion."
+     },
+     {
+      "p": "Peripheral (pitting) oedema",
+      "k": [
+       [
+        "oedema",
+        "edema",
+        "swelling"
+       ]
+      ],
+      "why": "Ankle and sacral oedema."
+     },
+     {
+      "p": "Hepatomegaly",
+      "k": [
+       [
+        "hepatomegaly",
+        "liver"
+       ]
+      ],
+      "why": "Congested liver; may be tender."
+     },
+     {
+      "p": "Caused by left HF or long-standing COPD",
+      "k": [
+       [
+        "left",
+        "copd",
+        "lung"
+       ]
+      ],
+      "why": "Failure of one side can worsen the other."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How is heart failure classified by ejection fraction, and what is high-output failure?",
+    "tip": "Exam thinking: the echo EF decides HFrEF vs HFpEF; a normal echo with failure makes you look for a high-output cause.",
+    "points": [
+     {
+      "p": "HFrEF: reduced ejection fraction",
+      "k": [
+       [
+        "hfref",
+        "reduced"
+       ]
+      ],
+      "why": "Under 40% on echo."
+     },
+     {
+      "p": "HFpEF: preserved EF above 50%",
+      "k": [
+       [
+        "hfpef",
+        "preserved"
+       ],
+       [
+        "50"
+       ]
+      ],
+      "why": "Diastolic dysfunction, often elderly hypertensive women."
+     },
+     {
+      "p": "High-output: hyperthyroidism, pregnancy, severe anaemia",
+      "k": [
+       [
+        "thyro",
+        "pregnan",
+        "anaemia",
+        "anemia"
+       ]
+      ],
+      "why": "Echo is normal with EF over 55%."
+     },
+     {
+      "p": "Differential: HOCM (asymmetric septal hypertrophy)",
+      "k": [
+       [
+        "hocm",
+        "hypertrophic"
+       ]
+      ],
+      "why": "Diastolic dysfunction from a thick septum."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which examination finding signals a poor prognosis in heart failure, and why?",
+    "tip": "Exam thinking: know which pulse goes with which disease.",
+    "points": [
+     {
+      "p": "Pulsus alternans",
+      "k": [
+       [
+        "alternans",
+        "alternating"
+       ]
+      ],
+      "why": "Alternating strong and weak pulses."
+     },
+     {
+      "p": "Reflects severe LV impairment",
+      "k": [
+       [
+        "severe",
+        "lv",
+        "left ventric"
+       ]
+      ],
+      "why": "Do not confuse with pulsus paradoxus (tamponade)."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the first-line test and the confirmatory test for heart failure?",
+    "tip": "Exam thinking: BNP rules out; echo rules in.",
+    "points": [
+     {
+      "p": "BNP (NT-proBNP) first-line",
+      "k": [
+       [
+        "bnp",
+        "natriuretic"
+       ]
+      ],
+      "why": "High negative predictive value: a low BNP makes HF very unlikely."
+     },
+     {
+      "p": "Transthoracic echocardiogram is the gold standard",
+      "k": [
+       [
+        "echo"
+       ]
+      ],
+      "why": "Done once BNP is raised; measures EF and structure."
+     },
+     {
+      "p": "Echo assesses ejection fraction and structural abnormality",
+      "k": [
+       [
+        "ejection",
+        "ef",
+        "structur",
+        "valv"
+       ]
+      ],
+      "why": "Separates HFrEF from HFpEF."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What does the chest X-ray show in heart failure?",
+    "tip": "Exam thinking: run through A to E.",
+    "points": [
+     {
+      "p": "Alveolar oedema: 'bat wing' pattern",
+      "k": [
+       [
+        "bat",
+        "alveolar"
+       ]
+      ],
+      "why": "Perihilar shadowing in acute pulmonary oedema."
+     },
+     {
+      "p": "Kerley B lines",
+      "k": [
+       [
+        "kerley"
+       ]
+      ],
+      "why": "Short horizontal lines at the periphery: interstitial oedema."
+     },
+     {
+      "p": "Cardiomegaly",
+      "k": [
+       [
+        "cardiomegaly",
+        "enlarged heart",
+        "big heart"
+       ]
+      ],
+      "why": "Cardiothoracic ratio above 0.5 on a PA film."
+     },
+     {
+      "p": "Upper lobe blood diversion",
+      "k": [
+       [
+        "upper lobe",
+        "diversion"
+       ]
+      ],
+      "why": "Raised pulmonary venous pressure."
+     },
+     {
+      "p": "Bilateral pleural effusions / fluid in horizontal fissure",
+      "k": [
+       [
+        "effusion",
+        "costophrenic",
+        "fissure"
+       ]
+      ],
+      "why": "Blunted costophrenic angles."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is severity graded with the NYHA classification?",
+    "tip": "Exam thinking: the key split is III (comfortable at rest) vs IV (symptoms at rest).",
+    "points": [
+     {
+      "p": "Class I: no limitation",
+      "k": [
+       [
+        "no limitation",
+        "class i ",
+        "class 1",
+        "none"
+       ]
+      ],
+      "why": "Diagnosed but asymptomatic on ordinary activity."
+     },
+     {
+      "p": "Class II: slight limitation, symptoms on ordinary activity",
+      "k": [
+       [
+        "slight",
+        "ordinary"
+       ]
+      ],
+      "why": "Comfortable at rest."
+     },
+     {
+      "p": "Class III: marked limitation, symptoms on minimal activity",
+      "k": [
+       [
+        "marked",
+        "minimal"
+       ]
+      ],
+      "why": "Still comfortable at rest."
+     },
+     {
+      "p": "Class IV: symptoms at rest",
+      "k": [
+       [
+        "at rest",
+        "rest"
+       ]
+      ],
+      "why": "Cannot do any activity without discomfort."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage acute pulmonary oedema?",
+    "tip": "Exam thinking: furosemide first; GTN only if BP allows; CPAP if not responding.",
+    "points": [
+     {
+      "p": "Sit upright, high-flow oxygen",
+      "k": [
+       [
+        "upright",
+        "sit"
+       ],
+       [
+        "oxygen",
+        "o2"
+       ]
+      ],
+      "why": "Reduces venous return and improves oxygenation."
+     },
+     {
+      "p": "IV furosemide 40–120 mg",
+      "k": [
+       [
+        "furosemide",
+        "loop diuretic"
+       ]
+      ],
+      "why": "Relieves symptoms but does not reduce mortality."
+     },
+     {
+      "p": "IV GTN if systolic BP above 100",
+      "k": [
+       [
+        "gtn",
+        "nitrate",
+        "glyceryl"
+       ]
+      ],
+      "why": "Venodilation; avoid in hypotension."
+     },
+     {
+      "p": "CPAP if not responding (BiPAP if hypercapnic/acidaemic)",
+      "k": [
+       [
+        "cpap",
+        "bipap",
+        "niv",
+        "non-invasive"
+       ]
+      ],
+      "why": "Hypoxaemic respiratory failure needs CPAP."
+     },
+     {
+      "p": "IV inotropes (dobutamine/milrinone) if hypotensive with poor LV",
+      "k": [
+       [
+        "inotrop",
+        "dobutamine",
+        "milrinone"
+       ]
+      ],
+      "why": "For cardiogenic shock."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the long-term management of HFrEF, step by step?",
+    "tip": "Exam thinking: 'which drug improves prognosis' is never furosemide.",
+    "points": [
+     {
+      "p": "ACE inhibitor plus beta-blocker first",
+      "k": [
+       [
+        "ace",
+        "ramipril",
+        "lisinopril"
+       ],
+       [
+        "beta",
+        "bisoprolol",
+        "carvedilol"
+       ]
+      ],
+      "why": "The foundation therapy; furosemide added for symptoms."
+     },
+     {
+      "p": "Add MRA (spironolactone/eplerenone) and SGLT2 inhibitor: the big 4",
+      "k": [
+       [
+        "mra",
+        "spironolactone",
+        "eplerenone",
+        "aldosterone"
+       ],
+       [
+        "sglt2",
+        "dapagliflozin",
+        "empagliflozin",
+        "gliflozin"
+       ]
+      ],
+      "why": "MRA: watch potassium; SGLT2i: watch UTIs."
+     },
+     {
+      "p": "Still symptomatic: switch ACE inhibitor to sacubitril-valsartan",
+      "k": [
+       [
+        "sacubitril",
+        "arni",
+        "neprilysin"
+       ]
+      ],
+      "why": "Stop the ACE inhibitor before starting it."
+     },
+     {
+      "p": "EF below 35%: CRT device and defibrillator",
+      "k": [
+       [
+        "crt",
+        "resynchron",
+        "defibrillator",
+        "icd"
+       ]
+      ],
+      "why": "Also if the QRS is wide despite therapy."
+     },
+     {
+      "p": "Annual flu vaccine and single pneumococcal vaccine",
+      "k": [
+       [
+        "vaccin",
+        "flu",
+        "influenza",
+        "pneumococcal"
+       ]
+      ],
+      "why": "Infection is a common trigger for decompensation."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does BNP rise in heart failure, and why does oedema form?",
+    "tip": "Exam thinking: stretch releases BNP; pressure pushes fluid out.",
+    "points": [
+     {
+      "p": "BNP released by ventricular myocytes in response to wall stretch",
+      "k": [
+       [
+        "stretch",
+        "strain"
+       ]
+      ],
+      "why": "Level tracks ventricular strain, hence the high negative predictive value."
+     },
+     {
+      "p": "BNP causes natriuresis, diuresis and vasodilation",
+      "k": [
+       [
+        "natriures",
+        "diures",
+        "vasodilat"
+       ]
+      ],
+      "why": "A counter-regulatory hormone opposing RAAS."
+     },
+     {
+      "p": "Left HF: raised pulmonary venous pressure causes alveolar transudation",
+      "k": [
+       [
+        "pulmonary venous",
+        "left atrial",
+        "transudat"
+       ]
+      ],
+      "why": "Gives crackles, orthopnoea and PND."
+     },
+     {
+      "p": "Right HF: raised systemic venous hydrostatic pressure causes peripheral oedema",
+      "k": [
+       [
+        "hydrostatic",
+        "systemic venous"
+       ]
+      ],
+      "why": "Also hepatomegaly and raised JVP."
+     },
+     {
+      "p": "RAAS and sympathetic activation worsen remodelling",
+      "k": [
+       [
+        "raas",
+        "renin",
+        "angiotensin",
+        "sympathetic"
+       ]
+      ],
+      "why": "Why ACE inhibitors and beta-blockers improve survival."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Orthopnoea": "Breathlessness when lying flat, relieved by sitting up; counted by the number of pillows needed.",
+  "PND": "Paroxysmal nocturnal dyspnoea: waking from sleep suddenly breathless, needing to sit up.",
+  "BNP": "B-type natriuretic peptide, released by stretched ventricles; a low level makes heart failure unlikely.",
+  "NT-proBNP": "The inactive fragment made alongside BNP; the version usually measured in UK practice.",
+  "HFrEF": "Heart failure with reduced ejection fraction: the ventricle cannot squeeze properly.",
+  "HFpEF": "Heart failure with preserved ejection fraction (above 50%): the ventricle is stiff and fills poorly.",
+  "Ejection fraction": "The percentage of blood in the left ventricle pumped out with each beat; normal is above 50%.",
+  "EF": "Ejection fraction: the share of ventricular blood ejected per beat.",
+  "Pulsus alternans": "A regular pulse that alternates between strong and weak beats; a sign of severe LV impairment.",
+  "Pulsus paradoxus": "An exaggerated fall in systolic BP on inspiration, seen in cardiac tamponade and severe asthma.",
+  "JVP": "Jugular venous pressure: the height of the venous pulse in the neck, reflecting right atrial pressure.",
+  "Hepatomegaly": "An enlarged liver; in heart failure from venous congestion.",
+  "Apex beat": "The lowest, most lateral point where the heartbeat can be felt; displaced when the ventricle dilates.",
+  "Kerley B lines": "Short horizontal lines at the lung edges on CXR, caused by fluid in the interlobular septa.",
+  "Bat wing": "Perihilar shadowing on CXR caused by alveolar pulmonary oedema.",
+  "Cardiomegaly": "An enlarged heart shadow on CXR: cardiothoracic ratio above 0.5 on a PA film.",
+  "Upper lobe diversion": "Prominent upper lobe vessels on CXR from raised pulmonary venous pressure.",
+  "Costophrenic angle": "The angle where the diaphragm meets the chest wall on CXR; blunted by an effusion.",
+  "NYHA": "New York Heart Association classes I to IV, grading heart failure symptoms by activity limitation.",
+  "Transthoracic echocardiogram": "Ultrasound of the heart through the chest wall; the gold standard test for heart failure.",
+  "TTE": "Transthoracic echocardiogram.",
+  "HOCM": "Hypertrophic obstructive cardiomyopathy: inherited asymmetric septal thickening causing diastolic dysfunction.",
+  "High-output heart failure": "Failure because the body demands too much output (thyrotoxicosis, pregnancy, anaemia), not because the heart is damaged.",
+  "Diastolic dysfunction": "Impaired relaxation and filling of the ventricle, the mechanism of HFpEF.",
+  "RAAS": "Renin-angiotensin-aldosterone system: hormones that retain salt and water and constrict vessels.",
+  "MRA": "Mineralocorticoid receptor antagonist (spironolactone, eplerenone); blocks aldosterone.",
+  "SGLT2 inhibitor": "A gliflozin drug (dapagliflozin, empagliflozin) that makes the kidney excrete glucose and sodium.",
+  "Sacubitril-valsartan": "An ARNI: a neprilysin inhibitor combined with an ARB, replacing the ACE inhibitor in resistant HFrEF.",
+  "ARNI": "Angiotensin receptor-neprilysin inhibitor, such as sacubitril-valsartan.",
+  "Neprilysin": "An enzyme that breaks down natriuretic peptides; blocking it boosts their beneficial effects.",
+  "Bradykinin": "A peptide normally broken down by ACE; its build-up on ACE inhibitors causes a dry cough.",
+  "CRT": "Cardiac resynchronisation therapy: a biventricular pacemaker that makes both ventricles contract together.",
+  "CRT-D": "A CRT device that is also an implantable defibrillator.",
+  "GTN": "Glyceryl trinitrate: a nitrate venodilator that reduces preload; avoid if systolic BP is under 100.",
+  "Furosemide": "A loop diuretic that offloads fluid; relieves symptoms but does not improve survival.",
+  "CPAP": "Continuous positive airway pressure via a tight mask; keeps alveoli open in pulmonary oedema.",
+  "BiPAP": "Bilevel positive airway pressure (NIV); also helps blow off CO2 in hypercapnia.",
+  "Inotropes": "Drugs such as dobutamine and milrinone that increase the force of heart contraction.",
+  "Afterload": "The resistance the ventricle pumps against, mainly systemic vascular resistance.",
+  "Preload": "The stretch on the ventricle at the end of filling, set by venous return.",
+  "Remodelling": "Harmful long-term change in ventricular size, shape and wall thickness after injury.",
+  "Natriuresis": "Excretion of sodium in the urine.",
+  "LBBB": "Left bundle branch block: a broad QRS from delayed left ventricular activation."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man has a 2 month history of increasing breathlessness on exertion. He now sleeps on three pillows and wakes at night gasping for breath. He had a myocardial infarction 4 years ago. There are fine crackles at both lung bases, the apex beat is displaced to the anterior axillary line and there is pitting oedema to the mid shins.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Asthma",
+    "Chronic heart failure",
+    "Chronic obstructive pulmonary disease",
+    "Idiopathic pulmonary fibrosis",
+    "Iron deficiency anaemia"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about breathlessness: decide heart or lung."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sleeps on three pillows",
+      "wakes at night gasping for breath",
+      "myocardial infarction 4 years ago",
+      "apex beat is displaced",
+      "pitting oedema"
+     ],
+     "x": "Orthopnoea and PND, a cause (old MI), a dilated ventricle (displaced apex) and fluid overload."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Ischaemic heart disease leading to **chronic heart failure**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Asthma gives wheeze and variable symptoms, not oedema or a displaced apex."
+      ],
+      [
+       2,
+       "COPD has no orthopnoea with a displaced apex; no smoking history is given."
+      ],
+      [
+       3,
+       "IPF gives fine crackles but clubbing and no oedema or displaced apex."
+      ],
+      [
+       4,
+       "Anaemia can cause breathlessness but not a displaced apex and crackles."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Chronic heart failure.** Rule: orthopnoea + PND + displaced apex + oedema = heart failure."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 79 year old woman has acute breathlessness and frothy sputum. Her pulse rate is 118 bpm, BP 150/88 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 87% breathing air. She has crackles to the mid zones bilaterally and a raised JVP. Her NT-proBNP is 6,200 ng/L.",
+   "labs": [
+    [
+     "NT-proBNP",
+     "6,200 ng/L",
+     "<400",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely finding on chest X-ray?",
+   "o": [
+    "Bilateral hilar lymphadenopathy",
+    "Hyperinflated lung fields",
+    "Kerley B lines",
+    "Left upper lobe collapse",
+    "Rib notching"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A CXR finding question: first decide the diagnosis, then recall its CXR signs."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "frothy sputum",
+      "crackles to the mid zones bilaterally",
+      "raised JVP",
+      "6,200 ng/L"
+     ],
+     "x": "Pulmonary oedema with a very high NT-proBNP: acute heart failure."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "CXR in heart failure: bat wing, **Kerley B lines**, cardiomegaly, upper lobe diversion, effusions."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bilateral hilar lymphadenopathy is sarcoidosis."
+      ],
+      [
+       1,
+       "Hyperinflation is COPD or asthma."
+      ],
+      [
+       3,
+       "Lobar collapse suggests an obstructing tumour or mucus plug."
+      ],
+      [
+       4,
+       "Rib notching is coarctation of the aorta."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Kerley B lines.** Remember A to E: alveolar oedema, B lines, cardiomegaly, diversion, effusions."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 66 year old man has had breathlessness and ankle swelling for 3 months. His echocardiogram shows an ejection fraction of 32%. He takes furosemide 40 mg daily and his oedema has improved. His pulse rate is 84 bpm and regular and BP 132/78 mmHg. His renal function and potassium are normal.",
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Amiodarone",
+    "Amlodipine",
+    "Digoxin",
+    "Ivabradine",
+    "Ramipril and bisoprolol"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of chronic heart failure: what comes first?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ejection fraction of 32%",
+      "furosemide 40 mg",
+      "regular",
+      "renal function and potassium are normal"
+     ],
+     "x": "HFrEF on a diuretic only: no prognostic drug yet. Normal renal function and potassium make an ACE inhibitor safe."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Foundation therapy: **ACE inhibitor plus beta-blocker**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amiodarone is for arrhythmias; he is in sinus rhythm."
+      ],
+      [
+       1,
+       "Amlodipine has no prognostic benefit in HFrEF."
+      ],
+      [
+       2,
+       "Digoxin is for AF rate control or later-line symptoms."
+      ],
+      [
+       3,
+       "Ivabradine is a later option once on a beta-blocker."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Ramipril and bisoprolol.** Then add MRA and SGLT2 inhibitor to complete the big 4."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 78 year old woman with long-standing hypertension has exertional breathlessness and ankle swelling. Her NT-proBNP is raised. Her echocardiogram shows concentric left ventricular hypertrophy, an ejection fraction of 60% and impaired diastolic filling.",
+   "q": "Which is the most likely mechanism of her heart failure?",
+   "o": [
+    "Impaired myocardial contractility",
+    "Impaired ventricular relaxation and filling",
+    "Increased demand for cardiac output",
+    "Pericardial constriction",
+    "Valvular regurgitation"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: decide what kind of heart failure this is."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing hypertension",
+      "concentric left ventricular hypertrophy",
+      "ejection fraction of 60%",
+      "impaired diastolic filling"
+     ],
+     "x": "EF above 50% with a thick, stiff ventricle: **HFpEF**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "HFpEF is **diastolic dysfunction**: the ventricle contracts normally but relaxes and fills poorly."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Poor contractility is HFrEF; her EF is preserved."
+      ],
+      [
+       2,
+       "High demand is high-output failure (thyroid, anaemia, pregnancy)."
+      ],
+      [
+       3,
+       "Constriction is not suggested; the echo shows LVH."
+      ],
+      [
+       4,
+       "No valve lesion is described."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Impaired ventricular relaxation and filling.** EF preserved despite raised filling pressures."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old woman has sudden worsening breathlessness overnight and is coughing pink frothy sputum. She has ischaemic heart disease. Her temperature is 36.8°C, pulse rate 116 bpm, BP 172/96 mmHg, respiratory rate 32 breaths per minute and oxygen saturation 84% breathing air. There are coarse crackles throughout both lung fields.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute exacerbation of COPD",
+    "Acute left ventricular failure",
+    "Community-acquired pneumonia",
+    "Pulmonary embolism",
+    "Tension pneumothorax"
+   ],
+   "a": 1,
+   "e": "Pink frothy sputum with bilateral crackles, no fever and known IHD is acute LVF with pulmonary oedema. Pneumonia would be febrile and usually focal.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of acute breathlessness."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pink frothy sputum",
+      "ischaemic heart disease",
+      "36.8°C",
+      "crackles throughout both lung fields"
+     ],
+     "x": "Classic pulmonary oedema, afebrile, with a cardiac cause."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute left ventricular failure** with pulmonary oedema."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "COPD gives wheeze and hyperinflation, not frothy sputum."
+      ],
+      [
+       2,
+       "Pneumonia is febrile with focal signs."
+      ],
+      [
+       3,
+       "PE usually has a clear chest and pleuritic pain."
+      ],
+      [
+       4,
+       "Tension pneumothorax has absent breath sounds and hypotension."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Acute LVF.** Pink frothy sputum + bilateral crackles = pulmonary oedema."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old man with severe COPD has 6 weeks of increasing leg swelling and abdominal distension. His pulse rate is 96 bpm, BP 128/76 mmHg and oxygen saturation 88% breathing air. His JVP is raised 7 cm, there is a smooth tender liver edge 4 cm below the costal margin and pitting oedema to the thighs.",
+   "labs": [
+    [
+     "Albumin",
+     "38 g/L",
+     "35–50",
+     ""
+    ],
+    [
+     "Urine protein",
+     "Negative",
+     "Negative",
+     ""
+    ],
+    [
+     "NT-proBNP",
+     "1,900 ng/L",
+     "<400",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cirrhosis",
+    "Deep vein thrombosis",
+    "Nephrotic syndrome",
+    "Right-sided heart failure",
+    "Superior vena cava obstruction"
+   ],
+   "a": 3,
+   "e": "Long-standing COPD complicated by right ventricular failure gives raised JVP, hepatomegaly and peripheral oedema. Normal albumin and no proteinuria exclude nephrotic syndrome and argue against cirrhosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of oedema: is it heart, liver or kidney?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe COPD",
+      "JVP is raised 7 cm",
+      "smooth tender liver edge",
+      "pitting oedema to the thighs"
+     ],
+     "x": "Raised JVP puts it in the heart; COPD is the cause of RV failure."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Right-sided (congestive) heart failure** from chronic lung disease."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cirrhosis does not raise the JVP and albumin would be low."
+      ],
+      [
+       1,
+       "DVT is unilateral and does not raise the JVP."
+      ],
+      [
+       2,
+       "Nephrotic syndrome needs heavy proteinuria and low albumin."
+      ],
+      [
+       4,
+       "SVC obstruction swells the face and arms, not the legs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Right-sided heart failure.** Raised JVP + hepatomegaly + oedema."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old man has 4 months of breathlessness walking on the flat and needs three pillows to sleep. He had an anterior myocardial infarction 2 years ago. His echocardiogram shows a dilated left ventricle with an ejection fraction of 28%.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Bronchial breathing",
+    "Collapsing pulse",
+    "Displaced apex beat",
+    "Slow-rising pulse",
+    "Tracheal deviation"
+   ],
+   "a": 2,
+   "e": "A dilated left ventricle in HFrEF displaces the apex beat laterally. A slow-rising pulse is aortic stenosis; a collapsing pulse is aortic regurgitation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An examination finding question: decide the diagnosis first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "three pillows",
+      "anterior myocardial infarction",
+      "dilated left ventricle",
+      "ejection fraction of 28%"
+     ],
+     "x": "Ischaemic HFrEF with a big left ventricle."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A dilated LV pushes the apex outward: **displaced apex beat**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchial breathing means consolidation."
+      ],
+      [
+       1,
+       "Collapsing pulse is aortic regurgitation."
+      ],
+      [
+       3,
+       "Slow-rising pulse is aortic stenosis."
+      ],
+      [
+       4,
+       "Tracheal deviation suggests collapse, effusion or tension pneumothorax."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Displaced apex beat.** A left-sided sign of a dilated ventricle."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 81 year old woman with hypertension is brought in with acute breathlessness. Her temperature is 37.0°C, pulse rate 110 bpm, BP 158/92 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 86% breathing air. There are bilateral crackles. Chest X-ray (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "pulm_oedema",
+      "side": "both"
+     },
+     {
+      "type": "cardiomegaly",
+      "side": "both"
+     },
+     {
+      "type": "effusion",
+      "side": "both",
+      "zone": "lower"
+     }
+    ],
+    "caption": "Perihilar bat-wing shadowing, cardiomegaly and blunted costophrenic angles."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute pulmonary oedema",
+    "Bilateral pneumonia",
+    "Idiopathic pulmonary fibrosis",
+    "Pneumocystis pneumonia",
+    "Sarcoidosis"
+   ],
+   "a": 0,
+   "e": "Bat-wing perihilar shadowing with cardiomegaly and bilateral effusions in an afebrile patient is acute pulmonary oedema from heart failure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis from a CXR plus a breathless patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hypertension",
+      "37.0°C",
+      "bilateral crackles",
+      "Chest X-ray (see item resources)"
+     ],
+     "x": "Afebrile, bilateral, hypertensive: the film shows bat wings, a big heart and effusions."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute pulmonary oedema** from heart failure."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Bilateral pneumonia is febrile and would not cause cardiomegaly."
+      ],
+      [
+       2,
+       "IPF is chronic, with reticular basal shadowing."
+      ],
+      [
+       3,
+       "PCP is in the immunosuppressed, with a fever and a normal heart size."
+      ],
+      [
+       4,
+       "Sarcoidosis gives bilateral hilar lymphadenopathy."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute pulmonary oedema.** Bat wings + cardiomegaly + effusions."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old woman has 2 months of breathlessness, ankle swelling, weight loss, heat intolerance and a fine tremor. Her pulse rate is 128 bpm and irregularly irregular, BP 136/58 mmHg. Her hands are warm. Her echocardiogram shows normal structure, an ejection fraction of 65% and normal diastolic filling.",
+   "labs": [
+    [
+     "TSH",
+     "<0.01 mU/L",
+     "0.3–4.2",
+     "L"
+    ],
+    [
+     "Free T4",
+     "48 pmol/L",
+     "12–22",
+     "H"
+    ],
+    [
+     "Hb",
+     "132 g/L",
+     "115–165",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely cause of her heart failure?",
+   "o": [
+    "Aortic stenosis",
+    "Coronary artery disease",
+    "Dilated cardiomyopathy",
+    "Hyperthyroidism",
+    "Hypertrophic obstructive cardiomyopathy"
+   ],
+   "a": 3,
+   "e": "Heart failure with a normal echo, preserved EF and normal filling is high-output failure; suppressed TSH and high T4 make hyperthyroidism the cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: the echo tells you which type of failure."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "heat intolerance and a fine tremor",
+      "irregularly irregular",
+      "hands are warm",
+      "normal structure, an ejection fraction of 65% and normal diastolic filling"
+     ],
+     "x": "Normal heart, warm peripheries, thyrotoxic features: **high-output** failure."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "High-output heart failure from **hyperthyroidism**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aortic stenosis would show on echo."
+      ],
+      [
+       1,
+       "Coronary disease gives regional wall motion problems and low EF."
+      ],
+      [
+       2,
+       "Dilated cardiomyopathy has a low EF."
+      ],
+      [
+       4,
+       "HOCM shows asymmetric septal hypertrophy on echo."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Hyperthyroidism.** Normal echo + heart failure = look for a high-output cause."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 77 year old woman with long-standing hypertension has 6 months of exertional breathlessness and ankle swelling. Her pulse rate is 78 bpm and BP 164/88 mmHg. Her echocardiogram shows concentric left ventricular hypertrophy with impaired relaxation and no valve disease.",
+   "labs": [
+    [
+     "NT-proBNP",
+     "1,450 ng/L",
+     "<400",
+     "H"
+    ],
+    [
+     "Ejection fraction",
+     "58%",
+     ">50%",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Heart failure with mildly reduced ejection fraction",
+    "Heart failure with preserved ejection fraction",
+    "Heart failure with reduced ejection fraction",
+    "High-output heart failure",
+    "Hypertrophic obstructive cardiomyopathy"
+   ],
+   "a": 1,
+   "e": "Symptoms, raised NT-proBNP and an EF above 50% with impaired relaxation is HFpEF. HOCM gives asymmetric septal hypertrophy, not concentric LVH from hypertension.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Which type of heart failure? Look at the EF."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing hypertension",
+      "concentric left ventricular hypertrophy",
+      "impaired relaxation",
+      "no valve disease"
+     ],
+     "x": "Concentric LVH with diastolic dysfunction in an older hypertensive woman; the labs show EF 58%."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**HFpEF**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Mildly reduced EF is 41 to 49%."
+      ],
+      [
+       2,
+       "HFrEF needs a reduced EF (under 40%)."
+      ],
+      [
+       3,
+       "High-output failure has a normal echo and a high-output cause."
+      ],
+      [
+       4,
+       "HOCM is asymmetric septal hypertrophy, usually in younger people."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. HFpEF.** EF above 50% + stiff ventricle."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 71 year old man sees his GP with 3 months of breathlessness on exertion and ankle swelling. He had a myocardial infarction 5 years ago. His pulse rate is 82 bpm and regular, BP 142/84 mmHg and oxygen saturation 95% breathing air. There are fine crackles at both bases.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Chest X-ray",
+    "Coronary angiogram",
+    "Echocardiography",
+    "Serum N-terminal pro-BNP",
+    "Serum troponin"
+   ],
+   "a": 3,
+   "e": "In suspected chronic heart failure NT-proBNP is first-line; if raised, echocardiography confirms. A normal level makes heart failure very unlikely.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Initial' investigation in suspected chronic heart failure."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sees his GP",
+      "3 months",
+      "myocardial infarction 5 years ago",
+      "fine crackles at both bases"
+     ],
+     "x": "Stable, chronic, in primary care: start with the blood test."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**NT-proBNP** first, then echo if raised."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CXR is supportive but not the first-line test."
+      ],
+      [
+       1,
+       "Angiography is for symptomatic coronary disease, not first-line HF."
+      ],
+      [
+       2,
+       "Echo is the confirmatory test after a raised BNP."
+      ],
+      [
+       4,
+       "Troponin is for acute coronary syndrome."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. NT-proBNP.** BNP first; echo second."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 74 year old woman has 2 months of breathlessness and ankle swelling. She has orthopnoea and a raised JVP. Her pulse rate is 88 bpm and BP 138/82 mmHg.",
+   "labs": [
+    [
+     "NT-proBNP",
+     "2,600 ng/L",
+     "<400",
+     "H"
+    ],
+    [
+     "Troponin T",
+     "11 ng/L",
+     "<14",
+     ""
+    ],
+    [
+     "Hb",
+     "126 g/L",
+     "115–165",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which investigation is the most appropriate to confirm the likely diagnosis?",
+   "o": [
+    "Cardiac MRI",
+    "Chest X-ray",
+    "Coronary angiogram",
+    "CT pulmonary angiogram",
+    "Transthoracic echocardiogram"
+   ],
+   "a": 4,
+   "e": "A raised NT-proBNP with heart failure symptoms needs a transthoracic echo, the gold standard, to confirm and measure EF.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Confirm' means the gold-standard test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "orthopnoea",
+      "raised JVP",
+      "breathlessness and ankle swelling"
+     ],
+     "x": "Heart failure features plus an NT-proBNP of 2,600 in the labs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Transthoracic echocardiogram**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cardiac MRI is for specific causes once echo is done."
+      ],
+      [
+       1,
+       "CXR supports but cannot confirm heart failure."
+      ],
+      [
+       2,
+       "Angiography looks for coronary disease, not heart failure."
+      ],
+      [
+       3,
+       "CTPA is for suspected PE."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Transthoracic echo.** BNP raised, so echo confirms."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 79 year old man with known heart failure is acutely breathless and coughing frothy sputum. His pulse rate is 108 bpm, BP 150/90 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 85% breathing air. There are crackles to both mid zones. He has been sat upright and given high-flow oxygen.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial drug management?",
+   "o": [
+    "Intravenous alteplase",
+    "Intravenous furosemide",
+    "Intravenous morphine",
+    "Oral bisoprolol",
+    "Oral ramipril"
+   ],
+   "a": 1,
+   "e": "After sitting up and oxygen, IV furosemide 40 to 120 mg is first-line for acute pulmonary oedema. Beta-blockers and ACE inhibitors are not started acutely.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial drug in an acute presentation."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "known heart failure",
+      "frothy sputum",
+      "85% breathing air",
+      "sat upright and given high-flow oxygen"
+     ],
+     "x": "Acute pulmonary oedema; the non-drug steps are done."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV furosemide**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Alteplase is for stroke or STEMI without PCI access."
+      ],
+      [
+       2,
+       "Morphine is no longer routine in pulmonary oedema."
+      ],
+      [
+       3,
+       "Beta-blockers can worsen acute decompensation."
+      ],
+      [
+       4,
+       "Ramipril is long-term therapy, not acute relief."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IV furosemide.** Sit up, oxygen, furosemide; GTN if systolic over 100."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 68 year old man has HFrEF with an ejection fraction of 33%. He takes maximum tolerated doses of ramipril, bisoprolol, eplerenone and dapagliflozin. He remains breathless walking 50 metres. His pulse rate is 64 bpm and BP 118/72 mmHg.",
+   "labs": [
+    [
+     "Potassium",
+     "4.8 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "eGFR",
+     "58 mL/min/1.73m²",
+     ">60",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Add amlodipine",
+    "Add diltiazem",
+    "Replace bisoprolol with atenolol",
+    "Replace eplerenone with indapamide",
+    "Replace ramipril with sacubitril-valsartan"
+   ],
+   "a": 4,
+   "e": "Still symptomatic on the big 4, so the ACE inhibitor is switched to the ARNI sacubitril-valsartan. Diltiazem is harmful in HFrEF.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in chronic HFrEF already on treatment."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ejection fraction of 33%",
+      "ramipril, bisoprolol, eplerenone and dapagliflozin",
+      "remains breathless"
+     ],
+     "x": "On all of the big 4 and still symptomatic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Switch ramipril to **sacubitril-valsartan**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amlodipine has no prognostic benefit."
+      ],
+      [
+       1,
+       "Rate-limiting calcium channel blockers worsen HFrEF."
+      ],
+      [
+       2,
+       "Atenolol is not a heart failure beta-blocker."
+      ],
+      [
+       3,
+       "Removing the MRA loses its prognostic benefit."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Sacubitril-valsartan.** ACE inhibitor out, ARNI in."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old woman has ischaemic HFrEF. Despite 6 months of optimal medical therapy her ejection fraction remains 29%. She is breathless on minimal exertion. Her pulse rate is 72 bpm and regular and BP 112/70 mmHg. Her ECG shows sinus rhythm with left bundle branch block and a QRS duration of 164 ms.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Cardiac resynchronisation therapy with defibrillator",
+    "Coronary artery bypass grafting",
+    "Heart transplant",
+    "Radiofrequency ablation",
+    "Single-chamber permanent pacemaker"
+   ],
+   "a": 0,
+   "e": "EF under 35% with a wide QRS despite optimal therapy is the indication for CRT plus a defibrillator. A single-chamber pacemaker does not resynchronise the ventricles.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after optimal drugs."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "optimal medical therapy",
+      "ejection fraction remains 29%",
+      "left bundle branch block",
+      "QRS duration of 164 ms"
+     ],
+     "x": "EF under 35% and a broad QRS: device territory."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CRT-D**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CABG is for revascularisable disease with angina; none described."
+      ],
+      [
+       2,
+       "Transplant is a last resort after devices fail."
+      ],
+      [
+       3,
+       "Ablation treats arrhythmias; she is in sinus rhythm."
+      ],
+      [
+       4,
+       "A single-chamber pacemaker does not fix dyssynchrony."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. CRT with defibrillator.** EF under 35% + wide QRS."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 73 year old man has right-sided heart failure secondary to long-standing left ventricular failure. He has pitting oedema to the knees and a raised JVP. His serum albumin is 39 g/L (35–50) and urinalysis is negative for protein.",
+   "labs": [
+    [
+     "Albumin",
+     "39 g/L",
+     "35–50",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his peripheral oedema?",
+   "o": [
+    "Decreased plasma oncotic pressure",
+    "Increased capillary permeability",
+    "Increased systemic capillary hydrostatic pressure",
+    "Lymphatic obstruction",
+    "Venous valve incompetence"
+   ],
+   "a": 2,
+   "e": "Right-sided failure causes systemic venous congestion, raising capillary hydrostatic pressure and pushing fluid into the tissues. His albumin is normal, so oncotic pressure is not the cause.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism: which Starling force has changed?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "right-sided heart failure",
+      "raised JVP",
+      "albumin is 39 g/L",
+      "negative for protein"
+     ],
+     "x": "Venous congestion with normal albumin."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Raised **systemic venous and capillary hydrostatic pressure**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Albumin is normal, so oncotic pressure is maintained."
+      ],
+      [
+       1,
+       "Permeability rises in sepsis and inflammation."
+      ],
+      [
+       3,
+       "Lymphatic obstruction gives non-pitting lymphoedema."
+      ],
+      [
+       4,
+       "Venous valve incompetence is varicose veins, and does not raise the JVP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Raised capillary hydrostatic pressure.** Back pressure from the failing right heart."
+    }
+   ]
+  }
+ ]
+}

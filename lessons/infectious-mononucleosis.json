@@ -1,0 +1,293 @@
+{
+  "id": "infectious-mononucleosis",
+  "patient": {
+    "name": "Tomasz Nowak",
+    "age": 19,
+    "sex": "M",
+    "setting": "University GP practice, then Emergency Department",
+    "complaint": "Severe sore throat and exhaustion for 6 days, now an itchy rash all over",
+    "background": ["First-year engineering student in Bloomsbury; plays university rugby", "Freshers' week 5 weeks ago, new girlfriend", "Given amoxicillin 3 days ago at a walk-in centre for 'tonsillitis'", "No known drug allergies"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a teenager or young adult with sore throat, fever, fatigue, posterior cervical nodes and splenomegaly, often with a rash after amoxicillin; complications (splenic rupture, hepatitis, airway obstruction) are asked as follow-ups.",
+      "steps": [
+        { "type": "story", "points": ["Tomasz, 19, has a **severe sore throat** and fever for 6 days.", "So tired he has missed every lecture this week.", "Started **amoxicillin** 3 days ago; now a **widespread itchy rash**.", "New girlfriend; she had a sore throat last month."], "vitals": { "T": "38.3°C", "HR": "96 bpm", "BP": "118/72 mmHg", "RR": "16 /min", "SpO2": "99% on air" } },
+        { "type": "notes", "src": 0, "lead": "A young adult with a new partner and a bad sore throat: think **EBV**, spread by **saliva**, the 'kissing disease'." },
+        { "type": "story", "points": ["Tonsils enlarged with **white exudate**; **palatal petechiae**.", "Tender nodes **behind the sternocleidomastoids** (posterior chain).", "Spleen tip palpable below the left costal margin.", "Pink **maculopapular** rash on trunk and limbs."] },
+        { "type": "notes", "src": 1, "lead": "Tomasz has the full picture: fever, fatigue, exudative tonsillitis, **posterior cervical nodes**, palatal petechiae and **splenomegaly**." },
+        { "type": "visual", "visual": { "kind": "abdomen", "title": "Where to feel in glandular fever", "regions": ["LUQ"], "caption": "Splenomegaly: feel from the right iliac fossa up towards the left upper quadrant. An enlarged spleen is at risk of rupture." } },
+        { "type": "ask", "q": "Tomasz's rash appeared after amoxicillin. What does it most likely mean?", "o": ["Anaphylaxis to penicillin", "Infectious mononucleosis with an amoxicillin rash", "Meningococcal septicaemia", "Scarlet fever"], "a": 1, "r": "A generalised **maculopapular rash** after amoxicillin in a sore throat is a classic clue to **EBV**, not true penicillin allergy." },
+        { "type": "notes", "src": 2, "lead": "Tomasz's rash is the signature clue: EBV given **amoxicillin**. Look also for **oral hairy leucoplakia** on the lateral tongue." },
+        { "type": "compare", "title": "Glandular fever vs bacterial tonsillitis", "head": ["Feature", "Infectious mononucleosis", "Bacterial (strep) tonsillitis"], "rows": [["Age", "Teens, young adults", "Children and adults"], ["Nodes", "**Posterior** cervical, generalised", "Anterior cervical, tender"], ["Fatigue", "**Profound**, lasts weeks", "Mild"], ["Spleen", "**Splenomegaly** common", "Normal"], ["Amoxicillin", "**Rash**", "Treats it"]] },
+        { "type": "notes", "src": 3, "lead": "With his spleen enlarged, Tomasz's big risk is **splenic rupture** (left shoulder-tip pain, **Kehr's sign**). Also watch his **LFTs** and his **airway**." },
+        { "type": "trap", "text": "Do not give **amoxicillin or ampicillin** for a sore throat in a young adult with posterior nodes and splenomegaly: think EBV first." }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?': the monospot (heterophile antibody) test is the key first test; EBV serology is gold standard (especially if monospot is negative); the FBC shows lymphocytosis with atypical lymphocytes.",
+      "steps": [
+        { "type": "labs", "title": "Tomasz's bloods", "rows": [["White cell count", "15.2 ×10⁹/L", "4.0–11.0", "H"], ["Lymphocytes", "9.8 ×10⁹/L", "1.0–4.0", "H"], ["Blood film", "Atypical lymphocytes", "None", ""], ["ALT", "164 IU/L", "10–50", "H"], ["Bilirubin", "24 µmol/L", "<21", "H"], ["CRP", "28 mg/L", "<5", "H"]], "text": "**Lymphocytosis with atypical lymphocytes** and a mild **EBV hepatitis**." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Tomasz's lymphocyte count", "min": 0, "max": 12, "unit": "×10⁹/L", "bands": [[0, 1, "Low", "warn"], [1, 4, "Normal 1–4", "ok"], [4, 12, "Lymphocytosis", "bad"]], "value": 9.8, "label": "Tomasz 9.8", "caption": "A marked lymphocytosis with atypical cells on the film fits EBV." } },
+        { "type": "ask", "q": "What is the key first diagnostic test for Tomasz?", "o": ["Antistreptolysin O titre", "Monospot test", "Throat swab culture", "Ultrasound of the spleen"], "a": 1, "r": "The **monospot** (heterophile antibody) test is the key first test. A throat swab looks for strep, not EBV." },
+        { "type": "notes", "src": 1, "lead": "Tomasz's **monospot** is positive: heterophile antibodies are present." },
+        { "type": "notes", "src": 0, "lead": "If the monospot had been negative (it can be falsely negative early), **EBV serology** is the **gold standard**. The FBC supports it with atypical lymphocytes." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Chance of a positive monospot by week of illness", "x": ["Week 1", "Week 2", "Week 3", "Week 4"], "unit": "% positive", "series": [ { "name": "Monospot positive", "values": [50, 75, 85, 85] } ], "caption": "Heterophile antibodies take time to appear; repeat or use EBV serology if negative early." } },
+        { "type": "story", "points": ["Two days later in A&E: tackled at rugby practice against advice.", "Sudden **left upper quadrant pain** and **left shoulder-tip pain**."], "vitals": { "HR": "124 bpm", "BP": "92/58 mmHg", "RR": "24 /min" } },
+        { "type": "notes", "src": 2, "lead": "Possible **splenic rupture**: Tomasz needs an **urgent group and save** straight away because of the risk of major haemorrhage." },
+        { "type": "trap", "text": "Under-12s often have a falsely **negative monospot**. A negative test early in the illness does not exclude EBV: use **EBV serology**." }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?': supportive care (paracetamol or ibuprofen, fluids, rest), stop amoxicillin if given, steroids only for severe tonsillar swelling, avoid contact sports for 3 to 4 weeks, and urgent assessment for airway or splenic emergencies.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "For uncomplicated glandular fever Tomasz needs **reassurance**: it is **self-limiting**. **Paracetamol or ibuprofen**, fluids and rest." },
+        { "type": "notes", "src": 2, "lead": "Tomasz's **amoxicillin is stopped** (his monospot is positive). He was told **no rugby or heavy lifting for 3 to 4 weeks**, but he played." },
+        { "type": "ask", "q": "Tomasz asks when he can return to rugby. What is the advice?", "o": ["After 3 to 4 weeks at least, once recovered", "As soon as the fever settles", "Immediately if he feels well", "Never again"], "a": 0, "r": "NICE: avoid **contact sports and heavy lifting for 3 to 4 weeks** to reduce splenic rupture risk." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Weeks since symptoms started: contact sport?", "min": 0, "max": 8, "unit": "weeks", "bands": [[0, 4, "Avoid contact sports and heavy lifting", "bad"], [4, 8, "Gradual return if recovered", "ok"]], "value": 1, "label": "Tomasz week 1", "caption": "Tackled in week 1: the highest-risk time for splenic rupture." } },
+        { "type": "flow", "title": "Managing glandular fever", "nodes": ["Confirm EBV: monospot or EBV serology", "Supportive: paracetamol or ibuprofen, fluids, rest", "Stop amoxicillin if given", "Severe tonsillar swelling → corticosteroid (prednisolone)", "Stridor or cannot swallow → urgent hospital assessment", "Avoid contact sports for 3 to 4 weeks"] },
+        { "type": "notes", "src": 1, "lead": "If Tomasz's tonsils swelled enough to threaten his airway, a **corticosteroid** such as **prednisolone** would be given." },
+        { "type": "story", "points": ["Tomasz is resuscitated with IV fluids; group and save sent.", "Surgeons review urgently for **splenic rupture**.", "Close monitoring; theatre if he becomes unstable."] },
+        { "type": "notes", "src": "guidelines", "lead": "Tomasz's care follows **NICE CKS** on glandular fever: supportive care, safety-netting and sport advice." },
+        { "type": "pearl", "text": "Fatigue can last for **weeks to months** after glandular fever. Reassure, and plan a gradual return to study and sport." }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: EBV enters B cells via CD21, the atypical lymphocytes are CD8+ T cells, the monospot detects heterophile antibodies, and the amoxicillin rash is a transient virus-related hypersensitivity.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "EBV, a **gamma-herpesvirus**, entered Tomasz's **B cells** through **CD21**, driving polyclonal B-cell proliferation." },
+        { "type": "flow", "title": "From kiss to atypical lymphocytes", "nodes": ["EBV in saliva infects oropharyngeal epithelium", "Binds CD21 on B lymphocytes", "Polyclonal B-cell proliferation", "CD8+ cytotoxic T cells respond: atypical lymphocytes", "Lymph node, tonsil and spleen enlargement"] },
+        { "type": "ask", "q": "What are the atypical lymphocytes on Tomasz's blood film?", "o": ["Activated CD8+ cytotoxic T cells", "EBV-infected B cells", "Natural killer cells", "Plasma cells"], "a": 0, "r": "They are **activated CD8+ T cells** attacking infected B cells, not the infected cells themselves." },
+        { "type": "notes", "src": 1, "lead": "Tomasz's film shows **CD8+ T cells** reacting to EBV. His monospot detects **heterophile antibodies** that agglutinate horse or sheep red cells." },
+        { "type": "notes", "src": 2, "lead": "Tomasz's spleen enlarged from **lymphoid hyperplasia**, making it fragile: the rugby tackle was enough to injure it." },
+        { "type": "notes", "src": 3, "lead": "Tomasz's rash is a **transient, virus-related hypersensitivity**, not a true penicillin allergy." },
+        { "type": "pearl", "text": "Because the amoxicillin rash is not true allergy, it does not by itself mean a lifelong penicillin allergy label, but document the reaction clearly." }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which virus causes infectious mononucleosis?", "o": ["Cytomegalovirus", "Epstein-Barr virus", "Herpes simplex virus", "Varicella zoster virus"], "a": 1, "r": "**EBV**, spread through saliva." },
+    { "d": "diagnosis", "q": "Which lymph nodes are typically enlarged in glandular fever?", "o": ["Axillary", "Inguinal", "Posterior cervical", "Pre-auricular"], "a": 2, "r": "**Posterior cervical** lymphadenopathy is classic." },
+    { "d": "diagnosis", "q": "What happens if amoxicillin is given in glandular fever?", "o": ["Anaphylaxis", "Generalised maculopapular rash", "Rapid cure", "Stevens-Johnson syndrome"], "a": 1, "r": "A widespread **maculopapular rash**." },
+    { "d": "diagnosis", "q": "What is Kehr's sign?", "o": ["Left shoulder-tip pain from diaphragmatic irritation", "Pain on palpating the right iliac fossa", "Periumbilical bruising", "Right shoulder pain from gallstones"], "a": 0, "r": "**Left shoulder-tip pain** from blood irritating the diaphragm, a sign of splenic rupture." },
+    { "d": "investigation", "q": "What is the key first diagnostic test?", "o": ["Blood cultures", "Monospot test", "Throat swab", "Ultrasound abdomen"], "a": 1, "r": "The **monospot** (heterophile antibody) test." },
+    { "d": "investigation", "q": "What is the gold-standard test for EBV infection?", "o": ["EBV serology", "Liver biopsy", "Lymph node biopsy", "Throat culture"], "a": 0, "r": "**EBV serology** (e.g. VCA IgM)." },
+    { "d": "investigation", "q": "What does the FBC typically show?", "o": ["Eosinophilia", "Lymphocytosis with atypical lymphocytes", "Neutrophilia", "Pancytopenia"], "a": 1, "r": "**Lymphocytosis with atypical lymphocytes**." },
+    { "d": "management", "q": "How long should contact sport be avoided?", "o": ["3 to 4 weeks", "48 hours", "6 months", "Until the rash fades"], "a": 0, "r": "NICE: **3 to 4 weeks**, to reduce splenic rupture risk." },
+    { "d": "management", "q": "When are corticosteroids used in glandular fever?", "o": ["All cases", "Fatigue over 2 weeks", "Rash after amoxicillin", "Severe tonsillar swelling"], "a": 3, "r": "**Severe tonsillar swelling** threatening the airway." },
+    { "d": "science", "q": "Which receptor does EBV use to enter B cells?", "o": ["CCR5", "CD4", "CD21", "CD8"], "a": 2, "r": "**CD21** (complement receptor 2)." }
+  ],
+  "blurt": {
+    "prompts": [
+      { "d": "diagnosis", "q": "What is infectious mononucleosis, what causes it and how is it spread?", "tip": "Exam thinking: name the virus and the route.", "points": [
+        { "p": "'Glandular fever', viral infection", "k": [["glandular", "viral", "virus"]], "why": "Peaks in teens and young adults." },
+        { "p": "Epstein-Barr virus (EBV)", "k": [["ebv", "epstein"]], "why": "CMV can mimic it, but EBV is the cause." },
+        { "p": "Spread via saliva: the 'kissing disease'", "k": [["saliva", "kiss"]], "why": "Look for a new partner in the stem." }
+      ] },
+      { "d": "diagnosis", "q": "How does glandular fever present and what do you find on examination?", "tip": "Exam thinking: posterior nodes and spleen separate it from strep throat.", "points": [
+        { "p": "Severe sore throat, fever, fatigue, headache, lethargy", "k": [["sore throat", "throat"], ["fatigue", "tired", "letharg"]], "why": "Fatigue is often profound." },
+        { "p": "Posterior cervical lymphadenopathy", "k": [["posterior"]], "why": "Strep usually gives anterior nodes." },
+        { "p": "Enlarged tonsils with exudate, inflamed pharynx", "k": [["tonsil", "exudate"]], "why": "Looks like bacterial tonsillitis." },
+        { "p": "Splenomegaly", "k": [["spleen", "splenomegaly"]], "why": "The key to the rupture risk." },
+        { "p": "Palatal petechiae", "k": [["petechia", "palat"]], "why": "Small red spots on the soft palate." }
+      ] },
+      { "d": "diagnosis", "q": "What are the signature clues to glandular fever in a vignette?", "tip": "Exam thinking: the antibiotic in the history is the giveaway.", "points": [
+        { "p": "Generalised maculopapular rash after amoxicillin or ampicillin", "k": [["amoxicillin", "ampicillin", "antibiotic"], ["rash"]], "why": "Given for an assumed bacterial sore throat." },
+        { "p": "Oral hairy leucoplakia on the lateral tongue", "k": [["hairy", "leucoplakia", "leukoplakia"]], "why": "A white 'hairy' lesion." }
+      ] },
+      { "d": "diagnosis", "q": "What complications of glandular fever must you recognise, and how do they present?", "tip": "Exam thinking: spleen, liver, airway.", "points": [
+        { "p": "Splenic rupture: abdominal pain, tachycardia, peritonism", "k": [["splen", "spleen"], ["ruptur"]], "why": "Can occur with or without trauma." },
+        { "p": "Left shoulder-tip pain (Kehr's sign)", "k": [["kehr", "shoulder"]], "why": "Diaphragmatic irritation from blood." },
+        { "p": "EBV hepatitis: deranged LFTs, raised inflammatory markers", "k": [["hepatitis", "lft", "liver"]], "why": "Usually mild transaminitis." },
+        { "p": "Upper airway obstruction from tonsils or quinsy: stridor", "k": [["airway", "stridor", "quinsy"]], "why": "Needs urgent hospital assessment." }
+      ] },
+      { "d": "diagnosis", "q": "Which features favour glandular fever over bacterial tonsillitis?", "tip": "Exam thinking: compare nodes, spleen and fatigue.", "points": [
+        { "p": "Posterior rather than anterior cervical nodes", "k": [["posterior"]], "why": "Anterior tender nodes suit strep." },
+        { "p": "Splenomegaly", "k": [["spleen", "splenomegaly"]], "why": "Not a feature of strep throat." },
+        { "p": "Profound fatigue and young adult age", "k": [["fatigue", "tired", "young", "teen"]], "why": "Fatigue lasting weeks." }
+      ] },
+      { "d": "investigation", "q": "How do you confirm glandular fever, and what does each test show?", "tip": "Exam thinking: monospot first, serology if negative.", "points": [
+        { "p": "Key test: monospot (heterophile antibody)", "k": [["monospot", "heterophile", "paul-bunnell", "paul bunnell"]], "why": "Can be negative in week 1 or in children." },
+        { "p": "Gold standard: EBV serology", "k": [["serology", "vca", "igm"]], "why": "Use if monospot is negative." },
+        { "p": "FBC: lymphocytosis with atypical lymphocytes", "k": [["lymphocyt"], ["atypical"]], "why": "Supports the diagnosis." },
+        { "p": "Suspected splenic rupture: urgent group and save", "k": [["group", "save", "crossmatch"]], "why": "Risk of major haemorrhage." }
+      ] },
+      { "d": "management", "q": "How is glandular fever managed, including emergencies and advice?", "tip": "Exam thinking: supportive, stop amoxicillin, steroids only for the airway, no rugby.", "points": [
+        { "p": "Self-limiting: reassurance and supportive care", "k": [["supportive", "self-limiting", "self limiting", "reassur", "rest", "fluid"]], "why": "No antivirals or antibiotics." },
+        { "p": "Paracetamol or ibuprofen", "k": [["paracetamol", "ibuprofen", "analges"]], "why": "Symptomatic relief." },
+        { "p": "Severe tonsillar swelling: corticosteroids (prednisolone)", "k": [["steroid", "prednisolone"]], "why": "Not for routine cases." },
+        { "p": "Stop amoxicillin if given and monospot positive", "k": [["stop"]], "why": "The rash will settle." },
+        { "p": "Avoid contact sports and heavy lifting for 3 to 4 weeks", "k": [["contact", "sport", "lifting"]], "why": "Reduces splenic rupture risk." },
+        { "p": "Airway obstruction or severe sore throat: urgent hospital assessment", "k": [["urgent", "hospital", "admi"]], "why": "Stridor or cannot swallow fluids." }
+      ] },
+      { "d": "science", "q": "How does EBV infect cells, and what are the atypical lymphocytes and heterophile antibodies?", "tip": "Exam thinking: B cells infected, T cells seen.", "points": [
+        { "p": "Gamma-herpesvirus infecting B cells via CD21", "k": [["cd21"]], "why": "Complement receptor 2." },
+        { "p": "Drives polyclonal B-cell proliferation", "k": [["polyclonal", "proliferat"]], "why": "Hence heterophile antibodies." },
+        { "p": "Atypical lymphocytes are activated CD8+ cytotoxic T cells", "k": [["cd8", "cytotoxic", "t cell", "t-cell"]], "why": "Not the infected B cells." },
+        { "p": "Heterophile antibodies agglutinate horse or sheep red cells", "k": [["horse", "sheep", "agglutinat"]], "why": "Non-specific: basis of the monospot." }
+      ] },
+      { "d": "science", "q": "Why does the spleen rupture, and why does amoxicillin cause a rash?", "tip": "Exam thinking: hyperplasia and hypersensitivity.", "points": [
+        { "p": "Lymphoid hyperplasia enlarges the spleen and makes it fragile", "k": [["hyperplasia", "fragil", "enlarg"]], "why": "Trauma or straining can rupture it." },
+        { "p": "Rash: transient virus-related hypersensitivity, not true penicillin allergy", "k": [["hypersensitiv", "immune", "not true", "not a true", "not allergy"]], "why": "Do not confuse with anaphylaxis." }
+      ] }
+    ]
+  },
+  "glossary": {
+    "infectious mononucleosis": "Glandular fever: an acute EBV infection with sore throat, fever, nodes and fatigue.",
+    "glandular fever": "The common name for infectious mononucleosis.",
+    "EBV": "Epstein-Barr virus, a gamma-herpesvirus that infects B cells.",
+    "Epstein-Barr virus": "A gamma-herpesvirus spread by saliva that causes glandular fever.",
+    "gamma-herpesvirus": "A herpesvirus subfamily that infects lymphocytes and stays latent for life.",
+    "kissing disease": "Nickname for glandular fever because EBV spreads through saliva.",
+    "posterior cervical lymphadenopathy": "Enlarged lymph nodes behind the sternocleidomastoid muscle.",
+    "lymphadenopathy": "Enlarged lymph nodes.",
+    "exudate": "White or yellow material on inflamed tonsils.",
+    "palatal petechiae": "Tiny red spots of bleeding on the soft palate.",
+    "petechiae": "Pinpoint non-blanching red spots from small bleeds.",
+    "splenomegaly": "An enlarged spleen.",
+    "maculopapular rash": "A rash of flat red patches and small raised bumps.",
+    "amoxicillin": "A penicillin antibiotic; causes a rash in EBV infection.",
+    "ampicillin": "A penicillin antibiotic closely related to amoxicillin.",
+    "oral hairy leucoplakia": "White, corrugated, 'hairy' patch on the side of the tongue linked to EBV.",
+    "splenic rupture": "Tearing of the spleen causing internal bleeding; a surgical emergency.",
+    "Kehr's sign": "Left shoulder-tip pain from blood irritating the diaphragm, a sign of splenic rupture.",
+    "peritonism": "Signs of peritoneal irritation: guarding, rebound and a rigid abdomen.",
+    "quinsy": "Peritonsillar abscess, causing trismus, uvula deviation and a muffled voice.",
+    "stridor": "High-pitched noisy breathing from upper airway narrowing.",
+    "monospot": "Rapid heterophile antibody test for glandular fever.",
+    "monospot test": "Rapid heterophile antibody test for glandular fever.",
+    "heterophile antibodies": "Non-specific antibodies that agglutinate horse or sheep red cells; detected by the monospot.",
+    "EBV serology": "Blood tests for antibodies to EBV antigens such as VCA IgM; gold standard.",
+    "VCA IgM": "Antibody to the EBV viral capsid antigen showing recent infection.",
+    "atypical lymphocytes": "Large reactive CD8+ T cells seen on the blood film in EBV.",
+    "lymphocytosis": "A raised lymphocyte count.",
+    "CD21": "Complement receptor 2 on B cells; the entry receptor for EBV.",
+    "CD8+": "Marker of cytotoxic T cells that kill virus-infected cells.",
+    "B lymphocytes": "Antibody-producing white cells; the cells EBV infects.",
+    "polyclonal": "Arising from many different cell clones rather than one.",
+    "lymphoid hyperplasia": "Increase in the number of lymphoid cells, enlarging nodes and spleen.",
+    "group and save": "Blood group and antibody screen so blood can be issued quickly.",
+    "prednisolone": "Oral corticosteroid used for severe tonsillar swelling.",
+    "corticosteroids": "Anti-inflammatory steroid drugs such as prednisolone.",
+    "hypersensitivity": "An exaggerated immune reaction.",
+    "LFTs": "Liver function tests.",
+    "self-limiting": "Gets better on its own without specific treatment.",
+    "NICE CKS": "NICE Clinical Knowledge Summaries: concise UK primary care guidance."
+  },
+  "technique": [
+    { "d": "diagnosis", "stem": "An 18 year old woman has a 1 week history of sore throat, fever and extreme tiredness. She started university 6 weeks ago. Her tonsils are enlarged with white exudate. There are tender nodes behind both sternocleidomastoid muscles and the spleen tip is palpable.", "q": "Which is the most likely diagnosis?", "o": ["Acute HIV seroconversion", "Bacterial tonsillitis", "Infectious mononucleosis", "Peritonsillar abscess", "Viral pharyngitis"], "a": 2, "steps": [
+      { "t": "Read the question line first", "x": "A sore throat diagnosis: viral, bacterial or EBV?" },
+      { "t": "Pick out the clues", "clues": ["18 year old", "extreme tiredness", "started university", "tender nodes behind both sternocleidomastoid muscles", "spleen tip is palpable"], "x": "Young adult, profound fatigue, **posterior** nodes and **splenomegaly**." },
+      { "t": "Make your own answer before looking", "x": "**Infectious mononucleosis** (EBV)." },
+      { "t": "Rule out the others", "elim": [[0, "HIV seroconversion: rash, ulcers, risk history; possible but less likely."], [1, "Strep gives anterior nodes and no splenomegaly."], [3, "Quinsy: unilateral swelling, trismus, uvula deviation."], [4, "Simple viral pharyngitis does not give splenomegaly."]] },
+      { "t": "Commit", "x": "**C. Infectious mononucleosis.** Posterior nodes + spleen + fatigue = EBV." }
+    ] },
+    { "d": "investigation", "stem": "A 20 year old man has had a sore throat, fever and fatigue for 5 days. He has enlarged tonsils with exudate, posterior cervical lymphadenopathy and palatal petechiae. His temperature is 38.1°C, pulse rate 92 bpm and BP 122/74 mmHg.", "labs": [["Lymphocytes", "7.4 ×10⁹/L", "1.0–4.0", "H"]], "q": "Which is the most appropriate initial investigation to confirm the diagnosis?", "o": ["Antistreptolysin O titre", "Blood cultures", "Liver function tests", "Monospot test", "Throat swab for culture"], "a": 3, "steps": [
+      { "t": "Read the question line first", "x": "Initial confirmatory test." },
+      { "t": "Pick out the clues", "clues": ["posterior cervical lymphadenopathy", "palatal petechiae", "fatigue for 5 days"], "x": "Clinical picture of EBV with lymphocytosis." },
+      { "t": "Make your own answer before looking", "x": "**Monospot** (heterophile antibody) test." },
+      { "t": "Rule out the others", "elim": [[0, "ASO titre is for recent strep infection."], [1, "Blood cultures are for bacteraemia."], [2, "LFTs look for hepatitis but do not confirm EBV."], [4, "Throat swab looks for strep."]] },
+      { "t": "Commit", "x": "**D. Monospot.** EBV serology if negative." }
+    ] },
+    { "d": "management", "stem": "A 17 year old boy has a positive monospot test. He has a sore throat, fatigue and a palpable spleen. He can swallow fluids and has no stridor. He plays rugby for his school. His temperature is 37.9°C, pulse rate 88 bpm and BP 120/70 mmHg.", "q": "Which is the most appropriate management?", "o": ["Intravenous aciclovir", "Oral amoxicillin", "Oral prednisolone", "Supportive care and avoid contact sports for 3 to 4 weeks", "Urgent splenectomy"], "a": 3, "steps": [
+      { "t": "Read the question line first", "x": "Management of uncomplicated glandular fever." },
+      { "t": "Pick out the clues", "clues": ["positive monospot test", "palpable spleen", "can swallow fluids and has no stridor", "plays rugby"], "x": "Confirmed EBV, no airway problem, splenomegaly, contact sport." },
+      { "t": "Make your own answer before looking", "x": "**Supportive care** plus **no contact sports** for 3 to 4 weeks." },
+      { "t": "Rule out the others", "elim": [[0, "Antivirals are not used in glandular fever."], [1, "Amoxicillin causes a rash and does not help a virus."], [2, "Steroids only for severe tonsillar swelling."], [4, "No rupture, so no splenectomy."]] },
+      { "t": "Commit", "x": "**D. Supportive care and avoid contact sports.**" }
+    ] },
+    { "d": "science", "stem": "A 19 year old woman with glandular fever has a blood film showing many large lymphocytes with abundant cytoplasm that indents around neighbouring red cells. Her doctor explains these are not the cells infected by the virus.", "q": "Which cells are these atypical lymphocytes?", "o": ["Activated CD8+ cytotoxic T cells", "EBV-infected B cells", "Monocytes", "Natural killer cells", "Plasma cells"], "a": 0, "steps": [
+      { "t": "Read the question line first", "x": "Identity of the atypical lymphocytes." },
+      { "t": "Pick out the clues", "clues": ["large lymphocytes with abundant cytoplasm", "not the cells infected by the virus"], "x": "Reactive cells responding to infected B cells." },
+      { "t": "Make your own answer before looking", "x": "**Activated CD8+ T cells**." },
+      { "t": "Rule out the others", "elim": [[1, "The stem says they are not the infected cells."], [2, "Monocytes are not lymphocytes."], [3, "NK cells contribute but are not the atypical cells."], [4, "Plasma cells are antibody-secreting B cells with eccentric nuclei."]] },
+      { "t": "Commit", "x": "**A. CD8+ T cells.**" }
+    ] }
+  ],
+  "practice": [
+    { "d": "diagnosis", "stem": "A 21 year old man has a 10 day history of sore throat, fever and tiredness. He has enlarged tonsils with exudate, palatal petechiae and tender posterior cervical lymph nodes. The spleen is palpable 2 cm below the left costal margin. His temperature is 38.2°C, pulse rate 94 bpm and BP 124/76 mmHg.", "labs": [["Lymphocytes", "8.1 ×10⁹/L", "1.0–4.0", "H"], ["ALT", "112 IU/L", "10–50", "H"]], "visual": null, "q": "Which is the most likely diagnosis?", "o": ["Acute hepatitis A", "Acute lymphoblastic leukaemia", "Bacterial tonsillitis", "Infectious mononucleosis", "Toxoplasmosis"], "a": 3, "e": "Sore throat, posterior nodes, palatal petechiae, splenomegaly, lymphocytosis and mild hepatitis in a young adult is EBV infectious mononucleosis.", "steps": [
+      { "t": "Read the question line first", "x": "Diagnosis of sore throat with systemic features." },
+      { "t": "Pick out the clues", "clues": ["sore throat, fever and tiredness", "palatal petechiae", "posterior cervical lymph nodes", "spleen is palpable"], "x": "Classic EBV examination." },
+      { "t": "Make your own answer before looking", "x": "**Infectious mononucleosis**." },
+      { "t": "Rule out the others", "elim": [[0, "Hepatitis A gives jaundice, not exudative tonsillitis."], [1, "ALL gives cytopenias and blasts, not a lymphocytosis of reactive cells."], [2, "Strep: anterior nodes, no spleen, no lymphocytosis."], [4, "Toxoplasmosis gives nodes but rarely exudative tonsillitis."]] },
+      { "t": "Commit", "x": "**D. Infectious mononucleosis.**" }
+    ] },
+    { "d": "diagnosis", "stem": "A 19 year old woman was given amoxicillin 2 days ago for a sore throat. She now has a widespread itchy pink maculopapular rash over her trunk and limbs. She has no lip swelling or wheeze. She has posterior cervical lymphadenopathy. Her temperature is 38.0°C, pulse rate 90 bpm and BP 116/70 mmHg.", "labs": [], "visual": null, "q": "Which is the most likely underlying diagnosis?", "o": ["Anaphylaxis", "Infectious mononucleosis", "Kawasaki disease", "Scarlet fever", "Stevens-Johnson syndrome"], "a": 1, "e": "A maculopapular rash after amoxicillin given for a sore throat in a young adult with posterior nodes is the classic presentation of EBV infection.", "steps": [
+      { "t": "Read the question line first", "x": "Underlying diagnosis behind the rash." },
+      { "t": "Pick out the clues", "clues": ["given amoxicillin 2 days ago for a sore throat", "maculopapular rash", "no lip swelling or wheeze", "posterior cervical lymphadenopathy"], "x": "Amoxicillin rash, no anaphylaxis, posterior nodes." },
+      { "t": "Make your own answer before looking", "x": "**Infectious mononucleosis**." },
+      { "t": "Rule out the others", "elim": [[0, "No angioedema, wheeze or hypotension."], [2, "Kawasaki is in young children with 5 days of fever."], [3, "Scarlet fever: sandpaper rash, strawberry tongue, before antibiotics."], [4, "SJS has mucosal blistering and skin sloughing."]] },
+      { "t": "Commit", "x": "**B. Infectious mononucleosis.**" }
+    ] },
+    { "d": "diagnosis", "stem": "A 20 year old man has a 1 week history of sore throat, fever and fatigue. A monospot test is positive. He has enlarged tonsils and posterior cervical nodes.", "labs": [], "visual": null, "q": "Which is the most likely additional finding on abdominal examination?", "o": ["Caput medusae", "Hepatomegaly with a hard irregular edge", "Palpable gallbladder", "Pulsatile mass", "Splenomegaly"], "a": 4, "e": "Splenomegaly from lymphoid hyperplasia is common in infectious mononucleosis and explains the risk of splenic rupture.", "steps": [
+      { "t": "Read the question line first", "x": "Most likely examination finding." },
+      { "t": "Pick out the clues", "clues": ["monospot test is positive", "posterior cervical nodes"], "x": "Confirmed EBV." },
+      { "t": "Make your own answer before looking", "x": "**Splenomegaly**." },
+      { "t": "Rule out the others", "elim": [[0, "Caput medusae is portal hypertension."], [1, "A hard irregular liver is malignancy."], [2, "Palpable gallbladder: pancreatic head cancer (Courvoisier)."], [3, "Pulsatile mass is an aortic aneurysm."]] },
+      { "t": "Commit", "x": "**E. Splenomegaly.**" }
+    ] },
+    { "d": "diagnosis", "stem": "An 18 year old man was diagnosed with glandular fever 10 days ago. He collapsed after being tackled at football. He has left upper quadrant pain and pain at the tip of his left shoulder. His abdomen is tender with guarding. His pulse rate is 128 bpm, BP 88/54 mmHg and respiratory rate 24 breaths per minute.", "labs": [["Haemoglobin", "96 g/L", "130–180", "L"]], "visual": { "kind": "abdomen", "title": "Site of pain", "regions": ["LUQ"], "caption": "Left upper quadrant pain with left shoulder-tip radiation." }, "q": "Which is the most likely diagnosis?", "o": ["Acute pancreatitis", "Left renal colic", "Perforated peptic ulcer", "Rib fracture", "Splenic rupture"], "a": 4, "e": "LUQ pain, Kehr's sign, shock and a falling Hb after trauma in glandular fever is splenic rupture.", "steps": [
+      { "t": "Read the question line first", "x": "Diagnosis of an acute abdomen in known EBV." },
+      { "t": "Pick out the clues", "clues": ["glandular fever 10 days ago", "tackled at football", "pain at the tip of his left shoulder", "BP 88/54 mmHg"], "x": "Splenomegaly, trauma, **Kehr's sign**, shock." },
+      { "t": "Make your own answer before looking", "x": "**Splenic rupture**." },
+      { "t": "Rule out the others", "elim": [[0, "Pancreatitis gives epigastric pain to the back, no trauma link."], [1, "Renal colic is loin-to-groin, not shock."], [2, "Perforation needs an ulcer history."], [3, "A rib fracture does not cause shock and Kehr's sign."]] },
+      { "t": "Commit", "x": "**E. Splenic rupture.**" }
+    ] },
+    { "d": "diagnosis", "stem": "A 22 year old woman has had a sore throat, fever and fatigue for 2 weeks. She has mild right upper quadrant discomfort. She drinks little alcohol and takes no medication. She has posterior cervical lymphadenopathy. Her pulse rate is 86 bpm and BP 118/72 mmHg.", "labs": [["ALT", "246 IU/L", "10–50", "H"], ["Bilirubin", "28 µmol/L", "<21", "H"], ["Lymphocytes", "6.9 ×10⁹/L", "1.0–4.0", "H"], ["Monospot", "Positive", "Negative", "H"]], "visual": null, "q": "Which is the most likely cause of her abnormal liver tests?", "o": ["Alcoholic hepatitis", "Autoimmune hepatitis", "Drug-induced liver injury", "EBV hepatitis", "Gallstones"], "a": 3, "e": "Deranged LFTs with a positive monospot and lymphocytosis is viral hepatitis secondary to EBV, a recognised complication of glandular fever.", "steps": [
+      { "t": "Read the question line first", "x": "Cause of the deranged LFTs." },
+      { "t": "Pick out the clues", "clues": ["sore throat, fever and fatigue", "drinks little alcohol and takes no medication", "posterior cervical lymphadenopathy"], "x": "Glandular fever picture; no alcohol or drug cause." },
+      { "t": "Make your own answer before looking", "x": "**EBV hepatitis**." },
+      { "t": "Rule out the others", "elim": [[0, "She drinks little alcohol."], [1, "Autoimmune hepatitis does not give a positive monospot and sore throat."], [2, "She takes no medication."], [4, "Gallstones give biliary colic and a cholestatic picture."]] },
+      { "t": "Commit", "x": "**D. EBV hepatitis.**" }
+    ] },
+    { "d": "diagnosis", "stem": "A 16 year old girl with confirmed glandular fever has increasing difficulty breathing over 12 hours. She cannot swallow her saliva and has a high-pitched noise on breathing in. Both tonsils are massively enlarged and meet in the midline. Her temperature is 38.4°C, pulse rate 118 bpm, BP 116/68 mmHg and oxygen saturation 94% breathing air.", "labs": [], "visual": null, "q": "Which complication has most likely developed?", "o": ["Acute epiglottitis", "Anaphylaxis", "Croup", "Retropharyngeal haematoma", "Upper airway obstruction from tonsillar enlargement"], "a": 4, "e": "Inspiratory stridor and inability to swallow saliva with massive tonsils in glandular fever is upper airway obstruction from tonsillar enlargement; she needs urgent hospital care and steroids.", "steps": [
+      { "t": "Read the question line first", "x": "Complication of glandular fever." },
+      { "t": "Pick out the clues", "clues": ["confirmed glandular fever", "cannot swallow her saliva", "high-pitched noise on breathing in", "massively enlarged and meet in the midline"], "x": "Stridor from kissing tonsils." },
+      { "t": "Make your own answer before looking", "x": "**Upper airway obstruction** from the tonsils." },
+      { "t": "Rule out the others", "elim": [[0, "Epiglottitis is rare after Hib vaccine; the tonsils explain this."], [1, "No drug or allergen trigger, no urticaria or wheeze."], [2, "Croup is a barking cough in young children."], [3, "No trauma or anticoagulation."]] },
+      { "t": "Commit", "x": "**E. Upper airway obstruction.** Needs urgent hospital assessment and steroids." }
+    ] },
+    { "d": "investigation", "stem": "An 18 year old woman has a sore throat, muscle aches and tiredness for 1 week after starting university. There are warm, tender nodes behind both sternocleidomastoid muscles and her tonsils are enlarged. Her pulse rate is 84 bpm and BP 114/70 mmHg.", "labs": [], "visual": null, "q": "Which is the most appropriate investigation to determine the cause?", "o": ["Liver function tests", "Mantoux test", "Monospot test", "Throat swab for culture", "Ultrasound of the neck"], "a": 2, "e": "Suspected glandular fever: the monospot (heterophile antibody) test is the key first test. EBV serology follows if it is negative.", "steps": [
+      { "t": "Read the question line first", "x": "Test to find the cause of sore throat and nodes." },
+      { "t": "Pick out the clues", "clues": ["starting university", "tender nodes behind both sternocleidomastoid muscles", "tonsils are enlarged"], "x": "Young adult with posterior nodes: EBV." },
+      { "t": "Make your own answer before looking", "x": "**Monospot test**." },
+      { "t": "Rule out the others", "elim": [[0, "LFTs look for complications, not the cause."], [1, "Mantoux is for TB."], [3, "Throat swab is for strep."], [4, "Ultrasound is not needed for reactive nodes."]] },
+      { "t": "Commit", "x": "**C. Monospot test.**" }
+    ] },
+    { "d": "investigation", "stem": "A 20 year old man has had sore throat, fever, fatigue and posterior cervical lymphadenopathy for 5 days. A monospot test is negative. His symptoms persist and the GP still suspects glandular fever.", "labs": [["Lymphocytes", "6.2 ×10⁹/L", "1.0–4.0", "H"], ["Blood film", "Atypical lymphocytes", "None", ""]], "visual": null, "q": "Which is the most appropriate investigation to confirm the diagnosis?", "o": ["Blood cultures", "CMV PCR", "EBV serology", "HIV test", "Lymph node biopsy"], "a": 2, "e": "The monospot can be falsely negative early; EBV serology is the gold standard.", "steps": [
+      { "t": "Read the question line first", "x": "Confirmatory test after a negative monospot." },
+      { "t": "Pick out the clues", "clues": ["for 5 days", "monospot test is negative", "still suspects glandular fever"], "x": "Early illness, negative monospot, atypical lymphocytes." },
+      { "t": "Make your own answer before looking", "x": "**EBV serology**." },
+      { "t": "Rule out the others", "elim": [[0, "No sepsis picture."], [1, "CMV mimics EBV but the question asks to confirm glandular fever."], [3, "HIV testing is reasonable if risk, but does not confirm EBV."], [4, "Biopsy is for persistent nodes or suspected lymphoma."]] },
+      { "t": "Commit", "x": "**C. EBV serology.** Gold standard." }
+    ] },
+    { "d": "management", "stem": "A 19 year old student has a 7 day history of fever, sore throat and fatigue. He has enlarged tonsils with exudate, cervical lymphadenopathy and mild splenomegaly. A monospot test is positive. He is swallowing fluids and has no stridor. His temperature is 37.8°C, pulse rate 86 bpm and BP 120/74 mmHg.", "labs": [], "visual": null, "q": "Which is the most appropriate management?", "o": ["Immediate admission and IV antibiotics", "Oral aciclovir", "Oral amoxicillin", "Oral prednisolone", "Supportive care with paracetamol, fluids and rest"], "a": 4, "e": "Uncomplicated glandular fever is self-limiting: supportive care with paracetamol or ibuprofen, fluids and rest. Steroids are only for severe tonsillar swelling.", "steps": [
+      { "t": "Read the question line first", "x": "Management of uncomplicated glandular fever." },
+      { "t": "Pick out the clues", "clues": ["monospot test is positive", "swallowing fluids and has no stridor", "mild splenomegaly"], "x": "Confirmed, no airway compromise." },
+      { "t": "Make your own answer before looking", "x": "**Supportive care**." },
+      { "t": "Rule out the others", "elim": [[0, "He is well enough for home; antibiotics do not treat EBV."], [1, "Antivirals are not recommended."], [2, "Amoxicillin causes a rash."], [3, "Steroids only for severe tonsillar swelling."]] },
+      { "t": "Commit", "x": "**E. Supportive care.**" }
+    ] },
+    { "d": "management", "stem": "A 20 year old woman started amoxicillin 3 days ago for a sore throat. She now has a widespread maculopapular rash. A monospot test is positive. She has no airway or breathing difficulty. Her pulse rate is 88 bpm and BP 118/72 mmHg.", "labs": [], "visual": null, "q": "Which is the most appropriate next step?", "o": ["Change to clarithromycin", "Give intramuscular adrenaline", "Start oral prednisolone", "Stop amoxicillin and manage supportively", "Switch to phenoxymethylpenicillin"], "a": 3, "e": "If amoxicillin has been given and the monospot is positive, stop amoxicillin and manage supportively. Antibiotics do not treat EBV.", "steps": [
+      { "t": "Read the question line first", "x": "Next step after an amoxicillin rash in confirmed EBV." },
+      { "t": "Pick out the clues", "clues": ["amoxicillin 3 days ago", "maculopapular rash", "monospot test is positive", "no airway or breathing difficulty"], "x": "EBV with amoxicillin rash; not anaphylaxis." },
+      { "t": "Make your own answer before looking", "x": "**Stop amoxicillin**, supportive care." },
+      { "t": "Rule out the others", "elim": [[0, "No antibiotic is needed for a virus."], [1, "No anaphylaxis."], [2, "Steroids are for severe tonsillar swelling."], [4, "No antibiotic is needed; still a penicillin."]] },
+      { "t": "Commit", "x": "**D. Stop amoxicillin and manage supportively.**" }
+    ] },
+    { "d": "management", "stem": "A 17 year old boy has confirmed glandular fever and a palpable spleen. He feels better after 1 week and asks when he can return to rugby and weight training. His pulse rate is 72 bpm and BP 122/70 mmHg.", "labs": [], "visual": null, "q": "Which is the most appropriate advice?", "o": ["Avoid contact sports and heavy lifting for 3 to 4 weeks", "Avoid sport until the monospot becomes negative", "Return immediately as he feels well", "Return once the fever has settled for 48 hours", "Wear a protective vest and continue playing"], "a": 0, "e": "NICE advises avoiding contact sports and heavy lifting for 3 to 4 weeks to reduce the risk of splenic rupture.", "steps": [
+      { "t": "Read the question line first", "x": "Advice about sport." },
+      { "t": "Pick out the clues", "clues": ["palpable spleen", "after 1 week", "rugby and weight training"], "x": "Splenomegaly plus contact sport and heavy lifting." },
+      { "t": "Make your own answer before looking", "x": "Avoid for **3 to 4 weeks**." },
+      { "t": "Rule out the others", "elim": [[1, "Heterophile antibodies can persist for months."], [2, "Feeling well does not mean the spleen is safe."], [3, "48 hours is far too short."], [4, "A vest does not protect the spleen."]] },
+      { "t": "Commit", "x": "**A. Avoid contact sports and heavy lifting for 3 to 4 weeks.**" }
+    ] },
+    { "d": "science", "stem": "A 19 year old man has glandular fever. His doctor explains that the virus enters a particular type of white cell by binding a surface receptor, then drives these cells to proliferate.", "labs": [], "visual": null, "q": "Which cell and receptor does the virus use?", "o": ["B lymphocytes via CD21", "CD4+ T cells via CCR5", "CD8+ T cells via CD8", "Macrophages via CD14", "Neutrophils via CD16"], "a": 0, "e": "EBV, a gamma-herpesvirus, infects B lymphocytes via CD21 (complement receptor 2) and drives polyclonal B-cell proliferation.", "steps": [
+      { "t": "Read the question line first", "x": "Mechanism of EBV entry." },
+      { "t": "Pick out the clues", "clues": ["enters a particular type of white cell", "drives these cells to proliferate"], "x": "Infected cells proliferate: B cells." },
+      { "t": "Make your own answer before looking", "x": "**B cells via CD21**." },
+      { "t": "Rule out the others", "elim": [[1, "CD4 and CCR5 are HIV."], [2, "CD8+ T cells are the responding atypical lymphocytes, not the infected cells."], [3, "CD14 is an LPS receptor on monocytes."], [4, "Neutrophils are not EBV targets."]] },
+      { "t": "Commit", "x": "**A. B lymphocytes via CD21.**" }
+    ] }
+  ]
+}

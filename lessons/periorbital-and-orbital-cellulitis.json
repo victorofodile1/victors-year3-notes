@@ -1,0 +1,675 @@
+{
+  "id": "periorbital-and-orbital-cellulitis",
+  "patient": {
+    "name": "Theo Mensah",
+    "age": 8,
+    "sex": "M",
+    "setting": "GP surgery, then Paediatric Emergency Department the next day",
+    "complaint": "Swollen, red left eyelid after a week-long cold, then double vision",
+    "background": [
+      "Blocked nose and cold for 7 days",
+      "Otherwise healthy; vaccinations up to date",
+      "Lives with his mum and sister in Walthamstow",
+      "No known drug allergies"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a child with a red swollen eyelid after sinusitis: proptosis, painful or restricted eye movements, diplopia or reduced vision mean orbital, not periorbital, cellulitis.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Day 1, GP: Theo's **left upper eyelid** is red, swollen and tender.",
+            "He has a mild fever after a week of blocked nose.",
+            "He can open the eye; vision is normal.",
+            "Eye movements full and painless; **no proptosis**."
+          ],
+          "vitals": { "T": "37.9°C", "HR": "104 bpm", "RR": "20 /min", "SpO2": "99% on air" }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "On day 1 Theo's infection is in the eyelid skin, **in front of the orbital septum**: periorbital (preseptal) cellulitis, after a cold."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Theo is a **child**, the group most affected by both forms."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Day 1 fits **periorbital**: swollen tender lid and fever, but vision, pupils and movements are **normal** with **no proptosis**."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Day 2: Theo **cannot open** the left eye; he is drowsy and hot.",
+            "He sees **double** and it hurts to look up.",
+            "The left eye is **pushed forward**; the conjunctiva is swollen.",
+            "Left acuity 6/12; right 6/6."
+          ],
+          "vitals": { "T": "39.3°C", "HR": "138 bpm", "BP": "98/60 mmHg", "RR": "26 /min", "SpO2": "98% on air" }
+        },
+        {
+          "type": "ask",
+          "q": "Theo now has proptosis, painful restricted eye movements and diplopia. Which is the diagnosis?",
+          "o": ["Allergic eyelid oedema", "Dacryocystitis", "Orbital cellulitis", "Periorbital cellulitis"],
+          "a": 2,
+          "r": "Any change in **vision, eye movement or proptosis** means the infection is **behind the septum**: orbital cellulitis, an emergency."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Theo has many **red flags**: proptosis, ophthalmoplegia, diplopia, reduced acuity, chemosis, reduced eye opening, fever and systemic illness."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Theo's proptosis (left minus right, Hertel)",
+            "min": 0,
+            "max": 8,
+            "unit": "mm",
+            "bands": [[0, 2, "normal asymmetry", "ok"], [2, 4, "proptosis", "warn"], [4, 8, "marked proptosis", "bad"]],
+            "value": 4,
+            "label": "Theo 4 mm",
+            "caption": "The left eye sits 4 mm further forward: something is filling the orbit behind the septum."
+          }
+        },
+        {
+          "type": "compare",
+          "title": "Periorbital vs orbital cellulitis",
+          "head": ["Feature", "Periorbital (preseptal)", "Orbital (postseptal)"],
+          "rows": [
+            ["Site", "Lid and skin in front of septum", "**Behind the septum**"],
+            ["Proptosis", "No", "**Yes**"],
+            ["Eye movements", "Normal, painless", "**Painful, restricted (diplopia)**"],
+            ["Vision and pupils", "Normal", "May fall; **RAPD**"],
+            ["Urgency", "Oral antibiotics if mild and well", "**Emergency: admit, IV antibiotics**"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Untreated, Theo risks **vision loss**, an **orbital abscess**, **cavernous sinus thrombosis** and meningitis."
+        },
+        {
+          "type": "trap",
+          "text": "A very swollen lid does not make it orbital. Only **proptosis, painful or restricted eye movements, reduced acuity or RAPD** do. Always force the lids open and check."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' with the answer contrast-enhanced CT of the orbits, sinuses and brain, alongside urgent ophthalmology and ENT review.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Theo's red flags mean **urgent ophthalmology and ENT review** and bloods now."
+        },
+        {
+          "type": "labs",
+          "title": "Theo's bloods",
+          "rows": [
+            ["White cell count", "21.4 ×10⁹/L", "4.5–13.5", "H"],
+            ["Neutrophils", "17.8 ×10⁹/L", "1.5–8.0", "H"],
+            ["CRP", "148 mg/L", "<5", "H"],
+            ["Lactate", "1.6 mmol/L", "<2", ""],
+            ["Blood cultures", "Taken", "", ""]
+          ],
+          "text": "A marked neutrophilia and high CRP: a serious bacterial infection. Cultures before IV antibiotics."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Theo's CRP",
+            "min": 0,
+            "max": 200,
+            "unit": "mg/L",
+            "bands": [[0, 5, "normal", "ok"], [5, 50, "raised", "warn"], [50, 200, "markedly raised", "bad"]],
+            "value": 148,
+            "label": "Theo 148",
+            "caption": "A useful baseline to track his response to IV antibiotics."
+          }
+        },
+        {
+          "type": "ask",
+          "q": "Which imaging should Theo have?",
+          "o": ["Contrast-enhanced CT of orbits, sinuses and brain", "No imaging needed", "Orbital ultrasound only", "Plain sinus X-ray"],
+          "a": 0,
+          "r": "**Contrast-enhanced CT** of orbits, sinuses and brain shows the extent, any **abscess** and intracranial spread."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Theo's diagnosis is **clinical plus urgent CT**: it shows **left ethmoid sinusitis** with a small medial subperiosteal collection."
+        },
+        {
+          "type": "pearl",
+          "text": "Image when orbital cellulitis is suspected: proptosis, ophthalmoplegia, reduced acuity, or no improvement on antibiotics. The answer is **CT with contrast**, not plain films."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' with mild periorbital cellulitis in a well child (oral co-amoxiclav, safety-net) versus orbital cellulitis (admit, IV cefotaxime or clindamycin, urgent ophthalmology and ENT).",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "On day 1 Theo was mild and well: **oral co-amoxiclav**, close follow-up and a clear **safety-net** to return if his eye changed."
+        },
+        {
+          "type": "ask",
+          "q": "Theo is back on day 2 with proptosis and diplopia. What now?",
+          "o": ["Admit for IV broad-spectrum antibiotics", "Continue oral co-amoxiclav", "Oral antibiotics and review in 48 hours", "Topical chloramphenicol"],
+          "a": 0,
+          "r": "Orbital cellulitis needs **admission and IV antibiotics** with urgent ophthalmology and ENT review."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Theo is **admitted** for **IV cefotaxime**, with urgent ophthalmology and ENT review, ready for **surgical drainage** if needed."
+        },
+        {
+          "type": "flow",
+          "title": "Red swollen eyelid: what to do",
+          "nodes": [
+            "Check vision, pupils, eye movements, proptosis",
+            "All normal, well → periorbital: oral co-amoxiclav, safety-net",
+            "Any abnormal → orbital: admit, IV antibiotics",
+            "Urgent CT with contrast; ophthalmology + ENT",
+            "Abscess or worsening vision → surgical drainage"
+          ],
+          "caption": "The eye examination decides the pathway."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Theo's response to IV cefotaxime",
+            "x": ["Day 2", "Day 3", "Day 4", "Day 5", "Day 6"],
+            "unit": "",
+            "series": [
+              { "name": "Temperature (°C)", "values": [39.3, 38.6, 37.8, 37.2, 36.9] },
+              { "name": "CRP (mg/L ÷ 10)", "values": [14.8, 12.1, 7.4, 3.6, 1.8] }
+            ],
+            "caption": "Fever and CRP settle; his small collection resolves without surgery."
+          }
+        },
+        {
+          "type": "trap",
+          "text": "Do not send home on oral antibiotics once there is proptosis or ophthalmoplegia. IV antibiotics are needed because of the risk of **cavernous sinus thrombosis** and intracranial spread."
+        },
+        {
+          "type": "pearl",
+          "text": "Children with periorbital cellulitis who are unwell or very young get **IV antibiotics** too. Safety-net everyone for orbital progression."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: the commonest organisms and source, why the orbital septum separates the two conditions, and why orbital infection reaches the cavernous sinus.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Theo's infection spread **contiguously** from his **ethmoid sinus**; **S. pneumoniae** often travels this way in children."
+        },
+        {
+          "type": "ask",
+          "q": "Which sinus most often seeds orbital cellulitis in children like Theo?",
+          "o": ["Ethmoid", "Frontal", "Maxillary", "Sphenoid"],
+          "a": 0,
+          "r": "The **ethmoid** sinus is separated from the orbit by the paper-thin **lamina papyracea**, so infection crosses easily."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "On day 1 Theo's **orbital septum** held the infection in front; by day 2 it had reached behind, threatening globe, muscles and apex."
+        },
+        {
+          "type": "flow",
+          "title": "From cold to cavernous sinus",
+          "nodes": [
+            "Viral URTI blocks sinus drainage",
+            "Bacterial ethmoid sinusitis",
+            "Spread through thin medial orbital wall",
+            "Orbital (postseptal) infection, abscess",
+            "Valveless orbital veins → cavernous sinus thrombosis, meningitis"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Theo's diplopia came from **muscle restriction**; his reduced acuity warns of **compressive optic neuropathy**; valveless veins risk **cavernous sinus thrombosis**."
+        },
+        {
+          "type": "pearl",
+          "text": "Cavernous sinus thrombosis clues: **bilateral** eye signs, CN III, IV and VI palsies, V1/V2 numbness, severe headache and a very unwell patient."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which structure separates periorbital from orbital cellulitis?", "o": ["Lamina papyracea", "Orbital septum", "Tarsal plate", "Tenon's capsule"], "a": 1, "r": "The **orbital septum**: periorbital is anterior, orbital is posterior." },
+    { "d": "diagnosis", "q": "Which finding indicates orbital rather than periorbital cellulitis?", "o": ["Eyelid erythema", "Fever", "Proptosis", "Tender eyelid"], "a": 2, "r": "**Proptosis** (or painful restricted movement, reduced acuity) means postseptal infection." },
+    { "d": "diagnosis", "q": "Which age group is most affected by periorbital and orbital cellulitis?", "o": ["Children", "Older adults", "Pregnant women", "Young adult men"], "a": 0, "r": "Both are more common in **children**." },
+    { "d": "diagnosis", "q": "Which is a serious intracranial complication of orbital cellulitis?", "o": ["Cavernous sinus thrombosis", "Normal pressure hydrocephalus", "Pituitary apoplexy", "Subarachnoid haemorrhage"], "a": 0, "r": "**Cavernous sinus thrombosis**, via valveless orbital veins." },
+    { "d": "investigation", "q": "Which is the best imaging for suspected orbital cellulitis?", "o": ["Contrast-enhanced CT of orbits, sinuses and brain", "MRI spine", "Orbital ultrasound", "Plain sinus X-ray"], "a": 0, "r": "**Contrast CT** of orbits, sinuses and brain." },
+    { "d": "management", "q": "What is first-line for mild periorbital cellulitis in a well patient?", "o": ["IV vancomycin", "Oral co-amoxiclav", "Surgical drainage", "Topical chloramphenicol"], "a": 1, "r": "**Oral co-amoxiclav** with close follow-up and safety-netting." },
+    { "d": "management", "q": "Which IV antibiotic is an example for orbital cellulitis in the notes?", "o": ["Cefotaxime", "Gentamicin alone", "Metronidazole alone", "Nitrofurantoin"], "a": 0, "r": "**Cefotaxime or clindamycin**, broad-spectrum IV." },
+    { "d": "management", "q": "Which specialties should urgently review orbital cellulitis?", "o": ["Dermatology and rheumatology", "Neurology and cardiology", "Ophthalmology and ENT", "Plastics and maxillofacial only"], "a": 2, "r": "**Ophthalmology and ENT** (sinus source, drainage)." },
+    { "d": "science", "q": "Which organism often causes orbital cellulitis via ethmoid sinusitis in children?", "o": ["Escherichia coli", "Pseudomonas aeruginosa", "Streptococcus pneumoniae", "Neisseria meningitidis"], "a": 2, "r": "**S. pneumoniae**; S. aureus and S. pyogenes are also common." },
+    { "d": "science", "q": "Why can orbital infection spread to the cavernous sinus?", "o": ["Lymphatic drainage to the sinus", "Orbital veins are valveless", "The optic nerve carries bacteria", "The septum drains into the sinus"], "a": 1, "r": "**Valveless orbital veins** allow posterior spread." }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "Define periorbital and orbital cellulitis, and name the common causes.",
+        "tip": "Exam thinking: the septum is the dividing line.",
+        "points": [
+          { "p": "Periorbital (preseptal): eyelid and skin anterior to the orbital septum", "k": [["preseptal", "anterior", "in front"], ["septum"]], "why": "Usually milder." },
+          { "p": "Orbital (postseptal): posterior to the septum; ophthalmological emergency", "k": [["postseptal", "posterior", "behind"], ["emergency", "urgent"]], "why": "Threatens sight and life." },
+          { "p": "Follows sinusitis, URTI, facial or eyelid trauma, skin infection", "k": [["sinus", "urti", "cold", "trauma", "skin", "bite"]], "why": "Sinusitis is the classic source." },
+          { "p": "More common in children; orbital bone fracture predisposes", "k": [["child", "paediatric", "fracture"]], "why": "Any of the 7 orbital bones." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does periorbital cellulitis present, and why are the eye findings normal?",
+        "tip": "Exam thinking: list what is normal; that is what makes it preseptal.",
+        "points": [
+          { "p": "Swollen, red, tender eyelid, mild pain, fever", "k": [["swollen", "swelling", "red", "erythema", "tender"]], "why": "Lid signs appear in both forms." },
+          { "p": "Vision, pupils and eye movements normal", "k": [["vision", "pupil", "movement"], ["normal"]], "why": "Any abnormality means orbital." },
+          { "p": "No proptosis; septum protects the orbit", "k": [["proptosis"]], "why": "The septum is the barrier." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "List the red flags that mean orbital cellulitis.",
+        "tip": "Exam thinking: one red flag is enough to switch pathway.",
+        "points": [
+          { "p": "Proptosis", "k": [["proptosis", "exophthalmos", "pushed forward"]], "why": "Mass effect behind the septum." },
+          { "p": "Painful eye movements, ophthalmoplegia, diplopia", "k": [["ophthalmoplegia", "diplopia", "double", "movement"]], "why": "Muscle restriction and inflammation." },
+          { "p": "Reduced visual acuity and RAPD", "k": [["acuity", "vision", "rapd", "afferent"]], "why": "Compressive optic neuropathy." },
+          { "p": "Chemosis, headache, reduced eye opening", "k": [["chemosis", "headache", "opening"]], "why": "Chemosis is conjunctival swelling." },
+          { "p": "Fever and systemic illness", "k": [["fever", "systemic", "unwell"]], "why": "Treat as an emergency." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the complications of orbital cellulitis?",
+        "tip": "Exam thinking: sight, then brain.",
+        "points": [
+          { "p": "Vision loss", "k": [["vision", "blind", "sight"]], "why": "From compressive optic neuropathy." },
+          { "p": "Subperiosteal or orbital abscess", "k": [["abscess"]], "why": "May need surgical drainage." },
+          { "p": "Cavernous sinus thrombosis", "k": [["cavernous"]], "why": "Bilateral signs and cranial nerve palsies." },
+          { "p": "Meningitis and intracranial spread", "k": [["meningitis", "intracranial", "brain abscess"]], "why": "Via valveless veins." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "How is suspected orbital cellulitis investigated?",
+        "tip": "Exam thinking: contrast CT, plus ophthalmology and ENT.",
+        "points": [
+          { "p": "Clinical diagnosis plus urgent CT orbit and sinuses", "k": [["ct"]], "why": "The gold standard." },
+          { "p": "Contrast-enhanced CT of orbits, sinuses and brain", "k": [["contrast"]], "why": "Shows abscess and intracranial spread." },
+          { "p": "Urgent ophthalmology and ENT review", "k": [["ophthalm", "ent", "eye doctor"]], "why": "ENT treats the sinus source." },
+          { "p": "Blood tests (FBC, CRP, cultures)", "k": [["blood", "fbc", "crp", "culture"]], "why": "Cultures before IV antibiotics." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is periorbital cellulitis managed?",
+        "tip": "Exam thinking: well and mild = oral; unwell or a young child = IV.",
+        "points": [
+          { "p": "Careful assessment to rule out orbital cellulitis", "k": [["rule out", "exclude", "assess"]], "why": "Check vision, pupils, movements, proptosis." },
+          { "p": "Mild and systemically well: oral co-amoxiclav with close follow-up", "k": [["co-amoxiclav", "coamoxiclav", "augmentin"]], "why": "First-line oral choice." },
+          { "p": "IV antibiotics if paediatric concern or more significant infection", "k": [["iv", "intravenous"]], "why": "Young or unwell children." },
+          { "p": "Safety-net and review for orbital progression", "k": [["safety", "review", "return"]], "why": "It can progress within hours." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is orbital cellulitis managed as an emergency, and why IV?",
+        "tip": "Exam thinking: admit, IV, two specialties, drain if needed.",
+        "points": [
+          { "p": "Admission", "k": [["admit", "admission", "hospital"]], "why": "Never discharge on oral antibiotics." },
+          { "p": "IV broad-spectrum antibiotics, e.g. cefotaxime or clindamycin", "k": [["cefotaxime", "clindamycin", "ceftriaxone", "iv antibiotic", "intravenous"]], "why": "Covers staph, strep and pneumococcus." },
+          { "p": "Urgent ophthalmology and ENT review", "k": [["ophthalm", "ent"]], "why": "Monitor vision; treat the sinus." },
+          { "p": "Surgical drainage if needed", "k": [["drain", "surgery", "surgical"]], "why": "For abscess or worsening vision." },
+          { "p": "IV because of cavernous sinus thrombosis and intracranial spread risk", "k": [["cavernous", "intracranial", "meningitis"]], "why": "The reason it is an emergency." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "How does infection reach the orbit, and which organisms cause it?",
+        "tip": "Exam thinking: contiguous spread from the sinuses.",
+        "points": [
+          { "p": "Contiguous spread from paranasal sinus, skin infection, insect bite, trauma", "k": [["sinus", "contiguous", "bite", "trauma", "skin"]], "why": "Ethmoid sinus in children." },
+          { "p": "S. aureus", "k": [["aureus", "staph"]], "why": "Common, especially after skin breaks." },
+          { "p": "S. pyogenes", "k": [["pyogenes", "group a"]], "why": "Classic cellulitis organism." },
+          { "p": "S. pneumoniae, often via ethmoid sinusitis in children", "k": [["pneumoniae", "pneumococ"]], "why": "Sinus pathogen." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does the orbital septum matter, and why is orbital cellulitis so dangerous?",
+        "tip": "Exam thinking: barrier, then pressure, then veins.",
+        "points": [
+          { "p": "Septum separates preseptal and postseptal compartments", "k": [["septum"], ["barrier", "separat", "compartment"]], "why": "Its integrity decides if globe, muscles and apex are at risk." },
+          { "p": "Compressive optic neuropathy: reduced acuity, RAPD", "k": [["optic neuropathy", "compress", "rapd"]], "why": "A sight-threatening sign." },
+          { "p": "Extraocular muscle restriction: ophthalmoplegia, diplopia", "k": [["muscle", "ophthalmoplegia", "diplopia"]], "why": "Explains painful restricted movement." },
+          { "p": "Valveless orbital veins allow spread to cavernous sinus or meninges", "k": [["valveless", "vein"]], "why": "The route of intracranial spread." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "periorbital cellulitis": "Infection of the eyelid and skin in front of the orbital septum; also called preseptal cellulitis.",
+    "preseptal cellulitis": "Another name for periorbital cellulitis: infection anterior to the orbital septum.",
+    "orbital cellulitis": "Infection behind the orbital septum involving orbital fat and muscles; an emergency.",
+    "postseptal": "Behind the orbital septum, inside the orbit.",
+    "orbital septum": "Thin fibrous sheet from the orbital rim to the eyelids that walls off the orbit.",
+    "orbit": "The bony eye socket, made of seven bones.",
+    "proptosis": "Forward bulging of the eye, caused by something filling the orbit.",
+    "exophthalmos": "Protrusion of the eye; often used for thyroid eye disease.",
+    "Hertel exophthalmometer": "Instrument that measures how far each eye protrudes.",
+    "ophthalmoplegia": "Weakness or restriction of eye movements.",
+    "diplopia": "Double vision.",
+    "chemosis": "Swelling of the conjunctiva.",
+    "conjunctiva": "Thin membrane covering the white of the eye and inner eyelids.",
+    "RAPD": "Relative afferent pupillary defect: a sign of optic nerve damage on the swinging light test.",
+    "visual acuity": "Sharpness of vision, measured on a Snellen chart.",
+    "compressive optic neuropathy": "Optic nerve damage from pressure, causing reduced acuity, colour loss and RAPD.",
+    "orbital apex": "Back of the orbit where the optic nerve and eye-movement nerves enter.",
+    "subperiosteal abscess": "Collection of pus between the orbital bone and its periosteum, usually next to the ethmoid sinus.",
+    "cavernous sinus thrombosis": "Infected clot in the venous sinus beside the pituitary, causing bilateral eye signs and cranial nerve palsies.",
+    "cavernous sinus": "Venous channel beside the pituitary containing CN III, IV, V1, V2 and VI and the carotid artery.",
+    "valveless veins": "Orbital veins with no valves, so blood and infection can flow back to the cavernous sinus.",
+    "meningitis": "Infection and inflammation of the membranes around the brain.",
+    "paranasal sinuses": "Air spaces around the nose: frontal, ethmoid, maxillary and sphenoid.",
+    "ethmoid sinus": "Sinus between the eyes, separated from the orbit by a very thin bone wall.",
+    "lamina papyracea": "Paper-thin medial orbital wall over the ethmoid sinus; infection crosses it easily.",
+    "sinusitis": "Infection or inflammation of the paranasal sinuses.",
+    "URTI": "Upper respiratory tract infection, e.g. a cold.",
+    "S. aureus": "Staphylococcus aureus: Gram-positive coccus causing skin and soft tissue infection.",
+    "S. pyogenes": "Group A streptococcus: a common cause of cellulitis.",
+    "S. pneumoniae": "Pneumococcus: a common sinus pathogen that can spread to the orbit.",
+    "co-amoxiclav": "Amoxicillin with clavulanic acid; oral first-line for mild periorbital cellulitis.",
+    "cefotaxime": "IV third-generation cephalosporin used for orbital cellulitis.",
+    "clindamycin": "Antibiotic active against staph, strep and anaerobes; an IV option for orbital cellulitis.",
+    "ENT": "Ear, nose and throat surgery; treats and drains the sinus source.",
+    "safety-net": "Clear advice on which changes mean coming back urgently.",
+    "dacryocystitis": "Infection of the tear sac, causing a red swelling at the inner corner of the eye.",
+    "thyroid eye disease": "Autoimmune orbital inflammation in Graves' disease causing proptosis and lid retraction.",
+    "retrobulbar haemorrhage": "Bleeding behind the eye after trauma, causing sudden proptosis and visual loss."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 6 year old girl has a 2 day history of a swollen, red right upper eyelid following a cold. Today she complains that it hurts to move her right eye and she is seeing double. Her temperature is 39.0°C and pulse rate 136 bpm. The right eye is pushed forward and movements are restricted in all directions.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Allergic conjunctivitis", "Dacryocystitis", "Orbital cellulitis", "Periorbital cellulitis", "Thyroid eye disease"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of a red swollen eyelid: decide preseptal or postseptal." },
+        { "t": "Pick out the clues", "clues": ["following a cold", "hurts to move her right eye", "seeing double", "pushed forward", "restricted in all directions"], "x": "URTI source, **painful ophthalmoplegia, diplopia, proptosis**, fever." },
+        { "t": "Make your own answer before looking", "x": "Eye involvement means behind the septum: **orbital cellulitis**." },
+        { "t": "Rule out the others", "elim": [[0, "Allergic conjunctivitis is itchy and bilateral with no proptosis or fever."], [1, "Dacryocystitis is a swelling at the medial canthus over the tear sac."], [3, "Periorbital cellulitis has normal eye movements and no proptosis."], [4, "Thyroid eye disease is painless, slow and not febrile; rare in children."]] },
+        { "t": "Commit", "x": "**C. Orbital cellulitis.** Proptosis or ophthalmoplegia = postseptal = emergency." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 10 year old boy has a 3 day history of left eyelid swelling after sinusitis. He has left proptosis, painful eye movements and left visual acuity of 6/18. His temperature is 38.8°C, pulse rate 120 bpm and BP 104/66 mmHg. IV antibiotics have been started.",
+      "q": "Which is the most appropriate imaging?",
+      "o": ["Contrast-enhanced CT of the orbits, sinuses and brain", "MRI of the cervical spine", "Non-contrast CT of the head only", "Orbital ultrasound", "Plain X-ray of the sinuses"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "Imaging for suspected orbital cellulitis." },
+        { "t": "Pick out the clues", "clues": ["after sinusitis", "left proptosis", "painful eye movements", "visual acuity of 6/18"], "x": "Orbital cellulitis with reduced vision: look for an **abscess** and intracranial spread." },
+        { "t": "Make your own answer before looking", "x": "**Contrast-enhanced CT of orbits, sinuses and brain**." },
+        { "t": "Rule out the others", "elim": [[1, "The spine is irrelevant."], [2, "Without contrast and without orbits and sinuses, an abscess may be missed."], [3, "Ultrasound cannot assess the sinuses or brain."], [4, "Plain films do not show orbital collections."]] },
+        { "t": "Commit", "x": "**A. Contrast CT of orbits, sinuses and brain.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 7 year old boy has a red, swollen left eyelid and fever after a week of nasal congestion. He has left proptosis and diplopia on looking to the left. His temperature is 38.9°C, pulse rate 128 bpm and BP 100/62 mmHg.",
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Admit for IV broad-spectrum antibiotics with urgent ophthalmology and ENT review", "Oral co-amoxiclav and review in 48 hours", "Oral flucloxacillin and warm compresses", "Topical chloramphenicol ointment", "Urgent outpatient ophthalmology clinic next week"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management: decide oral or IV, home or hospital." },
+        { "t": "Pick out the clues", "clues": ["nasal congestion", "left proptosis and diplopia", "temperature is 38.9°C"], "x": "Proptosis and diplopia: **orbital** cellulitis." },
+        { "t": "Make your own answer before looking", "x": "**Admit, IV antibiotics** (cefotaxime or clindamycin), urgent ophthalmology and ENT." },
+        { "t": "Rule out the others", "elim": [[1, "Oral treatment is for mild periorbital cellulitis in a well child."], [2, "Oral treatment at home risks cavernous sinus thrombosis."], [3, "Topical antibiotics do not reach the orbit."], [4, "This is an emergency, not a clinic referral."]] },
+        { "t": "Commit", "x": "**A. Admit for IV antibiotics.** Orbital = admit, IV, ophthalmology + ENT." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 5 year old boy has a red, swollen right eyelid that developed after an insect bite 2 days ago. He is afebrile and playing normally. Visual acuity is normal, pupils react normally, eye movements are full and painless and there is no proptosis.",
+      "q": "Which anatomical structure best explains why his eye movements and vision are unaffected?",
+      "o": ["Lacrimal gland", "Lamina papyracea", "Orbital septum", "Tarsal plate", "Tenon's capsule"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Anatomy: what keeps periorbital infection out of the orbit?" },
+        { "t": "Pick out the clues", "clues": ["insect bite", "eye movements are full and painless", "no proptosis"], "x": "Preseptal infection from a skin breach; orbit untouched." },
+        { "t": "Make your own answer before looking", "x": "The **orbital septum** is the barrier." },
+        { "t": "Rule out the others", "elim": [[0, "The lacrimal gland makes tears; it is not a barrier."], [1, "The lamina papyracea is the thin wall that lets sinus infection IN."], [3, "The tarsal plate stiffens the lid but does not wall off the orbit."], [4, "Tenon's capsule wraps the globe, not the septal plane."]] },
+        { "t": "Commit", "x": "**C. Orbital septum.** Anterior = periorbital; posterior = orbital." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 9 year old boy has had a blocked nose for a week. For 2 days his left eye has been swollen and red, and today he has double vision and pain when looking up. His temperature is 39.1°C, pulse rate 132 bpm and BP 102/64 mmHg. The left eye is proptosed with chemosis.",
+      "labs": [["White cell count", "19.6 ×10⁹/L", "4.5–13.5", "H"], ["CRP", "126 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute dacryocystitis", "Allergic eyelid oedema", "Orbital cellulitis", "Periorbital cellulitis", "Thyroid eye disease"],
+      "a": 2,
+      "e": "Sinusitis followed by proptosis, chemosis, painful eye movement and diplopia with fever is orbital cellulitis. Periorbital cellulitis spares vision, movements and position of the eye.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of a red swollen eye in a child." },
+        { "t": "Pick out the clues", "clues": ["blocked nose for a week", "double vision and pain when looking up", "proptosed with chemosis", "temperature is 39.1°C"], "x": "Sinus source, **diplopia, painful movement, proptosis, chemosis**, fever." },
+        { "t": "Make your own answer before looking", "x": "**Orbital cellulitis**." },
+        { "t": "Rule out the others", "elim": [[0, "Dacryocystitis is a medial canthal swelling without proptosis."], [1, "Allergy is itchy and afebrile."], [3, "Periorbital cellulitis has normal eye movements and no proptosis."], [4, "Thyroid eye disease is painless and slow, without fever."]] },
+        { "t": "Commit", "x": "**C. Orbital cellulitis.** Red flags = postseptal." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 4 year old girl has a red, swollen, tender left upper eyelid 1 day after a mosquito bite on the lid. She is eating and playing normally. Her temperature is 37.8°C and pulse rate 110 bpm. Vision is normal for age, pupils are normal, eye movements are full and painless and there is no proptosis.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Cavernous sinus thrombosis", "Chalazion", "Orbital cellulitis", "Periorbital cellulitis", "Subperiosteal abscess"],
+      "a": 3,
+      "e": "A red, tender lid after a skin breach with normal vision, pupils and movements and no proptosis is periorbital (preseptal) cellulitis. Orbital cellulitis would affect movements or eye position.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Preseptal or postseptal?" },
+        { "t": "Pick out the clues", "clues": ["mosquito bite", "eating and playing normally", "eye movements are full and painless", "no proptosis"], "x": "Skin source, systemically well, eye examination **normal**." },
+        { "t": "Make your own answer before looking", "x": "**Periorbital (preseptal) cellulitis**." },
+        { "t": "Rule out the others", "elim": [[0, "Cavernous sinus thrombosis gives bilateral signs and a very unwell child."], [1, "A chalazion is a painless lid lump without diffuse redness."], [2, "Orbital cellulitis affects movement, vision or eye position."], [4, "An abscess causes proptosis and restricted movement."]] },
+        { "t": "Commit", "x": "**D. Periorbital cellulitis.** Normal eye exam = preseptal." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 7 year old boy has had a red, swollen right eyelid for 24 hours after a cold. The GP is deciding whether this is periorbital or orbital cellulitis. His temperature is 38.2°C and pulse rate 112 bpm.",
+      "labs": [],
+      "visual": null,
+      "q": "Which finding would most strongly suggest orbital cellulitis?",
+      "o": ["Eyelid erythema", "Eyelid tenderness", "Fever of 38.2°C", "Painful, restricted eye movements", "Recent upper respiratory infection"],
+      "a": 3,
+      "e": "Painful, restricted eye movements (ophthalmoplegia) mean the infection is behind the septum. Lid redness, tenderness, fever and a preceding URTI occur in both forms.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which single sign separates orbital from periorbital?" },
+        { "t": "Pick out the clues", "clues": ["periorbital or orbital cellulitis", "after a cold"], "x": "You need a sign that only postseptal infection causes." },
+        { "t": "Make your own answer before looking", "x": "**Painful, restricted eye movements** (or proptosis, reduced acuity)." },
+        { "t": "Rule out the others", "elim": [[0, "Erythema is present in both."], [1, "Tenderness is present in both."], [2, "Fever occurs in both."], [4, "A URTI precedes both."]] },
+        { "t": "Commit", "x": "**D. Painful, restricted eye movements.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 12 year old girl is being treated with IV antibiotics for right orbital cellulitis. On day 2 she develops a severe headache and vomiting, and the left eye becomes swollen and proptosed. There is bilateral ophthalmoplegia and reduced sensation over the forehead. Her temperature is 39.8°C, pulse rate 140 bpm and BP 96/58 mmHg.",
+      "labs": [["CRP", "242 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely complication?",
+      "o": ["Bacterial meningitis without venous involvement", "Cavernous sinus thrombosis", "Central retinal artery occlusion", "Subperiosteal abscess", "Thyroid eye disease"],
+      "a": 1,
+      "e": "Spread to the opposite eye, bilateral ophthalmoplegia, V1 numbness and severe headache mean spread via valveless orbital veins to the cavernous sinus. A subperiosteal abscess stays on one side.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A complication of orbital cellulitis." },
+        { "t": "Pick out the clues", "clues": ["severe headache and vomiting", "the left eye becomes swollen and proptosed", "bilateral ophthalmoplegia", "reduced sensation over the forehead"], "x": "Spread to the **other eye**, cranial nerves III, IV, VI and **V1**." },
+        { "t": "Make your own answer before looking", "x": "**Cavernous sinus thrombosis**." },
+        { "t": "Rule out the others", "elim": [[0, "Meningitis does not cause bilateral proptosis and V1 loss."], [2, "CRAO is painless sudden visual loss in one eye."], [3, "An abscess is unilateral."], [4, "Thyroid eye disease is not acute or febrile."]] },
+        { "t": "Commit", "x": "**B. Cavernous sinus thrombosis.** Bilateral signs + cranial nerves = cavernous sinus." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 6 year old boy has orbital cellulitis following acute ethmoid sinusitis. He has had no skin injury or insect bite. His temperature is 38.9°C, pulse rate 126 bpm and BP 100/64 mmHg. Blood cultures grow Gram-positive diplococci.",
+      "labs": [["CRP", "112 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely causative organism?",
+      "o": ["Chlamydia trachomatis", "Escherichia coli", "Neisseria gonorrhoeae", "Pseudomonas aeruginosa", "Streptococcus pneumoniae"],
+      "a": 4,
+      "e": "S. pneumoniae, a Gram-positive diplococcus, often reaches the orbit via ethmoid sinusitis in children. Neisseria are Gram-negative diplococci; E. coli and Pseudomonas are Gram-negative rods.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Organism question: use the source and the Gram stain." },
+        { "t": "Pick out the clues", "clues": ["ethmoid sinusitis", "no skin injury", "Gram-positive diplococci"], "x": "Sinus source in a child, Gram-positive diplococci." },
+        { "t": "Make your own answer before looking", "x": "**Streptococcus pneumoniae**." },
+        { "t": "Rule out the others", "elim": [[0, "Chlamydia causes conjunctivitis and does not Gram stain."], [1, "E. coli is a Gram-negative rod."], [2, "Neisseria are Gram-negative diplococci causing hyperacute conjunctivitis."], [3, "Pseudomonas is a Gram-negative rod linked to contact lenses."]] },
+        { "t": "Commit", "x": "**E. S. pneumoniae.** Ethmoid sinusitis in a child, Gram-positive diplococci." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 34 year old man sustained a left zygomatic fracture in an assault 6 days ago. He now has increasing pain and swelling around the left eye, fever and double vision. His temperature is 38.7°C, pulse rate 112 bpm and BP 128/78 mmHg. The left eye is proptosed with chemosis and restricted movements.",
+      "labs": [["White cell count", "17.2 ×10⁹/L", "4.0–11.0", "H"], ["CRP", "164 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Carotid-cavernous fistula", "Orbital cellulitis", "Periorbital cellulitis", "Retrobulbar haemorrhage", "Thyroid eye disease"],
+      "a": 1,
+      "e": "Orbital bone fracture predisposes to orbital cellulitis; fever, raised inflammatory markers, proptosis, chemosis and ophthalmoplegia days later confirm it. Retrobulbar haemorrhage occurs immediately after injury without fever.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis after facial trauma." },
+        { "t": "Pick out the clues", "clues": ["zygomatic fracture", "6 days ago", "fever and double vision", "proptosed with chemosis and restricted movements"], "x": "Orbital bone fracture, days later fever, proptosis and ophthalmoplegia." },
+        { "t": "Make your own answer before looking", "x": "**Orbital cellulitis**." },
+        { "t": "Rule out the others", "elim": [[0, "A fistula gives a pulsatile eye and bruit, not fever."], [2, "Periorbital cellulitis has normal eye movements and no proptosis."], [3, "Retrobulbar haemorrhage is immediate, afebrile, after injury."], [4, "Thyroid eye disease is not febrile or post-traumatic."]] },
+        { "t": "Commit", "x": "**B. Orbital cellulitis.** Orbital fractures predispose to it." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 13 year old girl has right proptosis, painful restricted eye movements and fever 2 days after sinusitis. Her temperature is 38.6°C, pulse rate 118 bpm and BP 108/70 mmHg. She has been admitted and started on IV cefotaxime.",
+      "labs": [["CRP", "134 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate imaging?",
+      "o": ["Contrast-enhanced CT of the orbits, sinuses and brain", "MRI of the lumbar spine", "Non-contrast CT of the head only", "Orbital ultrasound only", "Plain X-ray of the orbits"],
+      "a": 0,
+      "e": "Contrast-enhanced CT of the orbits, sinuses and brain is the best imaging: it shows the sinus source, any abscess and intracranial spread. Plain films and ultrasound are inadequate.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Imaging for orbital cellulitis." },
+        { "t": "Pick out the clues", "clues": ["right proptosis", "painful restricted eye movements", "after sinusitis"], "x": "Confirmed orbital red flags." },
+        { "t": "Make your own answer before looking", "x": "**Contrast CT of orbits, sinuses and brain**." },
+        { "t": "Rule out the others", "elim": [[1, "The lumbar spine is irrelevant."], [2, "Head only and without contrast misses orbital and sinus disease."], [3, "Ultrasound cannot show sinuses or brain."], [4, "Plain films miss collections."]] },
+        { "t": "Commit", "x": "**A. Contrast-enhanced CT.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "An 11 year old boy with left orbital cellulitis after ethmoid sinusitis has worsening proptosis despite 24 hours of IV antibiotics. His temperature is 38.9°C, pulse rate 124 bpm and BP 104/66 mmHg. Contrast-enhanced CT of the orbits and sinuses is performed.",
+      "labs": [["CRP", "158 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely finding on CT?",
+      "o": ["Enlarged extraocular muscles with tendon sparing", "Isolated orbital floor blow-out fracture", "Normal orbits and sinuses", "Optic nerve glioma", "Subperiosteal abscess next to an opacified ethmoid sinus"],
+      "a": 4,
+      "e": "Worsening proptosis despite IV antibiotics after ethmoid sinusitis suggests a medial subperiosteal abscess, a complication that may need drainage. Tendon-sparing muscle enlargement is thyroid eye disease.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A 'most likely finding' on CT in non-resolving orbital cellulitis." },
+        { "t": "Pick out the clues", "clues": ["after ethmoid sinusitis", "worsening proptosis despite 24 hours of IV antibiotics"], "x": "Sinus source and failure to respond: think **abscess**." },
+        { "t": "Make your own answer before looking", "x": "**Subperiosteal abscess** beside the ethmoid sinus." },
+        { "t": "Rule out the others", "elim": [[0, "Tendon-sparing muscle enlargement is thyroid eye disease."], [1, "There is no trauma."], [2, "Worsening proptosis means CT will not be normal."], [3, "A glioma is slow and painless."]] },
+        { "t": "Commit", "x": "**E. Subperiosteal abscess.** Not improving on IV antibiotics: image and consider drainage." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 9 year old boy has a red, swollen right lower eyelid after scratching a spot 2 days ago. He is well and eating normally. His temperature is 37.6°C and pulse rate 96 bpm. Vision, pupils and eye movements are normal and there is no proptosis.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Admit for IV cefotaxime", "Emergency surgical drainage", "No treatment needed", "Oral co-amoxiclav with safety-netting and follow-up", "Topical chloramphenicol only"],
+      "a": 3,
+      "e": "Mild periorbital cellulitis in a systemically well child is treated with oral co-amoxiclav, close follow-up and safety-netting for orbital progression. IV antibiotics are for orbital cellulitis or an unwell child.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Management of a red lid with a normal eye exam." },
+        { "t": "Pick out the clues", "clues": ["scratching a spot", "He is well and eating normally", "no proptosis"], "x": "Mild **periorbital** cellulitis in a well child." },
+        { "t": "Make your own answer before looking", "x": "**Oral co-amoxiclav**, safety-net and review." },
+        { "t": "Rule out the others", "elim": [[0, "IV is for orbital cellulitis or a significant infection."], [1, "Nothing to drain."], [2, "Bacterial cellulitis needs antibiotics."], [4, "Topical treatment does not treat cellulitis."]] },
+        { "t": "Commit", "x": "**D. Oral co-amoxiclav with safety-netting.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 10 year old girl has a swollen left eye after a week of sinusitis. She has left proptosis and diplopia. Her temperature is 38.8°C, pulse rate 126 bpm and BP 102/64 mmHg. She has no drug allergies.",
+      "labs": [["White cell count", "18.1 ×10⁹/L", "4.5–13.5", "H"], ["CRP", "118 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Admit for IV cefotaxime with urgent ophthalmology and ENT review", "Oral amoxicillin at home", "Oral co-amoxiclav and review in 48 hours", "Oral prednisolone", "Topical chloramphenicol drops"],
+      "a": 0,
+      "e": "Orbital cellulitis needs admission, IV broad-spectrum antibiotics such as cefotaxime and urgent ophthalmology and ENT review, because of the risk of cavernous sinus thrombosis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management of a red flag eye." },
+        { "t": "Pick out the clues", "clues": ["after a week of sinusitis", "left proptosis and diplopia", "temperature is 38.8°C"], "x": "**Orbital** cellulitis." },
+        { "t": "Make your own answer before looking", "x": "**Admit, IV cefotaxime, ophthalmology and ENT**." },
+        { "t": "Rule out the others", "elim": [[1, "Oral treatment at home is unsafe in orbital disease."], [2, "Oral co-amoxiclav is for mild periorbital cellulitis."], [3, "Steroids alone do not treat infection."], [4, "Topical drops do not reach the orbit."]] },
+        { "t": "Commit", "x": "**A. Admit for IV cefotaxime.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 12 year old boy with right orbital cellulitis has been on IV cefotaxime for 36 hours. His right visual acuity has fallen from 6/9 to 6/36 and a new right relative afferent pupillary defect has appeared. His temperature is 38.6°C, pulse rate 120 bpm and BP 106/68 mmHg. CT shows a large medial subperiosteal abscess.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Add oral prednisolone and observe", "Continue IV cefotaxime and repeat CT in 1 week", "Discharge on oral co-amoxiclav", "Switch to oral clindamycin", "Urgent surgical drainage of the abscess"],
+      "a": 4,
+      "e": "Falling acuity and a new RAPD mean compressive optic neuropathy from the abscess; urgent surgical drainage by ophthalmology and ENT is needed alongside IV antibiotics.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step when orbital cellulitis worsens on IV antibiotics." },
+        { "t": "Pick out the clues", "clues": ["for 36 hours", "fallen from 6/9 to 6/36", "new right relative afferent pupillary defect", "large medial subperiosteal abscess"], "x": "Sight is failing: **compressive optic neuropathy** from an abscess." },
+        { "t": "Make your own answer before looking", "x": "**Urgent surgical drainage**." },
+        { "t": "Rule out the others", "elim": [[0, "Steroids alone do not drain pus."], [1, "Waiting a week risks permanent vision loss."], [2, "He is getting worse; discharge is unsafe."], [3, "Switching to oral is a step down."]] },
+        { "t": "Commit", "x": "**E. Urgent surgical drainage.** Worsening vision or abscess = drain." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "An 8 year old girl with left orbital cellulitis develops bilateral proptosis, bilateral ophthalmoplegia and severe headache. Her temperature is 39.6°C, pulse rate 138 bpm and BP 94/56 mmHg. MRI venography shows thrombosis of the cavernous sinus.",
+      "labs": [["CRP", "226 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely route by which the infection reached the cavernous sinus?",
+      "o": ["Direct spread through the optic canal along the optic nerve", "Haematogenous spread via the internal carotid artery", "Lymphatic drainage to the cavernous sinus", "Retrograde spread through valveless orbital veins", "Spread along the lacrimal duct"],
+      "a": 3,
+      "e": "The ophthalmic veins drain the orbit into the cavernous sinus and have no valves, so infected thrombus spreads backwards. The orbit has no significant lymphatic route to the sinus.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of intracranial spread." },
+        { "t": "Pick out the clues", "clues": ["left orbital cellulitis", "bilateral proptosis", "thrombosis of the cavernous sinus"], "x": "Orbital infection, then venous sinus clot affecting both sides." },
+        { "t": "Make your own answer before looking", "x": "**Valveless orbital (ophthalmic) veins**." },
+        { "t": "Rule out the others", "elim": [[0, "The optic nerve is not the route to the cavernous sinus."], [1, "Arterial spread would not cause venous sinus thrombosis."], [2, "The orbit has no lymphatic route to the sinus."], [4, "The lacrimal duct drains into the nose, away from the sinus."]] },
+        { "t": "Commit", "x": "**D. Valveless orbital veins.** The reason orbital cellulitis needs IV antibiotics." }
+      ]
+    }
+  ]
+}

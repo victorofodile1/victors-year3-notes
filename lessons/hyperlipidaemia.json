@@ -1,0 +1,444 @@
+{
+  "id": "hyperlipidaemia",
+  "patient": {
+    "name": "Tomasz Nowak",
+    "age": 42,
+    "sex": "M",
+    "setting": "GP surgery (NHS Health Check follow-up)",
+    "complaint": "Called back about a very high cholesterol on routine bloods; feels well",
+    "background": ["Father died of a heart attack aged 48", "Smokes 10 cigarettes a day", "Builder in Ealing; BMI 27 kg/m²", "No regular medication"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis/cause?' with a very high cholesterol plus tendon xanthomas and a premature family history (familial hypercholesterolaemia), or a secondary cause hidden in the stem (hypothyroidism, nephrotic syndrome, diabetes).",
+      "steps": [
+        { "type": "story", "points": ["Tomasz, 42, **feels completely well**.", "Routine bloods: total cholesterol **9.2 mmol/L**.", "Father died of an **MI at 48**.", "He smokes and eats takeaways most days."], "vitals": { "HR": "74 bpm", "BP": "134/82 mmHg" } },
+        { "type": "notes", "src": 0, "lead": "Like most people with high lipids, Tomasz has **no symptoms**: it was found on routine bloods." },
+        { "type": "story", "points": ["On examination: firm **lumps in both Achilles tendons**.", "Yellow plaques on both upper eyelids.", "No goitre; no oedema."] },
+        { "type": "notes", "src": 2, "lead": "Tomasz has both classic signs: **xanthelasma** on his eyelids and **tendon xanthomas** on his Achilles." },
+        { "type": "notes", "src": 3, "lead": "Very high cholesterol plus **tendon xanthomas** plus a father with an early MI: this is **familial hypercholesterolaemia** until proven otherwise." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Total cholesterol", "min": 3, "max": 11, "unit": "mmol/L", "bands": [[3, 5, "ideal", "ok"], [5, 7.5, "raised", "warn"], [7.5, 11, "think FH", "bad"]], "value": 9.2, "label": "Tomasz 9.2", "caption": "Above **7.5 mmol/L** should prompt investigation for familial hypercholesterolaemia." } },
+        { "type": "notes", "src": 1, "lead": "FH is the **primary** cause here; secondary causes such as diabetes, **hypothyroidism** and obesity still need excluding." },
+        { "type": "ask", "q": "Which secondary cause of high cholesterol is reversible and must be checked in Tomasz?", "o": ["Hypothyroidism", "Iron deficiency", "Osteoarthritis", "Vitamin D deficiency"], "a": 0, "r": "**Hypothyroidism** is a reversible cause of hypercholesterolaemia, so TFTs are checked before a statin." },
+        { "type": "notes", "src": 5, "lead": "Tomasz has no oedema, but **nephrotic syndrome** is another secondary cause: protein loss drives the liver to make more lipoprotein." },
+        { "type": "compare", "title": "Primary vs secondary hyperlipidaemia", "head": ["Feature", "Familial hypercholesterolaemia", "Hypothyroidism", "Nephrotic syndrome"], "rows": [["Clue", "**Tendon xanthomas**, early family MI", "Tired, cold, weight gain", "**Oedema**, frothy urine"], ["Lipids", "Very high LDL, normal TG", "Raised LDL", "Raised LDL and TG"], ["Key test", "Lipids, family testing", "**TSH**", "Urine ACR/PCR, albumin"], ["Fix", "High-intensity statin", "Levothyroxine", "Treat the kidney"]] },
+        { "type": "notes", "src": 4, "lead": "Tomasz's real danger is **accelerated atherosclerosis**: his father's early MI shows what untreated FH can do." },
+        { "type": "trap", "text": "Xanthelasma alone is common and often has **normal** lipids. Tendon xanthomas are the sign that points to FH." }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' for a full lipid profile, QRISK3 for primary prevention, TFTs/LFTs/HbA1c before a statin, and the total cholesterol/HDL ratio as the best predictor of risk.",
+      "steps": [
+        { "type": "labs", "title": "Tomasz's fasting lipid profile", "rows": [["Total cholesterol", "9.2 mmol/L", "<5.0", "H"], ["LDL cholesterol", "7.1 mmol/L", "<3.0", "H"], ["HDL cholesterol", "1.1 mmol/L", ">1.0", ""], ["Triglycerides", "1.6 mmol/L", "<1.7", ""], ["TC/HDL ratio", "8.4", "<4.5", "H"], ["Non-HDL cholesterol", "8.1 mmol/L", "<4.0", "H"]], "text": "Very high LDL with **normal triglycerides**: the classic FH pattern." },
+        { "type": "notes", "src": 0, "lead": "Tomasz's **full lipid profile** confirms it; his **TC/HDL ratio of 8.4** is the best single predictor of his cardiovascular risk." },
+        { "type": "ask", "q": "Which lipid measure best predicts Tomasz's cardiovascular risk?", "o": ["HDL alone", "LDL alone", "Total cholesterol/HDL ratio", "Triglycerides"], "a": 2, "r": "The **TC/HDL ratio** is the best predictor. LDL is the **treatment target**." },
+        { "type": "notes", "src": 1, "lead": "Most people get a **QRISK3** score; Tomasz's total cholesterol over **7.5** sends him down the FH route instead." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "QRISK3 10-year CVD risk (primary prevention)", "min": 0, "max": 30, "unit": "%", "bands": [[0, 10, "lifestyle", "ok"], [10, 20, "offer atorvastatin 20 mg", "warn"], [20, 30, "high risk", "bad"]], "value": 12, "label": "Tomasz's brother 12%", "caption": "For a typical patient, **QRISK3 ≥10%** means offer atorvastatin 20 mg. QRISK3 underestimates risk in FH." } },
+        { "type": "labs", "title": "Secondary causes and pre-statin bloods", "rows": [["TSH", "2.1 mU/L", "0.3–4.2", ""], ["HbA1c", "38 mmol/mol", "<42", ""], ["ALT", "28 U/L", "<40", ""], ["Creatinine", "82 µmol/L", "60–120", ""]], "text": "No hypothyroidism, diabetes or liver disease: no secondary cause, and safe to start a statin." },
+        { "type": "notes", "src": 2, "lead": "Tomasz has **HbA1c, TFTs and LFTs** before treatment, and will repeat lipids and LFTs at **3 months**." },
+        { "type": "trap", "text": "Do not start a statin without checking **TFTs**: treating undiagnosed hypothyroidism may fix the cholesterol and avoid statin myopathy." }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' choosing the statin dose: atorvastatin 20 mg for primary prevention (QRISK3 ≥10%), 80 mg for established CVD, high-intensity plus lipid clinic for FH, then ezetimibe.",
+      "steps": [
+        { "type": "ask", "q": "Tomasz has likely FH. What is the most appropriate management?", "o": ["Atorvastatin 20 mg, recheck in 1 year", "High-intensity statin and lipid clinic referral", "Lifestyle advice alone for 6 months", "PCSK9 inhibitor first-line"], "a": 1, "r": "In FH, start a **high-intensity statin promptly** and **refer to a lipid specialist** (with family cascade testing)." },
+        { "type": "notes", "src": 0, "lead": "Everyone starts with **lifestyle**: Tomasz is advised to stop smoking, cut saturated fat and exercise. A **statin** is the first drug." },
+        { "type": "notes", "src": 1, "lead": "Because Tomasz has **FH**, he goes straight onto **high-intensity** atorvastatin and is referred to the **lipid clinic**." },
+        { "type": "flow", "title": "Which statin dose?", "nodes": ["Lifestyle advice for everyone", "Primary prevention, QRISK3 ≥10% → atorvastatin 20 mg", "Diabetes → statin regardless of lipids", "Established CVD → atorvastatin 80 mg", "FH → high-intensity statin + lipid specialist", "CKD → lower dose"] },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Tomasz's non-HDL cholesterol", "x": ["Baseline", "3 months statin", "3 months + ezetimibe"], "unit": "mmol/L", "series": [{ "name": "Non-HDL cholesterol", "values": [8.1, 5.6, 4.2] }], "caption": "Statin alone gave a 31% fall: below the **40%** target, so **ezetimibe** was added." } },
+        { "type": "notes", "src": 2, "lead": "At **3 months** Tomasz's non-HDL had fallen by only 31%, so **ezetimibe** was added; **PCSK9 inhibitors** come after that." },
+        { "type": "notes", "src": "guidelines", "lead": "Tomasz's plan follows **NICE CG181**; QRISK3 and Framingham are used for people without FH." },
+        { "type": "trap", "text": "Statins are **contraindicated in pregnancy**. Ask about muscle aches; check **CK** only if he develops muscle symptoms." },
+        { "type": "pearl", "text": "Numbers to know: **20 mg** primary, **80 mg** secondary, review at **3 months**, aim for **>40%** non-HDL reduction." }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions on the mechanism of statins (HMG-CoA reductase), the defect in FH (LDL receptor, autosomal dominant) and why hypothyroidism or nephrotic syndrome raise cholesterol.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Tomasz's excess **LDL** is being deposited in his artery walls; his **HDL** works the other way, returning cholesterol to the liver." },
+        { "type": "flow", "title": "From LDL to plaque", "nodes": ["Excess LDL in plasma", "LDL enters the arterial intima and is oxidised", "Macrophages engulf it → foam cells", "Fatty streak grows into a plaque", "Plaque rupture → MI or stroke"] },
+        { "type": "notes", "src": 1, "lead": "Tomasz probably carries an **autosomal dominant LDL receptor** mutation: his liver cannot clear LDL, so it has been high since birth." },
+        { "type": "ask", "q": "Tomasz's father had FH. What is the chance each of Tomasz's children inherits it?", "o": ["0%", "25%", "50%", "100%"], "a": 2, "r": "**Autosomal dominant**: each child of one affected parent has a **50%** chance. This is why cascade testing matters." },
+        { "type": "notes", "src": 2, "lead": "Tomasz's atorvastatin blocks **HMG-CoA reductase**, so his liver cells make more **LDL receptors** and pull LDL out of the blood." },
+        { "type": "flow", "title": "How a statin lowers LDL", "nodes": ["Statin inhibits HMG-CoA reductase", "Less cholesterol made in the hepatocyte", "Cell upregulates LDL receptors", "More LDL cleared from plasma"] },
+        { "type": "notes", "src": 3, "lead": "Tomasz's normal TSH rules out the **hypothyroid** mechanism; nephrotic syndrome would act through **hepatic lipoprotein synthesis**." }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which sign most strongly suggests familial hypercholesterolaemia?", "o": ["Eruptive xanthomas", "Lipoma", "Tendon xanthomas", "Xanthelasma alone"], "a": 2, "r": "Very high cholesterol plus **tendon xanthomas** strongly suggests FH." },
+    { "d": "diagnosis", "q": "Which is a reversible secondary cause of hypercholesterolaemia?", "o": ["Asthma", "Hypothyroidism", "Iron deficiency", "Osteoporosis"], "a": 1, "r": "**Hypothyroidism** reduces LDL receptor expression; treating it lowers cholesterol." },
+    { "d": "diagnosis", "q": "What is the key complication of hyperlipidaemia?", "o": ["Cardiovascular disease", "Cirrhosis", "Gout", "Peptic ulcer"], "a": 0, "r": "**Cardiovascular disease** (IHD and stroke) from accelerated atherosclerosis." },
+    { "d": "investigation", "q": "What is the best lipid predictor of cardiovascular risk?", "o": ["HDL", "LDL", "Total cholesterol/HDL ratio", "Triglycerides"], "a": 2, "r": "The **TC/HDL ratio**; LDL is the treatment target." },
+    { "d": "investigation", "q": "Which total cholesterol should prompt investigation for FH?", "o": ["5.0 mmol/L", "6.0 mmol/L", "7.5 mmol/L", "10.0 mmol/L"], "a": 2, "r": "A total cholesterol above **7.5 mmol/L**." },
+    { "d": "investigation", "q": "Which tests are done before starting a statin?", "o": ["CK, ECG and FBC", "LFTs, lipid profile and TFTs", "Renal ultrasound and ACR", "Troponin and ECG"], "a": 1, "r": "**LFTs, full lipid profile and TFTs**; repeat lipids and LFTs at 3 months." },
+    { "d": "management", "q": "Which statin is used for primary prevention when QRISK3 is ≥10%?", "o": ["Atorvastatin 20 mg", "Atorvastatin 80 mg", "Rosuvastatin 40 mg", "Simvastatin 80 mg"], "a": 0, "r": "**Atorvastatin 20 mg**, aiming for >40% non-HDL reduction." },
+    { "d": "management", "q": "Which statin is used for secondary prevention?", "o": ["Atorvastatin 10 mg", "Atorvastatin 20 mg", "Atorvastatin 80 mg", "Pravastatin 40 mg"], "a": 2, "r": "**High-intensity atorvastatin 80 mg** regardless of baseline lipids." },
+    { "d": "management", "q": "What is added first if a statin alone is not enough?", "o": ["Bezafibrate", "Ezetimibe", "Nicotinic acid", "PCSK9 inhibitor"], "a": 1, "r": "**Ezetimibe** first; PCSK9 inhibitors are reserved for escalation." },
+    { "d": "science", "q": "Which enzyme do statins inhibit?", "o": ["Acetyl-CoA carboxylase", "HMG-CoA reductase", "Lipoprotein lipase", "PCSK9"], "a": 1, "r": "**HMG-CoA reductase**, the rate-limiting step of hepatic cholesterol synthesis." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 35 year old man has a routine health check. He has no symptoms. His father died of a myocardial infarction aged 46. There are firm nodules over both Achilles tendons. His pulse rate is 70 bpm and BP 128/80 mmHg.",
+      "labs": [["Total cholesterol", "9.6 mmol/L", "<5.0", "H"], ["LDL cholesterol", "7.6 mmol/L", "<3.0", "H"], ["Triglycerides", "1.4 mmol/L", "<1.7", ""], ["TSH", "1.8 mU/L", "0.3–4.2", ""]],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Familial combined hyperlipidaemia", "Familial hypercholesterolaemia", "Hypothyroidism", "Nephrotic syndrome", "Rheumatoid nodules"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis question with a lipid profile: primary or secondary, and which pattern?" },
+        { "t": "Pick out the clues", "clues": ["father died of a myocardial infarction aged 46", "firm nodules over both Achilles tendons", "35 year old"], "x": "Premature family CVD, **tendon xanthomas**, very high LDL with normal triglycerides." },
+        { "t": "Make your own answer before looking", "x": "**Familial hypercholesterolaemia**." },
+        { "t": "Rule out the others", "elim": [[0, "Familial combined hyperlipidaemia raises **triglycerides** too and does not cause tendon xanthomas."], [2, "TSH is normal."], [3, "No oedema or proteinuria is described."], [4, "Rheumatoid nodules sit on extensor surfaces with joint disease."]] },
+        { "t": "Commit", "x": "**B. Familial hypercholesterolaemia.** Rule: very high cholesterol + tendon xanthomas + early family MI = FH." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 52 year old woman has a fasting lipid profile at her GP. She asks which number best tells her how likely she is to have a heart attack or stroke. She has no history of cardiovascular disease.",
+      "labs": [["Total cholesterol", "6.4 mmol/L", "<5.0", "H"], ["LDL cholesterol", "4.2 mmol/L", "<3.0", "H"], ["HDL cholesterol", "1.2 mmol/L", ">1.2", ""], ["Triglycerides", "1.9 mmol/L", "<1.7", "H"]],
+      "q": "Which is the best predictor of her cardiovascular risk from this lipid profile?",
+      "o": ["HDL cholesterol", "LDL cholesterol", "Total cholesterol", "Total cholesterol/HDL ratio", "Triglycerides"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "Best **predictor of risk** from the lipid profile, not the treatment target." },
+        { "t": "Pick out the clues", "clues": ["best tells her how likely", "no history of cardiovascular disease"], "x": "Risk prediction for primary prevention." },
+        { "t": "Make your own answer before looking", "x": "The **total cholesterol/HDL ratio**." },
+        { "t": "Rule out the others", "elim": [[0, "HDL alone ignores the atherogenic lipids."], [1, "LDL is the **treatment target**, not the best predictor."], [2, "Total cholesterol alone ignores protective HDL."], [4, "Triglycerides are a weaker independent predictor."]] },
+        { "t": "Commit", "x": "**D. Total cholesterol/HDL ratio.** Rule: ratio predicts, LDL is targeted." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 29 year old woman has a total cholesterol of 9.8 mmol/L and LDL cholesterol of 7.9 mmol/L. She has tendon xanthomas on her knuckles and her mother had a myocardial infarction aged 50. Her TSH, HbA1c and LFTs are normal. She is not pregnant and is using contraception. Her pulse rate is 68 bpm and BP 118/72 mmHg.",
+      "q": "Which is the most appropriate management?",
+      "o": ["Atorvastatin 20 mg and repeat lipids in 1 year", "Ezetimibe alone", "High-intensity statin and referral to a lipid specialist", "Lifestyle advice alone for 6 months", "PCSK9 inhibitor"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Management: decide primary prevention, secondary prevention or FH." },
+        { "t": "Pick out the clues", "clues": ["9.8 mmol/L", "tendon xanthomas", "mother had a myocardial infarction aged 50", "not pregnant"], "x": "Clinical **FH**; secondary causes excluded; statin is safe." },
+        { "t": "Make your own answer before looking", "x": "Start a **high-intensity statin promptly** and **refer to a lipid specialist**." },
+        { "t": "Rule out the others", "elim": [[0, "20 mg is the QRISK3 primary-prevention dose; FH needs high intensity and specialist care."], [1, "Ezetimibe is added to a statin, not used first."], [3, "Lifestyle alone is not enough in FH."], [4, "PCSK9 inhibitors are reserved for escalation."]] },
+        { "t": "Commit", "x": "**C. High-intensity statin and lipid specialist referral.** Rule: FH = do not use QRISK3; treat high and refer." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 60 year old man starts atorvastatin 20 mg for primary prevention. Three months later his LDL cholesterol has fallen from 4.6 to 2.3 mmol/L.",
+      "q": "Which is the most likely mechanism of the fall in plasma LDL?",
+      "o": ["Activation of lipoprotein lipase", "Inhibition of intestinal cholesterol absorption", "Inhibition of PCSK9", "Reduced hepatic VLDL secretion via PPAR-alpha", "Upregulation of hepatic LDL receptors"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of a **statin** on plasma LDL." },
+        { "t": "Pick out the clues", "clues": ["atorvastatin", "fallen from 4.6 to 2.3 mmol/L"], "x": "A statin; LDL roughly halved." },
+        { "t": "Make your own answer before looking", "x": "HMG-CoA reductase blocked → less intracellular cholesterol → **more LDL receptors** → more LDL cleared." },
+        { "t": "Rule out the others", "elim": [[0, "Fibrates act via lipoprotein lipase and PPAR-alpha."], [1, "That is **ezetimibe**."], [2, "That is a **PCSK9 inhibitor**."], [3, "That describes fibrates."]] },
+        { "t": "Commit", "x": "**E. Upregulation of hepatic LDL receptors.** Rule: statin blocks synthesis, receptors rise, plasma LDL falls." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 40 year old woman has a routine health check. She is asymptomatic. Her brother had a myocardial infarction aged 44. She has thickened Achilles tendons with firm nodules. Her pulse rate is 72 bpm and BP 126/78 mmHg.",
+      "labs": [["Total cholesterol", "10.1 mmol/L", "<5.0", "H"], ["LDL cholesterol", "8.0 mmol/L", "<3.0", "H"], ["Triglycerides", "1.5 mmol/L", "<1.7", ""], ["TSH", "2.4 mU/L", "0.3–4.2", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Familial combined hyperlipidaemia", "Familial hypercholesterolaemia", "Familial hypertriglyceridaemia", "Hypothyroidism", "Obesity-related dyslipidaemia"],
+      "a": 1,
+      "e": "Very high LDL with normal triglycerides, tendon xanthomas and a premature family MI is familial hypercholesterolaemia. Combined and hypertriglyceridaemic forms raise triglycerides.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis from a lipid pattern plus examination." },
+        { "t": "Pick out the clues", "clues": ["brother had a myocardial infarction aged 44", "thickened Achilles tendons with firm nodules", "asymptomatic"], "x": "Early family CVD and **tendon xanthomas**; LDL very high, TG normal, TSH normal." },
+        { "t": "Make your own answer before looking", "x": "**Familial hypercholesterolaemia**." },
+        { "t": "Rule out the others", "elim": [[0, "Combined hyperlipidaemia raises triglycerides too."], [2, "Triglycerides are normal."], [3, "TSH is normal."], [4, "Obesity does not cause tendon xanthomas or LDL of 8."]] },
+        { "t": "Commit", "x": "**B. Familial hypercholesterolaemia.** Rule: tendon xanthomas + very high LDL + normal TG = FH." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 54 year old woman has a 6 month history of tiredness, weight gain, constipation and feeling cold. Her skin is dry and her reflexes are slow-relaxing. Her pulse rate is 54 bpm and BP 132/84 mmHg. A routine lipid profile shows raised cholesterol.",
+      "labs": [["Total cholesterol", "7.2 mmol/L", "<5.0", "H"], ["LDL cholesterol", "5.0 mmol/L", "<3.0", "H"], ["HbA1c", "36 mmol/mol", "<42", ""], ["Urine dipstick", "Protein negative", "", ""]],
+      "visual": null,
+      "q": "Which is the most likely cause of her hypercholesterolaemia?",
+      "o": ["Familial hypercholesterolaemia", "Hypothyroidism", "Nephrotic syndrome", "Obesity", "Type 2 diabetes"],
+      "a": 1,
+      "e": "Tiredness, weight gain, cold intolerance, bradycardia and slow-relaxing reflexes point to hypothyroidism, a reversible secondary cause of hypercholesterolaemia. Normal HbA1c and no proteinuria exclude diabetes and nephrotic syndrome.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The **cause** of high cholesterol: look for a secondary cause in the history." },
+        { "t": "Pick out the clues", "clues": ["tiredness, weight gain, constipation and feeling cold", "slow-relaxing", "pulse rate is 54 bpm"], "x": "Classic hypothyroid features." },
+        { "t": "Make your own answer before looking", "x": "**Hypothyroidism**: reduced LDL receptors and lipoprotein lipase activity." },
+        { "t": "Rule out the others", "elim": [[0, "No tendon xanthomas or family history; cholesterol only moderately raised."], [2, "Urine protein is negative."], [3, "Weight gain is a symptom here, not the root cause."], [4, "HbA1c is normal."]] },
+        { "t": "Commit", "x": "**B. Hypothyroidism.** Rule: always check TFTs; it is a reversible cause." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 6 year old boy has a 2 week history of puffy eyes and swollen legs. His urine is frothy. His pulse rate is 96 bpm and BP 98/60 mmHg. There is periorbital and pitting leg oedema. A lipid profile is markedly abnormal.",
+      "labs": [["Serum albumin", "18 g/L", "35–50", "L"], ["Total cholesterol", "9.4 mmol/L", "<5.0", "H"], ["Urine protein:creatinine ratio", "620 mg/mmol", "<15", "H"], ["TSH", "2.0 mU/L", "0.3–4.2", ""]],
+      "visual": null,
+      "q": "Which is the most likely cause of his hyperlipidaemia?",
+      "o": ["Familial hypercholesterolaemia", "Hypothyroidism", "Nephrotic syndrome", "Obesity", "Type 1 diabetes"],
+      "a": 2,
+      "e": "Oedema, heavy proteinuria and low albumin are nephrotic syndrome, which causes hyperlipidaemia as the liver increases lipoprotein synthesis in response to low oncotic pressure.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The cause of the lipids: look at what else is going on." },
+        { "t": "Pick out the clues", "clues": ["puffy eyes and swollen legs", "frothy", "periorbital and pitting leg oedema"], "x": "Oedema, proteinuria (PCR 620) and albumin 18: **nephrotic syndrome**." },
+        { "t": "Make your own answer before looking", "x": "**Nephrotic syndrome** driving hepatic lipoprotein synthesis." },
+        { "t": "Rule out the others", "elim": [[0, "FH does not cause oedema or proteinuria."], [1, "TSH is normal."], [3, "Nothing suggests obesity."], [4, "No polyuria, weight loss or hyperglycaemia."]] },
+        { "t": "Commit", "x": "**C. Nephrotic syndrome.** Rule: oedema + proteinuria + low albumin + high lipids = nephrotic." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 38 year old man has a total cholesterol of 9.8 mmol/L with normal triglycerides. His father died suddenly aged 49. He has no symptoms. His pulse rate is 66 bpm and BP 124/76 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely finding on examination?",
+      "o": ["Eruptive xanthomas on the buttocks", "Janeway lesions on the palms", "Lipaemia retinalis", "Spider naevi", "Tendon xanthomas"],
+      "a": 4,
+      "e": "Very high cholesterol with normal triglycerides and a premature family death suggests familial hypercholesterolaemia, which classically causes tendon xanthomas. Eruptive xanthomas and lipaemia retinalis come with very high triglycerides.",
+      "steps": [
+        { "t": "Read the question line first", "x": "An examination finding: first decide which lipid disorder." },
+        { "t": "Pick out the clues", "clues": ["9.8 mmol/L with normal triglycerides", "father died suddenly aged 49"], "x": "High cholesterol, normal TG, early family death: **FH**." },
+        { "t": "Make your own answer before looking", "x": "**Tendon xanthomas** (Achilles, knuckles)." },
+        { "t": "Rule out the others", "elim": [[0, "Eruptive xanthomas need very high **triglycerides**."], [1, "Janeway lesions are infective endocarditis."], [2, "Lipaemia retinalis also needs very high triglycerides."], [3, "Spider naevi suggest chronic liver disease."]] },
+        { "t": "Commit", "x": "**E. Tendon xanthomas.** Rule: high cholesterol = tendon xanthomas; high TG = eruptive." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 48 year old man with familial hypercholesterolaemia stopped his statin 5 years ago because he felt well. He has not attended follow-up. His triglycerides have always been normal. He smokes 20 cigarettes a day. His pulse rate is 80 bpm and BP 146/90 mmHg.",
+      "labs": [["Total cholesterol", "10.4 mmol/L", "<5.0", "H"], ["Triglycerides", "1.5 mmol/L", "<1.7", ""]],
+      "visual": null,
+      "q": "Which is the most likely complication he will develop?",
+      "o": ["Acute pancreatitis", "Ischaemic heart disease", "Non-alcoholic fatty liver disease", "Peripheral neuropathy", "Renal calculi"],
+      "a": 1,
+      "e": "The key complication of hyperlipidaemia, especially FH, is cardiovascular disease from accelerated atherosclerosis. Pancreatitis complicates very high triglycerides, which he does not have.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The most likely complication of untreated hypercholesterolaemia." },
+        { "t": "Pick out the clues", "clues": ["familial hypercholesterolaemia", "stopped his statin", "triglycerides have always been normal", "smokes 20 cigarettes a day"], "x": "Untreated very high LDL plus smoking and hypertension." },
+        { "t": "Make your own answer before looking", "x": "**Ischaemic heart disease** (or stroke) from atherosclerosis." },
+        { "t": "Rule out the others", "elim": [[0, "Pancreatitis needs very high **triglycerides**."], [2, "NAFLD is linked to obesity and insulin resistance."], [3, "Not a complication of hyperlipidaemia."], [4, "Not linked to hypercholesterolaemia."]] },
+        { "t": "Commit", "x": "**B. Ischaemic heart disease.** Rule: high LDL = atherosclerosis = IHD and stroke." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 56 year old woman has noticed soft, flat yellow plaques on the inner corners of both upper eyelids over the past year. They are painless and not itchy. She is overweight and has type 2 diabetes. Her pulse rate is 76 bpm and BP 138/86 mmHg.",
+      "labs": [["Total cholesterol", "7.0 mmol/L", "<5.0", "H"], ["LDL cholesterol", "4.8 mmol/L", "<3.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely underlying cause of her eyelid lesions?",
+      "o": ["Basal cell carcinoma", "Chalazion", "Hyperlipidaemia", "Molluscum contagiosum", "Sebaceous cyst"],
+      "a": 2,
+      "e": "Soft, flat yellow plaques at the inner eyelids are xanthelasma, a classic sign of hyperlipidaemia; her diabetes and obesity are secondary causes.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Name the cause of the eyelid lesions." },
+        { "t": "Pick out the clues", "clues": ["soft, flat yellow plaques", "inner corners of both upper eyelids", "overweight and has type 2 diabetes"], "x": "Bilateral yellow plaques = **xanthelasma**; secondary causes present." },
+        { "t": "Make your own answer before looking", "x": "Xanthelasma from **hyperlipidaemia**." },
+        { "t": "Rule out the others", "elim": [[0, "BCC is a pearly nodule, usually single, with rolled edges."], [1, "A chalazion is a firm lump within the lid, not a flat plaque."], [3, "Molluscum is umbilicated papules."], [4, "A cyst is a dome-shaped lump, not a flat yellow plaque."]] },
+        { "t": "Commit", "x": "**C. Hyperlipidaemia.** Rule: yellow eyelid plaques = xanthelasma = check lipids." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 58 year old man with no cardiovascular disease has a QRISK3 score of 16%. He agrees to start a statin. He drinks 30 units of alcohol a week. His pulse rate is 74 bpm and BP 136/84 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate investigation before starting treatment?",
+      "o": ["Creatine kinase", "Exercise ECG", "Liver function tests", "Renal ultrasound", "Serum urate"],
+      "a": 2,
+      "e": "Before starting a statin, check LFTs (with a full lipid profile and TFTs), then repeat lipids and LFTs at 3 months. CK is only checked if there are muscle symptoms.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A **pre-statin** test." },
+        { "t": "Pick out the clues", "clues": ["agrees to start a statin", "30 units of alcohol a week"], "x": "Statins can raise transaminases; his alcohol makes liver disease more likely." },
+        { "t": "Make your own answer before looking", "x": "**LFTs** (plus lipid profile and TFTs)." },
+        { "t": "Rule out the others", "elim": [[0, "CK only if he has muscle pain."], [1, "He has no symptoms of angina."], [3, "No renal concern."], [4, "Urate is not needed for a statin."]] },
+        { "t": "Commit", "x": "**C. Liver function tests.** Rule: before a statin = LFTs, lipids, TFTs; repeat at 3 months." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 55 year old woman attends for an NHS Health Check. She has no history of cardiovascular disease, diabetes or kidney disease. She smokes. Her pulse rate is 78 bpm and BP 142/88 mmHg. She wants to know whether she needs a statin.",
+      "labs": [["Total cholesterol", "6.2 mmol/L", "<5.0", "H"], ["HDL cholesterol", "1.3 mmol/L", ">1.2", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate next step to guide treatment?",
+      "o": ["CT coronary angiography", "Exercise tolerance test", "Lipoprotein(a) level", "QRISK3 score", "Repeat lipid profile in 12 months"],
+      "a": 3,
+      "e": "Statin decisions for primary prevention are based on the estimated 10-year CVD risk from QRISK3; a score of 10% or more means offer atorvastatin 20 mg.",
+      "steps": [
+        { "t": "Read the question line first", "x": "What decides whether she needs a statin?" },
+        { "t": "Pick out the clues", "clues": ["no history of cardiovascular disease, diabetes or kidney disease", "She smokes", "whether she needs a statin"], "x": "Primary prevention without diabetes or CKD." },
+        { "t": "Make your own answer before looking", "x": "Calculate her **QRISK3** 10-year risk." },
+        { "t": "Rule out the others", "elim": [[0, "CTCA is for chest pain, not risk stratification here."], [1, "She has no symptoms."], [2, "Lp(a) is not the first step."], [4, "Delaying does not answer her question."]] },
+        { "t": "Commit", "x": "**D. QRISK3 score.** Rule: primary prevention = QRISK3; ≥10% = atorvastatin 20 mg." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 62 year old man has a QRISK3 score of 14%. He has no history of cardiovascular disease. He has followed lifestyle advice for 3 months. His LFTs and TFTs are normal. His pulse rate is 72 bpm and BP 134/82 mmHg.",
+      "labs": [["Total cholesterol", "6.0 mmol/L", "<5.0", "H"], ["Non-HDL cholesterol", "4.8 mmol/L", "<4.0", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Atorvastatin 20 mg", "Atorvastatin 80 mg", "Continue lifestyle advice alone", "Ezetimibe 10 mg", "Simvastatin 10 mg"],
+      "a": 0,
+      "e": "Primary prevention with QRISK3 ≥10% is atorvastatin 20 mg, aiming for >40% reduction in non-HDL cholesterol. 80 mg is for secondary prevention.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Choose the drug and dose." },
+        { "t": "Pick out the clues", "clues": ["QRISK3 score of 14%", "no history of cardiovascular disease", "lifestyle advice for 3 months"], "x": "Primary prevention, risk ≥10%, lifestyle already tried." },
+        { "t": "Make your own answer before looking", "x": "**Atorvastatin 20 mg**." },
+        { "t": "Rule out the others", "elim": [[1, "80 mg is for established CVD."], [2, "QRISK3 ≥10% warrants a statin."], [3, "Ezetimibe is added to a statin later."], [4, "Low-intensity simvastatin is not the recommended choice."]] },
+        { "t": "Commit", "x": "**A. Atorvastatin 20 mg.** Rule: primary prevention 20, secondary 80." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 66 year old woman is recovering on the cardiology ward after a primary PCI for an anterior STEMI. She was not previously on a statin. Her pulse rate is 76 bpm and BP 124/76 mmHg. Her eGFR is 78 mL/min/1.73m².",
+      "labs": [["Total cholesterol", "4.9 mmol/L", "<5.0", ""], ["LDL cholesterol", "2.9 mmol/L", "<3.0", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate lipid-lowering treatment?",
+      "o": ["Atorvastatin 20 mg", "Atorvastatin 80 mg", "Ezetimibe 10 mg", "No statin as lipids are normal", "Rosuvastatin 5 mg"],
+      "a": 1,
+      "e": "Established CVD needs high-intensity atorvastatin 80 mg regardless of baseline lipids. Normal lipids do not mean no statin.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Statin dose after an MI." },
+        { "t": "Pick out the clues", "clues": ["anterior STEMI", "not previously on a statin", "eGFR is 78"], "x": "**Secondary prevention**; kidney function fine." },
+        { "t": "Make your own answer before looking", "x": "**Atorvastatin 80 mg**, whatever the lipid levels." },
+        { "t": "Rule out the others", "elim": [[0, "20 mg is primary prevention."], [2, "Ezetimibe is an add-on."], [3, "Secondary prevention is **regardless of baseline lipids**."], [4, "Too low intensity."]] },
+        { "t": "Commit", "x": "**B. Atorvastatin 80 mg.** Rule: established CVD = 80 mg; lower only in CKD." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 57 year old man had a myocardial infarction 4 months ago. He takes atorvastatin 80 mg and reports no side effects. He takes every dose. His pulse rate is 64 bpm and BP 126/78 mmHg. His lipids are repeated at 3 months.",
+      "labs": [["Non-HDL cholesterol (baseline)", "5.0 mmol/L", "<4.0", "H"], ["Non-HDL cholesterol (3 months)", "3.8 mmol/L", "<4.0", ""], ["ALT", "32 U/L", "<40", ""]],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Add ezetimibe", "Add fenofibrate", "Start a PCSK9 inhibitor", "Stop atorvastatin", "Switch to simvastatin 40 mg"],
+      "a": 0,
+      "e": "A fall from 5.0 to 3.8 is only 24%, below the 40% target despite adherence to atorvastatin 80 mg, so ezetimibe is added first. PCSK9 inhibitors are reserved for later escalation.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step after the 3-month review." },
+        { "t": "Pick out the clues", "clues": ["atorvastatin 80 mg", "no side effects", "takes every dose", "repeated at 3 months"], "x": "Maximal statin, adherent; non-HDL fell only 24%." },
+        { "t": "Make your own answer before looking", "x": "Target of ≥40% not met: **add ezetimibe**." },
+        { "t": "Rule out the others", "elim": [[1, "Fibrates are for high triglycerides, not this."], [2, "PCSK9 inhibitors come after ezetimibe."], [3, "He tolerates it and needs it."], [4, "Simvastatin 40 mg is weaker."]] },
+        { "t": "Commit", "x": "**A. Add ezetimibe.** Rule: statin not enough at 3 months = ezetimibe, then PCSK9." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 34 year old woman is diagnosed with familial hypercholesterolaemia. Her LDL cholesterol is 7.8 mmol/L with normal triglycerides. Her father and her sister are also affected. Her pulse rate is 70 bpm and BP 120/74 mmHg.",
+      "labs": [["LDL cholesterol", "7.8 mmol/L", "<3.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely underlying defect?",
+      "o": ["Apolipoprotein C-II deficiency", "HMG-CoA reductase overactivity", "LDL receptor gene mutation", "Lipoprotein lipase deficiency", "Loss-of-function PCSK9 mutation"],
+      "a": 2,
+      "e": "FH is most commonly due to autosomal dominant mutations in the LDL receptor gene, which impair hepatic clearance of LDL. Apo C-II and lipoprotein lipase defects raise triglycerides; PCSK9 loss of function lowers LDL.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The molecular defect in FH." },
+        { "t": "Pick out the clues", "clues": ["familial hypercholesterolaemia", "normal triglycerides", "Her father and her sister are also affected"], "x": "Isolated high LDL; vertical transmission suggests **autosomal dominant**." },
+        { "t": "Make your own answer before looking", "x": "**LDL receptor gene** mutation: the liver cannot clear LDL." },
+        { "t": "Rule out the others", "elim": [[0, "Apo C-II deficiency gives very high triglycerides."], [1, "Not the cause of FH."], [3, "Lipoprotein lipase deficiency also gives high triglycerides."], [4, "PCSK9 **loss** of function lowers LDL; gain of function is the rare FH cause."]] },
+        { "t": "Commit", "x": "**C. LDL receptor gene mutation.** Rule: FH = autosomal dominant LDL receptor defect." }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      { "d": "diagnosis", "q": "What is hyperlipidaemia and how is it usually found?", "tip": "Exam thinking: most stems are an asymptomatic patient with a lipid profile.", "points": [
+        { "p": "Raised LDL cholesterol and/or triglycerides", "k": [["ldl", "cholesterol", "lipid"]], "why": "LDL is the treatment target." },
+        { "p": "Usually asymptomatic, found on routine bloods", "k": [["asymptomatic", "no symptoms", "incidental", "routine"]], "why": "So it is found by screening such as the NHS Health Check." },
+        { "p": "Increases cardiovascular disease risk", "k": [["cardiovascular", "cvd", "heart", "stroke", "mi"]], "why": "IHD and stroke via accelerated atherosclerosis." }
+      ] },
+      { "d": "diagnosis", "q": "What are the primary and secondary causes of hyperlipidaemia?", "tip": "Exam thinking: the stem often hides a secondary cause; find it.", "points": [
+        { "p": "Familial hypercholesterolaemia (primary)", "k": [["familial", "fh"]], "why": "Very high LDL with normal or mildly raised TG." },
+        { "p": "Hypothyroidism (reversible)", "k": [["hypothyroid", "thyroid"]], "why": "Check TFTs before a statin." },
+        { "p": "Diabetes and obesity", "k": [["diabet", "obes"]], "why": "Common secondary causes." },
+        { "p": "Nephrotic syndrome", "k": [["nephrotic"]], "why": "Oedema, proteinuria and low albumin." },
+        { "p": "Poor diet and smoking", "k": [["diet", "smok"]], "why": "Lifestyle risk factors." }
+      ] },
+      { "d": "diagnosis", "q": "What are the examination signs, and which one points to FH?", "tip": "Exam thinking: tendon xanthomas plus very high cholesterol = FH.", "points": [
+        { "p": "Xanthelasma (yellow eyelid plaques)", "k": [["xanthelasma"]], "why": "Common; can occur with normal lipids." },
+        { "p": "Tendon xanthomas, especially in FH", "k": [["tendon"], ["xanthoma"]], "why": "Achilles and knuckle extensor tendons." },
+        { "p": "Very high cholesterol + tendon xanthomas = FH, needs urgent assessment", "k": [["fh", "familial"]], "why": "Premature family MI completes the picture." }
+      ] },
+      { "d": "diagnosis", "q": "What is the key complication of hyperlipidaemia and why?", "tip": "Exam thinking: separate cholesterol complications from triglyceride ones.", "points": [
+        { "p": "Cardiovascular disease: ischaemic heart disease and stroke", "k": [["ischaemic heart", "ihd", "coronary", "mi", "myocardial", "angina"], ["stroke"]], "why": "The major killer." },
+        { "p": "Driven by accelerated atherosclerosis", "k": [["atherosclero", "plaque", "atheroma"]], "why": "Very high triglycerides instead risk pancreatitis." }
+      ] },
+      { "d": "investigation", "q": "Which lipid tests are done, and which value best predicts risk?", "tip": "Exam thinking: ratio predicts, LDL is the target.", "points": [
+        { "p": "Full lipid profile: total cholesterol, LDL, HDL, triglycerides", "k": [["lipid profile", "lipid panel", "lipids"]], "why": "The gold-standard test." },
+        { "p": "Total cholesterol/HDL ratio is the best predictor", "k": [["ratio"], ["hdl"]], "why": "LDL is the treatment target." },
+        { "p": "Total cholesterol >7.5 mmol/L prompts FH work-up", "k": [["7.5"]], "why": "The cut-off number." }
+      ] },
+      { "d": "investigation", "q": "How is cardiovascular risk assessed and what is checked before and after a statin?", "tip": "Exam thinking: QRISK3 for primary prevention; LFTs and TFTs before a statin.", "points": [
+        { "p": "QRISK3 (or Framingham): 10-year CVD risk", "k": [["qrisk", "framingham"]], "why": "≥10% means offer a statin." },
+        { "p": "HbA1c, TFTs and LFTs for secondary causes", "k": [["tft", "thyroid", "tsh"], ["lft", "liver"]], "why": "Hypothyroidism is reversible." },
+        { "p": "Repeat lipids and LFTs at 3 months", "k": [["3 months", "three months", "12 weeks"]], "why": "Check the ≥40% non-HDL fall and liver tolerance." }
+      ] },
+      { "d": "management", "q": "Which statin and dose for primary prevention, secondary prevention, diabetes and FH?", "tip": "Exam thinking: the dose question is the commonest management SBA.", "points": [
+        { "p": "Lifestyle first for all", "k": [["lifestyle", "diet", "exercise", "smoking"]], "why": "Saturated fat, weight, exercise, smoking cessation." },
+        { "p": "Primary prevention: atorvastatin 20 mg if QRISK3 ≥10%", "k": [["20"]], "why": "Aim >40% non-HDL reduction." },
+        { "p": "Secondary prevention: atorvastatin 80 mg regardless of lipids", "k": [["80"]], "why": "Lower dose if CKD." },
+        { "p": "Diabetes: statin regardless of baseline lipids", "k": [["diabet"]], "why": "Per the notes." },
+        { "p": "FH: high-intensity statin promptly and lipid specialist referral", "k": [["specialist", "lipid clinic", "refer"]], "why": "Plus family cascade testing." }
+      ] },
+      { "d": "management", "q": "What happens at the 3-month review if the statin is not enough?", "tip": "Exam thinking: order matters, ezetimibe before PCSK9.", "points": [
+        { "p": "Target ≥40% reduction in non-HDL cholesterol", "k": [["40"]], "why": "Measured at 3 months." },
+        { "p": "Add ezetimibe first", "k": [["ezetimibe"]], "why": "Blocks intestinal cholesterol absorption." },
+        { "p": "PCSK9 inhibitors as further escalation", "k": [["pcsk9", "evolocumab", "alirocumab"]], "why": "Reserved second-line." }
+      ] },
+      { "d": "science", "q": "Why does LDL cause atherosclerosis while HDL protects?", "tip": "Exam thinking: direction of cholesterol transport.", "points": [
+        { "p": "LDL carries cholesterol to tissues and deposits in arterial walls", "k": [["ldl"], ["arter", "wall", "intima", "deposit"]], "why": "Initiates the plaque." },
+        { "p": "Foam cell formation and plaque", "k": [["foam"]], "why": "Macrophages engulf oxidised LDL." },
+        { "p": "HDL does reverse cholesterol transport to the liver", "k": [["reverse"], ["liver", "hepat"]], "why": "Hence its inverse risk association." }
+      ] },
+      { "d": "science", "q": "What causes FH, how do statins work, and why do hypothyroidism and nephrotic syndrome raise lipids?", "tip": "Exam thinking: inheritance and mechanism questions.", "points": [
+        { "p": "FH: autosomal dominant LDL receptor gene mutation", "k": [["autosomal dominant"], ["ldl receptor", "ldlr", "receptor"]], "why": "LDL high from birth; 50% risk to each child." },
+        { "p": "Statins inhibit HMG-CoA reductase", "k": [["hmg"]], "why": "Rate-limiting enzyme of hepatic cholesterol synthesis." },
+        { "p": "This upregulates hepatic LDL receptors", "k": [["upregulat", "more ldl receptor", "increase"]], "why": "More plasma LDL cleared." },
+        { "p": "Hypothyroidism: fewer LDL receptors, less lipoprotein lipase", "k": [["lipoprotein lipase", "lpl", "receptor"]], "why": "Reversible with levothyroxine." },
+        { "p": "Nephrotic: protein loss drives hepatic lipoprotein synthesis", "k": [["synthesis", "oncotic", "liver makes"]], "why": "Compensation for low oncotic pressure." }
+      ] }
+    ]
+  },
+  "glossary": {
+    "LDL": "Low-density lipoprotein; carries cholesterol to tissues and deposits it in artery walls.",
+    "HDL": "High-density lipoprotein; carries cholesterol back to the liver, protecting against atherosclerosis.",
+    "Non-HDL cholesterol": "Total cholesterol minus HDL; the value NICE uses to judge statin response.",
+    "Triglycerides": "Blood fats from diet and the liver; very high levels risk pancreatitis.",
+    "Lipid profile": "Blood test measuring total cholesterol, LDL, HDL and triglycerides.",
+    "Familial hypercholesterolaemia": "Inherited, usually autosomal dominant, LDL receptor defect causing very high LDL from birth.",
+    "FH": "Familial hypercholesterolaemia.",
+    "Xanthelasma": "Soft yellow cholesterol plaques on the eyelids.",
+    "Tendon xanthomas": "Cholesterol deposits in tendons such as the Achilles or knuckles; a hallmark of FH.",
+    "Eruptive xanthomas": "Crops of small yellow papules on buttocks or limbs, seen with very high triglycerides.",
+    "Atherosclerosis": "Build-up of fatty plaques in artery walls that narrow and can rupture.",
+    "Foam cell": "Macrophage stuffed with oxidised LDL; the building block of a fatty streak.",
+    "Reverse cholesterol transport": "HDL carrying cholesterol from tissues back to the liver for removal.",
+    "QRISK3": "NICE-recommended score estimating 10-year risk of heart attack or stroke.",
+    "Framingham": "An older cardiovascular risk score, an alternative to QRISK3.",
+    "Primary prevention": "Treatment to prevent a first cardiovascular event in someone without CVD.",
+    "Secondary prevention": "Treatment to prevent further events in someone with established CVD.",
+    "Statin": "Drug that inhibits HMG-CoA reductase to lower LDL cholesterol.",
+    "Atorvastatin": "Statin used at 20 mg for primary and 80 mg for secondary prevention.",
+    "HMG-CoA reductase": "Rate-limiting enzyme in liver cholesterol synthesis; the target of statins.",
+    "LDL receptor": "Liver cell receptor that removes LDL from the blood; defective in FH.",
+    "Ezetimibe": "Blocks intestinal cholesterol absorption; first add-on when a statin is not enough.",
+    "PCSK9 inhibitor": "Injectable antibody that stops LDL receptor breakdown; reserved for escalation.",
+    "PCSK9": "Liver protein that destroys LDL receptors; gain-of-function mutations cause rare FH.",
+    "Autosomal dominant": "Inheritance where one faulty copy causes disease; each child has a 50% risk.",
+    "Cascade testing": "Testing the relatives of someone with an inherited condition such as FH.",
+    "Hypothyroidism": "Underactive thyroid; a reversible cause of raised cholesterol.",
+    "TFTs": "Thyroid function tests (TSH and free T4).",
+    "TSH": "Thyroid-stimulating hormone; raised in primary hypothyroidism.",
+    "LFTs": "Liver function tests; checked before and 3 months after starting a statin.",
+    "Nephrotic syndrome": "Heavy proteinuria, low albumin and oedema, with raised lipids.",
+    "Oncotic pressure": "Pull of plasma proteins (mainly albumin) that keeps fluid in vessels.",
+    "Lipoprotein lipase": "Enzyme on vessel walls that breaks down triglyceride-rich lipoproteins.",
+    "CK": "Creatine kinase; muscle enzyme checked if a patient on a statin has muscle pain.",
+    "IHD": "Ischaemic heart disease: angina and myocardial infarction from coronary atherosclerosis.",
+    "NHS Health Check": "Routine cardiovascular risk check for adults aged 40 to 74 in England."
+  }
+}

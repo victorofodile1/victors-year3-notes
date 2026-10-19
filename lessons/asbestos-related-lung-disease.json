@@ -1,0 +1,442 @@
+{
+  "id": "asbestos-related-lung-disease",
+  "patient": {
+    "name": "Terry Walsh",
+    "age": 72,
+    "sex": "M",
+    "setting": "GP surgery, then respiratory clinic and pleural unit",
+    "complaint": "Two years of slowly worsening breathlessness, now with right-sided chest pain",
+    "background": ["Pipe lagger in the Woolwich docks and shipyards, 1968–1990", "Smoker, 35 pack-years, still smoking 10 a day", "Hypertension on amlodipine", "Lives with his wife in Eltham"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with an occupational clue (builder, shipyard, insulation) decades before: progressive breathlessness, clubbing and basal crackles mean asbestosis; chest pain, weight loss and an effusion mean mesothelioma; isolated calcified plaques are benign.",
+      "steps": [
+        {"type": "story", "points": ["Terry, 72, breathless walking up his road for 2 years.", "Dry cough; no wheeze.", "Worked **lagging pipes with asbestos** in the shipyards for 22 years.", "Still smokes 10 a day."], "vitals": {"HR": "84 bpm", "BP": "138/82 mmHg", "RR": "20 /min", "SpO2": "93% on air"}},
+        {"type": "notes", "src": 0, "lead": "Terry's job decades ago is the key: asbestos causes **fibrosis, pleural disease and cancer**, after a very long latency."},
+        {"type": "story", "points": ["Fingers are **clubbed**.", "Fine **end-inspiratory crackles** at both bases.", "Chest expansion is reduced."]},
+        {"type": "notes", "src": 1, "lead": "Terry has **asbestosis**: progressive breathlessness, cough, bibasal crackles and reduced expansion, with **lower lobe** fibrosis and plaques on the X-ray."},
+        {"type": "compare", "title": "The asbestos spectrum", "head": ["Disease", "Symptoms", "Key finding", "Malignant?"], "rows": [["Pleural plaques", "None", "Calcified plaques on diaphragm and lower lateral chest wall", "**No**, benign"], ["Asbestosis", "Progressive breathlessness, cough", "Lower lobe fibrosis, clubbing, crackles", "No, but raises cancer risk"], ["Mesothelioma", "Chest pain, weight loss, breathlessness", "Pleural effusion, pleural thickening", "**Yes**"], ["Lung cancer", "Haemoptysis, weight loss", "Mass; risk multiplied by smoking", "**Yes**"]]},
+        {"type": "notes", "src": 4, "lead": "Terry's CXR also shows calcified **pleural plaques**: a marker of exposure 20 to 40 years ago, harmless on their own."},
+        {"type": "story", "points": ["Eighteen months later: dull ache in the **right chest wall**.", "Lost 7 kg without trying.", "More breathless; one streak of blood in his sputum.", "Right base **stony dull** with absent breath sounds."], "vitals": {"HR": "98 bpm", "RR": "24 /min", "SpO2": "91% on air"}},
+        {"type": "ask", "q": "Terry now has chest wall pain, weight loss and a right effusion. What do you fear most?", "o": ["Empyema", "Heart failure", "Malignant mesothelioma", "Pleural plaques"], "a": 2, "r": "Chest pain, weight loss and a unilateral effusion in an asbestos worker is **mesothelioma** until proven otherwise."},
+        {"type": "notes", "src": 2, "lead": "Terry's story fits **mesothelioma**: decades of latency, then chest pain, weight loss, haemoptysis and a stony dull effusion."},
+        {"type": "notes", "src": 3, "lead": "As a **smoker** with asbestos exposure, Terry also has a hugely raised lung cancer risk, and mesothelioma often first shows as an effusion."},
+        {"type": "visual", "visual": {"kind": "trend", "title": "Terry's timeline", "x": ["1968", "1990", "2015", "2023", "2025"], "unit": "", "series": [{"name": "Years since first exposure", "values": [0, 22, 47, 55, 57]}], "caption": "Exposure ended in 1990; plaques, asbestosis and mesothelioma appear decades later."}},
+        {"type": "trap", "text": "Pleural plaques do **not** turn into mesothelioma and need no follow-up. Do not pick 'surveillance CT' for isolated plaques."}
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (chest X-ray), 'confirm the diagnosis' (CT with occupational history), and 'confirm mesothelioma' (thoracoscopy and pleural biopsy), plus spirometry showing a restrictive pattern.",
+      "steps": [
+        {"type": "ask", "q": "Which test does the GP request first for Terry?", "o": ["Bronchoscopy", "Chest X-ray", "CT chest", "Pleural biopsy"], "a": 1, "r": "A **chest X-ray** is first-line: plaques, fibrosis, effusion or thickening."},
+        {"type": "notes", "src": 1, "lead": "Terry's first **CXR** shows lower zone reticular shadowing and calcified plaques along both hemidiaphragms."},
+        {"type": "visual", "visual": {"kind": "cxr", "title": "Terry's first chest X-ray", "findings": [{"type": "fibrosis", "side": "both", "zone": "lower"}], "caption": "Bilateral lower zone fibrosis, with calcified plaques along the diaphragms."}},
+        {"type": "labs", "title": "Lung function", "rows": [["FEV1", "1.9 L (68% predicted)", ">80%", "L"], ["FVC", "2.2 L (62% predicted)", ">80%", "L"], ["FEV1/FVC", "0.86", ">0.70", ""], ["TLCO", "48% predicted", ">80%", "L"]], "text": "Both volumes down with a preserved ratio: restrictive. Low gas transfer from fibrosis."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "FEV1/FVC ratio", "min": 0.3, "max": 1.0, "unit": "", "bands": [[0.3, 0.7, "Obstructive", "bad"], [0.7, 1.0, "Normal or restrictive", "ok"]], "value": 0.86, "label": "Terry 0.86", "caption": "A ratio above 0.7 with a low FVC is a restrictive pattern."}},
+        {"type": "notes", "src": 0, "lead": "Terry's **CT chest** plus his detailed **occupational history** confirm asbestosis with pleural plaques."},
+        {"type": "visual", "visual": {"kind": "cxr", "title": "Terry's chest X-ray 18 months later", "findings": [{"type": "effusion", "side": "right", "zone": "lower"}, {"type": "fibrosis", "side": "both", "zone": "lower"}], "caption": "New large right pleural effusion on a background of basal fibrosis."}},
+        {"type": "labs", "title": "Pleural fluid (ultrasound-guided aspiration)", "rows": [["Protein", "44 g/L", "<30 (transudate)", "H"], ["LDH", "410 U/L", "<200", "H"], ["pH", "7.36", ">7.2", ""], ["Cytology", "Atypical mesothelial cells, not diagnostic", "No malignant cells", ""]], "text": "Exudate. Cytology is often non-diagnostic in mesothelioma."},
+        {"type": "notes", "src": 2, "lead": "Terry's CT shows nodular right pleural thickening; **thoracoscopy and pleural biopsy** confirm epithelioid **mesothelioma** on histology."},
+        {"type": "trap", "text": "Pleural fluid cytology is often **negative** in mesothelioma. A tissue diagnosis needs **thoracoscopic pleural biopsy**."}
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?' (smoking cessation and avoiding further exposure), 'reassurance only' for pleural plaques, and draining a symptomatic effusion in mesothelioma.",
+      "steps": [
+        {"type": "ask", "q": "Terry has asbestosis and still smokes. What is the single most important step?", "o": ["Long-term oxygen", "Oral prednisolone", "Pirfenidone", "Smoking cessation"], "a": 3, "r": "**Smoking cessation**: smoking and asbestos multiply his lung cancer risk."},
+        {"type": "notes", "src": 0, "lead": "Terry is referred to the stop smoking service with varenicline, and told to avoid any further asbestos exposure. His plaques alone need only reassurance."},
+        {"type": "visual", "visual": {"kind": "scale", "title": "Relative lung cancer risk", "min": 1, "max": 60, "unit": "x", "bands": [[1, 6, "Asbestos alone (about 5x)", "warn"], [6, 15, "Smoking alone (about 10x)", "warn"], [15, 60, "Both together (about 50x)", "bad"]], "value": 50, "label": "Terry about 50x", "caption": "The risks multiply rather than add: stopping smoking is the biggest win."}},
+        {"type": "notes", "src": 1, "lead": "Terry joins **pulmonary rehabilitation**, and his lung function and imaging are monitored in clinic; oxygen is assessed if he becomes hypoxic."},
+        {"type": "flow", "title": "Managing Terry's mesothelioma", "nodes": ["Large symptomatic right effusion", "Drain it (therapeutic aspiration or chest drain)", "Recurs: indwelling pleural catheter or pleurodesis", "MDT: treat per type and stage", "Palliative care and symptom control"]},
+        {"type": "notes", "src": 2, "lead": "Terry's effusion is **drained** and his mesothelioma is treated according to its type and stage by the lung cancer MDT."},
+        {"type": "notes", "src": "guidelines", "lead": "Terry's plaques needed **no follow-up**, and the **20 to 40 year latency** explains why his disease appeared long after he left the docks."},
+        {"type": "pearl", "text": "Asbestosis and mesothelioma are **prescribed industrial diseases**: patients can claim compensation, and deaths are reported to the coroner."}
+      ]
+    },
+    "science": {
+      "exam": "Expect applied mechanism questions: how asbestos causes fibrosis (macrophages, reactive oxygen species), why amphibole fibres cause mesothelioma, and why smoking multiplies risk.",
+      "steps": [
+        {"type": "notes", "src": 0, "lead": "Fibres reach Terry's **distal airways**; macrophages cannot clear them and keep releasing inflammatory mediators and **reactive oxygen species**."},
+        {"type": "flow", "title": "Fibre to fibrosis", "nodes": ["Fibres inhaled to distal airways", "Macrophages try and fail to engulf them", "Inflammatory mediators and ROS released", "Fibroblast activation", "Progressive lower lobe fibrosis"]},
+        {"type": "ask", "q": "Why is Terry's fibrosis worst at the bases?", "o": ["Lower lobes are better ventilated", "Gravity drags fibres into the pleura", "Upper lobes are protected by mucus", "Upper lobes have more macrophages"], "a": 0, "r": "The **lower lobes** get more ventilation, so more inhaled fibres are deposited there."},
+        {"type": "notes", "src": 1, "lead": "Fibres that migrated to Terry's pleura caused **localised calcified plaques**: a scar of exposure, not a step towards cancer."},
+        {"type": "notes", "src": 2, "lead": "Terry's mesothelioma came from **amphibole fibres** (blue and brown asbestos) damaging mesothelial cell DNA over decades."},
+        {"type": "notes", "src": 3, "lead": "Terry's cigarettes and his asbestos work **synergistically**, so his lung cancer risk is multiplied, not just added."},
+        {"type": "pearl", "text": "Smoking does **not** raise mesothelioma risk; it multiplies **lung cancer** risk in asbestos-exposed people."}
+      ]
+    }
+  },
+  "mcq": [
+    {"d": "diagnosis", "q": "What is the most important risk factor for asbestos-related lung disease?", "o": ["Family history", "Occupational exposure", "Passive smoking", "Urban air pollution"], "a": 1, "r": "**Occupational exposure**: construction, shipbuilding, insulation."},
+    {"d": "diagnosis", "q": "Which lung zones are mainly affected in asbestosis?", "o": ["Apices", "Hilar regions", "Lower lobes", "Upper lobes"], "a": 2, "r": "Asbestosis is **lower lobe** predominant (unlike silicosis and coal pneumoconiosis)."},
+    {"d": "diagnosis", "q": "Are pleural plaques associated with an increased cancer risk?", "o": ["Yes, lung cancer", "Yes, mesothelioma", "Yes, both", "No, they are benign"], "a": 3, "r": "Plaques are **benign**, with no malignant change and no follow-up needed."},
+    {"d": "diagnosis", "q": "How long after exposure do pleural plaques typically appear?", "o": ["1–2 years", "5–10 years", "10–15 years", "20–40 years"], "a": 3, "r": "They indicate exposure **20 to 40 years** earlier."},
+    {"d": "diagnosis", "q": "Which examination finding suggests a pleural effusion in mesothelioma?", "o": ["Bronchial breathing", "Hyper-resonance", "Stony dull percussion", "Tracheal tug"], "a": 2, "r": "**Stony dull** percussion with reduced breath sounds."},
+    {"d": "investigation", "q": "What is the first-line investigation for suspected asbestos-related lung disease?", "o": ["Bronchoscopy", "Chest X-ray", "PET-CT", "Pleural biopsy"], "a": 1, "r": "A **chest X-ray** shows plaques, fibrosis or effusion."},
+    {"d": "investigation", "q": "What confirms a diagnosis of mesothelioma?", "o": ["CT chest alone", "Pleural fluid cytology", "Sputum cytology", "Thoracoscopy and histology"], "a": 3, "r": "**Thoracoscopy with pleural biopsy** for histology."},
+    {"d": "investigation", "q": "Which lung function pattern does asbestosis give?", "o": ["Mixed with reversibility", "Normal", "Obstructive", "Restrictive"], "a": 3, "r": "A **restrictive** pattern: low FEV1 and FVC with a preserved ratio."},
+    {"d": "management", "q": "What is the most important lifestyle step in asbestos-related lung disease?", "o": ["Low-salt diet", "Smoking cessation", "Weight loss", "Yearly CT"], "a": 1, "r": "**Smoking cessation** with support, given the synergistic lung cancer risk."},
+    {"d": "science", "q": "Which fibre type is most carcinogenic to mesothelial cells?", "o": ["Amphibole", "Cellulose", "Chrysotile", "Glass"], "a": 0, "r": "**Amphibole** fibres (crocidolite, amosite) are directly genotoxic to mesothelial cells."}
+  ],
+  "blurt": {
+    "prompts": [
+      {"d": "diagnosis", "q": "What is asbestos-related lung disease and who gets it?", "tip": "Exam thinking: look for the job in the stem, often decades before.", "points": [
+        {"p": "Spectrum: fibrosis (asbestosis), pleural disease, malignancy", "k": [["fibrosis", "asbestosis", "pleural", "plaque", "mesothelioma"]], "why": "Know all four: plaques, asbestosis, mesothelioma, lung cancer."},
+        {"p": "Occupational exposure: construction, shipbuilding, insulation", "k": [["occupation", "construction", "builder", "shipbuild", "shipyard", "insulation", "lagg"]], "why": "Also plumbers, electricians, boiler engineers."},
+        {"p": "Very long latency period", "k": [["latency", "latent", "decades", "years later"]], "why": "Disease appears 20 to 40 years after exposure."}
+      ]},
+      {"d": "diagnosis", "q": "How does asbestosis present?", "tip": "Exam thinking: builder + clubbing + basal crackles = asbestosis.", "points": [
+        {"p": "Progressive breathlessness and cough", "k": [["breathless", "dyspnoea", "dyspnea", "sob"], ["cough"]], "why": "Slowly over years."},
+        {"p": "Fine bibasal crackles", "k": [["crackle", "crepitation"]], "why": "End-inspiratory, like velcro."},
+        {"p": "Reduced chest expansion", "k": [["expansion"]], "why": "Stiff fibrotic lungs."},
+        {"p": "Clubbing", "k": [["clubb"]], "why": "Common in asbestosis; not caused by plaques."},
+        {"p": "Lower lobe predominant fibrosis with pleural plaques on CXR", "k": [["lower", "basal", "base"]], "why": "Silicosis and coal pneumoconiosis are upper zone."}
+      ]},
+      {"d": "diagnosis", "q": "What is the classic presentation of mesothelioma?", "tip": "Exam thinking: asbestos worker with chest pain, weight loss and a unilateral effusion.", "points": [
+        {"p": "Chest (wall) pain", "k": [["chest pain", "chest wall", "pain"]], "why": "Often a dull, persistent ache."},
+        {"p": "Breathlessness from a pleural effusion", "k": [["effusion", "breathless"]], "why": "Often the first sign."},
+        {"p": "Stony dull percussion", "k": [["stony", "dull"]], "why": "With reduced breath sounds and vocal resonance."},
+        {"p": "Unintentional weight loss and haemoptysis", "k": [["weight", "haemoptysis", "hemoptysis", "blood"]], "why": "Malignant features."},
+        {"p": "Very long latent period after exposure", "k": [["latent", "latency", "decades"]], "why": "Rare but the classic complication."}
+      ]},
+      {"d": "diagnosis", "q": "What are pleural plaques and what do they mean for the patient?", "tip": "Exam thinking: the answer is reassurance.", "points": [
+        {"p": "On the lower lateral chest wall and diaphragm, often calcified", "k": [["diaphragm", "chest wall", "lateral", "calcif"]], "why": "Holly-leaf appearance on CXR."},
+        {"p": "Marker of exposure 20 to 40 years earlier", "k": [["20", "40", "exposure"]], "why": "Not a disease process in themselves."},
+        {"p": "Usually asymptomatic", "k": [["asymptomatic", "no symptoms"]], "why": "Often found incidentally."},
+        {"p": "Benign: no malignant change, no increased cancer risk, no follow-up", "k": [["benign", "no follow", "not malignant", "no malignan", "no cancer"]], "why": "Do not choose surveillance."}
+      ]},
+      {"d": "diagnosis", "q": "Which complications does asbestos exposure lead to, and how does smoking change risk?", "tip": "Exam thinking: smoking multiplies lung cancer, not mesothelioma.", "points": [
+        {"p": "Lung cancer risk markedly increased with asbestos plus smoking", "k": [["lung cancer", "bronchial carcinoma", "carcinoma"]], "why": "Synergistic (multiplicative)."},
+        {"p": "Mesothelioma, which can present with an effusion", "k": [["mesothelioma"]], "why": "Not linked to smoking."}
+      ]},
+      {"d": "investigation", "q": "What are the first-line and confirmatory investigations?", "tip": "Exam thinking: CXR first; CT plus the occupational history confirms.", "points": [
+        {"p": "Chest X-ray first-line: plaques, fibrosis, effusion or thickening", "k": [["x-ray", "xray", "cxr", "radiograph"]], "why": "Unilateral effusion raises concern for mesothelioma."},
+        {"p": "CT chest (more sensitive) for plaques, fibrosis, malignancy", "k": [["ct", "hrct", "computed"]], "why": "Detects disease the CXR misses."},
+        {"p": "Thorough occupational exposure history", "k": [["occupation", "history", "exposure", "job"]], "why": "CT plus history is the gold standard."},
+        {"p": "Lung function: restrictive pattern", "k": [["restrict"]], "why": "Low FEV1 and FVC, ratio above 0.7, low TLCO."}
+      ]},
+      {"d": "investigation", "q": "How is mesothelioma confirmed?", "tip": "Exam thinking: tissue is the issue.", "points": [
+        {"p": "Thoracoscopy", "k": [["thoracoscop", "vats", "pleuroscop"]], "why": "Direct view of the pleura with biopsy."},
+        {"p": "Histology from pleural biopsy", "k": [["histolog", "biopsy"]], "why": "Pleural fluid cytology is often non-diagnostic."}
+      ]},
+      {"d": "management", "q": "How is asbestos-related lung disease managed?", "tip": "Exam thinking: stop smoking first; plaques need nothing; effusions get drained.", "points": [
+        {"p": "Smoking cessation with support", "k": [["smok", "cessation", "quit"]], "why": "The most important step: synergistic cancer risk."},
+        {"p": "Avoid further asbestos exposure", "k": [["avoid"]], "why": "Removes the cause."},
+        {"p": "Pleural plaques: reassurance only", "k": [["reassur"]], "why": "No follow-up needed."},
+        {"p": "Supportive: oxygen, pulmonary rehabilitation, monitor lung function and imaging", "k": [["oxygen", "rehab", "monitor", "supportive"]], "why": "No drug reverses asbestosis."},
+        {"p": "Severe: drain effusions; treat malignancy by type and stage", "k": [["drain", "aspirat", "stage", "chemo", "mdt"]], "why": "Recurrent effusions may need an indwelling catheter or pleurodesis."}
+      ]},
+      {"d": "science", "q": "How does asbestos cause fibrosis, plaques and mesothelioma?", "tip": "Exam thinking: macrophages for fibrosis, amphiboles for mesothelioma.", "points": [
+        {"p": "Fibres deposit in distal airways and pleura", "k": [["distal", "airway", "deposit"]], "why": "Long thin fibres escape clearance."},
+        {"p": "Macrophages release inflammatory mediators and reactive oxygen species", "k": [["macrophage", "ros", "reactive oxygen", "free radical"]], "why": "Chronic inflammation drives fibrosis."},
+        {"p": "Plaques: fibres irritate the pleura, causing localised calcified plaques", "k": [["pleura", "plaque"]], "why": "Marker of exposure, not premalignant."},
+        {"p": "Amphibole fibres are directly genotoxic to mesothelial cells", "k": [["amphibole", "crocidolite", "amosite", "genotoxic", "dna"]], "why": "Mutations after decades of latency."},
+        {"p": "Smoking and asbestos act synergistically (multiplicatively)", "k": [["synerg", "multipl"]], "why": "Combined carcinogenic and inflammatory pathways."}
+      ]}
+    ]
+  },
+  "glossary": {
+    "Asbestos": "A naturally occurring fibrous mineral once widely used for insulation, lagging and building materials.",
+    "Asbestosis": "Interstitial lung fibrosis caused by inhaled asbestos fibres.",
+    "Mesothelioma": "A malignant tumour of the pleura (or peritoneum), strongly linked to asbestos.",
+    "Mesothelial cells": "The cells lining the pleura and peritoneum, from which mesothelioma arises.",
+    "Pleural plaques": "Benign, often calcified patches of pleural thickening that mark past asbestos exposure.",
+    "Pleura": "The thin membranes lining the lungs and inner chest wall.",
+    "Pleural effusion": "Fluid collecting between the two layers of the pleura.",
+    "Pleural thickening": "Fibrous thickening of the pleura; diffuse or nodular thickening may suggest mesothelioma.",
+    "Latency": "The time between exposure and disease appearing; decades for asbestos.",
+    "Amphibole": "The straight, needle-like asbestos fibre group (crocidolite, amosite) most linked to mesothelioma.",
+    "Crocidolite": "Blue asbestos, an amphibole and the most carcinogenic type.",
+    "Chrysotile": "White, curly serpentine asbestos; less carcinogenic than amphiboles.",
+    "Lagger": "A worker who wraps pipes and boilers with insulation, historically asbestos.",
+    "Clubbing": "Loss of the nail-bed angle and bulbous fingertips, seen in asbestosis and lung cancer.",
+    "Bibasal crackles": "Crackles heard at both lung bases; fine and end-inspiratory in fibrosis.",
+    "Stony dull": "A very dull percussion note over fluid, classic of a pleural effusion.",
+    "Restrictive pattern": "Low FEV1 and FVC with a normal or high FEV1/FVC ratio, as in fibrosis.",
+    "FEV1": "Forced expiratory volume in 1 second.",
+    "FVC": "Forced vital capacity: total air blown out after a full breath in.",
+    "TLCO": "Transfer factor for carbon monoxide: how well gas crosses into the blood; low in fibrosis.",
+    "HRCT": "High-resolution CT, used to show lung fibrosis and pleural disease in detail.",
+    "Thoracoscopy": "A camera passed into the pleural space to inspect and biopsy the pleura.",
+    "VATS": "Video-assisted thoracoscopic surgery.",
+    "Cytology": "Looking at cells under the microscope; often non-diagnostic for mesothelioma in pleural fluid.",
+    "Histology": "Examining tissue under the microscope to make a definitive diagnosis.",
+    "Exudate": "Protein-rich pleural fluid from inflammation or malignancy (protein above 30 g/L or by Light's criteria).",
+    "Reactive oxygen species": "Damaging oxygen-containing molecules released by macrophages that injure tissue and DNA.",
+    "ROS": "Reactive oxygen species.",
+    "Macrophages": "Immune cells that engulf particles; they fail to clear asbestos fibres and drive inflammation.",
+    "Genotoxic": "Damaging to DNA, causing mutations that can lead to cancer.",
+    "Synergistic": "Two factors combining to give an effect greater than their sum.",
+    "Pulmonary rehabilitation": "A supervised exercise and education programme that improves breathlessness and exercise tolerance.",
+    "Pleurodesis": "Sealing the pleural space (e.g. with talc) to stop an effusion recurring.",
+    "Indwelling pleural catheter": "A tunnelled tube left in the chest so a recurrent effusion can be drained at home.",
+    "Silicosis": "Fibrosis from silica dust, mainly upper zone, with eggshell calcification of hilar nodes.",
+    "MDT": "Multidisciplinary team meeting that plans cancer treatment.",
+    "Varenicline": "A partial nicotinic agonist used to help people stop smoking."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 74 year old man has a 3 month history of a dull ache in his left chest and 6 kg weight loss. He worked as a boiler engineer for 30 years and has never smoked. There is stony dull percussion with absent breath sounds at the left base. His temperature is 36.9°C and pulse rate 92 bpm.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Asbestosis", "Empyema", "Heart failure", "Malignant mesothelioma", "Tuberculosis"],
+      "a": 3,
+      "steps": [
+        {"t": "Read the question line first", "x": "A diagnosis in someone with an occupational clue."},
+        {"t": "Pick out the clues", "clues": ["dull ache in his left chest", "6 kg weight loss", "boiler engineer for 30 years", "never smoked", "stony dull percussion"], "x": "Asbestos exposure, chest pain, weight loss and a unilateral effusion."},
+        {"t": "Make your own answer before looking", "x": "**Malignant mesothelioma**."},
+        {"t": "Rule out the others", "elim": [[0, "Asbestosis is fibrosis: crackles and breathlessness, not pain and an effusion."], [1, "Empyema would cause fever and sepsis."], [2, "Heart failure gives bilateral effusions and no weight loss or chest pain."], [4, "TB gives fever and night sweats; the occupational clue points to asbestos."]]},
+        {"t": "Commit", "x": "**D. Mesothelioma.** Asbestos job + chest pain + weight loss + effusion."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 69 year old retired electrician has a 1 year history of gradually worsening breathlessness. He handled asbestos insulation boards in the 1970s. There are fine crackles at both lung bases and his fingers are clubbed. His oxygen saturation is 95% breathing air.",
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["Bronchoscopy", "Chest X-ray", "High-resolution CT chest", "Pleural biopsy", "Spirometry"],
+      "a": 1,
+      "steps": [
+        {"t": "Read the question line first", "x": "'Initial' investigation: the first test, not the best."},
+        {"t": "Pick out the clues", "clues": ["gradually worsening breathlessness", "asbestos insulation boards in the 1970s", "fine crackles at both lung bases", "clubbed"], "x": "Suspected asbestosis."},
+        {"t": "Make your own answer before looking", "x": "**Chest X-ray** first."},
+        {"t": "Rule out the others", "elim": [[0, "Bronchoscopy is for central masses or haemoptysis."], [2, "HRCT is more sensitive but comes after the CXR."], [3, "Pleural biopsy is for suspected mesothelioma."], [4, "Spirometry shows restriction but does not diagnose the cause."]]},
+        {"t": "Commit", "x": "**B. Chest X-ray.** Then CT and an occupational history to confirm."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 71 year old former shipyard worker has asbestosis confirmed on CT. He stopped smoking 10 years ago. He is breathless walking 200 metres. His oxygen saturation is 94% breathing air, pulse rate 80 bpm and BP 132/78 mmHg. His FVC is 64% predicted.",
+      "q": "Which is the most appropriate long-term management?",
+      "o": ["Annual bronchoscopy", "Long-term oral prednisolone", "Methotrexate", "Prophylactic azithromycin", "Pulmonary rehabilitation with lung function monitoring"],
+      "a": 4,
+      "steps": [
+        {"t": "Read the question line first", "x": "Long-term management of asbestosis."},
+        {"t": "Pick out the clues", "clues": ["asbestosis confirmed on CT", "stopped smoking 10 years ago", "breathless walking 200 metres", "94% breathing air"], "x": "Already an ex-smoker, so the next step is supportive care."},
+        {"t": "Make your own answer before looking", "x": "**Supportive care**: pulmonary rehab, monitor lung function and imaging, oxygen if needed."},
+        {"t": "Rule out the others", "elim": [[0, "Bronchoscopy has no role in monitoring asbestosis."], [1, "Steroids do not help asbestosis."], [2, "Methotrexate is not used for asbestosis."], [3, "Azithromycin prophylaxis is for bronchiectasis or COPD exacerbations."]]},
+        {"t": "Commit", "x": "**E. Pulmonary rehabilitation with monitoring.** No drug reverses asbestosis."}
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 68 year old man who worked spraying blue asbestos (crocidolite) in the 1970s is diagnosed with pleural mesothelioma. He has never smoked. His brother, who worked with him, has only pleural plaques.",
+      "q": "Which is the most likely mechanism of his tumour?",
+      "o": ["Amphibole fibre genotoxicity in mesothelial cells", "Epstein-Barr virus infection", "Inherited BRCA2 mutation", "Radon gas exposure", "Tobacco smoke carcinogens"],
+      "a": 0,
+      "steps": [
+        {"t": "Read the question line first", "x": "A mechanism of carcinogenesis."},
+        {"t": "Pick out the clues", "clues": ["blue asbestos (crocidolite)", "pleural mesothelioma", "never smoked"], "x": "Crocidolite is an amphibole; no smoking."},
+        {"t": "Make your own answer before looking", "x": "**Amphibole fibres** directly damage mesothelial cell DNA over decades."},
+        {"t": "Rule out the others", "elim": [[1, "EBV is linked to lymphoma and nasopharyngeal cancer."], [2, "BRCA2 is linked to breast, ovarian and prostate cancer."], [3, "Radon is linked to lung cancer, not mesothelioma."], [4, "He never smoked, and smoking does not cause mesothelioma."]]},
+        {"t": "Commit", "x": "**A. Amphibole genotoxicity.** Plaques in his brother are just a marker of exposure."}
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 75 year old man has 3 years of slowly worsening breathlessness and a dry cough. He worked in a shipyard fitting insulation for 25 years. His fingers are clubbed and there are fine end-inspiratory crackles at both bases. His oxygen saturation is 93% breathing air. HRCT shows bilateral lower zone fibrosis with calcified pleural plaques.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Asbestosis", "Hypersensitivity pneumonitis", "Lymphangitis carcinomatosa", "Sarcoidosis", "Silicosis"],
+      "a": 0,
+      "e": "Lower zone fibrosis with pleural plaques, clubbing and crackles in a shipyard insulation worker is asbestosis. Silicosis affects the upper zones.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis of a fibrotic lung disease."},
+        {"t": "Pick out the clues", "clues": ["shipyard fitting insulation", "clubbed", "fine end-inspiratory crackles at both bases", "lower zone fibrosis with calcified pleural plaques"], "x": "Asbestos exposure, basal fibrosis and plaques."},
+        {"t": "Make your own answer before looking", "x": "**Asbestosis**."},
+        {"t": "Rule out the others", "elim": [[1, "Hypersensitivity pneumonitis needs an antigen (birds, mould) and is upper or mid zone."], [2, "Lymphangitis is spread of cancer, with weight loss."], [3, "Sarcoidosis gives bilateral hilar lymphadenopathy in younger people."], [4, "Silicosis is upper zone with hilar eggshell calcification."]]},
+        {"t": "Commit", "x": "**A. Asbestosis.** Asbestos job + lower zone fibrosis + plaques."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 70 year old former lagger has 2 months of right-sided chest pain, weight loss and increasing breathlessness. His temperature is 36.8°C, pulse rate 96 bpm, BP 128/76 mmHg and oxygen saturation 92% breathing air. CT shows a large right pleural effusion with nodular pleural thickening.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely finding on examination of the right base?",
+      "o": ["Bronchial breathing", "Hyper-resonant percussion note", "Pleural rub with normal percussion", "Stony dull percussion with reduced breath sounds", "Widespread expiratory wheeze"],
+      "a": 3,
+      "e": "A large pleural effusion from mesothelioma gives stony dull percussion with reduced breath sounds. Bronchial breathing suggests consolidation.",
+      "steps": [
+        {"t": "Read the question line first", "x": "An examination finding: what does a large effusion sound like?"},
+        {"t": "Pick out the clues", "clues": ["former lagger", "right-sided chest pain, weight loss", "large right pleural effusion", "nodular pleural thickening"], "x": "Mesothelioma with a large effusion."},
+        {"t": "Make your own answer before looking", "x": "**Stony dull** percussion and reduced breath sounds."},
+        {"t": "Rule out the others", "elim": [[0, "Bronchial breathing is consolidation (or just above an effusion)."], [1, "Hyper-resonance is a pneumothorax."], [2, "A large effusion makes the note dull, not normal."], [4, "Wheeze suggests airway disease."]]},
+        {"t": "Commit", "x": "**D. Stony dull percussion.** Effusion in mesothelioma."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 66 year old woman has a chest X-ray before a hernia operation. She is well with no breathlessness. Her late husband was a builder and she washed his overalls for 20 years. The X-ray shows calcified holly-leaf shaped plaques on both hemidiaphragms and the lower lateral chest walls, with clear lung fields. Her pulse rate is 72 bpm and BP 130/80 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Asbestosis", "Malignant mesothelioma", "Old tuberculous pleurisy", "Pleural plaques", "Sarcoidosis"],
+      "a": 3,
+      "e": "Asymptomatic calcified plaques on the diaphragm and lower lateral chest wall with clear lungs after (domestic) asbestos exposure are benign pleural plaques.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis of an incidental CXR finding."},
+        {"t": "Pick out the clues", "clues": ["She is well with no breathlessness", "washed his overalls for 20 years", "calcified holly-leaf shaped plaques", "clear lung fields"], "x": "Domestic asbestos exposure, no symptoms, no fibrosis."},
+        {"t": "Make your own answer before looking", "x": "**Pleural plaques**."},
+        {"t": "Rule out the others", "elim": [[0, "Asbestosis needs lung fibrosis; the lungs are clear."], [1, "Mesothelioma gives pain, weight loss and an effusion."], [2, "Old TB pleurisy is usually unilateral and apical scarring is common."], [4, "Sarcoidosis gives hilar lymphadenopathy."]]},
+        {"t": "Commit", "x": "**D. Pleural plaques.** Benign: reassure, no follow-up."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 73 year old man who worked as a demolition labourer has asbestosis. He has 2 years of progressive breathlessness. There are fine crackles at both bases. His oxygen saturation is 94% breathing air.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely finding on spirometry?",
+      "o": ["Normal FEV1 and FVC", "Reduced FEV1 and FVC with FEV1/FVC ratio 0.55", "Reduced FEV1 and FVC with FEV1/FVC ratio 0.85", "Reduced FEV1 with normal FVC", "Significant reversibility with bronchodilator"],
+      "a": 2,
+      "e": "Asbestosis is a fibrotic, restrictive disease: both volumes fall with a preserved or raised ratio. A ratio of 0.55 would be obstructive.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Spirometry pattern: obstructive or restrictive?"},
+        {"t": "Pick out the clues", "clues": ["asbestosis", "progressive breathlessness", "fine crackles at both bases"], "x": "Interstitial fibrosis."},
+        {"t": "Make your own answer before looking", "x": "**Restrictive**: low FEV1 and FVC, ratio above 0.7."},
+        {"t": "Rule out the others", "elim": [[0, "Symptomatic fibrosis reduces volumes."], [1, "A ratio of 0.55 is obstructive (COPD)."], [3, "Low FEV1 with normal FVC means obstruction."], [4, "Reversibility suggests asthma."]]},
+        {"t": "Commit", "x": "**C. Ratio 0.85 with low volumes.** Restrictive pattern."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 64 year old man has asbestosis after 20 years as an insulation fitter. He still smokes 20 cigarettes a day. His oxygen saturation is 95% breathing air, pulse rate 78 bpm and BP 136/84 mmHg. He asks which serious condition he is now most at risk of.",
+      "labs": [],
+      "visual": null,
+      "q": "Which condition is he at greatest increased risk of developing?",
+      "o": ["Bronchiectasis", "Lung cancer", "Pneumothorax", "Pulmonary embolism", "Tuberculosis"],
+      "a": 1,
+      "e": "Asbestos exposure and smoking act synergistically, multiplying lung cancer risk. Smoking cessation is the key intervention.",
+      "steps": [
+        {"t": "Read the question line first", "x": "A complication question."},
+        {"t": "Pick out the clues", "clues": ["asbestosis", "insulation fitter", "still smokes 20 cigarettes a day"], "x": "Asbestos plus heavy smoking."},
+        {"t": "Make your own answer before looking", "x": "**Lung cancer**: the two risks multiply."},
+        {"t": "Rule out the others", "elim": [[0, "Bronchiectasis is not a recognised asbestos complication."], [2, "Pneumothorax is not a typical complication of asbestosis."], [3, "PE is not specifically linked to asbestos."], [4, "TB risk is raised in silicosis, not asbestosis."]]},
+        {"t": "Commit", "x": "**B. Lung cancer.** Asbestos x smoking = synergistic risk."}
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 78 year old retired plumber has 4 years of progressive exertional breathlessness. He lagged pipes with asbestos in the 1960s and 1970s. His fingers are clubbed and there are fine crackles at both bases. His oxygen saturation is 92% breathing air. Chest X-ray (see item resources).",
+      "labs": [["FEV1/FVC", "0.84", ">0.70", ""], ["FVC", "58% predicted", ">80%", "L"]],
+      "visual": {"kind": "cxr", "title": "Chest X-ray", "findings": [{"type": "fibrosis", "side": "both", "zone": "lower"}], "caption": "Bilateral lower zone reticular shadowing with pleural plaques along the diaphragms."},
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Asbestosis", "Bronchiectasis", "Coal worker's pneumoconiosis", "Sarcoidosis", "Silicosis"],
+      "a": 0,
+      "e": "Lower zone fibrosis with a restrictive pattern in a man who lagged pipes with asbestos is asbestosis. Coal and silica pneumoconioses are upper zone.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Diagnosis from history, CXR and lung function."},
+        {"t": "Pick out the clues", "clues": ["lagged pipes with asbestos", "clubbed", "fine crackles at both bases", "Chest X-ray (see item resources)"], "x": "Asbestos exposure and lower zone fibrosis; labs show restriction."},
+        {"t": "Make your own answer before looking", "x": "**Asbestosis**."},
+        {"t": "Rule out the others", "elim": [[1, "Bronchiectasis gives daily purulent sputum and coarse crackles."], [2, "Coal pneumoconiosis is upper zone in coal miners."], [3, "Sarcoidosis gives hilar lymphadenopathy, usually in younger people."], [4, "Silicosis is upper zone in stone workers and miners."]]},
+        {"t": "Commit", "x": "**A. Asbestosis.** Lower zones = asbestos."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 70 year old man who worked in building demolition has 18 months of worsening breathlessness. There are fine crackles at both bases. His oxygen saturation is 94% breathing air and pulse rate 82 bpm. His chest X-ray shows subtle basal reticular shadowing.",
+      "labs": [["FEV1/FVC", "0.82", ">0.70", ""], ["FVC", "70% predicted", ">80%", "L"]],
+      "visual": null,
+      "q": "Which is the most appropriate investigation to confirm the likely diagnosis?",
+      "o": ["Bronchoscopy", "High-resolution CT chest", "Pleural fluid aspiration", "Serum ACE", "Spirometry"],
+      "a": 1,
+      "e": "CT imaging, combined with a thorough occupational history, is the gold standard for asbestos-related lung disease and is more sensitive than CXR.",
+      "steps": [
+        {"t": "Read the question line first", "x": "'Confirm': the gold standard."},
+        {"t": "Pick out the clues", "clues": ["building demolition", "fine crackles at both bases", "subtle basal reticular shadowing"], "x": "Suspected asbestosis; the CXR is equivocal."},
+        {"t": "Make your own answer before looking", "x": "**CT chest** with the occupational history."},
+        {"t": "Rule out the others", "elim": [[0, "Bronchoscopy does not assess interstitial fibrosis well."], [2, "There is no effusion to aspirate."], [3, "Serum ACE is for sarcoidosis."], [4, "Spirometry has been done and shows restriction, not the cause."]]},
+        {"t": "Commit", "x": "**B. HRCT chest.** CT + occupational history confirm."}
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 76 year old former shipyard worker has a large left pleural effusion, chest wall pain and weight loss. CT shows nodular left pleural thickening. His temperature is 36.7°C, pulse rate 94 bpm and BP 124/72 mmHg.",
+      "labs": [["Pleural fluid protein", "46 g/L", "<30 (transudate)", "H"], ["Pleural fluid LDH", "380 U/L", "<200", "H"], ["Pleural fluid cytology", "No malignant cells seen", "", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+      "o": ["Bronchoscopy with washings", "PET-CT", "Repeat pleural fluid cytology", "Sputum cytology", "Thoracoscopic pleural biopsy"],
+      "a": 4,
+      "e": "Mesothelioma is confirmed by thoracoscopy and histology from a pleural biopsy. Pleural fluid cytology is often negative.",
+      "steps": [
+        {"t": "Read the question line first", "x": "'Confirm' a suspected pleural malignancy."},
+        {"t": "Pick out the clues", "clues": ["former shipyard worker", "chest wall pain and weight loss", "nodular left pleural thickening"], "x": "Suspected mesothelioma; the labs show an exudate with negative cytology."},
+        {"t": "Make your own answer before looking", "x": "**Thoracoscopy with pleural biopsy** for histology."},
+        {"t": "Rule out the others", "elim": [[0, "Bronchoscopy looks inside the airways, not the pleura."], [1, "PET-CT helps staging but does not give a tissue diagnosis."], [2, "Cytology is often non-diagnostic in mesothelioma."], [3, "Sputum cytology does not sample the pleura."]]},
+        {"t": "Commit", "x": "**E. Thoracoscopic pleural biopsy.** Tissue confirms mesothelioma."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 67 year old man has newly diagnosed asbestosis. He worked as a carpenter cutting asbestos boards for 15 years and still smokes 15 cigarettes a day. His oxygen saturation is 95% breathing air, pulse rate 80 bpm and BP 134/80 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Long-term oxygen therapy", "Lung transplant referral", "Oral prednisolone", "Pirfenidone", "Smoking cessation support"],
+      "a": 4,
+      "e": "Smoking cessation is the most important first step because smoking and asbestos synergistically multiply lung cancer risk. His saturations do not justify oxygen.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Initial management of asbestosis."},
+        {"t": "Pick out the clues", "clues": ["newly diagnosed asbestosis", "still smokes 15 cigarettes a day", "95% breathing air"], "x": "A current smoker who is not hypoxic."},
+        {"t": "Make your own answer before looking", "x": "**Smoking cessation** with support."},
+        {"t": "Rule out the others", "elim": [[0, "He is not hypoxic enough for oxygen."], [1, "Transplant is not a first step."], [2, "Steroids do not help asbestosis."], [3, "Pirfenidone is for idiopathic pulmonary fibrosis."]]},
+        {"t": "Commit", "x": "**E. Smoking cessation.** And avoid further exposure."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 62 year old man has an incidental finding of bilateral calcified pleural plaques on a chest X-ray. He worked as an electrician in old buildings in the 1980s. He has no symptoms and his lung fields are clear. His pulse rate is 70 bpm and BP 128/78 mmHg. He is anxious about cancer.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Annual CT surveillance", "Oral prednisolone", "Reassurance with no follow-up", "Referral for thoracoscopy", "Six-monthly chest X-ray"],
+      "a": 2,
+      "e": "Pleural plaques are benign, do not become malignant and do not raise cancer risk, so reassurance with no follow-up is correct.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Management of an incidental finding."},
+        {"t": "Pick out the clues", "clues": ["incidental finding", "calcified pleural plaques", "no symptoms", "lung fields are clear"], "x": "Isolated, asymptomatic plaques."},
+        {"t": "Make your own answer before looking", "x": "**Reassurance, no follow-up**."},
+        {"t": "Rule out the others", "elim": [[0, "Plaques need no surveillance."], [1, "Plaques are not inflammatory."], [3, "Thoracoscopy is for suspected mesothelioma."], [4, "Plaques need no imaging follow-up."]]},
+        {"t": "Commit", "x": "**C. Reassurance.** Plaques are benign markers of exposure."}
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 77 year old man has confirmed pleural mesothelioma. He is increasingly breathless at rest. His pulse rate is 104 bpm, BP 122/74 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 89% breathing air. Chest X-ray shows a large right pleural effusion with mediastinal shift to the left.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate next step to relieve his breathlessness?",
+      "o": ["Drainage of the pleural effusion", "Intravenous furosemide", "Nebulised salbutamol", "Oral prednisolone", "Radiotherapy to the chest wall"],
+      "a": 0,
+      "e": "A large symptomatic effusion in mesothelioma should be drained; recurrent effusions may need an indwelling catheter or pleurodesis.",
+      "steps": [
+        {"t": "Read the question line first", "x": "Symptom relief in mesothelioma."},
+        {"t": "Pick out the clues", "clues": ["confirmed pleural mesothelioma", "breathless at rest", "large right pleural effusion", "mediastinal shift"], "x": "A big malignant effusion is the cause of his breathlessness."},
+        {"t": "Make your own answer before looking", "x": "**Drain the effusion**."},
+        {"t": "Rule out the others", "elim": [[1, "Furosemide does not clear a malignant exudate."], [2, "Salbutamol treats bronchospasm, not fluid."], [3, "Steroids do not drain fluid."], [4, "Radiotherapy does not relieve a large effusion quickly."]]},
+        {"t": "Commit", "x": "**A. Drain the effusion.** Then plan for recurrence."}
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 72 year old man who spent 25 years fitting asbestos insulation has bilateral lower zone lung fibrosis. Bronchoalveolar lavage shows asbestos bodies inside alveolar macrophages.",
+      "labs": [["BAL asbestos bodies", "Present", "Absent", "H"]],
+      "visual": null,
+      "q": "Which is the most likely mechanism of his lung fibrosis?",
+      "o": ["Antigen-driven granuloma formation", "Immune complex deposition (type III hypersensitivity)", "Macrophage-driven chronic inflammation and fibrosis", "Neutrophil elastase-mediated alveolar destruction", "Type I IgE-mediated hypersensitivity"],
+      "a": 2,
+      "e": "Asbestos fibres deposit in distal airways; macrophages release inflammatory mediators and reactive oxygen species, driving chronic inflammation and fibrosis.",
+      "steps": [
+        {"t": "Read the question line first", "x": "A mechanism of fibrosis."},
+        {"t": "Pick out the clues", "clues": ["fitting asbestos insulation", "lower zone lung fibrosis", "asbestos bodies inside alveolar macrophages"], "x": "Macrophages loaded with fibres."},
+        {"t": "Make your own answer before looking", "x": "**Macrophage-driven** inflammation: mediators and ROS cause fibrosis."},
+        {"t": "Rule out the others", "elim": [[0, "Granulomas are sarcoidosis or TB."], [1, "Type III hypersensitivity is hypersensitivity pneumonitis."], [3, "Elastase destruction is emphysema (alpha-1 antitrypsin deficiency)."], [4, "IgE-mediated reactions are asthma and allergy."]]},
+        {"t": "Commit", "x": "**C. Macrophage-driven chronic inflammation.** ROS and mediators drive fibrosis."}
+      ]
+    }
+  ]
+}

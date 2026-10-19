@@ -1,0 +1,2423 @@
+{
+ "id": "infective-endocarditis",
+ "patient": {
+  "name": "Liam Doherty",
+  "age": 34,
+  "sex": "M",
+  "setting": "Emergency Department",
+  "complaint": "Fevers, rigors, night sweats and breathlessness for 10 days",
+  "background": [
+   "Injects heroin for 6 years, sometimes shares needles",
+   "Hepatitis C positive",
+   "Lives in a hostel in King's Cross",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'most likely organism?' with fever, a new murmur and peripheral signs. The history (injecting, teeth, colon, recent valve surgery, farming) names the organism.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Liam, 34, **injects heroin**; 10 days of fevers and rigors.",
+      "Drenching **night sweats**, aching all over, off his food.",
+      "Pleuritic chest pain and breathlessness for 3 days.",
+      "Groin injection site sore and red."
+     ],
+     "vitals": {
+      "T": "39.2°C",
+      "HR": "118 bpm",
+      "BP": "104/66 mmHg",
+      "RR": "24 /min",
+      "SpO2": "93% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Repeated injections give Liam repeated **transient bacteraemias**: organisms can settle on a valve and grow into a vegetation."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Liam has the biggest risk factor in the stem: **IV drug use**. That points to the **tricuspid** valve."
+    },
+    {
+     "type": "story",
+     "points": [
+      "New **pansystolic murmur** at the left lower sternal edge.",
+      "Murmur gets **louder on inspiration**.",
+      "JVP raised with large V waves.",
+      "**Splinter haemorrhages** in three nails; painless red macules on both palms."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Fever plus a **new murmur** in an injector: infective endocarditis until proven otherwise. His palm macules are **Janeway lesions**."
+    },
+    {
+     "type": "ask",
+     "q": "Liam has painless, flat red macules on his palms. What are they?",
+     "o": [
+      "Erythema nodosum",
+      "Janeway lesions",
+      "Osler's nodes",
+      "Roth spots"
+     ],
+     "a": 1,
+     "r": "**Janeway lesions** are painless and embolic. **Osler's nodes** are painful finger-pulp nodules; Roth spots are retinal."
+    },
+    {
+     "type": "compare",
+     "title": "Peripheral signs of infective endocarditis",
+     "head": [
+      "Sign",
+      "Where",
+      "Feel",
+      "Mechanism"
+     ],
+     "rows": [
+      [
+       "Janeway lesions",
+       "Palms and soles",
+       "**Painless**",
+       "Septic emboli"
+      ],
+      [
+       "Osler's nodes",
+       "Finger and toe pulps",
+       "**Painful**",
+       "Immune complexes"
+      ],
+      [
+       "Splinter haemorrhages",
+       "Nail beds",
+       "Painless",
+       "Emboli"
+      ],
+      [
+       "Roth spots",
+       "Retina",
+       "Painless",
+       "Emboli"
+      ],
+      [
+       "Clubbing",
+       "Fingers",
+       "Painless",
+       "Long-standing (subacute)"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Liam is **acutely** unwell over days with high fevers: the acute pattern, most likely **Staph. aureus**."
+    },
+    {
+     "type": "compare",
+     "title": "Acute vs subacute endocarditis",
+     "head": [
+      "Feature",
+      "Acute",
+      "Subacute"
+     ],
+     "rows": [
+      [
+       "Onset",
+       "Days, severe illness",
+       "Weeks, gradual malaise"
+      ],
+      [
+       "Valve",
+       "Often previously normal",
+       "Already abnormal"
+      ],
+      [
+       "Classic organism",
+       "**Staph. aureus**",
+       "**Strep. viridans**"
+      ],
+      [
+       "Typical story",
+       "IVDU, lines",
+       "Poor dentition, dental work"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Each organism has its own story in the stem. Liam's injecting makes **Staph. aureus** the leading organism."
+    },
+    {
+     "type": "pearl",
+     "text": "Read the organism off the story: injector = **Staph. aureus**; teeth = **Strep. viridans**; colon cancer/PR bleeding = **Strep. bovis**; valve surgery within 2 months = **Staph. epidermidis**; farmer = **Coxiella**; culture negative = **HACEK**."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Liam's pleuritic pain and low saturations fit **septic emboli** to the lungs from a right-sided vegetation."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Liam's chest X-ray",
+      "findings": [
+       {
+        "type": "cavity",
+        "side": "both",
+        "zone": "lower"
+       },
+       {
+        "type": "cavity",
+        "side": "right",
+        "zone": "middle"
+       }
+      ],
+      "caption": "Multiple small cavitating lesions in both lungs: **septic pulmonary emboli** from a tricuspid vegetation."
+     },
+     "text": "Right-sided vegetations embolise to the lungs; left-sided ones to the brain, spleen, kidneys and gut."
+    },
+    {
+     "type": "trap",
+     "text": "Do not call this simple pneumonia. Fever, injecting, a **new murmur** and multiple cavitating lesions mean right-sided endocarditis with septic emboli."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'most appropriate initial investigation' (three sets of blood cultures before antibiotics), TTE then TOE, and 'which is a major Duke criterion?'.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Liam is febrile and tachycardic. What must happen before the first antibiotic dose?",
+     "o": [
+      "CT chest",
+      "Three sets of blood cultures from different sites",
+      "Transoesophageal echo",
+      "Urine drug screen"
+     ],
+     "a": 1,
+     "r": "**Three sets of blood cultures** from different sites before antibiotics. In sepsis, take them fast; do not delay treatment."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Liam has three culture sets taken from different veins within the hour, then a **TTE**. His CRP and ESR are high."
+    },
+    {
+     "type": "labs",
+     "title": "Liam's bloods",
+     "rows": [
+      [
+       "Haemoglobin",
+       "108 g/L",
+       "130–180",
+       "L"
+      ],
+      [
+       "White cell count",
+       "18.2 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "CRP",
+       "186 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "ESR",
+       "72 mm/h",
+       "<15",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "88 µmol/L",
+       "60–110",
+       ""
+      ],
+      [
+       "Urine dipstick",
+       "Blood ++, protein +",
+       "Negative",
+       "H"
+      ]
+     ],
+     "text": "Inflammatory markers support infection; the urine blood hints at immune complex glomerulonephritis."
+    },
+    {
+     "type": "story",
+     "points": [
+      "All **3 of 3** culture sets grow **Staph. aureus** (MSSA).",
+      "TTE: 1.6 cm mobile **vegetation** on the tricuspid valve.",
+      "Severe tricuspid regurgitation; left-sided valves look normal."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Liam has **2 major** criteria (typical organism in cultures, vegetation on echo): **definite** endocarditis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Liam's Duke major criteria",
+      "min": 0,
+      "max": 2,
+      "unit": "major criteria",
+      "bands": [
+       [
+        0,
+        0.9,
+        "Not definite on major alone",
+        "ok"
+       ],
+       [
+        0.9,
+        1.9,
+        "1 major: needs 3 minor",
+        "warn"
+       ],
+       [
+        1.9,
+        2,
+        "2 major: definite",
+        "bad"
+       ]
+      ],
+      "value": 2,
+      "label": "Liam 2 major",
+      "caption": "Definite: **2 major**, or **1 major + 3 minor**, or **5 minor**."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "The **modified Duke criteria** turn Liam's cultures, echo and clinical signs into a definite, possible or rejected diagnosis."
+    },
+    {
+     "type": "compare",
+     "title": "Duke criteria in Liam",
+     "head": [
+      "Criterion",
+      "Type",
+      "Liam"
+     ],
+     "rows": [
+      [
+       "Typical organism in blood cultures",
+       "Major",
+       "Yes: Staph. aureus 3/3"
+      ],
+      [
+       "Vegetation on echo",
+       "Major",
+       "Yes: tricuspid"
+      ],
+      [
+       "Predisposition (IVDU, valve disease)",
+       "Minor",
+       "Yes"
+      ],
+      [
+       "Fever >38°C",
+       "Minor",
+       "Yes: 39.2°C"
+      ],
+      [
+       "Vascular phenomena (Janeway, emboli)",
+       "Minor",
+       "Yes"
+      ],
+      [
+       "Immunological phenomena (Osler's, GN, Roth)",
+       "Minor",
+       "Possible: haematuria"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Fever, IVDU, Janeway lesions and splinters are all **minor** criteria. The **major** ones are only cultures and echo evidence."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Liam's TTE answered the question. **TOE** would be next if TTE were normal despite high suspicion, or with a prosthetic valve."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Liam has a **daily ECG**: a lengthening PR interval would warn of a perivalvular abscess near the conduction system."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Liam's PR interval (daily ECG)",
+      "min": 100,
+      "max": 320,
+      "unit": "ms",
+      "bands": [
+       [
+        100,
+        200,
+        "Normal",
+        "ok"
+       ],
+       [
+        200,
+        300,
+        "First-degree block: think abscess",
+        "warn"
+       ],
+       [
+        300,
+        320,
+        "Long and rising",
+        "bad"
+       ]
+      ],
+      "value": 168,
+      "label": "Liam 168 ms",
+      "caption": "Normal PR is up to 200 ms. A rising PR on serial ECGs suggests an **aortic root abscess**."
+     }
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect empirical and targeted antibiotic choices (amoxicillin ± gentamicin; vancomycin + gentamicin if allergic; flucloxacillin for MSSA) and when to refer for surgery.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Sepsis bundle: oxygen, IV fluids, lactate 2.4 mmol/L.",
+      "Three culture sets taken, then antibiotics within the hour.",
+      "No penicillin allergy; no known MRSA."
+     ],
+     "vitals": {
+      "T": "39.0°C",
+      "HR": "112 bpm",
+      "BP": "108/70 mmHg",
+      "SpO2": "95% on 2 L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Liam gets ABCDE care, cultures first, then **empirical IV amoxicillin with gentamicin** for a native valve."
+    },
+    {
+     "type": "ask",
+     "q": "Liam's cultures grow MSSA. Which antibiotic now?",
+     "o": [
+      "High-dose IV flucloxacillin",
+      "IV benzylpenicillin",
+      "IV vancomycin and rifampicin",
+      "Oral amoxicillin"
+     ],
+     "a": 0,
+     "r": "Confirmed **MSSA**: high-dose **IV flucloxacillin**. Benzylpenicillin is for Strep. viridans; vancomycin for allergy or MRSA."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Once the organism is known, treatment is targeted. Liam needs **IV flucloxacillin** for around **4–6 weeks**."
+    },
+    {
+     "type": "flow",
+     "title": "Antibiotics in infective endocarditis",
+     "nodes": [
+      "Three sets of blood cultures",
+      "Empirical IV amoxicillin ± gentamicin (vancomycin + gentamicin if allergic/MRSA risk)",
+      "Organism identified",
+      "Targeted IV therapy for 4–6 weeks",
+      "Repeat cultures and echo; watch ECG"
+     ],
+     "caption": "Cultures before antibiotics; targeted IV therapy for weeks, not days."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Liam's response to flucloxacillin",
+      "x": [
+       "Day 0",
+       "Day 3",
+       "Day 7",
+       "Day 14",
+       "Day 28"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "CRP (mg/L)",
+        "values": [
+         186,
+         140,
+         62,
+         24,
+         6
+        ]
+       },
+       {
+        "name": "Temperature (°C)",
+        "values": [
+         39.2,
+         38.4,
+         37.4,
+         37.0,
+         36.8
+        ]
+       }
+      ],
+      "caption": "Falling CRP and settling fever: antibiotics are working, so no surgery for persistent infection."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Staph. aureus is on the surgical list, so the **endocarditis team** reviews Liam. He is stable and improving, so antibiotics continue."
+    },
+    {
+     "type": "compare",
+     "title": "When to call the cardiothoracic surgeon",
+     "head": [
+      "Indication",
+      "Example"
+     ],
+     "rows": [
+      [
+       "Haemodynamic instability / acute heart failure",
+       "Pulmonary oedema with worsening MR"
+      ],
+      [
+       "Persistent infection",
+       "Positive cultures despite antibiotics"
+      ],
+      [
+       "Abscess",
+       "Rising PR interval, aortic root abscess"
+      ],
+      [
+       "Recurrent emboli",
+       "Repeated strokes or lung emboli"
+      ],
+      [
+       "Difficult organisms",
+       "Staph. aureus, Coxiella, fungi"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Liam needs no dental antibiotic prophylaxis later; he is taught the **warning signs** and linked to drug services."
+    },
+    {
+     "type": "pearl",
+     "text": "UK practice: **no routine antibiotic prophylaxis** for dental procedures, even with a prosthetic valve. Educate on symptoms instead."
+    },
+    {
+     "type": "trap",
+     "text": "Never start antibiotics before cultures in a stable patient with suspected endocarditis: one dose can make cultures negative for good."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why injectors get tricuspid disease, embolic vs immune mechanisms of signs, and why a rising PR interval means an abscess.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Repeated injection of particles damages Liam's tricuspid endothelium; a platelet-fibrin clot forms and bacteria colonise it."
+    },
+    {
+     "type": "flow",
+     "title": "How a vegetation forms",
+     "nodes": [
+      "Endothelial damage (turbulent flow, particles)",
+      "Platelet-fibrin thrombus on the valve",
+      "Transient bacteraemia seeds the thrombus",
+      "Infected **vegetation** grows",
+      "Embolisation and valve destruction"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Venous blood from Liam's injection sites reaches the **right heart first**, so the tricuspid valve meets the organisms."
+    },
+    {
+     "type": "ask",
+     "q": "Why is the tricuspid valve the usual target in injectors?",
+     "o": [
+      "Higher right-sided pressures",
+      "Injected organisms reach the right heart first",
+      "Thinner left-sided leaflets",
+      "Tricuspid valve has no endothelium"
+     ],
+     "a": 1,
+     "r": "Venous return carries organisms to the **right heart** before the lungs filter them."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Liam's vegetation has eroded a leaflet, giving **severe TR**. If infection spread into the annulus, it could cause **heart block**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Liam's **Janeway lesions** are embolic; his urine blood suggests **immune complex** glomerulonephritis."
+    },
+    {
+     "type": "compare",
+     "title": "Embolic vs immunological signs",
+     "head": [
+      "Septic emboli",
+      "Immune complex deposition"
+     ],
+     "rows": [
+      [
+       "Janeway lesions",
+       "Osler's nodes"
+      ],
+      [
+       "Splinter haemorrhages",
+       "Glomerulonephritis (haematuria)"
+      ],
+      [
+       "Roth spots",
+       "Low complement"
+      ]
+     ]
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which valve is most often affected in IV drug users?",
+   "o": [
+    "Aortic",
+    "Mitral",
+    "Pulmonary",
+    "Tricuspid"
+   ],
+   "a": 3,
+   "r": "Injected organisms reach the right heart first: **tricuspid**. Mitral is commonest in non-IVDU."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the most common organism overall?",
+   "o": [
+    "Enterococcus faecalis",
+    "Staphylococcus aureus",
+    "Staphylococcus epidermidis",
+    "Streptococcus viridans"
+   ],
+   "a": 1,
+   "r": "**Staph. aureus** is commonest overall, especially in IVDU."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism is linked with colorectal carcinoma?",
+   "o": [
+    "Coxiella burnetii",
+    "HACEK",
+    "Streptococcus bovis",
+    "Streptococcus viridans"
+   ],
+   "a": 2,
+   "r": "**Strep. bovis (gallolyticus)**: arrange a colonoscopy."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism causes prosthetic valve endocarditis within 2 months of surgery?",
+   "o": [
+    "Enterococcus faecalis",
+    "Staphylococcus epidermidis",
+    "Streptococcus bovis",
+    "Streptococcus viridans"
+   ],
+   "a": 1,
+   "r": "Early prosthetic valve (or line) endocarditis: **Staph. epidermidis**."
+  },
+  {
+   "d": "science",
+   "q": "Which mechanism underlies Osler's nodes?",
+   "o": [
+    "Direct bacterial invasion",
+    "Immune complex deposition",
+    "Septic emboli",
+    "Vasospasm"
+   ],
+   "a": 1,
+   "r": "**Osler's nodes** (painful) and GN are immunological; Janeway lesions are embolic."
+  },
+  {
+   "d": "investigation",
+   "q": "Which combination makes a definite Duke diagnosis?",
+   "o": [
+    "1 major + 1 minor",
+    "1 major + 3 minor",
+    "3 minor",
+    "4 minor"
+   ],
+   "a": 1,
+   "r": "Definite: 2 major, **1 major + 3 minor**, or 5 minor."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the first-line imaging test?",
+   "o": [
+    "Cardiac MRI",
+    "CT chest",
+    "Transoesophageal echo",
+    "Transthoracic echo"
+   ],
+   "a": 3,
+   "r": "**TTE** first; TOE if TTE is inconclusive, prosthetic valve or high suspicion."
+  },
+  {
+   "d": "investigation",
+   "q": "What ECG change suggests an aortic root abscess?",
+   "o": [
+    "Prolonging PR interval",
+    "Saddle ST elevation",
+    "Tall R in V1",
+    "U waves"
+   ],
+   "a": 0,
+   "r": "A **lengthening PR** interval, progressing to higher-degree block."
+  },
+  {
+   "d": "management",
+   "q": "Empirical therapy for a penicillin-allergic patient?",
+   "o": [
+    "IV amoxicillin",
+    "IV benzylpenicillin",
+    "IV flucloxacillin",
+    "IV vancomycin + gentamicin"
+   ],
+   "a": 3,
+   "r": "Allergy, high risk or MRSA: **vancomycin plus gentamicin**."
+  },
+  {
+   "d": "management",
+   "q": "Antibiotic prophylaxis for dental work with a prosthetic valve (UK)?",
+   "o": [
+    "Amoxicillin 3 g before",
+    "Clindamycin before",
+    "Not routinely given",
+    "Vancomycin IV before"
+   ],
+   "a": 2,
+   "r": "**No routine prophylaxis** in the UK; advise on warning symptoms."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is the classic presentation of infective endocarditis?",
+    "tip": "Exam thinking: fever plus a new murmur is IE until proven otherwise.",
+    "points": [
+     {
+      "p": "Fever, night sweats, malaise",
+      "k": [
+       [
+        "fever",
+        "pyrexia",
+        "temperature"
+       ]
+      ],
+      "why": "Fever over 38°C is a minor Duke criterion."
+     },
+     {
+      "p": "New or changing heart murmur",
+      "k": [
+       [
+        "murmur"
+       ]
+      ],
+      "why": "A new murmur plus fever is the classic stem."
+     },
+     {
+      "p": "Confusion (or emboli such as stroke)",
+      "k": [
+       [
+        "confus",
+        "stroke",
+        "embol"
+       ]
+      ],
+      "why": "Left-sided vegetations embolise to the brain."
+     },
+     {
+      "p": "Peripheral signs: splinters, Janeway, Osler's, Roth spots, clubbing",
+      "k": [
+       [
+        "splinter",
+        "janeway",
+        "osler",
+        "roth",
+        "clubbing"
+       ]
+      ],
+      "why": "These are minor criteria, not major."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who gets it, and which valve is affected in each group?",
+    "tip": "Exam thinking: the risk factor in the stem tells you the valve.",
+    "points": [
+     {
+      "p": "Pre-existing valve disease or prosthetic valve",
+      "k": [
+       [
+        "valve",
+        "prosthetic"
+       ]
+      ],
+      "why": "Damaged endothelium gives organisms a landing site."
+     },
+     {
+      "p": "IV drug use",
+      "k": [
+       [
+        "ivdu",
+        "drug",
+        "inject",
+        "heroin"
+       ]
+      ],
+      "why": "Injectors get tricuspid, Staph. aureus endocarditis."
+     },
+     {
+      "p": "Previous endocarditis or congenital heart disease",
+      "k": [
+       [
+        "previous",
+        "congenital"
+       ]
+      ],
+      "why": "Past IE is a strong predictor of recurrence."
+     },
+     {
+      "p": "Tricuspid in IVDU, mitral in non-IVDU",
+      "k": [
+       [
+        "tricuspid"
+       ],
+       [
+        "mitral"
+       ]
+      ],
+      "why": "Right heart first because of venous return."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Match each organism to its classic story.",
+    "tip": "Exam thinking: one clue in the history names the bug.",
+    "points": [
+     {
+      "p": "Staph. aureus: IVDU, acute, commonest overall",
+      "k": [
+       [
+        "aureus"
+       ]
+      ],
+      "why": "Coagulase positive; also a surgical indication."
+     },
+     {
+      "p": "Strep. viridans: dental disease, subacute",
+      "k": [
+       [
+        "viridans",
+        "sanguinis"
+       ]
+      ],
+      "why": "Alpha-haemolytic; needs a dental review."
+     },
+     {
+      "p": "Staph. epidermidis: prosthetic valve within 2 months or lines",
+      "k": [
+       [
+        "epidermidis",
+        "coagulase negative",
+        "coagulase-negative"
+       ]
+      ],
+      "why": "Early prosthetic valve endocarditis."
+     },
+     {
+      "p": "Strep. bovis/gallolyticus: colorectal carcinoma",
+      "k": [
+       [
+        "bovis",
+        "gallolyticus"
+       ]
+      ],
+      "why": "Colonoscopy is mandatory."
+     },
+     {
+      "p": "Coxiella (farmers) and HACEK: culture-negative",
+      "k": [
+       [
+        "coxiella",
+        "q fever",
+        "hacek"
+       ]
+      ],
+      "why": "Fastidious or hard-to-culture organisms."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do Janeway lesions and Osler's nodes differ?",
+    "tip": "Exam thinking: painful Osler's, painless Janeway.",
+    "points": [
+     {
+      "p": "Janeway lesions: painless macules on palms and soles",
+      "k": [
+       [
+        "janeway"
+       ],
+       [
+        "painless",
+        "non-tender",
+        "palm",
+        "sole"
+       ]
+      ],
+      "why": "Embolic phenomenon."
+     },
+     {
+      "p": "Osler's nodes: painful nodules on finger or toe pulps",
+      "k": [
+       [
+        "osler"
+       ],
+       [
+        "painful",
+        "tender",
+        "pulp",
+        "finger"
+       ]
+      ],
+      "why": "Immunological phenomenon."
+     },
+     {
+      "p": "Janeway = septic emboli; Osler's = immune complexes",
+      "k": [
+       [
+        "embol"
+       ],
+       [
+        "immune"
+       ]
+      ],
+      "why": "Roth spots and splinters are also embolic."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the key complications of infective endocarditis?",
+    "tip": "Exam thinking: emboli, failure, abscess.",
+    "points": [
+     {
+      "p": "Septic emboli (brain, spleen, kidney, lung, gut: mesenteric ischaemia)",
+      "k": [
+       [
+        "embol"
+       ]
+      ],
+      "why": "Right-sided emboli go to the lungs."
+     },
+     {
+      "p": "Heart failure from valve destruction",
+      "k": [
+       [
+        "heart failure",
+        "failure",
+        "regurgitation"
+       ]
+      ],
+      "why": "Acute HF is a surgical indication."
+     },
+     {
+      "p": "Perivalvular/aortic root abscess with heart block",
+      "k": [
+       [
+        "abscess"
+       ]
+      ],
+      "why": "Suggested by a lengthening PR interval."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What are the first-line investigations?",
+    "tip": "Exam thinking: cultures first, then echo.",
+    "points": [
+     {
+      "p": "Three sets of blood cultures from different sites",
+      "k": [
+       [
+        "culture"
+       ],
+       [
+        "three",
+        "3"
+       ]
+      ],
+      "why": "Before antibiotics, unless septic: do not delay treatment."
+     },
+     {
+      "p": "Transthoracic echocardiography (TTE)",
+      "k": [
+       [
+        "tte",
+        "transthoracic"
+       ]
+      ],
+      "why": "First-line imaging."
+     },
+     {
+      "p": "Raised CRP and ESR",
+      "k": [
+       [
+        "crp",
+        "esr",
+        "inflammatory"
+       ]
+      ],
+      "why": "Supportive, not diagnostic."
+     },
+     {
+      "p": "TOE if TTE inconclusive, prosthetic valve or high suspicion",
+      "k": [
+       [
+        "toe",
+        "transoesophageal",
+        "tee"
+       ]
+      ],
+      "why": "More sensitive, especially for posterior lesions."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "State the modified Duke criteria: thresholds and the two major criteria.",
+    "tip": "Exam thinking: only cultures and echo are major.",
+    "points": [
+     {
+      "p": "Definite: 2 major, or 1 major + 3 minor, or 5 minor",
+      "k": [
+       [
+        "2 major",
+        "two major"
+       ],
+       [
+        "5 minor",
+        "five minor"
+       ]
+      ],
+      "why": "Learn all three combinations."
+     },
+     {
+      "p": "Major: positive blood cultures with a typical organism",
+      "k": [
+       [
+        "culture"
+       ]
+      ],
+      "why": "Typical organisms, persistently positive."
+     },
+     {
+      "p": "Major: echo evidence of endocardial involvement (vegetation)",
+      "k": [
+       [
+        "vegetation",
+        "echo",
+        "abscess"
+       ]
+      ],
+      "why": "An abscess on echo also counts."
+     },
+     {
+      "p": "Minor: predisposition, fever >38°C, vascular and immunological phenomena, cultures not meeting major",
+      "k": [
+       [
+        "predispos",
+        "fever"
+       ],
+       [
+        "vascular",
+        "immun",
+        "janeway",
+        "osler"
+       ]
+      ],
+      "why": "IVDU history is minor, not major."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which extra tests does a particular finding trigger?",
+    "tip": "Exam thinking: one result, one follow-on test.",
+    "points": [
+     {
+      "p": "Strep. bovis grown: colonoscopy",
+      "k": [
+       [
+        "colonoscopy"
+       ]
+      ],
+      "why": "Look for colorectal carcinoma."
+     },
+     {
+      "p": "Daily ECGs to watch the PR interval",
+      "k": [
+       [
+        "ecg"
+       ],
+       [
+        "pr"
+       ]
+      ],
+      "why": "Rising PR suggests a perivalvular abscess."
+     },
+     {
+      "p": "TOE for prosthetic valves or posterior lesions",
+      "k": [
+       [
+        "toe",
+        "transoesophageal"
+       ]
+      ],
+      "why": "TTE misses many prosthetic valve vegetations."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the empirical and targeted antibiotics?",
+    "tip": "Exam thinking: native valve vs allergy vs known organism.",
+    "points": [
+     {
+      "p": "Empirical native valve: IV amoxicillin ± gentamicin",
+      "k": [
+       [
+        "amoxicillin"
+       ]
+      ],
+      "why": "Cultures first."
+     },
+     {
+      "p": "Penicillin allergy, high risk or MRSA: IV vancomycin + gentamicin",
+      "k": [
+       [
+        "vancomycin"
+       ],
+       [
+        "gentamicin"
+       ]
+      ],
+      "why": "MRSA confirmed: vancomycin + gentamicin too."
+     },
+     {
+      "p": "Strep. viridans: IV benzylpenicillin ± gentamicin",
+      "k": [
+       [
+        "benzylpenicillin",
+        "penicillin"
+       ]
+      ],
+      "why": "Follow up with a dental review."
+     },
+     {
+      "p": "Staph. aureus (MSSA): high-dose IV flucloxacillin",
+      "k": [
+       [
+        "flucloxacillin"
+       ]
+      ],
+      "why": "Prosthetic valve: add rifampicin and gentamicin."
+     },
+     {
+      "p": "Duration around 4–6 weeks",
+      "k": [
+       [
+        "4",
+        "6",
+        "four",
+        "six",
+        "weeks"
+       ]
+      ],
+      "why": "IV therapy for weeks, not days."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When is surgery indicated, and is prophylaxis given?",
+    "tip": "Exam thinking: unstable, unresponsive, abscess, emboli or nasty organism = surgeon.",
+    "points": [
+     {
+      "p": "Haemodynamic instability or acute heart failure",
+      "k": [
+       [
+        "unstable",
+        "instability",
+        "heart failure",
+        "shock"
+       ]
+      ],
+      "why": "e.g. acute severe MR with pulmonary oedema."
+     },
+     {
+      "p": "Persistent infection despite antibiotics",
+      "k": [
+       [
+        "persist",
+        "despite",
+        "uncontrolled"
+       ]
+      ],
+      "why": "Positive cultures after a week of therapy."
+     },
+     {
+      "p": "Abscess, severe valve dysfunction or recurrent emboli",
+      "k": [
+       [
+        "abscess",
+        "embol",
+        "dysfunction"
+       ]
+      ],
+      "why": "Aortic root abscess needs urgent cardiothoracic referral."
+     },
+     {
+      "p": "Organisms: Staph. aureus, Coxiella, fungi",
+      "k": [
+       [
+        "aureus",
+        "fung",
+        "coxiella"
+       ]
+      ],
+      "why": "Hard to sterilise with antibiotics alone."
+     },
+     {
+      "p": "No routine antibiotic prophylaxis in the UK; educate on symptoms",
+      "k": [
+       [
+        "no",
+        "not"
+       ],
+       [
+        "prophyla"
+       ]
+      ],
+      "why": "Even with a prosthetic valve."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does a vegetation form and cause harm?",
+    "tip": "Exam thinking: damage, clot, infection, embolism.",
+    "points": [
+     {
+      "p": "Endothelial damage exposes a site for a platelet-fibrin thrombus",
+      "k": [
+       [
+        "endothel",
+        "endocard",
+        "damage"
+       ],
+       [
+        "platelet",
+        "fibrin",
+        "thromb"
+       ]
+      ],
+      "why": "Turbulent flow from valve disease is the classic cause."
+     },
+     {
+      "p": "Transient bacteraemia infects the thrombus to form a vegetation",
+      "k": [
+       [
+        "bacteraemia",
+        "bacteremia",
+        "infect"
+       ]
+      ],
+      "why": "Dental work, injecting, GI/GU procedures."
+     },
+     {
+      "p": "Embolism and valve erosion (regurgitation) or annular abscess (heart block)",
+      "k": [
+       [
+        "embol",
+        "regurg",
+        "abscess",
+        "block"
+       ]
+      ],
+      "why": "Abscess near the AV node prolongs PR."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do injectors get tricuspid endocarditis?",
+    "tip": "Exam thinking: follow the venous blood.",
+    "points": [
+     {
+      "p": "Injected organisms travel in venous return to the right heart first",
+      "k": [
+       [
+        "venous",
+        "vein"
+       ],
+       [
+        "right"
+       ]
+      ],
+      "why": "The tricuspid is the first valve they meet."
+     },
+     {
+      "p": "Usually Staph. aureus from skin",
+      "k": [
+       [
+        "aureus"
+       ]
+      ],
+      "why": "Septic emboli go to the lungs (cavitating lesions)."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Infective endocarditis": "Infection of the inner lining of the heart, usually a valve, forming vegetations.",
+  "IE": "Infective endocarditis.",
+  "Endocardium": "The thin inner lining of the heart chambers and valves.",
+  "Vegetation": "An infected clump of platelets, fibrin and bacteria stuck to a heart valve.",
+  "Bacteraemia": "Bacteria in the bloodstream.",
+  "IVDU": "Intravenous drug use (or user).",
+  "Splinter haemorrhages": "Thin red-brown streaks under the nails from tiny emboli or capillary bleeds.",
+  "Janeway lesions": "Painless red macules on the palms or soles caused by septic emboli.",
+  "Osler's nodes": "Painful raised nodules on finger or toe pulps caused by immune complex deposition.",
+  "Roth spots": "Retinal haemorrhages with pale centres, seen on fundoscopy in endocarditis.",
+  "Clubbing": "Loss of the angle at the nail bed with bulbous fingertips; a sign of long-standing disease.",
+  "Septic emboli": "Infected fragments of vegetation that break off and lodge in distant organs.",
+  "Duke criteria": "Major and minor criteria combining cultures, echo and clinical signs to diagnose endocarditis.",
+  "Modified Duke criteria": "Updated Duke criteria: definite IE is 2 major, 1 major + 3 minor, or 5 minor.",
+  "TTE": "Transthoracic echocardiography: ultrasound of the heart through the chest wall; first-line imaging.",
+  "TOE": "Transoesophageal echocardiography: probe in the oesophagus giving clearer views of posterior and prosthetic valves.",
+  "Aortic root abscess": "Infection spreading from the aortic valve into surrounding tissue, which can damage the conduction system.",
+  "Perivalvular abscess": "An abscess in the tissue around an infected valve.",
+  "PR interval": "ECG time from atrial to ventricular depolarisation; normal 120 to 200 ms.",
+  "Heart block": "Delayed or failed conduction from atria to ventricles.",
+  "Staph. aureus": "Coagulase-positive gram-positive coccus; the commonest cause of endocarditis, especially in IVDU.",
+  "Staph. epidermidis": "Coagulase-negative staphylococcus causing early prosthetic valve and line infections.",
+  "Strep. viridans": "Alpha-haemolytic mouth streptococci causing subacute endocarditis after dental disease.",
+  "Strep. bovis": "Streptococcus (gallolyticus) linked with colorectal carcinoma; needs a colonoscopy.",
+  "Enterococcus": "Gut organism causing endocarditis after GI or GU procedures.",
+  "Coxiella burnetii": "Organism causing Q fever in farmers and abattoir workers; a culture-negative cause.",
+  "HACEK": "Group of fastidious gram-negative organisms that cause culture-negative endocarditis.",
+  "Culture-negative endocarditis": "Endocarditis with negative blood cultures, from prior antibiotics or hard-to-grow organisms.",
+  "Coagulase": "Enzyme that clots plasma; separates Staph. aureus (positive) from Staph. epidermidis (negative).",
+  "MSSA": "Meticillin-sensitive Staph. aureus; treated with flucloxacillin.",
+  "MRSA": "Meticillin-resistant Staph. aureus; treated with vancomycin.",
+  "Flucloxacillin": "Narrow-spectrum penicillin used for meticillin-sensitive Staph. aureus.",
+  "Benzylpenicillin": "IV penicillin used for Strep. viridans endocarditis.",
+  "Gentamicin": "IV aminoglycoside added for synergy; monitor levels and kidney function.",
+  "Vancomycin": "IV glycopeptide used for MRSA or penicillin allergy.",
+  "Rifampicin": "Antibiotic added for prosthetic valves because it penetrates biofilm.",
+  "Biofilm": "A slimy layer of bacteria stuck to a surface such as a prosthetic valve, resistant to antibiotics.",
+  "Tricuspid regurgitation": "Backflow from right ventricle to right atrium; pansystolic murmur at the left lower sternal edge.",
+  "Glomerulonephritis": "Inflammation of the kidney filters, here from immune complexes; causes haematuria.",
+  "Immune complex": "Antibody bound to antigen that deposits in tissues and triggers inflammation.",
+  "Q fever": "Infection with Coxiella burnetii from farm animals.",
+  "Pansystolic murmur": "A murmur lasting the whole of systole, as in mitral or tricuspid regurgitation."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old woman has a 6 week history of tiredness, night sweats and 4 kg weight loss. She had two teeth extracted 2 months ago. She has known mitral valve prolapse. Her temperature is 37.9°C. There are splinter haemorrhages in several nails and a pansystolic murmur at the apex that is louder than at her last review.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute rheumatic fever",
+    "Infective endocarditis",
+    "Lymphoma",
+    "Polymyalgia rheumatica",
+    "Pulmonary tuberculosis"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question with fever and a murmur: think endocarditis first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6 week history",
+      "two teeth extracted",
+      "known mitral valve prolapse",
+      "splinter haemorrhages",
+      "louder than at her last review"
+     ],
+     "x": "Subacute course, dental source, abnormal valve, a **changing murmur** and splinters: classic subacute IE (Strep. viridans)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Fever + new or changing murmur = **infective endocarditis** until proven otherwise."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Rheumatic fever follows sore throat in children and young adults; no carditis story here."
+      ],
+      [
+       2,
+       "Lymphoma gives B symptoms but not a changing murmur or splinters."
+      ],
+      [
+       3,
+       "PMR causes shoulder and hip girdle stiffness, not murmurs."
+      ],
+      [
+       4,
+       "TB gives sweats and weight loss but not a changing murmur or splinters."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Infective endocarditis.** Teeth + abnormal valve + subacute = Strep. viridans IE."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 41 year old man who injects drugs has a 1 week history of fever and malaise. He has painless macules on his soles and splinter haemorrhages. His temperature is 38.9°C. Blood cultures are awaited. An echocardiogram is performed.",
+   "q": "Which finding is a major criterion in the modified Duke criteria?",
+   "o": [
+    "Fever of 38.9°C",
+    "History of intravenous drug use",
+    "Janeway lesions on the soles",
+    "Microscopic haematuria",
+    "Oscillating mass on the tricuspid valve on echocardiography"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks which finding is MAJOR, not which is present. Sort each option into major or minor."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "injects drugs",
+      "painless macules on his soles",
+      "38.9°C",
+      "An echocardiogram is performed"
+     ],
+     "x": "Several findings are present, but only two kinds of evidence are **major**: typical organisms in cultures and echo evidence."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **vegetation (oscillating mass) on echo** is a major criterion."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Fever >38°C is a minor criterion."
+      ],
+      [
+       1,
+       "IVDU is a predisposition: minor."
+      ],
+      [
+       2,
+       "Janeway lesions are vascular phenomena: minor."
+      ],
+      [
+       3,
+       "Glomerulonephritis is an immunological phenomenon: minor."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Major = cultures + echo. Everything clinical is minor."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 59 year old man is treated for infective endocarditis of a native mitral valve. He had a dental abscess 2 months ago. Three sets of blood cultures grow alpha-haemolytic streptococci identified as Streptococcus viridans. He has no drug allergies. His temperature is 37.8°C, pulse rate 92 bpm and BP 128/74 mmHg.",
+   "q": "Which is the most appropriate antibiotic treatment?",
+   "o": [
+    "Intravenous benzylpenicillin",
+    "Intravenous flucloxacillin",
+    "Intravenous vancomycin and rifampicin",
+    "Oral amoxicillin",
+    "Oral clarithromycin"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Targeted treatment: the organism is already known."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "native mitral valve",
+      "dental abscess",
+      "Streptococcus viridans",
+      "no drug allergies"
+     ],
+     "x": "Known Strep. viridans, native valve, no allergy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV benzylpenicillin** (± gentamicin) for 4–6 weeks, plus a dental review."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Flucloxacillin targets Staph. aureus (MSSA)."
+      ],
+      [
+       2,
+       "Vancomycin and rifampicin are for penicillin allergy (or prosthetic valves)."
+      ],
+      [
+       3,
+       "Endocarditis needs prolonged IV therapy, not oral."
+      ],
+      [
+       4,
+       "Oral macrolides do not treat endocarditis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. IV benzylpenicillin.** Then arrange **dental review**."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 28 year old woman who injects heroin has fever, a pansystolic murmur at the left lower sternal edge that is louder on inspiration, and multiple cavitating lesions on chest X-ray. Blood cultures grow Staphylococcus aureus.",
+   "q": "Which is the most likely reason the tricuspid valve is affected?",
+   "o": [
+    "Higher pressures across right-sided valves",
+    "Immune complex deposition on right-sided valves",
+    "Injected organisms reach the right heart first via venous return",
+    "Pulmonary hypertension from drug use",
+    "Rheumatic damage to the tricuspid valve"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why this valve in this patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "injects heroin",
+      "louder on inspiration",
+      "cavitating lesions",
+      "Staphylococcus aureus"
+     ],
+     "x": "Right-sided murmur (Carvallo's sign), septic lung emboli, skin organism in an injector."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Organisms injected into veins travel in **venous return to the right heart**, meeting the tricuspid valve first."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Right-sided pressures are lower, not higher."
+      ],
+      [
+       1,
+       "Immune complexes cause Osler's nodes and GN, not valve seeding."
+      ],
+      [
+       3,
+       "Pulmonary hypertension causes functional TR, not infection."
+      ],
+      [
+       4,
+       "Rheumatic disease mainly affects the mitral valve."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Follow the venous blood: injecting = right heart = tricuspid."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old woman who injects drugs has a 2 week history of fever, rigors and pleuritic chest pain. There is a pansystolic murmur at the left lower sternal edge that is louder on inspiration. Her temperature is 39.4°C, pulse rate 122 bpm, BP 102/64 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 92% breathing air. Chest X-ray (see item resources).",
+   "labs": [
+    [
+     "White cell count",
+     "19.6 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "CRP",
+     "212 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "cavity",
+      "side": "both",
+      "zone": "lower"
+     },
+     {
+      "type": "cavity",
+      "side": "left",
+      "zone": "middle"
+     }
+    ],
+    "caption": "Multiple bilateral cavitating lesions."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Aspiration pneumonia",
+    "Lung abscess",
+    "Pulmonary tuberculosis",
+    "Right-sided infective endocarditis",
+    "Sarcoidosis"
+   ],
+   "a": 3,
+   "e": "Fever, injecting, a right-sided murmur louder on inspiration and multiple cavitating lesions mean tricuspid endocarditis with septic pulmonary emboli. A single lung abscess would not explain the murmur.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: a febrile injector with a murmur."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "injects drugs",
+      "louder on inspiration",
+      "pleuritic chest pain",
+      "39.4°C"
+     ],
+     "x": "IVDU + right-sided murmur + **multiple** cavitating lesions = septic emboli."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Right-sided (tricuspid) infective endocarditis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspiration gives one consolidation, often right lower lobe, and no new murmur."
+      ],
+      [
+       1,
+       "A lung abscess is usually single and does not cause a murmur."
+      ],
+      [
+       2,
+       "TB is subacute, upper lobe, and gives no murmur."
+      ],
+      [
+       4,
+       "Sarcoidosis gives hilar nodes, not septic illness."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Fever + IVDU + new murmur: right-sided IE as an emergency."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old man has a 2 month history of malaise, low-grade fever and weight loss. Six weeks ago he had a tooth extracted. He has known bicuspid aortic valve disease. His temperature is 37.8°C. There are splinter haemorrhages and an early diastolic murmur. Three sets of blood cultures grow alpha-haemolytic streptococci.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Coxiella burnetii",
+    "Enterococcus faecalis",
+    "Staphylococcus aureus",
+    "Staphylococcus epidermidis",
+    "Streptococcus viridans"
+   ],
+   "a": 4,
+   "e": "Subacute endocarditis on an abnormal valve after dental work, with alpha-haemolytic streptococci, is Streptococcus viridans. Staph. aureus is acute and severe.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: read the story."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "2 month history",
+      "tooth extracted",
+      "bicuspid aortic valve",
+      "alpha-haemolytic streptococci"
+     ],
+     "x": "Subacute, dental source, abnormal valve, alpha-haemolytic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Strep. viridans.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coxiella is culture-negative in farmers."
+      ],
+      [
+       1,
+       "Enterococcus follows GI/GU procedures."
+      ],
+      [
+       2,
+       "Staph. aureus is acute, severe, often IVDU; it is a coccus in clusters."
+      ],
+      [
+       3,
+       "Staph. epidermidis is early prosthetic valve or line infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Teeth + subacute = Strep. viridans."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old man is admitted with fever and a new murmur. He has painless, flat, red macules on both palms and soles that do not blanch. His temperature is 38.6°C, pulse rate 108 bpm and BP 118/72 mmHg. Blood cultures grow Staphylococcus aureus.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely name for these skin lesions?",
+   "o": [
+    "Erythema nodosum",
+    "Gottron's papules",
+    "Heberden's nodes",
+    "Janeway lesions",
+    "Osler's nodes"
+   ],
+   "a": 3,
+   "e": "Painless macules on palms and soles in endocarditis are Janeway lesions (septic emboli). Osler's nodes are painful nodules on the finger pulps.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Finding question: name the sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "painless, flat, red macules",
+      "palms and soles",
+      "new murmur"
+     ],
+     "x": "Painless + flat + palms/soles in endocarditis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Janeway lesions.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Erythema nodosum is tender nodules on the shins."
+      ],
+      [
+       1,
+       "Gottron's papules are over the knuckles in dermatomyositis."
+      ],
+      [
+       2,
+       "Heberden's nodes are bony DIP swellings of osteoarthritis."
+      ],
+      [
+       4,
+       "Osler's nodes are **painful** finger-pulp nodules."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Janeway painless, Osler's painful."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 57 year old man is on day 6 of IV antibiotics for aortic valve infective endocarditis. He remains febrile. His temperature is 38.4°C, pulse rate 64 bpm and BP 124/70 mmHg. His PR interval was 180 ms on admission. ECG (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "ECG on day 6",
+    "layout": "strip",
+    "rhythm": "first_degree",
+    "rate": 64,
+    "caption": "Sinus rhythm with a PR interval of 280 ms."
+   },
+   "q": "Which is the most likely cause of the ECG change?",
+   "o": [
+    "Aortic root abscess",
+    "Digoxin toxicity",
+    "Hyperkalaemia",
+    "Inferior myocardial infarction",
+    "Lyme carditis"
+   ],
+   "a": 0,
+   "e": "A lengthening PR interval in aortic valve endocarditis with ongoing fever suggests a perivalvular aortic root abscess near the AV node. It needs urgent cardiothoracic referral.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of an ECG change in someone with endocarditis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "aortic valve infective endocarditis",
+      "remains febrile",
+      "PR interval was 180 ms on admission"
+     ],
+     "x": "Aortic IE, persistent fever, new first-degree block."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Aortic root (perivalvular) abscess.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No digoxin is mentioned."
+      ],
+      [
+       2,
+       "Hyperkalaemia gives peaked T waves first."
+      ],
+      [
+       3,
+       "No chest pain or ST elevation."
+      ],
+      [
+       4,
+       "Lyme needs tick exposure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rising PR in IE = abscess until proven otherwise."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man has a 6 week history of fever, fatigue and intermittent rectal bleeding. He has a new pansystolic murmur at the apex. His temperature is 38.1°C, pulse rate 96 bpm and BP 136/78 mmHg. Transthoracic echo shows a mitral valve vegetation.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "96 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "MCV",
+     "71 fL",
+     "80–100",
+     "L"
+    ],
+    [
+     "Ferritin",
+     "8 µg/L",
+     "30–400",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Enterococcus faecalis",
+    "HACEK organism",
+    "Staphylococcus aureus",
+    "Staphylococcus epidermidis",
+    "Streptococcus bovis"
+   ],
+   "a": 4,
+   "e": "Endocarditis with rectal bleeding and iron-deficiency anaemia suggests Streptococcus bovis (gallolyticus), associated with colorectal carcinoma. A colonoscopy is needed.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: what links the colon to the heart?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rectal bleeding",
+      "74 year old",
+      "mitral valve vegetation"
+     ],
+     "x": "Older man, PR bleeding, microcytic anaemia, endocarditis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Strep. bovis/gallolyticus**, then colonoscopy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Enterococcus follows GI/GU procedures, not occult colon cancer."
+      ],
+      [
+       1,
+       "HACEK causes culture-negative IE."
+      ],
+      [
+       2,
+       "Staph. aureus is acute, often IVDU."
+      ],
+      [
+       3,
+       "Staph. epidermidis is early prosthetic valve infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Strep. bovis = look for colorectal cancer."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old sheep farmer has a 3 month history of fever, night sweats and weight loss. He has a new early diastolic murmur. Three sets of blood cultures taken before antibiotics are negative after 5 days. Transoesophageal echo shows a vegetation on the aortic valve.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Coxiella burnetii",
+    "HACEK organism",
+    "Staphylococcus epidermidis",
+    "Streptococcus bovis",
+    "Streptococcus viridans"
+   ],
+   "a": 0,
+   "e": "Culture-negative endocarditis in a farmer is Coxiella burnetii (Q fever). HACEK also causes culture-negative IE, but the farming exposure points to Coxiella.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question with negative cultures."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sheep farmer",
+      "negative after 5 days",
+      "vegetation on the aortic valve"
+     ],
+     "x": "Culture-negative IE + farm animals."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Coxiella burnetii** (Q fever)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "HACEK is culture-negative, but there is no clue to it; the farm exposure decides."
+      ],
+      [
+       2,
+       "Staph. epidermidis needs a prosthetic valve or line."
+      ],
+      [
+       3,
+       "Strep. bovis grows in culture and links to colon cancer."
+      ],
+      [
+       4,
+       "Strep. viridans grows in culture; dental story."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Farmer + culture negative = Coxiella."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old woman with known mitral regurgitation has a 3 week history of fever and malaise. She has splinter haemorrhages. Her temperature is 38.3°C, pulse rate 98 bpm, BP 132/76 mmHg and oxygen saturation 97% breathing air. She is alert and well perfused. No antibiotics have been given.",
+   "labs": [
+    [
+     "CRP",
+     "94 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "White cell count",
+     "13.1 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "CT chest, abdomen and pelvis",
+    "Serum ESR",
+    "Three sets of blood cultures from different sites",
+    "Transoesophageal echocardiography",
+    "Transthoracic echocardiography"
+   ],
+   "a": 2,
+   "e": "In suspected endocarditis, three sets of blood cultures from different sites are taken first, before antibiotics. TTE follows as first-line imaging.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Initial' investigation in suspected IE in a stable patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "known mitral regurgitation",
+      "splinter haemorrhages",
+      "38.3°C",
+      "No antibiotics have been given"
+     ],
+     "x": "Suspected IE, stable, antibiotic-naive: cultures are the priority."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Three sets of blood cultures** from different sites."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "CT is for emboli or a source, not first."
+      ],
+      [
+       1,
+       "ESR is non-specific."
+      ],
+      [
+       3,
+       "TOE is second-line after TTE."
+      ],
+      [
+       4,
+       "TTE is first-line imaging but comes after cultures."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Cultures before antibiotics, then echo."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 71 year old man had a prosthetic aortic valve inserted 3 years ago. He has had fever for 2 weeks. Two of three blood culture sets grow Enterococcus faecalis. Transthoracic echocardiography shows no vegetation, but views of the prosthesis are poor.",
+   "labs": [
+    [
+     "CRP",
+     "121 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "ESR",
+     "64 mm/h",
+     "<20",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Ambulatory 24-hour ECG",
+    "Cardiac MRI",
+    "CT coronary angiography",
+    "Repeat transthoracic echocardiography in 4 weeks",
+    "Transoesophageal echocardiography"
+   ],
+   "a": 4,
+   "e": "TOE is more sensitive than TTE and is used for prosthetic valves or high suspicion despite a normal TTE.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation after a non-diagnostic TTE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "prosthetic aortic valve",
+      "Enterococcus faecalis",
+      "no vegetation",
+      "views of the prosthesis are poor"
+     ],
+     "x": "Prosthetic valve, positive cultures, unhelpful TTE: high suspicion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**TOE.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A 24-hour ECG looks for arrhythmia, not vegetations."
+      ],
+      [
+       1,
+       "Cardiac MRI is not the next valve test in IE."
+      ],
+      [
+       2,
+       "CT coronary angiography assesses coronary arteries."
+      ],
+      [
+       3,
+       "Waiting 4 weeks delays diagnosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Prosthetic valve or high suspicion + normal TTE = TOE."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 48 year old woman has suspected native valve infective endocarditis. She had anaphylaxis to penicillin as a child. Three sets of blood cultures have been taken. Her temperature is 38.7°C, pulse rate 104 bpm and BP 116/70 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial antibiotic treatment?",
+   "o": [
+    "Intravenous amoxicillin and gentamicin",
+    "Intravenous benzylpenicillin",
+    "Intravenous flucloxacillin",
+    "Intravenous vancomycin and gentamicin",
+    "Oral doxycycline"
+   ],
+   "a": 3,
+   "e": "With penicillin allergy, empirical treatment is IV vancomycin plus gentamicin. Amoxicillin, benzylpenicillin and flucloxacillin are all penicillins.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Empirical treatment: check allergies first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "native valve",
+      "anaphylaxis to penicillin",
+      "Three sets of blood cultures have been taken"
+     ],
+     "x": "Cultures done; true penicillin anaphylaxis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV vancomycin + gentamicin.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amoxicillin is a penicillin."
+      ],
+      [
+       1,
+       "Benzylpenicillin is a penicillin."
+      ],
+      [
+       2,
+       "Flucloxacillin is a penicillin."
+      ],
+      [
+       4,
+       "Oral doxycycline does not treat endocarditis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Allergic or MRSA risk = vancomycin + gentamicin."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 36 year old man who injects drugs has tricuspid valve infective endocarditis. Three sets of blood cultures grow Staphylococcus aureus sensitive to meticillin. He has no drug allergies and is haemodynamically stable. He started empirical IV amoxicillin and gentamicin yesterday.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate antibiotic treatment now?",
+   "o": [
+    "High-dose intravenous flucloxacillin",
+    "Intravenous benzylpenicillin",
+    "Intravenous vancomycin and gentamicin",
+    "Oral amoxicillin",
+    "Oral flucloxacillin"
+   ],
+   "a": 0,
+   "e": "Confirmed MSSA endocarditis is treated with high-dose IV flucloxacillin for 4–6 weeks. Vancomycin is for MRSA or allergy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Targeted therapy now the organism is known."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sensitive to meticillin",
+      "no drug allergies",
+      "haemodynamically stable"
+     ],
+     "x": "MSSA, no allergy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**High-dose IV flucloxacillin.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Benzylpenicillin is for Strep. viridans."
+      ],
+      [
+       2,
+       "Vancomycin + gentamicin is for MRSA or allergy."
+      ],
+      [
+       3,
+       "Oral amoxicillin is not adequate for IE."
+      ],
+      [
+       4,
+       "Oral therapy is not used initially; it must be IV."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** MSSA = IV flucloxacillin, 4–6 weeks."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man is on day 4 of IV antibiotics for mitral valve infective endocarditis. He becomes acutely breathless. His pulse rate is 124 bpm, BP 88/54 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 86% breathing air. There are bilateral crackles. Echo shows a ruptured mitral leaflet with severe regurgitation.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Add oral rifampicin",
+    "Continue antibiotics and repeat echo in 2 weeks",
+    "Oral antibiotic step-down",
+    "Permanent pacemaker insertion",
+    "Urgent cardiothoracic surgical referral"
+   ],
+   "a": 4,
+   "e": "Acute heart failure with severe valve destruction and haemodynamic instability is an indication for urgent surgery. Antibiotics alone will not fix a ruptured leaflet.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step: is this a surgical indication?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acutely breathless",
+      "BP 88/54 mmHg",
+      "bilateral crackles",
+      "ruptured mitral leaflet with severe regurgitation"
+     ],
+     "x": "Acute pulmonary oedema and shock from valve destruction."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent cardiothoracic surgery** (valve repair/replacement)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Rifampicin is for prosthetic valve biofilm; it will not fix the valve."
+      ],
+      [
+       1,
+       "Waiting risks death from cardiogenic shock."
+      ],
+      [
+       2,
+       "Stepping down is wrong in an unstable patient."
+      ],
+      [
+       3,
+       "No heart block is described."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Unstable + valve destruction = surgeon now."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 39 year old man presents with fever, a new pansystolic murmur and painful nodules on his finger pulps. Urinalysis shows blood and protein with red cell casts. Antibiotics have not yet been started.",
+   "labs": [
+    [
+     "Complement C3",
+     "0.52 g/L",
+     "0.75–1.65",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "142 µmol/L",
+     "60–110",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of the renal findings?",
+   "o": [
+    "Anti-glomerular basement membrane antibodies",
+    "Direct bacterial invasion of the glomeruli",
+    "Drug-induced interstitial nephritis",
+    "Immune complex deposition",
+    "Renal vein thrombosis"
+   ],
+   "a": 3,
+   "e": "Glomerulonephritis in endocarditis, like Osler's nodes, is caused by immune complex deposition. Low complement supports this.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: explain the kidney finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "painful nodules on his finger pulps",
+      "red cell casts",
+      "Antibiotics have not yet been started"
+     ],
+     "x": "Osler's nodes and GN share one mechanism; no drugs yet."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Immune complex deposition.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Anti-GBM is Goodpasture's disease."
+      ],
+      [
+       1,
+       "GN in IE is immune-mediated, not direct invasion."
+      ],
+      [
+       2,
+       "No drugs have been given yet."
+      ],
+      [
+       4,
+       "Renal vein thrombosis is linked to nephrotic syndrome."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Osler's + GN = immune complexes; Janeway + splinters = emboli."
+    }
+   ]
+  }
+ ]
+}

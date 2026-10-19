@@ -1,0 +1,661 @@
+{
+  "id": "gastrointestinal-perforation",
+  "patient": {
+    "name": "Kwame Asante",
+    "age": 64,
+    "sex": "M",
+    "setting": "Emergency Department",
+    "complaint": "Sudden severe upper abdominal pain that has spread across his whole abdomen",
+    "background": [
+      "Osteoarthritis of both knees; taking ibuprofen 400 mg three times a day for months",
+      "Months of epigastric discomfort eased by antacids",
+      "Smokes 20 a day; drinks 20 units a week",
+      "Retired postal worker from Tottenham"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with sudden epigastric pain becoming generalised, a rigid abdomen and NSAID use, or a 'most likely cause' twist such as typhoid or metoclopramide.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Kwame, 64, on **ibuprofen** for months for his knees.",
+            "At 6 am: sudden, severe **epigastric** pain, 'like being stabbed'.",
+            "Within two hours the pain spread over his whole abdomen.",
+            "He is lying completely still; any movement is agony."
+          ],
+          "vitals": { "T": "37.8°C", "HR": "114 bpm", "BP": "128/78 mmHg", "RR": "24 /min", "SpO2": "96% on air" }
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "abdomen",
+            "title": "Where Kwame's pain started",
+            "regions": ["epigastric"],
+            "caption": "Acute epigastric pain that then spreads across the abdomen as gastric contents leak into the peritoneum."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Kwame's stomach or duodenal wall has torn right through: a **full-thickness** breach, and peptic ulcer is the commonest cause."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Abdomen **rigid like a board**, with guarding everywhere.",
+            "Rebound tenderness; bowel sounds absent.",
+            "Pain worse when he breathes or the trolley moves.",
+            "BP still normal for now."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Kwame has generalised **peritonitis**: board-like rigidity, guarding, tachycardia and fever. His normal BP is no comfort, as **hypotension is late**."
+        },
+        {
+          "type": "ask",
+          "q": "Which detail in Kwame's history most points to a perforated peptic ulcer?",
+          "o": ["Age over 60", "Alcohol 20 units a week", "Long-term ibuprofen use", "Osteoarthritis"],
+          "a": 2,
+          "r": "Chronic **NSAID** use is the classic cause, along with H. pylori."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Kwame fits the **perforated peptic ulcer** picture exactly. The notes add **typhoid** as a cause of ileal perforation in a returning traveller."
+        },
+        {
+          "type": "compare",
+          "title": "Sudden severe upper abdominal pain",
+          "head": ["Feature", "Perforated ulcer", "Acute pancreatitis", "Ruptured AAA"],
+          "rows": [
+            ["Onset", "**Sudden**, epigastric then generalised", "Epigastric, radiates to back", "Sudden, back or loin"],
+            ["Abdomen", "**Board-like rigid**", "Tender, less rigid", "Pulsatile mass"],
+            ["Key test", "Erect CXR: free air", "Raised amylase or lipase", "CT angiogram or bedside USS"],
+            ["Clue", "NSAIDs, H. pylori", "Gallstones, alcohol", "Hypotension, vascular risk"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Kwame is not obstructed, but remember: **metoclopramide** in mechanical bowel obstruction raises pressure and can cause perforation, so avoid it."
+        },
+        {
+          "type": "trap",
+          "text": "A mildly raised amylase does not make this pancreatitis: perforation can raise it too. **Rigidity plus sudden onset** means image for free air."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (erect chest X-ray for free air under the diaphragm) or the most specific test (CT abdomen and pelvis with IV contrast).",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Kwame gets an **ABCDE** assessment, urgent surgical review, bloods and an **erect chest X-ray**, the first test for a perforated ulcer."
+        },
+        {
+          "type": "ask",
+          "q": "What is the first imaging test for Kwame?",
+          "o": ["Abdominal ultrasound", "Erect chest X-ray", "Supine abdominal X-ray", "Upper GI endoscopy"],
+          "a": 1,
+          "r": "**Erect CXR** shows free air under the diaphragm. Endoscopy is dangerous with a perforation, as insufflated air worsens it."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "cxr",
+            "title": "Kwame's erect chest X-ray",
+            "findings": [{ "type": "free_air" }],
+            "caption": "Crescents of gas under both hemidiaphragms: pneumoperitoneum."
+          },
+          "text": "Sitting him upright for at least 10 minutes lets the free gas rise under the diaphragm."
+        },
+        {
+          "type": "labs",
+          "title": "Kwame's bloods",
+          "rows": [
+            ["White cell count", "17.6 ×10⁹/L", "4.0–11.0", "H"],
+            ["CRP", "142 mg/L", "<5", "H"],
+            ["Lactate", "3.4 mmol/L", "<2.0", "H"],
+            ["Haemoglobin", "128 g/L", "130–180", "L"],
+            ["Amylase", "180 U/L", "<100", "H"],
+            ["Creatinine", "118 µmol/L", "59–104", "H"]
+          ],
+          "text": "Raised inflammatory markers and lactate. The modest amylase rise is from leaked duodenal contents."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Kwame's lactate",
+            "min": 0,
+            "max": 8,
+            "unit": "mmol/L",
+            "bands": [[0, 2, "normal", "ok"], [2, 4, "raised", "warn"], [4, 8, "severe: shock likely", "bad"]],
+            "value": 3.4,
+            "label": "Kwame 3.4",
+            "caption": "Raised lactate signals tissue hypoperfusion from sepsis; above 4 suggests septic shock."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "The surgeons request a **CT abdomen and pelvis with IV contrast**: the most specific test, showing **extraluminal gas and fluid** around Kwame's duodenum."
+        },
+        {
+          "type": "pearl",
+          "text": "A normal erect CXR does **not** exclude perforation. If suspicion stays high, go to **CT**."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?' (NBM, IV fluids, IV antibiotics, urgent surgical review) or definitive surgery: omental patch for a perforated ulcer, Hartmann's for sigmoid perforation with sepsis.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Kwame is made **NBM**, given oxygen, IV fluids, broad-spectrum IV antibiotics and analgesia; an **NG tube** goes down as he is nauseated."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Kwame over the first 4 hours",
+            "x": ["Arrival", "1 h", "2 h", "3 h", "4 h"],
+            "unit": "",
+            "series": [{ "name": "Heart rate (bpm)", "values": [114, 120, 126, 128, 132] }, { "name": "Systolic BP (mmHg)", "values": [128, 118, 104, 96, 88] }],
+            "caption": "Heart rate climbs and BP falls as sepsis sets in: hypotension is a late sign and means theatre now."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Kwame now has **hypotension, sepsis and peritonitis** together: a surgical emergency needing immediate intervention."
+        },
+        {
+          "type": "ask",
+          "q": "Which is the definitive operation for Kwame's perforated duodenal ulcer?",
+          "o": ["Hartmann's procedure", "Omental patch repair", "Right hemicolectomy", "Total gastrectomy"],
+          "a": 1,
+          "r": "**Omental patch repair** plugs the hole with omentum. Hartmann's is for sigmoid perforation."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Kwame has a laparotomy, **washout** and **omental patch repair**. A sigmoid perforation with sepsis would instead need a **Hartmann's procedure**."
+        },
+        {
+          "type": "flow",
+          "title": "Kwame's pathway",
+          "nodes": ["ABCDE, NBM, oxygen, IV fluids", "Broad-spectrum IV antibiotics, analgesia, NG tube", "Erect CXR then CT: free gas confirmed", "Urgent surgery: washout and omental patch", "After: stop NSAIDs, PPI, test and treat H. pylori"],
+          "caption": "Resuscitate and operate in parallel; do not delay theatre for perfect imaging when he is shocked."
+        },
+        {
+          "type": "trap",
+          "text": "Do not send a suspected perforation for **upper GI endoscopy**. The air pumped in can enlarge the hole; endoscopy comes weeks later to check healing."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: how NSAIDs or H. pylori cause ulcer perforation, why free air appears under the diaphragm, or why Hartmann's avoids an anastomosis.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Acid, bile and bacteria from Kwame's duodenum poured into his peritoneal cavity, causing a **chemical then bacterial peritonitis**."
+        },
+        {
+          "type": "ask",
+          "q": "How did ibuprofen cause Kwame's ulcer?",
+          "o": ["Increases gastrin secretion", "Inhibits COX-1, reducing protective prostaglandins", "Promotes H. pylori growth", "Stimulates parietal cell proton pumps"],
+          "a": 1,
+          "r": "Less **prostaglandin** means less mucus, less bicarbonate and poorer mucosal blood flow, so acid digests the wall."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Kwame's **NSAID** stripped his protective mucosal barrier; acid and pepsin then digested through the full thickness of the wall."
+        },
+        {
+          "type": "flow",
+          "title": "From NSAID to peritonitis",
+          "nodes": ["NSAID or H. pylori damages the mucosal barrier", "Acid-peptic digestion deepens the ulcer", "Full-thickness breach of the wall", "Gas and contents leak into the peritoneum", "Chemical then bacterial peritonitis, sepsis"]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "The gas under Kwame's diaphragm on his erect CXR escaped from the duodenal lumen and rose to the highest point of his peritoneal cavity."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Joining bowel in a **contaminated, septic** abdomen risks a leak, which is why Hartmann's brings out an end colostomy instead. Untreated, perforation leads to sepsis, abscess and death."
+        },
+        {
+          "type": "pearl",
+          "text": "In typhoid, *Salmonella* Typhi invades the **Peyer's patches** of the distal ileum; their necrosis is what perforates, usually in the second or third week."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "What is the classic abdominal sign of a perforated viscus?", "o": ["Board-like rigidity", "Cullen's sign", "Murphy's sign", "Pulsatile mass"], "a": 0, "r": "Generalised peritonitis gives a **board-like** rigid abdomen." },
+    { "d": "diagnosis", "q": "Which drug history classically precedes a perforated peptic ulcer?", "o": ["Chronic NSAID use", "Long-term PPI use", "Metformin", "Statins"], "a": 0, "r": "**NSAIDs** (and H. pylori) are the main risk factors." },
+    { "d": "diagnosis", "q": "Typhoid causes perforation of which part of the bowel?", "o": ["Distal ileum", "Duodenum", "Sigmoid colon", "Stomach"], "a": 0, "r": "Necrosis of **Peyer's patches** in the distal ileum." },
+    { "d": "diagnosis", "q": "Which drug should be avoided in mechanical bowel obstruction because it can precipitate perforation?", "o": ["Cyclizine", "Metoclopramide", "Ondansetron", "Paracetamol"], "a": 1, "r": "**Metoclopramide** is a prokinetic and raises pressure behind the obstruction." },
+    { "d": "investigation", "q": "What is the initial investigation for suspected perforation?", "o": ["Abdominal ultrasound", "Erect chest X-ray", "MRI abdomen", "Upper GI endoscopy"], "a": 1, "r": "**Erect CXR** looks for free air under the diaphragm." },
+    { "d": "investigation", "q": "What is the most specific investigation for GI perforation?", "o": ["CT abdomen and pelvis with IV contrast", "Erect chest X-ray", "Serum amylase", "Supine abdominal X-ray"], "a": 0, "r": "**CT** shows extraluminal gas or fluid and the likely site." },
+    { "d": "management", "q": "Which is the surgical repair for a perforated peptic ulcer?", "o": ["Hartmann's procedure", "Omental patch repair", "Right hemicolectomy", "Whipple's procedure"], "a": 1, "r": "**Omental patch** repair, often laparoscopic." },
+    { "d": "management", "q": "Which operation is used for sigmoid perforation with sepsis?", "o": ["Anterior resection with anastomosis", "Hartmann's procedure", "Loop ileostomy only", "Omental patch"], "a": 1, "r": "**Hartmann's**: sigmoid resection, end colostomy, rectal stump closed." },
+    { "d": "management", "q": "Which triad makes GI perforation a surgical emergency?", "o": ["Fever, jaundice, RUQ pain", "Hypotension, sepsis, peritonitis", "Pain, vomiting, distension", "Tachycardia, anaemia, melaena"], "a": 1, "r": "**Hypotension + sepsis + peritonitis** = immediate intervention." },
+    { "d": "science", "q": "Why does free air appear under the diaphragm?", "o": ["Gas escapes from the bowel lumen into the peritoneal cavity", "Gas-forming organisms in the lung", "Pneumothorax tracks down", "Swallowed air in the stomach"], "a": 0, "r": "Escaped gas rises to the highest point: under the diaphragm on an erect film." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 70 year old woman with rheumatoid arthritis has sudden, severe epigastric pain that began 3 hours ago and has spread across her abdomen. She takes naproxen daily. She is lying still and her abdomen is rigid with absent bowel sounds. Her temperature is 37.9°C, pulse rate 118 bpm and BP 112/70 mmHg.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute cholecystitis", "Acute pancreatitis", "Biliary colic", "Gastro-oesophageal reflux disease", "Perforated peptic ulcer"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of sudden severe upper abdominal pain." },
+        { "t": "Pick out the clues", "clues": ["sudden, severe epigastric pain", "spread across her abdomen", "naproxen daily", "rigid with absent bowel sounds"], "x": "Sudden onset, NSAID use and generalised peritonitis." },
+        { "t": "Make your own answer before looking", "x": "**Perforated peptic ulcer**." },
+        { "t": "Rule out the others", "elim": [[0, "Cholecystitis is RUQ, gradual, with Murphy's sign."], [1, "Pancreatitis radiates to the back and is rarely board-like."], [2, "Biliary colic is colicky RUQ pain with a soft abdomen."], [3, "Reflux does not cause peritonitis."]] },
+        { "t": "Commit", "x": "**E. Perforated peptic ulcer.** Rule: sudden epigastric pain + NSAID + rigid abdomen." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 55 year old man has sudden, severe epigastric pain that has become generalised over 2 hours. He takes ibuprofen for back pain. His abdomen is rigid. His temperature is 37.6°C, pulse rate 110 bpm and BP 124/76 mmHg. He has been assessed with ABCDE and the surgical team has been called.",
+      "q": "Which is the most appropriate initial imaging investigation?",
+      "o": ["Abdominal ultrasound", "CT angiography", "Erect chest X-ray", "Serum lipase", "Upper GI endoscopy"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial imaging for a suspected perforation." },
+        { "t": "Pick out the clues", "clues": ["sudden, severe epigastric pain", "ibuprofen", "abdomen is rigid"], "x": "Suspected perforated peptic ulcer." },
+        { "t": "Make your own answer before looking", "x": "**Erect chest X-ray** for free air under the diaphragm." },
+        { "t": "Rule out the others", "elim": [[0, "USS is poor for free gas and used for biliary disease."], [1, "CT angiography is for mesenteric ischaemia or AAA."], [3, "Lipase is a blood test, not imaging, for pancreatitis."], [4, "Endoscopy can worsen a perforation."]] },
+        { "t": "Commit", "x": "**C. Erect chest X-ray.** CT follows as the most specific test." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 24 year old man returned from Pakistan 2 weeks ago. He has had fever, headache, constipation and myalgia for 12 days. Today he developed sudden severe abdominal pain and his abdomen is rigid. His temperature is 39.4°C, pulse rate 122 bpm and BP 98/60 mmHg. CT shows free gas near the terminal ileum.",
+      "labs": [["Blood culture", "Gram-negative bacilli", "", ""]],
+      "q": "Which is the most appropriate management?",
+      "o": ["IV ceftriaxone alone", "Oral ciprofloxacin and discharge", "Stool culture and await results", "Supportive care only", "Urgent laparotomy with IV antibiotics"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "Management of a perforation in a returning traveller." },
+        { "t": "Pick out the clues", "clues": ["returned from Pakistan", "fever, headache, constipation and myalgia", "sudden severe abdominal pain", "free gas near the terminal ileum"], "x": "Typhoid with ileal perforation from Peyer's patch necrosis." },
+        { "t": "Make your own answer before looking", "x": "**Urgent surgery plus antibiotics**." },
+        { "t": "Rule out the others", "elim": [[0, "Antibiotics alone will not close a perforation."], [1, "He is septic and perforated."], [2, "Delay is dangerous; treat now."], [3, "Perforation needs surgery."]] },
+        { "t": "Commit", "x": "**E. Urgent laparotomy with IV antibiotics.** Typhoid perforation needs both." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 78 year old man has perforated sigmoid diverticulitis with faecal peritonitis. His pulse rate is 128 bpm and BP 84/50 mmHg despite fluids. The surgeon performs a Hartmann's procedure rather than resection with primary anastomosis.",
+      "q": "Which is the most likely reason for avoiding a primary anastomosis?",
+      "o": ["Easier histological assessment", "High risk of anastomotic leak in a contaminated, septic field", "Need to preserve the rectum for radiotherapy", "Risk of incisional hernia", "Shorter hospital stay"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Why choose Hartmann's: the reason behind the operation." },
+        { "t": "Pick out the clues", "clues": ["faecal peritonitis", "BP 84/50 mmHg despite fluids"], "x": "A heavily contaminated field and an unstable, septic patient." },
+        { "t": "Make your own answer before looking", "x": "An anastomosis would likely **leak**; an end colostomy avoids that." },
+        { "t": "Rule out the others", "elim": [[0, "Histology is the same either way."], [2, "No cancer or radiotherapy here."], [3, "Hernia risk does not decide this."], [4, "Hartmann's needs a second operation to reverse."]] },
+        { "t": "Commit", "x": "**B. Anastomotic leak risk.** Sepsis + contamination = no join." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 58 year old woman has sudden, severe epigastric pain that started 2 hours ago and now affects her whole abdomen. She takes naproxen for osteoarthritis. She is lying still with a rigid, silent abdomen. Her temperature is 37.8°C, pulse rate 116 bpm, BP 118/74 mmHg and respiratory rate 24 breaths per minute.",
+      "labs": [["White cell count", "16.2 ×10⁹/L", "4.0–11.0", "H"], ["Amylase", "160 U/L", "<100", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute cholecystitis", "Acute pancreatitis", "Inferior myocardial infarction", "Perforated peptic ulcer", "Ruptured abdominal aortic aneurysm"],
+      "a": 3,
+      "e": "Sudden epigastric pain becoming generalised with a rigid abdomen in an NSAID user is a perforated peptic ulcer. A mildly raised amylase occurs in perforation; pancreatitis usually gives much higher levels.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of sudden epigastric pain." },
+        { "t": "Pick out the clues", "clues": ["sudden, severe epigastric pain", "whole abdomen", "naproxen", "rigid, silent abdomen"], "x": "NSAID plus generalised peritonitis." },
+        { "t": "Make your own answer before looking", "x": "**Perforated peptic ulcer**." },
+        { "t": "Rule out the others", "elim": [[0, "RUQ, gradual, Murphy's sign."], [1, "Amylase is only mildly raised; pain radiates to the back."], [2, "MI does not cause a rigid abdomen."], [4, "AAA gives back pain, a pulsatile mass and shock."]] },
+        { "t": "Commit", "x": "**D. Perforated peptic ulcer.** Small amylase rises happen in perforation." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 71 year old man had a colonoscopy with removal of a large sigmoid polyp this morning. Four hours later he has increasing abdominal pain, distension and fever. He is tender with guarding. His temperature is 38.2°C, pulse rate 112 bpm and BP 122/72 mmHg. Erect chest X-ray (see item resources).",
+      "labs": [],
+      "visual": { "kind": "cxr", "title": "Erect chest X-ray", "findings": [{ "type": "free_air" }], "caption": "Free gas under both hemidiaphragms." },
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute pancreatitis", "Colonic perforation", "Ischaemic colitis", "Post-polypectomy bleeding", "Sigmoid volvulus"],
+      "a": 1,
+      "e": "Peritonism and free air under the diaphragm after colonoscopy is iatrogenic colonic perforation. Post-polypectomy bleeding causes rectal bleeding, not free gas.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis after a procedure, with an X-ray to interpret." },
+        { "t": "Pick out the clues", "clues": ["colonoscopy with removal of a large sigmoid polyp", "abdominal pain, distension and fever", "guarding", "Erect chest X-ray"], "x": "Iatrogenic injury is a recognised cause; the CXR shows pneumoperitoneum." },
+        { "t": "Make your own answer before looking", "x": "**Colonic perforation**." },
+        { "t": "Rule out the others", "elim": [[0, "Pancreatitis follows ERCP, not colonoscopy, and gives no free gas."], [2, "Ischaemic colitis gives bloody diarrhoea, not free air."], [3, "Bleeding gives blood per rectum and anaemia."], [4, "Volvulus gives a coffee-bean sign on AXR."]] },
+        { "t": "Commit", "x": "**B. Colonic perforation.** Free air after a scope = perforation." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 76 year old woman with known diverticular disease has had 3 days of left iliac fossa pain. This afternoon the pain became severe and spread across her whole abdomen. She has generalised guarding. Her temperature is 38.8°C, pulse rate 124 bpm and BP 92/58 mmHg. An erect chest X-ray shows gas under the diaphragm.",
+      "labs": [["CRP", "284 mg/L", "<5", "H"], ["Lactate", "4.2 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Diverticular abscess", "Ischaemic colitis", "Perforated diverticulitis", "Sigmoid volvulus", "Uncomplicated diverticulitis"],
+      "a": 2,
+      "e": "LIF pain progressing to generalised peritonitis, septic shock and free gas is perforated diverticulitis. An abscess stays localised.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis: what has diverticulitis turned into?" },
+        { "t": "Pick out the clues", "clues": ["known diverticular disease", "left iliac fossa pain", "spread across her whole abdomen", "gas under the diaphragm"], "x": "Diverticulitis that has ruptured: free gas and generalised peritonitis." },
+        { "t": "Make your own answer before looking", "x": "**Perforated diverticulitis**." },
+        { "t": "Rule out the others", "elim": [[0, "Abscess gives a localised mass and swinging fever, not generalised peritonitis."], [1, "Ischaemic colitis gives bloody diarrhoea, not free gas."], [3, "Volvulus gives massive distension and constipation."], [4, "Uncomplicated disease has no free gas or peritonitis."]] },
+        { "t": "Commit", "x": "**C. Perforated diverticulitis.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 30 year old man returned from Bangladesh 3 weeks ago. He has had a 2 week history of rising fever, headache, dry cough, fatigue and constipation. Today he has sudden severe lower abdominal pain and a rigid abdomen. His temperature is 39.6°C, pulse rate 88 bpm and BP 104/66 mmHg. CT shows free gas near the terminal ileum.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely causative organism?",
+      "o": ["Campylobacter jejuni", "Clostridioides difficile", "Entamoeba histolytica", "Salmonella Typhi", "Shigella sonnei"],
+      "a": 3,
+      "e": "Typhoid fever (Salmonella Typhi) causes necrosis of Peyer's patches in the distal ileum, leading to perforation. The relative bradycardia for his fever is another typhoid clue.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Organism behind an ileal perforation." },
+        { "t": "Pick out the clues", "clues": ["returned from Bangladesh", "rising fever, headache, dry cough, fatigue and constipation", "free gas near the terminal ileum", "pulse rate 88 bpm"], "x": "Enteric fever picture, then ileal perforation. Pulse is low for a temperature of 39.6°C." },
+        { "t": "Make your own answer before looking", "x": "**Salmonella Typhi**, via Peyer's patch necrosis." },
+        { "t": "Rule out the others", "elim": [[0, "Campylobacter gives bloody diarrhoea, rarely perforates."], [1, "C. difficile follows antibiotics and perforates the colon via toxic megacolon."], [2, "Amoebiasis affects the colon and liver."], [4, "Shigella causes dysentery of the colon."]] },
+        { "t": "Commit", "x": "**D. Salmonella Typhi.** Fever + constipation + ileal perforation." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "An 80 year old woman is admitted with large bowel obstruction from a sigmoid tumour. She is vomiting and a new antiemetic is started. Six hours later she has sudden severe abdominal pain and becomes peritonitic. Her pulse rate is 122 bpm and BP 96/60 mmHg. CT shows free intraperitoneal gas.",
+      "labs": [["Lactate", "3.9 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which medication is most likely to have contributed?",
+      "o": ["Cyclizine", "Metoclopramide", "Morphine", "Ondansetron", "Paracetamol"],
+      "a": 1,
+      "e": "Metoclopramide, a prokinetic dopamine antagonist, increases pressure behind a mechanical obstruction and can precipitate perforation. Cyclizine is the usual antiemetic choice in obstruction.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which drug caused the perforation?" },
+        { "t": "Pick out the clues", "clues": ["large bowel obstruction", "a new antiemetic is started", "free intraperitoneal gas"], "x": "A prokinetic given in mechanical obstruction." },
+        { "t": "Make your own answer before looking", "x": "**Metoclopramide**." },
+        { "t": "Rule out the others", "elim": [[0, "Cyclizine is not prokinetic; it is the preferred antiemetic in obstruction."], [2, "Morphine slows the gut."], [3, "Ondansetron is not prokinetic."], [4, "Paracetamol has no gut motor effect."]] },
+        { "t": "Commit", "x": "**B. Metoclopramide.** Never give a prokinetic in mechanical obstruction." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 49 year old man with known H. pylori infection, never treated, has had sudden epigastric pain for 3 hours. He vomited dark material once. His temperature is 37.7°C, pulse rate 112 bpm and BP 126/80 mmHg. He is reluctant to move.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely finding on abdominal examination?",
+      "o": ["Board-like rigidity with absent bowel sounds", "Cullen's sign", "Palpable gallbladder", "Pulsatile expansile mass", "Soft abdomen with tinkling bowel sounds"],
+      "a": 0,
+      "e": "A perforated peptic ulcer causes generalised chemical peritonitis, so the abdomen is board-like and silent. Cullen's sign is periumbilical bruising in haemorrhagic pancreatitis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A finding question: what will you feel?" },
+        { "t": "Pick out the clues", "clues": ["H. pylori infection, never treated", "sudden epigastric pain", "vomited dark material", "reluctant to move"], "x": "Peptic ulcer risk, sudden pain, coffee-ground vomit, peritonism." },
+        { "t": "Make your own answer before looking", "x": "**Board-like rigidity**, reduced or absent bowel sounds." },
+        { "t": "Rule out the others", "elim": [[1, "Cullen's is haemorrhagic pancreatitis."], [2, "Palpable gallbladder with jaundice suggests pancreatic cancer."], [3, "Pulsatile mass is an AAA."], [4, "Tinkling sounds suggest obstruction, not peritonitis."]] },
+        { "t": "Commit", "x": "**A. Board-like rigidity.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 66 year old man has sudden severe epigastric pain and a rigid abdomen. He takes aspirin and ibuprofen. His temperature is 37.6°C, pulse rate 108 bpm and BP 130/80 mmHg. He sits upright for 10 minutes and an erect chest X-ray is taken.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely finding on his erect chest X-ray?",
+      "o": ["Bilateral hilar lymphadenopathy", "Free air under the diaphragm", "Left lower lobe collapse", "Pleural effusion", "Widened mediastinum"],
+      "a": 1,
+      "e": "Pneumoperitoneum shows as gas under the diaphragm on an erect film, the classic sign of a perforated viscus. Sitting upright first lets the gas collect there.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Investigation finding in suspected perforation." },
+        { "t": "Pick out the clues", "clues": ["sudden severe epigastric pain", "aspirin and ibuprofen", "sits upright for 10 minutes"], "x": "Perforated ulcer suspected; the film is taken upright so gas rises." },
+        { "t": "Make your own answer before looking", "x": "**Free air under the diaphragm**." },
+        { "t": "Rule out the others", "elim": [[0, "Hilar nodes suggest sarcoidosis or lymphoma."], [2, "Collapse is a lung problem."], [3, "Effusion can follow pancreatitis but is not the perforation sign."], [4, "Widened mediastinum suggests aortic dissection."]] },
+        { "t": "Commit", "x": "**B. Free air under the diaphragm.** Pneumoperitoneum." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 60 year old woman has 6 hours of severe abdominal pain with guarding and tachycardia. Her erect chest X-ray shows no free air, but the surgical team remains concerned about perforation. Her pulse rate is 112 bpm and BP 120/74 mmHg.",
+      "labs": [["CRP", "160 mg/L", "<5", "H"], ["Lactate", "2.9 mmol/L", "<2.0", "H"], ["eGFR", "78 mL/min/1.73 m²", ">90", "L"]],
+      "visual": null,
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["Barium swallow", "Contrast enema", "CT abdomen and pelvis with IV contrast", "MRI abdomen", "Upper GI endoscopy"],
+      "a": 2,
+      "e": "CT abdomen and pelvis with IV contrast is the gold standard, most specific test, showing extraluminal gas or fluid. A normal erect CXR does not exclude perforation.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnostic (gold standard) test after a negative CXR." },
+        { "t": "Pick out the clues", "clues": ["erect chest X-ray shows no free air", "remains concerned about perforation", "guarding and tachycardia"], "x": "CXR misses some perforations; suspicion is still high." },
+        { "t": "Make your own answer before looking", "x": "**CT abdomen and pelvis with IV contrast**." },
+        { "t": "Rule out the others", "elim": [[0, "Barium leaking into the peritoneum is harmful."], [1, "Enemas risk worsening a colonic perforation."], [3, "MRI is slow and less available acutely."], [4, "Endoscopy can enlarge a perforation."]] },
+        { "t": "Commit", "x": "**C. CT with IV contrast.** Gold standard, most specific." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 57 year old man has sudden severe epigastric pain and a rigid abdomen. He takes diclofenac. Erect chest X-ray shows free air under the diaphragm. His temperature is 37.9°C, pulse rate 114 bpm, BP 124/76 mmHg and oxygen saturation 95% breathing air. He feels nauseated.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Admission with NBM, IV fluids, broad-spectrum IV antibiotics and urgent surgical review", "Endoscopic clipping of the ulcer", "H. pylori eradication therapy", "Oral omeprazole and outpatient review", "Urgent barium meal"],
+      "a": 0,
+      "e": "Initial management is NBM, oxygen, IV fluids, broad-spectrum IV antibiotics, analgesia, an NG tube for nausea and urgent surgical review. Endoscopy and barium are dangerous in perforation.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management of a confirmed perforation." },
+        { "t": "Pick out the clues", "clues": ["free air under the diaphragm", "rigid abdomen", "feels nauseated"], "x": "Pneumoperitoneum and peritonitis." },
+        { "t": "Make your own answer before looking", "x": "**NBM, IV fluids, IV antibiotics, analgesia, NG tube, surgeons.**" },
+        { "t": "Rule out the others", "elim": [[1, "Endoscopy worsens a perforation."], [2, "Eradication comes after the emergency."], [3, "Oral treatment and discharge is unsafe."], [4, "Barium in the peritoneum is harmful."]] },
+        { "t": "Commit", "x": "**A. Resuscitate and call the surgeons.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 62 year old man with a perforated duodenal ulcer confirmed on CT has been resuscitated with IV fluids and antibiotics. His pulse rate is 104 bpm and BP 118/72 mmHg. He is taken to theatre.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate definitive operation?",
+      "o": ["Billroth II gastrectomy", "Endoscopic clipping", "Hartmann's procedure", "IV PPI alone", "Omental patch repair"],
+      "a": 4,
+      "e": "A perforated peptic ulcer is repaired with an omental patch and peritoneal washout. Hartmann's is for sigmoid perforation; gastrectomy is rarely needed.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Definitive surgery for a perforated duodenal ulcer." },
+        { "t": "Pick out the clues", "clues": ["perforated duodenal ulcer", "taken to theatre"], "x": "Repair the hole." },
+        { "t": "Make your own answer before looking", "x": "**Omental patch repair** with washout." },
+        { "t": "Rule out the others", "elim": [[0, "Gastrectomy is a historical or last-resort operation."], [1, "Endoscopic clipping is for bleeding ulcers."], [2, "Hartmann's is for sigmoid colon perforation."], [3, "A PPI alone will not close the hole."]] },
+        { "t": "Commit", "x": "**E. Omental patch repair.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "An 81 year old woman has perforated sigmoid diverticulitis with faecal peritonitis at laparotomy. She needed vasopressors in theatre. Her pulse rate is 130 bpm and BP 82/48 mmHg on arrival in theatre.",
+      "labs": [["Lactate", "6.1 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate operation?",
+      "o": ["Anterior resection with primary anastomosis", "CT-guided percutaneous drainage", "Defunctioning loop ileostomy alone", "Hartmann's procedure", "Oral antibiotics and observation"],
+      "a": 3,
+      "e": "Sigmoid perforation with sepsis is managed with a Hartmann's procedure: sigmoid resection, end colostomy and rectal stump closure, avoiding a risky anastomosis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Operation for sigmoid perforation in a shocked patient." },
+        { "t": "Pick out the clues", "clues": ["perforated sigmoid diverticulitis", "faecal peritonitis", "vasopressors", "BP 82/48 mmHg"], "x": "Contaminated field, unstable patient." },
+        { "t": "Make your own answer before looking", "x": "**Hartmann's procedure**." },
+        { "t": "Rule out the others", "elim": [[0, "An anastomosis in faecal peritonitis is likely to leak."], [1, "Drainage is for a localised abscess."], [2, "An ileostomy alone leaves the perforation in place."], [4, "She has faecal peritonitis and shock."]] },
+        { "t": "Commit", "x": "**D. Hartmann's procedure.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 68 year old woman who takes ibuprofen daily for arthritis presents with a perforated gastric ulcer. Her H. pylori test is negative. Her pulse rate is 110 bpm and BP 122/74 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely mechanism by which her medication caused the ulcer?",
+      "o": ["Increased gastrin secretion", "Increased H. pylori colonisation", "Inhibition of COX-1 reducing protective prostaglandins", "Stimulation of parietal cell proton pumps", "Vagal overstimulation"],
+      "a": 2,
+      "e": "NSAIDs inhibit COX-1, reducing prostaglandins that maintain mucus, bicarbonate secretion and mucosal blood flow, so acid-peptic digestion erodes the full thickness of the wall.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of NSAID-induced ulcer." },
+        { "t": "Pick out the clues", "clues": ["ibuprofen daily", "H. pylori test is negative"], "x": "The NSAID is the cause, not H. pylori." },
+        { "t": "Make your own answer before looking", "x": "**COX-1 inhibition** reduces protective prostaglandins." },
+        { "t": "Rule out the others", "elim": [[0, "Gastrin excess is Zollinger-Ellison syndrome."], [1, "She is H. pylori negative."], [3, "NSAIDs do not directly stimulate proton pumps."], [4, "Not the NSAID mechanism."]] },
+        { "t": "Commit", "x": "**C. COX-1 inhibition.** Less prostaglandin = weaker barrier." }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is GI perforation, where does it happen and what causes it?",
+        "tip": "Exam thinking: the history gives the cause, the cause gives the site.",
+        "points": [
+          { "p": "Full-thickness rupture of the GI wall", "k": [["full", "thickness", "transmural"]], "why": "Partial-thickness ulcers do not leak." },
+          { "p": "Sites: stomach/duodenum, small bowel, colon", "k": [["duoden", "stomach", "gastric"], ["colon", "bowel", "ileum"]], "why": "Upper GI perforations are most often peptic." },
+          { "p": "Causes: peptic ulcer, diverticulitis, appendicitis, malignancy, trauma or iatrogenic", "k": [["ulcer", "peptic"], ["diverticul", "appendic", "malignan", "cancer", "iatrogenic", "trauma"]], "why": "Colonoscopy is a classic iatrogenic cause." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does GI perforation present on history and examination?",
+        "tip": "Exam thinking: hypotension is late, so a normal BP does not reassure.",
+        "points": [
+          { "p": "Sudden severe abdominal pain, worse on movement", "k": [["sudden", "acute"], ["pain"]], "why": "Patients lie still." },
+          { "p": "Board-like rigid abdomen from peritonitis, guarding, rebound", "k": [["board", "rigid"]], "why": "The classic sign." },
+          { "p": "Vomiting, distension, fever, tachycardia, collapse", "k": [["tachycard", "fever", "vomit", "distension"]], "why": "Systemic signs of sepsis." },
+          { "p": "Raised inflammatory markers and lactate", "k": [["lactate", "crp", "wcc", "inflammatory"]], "why": "Lactate reflects hypoperfusion." },
+          { "p": "Hypotension is a late sign", "k": [["hypotension", "low bp", "late"]], "why": "Shock means immediate intervention." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What is the classic presentation of a perforated peptic ulcer?",
+        "tip": "Exam thinking: look for the NSAID in the drug history.",
+        "points": [
+          { "p": "Chronic NSAID use (or H. pylori)", "k": [["nsaid", "ibuprofen", "naproxen", "diclofenac", "pylori"]], "why": "The two main risk factors." },
+          { "p": "Acute epigastric pain progressing to generalised pain", "k": [["epigastr"]], "why": "Leaked acid spreads across the peritoneum." },
+          { "p": "Sometimes coffee-ground haematemesis", "k": [["haematemesis", "coffee", "ground"]], "why": "A bleeding component may coexist." },
+          { "p": "Reduced bowel sounds, distension, raised WCC/CRP/lactate, hypotension, confusion", "k": [["bowel sounds", "silent", "hypotens", "confus"]], "why": "Signs of peritonitis and sepsis." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Name two less obvious causes of perforation tested in the notes.",
+        "tip": "Exam thinking: a returning traveller or a new antiemetic is the twist.",
+        "points": [
+          { "p": "Typhoid: Peyer's patch necrosis in the distal ileum", "k": [["typhoid", "salmonella", "enteric"], ["peyer", "ileum", "ileal"]], "why": "Fever, headache, constipation, cough, myalgia first." },
+          { "p": "Metoclopramide in mechanical bowel obstruction raises pressure", "k": [["metoclopramide"], ["obstruct"]], "why": "A prokinetic dopamine antagonist; avoid it in obstruction." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is the first-line and the gold-standard investigation for perforation, and what do they show?",
+        "tip": "Exam thinking: 'initial' is the erect CXR; 'most specific' is the CT.",
+        "points": [
+          { "p": "ABCDE, urgent surgical review and bloods", "k": [["abcde", "surgical review", "bloods"]], "why": "Resuscitate in parallel." },
+          { "p": "Erect chest X-ray: free air under the diaphragm (pneumoperitoneum)", "k": [["erect", "chest x", "cxr"], ["air", "gas", "pneumoperitoneum"]], "why": "Key test for perforated peptic ulcer." },
+          { "p": "CT abdomen and pelvis with IV contrast: extraluminal gas or fluid", "k": [["ct"], ["extraluminal", "gas", "fluid", "air"]], "why": "Gold standard and most specific." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is the initial management of GI perforation?",
+        "tip": "Exam thinking: resuscitate and call the surgeons.",
+        "points": [
+          { "p": "NBM, IV fluids, oxygen", "k": [["nbm", "nil by mouth"], ["fluid"]], "why": "Supportive first steps." },
+          { "p": "Broad-spectrum IV antibiotics and analgesia", "k": [["antibiotic"]], "why": "Bacterial peritonitis follows." },
+          { "p": "NG tube if nausea", "k": [["ng", "nasogastric"]], "why": "Decompresses the stomach." },
+          { "p": "Hypotension + sepsis + peritonitis = surgical emergency", "k": [["hypotens", "shock"], ["sepsis", "septic"], ["periton"]], "why": "Immediate intervention." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What definitive operations are used for a perforated ulcer and a sigmoid perforation?",
+        "tip": "Exam thinking: match the operation to the site.",
+        "points": [
+          { "p": "Urgent surgery: repair, resection or washout", "k": [["surg", "laparotomy", "laparoscop", "washout"]], "why": "Definitive treatment." },
+          { "p": "Perforated peptic ulcer: omental patch repair", "k": [["omental", "graham", "patch"]], "why": "Plugs the hole with omentum." },
+          { "p": "Sigmoid perforation with sepsis: Hartmann's procedure", "k": [["hartmann"]], "why": "Resection, end colostomy, rectal stump closed." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "What happens when the bowel perforates, and why does free air appear under the diaphragm?",
+        "tip": "Exam thinking: chemical first, then bacterial.",
+        "points": [
+          { "p": "Luminal contents (acid, bile, faeces, bacteria) enter the peritoneal cavity", "k": [["content", "acid", "bile", "faec", "bacteri"], ["periton"]], "why": "Upper GI leaks are acid; colonic leaks are faecal." },
+          { "p": "Chemical and/or bacterial peritonitis", "k": [["chemical", "bacterial"]], "why": "Leads to sepsis and shock." },
+          { "p": "Gas escapes into the peritoneum and rises under the diaphragm", "k": [["gas", "air"], ["escape", "rise", "leak"]], "why": "Classic radiological sign." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do NSAIDs and H. pylori cause perforation, and why does Hartmann's avoid an anastomosis?",
+        "tip": "Exam thinking: barrier failure, then digestion; contamination, then leak.",
+        "points": [
+          { "p": "NSAIDs and H. pylori impair the mucosal protective barrier", "k": [["barrier", "mucosa", "prostaglandin", "cox"]], "why": "NSAIDs inhibit COX-1 and protective prostaglandins." },
+          { "p": "Acid-peptic digestion through the full thickness of the wall", "k": [["acid", "peptic", "pepsin"], ["digest", "erode", "full"]], "why": "Ulcer deepens until it breaches." },
+          { "p": "Hartmann's avoids anastomosis in a contaminated, unstable field to reduce leak risk", "k": [["leak", "contaminat"]], "why": "Septic shock can develop rapidly." },
+          { "p": "Complications: peritonitis, sepsis, abscess, death", "k": [["sepsis", "abscess", "death"]], "why": "Why delay is dangerous." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "perforation": "A hole through the full thickness of the bowel or stomach wall.",
+    "full-thickness": "Through every layer of the bowel wall, so contents can leak out.",
+    "pneumoperitoneum": "Free gas inside the peritoneal cavity, usually from a perforated bowel.",
+    "peritonitis": "Inflammation of the peritoneum, giving a rigid, very tender abdomen.",
+    "peritoneal cavity": "The space inside the abdomen lined by peritoneum.",
+    "board-like": "Describes a rigid abdomen with involuntary muscle spasm from peritonitis.",
+    "guarding": "Involuntary tensing of the abdominal muscles when pressed.",
+    "rebound tenderness": "Pain when pressure on the abdomen is suddenly released.",
+    "peptic ulcer": "An ulcer in the stomach or duodenum caused by acid and pepsin.",
+    "NSAID": "Non-steroidal anti-inflammatory drug, such as ibuprofen or naproxen.",
+    "NSAIDs": "Non-steroidal anti-inflammatory drugs, such as ibuprofen or naproxen.",
+    "COX-1": "Enzyme making prostaglandins that protect the stomach lining; inhibited by NSAIDs.",
+    "prostaglandins": "Local hormones that maintain gastric mucus, bicarbonate and mucosal blood flow.",
+    "H. pylori": "Helicobacter pylori, a stomach bacterium that causes peptic ulcers.",
+    "haematemesis": "Vomiting blood.",
+    "coffee-ground": "Vomit containing altered, dark blood from the upper GI tract.",
+    "typhoid": "Enteric fever caused by Salmonella Typhi, spread by contaminated food and water.",
+    "Salmonella Typhi": "The bacterium causing typhoid fever.",
+    "Peyer's patches": "Clusters of lymphoid tissue in the distal ileum, targeted by typhoid.",
+    "ileum": "The last part of the small bowel, ending at the caecum.",
+    "metoclopramide": "A dopamine antagonist antiemetic that speeds gut emptying; avoid in mechanical obstruction.",
+    "prokinetic": "A drug that increases gut movement.",
+    "erect chest X-ray": "Chest X-ray taken with the patient upright, so free gas rises under the diaphragm.",
+    "extraluminal": "Outside the bowel lumen.",
+    "omental patch repair": "Closing a perforated ulcer by stitching a piece of omentum over the hole.",
+    "omentum": "A fatty apron hanging from the stomach that can seal holes and wall off infection.",
+    "Hartmann's procedure": "Resection of the sigmoid colon with an end colostomy and closed rectal stump.",
+    "anastomosis": "A surgical join between two ends of bowel.",
+    "anastomotic leak": "Leakage of bowel contents from a surgical join.",
+    "end colostomy": "The end of the colon brought out onto the abdominal wall as a stoma.",
+    "rectal stump": "The closed-off top of the rectum left behind in a Hartmann's procedure.",
+    "diverticulitis": "Inflammation of bowel wall pouches (diverticula), usually in the sigmoid colon.",
+    "iatrogenic": "Caused by medical treatment or a procedure.",
+    "NG tube": "Nasogastric tube passed through the nose into the stomach to drain it.",
+    "NBM": "Nil by mouth.",
+    "lactate": "A product of anaerobic metabolism; raised levels signal poor tissue perfusion.",
+    "sepsis": "Life-threatening organ dysfunction caused by the body's response to infection.",
+    "washout": "Rinsing the abdominal cavity during surgery to remove contamination.",
+    "ABCDE": "Airway, Breathing, Circulation, Disability, Exposure: the structured approach to an unwell patient."
+  }
+}

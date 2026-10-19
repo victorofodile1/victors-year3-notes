@@ -1,0 +1,2233 @@
+{
+ "id": "disease-prevention-screening",
+ "patient": {
+  "name": "Priya Raman",
+  "age": 29,
+  "sex": "F",
+  "setting": "GP surgery (practice nurse clinic)",
+  "complaint": "Cervical screening, delayed by pregnancy, now 12 weeks after giving birth",
+  "background": [
+   "Baby daughter born 12 weeks ago; newborn blood spot test done on day 6",
+   "Last cervical screen at 25 was normal",
+   "Ex-smoker; quit when she found out she was pregnant",
+   "Pharmacist living in Harrow; no other medical history"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Here 'diagnosis' means recognising the situation: which level of prevention, which programme and age, and the next step in the hrHPV-led cervical pathway.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Priya's routine cervical screen fell due **during pregnancy**.",
+      "It was postponed; she attends at **12 weeks post-partum**.",
+      "She has no bleeding, discharge or pain.",
+      "She asks what screening is actually for."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya's quitting smoking is **primary** prevention; her smear is **secondary** prevention: finding disease before symptoms."
+    },
+    {
+     "type": "ask",
+     "q": "A man attends cardiac rehabilitation after a heart attack. Which level of prevention is this?",
+     "o": [
+      "Primary",
+      "Primordial",
+      "Secondary",
+      "Tertiary"
+     ],
+     "a": 3,
+     "r": "Reducing complications of **established** disease is **tertiary** prevention."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Cervical screening age range",
+      "min": 15,
+      "max": 80,
+      "unit": "years",
+      "bands": [
+       [
+        15,
+        25,
+        "Not screened",
+        "warn"
+       ],
+       [
+        25,
+        64,
+        "Screened (hrHPV first)",
+        "ok"
+       ],
+       [
+        64,
+        80,
+        "Stops (if recent tests normal)",
+        "warn"
+       ]
+      ],
+      "value": 29,
+      "label": "Priya 29",
+      "caption": "Priya is well inside the 25–64 programme."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya is in the **cervical** programme now; at 50 she joins **breast** screening and later **bowel** (FIT)."
+    },
+    {
+     "type": "compare",
+     "title": "UK screening programmes",
+     "head": [
+      "Programme",
+      "Test",
+      "Who",
+      "How often"
+     ],
+     "rows": [
+      [
+       "Breast",
+       "Mammography",
+       "Women 50–70",
+       "Every 3 years"
+      ],
+      [
+       "Cervical",
+       "hrHPV first, cytology if positive",
+       "Women 25–64",
+       "Routine recall"
+      ],
+      [
+       "Bowel",
+       "FIT",
+       "Age 60 and over (notes)",
+       "Routine recall"
+      ],
+      [
+       "AAA",
+       "Abdominal ultrasound",
+       "Men 65+",
+       "Once"
+      ],
+      [
+       "Diabetic eye",
+       "Retinal photography",
+       "People with diabetes",
+       "Annually"
+      ]
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Priya's cervical screening result",
+     "rows": [
+      [
+       "High-risk HPV",
+       "Detected",
+       "Not detected",
+       "H"
+      ],
+      [
+       "Cytology",
+       "Low-grade dyskaryosis",
+       "Negative",
+       "H"
+      ]
+     ],
+     "text": "hrHPV is tested first; cytology is only read because hrHPV was positive."
+    },
+    {
+     "type": "ask",
+     "q": "Priya is hrHPV positive with low-grade dyskaryosis. What next?",
+     "o": [
+      "Colposcopy referral",
+      "Repeat sample in 12 months",
+      "Repeat sample in 3 months",
+      "Routine recall"
+     ],
+     "a": 0,
+     "r": "hrHPV positive **with abnormal cytology** goes to **colposcopy**. Normal cytology would mean a repeat at 12 months."
+    },
+    {
+     "type": "flow",
+     "title": "hrHPV-led cervical screening",
+     "nodes": [
+      "hrHPV test first",
+      "Negative → routine recall",
+      "Positive + abnormal cytology → colposcopy",
+      "Positive + normal cytology → repeat at 12 months",
+      "Still positive at 12 months → repeat at 24 months",
+      "Positive at 24 months → colposcopy"
+     ],
+     "caption": "Inadequate sample: repeat at 3 months; two in a row → colposcopy."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Priya's abnormal cytology takes her straight to **colposcopy**; after CIN II treatment she will have a **test of cure at 6 months**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Priya's smear was correctly **delayed to 12 weeks post-partum**; her baby's blood spot was on **day 6**, inside the day 5–9 window."
+    },
+    {
+     "type": "trap",
+     "text": "A normal recent smear does not reassure **postcoital or intermenstrual bleeding**. Symptoms need examination and gynae referral, not a screening test."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect a 2x2 table and 'What is the sensitivity / specificity / PPV?' or 'Which term describes...?', plus questions on what makes a good screening test.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Priya asks: 'How accurate is the HPV test?'",
+      "The nurse draws a **2x2 table** from a study of 1000 women.",
+      "Disease is confirmed by colposcopy and biopsy (the reference)."
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Study of a screening test (1000 women)",
+     "rows": [
+      [
+       "True positives (test +, disease +)",
+       "90",
+       "",
+       ""
+      ],
+      [
+       "False positives (test +, disease −)",
+       "45",
+       "",
+       ""
+      ],
+      [
+       "False negatives (test −, disease +)",
+       "10",
+       "",
+       ""
+      ],
+      [
+       "True negatives (test −, disease −)",
+       "855",
+       "",
+       ""
+      ]
+     ],
+     "text": "Sensitivity 90/100 = 90%. Specificity 855/900 = 95%. PPV 90/135 = 67%. NPV 855/865 = 99%."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sensitivity uses the **disease column** (TP and FN); specificity uses the **no-disease column** (TN and FP)."
+    },
+    {
+     "type": "ask",
+     "q": "In the table, what is the specificity?",
+     "o": [
+      "67%",
+      "90%",
+      "95%",
+      "99%"
+     ],
+     "a": 2,
+     "r": "Specificity = TN/(TN+FP) = 855/(855+45) = **95%**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Sensitivity of the screening test",
+      "min": 0,
+      "max": 100,
+      "unit": "%",
+      "bands": [
+       [
+        0,
+        70,
+        "Misses too many",
+        "bad"
+       ],
+       [
+        70,
+        85,
+        "Borderline",
+        "warn"
+       ],
+       [
+        85,
+        100,
+        "Good for screening",
+        "ok"
+       ]
+      ],
+      "value": 90,
+      "label": "Test 90%",
+      "caption": "Screening needs high sensitivity so few cases are missed (SnNout)."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya's HPV test is the **sensitive** first step; colposcopy is the **confirmatory** diagnostic test."
+    },
+    {
+     "type": "pearl",
+     "text": "**SnNout**: a highly Sensitive test, when Negative, rules OUT. **SpIn**: a highly Specific test, when Positive, rules IN."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Priya's positive result means a **67%** chance of disease (PPV) in this study; in a lower-prevalence group it would be lower."
+    },
+    {
+     "type": "trap",
+     "text": "PPV and NPV change with **prevalence**; sensitivity and specificity do not. Read which one the question asks for."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate next step?' within a screening pathway, or treatment of CIN II (LLETZ) and the follow-up afterwards.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "Any screening programme",
+     "nodes": [
+      "Identify eligible population (usually by age)",
+      "Screen with a sensitive test",
+      "Confirm with a diagnostic test",
+      "Treat early"
+     ],
+     "caption": "Screening never diagnoses on its own."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya was invited by **age**, screened with hrHPV, and now goes for **colposcopy** to confirm."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Colposcopy: acetowhite area; biopsy taken.",
+      "Histology: **CIN II**.",
+      "Priya worries about future pregnancies."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which is the treatment for Priya's CIN II?",
+     "o": [
+      "Hysterectomy",
+      "LLETZ",
+      "Radiotherapy",
+      "Repeat smear in 3 years"
+     ],
+     "a": 1,
+     "r": "**LLETZ** removes the transformation zone. Hysterectomy and radiotherapy are for invasive cancer."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya has **LLETZ** under local anaesthetic as a day case."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Months after LLETZ",
+      "min": 0,
+      "max": 12,
+      "unit": "months",
+      "bands": [
+       [
+        0,
+        5.5,
+        "Healing",
+        "warn"
+       ],
+       [
+        5.5,
+        6.5,
+        "Test of cure",
+        "ok"
+       ],
+       [
+        6.5,
+        12,
+        "Then recall as advised",
+        "warn"
+       ]
+      ],
+      "value": 6,
+      "label": "Priya's test of cure",
+      "caption": "Screening plus HPV test of cure at 6 months after CIN II treatment."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Priya's care follows the **NHS cervical screening pathway**; programmes meet the **Wilson and Jungner** criteria."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions on why screening needs a latent phase, why sensitivity and specificity trade off, and why low prevalence lowers PPV.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "CIN is the **preclinical phase** of cervical cancer: Priya's LLETZ treats it before cancer develops."
+    },
+    {
+     "type": "flow",
+     "title": "Natural history of cervical cancer",
+     "nodes": [
+      "Persistent hrHPV infection",
+      "CIN I → CIN II → CIN III",
+      "Detectable by screening (latent phase)",
+      "Invasive cancer if untreated"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Lowering the threshold for 'positive' catches more of Priya's peers with CIN but labels more healthy women as positive."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Same test (90% sens, 95% spec), different prevalence",
+      "x": [
+       "0.1%",
+       "1%",
+       "5%",
+       "20%"
+      ],
+      "unit": "%",
+      "series": [
+       {
+        "name": "PPV",
+        "values": [
+         1.8,
+         15.4,
+         48.6,
+         81.8
+        ]
+       },
+       {
+        "name": "NPV",
+        "values": [
+         99.99,
+         99.9,
+         99.4,
+         97.4
+        ]
+       }
+      ],
+      "caption": "As prevalence falls, PPV collapses while NPV rises."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "The same test is used in a population with much lower prevalence. What happens?",
+     "o": [
+      "NPV falls",
+      "PPV falls",
+      "Sensitivity falls",
+      "Specificity rises"
+     ],
+     "a": 1,
+     "r": "Lower prevalence means more false positives per true positive, so **PPV falls** (and NPV rises). Sensitivity and specificity are unchanged."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "That is why Priya's positive result is more meaningful in a high-risk group than in a low-risk one: **Bayes' theorem**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Cervical screening is offered to Priya because it meets **Wilson and Jungner**: net benefit outweighs overdiagnosis, anxiety and cost."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Vaccinating girls against HPV is which level of prevention?",
+   "o": [
+    "Primary",
+    "Quaternary",
+    "Secondary",
+    "Tertiary"
+   ],
+   "a": 0,
+   "r": "Preventing disease before it occurs is **primary** prevention."
+  },
+  {
+   "d": "diagnosis",
+   "q": "At what ages and how often is breast screening offered?",
+   "o": [
+    "25–64, every 5 years",
+    "40–70, yearly",
+    "50–70, every 3 years",
+    "50–74, every 2 years"
+   ],
+   "a": 2,
+   "r": "**Mammography, women 50–70, every 3 years**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "When is newborn blood spot screening done?",
+   "o": [
+    "6 weeks",
+    "Day 1",
+    "Day 14",
+    "Day 5 to 9"
+   ],
+   "a": 3,
+   "r": "Between **day 5 and day 9** of life."
+  },
+  {
+   "d": "diagnosis",
+   "q": "How often do HIV-positive women have cervical screening?",
+   "o": [
+    "Annually",
+    "Every 3 years",
+    "Every 5 years",
+    "Only if symptomatic"
+   ],
+   "a": 0,
+   "r": "HIV-positive women need **annual** cervical screening."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the formula for sensitivity?",
+   "o": [
+    "TN/(TN+FN)",
+    "TN/(TN+FP)",
+    "TP/(TP+FN)",
+    "TP/(TP+FP)"
+   ],
+   "a": 2,
+   "r": "**TP/(TP+FN)**: the proportion of diseased people who test positive."
+  },
+  {
+   "d": "investigation",
+   "q": "Which property should a screening test have most of all?",
+   "o": [
+    "High PPV",
+    "High sensitivity",
+    "High specificity",
+    "Low cost only"
+   ],
+   "a": 1,
+   "r": "High **sensitivity** to minimise missed cases."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the positive likelihood ratio?",
+   "o": [
+    "(1−Sensitivity)/Specificity",
+    "Sensitivity/(1−Specificity)",
+    "Specificity/Sensitivity",
+    "TP/(TP+FP)"
+   ],
+   "a": 1,
+   "r": "LR+ = **sensitivity/(1 − specificity)**."
+  },
+  {
+   "d": "management",
+   "q": "What is the treatment for CIN II?",
+   "o": [
+    "Cone biopsy under general anaesthetic",
+    "Hysterectomy",
+    "LLETZ",
+    "Watch and wait"
+   ],
+   "a": 2,
+   "r": "**Large loop excision of the transformation zone**."
+  },
+  {
+   "d": "management",
+   "q": "What is the order of a screening pathway?",
+   "o": [
+    "Confirm, screen, treat",
+    "Identify, screen, confirm, treat",
+    "Screen, treat, confirm",
+    "Treat, then screen"
+   ],
+   "a": 1,
+   "r": "Eligible population, screen, **confirm**, treat."
+  },
+  {
+   "d": "science",
+   "q": "How does falling prevalence affect PPV and NPV?",
+   "o": [
+    "Both fall",
+    "Both rise",
+    "PPV falls, NPV rises",
+    "PPV rises, NPV falls"
+   ],
+   "a": 2,
+   "r": "Via **Bayes' theorem**: fewer true positives per false positive."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "Define primary, secondary and tertiary prevention with an example of each.",
+    "tip": "Exam thinking: name the level from the example in the stem.",
+    "points": [
+     {
+      "p": "Primary: prevent disease before it occurs (vaccination, smoking cessation)",
+      "k": [
+       [
+        "primary"
+       ],
+       [
+        "vaccin",
+        "smoking",
+        "before"
+       ]
+      ],
+      "why": "HPV vaccine is primary; the smear is not."
+     },
+     {
+      "p": "Secondary: detect disease early (cancer screening)",
+      "k": [
+       [
+        "secondary"
+       ],
+       [
+        "screen",
+        "early"
+       ]
+      ],
+      "why": "Screening is secondary prevention."
+     },
+     {
+      "p": "Tertiary: reduce complications of established disease (rehabilitation, chronic disease control)",
+      "k": [
+       [
+        "tertiary"
+       ],
+       [
+        "rehab",
+        "complication",
+        "established",
+        "chronic"
+       ]
+      ],
+      "why": "Cardiac rehab after MI is tertiary."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "List the UK screening programmes with test, age group and interval.",
+    "tip": "Exam thinking: ages and intervals are classic one-liners.",
+    "points": [
+     {
+      "p": "Breast: mammography, women 50–70, every 3 years",
+      "k": [
+       [
+        "mammogra",
+        "breast"
+       ],
+       [
+        "50"
+       ]
+      ],
+      "why": "3-yearly, not yearly."
+     },
+     {
+      "p": "Cervical: hrHPV first, women 25–64",
+      "k": [
+       [
+        "cervical",
+        "hpv"
+       ],
+       [
+        "25"
+       ]
+      ],
+      "why": "HPV-led since primary HPV testing."
+     },
+     {
+      "p": "Bowel: FIT from age 60",
+      "k": [
+       [
+        "fit",
+        "faecal immunochemical",
+        "bowel"
+       ]
+      ],
+      "why": "England is extending FIT down to age 50."
+     },
+     {
+      "p": "AAA: abdominal ultrasound, men 65+",
+      "k": [
+       [
+        "aaa",
+        "aneurysm"
+       ],
+       [
+        "ultrasound",
+        "65"
+       ]
+      ],
+      "why": "Men only, one scan."
+     },
+     {
+      "p": "Diabetic retinopathy: annual",
+      "k": [
+       [
+        "retinopathy",
+        "diabetic eye",
+        "retina"
+       ]
+      ],
+      "why": "Annual photography for everyone with diabetes."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Walk through the hrHPV-led cervical screening algorithm.",
+    "tip": "Exam thinking: hrHPV status first, cytology second.",
+    "points": [
+     {
+      "p": "hrHPV negative → routine recall",
+      "k": [
+       [
+        "negative"
+       ],
+       [
+        "routine",
+        "recall"
+       ]
+      ],
+      "why": "Cytology is not read if hrHPV negative."
+     },
+     {
+      "p": "hrHPV positive + abnormal cytology → colposcopy",
+      "k": [
+       [
+        "abnormal",
+        "dyskaryosis"
+       ],
+       [
+        "colposcop"
+       ]
+      ],
+      "why": "Even low-grade dyskaryosis goes to colposcopy."
+     },
+     {
+      "p": "hrHPV positive + normal cytology → repeat at 12 months",
+      "k": [
+       [
+        "normal"
+       ],
+       [
+        "12 months",
+        "12-month",
+        "1 year",
+        "one year",
+        "a year"
+       ]
+      ],
+      "why": "Most HPV clears spontaneously."
+     },
+     {
+      "p": "Still positive at 12 → repeat at 24 months; positive at 24 → colposcopy",
+      "k": [
+       [
+        "24"
+       ]
+      ],
+      "why": "Negative at 24 months returns to routine recall."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What happens with inadequate samples and after CIN II treatment?",
+    "tip": "Exam thinking: the numbers 3 months, two samples, 6 months.",
+    "points": [
+     {
+      "p": "Inadequate sample: repeat at 3 months",
+      "k": [
+       [
+        "3 months",
+        "three months"
+       ]
+      ],
+      "why": "Repeat, do not refer, after one inadequate sample."
+     },
+     {
+      "p": "Two consecutive inadequate samples → colposcopy",
+      "k": [
+       [
+        "two",
+        "2"
+       ],
+       [
+        "colposcop"
+       ]
+      ],
+      "why": "Second inadequate triggers referral."
+     },
+     {
+      "p": "After CIN II treatment: screening + HPV test of cure at 6 months",
+      "k": [
+       [
+        "test of cure",
+        "6 months",
+        "six months"
+       ]
+      ],
+      "why": "Checks the HPV has cleared."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which special groups and situations change screening?",
+    "tip": "Exam thinking: pregnancy, newborns, HIV and symptoms.",
+    "points": [
+     {
+      "p": "Pregnancy screening: hepatitis B, HIV, rubella, syphilis",
+      "k": [
+       [
+        "hepatitis b",
+        "hep b",
+        "hiv",
+        "rubella",
+        "syphilis"
+       ]
+      ],
+      "why": "Offered at booking."
+     },
+     {
+      "p": "Newborn blood spot: day 5 to 9",
+      "k": [
+       [
+        "blood spot",
+        "heel prick",
+        "newborn"
+       ],
+       [
+        "5",
+        "9",
+        "five"
+       ]
+      ],
+      "why": "Too early misses conditions like PKU."
+     },
+     {
+      "p": "Smear in pregnancy delayed to 12 weeks post-partum",
+      "k": [
+       [
+        "12 weeks",
+        "twelve weeks",
+        "post-partum",
+        "postpartum"
+       ]
+      ],
+      "why": "Pregnancy changes make cytology unreliable."
+     },
+     {
+      "p": "HIV-positive women: annual cervical screening",
+      "k": [
+       [
+        "annual",
+        "yearly",
+        "every year"
+       ]
+      ],
+      "why": "Higher risk of persistent HPV."
+     },
+     {
+      "p": "Intermenstrual or postcoital bleeding: examine and refer, do not rely on screening",
+      "k": [
+       [
+        "postcoital",
+        "post-coital",
+        "intermenstrual",
+        "red flag"
+       ]
+      ],
+      "why": "Screening is for people without symptoms."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Give the formulas and meaning of sensitivity and specificity.",
+    "tip": "Exam thinking: sensitivity uses the diseased column, specificity the healthy column.",
+    "points": [
+     {
+      "p": "Sensitivity = TP/(TP+FN)",
+      "k": [
+       [
+        "sensitivity"
+       ],
+       [
+        "tp/(tp+fn)",
+        "tp/(tp + fn)",
+        "tp / (tp + fn)",
+        "true positive"
+       ]
+      ],
+      "why": "Ability to detect disease when present."
+     },
+     {
+      "p": "High sensitivity: few false negatives, rules OUT (SnNout)",
+      "k": [
+       [
+        "snnout",
+        "rule out",
+        "rules out",
+        "false negative"
+       ]
+      ],
+      "why": "A negative result is reassuring."
+     },
+     {
+      "p": "Specificity = TN/(TN+FP)",
+      "k": [
+       [
+        "specificity"
+       ],
+       [
+        "tn/(tn+fp)",
+        "tn/(tn + fp)",
+        "tn / (tn + fp)",
+        "true negative"
+       ]
+      ],
+      "why": "Ability to exclude disease when absent."
+     },
+     {
+      "p": "High specificity: few false positives, rules IN (SpIn)",
+      "k": [
+       [
+        "spin",
+        "rule in",
+        "rules in",
+        "false positive"
+       ]
+      ],
+      "why": "A positive result is convincing."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Define PPV, NPV and likelihood ratios, and say how prevalence affects them.",
+    "tip": "Exam thinking: PPV and NPV read across the rows of the 2x2 table.",
+    "points": [
+     {
+      "p": "PPV = TP/(TP+FP); rises with prevalence",
+      "k": [
+       [
+        "ppv",
+        "positive predictive"
+       ]
+      ],
+      "why": "Probability of disease given a positive test."
+     },
+     {
+      "p": "NPV = TN/(TN+FN); rises as prevalence falls",
+      "k": [
+       [
+        "npv",
+        "negative predictive"
+       ]
+      ],
+      "why": "Probability of no disease given a negative test."
+     },
+     {
+      "p": "LR+ = sensitivity/(1 − specificity); LR− = (1 − sensitivity)/specificity",
+      "k": [
+       [
+        "likelihood ratio",
+        "lr+",
+        "lr"
+       ]
+      ],
+      "why": "Not affected by prevalence."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What makes a good screening test and programme (Wilson and Jungner)?",
+    "tip": "Exam thinking: spot the missing criterion.",
+    "points": [
+     {
+      "p": "High sensitivity, then a confirmatory diagnostic test",
+      "k": [
+       [
+        "sensitiv"
+       ],
+       [
+        "confirm",
+        "diagnostic"
+       ]
+      ],
+      "why": "Screening alone never diagnoses."
+     },
+     {
+      "p": "Important health problem",
+      "k": [
+       [
+        "important"
+       ]
+      ],
+      "why": "Rare trivial diseases do not justify screening."
+     },
+     {
+      "p": "Detectable early or latent stage",
+      "k": [
+       [
+        "latent",
+        "early stage",
+        "preclinical",
+        "detectable"
+       ]
+      ],
+      "why": "No latent phase, nothing to find."
+     },
+     {
+      "p": "Effective treatment and an acceptable test",
+      "k": [
+       [
+        "treatment"
+       ],
+       [
+        "acceptable"
+       ]
+      ],
+      "why": "Finding untreatable disease only causes anxiety."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the steps of a screening pathway and how is CIN II treated?",
+    "tip": "Exam thinking: positive screen means confirm before treating.",
+    "points": [
+     {
+      "p": "Identify the eligible population (usually age-based)",
+      "k": [
+       [
+        "eligible",
+        "population",
+        "age"
+       ]
+      ],
+      "why": "Invitation is by age and sex."
+     },
+     {
+      "p": "Screen, then confirm with a diagnostic test",
+      "k": [
+       [
+        "confirm",
+        "diagnostic"
+       ]
+      ],
+      "why": "FIT positive → colonoscopy; hrHPV → colposcopy."
+     },
+     {
+      "p": "Treat with early intervention",
+      "k": [
+       [
+        "treat",
+        "intervention"
+       ]
+      ],
+      "why": "The whole point of screening."
+     },
+     {
+      "p": "CIN II: LLETZ",
+      "k": [
+       [
+        "lletz",
+        "loop excision"
+       ]
+      ],
+      "why": "Followed by test of cure at 6 months."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does screening work, and why do sensitivity and specificity trade off?",
+    "tip": "Exam thinking: latent phase and threshold.",
+    "points": [
+     {
+      "p": "Shifts detection to an earlier asymptomatic stage where treatment works better",
+      "k": [
+       [
+        "earlier",
+        "early",
+        "asymptomatic"
+       ]
+      ],
+      "why": "Lead to lower morbidity and mortality."
+     },
+     {
+      "p": "Needs a recognisable latent or preclinical phase",
+      "k": [
+       [
+        "latent",
+        "preclinical"
+       ]
+      ],
+      "why": "CIN is cervical cancer's latent phase."
+     },
+     {
+      "p": "Threshold: more sensitive = more false positives, and vice versa",
+      "k": [
+       [
+        "threshold",
+        "cut-off",
+        "cutoff"
+       ]
+      ],
+      "why": "You cannot maximise both."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does prevalence change predictive values, and why do Wilson and Jungner matter?",
+    "tip": "Exam thinking: Bayes' theorem and net benefit.",
+    "points": [
+     {
+      "p": "Prevalence is the pre-test probability; Bayes' theorem",
+      "k": [
+       [
+        "bayes",
+        "pre-test",
+        "pretest"
+       ]
+      ],
+      "why": "Post-test probability depends on pre-test probability."
+     },
+     {
+      "p": "Low prevalence: more false positives relative to true, PPV falls, NPV rises",
+      "k": [
+       [
+        "ppv",
+        "positive predictive"
+       ],
+       [
+        "fall",
+        "lower",
+        "reduc",
+        "decreas"
+       ]
+      ],
+      "why": "Why screening low-risk groups yields many false alarms."
+     },
+     {
+      "p": "Criteria ensure net benefit over harm: overdiagnosis, anxiety, cost",
+      "k": [
+       [
+        "overdiagnosis",
+        "over-diagnosis",
+        "anxiety",
+        "harm",
+        "cost"
+       ]
+      ],
+      "why": "Screening can harm healthy people."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "primary prevention": "Stopping disease before it starts, such as vaccination or stopping smoking.",
+  "secondary prevention": "Finding disease early, before symptoms, such as cancer screening.",
+  "tertiary prevention": "Reducing complications of established disease, such as rehabilitation.",
+  "screening": "Testing people without symptoms to find disease or risk early.",
+  "hrHPV": "High-risk human papillomavirus types (such as 16 and 18) that can cause cervical cancer.",
+  "HPV": "Human papillomavirus, a sexually transmitted virus; persistent high-risk types cause CIN and cervical cancer.",
+  "cytology": "Looking at cells under a microscope; in cervical screening it is read only if hrHPV is positive.",
+  "dyskaryosis": "Abnormal-looking cervical cells on cytology, graded low or high.",
+  "colposcopy": "Magnified examination of the cervix, with biopsy of abnormal areas.",
+  "CIN": "Cervical intraepithelial neoplasia: pre-cancerous change graded I to III.",
+  "transformation zone": "The area of the cervix where cells change type, where most CIN arises.",
+  "LLETZ": "Large loop excision of the transformation zone, the treatment for CIN II.",
+  "test of cure": "HPV test and cytology 6 months after CIN treatment to confirm clearance.",
+  "mammography": "Low-dose breast X-ray used in breast screening.",
+  "FIT": "Faecal immunochemical test detecting human blood in stool, used in bowel screening.",
+  "AAA": "Abdominal aortic aneurysm, screened by one ultrasound in men aged 65.",
+  "diabetic retinopathy": "Damage to retinal vessels from diabetes, screened annually.",
+  "newborn blood spot": "Heel-prick test between day 5 and 9 screening for conditions such as PKU and sickle cell.",
+  "post-partum": "The period after giving birth.",
+  "sensitivity": "The proportion of people with the disease who test positive: TP/(TP+FN).",
+  "specificity": "The proportion of people without the disease who test negative: TN/(TN+FP).",
+  "PPV": "Positive predictive value: chance of disease if the test is positive, TP/(TP+FP).",
+  "NPV": "Negative predictive value: chance of no disease if the test is negative, TN/(TN+FN).",
+  "likelihood ratio": "How much a test result changes the odds of disease; does not depend on prevalence.",
+  "prevalence": "The proportion of a population that has the disease at a given time.",
+  "pre-test probability": "The chance of disease before the test, often equal to prevalence.",
+  "Bayes' theorem": "Rule linking pre-test probability and test accuracy to post-test probability.",
+  "SnNout": "A highly Sensitive test, if Negative, rules OUT disease.",
+  "SpIn": "A highly Specific test, if Positive, rules IN disease.",
+  "2x2 table": "Grid of test result against true disease status giving TP, FP, FN and TN.",
+  "false positive": "A positive test in someone without the disease.",
+  "false negative": "A negative test in someone who has the disease.",
+  "Wilson and Jungner": "The WHO criteria a disease and test must meet to justify population screening.",
+  "latent phase": "A detectable stage of disease before symptoms appear.",
+  "overdiagnosis": "Diagnosing disease that would never have caused harm in the person's lifetime.",
+  "lead-time bias": "Apparent longer survival from screening only because diagnosis was earlier.",
+  "TP": "True positive: test positive and disease present.",
+  "FN": "False negative: test negative but disease present."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old woman attends for routine cervical screening. She has no symptoms. Her result is high-risk HPV positive with low-grade dyskaryosis on cytology. Her previous screen was normal.",
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Refer for colposcopy",
+    "Repeat screening in 12 months",
+    "Repeat screening in 3 months",
+    "Return to routine recall",
+    "Treat with LLETZ immediately"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in the cervical pathway: read both results."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "high-risk HPV positive",
+      "low-grade dyskaryosis",
+      "no symptoms"
+     ],
+     "x": "hrHPV positive and cytology abnormal, even if low-grade."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "hrHPV positive + abnormal cytology = **colposcopy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Only if hrHPV positive with **normal** cytology."
+      ],
+      [
+       2,
+       "That is for an inadequate sample."
+      ],
+      [
+       3,
+       "Only if hrHPV negative."
+      ],
+      [
+       4,
+       "CIN must be confirmed at colposcopy first."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Refer for colposcopy.** Rule: hrHPV+ and any dyskaryosis → colposcopy; hrHPV+ and normal → 12 months."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A new blood test for colorectal cancer is evaluated in 1000 people. Of 100 people with cancer, 80 test positive. Of 900 people without cancer, 864 test negative.",
+   "q": "What is the specificity of the test?",
+   "o": [
+    "4%",
+    "20%",
+    "69%",
+    "80%",
+    "96%"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Specificity: use only the people WITHOUT disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Of 900 people without cancer",
+      "864 test negative"
+     ],
+     "x": "TN = 864, FP = 36."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Specificity = TN/(TN+FP) = 864/900 = **96%**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is the false positive rate (36/900)."
+      ],
+      [
+       1,
+       "That is the false negative rate (20/100)."
+      ],
+      [
+       2,
+       "That is the PPV (80/116)."
+      ],
+      [
+       3,
+       "That is the sensitivity (80/100)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. 96%.** Rule: specificity uses the healthy column; sensitivity the diseased column."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man completes his bowel screening FIT kit at home. The result is positive. He has no symptoms, no weight loss and a normal examination.",
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Colonoscopy",
+    "CT abdomen and pelvis",
+    "Faecal calprotectin",
+    "Repeat FIT in 2 years",
+    "Start iron supplements"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after a positive screening test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bowel screening FIT",
+      "positive",
+      "no symptoms"
+     ],
+     "x": "Screening found a positive; the pathway says confirm with a diagnostic test."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Positive FIT → confirmatory **colonoscopy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Not the confirmatory test after a positive FIT."
+      ],
+      [
+       2,
+       "Used for inflammatory bowel disease, not screening follow-up."
+      ],
+      [
+       3,
+       "A positive screen needs confirmation now."
+      ],
+      [
+       4,
+       "Treats nothing; misses the cancer."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Colonoscopy.** Rule: identify, screen, confirm, treat. A screen is never the diagnosis."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A screening test with 90% sensitivity and 95% specificity is moved from a high-risk clinic, where prevalence is 20%, to the general population, where prevalence is 0.5%.",
+   "q": "Which is the most likely change in the general population?",
+   "o": [
+    "Likelihood ratios rise",
+    "Negative predictive value falls",
+    "Positive predictive value falls",
+    "Sensitivity falls",
+    "Specificity falls"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: what depends on prevalence?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "prevalence is 20%",
+      "prevalence is 0.5%"
+     ],
+     "x": "Prevalence falls 40-fold; predictive values change, test properties do not."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Lower prevalence: more false positives per true positive, so **PPV falls**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "LRs do not depend on prevalence."
+      ],
+      [
+       1,
+       "NPV rises as prevalence falls."
+      ],
+      [
+       3,
+       "Sensitivity is a test property; prevalence does not change it."
+      ],
+      [
+       4,
+       "Specificity is also independent of prevalence."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Positive predictive value falls.** Rule: prevalence moves PPV and NPV, never sensitivity or specificity."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man had a myocardial infarction 6 weeks ago. He now attends a supervised exercise and education programme to improve his recovery and reduce further complications. His pulse rate is 62 bpm and BP 124/76 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which level of prevention does the programme represent?",
+   "o": [
+    "Primary prevention",
+    "Primordial prevention",
+    "Quaternary prevention",
+    "Secondary prevention",
+    "Tertiary prevention"
+   ],
+   "a": 4,
+   "e": "Cardiac rehabilitation reduces complications of established disease, so it is tertiary prevention. Secondary prevention is early detection in asymptomatic people.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Name the level of prevention."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "myocardial infarction 6 weeks ago",
+      "supervised exercise and education programme"
+     ],
+     "x": "Established disease; rehabilitation to reduce complications."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Reducing complications of established disease: **tertiary prevention**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "He already has the disease."
+      ],
+      [
+       1,
+       "Prevents risk factors arising in whole populations."
+      ],
+      [
+       2,
+       "Protects from over-medicalisation."
+      ],
+      [
+       3,
+       "Detects disease early in people without symptoms; he has established disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tertiary prevention.** Rehab after an event = tertiary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 55 year old woman asks how often she will be invited for breast screening. She has no breast symptoms and no family history of breast cancer. Her pulse rate is 70 bpm and BP 128/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the correct screening interval?",
+   "o": [
+    "Annually",
+    "Every 2 years",
+    "Every 3 years",
+    "Every 5 years",
+    "Only if symptoms develop"
+   ],
+   "a": 2,
+   "e": "NHS breast screening offers mammography to women aged 50–70 every 3 years.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Programme facts: test and interval."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "55 year old woman",
+      "breast screening",
+      "no breast symptoms"
+     ],
+     "x": "Women 50–70 are offered mammography."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "NHS breast screening is **every 3 years**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Annual screening is not the NHS routine programme."
+      ],
+      [
+       1,
+       "Not the NHS interval."
+      ],
+      [
+       3,
+       "Too long; that is not the breast programme interval."
+      ],
+      [
+       4,
+       "Screening is for women without symptoms."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Every 3 years.** Breast: mammography, 50–70, every 3 years."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old woman has routine cervical screening. She has no symptoms. Investigations are shown.",
+   "labs": [
+    [
+     "High-risk HPV",
+     "Detected",
+     "Not detected",
+     "H"
+    ],
+    [
+     "Cytology",
+     "Negative (no dyskaryosis)",
+     "Negative",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Refer for colposcopy",
+    "Repeat test in 12 months",
+    "Repeat test in 3 months",
+    "Return to routine recall",
+    "Treat with LLETZ"
+   ],
+   "a": 1,
+   "e": "hrHPV positive with normal cytology is repeated at 12 months, since most infections clear. Abnormal cytology would mean colposcopy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in the hrHPV algorithm."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no symptoms",
+      "Investigations are shown"
+     ],
+     "x": "hrHPV positive, cytology normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "hrHPV+ with normal cytology: **repeat at 12 months**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Only if cytology is abnormal or hrHPV persists at 24 months."
+      ],
+      [
+       2,
+       "For an inadequate sample."
+      ],
+      [
+       3,
+       "hrHPV is positive, so not yet."
+      ],
+      [
+       4,
+       "No CIN has been found."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Repeat test in 12 months.** hrHPV+ normal cytology → 12 months; abnormal → colposcopy."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 40 year old woman has cervical screening. The laboratory reports the sample as inadequate. She returns 3 months later and the repeat sample is again inadequate. She has no symptoms.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Refer for colposcopy",
+    "Repeat in 12 months",
+    "Repeat in 3 months",
+    "Return to routine recall",
+    "Self-sampling HPV kit only"
+   ],
+   "a": 0,
+   "e": "An inadequate sample is repeated at 3 months; two consecutive inadequate samples prompt colposcopy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after repeated inadequate samples."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "inadequate",
+      "again inadequate"
+     ],
+     "x": "Two consecutive inadequate samples."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Two inadequate samples in a row: **colposcopy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Not after two inadequate samples."
+      ],
+      [
+       2,
+       "That was the right step after the first, not the second."
+      ],
+      [
+       3,
+       "Unsafe; she has no valid result."
+      ],
+      [
+       4,
+       "Not the pathway after two inadequate samples."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Refer for colposcopy.** One inadequate → 3 months; two → colposcopy."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 36 year old woman has 2 months of postcoital bleeding. Her cervical screen 1 year ago was hrHPV negative. Her pulse rate is 76 bpm and BP 116/72 mmHg. Her pregnancy test is negative.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Bring forward her cervical screening",
+    "Reassure: her screen was negative",
+    "Repeat screening in 3 years",
+    "Speculum examination and gynaecology referral",
+    "Start the combined pill"
+   ],
+   "a": 3,
+   "e": "Postcoital or intermenstrual bleeding is a gynaecological red flag needing examination and referral; screening is only for people without symptoms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Symptomatic patient in a screening topic."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "postcoital bleeding",
+      "screen 1 year ago was hrHPV negative"
+     ],
+     "x": "Red flag symptom; screening history is irrelevant to symptoms."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Examine and refer to gynaecology**, do not rely on screening."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Screening is for people without symptoms."
+      ],
+      [
+       1,
+       "A negative screen does not explain symptoms."
+      ],
+      [
+       2,
+       "Ignores a red flag."
+      ],
+      [
+       4,
+       "Treats nothing and delays diagnosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Speculum examination and gynaecology referral.** Symptoms = diagnostic pathway, not screening."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old woman with HIV attends her GP. She is well on antiretroviral therapy. She asks how often she should have cervical screening.",
+   "labs": [
+    [
+     "CD4 count",
+     "620 cells/µL",
+     "500–1500",
+     ""
+    ],
+    [
+     "HIV viral load",
+     "Undetectable",
+     "<50 copies/mL",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the correct screening interval?",
+   "o": [
+    "Every 3 years",
+    "Every 5 years",
+    "Every 6 months",
+    "Every year",
+    "Only when CD4 falls below 200"
+   ],
+   "a": 3,
+   "e": "HIV-positive women need annual cervical screening, whatever their CD4 count, because of higher risk of persistent HPV.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Special-group screening interval."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "with HIV",
+      "how often"
+     ],
+     "x": "HIV-positive women are at higher risk of persistent HPV."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "HIV-positive women have **annual** cervical screening."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Routine interval for women without HIV."
+      ],
+      [
+       1,
+       "Older age-group interval."
+      ],
+      [
+       2,
+       "Not the standard interval."
+      ],
+      [
+       4,
+       "Screening does not depend on CD4."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Every year.** HIV positive = annual cervical cytology."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A new screening test for prostate cancer is studied. Investigations are shown.",
+   "labs": [
+    [
+     "True positives (test +, disease +)",
+     "80",
+     "",
+     ""
+    ],
+    [
+     "False positives (test +, disease −)",
+     "30",
+     "",
+     ""
+    ],
+    [
+     "False negatives (test −, disease +)",
+     "20",
+     "",
+     ""
+    ],
+    [
+     "True negatives (test −, disease −)",
+     "870",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "What is the sensitivity of the test?",
+   "o": [
+    "20%",
+    "72.7%",
+    "80%",
+    "96.7%",
+    "97.8%"
+   ],
+   "a": 2,
+   "e": "Sensitivity = TP/(TP+FN) = 80/100 = 80%. Specificity would be 870/900.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Sensitivity: use only the people WITH disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Investigations are shown"
+     ],
+     "x": "TP = 80, FN = 20."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Sensitivity = 80/(80+20) = **80%**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is the false negative rate (20/100)."
+      ],
+      [
+       1,
+       "That is the PPV (80/110)."
+      ],
+      [
+       3,
+       "That is the specificity (870/900)."
+      ],
+      [
+       4,
+       "That is the NPV (870/890)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. 80%.** Sensitivity = TP/(TP+FN)."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A screening test for pulmonary embolism is evaluated in 1000 patients. Investigations are shown.",
+   "labs": [
+    [
+     "True positives (test +, disease +)",
+     "45",
+     "",
+     ""
+    ],
+    [
+     "False positives (test +, disease −)",
+     "135",
+     "",
+     ""
+    ],
+    [
+     "False negatives (test −, disease +)",
+     "5",
+     "",
+     ""
+    ],
+    [
+     "True negatives (test −, disease −)",
+     "815",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "What is the positive predictive value of the test?",
+   "o": [
+    "5%",
+    "25%",
+    "85.8%",
+    "90%",
+    "99.4%"
+   ],
+   "a": 1,
+   "e": "PPV = TP/(TP+FP) = 45/(45+135) = 25%. Sensitivity is 90% but most positives are false because prevalence is low.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "PPV: read across the test-positive row."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Investigations are shown"
+     ],
+     "x": "Test positive = TP 45 + FP 135 = 180."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PPV = 45/180 = **25%**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Prevalence (50/1000), not PPV."
+      ],
+      [
+       2,
+       "That is the specificity (815/950)."
+      ],
+      [
+       3,
+       "That is the sensitivity (45/50)."
+      ],
+      [
+       4,
+       "That is the NPV (815/820)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. 25%.** PPV = TP/(TP+FP): of all positives, how many truly have it."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 28 year old woman has colposcopy after an abnormal cervical screen. Biopsy shows CIN grade II. She has no symptoms. Her pulse rate is 68 bpm and BP 112/70 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate treatment?",
+   "o": [
+    "Antiviral therapy",
+    "Chemoradiotherapy",
+    "LLETZ",
+    "Radical hysterectomy",
+    "Repeat cytology in 3 years"
+   ],
+   "a": 2,
+   "e": "CIN grade II is treated by LLETZ. Hysterectomy and chemoradiotherapy are for invasive cancer.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Treatment of a confirmed pre-cancer."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "CIN grade II",
+      "no symptoms"
+     ],
+     "x": "CIN II is a treatable latent phase."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**LLETZ** (large loop excision of the transformation zone)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No antiviral treats CIN."
+      ],
+      [
+       1,
+       "For invasive cervical cancer."
+      ],
+      [
+       3,
+       "For invasive cancer, not CIN."
+      ],
+      [
+       4,
+       "CIN II needs treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. LLETZ.** CIN II = LLETZ, then test of cure at 6 months."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 35 year old woman had LLETZ for CIN II. Histology confirms complete excision. She has no symptoms and asks when her next test is.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate follow-up?",
+   "o": [
+    "Colposcopy every 3 months for 2 years",
+    "No further screening needed",
+    "Routine recall in 3 years",
+    "Routine recall in 5 years",
+    "Screening with HPV test of cure at 6 months"
+   ],
+   "a": 4,
+   "e": "After CIN II treatment women are offered cervical screening and an HPV test of cure at 6 months.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Follow-up after CIN treatment."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "LLETZ for CIN II",
+      "when her next test is"
+     ],
+     "x": "Post-treatment pathway."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Test of cure at 6 months**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not routine after complete excision."
+      ],
+      [
+       1,
+       "She still needs a test of cure and screening."
+      ],
+      [
+       2,
+       "Skips the test of cure."
+      ],
+      [
+       3,
+       "Skips the test of cure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Screening with HPV test of cure at 6 months.** CIN II treated → screening + HPV test of cure at 6 months."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 30 year old woman is 20 weeks pregnant. She receives an invitation for routine cervical screening. She has no symptoms and her previous screens were normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Delay screening until 12 weeks post-partum",
+    "Perform screening at 36 weeks",
+    "Perform screening now",
+    "Refer for colposcopy",
+    "Remove her from the programme"
+   ],
+   "a": 0,
+   "e": "Routine cervical screening is delayed in pregnancy until 12 weeks post-partum. Symptoms would need examination regardless.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Screening in a special situation: pregnancy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "20 weeks pregnant",
+      "routine cervical screening",
+      "no symptoms"
+     ],
+     "x": "Routine screen, asymptomatic, pregnant."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Delay until 12 weeks post-partum**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Still pregnant; delay until after birth."
+      ],
+      [
+       2,
+       "Routine screening is delayed in pregnancy."
+      ],
+      [
+       3,
+       "No abnormal result."
+      ],
+      [
+       4,
+       "She stays in the programme."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Delay screening until 12 weeks post-partum.** Pregnant and due a routine smear → 12 weeks after delivery."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A test with 90% sensitivity and 95% specificity gives a PPV of 82% in a hospital clinic. When it is used to screen the general population, the PPV falls to 2%. Investigations are shown.",
+   "labs": [
+    [
+     "Prevalence, hospital clinic",
+     "20%",
+     "",
+     ""
+    ],
+    [
+     "Prevalence, general population",
+     "0.1%",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely explanation?",
+   "o": [
+    "Higher prevalence in the general population",
+    "Lower prevalence in the general population",
+    "Lower sensitivity in the general population",
+    "Lower specificity in the general population",
+    "Spectrum of more severe disease"
+   ],
+   "a": 1,
+   "e": "By Bayes' theorem, PPV depends on prevalence. In a low-prevalence population even a specific test gives more false than true positives.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: why PPV changes."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "90% sensitivity and 95% specificity",
+      "PPV falls to 2%",
+      "general population"
+     ],
+     "x": "Same test; only the population changed."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Prevalence fell, so false positives outnumber true positives: **lower prevalence**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Higher prevalence would raise PPV."
+      ],
+      [
+       2,
+       "Sensitivity is a test property and is unchanged."
+      ],
+      [
+       3,
+       "Specificity is unchanged."
+      ],
+      [
+       4,
+       "More severe disease would make detection easier, not PPV lower."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Lower prevalence in the general population.** Bayes: prevalence drives PPV."
+    }
+   ]
+  }
+ ]
+}

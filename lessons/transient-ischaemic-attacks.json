@@ -1,0 +1,2042 @@
+{
+ "id": "transient-ischaemic-attacks",
+ "patient": {
+  "name": "Rajesh Patel",
+  "age": 68,
+  "sex": "M",
+  "setting": "GP surgery, then specialist TIA clinic",
+  "complaint": "30 minutes of right hand weakness and jumbled speech this morning, now completely resolved",
+  "background": [
+   "Hypertension on amlodipine",
+   "Hypercholesterolaemia, stopped simvastatin last year",
+   "Smoked 20 a day for 40 years",
+   "Retired accountant from Harrow; not on any anticoagulant"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a sudden focal deficit (weakness, dysphasia, monocular loss) that has fully resolved; if it has not resolved, it is a stroke.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Rajesh, 68, was making tea at **08:30**.",
+      "Suddenly he **could not grip the cup** in his right hand.",
+      "His words came out **jumbled** for about 30 minutes.",
+      "By 09:15 everything was **back to normal**.",
+      "He sees his GP at 11:00."
+     ],
+     "vitals": {
+      "T": "36.6°C",
+      "HR": "76 bpm regular",
+      "BP": "164/92 mmHg",
+      "RR": "14 /min",
+      "SpO2": "97% on air",
+      "CBG": "6.2 mmol/L"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's deficit came on suddenly and **fully resolved**: a TIA, a warning of impending stroke."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Symptom duration: TIA or stroke?",
+      "min": 0,
+      "max": 48,
+      "unit": "hours",
+      "bands": [
+       [
+        0,
+        24,
+        "fully resolved: TIA",
+        "ok"
+       ],
+       [
+        24,
+        48,
+        "persisting: stroke",
+        "bad"
+       ]
+      ],
+      "value": 0.75,
+      "label": "Rajesh 45 min",
+      "caption": "Most TIAs last minutes. Any deficit still present means stroke."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh smokes, has **hypertension** and **high cholesterol**, and has a carotid bruit: atherosclerotic risk everywhere."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh had sudden unilateral weakness and **dysphasia** that resolved; his examination now is **normal**, as expected."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Neurological examination: **completely normal**.",
+      "Pulse regular; heart sounds normal.",
+      "A **bruit** over the left carotid artery."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which territory did Rajesh's TIA affect?",
+     "o": [
+      "Left carotid (anterior) circulation",
+      "Posterior circulation",
+      "Right carotid circulation",
+      "Retinal artery only"
+     ],
+     "a": 0,
+     "r": "Right hand weakness plus language disturbance means the **left (dominant) hemisphere**, supplied by the **left carotid**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh's TIA was hemispheric. The two classics to recognise are **amaurosis fugax** (carotid) and a resolved homonymous hemianopia (PCA)."
+    },
+    {
+     "type": "compare",
+     "title": "Transient neurological symptoms",
+     "head": [
+      "Condition",
+      "Onset and course",
+      "Key clue"
+     ],
+     "rows": [
+      [
+       "TIA",
+       "Sudden, negative symptoms, resolves fully",
+       "Weakness, dysphasia, monocular loss"
+      ],
+      [
+       "Stroke",
+       "Sudden, persists",
+       "Deficit still present"
+      ],
+      [
+       "Migraine aura",
+       "Spreads over minutes, positive symptoms",
+       "Zigzag lights, tingling, then headache"
+      ],
+      [
+       "Hypoglycaemia",
+       "Variable",
+       "Low CBG, on insulin or sulfonylurea"
+      ],
+      [
+       "Focal seizure",
+       "Jerking, then Todd's paresis",
+       "Positive motor symptoms"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Rajesh's big danger is a **stroke** in the coming days. Symptoms that do not resolve are a completed stroke."
+    },
+    {
+     "type": "trap",
+     "text": "Do not call it a TIA if the deficit is **still present** when you see the patient: that is a stroke and needs 999."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect carotid Doppler as the key investigation, MRI with DWI as the preferred imaging, and immediate CT if the patient is anticoagulated.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's TIA is a **clinical diagnosis** from the history; scans look for the cause and the risk, not to prove it."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh's CBG of **6.2** excludes hypoglycaemia. He needs a **carotid Doppler**, an ECG for AF and bloods."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Rajesh's ECG in clinic",
+      "layout": "strip",
+      "rhythm": "sinus",
+      "rate": 76,
+      "caption": "Sinus rhythm: no AF on this trace, so the source is likely the carotid."
+     },
+     "text": "AF changes treatment from antiplatelet to anticoagulant, so always look."
+    },
+    {
+     "type": "labs",
+     "title": "TIA clinic bloods",
+     "rows": [
+      [
+       "Total cholesterol",
+       "6.4 mmol/L",
+       "<5.0",
+       "H"
+      ],
+      [
+       "LDL",
+       "4.3 mmol/L",
+       "<3.0",
+       "H"
+      ],
+      [
+       "HbA1c",
+       "41 mmol/mol",
+       "<48",
+       ""
+      ],
+      [
+       "Haemoglobin",
+       "148 g/L",
+       "130–175",
+       ""
+      ],
+      [
+       "Creatinine",
+       "84 µmol/L",
+       "60–110",
+       ""
+      ]
+     ],
+     "text": "High cholesterol: restart a high-intensity statin. No diabetes."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "At the TIA clinic within 24 hours Rajesh has **MRI with DWI** (a small bright spot) and carotid **duplex**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Left internal carotid stenosis (NASCET)",
+      "min": 0,
+      "max": 100,
+      "unit": "%",
+      "bands": [
+       [
+        0,
+        50,
+        "<50%: medical therapy",
+        "ok"
+       ],
+       [
+        50,
+        99,
+        "50–99%: endarterectomy",
+        "bad"
+       ],
+       [
+        99,
+        100,
+        "occluded: no surgery",
+        "warn"
+       ]
+      ],
+      "value": 78,
+      "label": "Rajesh 78%",
+      "caption": "78% symptomatic stenosis: refer for urgent carotid endarterectomy."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh takes no anticoagulant. If he did, a new TIA would mean **immediate admission** for a CT head to exclude a bleed."
+    },
+    {
+     "type": "pearl",
+     "text": "MRI with **diffusion-weighted imaging** is preferred in TIA; CT is reserved for anticoagulated patients or suspected haemorrhage."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'aspirin 300 mg and TIA clinic within 24 hours' versus '999' for ongoing symptoms; then endarterectomy for 50–99% stenosis and anticoagulation for AF.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Rajesh's GP gives **aspirin 300 mg now** and refers him to be seen in the TIA clinic **within 24 hours**."
+    },
+    {
+     "type": "flow",
+     "title": "Suspected TIA pathway",
+     "nodes": [
+      "Symptoms resolved? (if not: 999)",
+      "Check CBG",
+      "Aspirin 300 mg now",
+      "TIA clinic within 24 h",
+      "MRI DWI, carotid duplex, ECG",
+      "Secondary prevention ± endarterectomy"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "If Rajesh's symptoms had **returned again and again** (crescendo TIA) or persisted, he would go straight to hospital."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh has no aspirin contraindication. If he had a GI bleed risk, **clopidogrel** plus a **PPI** would be used."
+    },
+    {
+     "type": "ask",
+     "q": "Rajesh's left carotid is 78% narrowed. What is the definitive treatment?",
+     "o": [
+      "Carotid endarterectomy",
+      "Clopidogrel alone",
+      "Repeat Doppler in 6 months",
+      "Warfarin"
+     ],
+     "a": 0,
+     "r": "Symptomatic **50–99%** stenosis (NASCET) needs **urgent carotid endarterectomy**, ideally within 2 weeks."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Rajesh's stenosis is on the **left**, the side feeding the hemisphere that caused his right-hand symptoms: he is listed for **endarterectomy**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Long-term Rajesh takes **clopidogrel**, **atorvastatin 80 mg** and better BP control, and stops smoking."
+    },
+    {
+     "type": "compare",
+     "title": "Secondary prevention after TIA",
+     "head": [
+      "Situation",
+      "Antithrombotic",
+      "Plus"
+     ],
+     "rows": [
+      [
+       "No AF",
+       "Clopidogrel (DAPT if high risk)",
+       "Atorvastatin 80 mg, BP control"
+      ],
+      [
+       "AF",
+       "DOAC (apixaban/rivaroxaban), start once bleed excluded",
+       "Atorvastatin 80 mg, BP control"
+      ],
+      [
+       "Aspirin intolerant",
+       "Clopidogrel + PPI",
+       "Atorvastatin 80 mg"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "In AF the answer is **anticoagulation**, not antiplatelets. After a TIA it can start immediately once haemorrhage is excluded."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Rajesh's pathway follows **NICE NG128**; his stenosis is graded by **NASCET** criteria."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Applied mechanism: ischaemia without infarction, carotid emboli causing amaurosis fugax, and why endarterectomy reduces risk.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "An embolus briefly blocked a branch of Rajesh's left MCA, then broke up: ischaemia **without infarction**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Rajesh's left carotid plaque is the likely **embolic source**; plaque rupture showers debris downstream."
+    },
+    {
+     "type": "flow",
+     "title": "From carotid plaque to TIA",
+     "nodes": [
+      "Atherosclerotic carotid plaque",
+      "Plaque rupture, thrombus forms",
+      "Embolus to MCA or ophthalmic artery",
+      "Brief occlusion, then lysis",
+      "Function returns: no infarct"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Endarterectomy removes the plaque, taking away Rajesh's **embolic source**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Rajesh's stroke risk is highest in the **first days**, which is why aspirin is given immediately and review is within 24 hours."
+    },
+    {
+     "type": "ask",
+     "q": "Which artery is transiently occluded in amaurosis fugax?",
+     "o": [
+      "Central retinal / ophthalmic artery",
+      "Middle cerebral artery",
+      "Posterior cerebral artery",
+      "Vertebral artery"
+     ],
+     "a": 0,
+     "r": "Emboli from the carotid reach the **ophthalmic / central retinal artery**, giving painless monocular loss."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "By definition, a TIA resolves within what time?",
+   "o": [
+    "1 hour",
+    "6 hours",
+    "24 hours",
+    "72 hours"
+   ],
+   "a": 2,
+   "r": "By definition **within 24 hours**, usually minutes."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is amaurosis fugax?",
+   "o": [
+    "Bilateral blurring with headache",
+    "Painless transient monocular visual loss",
+    "Painful red eye",
+    "Permanent field defect"
+   ],
+   "a": 1,
+   "r": "A curtain over one eye: classic **carotid** TIA."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the key complication of a TIA?",
+   "o": [
+    "Dementia",
+    "Epilepsy",
+    "Ischaemic stroke",
+    "Subdural haemorrhage"
+   ],
+   "a": 2,
+   "r": "A TIA is a warning of **impending stroke**."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test checks for carotid stenosis after TIA?",
+   "o": [
+    "Carotid Doppler ultrasound",
+    "CT head",
+    "EEG",
+    "Lumbar puncture"
+   ],
+   "a": 0,
+   "r": "**Urgent carotid Doppler** for all candidates for endarterectomy."
+  },
+  {
+   "d": "investigation",
+   "q": "Which imaging is preferred in the TIA clinic?",
+   "o": [
+    "CT head",
+    "MRI with DWI",
+    "PET scan",
+    "Skull X-ray"
+   ],
+   "a": 1,
+   "r": "**MRI with diffusion-weighted imaging**, within 24 hours."
+  },
+  {
+   "d": "investigation",
+   "q": "A TIA patient on apixaban needs what?",
+   "o": [
+    "Outpatient MRI",
+    "Immediate admission for CT head",
+    "Routine TIA clinic",
+    "Stop apixaban and review in a week"
+   ],
+   "a": 1,
+   "r": "Anticoagulated: **admit for CT** to exclude haemorrhage."
+  },
+  {
+   "d": "management",
+   "q": "What is the immediate treatment of suspected TIA?",
+   "o": [
+    "Alteplase",
+    "Aspirin 300 mg",
+    "Clopidogrel 75 mg",
+    "Warfarin"
+   ],
+   "a": 1,
+   "r": "**Aspirin 300 mg immediately**, unless contraindicated."
+  },
+  {
+   "d": "management",
+   "q": "Aspirin is contraindicated. What instead?",
+   "o": [
+    "Clopidogrel + PPI",
+    "Dipyridamole alone",
+    "No antiplatelet",
+    "Warfarin"
+   ],
+   "a": 0,
+   "r": "**Clopidogrel** monotherapy plus a PPI such as lansoprazole."
+  },
+  {
+   "d": "management",
+   "q": "Which carotid stenosis warrants endarterectomy after TIA?",
+   "o": [
+    "10–29%",
+    "30–49%",
+    "50–99% symptomatic",
+    "100% occluded"
+   ],
+   "a": 2,
+   "r": "**50–99%** (NASCET); not if totally occluded."
+  },
+  {
+   "d": "science",
+   "q": "What separates TIA from stroke pathologically?",
+   "o": [
+    "Haemorrhage",
+    "Infarction",
+    "Inflammation",
+    "Vessel type"
+   ],
+   "a": 1,
+   "r": "In TIA ischaemia resolves **before infarction**."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is a TIA and how is it defined?",
+    "tip": "Exam thinking: the word 'resolved' in the stem is what makes it a TIA.",
+    "points": [
+     {
+      "p": "Transient neurological dysfunction from focal cerebral ischaemia",
+      "k": [
+       [
+        "isch"
+       ],
+       [
+        "focal",
+        "transient",
+        "temporary"
+       ]
+      ],
+      "why": "Not a global loss of consciousness."
+     },
+     {
+      "p": "Fully resolves, by definition within 24 hours (usually minutes)",
+      "k": [
+       [
+        "24",
+        "resolve"
+       ]
+      ],
+      "why": "Ongoing symptoms = stroke."
+     },
+     {
+      "p": "Warning sign of impending stroke",
+      "k": [
+       [
+        "stroke"
+       ]
+      ],
+      "why": "Risk is highest in the first days."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors and the typical presentation of a TIA?",
+    "tip": "Exam thinking: same risk factors as stroke; examination is normal by the time you see them.",
+    "points": [
+     {
+      "p": "Risk factors: AF, carotid stenosis, hypertension, hyperlipidaemia, smoking",
+      "k": [
+       [
+        "af",
+        "atrial fibrillation",
+        "carotid",
+        "hypertension",
+        "smok",
+        "cholesterol",
+        "lipid"
+       ]
+      ],
+      "why": "A carotid bruit is a stem clue."
+     },
+     {
+      "p": "Sudden unilateral weakness or speech disturbance that completely resolves",
+      "k": [
+       [
+        "weak",
+        "speech",
+        "dysphasia",
+        "aphasia"
+       ]
+      ],
+      "why": "Negative symptoms (loss of function)."
+     },
+     {
+      "p": "Facial droop, numbness, transient dysarthria",
+      "k": [
+       [
+        "face",
+        "facial",
+        "numb",
+        "dysarthria"
+       ]
+      ],
+      "why": "FAST features."
+     },
+     {
+      "p": "Examination normal at assessment",
+      "k": [
+       [
+        "normal"
+       ]
+      ],
+      "why": "Abnormal findings mean stroke."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the classic TIA presentations to recognise by name?",
+    "tip": "Exam thinking: one eye = carotid; both eyes, one half-field = posterior.",
+    "points": [
+     {
+      "p": "Amaurosis fugax: transient monocular visual loss (curtain)",
+      "k": [
+       [
+        "amaurosis",
+        "monocular",
+        "one eye"
+       ]
+      ],
+      "why": "Carotid atherosclerosis is the usual source."
+     },
+     {
+      "p": "PCA territory TIA: transient homonymous hemianopia (occipital cortex)",
+      "k": [
+       [
+        "hemianopia"
+       ]
+      ],
+      "why": "Lesion behind the chiasm."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell a TIA from its mimics and from stroke?",
+    "tip": "Exam thinking: negative, sudden, fully resolved = TIA.",
+    "points": [
+     {
+      "p": "Persisting deficit = completed stroke, not TIA",
+      "k": [
+       [
+        "persist",
+        "ongoing",
+        "not resolv",
+        "still"
+       ]
+      ],
+      "why": "Treat as stroke: 999."
+     },
+     {
+      "p": "Hypoglycaemia: check capillary glucose",
+      "k": [
+       [
+        "glucose",
+        "cbg",
+        "hypoglyc",
+        "sugar"
+       ]
+      ],
+      "why": "The commonest mimic to exclude first."
+     },
+     {
+      "p": "Migraine aura: spreading positive symptoms, then headache",
+      "k": [
+       [
+        "migraine"
+       ]
+      ],
+      "why": "Positive phenomena (sparkles, tingling) favour migraine."
+     },
+     {
+      "p": "Focal seizure: jerking then Todd's paresis",
+      "k": [
+       [
+        "seizure",
+        "todd"
+       ]
+      ],
+      "why": "Positive motor symptoms."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you investigate a TIA?",
+    "tip": "Exam thinking: TIA is clinical; the tests find the cause.",
+    "points": [
+     {
+      "p": "Clinical diagnosis plus urgent specialist review",
+      "k": [
+       [
+        "clinical"
+       ]
+      ],
+      "why": "No test proves a TIA."
+     },
+     {
+      "p": "Capillary glucose",
+      "k": [
+       [
+        "glucose",
+        "cbg",
+        "sugar"
+       ]
+      ],
+      "why": "Excludes hypoglycaemia."
+     },
+     {
+      "p": "Urgent carotid Doppler / duplex",
+      "k": [
+       [
+        "doppler",
+        "duplex",
+        "carotid"
+       ]
+      ],
+      "why": "Unless not a candidate for endarterectomy."
+     },
+     {
+      "p": "ECG for AF, bloods",
+      "k": [
+       [
+        "ecg"
+       ]
+      ],
+      "why": "AF changes management."
+     },
+     {
+      "p": "MRI with DWI within 24 hours in TIA clinic",
+      "k": [
+       [
+        "mri",
+        "dwi",
+        "diffusion"
+       ]
+      ],
+      "why": "Preferred over CT."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What do you do if a TIA patient is anticoagulated?",
+    "tip": "Exam thinking: anticoagulant in the stem changes the pathway.",
+    "points": [
+     {
+      "p": "Admit immediately",
+      "k": [
+       [
+        "admit",
+        "hospital",
+        "immediate"
+       ]
+      ],
+      "why": "Not routine TIA clinic."
+     },
+     {
+      "p": "Non-contrast CT head to exclude haemorrhage",
+      "k": [
+       [
+        "ct"
+       ]
+      ],
+      "why": "Bleeding can mimic TIA in an anticoagulated patient."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the immediate management of a suspected TIA, and what changes it?",
+    "tip": "Exam thinking: resolved = aspirin + clinic; ongoing or crescendo = admit.",
+    "points": [
+     {
+      "p": "Aspirin 300 mg immediately",
+      "k": [
+       [
+        "aspirin"
+       ],
+       [
+        "300"
+       ]
+      ],
+      "why": "Unless contraindicated or anticoagulated."
+     },
+     {
+      "p": "Specialist review in TIA clinic within 24 hours",
+      "k": [
+       [
+        "24"
+       ]
+      ],
+      "why": "NICE: everyone within 24 hours."
+     },
+     {
+      "p": "Aspirin contraindicated: clopidogrel + PPI",
+      "k": [
+       [
+        "clopidogrel"
+       ]
+      ],
+      "why": "E.g. lansoprazole for GI protection."
+     },
+     {
+      "p": "Ongoing symptoms or crescendo TIA: emergency admission",
+      "k": [
+       [
+        "crescendo",
+        "emergency",
+        "admi",
+        "999"
+       ]
+      ],
+      "why": "Not a routine clinic referral."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the secondary prevention after a TIA, including surgery?",
+    "tip": "Exam thinking: AF changes the drug; stenosis percentage decides surgery.",
+    "points": [
+     {
+      "p": "Clopidogrel (dual antiplatelet if high risk)",
+      "k": [
+       [
+        "clopidogrel",
+        "antiplatelet"
+       ]
+      ],
+      "why": "Long-term antiplatelet."
+     },
+     {
+      "p": "Atorvastatin 80 mg",
+      "k": [
+       [
+        "atorvastatin",
+        "statin"
+       ]
+      ],
+      "why": "High-intensity statin."
+     },
+     {
+      "p": "BP control, stop smoking",
+      "k": [
+       [
+        "blood pressure",
+        "bp",
+        "antihypertensive"
+       ]
+      ],
+      "why": "Modifiable risk factors."
+     },
+     {
+      "p": "AF: anticoagulate (apixaban/rivaroxaban) instead",
+      "k": [
+       [
+        "anticoag",
+        "doac",
+        "apixaban",
+        "rivaroxaban",
+        "warfarin"
+       ]
+      ],
+      "why": "Start once haemorrhage excluded."
+     },
+     {
+      "p": "Carotid endarterectomy for symptomatic 50–99% stenosis (NASCET); not if occluded",
+      "k": [
+       [
+        "endarterectomy"
+       ],
+       [
+        "50"
+       ]
+      ],
+      "why": "Urgent, ideally within 2 weeks."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does a TIA differ from a stroke, and why is carotid disease important?",
+    "tip": "Exam thinking: infarction is the dividing line.",
+    "points": [
+     {
+      "p": "Thrombus/embolus transiently occludes, ischaemia resolves before infarction",
+      "k": [
+       [
+        "infarct"
+       ]
+      ],
+      "why": "Stroke = infarction."
+     },
+     {
+      "p": "Carotid atherosclerosis: plaque rupture or thrombus embolises distally",
+      "k": [
+       [
+        "carotid"
+       ],
+       [
+        "plaque",
+        "athero",
+        "embol"
+       ]
+      ],
+      "why": "Major embolic source."
+     },
+     {
+      "p": "Amaurosis fugax: transient occlusion of ophthalmic / central retinal artery",
+      "k": [
+       [
+        "ophthalmic",
+        "retinal"
+       ]
+      ],
+      "why": "First branch of the internal carotid."
+     },
+     {
+      "p": "Endarterectomy removes the plaque, reducing embolic risk",
+      "k": [
+       [
+        "remov"
+       ],
+       [
+        "plaque"
+       ]
+      ],
+      "why": "Not done if fully occluded: no flow, no emboli."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "TIA": "Transient ischaemic attack: brief focal neurological dysfunction from ischaemia that fully resolves without infarction.",
+  "focal cerebral ischaemia": "Reduced blood supply to one area of the brain.",
+  "amaurosis fugax": "Painless, temporary, curtain-like loss of vision in one eye from retinal artery ischaemia.",
+  "homonymous hemianopia": "Loss of the same half of the visual field in both eyes, from a lesion behind the chiasm.",
+  "dysphasia": "Difficulty producing or understanding language.",
+  "aphasia": "Loss of language ability from a brain lesion.",
+  "dysarthria": "Slurred speech from weak or uncoordinated speech muscles.",
+  "carotid bruit": "A whooshing sound over the carotid from turbulent flow through a stenosis.",
+  "carotid stenosis": "Narrowing of the carotid artery, usually by atherosclerosis.",
+  "carotid Doppler": "Ultrasound measuring carotid narrowing and blood flow.",
+  "duplex ultrasound": "Ultrasound combining images and Doppler flow, used to grade carotid stenosis.",
+  "NASCET": "North American Symptomatic Carotid Endarterectomy Trial criteria for measuring carotid stenosis percentage.",
+  "carotid endarterectomy": "Surgery to remove atherosclerotic plaque from the carotid artery.",
+  "crescendo TIA": "Repeated TIAs increasing in frequency, needing emergency admission.",
+  "DWI": "Diffusion-weighted MRI, which shows even small acute ischaemic lesions as bright.",
+  "diffusion-weighted imaging": "MRI sequence that detects acute ischaemia within minutes.",
+  "TIA clinic": "Specialist rapid-access clinic where suspected TIA is assessed within 24 hours.",
+  "atrial fibrillation": "Irregularly irregular rhythm that lets clots form in the left atrium and embolise.",
+  "AF": "Atrial fibrillation.",
+  "DOAC": "Direct oral anticoagulant, such as apixaban or rivaroxaban.",
+  "apixaban": "A factor Xa inhibitor DOAC used in AF.",
+  "rivaroxaban": "A factor Xa inhibitor DOAC used in AF.",
+  "clopidogrel": "Antiplatelet that blocks the P2Y12 ADP receptor; long-term choice after TIA.",
+  "PPI": "Proton pump inhibitor, such as lansoprazole, protecting the stomach.",
+  "lansoprazole": "A proton pump inhibitor used for stomach protection.",
+  "dual antiplatelet": "Two antiplatelets together (e.g. aspirin plus clopidogrel) for a short time in high-risk patients.",
+  "atorvastatin": "High-intensity statin given at 80 mg after TIA or stroke.",
+  "embolus": "A clot or plaque fragment carried in the blood that blocks a smaller vessel.",
+  "plaque rupture": "Breakdown of an atherosclerotic plaque, exposing material that triggers thrombus.",
+  "ophthalmic artery": "First branch of the internal carotid, supplying the eye.",
+  "central retinal artery": "Branch of the ophthalmic artery supplying the inner retina.",
+  "infarction": "Tissue death from loss of blood supply.",
+  "Todd's paresis": "Temporary weakness after a focal seizure that can mimic TIA.",
+  "CBG": "Capillary blood glucose, a bedside finger-prick test.",
+  "mimic": "A condition that imitates TIA or stroke, such as hypoglycaemia, migraine or seizure.",
+  "internal carotid": "The branch of the common carotid that supplies the eye and anterior brain."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man has a 20 minute episode of left arm and face weakness. When seen by his GP 2 hours later, his examination is completely normal. He has hypertension and smokes. His pulse rate is 78 bpm regular and BP 162/94 mmHg. His capillary glucose is 5.9 mmol/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Focal seizure",
+    "Hypoglycaemia",
+    "Ischaemic stroke",
+    "Migraine with aura",
+    "Transient ischaemic attack"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for a diagnosis: resolved or not?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "20 minute episode",
+      "examination is completely normal",
+      "hypertension and smokes",
+      "capillary glucose is 5.9 mmol/L"
+     ],
+     "x": "Brief focal deficit, fully resolved, vascular risks, mimic excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Sudden focal deficit that resolved fully = **TIA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No jerking; weakness was a negative symptom."
+      ],
+      [
+       1,
+       "Glucose is normal."
+      ],
+      [
+       2,
+       "The deficit has fully resolved."
+      ],
+      [
+       3,
+       "No spreading positive symptoms or headache."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Transient ischaemic attack.** Resolved = TIA; persisting = stroke."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 64 year old woman is seen in the TIA clinic the day after a 15 minute episode of right-sided weakness that resolved. She takes no anticoagulants. Her pulse rate is 72 bpm regular and BP 148/86 mmHg. Carotid Doppler shows 30% stenosis bilaterally.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate brain imaging?",
+   "o": [
+    "CT angiogram of the circle of Willis",
+    "Lumbar puncture",
+    "MRI brain with diffusion-weighted imaging",
+    "No imaging is needed",
+    "Non-contrast CT head immediately"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Asks for brain imaging in TIA clinic."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "TIA clinic",
+      "resolved",
+      "takes no anticoagulants"
+     ],
+     "x": "Specialist clinic, resolved TIA, not anticoagulated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**MRI with DWI** (NICE, within 24 hours)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For aneurysms or acute vessel occlusion."
+      ],
+      [
+       1,
+       "No role in TIA."
+      ],
+      [
+       3,
+       "NICE advises MRI in the TIA clinic when imaging is needed to look for ischaemia or alternatives."
+      ],
+      [
+       4,
+       "For anticoagulated patients or suspected bleed."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. MRI brain with diffusion-weighted imaging.** TIA imaging = MRI DWI; CT only if anticoagulated."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 69 year old man had a 30 minute episode of slurred speech that has fully resolved. He had a major upper GI bleed from a peptic ulcer last year. His pulse rate is 80 bpm regular and BP 150/88 mmHg. He is not anticoagulated.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial antiplatelet treatment?",
+   "o": [
+    "Aspirin 300 mg",
+    "Clopidogrel with a proton pump inhibitor",
+    "Dipyridamole alone",
+    "No antiplatelet",
+    "Warfarin"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Antiplatelet choice when aspirin is unsafe."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fully resolved",
+      "major upper GI bleed from a peptic ulcer",
+      "not anticoagulated"
+     ],
+     "x": "Resolved TIA, aspirin contraindicated by GI bleeding."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Clopidogrel + PPI** (e.g. lansoprazole)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Contraindicated given his recent GI bleed."
+      ],
+      [
+       2,
+       "Not the recommended alternative."
+      ],
+      [
+       3,
+       "Leaves him at high early stroke risk."
+      ],
+      [
+       4,
+       "No AF; antiplatelets are indicated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Clopidogrel with a proton pump inhibitor.** Aspirin contraindicated = clopidogrel + PPI."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old man has sudden painless loss of vision in his right eye, 'like a curtain coming down', lasting 5 minutes. It fully recovers. He has a right carotid bruit. His pulse rate is 74 bpm and BP 158/90 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his visual loss?",
+   "o": [
+    "Embolus from carotid plaque transiently occluding the retinal circulation",
+    "Giant cell arteritis of the posterior ciliary arteries",
+    "Occipital cortex ischaemia",
+    "Raised intracranial pressure",
+    "Retinal detachment"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of amaurosis fugax."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "painless loss of vision in his right eye",
+      "like a curtain coming down",
+      "fully recovers",
+      "right carotid bruit"
+     ],
+     "x": "Monocular, curtain, resolved, ipsilateral bruit."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Carotid **embolus** briefly blocking the **ophthalmic / central retinal artery**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Headache, jaw claudication, older, raised ESR."
+      ],
+      [
+       2,
+       "Gives a bilateral homonymous field defect, not one eye."
+      ],
+      [
+       3,
+       "Transient obscurations with papilloedema and headache."
+      ],
+      [
+       4,
+       "Floaters and flashes, not fully recovering."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Embolus from carotid plaque transiently occluding the retinal circulation.** Amaurosis fugax = carotid embolus to the retinal circulation."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 73 year old woman had a 40 minute episode of difficulty finding words and weakness of her right hand this morning. By the time she arrives at the GP surgery, it has completely resolved. She has type 2 diabetes and hypercholesterolaemia. Her pulse rate is 76 bpm regular, BP 158/88 mmHg and capillary glucose 7.1 mmol/L. Neurological examination is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bell's palsy",
+    "Focal seizure",
+    "Hypoglycaemia",
+    "Ischaemic stroke",
+    "Transient ischaemic attack"
+   ],
+   "a": 4,
+   "e": "A sudden focal deficit that fully resolves, with normal examination and glucose, is a TIA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "40 minute episode",
+      "completely resolved",
+      "capillary glucose 7.1 mmol/L",
+      "Neurological examination is normal"
+     ],
+     "x": "Brief, fully resolved focal deficit; glucose normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**TIA** (left carotid territory)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Facial weakness only, and it does not resolve in minutes."
+      ],
+      [
+       1,
+       "Positive symptoms such as jerking would be expected."
+      ],
+      [
+       2,
+       "Glucose is 7.1."
+      ],
+      [
+       3,
+       "The deficit has fully resolved."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Transient ischaemic attack.** Resolved focal deficit = TIA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 67 year old man has sudden painless loss of vision in his left eye lasting 10 minutes. He describes a black curtain coming down. It fully recovered. He smokes and has hypertension. His pulse rate is 72 bpm and BP 166/94 mmHg. Visual acuity and fundoscopy are now normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute angle-closure glaucoma",
+    "Central retinal vein occlusion",
+    "Giant cell arteritis",
+    "Migraine with aura",
+    "Transient ischaemic attack (amaurosis fugax)"
+   ],
+   "a": 4,
+   "e": "Painless curtain-like monocular loss that fully recovers is amaurosis fugax, a carotid-territory TIA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of transient monocular loss."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "painless loss of vision in his left eye",
+      "black curtain coming down",
+      "fully recovered",
+      "smokes and has hypertension"
+     ],
+     "x": "Monocular, painless, curtain, resolved, vascular risks."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Amaurosis fugax**: a retinal TIA."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Painful red eye with halos."
+      ],
+      [
+       1,
+       "Persisting loss with 'stormy sunset' fundus."
+      ],
+      [
+       2,
+       "Headache, jaw claudication, scalp tenderness, raised ESR."
+      ],
+      [
+       3,
+       "Positive phenomena in both eyes' fields, then headache."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Transient ischaemic attack (amaurosis fugax).** Curtain over one eye that resolves = amaurosis fugax."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man had two episodes this week of right arm weakness lasting 10 minutes, each fully resolving. He smokes 30 a day. His pulse rate is 70 bpm regular and BP 160/90 mmHg. ECG shows sinus rhythm.",
+   "labs": [
+    [
+     "LDL",
+     "4.0 mmol/L",
+     "<3.0",
+     "H"
+    ],
+    [
+     "Glucose",
+     "5.6 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Ejection systolic murmur radiating to the carotids",
+    "Irregularly irregular pulse",
+    "Left carotid bruit",
+    "Right carotid bruit",
+    "Right pronator drift"
+   ],
+   "a": 2,
+   "e": "Right-sided symptoms come from the left hemisphere; in a smoker in sinus rhythm the likely source is left carotid stenosis, heard as a bruit.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely examination finding."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "right arm weakness",
+      "fully resolving",
+      "smokes 30 a day",
+      "ECG shows sinus rhythm"
+     ],
+     "x": "Recurrent right-sided TIAs, smoker, no AF."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Left hemisphere = **left carotid** stenosis: a **left carotid bruit**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aortic stenosis; not the TIA mechanism here."
+      ],
+      [
+       1,
+       "Pulse is regular and ECG is sinus."
+      ],
+      [
+       3,
+       "Right carotid supplies the right hemisphere, giving LEFT-sided symptoms."
+      ],
+      [
+       4,
+       "Examination is normal once a TIA has resolved."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Left carotid bruit.** Carotid lesion is on the side opposite the limb symptoms."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 76 year old woman had a 30 minute episode of left face and arm weakness that resolved. Her pulse rate is 108 bpm irregularly irregular and BP 146/84 mmHg. ECG (see item resources). Carotid Doppler shows less than 30% stenosis bilaterally.",
+   "labs": [],
+   "visual": {
+    "kind": "ecg",
+    "title": "ECG",
+    "layout": "12lead",
+    "rhythm": "af",
+    "rate": 108,
+    "leads": {},
+    "caption": "Irregularly irregular rhythm with no P waves."
+   },
+   "q": "Which is the most likely cause of her TIA?",
+   "o": [
+    "Cardioembolism from atrial fibrillation",
+    "Carotid artery dissection",
+    "Hypertensive small vessel disease",
+    "Right carotid stenosis",
+    "Vasculitis"
+   ],
+   "a": 0,
+   "e": "With AF on the ECG and insignificant carotid disease, the embolic source is the left atrium: cardioembolic TIA.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Most likely cause."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "irregularly irregular",
+      "ECG (see item resources)",
+      "less than 30% stenosis bilaterally"
+     ],
+     "x": "AF on the ECG; carotids not significantly narrowed."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cardioembolism from AF.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Young, neck pain, Horner's."
+      ],
+      [
+       2,
+       "Causes lacunar events; AF is a more convincing source."
+      ],
+      [
+       3,
+       "Doppler shows less than 30% stenosis."
+      ],
+      [
+       4,
+       "No systemic features."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Cardioembolism from atrial fibrillation.** AF + clean carotids = cardioembolic TIA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old man noticed he could not see things on his left side for 25 minutes. It fully resolved. Visual field testing now is normal. He has hypertension and hyperlipidaemia. His pulse rate is 74 bpm and BP 156/92 mmHg.",
+   "labs": [
+    [
+     "Cholesterol",
+     "6.1 mmol/L",
+     "<5.0",
+     "H"
+    ],
+    [
+     "Glucose",
+     "5.4 mmol/L",
+     "4.0–7.8",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely site of the transient ischaemia?",
+   "o": [
+    "Left occipital cortex",
+    "Left retina",
+    "Optic chiasm",
+    "Right occipital cortex",
+    "Right retina"
+   ],
+   "a": 3,
+   "e": "A transient homonymous hemianopia is a PCA-territory TIA in the occipital cortex opposite the field loss.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Site of ischaemia."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "could not see things on his left side",
+      "fully resolved"
+     ],
+     "x": "Transient left-sided field loss in both eyes."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Left homonymous field loss = **right occipital cortex** (PCA territory TIA)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would cause a RIGHT-sided field loss."
+      ],
+      [
+       1,
+       "Retinal ischaemia affects one eye only."
+      ],
+      [
+       2,
+       "Causes bitemporal hemianopia, usually from a pituitary mass."
+      ],
+      [
+       4,
+       "Monocular, not a hemifield in both eyes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Right occipital cortex.** Field defect side is opposite the occipital lesion."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man had three episodes of left arm numbness and weakness in the last 24 hours, each lasting 15 minutes and fully resolving. He is now well with a normal examination. His pulse rate is 72 bpm and BP 170/96 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Crescendo TIA",
+    "Focal seizures",
+    "Lacunar stroke",
+    "Migraine with aura",
+    "Peripheral nerve entrapment"
+   ],
+   "a": 0,
+   "e": "Multiple TIAs in a short period is crescendo TIA, needing urgent emergency admission rather than routine clinic.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of recurrent events."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "three episodes",
+      "in the last 24 hours",
+      "fully resolving"
+     ],
+     "x": "Repeated resolving TIAs clustering in a day."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Crescendo TIA**: an emergency admission."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Positive symptoms and post-ictal weakness."
+      ],
+      [
+       2,
+       "A stroke persists."
+      ],
+      [
+       3,
+       "Spreading positive sensory symptoms then headache."
+      ],
+      [
+       4,
+       "Not sudden, recurrent and resolving with weakness of a whole arm."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Crescendo TIA.** Clustering TIAs = crescendo TIA = admit."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old man is seen in the TIA clinic after a resolved episode of right hand weakness and dysphasia. He is fit for surgery. His pulse rate is 76 bpm regular and BP 152/88 mmHg. ECG shows sinus rhythm.",
+   "labs": [
+    [
+     "LDL",
+     "3.8 mmol/L",
+     "<3.0",
+     "H"
+    ],
+    [
+     "HbA1c",
+     "44 mmol/mol",
+     "<48",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to guide further management?",
+   "o": [
+    "Carotid Doppler ultrasound",
+    "Coronary angiography",
+    "Electroencephalogram",
+    "Lumbar puncture",
+    "Transthoracic echocardiogram"
+   ],
+   "a": 0,
+   "e": "All TIA patients who could have endarterectomy need an urgent carotid Doppler.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation that changes management."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "resolved episode",
+      "fit for surgery",
+      "ECG shows sinus rhythm"
+     ],
+     "x": "Carotid territory TIA, surgical candidate, no AF."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent carotid Doppler** to look for stenosis needing endarterectomy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Investigates angina, not TIA."
+      ],
+      [
+       2,
+       "For seizures."
+      ],
+      [
+       3,
+       "No role."
+      ],
+      [
+       4,
+       "Considered later; the carotid is the priority in an anterior circulation TIA."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Carotid Doppler ultrasound.** TIA + fit for surgery = carotid Doppler."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "An 80 year old woman taking rivaroxaban for atrial fibrillation had a 20 minute episode of left arm weakness that has now resolved. Her pulse rate is 84 bpm irregularly irregular and BP 150/86 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Admit immediately for non-contrast CT head",
+    "Give aspirin 300 mg and refer to TIA clinic",
+    "MRI brain within 1 week",
+    "Outpatient carotid Doppler",
+    "Stop rivaroxaban and review in 2 weeks"
+   ],
+   "a": 0,
+   "e": "Suspected TIA in an anticoagulated patient needs immediate admission and non-contrast CT to exclude intracranial haemorrhage.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in an anticoagulated patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "taking rivaroxaban",
+      "has now resolved"
+     ],
+     "x": "Anticoagulated patient with a TIA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Admit immediately for non-contrast CT** to exclude haemorrhage."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Not for anticoagulated patients; bleed must be excluded."
+      ],
+      [
+       2,
+       "Too slow."
+      ],
+      [
+       3,
+       "Excluding haemorrhage comes first."
+      ],
+      [
+       4,
+       "Unsafe and too slow."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Admit immediately for non-contrast CT head.** TIA on anticoagulant = admit for CT."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old man presents to his GP after an episode of slurred speech 2 hours ago that resolved after 30 minutes. He takes atorvastatin 40 mg. He has no allergies and is not anticoagulated. His pulse rate is 70 bpm regular and BP 154/90 mmHg. Examination is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Arrange a 999 ambulance to the hyperacute stroke unit",
+    "Arrange routine neurology outpatient review",
+    "Give aspirin 300 mg and refer to TIA clinic within 24 hours",
+    "Start clopidogrel 75 mg and review in 2 weeks",
+    "Start warfarin"
+   ],
+   "a": 2,
+   "e": "Resolved suspected TIA: aspirin 300 mg immediately and specialist review within 24 hours. 999 is for ongoing symptoms.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step in primary care."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "resolved after 30 minutes",
+      "not anticoagulated",
+      "Examination is normal"
+     ],
+     "x": "Resolved TIA, not anticoagulated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Aspirin 300 mg now + TIA clinic within 24 hours.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For ongoing symptoms; his have resolved."
+      ],
+      [
+       1,
+       "Far too slow."
+      ],
+      [
+       3,
+       "Long-term prevention after specialist review."
+      ],
+      [
+       4,
+       "No AF."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Give aspirin 300 mg and refer to TIA clinic within 24 hours.** Resolved = aspirin + TIA clinic; ongoing = 999."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 68 year old man had a TIA with right arm weakness 3 days ago. Carotid duplex shows 75% stenosis of the left internal carotid artery and 20% on the right. His pulse rate is 72 bpm and BP 146/84 mmHg. He is fit for surgery.",
+   "labs": [],
+   "visual": {
+    "kind": "scale",
+    "title": "Left ICA stenosis (NASCET)",
+    "min": 0,
+    "max": 100,
+    "unit": "%",
+    "bands": [
+     [
+      0,
+      50,
+      "medical",
+      "ok"
+     ],
+     [
+      50,
+      99,
+      "endarterectomy",
+      "bad"
+     ],
+     [
+      99,
+      100,
+      "occluded",
+      "warn"
+     ]
+    ],
+    "value": 75,
+    "label": "75%",
+    "caption": "Symptomatic 75% stenosis."
+   },
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Bilateral carotid stenting",
+    "Carotid endarterectomy of the left internal carotid",
+    "Carotid endarterectomy of the right internal carotid",
+    "Dual antiplatelets only, repeat duplex in 1 year",
+    "Start apixaban"
+   ],
+   "a": 1,
+   "e": "Symptomatic 50–99% stenosis (NASCET) on the side supplying the affected hemisphere needs urgent carotid endarterectomy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Definitive management."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "right arm weakness",
+      "75% stenosis of the left internal carotid artery",
+      "fit for surgery"
+     ],
+     "x": "Symptomatic left carotid stenosis of 75%."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent left carotid endarterectomy.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "The right side does not need treatment."
+      ],
+      [
+       2,
+       "Right is only 20% and is the asymptomatic side."
+      ],
+      [
+       3,
+       "Symptomatic 50–99% stenosis needs surgery urgently."
+      ],
+      [
+       4,
+       "No AF."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Carotid endarterectomy of the left internal carotid.** Symptomatic 50–99% = endarterectomy."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old woman is seen in the TIA clinic after a resolved episode of left-sided weakness. ECG shows atrial fibrillation. MRI shows no haemorrhage. Her pulse rate is 96 bpm irregularly irregular and BP 142/82 mmHg.",
+   "labs": [
+    [
+     "eGFR",
+     "68 mL/min",
+     ">60",
+     ""
+    ],
+    [
+     "Haemoglobin",
+     "131 g/L",
+     "115–165",
+     ""
+    ],
+    [
+     "Platelets",
+     "244 ×10⁹/L",
+     "150–400",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate long-term antithrombotic treatment?",
+   "o": [
+    "Apixaban",
+    "Aspirin 75 mg",
+    "Aspirin and clopidogrel",
+    "Clopidogrel 75 mg",
+    "No antithrombotic"
+   ],
+   "a": 0,
+   "e": "If AF is the cause of TIA, anticoagulate (apixaban or rivaroxaban) instead of antiplatelets, once haemorrhage is excluded.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Long-term antithrombotic."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "ECG shows atrial fibrillation",
+      "MRI shows no haemorrhage"
+     ],
+     "x": "TIA with AF, haemorrhage excluded."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Anticoagulate with a DOAC (apixaban).**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Antiplatelets alone are inadequate in AF."
+      ],
+      [
+       2,
+       "Still antiplatelet-only; AF needs anticoagulation."
+      ],
+      [
+       3,
+       "For non-AF TIA."
+      ],
+      [
+       4,
+       "Leaves high stroke risk."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Apixaban.** AF + TIA = DOAC."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 65 year old man had 15 minutes of left arm weakness that fully resolved. His pulse rate is 70 bpm and BP 150/88 mmHg. MRI with diffusion-weighted imaging the next day shows no infarct.",
+   "labs": [],
+   "visual": null,
+   "q": "Which best explains why his symptoms resolved completely?",
+   "o": [
+    "Haemorrhage was reabsorbed",
+    "Ischaemia resolved before infarction occurred",
+    "Neurones regenerated",
+    "The deficit was functional",
+    "The infarct was too small to cause lasting symptoms"
+   ],
+   "a": 1,
+   "e": "In a TIA, a thrombus or embolus transiently occludes an artery and flow returns before infarction; stroke is defined by infarction.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Pathological mechanism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fully resolved",
+      "shows no infarct"
+     ],
+     "x": "Resolved symptoms, no infarct on DWI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Transient occlusion; **ischaemia resolved before infarction**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "TIA is ischaemic, not haemorrhagic."
+      ],
+      [
+       2,
+       "Dead neurones do not regenerate in minutes."
+      ],
+      [
+       3,
+       "A sudden vascular deficit in a risk-factor patient is organic."
+      ],
+      [
+       4,
+       "MRI shows no infarct; infarction defines stroke."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Ischaemia resolved before infarction occurred.** TIA = ischaemia without infarction."
+    }
+   ]
+  }
+ ]
+}

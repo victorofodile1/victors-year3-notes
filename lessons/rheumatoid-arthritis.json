@@ -1,0 +1,786 @@
+{
+ "id": "rheumatoid-arthritis",
+ "patient": {
+  "name": "Priya Raman",
+  "age": 46,
+  "sex": "F",
+  "setting": "GP surgery, then early arthritis clinic",
+  "complaint": "Three months of painful, swollen fingers and wrists, stiff for two hours every morning",
+  "background": [
+   "Pharmacy dispenser in Harrow; smokes 10 a day",
+   "Mother had 'rheumatism' with deformed hands",
+   "Hopes to have another child in the next few years",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a symmetrical small-joint polyarthritis of the hands that spares the DIP joints, long morning stiffness and positive RF/anti-CCP, plus named deformities, eye disease, Felty's syndrome and atlantoaxial subluxation as 'most likely finding/cause' questions.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Priya, 46: **both hands and wrists** painful and swollen for 3 months.",
+      "Stiff for **2 hours** every morning; eases as the day goes on.",
+      "Struggling to open jars and do buttons at work.",
+      "Her feet ache across the balls of the feet."
+     ],
+     "vitals": {
+      "T": "37.1°C",
+      "HR": "82 bpm",
+      "BP": "128/80 mmHg",
+      "RR": "14 /min"
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Boggy swelling of **MCP and PIP joints**, both hands.",
+      "Both wrists swollen and warm.",
+      "**DIP joints are normal.**",
+      "Squeezing across her MTP joints hurts."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya has a **symmetrical small-joint polyarthritis** of MCPs, PIPs and wrists, with **DIPs spared**: the RA pattern."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Priya's **2 hours of morning stiffness** that improves with use is the signature inflammatory symptom."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Morning stiffness",
+      "min": 0,
+      "max": 180,
+      "unit": "min",
+      "bands": [[0, 30, "Osteoarthritis range", "ok"], [30, 60, "Inflammatory", "warn"], [60, 180, "Over 1 hour: RA signature", "bad"]],
+      "value": 120,
+      "label": "Priya 120 min",
+      "caption": "RA stiffness lasts **more than 1 hour**. Osteoarthritis stiffness is brief and pain worsens with use."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Which feature most argues against hand osteoarthritis in Priya?",
+     "o": ["Age over 40", "DIP joints spared, MCPs swollen", "Pain using her hands", "Positive family history"],
+     "a": 1,
+     "r": "OA hits the **DIPs** (Heberden's nodes) and thumb base. RA involves **MCPs, PIPs and wrists** and **spares the DIPs**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya **smokes**, the key modifiable risk factor, and smoking is also a **poor prognostic** sign."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Priya's painful **MTP joints** fit RA; ask about gritty or painful red eyes too."
+    },
+    {
+     "type": "compare",
+     "title": "Arthritis of the hands",
+     "head": ["Feature", "Rheumatoid arthritis", "Osteoarthritis", "Psoriatic arthritis"],
+     "rows": [
+      ["Joints", "MCP, PIP, wrist; DIP spared", "DIP, PIP, thumb base", "DIP, often asymmetrical"],
+      ["Morning stiffness", "Over 1 hour", "Under 30 min", "Prolonged"],
+      ["Swelling", "Soft, boggy synovitis", "Hard, bony nodes", "Dactylitis"],
+      ["Bloods", "RF, anti-CCP positive", "Normal", "Seronegative"],
+      ["Clue", "Symmetrical", "Worse with use", "Psoriasis, nail pitting"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Untreated, Priya's hands could end up like her mother's: **swan neck, boutonnière, ulnar deviation** and **Z-thumb**."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Two named syndromes to know for Priya's future: **Felty's** (splenomegaly, neutropenia) and **Caplan** (lung nodules with dust exposure)."
+    },
+    {
+     "type": "trap",
+     "text": "Swan neck = **PIP hyperextended, DIP flexed**. Boutonnière = **PIP flexed, DIP hyperextended**. Look at the **PIP** to tell them apart."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'which test is most specific' (anti-CCP), 'most likely X-ray finding' (periarticular osteopenia early, juxta-articular erosions as the hallmark), X-ray of hands and feet, a pre-operative C-spine X-ray, and DAS28 bands.",
+   "steps": [
+    {
+     "type": "labs",
+     "title": "Priya's bloods",
+     "rows": [
+      ["Haemoglobin", "114 g/L", "120–150", "L"],
+      ["CRP", "32 mg/L", "<5", "H"],
+      ["ESR", "44 mm/h", "1–20", "H"],
+      ["Rheumatoid factor", "86 IU/mL", "<14", "H"],
+      ["Anti-CCP", ">300 U/mL", "<7", "H"],
+      ["eGFR", ">90 mL/min/1.73m²", ">60", ""]
+     ],
+     "text": "Anaemia of chronic disease, raised inflammatory markers, **strongly positive RF and anti-CCP**."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya's diagnosis is **clinical plus serology**: the pattern of joints plus her positive antibodies."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya's **anti-CCP** is the most specific result and predicts erosions; her **RF** is sensitive but not used to track activity."
+    },
+    {
+     "type": "ask",
+     "q": "Priya's hands and feet are X-rayed. What is the earliest X-ray sign of RA?",
+     "o": ["Juxta-articular erosions", "Osteophytes", "Periarticular osteopenia", "Subchondral cysts"],
+     "a": 2,
+     "r": "**Periarticular osteopenia** is earliest. **Juxta-articular erosions** are the hallmark but come later; osteophytes and cysts are OA."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Priya's X-rays show **periarticular osteopenia** and soft tissue swelling at the PIPs, with one early erosion at the MCP."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Priya's **DAS28 is 5.6**: high disease activity, the baseline used to judge her treatment."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "DAS28 disease activity",
+      "min": 0,
+      "max": 8,
+      "unit": "",
+      "bands": [[0, 2.6, "Remission <2.6", "ok"], [2.6, 3.2, "Low 2.6–3.2", "ok"], [3.2, 5.1, "Moderate 3.2–5.1", "warn"], [5.1, 8, "High >5.1", "bad"]],
+      "value": 5.6,
+      "label": "Priya 5.6",
+      "caption": "DAS28 combines 28 joint counts, ESR or CRP and a patient global score. The target is **remission (<2.6)**."
+     }
+    },
+    {
+     "type": "pearl",
+     "text": "**RF** = most **sensitive**; **anti-CCP** = most **specific**. If a stem gives a negative RF but you still suspect RA, the answer is **anti-CCP**."
+    },
+    {
+     "type": "trap",
+     "text": "Before a general anaesthetic in long-standing RA, think **atlantoaxial subluxation**: a **C-spine X-ray (AP and lateral)** is the pre-operative screen, not a hand X-ray."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (methotrexate plus a short course of prednisolone), DMARD choices in renal impairment or pregnancy, drug monitoring (eye checks, BP), TB screening before biologics, and IM steroid for a flare.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Priya has new RA with normal kidney function. What is the most appropriate initial management?",
+     "o": ["Adalimumab", "Hydroxychloroquine alone", "Methotrexate plus a short course of prednisolone", "Naproxen alone"],
+     "a": 2,
+     "r": "**Methotrexate** (weekly) with a **short steroid bridge** is first-line, ideally within 3 months. NSAIDs do not modify disease; biologics come after DMARDs fail."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya starts **weekly methotrexate** with **folic acid** and a short course of prednisolone; her eGFR is normal."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "eGFR and methotrexate",
+      "min": 0,
+      "max": 120,
+      "unit": "mL/min",
+      "bands": [[0, 50, "Under 50: avoid methotrexate, use sulfasalazine", "bad"], [50, 120, "Methotrexate OK", "ok"]],
+      "value": 95,
+      "label": "Priya 95",
+      "caption": "Methotrexate is renally cleared. Below **50 mL/min**, sulfasalazine is used first-line instead."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "At 3 months Priya is better but not in remission, so **sulfasalazine** is added; each add-on DMARD has its own monitoring."
+    },
+    {
+     "type": "compare",
+     "title": "DMARD watch-list",
+     "head": ["Drug", "Key risk", "What to do"],
+     "rows": [
+      ["Methotrexate", "Macrocytic anaemia, mouth ulcers; teratogenic", "Folic acid; stop 6 months before conception"],
+      ["Hydroxychloroquine", "Bull's eye retinopathy", "Baseline and annual eye screening"],
+      ["Leflunomide", "Hypertension", "BP at baseline and every review"],
+      ["Sulfasalazine", "Reversible azoospermia", "Avoid in sulfonamide allergy"]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Priya's DAS28 over a year",
+      "x": ["Start", "3 mo", "6 mo", "9 mo", "12 mo"],
+      "unit": "DAS28",
+      "series": [ { "name": "DAS28", "values": [5.6, 4.4, 3.6, 2.4, 2.2] } ],
+      "caption": "Methotrexate first, sulfasalazine added at 3 months, **remission (<2.6)** by 9 months."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Had Priya failed conventional DMARDs, a **TNF inhibitor** would follow, after **TB screening** (CXR and Quantiferon)."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Eight months in, Priya flares after a chest infection.",
+      "Wrists and MCPs hot and swollen again; she cannot work."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Priya's flare is settled with an **intramuscular methylprednisolone** injection."
+    },
+    {
+     "type": "ask",
+     "q": "A year later Priya wants to try for a baby. What should happen to her methotrexate?",
+     "o": ["Continue it with extra folic acid", "Stop it and switch to sulfasalazine plus hydroxychloroquine", "Stop all treatment", "Switch to leflunomide"],
+     "a": 1,
+     "r": "Methotrexate is **teratogenic** and needs a **6-month washout**. Switch to **sulfasalazine plus hydroxychloroquine** with folic acid; leflunomide is also teratogenic."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Priya stops methotrexate **6 months before trying** and stays controlled on **sulfasalazine and hydroxychloroquine** with folic acid."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Priya's care follows the **NICE DMARD escalation** pathway, with **DAS28** used at each step to decide whether to step up."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: what RF and anti-CCP are, why pannus erodes bone, how methotrexate and TNF inhibitors work, and why Felty's syndrome causes infections.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Priya's swollen joints are **chronic autoimmune synovitis**: an inflamed, thickened joint lining."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Priya's RF is **IgM against the Fc portion of IgG**; her anti-CCP targets **citrullinated proteins**, which smoking increases."
+    },
+    {
+     "type": "flow",
+     "title": "From synovitis to erosion",
+     "nodes": ["Citrullinated proteins trigger autoimmunity (HLA-DR4, smoking)", "T cells and immune complexes inflame the synovium", "TNF-alpha, IL-6, IL-1 released", "Synovium thickens into pannus", "Pannus erodes cartilage and juxta-articular bone"]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Priya's early MCP erosion is **pannus** eating into the bone at the joint margin."
+    },
+    {
+     "type": "ask",
+     "q": "How does Priya's methotrexate work?",
+     "o": ["Blocks TNF-alpha", "Inhibits COX-2", "Inhibits dihydrofolate reductase", "Inhibits calcineurin"],
+     "a": 2,
+     "r": "Methotrexate is a **folate antagonist** that inhibits **dihydrofolate reductase**, hence folic acid to reduce side effects."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Priya ever needs a biologic, blocking **TNF-alpha** switches off a key driver of her synovitis."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "If Priya developed **Felty's syndrome**, neutropenia and **functional hyposplenism** would leave her vulnerable to serious bacterial infection."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Chest X-ray: rheumatoid lung involvement",
+      "findings": [ { "type": "effusion", "side": "right", "zone": "lower" } ],
+      "caption": "RA can cause an **exudative pleural effusion**; other lung features include nodules (Caplan syndrome with dust exposure) and fibrosis."
+     },
+     "text": "RA is systemic: lungs, eyes, spleen and heart can all be involved."
+    },
+    {
+     "type": "pearl",
+     "text": "**TB screening before TNF inhibitors**: TNF-alpha holds granulomas together, so blocking it can **reactivate latent TB** into severe disease."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  { "d": "diagnosis", "q": "Which joints are characteristically spared in rheumatoid arthritis?", "o": ["DIP joints", "MCP joints", "PIP joints", "Wrists"], "a": 0, "r": "RA **spares the DIPs**; DIP involvement suggests OA or psoriatic arthritis." },
+  { "d": "diagnosis", "q": "Which HLA type is a risk factor for RA?", "o": ["HLA-B27", "HLA-B51", "HLA-DQ2", "HLA-DR4"], "a": 3, "r": "**HLA-DR4**; smoking is the key modifiable risk." },
+  { "d": "diagnosis", "q": "What is a swan neck deformity?", "o": ["Flexed DIP, hyperextended PIP", "Flexed PIP, hyperextended DIP", "Ulnar deviation at the MCPs", "Z-shaped thumb"], "a": 0, "r": "Swan neck: **PIP hyperextended, DIP flexed**. Boutonnière is the reverse." },
+  { "d": "diagnosis", "q": "What is the triad of Felty's syndrome?", "o": ["RA, lung nodules, dust exposure", "RA, splenomegaly, neutropenia", "RA, dry eyes, dry mouth", "RA, uveitis, urethritis"], "a": 1, "r": "**RA + splenomegaly + neutropenia**." },
+  { "d": "investigation", "q": "What is the most specific serological marker for RA?", "o": ["Anti-CCP", "ANA", "ESR", "Rheumatoid factor"], "a": 0, "r": "**Anti-CCP** is most specific; RF is most sensitive." },
+  { "d": "investigation", "q": "What is the earliest X-ray sign of RA?", "o": ["Joint space widening", "Juxta-articular erosions", "Osteophytes", "Periarticular osteopenia"], "a": 3, "r": "**Periarticular osteopenia** of the PIPs; erosions are the hallmark but later." },
+  { "d": "investigation", "q": "What DAS28 score indicates remission?", "o": ["Under 2.6", "2.6 to 3.2", "3.2 to 5.1", "Over 5.1"], "a": 0, "r": "Remission **<2.6**; high activity >5.1." },
+  { "d": "management", "q": "What is the first-line DMARD for RA?", "o": ["Adalimumab", "Hydroxychloroquine", "Methotrexate", "Sulfasalazine"], "a": 2, "r": "**Methotrexate** weekly, with folic acid and a short steroid course." },
+  { "d": "management", "q": "Which DMARDs are used in pregnancy for RA?", "o": ["Leflunomide and methotrexate", "Methotrexate alone", "Sulfasalazine and hydroxychloroquine", "Sulfasalazine and leflunomide"], "a": 2, "r": "**Sulfasalazine plus hydroxychloroquine** with folic acid." },
+  { "d": "science", "q": "What is rheumatoid factor?", "o": ["IgA against gliadin", "IgE against mast cells", "IgG against DNA", "IgM against the Fc portion of IgG"], "a": 3, "r": "RF is usually **IgM against the Fc portion of IgG**." }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "Describe the joint pattern and signature symptom of rheumatoid arthritis.",
+    "tip": "Exam thinking: symmetrical, small joints, DIPs spared, stiffness over an hour.",
+    "points": [
+     { "p": "Symmetrical polyarthritis", "k": [["symmetric"]], "why": "Asymmetry points to a spondyloarthropathy." },
+     { "p": "Small joints of the hands: MCP, PIP and wrists", "k": [["mcp", "metacarpophalangeal"], ["pip", "proximal interphalangeal"]], "why": "Wrists commonly too." },
+     { "p": "Spares the DIP joints", "k": [["dip", "distal interphalangeal"]], "why": "DIP disease suggests OA or psoriatic arthritis." },
+     { "p": "Morning stiffness over 1 hour", "k": [["morning", "stiff"], ["1 hour", "one hour", "an hour", "60"]], "why": "OA stiffness is under 30 minutes." },
+     { "p": "Improves with exertion, worse at rest", "k": [["exert", "exercise", "use", "activity"]], "why": "Inflammatory pattern." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors and poor prognostic markers in RA?",
+    "tip": "Exam thinking: smoking appears in both lists.",
+    "points": [
+     { "p": "HLA-DR4", "k": [["dr4"]], "why": "B27 is the spondyloarthropathy distractor." },
+     { "p": "Smoking (modifiable)", "k": [["smok"]], "why": "Raises risk and worsens prognosis." },
+     { "p": "Positive RF and anti-CCP", "k": [["rf", "rheumatoid factor", "anti-ccp", "ccp"]], "why": "Anti-CCP predicts erosions." },
+     { "p": "Rheumatoid nodules", "k": [["nodule"]], "why": "Marker of severe seropositive disease." },
+     { "p": "Insidious onset, poor functional status at presentation", "k": [["insidious", "function"]], "why": "Also poor prognosis." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which hand deformities does RA cause? Define each.",
+    "tip": "Exam thinking: look at the PIP to tell swan neck from boutonnière.",
+    "points": [
+     { "p": "Swan neck: flexed DIP, hyperextended PIP", "k": [["swan"]], "why": "PIP hyperextended." },
+     { "p": "Boutonnière: hyperextended DIP, flexed PIP", "k": [["boutonni", "buttonhole"]], "why": "PIP flexed." },
+     { "p": "Ulnar deviation at the MCP joints", "k": [["ulnar"]], "why": "Fingers drift towards the little finger." },
+     { "p": "Z-thumb deformity", "k": [["z-thumb", "z thumb", "z-shaped"]], "why": "Also called Z deformity." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the extra-articular features and complications of RA?",
+    "tip": "Exam thinking: eyes, neck, lungs, heart, spleen.",
+    "points": [
+     { "p": "MTP involvement with hammer toes", "k": [["mtp", "hammer", "metatarsophalangeal"]], "why": "Feet are often involved." },
+     { "p": "Episcleritis (gritty, no pain) and scleritis (painful)", "k": [["episcleritis", "scleritis"]], "why": "Pain separates scleritis." },
+     { "p": "Atlantoaxial subluxation: cervical cord compression risk", "k": [["atlantoaxial", "atlanto-axial", "c1", "cervical"]], "why": "Pre-op C-spine X-ray." },
+     { "p": "Exudative pleural effusion, pulmonary hypertension", "k": [["effusion", "pulmonary hypertension", "pleural"]], "why": "Lung involvement is common." },
+     { "p": "Ischaemic heart disease", "k": [["ischaemic heart", "ihd", "coronary", "cardiovascular"]], "why": "Inflammation accelerates atherosclerosis." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are Felty's syndrome and Caplan syndrome?",
+    "tip": "Exam thinking: classic 'most likely diagnosis' eponyms in RA stems.",
+    "points": [
+     { "p": "Felty's: RA, splenomegaly and neutropenia", "k": [["splenomegaly", "spleen"], ["neutropenia", "neutrophil", "low wcc"]], "why": "Risk of serious bacterial infection." },
+     { "p": "Caplan: rheumatoid pneumoconiosis with lung nodules", "k": [["caplan", "pneumoconiosis", "nodule"]], "why": "Coal, asbestos or silica dust plus smoking." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which blood tests are used in RA and what does each tell you?",
+    "tip": "Exam thinking: sensitive vs specific is the classic one-liner.",
+    "points": [
+     { "p": "FBC, ESR, CRP", "k": [["fbc", "esr", "crp"]], "why": "Anaemia of chronic disease, raised markers." },
+     { "p": "RF: most sensitive, poor for monitoring; negative RF is a good prognostic factor", "k": [["rf", "rheumatoid factor"], ["sensitive"]], "why": "IgM against IgG." },
+     { "p": "Anti-CCP: most specific, linked to erosions", "k": [["ccp"], ["specific"]], "why": "Low/absent anti-CCP = good prognosis." },
+     { "p": "Gold standard: clinical diagnosis plus serology", "k": [["clinical"]], "why": "No single test diagnoses RA." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What imaging is done in RA, what does it show, and how is activity scored?",
+    "tip": "Exam thinking: earliest vs hallmark X-ray sign; DAS28 cut-offs.",
+    "points": [
+     { "p": "X-ray of both hands and feet (NICE, all suspected RA)", "k": [["x-ray", "xray", "radiograph"], ["hand", "feet", "foot"]], "why": "Baseline for erosions." },
+     { "p": "Periarticular osteopenia: earliest sign", "k": [["osteopenia"]], "why": "At the PIPs." },
+     { "p": "Juxta-articular erosions: hallmark", "k": [["erosion"]], "why": "Plus joint space narrowing and soft tissue swelling." },
+     { "p": "Pre-operative C-spine X-ray (AP and lateral) for atlantoaxial subluxation", "k": [["c-spine", "cervical", "neck"]], "why": "Before general anaesthesia." },
+     { "p": "DAS28: remission <2.6, low 2.6–3.2, moderate 3.2–5.1, high >5.1", "k": [["das28", "das 28", "das-28"], ["2.6"]], "why": "Guides escalation." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Outline initial RA treatment and the DMARD escalation pathway.",
+    "tip": "Exam thinking: methotrexate first unless eGFR <50 or pregnancy; TB screen before biologics.",
+    "points": [
+     { "p": "Methotrexate (weekly) plus a short course of oral prednisolone", "k": [["methotrexate", "mtx"]], "why": "Ideally within 3 months of persistent symptoms." },
+     { "p": "Folic acid alongside methotrexate", "k": [["folic", "folate"]], "why": "Reduces macrocytic anaemia and mouth ulcers." },
+     { "p": "eGFR <50: sulfasalazine first-line instead", "k": [["sulfasalazine"]], "why": "Methotrexate is renally cleared." },
+     { "p": "Not in remission: add leflunomide, sulfasalazine or hydroxychloroquine", "k": [["leflunomide", "hydroxychloroquine", "add another", "combination"]], "why": "Conventional DMARD combination." },
+     { "p": "DMARDs fail: TNF inhibitor after TB screening (CXR, Quantiferon)", "k": [["tnf", "adalimumab", "etanercept", "infliximab", "biologic"]], "why": "Risk of TB reactivation." },
+     { "p": "Flare: intramuscular methylprednisolone", "k": [["intramuscular", "im ", "methylprednisolone"]], "why": "Short-term flare control." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the key DMARD monitoring points, and what changes in pregnancy?",
+    "tip": "Exam thinking: each drug has one classic toxicity.",
+    "points": [
+     { "p": "Hydroxychloroquine: bull's eye retinopathy, baseline and annual eye screening", "k": [["retinopathy", "eye", "bull"]], "why": "Ophthalmology assessment." },
+     { "p": "Leflunomide: hypertension, check BP each review", "k": [["blood pressure", "bp", "hypertension"]], "why": "Also teratogenic." },
+     { "p": "Sulfasalazine: reversible azoospermia; avoid in sulfonamide allergy", "k": [["azoospermia", "sulfonamide", "sperm"]], "why": "Male fertility question." },
+     { "p": "Pregnancy: avoid methotrexate (teratogenic, 6-month washout)", "k": [["teratogen", "6 month", "six month", "washout"]], "why": "Stop before conception." },
+     { "p": "Use sulfasalazine plus hydroxychloroquine with folic acid", "k": [["sulfasalazine", "hydroxychloroquine"]], "why": "Safe in pregnancy." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the pathophysiology of RA, and what are RF and anti-CCP?",
+    "tip": "Exam thinking: synovitis, pannus, cytokines.",
+    "points": [
+     { "p": "Chronic autoimmune synovitis", "k": [["synovitis", "synovium", "synovial"]], "why": "Not enthesitis (that is AS)." },
+     { "p": "Immune complex deposition and T-cell mediated inflammation", "k": [["immune complex", "t-cell", "t cell"]], "why": "Both mechanisms contribute." },
+     { "p": "RF: IgM against the Fc portion of IgG", "k": [["fc"], ["igg"]], "why": "Forms immune complexes." },
+     { "p": "Anti-CCP targets citrullinated proteins, immunogenic in HLA-DR4 carriers", "k": [["citrullin"]], "why": "Smoking increases citrullination." },
+     { "p": "Pannus erodes cartilage and juxta-articular bone", "k": [["pannus"]], "why": "Explains erosions." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do methotrexate and TNF inhibitors work, and why does Felty's cause infections?",
+    "tip": "Exam thinking: mechanism of drug action and its consequences.",
+    "points": [
+     { "p": "Methotrexate: folate antagonist inhibiting dihydrofolate reductase", "k": [["dihydrofolate", "dhfr", "folate antagonist"]], "why": "Hence folic acid supplements." },
+     { "p": "TNF-alpha, IL-6 and IL-1 drive synovitis and systemic features", "k": [["tnf", "il-6", "il6", "il-1", "il1"]], "why": "Rationale for biologics." },
+     { "p": "Felty's: neutropenia and functional hyposplenism cause serious bacterial infection", "k": [["hyposplen", "neutropenia"]], "why": "Splenomegaly with poor splenic function." }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "RA": "Rheumatoid arthritis: chronic autoimmune symmetrical polyarthritis of small joints.",
+  "MCP": "Metacarpophalangeal joint, the knuckle joint; typically involved in RA.",
+  "PIP": "Proximal interphalangeal joint of the finger; typically involved in RA.",
+  "DIP": "Distal interphalangeal joint, nearest the fingertip; spared in RA.",
+  "MTP": "Metatarsophalangeal joint at the base of the toes.",
+  "Polyarthritis": "Arthritis affecting five or more joints.",
+  "Synovitis": "Inflammation of the synovial lining of a joint.",
+  "Pannus": "Thickened, invasive inflamed synovium that erodes cartilage and bone in RA.",
+  "HLA-DR4": "HLA class II gene variant linked to RA and anti-CCP positivity.",
+  "Rheumatoid factor": "Autoantibody, usually IgM, against the Fc portion of IgG; sensitive for RA.",
+  "RF": "Rheumatoid factor.",
+  "Anti-CCP": "Anti-cyclic citrullinated peptide antibody; the most specific blood test for RA.",
+  "Citrullinated proteins": "Proteins in which arginine has been converted to citrulline; targets of anti-CCP.",
+  "Periarticular osteopenia": "Reduced bone density around a joint; the earliest X-ray sign of RA.",
+  "Juxta-articular erosions": "Bone erosions at the joint margins; the hallmark X-ray sign of RA.",
+  "DAS28": "Disease Activity Score using 28 joints, ESR/CRP and patient score; remission is under 2.6.",
+  "Swan neck deformity": "Finger with hyperextended PIP and flexed DIP.",
+  "Boutonnière deformity": "Finger with flexed PIP and hyperextended DIP.",
+  "Ulnar deviation": "Drift of the fingers towards the little finger side at the MCP joints.",
+  "Z-thumb": "Thumb deformity with flexed MCP and hyperextended IP joint.",
+  "Hammer toe": "Toe deformity with a flexed PIP joint.",
+  "Episcleritis": "Inflammation of the episclera; gritty, red, not painful.",
+  "Scleritis": "Painful, deep inflammation of the sclera that can threaten sight.",
+  "Atlantoaxial subluxation": "Instability between C1 and C2 that can compress the cervical cord.",
+  "Felty's syndrome": "RA with splenomegaly and neutropenia, causing serious bacterial infections.",
+  "Caplan syndrome": "Rheumatoid lung nodules in people exposed to coal, silica or asbestos dust.",
+  "Hyposplenism": "Reduced spleen function, raising the risk of infection with encapsulated bacteria.",
+  "Neutropenia": "Low neutrophil count, raising the risk of bacterial infection.",
+  "DMARD": "Disease-modifying antirheumatic drug that slows joint damage.",
+  "Methotrexate": "Weekly folate antagonist DMARD inhibiting dihydrofolate reductase; first-line for RA.",
+  "Dihydrofolate reductase": "Enzyme that regenerates active folate; inhibited by methotrexate.",
+  "Folic acid": "Vitamin given with methotrexate to reduce mouth ulcers and anaemia.",
+  "Sulfasalazine": "DMARD used if eGFR is under 50, in pregnancy or as an add-on.",
+  "Hydroxychloroquine": "Mild DMARD that can cause bull's eye retinopathy, needing annual eye checks.",
+  "Leflunomide": "DMARD that can raise blood pressure; teratogenic.",
+  "Bull's eye retinopathy": "Ring-shaped macular damage caused by hydroxychloroquine.",
+  "Azoospermia": "No sperm in the semen; a reversible side effect of sulfasalazine.",
+  "TNF inhibitor": "Biologic blocking TNF-alpha, e.g. adalimumab, etanercept, infliximab.",
+  "Quantiferon": "Interferon-gamma release blood test for latent tuberculosis.",
+  "Methylprednisolone": "Corticosteroid given by intramuscular injection for RA flares.",
+  "Teratogenic": "Able to cause birth defects.",
+  "Heberden's nodes": "Bony swellings at DIP joints in osteoarthritis."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 44 year old woman has a 4 month history of painful, swollen hands. She is stiff for 2 hours each morning. Her MCP and PIP joints and both wrists are swollen and tender. The DIP joints are normal. She has no rash or nail changes.",
+   "labs": [["Rheumatoid factor", "64 IU/mL", "<14", "H"], ["CRP", "28 mg/L", "<5", "H"]],
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Gout", "Hand osteoarthritis", "Psoriatic arthritis", "Rheumatoid arthritis", "Systemic lupus erythematosus"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "A diagnosis of a hand polyarthritis." },
+    { "t": "Pick out the clues", "clues": ["4 month history", "stiff for 2 hours each morning", "MCP and PIP joints and both wrists", "DIP joints are normal", "no rash or nail changes"], "x": "Symmetrical small-joint synovitis, DIPs spared, long morning stiffness, RF positive." },
+    { "t": "Make your own answer before looking", "x": "**Rheumatoid arthritis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Gout is an acute monoarthritis, often the big toe."], [1, "OA affects DIPs, has brief stiffness and normal CRP."], [2, "Psoriatic arthritis involves DIPs with nail changes or psoriasis."], [4, "SLE arthritis is non-erosive with rash, ulcers and ANA."]] },
+    { "t": "Commit", "x": "**D. Rheumatoid arthritis.** Symmetrical + MCP/PIP/wrist + DIP spared + stiffness over 1 hour." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 50 year old woman has suspected rheumatoid arthritis with symmetrical swelling of her MCP joints and wrists and pain across her forefeet. Rheumatoid factor and anti-CCP are positive. The rheumatologist wants baseline imaging to look for erosions, as NICE recommends for all patients with suspected RA.",
+   "q": "Which is the most appropriate imaging?",
+   "o": ["MRI of the hands", "Ultrasound of the wrists", "X-ray of both hands and feet", "X-ray of the cervical spine", "X-ray of the hands only"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "Baseline imaging in suspected RA." },
+    { "t": "Pick out the clues", "clues": ["pain across her forefeet", "baseline imaging to look for erosions", "NICE recommends for all patients"], "x": "Feet are involved too, and the guideline wording is a clue." },
+    { "t": "Make your own answer before looking", "x": "**X-ray of both hands and feet.**" },
+    { "t": "Rule out the others", "elim": [[0, "MRI is sensitive but not the standard baseline test."], [1, "Ultrasound can show synovitis but is not the NICE baseline."], [3, "C-spine X-ray is a pre-operative screen for atlantoaxial subluxation."], [4, "Feet must be included; MTP erosions often appear first."]] },
+    { "t": "Commit", "x": "**C. X-ray of both hands and feet.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 67 year old man is newly diagnosed with rheumatoid arthritis. He has chronic kidney disease and his eGFR is 42 mL/min/1.73m². He has no allergies and is not on any DMARD.",
+   "labs": [["eGFR", "42 mL/min/1.73m²", ">60", "L"], ["Creatinine", "152 µmol/L", "60–110", "H"]],
+   "q": "Which is the most appropriate first-line DMARD?",
+   "o": ["Adalimumab", "Hydroxychloroquine", "Leflunomide", "Methotrexate", "Sulfasalazine"],
+   "a": 4,
+   "steps": [
+    { "t": "Read the question line first", "x": "First-line DMARD, with a twist in the stem." },
+    { "t": "Pick out the clues", "clues": ["newly diagnosed", "eGFR is 42", "no allergies"], "x": "eGFR under 50 rules out methotrexate; no sulfonamide allergy." },
+    { "t": "Make your own answer before looking", "x": "**Sulfasalazine** first-line instead of methotrexate." },
+    { "t": "Rule out the others", "elim": [[0, "Biologics come only after conventional DMARDs fail."], [1, "Hydroxychloroquine is an add-on, not monotherapy first-line here."], [2, "Leflunomide is an alternative, but sulfasalazine is preferred when eGFR is under 50."], [3, "Methotrexate is renally cleared: avoid if eGFR is under 50."]] },
+    { "t": "Commit", "x": "**E. Sulfasalazine.** Methotrexate unless eGFR <50 or pregnancy." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 52 year old woman with rheumatoid arthritis starts weekly oral methotrexate. She is advised to take folic acid on a different day of the week to reduce mouth ulcers and anaemia.",
+   "q": "Which is the mechanism of action of methotrexate?",
+   "o": ["Blocks the IL-6 receptor", "Inhibits calcineurin", "Inhibits dihydrofolate reductase", "Inhibits dihydroorotate dehydrogenase", "Neutralises TNF-alpha"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "Drug mechanism question." },
+    { "t": "Pick out the clues", "clues": ["weekly oral methotrexate", "folic acid", "mouth ulcers and anaemia"], "x": "Folic acid rescue points to folate antagonism." },
+    { "t": "Make your own answer before looking", "x": "Methotrexate **inhibits dihydrofolate reductase**." },
+    { "t": "Rule out the others", "elim": [[0, "IL-6 receptor blockade is tocilizumab."], [1, "Calcineurin inhibition is ciclosporin or tacrolimus."], [3, "DHODH inhibition is leflunomide."], [4, "TNF neutralisation is adalimumab or infliximab."]] },
+    { "t": "Commit", "x": "**C. Inhibits dihydrofolate reductase.** Hence folic acid." }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 39 year old woman has 3 months of painful swelling of the small joints of both hands and wrists, with 90 minutes of morning stiffness. The MCP and PIP joints are swollen and tender; the DIP joints are spared. Her temperature is 37.2°C, pulse rate 80 bpm and BP 124/78 mmHg.",
+   "labs": [["Anti-CCP", "210 U/mL", "<7", "H"], ["ESR", "42 mm/h", "1–20", "H"], ["Haemoglobin", "116 g/L", "120–150", "L"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Gout", "Osteoarthritis", "Polymyalgia rheumatica", "Psoriatic arthritis", "Rheumatoid arthritis"],
+   "a": 4,
+   "e": "Symmetrical MCP/PIP/wrist synovitis sparing the DIPs, prolonged morning stiffness and a strongly positive anti-CCP: rheumatoid arthritis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of a symmetrical hand arthritis." },
+    { "t": "Pick out the clues", "clues": ["both hands and wrists", "90 minutes of morning stiffness", "MCP and PIP joints", "DIP joints are spared"], "x": "Plus anti-CCP 210 and anaemia of chronic disease." },
+    { "t": "Make your own answer before looking", "x": "**Rheumatoid arthritis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Gout is an acute crystal monoarthritis."], [1, "OA affects DIPs with short stiffness and normal ESR."], [2, "PMR affects shoulder and hip girdles in over 50s."], [3, "Psoriatic arthritis affects DIPs and is seronegative."]] },
+    { "t": "Commit", "x": "**E. Rheumatoid arthritis.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 48 year old woman has a 5 month history of symmetrical swelling of her MCP and PIP joints with prolonged morning stiffness. Rheumatoid factor is positive. X-rays of both hands are requested.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely early finding on her hand X-rays?",
+   "o": ["Chondrocalcinosis", "Osteophytes", "Pencil-in-cup deformity", "Periarticular osteopenia", "Subchondral sclerosis"],
+   "a": 3,
+   "e": "Periarticular osteopenia is the earliest X-ray sign of RA; juxta-articular erosions are the hallmark later. Osteophytes and sclerosis are OA; pencil-in-cup is psoriatic.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Earliest X-ray finding in RA." },
+    { "t": "Pick out the clues", "clues": ["5 month history", "symmetrical swelling of her MCP and PIP joints", "Rheumatoid factor is positive"], "x": "Early RA." },
+    { "t": "Make your own answer before looking", "x": "**Periarticular osteopenia.**" },
+    { "t": "Rule out the others", "elim": [[0, "Chondrocalcinosis is pseudogout (CPPD)."], [1, "Osteophytes are OA."], [2, "Pencil-in-cup is psoriatic arthritis mutilans."], [4, "Subchondral sclerosis is OA."]] },
+    { "t": "Commit", "x": "**D. Periarticular osteopenia.** Earliest = osteopenia; hallmark = erosions." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 63 year old woman has had rheumatoid arthritis for 20 years. Her index and middle fingers are bent so that the PIP joints are hyperextended and the DIP joints are flexed. Her fingers also drift towards the little finger.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely deformity of her index and middle fingers?",
+   "o": ["Boutonnière deformity", "Mallet finger", "Swan neck deformity", "Trigger finger", "Z-thumb deformity"],
+   "a": 2,
+   "e": "PIP hyperextension with DIP flexion is a swan neck deformity. Boutonnière is the reverse: PIP flexed, DIP hyperextended.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Name the deformity." },
+    { "t": "Pick out the clues", "clues": ["PIP joints are hyperextended", "DIP joints are flexed", "drift towards the little finger"], "x": "Look at the PIP: hyperextended. Ulnar deviation also present." },
+    { "t": "Make your own answer before looking", "x": "**Swan neck deformity.**" },
+    { "t": "Rule out the others", "elim": [[0, "Boutonnière has a flexed PIP and hyperextended DIP."], [1, "Mallet finger is an isolated DIP droop after extensor tendon injury."], [3, "Trigger finger locks in flexion, with no hyperextension."], [4, "Z-thumb affects the thumb, not the index and middle fingers."]] },
+    { "t": "Commit", "x": "**C. Swan neck deformity.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man with seropositive rheumatoid arthritis has 6 weeks of increasing breathlessness. There is dullness to percussion and reduced breath sounds at the right base. He has never worked with asbestos. Chest X-ray (see item resources). A pleural aspirate is sent.",
+   "labs": [["Pleural fluid protein", "48 g/L", "<30 transudate", "H"], ["Pleural fluid glucose", "1.2 mmol/L", ">3.3", "L"], ["Pleural fluid pH", "7.28", "7.60–7.64", "L"], ["Gram stain and culture", "Negative", "", ""], ["Cytology", "No malignant cells", "", ""]],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [ { "type": "effusion", "side": "right", "zone": "lower" } ],
+    "caption": "Right-sided pleural effusion with a meniscus."
+   },
+   "q": "Which is the most likely cause of the effusion?",
+   "o": ["Congestive cardiac failure", "Mesothelioma", "Parapneumonic effusion", "Pulmonary embolism", "Rheumatoid pleural effusion"],
+   "a": 4,
+   "e": "An exudate with very low glucose, negative culture and no malignant cells in a man with RA is a rheumatoid pleural effusion. Heart failure produces a transudate.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Cause of a pleural effusion in a patient with RA." },
+    { "t": "Pick out the clues", "clues": ["seropositive rheumatoid arthritis", "6 weeks of increasing breathlessness", "never worked with asbestos"], "x": "Exudate (protein 48), glucose very low, culture and cytology negative." },
+    { "t": "Make your own answer before looking", "x": "**Rheumatoid (exudative) pleural effusion.**" },
+    { "t": "Rule out the others", "elim": [[0, "Heart failure gives a transudate, often bilateral."], [1, "No asbestos exposure and cytology is negative."], [2, "No fever or pneumonia; culture negative."], [3, "PE effusions are small, with acute onset and pleuritic pain."]] },
+    { "t": "Commit", "x": "**E. Rheumatoid pleural effusion.** RA + exudate + very low glucose." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 57 year old woman with rheumatoid arthritis has a 3 day history of a red right eye with a severe, deep, boring pain that keeps her awake. The eye is tender to touch and the redness does not blanch with phenylephrine drops. Her pulse rate is 84 bpm and BP 136/82 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute angle-closure glaucoma", "Anterior uveitis", "Bacterial conjunctivitis", "Scleritis", "Subconjunctival haemorrhage"],
+   "a": 3,
+   "e": "Severe boring pain, tenderness and non-blanching redness in RA is scleritis. Episcleritis is gritty and not painful; uveitis gives photophobia and a small pupil.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of a red eye in RA." },
+    { "t": "Pick out the clues", "clues": ["rheumatoid arthritis", "severe, deep, boring pain", "keeps her awake", "tender to touch", "does not blanch with phenylephrine"], "x": "Painful, deep and non-blanching: the sclera itself." },
+    { "t": "Make your own answer before looking", "x": "**Scleritis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Angle-closure gives a fixed mid-dilated pupil, haloes and vomiting."], [1, "Uveitis is linked to HLA-B27 disease, with photophobia and a small pupil."], [2, "Conjunctivitis is gritty with discharge and no deep pain."], [4, "Subconjunctival haemorrhage is painless."]] },
+    { "t": "Commit", "x": "**D. Scleritis.** RA eyes: episcleritis (gritty, no pain) vs scleritis (painful)." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old woman with rheumatoid arthritis for 30 years has 2 months of neck pain and tingling in both hands. She has become clumsy and unsteady. Her pulse rate is 76 bpm and BP 132/80 mmHg. Reflexes are brisk in all four limbs with upgoing plantars.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of her symptoms?",
+   "o": ["Atlantoaxial subluxation", "Carpal tunnel syndrome", "Cervical spondylotic radiculopathy", "Multiple sclerosis", "Peripheral neuropathy"],
+   "a": 0,
+   "e": "Long-standing RA with neck pain and upper motor neuron signs in all four limbs suggests high cervical cord compression from atlantoaxial subluxation.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Cause of neurological symptoms in long-standing RA." },
+    { "t": "Pick out the clues", "clues": ["rheumatoid arthritis for 30 years", "neck pain", "tingling in both hands", "brisk in all four limbs", "upgoing plantars"], "x": "UMN signs in all limbs = high cervical cord compression." },
+    { "t": "Make your own answer before looking", "x": "**Atlantoaxial subluxation.**" },
+    { "t": "Rule out the others", "elim": [[1, "Carpal tunnel causes median sensory loss without UMN signs."], [2, "Radiculopathy gives LMN signs in one root."], [3, "MS starts younger and does not cause neck pain in RA."], [4, "Neuropathy causes reduced, not brisk, reflexes."]] },
+    { "t": "Commit", "x": "**A. Atlantoaxial subluxation.** Screen with a C-spine X-ray before anaesthesia." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 45 year old woman has 4 months of symmetrical swelling of her MCP and PIP joints and wrists with 2 hours of morning stiffness. Her rheumatoid factor is negative but the rheumatologist still suspects rheumatoid arthritis.",
+   "labs": [["Rheumatoid factor", "<10 IU/mL", "<14", ""], ["CRP", "24 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which blood test is most specific for the suspected diagnosis?",
+   "o": ["Anti-centromere antibodies", "Anti-cyclic citrullinated peptide (anti-CCP) antibodies", "ESR", "HLA-B27", "Repeat rheumatoid factor"],
+   "a": 1,
+   "e": "Anti-CCP is the most specific marker for RA and can be positive when RF is negative. RF is the most sensitive but less specific.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Most specific' test for RA." },
+    { "t": "Pick out the clues", "clues": ["symmetrical swelling of her MCP and PIP joints", "rheumatoid factor is negative", "still suspects rheumatoid arthritis"], "x": "Classic RA clinically; RF negative." },
+    { "t": "Make your own answer before looking", "x": "**Anti-CCP antibodies.**" },
+    { "t": "Rule out the others", "elim": [[0, "Anti-centromere is limited cutaneous systemic sclerosis."], [2, "ESR is non-specific."], [3, "HLA-B27 is for spondyloarthropathies."], [4, "RF is sensitive, not specific; repeating it adds little."]] },
+    { "t": "Commit", "x": "**B. Anti-CCP antibodies.** Sensitive = RF; specific = anti-CCP." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old woman with rheumatoid arthritis for 25 years is listed for an elective total knee replacement under general anaesthesia. She has occasional neck stiffness but no neurological symptoms. Her pulse rate is 74 bpm and BP 130/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate pre-operative investigation?",
+   "o": ["Anti-CCP antibodies", "Bone scan", "CT head", "Lateral and AP cervical spine X-ray", "MRI lumbar spine"],
+   "a": 3,
+   "e": "Long-standing RA patients need a pre-operative C-spine X-ray (AP and lateral) to screen for atlantoaxial subluxation before neck manipulation during intubation.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Pre-operative test in long-standing RA." },
+    { "t": "Pick out the clues", "clues": ["rheumatoid arthritis for 25 years", "under general anaesthesia", "occasional neck stiffness"], "x": "Intubation moves the neck; C1/C2 may be unstable." },
+    { "t": "Make your own answer before looking", "x": "**C-spine X-ray (AP and lateral).**" },
+    { "t": "Rule out the others", "elim": [[0, "Anti-CCP is diagnostic, not pre-operative."], [1, "Bone scan is not used to assess C1/C2 stability."], [2, "CT head does not show atlantoaxial subluxation."], [4, "The lumbar spine is irrelevant here."]] },
+    { "t": "Commit", "x": "**D. Lateral and AP cervical spine X-ray.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 41 year old woman is newly diagnosed with rheumatoid arthritis after 2 months of persistent symmetrical synovitis. She is not planning pregnancy and uses reliable contraception. Her temperature is 37.0°C, pulse rate 78 bpm and BP 122/76 mmHg.",
+   "labs": [["eGFR", ">90 mL/min/1.73m²", ">60", ""], ["ALT", "22 IU/L", "10–40", ""], ["Anti-CCP", "180 U/mL", "<7", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Adalimumab", "Hydroxychloroquine alone", "Methotrexate with a short course of prednisolone", "Naproxen alone", "Sulfasalazine with hydroxychloroquine"],
+   "a": 2,
+   "e": "First-line RA treatment is methotrexate with a short course of oral prednisolone, with folic acid. Sulfasalazine plus hydroxychloroquine is for pregnancy.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management of new RA." },
+    { "t": "Pick out the clues", "clues": ["newly diagnosed", "not planning pregnancy", "reliable contraception"], "x": "Normal eGFR and LFTs: no barrier to methotrexate." },
+    { "t": "Make your own answer before looking", "x": "**Methotrexate plus a short steroid course.**" },
+    { "t": "Rule out the others", "elim": [[0, "Biologics only after DMARDs fail."], [1, "Hydroxychloroquine alone is too weak for seropositive RA."], [3, "NSAIDs do not modify disease."], [4, "This combination is the pregnancy option."]] },
+    { "t": "Commit", "x": "**C. Methotrexate with a short course of prednisolone.** Add folic acid." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 31 year old woman with rheumatoid arthritis well controlled on methotrexate and folic acid tells her rheumatologist that she would like to start trying for a baby in the next few months.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate change to her treatment?",
+   "o": ["Add adalimumab to methotrexate", "Continue methotrexate with high-dose folic acid", "Stop all treatment", "Switch to leflunomide", "Switch to sulfasalazine and hydroxychloroquine"],
+   "a": 4,
+   "e": "Methotrexate is teratogenic and needs a 6-month washout before conception. Sulfasalazine and hydroxychloroquine with folic acid are used instead; leflunomide is also teratogenic.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Change of DMARD before pregnancy." },
+    { "t": "Pick out the clues", "clues": ["well controlled on methotrexate", "trying for a baby"], "x": "Methotrexate must stop; disease must stay controlled." },
+    { "t": "Make your own answer before looking", "x": "**Switch to sulfasalazine plus hydroxychloroquine** (with folic acid)." },
+    { "t": "Rule out the others", "elim": [[0, "Methotrexate must stop; adding a biologic does not solve that."], [1, "Folic acid does not make methotrexate safe in pregnancy."], [2, "Stopping everything risks a flare."], [3, "Leflunomide is also teratogenic."]] },
+    { "t": "Commit", "x": "**E. Switch to sulfasalazine and hydroxychloroquine.** 6-month methotrexate washout." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 55 year old man with rheumatoid arthritis has active disease despite 6 months of methotrexate combined with sulfasalazine. His DAS28 is 5.8. Chest X-ray and Quantiferon test are negative. His pulse rate is 80 bpm and BP 134/82 mmHg.",
+   "labs": [["CRP", "36 mg/L", "<5", "H"], ["Quantiferon", "Negative", "Negative", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": ["Adalimumab", "Azathioprine", "Ciclosporin", "Long-term oral prednisolone", "Penicillamine"],
+   "a": 0,
+   "e": "High disease activity despite conventional DMARD combination, with TB excluded, is treated with a TNF inhibitor such as adalimumab.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Next step' after DMARD failure." },
+    { "t": "Pick out the clues", "clues": ["despite 6 months of methotrexate combined with sulfasalazine", "DAS28 is 5.8", "Quantiferon test are negative"], "x": "High activity (>5.1), conventional DMARDs failed, TB screen done." },
+    { "t": "Make your own answer before looking", "x": "**TNF inhibitor: adalimumab.**" },
+    { "t": "Rule out the others", "elim": [[1, "Azathioprine is not part of the standard RA escalation."], [2, "Ciclosporin is rarely used now."], [3, "Long-term steroids cause harm and do not stop erosions."], [4, "Penicillamine is obsolete for RA."]] },
+    { "t": "Commit", "x": "**A. Adalimumab.** TB screen first, then biologic." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 64 year old man with long-standing seropositive rheumatoid arthritis has had three episodes of bacterial pneumonia in a year. His spleen is palpable 4 cm below the costal margin.",
+   "labs": [["Neutrophils", "0.9 ×10⁹/L", "2.0–7.5", "L"], ["Haemoglobin", "108 g/L", "130–170", "L"], ["Platelets", "182 ×10⁹/L", "150–400", ""], ["Rheumatoid factor", "320 IU/mL", "<14", "H"]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his recurrent infections?",
+   "o": ["Complement deficiency", "Hypogammaglobulinaemia", "Neutropenia with functional hyposplenism", "Steroid-induced immunosuppression", "T-cell lymphopenia"],
+   "a": 2,
+   "e": "RA with splenomegaly and neutropenia is Felty's syndrome; neutropenia and functional hyposplenism predispose to serious bacterial infection.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Mechanism of infection risk." },
+    { "t": "Pick out the clues", "clues": ["long-standing seropositive rheumatoid arthritis", "three episodes of bacterial pneumonia", "spleen is palpable"], "x": "Splenomegaly plus neutrophils 0.9: **Felty's syndrome**." },
+    { "t": "Make your own answer before looking", "x": "**Neutropenia with functional hyposplenism.**" },
+    { "t": "Rule out the others", "elim": [[0, "Complement deficiency fits lupus or Neisseria infections."], [1, "Low immunoglobulins are not part of Felty's."], [3, "No steroid use is mentioned."], [4, "T-cell defects cause viral and opportunistic infections."]] },
+    { "t": "Commit", "x": "**C. Neutropenia with functional hyposplenism.** Felty's = RA + splenomegaly + neutropenia." }
+   ]
+  }
+ ]
+}

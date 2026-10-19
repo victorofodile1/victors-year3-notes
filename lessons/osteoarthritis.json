@@ -1,0 +1,2105 @@
+{
+ "id": "osteoarthritis",
+ "patient": {
+  "name": "Bernadette O'Sullivan",
+  "age": 67,
+  "sex": "F",
+  "setting": "GP surgery",
+  "complaint": "Right knee pain for 18 months, worse on walking",
+  "background": [
+   "BMI 34",
+   "Hypertension on amlodipine; eGFR 78",
+   "Retired school dinner lady from Croydon",
+   "Knobbly finger joints for years"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an older, overweight patient with activity-related joint pain, short morning stiffness, crepitus and normal inflammatory markers, or hand OA with Heberden's nodes versus rheumatoid.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Bernadette, 67: right knee **aches after walking** to the shops.",
+      "Eases with rest; worse by evening.",
+      "Stiff for about **10 minutes** on getting up.",
+      "No fever, no weight loss, no hot red joint."
+     ],
+     "vitals": {
+      "T": "36.7°C",
+      "HR": "76 bpm",
+      "BP": "138/82 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Bernadette's knee is wearing out: **cartilage degeneration** with osteophytes and a low-grade effusion, not an inflammatory arthritis."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Her **BMI of 34** is her biggest modifiable risk factor; age over 50 and both knees aching fit primary OA."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Morning stiffness",
+      "min": 0,
+      "max": 120,
+      "unit": "minutes",
+      "bands": [
+       [
+        0,
+        30,
+        "OA: under 30 min",
+        "ok"
+       ],
+       [
+        30,
+        60,
+        "Think inflammatory",
+        "warn"
+       ],
+       [
+        60,
+        120,
+        "Rheumatoid: over 1 hour",
+        "bad"
+       ]
+      ],
+      "value": 10,
+      "label": "Bernadette 10 min",
+      "caption": "Short stiffness after rest points to OA; long morning stiffness points to an inflammatory arthritis."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Right knee: **crepitus**, small cool effusion.",
+      "Slightly reduced flexion; mild **varus** deformity.",
+      "**Antalgic gait**: short stance on the right.",
+      "No warmth or redness."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Activity pain, stiffness under 30 minutes, crepitus and **no fever or erythema**: Bernadette's knee is classic OA."
+    },
+    {
+     "type": "ask",
+     "q": "Which is the most likely diagnosis for Bernadette's knee?",
+     "o": [
+      "Gout",
+      "Osteoarthritis",
+      "Rheumatoid arthritis",
+      "Septic arthritis"
+     ],
+     "a": 1,
+     "r": "Chronic activity-related pain, short stiffness and crepitus in an older obese woman is **osteoarthritis**. Gout and sepsis are acute and hot."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Hands: hard bony swellings at the **DIP** joints.",
+      "Similar smaller swellings at the **PIP** joints.",
+      "Base of both thumbs looks **squared**.",
+      "MCP joints and wrists spared."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Bernadette's DIP lumps are **Heberden's nodes** and her PIP lumps are **Bouchard's nodes**. DIP involvement argues against rheumatoid."
+    },
+    {
+     "type": "compare",
+     "title": "Osteoarthritis vs rheumatoid arthritis",
+     "head": [
+      "Feature",
+      "Osteoarthritis",
+      "Rheumatoid arthritis"
+     ],
+     "rows": [
+      [
+       "Pain",
+       "Worse with **activity**",
+       "Worse after rest, improves with use"
+      ],
+      [
+       "Morning stiffness",
+       "**Under 30 min**",
+       "Over 1 hour"
+      ],
+      [
+       "Hand joints",
+       "**DIP** and PIP, thumb base",
+       "MCP and PIP, **spares DIP**"
+      ],
+      [
+       "Swelling",
+       "Hard, bony nodes",
+       "Soft, boggy synovitis"
+      ],
+      [
+       "Bloods",
+       "**Normal CRP/ESR**",
+       "Raised CRP/ESR, RF, anti-CCP"
+      ],
+      [
+       "X-ray",
+       "Joint space loss, osteophytes",
+       "Periarticular osteopenia, erosions"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "A year later Bernadette develops sudden pain behind the knee and a bruised, swollen calf: a **ruptured Baker's cyst**."
+    },
+    {
+     "type": "trap",
+     "text": "A ruptured Baker's cyst looks like a **DVT**: swollen, tender calf. Look for **bruising around the ankle**, and still exclude DVT with a Doppler ultrasound."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?' where the answer is often none: OA is a clinical diagnosis over 45. Or 'Which is the most likely X-ray finding?' (loss of joint space, osteophytes, subchondral cysts, sclerosis).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Bernadette asks for a scan to confirm it. Which is most appropriate?",
+     "o": [
+      "Clinical diagnosis without imaging",
+      "CRP and ESR",
+      "MRI of the knee",
+      "X-ray of the knee"
+     ],
+     "a": 0,
+     "r": "Over 45, activity-related pain and stiffness under 30 minutes: **clinical diagnosis**. Imaging is not needed to diagnose typical OA."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Bernadette meets all three NICE criteria: **over 45**, activity-related pain, stiffness **under 30 minutes**. No test is needed."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Age criterion for clinical diagnosis",
+      "min": 20,
+      "max": 90,
+      "unit": "years",
+      "bands": [
+       [
+        20,
+        45,
+        "Under 45: look for another cause",
+        "warn"
+       ],
+       [
+        45,
+        90,
+        "Over 45: criterion met",
+        "ok"
+       ]
+      ],
+      "value": 67,
+      "label": "Bernadette 67",
+      "caption": "A younger patient with unilateral OA needs a reason, such as a previous injury."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Bloods taken for her hands",
+     "rows": [
+      [
+       "CRP",
+       "3 mg/L",
+       "<5",
+       ""
+      ],
+      [
+       "ESR",
+       "14 mm/h",
+       "<20",
+       ""
+      ],
+      [
+       "Rheumatoid factor",
+       "Negative",
+       "Negative",
+       ""
+      ],
+      [
+       "Serum urate",
+       "310 µmol/L",
+       "150–360",
+       ""
+      ]
+     ],
+     "text": "All normal, as expected in OA."
+    },
+    {
+     "type": "pearl",
+     "text": "**Normal inflammatory markers** are part of the OA picture. A raised CRP should make you think of an inflammatory, crystal or septic arthritis."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Two years on, pain is severe despite treatment.",
+      "Knee X-ray before orthopaedic referral."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Bernadette's X-ray shows the four classic signs: **loss of joint space**, **osteophytes**, **subchondral cysts** and **subarticular sclerosis**."
+    },
+    {
+     "type": "flow",
+     "title": "OA X-ray signs: LOSS",
+     "nodes": [
+      "L: Loss of joint space",
+      "O: Osteophytes",
+      "S: Subchondral cysts",
+      "S: Subarticular sclerosis"
+     ],
+     "caption": "Compare: punched-out erosions in gout, chondrocalcinosis in pseudogout, osteopenia in rheumatoid."
+    },
+    {
+     "type": "trap",
+     "text": "X-ray severity matches symptoms poorly. Do not X-ray to **diagnose** typical OA; use it when the picture is atypical or before surgery."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' for knee OA: topical NSAID plus exercise first, oral NSAID with a PPI next, steroid injection for flares, and arthroplasty for severe disease.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which is the most appropriate first-line treatment for Bernadette's knee?",
+     "o": [
+      "Intra-articular steroid injection",
+      "Paracetamol",
+      "Topical NSAID and physiotherapy",
+      "Total knee replacement"
+     ],
+     "a": 2,
+     "r": "First-line knee OA is a **topical NSAID** plus **exercise/physiotherapy** and weight loss. Routine paracetamol is no longer offered."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Bernadette starts **topical diclofenac** gel and a physio-led exercise programme. Her eGFR of 78 and few vascular risks mean NSAIDs are allowed."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Three months later: still painful walking to the shops.",
+      "GP adds **oral naproxen**.",
+      "She has no ulcer history."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Every OA patient on an oral NSAID gets a **PPI**, so Bernadette has omeprazole with her naproxen. With CKD she would get lifestyle advice instead."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Bernadette's knee pain score",
+      "x": [
+       "Start",
+       "Topical + physio",
+       "Oral NSAID",
+       "Steroid injection",
+       "3 months later",
+       "After TKR"
+      ],
+      "unit": "pain /10",
+      "series": [
+       {
+        "name": "Pain",
+        "values": [
+         7,
+         6,
+         5,
+         2,
+         6,
+         1
+        ]
+       }
+      ],
+      "caption": "The steroid injection works well but wears off; arthroplasty gives lasting relief."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "In a bad flare Bernadette has an **intra-articular methylprednisolone** injection: effective but **temporary**, as the trend shows."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Two years on: night pain, walking under 100 metres.",
+      "Function poor despite full conservative treatment.",
+      "Referred for **total knee replacement**."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Bernadette's severe, refractory disease needs **arthroplasty**. After a knee replacement the **common peroneal nerve** is most at risk (foot drop)."
+    },
+    {
+     "type": "flow",
+     "title": "Knee OA escalation",
+     "nodes": [
+      "Everyone: exercise, weight loss, education",
+      "Topical NSAID",
+      "Oral NSAID + PPI (avoid in CKD)",
+      "Intra-articular steroid for flares",
+      "Severe, refractory: arthroplasty"
+     ]
+    },
+    {
+     "type": "compare",
+     "title": "Shortened, rotated leg: which is it?",
+     "head": [
+      "",
+      "Posterior hip prosthesis dislocation",
+      "Fractured neck of femur"
+     ],
+     "rows": [
+      [
+       "Setting",
+       "After hip replacement; 'clunk' on bending",
+       "Fall onto hip"
+      ],
+      [
+       "Leg",
+       "Shortened, **internally** rotated",
+       "Shortened, **externally** rotated"
+      ]
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "The most common reason for hip replacement **revision** is **aseptic loosening**."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Bernadette's clinical diagnosis and stepwise plan follow the **NICE osteoarthritis guideline**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions on why cartilage is lost (MMP breakdown exceeding repair), why osteophytes form, or why a ruptured Baker's cyst mimics a DVT.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "In Bernadette's knee, **matrix metalloproteinase** breakdown of cartilage outpaces repair, so the cartilage thins year by year."
+    },
+    {
+     "type": "flow",
+     "title": "From load to an osteoarthritic knee",
+     "nodes": [
+      "Excess mechanical load (obesity, old injury)",
+      "MMP breakdown exceeds repair",
+      "Articular cartilage thins: joint space narrows",
+      "Subchondral bone remodels: sclerosis and cysts",
+      "Osteophytes form at the margins",
+      "Pain, crepitus, deformity"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Bernadette's osteophytes and sclerosis are her bone's **attempted repair** as the cartilage cushion is lost."
+    },
+    {
+     "type": "ask",
+     "q": "Why is Bernadette's CRP normal despite a knee effusion?",
+     "o": [
+      "Cartilage cannot become inflamed",
+      "Inflammation is low-grade and local",
+      "NSAIDs have suppressed it",
+      "The effusion is blood, not fluid"
+     ],
+     "a": 1,
+     "r": "Cartilage debris causes **low-grade local synovitis** without the systemic response of inflammatory arthritis, so CRP stays normal."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Bernadette's small effusion is **low-grade synovitis** from cartilage debris, so she has swelling without fever or a raised CRP."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Bernadette's BMI",
+      "min": 15,
+      "max": 45,
+      "unit": "kg/m²",
+      "bands": [
+       [
+        18.5,
+        25,
+        "Healthy",
+        "ok"
+       ],
+       [
+        25,
+        30,
+        "Overweight",
+        "warn"
+       ],
+       [
+        30,
+        45,
+        "Obese",
+        "bad"
+       ]
+      ],
+      "value": 34,
+      "label": "Bernadette 34",
+      "caption": "Every extra kilogram adds several kilograms of load across the knee with each step."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Bernadette's weight increases **mechanical loading** of her knees; in a younger patient an old meniscal or ligament injury does the same."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Bernadette's Baker's cyst was synovial fluid herniating into the **popliteal fossa**; rupture spilled it into her calf, mimicking a DVT."
+    },
+    {
+     "type": "pearl",
+     "text": "OA is a **non-inflammatory** arthritis: the damage is mechanical and degenerative, so treatment targets load, pain and function, not the immune system."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which is one of the strongest risk factors for osteoarthritis?",
+   "o": [
+    "Male sex",
+    "Obesity",
+    "Smoking",
+    "Tall stature"
+   ],
+   "a": 1,
+   "r": "**Obesity** increases mechanical loading of weight-bearing joints."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which hand joints are typically affected by osteoarthritis?",
+   "o": [
+    "DIP and PIP joints",
+    "MCP joints only",
+    "MCP and wrist joints",
+    "Wrist only"
+   ],
+   "a": 0,
+   "r": "OA affects **DIP and PIP** joints and the thumb base; rheumatoid spares the DIPs."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What are Heberden's nodes?",
+   "o": [
+    "Bony swellings at DIP joints",
+    "Bony swellings at PIP joints",
+    "Rheumatoid nodules at the elbow",
+    "Urate deposits on the ear"
+   ],
+   "a": 0,
+   "r": "**Heberden's** = DIP; **Bouchard's** = PIP."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which complication of knee OA can mimic a DVT?",
+   "o": [
+    "Baker's cyst rupture",
+    "Common peroneal nerve palsy",
+    "Meniscal tear",
+    "Patellar fracture"
+   ],
+   "a": 0,
+   "r": "A ruptured **Baker's cyst** gives posterior knee pain and calf swelling with bruising."
+  },
+  {
+   "d": "investigation",
+   "q": "How long is morning stiffness in osteoarthritis?",
+   "o": [
+    "Under 30 minutes",
+    "1 to 2 hours",
+    "Over 2 hours",
+    "All day"
+   ],
+   "a": 0,
+   "r": "OA stiffness is **under 30 minutes**; over an hour suggests inflammatory arthritis."
+  },
+  {
+   "d": "investigation",
+   "q": "Which is NOT a classic X-ray feature of osteoarthritis?",
+   "o": [
+    "Loss of joint space",
+    "Osteophytes",
+    "Periarticular osteopenia",
+    "Subchondral cysts"
+   ],
+   "a": 2,
+   "r": "Periarticular osteopenia is **rheumatoid**. OA shows LOSS: joint space loss, osteophytes, subchondral cysts, sclerosis."
+  },
+  {
+   "d": "management",
+   "q": "What is first-line drug treatment for knee osteoarthritis?",
+   "o": [
+    "Oral codeine",
+    "Oral paracetamol",
+    "Topical NSAID",
+    "Oral prednisolone"
+   ],
+   "a": 2,
+   "r": "**Topical NSAID** plus exercise. Routine paracetamol should not be offered."
+  },
+  {
+   "d": "management",
+   "q": "What must be co-prescribed with an oral NSAID in OA?",
+   "o": [
+    "Bisphosphonate",
+    "Paracetamol",
+    "Proton pump inhibitor",
+    "Vitamin D"
+   ],
+   "a": 2,
+   "r": "NICE: co-prescribe a **PPI** with oral NSAIDs in all OA patients."
+  },
+  {
+   "d": "management",
+   "q": "Which nerve is most at risk in knee arthroplasty?",
+   "o": [
+    "Common peroneal nerve",
+    "Femoral nerve",
+    "Sciatic nerve",
+    "Tibial nerve"
+   ],
+   "a": 0,
+   "r": "The **common peroneal nerve**, causing foot drop."
+  },
+  {
+   "d": "science",
+   "q": "Which enzymes drive cartilage breakdown in OA?",
+   "o": [
+    "Cyclo-oxygenases",
+    "Matrix metalloproteinases",
+    "Tyrosine kinases",
+    "Xanthine oxidases"
+   ],
+   "a": 1,
+   "r": "**Matrix metalloproteinases** break down cartilage faster than it is repaired."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is osteoarthritis and who gets it?",
+    "tip": "Exam thinking: older, overweight, or a younger patient with an old injury.",
+    "points": [
+     {
+      "p": "Degeneration of cartilage with osteophytes and low-grade synovitis/effusion",
+      "k": [
+       [
+        "cartilage"
+       ],
+       [
+        "degenerat",
+        "loss",
+        "wear"
+       ]
+      ],
+      "why": "Non-inflammatory, unlike rheumatoid."
+     },
+     {
+      "p": "Obesity is one of the strongest risk factors",
+      "k": [
+       [
+        "obes",
+        "weight",
+        "bmi"
+       ]
+      ],
+      "why": "Mechanical loading accelerates wear."
+     },
+     {
+      "p": "Primary OA: over 50, multiple weight-bearing joints bilaterally",
+      "k": [
+       [
+        "50",
+        "older",
+        "age",
+        "elderly"
+       ]
+      ],
+      "why": "Cumulative wear and tear."
+     },
+     {
+      "p": "Unilateral OA in the young: previous joint injury (fracture, meniscus, ligament)",
+      "k": [
+       [
+        "injur",
+        "fracture",
+        "menisc",
+        "ligament",
+        "trauma"
+       ]
+      ],
+      "why": "Ask about old sports injuries."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does knee osteoarthritis present?",
+    "tip": "Exam thinking: the stiffness duration and normal markers separate OA from inflammatory arthritis.",
+    "points": [
+     {
+      "p": "Activity-related joint pain, eased by rest",
+      "k": [
+       [
+        "activity",
+        "exercise",
+        "walking",
+        "use",
+        "weight-bearing"
+       ]
+      ],
+      "why": "Rheumatoid improves with use."
+     },
+     {
+      "p": "Morning stiffness under 30 minutes",
+      "k": [
+       [
+        "stiff"
+       ],
+       [
+        "30"
+       ]
+      ],
+      "why": "Over an hour suggests inflammatory."
+     },
+     {
+      "p": "Crepitus, effusion, reduced movement, antalgic gait",
+      "k": [
+       [
+        "crepitus",
+        "effusion",
+        "antalgic",
+        "creak"
+       ]
+      ],
+      "why": "Varus or valgus deformity in advanced knee OA."
+     },
+     {
+      "p": "No fever, no erythema, normal inflammatory markers",
+      "k": [
+       [
+        "fever",
+        "erythema",
+        "crp",
+        "esr",
+        "inflammatory marker"
+       ]
+      ],
+      "why": "A hot red joint is not OA."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which hand features distinguish OA from rheumatoid arthritis?",
+    "tip": "Exam thinking: DIP involvement points to OA.",
+    "points": [
+     {
+      "p": "OA affects DIP and PIP joints; rheumatoid spares DIPs",
+      "k": [
+       [
+        "dip",
+        "distal interphalangeal"
+       ]
+      ],
+      "why": "Rheumatoid targets MCPs and PIPs."
+     },
+     {
+      "p": "Heberden's nodes (DIP)",
+      "k": [
+       [
+        "heberden"
+       ]
+      ],
+      "why": "Hard, bony swellings."
+     },
+     {
+      "p": "Bouchard's nodes (PIP)",
+      "k": [
+       [
+        "bouchard"
+       ]
+      ],
+      "why": "Both node types are hard and bony, unlike the soft boggy swelling of rheumatoid."
+     },
+     {
+      "p": "Squaring of the thumb: 1st carpometacarpal OA, pain on gripping and pinching",
+      "k": [
+       [
+        "thumb",
+        "carpometacarpal",
+        "cmc"
+       ]
+      ],
+      "why": "Base of thumb OA is very common."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What is a ruptured Baker's cyst and what does it mimic?",
+    "tip": "Exam thinking: calf swelling in a patient with knee OA.",
+    "points": [
+     {
+      "p": "Synovial fluid herniation into the popliteal fossa",
+      "k": [
+       [
+        "popliteal",
+        "behind the knee",
+        "posterior knee"
+       ]
+      ],
+      "why": "Often associated with OA effusions."
+     },
+     {
+      "p": "Rupture: sudden posterior knee pain, calf swelling and bruising",
+      "k": [
+       [
+        "calf",
+        "bruis"
+       ]
+      ],
+      "why": "Bruising around the ankle is a useful clue."
+     },
+     {
+      "p": "Mimics a DVT",
+      "k": [
+       [
+        "dvt",
+        "deep vein",
+        "thrombosis"
+       ]
+      ],
+      "why": "Still exclude DVT with Doppler ultrasound."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is osteoarthritis diagnosed, and what does the X-ray show?",
+    "tip": "Exam thinking: 'which investigation?' is often 'none, clinical diagnosis'.",
+    "points": [
+     {
+      "p": "Clinical diagnosis if over 45, activity-related pain, no or short morning stiffness",
+      "k": [
+       [
+        "clinical"
+       ],
+       [
+        "45"
+       ]
+      ],
+      "why": "No imaging needed for typical OA."
+     },
+     {
+      "p": "Loss of joint space",
+      "k": [
+       [
+        "joint space"
+       ]
+      ],
+      "why": "Narrowing from cartilage loss."
+     },
+     {
+      "p": "Osteophytes",
+      "k": [
+       [
+        "osteophyte"
+       ]
+      ],
+      "why": "Bony spurs at the joint margin."
+     },
+     {
+      "p": "Subchondral cysts and subarticular sclerosis",
+      "k": [
+       [
+        "cyst",
+        "sclerosis"
+       ]
+      ],
+      "why": "LOSS mnemonic."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the stepwise drug treatment of knee osteoarthritis?",
+    "tip": "Exam thinking: topical first, PPI with oral, no NSAIDs in CKD.",
+    "points": [
+     {
+      "p": "Exercise, physiotherapy and weight loss for everyone",
+      "k": [
+       [
+        "exercise",
+        "physio",
+        "weight loss",
+        "lifestyle"
+       ]
+      ],
+      "why": "Core treatment throughout."
+     },
+     {
+      "p": "First-line: topical NSAID",
+      "k": [
+       [
+        "topical"
+       ]
+      ],
+      "why": "Routine paracetamol should not be offered."
+     },
+     {
+      "p": "Oral NSAID with a PPI",
+      "k": [
+       [
+        "ppi",
+        "proton pump",
+        "omeprazole",
+        "lansoprazole"
+       ]
+      ],
+      "why": "NICE: PPI with all oral NSAIDs in OA."
+     },
+     {
+      "p": "Avoid NSAIDs in CKD or multiple vascular risk factors; use lifestyle measures",
+      "k": [
+       [
+        "ckd",
+        "kidney",
+        "renal"
+       ]
+      ],
+      "why": "Advise weight loss instead."
+     },
+     {
+      "p": "Intra-articular corticosteroid injection for severe flares: effective but temporary",
+      "k": [
+       [
+        "intra-articular",
+        "intraarticular",
+        "injection"
+       ]
+      ],
+      "why": "Methylprednisolone; low dose in renal failure."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "When is joint replacement offered and what are its key complications?",
+    "tip": "Exam thinking: a shortened internally rotated leg after a hip replacement.",
+    "points": [
+     {
+      "p": "Arthroplasty for severe or refractory disease",
+      "k": [
+       [
+        "arthroplasty",
+        "replacement",
+        "tkr",
+        "thr"
+       ]
+      ],
+      "why": "When conservative measures fail."
+     },
+     {
+      "p": "Knee arthroplasty: common peroneal nerve most at risk",
+      "k": [
+       [
+        "peroneal",
+        "fibular"
+       ]
+      ],
+      "why": "Causes foot drop."
+     },
+     {
+      "p": "Hip replacement revision: aseptic loosening most common reason",
+      "k": [
+       [
+        "aseptic",
+        "loosening"
+       ]
+      ],
+      "why": "Not infection."
+     },
+     {
+      "p": "Posterior dislocation: clunk, shortened, internally rotated leg",
+      "k": [
+       [
+        "internal"
+       ],
+       [
+        "dislocat",
+        "rotat"
+       ]
+      ],
+      "why": "NOF fracture is externally rotated."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "What is the pathophysiology of osteoarthritis?",
+    "tip": "Exam thinking: breakdown beats repair, and bone tries to compensate.",
+    "points": [
+     {
+      "p": "Matrix metalloproteinase breakdown exceeds cartilage repair",
+      "k": [
+       [
+        "metalloproteinase",
+        "mmp"
+       ]
+      ],
+      "why": "Progressive loss of articular cartilage."
+     },
+     {
+      "p": "Subchondral bone remodels: sclerosis and osteophytes as attempted repair",
+      "k": [
+       [
+        "remodel",
+        "repair"
+       ]
+      ],
+      "why": "Explains the X-ray signs."
+     },
+     {
+      "p": "Low-grade synovitis from cartilage debris, no systemic inflammation",
+      "k": [
+       [
+        "low-grade",
+        "low grade",
+        "debris",
+        "local"
+       ]
+      ],
+      "why": "Why CRP is normal."
+     },
+     {
+      "p": "Obesity and previous injury increase mechanical loading",
+      "k": [
+       [
+        "load",
+        "mechanical"
+       ]
+      ],
+      "why": "Faster cartilage wear."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Osteoarthritis": "Degenerative joint disease with cartilage loss, bony overgrowth and low-grade inflammation.",
+  "OA": "Osteoarthritis.",
+  "Articular cartilage": "Smooth tissue covering bone ends inside a joint, allowing frictionless movement.",
+  "Osteophytes": "Bony spurs at the edges of a joint, formed as the bone tries to repair itself.",
+  "Synovitis": "Inflammation of the synovial lining of a joint.",
+  "Effusion": "Excess fluid inside a joint, causing swelling.",
+  "Stenosing tenosynovitis": "Narrowing and inflammation of a tendon sheath, as in trigger finger.",
+  "Crepitus": "A grating or crackling sensation felt or heard when a rough joint moves.",
+  "Antalgic gait": "A limp in which the patient spends less time on the painful leg.",
+  "Varus": "Deformity with the knee pointing outwards, giving a bow-legged look.",
+  "Valgus": "Deformity with the knee pointing inwards, giving a knock-kneed look.",
+  "DIP": "Distal interphalangeal joint, the finger joint nearest the fingertip.",
+  "PIP": "Proximal interphalangeal joint, the middle finger joint.",
+  "MCP": "Metacarpophalangeal joint, the knuckle joint; typical in rheumatoid arthritis.",
+  "Carpometacarpal joint": "Joint between wrist bones and hand bones; the first one is at the base of the thumb.",
+  "Heberden's nodes": "Hard bony swellings of the DIP joints in osteoarthritis.",
+  "Bouchard's nodes": "Hard bony swellings of the PIP joints in osteoarthritis.",
+  "Squaring of the thumb": "Square-looking thumb base caused by osteoarthritis of the first carpometacarpal joint.",
+  "Baker's cyst": "A fluid-filled swelling behind the knee from synovial fluid herniating into the popliteal fossa.",
+  "Popliteal fossa": "The diamond-shaped hollow at the back of the knee.",
+  "DVT": "Deep vein thrombosis, a blood clot in a deep leg vein.",
+  "Subchondral cysts": "Fluid-filled holes in the bone just beneath damaged cartilage, seen on X-ray.",
+  "Subarticular sclerosis": "Increased bone density beneath the joint surface, seen as a whiter band on X-ray.",
+  "Topical NSAID": "An anti-inflammatory gel or cream, such as diclofenac, applied over the joint.",
+  "PPI": "Proton pump inhibitor, such as omeprazole, which protects the stomach from NSAIDs.",
+  "Celecoxib": "A COX-2 selective NSAID with less stomach irritation.",
+  "Intra-articular": "Injected directly into the joint space.",
+  "Methylprednisolone": "A corticosteroid used for joint injections.",
+  "Arthroplasty": "Surgical replacement of a joint.",
+  "Common peroneal nerve": "Nerve winding round the fibular neck; injury causes foot drop.",
+  "Aseptic loosening": "Loosening of a joint replacement without infection; the commonest reason for hip revision.",
+  "Matrix metalloproteinases": "Enzymes that break down cartilage matrix; overactive in osteoarthritis.",
+  "MMP": "Matrix metalloproteinase.",
+  "Meniscus": "C-shaped cartilage cushion in the knee; tears predispose to later OA.",
+  "CKD": "Chronic kidney disease, in which NSAIDs are best avoided.",
+  "Revision": "A repeat operation to replace or fix a failed joint replacement.",
+  "De Quervain's tenosynovitis": "Inflammation of thumb tendons at the wrist, causing radial wrist pain; a differential for thumb base OA."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old woman has an 18 month history of pain in both knees, worse after walking and relieved by rest. Her knees are stiff for 15 minutes in the morning. Her BMI is 33. Both knees have crepitus and small cool effusions. She has bony swellings of the distal interphalangeal joints of both hands.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bursitis",
+    "Gout",
+    "Meniscal tear",
+    "Osteoarthritis",
+    "Rheumatoid arthritis"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about chronic joint pain: mechanical or inflammatory?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "18 month history",
+      "worse after walking and relieved by rest",
+      "stiff for 15 minutes",
+      "BMI is 33",
+      "crepitus",
+      "distal interphalangeal joints"
+     ],
+     "x": "Chronic, activity-related, short stiffness, obese, crepitus and DIP nodes (Heberden's)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Mechanical pain plus Heberden's nodes: **osteoarthritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bursitis is a localised soft tissue swelling, not bilateral joint disease with nodes."
+      ],
+      [
+       1,
+       "Gout is acute and hot, classically the big toe."
+      ],
+      [
+       2,
+       "A meniscal tear follows twisting injury, with locking, usually one knee."
+      ],
+      [
+       4,
+       "Rheumatoid has long morning stiffness and spares the DIP joints."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Osteoarthritis.** Rule: activity pain + stiffness under 30 min + DIP nodes = OA."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 63 year old man has a 1 year history of right knee pain that comes on with walking. He has 10 minutes of stiffness on waking. There is crepitus on movement and no warmth. He is otherwise well and asks what test is needed to confirm the diagnosis.",
+   "q": "Which is the most appropriate investigation?",
+   "o": [
+    "Clinical diagnosis without investigation",
+    "CRP and ESR",
+    "MRI of the knee",
+    "Rheumatoid factor",
+    "X-ray of the knee"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for an investigation. First check if OA can be diagnosed clinically."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "63 year old man",
+      "comes on with walking",
+      "10 minutes of stiffness",
+      "otherwise well"
+     ],
+     "x": "Over 45, activity-related pain, stiffness under 30 minutes: all three NICE criteria."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "No test is needed: **clinical diagnosis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Inflammatory markers are not needed when the picture is typical."
+      ],
+      [
+       2,
+       "MRI is not used to diagnose OA."
+      ],
+      [
+       3,
+       "Rheumatoid factor tests for rheumatoid arthritis, which this is not."
+      ],
+      [
+       4,
+       "X-ray is not needed for typical OA and correlates poorly with symptoms."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Clinical diagnosis.** Rule: over 45 + activity pain + stiffness under 30 min = OA, no imaging."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 66 year old woman has knee osteoarthritis. She has used topical diclofenac and done physiotherapy for 3 months but still has pain on walking. She has no history of peptic ulcer disease or kidney disease. Her temperature is 36.6°C, pulse rate 72 bpm and BP 132/80 mmHg.",
+   "labs": [
+    [
+     "eGFR",
+     "82 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate next step in management?",
+   "o": [
+    "Oral codeine",
+    "Oral naproxen with omeprazole",
+    "Oral naproxen without gastroprotection",
+    "Paracetamol alone",
+    "Total knee replacement"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step after first-line has failed."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "topical diclofenac",
+      "physiotherapy for 3 months",
+      "still has pain",
+      "no history of peptic ulcer disease or kidney disease"
+     ],
+     "x": "First-line done; no contraindication to oral NSAIDs."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Oral NSAID **with a PPI**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Opioids are not the next step in OA."
+      ],
+      [
+       2,
+       "NICE requires a PPI with every oral NSAID in OA."
+      ],
+      [
+       3,
+       "Routine paracetamol is not offered."
+      ],
+      [
+       4,
+       "Arthroplasty is for severe, refractory disease, not after 3 months."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Oral naproxen with omeprazole.** Rule: oral NSAID always with a PPI."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 71 year old man has a knee X-ray for long-standing osteoarthritis. It shows narrowing of the joint space with bony spurs at the joint margins and dense white bone beneath the articular surface.",
+   "q": "Which is the most likely explanation for the bony spurs?",
+   "o": [
+    "Attempted repair by remodelling subchondral bone",
+    "Calcium pyrophosphate deposition",
+    "Osteoclast activation by RANKL",
+    "Pannus invading the joint margin",
+    "Urate crystal deposition"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: why do osteophytes form in OA?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "narrowing of the joint space",
+      "bony spurs at the joint margins",
+      "dense white bone"
+     ],
+     "x": "Joint space loss, osteophytes, subchondral sclerosis: classic OA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bone remodels as **attempted repair** after cartilage loss."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CPP deposition gives chondrocalcinosis in pseudogout."
+      ],
+      [
+       2,
+       "Osteoclast activation causes bone loss, not new bone."
+      ],
+      [
+       3,
+       "Pannus causes erosions in rheumatoid arthritis."
+      ],
+      [
+       4,
+       "Urate deposition gives punched-out erosions in gout."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Attempted repair by remodelling.** Rule: osteophytes and sclerosis = bone's repair response to cartilage loss."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old woman has a 2 year history of left knee pain that is worse at the end of the day and after walking. Morning stiffness lasts 15 minutes. Her BMI is 35. Her temperature is 36.8°C, pulse rate 74 bpm and BP 136/84 mmHg. The knee has crepitus and a small cool effusion.",
+   "labs": [
+    [
+     "CRP",
+     "4 mg/L",
+     "<5",
+     ""
+    ],
+    [
+     "ESR",
+     "15 mm/h",
+     "<20",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Gout",
+    "Osteoarthritis",
+    "Pseudogout",
+    "Rheumatoid arthritis",
+    "Septic arthritis"
+   ],
+   "a": 1,
+   "e": "Chronic activity-related knee pain with short stiffness, crepitus, obesity and normal inflammatory markers is osteoarthritis. Crystal and septic arthritis present acutely with a hot joint.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of chronic knee pain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "2 year history",
+      "worse at the end of the day and after walking",
+      "15 minutes",
+      "BMI is 35",
+      "crepitus",
+      "small cool effusion"
+     ],
+     "x": "Chronic, mechanical, short stiffness, obese, normal CRP."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Osteoarthritis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gout is acute and hot."
+      ],
+      [
+       2,
+       "Pseudogout is an acute hot knee."
+      ],
+      [
+       3,
+       "Rheumatoid has long stiffness and raised markers."
+      ],
+      [
+       4,
+       "Septic arthritis is acute with fever."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Osteoarthritis.** Rule: chronic + mechanical + normal CRP = OA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old woman has aching fingers for 5 years, worse after gardening. Stiffness lasts 10 minutes in the morning. Her temperature is 36.6°C, pulse rate 70 bpm and BP 128/76 mmHg. The GP suspects osteoarthritis of the hands.",
+   "labs": [
+    [
+     "Rheumatoid factor",
+     "Negative",
+     "Negative",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on examination of her hands?",
+   "o": [
+    "Boggy swelling of the metacarpophalangeal joints",
+    "Bony swellings of the distal interphalangeal joints",
+    "Nail pitting with dactylitis",
+    "Swan-neck deformity",
+    "Ulnar deviation of the fingers"
+   ],
+   "a": 1,
+   "e": "Hand OA affects the DIP (Heberden's) and PIP (Bouchard's) joints with hard bony swellings. Boggy MCP synovitis, swan-neck and ulnar deviation are rheumatoid.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Examination finding of hand OA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "5 years",
+      "worse after gardening",
+      "10 minutes",
+      "osteoarthritis of the hands"
+     ],
+     "x": "Chronic, activity-related, short stiffness."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Heberden's nodes**: hard bony DIP swellings."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Boggy MCP swelling is rheumatoid synovitis."
+      ],
+      [
+       2,
+       "Nail pitting and dactylitis are psoriatic arthritis."
+      ],
+      [
+       3,
+       "Swan-neck deformity is rheumatoid."
+      ],
+      [
+       4,
+       "Ulnar deviation is rheumatoid."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bony DIP swellings.** Rule: OA hits DIPs; rheumatoid spares them."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 61 year old woman has a 6 month history of pain at the base of her right thumb when opening jars and turning keys. The base of the thumb looks square. Pain is reproduced by grinding the thumb metacarpal against the trapezium. Finkelstein's test is negative and sensation in the hand is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Carpal tunnel syndrome",
+    "De Quervain's tenosynovitis",
+    "First carpometacarpal joint osteoarthritis",
+    "Rheumatoid arthritis",
+    "Scaphoid fracture"
+   ],
+   "a": 2,
+   "e": "Thumb base pain with gripping, squaring and a positive grind test is first CMC joint OA. De Quervain's gives a positive Finkelstein's test.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of thumb base pain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "base of her right thumb",
+      "opening jars and turning keys",
+      "looks square",
+      "grinding the thumb metacarpal against the trapezium",
+      "Finkelstein's test is negative"
+     ],
+     "x": "Pain gripping and turning, squaring, positive grind, negative Finkelstein's."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**First CMC joint OA**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Carpal tunnel causes numbness in the median nerve distribution; sensation is normal."
+      ],
+      [
+       1,
+       "De Quervain's has a positive Finkelstein's test."
+      ],
+      [
+       3,
+       "Rheumatoid is a symmetrical MCP/PIP polyarthritis."
+      ],
+      [
+       4,
+       "No trauma; scaphoid fracture follows a fall on an outstretched hand."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. First CMC joint OA.** Rule: squared thumb + grip pain = CMC OA."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old man with long-standing knee osteoarthritis has sudden pain behind his right knee followed by a swollen, tender right calf. There is bruising around the right ankle. His temperature is 36.9°C, pulse rate 84 bpm and BP 140/82 mmHg.",
+   "labs": [
+    [
+     "Doppler ultrasound",
+     "No deep vein thrombus; fluid tracking into the calf",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cellulitis",
+    "Deep vein thrombosis",
+    "Popliteal artery aneurysm",
+    "Ruptured Baker's cyst",
+    "Superficial thrombophlebitis"
+   ],
+   "a": 3,
+   "e": "Sudden posterior knee pain then calf swelling and ankle bruising in knee OA, with no thrombus on Doppler, is a ruptured Baker's cyst.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a swollen calf in a patient with knee OA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "long-standing knee osteoarthritis",
+      "sudden pain behind his right knee",
+      "bruising around the right ankle"
+     ],
+     "x": "OA effusion, posterior knee pain, calf bruising, and Doppler shows no clot."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Ruptured Baker's cyst**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cellulitis gives fever and spreading erythema."
+      ],
+      [
+       1,
+       "Doppler shows no thrombus."
+      ],
+      [
+       2,
+       "Aneurysm is a pulsatile popliteal mass, not sudden calf fluid."
+      ],
+      [
+       4,
+       "Thrombophlebitis is a tender red superficial vein."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Ruptured Baker's cyst.** Rule: OA knee + calf swelling + bruising + no DVT = Baker's."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 36 year old man has a 2 year history of right knee pain on running and squatting, with slight swelling. His left knee is normal. He had a footballing injury to the right knee aged 22 that needed arthroscopic surgery. His BMI is 23. His temperature is 36.7°C, pulse rate 62 bpm and BP 122/74 mmHg. X-ray shows narrowing of the right medial joint space with osteophytes.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely cause of his osteoarthritis?",
+   "o": [
+    "Hyperuricaemia",
+    "Obesity",
+    "Osteoporosis",
+    "Previous meniscal injury",
+    "Rheumatoid arthritis"
+   ],
+   "a": 3,
+   "e": "Unilateral OA in a younger patient usually follows a previous joint insult such as a meniscal or ligament injury. His BMI is normal.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question about OA in a young man."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "36 year old man",
+      "left knee is normal",
+      "footballing injury",
+      "arthroscopic surgery",
+      "BMI is 23"
+     ],
+     "x": "Young, unilateral, old injury, normal weight."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Secondary OA after a **previous joint injury**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hyperuricaemia causes gout, not this X-ray."
+      ],
+      [
+       1,
+       "His BMI is normal."
+      ],
+      [
+       2,
+       "Osteoporosis causes fractures, not OA."
+      ],
+      [
+       4,
+       "Rheumatoid is symmetrical and erosive, not unilateral with osteophytes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Previous meniscal injury.** Rule: young + unilateral OA = look for an old injury."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old woman had a total hip replacement for osteoarthritis 2 weeks ago. While bending to put on her shoes she felt a 'clunk' and severe hip pain. She cannot weight-bear. Her temperature is 36.8°C, pulse rate 96 bpm and BP 148/86 mmHg. The right leg is shortened and internally rotated.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Aseptic loosening",
+    "Periprosthetic fracture",
+    "Posterior dislocation of the prosthesis",
+    "Prosthetic joint infection",
+    "Sciatic nerve injury"
+   ],
+   "a": 2,
+   "e": "A clunk on hip flexion soon after hip replacement with a shortened, internally rotated leg is posterior dislocation. Aseptic loosening is a late, gradual cause of revision.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of an acute complication after hip arthroplasty for OA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "total hip replacement",
+      "2 weeks ago",
+      "bending to put on her shoes",
+      "'clunk'",
+      "shortened and internally rotated"
+     ],
+     "x": "Early, flexion movement, clunk, short internally rotated leg."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Posterior dislocation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aseptic loosening is late and gradual, years later."
+      ],
+      [
+       1,
+       "Fracture usually follows a fall; no clunk on bending."
+      ],
+      [
+       3,
+       "Infection gives fever, wound problems and gradual pain."
+      ],
+      [
+       4,
+       "Nerve injury gives foot drop or numbness, not a rotated short leg."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Posterior dislocation.** Rule: clunk + short + internally rotated = dislocated hip prosthesis."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 70 year old man has severe right knee pain despite topical and oral NSAIDs and a steroid injection. He is being referred to orthopaedics. His temperature is 36.7°C, pulse rate 78 bpm and BP 138/80 mmHg. A knee X-ray is requested.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on the X-ray?",
+   "o": [
+    "Chondrocalcinosis",
+    "Loss of joint space with osteophytes",
+    "Periarticular osteopenia with erosions",
+    "Punched-out erosions with preserved joint space",
+    "Widened joint space"
+   ],
+   "a": 1,
+   "e": "OA shows loss of joint space, osteophytes, subchondral cysts and sclerosis. Periarticular osteopenia is rheumatoid; punched-out erosions are gout.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "X-ray finding in severe OA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe right knee pain",
+      "despite topical and oral NSAIDs and a steroid injection",
+      "referred to orthopaedics"
+     ],
+     "x": "Advanced OA, X-ray before arthroplasty."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**LOSS**: loss of joint space, osteophytes, subchondral cysts, sclerosis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Chondrocalcinosis is pseudogout."
+      ],
+      [
+       2,
+       "Periarticular osteopenia is rheumatoid arthritis."
+      ],
+      [
+       3,
+       "Punched-out erosions are gout."
+      ],
+      [
+       4,
+       "OA narrows the joint space."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Loss of joint space with osteophytes.** Rule: OA = LOSS."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 68 year old woman has a 3 year history of pain in both knees and her hands, worse with activity. Morning stiffness lasts 20 minutes. She has Heberden's nodes. Her temperature is 36.5°C, pulse rate 70 bpm and BP 134/78 mmHg. Blood tests are taken.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely result?",
+   "o": [
+    "Normal CRP and ESR",
+    "Positive anti-CCP antibodies",
+    "Positive rheumatoid factor",
+    "Raised CRP and ESR",
+    "Raised serum urate"
+   ],
+   "a": 0,
+   "e": "OA is non-inflammatory: CRP and ESR are normal. Raised markers and antibodies point to rheumatoid; raised urate to gout.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Expected blood results in OA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "worse with activity",
+      "20 minutes",
+      "Heberden's nodes"
+     ],
+     "x": "Mechanical pain, short stiffness, DIP nodes: OA."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bloods are **normal**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Anti-CCP is specific for rheumatoid arthritis."
+      ],
+      [
+       2,
+       "Rheumatoid factor points to rheumatoid."
+      ],
+      [
+       3,
+       "Raised CRP and ESR suggest inflammatory arthritis."
+      ],
+      [
+       4,
+       "Raised urate suggests gout."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Normal CRP and ESR.** Rule: OA has no systemic inflammation."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 62 year old man has a clinical diagnosis of knee osteoarthritis. He has pain on walking but no other medical problems. His BMI is 31. His temperature is 36.6°C, pulse rate 70 bpm and BP 130/78 mmHg.",
+   "labs": [
+    [
+     "eGFR",
+     "88 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intra-articular corticosteroid injection",
+    "Oral naproxen with omeprazole",
+    "Paracetamol",
+    "Topical NSAID and an exercise programme",
+    "Total knee replacement"
+   ],
+   "a": 3,
+   "e": "First-line knee OA is a topical NSAID with exercise, physiotherapy and weight loss. Routine paracetamol is not offered.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of knee OA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "clinical diagnosis of knee osteoarthritis",
+      "no other medical problems",
+      "BMI is 31"
+     ],
+     "x": "New OA, no contraindications, overweight."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Topical NSAID + exercise**, plus weight loss advice."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Steroid injection is for severe flares later."
+      ],
+      [
+       1,
+       "Oral NSAID is second-line."
+      ],
+      [
+       2,
+       "Routine paracetamol should not be offered."
+      ],
+      [
+       4,
+       "Arthroplasty is for severe refractory disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Topical NSAID and exercise.** Rule: start topical, add exercise for everyone."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 67 year old woman with knee osteoarthritis is started on oral naproxen because topical treatment has not helped. She has no history of peptic ulcer disease. Her temperature is 36.7°C, pulse rate 76 bpm and BP 134/82 mmHg.",
+   "labs": [
+    [
+     "eGFR",
+     "79 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate drug to prescribe alongside it?",
+   "o": [
+    "Amitriptyline",
+    "Codeine",
+    "Omeprazole",
+    "Paracetamol",
+    "Prednisolone"
+   ],
+   "a": 2,
+   "e": "NICE advises co-prescribing a PPI with oral NSAIDs in all OA patients, whether or not they have ulcer history.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "What goes with an oral NSAID in OA?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "oral naproxen",
+      "topical treatment has not helped",
+      "no history of peptic ulcer disease"
+     ],
+     "x": "Oral NSAID started; no ulcer history does not remove the need for a PPI."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **PPI**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amitriptyline is for neuropathic pain."
+      ],
+      [
+       1,
+       "Codeine adds opioid harm without protecting the stomach."
+      ],
+      [
+       3,
+       "Routine paracetamol is not offered."
+      ],
+      [
+       4,
+       "Oral steroids are not used in OA and add GI risk."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Omeprazole.** Rule: every oral NSAID in OA comes with a PPI."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old woman has knee osteoarthritis and chronic kidney disease stage 4. She has pain walking to the shops. Her BMI is 36. Her temperature is 36.6°C, pulse rate 78 bpm and BP 146/88 mmHg.",
+   "labs": [
+    [
+     "eGFR",
+     "24 mL/min/1.73m²",
+     ">60",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "196 µmol/L",
+     "45–90",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intra-articular corticosteroid injection",
+    "Oral ibuprofen",
+    "Oral naproxen with omeprazole",
+    "Total knee replacement",
+    "Weight loss and exercise programme"
+   ],
+   "a": 4,
+   "e": "NSAIDs are contraindicated in CKD, so the notes advise lifestyle measures such as weight loss and exercise. Steroid injection is for severe flares; arthroplasty for refractory disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: check for contraindications first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "chronic kidney disease stage 4",
+      "BMI is 36",
+      "pain walking to the shops"
+     ],
+     "x": "CKD rules out NSAIDs; obesity is modifiable."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Weight loss and exercise**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Steroid injection is for severe flares, not initial care."
+      ],
+      [
+       1,
+       "Ibuprofen is an NSAID: contraindicated in CKD."
+      ],
+      [
+       2,
+       "Naproxen is an NSAID: a PPI does not protect the kidney."
+      ],
+      [
+       3,
+       "Arthroplasty is for severe refractory disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Weight loss and exercise.** Rule: OA + CKD = no NSAIDs, lifestyle first."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 65 year old woman has knee osteoarthritis. A biopsy of the articular cartilage taken during her knee replacement shows thinning, fissuring and loss of matrix. There is no pannus or crystal deposition. Her temperature is 36.8°C, pulse rate 72 bpm and BP 130/80 mmHg.",
+   "labs": [
+    [
+     "CRP",
+     "3 mg/L",
+     "<5",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her cartilage loss?",
+   "o": [
+    "Autoantibodies against type II collagen",
+    "Immune complex deposition",
+    "Matrix metalloproteinase breakdown exceeding repair",
+    "Pannus invasion of cartilage",
+    "Urate crystal deposition"
+   ],
+   "a": 2,
+   "e": "OA cartilage loss is an imbalance between breakdown by matrix metalloproteinases and repair. Pannus is rheumatoid; urate crystals are gout.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of cartilage loss in OA."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "thinning, fissuring and loss of matrix",
+      "no pannus or crystal deposition"
+     ],
+     "x": "Degenerative matrix loss without inflammation or crystals, and CRP is normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**MMP breakdown outpacing repair**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Autoantibodies are not the mechanism in OA."
+      ],
+      [
+       1,
+       "Immune complexes cause SLE-type disease."
+      ],
+      [
+       3,
+       "There is no pannus; that is rheumatoid."
+      ],
+      [
+       4,
+       "There are no crystals; that is gout."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. MMP breakdown exceeding repair.** Rule: OA = enzyme breakdown beats repair."
+    }
+   ]
+  }
+ ]
+}

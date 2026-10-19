@@ -1,0 +1,2446 @@
+{
+ "id": "tuberculosis",
+ "patient": {
+  "name": "Abdi Warsame",
+  "age": 29,
+  "sex": "M",
+  "setting": "Respiratory assessment unit, Royal London Hospital",
+  "complaint": "Six weeks of cough, night sweats and weight loss, with streaks of blood in his sputum",
+  "background": [
+   "Moved from Somalia 3 years ago",
+   "Shares a two-bedroom flat in Tower Hamlets with four men",
+   "Younger brother Hamza, 14, visits most weekends",
+   "No previous illness; never had an HIV test"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with chronic cough over 3 weeks, night sweats, weight loss and haemoptysis in someone from an endemic area or on immunosuppression (anti-TNF, HIV), or an extrapulmonary form: Pott's spine, ileocaecal mass, TB meningitis, miliary TB.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Abdi, 29, from Somalia 3 years ago.",
+      "**Cough for 6 weeks**; now streaks of blood.",
+      "Drenching **night sweats**; trousers loose, **8 kg lost**.",
+      "Tired all the time; missing shifts as a delivery driver."
+     ],
+     "vitals": {
+      "T": "37.9°C",
+      "HR": "98 bpm",
+      "BP": "118/72 mmHg",
+      "RR": "20 /min",
+      "SpO2": "95% on air"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Cough duration",
+      "min": 0,
+      "max": 12,
+      "unit": "weeks",
+      "bands": [
+       [
+        0,
+        3,
+        "Acute: usually viral or CAP",
+        "ok"
+       ],
+       [
+        3,
+        12,
+        "Chronic: think TB (and cancer)",
+        "bad"
+       ]
+      ],
+      "value": 6,
+      "label": "Abdi 6 weeks",
+      "caption": "A cough beyond 3 weeks with systemic symptoms is TB until proven otherwise."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "What is the most likely diagnosis?",
+     "o": [
+      "Community-acquired pneumonia",
+      "Lung cancer",
+      "Pulmonary tuberculosis",
+      "Sarcoidosis"
+     ],
+     "a": 2,
+     "r": "Chronic cough, haemoptysis, night sweats and weight loss in a young man from an **endemic area**: pulmonary TB."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Abdi's illness is **Mycobacterium tuberculosis**: a granulomatous infection that is usually in the lungs but can reach almost any organ."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Abdi has two risk factors: **residence in an endemic area** and close, crowded living. His **HIV** status is unknown and must be checked."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Thin, with wasted temples (**cachexia**).",
+      "Rubbery nodes in the right side of his neck.",
+      "Crackles over the **right upper zone**.",
+      "Spine non-tender; abdomen soft, no mass."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Abdi has the full pulmonary picture: **cough over 3 weeks**, mild haemoptysis, fever, sweats, weight loss, cachexia, crackles and lymphadenopathy."
+    },
+    {
+     "type": "compare",
+     "title": "TB vs its look-alikes",
+     "head": [
+      "Feature",
+      "Pulmonary TB",
+      "CAP",
+      "Lung cancer",
+      "Sarcoidosis"
+     ],
+     "rows": [
+      [
+       "Time course",
+       "Weeks to months",
+       "Days",
+       "Months",
+       "Months"
+      ],
+      [
+       "Night sweats, weight loss",
+       "**Yes**",
+       "No",
+       "Weight loss",
+       "Sometimes"
+      ],
+      [
+       "CXR",
+       "**Upper zone** opacity, cavity",
+       "Lobar consolidation",
+       "Mass, hilar",
+       "Bilateral hilar nodes"
+      ],
+      [
+       "Who",
+       "Endemic area, HIV, anti-TNF",
+       "Anyone",
+       "Smoker, older",
+       "Young, often Afro-Caribbean"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Abdi's spine and abdomen were examined because TB also causes **Pott's disease**, an **ileocaecal mass**, lymph node, CNS and skin disease (**lupus vulgaris**)."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Untreated, Abdi risks **cavitation**, **miliary TB**, **TB meningitis** and death; his brother and flatmates are at risk too."
+    },
+    {
+     "type": "trap",
+     "text": "A normal temperature does not exclude TB: the fever is often low-grade and evening. The **duration** (over 3 weeks) and **night sweats** carry the stem."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation to confirm the diagnosis?' (three sputum samples for AFB smear and culture; culture is gold standard), CXR findings (upper zone, cavitation), IGRA versus Mantoux for latent TB, and the HIV test.",
+   "steps": [
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Abdi's chest X-ray",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "right",
+        "zone": "upper"
+       },
+       {
+        "type": "cavity",
+        "side": "right",
+        "zone": "upper"
+       }
+      ],
+      "caption": "Patchy right upper zone opacification with a cavity: classic post-primary TB."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Abdi's CXR shows the **upper zone** cavitating change. He can cough up sputum, so no **bronchoalveolar lavage** is needed; respiratory **PCR** speeds things up."
+    },
+    {
+     "type": "ask",
+     "q": "Which test is the gold standard for confirming active TB?",
+     "o": [
+      "AFB smear",
+      "Chest X-ray",
+      "IGRA",
+      "Mantoux test",
+      "Mycobacterial culture"
+     ],
+     "a": 4,
+     "r": "**Culture** is the most sensitive and identifies drug sensitivities, but takes weeks. IGRA and Mantoux only show exposure."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Abdi gives **three early-morning sputum samples** for AFB smear and culture. Auramine staining gives the fastest smear result."
+    },
+    {
+     "type": "labs",
+     "title": "Abdi's sputum (48 hours)",
+     "rows": [
+      [
+       "Sputum AFB smear (auramine)",
+       "Positive, 2+",
+       "Negative",
+       "H"
+      ],
+      [
+       "M. tuberculosis complex PCR",
+       "Detected",
+       "Not detected",
+       "H"
+      ],
+      [
+       "Rifampicin resistance (rpoB)",
+       "Not detected",
+       "Not detected",
+       ""
+      ],
+      [
+       "Mycobacterial culture",
+       "Pending (up to 6 weeks)",
+       "No growth",
+       ""
+      ]
+     ],
+     "text": "Smear-positive means he is **infectious**. Culture will confirm and give full sensitivities."
+    },
+    {
+     "type": "trap",
+     "text": "A positive AFB smear is **not specific**: all mycobacteria are acid-fast. PCR or culture confirms it is M. tuberculosis."
+    },
+    {
+     "type": "labs",
+     "title": "Abdi's baseline bloods",
+     "rows": [
+      [
+       "HIV antibody/antigen",
+       "Positive",
+       "Negative",
+       "H"
+      ],
+      [
+       "CD4 count",
+       "180 cells/µL",
+       "500–1500",
+       "L"
+      ],
+      [
+       "ALT",
+       "32 U/L",
+       "<40",
+       ""
+      ],
+      [
+       "Creatinine",
+       "78 µmol/L",
+       "60–120",
+       ""
+      ],
+      [
+       "Haemoglobin",
+       "116 g/L",
+       "130–180",
+       "L"
+      ]
+     ],
+     "text": "New HIV: this changes when antiretrovirals start."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Every patient tested for TB gets an **HIV test**: Abdi's is positive. Baseline U&Es, LFTs, FBC and **vision** are checked before RIPE."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "His flatmates and brother Hamza are screened for **latent TB**: the UK prefers **IGRA**, especially after BCG; Mantoux is positive at **5 mm or more**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Flatmate's Mantoux induration",
+      "min": 0,
+      "max": 20,
+      "unit": "mm",
+      "bands": [
+       [
+        0,
+        5,
+        "Negative",
+        "ok"
+       ],
+       [
+        5,
+        20,
+        "Positive (≥5 mm)",
+        "bad"
+       ]
+      ],
+      "value": 11,
+      "label": "Yusuf 11 mm",
+      "caption": "Measure the induration (the hard lump), not the redness, at 48 to 72 hours."
+     }
+    },
+    {
+     "type": "compare",
+     "title": "Mantoux vs IGRA",
+     "head": [
+      "",
+      "Mantoux (TST)",
+      "IGRA"
+     ],
+     "rows": [
+      [
+       "What it is",
+       "Intradermal tuberculin, read at 48–72 h",
+       "Blood test: T cells release interferon-gamma to TB antigens"
+      ],
+      [
+       "Positive",
+       "Induration **≥5 mm**",
+       "Interferon-gamma above cut-off"
+      ],
+      [
+       "After BCG",
+       "False positives",
+       "**Not affected**: preferred"
+      ],
+      [
+       "Limits",
+       "Two visits",
+       "Neither test separates latent from active TB"
+      ]
+     ]
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (RIPE for 2 months, then RI for 4 months), side-effect questions (orange urine, neuropathy, vision, gout), latent TB regimens, ART timing in HIV, and BCG for contacts.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Abdi is moved to a **negative-pressure side room**.",
+      "Staff wear FFP3 masks until he is smear-negative.",
+      "Public health is notified the same day."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Abdi is notified on suspicion and starts **RIPE** for 2 months, then **rifampicin and isoniazid** for 4 more: 6 months in total, with **pyridoxine**."
+    },
+    {
+     "type": "flow",
+     "title": "Abdi's 6-month regimen",
+     "nodes": [
+      "Month 0: notify, start RIPE + pyridoxine",
+      "Months 1–2: Rifampicin, Isoniazid, Pyrazinamide, Ethambutol",
+      "Months 3–6: Rifampicin + Isoniazid only",
+      "Month 6: complete if fully sensitive, no CNS disease"
+     ],
+     "caption": "CNS TB needs longer treatment and steroids; drug-resistant TB needs specialist regimens."
+    },
+    {
+     "type": "ask",
+     "q": "Why does Abdi also take pyridoxine?",
+     "o": [
+      "To boost rifampicin levels",
+      "To prevent ethambutol eye damage",
+      "To prevent isoniazid neuropathy",
+      "To protect the liver"
+     ],
+     "a": 2,
+     "r": "Isoniazid depletes B6; **pyridoxine** prevents **peripheral neuropathy**."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Abdi is warned what to look for: jaundice (rifampicin, pyrazinamide), tingling feet (isoniazid), blurred or colour vision change (**ethambutol**), joint pain (pyrazinamide)."
+    },
+    {
+     "type": "compare",
+     "title": "RIPE side effects",
+     "head": [
+      "Drug",
+      "Classic side effect",
+      "Exam clue"
+     ],
+     "rows": [
+      [
+       "Rifampicin",
+       "Hepatotoxicity; **orange-red urine and tears**",
+       "'Orange urine' is expected; also an enzyme inducer"
+      ],
+      [
+       "Isoniazid",
+       "**Peripheral neuropathy**",
+       "Tingling feet; prevent with pyridoxine"
+      ],
+      [
+       "Pyrazinamide",
+       "Hepatotoxicity, **hyperuricaemia (gout)**, arthralgia",
+       "Hot swollen toe"
+      ],
+      [
+       "Ethambutol",
+       "**Optic neuropathy**, red-green colour blindness",
+       "Check vision first"
+      ]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Week 2: Abdi's urine is orange. What is the best response?",
+     "o": [
+      "Reassure: expected with rifampicin",
+      "Stop all TB drugs",
+      "Switch to rifabutin",
+      "Test for haematuria"
+     ],
+     "a": 0,
+     "r": "Orange-red urine and tears are a harmless, expected rifampicin effect. Soft contact lenses can stain."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Abdi's antiretrovirals are started about **4 weeks** after his TB drugs to reduce the risk of **IRIS**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Abdi's weight on treatment",
+      "x": [
+       "Start",
+       "Month 2",
+       "Month 4",
+       "Month 6"
+      ],
+      "unit": "kg",
+      "series": [
+       {
+        "name": "Weight",
+        "values": [
+         54,
+         57,
+         60,
+         63
+        ]
+       }
+      ],
+      "caption": "Weight gain and loss of night sweats are the simplest signs that treatment is working."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Yusuf (Mantoux 11 mm, CXR clear, no symptoms) has **latent TB**: 3 months isoniazid plus rifampicin with pyridoxine. He can keep working."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Hamza, 14, is unvaccinated and Mantoux-negative: he is offered **BCG**. Abdi himself, HIV-positive, must not have this **live vaccine**."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Abdi's care follows **NICE NG33** and UKHSA notification guidance: notify, RIPE for 6 months, screen contacts."
+    },
+    {
+     "type": "trap",
+     "text": "**Rifampicin is a strong enzyme inducer**: it reduces the pill, warfarin and many antiretrovirals. That is when **rifabutin** is substituted."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: mechanism of each RIPE drug, why TB favours the upper lobes, why it reactivates with immunosuppression (HIV, anti-TNF), and how miliary TB spreads.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Abdi's bacilli are **acid-fast**, slow-growing and live inside macrophages. The **Th1** response walls them off in **granulomas**."
+    },
+    {
+     "type": "flow",
+     "title": "From inhalation to cavity",
+     "nodes": [
+      "Droplets inhaled; macrophages engulf bacilli",
+      "Bacilli survive inside macrophages",
+      "Th1 cells release IFN-gamma; macrophages activate",
+      "Granuloma walls them off (latent TB)",
+      "Caseating necrosis in the centre",
+      "Necrosis erodes into a bronchus: cavity, infectious sputum"
+     ],
+     "caption": "This is why granulomas on biopsy and a cavity on CXR both point to TB."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Abdi's cavity is in the **upper lobe**: caseating granulomas break down there because **higher oxygen tension** suits this aerobic organism."
+    },
+    {
+     "type": "ask",
+     "q": "Why does TB favour the upper lobes?",
+     "o": [
+      "Better lymphatic drainage",
+      "Gravity-dependent aspiration",
+      "Higher oxygen tension",
+      "More blood flow"
+     ],
+     "a": 2,
+     "r": "M. tuberculosis is **aerobic**; the apices are best ventilated relative to perfusion, so oxygen tension is highest."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Abdi may have caught TB in Somalia years ago; his new **HIV** weakened cell-mediated immunity, letting latent TB **reactivate**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "With a CD4 of 180, Abdi is at risk of **miliary TB**: bloodstream spread seeding millet-seed granulomas, plus extrapulmonary spread to bone, nodes and meninges."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Each RIPE drug hits a different target, so together they kill bacilli and prevent **resistance** emerging."
+    },
+    {
+     "type": "compare",
+     "title": "How the RIPE drugs work",
+     "head": [
+      "Drug",
+      "Mechanism"
+     ],
+     "rows": [
+      [
+       "Isoniazid",
+       "Inhibits **mycolic acid** synthesis (cell wall)"
+      ],
+      [
+       "Rifampicin",
+       "Inhibits bacterial **RNA polymerase**"
+      ],
+      [
+       "Pyrazinamide",
+       "Active in the **acidic** environment inside macrophages"
+      ],
+      [
+       "Ethambutol",
+       "Inhibits **arabinogalactan** synthesis (cell wall)"
+      ]
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "Anti-TNF drugs such as **infliximab** break granulomas down: screen for latent TB (IGRA) before starting them."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which organism causes tuberculosis?",
+   "o": [
+    "Mycobacterium avium",
+    "Mycobacterium leprae",
+    "Mycobacterium tuberculosis",
+    "Nocardia asteroides"
+   ],
+   "a": 2,
+   "r": "TB is a granulomatous infection with **M. tuberculosis**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which drug class notably increases TB risk?",
+   "o": [
+    "ACE inhibitors",
+    "Anti-TNF agents (e.g. infliximab)",
+    "Proton pump inhibitors",
+    "Statins"
+   ],
+   "a": 1,
+   "r": "TNF holds granulomas together; anti-TNF drugs let latent TB reactivate."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is Pott's disease?",
+   "o": [
+    "TB of the ileocaecum",
+    "TB of the meninges",
+    "TB of the skin",
+    "TB of the spine"
+   ],
+   "a": 3,
+   "r": "Skeletal TB of the spine is **Pott's disease**."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard test for active TB?",
+   "o": [
+    "AFB smear",
+    "IGRA",
+    "Mantoux test",
+    "Mycobacterial culture"
+   ],
+   "a": 3,
+   "r": "Culture is most sensitive but slow."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test is preferred for latent TB in a BCG-vaccinated person?",
+   "o": [
+    "AFB smear",
+    "Chest X-ray",
+    "IGRA",
+    "Mantoux test"
+   ],
+   "a": 2,
+   "r": "BCG gives false-positive Mantoux results; IGRA is not affected."
+  },
+  {
+   "d": "investigation",
+   "q": "Where is the classic CXR change in pulmonary TB?",
+   "o": [
+    "Hilar only",
+    "Lower zones",
+    "Pleura only",
+    "Upper zones"
+   ],
+   "a": 3,
+   "r": "Patchy or fibronodular **upper zone** opacification with cavitation."
+  },
+  {
+   "d": "management",
+   "q": "What is the standard regimen for active non-CNS TB?",
+   "o": [
+    "Isoniazid 6 months",
+    "Rifampicin + isoniazid 3 months",
+    "RIPE 2 months, then RI 4 months",
+    "RIPE 6 months"
+   ],
+   "a": 2,
+   "r": "Total 6 months."
+  },
+  {
+   "d": "management",
+   "q": "Which TB drug causes red-green colour blindness?",
+   "o": [
+    "Ethambutol",
+    "Isoniazid",
+    "Pyrazinamide",
+    "Rifampicin"
+   ],
+   "a": 0,
+   "r": "Ethambutol causes **optic neuropathy**; check vision before starting."
+  },
+  {
+   "d": "management",
+   "q": "When should antiretrovirals start in HIV with newly treated TB?",
+   "o": [
+    "About 4 weeks after TB treatment",
+    "After 6 months of TB treatment",
+    "Before TB treatment",
+    "On the same day"
+   ],
+   "a": 0,
+   "r": "Delaying ~4 weeks reduces **IRIS**."
+  },
+  {
+   "d": "science",
+   "q": "How does isoniazid work?",
+   "o": [
+    "Inhibits arabinogalactan synthesis",
+    "Inhibits DNA gyrase",
+    "Inhibits mycolic acid synthesis",
+    "Inhibits RNA polymerase"
+   ],
+   "a": 2,
+   "r": "Mycolic acid is the waxy cell wall layer."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is TB, and what is latent TB?",
+    "tip": "Exam thinking: latent = positive test, no disease, not infectious.",
+    "points": [
+     {
+      "p": "Mycobacterium tuberculosis infection",
+      "k": [
+       [
+        "mycobacter",
+        "m. tb",
+        "m tuberculosis"
+       ]
+      ],
+      "why": "An acid-fast bacillus."
+     },
+     {
+      "p": "Granulomatous infection, usually lungs, can affect almost any organ",
+      "k": [
+       [
+        "granulom"
+       ]
+      ],
+      "why": "Caseating granulomas on biopsy."
+     },
+     {
+      "p": "Latent TB: asymptomatic, non-infectious, positive screening test, no active disease",
+      "k": [
+       [
+        "latent"
+       ],
+       [
+        "asymptomatic",
+        "non-infectious",
+        "not infectious",
+        "no symptoms"
+       ]
+      ],
+      "why": "Treated to prevent reactivation."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who gets TB? List the risk factors.",
+    "tip": "Exam thinking: the stem hides the risk factor in the social history or drug list.",
+    "points": [
+     {
+      "p": "Close contact with active TB",
+      "k": [
+       [
+        "contact"
+       ]
+      ],
+      "why": "Household contacts are screened."
+     },
+     {
+      "p": "Immunosuppression, including HIV",
+      "k": [
+       [
+        "hiv",
+        "immunosupp"
+       ]
+      ],
+      "why": "Test every TB patient for HIV."
+     },
+     {
+      "p": "Travel to or residence in an endemic area",
+      "k": [
+       [
+        "endemic",
+        "travel",
+        "abroad",
+        "high-prevalence",
+        "high prevalence"
+       ]
+      ],
+      "why": "South Asia, sub-Saharan Africa."
+     },
+     {
+      "p": "Homelessness",
+      "k": [
+       [
+        "homeless"
+       ]
+      ],
+      "why": "Also prison, drug and alcohol use."
+     },
+     {
+      "p": "Anti-TNF therapy, e.g. infliximab",
+      "k": [
+       [
+        "infliximab",
+        "anti-tnf",
+        "anti tnf",
+        "tnf"
+       ]
+      ],
+      "why": "Screen with IGRA before starting."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does pulmonary TB present, and what do you find on examination?",
+    "tip": "Exam thinking: duration over 3 weeks is the key number.",
+    "points": [
+     {
+      "p": "Chronic cough over 3 weeks",
+      "k": [
+       [
+        "cough"
+       ],
+       [
+        "3",
+        "three",
+        "chronic"
+       ]
+      ],
+      "why": "The threshold that should trigger TB testing."
+     },
+     {
+      "p": "Mild haemoptysis",
+      "k": [
+       [
+        "haemoptysis",
+        "hemoptysis",
+        "blood"
+       ]
+      ],
+      "why": "Usually streaks, not massive."
+     },
+     {
+      "p": "Fever and night sweats",
+      "k": [
+       [
+        "sweat"
+       ]
+      ],
+      "why": "Low-grade evening fever."
+     },
+     {
+      "p": "Weight loss and lethargy",
+      "k": [
+       [
+        "weight"
+       ]
+      ],
+      "why": "Cachexia on examination."
+     },
+     {
+      "p": "Crackles and lymphadenopathy",
+      "k": [
+       [
+        "crackle",
+        "lymph",
+        "node"
+       ]
+      ],
+      "why": "Often cervical nodes."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Name the extrapulmonary forms of TB and their clues.",
+    "tip": "Exam thinking: TB is the great mimic outside the lung.",
+    "points": [
+     {
+      "p": "GI TB: abdominal pain, ileocaecal mass",
+      "k": [
+       [
+        "ileocaecal",
+        "ileocecal",
+        "gi",
+        "abdominal"
+       ]
+      ],
+      "why": "Mimics Crohn's and caecal cancer."
+     },
+     {
+      "p": "Spinal TB: Pott's disease",
+      "k": [
+       [
+        "pott",
+        "spin"
+       ]
+      ],
+      "why": "Back pain, vertebral collapse, gibbus."
+     },
+     {
+      "p": "Lymph node TB",
+      "k": [
+       [
+        "lymph",
+        "node",
+        "scrofula"
+       ]
+      ],
+      "why": "Painless matted neck nodes."
+     },
+     {
+      "p": "CNS / meningeal TB",
+      "k": [
+       [
+        "mening",
+        "cns"
+       ]
+      ],
+      "why": "Subacute headache and confusion."
+     },
+     {
+      "p": "Cutaneous TB: lupus vulgaris",
+      "k": [
+       [
+        "lupus vulgaris",
+        "cutaneous",
+        "skin"
+       ]
+      ],
+      "why": "Papules enlarging into scaly plaques."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of TB?",
+    "tip": "Exam thinking: subacute meningitis in a contact from a high-prevalence country is TB until proven otherwise.",
+    "points": [
+     {
+      "p": "TB meningitis: subacute fever, headache, confusion",
+      "k": [
+       [
+        "mening"
+       ]
+      ],
+      "why": "CSF: lymphocytes, high protein, very low glucose."
+     },
+     {
+      "p": "Cavitation and lung damage",
+      "k": [
+       [
+        "cavit",
+        "lung damage",
+        "fibros"
+       ]
+      ],
+      "why": "Can leave bronchiectasis or aspergilloma."
+     },
+     {
+      "p": "Miliary TB",
+      "k": [
+       [
+        "miliary"
+       ]
+      ],
+      "why": "Haematogenous spread."
+     },
+     {
+      "p": "Death if untreated",
+      "k": [
+       [
+        "death",
+        "fatal",
+        "die"
+       ]
+      ],
+      "why": "Treatment is highly effective if completed."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you confirm active pulmonary TB, and what does the CXR show?",
+    "tip": "Exam thinking: three samples, smear and culture; culture is gold standard.",
+    "points": [
+     {
+      "p": "Three early-morning sputum samples",
+      "k": [
+       [
+        "sputum"
+       ],
+       [
+        "3",
+        "three"
+       ]
+      ],
+      "why": "BAL or gastric aspirate (children) if no sputum."
+     },
+     {
+      "p": "AFB smear: Ziehl-Neelsen or auramine (fastest)",
+      "k": [
+       [
+        "afb",
+        "ziehl",
+        "auramine",
+        "acid-fast",
+        "acid fast"
+       ]
+      ],
+      "why": "Not specific: all mycobacteria stain."
+     },
+     {
+      "p": "Mycobacterial culture: gold standard, most sensitive, slow",
+      "k": [
+       [
+        "culture"
+       ]
+      ],
+      "why": "Gives drug sensitivities."
+     },
+     {
+      "p": "PCR for rapid diagnosis",
+      "k": [
+       [
+        "pcr"
+       ]
+      ],
+      "why": "Also detects rifampicin resistance."
+     },
+     {
+      "p": "CXR: upper zone patchy/fibronodular opacity, cavitation",
+      "k": [
+       [
+        "upper"
+       ],
+       [
+        "cavit",
+        "opac",
+        "fibronodular",
+        "shadow"
+       ]
+      ],
+      "why": "Granulomas may calcify."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What else must every TB patient have before treatment?",
+    "tip": "Exam thinking: HIV test and baseline vision.",
+    "points": [
+     {
+      "p": "HIV test",
+      "k": [
+       [
+        "hiv"
+       ]
+      ],
+      "why": "Changes ART timing and drug choice."
+     },
+     {
+      "p": "U&Es, LFTs, FBC",
+      "k": [
+       [
+        "lft",
+        "liver"
+       ]
+      ],
+      "why": "Three of the four drugs are hepatotoxic risks."
+     },
+     {
+      "p": "Baseline vision testing",
+      "k": [
+       [
+        "vision",
+        "visual",
+        "eye",
+        "acuity"
+       ]
+      ],
+      "why": "Ethambutol optic neuropathy."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is latent TB tested for, and which test is preferred?",
+    "tip": "Exam thinking: IGRA after BCG.",
+    "points": [
+     {
+      "p": "Mantoux (tuberculin skin) test",
+      "k": [
+       [
+        "mantoux",
+        "tuberculin",
+        "tst"
+       ]
+      ],
+      "why": "Read at 48 to 72 hours."
+     },
+     {
+      "p": "Positive if 5 mm or more",
+      "k": [
+       [
+        "5"
+       ]
+      ],
+      "why": "Measure the induration, not the redness."
+     },
+     {
+      "p": "IGRA preferred in the UK",
+      "k": [
+       [
+        "igra",
+        "interferon"
+       ]
+      ],
+      "why": "Especially in BCG-vaccinated people."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the treatment for active TB, and what do you add?",
+    "tip": "Exam thinking: 2 + 4 = 6 months.",
+    "points": [
+     {
+      "p": "RIPE (rifampicin, isoniazid, pyrazinamide, ethambutol) for 2 months",
+      "k": [
+       [
+        "ripe",
+        "pyrazinamide",
+        "ethambutol"
+       ],
+       [
+        "2",
+        "two"
+       ]
+      ],
+      "why": "Intensive phase."
+     },
+     {
+      "p": "Then rifampicin + isoniazid for 4 months",
+      "k": [
+       [
+        "4",
+        "four"
+       ]
+      ],
+      "why": "Continuation phase: total 6 months."
+     },
+     {
+      "p": "Pyridoxine (B6) with isoniazid",
+      "k": [
+       [
+        "pyridoxine",
+        "b6"
+       ]
+      ],
+      "why": "Prevents peripheral neuropathy."
+     },
+     {
+      "p": "Notify public health on suspicion",
+      "k": [
+       [
+        "notif"
+       ]
+      ],
+      "why": "Do not wait for culture."
+     },
+     {
+      "p": "Rifabutin can replace rifampicin",
+      "k": [
+       [
+        "rifabutin"
+       ]
+      ],
+      "why": "When interactions are a problem."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Give the key side effect of each RIPE drug.",
+    "tip": "Exam thinking: match the symptom in the stem to the drug.",
+    "points": [
+     {
+      "p": "Rifampicin: hepatotoxicity, orange-red urine and tears",
+      "k": [
+       [
+        "rifampicin"
+       ],
+       [
+        "orange",
+        "red",
+        "liver",
+        "hepat"
+       ]
+      ],
+      "why": "Also a potent enzyme inducer."
+     },
+     {
+      "p": "Isoniazid: peripheral neuropathy",
+      "k": [
+       [
+        "isoniazid"
+       ],
+       [
+        "neuropath",
+        "tingling",
+        "numb"
+       ]
+      ],
+      "why": "Prevent with pyridoxine."
+     },
+     {
+      "p": "Pyrazinamide: hepatotoxicity, gout, arthralgia",
+      "k": [
+       [
+        "pyrazinamide"
+       ],
+       [
+        "gout",
+        "urate",
+        "uric",
+        "arthralgia",
+        "joint"
+       ]
+      ],
+      "why": "Hyperuricaemia."
+     },
+     {
+      "p": "Ethambutol: optic neuropathy, colour blindness",
+      "k": [
+       [
+        "ethambutol"
+       ],
+       [
+        "optic",
+        "vision",
+        "visual",
+        "colour",
+        "color",
+        "eye"
+       ]
+      ],
+      "why": "Check vision first."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you treat latent TB, HIV co-infection and protect contacts?",
+    "tip": "Exam thinking: three distinct scenarios.",
+    "points": [
+     {
+      "p": "Latent: 3 months isoniazid + rifampicin, or 6 months isoniazid",
+      "k": [
+       [
+        "latent",
+        "3 months",
+        "three months"
+       ]
+      ],
+      "why": "Isoniazid alone if rifamycins contraindicated."
+     },
+     {
+      "p": "Latent TB is not infectious: no work restriction",
+      "k": [
+       [
+        "not infectious",
+        "non-infectious",
+        "work",
+        "employ"
+       ]
+      ],
+      "why": "Cannot transmit."
+     },
+     {
+      "p": "HIV: delay ART about 4 weeks to reduce IRIS",
+      "k": [
+       [
+        "iris",
+        "immune reconstitution"
+       ]
+      ],
+      "why": "Paradoxical worsening of TB."
+     },
+     {
+      "p": "BCG for Mantoux-negative unvaccinated contacts under 35",
+      "k": [
+       [
+        "bcg"
+       ]
+      ],
+      "why": "Over 35 if a healthcare worker."
+     },
+     {
+      "p": "BCG is live: not in immunosuppression",
+      "k": [
+       [
+        "live"
+       ]
+      ],
+      "why": "So not for HIV-positive patients."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does TB form granulomas, cavitate in the upper lobes and reactivate, and how do the drugs work?",
+    "tip": "Exam thinking: Th1, oxygen, immunity, cell wall.",
+    "points": [
+     {
+      "p": "Th1 cell-mediated response forms granulomas",
+      "k": [
+       [
+        "th1",
+        "cell-mediated",
+        "cell mediated",
+        "macrophage"
+       ]
+      ],
+      "why": "Macrophages wall off the organism."
+     },
+     {
+      "p": "Caseating necrosis causes cavities",
+      "k": [
+       [
+        "caseat"
+       ]
+      ],
+      "why": "Necrosis erodes into a bronchus."
+     },
+     {
+      "p": "Upper lobes: higher oxygen tension for an aerobic organism",
+      "k": [
+       [
+        "oxygen",
+        "o2"
+       ]
+      ],
+      "why": "Aerobic bacillus."
+     },
+     {
+      "p": "Reactivation when immunity wanes",
+      "k": [
+       [
+        "immun",
+        "hiv",
+        "ageing",
+        "aging"
+       ]
+      ],
+      "why": "Latent bacilli lie dormant in granulomas."
+     },
+     {
+      "p": "Isoniazid: mycolic acid; rifampicin: RNA polymerase",
+      "k": [
+       [
+        "mycolic"
+       ],
+       [
+        "rna polymerase"
+       ]
+      ],
+      "why": "Ethambutol: arabinogalactan; pyrazinamide: acid pH."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "TB": "Tuberculosis: infection with Mycobacterium tuberculosis, usually of the lungs.",
+  "Mycobacterium tuberculosis": "Slow-growing, aerobic, acid-fast bacillus that causes tuberculosis.",
+  "latent TB": "Contained TB infection: positive screening test, no symptoms, not infectious.",
+  "granuloma": "A cluster of activated macrophages and lymphocytes that walls off an organism.",
+  "caseating necrosis": "Cheese-like dead tissue at the centre of a TB granuloma.",
+  "cavitation": "Formation of an air-filled hole in the lung where necrotic tissue has drained away.",
+  "miliary TB": "Bloodstream spread of TB seeding many tiny millet-seed granulomas through the organs.",
+  "Pott's disease": "Tuberculosis of the spine, causing back pain and vertebral collapse.",
+  "lupus vulgaris": "The commonest form of skin TB: papules enlarging into scaly red plaques.",
+  "ileocaecal": "Where the end of the small bowel joins the caecum; the usual site of GI TB.",
+  "haemoptysis": "Coughing up blood.",
+  "cachexia": "Severe wasting of muscle and fat from chronic illness.",
+  "AFB": "Acid-fast bacilli: bacteria that keep a stain after acid washing, such as mycobacteria.",
+  "acid-fast": "Retains stain after acid washing because of a waxy mycolic acid cell wall.",
+  "Ziehl-Neelsen": "A stain that shows acid-fast bacilli as red rods on a blue background.",
+  "auramine": "A fluorescent stain for acid-fast bacilli; the fastest smear method.",
+  "bronchoalveolar lavage": "Washing a lung segment with saline at bronchoscopy to collect a sample.",
+  "BAL": "Bronchoalveolar lavage: a lung washing sample taken at bronchoscopy.",
+  "gastric aspirate": "Stomach fluid aspirated in the morning to find swallowed TB bacilli, used in young children.",
+  "Mantoux": "Tuberculin skin test; the induration is read at 48 to 72 hours, 5 mm or more is positive.",
+  "induration": "The firm, raised area of skin measured in a Mantoux test; redness is ignored.",
+  "IGRA": "Interferon-gamma release assay: a blood test for TB exposure, not affected by BCG.",
+  "BCG": "Bacillus Calmette-Guérin: a live attenuated TB vaccine.",
+  "RIPE": "Rifampicin, isoniazid, pyrazinamide and ethambutol: the first-line TB regimen.",
+  "rifampicin": "TB drug that inhibits RNA polymerase; turns urine orange and induces liver enzymes.",
+  "isoniazid": "TB drug that blocks mycolic acid synthesis; causes peripheral neuropathy.",
+  "pyrazinamide": "TB drug active in acidic macrophages; causes hepatitis and gout.",
+  "ethambutol": "TB drug that blocks arabinogalactan synthesis; causes optic neuropathy.",
+  "rifabutin": "A rifamycin with fewer drug interactions, used in place of rifampicin.",
+  "pyridoxine": "Vitamin B6, given with isoniazid to prevent peripheral neuropathy.",
+  "peripheral neuropathy": "Nerve damage causing tingling, numbness or burning in the hands and feet.",
+  "optic neuropathy": "Damage to the optic nerve causing blurred vision or loss of colour vision.",
+  "hyperuricaemia": "High blood uric acid, which can cause gout.",
+  "enzyme inducer": "A drug that speeds up liver metabolism of other drugs, lowering their levels.",
+  "IRIS": "Immune reconstitution inflammatory syndrome: inflammatory flare when immunity recovers on ART.",
+  "ART": "Antiretroviral therapy: the drug combination used to treat HIV.",
+  "CD4 count": "Number of CD4 helper T cells; a low count shows HIV-related immunosuppression.",
+  "infliximab": "An anti-TNF antibody for Crohn's and arthritis that can reactivate latent TB.",
+  "anti-TNF": "Drugs blocking tumour necrosis factor; TNF is needed to keep granulomas intact.",
+  "Th1": "T helper 1 cells, which activate macrophages with interferon-gamma to control TB.",
+  "mycolic acid": "Waxy fatty acid in the mycobacterial cell wall, target of isoniazid.",
+  "arabinogalactan": "A cell wall polysaccharide in mycobacteria, target of ethambutol.",
+  "negative-pressure room": "An isolation room whose air flows inwards, stopping airborne spread.",
+  "FFP3": "A high-filtration respirator mask worn by staff caring for infectious TB.",
+  "smear-positive": "Acid-fast bacilli seen on sputum microscopy; the patient is highly infectious.",
+  "lymphadenopathy": "Enlarged lymph nodes."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 41 year old man who moved from Pakistan 5 years ago has a 3 month history of right-sided abdominal pain, fever, night sweats and weight loss. His brother is being treated for tuberculosis. There is a tender mass in the right iliac fossa. Chest X-ray shows fibronodular shadowing at the right apex.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Appendix mass",
+    "Caecal carcinoma",
+    "Crohn's disease",
+    "Ileocaecal tuberculosis",
+    "Lymphoma"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question with an abdominal mass and systemic symptoms."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "moved from Pakistan",
+      "night sweats and weight loss",
+      "His brother is being treated for tuberculosis",
+      "mass in the right iliac fossa",
+      "fibronodular shadowing at the right apex"
+     ],
+     "x": "Endemic country, TB contact, B symptoms, **ileocaecal mass**, apical shadowing."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "GI (ileocaecal) TB."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Follows days of appendicitis, not 3 months of sweats and weight loss."
+      ],
+      [
+       1,
+       "Possible at older ages, but sweats, a TB contact and apical shadowing point to TB."
+      ],
+      [
+       2,
+       "Can give an RIF mass, but does not explain the TB contact and apical shadowing."
+      ],
+      [
+       4,
+       "Causes B symptoms, but the TB contact and apical CXR change fit TB better."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Ileocaecal TB.** Rule: RIF mass + TB risk + apical CXR change = GI TB."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 36 year old woman from Nepal has a 5 week history of productive cough, evening fevers and weight loss. Chest X-ray shows left upper zone opacification with a cavity. Her first sputum sample shows acid-fast bacilli on auramine staining.",
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "CT chest",
+    "Interferon-gamma release assay",
+    "Mantoux test",
+    "Mycobacterial culture of sputum",
+    "Repeat AFB smear"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Confirm the diagnosis' means the gold standard."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "left upper zone opacification with a cavity",
+      "acid-fast bacilli on auramine staining"
+     ],
+     "x": "Smear-positive, but AFB is not specific to M. tuberculosis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Mycobacterial culture: gold standard, most sensitive, gives sensitivities."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Shows the extent of disease but cannot identify the organism."
+      ],
+      [
+       1,
+       "Shows exposure; cannot distinguish latent from active TB."
+      ],
+      [
+       2,
+       "Shows exposure only, and is affected by BCG."
+      ],
+      [
+       4,
+       "Smear is not specific: all mycobacteria are acid-fast."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Culture.** Rule: smear suggests, culture confirms."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 27 year old man has smear-positive pulmonary tuberculosis that is fully sensitive on PCR. He has no neurological symptoms. His HIV test is negative and his LFTs and visual acuity are normal. He is about to start rifampicin, isoniazid, pyrazinamide and ethambutol.",
+   "q": "Which is the most appropriate additional medication?",
+   "o": [
+    "Folic acid",
+    "Prednisolone",
+    "Pyridoxine",
+    "Rifabutin",
+    "Vitamin D"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An 'additional medication' question alongside RIPE."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rifampicin, isoniazid, pyrazinamide and ethambutol",
+      "no neurological symptoms"
+     ],
+     "x": "Isoniazid causes peripheral neuropathy; it is prevented routinely."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Pyridoxine (vitamin B6)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Not needed with RIPE."
+      ],
+      [
+       1,
+       "Steroids are added for TB meningitis or pericarditis, not uncomplicated pulmonary TB."
+      ],
+      [
+       3,
+       "A substitute for rifampicin when interactions matter, not an addition."
+      ],
+      [
+       4,
+       "Not part of standard TB treatment."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Pyridoxine.** Rule: isoniazid always comes with B6."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 50 year old man with pulmonary tuberculosis asks why his chest X-ray shows a cavity at the top of his right lung rather than at the base. He has never smoked and has no other lung disease.",
+   "q": "Which is the most likely explanation for the upper lobe location?",
+   "o": [
+    "Aspiration into dependent segments",
+    "Greater blood flow at the apices",
+    "Higher oxygen tension favours the aerobic organism",
+    "Lower oxygen tension favours the organism",
+    "More lymphatic tissue at the apices"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about location."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "cavity at the top of his right lung"
+     ],
+     "x": "Apex has a high V/Q ratio, so the highest alveolar oxygen tension."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Higher oxygen tension favours the aerobic M. tuberculosis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspiration hits the lower lobes and posterior segments."
+      ],
+      [
+       1,
+       "Perfusion is actually lower at the apices."
+      ],
+      [
+       3,
+       "The reverse: M. tuberculosis is aerobic."
+      ],
+      [
+       4,
+       "Not the reason; oxygen tension is."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Rule: TB is aerobic, so it lives at the apex."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old man who is homeless has a 2 month history of cough, sweats at night and weight loss. He has coughed up streaks of blood. There are crackles at the left apex. His temperature is 37.8°C, pulse rate 94 bpm, BP 116/70 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 96% breathing air. Chest X-ray (see item resources).",
+   "labs": [
+    [
+     "CRP",
+     "41 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Haemoglobin",
+     "121 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "White cell count",
+     "9.1 ×10⁹/L",
+     "4.0–11.0",
+     ""
+    ]
+   ],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "cavity",
+      "side": "left",
+      "zone": "upper"
+     },
+     {
+      "type": "consolidation",
+      "side": "left",
+      "zone": "upper"
+     }
+    ],
+    "caption": "Left upper zone opacification with cavitation."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Aspiration pneumonia",
+    "Bronchiectasis",
+    "Lung abscess",
+    "Pulmonary tuberculosis",
+    "Sarcoidosis"
+   ],
+   "a": 3,
+   "e": "Homelessness, a chronic cough with haemoptysis, night sweats and weight loss, and an upper zone cavity are pulmonary TB. Lung abscess and aspiration are acute and usually lower zone.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis with a chest X-ray."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "homeless",
+      "2 month history",
+      "sweats at night and weight loss",
+      "streaks of blood",
+      "crackles at the left apex"
+     ],
+     "x": "Homelessness, chronic course, B symptoms, haemoptysis, apical crackles, apical cavity."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Pulmonary TB."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Acute, lower lobe, with a risk such as reduced consciousness."
+      ],
+      [
+       1,
+       "Years of daily copious sputum, not 2 months of sweats and weight loss."
+      ],
+      [
+       2,
+       "Swinging fever and foul sputum, usually after aspiration."
+      ],
+      [
+       4,
+       "Bilateral hilar nodes, not an apical cavity."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pulmonary TB.** Chronic cough + B symptoms + upper zone cavity."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old woman with Crohn's disease started infliximab 4 months ago. She now has 5 weeks of cough, fevers and 5 kg weight loss. She did not have latent TB screening before starting. Her temperature is 38.1°C, pulse rate 102 bpm, BP 112/68 mmHg and oxygen saturation 95% breathing air. Chest X-ray shows right upper zone patchy opacification.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Crohn's disease flare",
+    "Drug-induced pneumonitis",
+    "Pneumocystis pneumonia",
+    "Reactivation of tuberculosis",
+    "Streptococcal pneumonia"
+   ],
+   "a": 3,
+   "e": "Anti-TNF drugs such as infliximab allow latent TB to reactivate; a subacute cough, fever, weight loss and upper zone change fit TB. Pneumocystis is bilateral and perihilar.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a patient on immunosuppression."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started infliximab 4 months ago",
+      "5 weeks of cough, fevers and 5 kg weight loss",
+      "did not have latent TB screening",
+      "right upper zone"
+     ],
+     "x": "Anti-TNF without screening; subacute cough, fever, weight loss; upper zone change."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Reactivation of latent TB due to infliximab."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Would cause bowel symptoms, not cough and upper zone shadowing."
+      ],
+      [
+       1,
+       "Diffuse changes without a classic upper zone TB pattern and weight loss."
+      ],
+      [
+       2,
+       "Dry cough, desaturation on exertion, bilateral perihilar change."
+      ],
+      [
+       4,
+       "Acute over days, lobar, not 5 weeks with weight loss."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. TB reactivation.** Rule: anti-TNF + chronic cough = TB; screen with IGRA first."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old man from Bangladesh has a 4 month history of worsening mid-back pain, night sweats and weight loss. There is a tender angular deformity of the lower thoracic spine. Leg power is normal. His temperature is 37.7°C, pulse rate 88 bpm and BP 128/80 mmHg. Spine X-ray shows destruction of two adjacent vertebral bodies and the disc between them.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Ankylosing spondylitis",
+    "Metastatic spinal disease",
+    "Multiple myeloma",
+    "Osteoporotic fracture",
+    "Pott's disease"
+   ],
+   "a": 4,
+   "e": "Two adjacent vertebrae with disc destruction, a gibbus deformity and night sweats in someone from an endemic area is spinal TB (Pott's disease). Metastases usually spare the disc.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a spinal lesion with systemic symptoms."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "from Bangladesh",
+      "night sweats and weight loss",
+      "angular deformity",
+      "two adjacent vertebral bodies and the disc between them"
+     ],
+     "x": "Endemic country, B symptoms, gibbus, two vertebrae plus the disc between."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Spinal TB (Pott's disease)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Young man with inflammatory low back stiffness, not vertebral destruction and sweats."
+      ],
+      [
+       1,
+       "Usually spares the disc and needs a primary cancer."
+      ],
+      [
+       2,
+       "Older patients, lytic lesions with anaemia and renal impairment."
+      ],
+      [
+       3,
+       "Low-trauma fracture in older patients, without sweats or disc loss."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Pott's disease.** Infection crosses the disc; tumour spares it."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old woman who arrived from Ethiopia a year ago has a 3 week history of headache, fever and increasing confusion. She is drowsy, with neck stiffness and a left sixth nerve palsy. Her temperature is 38.0°C, pulse rate 96 bpm, BP 124/78 mmHg and respiratory rate 18 breaths per minute. Lumbar puncture results are shown.",
+   "labs": [
+    [
+     "CSF white cells",
+     "310 /µL (lymphocytes 85%)",
+     "<5",
+     "H"
+    ],
+    [
+     "CSF protein",
+     "2.6 g/L",
+     "0.15–0.45",
+     "H"
+    ],
+    [
+     "CSF:serum glucose ratio",
+     "0.2",
+     ">0.6",
+     "L"
+    ],
+    [
+     "CSF Gram stain",
+     "No organisms",
+     "No organisms",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bacterial (pneumococcal) meningitis",
+    "Cryptococcal meningitis",
+    "Herpes simplex encephalitis",
+    "Tuberculous meningitis",
+    "Viral meningitis"
+   ],
+   "a": 3,
+   "e": "A subacute meningitis with cranial nerve palsy and lymphocytic CSF, very high protein and very low glucose in someone from a high-prevalence country is TB meningitis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis using CSF results."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "arrived from Ethiopia",
+      "3 week history",
+      "increasing confusion",
+      "sixth nerve palsy"
+     ],
+     "x": "**Subacute**, endemic country, cranial nerve palsy, lymphocytes, high protein, very low glucose."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "TB meningitis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Acute over hours, with neutrophils in the CSF."
+      ],
+      [
+       1,
+       "Possible in advanced HIV, but no HIV is mentioned; India ink would be positive."
+      ],
+      [
+       2,
+       "Acute, temporal lobe features, CSF glucose normal."
+      ],
+      [
+       4,
+       "Normal CSF glucose and a milder illness."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. TB meningitis.** Subacute + lymphocytic CSF + very low glucose."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old man with untreated HIV (CD4 count 60 cells/µL) has 3 weeks of fever, breathlessness and weight loss. His temperature is 38.6°C, pulse rate 112 bpm, BP 108/66 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 93% breathing air. Chest X-ray shows numerous 1 to 2 mm nodules evenly scattered through both lungs.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Kaposi sarcoma",
+    "Miliary tuberculosis",
+    "Pneumocystis pneumonia",
+    "Sarcoidosis",
+    "Streptococcal pneumonia"
+   ],
+   "a": 1,
+   "e": "Innumerable uniform 1 to 2 mm nodules in a profoundly immunosuppressed patient are miliary TB, from haematogenous spread. Pneumocystis gives perihilar ground-glass change.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis with a described CXR in immunosuppression."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "CD4 count 60 cells/µL",
+      "numerous 1 to 2 mm nodules evenly scattered through both lungs"
+     ],
+     "x": "Profound immunosuppression and **millet-seed** nodules = haematogenous spread."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Miliary TB."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Nodular and peribronchial, often with skin lesions, not uniform millet seeds."
+      ],
+      [
+       2,
+       "Bilateral perihilar ground-glass change, not tiny discrete nodules."
+      ],
+      [
+       3,
+       "Bilateral hilar nodes; not a febrile illness in advanced HIV."
+      ],
+      [
+       4,
+       "Lobar consolidation, acute onset."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Miliary TB.** Tiny uniform nodules everywhere = bloodstream spread."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old man started treatment for pulmonary tuberculosis 6 weeks ago. He now finds his vision blurred and cannot tell red from green on his football team's kit. His pupils react normally. His BP is 130/82 mmHg and pulse rate 76 bpm.",
+   "labs": [],
+   "visual": null,
+   "q": "Which drug is the most likely cause?",
+   "o": [
+    "Ethambutol",
+    "Isoniazid",
+    "Pyrazinamide",
+    "Pyridoxine",
+    "Rifampicin"
+   ],
+   "a": 0,
+   "e": "Ethambutol causes toxic optic neuropathy, with blurred vision and red-green colour blindness; stop it and refer urgently. Isoniazid causes peripheral neuropathy.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely cause' question about a drug side effect."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "6 weeks ago",
+      "vision blurred",
+      "cannot tell red from green"
+     ],
+     "x": "Red-green colour vision loss = optic neuropathy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Ethambutol."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Mainly peripheral neuropathy."
+      ],
+      [
+       2,
+       "Hepatotoxicity, gout and arthralgia."
+      ],
+      [
+       3,
+       "Given to prevent neuropathy; it does not cause visual loss."
+      ],
+      [
+       4,
+       "Hepatotoxicity and orange secretions, not colour blindness."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Ethambutol.** Rule: ethambutol = eyes; check vision at baseline."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 44 year old woman from the Philippines has a 6 week history of productive cough, evening fevers and weight loss. Her chest X-ray shows right upper zone opacification with cavitation. She is producing sputum.",
+   "labs": [
+    [
+     "CRP",
+     "36 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "ESR",
+     "68 mm/h",
+     "<20",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Bronchoscopy with lavage",
+    "CT chest",
+    "Interferon-gamma release assay",
+    "Mantoux test",
+    "Three sputum samples for AFB smear and culture"
+   ],
+   "a": 4,
+   "e": "Three early-morning sputum samples for AFB smear and culture confirm active TB; bronchoalveolar lavage is used only if no sputum. IGRA and Mantoux cannot diagnose active disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming active TB in a patient who can produce sputum."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "right upper zone opacification with cavitation",
+      "She is producing sputum"
+     ],
+     "x": "Producing sputum, so the least invasive confirmatory test."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Three (early-morning) sputum samples for AFB smear and mycobacterial culture."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Only if she cannot produce sputum."
+      ],
+      [
+       1,
+       "Shows extent, not the organism."
+      ],
+      [
+       2,
+       "Shows exposure; cannot distinguish latent from active TB."
+      ],
+      [
+       3,
+       "Shows exposure only."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Rule: active TB is confirmed by sputum, not IGRA or Mantoux."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 26 year old nurse had the BCG vaccine as a child. A patient she cared for 3 weeks ago has smear-positive pulmonary TB. She is well with no cough, fever or weight loss.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to screen her for latent TB?",
+   "o": [
+    "Chest X-ray only",
+    "Interferon-gamma release assay",
+    "Mantoux test",
+    "Sputum AFB smear",
+    "Sputum culture"
+   ],
+   "a": 1,
+   "e": "IGRA is preferred in the UK for latent TB, particularly after BCG, which makes the Mantoux test less reliable. Sputum tests look for active disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A latent TB screening question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "had the BCG vaccine as a child",
+      "She is well with no cough"
+     ],
+     "x": "Asymptomatic, BCG-vaccinated contact."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "IGRA, preferred in the UK, especially after BCG."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Done if screening is positive, to exclude active disease; it does not detect latent TB."
+      ],
+      [
+       2,
+       "Less reliable after BCG, which causes false positives."
+      ],
+      [
+       3,
+       "She has no symptoms and no sputum; this tests active disease."
+      ],
+      [
+       4,
+       "Tests active disease, not latent infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IGRA.** Rule: BCG ruins the Mantoux; use IGRA."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 35 year old man has smear-positive, fully sensitive pulmonary tuberculosis without neurological involvement. His HIV test is negative. His temperature is 37.6°C, pulse rate 90 bpm, BP 122/76 mmHg and oxygen saturation 97% breathing air. Baseline LFTs and vision are normal.",
+   "labs": [
+    [
+     "ALT",
+     "28 U/L",
+     "<40",
+     ""
+    ],
+    [
+     "Bilirubin",
+     "11 µmol/L",
+     "<21",
+     ""
+    ],
+    [
+     "Creatinine",
+     "82 µmol/L",
+     "60–120",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Isoniazid alone for 6 months",
+    "Rifampicin and isoniazid for 3 months",
+    "RIPE for 12 months",
+    "RIPE for 2 months only",
+    "RIPE for 2 months, then rifampicin and isoniazid for 4 months"
+   ],
+   "a": 4,
+   "e": "Active non-CNS TB is treated with RIPE for 2 months then rifampicin and isoniazid for 4 months. Isoniazid alone or 3 months of RI are latent TB regimens.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of active pulmonary TB."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fully sensitive pulmonary tuberculosis",
+      "without neurological involvement"
+     ],
+     "x": "Active, non-CNS, sensitive TB."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "RIPE 2 months then RI 4 months: 6 months total, with pyridoxine."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A latent TB regimen, not active disease."
+      ],
+      [
+       1,
+       "A latent TB regimen."
+      ],
+      [
+       3,
+       "Too short: the continuation phase is essential."
+      ],
+      [
+       2,
+       "12 months is for CNS TB, and then only 2 months of all four drugs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Rule: 2 + 4 = 6 months for non-CNS TB."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 30 year old woman is diagnosed with pulmonary tuberculosis and, at the same time, HIV with a CD4 count of 210 cells/µL. She has started rifampicin, isoniazid, pyrazinamide and ethambutol today. She asks when she can begin HIV treatment.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate timing for antiretroviral therapy?",
+   "o": [
+    "About 4 weeks after starting TB treatment",
+    "After completing 6 months of TB treatment",
+    "Before starting TB treatment",
+    "Only if the CD4 count falls below 50",
+    "Today, at the same time as TB treatment"
+   ],
+   "a": 0,
+   "e": "ART is delayed about 4 weeks after starting TB treatment to reduce immune reconstitution inflammatory syndrome. It should not wait for the end of TB treatment.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A timing question in HIV-TB co-infection."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "HIV with a CD4 count of 210",
+      "started rifampicin, isoniazid, pyrazinamide and ethambutol today"
+     ],
+     "x": "New HIV and TB together: avoid IRIS."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Delay ART by about 4 weeks after starting TB drugs."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Too long to leave HIV untreated."
+      ],
+      [
+       2,
+       "TB treatment should not be delayed."
+      ],
+      [
+       3,
+       "ART is indicated for all people with HIV."
+      ],
+      [
+       4,
+       "Starting together raises the risk of IRIS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. About 4 weeks.** Rule: TB drugs first, ART later, to avoid IRIS."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 28 year old flatmate of a man with smear-positive pulmonary TB has a positive interferon-gamma release assay. He has no symptoms and his chest X-ray is normal. His HIV test is negative and he takes no regular medication. He works in a bank.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "BCG vaccination",
+    "Exclude him from work until treated",
+    "Isoniazid and rifampicin for 3 months",
+    "Repeat IGRA in 1 year",
+    "RIPE for 6 months"
+   ],
+   "a": 2,
+   "e": "Latent TB is treated with 3 months of isoniazid and rifampicin (with pyridoxine), or 6 months of isoniazid if rifamycins are contraindicated. It is not infectious, so he keeps working.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of a positive screening test without active disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "positive interferon-gamma release assay",
+      "no symptoms and his chest X-ray is normal",
+      "takes no regular medication",
+      "works in a bank"
+     ],
+     "x": "Latent TB; no reason to avoid rifamycins."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "3 months of isoniazid plus rifampicin, with pyridoxine."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "For test-negative, unvaccinated contacts; he is already infected."
+      ],
+      [
+       1,
+       "Latent TB is not infectious: no work restriction."
+      ],
+      [
+       3,
+       "Latent TB in a young contact should be treated."
+      ],
+      [
+       4,
+       "That treats active disease, which his normal CXR and lack of symptoms exclude."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. 3 months isoniazid + rifampicin.** Isoniazid alone for 6 months if rifamycins cannot be used."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 47 year old man on treatment for pulmonary tuberculosis is told that one of his drugs works by blocking synthesis of the waxy mycolic acid layer of the mycobacterial cell wall. He has developed tingling in both feet.",
+   "labs": [],
+   "visual": null,
+   "q": "Which drug works by this mechanism?",
+   "o": [
+    "Ethambutol",
+    "Isoniazid",
+    "Pyrazinamide",
+    "Rifabutin",
+    "Rifampicin"
+   ],
+   "a": 1,
+   "e": "Isoniazid inhibits mycolic acid synthesis and causes peripheral neuropathy, prevented by pyridoxine. Ethambutol blocks arabinogalactan; rifampicin blocks RNA polymerase.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A drug mechanism question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "mycolic acid",
+      "tingling in both feet"
+     ],
+     "x": "Mycolic acid synthesis plus peripheral neuropathy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Isoniazid."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Inhibits arabinogalactan synthesis."
+      ],
+      [
+       2,
+       "Active in the acidic environment inside macrophages."
+      ],
+      [
+       3,
+       "A rifamycin: inhibits RNA polymerase."
+      ],
+      [
+       4,
+       "Inhibits bacterial RNA polymerase."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Isoniazid.** Mycolic acid + neuropathy; give pyridoxine."
+    }
+   ]
+  }
+ ]
+}

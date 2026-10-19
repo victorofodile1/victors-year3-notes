@@ -1,0 +1,2337 @@
+{
+ "id": "lung-cancer",
+ "patient": {
+  "name": "Terence Mahoney",
+  "age": 67,
+  "sex": "M",
+  "setting": "GP surgery, then respiratory clinic and the acute medical unit",
+  "complaint": "Cough for 6 weeks, now coughing up streaks of blood",
+  "background": [
+   "Still smokes; 45 pack-years",
+   "Retired docker in Tilbury, handled asbestos lagging in the 1970s",
+   "Hypertension on amlodipine",
+   "Lives with his wife in Barking"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' or 'Which type of lung cancer?' with a smoker, haemoptysis and weight loss: the location (central or peripheral) and the paraneoplastic clue (calcium, sodium, LEMS) pick the subtype.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Terence, 67, has a **new cough** for 6 weeks.",
+      "This week: **streaks of blood** in his sputum.",
+      "Lost 7 kg without trying; drenching **night sweats**.",
+      "45 pack-years and still smoking; asbestos at the docks."
+     ],
+     "vitals": {
+      "T": "37.1°C",
+      "HR": "92 bpm",
+      "BP": "138/82 mmHg",
+      "RR": "18 /min",
+      "SpO2": "95% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Terence has the two biggest risk factors in the notes: heavy **smoking** and old **asbestos** exposure."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "A new persistent cough plus **haemoptysis** and weight loss in a smoker is lung cancer until proven otherwise."
+    },
+    {
+     "type": "ask",
+     "q": "Which single feature in Terence's story is the red flag that demands urgent action?",
+     "o": [
+      "Cough for 6 weeks",
+      "Haemoptysis",
+      "Hypertension",
+      "Night sweats"
+     ],
+     "a": 1,
+     "r": "**Haemoptysis** is the red flag in the notes, and unexplained haemoptysis over 40 triggers a two-week wait referral."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Examination: **finger clubbing**; he winces when you press his shins.",
+      "Reduced breath sounds over the right upper zone.",
+      "No Horner's: pupils equal, no ptosis.",
+      "Face and neck veins normal; no hoarseness."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Clubbing with painful shins is **hypertrophic pulmonary osteoarthropathy**, a clue to **squamous cell carcinoma**, the strongest NSCLC link to smoking."
+    },
+    {
+     "type": "compare",
+     "title": "Which lung cancer is it?",
+     "head": [
+      "Subtype",
+      "Where",
+      "Signature clue"
+     ],
+     "rows": [
+      [
+       "Squamous cell",
+       "Central, can **cavitate**",
+       "**Hypercalcaemia (PTHrP)**, clubbing, HPOA"
+      ],
+      [
+       "Adenocarcinoma",
+       "**Peripheral**",
+       "Non-smokers and women; most common overall"
+      ],
+      [
+       "Small cell",
+       "Central / perihilar",
+       "**SIADH**, ectopic ACTH, **LEMS**"
+      ],
+      [
+       "Large cell",
+       "Variable",
+       "Poorly differentiated, poor prognosis"
+      ],
+      [
+       "Mesothelioma",
+       "Pleura",
+       "**Asbestos**, effusion and pleural thickening"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Terence has no Horner's, but an **apical (Pancoast)** tumour would give ptosis, miosis and anhidrosis on the same side."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "His face and neck veins are normal for now. If his face swells and his neck veins distend, think **SVC obstruction**."
+    },
+    {
+     "type": "flow",
+     "title": "Reading a lung cancer stem",
+     "nodes": [
+      "Smoker + cough, haemoptysis, weight loss",
+      "Central or peripheral mass?",
+      "High calcium → squamous cell",
+      "Low sodium, Cushing's or LEMS → small cell",
+      "Non-smoker, peripheral → adenocarcinoma",
+      "Asbestos + pleural thickening → mesothelioma"
+     ],
+     "caption": "The paraneoplastic clue usually names the subtype."
+    },
+    {
+     "type": "trap",
+     "text": "Do not pick small cell just because the patient smokes. **Hypercalcaemia** points to **squamous cell**; small cell gives **hyponatraemia** (SIADH)."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (chest X-ray) or 'Which confirms the diagnosis?' (bronchoscopy or CT-guided biopsy after contrast CT), plus two-week wait referral rules.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Terence is in your GP surgery. Which is the most appropriate first investigation?",
+     "o": [
+      "Bronchoscopy",
+      "Chest X-ray",
+      "Contrast CT chest",
+      "PET scan"
+     ],
+     "a": 1,
+     "r": "**Chest X-ray** is first-line, within 2 weeks. CT stages it, bronchoscopy confirms it, PET adds staging."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Terence's same-week **chest X-ray** is the first step."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Terence's chest X-ray",
+      "findings": [
+       {
+        "type": "mass",
+        "side": "right",
+        "zone": "upper"
+       },
+       {
+        "type": "hilar",
+        "side": "right",
+        "zone": "middle"
+       }
+      ],
+      "caption": "Right upper zone mass near the hilum with right hilar enlargement."
+     },
+     "text": "A **mass lesion** on the X-ray of a smoker with haemoptysis: urgent referral."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Terence is over 40 with **haemoptysis** and a suspicious X-ray: a **two-week wait** referral to the lung cancer team."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Terence's pathway follows the two-week wait criteria; a small incidental nodule would follow the surveillance protocol instead."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "In clinic Terence has a **contrast CT chest** to stage the tumour and see how far it has spread."
+    },
+    {
+     "type": "story",
+     "points": [
+      "CT: 3.8 cm right upper lobe mass, near the hilum.",
+      "No other lobe involved; no distant spread seen.",
+      "PET shows no distant metastases."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Only tissue confirms it: **bronchoscopy** biopsy of Terence's mass, done after the CT, shows the cell type."
+    },
+    {
+     "type": "labs",
+     "title": "Bronchoscopy biopsy and bloods",
+     "rows": [
+      [
+       "Histology",
+       "Keratin pearls, intercellular bridges",
+       "",
+       ""
+      ],
+      [
+       "Adjusted calcium",
+       "2.71 mmol/L",
+       "2.20–2.60",
+       "H"
+      ],
+      [
+       "Platelets",
+       "468 ×10⁹/L",
+       "150–400",
+       "H"
+      ],
+      [
+       "Sodium",
+       "138 mmol/L",
+       "135–145",
+       ""
+      ]
+     ],
+     "text": "Keratin pearls mean **squamous cell carcinoma**. Calcium is already creeping up; raised platelets fit the notes."
+    },
+    {
+     "type": "flow",
+     "title": "Investigation pathway",
+     "nodes": [
+      "Chest X-ray (within 2 weeks)",
+      "Two-week wait referral",
+      "Contrast CT chest: stage and extent",
+      "PET for staging",
+      "Bronchoscopy or CT-guided biopsy: confirms"
+     ],
+     "caption": "X-ray first, CT second, tissue for the diagnosis."
+    },
+    {
+     "type": "trap",
+     "text": "A normal chest X-ray does not end the story if the stem screams cancer. But the **confirmatory** test is always **tissue** (bronchoscopy or CT-guided biopsy), never the CT alone."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' for an emergency (SVC obstruction: dexamethasone then stent; hypercalcaemia: IV 0.9% saline) or the definitive treatment (lobectomy for early NSCLC, chemoradiotherapy for SCLC).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Two weeks later Terence is brought to the acute medical unit.",
+      "Vomiting, constipated, very thirsty and **confused**.",
+      "Dry mucous membranes; JVP not visible."
+     ],
+     "vitals": {
+      "T": "37.0°C",
+      "HR": "104 bpm",
+      "BP": "108/64 mmHg",
+      "RR": "16 /min",
+      "SpO2": "95% on air",
+      "GCS": "14"
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Adjusted calcium",
+      "min": 2.0,
+      "max": 4.0,
+      "unit": "mmol/L",
+      "bands": [
+       [
+        2.2,
+        2.6,
+        "normal",
+        "ok"
+       ],
+       [
+        2.6,
+        3.0,
+        "mild",
+        "warn"
+       ],
+       [
+        3.0,
+        4.0,
+        "severe",
+        "bad"
+       ]
+      ],
+      "value": 3.42,
+      "label": "Terence 3.42",
+      "caption": "Severe hypercalcaemia with PTH suppressed: PTHrP from his squamous cell tumour."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Terence's calcium is 3.42 mmol/L and he is dry. What is the first treatment?",
+     "o": [
+      "Furosemide",
+      "IV 0.9% sodium chloride",
+      "Oral dexamethasone",
+      "Parathyroidectomy"
+     ],
+     "a": 1,
+     "r": "Rehydrate first with **IV 0.9% sodium chloride**. Dexamethasone is for SVC obstruction; parathyroidectomy treats primary hyperparathyroidism."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Terence's **PTHrP** hypercalcaemia needs **IV 0.9% saline** now. The same notes cover SVC obstruction and malignant effusion."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Terence's calcium on IV saline",
+      "x": [
+       "Admission",
+       "Day 1",
+       "Day 2",
+       "Day 3"
+      ],
+      "unit": "mmol/L",
+      "series": [
+       {
+        "name": "Adjusted calcium",
+        "values": [
+         3.42,
+         3.15,
+         2.88,
+         2.7
+        ]
+       }
+      ],
+      "caption": "Calcium falls and his confusion clears with fluids (NICE practice adds an IV bisphosphonate)."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Once well, Terence's tumour is **localised NSCLC in one lobe**, so curative **lobectomy** is offered if his lungs can cope."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "FEV1 before surgery",
+      "min": 0.5,
+      "max": 3.5,
+      "unit": "L",
+      "bands": [
+       [
+        0.5,
+        1.5,
+        "too low: no surgery",
+        "bad"
+       ],
+       [
+        1.5,
+        3.5,
+        "fit for resection",
+        "ok"
+       ]
+      ],
+      "value": 2.1,
+      "label": "Terence 2.1 L",
+      "caption": "FEV1 below 1.5 L contraindicates surgery; Terence is above it."
+     },
+     "text": "Pulmonary function tests come before any lobectomy."
+    },
+    {
+     "type": "compare",
+     "title": "Who gets what",
+     "head": [
+      "Situation",
+      "Treatment"
+     ],
+     "rows": [
+      [
+       "Early NSCLC, one lobe, fit",
+       "**Lobectomy**"
+      ],
+      [
+       "Stage III/IV NSCLC",
+       "**Cisplatin + gemcitabine**; targeted or immunotherapy by markers"
+      ],
+      [
+       "SCLC",
+       "**Chemotherapy + radiotherapy**"
+      ],
+      [
+       "Advanced, incurable",
+       "**Palliative care**"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "If Terence's cancer had been stage III/IV, or small cell, he would have had chemotherapy rather than surgery."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Whatever the stage, **palliative care** is involved early when cure is not possible, for breathlessness, pain and cough."
+    },
+    {
+     "type": "pearl",
+     "text": "SVC obstruction: **oral dexamethasone 8 mg** immediately, then **SVC stent**. SVC obstruction, **FEV1 <1.5**, malignant effusion and vocal cord palsy all rule out lobectomy."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why squamous cell causes hypercalcaemia (PTHrP), why a Pancoast tumour causes Horner's, or why small cell causes SIADH and LEMS.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Decades of tobacco smoke and asbestos piled up **genetic mutations** in Terence's bronchial epithelium."
+    },
+    {
+     "type": "flow",
+     "title": "From smoke to cancer",
+     "nodes": [
+      "Carcinogens: tobacco, asbestos, radon",
+      "DNA damage in bronchial epithelium",
+      "Mutations accumulate",
+      "Malignant transformation",
+      "Local invasion and metastasis"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Terence's squamous tumour sits **centrally** by the bronchi; small cell comes from **neuroendocrine** cells and spreads early."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Terence's **PTH was suppressed** while calcium was high: the tumour's **PTHrP** acts like PTH on bone and kidney."
+    },
+    {
+     "type": "ask",
+     "q": "Which result fits Terence's PTHrP-driven hypercalcaemia?",
+     "o": [
+      "High calcium, high PTH",
+      "High calcium, low PTH",
+      "Low calcium, high PTH",
+      "Normal calcium, low PTH"
+     ],
+     "a": 1,
+     "r": "PTHrP raises calcium, and the parathyroids switch off, so native **PTH is low**. High calcium with high PTH is primary hyperparathyroidism."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Had Terence's tumour been at the **apex**, it could invade the sympathetic chain, brachial plexus and recurrent laryngeal nerve."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "A central right-sided mass like Terence's can press on the **SVC**, blocking venous return from the head and arms."
+    },
+    {
+     "type": "pearl",
+     "text": "Small cell makes **hormones** (ACTH, ADH) and triggers **anti-VGCC** antibodies (LEMS). Squamous cell makes **PTHrP**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which is the most important risk factor for lung cancer?",
+   "o": [
+    "Asbestos",
+    "Beryllium",
+    "Radiotherapy",
+    "Smoking"
+   ],
+   "a": 3,
+   "r": "**Smoking** is the most important; asbestos, beryllium and radiotherapy also raise risk."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which lung cancer subtype is most strongly linked to smoking among NSCLC and causes cavitating lesions?",
+   "o": [
+    "Adenocarcinoma",
+    "Large cell carcinoma",
+    "Mesothelioma",
+    "Squamous cell carcinoma"
+   ],
+   "a": 3,
+   "r": "**Squamous cell carcinoma**: central, cavitates, keratin pearls, PTHrP hypercalcaemia."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which paraneoplastic syndrome gives proximal weakness that improves with exertion?",
+   "o": [
+    "Dermatomyositis",
+    "Lambert-Eaton myasthenic syndrome",
+    "Myasthenia gravis",
+    "SIADH"
+   ],
+   "a": 1,
+   "r": "**LEMS** (anti-VGCC antibodies) with small cell lung cancer. Myasthenia gets worse with exertion."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which triad is Horner's syndrome?",
+   "o": [
+    "Miosis, ptosis, anhidrosis",
+    "Mydriasis, ptosis, anhidrosis",
+    "Miosis, proptosis, sweating",
+    "Mydriasis, diplopia, ptosis"
+   ],
+   "a": 0,
+   "r": "Unilateral **miosis, ptosis and anhidrosis**, classically from a Pancoast tumour."
+  },
+  {
+   "d": "investigation",
+   "q": "Which investigation confirms lung cancer?",
+   "o": [
+    "Chest X-ray",
+    "Contrast CT chest",
+    "Fibre-optic bronchoscopy with biopsy",
+    "Sputum culture"
+   ],
+   "a": 2,
+   "r": "**Bronchoscopy** (or CT-guided biopsy) is gold standard, after contrast CT."
+  },
+  {
+   "d": "investigation",
+   "q": "Who needs a two-week wait referral for suspected lung cancer?",
+   "o": [
+    "Anyone over 40 with unexplained haemoptysis",
+    "Anyone over 60 with a cough for 1 week",
+    "Smokers over 50 only",
+    "Under 40s with a chest infection"
+   ],
+   "a": 0,
+   "r": "**Over 40 with unexplained haemoptysis**, or a chest X-ray suggesting lung cancer."
+  },
+  {
+   "d": "management",
+   "q": "What is the immediate treatment of SVC obstruction?",
+   "o": [
+    "IV 0.9% sodium chloride",
+    "Indwelling pleural catheter",
+    "Lobectomy",
+    "Oral dexamethasone 8 mg"
+   ],
+   "a": 3,
+   "r": "**Oral dexamethasone 8 mg** immediately, then definitive **SVC stent**."
+  },
+  {
+   "d": "management",
+   "q": "Which is the chemotherapy regimen for stage III/IV NSCLC in the notes?",
+   "o": [
+    "ABVD",
+    "Cisplatin plus gemcitabine",
+    "FOLFOX",
+    "R-CHOP"
+   ],
+   "a": 1,
+   "r": "**Cisplatin plus gemcitabine.** The others are lymphoma and colorectal regimens."
+  },
+  {
+   "d": "management",
+   "q": "Which FEV1 contraindicates lobectomy?",
+   "o": [
+    "Below 1.5 L",
+    "Below 2.5 L",
+    "Below 3.0 L",
+    "Above 2.0 L"
+   ],
+   "a": 0,
+   "r": "**FEV1 <1.5** is a contraindication, alongside SVC obstruction, malignant effusion and vocal cord palsy."
+  },
+  {
+   "d": "science",
+   "q": "Why does squamous cell carcinoma cause hypercalcaemia?",
+   "o": [
+    "Bone metastases only",
+    "Ectopic ACTH",
+    "PTHrP secretion",
+    "Vitamin D excess from granulomas"
+   ],
+   "a": 2,
+   "r": "**PTHrP** mimics PTH on bone and kidney, with native PTH suppressed."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors and classic presenting features of lung cancer?",
+    "tip": "Exam thinking: a smoker with a new cough is cancer until proven otherwise.",
+    "points": [
+     {
+      "p": "Smoking (most important); asbestos, beryllium, radiotherapy",
+      "k": [
+       [
+        "smok",
+        "tobacco",
+        "cigarette"
+       ]
+      ],
+      "why": "Asbestos alone points more to mesothelioma."
+     },
+     {
+      "p": "New persistent cough in a smoker",
+      "k": [
+       [
+        "cough"
+       ]
+      ],
+      "why": "Cough is lung cancer until proven otherwise in a smoker."
+     },
+     {
+      "p": "Haemoptysis (red flag)",
+      "k": [
+       [
+        "haemoptysis",
+        "hemoptysis",
+        "blood"
+       ]
+      ],
+      "why": "Over 40 with unexplained haemoptysis = two-week wait."
+     },
+     {
+      "p": "Weight loss, night sweats, dyspnoea",
+      "k": [
+       [
+        "weight",
+        "sweat",
+        "dyspnoea",
+        "breathless",
+        "sob"
+       ]
+      ],
+      "why": "B-symptoms also suggest TB or lymphoma; the smoking history tips it."
+     },
+     {
+      "p": "Raised platelets",
+      "k": [
+       [
+        "platelet",
+        "thrombocytosis"
+       ]
+      ],
+      "why": "Thrombocytosis is a quiet clue in the bloods."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which features point to squamous cell carcinoma?",
+    "tip": "Exam thinking: calcium high in a smoker = squamous.",
+    "points": [
+     {
+      "p": "Strongest NSCLC link to smoking; central",
+      "k": [
+       [
+        "smok",
+        "central"
+       ]
+      ],
+      "why": "Small cell has the strongest link overall."
+     },
+     {
+      "p": "Cavitating lesions",
+      "k": [
+       [
+        "cavit"
+       ]
+      ],
+      "why": "Central necrosis causes cavitation."
+     },
+     {
+      "p": "Hypercalcaemia via PTHrP",
+      "k": [
+       [
+        "pthrp",
+        "calcium",
+        "hypercalc"
+       ]
+      ],
+      "why": "The single most tested squamous clue."
+     },
+     {
+      "p": "Hypertrophic pulmonary osteoarthropathy: clubbing, distal bone pain",
+      "k": [
+       [
+        "clubbing",
+        "osteoarthropathy",
+        "hpoa"
+       ]
+      ],
+      "why": "Painful shins and wrists plus clubbing."
+     },
+     {
+      "p": "Keratin pearls and intercellular bridges on histology",
+      "k": [
+       [
+        "keratin",
+        "intercellular",
+        "pearl"
+       ]
+      ],
+      "why": "Mucin and glands mean adenocarcinoma instead."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which features point to small cell lung cancer, and which paraneoplastic syndromes does it cause?",
+    "tip": "Exam thinking: low sodium, Cushingoid or weak legs in a smoker = small cell.",
+    "points": [
+     {
+      "p": "Central / perihilar, strongest smoking link",
+      "k": [
+       [
+        "central",
+        "perihilar",
+        "hilar"
+       ]
+      ],
+      "why": "Peripheral masses suggest adenocarcinoma."
+     },
+     {
+      "p": "SIADH causing hyponatraemia",
+      "k": [
+       [
+        "siadh",
+        "adh",
+        "hyponat",
+        "sodium"
+       ]
+      ],
+      "why": "Euvolaemic low sodium with concentrated urine."
+     },
+     {
+      "p": "Ectopic ACTH / Cushing's, with hypokalaemia",
+      "k": [
+       [
+        "acth",
+        "cushing",
+        "hypokal",
+        "potassium"
+       ]
+      ],
+      "why": "Ectopic ACTH gives marked hypokalaemia."
+     },
+     {
+      "p": "Lambert-Eaton: proximal weakness improving with exertion, anti-VGCC",
+      "k": [
+       [
+        "lambert",
+        "lems",
+        "vgcc",
+        "calcium channel"
+       ]
+      ],
+      "why": "Myasthenia gravis worsens with exertion; LEMS improves."
+     },
+     {
+      "p": "Neuroendocrine origin, dense neurosecretory granules",
+      "k": [
+       [
+        "neuroendocrine",
+        "neurosecretory",
+        "granule"
+       ]
+      ],
+      "why": "Explains the hormone secretion."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do adenocarcinoma, large cell carcinoma and mesothelioma differ?",
+    "tip": "Exam thinking: non-smoker woman with a peripheral mass = adenocarcinoma.",
+    "points": [
+     {
+      "p": "Adenocarcinoma: most common, non-smokers and women, peripheral",
+      "k": [
+       [
+        "adeno"
+       ],
+       [
+        "peripher",
+        "non-smoker",
+        "nonsmoker",
+        "women",
+        "common"
+       ]
+      ],
+      "why": "The usual answer when the stem says 'never smoked'."
+     },
+     {
+      "p": "Adenocarcinoma: glandular spaces with mucin",
+      "k": [
+       [
+        "mucin",
+        "gland"
+       ]
+      ],
+      "why": "Mucin = adeno; keratin = squamous."
+     },
+     {
+      "p": "Large cell: poorly differentiated, poor prognosis",
+      "k": [
+       [
+        "large cell"
+       ],
+       [
+        "poor",
+        "undifferentiated"
+       ]
+      ],
+      "why": "No signature paraneoplastic syndrome in the notes."
+     },
+     {
+      "p": "Mesothelioma: asbestos, pleural effusion and thickening",
+      "k": [
+       [
+        "mesothelioma"
+       ],
+       [
+        "asbestos",
+        "pleura"
+       ]
+      ],
+      "why": "Chest pain, breathlessness and weight loss in an ex-builder or docker."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What does a Pancoast tumour cause, and how does SVC obstruction present?",
+    "tip": "Exam thinking: an apical mass explains a droopy eyelid and arm pain together.",
+    "points": [
+     {
+      "p": "Horner's syndrome: ipsilateral miosis, ptosis, anhidrosis",
+      "k": [
+       [
+        "horner",
+        "miosis",
+        "ptosis",
+        "anhidrosis"
+       ]
+      ],
+      "why": "Sympathetic chain invasion at the apex."
+     },
+     {
+      "p": "Hoarseness (recurrent laryngeal nerve) and brachial neuropathy",
+      "k": [
+       [
+        "hoarse",
+        "laryngeal",
+        "brachial"
+       ]
+      ],
+      "why": "Vocal cord palsy also rules out surgery."
+     },
+     {
+      "p": "SVCO: facial plethora, periorbital oedema, raised JVP, distended neck veins",
+      "k": [
+       [
+        "plethora",
+        "oedema",
+        "swelling",
+        "jvp",
+        "neck vein"
+       ]
+      ],
+      "why": "The JVP is raised and non-pulsatile."
+     },
+     {
+      "p": "Stridor on Pemberton's test",
+      "k": [
+       [
+        "pemberton",
+        "stridor"
+       ]
+      ],
+      "why": "Raising both arms worsens the obstruction."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the investigation pathway for suspected lung cancer, and what confirms it?",
+    "tip": "Exam thinking: X-ray first, CT to stage, tissue to confirm.",
+    "points": [
+     {
+      "p": "Chest X-ray first-line within 2 weeks",
+      "k": [
+       [
+        "x-ray",
+        "xray",
+        "cxr",
+        "radiograph"
+       ]
+      ],
+      "why": "Shows a mass lesion."
+     },
+     {
+      "p": "Contrast-enhanced CT chest to stage",
+      "k": [
+       [
+        "ct"
+       ]
+      ],
+      "why": "Second-line, for staging and extent."
+     },
+     {
+      "p": "PET scan for staging",
+      "k": [
+       [
+        "pet"
+       ]
+      ],
+      "why": "Looks for distant spread before surgery."
+     },
+     {
+      "p": "Bronchoscopy (or CT-guided biopsy) confirms",
+      "k": [
+       [
+        "bronchoscop",
+        "biopsy"
+       ]
+      ],
+      "why": "Gold standard, done after contrast CT."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Who needs a two-week wait referral, and how is a 5 to 8 mm nodule followed up?",
+    "tip": "Exam thinking: the number 40 and the word haemoptysis.",
+    "points": [
+     {
+      "p": "Over 40 with unexplained haemoptysis",
+      "k": [
+       [
+        "40",
+        "forty"
+       ],
+       [
+        "haemoptysis",
+        "hemoptysis",
+        "blood"
+       ]
+      ],
+      "why": "No need to wait for a chest X-ray first."
+     },
+     {
+      "p": "Chest X-ray suggesting lung cancer",
+      "k": [
+       [
+        "x-ray",
+        "xray",
+        "cxr"
+       ]
+      ],
+      "why": "Any age with suspicious X-ray findings."
+     },
+     {
+      "p": "5 to 8 mm nodule: re-scan at 12 months",
+      "k": [
+       [
+        "12 month",
+        "twelve month",
+        "a year",
+        "1 year",
+        "one year"
+       ]
+      ],
+      "why": "Surveillance, not biopsy, for small nodules."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is lung cancer treated by type and stage, and what rules out surgery?",
+    "tip": "Exam thinking: one lobe and fit = lobectomy; SCLC = chemoradiotherapy.",
+    "points": [
+     {
+      "p": "Early localised NSCLC in one lobe: lobectomy, after PFTs",
+      "k": [
+       [
+        "lobectomy",
+        "resection",
+        "surgery"
+       ]
+      ],
+      "why": "Pulmonary function tests first."
+     },
+     {
+      "p": "Contraindications: SVCO, FEV1 <1.5, malignant effusion, vocal cord paralysis",
+      "k": [
+       [
+        "fev1",
+        "1.5",
+        "effusion",
+        "vocal",
+        "svc"
+       ]
+      ],
+      "why": "FEV1 <1.5 is the number they test."
+     },
+     {
+      "p": "Stage III/IV NSCLC: cisplatin plus gemcitabine",
+      "k": [
+       [
+        "cisplatin",
+        "gemcitabine"
+       ]
+      ],
+      "why": "Targeted or immunotherapy if tumour markers allow."
+     },
+     {
+      "p": "SCLC: combined chemotherapy and radiotherapy",
+      "k": [
+       [
+        "chemo"
+       ],
+       [
+        "radio"
+       ]
+      ],
+      "why": "SCLC has usually spread by diagnosis, so not surgery."
+     },
+     {
+      "p": "Palliative care in advanced disease",
+      "k": [
+       [
+        "palliat"
+       ]
+      ],
+      "why": "Symptom control when cure is not possible."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage SVC obstruction, hypercalcaemia and malignant pleural effusion?",
+    "tip": "Exam thinking: match each emergency to its one first move.",
+    "points": [
+     {
+      "p": "SVCO: oral dexamethasone 8 mg immediately",
+      "k": [
+       [
+        "dexamethasone",
+        "steroid"
+       ]
+      ],
+      "why": "Reduces tumour oedema while a stent is arranged."
+     },
+     {
+      "p": "SVCO definitive: SVC stent",
+      "k": [
+       [
+        "stent"
+       ]
+      ],
+      "why": "Restores venous return."
+     },
+     {
+      "p": "Hypercalcaemia: IV 0.9% sodium chloride",
+      "k": [
+       [
+        "saline",
+        "sodium chloride",
+        "0.9",
+        "fluid"
+       ]
+      ],
+      "why": "Rehydrate first; these patients are dry."
+     },
+     {
+      "p": "Symptomatic malignant effusion: indwelling pleural catheter",
+      "k": [
+       [
+        "pleural catheter",
+        "indwelling",
+        "ipc"
+       ]
+      ],
+      "why": "For recurrent effusions, e.g. mesothelioma."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does squamous cell cause hypercalcaemia, and why does a Pancoast tumour cause Horner's?",
+    "tip": "Exam thinking: name the hormone and the nerve.",
+    "points": [
+     {
+      "p": "PTHrP mimics PTH on bone and kidney",
+      "k": [
+       [
+        "pthrp",
+        "parathyroid hormone-related",
+        "parathyroid hormone related"
+       ]
+      ],
+      "why": "Not bone metastases in the classic stem."
+     },
+     {
+      "p": "Native PTH is suppressed",
+      "k": [
+       [
+        "suppress",
+        "low pth"
+       ]
+      ],
+      "why": "High PTH would mean primary hyperparathyroidism."
+     },
+     {
+      "p": "Apical tumour invades the sympathetic chain",
+      "k": [
+       [
+        "sympathetic"
+       ]
+      ],
+      "why": "Gives ipsilateral Horner's."
+     },
+     {
+      "p": "SVCO from direct compression or invasion of the SVC",
+      "k": [
+       [
+        "compress",
+        "invas",
+        "venous return"
+       ]
+      ],
+      "why": "Impaired venous return from head, neck and arms."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do the lung cancer subtypes arise in different places and behave differently?",
+    "tip": "Exam thinking: the cell of origin explains location and hormones.",
+    "points": [
+     {
+      "p": "Squamous: central near the bronchi; cavitates from central necrosis",
+      "k": [
+       [
+        "squamous"
+       ],
+       [
+        "central",
+        "bronch",
+        "necrosis"
+       ]
+      ],
+      "why": "Central location also explains SVC compression."
+     },
+     {
+      "p": "Adenocarcinoma: peripheral, from mucus-secreting glandular cells",
+      "k": [
+       [
+        "adeno"
+       ],
+       [
+        "peripher",
+        "gland",
+        "mucus"
+       ]
+      ],
+      "why": "Peripheral masses may spread to the pleura."
+     },
+     {
+      "p": "Small cell: neuroendocrine cells, aggressive, early metastasis",
+      "k": [
+       [
+        "neuroendocrine"
+       ]
+      ],
+      "why": "Hence ectopic ACTH and ADH."
+     },
+     {
+      "p": "Carcinogens cause accumulated genetic mutations",
+      "k": [
+       [
+        "mutation",
+        "dna",
+        "genetic"
+       ]
+      ],
+      "why": "Tobacco smoke, asbestos and radon."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "NSCLC": "Non-small cell lung cancer: adenocarcinoma, squamous cell and large cell carcinoma; the majority of cases.",
+  "SCLC": "Small cell lung cancer: aggressive neuroendocrine tumour that spreads early and secretes hormones.",
+  "adenocarcinoma": "Cancer of glandular cells; the most common lung cancer, peripheral, seen in non-smokers too.",
+  "squamous cell carcinoma": "Cancer of squamous epithelium; central, smoking-linked, cavitates and secretes PTHrP.",
+  "large cell carcinoma": "Poorly differentiated non-small cell lung cancer with a poor prognosis.",
+  "mesothelioma": "Malignant tumour of the pleura linked to asbestos, causing effusion and pleural thickening.",
+  "haemoptysis": "Coughing up blood; a red flag for lung cancer.",
+  "pack-years": "Packs of 20 cigarettes smoked per day multiplied by years smoked.",
+  "asbestos": "Fibrous mineral once used in insulation; causes mesothelioma and raises lung cancer risk.",
+  "beryllium": "Metal whose dust can cause lung disease and raises lung cancer risk.",
+  "paraneoplastic": "Effects of a cancer caused by hormones or antibodies it triggers, not by local spread.",
+  "PTHrP": "Parathyroid hormone-related peptide: made by squamous cell carcinoma, mimics PTH and raises calcium.",
+  "PTH": "Parathyroid hormone; raises blood calcium. Suppressed when PTHrP causes hypercalcaemia.",
+  "hypercalcaemia": "High blood calcium: thirst, vomiting, constipation, confusion.",
+  "SIADH": "Syndrome of inappropriate ADH: water retention causing hyponatraemia, seen with small cell lung cancer.",
+  "hyponatraemia": "Low blood sodium; with small cell lung cancer think SIADH.",
+  "ACTH": "Adrenocorticotropic hormone; ectopic secretion by small cell causes Cushing's and hypokalaemia.",
+  "Lambert-Eaton myasthenic syndrome": "Anti-VGCC antibody syndrome: proximal leg weakness that improves with exertion, linked to small cell.",
+  "LEMS": "Lambert-Eaton myasthenic syndrome.",
+  "VGCC": "Voltage-gated calcium channel at the nerve terminal; targeted by antibodies in LEMS.",
+  "Horner's syndrome": "Ipsilateral miosis, ptosis and anhidrosis from damage to the sympathetic chain.",
+  "miosis": "A small, constricted pupil.",
+  "ptosis": "A drooping upper eyelid.",
+  "anhidrosis": "Loss of sweating on one side of the face.",
+  "Pancoast tumour": "Lung cancer at the apex that invades the sympathetic chain, brachial plexus or recurrent laryngeal nerve.",
+  "recurrent laryngeal nerve": "Nerve to most of the larynx muscles; damage causes hoarseness.",
+  "SVC": "Superior vena cava: carries blood from the head, neck and arms to the heart.",
+  "SVC obstruction": "Blocked superior vena cava: facial swelling, plethora, distended neck veins, raised JVP.",
+  "plethora": "A red, congested face.",
+  "Pemberton's test": "Raising both arms over the head; facial plethora or stridor suggests thoracic inlet obstruction.",
+  "JVP": "Jugular venous pressure; raised and non-pulsatile in SVC obstruction.",
+  "clubbing": "Loss of the nail bed angle and bulbous fingertips; seen in squamous cell lung cancer.",
+  "hypertrophic pulmonary osteoarthropathy": "Clubbing with painful new bone formation at the wrists and shins, linked to squamous cell.",
+  "keratin pearls": "Whorls of keratin on histology that identify squamous cell carcinoma.",
+  "mucin": "Mucus protein; glandular spaces with mucin identify adenocarcinoma.",
+  "neurosecretory granules": "Hormone-containing granules seen in small cell (neuroendocrine) tumours.",
+  "bronchoscopy": "Camera passed into the airways to see and biopsy a tumour; the confirmatory test.",
+  "CT-guided biopsy": "Needle biopsy of a lung lesion using CT to guide it; used for peripheral masses.",
+  "PET": "Positron emission tomography; shows metabolically active tumour for staging.",
+  "two-week wait": "Urgent cancer referral: the patient is seen by a specialist within two weeks.",
+  "lobectomy": "Surgical removal of one lobe of the lung; curative for early NSCLC.",
+  "FEV1": "Forced expiratory volume in 1 second; below 1.5 L rules out lobectomy.",
+  "cisplatin": "Platinum chemotherapy drug, used with gemcitabine for stage III/IV NSCLC.",
+  "gemcitabine": "Nucleoside analogue chemotherapy drug, paired with cisplatin for advanced NSCLC.",
+  "dexamethasone": "Potent steroid; 8 mg orally is the immediate treatment for SVC obstruction.",
+  "indwelling pleural catheter": "Tunnelled drain left in the chest so a recurring malignant effusion can be drained at home.",
+  "pleural effusion": "Fluid collecting between the lung and chest wall."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 71 year old man has a 3 month history of increasing breathlessness, dull right-sided chest pain and weight loss. He worked as a pipe lagger in a shipyard for 30 years. He has never smoked. There is dullness to percussion at the right base. Chest X-ray shows a right pleural effusion with nodular pleural thickening.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Adenocarcinoma of the lung",
+    "Mesothelioma",
+    "Parapneumonic effusion",
+    "Small cell lung cancer",
+    "Tuberculosis"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question about a pleural problem with weight loss: think pleural malignancy."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pipe lagger in a shipyard",
+      "never smoked",
+      "dull right-sided chest pain and weight loss",
+      "pleural effusion with nodular pleural thickening"
+     ],
+     "x": "Pipe lagging = **asbestos**. Chest pain, breathlessness, weight loss and **pleural thickening** with effusion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Asbestos plus pleural effusion and thickening: **mesothelioma**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Adenocarcinoma gives a peripheral lung mass; the stem describes pleural thickening and asbestos."
+      ],
+      [
+       2,
+       "No fever or pneumonia; the course is 3 months of weight loss."
+      ],
+      [
+       3,
+       "Small cell is a central mass in a heavy smoker; he never smoked."
+      ],
+      [
+       4,
+       "No fever, night sweats or exposure; asbestos is the stem's key exposure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Mesothelioma.** Rule: asbestos + pleural effusion and thickening = mesothelioma."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 58 year old woman has a CT abdomen for abdominal pain. The lung bases show an incidental 6 mm solid nodule in the left lower lobe. She is an ex-smoker with no symptoms. Her pulse rate is 76 bpm and BP 126/78 mmHg. There are no other abnormalities on the scan.",
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Bronchoscopy",
+    "CT-guided biopsy",
+    "PET scan",
+    "Repeat CT chest at 12 months",
+    "Two-week wait referral for lobectomy"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A next-step question about an incidental nodule: size decides."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "incidental 6 mm solid nodule",
+      "no symptoms",
+      "no other abnormalities"
+     ],
+     "x": "A **5 to 8 mm** nodule with nothing else: the surveillance range in the notes."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Surveillance: **re-scan at 12 months**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchoscopy confirms a suspected cancer; a 6 mm nodule is too small and is watched."
+      ],
+      [
+       1,
+       "Biopsy is not indicated for a nodule in the surveillance range."
+      ],
+      [
+       2,
+       "PET is for staging a suspected cancer, not a tiny nodule."
+      ],
+      [
+       4,
+       "No diagnosis of cancer exists; surgery is far too early."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Repeat CT at 12 months.** Rule: 5 to 8 mm nodule = surveillance re-scan."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man with a 50 pack-year smoking history has a central left hilar mass. Bronchoscopic biopsy shows small cell lung cancer. CT and PET show spread to the mediastinal nodes and liver. His pulse rate is 88 bpm and BP 132/80 mmHg. He is fully independent.",
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Combined chemotherapy and radiotherapy",
+    "Indwelling pleural catheter",
+    "Lobectomy",
+    "Oral dexamethasone and SVC stent",
+    "Pneumonectomy"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A treatment question: the subtype decides first, then the stage."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "small cell lung cancer",
+      "spread to the mediastinal nodes and liver",
+      "fully independent"
+     ],
+     "x": "**SCLC** with distant spread, in a fit patient."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "SCLC: **combined chemotherapy and radiotherapy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "An indwelling catheter is for a symptomatic malignant effusion; none is described."
+      ],
+      [
+       2,
+       "Lobectomy is for early, localised NSCLC in one lobe."
+      ],
+      [
+       3,
+       "That is SVC obstruction treatment; he has no facial swelling or distended neck veins."
+      ],
+      [
+       4,
+       "Surgery does not cure metastatic small cell disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Chemotherapy and radiotherapy.** Rule: SCLC = chemoradiotherapy; surgery is for early NSCLC."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 59 year old woman has a 2 month history of pain in her right shoulder radiating down the inside of her arm. Her right upper eyelid droops and her right pupil is smaller than the left. Her right forehead does not sweat. She smokes 20 cigarettes a day. A chest X-ray shows a right apical mass.",
+   "q": "Which is the most likely mechanism of her eye signs?",
+   "o": [
+    "Compression of the oculomotor nerve",
+    "Compression of the superior vena cava",
+    "Ectopic ACTH secretion",
+    "Invasion of the cervical sympathetic chain",
+    "Recurrent laryngeal nerve invasion"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: explain the eyelid and pupil signs."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "radiating down the inside of her arm",
+      "upper eyelid droops",
+      "pupil is smaller",
+      "does not sweat",
+      "right apical mass"
+     ],
+     "x": "Ptosis, **miosis**, anhidrosis = **Horner's**; arm pain = brachial plexus; apical mass = **Pancoast**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The apical tumour invades the **sympathetic chain**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A third nerve palsy gives a large pupil and a down-and-out eye, not a small pupil."
+      ],
+      [
+       1,
+       "SVC compression gives facial swelling and distended neck veins."
+      ],
+      [
+       2,
+       "Ectopic ACTH causes Cushing's and hypokalaemia, not eye signs."
+      ],
+      [
+       4,
+       "Recurrent laryngeal nerve invasion causes hoarseness, not eye signs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Sympathetic chain invasion.** Rule: Pancoast + small pupil = Horner's from sympathetic chain invasion."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old man has a 2 month history of cough, haemoptysis and weight loss. He has a 55 pack-year smoking history. Over the past week he has become thirsty, constipated and confused. His temperature is 36.9°C, pulse rate 98 bpm, BP 122/74 mmHg and oxygen saturation 94% breathing air. He has finger clubbing. Chest X-ray shows a central right-sided mass with a cavity.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.31 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "PTH",
+     "0.8 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "Sodium",
+     "139 mmol/L",
+     "135–145",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which type of lung cancer is most likely?",
+   "o": [
+    "Adenocarcinoma",
+    "Large cell carcinoma",
+    "Mesothelioma",
+    "Small cell carcinoma",
+    "Squamous cell carcinoma"
+   ],
+   "a": 4,
+   "e": "A central cavitating mass with clubbing and hypercalcaemia with suppressed PTH is squamous cell carcinoma secreting PTHrP. Small cell causes hyponatraemia (SIADH), not hypercalcaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A subtype question: look for location and the paraneoplastic clue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "55 pack-year smoking history",
+      "thirsty, constipated and confused",
+      "finger clubbing",
+      "central right-sided mass with a cavity"
+     ],
+     "x": "Hypercalcaemia symptoms with low PTH, clubbing, central **cavitating** mass in a heavy smoker."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PTHrP hypercalcaemia + cavitation: **squamous cell carcinoma**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Adenocarcinoma is peripheral with no paraneoplastic association in the notes."
+      ],
+      [
+       1,
+       "Large cell has no paraneoplastic association in the notes."
+      ],
+      [
+       2,
+       "Mesothelioma is pleural, linked to asbestos, with effusion and thickening."
+      ],
+      [
+       3,
+       "Small cell causes SIADH and ectopic ACTH; sodium is normal here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Squamous cell carcinoma.** Rule: smoker + high calcium + low PTH = squamous."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old woman has a 6 week history of cough and weight loss. She has smoked 30 cigarettes a day for 45 years. She has become increasingly drowsy and nauseated. She appears euvolaemic. Chest X-ray shows a left perihilar mass.",
+   "labs": [
+    [
+     "Sodium",
+     "121 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "Plasma osmolality",
+     "254 mOsm/kg",
+     "275–295",
+     "L"
+    ],
+    [
+     "Urine osmolality",
+     "540 mOsm/kg",
+     "50–1200",
+     ""
+    ],
+    [
+     "Adjusted calcium",
+     "2.41 mmol/L",
+     "2.20–2.60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Adenocarcinoma of the lung",
+    "Mesothelioma",
+    "Small cell lung cancer",
+    "Squamous cell carcinoma of the lung",
+    "Tuberculosis"
+   ],
+   "a": 2,
+   "e": "A heavy smoker with a central perihilar mass and euvolaemic hyponatraemia with concentrated urine has SIADH from small cell lung cancer. Squamous cell gives hypercalcaemia instead.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: the electrolytes name the subtype."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smoked 30 cigarettes a day for 45 years",
+      "drowsy and nauseated",
+      "euvolaemic",
+      "left perihilar mass"
+     ],
+     "x": "Low sodium, low plasma osmolality and inappropriately concentrated urine in a euvolaemic smoker = **SIADH**; perihilar mass."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "SIADH + central mass: **small cell lung cancer**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Adenocarcinoma is peripheral, with no paraneoplastic association in the notes."
+      ],
+      [
+       1,
+       "Mesothelioma is pleural, linked to asbestos."
+      ],
+      [
+       3,
+       "Squamous cell gives hypercalcaemia (PTHrP); calcium is normal."
+      ],
+      [
+       4,
+       "TB can cause SIADH but gives fever, night sweats and upper-zone cavitation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Small cell lung cancer.** Rule: smoker + central mass + low sodium = SCLC with SIADH."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 61 year old man has a 3 month history of severe pain in his left shoulder spreading to his little finger, with weakness of the small muscles of his left hand. His left eyelid droops and his left pupil is constricted. He has smoked for 40 years. His pulse rate is 84 bpm and BP 136/84 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Carotid artery dissection",
+    "Cervical rib",
+    "Cervical spondylosis",
+    "Pancoast tumour",
+    "Syringomyelia"
+   ],
+   "a": 3,
+   "e": "Shoulder and ulnar-sided arm pain with hand weakness (brachial plexus) plus ipsilateral Horner's in a smoker is an apical (Pancoast) lung tumour. Carotid dissection gives Horner's with neck pain and headache, not hand wasting.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: put the arm signs and the eye signs in one place."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "spreading to his little finger",
+      "weakness of the small muscles of his left hand",
+      "left eyelid droops",
+      "pupil is constricted",
+      "smoked for 40 years"
+     ],
+     "x": "Lower brachial plexus (C8/T1) plus **Horner's** on the same side in a smoker."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The lung apex sits by both: **Pancoast tumour**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Carotid dissection causes Horner's with neck pain and headache, not hand weakness."
+      ],
+      [
+       1,
+       "A cervical rib can compress the plexus but rarely causes Horner's and fits younger patients."
+      ],
+      [
+       2,
+       "Spondylosis gives neck pain and root signs, not Horner's."
+      ],
+      [
+       4,
+       "Syringomyelia gives cape-like loss of pain and temperature, usually bilateral."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pancoast tumour.** Rule: smoker + Horner's + arm pain = apical lung cancer."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man with known squamous cell carcinoma of the right lung has a 1 week history of headache and swelling of his face and arms, worse in the morning. His pulse rate is 96 bpm, BP 142/88 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 94% breathing air. Raising both arms above his head makes his face turn red and he becomes stridulous.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": [
+    "Bilateral pitting ankle oedema",
+    "Distended non-pulsatile neck veins",
+    "Left-sided Horner's syndrome",
+    "Pulsus paradoxus",
+    "Unilateral calf swelling"
+   ],
+   "a": 1,
+   "e": "Facial and arm swelling with a positive Pemberton's test is SVC obstruction, which gives distended neck veins and a raised, non-pulsatile JVP. Pulsus paradoxus is tamponade.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A finding question: name the complication, then predict the sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "squamous cell carcinoma of the right lung",
+      "swelling of his face and arms",
+      "worse in the morning",
+      "Raising both arms above his head"
+     ],
+     "x": "Head and arm swelling, worse lying flat overnight, positive **Pemberton's**: **SVC obstruction**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Blocked SVC: **distended neck veins**, raised non-pulsatile JVP."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "SVC obstruction affects head, neck and arms; ankle oedema is IVC or heart failure."
+      ],
+      [
+       2,
+       "His tumour is right-sided, and Horner's comes from an apical tumour, not SVCO."
+      ],
+      [
+       3,
+       "Pulsus paradoxus suggests cardiac tamponade."
+      ],
+      [
+       4,
+       "Calf swelling is DVT, a leg sign."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Distended neck veins.** Rule: face and arm swelling + Pemberton's = SVC obstruction."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man has a 2 month history of difficulty climbing stairs and rising from a chair. His legs feel stronger after a few minutes of walking. He has a dry mouth. He smokes 25 cigarettes a day and has lost 6 kg. Proximal leg reflexes are reduced. Chest X-ray shows a right hilar mass.",
+   "labs": [
+    [
+     "Creatine kinase",
+     "110 U/L",
+     "40–320",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Dermatomyositis",
+    "Lambert-Eaton myasthenic syndrome",
+    "Motor neurone disease",
+    "Myasthenia gravis",
+    "Polymyalgia rheumatica"
+   ],
+   "a": 1,
+   "e": "Proximal leg weakness that improves with exertion, reduced reflexes and autonomic dry mouth in a smoker with a hilar mass is LEMS from small cell lung cancer (anti-VGCC). Myasthenia gravis worsens with exertion.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: a weakness pattern in a smoker with a hilar mass."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "difficulty climbing stairs and rising from a chair",
+      "stronger after a few minutes of walking",
+      "dry mouth",
+      "right hilar mass"
+     ],
+     "x": "Proximal legs, **improves with exertion**, autonomic features, central mass: small cell paraneoplastic syndrome."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Lambert-Eaton myasthenic syndrome** (anti-VGCC)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dermatomyositis gives a rash and raised CK; CK is normal."
+      ],
+      [
+       2,
+       "MND gives mixed UMN and LMN signs and does not improve with exercise."
+      ],
+      [
+       3,
+       "Myasthenia worsens with exertion and often affects the eyes first."
+      ],
+      [
+       4,
+       "PMR gives stiffness and pain, not true weakness, with raised ESR."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. LEMS.** Rule: proximal weakness that improves with use in a smoker = LEMS with SCLC."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 52 year old woman who has never smoked has a 3 month history of a persistent dry cough and 4 kg weight loss. She has no fever. Her pulse rate is 82 bpm and BP 124/76 mmHg. A chest X-ray is shown (see item resources). Biopsy shows glandular spaces containing mucin.",
+   "labs": [],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "mass",
+      "side": "left",
+      "zone": "upper"
+     }
+    ],
+    "caption": "Peripheral left upper zone mass."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Adenocarcinoma of the lung",
+    "Large cell carcinoma of the lung",
+    "Small cell lung cancer",
+    "Squamous cell carcinoma of the lung",
+    "Tuberculosis"
+   ],
+   "a": 0,
+   "e": "A peripheral mass in a woman who has never smoked, with glandular spaces and mucin on biopsy, is adenocarcinoma, the most common lung cancer. Squamous cell shows keratin pearls.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: smoking status, location and histology."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "never smoked",
+      "persistent dry cough and 4 kg weight loss",
+      "glandular spaces containing mucin"
+     ],
+     "x": "Non-smoking woman, **peripheral** mass, **mucin** on biopsy."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Adenocarcinoma.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Large cell is poorly differentiated, with no glandular mucin."
+      ],
+      [
+       2,
+       "Small cell is central with neurosecretory granules, in heavy smokers."
+      ],
+      [
+       3,
+       "Squamous cell is central with keratin pearls, strongly smoking-linked."
+      ],
+      [
+       4,
+       "No fever or night sweats; the biopsy shows malignant glands, not granulomas."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Adenocarcinoma.** Rule: non-smoker + peripheral + mucin = adenocarcinoma."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 62 year old man sees his GP with a 4 week history of a persistent cough. He has smoked 20 cigarettes a day for 40 years. He has no haemoptysis. His temperature is 36.8°C, pulse rate 78 bpm, BP 134/82 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 96% breathing air. Chest examination is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Bronchoscopy",
+    "Chest X-ray",
+    "Contrast-enhanced CT chest",
+    "PET scan",
+    "Sputum cytology"
+   ],
+   "a": 1,
+   "e": "A persistent cough in a long-term smoker needs a chest X-ray first, within 2 weeks. CT is second-line for staging and bronchoscopy confirms the diagnosis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation: the first test, not the best test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sees his GP",
+      "persistent cough",
+      "smoked 20 cigarettes a day for 40 years",
+      "no haemoptysis"
+     ],
+     "x": "A smoker with a new persistent cough in primary care, no haemoptysis yet."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Chest X-ray**, first-line."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchoscopy confirms; it comes after imaging."
+      ],
+      [
+       2,
+       "Contrast CT is second-line for staging."
+      ],
+      [
+       3,
+       "PET is a staging test once cancer is suspected."
+      ],
+      [
+       4,
+       "Sputum cytology is not the first-line test in the notes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Chest X-ray.** Rule: first-line = CXR; staging = CT; confirm = bronchoscopy."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old woman has haemoptysis and weight loss. She has a 50 pack-year smoking history. Chest X-ray shows a 4 cm right hilar mass. Contrast-enhanced CT chest shows a 4 cm central right mass narrowing the right main bronchus with enlarged mediastinal nodes. Her pulse rate is 88 bpm.",
+   "labs": [],
+   "visual": null,
+   "q": "Which investigation will confirm the diagnosis?",
+   "o": [
+    "Fibre-optic bronchoscopy with biopsy",
+    "MRI chest",
+    "PET scan",
+    "Pulmonary function tests",
+    "Serum tumour markers"
+   ],
+   "a": 0,
+   "e": "Tissue is needed: fibre-optic bronchoscopy with biopsy, after contrast CT, is the gold standard, and a central mass narrowing a bronchus is within reach of the scope. PET stages but does not give histology.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Confirm the diagnosis' means tissue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Contrast-enhanced CT chest",
+      "central right mass narrowing the right main bronchus"
+     ],
+     "x": "CT already done; a **central** mass in a bronchus is reachable by bronchoscope."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Bronchoscopy with biopsy.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "MRI chest adds nothing for diagnosis here and gives no tissue."
+      ],
+      [
+       2,
+       "PET is for staging; it cannot give histology."
+      ],
+      [
+       3,
+       "PFTs assess fitness for surgery, not the diagnosis."
+      ],
+      [
+       4,
+       "Tumour markers may guide targeted therapy but do not confirm lung cancer."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Bronchoscopy.** Rule: CT first, then tissue by bronchoscopy (central) or CT-guided biopsy (peripheral)."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 66 year old man with small cell lung cancer has a 5 day history of facial swelling and breathlessness. His face is plethoric with periorbital oedema, and his neck veins are distended. His pulse rate is 104 bpm, BP 146/90 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 93% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Furosemide 40 mg IV",
+    "Indwelling pleural catheter",
+    "IV 0.9% sodium chloride",
+    "Low molecular weight heparin",
+    "Oral dexamethasone 8 mg"
+   ],
+   "a": 4,
+   "e": "Facial plethora, periorbital oedema and distended neck veins in lung cancer is SVC obstruction: give oral dexamethasone 8 mg immediately, then an SVC stent. IV saline is for PTHrP hypercalcaemia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of an oncological emergency."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "small cell lung cancer",
+      "facial swelling",
+      "plethoric with periorbital oedema",
+      "neck veins are distended"
+     ],
+     "x": "Classic **SVC obstruction** in a central tumour."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Dexamethasone 8 mg** now, stent definitively."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "This is not heart failure; diuretics do not relieve tumour compression."
+      ],
+      [
+       1,
+       "A pleural catheter is for a symptomatic malignant effusion."
+      ],
+      [
+       2,
+       "IV saline treats hypercalcaemia, not SVCO."
+      ],
+      [
+       3,
+       "Anticoagulation is for SVC thrombosis, not first-line for tumour compression."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Oral dexamethasone 8 mg.** Rule: SVCO = dexamethasone first, SVC stent definitive."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old woman with squamous cell carcinoma of the lung has 4 days of vomiting, abdominal pain and confusion. Her pulse rate is 108 bpm, BP 104/62 mmHg and respiratory rate 16 breaths per minute. Her mucous membranes are dry and her JVP is not visible.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.48 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "PTH",
+     "0.6 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "Creatinine",
+     "142 µmol/L",
+     "45–90",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Calcium gluconate IV",
+    "Furosemide IV",
+    "IV 0.9% sodium chloride",
+    "Oral dexamethasone",
+    "Parathyroidectomy"
+   ],
+   "a": 2,
+   "e": "PTHrP-mediated hypercalcaemia with dehydration needs IV 0.9% sodium chloride first. Furosemide before rehydration worsens dehydration; parathyroidectomy treats primary hyperparathyroidism (high PTH).",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: the first move, not the whole plan."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "squamous cell carcinoma",
+      "vomiting, abdominal pain and confusion",
+      "mucous membranes are dry",
+      "JVP is not visible"
+     ],
+     "x": "Severe hypercalcaemia, low PTH, dry, AKI: **PTHrP** from squamous cell."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**IV 0.9% sodium chloride.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Calcium gluconate treats hyperkalaemia or hypocalcaemia; it would worsen this."
+      ],
+      [
+       1,
+       "Furosemide in a dry patient worsens volume depletion; not first-line."
+      ],
+      [
+       3,
+       "Dexamethasone is the first step for SVC obstruction."
+      ],
+      [
+       4,
+       "PTH is suppressed, so this is not parathyroid disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV 0.9% sodium chloride.** Rule: malignant hypercalcaemia = fluids first."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man has a 3 cm adenocarcinoma confined to the right upper lobe. CT and PET show no nodal or distant spread. He is fit and walks 3 miles daily. His pulse rate is 72 bpm and BP 130/80 mmHg.",
+   "labs": [
+    [
+     "FEV1",
+     "2.3 L (82% predicted)",
+     "",
+     ""
+    ],
+    [
+     "FVC",
+     "3.1 L (88% predicted)",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Cisplatin plus gemcitabine",
+    "Combined chemotherapy and radiotherapy",
+    "Indwelling pleural catheter",
+    "Palliative care only",
+    "Right upper lobectomy"
+   ],
+   "a": 4,
+   "e": "Early localised NSCLC confined to one lobe with FEV1 above 1.5 L is treated by curative lobectomy. Cisplatin plus gemcitabine is for stage III/IV NSCLC.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Definitive treatment: decide stage and fitness."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confined to the right upper lobe",
+      "no nodal or distant spread",
+      "fit and walks 3 miles daily"
+     ],
+     "x": "Early **NSCLC** in one lobe; FEV1 2.3 L is above the 1.5 L cut-off."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Curative **lobectomy**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Cisplatin plus gemcitabine is for stage III/IV NSCLC."
+      ],
+      [
+       1,
+       "Chemoradiotherapy is the treatment for small cell lung cancer."
+      ],
+      [
+       2,
+       "There is no malignant pleural effusion."
+      ],
+      [
+       3,
+       "This is curable disease; palliation alone would be wrong."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Lobectomy.** Rule: one lobe, no spread, FEV1 >1.5 = lobectomy."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 67 year old man with a central cavitating lung mass has polyuria, constipation and confusion. Bone scan shows no metastases. His pulse rate is 96 bpm and BP 118/70 mmHg.",
+   "labs": [
+    [
+     "Adjusted calcium",
+     "3.21 mmol/L",
+     "2.20–2.60",
+     "H"
+    ],
+    [
+     "PTH",
+     "0.7 pmol/L",
+     "1.6–6.9",
+     "L"
+    ],
+    [
+     "Phosphate",
+     "0.62 mmol/L",
+     "0.80–1.50",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his hypercalcaemia?",
+   "o": [
+    "Ectopic ACTH secretion",
+    "Ectopic vitamin D production by granulomas",
+    "Osteolytic bone metastases",
+    "Parathyroid adenoma",
+    "Tumour secretion of PTH-related peptide"
+   ],
+   "a": 4,
+   "e": "Squamous cell carcinoma secretes PTHrP, which acts like PTH on bone and kidney (high calcium, low phosphate) while native PTH is suppressed. The bone scan excludes metastases, and a parathyroid adenoma would give a high PTH.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: explain the calcium."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "central cavitating lung mass",
+      "Bone scan shows no metastases"
+     ],
+     "x": "Central cavitating mass = **squamous**. High calcium, low phosphate, **low PTH**, no bone metastases."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**PTHrP** secreted by the tumour."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Ectopic ACTH (small cell) causes Cushing's and hypokalaemia, not hypercalcaemia."
+      ],
+      [
+       1,
+       "Granulomatous vitamin D is sarcoidosis or TB, and raises phosphate."
+      ],
+      [
+       2,
+       "The bone scan shows no metastases."
+      ],
+      [
+       3,
+       "An adenoma would give a high or inappropriately normal PTH."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. PTHrP.** Rule: squamous + high calcium + low PTH = PTHrP."
+    }
+   ]
+  }
+ ]
+}

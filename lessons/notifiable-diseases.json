@@ -1,0 +1,2184 @@
+{
+ "id": "notifiable-diseases",
+ "patient": {
+  "name": "Kofi Mensah",
+  "age": 3,
+  "sex": "M",
+  "setting": "GP surgery, Hackney (same-day appointment)",
+  "complaint": "Four days of fever, cough and red eyes; a rash appeared this morning",
+  "background": [
+   "MMR not given: parents declined at 12 months",
+   "Attends a nursery of 40 children",
+   "Baby sister Ama, 5 months old, at home",
+   "Mother Abena is 20 weeks pregnant"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect a vignette of a classic infection (fever and rash, purpuric rash, whooping cough, cavitating TB) where you must recognise the disease and know it is notifiable, and how fast: immediately or within 3 days.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kofi, 3, **unvaccinated**: fever for 4 days.",
+      "Runny nose, dry cough and **red, watery eyes**.",
+      "This morning a blotchy red rash began **behind his ears**.",
+      "Now spreading down his face and trunk."
+     ],
+     "vitals": {
+      "T": "39.4°C",
+      "HR": "142 bpm",
+      "RR": "30 /min",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "What is the most likely diagnosis?",
+     "o": [
+      "Measles",
+      "Roseola",
+      "Rubella",
+      "Scarlet fever"
+     ],
+     "a": 0,
+     "r": "Cough, coryza, conjunctivitis, high fever, then a rash starting behind the ears in an unvaccinated child: **measles**."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kofi's measles is one of the classic **notifiable diseases**: the law says it must be reported to public health."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Inside his cheeks: tiny white spots on a red base (**Koplik spots**).",
+      "His sister Ama, 5 months, came to the appointment too.",
+      "The GP asks: is this notifiable, and how fast?"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Measles is in the **urgently notifiable** group with meningococcal meningitis, cholera and rabies: Kofi's GP must act **today**, not within 3 days."
+    },
+    {
+     "type": "compare",
+     "title": "How fast must you notify?",
+     "head": [
+      "Category",
+      "Examples",
+      "Deadline"
+     ],
+     "rows": [
+      [
+       "**Urgent**",
+       "Measles, meningococcal meningitis, cholera, rabies",
+       "**Immediately** (phone)"
+      ],
+      [
+       "**Routine**",
+       "TB, hepatitis B, food poisoning",
+       "Within **3 days**"
+      ],
+      [
+       "**Not notifiable**",
+       "HIV, syphilis, herpes simplex, ophthalmia neonatorum",
+       "No legal duty"
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Notification deadline (hours from suspicion)",
+      "min": 0,
+      "max": 72,
+      "unit": "h",
+      "bands": [
+       [
+        0,
+        6,
+        "Urgent: immediately",
+        "bad"
+       ],
+       [
+        6,
+        72,
+        "Routine: within 3 days",
+        "warn"
+       ]
+      ],
+      "value": 1,
+      "label": "Kofi: measles, now",
+      "caption": "Urgent diseases are phoned through at once; routine ones within 72 hours."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "The notes' exam clue is Kofi exactly: **fever, rash, generally unwell** means think measles and notify immediately."
+    },
+    {
+     "type": "trap",
+     "text": "**HIV** is monitored but **not** legally notifiable, and neither are syphilis or herpes simplex. They are classic 'which is notifiable?' distractors."
+    },
+    {
+     "type": "pearl",
+     "text": "Notification is triggered by **clinical suspicion**. Kofi's GP does not need a positive test to report him."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate next step?' where the answer is to notify now on clinical suspicion, with confirmatory samples (PCR, serology, blood cultures) sent alongside, never instead.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Kofi's GP sends an oral fluid swab. When should she notify?",
+     "o": [
+      "After the IgM result",
+      "After the PCR result",
+      "Now, on clinical suspicion",
+      "Only if a second case appears"
+     ],
+     "a": 2,
+     "r": "Notify on **suspicion**. Waiting days for results loses the window for protecting contacts."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kofi's diagnosis is made by the GP's **clinical judgement plus formal notification**: no lab result is needed first."
+    },
+    {
+     "type": "flow",
+     "title": "Suspicion to confirmation",
+     "nodes": [
+      "Clinical suspicion of measles",
+      "Phone the local health protection team now",
+      "Send samples: oral fluid PCR / IgM, or blood",
+      "Lab confirms and also reports the organism",
+      "HPT updates contacts' advice"
+     ],
+     "caption": "Notification and testing run in parallel, not in sequence."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kofi's oral fluid swab and serology are **confirmatory** tests, sent after he has already been notified."
+    },
+    {
+     "type": "labs",
+     "title": "Kofi's results (day 3)",
+     "rows": [
+      [
+       "Measles RNA PCR (oral fluid)",
+       "Detected",
+       "Not detected",
+       "H"
+      ],
+      [
+       "Measles IgM",
+       "Positive",
+       "Negative",
+       "H"
+      ],
+      [
+       "Lymphocytes",
+       "0.9 ×10⁹/L",
+       "1.5–7.0",
+       "L"
+      ],
+      [
+       "CRP",
+       "18 mg/L",
+       "<5",
+       "H"
+      ]
+     ],
+     "text": "Confirmation arrives 3 days later: by then contacts must already have been protected."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Antibody response after rash onset",
+      "x": [
+       "Day 0",
+       "Day 3",
+       "Day 7",
+       "Day 14",
+       "Day 28"
+      ],
+      "unit": "relative level",
+      "series": [
+       {
+        "name": "Measles IgM",
+        "values": [
+         0.3,
+         2,
+         4,
+         3,
+         1
+        ]
+       },
+       {
+        "name": "Measles IgG",
+        "values": [
+         0.1,
+         0.5,
+         2,
+         4,
+         5
+        ]
+       }
+      ],
+      "caption": "IgM can still be negative in the first days of the rash: a negative early test does not cancel the suspicion."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Never write 'await laboratory confirmation' as the next step. In notifiable disease questions that option is almost always wrong."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate action?' about who notifies (the suspecting doctor), to whom (UKHSA / local health protection team), how fast, whether consent is needed (it is not), and what happens to contacts.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "The GP keeps Kofi out of the busy waiting room.",
+      "His mother asks: 'Do you have to tell anyone? I don't consent.'"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Who is legally responsible for notifying Kofi's measles?",
+     "o": [
+      "Kofi's parents",
+      "The GP who suspects it",
+      "The laboratory",
+      "The nursery manager",
+      "The practice manager"
+     ],
+     "a": 1,
+     "r": "The **doctor who suspects** the disease has the legal duty, whoever confirms it later."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kofi's GP phones the local health protection team (**UKHSA**) **immediately** because measles is urgent; no test result is awaited."
+    },
+    {
+     "type": "trap",
+     "text": "Notification is a **statutory duty**: it does **not** need the patient's (or parent's) consent. Explain it kindly, but notify."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kofi gets supportive care at home, is **isolated** from nursery, and the HPT traces his contacts: nursery, sister Ama, pregnant mother."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Days since exposure (measles contacts)",
+      "min": 0,
+      "max": 10,
+      "unit": "days",
+      "bands": [
+       [
+        0,
+        3,
+        "MMR can still prevent",
+        "ok"
+       ],
+       [
+        3,
+        6,
+        "Immunoglobulin window",
+        "warn"
+       ],
+       [
+        6,
+        10,
+        "Too late: watch and isolate",
+        "bad"
+       ]
+      ],
+      "value": 1,
+      "label": "Ama: day 1",
+      "caption": "Early notification is what keeps contacts inside these windows."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "Contact management for measles",
+     "nodes": [
+      "Notify HPT immediately",
+      "List contacts: home, nursery, waiting room",
+      "Check vaccine status and vulnerability",
+      "MMR within 72 h for susceptible contacts",
+      "Immunoglobulin for infants, pregnant and immunosuppressed contacts"
+     ],
+     "caption": "Ama (5 months) and Abena (pregnant, check immunity) are the vulnerable contacts."
+    },
+    {
+     "type": "compare",
+     "title": "Public health action after notification",
+     "head": [
+      "Disease",
+      "Category",
+      "Contact action"
+     ],
+     "rows": [
+      [
+       "Measles",
+       "Urgent",
+       "MMR catch-up; immunoglobulin for vulnerable"
+      ],
+      [
+       "Meningococcal disease",
+       "Urgent",
+       "**Antibiotic prophylaxis** (e.g. ciprofloxacin) for close contacts"
+      ],
+      [
+       "Tuberculosis",
+       "Routine (3 days)",
+       "Contact screening; treat active TB ~6 months"
+      ],
+      [
+       "Food poisoning",
+       "Routine (3 days)",
+       "Exclude food handlers until symptom-free 48 h"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kofi's GP follows the **Health Protection (Notification) Regulations 2010** and UKHSA guidance: report suspicion, urgent cases by phone."
+    },
+    {
+     "type": "pearl",
+     "text": "Who, what, when: the **suspecting clinician** notifies **UKHSA** (local HPT), **immediately** if urgent, otherwise **within 3 days**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied 'why' questions: why notify before confirmation, why some diseases are notifiable, and why measles or meningococcal disease are urgent while TB is routine.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Notifying Kofi on day 0 lets the HPT give Ama and the nursery protection **days before** the PCR result would have arrived."
+    },
+    {
+     "type": "flow",
+     "title": "Why speed matters",
+     "nodes": [
+      "One undetected measles case",
+      "Each case infects about 12 to 18 non-immune people",
+      "Post-exposure MMR only works within 72 h",
+      "Delay = missed window = outbreak"
+     ],
+     "caption": "Measles is one of the most contagious infections known."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Measles is chosen because it is highly **transmissible**, can cause pneumonia and encephalitis, and **MMR catch-up** for contacts works if given early."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Measles spreads fast with a short window for action, so it is **immediate**; TB spreads slowly, so a **3-day** window is safe."
+    },
+    {
+     "type": "ask",
+     "q": "Why is TB routinely, not urgently, notifiable?",
+     "o": [
+      "It is not infectious",
+      "Lab confirmation is quick",
+      "Lower immediate outbreak risk",
+      "Treatment is only 2 weeks"
+     ],
+     "a": 2,
+     "r": "TB spreads slowly with a long incubation, so the **3-day** window carries little added risk."
+    },
+    {
+     "type": "pearl",
+     "text": "Three filters make a disease notifiable: **transmissibility**, **severity** and **value of early intervention**."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which disease is urgently (immediately) notifiable?",
+   "o": [
+    "Food poisoning",
+    "Hepatitis B",
+    "Measles",
+    "Tuberculosis"
+   ],
+   "a": 2,
+   "r": "Measles is urgent; TB, hepatitis B and food poisoning are routine (within 3 days)."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which of these is NOT legally notifiable in the UK?",
+   "o": [
+    "Cholera",
+    "HIV",
+    "Meningococcal septicaemia",
+    "Whooping cough"
+   ],
+   "a": 1,
+   "r": "**HIV** is monitored but not legally notifiable."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism causes meningococcal septicaemia?",
+   "o": [
+    "Haemophilus influenzae",
+    "Neisseria meningitidis",
+    "Streptococcus pneumoniae",
+    "Streptococcus pyogenes"
+   ],
+   "a": 1,
+   "r": "Meningococcus is **Neisseria meningitidis**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the typical treatment length for active TB?",
+   "o": [
+    "2 weeks",
+    "2 years",
+    "6 weeks",
+    "About 6 months"
+   ],
+   "a": 3,
+   "r": "Active TB is treated for about **6 months**."
+  },
+  {
+   "d": "investigation",
+   "q": "When should a suspected notifiable disease be reported?",
+   "o": [
+    "After a second case",
+    "After consultant review",
+    "After lab confirmation",
+    "On clinical suspicion"
+   ],
+   "a": 3,
+   "r": "Notify on suspicion, not confirmation."
+  },
+  {
+   "d": "investigation",
+   "q": "Which tests are done after notification to confirm the disease?",
+   "o": [
+    "Blood cultures, PCR and serology",
+    "Chest X-ray only",
+    "No tests are needed",
+    "Skin biopsy"
+   ],
+   "a": 0,
+   "r": "Confirmatory tests follow notification."
+  },
+  {
+   "d": "management",
+   "q": "Who is legally responsible for notification?",
+   "o": [
+    "The laboratory",
+    "The patient",
+    "The practice manager",
+    "The suspecting doctor"
+   ],
+   "a": 3,
+   "r": "The diagnosing or suspecting clinician, to UKHSA."
+  },
+  {
+   "d": "management",
+   "q": "Within what time must a routine notifiable disease be reported?",
+   "o": [
+    "24 hours",
+    "28 days",
+    "3 days",
+    "7 days"
+   ],
+   "a": 2,
+   "r": "Routine diseases: within **3 days**."
+  },
+  {
+   "d": "management",
+   "q": "What usually follows notification of an outbreak-prone disease?",
+   "o": [
+    "Contact tracing and prophylaxis",
+    "Hospital admission of all contacts",
+    "No further action",
+    "Patient consent forms"
+   ],
+   "a": 0,
+   "r": "The HPT traces contacts and offers vaccine or prophylaxis."
+  },
+  {
+   "d": "science",
+   "q": "Why must measles be notified immediately?",
+   "o": [
+    "High transmissibility, short intervention window",
+    "It is a blood-borne virus",
+    "It is always fatal",
+    "Treatment needs consent"
+   ],
+   "a": 0,
+   "r": "Short incubation and high spread need immediate action."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is a notifiable disease, and name the classic examples.",
+    "tip": "Exam thinking: the stem describes the disease; you must spot that it is notifiable.",
+    "points": [
+     {
+      "p": "Infectious disease that must legally be reported to public health",
+      "k": [
+       [
+        "report",
+        "notif"
+       ],
+       [
+        "public health",
+        "ukhsa",
+        "health protection",
+        "law",
+        "legal"
+       ]
+      ],
+      "why": "Under the Health Protection (Notification) Regulations 2010."
+     },
+     {
+      "p": "Measles",
+      "k": [
+       [
+        "measles"
+       ]
+      ],
+      "why": "Fever, rash, generally unwell: notify immediately."
+     },
+     {
+      "p": "Meningococcal septicaemia / acute meningitis",
+      "k": [
+       [
+        "mening"
+       ]
+      ],
+      "why": "Neisseria meningitidis."
+     },
+     {
+      "p": "Whooping cough",
+      "k": [
+       [
+        "whooping",
+        "pertussis"
+       ]
+      ],
+      "why": "Especially in unvaccinated young infants."
+     },
+     {
+      "p": "Tuberculosis",
+      "k": [
+       [
+        "tb",
+        "tuberculosis"
+       ]
+      ],
+      "why": "Active disease treated for about 6 months."
+     },
+     {
+      "p": "Acute infective hepatitis",
+      "k": [
+       [
+        "hepatitis"
+       ]
+      ],
+      "why": "Hepatitis B is routinely notifiable."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which diseases are urgently notifiable, and what does 'urgent' mean?",
+    "tip": "Exam thinking: urgent = phone now, not a form within 3 days.",
+    "points": [
+     {
+      "p": "Notify immediately",
+      "k": [
+       [
+        "immediate",
+        "urgent",
+        "phone",
+        "at once"
+       ]
+      ],
+      "why": "Do not wait for test results."
+     },
+     {
+      "p": "Meningococcal meningitis",
+      "k": [
+       [
+        "mening"
+       ]
+      ],
+      "why": "Close contacts need antibiotic prophylaxis."
+     },
+     {
+      "p": "Measles",
+      "k": [
+       [
+        "measles"
+       ]
+      ],
+      "why": "Contacts need MMR within 72 h."
+     },
+     {
+      "p": "Cholera",
+      "k": [
+       [
+        "cholera"
+       ]
+      ],
+      "why": "GI notifiable disease."
+     },
+     {
+      "p": "Rabies",
+      "k": [
+       [
+        "rabies"
+       ]
+      ],
+      "why": "Post-exposure prophylaxis is time-critical."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which diseases are routinely notifiable, and in what time frame?",
+    "tip": "Exam thinking: routine is still a legal duty, just slower.",
+    "points": [
+     {
+      "p": "Within 3 days",
+      "k": [
+       [
+        "3",
+        "three",
+        "72"
+       ]
+      ],
+      "why": "The routine deadline."
+     },
+     {
+      "p": "Tuberculosis",
+      "k": [
+       [
+        "tb",
+        "tuberculosis"
+       ]
+      ],
+      "why": "Lower immediate outbreak risk."
+     },
+     {
+      "p": "Hepatitis B",
+      "k": [
+       [
+        "hepatitis b",
+        "hep b",
+        "hbv"
+       ]
+      ],
+      "why": "A blood-borne notifiable disease."
+     },
+     {
+      "p": "Food poisoning",
+      "k": [
+       [
+        "food poisoning",
+        "campylobacter",
+        "salmonella"
+       ]
+      ],
+      "why": "Even confirmed Campylobacter is notified."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Name diseases that are NOT legally notifiable in the UK.",
+    "tip": "Exam thinking: these are the distractors in 'which is notifiable?'.",
+    "points": [
+     {
+      "p": "HIV (monitored, not notifiable)",
+      "k": [
+       [
+        "hiv"
+       ]
+      ],
+      "why": "The commonest trap."
+     },
+     {
+      "p": "Syphilis",
+      "k": [
+       [
+        "syphilis"
+       ]
+      ],
+      "why": "Monitored through sexual health surveillance instead."
+     },
+     {
+      "p": "Herpes simplex",
+      "k": [
+       [
+        "herpes",
+        "hsv"
+       ]
+      ],
+      "why": "Not notifiable."
+     },
+     {
+      "p": "Ophthalmia neonatorum (recently removed)",
+      "k": [
+       [
+        "ophthalmia"
+       ]
+      ],
+      "why": "Older lists still include it."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How are notifiable diseases grouped by type? Give an example of each.",
+    "tip": "Exam thinking: classify the vignette first, then decide urgency.",
+    "points": [
+     {
+      "p": "Rash: measles, rubella",
+      "k": [
+       [
+        "rash"
+       ],
+       [
+        "measles",
+        "rubella"
+       ]
+      ],
+      "why": "Fever plus rash suggests measles."
+     },
+     {
+      "p": "GI: cholera, food poisoning",
+      "k": [
+       [
+        "gi",
+        "gastro",
+        "gut"
+       ],
+       [
+        "cholera",
+        "food"
+       ]
+      ],
+      "why": "Cholera urgent, food poisoning routine."
+     },
+     {
+      "p": "Neurological: meningitis",
+      "k": [
+       [
+        "neuro"
+       ],
+       [
+        "mening"
+       ]
+      ],
+      "why": "Urgent."
+     },
+     {
+      "p": "Blood-borne: hepatitis B",
+      "k": [
+       [
+        "blood"
+       ],
+       [
+        "hepatitis",
+        "hep b"
+       ]
+      ],
+      "why": "Routine."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Do you need lab confirmation before notifying? What tests follow?",
+    "tip": "Exam thinking: 'await results' is the classic wrong answer.",
+    "points": [
+     {
+      "p": "No: notify on clinical suspicion",
+      "k": [
+       [
+        "suspicion",
+        "suspect",
+        "clinical"
+       ]
+      ],
+      "why": "Diagnosis is clinical plus formal notification."
+     },
+     {
+      "p": "Blood cultures",
+      "k": [
+       [
+        "culture"
+       ]
+      ],
+      "why": "For meningococcal disease, take before antibiotics only if no delay."
+     },
+     {
+      "p": "PCR",
+      "k": [
+       [
+        "pcr"
+       ]
+      ],
+      "why": "Oral fluid PCR for measles; blood PCR for meningococcus."
+     },
+     {
+      "p": "Serology",
+      "k": [
+       [
+        "serolog",
+        "igm",
+        "antibod"
+       ]
+      ],
+      "why": "IgM can be falsely negative very early."
+     },
+     {
+      "p": "Imaging where relevant",
+      "k": [
+       [
+        "imaging",
+        "x-ray",
+        "xray",
+        "cxr"
+       ]
+      ],
+      "why": "E.g. chest X-ray for TB."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Who notifies, to whom, and how fast?",
+    "tip": "Exam thinking: who, where, when.",
+    "points": [
+     {
+      "p": "The suspecting/diagnosing doctor is legally responsible",
+      "k": [
+       [
+        "doctor",
+        "clinician",
+        "gp",
+        "suspecting"
+       ]
+      ],
+      "why": "Not the lab, not the patient."
+     },
+     {
+      "p": "To UKHSA / local health protection team",
+      "k": [
+       [
+        "ukhsa",
+        "health protection",
+        "hpt",
+        "public health"
+       ]
+      ],
+      "why": "Formerly Public Health England."
+     },
+     {
+      "p": "Urgent diseases immediately",
+      "k": [
+       [
+        "immediate",
+        "urgent",
+        "phone"
+       ]
+      ],
+      "why": "By phone."
+     },
+     {
+      "p": "Others within 3 days",
+      "k": [
+       [
+        "3",
+        "three",
+        "72"
+       ]
+      ],
+      "why": "Routine written notification."
+     },
+     {
+      "p": "No patient consent needed",
+      "k": [
+       [
+        "consent"
+       ]
+      ],
+      "why": "It is a statutory duty."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What happens to the patient and their contacts after notification?",
+    "tip": "Exam thinking: treat, isolate, trace, protect.",
+    "points": [
+     {
+      "p": "Treat with appropriate antibiotics or antivirals",
+      "k": [
+       [
+        "antibiotic",
+        "antiviral",
+        "treat"
+       ]
+      ],
+      "why": "Supportive care for measles."
+     },
+     {
+      "p": "Infection control, e.g. isolation",
+      "k": [
+       [
+        "isolat",
+        "infection control",
+        "exclu"
+       ]
+      ],
+      "why": "Keep away from nursery or school."
+     },
+     {
+      "p": "Identify and trace close contacts",
+      "k": [
+       [
+        "contact"
+       ],
+       [
+        "trac",
+        "identif"
+       ]
+      ],
+      "why": "Done by the health protection team."
+     },
+     {
+      "p": "Vaccination or prophylaxis of contacts",
+      "k": [
+       [
+        "vaccin",
+        "prophyla",
+        "mmr",
+        "ciprofloxacin",
+        "immunoglobulin"
+       ]
+      ],
+      "why": "MMR within 72 h for measles; ciprofloxacin for meningococcal contacts."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does notifiable disease legislation exist, and why are some diseases chosen?",
+    "tip": "Exam thinking: the purpose is speed of public health action.",
+    "points": [
+     {
+      "p": "Rapid public health intervention before lab confirmation",
+      "k": [
+       [
+        "rapid",
+        "early",
+        "fast",
+        "before"
+       ]
+      ],
+      "why": "Lab confirmation would delay action."
+     },
+     {
+      "p": "Contact tracing, prophylaxis, outbreak control",
+      "k": [
+       [
+        "contact",
+        "prophyla",
+        "outbreak"
+       ]
+      ],
+      "why": "The three actions it enables."
+     },
+     {
+      "p": "Chosen by transmissibility",
+      "k": [
+       [
+        "transmiss",
+        "contagio",
+        "spread"
+       ]
+      ],
+      "why": "Measles is extremely contagious."
+     },
+     {
+      "p": "Severity",
+      "k": [
+       [
+        "sever",
+        "serious",
+        "fatal",
+        "death"
+       ]
+      ],
+      "why": "Meningococcal disease kills within hours."
+     },
+     {
+      "p": "Value of early intervention",
+      "k": [
+       [
+        "early intervention",
+        "pep",
+        "prophyla",
+        "mmr",
+        "intervention"
+       ]
+      ],
+      "why": "PEP for meningococcal; MMR for measles contacts."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do notification time frames differ between diseases?",
+    "tip": "Exam thinking: urgency matches outbreak speed.",
+    "points": [
+     {
+      "p": "Short incubation, high transmissibility: immediate",
+      "k": [
+       [
+        "incubation",
+        "transmiss",
+        "contagio"
+       ]
+      ],
+      "why": "Meningococcal disease, measles."
+     },
+     {
+      "p": "Lower immediate outbreak risk: 3-day window",
+      "k": [
+       [
+        "3",
+        "three",
+        "lower",
+        "slow"
+       ]
+      ],
+      "why": "E.g. TB, hepatitis B."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "notifiable disease": "An infection that a doctor must legally report to public health authorities when it is suspected.",
+  "UKHSA": "UK Health Security Agency, which replaced Public Health England and receives notifications.",
+  "HPT": "Health protection team: the local UKHSA team that receives notifications and organises contact tracing.",
+  "health protection team": "The local UKHSA team that receives notifications and manages outbreaks and contacts.",
+  "Public Health England": "The former name of the national public health agency, replaced by UKHSA in 2021.",
+  "measles": "A highly contagious paramyxovirus infection causing fever, cough, coryza, conjunctivitis and a spreading rash.",
+  "Koplik spots": "Tiny white spots on a red base inside the cheeks, seen early in measles.",
+  "coryza": "Runny, blocked nose from inflammation of the nasal lining.",
+  "conjunctivitis": "Red, watery, inflamed eyes; part of the measles prodrome.",
+  "rubella": "German measles: a mild viral rash illness, dangerous to the fetus in pregnancy.",
+  "MMR": "Combined live vaccine against measles, mumps and rubella; given at 1 year and 3 years 4 months.",
+  "immunoglobulin": "Pooled antibodies given to vulnerable contacts for short-term passive protection after exposure.",
+  "post-exposure prophylaxis": "Treatment or vaccine given after contact with an infection to stop the disease developing.",
+  "PEP": "Post-exposure prophylaxis: preventive treatment given after an exposure.",
+  "prophylaxis": "Treatment given to prevent disease rather than treat it.",
+  "contact tracing": "Finding and advising everyone who was exposed to a case so they can be tested or protected.",
+  "meningococcal septicaemia": "Bloodstream infection with Neisseria meningitidis, causing shock and a non-blanching rash.",
+  "Neisseria meningitidis": "Gram-negative diplococcus that causes meningococcal meningitis and septicaemia.",
+  "non-blanching": "A rash that does not fade when pressed with a glass; suggests bleeding into the skin.",
+  "purpuric": "Describes purple spots from bleeding under the skin that do not blanch.",
+  "ciprofloxacin": "A quinolone antibiotic given as a single dose to close contacts of meningococcal disease.",
+  "whooping cough": "Pertussis: Bordetella pertussis infection with bouts of coughing and an inspiratory whoop.",
+  "pertussis": "Whooping cough, caused by Bordetella pertussis; dangerous in unvaccinated young infants.",
+  "post-tussive vomiting": "Vomiting straight after a coughing fit, typical of whooping cough.",
+  "cholera": "Vibrio cholerae infection causing profuse rice-water diarrhoea; urgently notifiable.",
+  "rabies": "A fatal viral encephalitis spread by animal bites; urgently notifiable.",
+  "food poisoning": "Gut infection from contaminated food, e.g. Campylobacter or Salmonella; routinely notifiable.",
+  "Campylobacter": "The commonest bacterial cause of food poisoning in the UK, often from poultry.",
+  "TB": "Tuberculosis, a Mycobacterium tuberculosis infection; routinely notifiable.",
+  "hepatitis B": "A blood-borne viral liver infection; routinely notifiable.",
+  "ophthalmia neonatorum": "Conjunctivitis in a newborn's first month; recently removed from the notifiable list.",
+  "serology": "Blood tests that detect antibodies (e.g. IgM, IgG) to an infection.",
+  "IgM": "The first antibody made in a new infection; a positive IgM suggests recent infection.",
+  "IgG": "The later, long-lasting antibody that shows past infection or immunity.",
+  "PCR": "Polymerase chain reaction: detects the organism's genetic material, fast and sensitive.",
+  "oral fluid swab": "A sponge rubbed along the gums to collect fluid for measles PCR and antibody tests.",
+  "blood cultures": "Blood samples incubated to grow bacteria and identify the organism and its sensitivities.",
+  "statutory duty": "A legal obligation set out in law; it does not depend on the patient's consent.",
+  "incubation period": "The time between catching an infection and developing symptoms.",
+  "transmissibility": "How easily an infection spreads from person to person.",
+  "outbreak": "More cases of a disease than expected in a place or group over a time period.",
+  "isolation": "Separating an infectious person from others to stop spread."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old university student has a 12 hour history of fever, headache and vomiting. She now dislikes bright light and has a stiff neck. There is a non-blanching purpuric rash on her legs. She shares a flat with four other students.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Measles",
+    "Meningococcal meningitis",
+    "Migraine",
+    "Subarachnoid haemorrhage",
+    "Viral meningitis"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question: put the headache, fever and rash together."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fever, headache and vomiting",
+      "stiff neck",
+      "non-blanching purpuric rash",
+      "shares a flat"
+     ],
+     "x": "Meningism plus fever plus **non-blanching rash** = meningococcal disease. Shared housing matters for contacts."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Meningococcal meningitis: urgently notifiable, with prophylaxis for her flatmates."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Measles has a prodrome of cough, coryza and conjunctivitis and a blanching maculopapular rash."
+      ],
+      [
+       2,
+       "Migraine does not cause fever or a purpuric rash."
+      ],
+      [
+       3,
+       "Sudden thunderclap headache, no fever or rash."
+      ],
+      [
+       4,
+       "Viral meningitis is milder and does not cause a non-blanching rash."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Meningococcal meningitis.** Rule: fever + non-blanching rash = meningococcal until proven otherwise; notify immediately."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 6 year old boy who has not had MMR has a 3 day history of fever, cough and red eyes, and today a red maculopapular rash that began behind his ears. The GP suspects measles and takes an oral fluid swab. The result will take 3 days.",
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Await the oral fluid result before notifying",
+    "Notify the health protection team now",
+    "Notify within 3 days if the result is positive",
+    "Repeat the swab in 1 week",
+    "Send blood for measles IgG"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next step' with a test pending: the trap is waiting for it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "has not had MMR",
+      "began behind his ears",
+      "suspects measles",
+      "will take 3 days"
+     ],
+     "x": "Classic measles in an unvaccinated child; the result is days away."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Notify on **clinical suspicion**, immediately, while the swab is processed."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Notification is on suspicion; waiting loses the contact window."
+      ],
+      [
+       2,
+       "Measles is urgent, and suspicion is enough."
+      ],
+      [
+       3,
+       "No reason to repeat, and it delays everything."
+      ],
+      [
+       4,
+       "IgG shows past immunity; it does not confirm acute infection or replace notification."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Notify now.** Rule: never wait for lab confirmation in a notifiable disease."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A foundation doctor in the emergency department suspects meningococcal septicaemia in a 22 year old man and starts intravenous ceftriaxone. The microbiology result will not be available until tomorrow. The patient's partner asks who will tell public health.",
+   "q": "Which is the most appropriate action regarding notification?",
+   "o": [
+    "Consultant notifies after confirmation",
+    "Foundation doctor notifies UKHSA immediately",
+    "Foundation doctor notifies within 3 days",
+    "Laboratory notifies; no clinician action needed",
+    "Partner is asked to contact UKHSA"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'who and when' notification question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "suspects meningococcal septicaemia",
+      "will not be available until tomorrow",
+      "who will tell public health"
+     ],
+     "x": "The **suspecting** doctor, an **urgent** disease, result not back."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The FY doctor notifies UKHSA (local HPT) immediately on suspicion."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "The duty sits with the suspecting doctor, and suspicion is enough."
+      ],
+      [
+       3,
+       "Labs report organisms too, but that does not replace the clinician's duty."
+      ],
+      [
+       2,
+       "Meningococcal disease is urgent: immediately, not within 3 days."
+      ],
+      [
+       4,
+       "Families do not notify; the clinician does."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: the suspecting clinician notifies; urgent means now."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A health protection team receives a phone notification of suspected meningococcal disease in a nursery worker on the same day she is admitted. Her household contacts are given ciprofloxacin that evening, 2 days before PCR confirms Neisseria meningitidis.",
+   "q": "Which best explains why notification is required before laboratory confirmation?",
+   "o": [
+    "Allows early prophylaxis of contacts",
+    "Confirms the diagnosis legally",
+    "Makes treatment of the patient free",
+    "Replaces the need for PCR",
+    "Requires the patient's consent"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'why' question about the purpose of notification."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "same day she is admitted",
+      "household contacts are given ciprofloxacin that evening",
+      "2 days before PCR confirms"
+     ],
+     "x": "Contacts protected 2 days before confirmation: that is the point."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Notification enables rapid public health action (prophylaxis, tracing) before lab confirmation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Notification is a report of suspicion, not a diagnostic test."
+      ],
+      [
+       2,
+       "Notification has nothing to do with paying for care."
+      ],
+      [
+       3,
+       "PCR is still done to confirm the organism."
+      ],
+      [
+       4,
+       "Notification does not need consent."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Early prophylaxis of contacts.** Rule: the law exists for speed of public health action."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 4 year old girl who has not received MMR has a 4 day history of fever, runny nose, cough and sore red eyes. Today a red blotchy rash appeared on her face and behind her ears and is spreading to her trunk. There are white spots on her buccal mucosa. Her temperature is 39.6°C, pulse rate 148 bpm and respiratory rate 32 breaths per minute.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Hand, foot and mouth disease",
+    "Measles",
+    "Roseola infantum",
+    "Rubella",
+    "Scarlet fever"
+   ],
+   "a": 1,
+   "e": "The 3 Cs (cough, coryza, conjunctivitis), Koplik spots and a rash spreading from behind the ears are measles. Rubella is milder without Koplik spots.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: fever and rash in a child."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "has not received MMR",
+      "runny nose, cough and sore red eyes",
+      "behind her ears",
+      "white spots on her buccal mucosa"
+     ],
+     "x": "Unvaccinated, the 3 Cs prodrome, rash spreading from behind the ears, **Koplik spots**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Measles, which must be notified immediately."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Gives mouth ulcers and a vesicular rash on hands and feet, without conjunctivitis."
+      ],
+      [
+       2,
+       "Rash appears as the fever settles, usually under 2 years."
+      ],
+      [
+       3,
+       "Milder, with lymphadenopathy and no Koplik spots."
+      ],
+      [
+       4,
+       "Sandpaper rash, strawberry tongue and sore throat, not coryza and conjunctivitis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Measles.** Fever + rash + unwell = measles; notify immediately."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 17 year old boy has a 10 hour history of fever, aching legs and cold hands. He has a non-blanching purple rash on his trunk and legs. He is drowsy but has no neck stiffness. His temperature is 39.1°C, pulse rate 132 bpm, BP 84/50 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 95% breathing air.",
+   "labs": [
+    [
+     "White cell count",
+     "22.4 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "Platelets",
+     "88 ×10⁹/L",
+     "150–400",
+     "L"
+    ],
+    [
+     "CRP",
+     "212 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Lactate",
+     "5.1 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Henoch-Schönlein purpura",
+    "Immune thrombocytopenia",
+    "Meningococcal septicaemia",
+    "Toxic shock syndrome",
+    "Viral meningitis"
+   ],
+   "a": 2,
+   "e": "Fever, shock and a non-blanching rash are meningococcal septicaemia, which can occur without neck stiffness. ITP and HSP do not cause shock.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a shocked, febrile teenager with a rash."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "aching legs and cold hands",
+      "non-blanching purple rash",
+      "BP 84/50 mmHg",
+      "no neck stiffness"
+     ],
+     "x": "Early sepsis signs, **non-blanching rash**, hypotension. No meningism does not exclude it."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Meningococcal septicaemia (Neisseria meningitidis): urgently notifiable."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Palpable purpura on the buttocks and legs in a well child, without shock."
+      ],
+      [
+       1,
+       "Bruising and petechiae in a well child; platelets would be very low, no fever or shock."
+      ],
+      [
+       3,
+       "Diffuse erythroderma that blanches, often tampon-related, not a purpuric rash."
+      ],
+      [
+       4,
+       "No shock and no purpuric rash."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Meningococcal septicaemia.** Septicaemia can occur without meningitis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 7 week old unvaccinated boy has had a cough for 2 weeks. The coughing comes in long bouts that leave him red in the face, followed by a gasp and then vomiting. Between bouts he looks well. His temperature is 37.3°C, pulse rate 150 bpm, respiratory rate 44 breaths per minute and oxygen saturation 96% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bronchiolitis",
+    "Croup",
+    "Cystic fibrosis",
+    "Inhaled foreign body",
+    "Whooping cough"
+   ],
+   "a": 4,
+   "e": "Paroxysmal cough with a whoop and post-tussive vomiting in an unvaccinated infant is pertussis, a notifiable disease. Bronchiolitis gives constant distress with wheeze and crackles.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: a cough pattern in a young infant."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unvaccinated",
+      "long bouts",
+      "followed by a gasp and then vomiting",
+      "Between bouts he looks well"
+     ],
+     "x": "Paroxysms, whoop, **post-tussive vomiting**, well between bouts, unvaccinated young infant."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Whooping cough (pertussis), notifiable and dangerous at this age."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Coryza, wheeze and crackles with continuous distress, not well between paroxysms."
+      ],
+      [
+       1,
+       "Barking cough and stridor in an older infant or toddler."
+      ],
+      [
+       2,
+       "Chronic cough with failure to thrive and greasy stools, not paroxysms."
+      ],
+      [
+       3,
+       "Sudden choking episode in a mobile toddler, not a 7 week old."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Whooping cough.** Paroxysms + whoop + vomiting + unvaccinated infant."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A GP reviews five new diagnoses made at the practice this week. She wants to know which one does not need to be reported under the Health Protection (Notification) Regulations. The diagnoses are a new positive HIV test, acute hepatitis B, pulmonary tuberculosis, measles and Campylobacter food poisoning.",
+   "labs": [],
+   "visual": null,
+   "q": "Which condition is not legally notifiable?",
+   "o": [
+    "Acute hepatitis B",
+    "Campylobacter food poisoning",
+    "HIV",
+    "Measles",
+    "Pulmonary tuberculosis"
+   ],
+   "a": 2,
+   "e": "HIV is monitored for public health purposes but is not legally notifiable. Hepatitis B, TB and food poisoning are routine; measles is urgent.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'which is not notifiable' question: find the odd one out."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "new positive HIV test",
+      "does not need to be reported"
+     ],
+     "x": "Recall the not-notifiable list: HIV, syphilis, herpes simplex, ophthalmia neonatorum."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "HIV is monitored but not legally notifiable."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Routinely notifiable (within 3 days)."
+      ],
+      [
+       1,
+       "Food poisoning is routinely notifiable, even when it resolves."
+      ],
+      [
+       3,
+       "Urgently notifiable."
+      ],
+      [
+       4,
+       "Routinely notifiable."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. HIV.** It is surveilled, not notified."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old chef has 3 days of bloody diarrhoea, cramping abdominal pain and fever after a barbecue. He is improving with oral fluids. His stool culture has now come back.",
+   "labs": [
+    [
+     "Stool culture",
+     "Campylobacter jejuni isolated",
+     "No pathogens",
+     "H"
+    ],
+    [
+     "CRP",
+     "64 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "88 µmol/L",
+     "60–120",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the correct notification category for this condition?",
+   "o": [
+    "Immediately notifiable by phone",
+    "Not notifiable because he is improving",
+    "Not notifiable unless there is an outbreak",
+    "Notifiable only with the patient's consent",
+    "Routinely notifiable within 3 days"
+   ],
+   "a": 4,
+   "e": "Food poisoning is routinely notifiable within 3 days, whatever the outcome; as a chef he must also be excluded from work until 48 hours symptom-free.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Classify the disease first: food poisoning."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bloody diarrhoea",
+      "after a barbecue",
+      "improving with oral fluids",
+      "45 year old chef"
+     ],
+     "x": "Campylobacter food poisoning in a food handler: notifiable, routine category."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Routine notification within 3 days (he also needs exclusion from food handling)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "That is for measles, meningococcal disease, cholera and rabies."
+      ],
+      [
+       1,
+       "Recovery does not remove the legal duty."
+      ],
+      [
+       2,
+       "A single case is notifiable."
+      ],
+      [
+       3,
+       "Notification does not need consent."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Routine, within 3 days.** Food poisoning is routine; urgent is measles, meningococcal, cholera, rabies."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old man who moved from Somalia 2 years ago has a 3 month history of cough, night sweats and 7 kg weight loss. He has coughed up blood twice. His temperature is 37.9°C, pulse rate 96 bpm, BP 122/76 mmHg and oxygen saturation 96% breathing air. Chest X-ray (see item resources).",
+   "labs": [
+    [
+     "Sputum smear (Ziehl-Neelsen)",
+     "Acid-fast bacilli seen",
+     "None seen",
+     "H"
+    ],
+    [
+     "CRP",
+     "48 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Haemoglobin",
+     "118 g/L",
+     "130–180",
+     "L"
+    ]
+   ],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "cavity",
+      "side": "right",
+      "zone": "upper"
+     },
+     {
+      "type": "consolidation",
+      "side": "right",
+      "zone": "upper"
+     }
+    ],
+    "caption": "Right upper zone consolidation with cavitation."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Bronchiectasis",
+    "Community-acquired pneumonia",
+    "Lung cancer",
+    "Pulmonary tuberculosis",
+    "Sarcoidosis"
+   ],
+   "a": 3,
+   "e": "Chronic cough, night sweats, weight loss and haemoptysis with an upper zone cavity and acid-fast bacilli is pulmonary TB, a routinely notifiable disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis with a chest X-ray."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "moved from Somalia",
+      "3 month history",
+      "night sweats and 7 kg weight loss",
+      "coughed up blood"
+     ],
+     "x": "High-incidence country, chronic course, B symptoms, haemoptysis, **upper zone cavity**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Pulmonary TB, routinely notifiable."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Daily copious sputum for years, not weight loss and night sweats over 3 months."
+      ],
+      [
+       1,
+       "Acute illness over days, not months."
+      ],
+      [
+       2,
+       "Possible, but a young man from a high-incidence country with night sweats and cavitation fits TB."
+      ],
+      [
+       4,
+       "Bilateral hilar lymphadenopathy, not an upper zone cavity."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pulmonary TB.** Notify within 3 days; treat active disease for about 6 months."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 20 year old woman is admitted with fever, a non-blanching rash and neck stiffness. Meningococcal disease is suspected and intravenous ceftriaxone has been given. The health protection team has been phoned.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the organism?",
+   "o": [
+    "Blood culture and meningococcal PCR",
+    "Chest X-ray",
+    "CT head",
+    "Measles IgM",
+    "Throat swab for viral PCR"
+   ],
+   "a": 0,
+   "e": "Once notified, confirmatory tests follow: blood culture and meningococcal PCR, which stays positive after antibiotics have started.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirming the organism after notification."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "non-blanching rash",
+      "ceftriaxone has been given",
+      "health protection team has been phoned"
+     ],
+     "x": "Already notified; now confirm. After antibiotics, cultures may be negative, so add **PCR**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Blood culture plus meningococcal PCR (which still works after antibiotics)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       2,
+       "Imaging does not identify the organism."
+      ],
+      [
+       1,
+       "Not relevant to confirming meningococcus."
+      ],
+      [
+       3,
+       "Measles is not suspected."
+      ],
+      [
+       4,
+       "Meningococcus is bacterial; a viral swab will not confirm it."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: notify first, then confirm with cultures, PCR and serology."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 28 year old unvaccinated teacher has a 4 day history of fever, cough and conjunctivitis and a maculopapular rash that started on her face today. Her temperature is 38.9°C, pulse rate 104 bpm, BP 118/72 mmHg and oxygen saturation 98% breathing air. The GP suspects measles.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Check measles IgG and notify if positive",
+    "Notify now and send oral fluid for PCR",
+    "Notify only if she develops complications",
+    "Send oral fluid for PCR and notify if positive",
+    "Wait for a second case at the school"
+   ],
+   "a": 1,
+   "e": "Measles is urgently notifiable on clinical suspicion; confirmatory oral fluid PCR is sent at the same time, never as a condition for notifying.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'next step' with a suspected urgent disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "unvaccinated teacher",
+      "fever, cough and conjunctivitis",
+      "started on her face today",
+      "suspects measles"
+     ],
+     "x": "Clinical measles in a teacher: many contacts."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Notify immediately on suspicion and send confirmatory samples in parallel."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "IgG shows immunity, not acute infection, and notification should not wait."
+      ],
+      [
+       2,
+       "Complications are not a criterion; suspicion is enough."
+      ],
+      [
+       3,
+       "Waiting for confirmation is the classic wrong answer."
+      ],
+      [
+       4,
+       "One suspected case is enough."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Rule: suspicion triggers notification; tests run alongside."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 32 year old office worker sees her GP for the result of a stool test. It confirms Campylobacter food poisoning, which has fully resolved. The GP explains he must notify the health protection team. She refuses consent, saying she does not want her information shared.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate action?",
+   "o": [
+    "Do not notify because she has recovered",
+    "Do not notify because she is not a food handler",
+    "Notify only anonymised information",
+    "Notify the health protection team without her consent",
+    "Refer to the practice's Caldicott guardian before notifying"
+   ],
+   "a": 3,
+   "e": "Notification is a statutory duty under the 2010 Regulations, so it does not need the patient's consent and must identify her so the team can follow up.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A consent and confidentiality question about notification."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confirms Campylobacter food poisoning",
+      "fully resolved",
+      "She refuses consent"
+     ],
+     "x": "A statutory duty overrides refusal of consent; explain why to her."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Notify with identifiable details, explaining the legal requirement."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Recovery does not remove the legal duty."
+      ],
+      [
+       1,
+       "Her job affects exclusion advice, not the duty to notify."
+      ],
+      [
+       2,
+       "Notification needs identifiable details so the team can follow up."
+      ],
+      [
+       4,
+       "Unnecessary: the law already requires disclosure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: notification is a legal duty; consent is not needed."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 19 year old student is admitted to intensive care with meningococcal septicaemia and has been notified. His girlfriend stayed in his room the night before admission. She is well. Her temperature is 36.8°C, pulse rate 76 bpm and BP 118/74 mmHg.",
+   "labs": [
+    [
+     "Index case blood PCR",
+     "Neisseria meningitidis group B",
+     "Not detected",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management for the girlfriend?",
+   "o": [
+    "Admit for intravenous ceftriaxone",
+    "MMR vaccine",
+    "Reassure: no action needed",
+    "Single dose of oral ciprofloxacin",
+    "Throat swab and treat if positive"
+   ],
+   "a": 3,
+   "e": "Close contacts of meningococcal disease are given chemoprophylaxis, usually a single dose of ciprofloxacin, arranged with the health protection team after notification.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Contact management after notification."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "has been notified",
+      "stayed in his room the night before",
+      "She is well"
+     ],
+     "x": "A close contact of meningococcal disease, well."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Antibiotic prophylaxis: single-dose ciprofloxacin."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She is well; prophylaxis, not treatment, is needed."
+      ],
+      [
+       1,
+       "MMR is for measles contacts."
+      ],
+      [
+       2,
+       "Close contacts of meningococcal disease need prophylaxis."
+      ],
+      [
+       4,
+       "Prophylaxis is given without waiting for swabs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Ciprofloxacin.** Rule: notify, then trace and protect close contacts."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A foundation doctor on a respiratory ward diagnoses smear-positive pulmonary tuberculosis in a 52 year old man. Culture and sensitivities will take several weeks. The patient is stable and isolated in a side room.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate action regarding notification?",
+   "o": [
+    "Ask the patient's consent before notifying",
+    "Leave notification to the laboratory",
+    "Notify after culture confirms the diagnosis",
+    "Notify only if a contact becomes unwell",
+    "Notify the health protection team within 3 days"
+   ],
+   "a": 4,
+   "e": "TB is routinely notifiable: the diagnosing clinician notifies within 3 days without waiting for culture. The health protection team then screens contacts.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'who, when' question for a routine disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "smear-positive pulmonary tuberculosis",
+      "will take several weeks",
+      "foundation doctor"
+     ],
+     "x": "TB is routinely notifiable; the diagnosing doctor notifies."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The doctor notifies within 3 days, without waiting for culture."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Consent is not needed."
+      ],
+      [
+       1,
+       "The suspecting clinician holds the duty."
+      ],
+      [
+       2,
+       "Notify on suspicion; do not wait weeks."
+      ],
+      [
+       3,
+       "TB is notifiable on its own."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Within 3 days.** TB is routine; urgent ones are phoned immediately."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A health protection consultant explains to medical students why measles must be notified by phone the same day it is suspected, whereas hepatitis B can be reported within 3 days. She points out that unvaccinated contacts of measles can be protected with MMR if given quickly.",
+   "labs": [],
+   "visual": null,
+   "q": "Which best explains the difference in time frames?",
+   "o": [
+    "Hepatitis B is not infectious",
+    "Hepatitis B tests are faster",
+    "Measles is always fatal",
+    "Measles needs consent to notify",
+    "Measles spreads fast with a short window to protect contacts"
+   ],
+   "a": 4,
+   "e": "Highly transmissible, short-incubation diseases with time-critical interventions (MMR within 72 hours) need immediate notification; lower-risk diseases allow 3 days.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'why' question about time frames."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "notified by phone the same day",
+      "within 3 days",
+      "protected with MMR if given quickly"
+     ],
+     "x": "Fast spread, short incubation, and a time-limited intervention."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "High transmissibility with a short intervention window demands immediate notification."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hepatitis B is infectious, via blood and sex."
+      ],
+      [
+       1,
+       "Speed of testing does not set the deadline."
+      ],
+      [
+       2,
+       "Measles is usually not fatal; the issue is spread."
+      ],
+      [
+       3,
+       "No notification needs consent."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Rule: urgency matches transmissibility and the value of early intervention."
+    }
+   ]
+  }
+ ]
+}

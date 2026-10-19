@@ -1,0 +1,720 @@
+{
+ "id": "sepsis",
+ "patient": {
+  "name": "Joseph Mensah",
+  "age": 79,
+  "sex": "M",
+  "setting": "Emergency Department",
+  "complaint": "Fever, shaking and new confusion since last night",
+  "background": [
+   "Long-term urinary catheter for urinary retention (enlarged prostate)",
+   "Type 2 diabetes on metformin and gliclazide",
+   "Chronic kidney disease stage 3",
+   "Lives with his wife in Croydon; no known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with fever (or hypothermia), tachycardia, hypotension and confusion after an infection, often in an older or immunosuppressed patient; septic shock if hypotension persists despite fluids.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Joseph, 79, has a **long-term urinary catheter**.",
+      "Since last night: fever, rigors and cloudy, smelly urine in the bag.",
+      "His wife says he is **muddled** and not himself.",
+      "He is clammy and breathing fast."
+     ],
+     "vitals": {
+      "T": "39.2°C",
+      "HR": "128 bpm",
+      "BP": "86/50 mmHg",
+      "RR": "26 /min",
+      "SpO2": "93% on air",
+      "GCS": "14"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Joseph has an infection (catheter urine) and his organs are struggling: confusion, low BP. That dysregulated response is **sepsis**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Joseph's catheter infection is the key risk factor; his age, diabetes and kidney disease (chronic disease) add to it."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Joseph shows fever, tachycardia, **hypotension** and **altered mental state**: the typical presentation of sepsis."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Joseph's heart rate against the high-risk cut-off",
+      "min": 40,
+      "max": 160,
+      "unit": "bpm",
+      "bands": [[40, 50, "low", "warn"], [50, 90, "normal", "ok"], [90, 131, "raised", "warn"], [131, 160, "high risk", "bad"]],
+      "value": 128,
+      "label": "Joseph 128",
+      "caption": "HR above **131** is a high-risk criterion. Joseph is just under, but his **BP under 90** and **RR over 25** already meet high-risk criteria."
+     }
+    },
+    {
+     "type": "compare",
+     "title": "High-risk criteria: does Joseph meet them?",
+     "head": ["Criterion", "Cut-off", "Joseph"],
+     "rows": [
+      ["Systolic BP", "<90 mmHg or >40 fall from baseline", "**86** (usual 140): yes"],
+      ["MAP", "<65 mmHg", "**62**: yes"],
+      ["Heart rate", ">131 /min", "128: no"],
+      ["Respiratory rate", ">25 /min", "**26**: yes"],
+      ["Consciousness", "Responds only to voice or pain, or unresponsive", "Confused, alert: no"]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Joseph has a catheter infection, fever, confusion and BP 86/50 mmHg. Which is the most likely diagnosis?",
+     "o": ["Cystitis without systemic upset", "Delirium from dementia", "Hypoglycaemia", "Sepsis"],
+     "a": 3,
+     "r": "Infection plus organ dysfunction (hypotension, confusion) = **sepsis**. Confusion here is a sign of hypoperfusion, not a separate diagnosis."
+    },
+    {
+     "type": "story",
+     "points": [
+      "He receives two 500 mL fluid boluses over the next hour.",
+      "BP stays at **80/46 mmHg**; urine output under 10 mL/h.",
+      "His temperature is still 39.0°C."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Hypotension and low urine output persist **despite adequate fluids**: Joseph's sepsis has become **septic shock**."
+    },
+    {
+     "type": "flow",
+     "title": "Infection to septic shock",
+     "nodes": [
+      "Infection (catheter UTI)",
+      "Dysregulated host response",
+      "Organ dysfunction = sepsis",
+      "Fluids given",
+      "BP still low = septic shock"
+     ],
+     "caption": "Septic shock needs **vasopressors**; fluids alone will not fix it."
+    },
+    {
+     "type": "trap",
+     "text": "Sepsis can present with **hypothermia**, not fever, especially in the elderly or immunosuppressed. A low temperature does not exclude it."
+    },
+    {
+     "type": "pearl",
+     "text": "Classic stem: older patient, infection source, **fever or hypothermia**, tachycardia, hypotension and new confusion. Persistent low BP after fluids = **septic shock**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' with **blood cultures before antibiotics** or **lactate** as the answer, and septic-screen questions to find the source.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "No single test proves sepsis. Joseph's diagnosis is **clinical**, and his **lactate** shows how severe it is."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Full observations and examination: warm peripheries, suprapubic tenderness.",
+      "Blood cultures taken **before** the first antibiotic dose.",
+      "Venous gas and bloods sent."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Joseph's first-line set: vital signs, examination, **lactate**, FBC, U&Es, CRP, **blood cultures before antibiotics** and a blood gas."
+    },
+    {
+     "type": "labs",
+     "title": "Joseph's first bloods",
+     "rows": [
+      ["Lactate", "4.6 mmol/L", "0.5–2.0", "H"],
+      ["pH (venous)", "7.28", "7.35–7.45", "L"],
+      ["WCC", "18.9 ×10⁹/L", "4.0–11.0", "H"],
+      ["CRP", "248 mg/L", "<5", "H"],
+      ["Albumin", "27 g/L", "35–50", "L"],
+      ["Creatinine", "196 µmol/L (baseline 130)", "60–110", "H"],
+      ["Glucose", "14.2 mmol/L", "4.0–7.8", "H"]
+     ],
+     "text": "High lactate (hypoperfusion), acidosis, raised inflammatory markers and **low albumin** from the acute-phase response."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Joseph's lactate",
+      "min": 0,
+      "max": 8,
+      "unit": "mmol/L",
+      "bands": [[0, 2, "normal", "ok"], [2, 4, "raised", "warn"], [4, 8, "severe: hypoperfusion", "bad"]],
+      "value": 4.6,
+      "label": "Joseph 4.6",
+      "caption": "Raised lactate = **hypoperfusion**. Above 4 is high risk; repeat it to track response."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Joseph's antibiotics are drawn up. What must be done first, if it will not delay them?",
+     "o": ["Blood cultures", "CT abdomen", "Echocardiogram", "Lumbar puncture"],
+     "a": 0,
+     "r": "**Blood cultures before antibiotics**, because antibiotics may make cultures negative. Never delay antibiotics beyond the hour for them."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Joseph's septic screen: **catheter urine culture** (change the catheter first), chest X-ray to exclude a chest source, and a catheter for accurate input-output."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Chest X-ray (septic screen)",
+      "findings": [],
+      "caption": "Clear lungs: no pneumonia. The source is the **urine**, so the urine culture matters most."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Do not wait for culture results, imaging or a CRP before giving antibiotics. Sepsis is diagnosed **clinically**; tests support it."
+    },
+    {
+     "type": "pearl",
+     "text": "Lactate is the critical blood test: it shows **hypoperfusion** and its trend shows whether resuscitation is working."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (the Sepsis Six within 1 hour; IV antibiotics; 500 mL 0.9% saline bolus) and 'next step' after fluids fail (noradrenaline in ICU) or source control.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "Sepsis Six: within 1 hour",
+     "nodes": [
+      "Give oxygen",
+      "Take blood cultures",
+      "Give IV antibiotics",
+      "Give IV fluids",
+      "Measure lactate",
+      "Monitor urine output"
+     ],
+     "caption": "Three in (oxygen, antibiotics, fluids), three out (cultures, lactate, urine)."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Joseph gets the **Sepsis Six** within the hour. Of all six, the **antibiotics** matter most."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "ABCDE first, then a **500 mL 0.9% saline** bolus, cultures, and IV **piperacillin-tazobactam** (with metronidazole per local policy) within 1 hour."
+    },
+    {
+     "type": "ask",
+     "q": "Joseph is hypotensive with suspected sepsis. Which IV fluid bolus is given first?",
+     "o": ["1 L 5% glucose", "250 mL 20% albumin", "500 mL 0.9% saline", "Two units of red cells"],
+     "a": 2,
+     "r": "A **500 mL crystalloid** (0.9% saline) bolus, then reassess. Glucose does not stay in the circulation; blood is for bleeding."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Joseph's BP response",
+      "x": ["Arrival", "500 mL", "1 L", "Noradrenaline 1 h", "Noradrenaline 6 h"],
+      "unit": "mmHg",
+      "series": [
+       {"name": "Systolic BP", "values": [86, 84, 80, 104, 116]},
+       {"name": "MAP", "values": [62, 61, 57, 74, 80]}
+      ],
+      "caption": "No response to fluids, so **septic shock**. MAP rises above **65** only once noradrenaline starts."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Joseph's BP did not respond to fluids, so ICU starts **noradrenaline**. Vasopressin or adrenaline would be added if it were not enough."
+    },
+    {
+     "type": "ask",
+     "q": "After 1 L of fluid Joseph's MAP is 57 mmHg. Which is the next most appropriate step?",
+     "o": ["Further 3 L fluid bolus", "IV furosemide", "Noradrenaline infusion via ICU", "Oral antibiotics"],
+     "a": 2,
+     "r": "Persistent hypotension despite fluids: contact ICU for a **noradrenaline infusion**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Urine culture grows **E. coli** sensitive to the antibiotic.",
+      "Old catheter removed and replaced; antibiotics narrowed to the sensitivities.",
+      "Day 3: off noradrenaline, lactate 1.1, eating."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "The infected catheter is Joseph's source, so **removing it** is source control. An abscess would need draining."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Joseph's care follows **NICE NG51** for recognition and early management, and the UK Sepsis Trust's **Sepsis Six** bundle."
+    },
+    {
+     "type": "trap",
+     "text": "Do not delay antibiotics to get blood cultures. Take cultures first **only if it does not delay** antibiotics beyond 1 hour."
+    },
+    {
+     "type": "pearl",
+     "text": "Broad-spectrum first (Gram-positive, Gram-negative and anaerobes), then **narrow once culture results** are back."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why sepsis causes hypotension (cytokine vasodilation, capillary leak), why lactate rises, why albumin falls, or why vasopressors are needed.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Joseph's immune response to E. coli overshot: **TNF-alpha** and **IL-6** flooded his circulation."
+    },
+    {
+     "type": "flow",
+     "title": "Why Joseph became hypotensive",
+     "nodes": [
+      "Bacteria trigger cytokine release (TNF-alpha, IL-6)",
+      "Widespread vasodilation",
+      "Capillary leak",
+      "Relative hypovolaemia",
+      "Low BP and poor tissue perfusion"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Joseph's tissues were short of oxygen, so cells switched to **anaerobic metabolism**, making the lactate of 4.6."
+    },
+    {
+     "type": "ask",
+     "q": "Why was Joseph's lactate raised?",
+     "o": ["Anaerobic metabolism from poor tissue oxygen delivery", "Excess lactate in IV fluids", "Metformin alone", "Muscle exercise during rigors"],
+     "a": 0,
+     "r": "Vasodilation and capillary leak reduce oxygen delivery, so cells make energy **anaerobically**, producing lactate."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Joseph's albumin of 27 reflects the **acute-phase response**: his liver is making CRP instead of albumin."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Vasodilation and a depressed heart overwhelmed Joseph's circulation despite fluids, so **noradrenaline** was needed to restore vascular tone."
+    },
+    {
+     "type": "pearl",
+     "text": "Exam phrase: hypotension in sepsis is caused by **cytokine-mediated vasodilation and capillary leak**, not by blood loss."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {"d": "diagnosis", "q": "What is sepsis?", "o": ["Any bacterial infection", "Bacteria in the blood", "Fever over 38°C", "Life-threatening organ dysfunction from a dysregulated response to infection"], "a": 3, "r": "Sepsis is a **dysregulated host response** to infection causing organ dysfunction."},
+  {"d": "diagnosis", "q": "What defines septic shock?", "o": ["Fever with tachycardia", "Lactate above 1 mmol/L", "Persistent hypotension despite adequate fluids", "Positive blood culture"], "a": 2, "r": "**Septic shock**: sepsis with hypotension (and low urine output) despite adequate fluid resuscitation."},
+  {"d": "diagnosis", "q": "Which respiratory rate is a high-risk criterion in sepsis?", "o": ["Above 16 /min", "Above 20 /min", "Above 25 /min", "Below 12 /min"], "a": 2, "r": "RR **>25/min** is high risk, along with systolic BP <90 and HR >131."},
+  {"d": "investigation", "q": "What is the gold standard for diagnosing sepsis?", "o": ["Blood culture", "Clinical diagnosis plus lactate", "CRP above 100", "Procalcitonin"], "a": 1, "r": "Sepsis is a **clinical diagnosis plus lactate**."},
+  {"d": "investigation", "q": "What should be taken before antibiotics in sepsis, if possible?", "o": ["Blood cultures", "Chest X-ray", "CT scan", "Urine dipstick"], "a": 0, "r": "**Blood cultures**, as antibiotics may alter culture results."},
+  {"d": "management", "q": "Within what time should the Sepsis Six be completed?", "o": ["15 minutes", "1 hour", "4 hours", "24 hours"], "a": 1, "r": "All six within **1 hour**."},
+  {"d": "management", "q": "What is the single most important treatment for sepsis?", "o": ["Antibiotics", "Oxygen", "Paracetamol", "Urinary catheter"], "a": 0, "r": "**Antibiotics** are the single most important treatment."},
+  {"d": "management", "q": "Which vasopressor is used first for hypotension unresponsive to fluids?", "o": ["Adrenaline", "Dobutamine", "Noradrenaline", "Vasopressin"], "a": 2, "r": "**Noradrenaline**, supplemented by vasopressin and adrenaline if needed."},
+  {"d": "science", "q": "Why is albumin often low in sepsis?", "o": ["Albumin is lost in urine", "Liver makes inflammatory proteins instead of albumin", "Poor diet", "The kidneys break it down"], "a": 1, "r": "The liver's **acute-phase response** favours CRP and other inflammatory proteins over albumin."},
+  {"d": "science", "q": "Which cytokines drive vasodilation and capillary leak in sepsis?", "o": ["IL-4 and IL-5", "IL-10 and TGF-beta", "Interferon-alpha and IL-2", "TNF-alpha and IL-6"], "a": 3, "r": "Pro-inflammatory **TNF-alpha** and **IL-6**."}
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old woman has a 2 day history of productive cough and breathlessness. Today she is confused. Her temperature is 38.8°C, pulse rate 122 bpm, BP 88/54 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 90% breathing air. Her usual BP is 145/80 mmHg. There are coarse crackles at the right base.",
+   "labs": [["Lactate", "3.8 mmol/L", "0.5–2.0", "H"], ["WCC", "17.2 ×10⁹/L", "4.0–11.0", "H"], ["CRP", "210 mg/L", "<5", "H"]],
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute heart failure", "Anaphylaxis", "Pulmonary embolism", "Sepsis", "Stroke"],
+   "a": 3,
+   "steps": [
+    {"t": "Read the question line first", "x": "A diagnosis question: infection signs plus organ dysfunction point one way."},
+    {"t": "Pick out the clues", "clues": ["productive cough", "she is confused", "38.8°C", "BP 88/54 mmHg", "respiratory rate 28", "coarse crackles at the right base"], "x": "Pneumonia source, fever, hypotension (a 57 mmHg fall), RR over 25, new confusion."},
+    {"t": "Make your own answer before looking", "x": "Infection plus organ dysfunction: **sepsis** from pneumonia."},
+    {"t": "Rule out the others", "elim": [[0, "Heart failure gives bilateral crackles and oedema, not fever and a high CRP."], [1, "No allergen, urticaria or wheeze."], [2, "PE does not give a productive cough, fever and focal crackles."], [4, "Stroke does not explain fever, hypotension and a chest source."]]},
+    {"t": "Commit", "x": "**D. Sepsis.** Infection + hypotension + confusion = sepsis."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 66 year old man has fever, rigors and right loin pain. His temperature is 39.5°C, pulse rate 118 bpm, BP 92/58 mmHg and respiratory rate 24 breaths per minute. He has been given oxygen and a cannula is in place. IV antibiotics are being prepared and can be given within 10 minutes.",
+   "q": "Which is the most appropriate initial investigation before the antibiotics are given?",
+   "o": ["Blood cultures", "CT kidneys, ureters and bladder", "Procalcitonin", "Renal ultrasound", "Urine dipstick"],
+   "a": 0,
+   "steps": [
+    {"t": "Read the question line first", "x": "The test to do **before** antibiotics in suspected sepsis."},
+    {"t": "Pick out the clues", "clues": ["fever, rigors and right loin pain", "BP 92/58 mmHg", "IV antibiotics are being prepared", "within 10 minutes"], "x": "Septic pyelonephritis; antibiotics imminent, so there is time for cultures without delay."},
+    {"t": "Make your own answer before looking", "x": "**Blood cultures** before antibiotics, as antibiotics may alter the results."},
+    {"t": "Rule out the others", "elim": [[1, "CT can come later to look for obstruction; it is not urgent before antibiotics."], [2, "Procalcitonin is not part of the first-line set and does not change immediate care."], [3, "Ultrasound helps find obstruction later, not before antibiotics."], [4, "A dipstick adds little; a urine culture matters more, and antibiotics only alter cultures."]]},
+    {"t": "Commit", "x": "**A. Blood cultures.** Cultures first, but never delay antibiotics past 1 hour."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 52 year old woman has cellulitis of the right leg and is now drowsy. Her temperature is 38.9°C, pulse rate 124 bpm, BP 84/50 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 95% breathing air. Her airway is patent. Two cannulas have been inserted and blood cultures taken.",
+   "q": "Which is the most appropriate initial fluid management?",
+   "o": ["1 L 5% glucose over 8 hours", "500 mL 0.9% sodium chloride bolus", "500 mL 20% albumin", "Maintenance fluid at 80 mL per hour", "No fluid until the lactate is known"],
+   "a": 1,
+   "steps": [
+    {"t": "Read the question line first", "x": "Fluid choice and speed for a hypotensive septic patient."},
+    {"t": "Pick out the clues", "clues": ["cellulitis", "now drowsy", "BP 84/50 mmHg", "Two cannulas have been inserted"], "x": "Septic, hypotensive, access ready: give a fluid challenge now."},
+    {"t": "Make your own answer before looking", "x": "**500 mL 0.9% saline bolus**, then reassess."},
+    {"t": "Rule out the others", "elim": [[0, "Glucose does not stay intravascular and slow fluid is useless in shock."], [2, "Albumin is not first-line resuscitation fluid."], [3, "Maintenance rate is far too slow for shock."], [4, "Never delay fluids for a result."]]},
+    {"t": "Commit", "x": "**B. 500 mL 0.9% saline.** Bolus, reassess, repeat; vasopressors if it fails."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 70 year old man is admitted with sepsis from a perforated appendix. His pulse rate is 116 bpm and BP 90/56 mmHg. He has no history of liver disease and ate normally until 2 days ago. His blood tests show CRP 290 mg/L and albumin 24 g/L.",
+   "labs": [["CRP", "290 mg/L", "<5", "H"], ["Albumin", "24 g/L", "35–50", "L"], ["ALT", "32 U/L", "<40", ""]],
+   "q": "Which is the most likely mechanism of his low albumin?",
+   "o": ["Hepatic synthesis diverted to acute-phase proteins", "Loss of albumin in the stool", "Malnutrition over 2 days", "Nephrotic syndrome", "Reduced liver mass from cirrhosis"],
+   "a": 0,
+   "steps": [
+    {"t": "Read the question line first", "x": "Mechanism: why is albumin low in sepsis?"},
+    {"t": "Pick out the clues", "clues": ["sepsis", "no history of liver disease", "ate normally until 2 days ago", "CRP 290 mg/L", "albumin 24 g/L"], "x": "High CRP, low albumin, normal liver and diet."},
+    {"t": "Make your own answer before looking", "x": "The liver's **acute-phase response** makes CRP at the expense of albumin."},
+    {"t": "Rule out the others", "elim": [[1, "Protein-losing enteropathy is chronic, not 2 days."], [2, "Two days of poor intake cannot drop albumin this much."], [3, "No proteinuria or oedema is described."], [4, "He has no liver disease and a normal ALT."]]},
+    {"t": "Commit", "x": "**A. Acute-phase diversion.** Low albumin is a further sign of sepsis."}
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "An 82 year old woman from a care home has become confused and is eating poorly. Staff say her urine has been offensive for 2 days. Her temperature is 38.4°C, pulse rate 116 bpm, BP 88/52 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 95% breathing air. Her usual BP is 150/80 mmHg.",
+   "labs": [["Lactate", "3.4 mmol/L", "0.5–2.0", "H"], ["WCC", "16.1 ×10⁹/L", "4.0–11.0", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Alzheimer's dementia", "Hypoglycaemia", "Sepsis", "Subdural haematoma", "Uncomplicated cystitis"],
+   "a": 2,
+   "e": "A urinary source with fever, tachycardia, hypotension (a 62 mmHg fall) and new confusion is sepsis. Uncomplicated cystitis would not cause organ dysfunction.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Most likely diagnosis in a confused, unwell older woman."},
+    {"t": "Pick out the clues", "clues": ["become confused", "urine has been offensive", "38.4°C", "BP 88/52 mmHg", "usual BP is 150/80 mmHg"], "x": "Urinary infection with fever, hypotension and altered mental state."},
+    {"t": "Make your own answer before looking", "x": "Infection plus organ dysfunction: **sepsis** (urinary source)."},
+    {"t": "Rule out the others", "elim": [[0, "Dementia is gradual and does not cause fever or hypotension."], [1, "Hypoglycaemia does not explain fever and a raised lactate."], [3, "Subdural gives fluctuating confusion after a fall, not fever."], [4, "Cystitis alone does not cause hypotension or confusion."]]},
+    {"t": "Commit", "x": "**C. Sepsis.** New confusion is organ dysfunction, not just a UTI."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 60 year old man with sepsis from cholangitis has received 2 L of IV crystalloid over 1 hour. His temperature is 39.2°C, pulse rate 126 bpm and BP 78/44 mmHg (mean arterial pressure 55 mmHg). His urine output is 8 mL per hour. His jugular venous pressure is not raised and his peripheries are warm.",
+   "labs": [["Lactate", "5.2 mmol/L", "0.5–2.0", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Anaphylactic shock", "Cardiogenic shock", "Hypovolaemic shock", "Neurogenic shock", "Septic shock"],
+   "a": 4,
+   "e": "Sepsis with persistent hypotension and low urine output despite adequate fluids is septic shock. Warm peripheries reflect vasodilation; hypovolaemic shock would respond to fluid.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Which type of shock?"},
+    {"t": "Pick out the clues", "clues": ["sepsis from cholangitis", "2 L of IV crystalloid", "BP 78/44 mmHg", "8 mL per hour", "peripheries are warm"], "x": "Known sepsis, hypotension persisting after fluid, warm vasodilated periphery."},
+    {"t": "Make your own answer before looking", "x": "**Septic shock**: hypotension despite adequate fluids."},
+    {"t": "Rule out the others", "elim": [[0, "No allergen, rash or wheeze."], [1, "JVP not raised; no cardiac cause."], [2, "Hypovolaemia would respond to 2 L and gives cold peripheries."], [3, "No spinal injury; neurogenic shock gives bradycardia."]]},
+    {"t": "Commit", "x": "**E. Septic shock.** Fluids given, BP still low."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old woman is admitted with sepsis from pneumonia. She has no history of liver or kidney disease and was eating well until 3 days ago. Her pulse rate is 112 bpm and BP 96/60 mmHg. Her CRP is 260 mg/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely additional finding on her blood tests?",
+   "o": ["High albumin", "High platelets above 1000 ×10⁹/L", "Low albumin", "Low CRP", "Low lactate"],
+   "a": 2,
+   "e": "In sepsis the liver's acute-phase response favours inflammatory markers over albumin, so low albumin is a further sign.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Predict a blood result in sepsis."},
+    {"t": "Pick out the clues", "clues": ["sepsis from pneumonia", "no history of liver or kidney disease", "CRP is 260 mg/L"], "x": "Strong acute-phase response; no other reason for abnormal proteins."},
+    {"t": "Make your own answer before looking", "x": "**Low albumin**, from acute-phase diversion."},
+    {"t": "Rule out the others", "elim": [[0, "Albumin falls, not rises, in sepsis."], [1, "Platelets may rise or fall but not above 1000."], [3, "CRP is already given as high."], [4, "Lactate is usually raised, not low."]]},
+    {"t": "Commit", "x": "**C. Low albumin.** Liver makes CRP instead of albumin."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old man has a 1 day history of fever and dysuria. He is alert and talking normally. His temperature is 38.7°C, oxygen saturation 96% breathing air and BP 128/76 mmHg, which is his usual. The doctor is deciding whether he meets any high-risk criteria for sepsis.",
+   "labs": [],
+   "visual": null,
+   "q": "Which additional finding would be a high-risk criterion for sepsis?",
+   "o": ["Heart rate 104 bpm", "Respiratory rate 27 breaths per minute", "Systolic BP 112 mmHg", "Temperature 38.0°C", "Urine output 1 mL/kg per hour"],
+   "a": 1,
+   "e": "High-risk criteria include RR over 25, systolic BP under 90 (or a fall over 40), MAP under 65, HR over 131 and reduced responsiveness. RR 27 meets one.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Which number crosses a high-risk cut-off?"},
+    {"t": "Pick out the clues", "clues": ["fever and dysuria", "He is alert", "BP 128/76 mmHg, which is his usual", "high-risk criteria"], "x": "Infection, no organ dysfunction yet; look for the value beyond the threshold."},
+    {"t": "Make your own answer before looking", "x": "RR **over 25**, HR over 131, systolic under 90, MAP under 65."},
+    {"t": "Rule out the others", "elim": [[0, "104 is raised but under 131."], [2, "112 is above 90 and only a 16 mmHg fall."], [3, "Fever is not itself a high-risk criterion."], [4, "Normal urine output."]]},
+    {"t": "Commit", "x": "**B. RR 27.** Over 25 = high risk."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old woman with rheumatoid arthritis takes methotrexate and prednisolone. She has a 2 day history of feeling unwell, shivering and confusion after a dental abscess. Her temperature is 35.4°C, pulse rate 124 bpm, BP 82/48 mmHg and respiratory rate 26 breaths per minute.",
+   "labs": [["Lactate", "4.1 mmol/L", "0.5–2.0", "H"], ["CRP", "198 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Addisonian crisis", "Hypothyroid coma", "Methotrexate toxicity", "Rheumatoid flare", "Sepsis"],
+   "a": 4,
+   "e": "Immunosuppression is a key risk factor; sepsis can cause hypothermia rather than fever. An infection source, tachycardia, hypotension and raised lactate confirm it.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Diagnosis in an immunosuppressed, shocked patient."},
+    {"t": "Pick out the clues", "clues": ["methotrexate and prednisolone", "dental abscess", "35.4°C", "BP 82/48 mmHg", "confusion"], "x": "Immunosuppressed, infection source, **hypothermia**, hypotension, confusion."},
+    {"t": "Make your own answer before looking", "x": "**Sepsis**, presenting with hypothermia."},
+    {"t": "Rule out the others", "elim": [[0, "Steroid use raises this risk, but the abscess, CRP 198 and lactate point to infection."], [1, "Hypothyroid coma gives bradycardia, not tachycardia."], [2, "Methotrexate toxicity gives mucositis and cytopenias, not this picture."], [3, "A flare causes joint pain, not shock."]]},
+    {"t": "Commit", "x": "**E. Sepsis.** A low temperature does not exclude it."}
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 34 year old woman has a 3 day history of fever and right loin pain. She is drowsy and responds only to voice. Her temperature is 39.6°C, pulse rate 134 bpm, BP 84/50 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 96% breathing air. Urine dipstick shows leucocytes and nitrites.",
+   "labs": [["Lactate", "4.4 mmol/L", "0.5–2.0", "H"], ["Creatinine", "142 µmol/L", "45–90", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Acute appendicitis", "Ectopic pregnancy", "Renal colic", "Sepsis from pyelonephritis", "Uncomplicated cystitis"],
+   "a": 3,
+   "e": "Fever, loin pain and a positive dipstick with hypotension, HR over 131, RR over 25 and reduced responsiveness: high-risk sepsis from a urinary source.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Diagnosis with source and severity."},
+    {"t": "Pick out the clues", "clues": ["fever and right loin pain", "responds only to voice", "pulse rate 134 bpm", "BP 84/50 mmHg", "leucocytes and nitrites"], "x": "Upper urinary infection plus several high-risk criteria."},
+    {"t": "Make your own answer before looking", "x": "**Sepsis from pyelonephritis**."},
+    {"t": "Rule out the others", "elim": [[0, "Appendicitis gives RIF pain and a clean dipstick usually."], [1, "Ectopic gives pelvic pain, bleeding, no high fever with nitrites."], [2, "Renal colic is colicky pain without high fever unless infected."], [4, "Cystitis is lower urinary and does not cause shock."]]},
+    {"t": "Commit", "x": "**D. Sepsis from pyelonephritis.** Infection + high-risk criteria."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 71 year old man with a 2 day history of cough and fever is confused. His temperature is 38.9°C, pulse rate 118 bpm, BP 86/52 mmHg and respiratory rate 26 breaths per minute. Blood cultures have been taken and IV antibiotics given. The team want to assess how severe his tissue hypoperfusion is.",
+   "labs": [["WCC", "18.4 ×10⁹/L", "4.0–11.0", "H"], ["CRP", "230 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate investigation?",
+   "o": ["Chest CT", "D-dimer", "Lactate", "Procalcitonin", "Sputum culture"],
+   "a": 2,
+   "e": "Lactate is critical: a raised level shows hypoperfusion and its trend monitors resuscitation. Clinical diagnosis plus lactate is the gold standard.",
+   "steps": [
+    {"t": "Read the question line first", "x": "The test for hypoperfusion severity."},
+    {"t": "Pick out the clues", "clues": ["is confused", "BP 86/52 mmHg", "Blood cultures have been taken", "how severe his tissue hypoperfusion is"], "x": "Sepsis already suspected; now quantify perfusion."},
+    {"t": "Make your own answer before looking", "x": "**Lactate** (on a blood gas)."},
+    {"t": "Rule out the others", "elim": [[0, "CT is not first-line and does not measure perfusion."], [1, "D-dimer is non-specific in sepsis."], [3, "Procalcitonin marks bacterial infection, not perfusion."], [4, "Sputum culture finds the organism, not severity."]]},
+    {"t": "Commit", "x": "**C. Lactate.** Clinical diagnosis plus lactate."}
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 77 year old woman is treated for sepsis with IV antibiotics after blood cultures. Her temperature is 38.6°C, pulse rate 110 bpm and BP 98/60 mmHg. She has no cough, abdominal pain or skin changes, and the source is unclear. She is incontinent of urine.",
+   "labs": [["Lactate", "2.8 mmol/L", "0.5–2.0", "H"], ["CRP", "180 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation to identify the source?",
+   "o": ["Bone scan", "Echocardiogram", "Lumbar puncture", "Serum ferritin", "Urine culture"],
+   "a": 4,
+   "e": "A full septic screen (urine culture, chest X-ray, sputum culture, imaging) finds the source; urine is the commonest source in older women.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Second-line: find the source."},
+    {"t": "Pick out the clues", "clues": ["source is unclear", "no cough, abdominal pain or skin changes", "incontinent of urine"], "x": "No chest, abdomen or skin source; urine is the likeliest."},
+    {"t": "Make your own answer before looking", "x": "Septic screen starting with **urine culture**."},
+    {"t": "Rule out the others", "elim": [[0, "Bone scan is not part of a septic screen."], [1, "Echo only if endocarditis is suspected (murmur, positive cultures)."], [2, "No meningism or headache."], [3, "Ferritin does not identify a source."]]},
+    {"t": "Commit", "x": "**E. Urine culture.** Septic screen to find the source."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old man has fever, confusion and a red, hot, swollen leg. His temperature is 39.1°C, pulse rate 126 bpm, BP 86/52 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 95% breathing air. Oxygen has been given, blood cultures taken, lactate measured and a 500 mL fluid bolus started.",
+   "labs": [["Lactate", "4.2 mmol/L", "0.5–2.0", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": ["CT of the leg", "IV broad-spectrum antibiotics now", "Oral flucloxacillin", "Wait for blood culture results", "Wound swab before any treatment"],
+   "a": 1,
+   "e": "Antibiotics are the single most important treatment and must be given IV within 1 hour. Waiting for cultures or tests delays life-saving therapy.",
+   "steps": [
+    {"t": "Read the question line first", "x": "What is still missing from the Sepsis Six?"},
+    {"t": "Pick out the clues", "clues": ["Oxygen has been given", "blood cultures taken", "lactate measured", "500 mL fluid bolus started", "BP 86/52 mmHg"], "x": "Four of six done; antibiotics are not yet given."},
+    {"t": "Make your own answer before looking", "x": "**IV broad-spectrum antibiotics** within the hour."},
+    {"t": "Rule out the others", "elim": [[0, "Imaging must not delay antibiotics."], [2, "Oral route is wrong in septic shock."], [3, "Never wait for cultures."], [4, "Cultures are already taken; swabbing must not delay treatment."]]},
+    {"t": "Commit", "x": "**B. IV antibiotics now.** The most important part of the bundle."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 69 year old woman with sepsis from a urinary source has received IV antibiotics and 2 L of 0.9% saline in boluses. Her pulse rate is 122 bpm, BP 80/44 mmHg (mean arterial pressure 56 mmHg) and urine output 10 mL per hour. Her chest is clear and her lactate is 4.8 mmol/L.",
+   "labs": [["Lactate", "4.8 mmol/L", "0.5–2.0", "H"], ["Creatinine", "188 µmol/L", "45–90", "H"]],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": ["Contact ICU for noradrenaline infusion", "IV furosemide", "Oral midodrine", "Repeat the full blood count", "Switch to oral antibiotics"],
+   "a": 0,
+   "e": "Persistent hypotension despite fluids (septic shock) needs a noradrenaline infusion via ICU. Furosemide would worsen hypotension.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Next step after fluids have failed."},
+    {"t": "Pick out the clues", "clues": ["2 L of 0.9% saline", "BP 80/44 mmHg", "mean arterial pressure 56 mmHg", "urine output 10 mL per hour"], "x": "Septic shock: MAP under 65 despite fluid."},
+    {"t": "Make your own answer before looking", "x": "**ICU for noradrenaline**."},
+    {"t": "Rule out the others", "elim": [[1, "Diuretics drop BP further."], [2, "Oral midodrine has no role in acute septic shock."], [3, "A blood count does not treat shock."], [4, "She is far too unwell for oral antibiotics."]]},
+    {"t": "Commit", "x": "**A. Noradrenaline via ICU.** Fluids fail = vasopressor."}
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 56 year old man on haemodialysis via a tunnelled central line has fever and rigors starting during dialysis. His temperature is 39.4°C, pulse rate 118 bpm and BP 98/60 mmHg. The line exit site is red with pus. Blood cultures from the line and a peripheral vein grow Staphylococcus aureus. He has started IV antibiotics.",
+   "labs": [["CRP", "220 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate additional management?",
+   "o": ["Add oral rifampicin only", "Continue the line and recheck in 1 week", "Flush the line with saline", "Remove the infected line", "Start IV hydrocortisone"],
+   "a": 3,
+   "e": "Source control means removing infected devices or lines and draining abscesses. Antibiotics alone rarely clear an infected line.",
+   "steps": [
+    {"t": "Read the question line first", "x": "What else besides antibiotics?"},
+    {"t": "Pick out the clues", "clues": ["tunnelled central line", "starting during dialysis", "exit site is red with pus", "grow Staphylococcus aureus"], "x": "The line is the source."},
+    {"t": "Make your own answer before looking", "x": "**Source control: remove the line**."},
+    {"t": "Rule out the others", "elim": [[0, "Adding an oral drug does not remove the source."], [2, "Flushing pushes more bacteria into the blood."], [1, "Leaving an infected line in risks persistent bacteraemia."], [4, "Steroids are not indicated; he is not in refractory shock."]]},
+    {"t": "Commit", "x": "**D. Remove the line.** Source control."}
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 72 year old woman with sepsis from pneumonia has warm peripheries and a bounding pulse. Her pulse rate is 124 bpm and BP 84/40 mmHg. Her BP does not improve after 2 L of IV fluid, and she develops oedema of her arms and legs.",
+   "labs": [["Lactate", "4.5 mmol/L", "0.5–2.0", "H"], ["Albumin", "26 g/L", "35–50", "L"]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of her hypotension?",
+   "o": ["Acute blood loss", "Cytokine-mediated vasodilation and capillary leak", "IgE-mediated mast cell degranulation", "Loss of sympathetic tone from spinal injury", "Primary left ventricular failure"],
+   "a": 1,
+   "e": "TNF-alpha and IL-6 cause widespread vasodilation (warm, bounding) and capillary leak (oedema), giving relative hypovolaemia that fluids cannot fix.",
+   "steps": [
+    {"t": "Read the question line first", "x": "Mechanism of septic hypotension."},
+    {"t": "Pick out the clues", "clues": ["warm peripheries and a bounding pulse", "BP 84/40 mmHg", "does not improve after 2 L", "oedema of her arms and legs"], "x": "Low diastolic, warm and leaky: vasodilation plus capillary leak."},
+    {"t": "Make your own answer before looking", "x": "**Cytokine-mediated vasodilation and capillary leak**."},
+    {"t": "Rule out the others", "elim": [[0, "No bleeding; haemorrhage gives cold peripheries."], [2, "That is anaphylaxis; no allergen."], [3, "That is neurogenic shock; no spinal injury."], [4, "LV failure gives cold peripheries and pulmonary oedema."]]},
+    {"t": "Commit", "x": "**B. Vasodilation and capillary leak.** The reason vasopressors are needed."}
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {"d": "diagnosis", "q": "What is sepsis, and who is most at risk?", "tip": "Exam thinking: definition plus risk factors.", "points": [
+    {"p": "Life-threatening condition from a dysregulated response to infection", "k": [["dysregulat", "overwhelm", "abnormal response"], ["infection"]], "why": "The key phrase is dysregulated host response."},
+    {"p": "Leads to organ dysfunction", "k": [["organ"]], "why": "Infection without organ dysfunction is not sepsis."},
+    {"p": "Risk factors: infection, immunosuppression, chronic disease", "k": [["immunosupp", "steroid", "chemo", "chronic disease", "diabetes", "elderly"]], "why": "Infection is the most important risk factor."}
+   ]},
+   {"d": "diagnosis", "q": "How does sepsis usually present?", "tip": "Exam thinking: list the signs a vignette gives.", "points": [
+    {"p": "Fever or hypothermia", "k": [["fever", "hypotherm", "pyrex", "temperature"]], "why": "Hypothermia is common in the elderly or immunosuppressed."},
+    {"p": "Tachycardia", "k": [["tachycard", "heart rate", "pulse"]], "why": "HR over 131 is high risk."},
+    {"p": "Hypotension", "k": [["hypotens", "low bp", "low blood pressure"]], "why": "Systolic under 90 is high risk."},
+    {"p": "Confusion or altered mental state", "k": [["confus", "altered", "drows", "mental"]], "why": "A sign of organ dysfunction."},
+    {"p": "Raised lactate and low albumin", "k": [["lactate", "albumin"]], "why": "Both support the diagnosis."}
+   ]},
+   {"d": "diagnosis", "q": "What are the high-risk criteria for sepsis, with cut-offs?", "tip": "Exam thinking: know the numbers.", "points": [
+    {"p": "Systolic BP under 90 mmHg or a fall over 40 from baseline", "k": [["90"], ["systolic", "bp", "blood pressure"]], "why": "Also MAP under 65."},
+    {"p": "MAP under 65 mmHg", "k": [["65"]], "why": "The vasopressor target too."},
+    {"p": "HR over 131 /min", "k": [["131", "130"]], "why": "Not 100 or 120."},
+    {"p": "RR over 25 /min", "k": [["25"]], "why": "A rate of 21 to 24 is moderate risk."},
+    {"p": "Responds only to voice or pain, or unresponsive", "k": [["voice", "pain", "unrespons", "avpu", "gcs"]], "why": "Reduced consciousness."}
+   ]},
+   {"d": "diagnosis", "q": "What is septic shock and how does it present?", "tip": "Exam thinking: what separates shock from sepsis.", "points": [
+    {"p": "Sepsis with persistent hypotension despite adequate fluids", "k": [["hypotens", "low bp", "low blood pressure"], ["despite", "fluid"]], "why": "Needs vasopressors."},
+    {"p": "Low urine output despite fluids", "k": [["urine", "oligur"]], "why": "Kidney hypoperfusion."},
+    {"p": "Fever and tachycardia", "k": [["fever", "tachycard", "39"]], "why": "Warm peripheries from vasodilation."}
+   ]},
+   {"d": "investigation", "q": "What is the gold standard and the first-line set of tests in sepsis?", "tip": "Exam thinking: what comes before antibiotics.", "points": [
+    {"p": "Gold standard: clinical diagnosis plus lactate", "k": [["clinical"], ["lactate"]], "why": "No single test confirms sepsis."},
+    {"p": "Vital signs and clinical examination", "k": [["vital", "observ", "examin"]], "why": "Immediate assessment."},
+    {"p": "Blood cultures before antibiotics", "k": [["culture"]], "why": "Antibiotics may alter results; do not delay them."},
+    {"p": "Bloods: FBC, U&Es, CRP; blood gas for acid-base, lactate, electrolytes, glucose", "k": [["fbc", "u&e", "u&es", "crp", "gas", "vbg", "abg"]], "why": "Raised lactate = hypoperfusion."}
+   ]},
+   {"d": "investigation", "q": "How do you find the source of sepsis?", "tip": "Exam thinking: the septic screen.", "points": [
+    {"p": "Urine culture", "k": [["urine"]], "why": "Commonest source in older patients."},
+    {"p": "Chest X-ray and sputum culture", "k": [["x-ray", "xray", "cxr", "sputum"]], "why": "Pneumonia is the commonest source overall."},
+    {"p": "Further imaging", "k": [["imaging", "ct", "ultrasound", "scan"]], "why": "Looks for abscesses or collections."},
+    {"p": "Urinary catheter for input-output", "k": [["catheter"]], "why": "Measures urine output accurately."}
+   ]},
+   {"d": "management", "q": "What is the Sepsis Six and the time frame?", "tip": "Exam thinking: three in, three out.", "points": [
+    {"p": "Give oxygen", "k": [["oxygen", "o2"]], "why": "15 L/min non-rebreathe if hypoxic."},
+    {"p": "Take blood cultures", "k": [["culture"]], "why": "Before antibiotics if possible."},
+    {"p": "Give IV antibiotics", "k": [["antibiotic"]], "why": "The single most important treatment."},
+    {"p": "Give IV fluids", "k": [["fluid", "saline", "crystalloid"]], "why": "500 mL 0.9% saline bolus."},
+    {"p": "Measure lactate and monitor urine output", "k": [["lactate"], ["urine"]], "why": "All six within 1 hour."}
+   ]},
+   {"d": "management", "q": "What fluid and antibiotics are given in the emergency, and how?", "tip": "Exam thinking: volume, fluid type and spectrum.", "points": [
+    {"p": "ABCDE, then 500 mL 0.9% saline bolus", "k": [["500"], ["saline", "crystalloid", "sodium chloride"]], "why": "Reassess after each bolus."},
+    {"p": "IV antibiotics within 1 hour, ideally after cultures", "k": [["hour", "60"]], "why": "Do not delay for cultures."},
+    {"p": "Broad-spectrum, e.g. piperacillin-tazobactam with metronidazole", "k": [["piperacillin", "tazocin", "pip", "broad"]], "why": "Covers Gram-positive, Gram-negative and anaerobes."},
+    {"p": "Adjust once cultures are available", "k": [["adjust", "narrow", "rationalis", "sensitiv"]], "why": "Antimicrobial stewardship."}
+   ]},
+   {"d": "management", "q": "What do you do if hypotension persists despite fluids, and what is source control?", "tip": "Exam thinking: the next step after fluids fail.", "points": [
+    {"p": "Contact ICU for noradrenaline infusion", "k": [["noradrenaline", "norepinephrine", "vasopressor"]], "why": "Defines septic shock."},
+    {"p": "Add vasopressin and adrenaline if needed", "k": [["vasopressin", "adrenaline"]], "why": "Second-line pressors."},
+    {"p": "Source control: drain abscesses, remove infected devices or lines", "k": [["drain", "remove"]], "why": "Antibiotics cannot sterilise a collection or a line."}
+   ]},
+   {"d": "science", "q": "Why does sepsis cause hypotension and a raised lactate?", "tip": "Exam thinking: cytokines to lactate.", "points": [
+    {"p": "Pro-inflammatory cytokines (TNF-alpha, IL-6)", "k": [["tnf", "il-6", "il6", "cytokine"]], "why": "Released in excess."},
+    {"p": "Widespread vasodilation and capillary leak", "k": [["vasodilat"], ["leak", "capillary"]], "why": "Causes relative hypovolaemia."},
+    {"p": "Reduced tissue oxygen delivery drives anaerobic metabolism and lactate", "k": [["anaerobic"]], "why": "Lactate monitors severity and resuscitation."}
+   ]},
+   {"d": "science", "q": "Why is albumin low in sepsis, and why do vasopressors work?", "tip": "Exam thinking: liver priorities and vascular tone.", "points": [
+    {"p": "Liver diverts synthesis to inflammatory proteins (CRP) at the expense of albumin", "k": [["liver", "hepat", "acute phase", "acute-phase"], ["crp", "inflammatory"]], "why": "Low albumin is a further sign of sepsis."},
+    {"p": "Vasodilation and myocardial depression overwhelm the circulation", "k": [["myocardial", "heart", "vasodilat"]], "why": "Fluids cannot restore BP alone."},
+    {"p": "Noradrenaline restores vascular tone", "k": [["tone", "vasoconstrict"]], "why": "Raises MAP above 65."}
+   ]}
+  ]
+ },
+ "glossary": {
+  "Sepsis": "Life-threatening organ dysfunction caused by a dysregulated host response to infection.",
+  "Septic shock": "Sepsis with persistent hypotension and low urine output despite adequate fluids, needing vasopressors.",
+  "Sepsis Six": "Bundle completed within 1 hour: oxygen, blood cultures, IV antibiotics, IV fluids, lactate, urine output.",
+  "Lactate": "Product of anaerobic metabolism; a raised level shows tissue hypoperfusion.",
+  "Hypoperfusion": "Not enough blood flow to deliver oxygen to tissues.",
+  "Anaerobic metabolism": "Energy production without oxygen, making lactate as a by-product.",
+  "MAP": "Mean arterial pressure; under 65 mmHg is a high-risk sepsis criterion and the vasopressor target.",
+  "Vasopressor": "Drug that constricts blood vessels to raise blood pressure.",
+  "Noradrenaline": "First-line vasopressor for septic shock, given by infusion in ICU.",
+  "Vasopressin": "Hormone used as a second vasopressor when noradrenaline alone is not enough.",
+  "Crystalloid": "Clear salt-based IV fluid such as 0.9% sodium chloride.",
+  "Fluid bolus": "A quick set volume of IV fluid (e.g. 500 mL) given to test and treat low blood pressure.",
+  "Piperacillin-tazobactam": "Broad-spectrum IV penicillin with a beta-lactamase inhibitor; covers Gram-positive, Gram-negative and anaerobic bacteria.",
+  "Metronidazole": "Antibiotic that targets anaerobic bacteria.",
+  "Broad-spectrum": "An antibiotic or regimen covering many types of bacteria before the organism is known.",
+  "Blood cultures": "Blood bottles incubated to grow and identify bacteria in the bloodstream.",
+  "Septic screen": "Set of tests to find the infection source: urine and sputum cultures, chest X-ray, imaging.",
+  "Source control": "Removing the source of infection, e.g. draining an abscess or removing an infected line.",
+  "Cytokine": "Signalling protein from immune cells; TNF-alpha and IL-6 drive sepsis.",
+  "TNF-alpha": "Tumour necrosis factor alpha: a key pro-inflammatory cytokine causing fever and vasodilation.",
+  "IL-6": "Interleukin 6: a pro-inflammatory cytokine that also drives the liver's acute-phase response.",
+  "Vasodilation": "Widening of blood vessels, lowering blood pressure.",
+  "Capillary leak": "Fluid escaping from damaged small vessels into tissues, causing oedema.",
+  "Acute-phase response": "Liver shift towards making inflammatory proteins such as CRP during illness.",
+  "CRP": "C-reactive protein: an acute-phase protein that rises in infection and inflammation.",
+  "Albumin": "Main blood protein made by the liver; falls in sepsis.",
+  "Myocardial depression": "Reduced pumping strength of the heart caused by inflammatory mediators.",
+  "Rigors": "Violent shaking with a rapidly rising temperature, typical of bacteraemia.",
+  "Hypothermia": "Body temperature below 36°C; can be how sepsis presents in older people.",
+  "Immunosuppression": "Weakened immune system, e.g. from steroids, chemotherapy or methotrexate.",
+  "ABCDE": "Airway, Breathing, Circulation, Disability, Exposure: the structured approach to an acutely ill patient.",
+  "Non-rebreathe mask": "Oxygen mask with a reservoir bag delivering high-concentration oxygen at 15 L/min.",
+  "ICU": "Intensive care unit, where vasopressors and organ support are given.",
+  "Pyelonephritis": "Infection of the kidney, causing fever, loin pain and rigors.",
+  "NEWS2": "National Early Warning Score: a UK score from observations used to spot deteriorating patients.",
+  "Oliguria": "Low urine output, under about 0.5 mL/kg per hour.",
+  "Cholangitis": "Infection of the bile ducts, usually from obstruction."
+ }
+}

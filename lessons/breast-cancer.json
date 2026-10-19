@@ -1,0 +1,2263 @@
+{
+  "id": "breast-cancer",
+  "patient": {
+    "name": "Joanne Fletcher",
+    "age": 58,
+    "sex": "F",
+    "setting": "GP surgery, then breast one-stop clinic",
+    "complaint": "Painless lump in the left breast noticed in the shower 3 weeks ago",
+    "background": [
+      "Postmenopausal since 53; took HRT for 4 years",
+      "Never had children; periods started at 11",
+      "BMI 31; drinks about 18 units a week",
+      "Aunt had breast cancer at 66",
+      "Office manager in Bromley; missed her last screening mammogram"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' or 'Which is the most likely finding on examination?': a hard, irregular, fixed, painless lump (with skin changes) in an older woman, against smooth mobile benign lumps; histology subtypes (DCIS, lobular) and TNM staging also appear.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Joanne, 58, felt a **painless lump** in her left breast.",
+            "It has not changed with any cycle; she is postmenopausal.",
+            "Her left nipple looks slightly pulled in.",
+            "No discharge, no weight loss, no bone pain."
+          ],
+          "vitals": {
+            "T": "36.7°C",
+            "HR": "76 bpm",
+            "BP": "134/82 mmHg"
+          }
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Joanne has several **oestrogen exposure** risk factors: early menarche, nulliparity, HRT, obesity and alcohol. Her aunt is a second-degree relative."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Left upper outer quadrant: **3 cm hard, irregular** lump.",
+            "It is **fixed** to deep tissue; overlying skin tethers when she raises her arms.",
+            "Mild **nipple retraction**; no peau d'orange.",
+            "No palpable axillary or supraclavicular nodes."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Every examination feature in Joanne points to cancer: **hard, irregular, fixed**, painless, with nipple retraction."
+        },
+        {
+          "type": "ask",
+          "q": "Which feature of Joanne's lump most strongly suggests malignancy?",
+          "o": [
+            "Location in the upper outer quadrant",
+            "Painless",
+            "Size of 3 cm",
+            "Tethered and fixed to deep tissue"
+          ],
+          "a": 3,
+          "r": "**Fixity and skin tethering** mean infiltration. Painless lumps and the upper outer quadrant are common in benign disease too."
+        },
+        {
+          "type": "compare",
+          "title": "Breast lumps: which is it?",
+          "head": [
+            "Lump",
+            "Age",
+            "Feel",
+            "Clue"
+          ],
+          "rows": [
+            [
+              "**Breast cancer**",
+              "Older, often >50",
+              "Hard, irregular, **fixed**",
+              "Skin tethering, nipple retraction, nodes"
+            ],
+            [
+              "Fibroadenoma",
+              "Young, <30",
+              "Firm, smooth, very mobile",
+              "'Breast mouse'"
+            ],
+            [
+              "Breast cyst",
+              "30 to 50",
+              "Smooth, fluctuant, tender",
+              "Changes with cycle"
+            ],
+            [
+              "Fat necrosis",
+              "Any",
+              "Hard, irregular",
+              "Trauma or surgery"
+            ],
+            [
+              "Abscess",
+              "Breastfeeding",
+              "Warm, tender, fluctuant",
+              "Fever"
+            ]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "The most likely type for Joanne's lump is **invasive ductal carcinoma**."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Joanne's 'small pebble' lump fits **IDC**. DCIS would usually show as microcalcification with no lump; lobular cancer can hide on a mammogram."
+        },
+        {
+          "type": "compare",
+          "title": "In situ vs invasive",
+          "head": [
+            "Type",
+            "Basement membrane",
+            "How it is found"
+          ],
+          "rows": [
+            [
+              "DCIS",
+              "**Intact**",
+              "Microcalcification on mammogram"
+            ],
+            [
+              "LCIS",
+              "Intact",
+              "Incidental on biopsy"
+            ],
+            [
+              "Invasive ductal",
+              "Breached",
+              "Hard, fixed lump"
+            ],
+            [
+              "Invasive lobular",
+              "Breached",
+              "Often missed on mammogram: **MRI**"
+            ]
+          ]
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Tumour size (T stage)",
+            "min": 0,
+            "max": 8,
+            "unit": "cm",
+            "bands": [
+              [
+                0,
+                2,
+                "T1 <2 cm",
+                "ok"
+              ],
+              [
+                2,
+                5,
+                "T2 2–5 cm",
+                "warn"
+              ],
+              [
+                5,
+                8,
+                "T3 >5 cm",
+                "bad"
+              ]
+            ],
+            "value": 3,
+            "label": "Joanne 3 cm",
+            "caption": "Joanne's lump is **T2**. T4 is any size invading chest wall or skin, or inflammatory cancer."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Joanne is staged with **TNM**. Spread goes to **bone, liver and lungs**, so ask about bone pain and breathlessness."
+        },
+        {
+          "type": "trap",
+          "text": "Do not reassure a postmenopausal woman because a lump is **painless**. Painless is typical of cancer; cyclical tenderness points to benign disease."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' where the answer is triple assessment, ultrasound in women under 40, MRI for lobular cancer, axillary ultrasound or sentinel node biopsy for staging, or a family history referral.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "GP refers Joanne on the **2-week-wait** pathway.",
+            "She is seen in a one-stop breast clinic 9 days later.",
+            "Exam, imaging and biopsy are all done in one visit."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Joanne has **triple assessment**: clinical examination, imaging and **core needle biopsy**."
+        },
+        {
+          "type": "ask",
+          "q": "Which imaging is first-line for Joanne's lump?",
+          "o": [
+            "CT chest",
+            "Mammogram",
+            "MRI breast",
+            "PET scan"
+          ],
+          "a": 1,
+          "r": "At 58, **mammography** is first-line (with ultrasound). Ultrasound alone is for younger, denser breasts; MRI is for lobular cancer or high-risk screening."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Joanne is in the screening age range and over 30, so her lump needed an **urgent** referral. A 25 year old would get **ultrasound** first."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "NHS breast screening",
+            "min": 30,
+            "max": 85,
+            "unit": "years",
+            "bands": [
+              [
+                30,
+                50,
+                "Not routinely screened",
+                "warn"
+              ],
+              [
+                50,
+                70,
+                "Mammogram every 3 years",
+                "ok"
+              ],
+              [
+                70,
+                85,
+                "Can self-refer",
+                "warn"
+              ]
+            ],
+            "value": 58,
+            "label": "Joanne 58",
+            "caption": "Joanne is in the **50 to 70** window and should have had a mammogram every 3 years."
+          }
+        },
+        {
+          "type": "labs",
+          "title": "Joanne's results",
+          "rows": [
+            [
+              "Mammogram",
+              "Spiculated 3 cm mass, left UOQ",
+              "",
+              ""
+            ],
+            [
+              "Breast ultrasound",
+              "Irregular solid mass",
+              "",
+              ""
+            ],
+            [
+              "Axillary ultrasound",
+              "Normal nodes",
+              "",
+              ""
+            ],
+            [
+              "Core biopsy",
+              "Invasive ductal carcinoma, grade 2",
+              "",
+              ""
+            ],
+            [
+              "ER / PR",
+              "Positive / positive",
+              "",
+              ""
+            ],
+            [
+              "HER2",
+              "Negative",
+              "",
+              ""
+            ]
+          ],
+          "text": "Hormone receptor and **HER2** status decide her drug treatment."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Joanne has no palpable nodes, so a **pre-operative axillary ultrasound** is done; it is normal, so the axilla will be staged by **sentinel node biopsy**."
+        },
+        {
+          "type": "flow",
+          "title": "Staging Joanne: TNM",
+          "nodes": [
+            "T: mammogram + core biopsy (3 cm → T2)",
+            "N: axillary ultrasound, then sentinel node biopsy",
+            "M: PET (or CT) if spread suspected",
+            "Receptors: ER, PR, HER2 on the biopsy",
+            "Stage and receptors → treatment plan"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Joanne's aunt (second-degree, at 66) does **not** meet high familial risk criteria, so her family need no referral."
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "Joanne's pathway follows these: NHS screening, NICE suspected cancer referral and **TNM** staging."
+        },
+        {
+          "type": "pearl",
+          "text": "Triple assessment = **examination + imaging + core biopsy**. FNA is not enough: a core biopsy gives histology and receptor status."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' where receptor status and menopause decide: aromatase inhibitor for postmenopausal ER-positive, tamoxifen for premenopausal ER-positive, trastuzumab for HER2-positive (watch the heart), FEC-D for triple-negative.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Joanne has a 3 cm peripheral tumour and a normal axillary ultrasound. What is the most appropriate surgery?",
+          "o": [
+            "Axillary node clearance",
+            "Breast-conserving surgery with sentinel node biopsy",
+            "Mastectomy with axillary node clearance",
+            "No surgery; hormone therapy only"
+          ],
+          "a": 1,
+          "r": "Small (under 4–5 cm) **peripheral** tumour, negative axilla: **wide local excision** plus **sentinel node biopsy**."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Joanne has **breast-conserving surgery** with **sentinel node biopsy**. The sentinel node is clear."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Because Joanne kept her breast, she has **whole-breast radiotherapy** to cut recurrence. Her clear node spares her **axillary clearance** and its lymphoedema risk."
+        },
+        {
+          "type": "compare",
+          "title": "Drug treatment by tumour type",
+          "head": [
+            "Tumour",
+            "Treatment",
+            "Watch for"
+          ],
+          "rows": [
+            [
+              "ER+, postmenopausal",
+              "**Aromatase inhibitor** (letrozole, anastrozole)",
+              "Osteoporosis, arthralgia"
+            ],
+            [
+              "ER+, premenopausal",
+              "**Tamoxifen**",
+              "Hot flushes"
+            ],
+            [
+              "HER2+",
+              "**Trastuzumab**",
+              "Cardiotoxicity: monitor heart"
+            ],
+            [
+              "Triple-negative or node-positive",
+              "Neoadjuvant **FEC-D** then surgery",
+              "Chemotherapy toxicity"
+            ]
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "Joanne is postmenopausal, ER-positive and HER2-negative. Which drug is first-line?",
+          "o": [
+            "Docetaxel",
+            "Letrozole",
+            "Tamoxifen",
+            "Trastuzumab"
+          ],
+          "a": 1,
+          "r": "Postmenopausal ER-positive: an **aromatase inhibitor**, such as letrozole. Tamoxifen is first-line before the menopause."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Joanne starts **letrozole**. Had she been HER2-positive, **trastuzumab** with cardiac monitoring would have been added."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Joanne's DEXA T score on letrozole",
+            "x": [
+              "Start",
+              "Year 1",
+              "Year 2",
+              "Year 3"
+            ],
+            "unit": "SD",
+            "series": [
+              {
+                "name": "Hip T score",
+                "values": [
+                  -0.9,
+                  -1.3,
+                  -1.7,
+                  -2.0
+                ]
+              }
+            ],
+            "caption": "Aromatase inhibitors remove her last oestrogen, so bone density falls: **monitor BMD**."
+          }
+        },
+        {
+          "type": "story",
+          "points": [
+            "Four years later, Joanne has new **back pain** and leg heaviness.",
+            "She is unsteady and has numb thighs.",
+            "Bone metastases are suspected."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Back pain with new **neurological** symptoms in a woman with breast cancer is **spinal cord compression** until proven otherwise: emergency MRI and treatment."
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "For advanced spread, Joanne's aim becomes control: **palliative** chemotherapy or radiotherapy."
+        },
+        {
+          "type": "trap",
+          "text": "Tamoxifen vs aromatase inhibitor is decided by **menopausal status**. A stem that says 'periods stopped 8 months ago' is still perimenopausal: tamoxifen."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why BRCA mutations cause cancer, why trastuzumab harms the heart, why anti-oestrogen drugs work, or what causes peau d'orange.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Joanne's tumour has **breached the basement membrane**, so it is invasive and can reach lymphatics."
+        },
+        {
+          "type": "flow",
+          "title": "From normal duct to spread",
+          "nodes": [
+            "Normal ductal epithelium",
+            "Atypical hyperplasia",
+            "DCIS: basement membrane intact",
+            "Invasive ductal carcinoma: membrane breached",
+            "Lymphatic spread (sentinel node) then blood (bone, liver, lung)"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Joanne does not have a BRCA family history. **BRCA1/2** are tumour suppressors that repair DNA double-strand breaks."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Joanne's years of oestrogen drove her ER-positive tumour, which is exactly why **letrozole** helps."
+        },
+        {
+          "type": "ask",
+          "q": "How does letrozole reduce oestrogen in a postmenopausal woman like Joanne?",
+          "o": [
+            "Blocks oestrogen receptors in the breast",
+            "Blocks peripheral conversion of androgens to oestrogen",
+            "Destroys ovarian tissue",
+            "Suppresses pituitary FSH"
+          ],
+          "a": 1,
+          "r": "After menopause, oestrogen comes from **aromatase** in fat turning androgens into oestrogen. Tamoxifen blocks the receptor instead."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Joanne is HER2-negative, but HER2 also sits on **cardiac myocytes**, so trastuzumab can cause heart failure."
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Joanne has no peau d'orange: that skin pitting means tumour is **blocking dermal lymphatics**."
+        },
+        {
+          "type": "notes",
+          "src": 5,
+          "lead": "Joanne's **sentinel node** was the first to drain the tumour; because it was clear, the rest of her axilla was left alone."
+        },
+        {
+          "type": "pearl",
+          "text": "Peau d'orange = **lymphatic** blockage; nipple retraction and skin tethering = tumour pulling on **ligaments and ducts**."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    {
+      "d": "diagnosis",
+      "q": "What is the most common type of breast cancer?",
+      "o": [
+        "DCIS",
+        "Invasive ductal carcinoma",
+        "Invasive lobular carcinoma",
+        "Medullary carcinoma"
+      ],
+      "a": 1,
+      "r": "**Invasive ductal carcinoma** is the most common."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Which gene mutation carries the highest relative risk of breast cancer?",
+      "o": [
+        "APC",
+        "BRCA1",
+        "BRCA2",
+        "TP53 polymorphism"
+      ],
+      "a": 1,
+      "r": "**BRCA1** heterozygous carriers have the highest relative risk."
+    },
+    {
+      "d": "diagnosis",
+      "q": "What is the typical mammogram finding in DCIS?",
+      "o": [
+        "Microcalcification",
+        "Normal mammogram",
+        "Smooth round mass",
+        "Spiculated mass with skin thickening"
+      ],
+      "a": 0,
+      "r": "**Microcalcification**; the basement membrane is intact."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Which are the commonest sites of breast cancer metastasis?",
+      "o": [
+        "Bone, liver, lungs",
+        "Brain, kidney, spleen",
+        "Ovary, bowel, skin",
+        "Thyroid, adrenal, bladder"
+      ],
+      "a": 0,
+      "r": "**Bone, liver and lungs**."
+    },
+    {
+      "d": "investigation",
+      "q": "What does triple assessment consist of?",
+      "o": [
+        "Examination, imaging and core biopsy",
+        "Mammogram, MRI and PET",
+        "Mammogram, tumour markers and FNA",
+        "Ultrasound, CT and bloods"
+      ],
+      "a": 0,
+      "r": "**Clinical examination, imaging and core needle biopsy**."
+    },
+    {
+      "d": "investigation",
+      "q": "Which is the gold-standard imaging for invasive lobular carcinoma?",
+      "o": [
+        "CT chest",
+        "Mammogram",
+        "MRI breast",
+        "Ultrasound"
+      ],
+      "a": 2,
+      "r": "Lobular cancer is often missed on mammogram: **MRI breast**."
+    },
+    {
+      "d": "investigation",
+      "q": "Who is invited to NHS breast screening?",
+      "o": [
+        "Women 40 to 60, yearly",
+        "Women 50 to 70, every 3 years",
+        "Women 50 to 75, every 5 years",
+        "All women over 30, every 2 years"
+      ],
+      "a": 1,
+      "r": "Mammogram **every 3 years, ages 50 to 70**."
+    },
+    {
+      "d": "management",
+      "q": "First-line endocrine therapy for ER-positive premenopausal breast cancer?",
+      "o": [
+        "Anastrozole",
+        "Letrozole",
+        "Tamoxifen",
+        "Trastuzumab"
+      ],
+      "a": 2,
+      "r": "**Tamoxifen** (a SERM) before the menopause."
+    },
+    {
+      "d": "management",
+      "q": "What is the main side effect of trastuzumab?",
+      "o": [
+        "Cardiotoxicity",
+        "Hepatotoxicity",
+        "Osteoporosis",
+        "Pulmonary fibrosis"
+      ],
+      "a": 0,
+      "r": "**Cardiotoxicity / heart failure**: monitor cardiac function."
+    },
+    {
+      "d": "science",
+      "q": "What is the normal function of BRCA1 and BRCA2?",
+      "o": [
+        "Cell cycle acceleration",
+        "DNA double-strand break repair",
+        "Mismatch repair",
+        "Oestrogen receptor signalling"
+      ],
+      "a": 1,
+      "r": "Tumour suppressors in **homologous recombination** repair."
+    }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 52 year old woman has a 4 week history of a red, swollen, heavy right breast. She is not breastfeeding. A course of flucloxacillin has not helped. The skin of the whole breast is thickened and pitted like orange peel. There are firm right axillary nodes. Her temperature is 36.8°C, pulse rate 80 bpm and BP 128/76 mmHg.",
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Breast abscess",
+        "Duct ectasia",
+        "Fat necrosis",
+        "Inflammatory breast cancer",
+        "Lactational mastitis"
+      ],
+      "a": 3,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "A diagnosis of a red, swollen breast: infection or cancer?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "not breastfeeding",
+            "has not helped",
+            "pitted like orange peel",
+            "firm right axillary nodes",
+            "temperature is 36.8°C"
+          ],
+          "x": "No lactation, no fever, no antibiotic response, **peau d'orange** and nodes."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Inflammatory breast cancer** (T4): tumour in dermal lymphatics."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "An abscess is a tender fluctuant lump with fever."
+            ],
+            [
+              1,
+              "Duct ectasia gives nipple discharge, not diffuse peau d'orange."
+            ],
+            [
+              2,
+              "Fat necrosis is a hard lump after trauma, not a diffuse red breast."
+            ],
+            [
+              4,
+              "She is not breastfeeding and has no fever."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Inflammatory breast cancer.** 'Mastitis' that fails antibiotics in a non-lactating woman is cancer until proven otherwise."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 47 year old woman has a 2 cm hard lump in her left breast. She was referred urgently by her GP. There are no palpable axillary nodes.",
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": [
+        "CT chest, abdomen and pelvis",
+        "Fine needle aspiration alone",
+        "MRI breast alone",
+        "Triple assessment",
+        "Tumour markers (CA 15-3)"
+      ],
+      "a": 3,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "'Diagnostic investigation' for a breast lump."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "47 year old",
+            "2 cm hard lump",
+            "referred urgently"
+          ],
+          "x": "Suspicious lump in a woman over 30."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Gold standard: **triple assessment** (exam, imaging, core biopsy)."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "CT is for staging distant spread, not diagnosis."
+            ],
+            [
+              1,
+              "FNA gives cytology only, no histology or receptors."
+            ],
+            [
+              2,
+              "MRI is for lobular cancer or high-risk screening."
+            ],
+            [
+              4,
+              "Tumour markers are not diagnostic."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Triple assessment.**"
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 41 year old woman has a 3 cm invasive ductal carcinoma with two palpable axillary nodes. Core biopsy shows the tumour is oestrogen receptor negative, progesterone receptor negative and HER2 negative.",
+      "q": "Which is the most appropriate initial treatment?",
+      "o": [
+        "Anastrozole",
+        "Neoadjuvant FEC-D chemotherapy",
+        "Palliative radiotherapy",
+        "Tamoxifen",
+        "Trastuzumab"
+      ],
+      "a": 1,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Initial treatment: look at receptors and nodes."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "two palpable axillary nodes",
+            "oestrogen receptor negative",
+            "progesterone receptor negative and HER2 negative"
+          ],
+          "x": "**Triple-negative** and node-positive."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Neoadjuvant FEC-D** then surgery and adjuvant therapy."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Aromatase inhibitors need ER-positive disease."
+            ],
+            [
+              2,
+              "She has no metastases; treatment is curative."
+            ],
+            [
+              3,
+              "Tamoxifen needs ER-positive disease."
+            ],
+            [
+              4,
+              "Trastuzumab needs HER2-positive disease."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Neoadjuvant FEC-D.** No receptor to target = chemotherapy."
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 63 year old woman has a hard left breast lump. The overlying skin is thickened, with dimpling around the hair follicles giving an orange-peel appearance.",
+      "q": "Which is the most likely mechanism of the skin change?",
+      "o": [
+        "Dermal lymphatic obstruction by tumour cells",
+        "Infection of hair follicles",
+        "Shortening of Cooper's ligaments",
+        "Tumour invasion of sweat glands",
+        "Venous obstruction"
+      ],
+      "a": 0,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Mechanism of a skin sign."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "orange-peel appearance",
+            "dimpling around the hair follicles"
+          ],
+          "x": "**Peau d'orange**."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Tumour blocks **dermal lymphatics**; oedema swells skin but follicles stay tethered."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Folliculitis gives pustules, not pitting."
+            ],
+            [
+              2,
+              "Cooper's ligament shortening gives skin dimpling and tethering, not diffuse pitting."
+            ],
+            [
+              3,
+              "Sweat glands are not the mechanism."
+            ],
+            [
+              4,
+              "Venous obstruction gives dilated veins, not peau d'orange."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Dermal lymphatic obstruction.**"
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 66 year old woman has noticed a lump in her right breast for 2 months. It is painless. There is a 2.5 cm hard, irregular mass in the upper outer quadrant, fixed to the underlying tissue, with nipple retraction. There is a firm right axillary node. Her pulse rate is 78 bpm and BP 142/84 mmHg.",
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Breast cyst",
+        "Fat necrosis",
+        "Fibroadenoma",
+        "Intraductal papilloma",
+        "Invasive ductal carcinoma"
+      ],
+      "a": 4,
+      "e": "A hard, irregular, fixed, painless lump with nipple retraction and an axillary node in an older woman is invasive ductal carcinoma, the commonest breast cancer.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Breast lump diagnosis: feel, fixity, age."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "66 year old",
+            "painless",
+            "hard, irregular",
+            "fixed to the underlying tissue",
+            "nipple retraction",
+            "firm right axillary node"
+          ],
+          "x": "Every malignant feature."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Invasive ductal carcinoma**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "A cyst is smooth and fluctuant, often tender."
+            ],
+            [
+              1,
+              "Fat necrosis follows trauma and does not give a node."
+            ],
+            [
+              2,
+              "Fibroadenoma is smooth and mobile in young women."
+            ],
+            [
+              3,
+              "Papilloma gives nipple discharge with a small soft lump."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**E. Invasive ductal carcinoma.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 54 year old woman is recalled after a routine screening mammogram. She has no symptoms and no palpable lump. The mammogram shows a cluster of fine microcalcifications in the left breast. Core biopsy shows malignant cells confined within the ducts, with an intact basement membrane.",
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Ductal carcinoma in situ",
+        "Fibrocystic change",
+        "Invasive ductal carcinoma",
+        "Invasive lobular carcinoma",
+        "Lobular carcinoma in situ"
+      ],
+      "a": 0,
+      "e": "Microcalcification with malignant cells confined to the ducts and an intact basement membrane is DCIS. Invasive cancer breaches the membrane.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis from mammogram and histology."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "microcalcifications",
+            "confined within the ducts",
+            "intact basement membrane"
+          ],
+          "x": "Ductal, in situ, calcified."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**DCIS**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Fibrocystic change is benign, with no malignant cells."
+            ],
+            [
+              2,
+              "Invasive cancer breaches the basement membrane."
+            ],
+            [
+              3,
+              "Lobular cancer is invasive and often invisible on mammogram."
+            ],
+            [
+              4,
+              "LCIS is lobular and usually incidental, not calcified."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. DCIS.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 61 year old woman has a vague area of thickening in her left breast. Her mammogram is reported as normal. Ultrasound shows an ill-defined area and core biopsy shows small, round, uniform cells infiltrating in single file through the stroma. MRI shows the lesion to be much larger than expected.",
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Ductal carcinoma in situ",
+        "Invasive ductal carcinoma",
+        "Invasive lobular carcinoma",
+        "Lobular carcinoma in situ",
+        "Phyllodes tumour"
+      ],
+      "a": 2,
+      "e": "Invasive lobular carcinoma has small round uniform cells infiltrating the stroma, is often missed on mammogram, and is best imaged by MRI.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Histological diagnosis."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "vague area of thickening",
+            "mammogram is reported as normal",
+            "small, round, uniform cells",
+            "single file",
+            "MRI"
+          ],
+          "x": "Hidden on mammogram, infiltrating uniform cells, MRI needed."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Invasive lobular carcinoma**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "DCIS shows microcalcification and is not infiltrating."
+            ],
+            [
+              1,
+              "IDC is usually a hard mass seen on mammogram."
+            ],
+            [
+              3,
+              "LCIS does not infiltrate the stroma."
+            ],
+            [
+              4,
+              "Phyllodes is a fast-growing smooth mass."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**C. Invasive lobular carcinoma.** Missed on mammogram = lobular, use MRI."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 70 year old woman has noticed her left breast looks different. Her skin dimples when she raises her arms. Her temperature is 36.6°C, pulse rate 74 bpm and BP 138/80 mmHg. She is not breastfeeding and has no breast pain.",
+      "visual": null,
+      "q": "Which is the most likely clinical finding on examination of the left breast?",
+      "o": [
+        "A non-tender, firm, smooth, very mobile mass",
+        "A non-tender, hard, irregular, fixed mass with skin tethering",
+        "A tender, fluctuant mass with overlying erythema",
+        "A tender, smooth, fluctuant mass that varies with the cycle",
+        "Generalised lumpiness without a discrete mass"
+      ],
+      "a": 1,
+      "e": "Skin dimpling in a 70 year old points to breast cancer: a hard, irregular, fixed, non-tender lump with tethering.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Predict the examination finding."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "70 year old",
+            "Her skin dimples",
+            "no breast pain"
+          ],
+          "x": "Older woman, skin tethering, painless."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Hard, irregular, fixed mass with skin tethering**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "That is a fibroadenoma in a young woman."
+            ],
+            [
+              2,
+              "That is an abscess."
+            ],
+            [
+              3,
+              "That is a cyst; she is postmenopausal."
+            ],
+            [
+              4,
+              "That is fibrocystic change."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Hard, irregular, fixed mass with skin tethering.**"
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 64 year old woman treated for breast cancer 3 years ago has 6 weeks of worsening lower back pain that keeps her awake at night. She is thirsty and constipated. Her pulse rate is 82 bpm and BP 130/78 mmHg. Leg power and sensation are normal.",
+      "labs": [
+        [
+          "Calcium (adjusted)",
+          "3.02 mmol/L",
+          "2.20–2.60",
+          "H"
+        ],
+        [
+          "ALP",
+          "312 U/L",
+          "30–130",
+          "H"
+        ],
+        [
+          "PTH",
+          "0.8 pmol/L",
+          "1.6–6.9",
+          "L"
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely cause of her symptoms?",
+      "o": [
+        "Bone metastases",
+        "Liver metastases",
+        "Mechanical back pain",
+        "Primary hyperparathyroidism",
+        "Tamoxifen side effect"
+      ],
+      "a": 0,
+      "e": "Night back pain, hypercalcaemia with a suppressed PTH and raised ALP after breast cancer mean bone metastases, the commonest site of spread.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Cause of back pain and hypercalcaemia after cancer."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "treated for breast cancer",
+            "keeps her awake at night",
+            "thirsty and constipated"
+          ],
+          "x": "Night pain + hypercalcaemia symptoms; PTH **suppressed**, ALP high."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Bone metastases**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Liver metastases do not cause hypercalcaemia or back pain."
+            ],
+            [
+              2,
+              "Mechanical pain is not worse at night and calcium is normal."
+            ],
+            [
+              3,
+              "PTH would be high, not suppressed."
+            ],
+            [
+              4,
+              "Tamoxifen does not cause this picture."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Bone metastases.** Bone, liver, lungs."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 56 year old woman has a 4 cm invasive ductal carcinoma in her right breast. Sentinel node biopsy shows tumour in 2 axillary lymph nodes. CT of the chest, abdomen and pelvis shows no distant spread. Her pulse rate is 72 bpm and BP 128/74 mmHg.",
+      "labs": [
+        [
+          "Tumour size",
+          "4 cm",
+          "",
+          ""
+        ],
+        [
+          "Positive axillary nodes",
+          "2",
+          "0",
+          "H"
+        ],
+        [
+          "Distant metastases",
+          "None",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely TNM stage?",
+      "o": [
+        "T1 N0 M0",
+        "T2 N1 M0",
+        "T2 N2 M0",
+        "T3 N1 M0",
+        "T4 N1 M1"
+      ],
+      "a": 1,
+      "e": "T2 is 2 to 5 cm, N1 is 1 to 3 local nodes, M0 is no metastasis: T2 N1 M0.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Stage using T, N and M separately."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "4 cm",
+            "2 axillary lymph nodes",
+            "no distant spread"
+          ],
+          "x": "Size 4 cm, 2 nodes, no metastases."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "T2 (2–5 cm), N1 (1–3 nodes), M0: **T2 N1 M0**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "T1 is under 2 cm; nodes are involved."
+            ],
+            [
+              2,
+              "N2 is 4 to 9 nodes."
+            ],
+            [
+              3,
+              "T3 is over 5 cm."
+            ],
+            [
+              4,
+              "No chest wall, skin or distant spread."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. T2 N1 M0.**"
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 34 year old woman has a 1.5 cm firm, irregular lump in her right breast that has been present for 6 weeks. She has dense breast tissue. She is referred to the breast clinic.",
+      "visual": null,
+      "q": "Which is the most appropriate initial imaging?",
+      "o": [
+        "CT chest",
+        "Mammogram",
+        "MRI breast",
+        "PET scan",
+        "Ultrasound of the breast"
+      ],
+      "a": 4,
+      "e": "In women under 40 with dense breast tissue, ultrasound is the first-line imaging in triple assessment; mammography is first-line in older women.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Initial imaging: depends on age."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "34 year old",
+            "dense breast tissue"
+          ],
+          "x": "Young, **dense** breast tissue."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Ultrasound** first."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "CT is for staging."
+            ],
+            [
+              1,
+              "Mammograms are less sensitive in dense young breasts."
+            ],
+            [
+              2,
+              "MRI is for lobular cancer or high-risk screening."
+            ],
+            [
+              3,
+              "PET assesses metastases."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**E. Ultrasound.** Under 40 = ultrasound; older = mammogram."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 59 year old woman has a 1.8 cm invasive ductal carcinoma confirmed on core biopsy. There are no palpable axillary lymph nodes. She is planned for breast-conserving surgery.",
+      "labs": [
+        [
+          "Core biopsy",
+          "Invasive ductal carcinoma",
+          "",
+          ""
+        ],
+        [
+          "ER",
+          "Positive",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most appropriate investigation to assess the axilla before surgery?",
+      "o": [
+        "Axillary lymph node clearance",
+        "Axillary ultrasound",
+        "CT chest",
+        "MRI breast",
+        "PET scan"
+      ],
+      "a": 1,
+      "e": "With no palpable nodes, pre-operative axillary ultrasound is done; if normal, the axilla is staged with sentinel node biopsy at surgery.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Assess the axilla, before surgery."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "no palpable axillary lymph nodes",
+            "planned for breast-conserving surgery"
+          ],
+          "x": "Clinically negative axilla."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Pre-operative axillary ultrasound**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Clearance is treatment for proven nodal spread, not an investigation."
+            ],
+            [
+              2,
+              "CT looks for distant spread."
+            ],
+            [
+              3,
+              "MRI is for the breast, not the axilla."
+            ],
+            [
+              4,
+              "PET assesses metastases (M)."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Axillary ultrasound**, then sentinel node biopsy at surgery."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 63 year old woman has had breast-conserving surgery and radiotherapy for invasive ductal carcinoma. Her last period was 12 years ago. Her pulse rate is 70 bpm and BP 136/80 mmHg.",
+      "labs": [
+        [
+          "ER",
+          "Positive",
+          "",
+          ""
+        ],
+        [
+          "PR",
+          "Positive",
+          "",
+          ""
+        ],
+        [
+          "HER2",
+          "Negative",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most appropriate adjuvant drug treatment?",
+      "o": [
+        "Docetaxel",
+        "Letrozole",
+        "Tamoxifen",
+        "Trastuzumab",
+        "Zoledronic acid alone"
+      ],
+      "a": 1,
+      "e": "ER-positive, HER2-negative cancer in a postmenopausal woman is treated with an aromatase inhibitor such as letrozole (monitor BMD).",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Adjuvant drug: receptors and menopause."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "last period was 12 years ago"
+          ],
+          "x": "**Postmenopausal**, ER-positive, HER2-negative."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Aromatase inhibitor: letrozole**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Docetaxel is part of FEC-D for triple-negative or node-positive disease."
+            ],
+            [
+              2,
+              "Tamoxifen is first-line before the menopause."
+            ],
+            [
+              3,
+              "Trastuzumab is for HER2-positive."
+            ],
+            [
+              4,
+              "Bone protection alone does not treat the cancer."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Letrozole.** Postmenopausal ER+ = aromatase inhibitor."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 38 year old woman has had a wide local excision for invasive ductal carcinoma. She has regular periods. The tumour is oestrogen receptor positive and HER2 negative.",
+      "visual": null,
+      "q": "Which is the most appropriate endocrine therapy?",
+      "o": [
+        "Anastrozole",
+        "Letrozole",
+        "Raloxifene",
+        "Tamoxifen",
+        "Trastuzumab"
+      ],
+      "a": 3,
+      "e": "In premenopausal ER-positive disease, tamoxifen (a SERM) is first-line. Aromatase inhibitors do not stop ovarian oestrogen production.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Endocrine therapy: menopausal status decides."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "38 year old",
+            "regular periods",
+            "oestrogen receptor positive"
+          ],
+          "x": "**Premenopausal**, ER-positive."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Tamoxifen**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Aromatase inhibitors are for postmenopausal women."
+            ],
+            [
+              1,
+              "Aromatase inhibitors are for postmenopausal women."
+            ],
+            [
+              2,
+              "Raloxifene is not used to treat breast cancer."
+            ],
+            [
+              4,
+              "Trastuzumab needs HER2-positive disease."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Tamoxifen.**"
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 49 year old woman has invasive ductal carcinoma. Core biopsy shows the tumour is HER2 positive. She has no history of heart disease. Her pulse rate is 68 bpm and BP 122/76 mmHg.",
+      "labs": [
+        [
+          "ER",
+          "Negative",
+          "",
+          ""
+        ],
+        [
+          "HER2",
+          "Positive (3+)",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which targeted treatment is most appropriate?",
+      "o": [
+        "Anastrozole",
+        "Bevacizumab",
+        "Rituximab",
+        "Tamoxifen",
+        "Trastuzumab"
+      ],
+      "a": 4,
+      "e": "HER2-positive cancer is treated with trastuzumab (Herceptin), which needs cardiac monitoring because of cardiotoxicity.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Targeted therapy: match it to the receptor."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "HER2 positive",
+            "no history of heart disease"
+          ],
+          "x": "HER2-positive, ER-negative; heart matters for the drug."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Trastuzumab**, with cardiac monitoring."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Needs ER-positive disease."
+            ],
+            [
+              1,
+              "Bevacizumab targets VEGF, not HER2."
+            ],
+            [
+              2,
+              "Rituximab targets CD20 in lymphoma."
+            ],
+            [
+              3,
+              "Needs ER-positive disease."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**E. Trastuzumab.** Check the heart (echo) before and during."
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 35 year old woman has breast cancer. Her mother had ovarian cancer at 48 and her sister breast cancer at 39. Genetic testing shows a heterozygous BRCA1 mutation.",
+      "visual": null,
+      "q": "Which is the normal function of the protein encoded by this gene?",
+      "o": [
+        "Activating the oestrogen receptor",
+        "DNA double-strand break repair by homologous recombination",
+        "DNA mismatch repair",
+        "Promoting cell division as a proto-oncogene",
+        "Regulating apoptosis through BCL-2"
+      ],
+      "a": 1,
+      "e": "BRCA1 and BRCA2 are tumour suppressor genes involved in DNA double-strand break repair by homologous recombination; loss of function greatly increases cancer risk.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Gene function."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "ovarian cancer at 48",
+            "heterozygous BRCA1 mutation"
+          ],
+          "x": "Breast and ovarian family history, BRCA1."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Double-strand break repair** (homologous recombination)."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "BRCA1 does not activate the oestrogen receptor."
+            ],
+            [
+              2,
+              "Mismatch repair genes cause Lynch syndrome."
+            ],
+            [
+              3,
+              "BRCA is a tumour suppressor, not a proto-oncogene."
+            ],
+            [
+              4,
+              "BCL-2 is a separate anti-apoptotic gene."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Double-strand break repair.**"
+        }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "How does breast cancer present, and what do you find on examination?",
+        "tip": "Exam thinking: the examination finding is often the question.",
+        "points": [
+          {
+            "p": "Painless, hard, irregular, fixed lump",
+            "k": [
+              [
+                "hard",
+                "irregular",
+                "fixed"
+              ]
+            ],
+            "why": "Benign lumps are smooth and mobile."
+          },
+          {
+            "p": "Skin changes: peau d'orange, tethering, nipple retraction",
+            "k": [
+              [
+                "peau",
+                "orange",
+                "tether",
+                "retract",
+                "dimpl"
+              ]
+            ],
+            "why": "Signs of infiltration."
+          },
+          {
+            "p": "Nipple discharge (may be bloody)",
+            "k": [
+              [
+                "discharge"
+              ]
+            ],
+            "why": "Over 50 with unilateral discharge = 2WW."
+          },
+          {
+            "p": "Axillary lymphadenopathy",
+            "k": [
+              [
+                "axilla",
+                "node",
+                "lymph"
+              ]
+            ],
+            "why": "N stage."
+          },
+          {
+            "p": "Abnormal screening mammogram",
+            "k": [
+              [
+                "mammogra",
+                "screen"
+              ]
+            ],
+            "why": "Often how DCIS is found."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the risk factors for breast cancer?",
+        "tip": "Exam thinking: most are extra oestrogen exposure.",
+        "points": [
+          {
+            "p": "Family history, BRCA1/2 (BRCA1 highest relative risk)",
+            "k": [
+              [
+                "brca",
+                "family"
+              ]
+            ],
+            "why": "Children and siblings have a 50% chance of carrying it."
+          },
+          {
+            "p": "Oestrogen exposure: early menarche, late menopause, HRT",
+            "k": [
+              [
+                "oestrogen",
+                "estrogen",
+                "menarche",
+                "menopause",
+                "hrt"
+              ]
+            ],
+            "why": "More cycles, more proliferation."
+          },
+          {
+            "p": "Nulliparity or late first pregnancy",
+            "k": [
+              [
+                "nullipar",
+                "pregnan",
+                "children"
+              ]
+            ],
+            "why": "Pregnancy is protective."
+          },
+          {
+            "p": "Obesity and alcohol",
+            "k": [
+              [
+                "obes",
+                "weight",
+                "bmi",
+                "alcohol"
+              ]
+            ],
+            "why": "Fat makes oestrogen after the menopause."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Name the subtypes and how each one presents.",
+        "tip": "Exam thinking: basement membrane and mammogram visibility.",
+        "points": [
+          {
+            "p": "Invasive ductal carcinoma: most common, hard fixed lump",
+            "k": [
+              [
+                "ductal",
+                "idc"
+              ]
+            ],
+            "why": "'Like a small pebble'."
+          },
+          {
+            "p": "DCIS: microcalcification, basement membrane intact",
+            "k": [
+              [
+                "dcis",
+                "ductal carcinoma in situ"
+              ],
+              [
+                "calcif"
+              ]
+            ],
+            "why": "Usually found on screening."
+          },
+          {
+            "p": "Invasive lobular: missed on mammogram, MRI gold standard",
+            "k": [
+              [
+                "lobular"
+              ],
+              [
+                "mri"
+              ]
+            ],
+            "why": "Small round uniform infiltrating cells."
+          },
+          {
+            "p": "LCIS: incidental on biopsy",
+            "k": [
+              [
+                "lcis",
+                "lobular carcinoma in situ"
+              ]
+            ],
+            "why": "A risk marker."
+          },
+          {
+            "p": "Intraductal papilloma: benign, clear or bloody discharge, raises risk",
+            "k": [
+              [
+                "papilloma"
+              ]
+            ],
+            "why": "Wart-like, small lump."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How is breast cancer staged, and where does it spread?",
+        "tip": "Exam thinking: know the T and N cut-offs.",
+        "points": [
+          {
+            "p": "T1 <2 cm, T2 2–5 cm, T3 >5 cm, T4 chest wall, skin or inflammatory",
+            "k": [
+              [
+                "t1",
+                "t2",
+                "t3",
+                "t4",
+                "2 cm",
+                "5 cm",
+                "2cm",
+                "5cm"
+              ]
+            ],
+            "why": "T4 is any size."
+          },
+          {
+            "p": "N1 1–3 nodes, N2 4–9, N3 ≥10 or supra/infraclavicular",
+            "k": [
+              [
+                "n1",
+                "n2",
+                "n3",
+                "node"
+              ]
+            ],
+            "why": "Nodes are counted."
+          },
+          {
+            "p": "M0 or M1: metastasis absent or present",
+            "k": [
+              [
+                "m0",
+                "m1",
+                "metasta"
+              ]
+            ],
+            "why": "Any distant spread is M1."
+          },
+          {
+            "p": "Spreads to bone, liver and lungs",
+            "k": [
+              [
+                "bone"
+              ],
+              [
+                "liver",
+                "lung"
+              ]
+            ],
+            "why": "Bone gives hypercalcaemia and cord compression."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is the gold-standard investigation and which imaging do you use at which age?",
+        "tip": "Exam thinking: age decides the imaging.",
+        "points": [
+          {
+            "p": "Triple assessment: examination, imaging, core biopsy",
+            "k": [
+              [
+                "triple"
+              ]
+            ],
+            "why": "Core biopsy gives histology and receptors."
+          },
+          {
+            "p": "Under 40: ultrasound (dense breasts)",
+            "k": [
+              [
+                "ultrasound",
+                "uss"
+              ]
+            ],
+            "why": "Mammograms are poor in dense tissue."
+          },
+          {
+            "p": "Older women: mammogram",
+            "k": [
+              [
+                "mammogra"
+              ]
+            ],
+            "why": "Over 35 in the notes."
+          },
+          {
+            "p": "MRI breast for lobular cancer",
+            "k": [
+              [
+                "mri"
+              ]
+            ],
+            "why": "Lobular is often missed on mammogram."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "Describe screening, urgent referral and high familial risk referral.",
+        "tip": "Exam thinking: numbers matter.",
+        "points": [
+          {
+            "p": "Screening: mammogram every 3 years, ages 50 to 70",
+            "k": [
+              [
+                "50"
+              ],
+              [
+                "70"
+              ]
+            ],
+            "why": "NHS Breast Screening Programme."
+          },
+          {
+            "p": "Over 30 with a lump: urgent 2WW; under 30: non-urgent",
+            "k": [
+              [
+                "30"
+              ]
+            ],
+            "why": "Over 50 with unilateral nipple discharge is also 2WW."
+          },
+          {
+            "p": "Familial risk: male first-degree relative, first-degree <40, bilateral <50, or two first-degree relatives",
+            "k": [
+              [
+                "male",
+                "first-degree",
+                "first degree",
+                "bilateral",
+                "40"
+              ]
+            ],
+            "why": "These need genetics referral."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "How do you stage the tumour, nodes and metastases?",
+        "tip": "Exam thinking: no palpable nodes = ultrasound first.",
+        "points": [
+          {
+            "p": "T: mammography and core biopsy",
+            "k": [
+              [
+                "mammogra",
+                "biopsy"
+              ]
+            ],
+            "why": "Gives size and type."
+          },
+          {
+            "p": "N: pre-operative axillary ultrasound then sentinel node biopsy",
+            "k": [
+              [
+                "sentinel",
+                "axillary ultrasound"
+              ]
+            ],
+            "why": "Ultrasound if no palpable nodes."
+          },
+          {
+            "p": "M: PET scan",
+            "k": [
+              [
+                "pet",
+                "ct"
+              ]
+            ],
+            "why": "For suspected distant spread."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What surgery and radiotherapy are used in early breast cancer?",
+        "tip": "Exam thinking: small and peripheral = keep the breast.",
+        "points": [
+          {
+            "p": "Breast-conserving surgery (lumpectomy) for small (<4–5 cm) peripheral tumours, with sentinel node biopsy",
+            "k": [
+              [
+                "conserv",
+                "lumpectomy",
+                "wide local",
+                "wle"
+              ]
+            ],
+            "why": "Needs a negative axillary ultrasound."
+          },
+          {
+            "p": "Otherwise mastectomy",
+            "k": [
+              [
+                "mastectomy"
+              ]
+            ],
+            "why": "Large or central tumours."
+          },
+          {
+            "p": "Whole-breast radiotherapy after breast-conserving surgery",
+            "k": [
+              [
+                "radiotherapy",
+                "radiation"
+              ]
+            ],
+            "why": "Reduces recurrence."
+          },
+          {
+            "p": "Axillary node clearance for proven nodal spread",
+            "k": [
+              [
+                "clearance",
+                "dissection"
+              ]
+            ],
+            "why": "Risk of lymphoedema."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "Which drug treatment for each receptor type, and what are the side effects?",
+        "tip": "Exam thinking: receptor first, then menopause.",
+        "points": [
+          {
+            "p": "ER+ premenopausal: tamoxifen (hot flushes)",
+            "k": [
+              [
+                "tamoxifen"
+              ]
+            ],
+            "why": "Under 45 or within 1 year of last period."
+          },
+          {
+            "p": "ER+ postmenopausal: aromatase inhibitor (letrozole, anastrozole), osteoporosis risk",
+            "k": [
+              [
+                "letrozole",
+                "anastrozole",
+                "aromatase"
+              ]
+            ],
+            "why": "Monitor BMD."
+          },
+          {
+            "p": "HER2+: trastuzumab, cardiotoxic",
+            "k": [
+              [
+                "trastuzumab",
+                "herceptin"
+              ]
+            ],
+            "why": "Cardiac monitoring."
+          },
+          {
+            "p": "Triple-negative or node-positive: neoadjuvant FEC-D",
+            "k": [
+              [
+                "fec"
+              ]
+            ],
+            "why": "Then surgery and adjuvant therapy."
+          },
+          {
+            "p": "New neurology: emergency (cord compression or brain metastases)",
+            "k": [
+              [
+                "cord",
+                "brain",
+                "neuro"
+              ]
+            ],
+            "why": "Advanced disease: palliative chemo or radiotherapy."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do BRCA mutations, oestrogen and HER2 matter?",
+        "tip": "Exam thinking: each explains a drug or a risk.",
+        "points": [
+          {
+            "p": "BRCA1/2: tumour suppressors in DNA double-strand break repair",
+            "k": [
+              [
+                "double-strand",
+                "double strand",
+                "homologous",
+                "dna repair"
+              ]
+            ],
+            "why": "Loss of function greatly raises risk."
+          },
+          {
+            "p": "Oestrogen drives proliferation of hormone-sensitive epithelium",
+            "k": [
+              [
+                "prolif"
+              ]
+            ],
+            "why": "Rationale for tamoxifen and aromatase inhibitors."
+          },
+          {
+            "p": "HER2 overexpression drives aggressive growth; trastuzumab also hits HER2 on cardiac myocytes",
+            "k": [
+              [
+                "her2"
+              ],
+              [
+                "heart",
+                "cardiac",
+                "myocyte"
+              ]
+            ],
+            "why": "Hence cardiotoxicity."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Explain the basement membrane, peau d'orange and sentinel node biopsy.",
+        "tip": "Exam thinking: mechanisms of signs and tests.",
+        "points": [
+          {
+            "p": "In situ = basement membrane intact; invasive = breached",
+            "k": [
+              [
+                "basement"
+              ]
+            ],
+            "why": "DCIS cannot metastasise until the membrane is breached."
+          },
+          {
+            "p": "Peau d'orange: dermal lymphatic obstruction causing oedema",
+            "k": [
+              [
+                "lymph"
+              ]
+            ],
+            "why": "Hair follicles stay tethered as skin swells."
+          },
+          {
+            "p": "Sentinel node is the first to drain the tumour, so staging with less morbidity",
+            "k": [
+              [
+                "first"
+              ],
+              [
+                "morbidity",
+                "lymphoedema",
+                "less"
+              ]
+            ],
+            "why": "Avoids full clearance if negative."
+          }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "Invasive ductal carcinoma": "Breast cancer from duct cells that has breached the basement membrane; the most common type.",
+    "IDC": "Invasive ductal carcinoma, the most common breast cancer.",
+    "DCIS": "Ductal carcinoma in situ: malignant duct cells with an intact basement membrane, often seen as microcalcification.",
+    "LCIS": "Lobular carcinoma in situ: non-invasive lobular cells, usually found by chance.",
+    "Invasive lobular carcinoma": "Invasive cancer of lobular cells that is often missed on mammogram.",
+    "Intraductal papilloma": "Benign wart-like duct growth causing clear or bloody nipple discharge.",
+    "Basement membrane": "Thin layer under the epithelium; breaching it makes a cancer invasive.",
+    "Microcalcification": "Tiny calcium flecks on a mammogram, typical of DCIS.",
+    "Peau d'orange": "Orange-peel pitting of breast skin from blocked dermal lymphatics.",
+    "Nipple retraction": "Nipple pulled inwards, often by tumour tethering the ducts.",
+    "Skin tethering": "Skin dimpling as tumour pulls on the supporting ligaments.",
+    "Inflammatory breast cancer": "Aggressive cancer in dermal lymphatics causing a red, swollen breast; staged T4.",
+    "Fibroadenoma": "Benign smooth, very mobile lump in young women.",
+    "Fat necrosis": "Hard benign lump after trauma or surgery that can mimic cancer.",
+    "BRCA1": "Tumour suppressor gene for DNA repair; mutations give the highest relative breast cancer risk.",
+    "BRCA2": "Tumour suppressor gene for DNA repair; mutations raise breast, ovarian and male breast cancer risk.",
+    "Homologous recombination": "Accurate repair of DNA double-strand breaks using the sister chromatid as a template.",
+    "Nulliparity": "Never having given birth.",
+    "Menarche": "First menstrual period.",
+    "Triple assessment": "Clinical examination, imaging and core needle biopsy of a breast lump.",
+    "Core needle biopsy": "A wide needle takes a tissue core for histology and receptor testing.",
+    "Mammogram": "Low-dose breast X-ray, used for screening and first-line imaging in older women.",
+    "Sentinel node biopsy": "Removal of the first node(s) draining the tumour to stage the axilla.",
+    "Axillary node clearance": "Removal of the axillary nodes for proven nodal spread; risks arm lymphoedema.",
+    "Lymphoedema": "Swelling from damaged lymph drainage, often of the arm after axillary surgery.",
+    "2-week-wait": "NHS urgent suspected-cancer referral, seen within two weeks.",
+    "TNM": "Staging by tumour size, node involvement and metastasis.",
+    "Breast-conserving surgery": "Removing the tumour with a margin while keeping the breast; also called wide local excision.",
+    "Lumpectomy": "Breast-conserving removal of a tumour with a clear margin.",
+    "Mastectomy": "Surgical removal of the whole breast.",
+    "Neoadjuvant": "Treatment given before surgery to shrink a tumour.",
+    "Adjuvant": "Treatment given after surgery to reduce recurrence.",
+    "ER": "Oestrogen receptor; ER-positive tumours respond to hormone therapy.",
+    "PR": "Progesterone receptor, tested with ER on the biopsy.",
+    "HER2": "Growth factor receptor; overexpression gives aggressive cancer treatable with trastuzumab.",
+    "Triple-negative": "Tumour negative for ER, PR and HER2, so no targeted hormone or HER2 drug works.",
+    "Tamoxifen": "Selective oestrogen receptor modulator used for ER-positive premenopausal breast cancer.",
+    "SERM": "Selective oestrogen receptor modulator, such as tamoxifen.",
+    "Aromatase inhibitor": "Drug blocking conversion of androgens to oestrogen; used in postmenopausal ER-positive cancer.",
+    "Letrozole": "Aromatase inhibitor for postmenopausal ER-positive breast cancer.",
+    "Anastrozole": "Aromatase inhibitor for postmenopausal ER-positive breast cancer.",
+    "Trastuzumab": "Monoclonal antibody against HER2 (Herceptin); can cause heart failure.",
+    "FEC-D": "Chemotherapy: fluorouracil, epirubicin, cyclophosphamide, then docetaxel.",
+    "Cardiotoxicity": "Drug damage to the heart muscle, such as heart failure from trastuzumab.",
+    "Spinal cord compression": "Emergency compression of the cord, often by bone metastases, causing back pain and leg weakness."
+  }
+}

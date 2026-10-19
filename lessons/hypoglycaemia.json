@@ -1,0 +1,2215 @@
+{
+  "id": "hypoglycaemia",
+  "patient": {
+    "name": "Desmond Clarke",
+    "age": 67,
+    "sex": "M",
+    "setting": "Emergency Department (brought in by ambulance)",
+    "complaint": "Found sweaty, confused and slurring his words by his wife at 7 am",
+    "background": [
+      "Type 2 diabetes for 12 years on metformin and gliclazide",
+      "Chronic kidney disease stage 3; diarrhoea and vomiting for 3 days, barely eating",
+      "One severe hypo needing paramedics 4 months ago",
+      "Retired bus driver from Lewisham; still drives his own car"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' or 'Which medication is the most likely cause?' with a confused, sweaty diabetic on insulin or a sulphonylurea and a capillary glucose below 4.0 mmol/L.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Desmond, 67, type 2 diabetes on **gliclazide** and metformin.",
+            "Three days of diarrhoea and vomiting; hardly eating, still taking his tablets.",
+            "Wife found him **drenched in sweat**, shaking and talking nonsense.",
+            "Paramedics bring him in; he is drowsy but rousable."
+          ],
+          "vitals": {
+            "T": "36.4°C",
+            "HR": "108 bpm",
+            "BP": "146/84 mmHg",
+            "RR": "18 /min",
+            "SpO2": "97% on air",
+            "GCS": "13/15"
+          }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "A confused, sweaty diabetic is hypoglycaemic until a finger-prick says otherwise. The cut-off to remember is **below 4.0 mmol/L**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Capillary blood glucose",
+            "min": 0,
+            "max": 10,
+            "unit": "mmol/L",
+            "bands": [
+              [
+                0,
+                3.0,
+                "severe symptoms likely",
+                "bad"
+              ],
+              [
+                3.0,
+                4.0,
+                "hypoglycaemia",
+                "warn"
+              ],
+              [
+                4.0,
+                10,
+                "safe range",
+                "ok"
+              ]
+            ],
+            "value": 2.1,
+            "label": "Desmond 2.1",
+            "caption": "Desmond is well below 4.0 mmol/L and below 3.0, where severe neuroglycopenic symptoms appear."
+          },
+          "text": "The paramedics' finger-prick glucose is the single most important number in the case."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond has the classic set-up: a **sulphonylurea** plus **missed meals** from his gastroenteritis."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Clammy, tremulous, heart racing.",
+            "Speech slurred; does not know where he is.",
+            "No focal limb weakness; pupils equal and reactive.",
+            "No smell of ketones, not dehydrated-looking enough for HHS."
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "Which of Desmond's features is neuroglycopenic rather than autonomic?",
+          "o": [
+            "Palpitations",
+            "Slurred speech",
+            "Sweating",
+            "Tremor"
+          ],
+          "a": 1,
+          "r": "**Slurred speech** reflects the brain running out of glucose. Sweating, tremor and palpitations are the **adrenaline** warning signs."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond has both sets: autonomic (sweating, tremor, palpitations) and neuroglycopenic (**confusion, slurred speech, drowsiness**)."
+        },
+        {
+          "type": "compare",
+          "title": "Confused diabetic: which emergency?",
+          "head": [
+            "Feature",
+            "Hypoglycaemia",
+            "DKA",
+            "HHS"
+          ],
+          "rows": [
+            [
+              "Glucose",
+              "**<4.0 mmol/L**",
+              ">11 mmol/L",
+              "Very high, often >30"
+            ],
+            [
+              "Onset",
+              "Minutes to hours",
+              "Hours to a day",
+              "Days"
+            ],
+            [
+              "Skin",
+              "**Sweaty**, clammy",
+              "Dry, dehydrated",
+              "Very dehydrated"
+            ],
+            [
+              "Key drug link",
+              "Insulin, sulphonylurea",
+              "Type 1, missed insulin",
+              "Type 2, infection"
+            ]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Desmond's cause is his drug, but **Whipple's triad** still applies: symptoms, a low glucose at the time, and relief when glucose is given. In a non-diabetic, think **insulinoma**."
+        },
+        {
+          "type": "trap",
+          "text": "A drowsy patient with slurred speech can look like a **stroke**. Always check the **capillary glucose** first; hypoglycaemia can even cause focal signs."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate initial investigation?' (capillary glucose) or a C-peptide question: raised means endogenous insulin (insulinoma, sulphonylurea), low means injected insulin.",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Desmond arrives confused and sweaty. Which test comes first?",
+          "o": [
+            "Capillary blood glucose",
+            "CT head",
+            "Serum C-peptide",
+            "Venous blood gas"
+          ],
+          "a": 0,
+          "r": "A **finger-prick glucose** takes seconds and changes management immediately. Do it before any scan."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Desmond's finger-prick reads 2.1 mmol/L; a **laboratory glucose** sent at the same time confirms it."
+        },
+        {
+          "type": "labs",
+          "title": "Bloods taken before treatment",
+          "rows": [
+            [
+              "Laboratory glucose",
+              "2.0 mmol/L",
+              "3.5–5.5",
+              "L"
+            ],
+            [
+              "Creatinine",
+              "212 µmol/L",
+              "59–104",
+              "H"
+            ],
+            [
+              "eGFR",
+              "26 mL/min/1.73 m²",
+              ">90",
+              "L"
+            ],
+            [
+              "Potassium",
+              "4.9 mmol/L",
+              "3.5–5.3",
+              ""
+            ],
+            [
+              "Blood ketones",
+              "0.2 mmol/L",
+              "<0.6",
+              ""
+            ],
+            [
+              "Serum C-peptide",
+              "Raised",
+              "",
+              "H"
+            ]
+          ],
+          "text": "AKI on CKD means gliclazide is not being cleared. Raised C-peptide fits drug-driven endogenous insulin."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Desmond's kidney function",
+            "min": 0,
+            "max": 100,
+            "unit": "eGFR",
+            "bands": [
+              [
+                0,
+                30,
+                "severely reduced",
+                "bad"
+              ],
+              [
+                30,
+                60,
+                "moderately reduced",
+                "warn"
+              ],
+              [
+                60,
+                100,
+                "normal or mild",
+                "ok"
+              ]
+            ],
+            "value": 26,
+            "label": "Desmond 26",
+            "caption": "Dehydration pushed his eGFR down, so the sulphonylurea built up and kept driving insulin release."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond's **C-peptide is raised**: his own pancreas is over-secreting insulin, as expected with a sulphonylurea. Injected insulin would give a **low** C-peptide."
+        },
+        {
+          "type": "flow",
+          "title": "Reading the C-peptide",
+          "nodes": [
+            "Hypoglycaemia confirmed",
+            "Send insulin and C-peptide at the time of the low",
+            "C-peptide raised → endogenous insulin",
+            "Sulphonylurea screen or insulinoma work-up",
+            "C-peptide low with high insulin → exogenous insulin"
+          ],
+          "caption": "C-peptide is cut from proinsulin in the beta cell, so it only comes with the body's own insulin."
+        },
+        {
+          "type": "compare",
+          "title": "Which cause?",
+          "head": [
+            "Cause",
+            "Insulin",
+            "C-peptide",
+            "Next step"
+          ],
+          "rows": [
+            [
+              "Insulinoma",
+              "High",
+              "**High**",
+              "72-hour supervised fast"
+            ],
+            [
+              "Sulphonylurea",
+              "High",
+              "**High**",
+              "Drug history, drug screen"
+            ],
+            [
+              "Injected insulin",
+              "High",
+              "**Low**",
+              "Review insulin use"
+            ]
+          ]
+        },
+        {
+          "type": "pearl",
+          "text": "Suspected **insulinoma** in a non-diabetic: the diagnostic test is a **72-hour supervised fast**, with insulin, proinsulin and ketones taken at the moment glucose drops."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?' where consciousness decides: oral glucose if able to swallow, buccal gel if conscious but not able to self-treat, IV glucose if GCS below 15, IM glucagon if no IV access.",
+      "steps": [
+        {
+          "type": "flow",
+          "title": "Treatment by conscious level",
+          "nodes": [
+            "Conscious, can swallow → oral fast-acting glucose",
+            "Conscious, cannot self-treat → buccal Glucogel",
+            "GCS <15 or seizing → IV glucose over 10 min",
+            "No IV access → IM glucagon",
+            "Then a long-acting carbohydrate"
+          ],
+          "caption": "Recheck the capillary glucose after each step."
+        },
+        {
+          "type": "ask",
+          "q": "Desmond's GCS is 13 and he has a cannula. What do you give?",
+          "o": [
+            "Buccal glucose gel",
+            "IM glucagon",
+            "IV 20% glucose 100 ml",
+            "Oral glucose tablets"
+          ],
+          "a": 2,
+          "r": "GCS below 15 is not safe for oral treatment. With **IV access**, give **100 ml of 20%** (or 200 ml of 10%) glucose over 10 minutes."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Had Desmond been fully alert, **oral fast-acting glucose** would do. If alert but unable to self-treat, **buccal Glucogel**."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond gets **100 ml of 20% glucose IV**, then toast and a sandwich once he can swallow safely. With no cannula, IM glucagon."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Desmond's glucose after treatment",
+            "x": [
+              "0 min",
+              "15 min",
+              "1 h",
+              "4 h",
+              "12 h"
+            ],
+            "unit": "mmol/L",
+            "series": [
+              {
+                "name": "Capillary glucose",
+                "values": [
+                  2.1,
+                  7.6,
+                  5.4,
+                  3.6,
+                  5.8
+                ]
+              }
+            ],
+            "caption": "Gliclazide outlasts the IV glucose: the dip at 4 hours is why sulphonylurea hypos are admitted and monitored."
+          }
+        },
+        {
+          "type": "trap",
+          "text": "Do not send a sulphonylurea hypo home after one good reading. The drug has a long action, worse in **renal impairment**, so hypoglycaemia recurs."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Gliclazide stopped while his kidneys recover; diabetes team reviews his drugs.",
+            "This is his **second severe hypo this year**, both while awake.",
+            "He plans to drive himself home from the ward."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond needs a **medication and diet review**, and two severe episodes while awake mean he must **stop driving** and tell the DVLA."
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "Desmond's discharge plan follows **DVLA** guidance on severe hypoglycaemia; **Whipple's triad** is the rule for proving a hypo caused the symptoms."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why sweating comes before confusion, why awareness is lost, or how a sulphonylurea causes hypoglycaemia.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Desmond's sweating and tremor were **adrenaline**: the body's counter-regulatory alarm as glucose fell."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "His confusion came later, once the **glucose-dependent brain** ran short of fuel."
+        },
+        {
+          "type": "flow",
+          "title": "From falling glucose to coma",
+          "nodes": [
+            "Glucose falls below about 4 mmol/L",
+            "Sympathetic response: adrenaline released",
+            "Sweating, tremor, palpitations, anxiety",
+            "Glucose keeps falling: brain fuel runs out",
+            "Confusion, slurred speech, seizures, coma"
+          ],
+          "caption": "Autonomic warning signs normally come first."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Desmond still gets warning sweats. Repeated hypos can blunt this response, so patients go straight to **unheralded** confusion."
+        },
+        {
+          "type": "ask",
+          "q": "How does gliclazide cause Desmond's hypoglycaemia?",
+          "o": [
+            "Blocks beta-cell ATP-sensitive K+ channels, releasing insulin",
+            "Blocks renal glucose reabsorption",
+            "Inhibits hepatic glucose output via AMPK",
+            "Slows gastric emptying"
+          ],
+          "a": 0,
+          "r": "Sulphonylureas close **K-ATP channels**, depolarising the beta cell so it releases insulin whatever the glucose level."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Desmond's own insulin, released by gliclazide, kept pushing glucose into cells and switching off **hepatic glucose output** while he was not eating."
+        },
+        {
+          "type": "pearl",
+          "text": "**Metformin alone rarely causes hypoglycaemia** because it does not raise insulin. In a stem with both drugs, the sulphonylurea is the culprit."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    {
+      "d": "diagnosis",
+      "q": "Below which blood glucose is hypoglycaemia clinically significant?",
+      "o": [
+        "2.0 mmol/L",
+        "3.0 mmol/L",
+        "4.0 mmol/L",
+        "5.5 mmol/L"
+      ],
+      "a": 2,
+      "r": "Clinically significant hypoglycaemia is **below 4.0 mmol/L**; severe symptoms often appear below 3.0."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Which is an autonomic feature of hypoglycaemia?",
+      "o": [
+        "Confusion",
+        "Seizure",
+        "Slurred speech",
+        "Sweating"
+      ],
+      "a": 3,
+      "r": "**Sweating**, tremor, palpitations and anxiety are autonomic; the rest are neuroglycopenic."
+    },
+    {
+      "d": "diagnosis",
+      "q": "Which oral diabetes drug class most often causes hypoglycaemia?",
+      "o": [
+        "Biguanides",
+        "DPP-4 inhibitors",
+        "SGLT2 inhibitors",
+        "Sulphonylureas"
+      ],
+      "a": 3,
+      "r": "**Sulphonylureas** (e.g. gliclazide) stimulate insulin release regardless of glucose."
+    },
+    {
+      "d": "diagnosis",
+      "q": "What is Whipple's triad?",
+      "o": [
+        "Hypoglycaemia, hypokalaemia, hypotension",
+        "Symptoms, low glucose at the time, relief with glucose",
+        "Sweating, tremor, palpitations",
+        "Weight gain, fasting symptoms, raised insulin"
+      ],
+      "a": 1,
+      "r": "**Symptoms + a low glucose at the time + resolution with glucose**: classically used for insulinoma."
+    },
+    {
+      "d": "investigation",
+      "q": "What does a low C-peptide with high insulin suggest?",
+      "o": [
+        "Exogenous insulin",
+        "Insulinoma",
+        "Sulphonylurea use",
+        "Type 2 diabetes"
+      ],
+      "a": 0,
+      "r": "Injected insulin has no C-peptide, so C-peptide is **not raised** with **exogenous insulin**."
+    },
+    {
+      "d": "investigation",
+      "q": "What is the diagnostic test for insulinoma?",
+      "o": [
+        "72-hour supervised fast",
+        "Oral glucose tolerance test",
+        "Random insulin level",
+        "Short Synacthen test"
+      ],
+      "a": 0,
+      "r": "A **72-hour supervised fast**, with a hormone profile taken at the moment of hypoglycaemia."
+    },
+    {
+      "d": "management",
+      "q": "Unconscious hypoglycaemia, no IV access. What do you give?",
+      "o": [
+        "Buccal glucose gel",
+        "IM glucagon",
+        "Oral glucose",
+        "Subcutaneous insulin"
+      ],
+      "a": 1,
+      "r": "**IM glucagon** when IV glucose cannot be given; nothing by mouth if unconscious."
+    },
+    {
+      "d": "management",
+      "q": "Which IV glucose regimen is used for severe hypoglycaemia?",
+      "o": [
+        "50 ml of 50% glucose",
+        "100 ml of 20% glucose",
+        "500 ml of 5% glucose",
+        "1 litre of 0.9% saline"
+      ],
+      "a": 1,
+      "r": "**100 ml of 20%** or 200 ml of 10% glucose over about 10 minutes."
+    },
+    {
+      "d": "management",
+      "q": "After how many severe hypos while awake must a driver stop and tell the DVLA?",
+      "o": [
+        "Any single episode",
+        "More than one",
+        "Three or more",
+        "Only if on insulin"
+      ],
+      "a": 1,
+      "r": "**More than one** severe episode while awake, or **one while driving**."
+    },
+    {
+      "d": "science",
+      "q": "Why do autonomic symptoms usually come before confusion?",
+      "o": [
+        "Adrenaline is released as glucose falls",
+        "Cortisol rises after hours",
+        "Glucagon causes sweating",
+        "Insulin directly causes tremor"
+      ],
+      "a": 0,
+      "r": "The **counter-regulatory sympathetic response** fires first, a warning before brain fuel runs out."
+    }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 22 year old man with type 1 diabetes is found by his flatmate sweating and confused after a night out drinking. He played football earlier that day and took his usual insulin. He is tremulous, his speech is slurred and he cannot say where he is. His temperature is 36.5°C, pulse rate 118 bpm and BP 132/78 mmHg. There is no focal neurological deficit.",
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Alcohol intoxication",
+        "Diabetic ketoacidosis",
+        "Hypoglycaemia",
+        "Meningitis",
+        "Subdural haematoma"
+      ],
+      "a": 2,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "A diagnosis question in a confused diabetic: the drug, the timing and the skin decide it."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "type 1 diabetes",
+            "sweating and confused",
+            "night out drinking",
+            "played football",
+            "took his usual insulin",
+            "tremulous"
+          ],
+          "x": "Insulin plus exercise plus alcohol all lower glucose. **Sweating and tremor** are autonomic; confusion is neuroglycopenic."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "Usual insulin dose after exercise and alcohol: **hypoglycaemia**. Check a capillary glucose."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Alcohol does not explain the sweating and tremor; never blame drink before checking glucose."
+            ],
+            [
+              1,
+              "DKA builds over hours with vomiting and dry skin, not sweating, and follows missed insulin."
+            ],
+            [
+              3,
+              "No fever, headache or neck stiffness."
+            ],
+            [
+              4,
+              "No head injury history and no focal signs."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**C. Hypoglycaemia.** Rule: sweaty + confused + insulin = check the glucose first."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 45 year old nurse without diabetes has had three episodes of sweating and confusion at work in a month. During the latest episode her capillary glucose was 2.2 mmol/L and her symptoms resolved with oral glucose. Bloods were sent at the time.",
+      "labs": [
+        [
+          "Plasma glucose",
+          "2.1 mmol/L",
+          "3.5–5.5",
+          "L"
+        ],
+        [
+          "Serum insulin",
+          "Very high",
+          "",
+          "H"
+        ]
+      ],
+      "q": "Which is the most appropriate investigation to distinguish an endogenous from an exogenous cause?",
+      "o": [
+        "72-hour supervised fast",
+        "CT pancreas",
+        "HbA1c",
+        "Serum C-peptide",
+        "Short Synacthen test"
+      ],
+      "a": 3,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "It asks to separate **endogenous** (own insulin) from **exogenous** (injected) insulin."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "without diabetes",
+            "capillary glucose was 2.2 mmol/L",
+            "symptoms resolved with oral glucose",
+            "nurse"
+          ],
+          "x": "Whipple's triad is met. A nurse has access to insulin, so exogenous insulin is on the list."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**C-peptide**: raised with own insulin (insulinoma, sulphonylurea), low with injected insulin."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "The supervised fast diagnoses insulinoma but does not answer the endogenous vs exogenous question first."
+            ],
+            [
+              1,
+              "Imaging comes after a biochemical diagnosis of insulinoma."
+            ],
+            [
+              2,
+              "HbA1c measures average glucose, not insulin source."
+            ],
+            [
+              4,
+              "Synacthen tests for adrenal insufficiency; insulin would not be high."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Serum C-peptide.** Rule: C-peptide travels only with the body's own insulin."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 71 year old woman with type 2 diabetes on gliclazide is brought to the emergency department after her carer found her drowsy. She opens her eyes to voice and is confused. Her GCS is 12. Her pulse rate is 104 bpm and BP 150/88 mmHg. Her capillary glucose is 1.9 mmol/L. A cannula has been sited.",
+      "q": "Which is the most appropriate initial management?",
+      "o": [
+        "Buccal glucose gel",
+        "IM glucagon",
+        "IV 20% glucose 100 ml over 10 minutes",
+        "Oral glucose drink",
+        "Slow-release carbohydrate snack"
+      ],
+      "a": 2,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Initial management of hypoglycaemia: consciousness and IV access decide the route."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "GCS is 12",
+            "capillary glucose is 1.9 mmol/L",
+            "A cannula has been sited",
+            "gliclazide"
+          ],
+          "x": "GCS below 15 rules out anything by mouth. IV access is available."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**IV glucose**: 100 ml of 20% (or 200 ml of 10%) over 10 minutes."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Buccal gel is for a conscious patient who cannot self-treat."
+            ],
+            [
+              1,
+              "IM glucagon is only if there is no IV access; it also works less well with sulphonylureas."
+            ],
+            [
+              3,
+              "Oral glucose risks aspiration with a GCS of 12."
+            ],
+            [
+              4,
+              "Long-acting carbohydrate comes after the glucose is corrected."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**C. IV 20% glucose.** Rule: GCS <15 with a cannula = IV glucose; no cannula = IM glucagon."
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 30 year old woman with type 1 diabetes for 20 years has had two episodes of being found unconscious with a capillary glucose below 2.5 mmol/L. She says she no longer gets the shaky, sweaty feeling she used to have before a hypo. She has had many mild hypos this year.",
+      "q": "Which is the most likely mechanism of her loss of warning symptoms?",
+      "o": [
+        "Blunted autonomic counter-regulatory response",
+        "Increased cerebral glucose uptake",
+        "Insulin antibody formation",
+        "Reduced hepatic gluconeogenesis",
+        "Reduced insulin clearance"
+      ],
+      "a": 0,
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "A mechanism question: why have the warning signs gone?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "no longer gets the shaky, sweaty feeling",
+            "many mild hypos",
+            "type 1 diabetes for 20 years"
+          ],
+          "x": "The lost symptoms are the **autonomic** ones. Repeated hypos and long-standing diabetes blunt them."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Impaired hypoglycaemia awareness**: a blunted sympathetic (adrenaline) warning response, from autonomic neuropathy."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "This would explain less brain fuel shortage, not lost sweating and tremor."
+            ],
+            [
+              2,
+              "Antibodies cause erratic glucose, not loss of warning symptoms."
+            ],
+            [
+              3,
+              "This makes hypos more likely but does not remove the warning signs."
+            ],
+            [
+              4,
+              "Explains more hypos (e.g. renal failure), not unawareness."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Blunted autonomic response.** Rule: lost sweats and tremor = impaired awareness, so hypos go straight to coma."
+        }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 19 year old woman with type 1 diabetes is brought to the emergency department by her boyfriend. She skipped lunch after her usual morning insulin and went to the gym. She is anxious, sweaty and shaking, and keeps repeating herself. Her temperature is 36.7°C, pulse rate 116 bpm, BP 124/72 mmHg and respiratory rate 16 breaths per minute.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Addisonian crisis",
+        "Anxiety attack",
+        "Diabetic ketoacidosis",
+        "Hyperosmolar hyperglycaemic state",
+        "Hypoglycaemia"
+      ],
+      "a": 4,
+      "e": "Insulin, a missed meal and exercise with sweating, tremor and confusion is hypoglycaemia. An anxiety attack also gives autonomic symptoms but not confusion.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis in a type 1 diabetic: think of the three diabetic emergencies."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "skipped lunch after her usual morning insulin",
+            "went to the gym",
+            "sweaty and shaking",
+            "keeps repeating herself"
+          ],
+          "x": "Insulin with no food and extra exercise. Autonomic plus neuroglycopenic symptoms."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Hypoglycaemia**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Addisonian crisis gives hypotension and vomiting; no steroid history here."
+            ],
+            [
+              1,
+              "Anxiety gives autonomic symptoms but not confusion; never diagnose it in an insulin user without a glucose."
+            ],
+            [
+              2,
+              "DKA follows missed insulin and gives vomiting, dehydration and Kussmaul breathing."
+            ],
+            [
+              3,
+              "HHS is a type 2 condition developing over days."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**E. Hypoglycaemia.** Insulin + missed meal + exercise = hypo."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 78 year old man with type 2 diabetes is brought in confused. He has had a urinary tract infection and has been drinking little for 4 days. His medications are atorvastatin, bendroflumethiazide, gliclazide, metformin and ramipril. His pulse rate is 98 bpm and BP 112/68 mmHg.",
+      "labs": [
+        [
+          "Urea",
+          "29 mmol/L",
+          "2.5–7.8",
+          "H"
+        ],
+        [
+          "Creatinine",
+          "198 µmol/L",
+          "59–104",
+          "H"
+        ],
+        [
+          "eGFR",
+          "28 mL/min/1.73 m²",
+          ">90",
+          "L"
+        ],
+        [
+          "Capillary glucose",
+          "2.6 mmol/L",
+          "3.5–5.5",
+          "L"
+        ]
+      ],
+      "visual": null,
+      "q": "Which of his medications is the most likely cause of his hypoglycaemia?",
+      "o": [
+        "Atorvastatin",
+        "Bendroflumethiazide",
+        "Gliclazide",
+        "Metformin",
+        "Ramipril"
+      ],
+      "a": 2,
+      "e": "Gliclazide stimulates insulin release and accumulates when the kidneys fail. Metformin does not raise insulin and rarely causes hypoglycaemia on its own.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Most likely cause from a drug list: find the drug that raises insulin."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "drinking little for 4 days",
+            "urinary tract infection",
+            "gliclazide"
+          ],
+          "x": "Poor intake, AKI and a sulphonylurea: the classic accumulation set-up."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Gliclazide**, a sulphonylurea."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Statins do not lower glucose."
+            ],
+            [
+              1,
+              "Thiazides tend to raise glucose."
+            ],
+            [
+              3,
+              "Metformin causes lactic acidosis in AKI, not hypoglycaemia."
+            ],
+            [
+              4,
+              "ACE inhibitors worsen AKI but do not directly cause hypos."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**C. Gliclazide.** Rule: hypo + AKI + sulphonylurea = the sulphonylurea."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 42 year old woman without diabetes has a 6 month history of episodes of sweating, palpitations and confusion, usually before breakfast or after missing meals. The episodes stop when she eats. She has gained 7 kg because she eats frequently to prevent them. During one episode her capillary glucose was 2.3 mmol/L.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Addison's disease",
+        "Dumping syndrome",
+        "Insulinoma",
+        "Phaeochromocytoma",
+        "Vasovagal syncope"
+      ],
+      "a": 2,
+      "e": "Fasting hypoglycaemia with Whipple's triad and weight gain in a non-diabetic is insulinoma. Dumping syndrome gives post-prandial symptoms after gastric surgery.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis of recurrent hypoglycaemia in someone not on diabetes drugs."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "without diabetes",
+            "before breakfast or after missing meals",
+            "stop when she eats",
+            "gained 7 kg",
+            "capillary glucose was 2.3 mmol/L"
+          ],
+          "x": "Symptoms, a low glucose at the time and relief with food: **Whipple's triad**. Fasting pattern and weight gain."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Insulinoma**, a functional pancreatic neuroendocrine tumour."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Addison's gives weight loss, pigmentation and hypotension."
+            ],
+            [
+              1,
+              "Dumping is after meals and after gastric surgery."
+            ],
+            [
+              3,
+              "Phaeochromocytoma gives paroxysmal hypertension with high, not low, glucose."
+            ],
+            [
+              4,
+              "Vasovagal syncope is brief and has a normal glucose."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**C. Insulinoma.** Rule: Whipple's triad in a non-diabetic = insulinoma until proven otherwise."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 34 year old man with type 1 diabetes for 22 years is brought in after being found unconscious at work. His capillary glucose was 1.8 mmol/L and he recovered with IV glucose. He says he no longer feels sweaty or shaky before a hypo, which he used to. His pulse rate is 84 bpm and BP 126/80 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely cause of his lack of warning symptoms?",
+      "o": [
+        "Autonomic neuropathy",
+        "Diabetic retinopathy",
+        "Hypothyroidism",
+        "Peripheral sensory neuropathy",
+        "Proximal myopathy"
+      ],
+      "a": 0,
+      "e": "Impaired hypoglycaemia awareness is due to autonomic neuropathy blunting the sympathetic warning response. Peripheral sensory neuropathy affects the feet, not the adrenaline response.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Most likely cause of losing hypo warning signs."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "type 1 diabetes for 22 years",
+            "no longer feels sweaty or shaky"
+          ],
+          "x": "Long-standing diabetes; the autonomic warning symptoms have gone."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Autonomic neuropathy** causing impaired hypoglycaemia awareness."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Retinopathy affects vision, not hypo awareness."
+            ],
+            [
+              2,
+              "Hypothyroidism does not remove sweating and tremor."
+            ],
+            [
+              3,
+              "Sensory neuropathy affects feeling in the feet, not the sympathetic response."
+            ],
+            [
+              4,
+              "Myopathy causes weakness, not unawareness."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Autonomic neuropathy.** Rule: lost warning signs = impaired awareness."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A baby boy born at 34 weeks' gestation is 6 hours old. The midwife notices he is jittery, feeding poorly and sweaty. His temperature is 36.8°C and pulse rate 168 bpm. There is no rash and the fontanelle is soft.",
+      "labs": [
+        [
+          "Blood glucose",
+          "1.6 mmol/L",
+          "2.6–5.5",
+          "L"
+        ],
+        [
+          "Corrected calcium",
+          "2.30 mmol/L",
+          "2.20–2.60",
+          ""
+        ],
+        [
+          "CRP",
+          "3 mg/L",
+          "<5",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": [
+        "Hypoxic-ischaemic encephalopathy",
+        "Neonatal abstinence syndrome",
+        "Neonatal hypocalcaemia",
+        "Neonatal hypoglycaemia",
+        "Neonatal sepsis"
+      ],
+      "a": 3,
+      "e": "Prematurity is a specific risk factor for neonatal hypoglycaemia, and the glucose is low with normal calcium and CRP. Hypocalcaemia also causes jitteriness but the calcium is normal.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnosis in a jittery newborn: check the labs for the cause."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "34 weeks' gestation",
+            "jittery, feeding poorly and sweaty"
+          ],
+          "x": "Preterm (<37 weeks) is a risk factor. In the bloods, glucose is low; calcium and CRP are normal."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Neonatal hypoglycaemia**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "HIE follows a difficult delivery with low Apgars; none is described."
+            ],
+            [
+              1,
+              "No maternal opiate history and symptoms usually start later."
+            ],
+            [
+              2,
+              "Calcium is normal."
+            ],
+            [
+              4,
+              "No fever, normal CRP."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Neonatal hypoglycaemia.** Prematurity is the risk factor to spot."
+        }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 29 year old healthcare assistant without diabetes is brought to the emergency department confused and sweating. Her capillary glucose is 1.7 mmol/L and she recovers with IV glucose. Her sister has type 1 diabetes. Her pulse rate is 110 bpm and BP 118/70 mmHg. Bloods were taken before treatment.",
+      "labs": [
+        [
+          "Plasma glucose",
+          "1.6 mmol/L",
+          "3.5–5.5",
+          "L"
+        ],
+        [
+          "Serum insulin",
+          "Very high",
+          "",
+          "H"
+        ],
+        [
+          "Serum C-peptide",
+          "Undetectable",
+          "",
+          "L"
+        ],
+        [
+          "Sulphonylurea screen",
+          "Negative",
+          "",
+          ""
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely cause of her hypoglycaemia?",
+      "o": [
+        "Alcohol excess",
+        "Exogenous insulin administration",
+        "Insulinoma",
+        "Non-islet cell tumour hypoglycaemia",
+        "Sulphonylurea ingestion"
+      ],
+      "a": 1,
+      "e": "High insulin with low C-peptide means the insulin was injected. Insulinoma and sulphonylureas both raise C-peptide.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Cause of hypoglycaemia: read the insulin and C-peptide together."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "without diabetes",
+            "Her sister has type 1 diabetes",
+            "healthcare assistant"
+          ],
+          "x": "Access to insulin. In the bloods: very high insulin but undetectable C-peptide."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Exogenous insulin**: injected insulin carries no C-peptide."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Alcohol suppresses gluconeogenesis but insulin would be low."
+            ],
+            [
+              2,
+              "Insulinoma makes insulin and C-peptide together, so C-peptide is raised."
+            ],
+            [
+              3,
+              "Non-islet tumours act via IGF-2 with low insulin."
+            ],
+            [
+              4,
+              "Sulphonylureas raise C-peptide and the screen is negative."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Exogenous insulin.** Rule: high insulin + low C-peptide = injected."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 58 year old man with type 2 diabetes on insulin is brought in by ambulance after his wife found him drowsy and sweating. He mumbles but does not answer questions. His temperature is 36.6°C, pulse rate 112 bpm, BP 148/86 mmHg, respiratory rate 16 breaths per minute and oxygen saturation 97% breathing air. There is no focal weakness.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation?",
+      "o": [
+        "Capillary blood glucose",
+        "CT head",
+        "Serum C-peptide",
+        "Urine toxicology screen",
+        "Venous blood gas"
+      ],
+      "a": 0,
+      "e": "A capillary (finger-prick) glucose is fast and changes treatment immediately. CT head is for when glucose is normal and a stroke or head injury is suspected.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Initial investigation: the quickest test that changes management."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "type 2 diabetes on insulin",
+            "drowsy and sweating",
+            "no focal weakness"
+          ],
+          "x": "Insulin user, sweaty and drowsy: hypoglycaemia until proven otherwise."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Finger-prick capillary glucose**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "Scan only after glucose is checked and corrected."
+            ],
+            [
+              2,
+              "C-peptide finds the cause later; it is not the first test."
+            ],
+            [
+              3,
+              "Toxicology is not the first step in a sweaty insulin user."
+            ],
+            [
+              4,
+              "A gas is useful for DKA, but glucose comes first and is quicker."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. Capillary blood glucose.** Rule: check the glucose in anyone with reduced consciousness, before any scan."
+        }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 50 year old woman without diabetes has recurrent fasting episodes of confusion that resolve with food. During an episode her plasma glucose was 2.0 mmol/L with a raised insulin and raised C-peptide. A sulphonylurea screen was negative.",
+      "labs": [
+        [
+          "Plasma glucose",
+          "2.0 mmol/L",
+          "3.5–5.5",
+          "L"
+        ],
+        [
+          "Serum C-peptide",
+          "Raised",
+          "",
+          "H"
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": [
+        "72-hour supervised fast",
+        "HbA1c",
+        "Oral glucose tolerance test",
+        "Random serum cortisol",
+        "Short Synacthen test"
+      ],
+      "a": 0,
+      "e": "Suspected insulinoma is diagnosed by a 72-hour supervised fast with a hormone profile at the time of hypoglycaemia. An OGTT tests for diabetes, not fasting hypoglycaemia.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Diagnostic investigation for endogenous hyperinsulinism."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "fasting episodes",
+            "raised C-peptide",
+            "sulphonylurea screen was negative"
+          ],
+          "x": "Endogenous insulin, no drug: insulinoma."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**72-hour supervised fast**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              1,
+              "HbA1c reflects average glucose, not insulin excess."
+            ],
+            [
+              2,
+              "OGTT diagnoses diabetes and provokes post-prandial, not fasting, responses."
+            ],
+            [
+              3,
+              "Cortisol screens adrenal failure, which would not raise insulin."
+            ],
+            [
+              4,
+              "Synacthen tests adrenal reserve, not insulinoma."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**A. 72-hour supervised fast.** Rule: proven endogenous hyperinsulinism, no drug = supervised fast."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 63 year old man with type 2 diabetes on gliclazide feels shaky and sweaty in the clinic waiting room. He is fully alert, talking normally and able to swallow. His pulse rate is 100 bpm and BP 136/82 mmHg. His capillary glucose is 3.2 mmol/L.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": [
+        "Buccal glucose gel",
+        "IM glucagon",
+        "IV 10% glucose 200 ml",
+        "Oral fast-acting glucose",
+        "Slow-release carbohydrate snack only"
+      ],
+      "a": 3,
+      "e": "Conscious and able to swallow: oral fast-acting glucose such as glucose tablets or a sugary drink, followed by a longer-acting carbohydrate. IV and IM routes are for reduced consciousness.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Initial management: how conscious is he?"
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "fully alert",
+            "able to swallow",
+            "capillary glucose is 3.2 mmol/L"
+          ],
+          "x": "Hypoglycaemic but alert and safe to swallow."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Oral fast-acting glucose** (tablets, Lucozade, orange juice)."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Buccal gel is for a conscious patient unable to self-treat."
+            ],
+            [
+              1,
+              "Glucagon is for the unconscious with no IV access."
+            ],
+            [
+              2,
+              "IV glucose is for GCS below 15 or seizures."
+            ],
+            [
+              4,
+              "A slow snack alone is too slow; it follows fast glucose."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Oral fast-acting glucose.** Then a longer-acting carbohydrate."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 26 year old woman with type 1 diabetes is found having a seizure in a park. A friend says she injected insulin and skipped lunch. The paramedic's capillary glucose is 1.5 mmol/L. Two attempts at IV access have failed. Her pulse rate is 124 bpm and BP 140/90 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": [
+        "Buccal glucose gel",
+        "IM glucagon",
+        "IV 20% glucose",
+        "Oral glucose drink",
+        "Rectal diazepam"
+      ],
+      "a": 1,
+      "e": "A seizing hypoglycaemic patient with no IV access needs IM glucagon. Nothing should go in the mouth during a seizure.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Initial management: conscious level and IV access decide."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "having a seizure",
+            "capillary glucose is 1.5 mmol/L",
+            "Two attempts at IV access have failed"
+          ],
+          "x": "Seizing, severe hypo, no IV route."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**IM glucagon**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Nothing by mouth in a seizing patient; gel is for conscious patients."
+            ],
+            [
+              2,
+              "IV access has failed."
+            ],
+            [
+              3,
+              "Aspiration risk."
+            ],
+            [
+              4,
+              "The seizure is from hypoglycaemia; treat the cause."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. IM glucagon.** Rule: unconscious or seizing with no IV = IM glucagon."
+        }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 54 year old taxi driver with type 2 diabetes on insulin is reviewed in clinic. He has had two episodes this year where his wife needed to give him glucose because he was too confused to treat himself, both at home while awake. He has not had a hypo while driving. His pulse rate is 76 bpm and BP 134/80 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate advice about driving?",
+      "o": [
+        "Check glucose before each journey and continue driving",
+        "Continue driving and inform the DVLA only after a third episode",
+        "Stop driving for 24 hours after each episode",
+        "Stop driving immediately and inform the DVLA",
+        "Switch to daytime driving only"
+      ],
+      "a": 3,
+      "e": "More than one severe hypo (needing help from another person) while awake means he must stop driving and inform the DVLA. Checking glucose before driving is good practice but does not replace this.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "DVLA question: count the severe episodes and where they happened."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "two episodes this year",
+            "too confused to treat himself",
+            "at home while awake"
+          ],
+          "x": "Severe = needs help from another person. Two while awake."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Stop driving and inform the DVLA**."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "Pre-drive checks do not override the DVLA rule."
+            ],
+            [
+              1,
+              "The threshold is more than one, which he has already met."
+            ],
+            [
+              2,
+              "There is no 24-hour rule for this."
+            ],
+            [
+              4,
+              "Time of day is irrelevant."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**D. Stop driving and inform the DVLA.** Rule: >1 severe while awake, or 1 while driving."
+        }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 70 year old man with type 2 diabetes develops recurrent hypoglycaemia after starting a new tablet. His pulse rate is 96 bpm and BP 142/84 mmHg. His serum C-peptide is raised during an episode. The tablet is a sulphonylurea.",
+      "labs": [
+        [
+          "Capillary glucose",
+          "2.8 mmol/L",
+          "3.5–5.5",
+          "L"
+        ]
+      ],
+      "visual": null,
+      "q": "Which is the most likely mechanism of action of this drug?",
+      "o": [
+        "Activates PPAR-gamma receptors",
+        "Blocks ATP-sensitive potassium channels on beta cells",
+        "Inhibits DPP-4",
+        "Inhibits hepatic gluconeogenesis via AMPK",
+        "Inhibits SGLT2 in the proximal tubule"
+      ],
+      "a": 1,
+      "e": "Sulphonylureas close K-ATP channels on beta cells, causing depolarisation and insulin release regardless of glucose, which explains the raised C-peptide. AMPK activation is metformin.",
+      "steps": [
+        {
+          "t": "Read the question line first",
+          "x": "Mechanism of a sulphonylurea."
+        },
+        {
+          "t": "Pick out the clues",
+          "clues": [
+            "sulphonylurea",
+            "C-peptide is raised"
+          ],
+          "x": "Raised C-peptide means the drug drives the patient's own insulin release."
+        },
+        {
+          "t": "Make your own answer before looking",
+          "x": "**Closes beta-cell K-ATP channels** → depolarisation → Ca²⁺ influx → insulin release."
+        },
+        {
+          "t": "Rule out the others",
+          "elim": [
+            [
+              0,
+              "PPAR-gamma is pioglitazone; it improves sensitivity."
+            ],
+            [
+              2,
+              "DPP-4 inhibitors raise incretins in a glucose-dependent way."
+            ],
+            [
+              3,
+              "AMPK is metformin; it does not raise insulin."
+            ],
+            [
+              4,
+              "SGLT2 inhibitors cause glycosuria, rarely hypoglycaemia."
+            ]
+          ]
+        },
+        {
+          "t": "Commit",
+          "x": "**B. Blocks K-ATP channels.** Insulin release whatever the glucose = hypo risk."
+        }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "Define hypoglycaemia and name its two groups of symptoms, with examples.",
+        "tip": "Exam thinking: the stem gives you a mix of symptoms; sort them into the two groups.",
+        "points": [
+          {
+            "p": "Blood glucose below 4.0 mmol/L",
+            "k": [
+              [
+                "glucose",
+                "sugar",
+                "cbg"
+              ],
+              [
+                "4"
+              ]
+            ],
+            "why": "Severe symptoms often appear below 3.0 mmol/L."
+          },
+          {
+            "p": "Autonomic: sweating, tremor, palpitations, anxiety",
+            "k": [
+              [
+                "sweat",
+                "tremor",
+                "shak",
+                "palpitation"
+              ]
+            ],
+            "why": "These come from adrenaline and usually come first."
+          },
+          {
+            "p": "Neuroglycopenic: confusion, drowsiness, slurred speech, seizures, coma",
+            "k": [
+              [
+                "confus",
+                "drows",
+                "slurr",
+                "seizure",
+                "coma",
+                "conscious"
+              ]
+            ],
+            "why": "These reflect the brain running out of glucose."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Who gets hypoglycaemia? Name the main causes and risk factors.",
+        "tip": "Exam thinking: find the drug in the stem, then the reason it tipped over.",
+        "points": [
+          {
+            "p": "Diabetes treated with insulin",
+            "k": [
+              [
+                "insulin"
+              ]
+            ],
+            "why": "The most important cause."
+          },
+          {
+            "p": "Sulphonylureas such as gliclazide",
+            "k": [
+              [
+                "sulphonylurea",
+                "sulfonylurea",
+                "gliclazide"
+              ]
+            ],
+            "why": "Metformin alone rarely causes hypos."
+          },
+          {
+            "p": "Missed meals (plus exercise, alcohol)",
+            "k": [
+              [
+                "meal",
+                "food",
+                "eat",
+                "fast"
+              ]
+            ],
+            "why": "Usual dose with less food is the classic precipitant."
+          },
+          {
+            "p": "Impaired awareness from autonomic neuropathy",
+            "k": [
+              [
+                "awareness",
+                "autonomic"
+              ]
+            ],
+            "why": "These patients go straight to confusion without warning."
+          },
+          {
+            "p": "Neonates: prematurity (<37 weeks)",
+            "k": [
+              [
+                "prematur",
+                "preterm",
+                "37"
+              ]
+            ],
+            "why": "The specific neonatal risk factor in the notes."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What is an insulinoma and what is Whipple's triad?",
+        "tip": "Exam thinking: recurrent fasting hypos in a non-diabetic who is gaining weight.",
+        "points": [
+          {
+            "p": "Insulinoma: functional pancreatic neuroendocrine tumour secreting insulin",
+            "k": [
+              [
+                "pancrea"
+              ],
+              [
+                "neuroendocrine",
+                "tumour",
+                "tumor"
+              ]
+            ],
+            "why": "Weight gain from eating to prevent attacks is a clue."
+          },
+          {
+            "p": "Symptoms of hypoglycaemia",
+            "k": [
+              [
+                "symptom"
+              ]
+            ],
+            "why": "First part of the triad."
+          },
+          {
+            "p": "Low plasma glucose at the time of symptoms",
+            "k": [
+              [
+                "low"
+              ],
+              [
+                "glucose",
+                "sugar"
+              ]
+            ],
+            "why": "The glucose must be measured during the episode."
+          },
+          {
+            "p": "Symptoms resolve after glucose is given",
+            "k": [
+              [
+                "resol",
+                "reliev",
+                "improve",
+                "better"
+              ]
+            ],
+            "why": "Third part of the triad."
+          }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How do you tell hypoglycaemia from DKA, HHS and stroke in a confused diabetic?",
+        "tip": "Exam thinking: the glucose and the skin give it away before anything else.",
+        "points": [
+          {
+            "p": "Hypo: glucose below 4, sweaty, onset over minutes",
+            "k": [
+              [
+                "sweat",
+                "clammy"
+              ]
+            ],
+            "why": "DKA and HHS patients are dry and dehydrated."
+          },
+          {
+            "p": "DKA: high glucose, ketones, acidosis, type 1",
+            "k": [
+              [
+                "dka",
+                "ketoacidosis",
+                "ketone"
+              ]
+            ],
+            "why": "Follows missed insulin or infection."
+          },
+          {
+            "p": "HHS: very high glucose, severe dehydration, days, type 2",
+            "k": [
+              [
+                "hhs",
+                "hyperosmolar"
+              ]
+            ],
+            "why": "Builds over days, not minutes."
+          },
+          {
+            "p": "Stroke mimic: always check glucose before calling a stroke",
+            "k": [
+              [
+                "stroke"
+              ]
+            ],
+            "why": "Hypoglycaemia can cause focal signs."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is the first test for hypoglycaemia, and what confirms it?",
+        "tip": "Exam thinking: the 'initial investigation' in a confused insulin user is the finger-prick.",
+        "points": [
+          {
+            "p": "Capillary (finger-prick) blood glucose",
+            "k": [
+              [
+                "capillary",
+                "finger",
+                "cbg",
+                "bm"
+              ]
+            ],
+            "why": "Quick and changes management at once."
+          },
+          {
+            "p": "Laboratory blood glucose for confirmation",
+            "k": [
+              [
+                "lab",
+                "plasma",
+                "venous",
+                "formal"
+              ]
+            ],
+            "why": "Send it without delaying treatment."
+          }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "How does C-peptide separate the causes, and how is insulinoma diagnosed?",
+        "tip": "Exam thinking: high insulin plus low C-peptide means a syringe.",
+        "points": [
+          {
+            "p": "Raised C-peptide: endogenous insulin (insulinoma or sulphonylurea)",
+            "k": [
+              [
+                "raised",
+                "high",
+                "elevated"
+              ],
+              [
+                "insulinoma",
+                "sulphonylurea",
+                "sulfonylurea",
+                "endogenous"
+              ]
+            ],
+            "why": "A sulphonylurea screen separates these two."
+          },
+          {
+            "p": "Low C-peptide: exogenous (injected) insulin",
+            "k": [
+              [
+                "low",
+                "not raised",
+                "suppressed",
+                "undetectable"
+              ],
+              [
+                "exogenous",
+                "inject"
+              ]
+            ],
+            "why": "Think of a healthcare worker or a relative's insulin."
+          },
+          {
+            "p": "Insulinoma: 72-hour supervised fast",
+            "k": [
+              [
+                "72"
+              ],
+              [
+                "fast"
+              ]
+            ],
+            "why": "Hormone profile (insulin, proinsulin, ketones) taken at the moment of the hypo."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How do you treat hypoglycaemia at each level of consciousness?",
+        "tip": "Exam thinking: GCS and IV access decide the route.",
+        "points": [
+          {
+            "p": "Conscious and can swallow: oral fast-acting glucose (tablets, Lucozade, juice)",
+            "k": [
+              [
+                "oral",
+                "tablet",
+                "drink",
+                "lucozade",
+                "juice"
+              ]
+            ],
+            "why": "First-line."
+          },
+          {
+            "p": "Conscious, cannot self-treat: buccal Glucogel",
+            "k": [
+              [
+                "buccal",
+                "glucogel",
+                "gel"
+              ]
+            ],
+            "why": "One tube."
+          },
+          {
+            "p": "GCS below 15 or seizing: IV glucose, 200 ml 10% or 100 ml 20% over 10 min",
+            "k": [
+              [
+                "iv",
+                "intravenous",
+                "dextrose"
+              ],
+              [
+                "10%",
+                "20%",
+                "10 percent",
+                "20 percent"
+              ]
+            ],
+            "why": "Over about 10 minutes."
+          },
+          {
+            "p": "No IV access: IM glucagon",
+            "k": [
+              [
+                "glucagon"
+              ]
+            ],
+            "why": "Works less well when glycogen stores are low."
+          },
+          {
+            "p": "Then a longer-acting carbohydrate",
+            "k": [
+              [
+                "long",
+                "complex",
+                "starch",
+                "toast",
+                "biscuit",
+                "sandwich"
+              ]
+            ],
+            "why": "Stops the glucose falling again."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What follow-up and driving advice does a patient need after a severe hypo?",
+        "tip": "Exam thinking: count the severe episodes and check whether one was at the wheel.",
+        "points": [
+          {
+            "p": "Medication review and diet review to find the cause",
+            "k": [
+              [
+                "medication",
+                "drug",
+                "dose"
+              ],
+              [
+                "review"
+              ]
+            ],
+            "why": "Stop or reduce the sulphonylurea; check renal function."
+          },
+          {
+            "p": "More than one severe episode while awake: stop driving, inform DVLA",
+            "k": [
+              [
+                "more than one",
+                "two",
+                "2",
+                "second"
+              ],
+              [
+                "dvla"
+              ]
+            ],
+            "why": "Severe means needing help from another person."
+          },
+          {
+            "p": "One severe episode while driving: stop driving, inform DVLA",
+            "k": [
+              [
+                "driving",
+                "wheel"
+              ],
+              [
+                "one",
+                "single",
+                "1"
+              ]
+            ],
+            "why": "A single episode at the wheel is enough."
+          }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is neonatal hypoglycaemia managed?",
+        "tip": "Exam thinking: symptoms decide between feeding and the neonatal unit.",
+        "points": [
+          {
+            "p": "Asymptomatic: encourage normal feeds and monitor",
+            "k": [
+              [
+                "feed"
+              ]
+            ],
+            "why": "Most mild cases settle with feeding."
+          },
+          {
+            "p": "Symptomatic or very low: admit to neonatal unit for IV 10% dextrose",
+            "k": [
+              [
+                "neonatal unit",
+                "nicu",
+                "scbu",
+                "admit"
+              ],
+              [
+                "iv",
+                "intravenous",
+                "dextrose"
+              ]
+            ],
+            "why": "Jitteriness, poor feeding or seizures are symptoms."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do autonomic symptoms come first, and why can awareness be lost?",
+        "tip": "Exam thinking: explain the order of symptoms and what blunts it.",
+        "points": [
+          {
+            "p": "Falling glucose triggers a sympathetic counter-regulatory response (adrenaline)",
+            "k": [
+              [
+                "adrenaline",
+                "epinephrine",
+                "sympathetic",
+                "counter"
+              ]
+            ],
+            "why": "This is the warning sign."
+          },
+          {
+            "p": "The brain depends on glucose as its main fuel, so it fails next",
+            "k": [
+              [
+                "brain",
+                "cerebral",
+                "neuron"
+              ],
+              [
+                "glucose",
+                "fuel",
+                "energy"
+              ]
+            ],
+            "why": "Causes confusion, seizures, coma."
+          },
+          {
+            "p": "Repeated hypos and autonomic neuropathy blunt the warning response",
+            "k": [
+              [
+                "repeat",
+                "recurrent",
+                "autonomic",
+                "neuropathy"
+              ]
+            ],
+            "why": "Unheralded severe hypos follow."
+          }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "How do insulin and sulphonylureas cause hypoglycaemia?",
+        "tip": "Exam thinking: both work through insulin; one is injected, one is released.",
+        "points": [
+          {
+            "p": "Insulin drives glucose into cells",
+            "k": [
+              [
+                "cell",
+                "uptake",
+                "tissue",
+                "muscle"
+              ]
+            ],
+            "why": "Mainly muscle and fat."
+          },
+          {
+            "p": "Insulin suppresses hepatic glucose output",
+            "k": [
+              [
+                "liver",
+                "hepatic"
+              ],
+              [
+                "suppress",
+                "reduce",
+                "inhibit",
+                "output"
+              ]
+            ],
+            "why": "So fasting glucose cannot be maintained."
+          },
+          {
+            "p": "Sulphonylureas stimulate endogenous insulin release (close beta-cell K-ATP channels)",
+            "k": [
+              [
+                "release",
+                "secret",
+                "stimulat",
+                "k-atp",
+                "katp",
+                "potassium"
+              ]
+            ],
+            "why": "Regardless of glucose level, hence hypos with missed meals."
+          }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "hypoglycaemia": "Blood glucose below 4.0 mmol/L causing autonomic and neuroglycopenic symptoms.",
+    "neuroglycopenic": "Symptoms caused by the brain lacking glucose, such as confusion, drowsiness and seizures.",
+    "autonomic": "Symptoms from the sympathetic nervous system: sweating, tremor, palpitations and anxiety.",
+    "counter-regulatory": "Hormone responses (adrenaline, glucagon, cortisol) that raise glucose when it falls.",
+    "sulphonylurea": "Oral diabetes drug class, such as gliclazide, that makes the pancreas release insulin.",
+    "gliclazide": "A sulphonylurea; a common cause of hypoglycaemia, especially in kidney impairment.",
+    "metformin": "First-line type 2 diabetes drug that lowers liver glucose output; rarely causes hypoglycaemia alone.",
+    "insulinoma": "A pancreatic neuroendocrine tumour that secretes insulin and causes fasting hypoglycaemia.",
+    "Whipple's triad": "Hypoglycaemic symptoms, a low glucose at the time, and relief when glucose is given.",
+    "neuroendocrine tumour": "A tumour of hormone-producing cells, which can secrete active hormones such as insulin.",
+    "C-peptide": "Fragment cut from proinsulin when the body makes insulin; absent from injected insulin.",
+    "proinsulin": "The precursor molecule that is split into insulin and C-peptide in beta cells.",
+    "endogenous": "Made by the body itself.",
+    "exogenous": "Coming from outside the body, such as injected insulin.",
+    "72-hour supervised fast": "Diagnostic test for insulinoma: fasting in hospital with bloods taken when glucose drops.",
+    "capillary blood glucose": "Finger-prick glucose reading at the bedside.",
+    "CBG": "Capillary blood glucose, the bedside finger-prick reading.",
+    "Glucogel": "A glucose gel squeezed into the cheek (buccal) for conscious patients who cannot self-treat.",
+    "buccal": "Given inside the cheek, absorbed through the lining of the mouth.",
+    "glucagon": "Hormone that releases glucose from liver glycogen; given IM when there is no IV access.",
+    "IM": "Intramuscular: injected into a muscle.",
+    "dextrose": "Another name for glucose in IV fluids.",
+    "impaired hypoglycaemia awareness": "Loss of the warning autonomic symptoms, so hypos go straight to confusion or coma.",
+    "autonomic neuropathy": "Damage to autonomic nerves, which can blunt the warning response to hypoglycaemia.",
+    "DVLA": "Driver and Vehicle Licensing Agency, the UK body that must be told about severe hypos.",
+    "severe hypoglycaemia": "A hypo where the person needs help from someone else to treat it.",
+    "GCS": "Glasgow Coma Scale, a score of conscious level from 3 to 15.",
+    "DKA": "Diabetic ketoacidosis: high glucose, ketones and acidosis, usually in type 1 diabetes.",
+    "HHS": "Hyperosmolar hyperglycaemic state: very high glucose and dehydration in type 2 diabetes, over days.",
+    "K-ATP channel": "ATP-sensitive potassium channel on beta cells; closing it triggers insulin release.",
+    "beta cells": "Insulin-producing cells in the pancreatic islets.",
+    "hepatic glucose output": "Glucose released by the liver from glycogen and gluconeogenesis.",
+    "gluconeogenesis": "Making new glucose from non-carbohydrate sources, mainly in the liver.",
+    "AKI": "Acute kidney injury: a rapid fall in kidney function.",
+    "eGFR": "Estimated glomerular filtration rate, a measure of kidney function.",
+    "neonatal hypoglycaemia": "Low blood glucose in a newborn; prematurity is a key risk factor.",
+    "prematurity": "Birth before 37 weeks of gestation.",
+    "Lucozade": "A glucose drink used as oral fast-acting glucose."
+  }
+}

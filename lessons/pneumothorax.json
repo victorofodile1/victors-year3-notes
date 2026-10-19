@@ -1,0 +1,2043 @@
+{
+ "id": "pneumothorax",
+ "patient": {
+  "name": "Kieran Doherty",
+  "age": 22,
+  "sex": "M",
+  "setting": "Emergency Department, then the respiratory ward",
+  "complaint": "Sudden sharp right-sided chest pain and breathlessness while sitting at his desk",
+  "background": [
+   "Engineering student in Bloomsbury",
+   "1.93 m tall, BMI 18.5",
+   "Smokes 10 cigarettes a day and cannabis at weekends",
+   "No lung disease, no regular medicines"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with sudden pleuritic pain and breathlessness in a tall thin young smoker (primary) or a COPD patient (secondary), and tension pneumothorax when the stem adds hypotension and tracheal deviation.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kieran, 22, tall and thin, felt a **sudden stab** in his right chest.",
+      "Pain is sharp and **worse on breathing in**.",
+      "Breathless walking to the bus stop.",
+      "No cough, fever or leg swelling."
+     ],
+     "vitals": {
+      "T": "36.9°C",
+      "HR": "104 bpm",
+      "BP": "126/78 mmHg",
+      "RR": "22 /min",
+      "SpO2": "95% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kieran is the textbook **primary spontaneous** case: tall, thin, young, male, smoking tobacco and cannabis, no lung disease."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Trachea **central**.",
+      "Right side: reduced expansion, **hyper-resonant** to percussion.",
+      "Right side: **reduced breath sounds**.",
+      "Left side normal."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Sudden pleuritic pain, hyper-resonance and quiet breath sounds on one side: **air in Kieran's right pleural space**."
+    },
+    {
+     "type": "ask",
+     "q": "Which is the most likely diagnosis for Kieran?",
+     "o": [
+      "Pneumonia",
+      "Primary spontaneous pneumothorax",
+      "Pulmonary embolism",
+      "Secondary spontaneous pneumothorax"
+     ],
+     "a": 1,
+     "r": "No underlying lung disease, so **primary**. PE does not give hyper-resonance; pneumonia gives dullness and fever."
+    },
+    {
+     "type": "compare",
+     "title": "What you find on the affected side",
+     "head": [
+      "Sign",
+      "Pneumothorax",
+      "Pleural effusion",
+      "Consolidation"
+     ],
+     "rows": [
+      [
+       "Percussion",
+       "**Hyper-resonant**",
+       "Stony dull",
+       "Dull"
+      ],
+      [
+       "Breath sounds",
+       "Reduced or absent",
+       "Reduced or absent",
+       "Bronchial"
+      ],
+      [
+       "Vocal resonance",
+       "Reduced",
+       "Reduced",
+       "Increased"
+      ],
+      [
+       "Trachea",
+       "Central (**away** if tension)",
+       "Away if massive",
+       "Central"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kieran's trachea is central and his BP is normal, so this is **not tension**. Hypotension plus tracheal deviation away would be."
+    },
+    {
+     "type": "flow",
+     "title": "Simple or tension?",
+     "nodes": [
+      "Sudden pleuritic pain + breathless",
+      "Hyper-resonant, quiet side",
+      "BP normal, trachea central → simple",
+      "Hypotension, trachea deviated away, raised JVP → tension",
+      "Tension = decompress now, no X-ray"
+     ],
+     "caption": "Haemodynamics and the trachea decide."
+    },
+    {
+     "type": "trap",
+     "text": "In tension pneumothorax the trachea deviates **away** from the affected side. Deviation **towards** a side suggests collapse or pneumonectomy."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate investigation?': chest X-ray confirms and sizes a stable pneumothorax, CT if unclear, and none at all for tension (clinical diagnosis).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Kieran is stable. Which test confirms the diagnosis?",
+     "o": [
+      "CT pulmonary angiogram",
+      "Chest X-ray",
+      "D-dimer",
+      "ECG"
+     ],
+     "a": 1,
+     "r": "**Chest X-ray** shows the pleural line and lets you measure the rim, which directs treatment."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kieran is stable, so he gets an X-ray. If he were in **tension**, you would decompress first and image later."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Kieran's chest X-ray",
+      "findings": [
+       {
+        "type": "pneumothorax",
+        "side": "right",
+        "zone": "upper"
+       }
+      ],
+      "caption": "Visible right pleural line with no lung markings beyond it; no mediastinal shift."
+     },
+     "text": "Look for the **pleural line** and **absent lung markings** peripheral to it."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Rim of air at the hilum",
+      "min": 0,
+      "max": 6,
+      "unit": "cm",
+      "bands": [
+       [
+        0,
+        2,
+        "<2 cm small",
+        "ok"
+       ],
+       [
+        2,
+        6,
+        ">2 cm large",
+        "warn"
+       ]
+      ],
+      "value": 3.2,
+      "label": "Kieran 3.2 cm",
+      "caption": "Over 2 cm and symptomatic: he needs a procedure, not just observation."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kieran's film is clear-cut. **CT chest** is for when the X-ray is unclear, e.g. a large bulla in COPD."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kieran's 3.2 cm rim is judged against the **BTS 2 cm** threshold, which sets the treatment pathway."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Kieran needs a drain, you check it is working by watching the fluid **swing** and looking for **bubbling**."
+    },
+    {
+     "type": "trap",
+     "text": "Never send a hypotensive patient with a deviated trachea for an X-ray. **Tension pneumothorax is a clinical diagnosis.**"
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': needle aspiration for a symptomatic or >2 cm primary, chest drain if aspiration fails or the patient is ≥50 with a smoking history or has lung disease, and needle decompression for tension.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kieran's pneumothorax is **primary, symptomatic and >2 cm**, so the first step is **needle aspiration** with an 18-gauge cannula."
+    },
+    {
+     "type": "flow",
+     "title": "Primary spontaneous pneumothorax",
+     "nodes": [
+      "Tension? → needle decompression",
+      "Asymptomatic, <2 cm → discharge, review 2–4 days",
+      "Symptomatic and/or >2 cm → needle aspiration",
+      "Aspiration fails → chest drain",
+      "Air leak persists → cardiothoracic surgery (VATS)"
+     ],
+     "caption": "Kieran is on the third line."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Aspiration of 1.8 L of air.",
+      "Repeat X-ray: rim still **2.6 cm**; still breathless."
+     ],
+     "vitals": {
+      "HR": "98 bpm",
+      "RR": "20 /min",
+      "SpO2": "95% on air"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Kieran's aspiration has failed. What is the next step?",
+     "o": [
+      "Chest drain",
+      "Discharge with review in 2 to 4 days",
+      "Needle decompression",
+      "VATS pleurodesis"
+     ],
+     "a": 0,
+     "r": "A symptomatic pneumothorax >2 cm not resolved by aspiration needs a **chest drain**. Decompression is only for tension."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kieran gets a **chest drain**. Older smokers, lung disease or instability would have earned one straight away."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kieran's rim of air",
+      "x": [
+       "Arrival",
+       "After aspiration",
+       "Drain day 1",
+       "Drain day 3"
+      ],
+      "unit": "cm",
+      "series": [
+       {
+        "name": "Rim of air",
+        "values": [
+         3.2,
+         2.6,
+         0.8,
+         0
+        ]
+       }
+      ],
+      "caption": "Bubbling stops by day 3 and the lung is up, so the drain comes out."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "The drain is not allowed to suck Kieran's lung up too fast (**re-expansion oedema**), and **stopping smoking** is the biggest step against recurrence."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Had Kieran's drain kept **bubbling** past 3 to 5 days, or if he has a recurrence, he would go to cardiothoracic surgery for **VATS**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Kieran had become hypotensive with a deviated trachea, he would need **needle decompression** at once, before any X-ray."
+    },
+    {
+     "type": "pearl",
+     "text": "Tension: **16-gauge cannula**, **2nd intercostal space, mid-clavicular line** (or 5th ICS anterior axillary line), on the affected side, opposite the tracheal deviation. Then a chest drain."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why air in the pleura collapses the lung, why tension causes obstructive shock, or why tall thin people rupture apical blebs.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kieran's height puts more **mechanical stress on his lung apex**, where a small subpleural **bleb** ruptured."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Air leaked into his pleural space and abolished the **negative intrapleural pressure** holding his right lung open."
+    },
+    {
+     "type": "flow",
+     "title": "Tension pneumothorax",
+     "nodes": [
+      "One-way valve: air in on inspiration, cannot leave",
+      "Pleural pressure rises with every breath",
+      "Mediastinum pushed to the other side",
+      "Great veins compressed: venous return falls",
+      "Obstructive shock"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kieran never developed this **one-way valve**; decompression would turn a tension into a simple pneumothorax."
+    },
+    {
+     "type": "ask",
+     "q": "Why does tension pneumothorax cause hypotension?",
+     "o": [
+      "Hypoxic myocardial depression",
+      "Reduced venous return from compressed great veins",
+      "Sepsis from pleural infection",
+      "Vagal bradycardia"
+     ],
+     "a": 1,
+     "r": "Rising pressure shifts the mediastinum and **compresses the great veins**, cutting preload: **obstructive shock**."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Kieran's lung had been re-expanded too fast, **reperfusion injury** and leaky capillaries could have flooded it with oedema."
+    },
+    {
+     "type": "pearl",
+     "text": "Pneumothorax lowers the **V/Q ratio**: the collapsed lung is still perfused but not ventilated, so oxygen saturation falls."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Who classically gets a primary spontaneous pneumothorax?",
+   "o": [
+    "Elderly women with COPD",
+    "Obese middle-aged men",
+    "Tall, thin young male smokers",
+    "Children with asthma"
+   ],
+   "a": 2,
+   "r": "**Tall, thin young males**, often smokers (including cannabis), with no lung disease."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which is the most important cause of secondary pneumothorax?",
+   "o": [
+    "Asthma",
+    "COPD",
+    "Marfan's syndrome",
+    "Pulmonary fibrosis"
+   ],
+   "a": 1,
+   "r": "**COPD** is the most important; pulmonary fibrosis gives more severe disease."
+  },
+  {
+   "d": "diagnosis",
+   "q": "In tension pneumothorax, which way does the trachea deviate?",
+   "o": [
+    "Away from the affected side",
+    "It stays central",
+    "Towards the affected side",
+    "Upwards"
+   ],
+   "a": 0,
+   "r": "**Away** from the affected side, with hypotension and distended neck veins."
+  },
+  {
+   "d": "investigation",
+   "q": "Which investigation confirms a stable pneumothorax?",
+   "o": [
+    "ABG",
+    "Chest X-ray",
+    "CTPA",
+    "Ultrasound abdomen"
+   ],
+   "a": 1,
+   "r": "**Chest X-ray**: pleural line and absent lung markings beyond it."
+  },
+  {
+   "d": "investigation",
+   "q": "What does a 'swinging' chest drain tell you?",
+   "o": [
+    "Ongoing air leak",
+    "The drain is blocked",
+    "The drain is patent and in the pleural space",
+    "The lung has fully re-expanded"
+   ],
+   "a": 2,
+   "r": "Swinging means the drain is **patent**. Persistent **bubbling** means an ongoing air leak."
+  },
+  {
+   "d": "management",
+   "q": "Where is needle decompression performed for tension pneumothorax?",
+   "o": [
+    "2nd ICS, mid-clavicular line",
+    "4th ICS, posterior axillary line",
+    "5th ICS, mid-clavicular line",
+    "7th ICS, mid-scapular line"
+   ],
+   "a": 0,
+   "r": "**2nd intercostal space, mid-clavicular line** (or 5th ICS anterior axillary line), 16-gauge cannula."
+  },
+  {
+   "d": "management",
+   "q": "Which is first-line for a symptomatic primary pneumothorax >2 cm?",
+   "o": [
+    "Chest drain",
+    "Needle aspiration",
+    "Needle decompression",
+    "VATS pleurodesis"
+   ],
+   "a": 1,
+   "r": "**Needle aspiration** with an 18-gauge cannula; chest drain if it fails."
+  },
+  {
+   "d": "management",
+   "q": "Which patient should go straight to a chest drain?",
+   "o": [
+    "19 year old, asymptomatic, 1.5 cm rim",
+    "25 year old, symptomatic, 2.5 cm rim",
+    "30 year old, asymptomatic, 1 cm rim",
+    "58 year old smoker, 3 cm rim"
+   ],
+   "a": 3,
+   "r": "**Age ≥50 with a significant smoking history** is a chest drain indication."
+  },
+  {
+   "d": "management",
+   "q": "What is the risk of draining a large pneumothorax too quickly?",
+   "o": [
+    "Empyema",
+    "Haemothorax",
+    "Re-expansion pulmonary oedema",
+    "Tension pneumothorax"
+   ],
+   "a": 2,
+   "r": "**Re-expansion pulmonary oedema** from reperfusion injury and leaky capillaries."
+  },
+  {
+   "d": "science",
+   "q": "What is the mechanism of a tension pneumothorax?",
+   "o": [
+    "Bilateral pleural tears",
+    "Blood in the pleural space",
+    "Fluid in the alveoli",
+    "One-way valve trapping air"
+   ],
+   "a": 3,
+   "r": "A **one-way valve**: air enters on inspiration but cannot escape."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is a pneumothorax and how does it present?",
+    "tip": "Exam thinking: sudden, pleuritic, one-sided, hyper-resonant.",
+    "points": [
+     {
+      "p": "Air in the pleural cavity causing lung collapse",
+      "k": [
+       [
+        "air",
+        "gas"
+       ],
+       [
+        "pleura"
+       ]
+      ],
+      "why": "Between the visceral and parietal pleura."
+     },
+     {
+      "p": "Sudden-onset pleuritic chest pain and breathlessness",
+      "k": [
+       [
+        "sudden",
+        "pleuritic"
+       ]
+      ],
+      "why": "Onset at rest is typical."
+     },
+     {
+      "p": "Hyper-resonant percussion on the affected side",
+      "k": [
+       [
+        "hyper-resonan",
+        "hyperresonan"
+       ]
+      ],
+      "why": "Dullness means fluid or consolidation instead."
+     },
+     {
+      "p": "Reduced air entry / breath sounds",
+      "k": [
+       [
+        "reduced",
+        "absent",
+        "quiet"
+       ],
+       [
+        "breath",
+        "air entry"
+       ]
+      ],
+      "why": "With reduced expansion on that side."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do primary and secondary spontaneous pneumothoraces differ?",
+    "tip": "Exam thinking: any lung disease makes it secondary.",
+    "points": [
+     {
+      "p": "Primary: no lung disease, apical bleb rupture",
+      "k": [
+       [
+        "bleb",
+        "bulla",
+        "no lung disease",
+        "no underlying"
+       ]
+      ],
+      "why": "Lower risk; aspiration first."
+     },
+     {
+      "p": "Primary: tall, thin young males and smokers (including cannabis)",
+      "k": [
+       [
+        "tall",
+        "thin",
+        "young",
+        "male",
+        "cannabis"
+       ]
+      ],
+      "why": "The classic stem."
+     },
+     {
+      "p": "Secondary: underlying lung disease, most importantly COPD",
+      "k": [
+       [
+        "copd",
+        "emphysema"
+       ]
+      ],
+      "why": "Secondary needs a drain or inpatient monitoring."
+     },
+     {
+      "p": "Also pulmonary fibrosis (more severe), asthma, Marfan's, post chest drain",
+      "k": [
+       [
+        "fibrosis",
+        "asthma",
+        "marfan"
+       ]
+      ],
+      "why": "Marfan's patients are tall too."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features of a tension pneumothorax?",
+    "tip": "Exam thinking: shock + trachea away + hyper-resonant = decompress.",
+    "points": [
+     {
+      "p": "Hypotension / haemodynamic instability (obstructive shock)",
+      "k": [
+       [
+        "hypotens",
+        "shock",
+        "unstable",
+        "instability",
+        "low bp"
+       ]
+      ],
+      "why": "The feature that separates it from simple pneumothorax."
+     },
+     {
+      "p": "Tracheal deviation away from the affected side",
+      "k": [
+       [
+        "trachea"
+       ],
+       [
+        "away",
+        "deviat"
+       ]
+      ],
+      "why": "Mediastinal shift."
+     },
+     {
+      "p": "Absent breath sounds, hyper-resonance, reduced expansion, reduced vocal resonance",
+      "k": [
+       [
+        "absent",
+        "hyper-resonan",
+        "hyperresonan",
+        "expansion"
+       ]
+      ],
+      "why": "On the affected side."
+     },
+     {
+      "p": "Distended neck veins, surgical emphysema, often after trauma",
+      "k": [
+       [
+        "neck vein",
+        "jvp",
+        "emphysema",
+        "crepitus",
+        "trauma"
+       ]
+      ],
+      "why": "Raised JVP from obstructed venous return."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell pneumothorax from effusion and consolidation at the bedside?",
+    "tip": "Exam thinking: percussion note first.",
+    "points": [
+     {
+      "p": "Pneumothorax: hyper-resonant, reduced breath sounds",
+      "k": [
+       [
+        "hyper-resonan",
+        "hyperresonan"
+       ]
+      ],
+      "why": "The only one that is hyper-resonant."
+     },
+     {
+      "p": "Effusion: stony dull, reduced breath sounds",
+      "k": [
+       [
+        "stony",
+        "dull"
+       ]
+      ],
+      "why": "Massive effusion also pushes the trachea away."
+     },
+     {
+      "p": "Consolidation: dull, bronchial breathing, increased vocal resonance",
+      "k": [
+       [
+        "bronchial",
+        "increased vocal"
+       ]
+      ],
+      "why": "Plus fever and productive cough."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you investigate a suspected pneumothorax, and when do you not?",
+    "tip": "Exam thinking: stable = X-ray; tension = no imaging.",
+    "points": [
+     {
+      "p": "Chest X-ray: pleural line with absent lung markings beyond it",
+      "k": [
+       [
+        "x-ray",
+        "xray",
+        "cxr",
+        "radiograph"
+       ]
+      ],
+      "why": "Also sizes it against the 2 cm threshold."
+     },
+     {
+      "p": "CT chest if the diagnosis is unclear",
+      "k": [
+       [
+        "ct"
+       ]
+      ],
+      "why": "E.g. large bullae in COPD."
+     },
+     {
+      "p": "Tension is a clinical diagnosis: treat before imaging",
+      "k": [
+       [
+        "clinical",
+        "do not wait",
+        "without imaging",
+        "before imaging"
+       ]
+      ],
+      "why": "An X-ray delays life-saving decompression."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you check a chest drain is working?",
+    "tip": "Exam thinking: swing = patent; bubble = leak.",
+    "points": [
+     {
+      "p": "Fluid swinging with respiration = patent drain in the pleural space",
+      "k": [
+       [
+        "swing"
+       ]
+      ],
+      "why": "No swing suggests a blocked, kinked or displaced drain."
+     },
+     {
+      "p": "Persistent bubbling in the water seal = ongoing air leak",
+      "k": [
+       [
+        "bubbl"
+       ]
+      ],
+      "why": "Leak beyond 3 to 5 days: refer to surgeons."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage a primary spontaneous pneumothorax?",
+    "tip": "Exam thinking: 2 cm and symptoms decide.",
+    "points": [
+     {
+      "p": "Asymptomatic, <2 cm: discharge, outpatient review in 2–4 days",
+      "k": [
+       [
+        "discharge",
+        "conservative",
+        "observ",
+        "follow-up",
+        "follow up"
+       ]
+      ],
+      "why": "Minimally symptomatic of any size can be managed conservatively."
+     },
+     {
+      "p": "Symptomatic and/or >2 cm: needle aspiration (18-gauge)",
+      "k": [
+       [
+        "aspirat"
+       ]
+      ],
+      "why": "Ambulatory devices are an alternative."
+     },
+     {
+      "p": "Aspiration fails: chest drain",
+      "k": [
+       [
+        "drain"
+       ]
+      ],
+      "why": "Second line."
+     },
+     {
+      "p": "Persistent air leak (3–5 days) or recurrence: cardiothoracic referral, VATS pleurodesis ± bullectomy",
+      "k": [
+       [
+        "vats",
+        "pleurodesis",
+        "surg",
+        "cardiothoracic",
+        "bullectomy"
+       ]
+      ],
+      "why": "Third line."
+     },
+     {
+      "p": "Smoking cessation",
+      "k": [
+       [
+        "smok"
+       ]
+      ],
+      "why": "Reduces recurrence."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Who needs a chest drain straight away, and how do you treat a tension pneumothorax?",
+    "tip": "Exam thinking: age 50 + smoking = drain; tension = needle now.",
+    "points": [
+     {
+      "p": "Drain: age ≥50 with smoking history, underlying lung disease, bilateral",
+      "k": [
+       [
+        "50",
+        "fifty",
+        "lung disease",
+        "copd",
+        "bilateral"
+       ]
+      ],
+      "why": "The 55 year old smoker with a 4 cm rim gets a drain."
+     },
+     {
+      "p": "Drain: haemodynamic compromise, significant hypoxia, haemothorax",
+      "k": [
+       [
+        "haemodynamic",
+        "hypox",
+        "haemothorax",
+        "unstable"
+       ]
+      ],
+      "why": "Also large high-risk pneumothoraces."
+     },
+     {
+      "p": "Tension: immediate needle decompression with a 16-gauge cannula",
+      "k": [
+       [
+        "decompress",
+        "thoracocentesis",
+        "thoracostomy"
+       ]
+      ],
+      "why": "Converts tension to simple pneumothorax."
+     },
+     {
+      "p": "2nd ICS mid-clavicular line (or 5th ICS anterior axillary line), opposite the tracheal deviation",
+      "k": [
+       [
+        "2nd",
+        "second",
+        "5th",
+        "fifth"
+       ]
+      ],
+      "why": "5th ICS mid-clavicular is the classic wrong option."
+     },
+     {
+      "p": "Small stable secondary: inpatient monitoring",
+      "k": [
+       [
+        "inpatient",
+        "admit",
+        "monitor"
+       ]
+      ],
+      "why": "Secondary is never sent straight home."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does a pneumothorax collapse the lung, and why do primary ones affect tall, thin people?",
+    "tip": "Exam thinking: negative pressure holds the lung open.",
+    "points": [
+     {
+      "p": "Air enters via a breach in the visceral or parietal pleura",
+      "k": [
+       [
+        "breach",
+        "tear",
+        "rupture",
+        "hole"
+       ]
+      ],
+      "why": "Usually the visceral pleura in spontaneous cases."
+     },
+     {
+      "p": "Loss of negative intrapleural pressure lets the lung recoil and collapse",
+      "k": [
+       [
+        "negative"
+       ]
+      ],
+      "why": "Elastic recoil pulls the lung in."
+     },
+     {
+      "p": "Rupture of a subpleural apical bleb or bulla",
+      "k": [
+       [
+        "bleb",
+        "bulla"
+       ]
+      ],
+      "why": "At the apex."
+     },
+     {
+      "p": "Tall, thin people have greater mechanical stress at the apex",
+      "k": [
+       [
+        "stress",
+        "apex",
+        "apical",
+        "tall"
+       ]
+      ],
+      "why": "Explains the classic body habitus."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does tension pneumothorax cause shock, and why can rapid re-expansion cause oedema?",
+    "tip": "Exam thinking: one-way valve, then no venous return.",
+    "points": [
+     {
+      "p": "One-way valve: air enters on inspiration but cannot escape",
+      "k": [
+       [
+        "one-way",
+        "one way",
+        "valve"
+       ]
+      ],
+      "why": "Pressure builds with each breath."
+     },
+     {
+      "p": "Mediastinal shift compresses the great veins and heart",
+      "k": [
+       [
+        "mediastin",
+        "great vein",
+        "vena cava",
+        "venous return",
+        "preload"
+       ]
+      ],
+      "why": "Obstructive shock."
+     },
+     {
+      "p": "Decompression converts tension to simple pneumothorax",
+      "k": [
+       [
+        "convert",
+        "simple",
+        "release"
+       ]
+      ],
+      "why": "A chest drain must follow."
+     },
+     {
+      "p": "Re-expansion oedema: reperfusion injury and increased capillary permeability",
+      "k": [
+       [
+        "reperfusion",
+        "permeab",
+        "leaky"
+       ]
+      ],
+      "why": "Avoid over-rapid drainage."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "pneumothorax": "Air in the pleural space, between the lung and chest wall, causing the lung to collapse.",
+  "primary spontaneous pneumothorax": "Pneumothorax with no underlying lung disease, usually from an apical bleb in a tall thin young man.",
+  "secondary spontaneous pneumothorax": "Pneumothorax caused by underlying lung disease such as COPD.",
+  "tension pneumothorax": "Life-threatening pneumothorax where trapped air builds pressure, shifts the mediastinum and causes shock.",
+  "pleural cavity": "The thin space between the visceral pleura on the lung and the parietal pleura on the chest wall.",
+  "visceral pleura": "The membrane covering the lung surface.",
+  "parietal pleura": "The membrane lining the inside of the chest wall.",
+  "pleural line": "The thin white edge of the collapsed lung seen on a chest X-ray.",
+  "pleuritic": "Sharp chest pain that is worse on breathing in or coughing.",
+  "hyper-resonant": "A hollow, drum-like percussion note over air, as in pneumothorax.",
+  "vocal resonance": "How clearly spoken sounds transmit through the chest; reduced over air or fluid.",
+  "bleb": "A small air-filled blister under the visceral pleura, usually at the lung apex.",
+  "bulla": "An air space larger than 1 cm within the lung, common in emphysema.",
+  "COPD": "Chronic obstructive pulmonary disease; the most important cause of secondary pneumothorax.",
+  "Marfan's": "Inherited connective tissue disorder causing tall stature and a higher risk of pneumothorax.",
+  "obstructive shock": "Shock from blocked venous return or cardiac filling, as in tension pneumothorax.",
+  "mediastinal shift": "Movement of the heart and trachea away from a high-pressure side of the chest.",
+  "tracheal deviation": "The trachea pushed off the midline; away from the side of a tension pneumothorax.",
+  "surgical emphysema": "Air trapped under the skin, felt as crackling (crepitus).",
+  "crepitus": "A crackling feeling under the fingers from air in the tissues.",
+  "V/Q ratio": "Ventilation to perfusion ratio; falls when collapsed lung is still perfused.",
+  "needle aspiration": "Removing air from the pleural space through a cannula; first-line for symptomatic primary pneumothorax.",
+  "needle decompression": "Emergency cannula into the chest to release trapped air in tension pneumothorax.",
+  "needle thoracocentesis": "Another name for needle decompression of the chest.",
+  "intercostal space": "The gap between two ribs; the 2nd is used for needle decompression.",
+  "mid-clavicular line": "A vertical line down from the middle of the clavicle.",
+  "anterior axillary line": "A vertical line down from the front fold of the armpit.",
+  "chest drain": "A tube inserted into the pleural space, connected to an underwater seal, to let air or fluid out.",
+  "underwater seal": "Drain bottle where the tube sits under water so air escapes but cannot return.",
+  "swinging": "Drain fluid moving up and down with breathing, showing the drain is patent.",
+  "bubbling": "Air bubbles in the water seal, showing an ongoing air leak.",
+  "air leak": "Continued escape of air from the lung into the pleural space.",
+  "VATS": "Video-assisted thoracoscopic surgery: keyhole chest surgery for pleurodesis or bullectomy.",
+  "pleurodesis": "Sticking the pleural layers together mechanically or chemically to prevent recurrence.",
+  "bullectomy": "Surgical removal of a bulla.",
+  "re-expansion pulmonary oedema": "Fluid in a lung that has been re-expanded too quickly after collapse.",
+  "haemothorax": "Blood in the pleural space.",
+  "BTS": "British Thoracic Society, which publishes the UK pneumothorax guidelines.",
+  "16-gauge": "Large-bore cannula size used for needle decompression."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 33 year old tall man is brought to the Emergency Department severely breathless. His pulse rate is 132 bpm, BP 78/50 mmHg, respiratory rate 34 breaths per minute and oxygen saturation 84% on 15 L oxygen. His trachea is deviated to the right. There are no breath sounds and reduced expansion on the left, which is hyper-resonant. His neck veins are distended.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute severe asthma",
+    "Cardiac tamponade",
+    "Left pleural effusion",
+    "Massive pulmonary embolism",
+    "Tension pneumothorax"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis question in a shocked, breathless patient: examine the chest signs."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "BP 78/50 mmHg",
+      "trachea is deviated to the right",
+      "no breath sounds and reduced expansion on the left",
+      "hyper-resonant",
+      "neck veins are distended"
+     ],
+     "x": "Shock, trachea pushed **away** from the silent, hyper-resonant left side, raised JVP."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Left tension pneumothorax.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Asthma is bilateral wheeze, without tracheal deviation."
+      ],
+      [
+       1,
+       "Tamponade gives muffled heart sounds with normal, symmetrical breath sounds."
+      ],
+      [
+       2,
+       "An effusion is dull, not hyper-resonant."
+      ],
+      [
+       3,
+       "Massive PE causes shock but a clear, symmetrical chest."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tension pneumothorax.** Rule: shock + trachea away + hyper-resonant silent side = tension."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 26 year old man had a right chest drain inserted for a pneumothorax 6 hours ago. The water seal shows no bubbling and the fluid level does not move with breathing or coughing. He is more breathless. His pulse rate is 104 bpm, BP 124/78 mmHg and oxygen saturation 93% breathing air.",
+   "q": "Which is the most likely explanation of the drain findings?",
+   "o": [
+    "Drain functioning normally",
+    "Drain is blocked, kinked or displaced",
+    "Lung has fully re-expanded and he is improving",
+    "Ongoing air leak",
+    "Re-expansion pulmonary oedema"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A drain-assessment question: interpret swinging and bubbling."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no bubbling",
+      "does not move with breathing or coughing",
+      "more breathless"
+     ],
+     "x": "No **swing** and he is worse: the drain is not working."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Blocked, kinked or displaced drain.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A working drain swings with respiration."
+      ],
+      [
+       2,
+       "A re-expanded lung can reduce the swing, but he would be improving, not more breathless."
+      ],
+      [
+       3,
+       "An air leak shows persistent bubbling; there is none."
+      ],
+      [
+       4,
+       "Re-expansion oedema follows over-rapid re-expansion; the drain findings point to failure instead."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Drain not working.** Rule: swing = patent; no swing + worse = blocked or displaced."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 24 year old man has had a right chest drain for a primary spontaneous pneumothorax for 5 days. The drain is still bubbling continuously and the repeat chest X-ray shows the lung has not fully re-expanded. His pulse rate is 84 bpm, BP 122/76 mmHg and oxygen saturation 96% breathing air.",
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Insert a second chest drain",
+    "Needle decompression",
+    "Refer to cardiothoracic surgery",
+    "Remove the drain and repeat aspiration",
+    "Start high-flow oxygen and discharge"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step when a drain has failed."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "for 5 days",
+      "still bubbling continuously",
+      "has not fully re-expanded"
+     ],
+     "x": "**Persistent air leak** and failed re-expansion beyond 3 to 5 days."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Refer to **cardiothoracic surgery** (VATS pleurodesis ± bullectomy)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Another drain does not fix the leak; surgery does."
+      ],
+      [
+       1,
+       "Decompression is for tension; he is stable."
+      ],
+      [
+       3,
+       "Aspiration has a lower success rate than a drain already in place."
+      ],
+      [
+       4,
+       "He cannot go home with an unresolved air leak."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Cardiothoracic referral.** Rule: leak beyond 3 to 5 days = surgeons (VATS)."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 19 year old man who is 1.95 m tall and very thin has a sudden left-sided pleuritic chest pain while studying. He smokes cannabis. He has no lung disease. His pulse rate is 96 bpm and BP 120/74 mmHg. Chest X-ray shows a left apical pneumothorax.",
+   "q": "Which is the most likely underlying mechanism?",
+   "o": [
+    "Bronchial obstruction by a mucus plug",
+    "Erosion by a cavitating infection",
+    "Rib fracture puncturing the pleura",
+    "Rupture of a subpleural apical bleb",
+    "Rupture of an emphysematous bulla from COPD"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question for a primary spontaneous pneumothorax."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "1.95 m tall and very thin",
+      "smokes cannabis",
+      "no lung disease",
+      "left apical pneumothorax"
+     ],
+     "x": "Tall, thin, young, no lung disease: **primary**. Apical stress ruptures a **bleb**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Subpleural apical bleb rupture.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A mucus plug causes collapse without pleural air."
+      ],
+      [
+       1,
+       "There is no infection described."
+      ],
+      [
+       2,
+       "No trauma is described."
+      ],
+      [
+       4,
+       "COPD bullae cause secondary pneumothorax in older smokers."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Apical bleb rupture.** Rule: tall thin young man = bleb, primary pneumothorax."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 20 year old man has a 2 hour history of sudden right-sided chest pain, worse on inspiration, and breathlessness. He is tall and thin and smokes. His temperature is 36.8°C, pulse rate 98 bpm, BP 124/76 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air. There is reduced air entry and hyper-resonance on the right. His trachea is central.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Costochondritis",
+    "Pneumonia",
+    "Primary spontaneous pneumothorax",
+    "Pulmonary embolism",
+    "Tension pneumothorax"
+   ],
+   "a": 2,
+   "e": "Sudden pleuritic pain with right-sided hyper-resonance and reduced air entry in a tall, thin young smoker is a primary spontaneous pneumothorax. Normal BP and a central trachea exclude tension.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of sudden pleuritic chest pain."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden right-sided chest pain, worse on inspiration",
+      "tall and thin and smokes",
+      "hyper-resonance on the right",
+      "trachea is central"
+     ],
+     "x": "Classic habitus, **hyper-resonance**, stable, trachea central."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Primary spontaneous pneumothorax.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Costochondritis gives chest wall tenderness with a normal chest examination."
+      ],
+      [
+       1,
+       "Pneumonia gives fever and dullness, not hyper-resonance."
+      ],
+      [
+       3,
+       "PE causes pleuritic pain but a normal percussion note."
+      ],
+      [
+       4,
+       "Tension needs shock and tracheal deviation; he is stable."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Primary spontaneous pneumothorax.** Rule: tall thin young smoker + hyper-resonance = primary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old woman with COPD has a sudden increase in breathlessness and left-sided chest pain. Her pulse rate is 112 bpm, BP 132/80 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 86% breathing air. Breath sounds are reduced on the left. A chest X-ray is shown (see item resources).",
+   "labs": [
+    [
+     "pH",
+     "7.31",
+     "7.35–7.45",
+     "L"
+    ],
+    [
+     "PaO2",
+     "7.1 kPa",
+     "10–14",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "7.2 kPa",
+     "4.7–6.0",
+     "H"
+    ]
+   ],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "pneumothorax",
+      "side": "left",
+      "zone": "upper"
+     }
+    ],
+    "caption": "Left pleural line with absent lung markings beyond it; hyperexpanded lungs."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Infective exacerbation of COPD",
+    "Left lower lobe pneumonia",
+    "Primary spontaneous pneumothorax",
+    "Pulmonary embolism",
+    "Secondary spontaneous pneumothorax"
+   ],
+   "a": 4,
+   "e": "A pneumothorax in a patient with COPD is secondary, because there is underlying lung disease. It is more dangerous and always needs admission. Primary pneumothorax means no lung disease.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: the X-ray shows air; the history classifies it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "with COPD",
+      "sudden increase in breathlessness",
+      "Breath sounds are reduced on the left",
+      "see item resources"
+     ],
+     "x": "Sudden worsening, one-sided signs, pleural line on X-ray, known **COPD**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Secondary spontaneous pneumothorax.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "An exacerbation does not show a pleural line."
+      ],
+      [
+       1,
+       "Pneumonia shows consolidation and fever."
+      ],
+      [
+       2,
+       "Primary means no underlying lung disease."
+      ],
+      [
+       3,
+       "PE does not produce a pleural line on X-ray."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Secondary spontaneous pneumothorax.** Rule: pneumothorax + lung disease = secondary."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old man is brought to the Emergency Department after a stab wound to the left chest. His pulse rate is 136 bpm, BP 74/46 mmHg, respiratory rate 36 breaths per minute and oxygen saturation 82% on 15 L oxygen. His trachea is deviated to the right. The left chest is hyper-resonant with absent breath sounds. Heart sounds are clearly audible.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cardiac tamponade",
+    "Flail chest",
+    "Massive haemothorax",
+    "Simple pneumothorax",
+    "Tension pneumothorax"
+   ],
+   "a": 4,
+   "e": "Trauma, shock, tracheal deviation away from a hyper-resonant silent side is tension pneumothorax. Haemothorax would be dull; tamponade gives muffled heart sounds.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a shocked trauma patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "stab wound to the left chest",
+      "BP 74/46 mmHg",
+      "trachea is deviated to the right",
+      "hyper-resonant with absent breath sounds",
+      "Heart sounds are clearly audible"
+     ],
+     "x": "Shock, trachea **away**, **hyper-resonant**, normal heart sounds."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Left tension pneumothorax.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Tamponade gives muffled heart sounds and a normal chest note."
+      ],
+      [
+       1,
+       "Flail chest shows paradoxical movement of a chest segment."
+      ],
+      [
+       2,
+       "Haemothorax is dull to percussion."
+      ],
+      [
+       3,
+       "A simple pneumothorax does not cause shock or tracheal deviation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tension pneumothorax.** Rule: hyper-resonant + shock + trachea away = tension."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 25 year old woman has a 3 hour history of sudden left-sided pleuritic chest pain. She is breathless on walking. Her pulse rate is 96 bpm, BP 118/72 mmHg and oxygen saturation 96% breathing air. Chest X-ray shows a left pneumothorax with a 2.5 cm rim and no mediastinal shift.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination of the left chest?",
+   "o": [
+    "Bronchial breathing",
+    "Coarse crackles",
+    "Hyper-resonant percussion note",
+    "Increased vocal resonance",
+    "Stony dull percussion note"
+   ],
+   "a": 2,
+   "e": "Air in the pleural space gives a hyper-resonant percussion note with reduced breath sounds and reduced vocal resonance. Stony dullness is an effusion; bronchial breathing is consolidation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An examination finding for a confirmed pneumothorax."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden left-sided pleuritic chest pain",
+      "left pneumothorax",
+      "no mediastinal shift"
+     ],
+     "x": "Simple left pneumothorax."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Hyper-resonance**, reduced breath sounds."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchial breathing is consolidation."
+      ],
+      [
+       1,
+       "Crackles suggest fluid in alveoli or fibrosis."
+      ],
+      [
+       3,
+       "Vocal resonance is reduced over air, increased over consolidation."
+      ],
+      [
+       4,
+       "Stony dullness is a pleural effusion."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Hyper-resonant.** Rule: air = hyper-resonant; fluid = dull."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old man has sudden right-sided chest pain and breathlessness. He has a 50 pack-year smoking history, a chronic productive cough and a barrel-shaped chest. His pulse rate is 108 bpm, BP 136/84 mmHg and oxygen saturation 88% breathing air. Chest X-ray shows a right pneumothorax and hyperexpanded lungs.",
+   "labs": [
+    [
+     "FEV1/FVC (from last year)",
+     "0.52",
+     ">0.70",
+     "L"
+    ],
+    [
+     "FEV1 % predicted",
+     "48%",
+     ">80%",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of his pneumothorax?",
+   "o": [
+    "Asthma",
+    "Chronic obstructive pulmonary disease",
+    "Idiopathic pulmonary fibrosis",
+    "Marfan's syndrome",
+    "Rupture of an apical bleb in healthy lung"
+   ],
+   "a": 1,
+   "e": "A heavy smoker with a barrel chest and obstructive spirometry has COPD, the most important cause of secondary pneumothorax. Apical bleb rupture in healthy lung is the primary mechanism in young people.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A cause question: identify the underlying lung disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "50 pack-year smoking history",
+      "chronic productive cough",
+      "barrel-shaped chest",
+      "hyperexpanded lungs"
+     ],
+     "x": "Smoker, chronic cough, hyperexpansion, FEV1/FVC 0.52: **COPD**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**COPD**, causing a secondary pneumothorax."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Asthma is reversible and less likely at 62 with this smoking history."
+      ],
+      [
+       2,
+       "IPF gives a restrictive pattern and small lungs."
+      ],
+      [
+       3,
+       "Marfan's presents young with tall stature."
+      ],
+      [
+       4,
+       "His lungs are not healthy: this is secondary, not primary."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. COPD.** Rule: COPD is the most important cause of secondary pneumothorax."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man had a chest drain inserted for a large right pneumothorax 1 hour ago, with rapid drainage on suction. He now has a cough with frothy pink sputum and worsening breathlessness. His pulse rate is 118 bpm, BP 112/70 mmHg and oxygen saturation 87% on 4 L oxygen. Repeat X-ray shows the right lung re-expanded with new right-sided airspace shadowing.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Aspiration pneumonia",
+    "Haemothorax",
+    "Left ventricular failure",
+    "Re-expansion pulmonary oedema",
+    "Tension pneumothorax"
+   ],
+   "a": 3,
+   "e": "Frothy sputum and new shadowing confined to the just re-expanded lung after rapid drainage is re-expansion pulmonary oedema. Left ventricular failure would be bilateral.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a complication after drainage."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rapid drainage on suction",
+      "frothy pink sputum",
+      "re-expanded with new right-sided airspace shadowing"
+     ],
+     "x": "Over-rapid re-expansion, then oedema **only on that side**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Re-expansion pulmonary oedema.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspiration needs a reason to aspirate and takes longer to develop."
+      ],
+      [
+       1,
+       "Haemothorax shows fluid and dullness, not frothy sputum."
+      ],
+      [
+       2,
+       "LVF gives bilateral oedema, not one-sided."
+      ],
+      [
+       4,
+       "The lung has re-expanded; tension would show collapse and shock."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Re-expansion pulmonary oedema.** Rule: rapid drainage + one-sided oedema = re-expansion."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 23 year old man has a 4 hour history of sudden left-sided pleuritic chest pain and mild breathlessness. His pulse rate is 92 bpm, BP 122/78 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air. There is reduced air entry and hyper-resonance on the left. His trachea is central.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Arterial blood gas",
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "D-dimer",
+    "Echocardiogram"
+   ],
+   "a": 1,
+   "e": "A stable suspected pneumothorax is confirmed with a chest X-ray, which also measures the rim to guide treatment. CT is only needed if the X-ray is unclear.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation in a stable patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sudden left-sided pleuritic chest pain",
+      "hyper-resonance on the left",
+      "trachea is central"
+     ],
+     "x": "Stable, suspected simple pneumothorax."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Chest X-ray.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "An ABG does not confirm a pneumothorax; his saturations are normal."
+      ],
+      [
+       2,
+       "CTPA is for PE; hyper-resonance points to air."
+      ],
+      [
+       3,
+       "D-dimer is for PE risk assessment."
+      ],
+      [
+       4,
+       "Echo is for tamponade or heart failure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Chest X-ray.** Rule: stable = CXR to confirm and size; tension = no imaging."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 71 year old man with severe emphysema has increased breathlessness. His pulse rate is 104 bpm, BP 128/76 mmHg and oxygen saturation 89% breathing air. His chest X-ray shows a large lucent area in the right upper zone with no clear pleural line; the radiologist cannot tell a large bulla from a pneumothorax.",
+   "labs": [
+    [
+     "PaO2",
+     "7.8 kPa",
+     "10–14",
+     "L"
+    ],
+    [
+     "PaCO2",
+     "6.4 kPa",
+     "4.7–6.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Bronchoscopy",
+    "CT chest",
+    "Lateral chest X-ray",
+    "Spirometry",
+    "Ventilation/perfusion scan"
+   ],
+   "a": 1,
+   "e": "CT chest is used when the X-ray is unclear, such as telling a large bulla from a pneumothorax in emphysema. Putting a drain into a bulla would be dangerous.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next investigation when the first-line test is inconclusive."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe emphysema",
+      "no clear pleural line",
+      "cannot tell a large bulla from a pneumothorax"
+     ],
+     "x": "X-ray **inconclusive** in bullous lung disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**CT chest.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bronchoscopy looks at airways, not the pleura."
+      ],
+      [
+       2,
+       "A lateral film rarely settles bulla versus pneumothorax."
+      ],
+      [
+       3,
+       "Spirometry measures airflow, not pleural air."
+      ],
+      [
+       4,
+       "A V/Q scan is for PE."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. CT chest.** Rule: CXR unclear = CT chest."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 27 year old man has right-sided chest pain and breathlessness of sudden onset over the past 2 hours. He has no lung disease. His temperature is 37.0°C, pulse rate 88 bpm, BP 120/72 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 95% breathing air. Chest X-ray shows a right pneumothorax with a 3.5 cm rim of air and no mediastinal shift.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Discharge with outpatient review in 2 to 4 days",
+    "Insert a chest drain",
+    "Needle aspiration",
+    "Needle decompression in the 2nd intercostal space",
+    "Refer for VATS pleurodesis"
+   ],
+   "a": 2,
+   "e": "A symptomatic primary pneumothorax with a rim over 2 cm is treated first with needle aspiration. A chest drain is second-line if aspiration fails; decompression is for tension only.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: classify, then size."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "27 year old",
+      "no lung disease",
+      "3.5 cm rim of air",
+      "no mediastinal shift"
+     ],
+     "x": "Young, **primary**, symptomatic, **>2 cm**, stable, not tension."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Needle aspiration.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Discharge is for asymptomatic primary pneumothorax under 2 cm."
+      ],
+      [
+       1,
+       "A drain is second-line, or first-line if over 50 with smoking or lung disease."
+      ],
+      [
+       3,
+       "Decompression is for tension; he is stable with no shift."
+      ],
+      [
+       4,
+       "VATS is third-line, for persistent leak or recurrence."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Needle aspiration.** Rule: primary + symptomatic or >2 cm = aspirate first."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 56 year old man has sudden left-sided chest pain and breathlessness for 1 hour. He is usually well but smokes 30 cigarettes a day. His temperature is 37.0°C, pulse rate 86 bpm, BP 124/78 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 93% breathing air. Chest X-ray shows a left pneumothorax with a 4 cm rim. There is no mediastinal shift.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Admit and give oxygen only",
+    "Discharge with outpatient review",
+    "Insert a chest drain",
+    "Needle decompression in the 2nd intercostal space",
+    "Refer for VATS pleurodesis"
+   ],
+   "a": 2,
+   "e": "Age 50 or over with a significant smoking history is an indication for a chest drain rather than aspiration. Decompression is for tension, and VATS is for persistent leak or recurrence.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: look for chest drain indications."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "56 year old",
+      "smokes 30 cigarettes a day",
+      "4 cm rim",
+      "no mediastinal shift"
+     ],
+     "x": "**≥50 with a smoking history**, large, symptomatic, not tension."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Chest drain.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Oxygen alone is for small, minimally symptomatic pneumothoraces."
+      ],
+      [
+       1,
+       "He is symptomatic with a large pneumothorax."
+      ],
+      [
+       3,
+       "No tension: BP is normal and there is no shift."
+      ],
+      [
+       4,
+       "VATS is third-line."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Chest drain.** Rule: age ≥50 + smoking = drain, not aspiration."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old man is brought to the Emergency Department severely breathless after a fall from a ladder. His pulse rate is 138 bpm, BP 76/48 mmHg, respiratory rate 36 breaths per minute and oxygen saturation 80% on 15 L oxygen. His trachea is deviated to the left. The right chest is hyper-resonant with absent breath sounds and his neck veins are distended.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate immediate management?",
+   "o": [
+    "Needle decompression, left 2nd intercostal space, mid-clavicular line",
+    "Needle decompression, right 2nd intercostal space, mid-clavicular line",
+    "Needle decompression, right 5th intercostal space, mid-clavicular line",
+    "Right chest drain after a chest X-ray",
+    "Urgent chest X-ray"
+   ],
+   "a": 1,
+   "e": "A right tension pneumothorax needs immediate needle decompression with a 16-gauge cannula in the right 2nd ICS mid-clavicular line, opposite the tracheal deviation. Imaging must not delay it.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Immediate management in a shocked patient: side and site both matter."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "BP 76/48 mmHg",
+      "trachea is deviated to the left",
+      "right chest is hyper-resonant with absent breath sounds",
+      "neck veins are distended"
+     ],
+     "x": "**Right tension pneumothorax**: trachea pushed left."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Right** 2nd ICS mid-clavicular needle decompression now."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Wrong side: decompress the affected side, opposite the tracheal deviation."
+      ],
+      [
+       2,
+       "5th ICS mid-clavicular is the wrong site (5th ICS is anterior axillary)."
+      ],
+      [
+       3,
+       "A drain follows decompression; waiting for an X-ray wastes time."
+      ],
+      [
+       4,
+       "Tension is a clinical diagnosis; do not image first."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Right 2nd ICS MCL decompression.** Rule: tension = decompress the side opposite the deviation, now."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 29 year old man with a right pneumothorax deteriorates while waiting for a chest drain. His pulse rate rises to 140 bpm, BP falls to 70/40 mmHg and his neck veins become distended. His trachea shifts to the left.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his hypotension?",
+   "o": [
+    "Hypovolaemia from blood loss into the pleura",
+    "Left ventricular systolic failure",
+    "Peripheral vasodilatation from sepsis",
+    "Reduced venous return from raised intrathoracic pressure",
+    "Vagally mediated bradycardia"
+   ],
+   "a": 3,
+   "e": "A one-way valve traps air, raising intrathoracic pressure, shifting the mediastinum and compressing the great veins, so venous return and cardiac output fall: obstructive shock. Hypovolaemia would give flat neck veins.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question about shock in tension pneumothorax."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "deteriorates while waiting",
+      "BP falls to 70/40 mmHg",
+      "neck veins become distended",
+      "trachea shifts to the left"
+     ],
+     "x": "Tension: **raised JVP** with shock means blood cannot get back to the heart."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Reduced venous return**: obstructive shock."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hypovolaemia gives flat, not distended, neck veins."
+      ],
+      [
+       1,
+       "The heart is compressed, not intrinsically failing."
+      ],
+      [
+       2,
+       "No infection; sepsis gives warm vasodilated shock."
+      ],
+      [
+       4,
+       "He is tachycardic, not bradycardic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Reduced venous return.** Rule: tension = obstructive shock with distended neck veins."
+    }
+   ]
+  }
+ ]
+}

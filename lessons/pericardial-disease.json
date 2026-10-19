@@ -1,0 +1,2234 @@
+{
+ "id": "pericardial-disease",
+ "patient": {
+  "name": "Grace Mensah",
+  "age": 32,
+  "sex": "F",
+  "setting": "Emergency Department, then cardiology ward",
+  "complaint": "Sharp central chest pain for 2 days, worse lying flat and better sitting forward",
+  "background": [
+   "Systemic lupus erythematosus for 6 years, on hydroxychloroquine",
+   "Flu-like illness with fever last week",
+   "Lives in Lewisham, works as a nursery manager",
+   "No known drug allergies; no history of peptic ulcer"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with positional chest pain and a rub (pericarditis), Beck's triad after surgery or trauma (tamponade), or raised JVP, ascites and a knock (constrictive).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Grace, 32, has **SLE**; flu-like illness last week.",
+      "Sharp **retrosternal** pain, worse **lying flat**, breathing in and coughing.",
+      "Pain eases when she **sits forward**.",
+      "Scratchy, high-pitched sound at the left sternal edge."
+     ],
+     "vitals": {
+      "T": "37.9°C",
+      "HR": "104 bpm",
+      "BP": "122/76 mmHg",
+      "RR": "20 /min",
+      "SpO2": "98% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Grace's pericardium is inflamed. Her recent viral illness (and her **SLE**) are both recognised causes."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Grace has the classic triad of **acute pericarditis**: positional pleuritic pain, flu-like prodrome and a **friction rub**."
+    },
+    {
+     "type": "ask",
+     "q": "Grace's pain is sharp, worse lying flat and relieved by sitting forward. Which diagnosis fits best?",
+     "o": [
+      "Acute coronary syndrome",
+      "Acute pericarditis",
+      "Aortic dissection",
+      "Pulmonary embolism"
+     ],
+     "a": 1,
+     "r": "Positional pain eased by **sitting forward** with a **rub** is pericarditis. ACS pain is crushing; dissection tears to the back."
+    },
+    {
+     "type": "compare",
+     "title": "Chest pain that can mimic pericarditis",
+     "head": [
+      "Feature",
+      "Pericarditis",
+      "STEMI",
+      "PE"
+     ],
+     "rows": [
+      [
+       "Pain",
+       "Sharp, positional, better sitting forward",
+       "Crushing, radiates to arm/jaw",
+       "Pleuritic, sudden"
+      ],
+      [
+       "Sign",
+       "**Friction rub**",
+       "Sweaty, may have S4",
+       "Tachycardia, low SpO2"
+      ],
+      [
+       "ECG",
+       "**Widespread** saddle ST elevation, PR depression",
+       "Territorial ST elevation + reciprocal depression",
+       "Sinus tachycardia"
+      ]
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 3: Grace becomes breathless and light-headed.",
+      "JVP raised to the earlobe; heart sounds now **muffled**.",
+      "Systolic BP falls by 22 mmHg when she breathes in."
+     ],
+     "vitals": {
+      "HR": "132 bpm",
+      "BP": "84/60 mmHg",
+      "RR": "28 /min",
+      "SpO2": "94% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Grace now has **Beck's triad** (raised JVP, hypotension, muffled heart sounds) and **pulsus paradoxus**: cardiac tamponade."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Grace's inspiratory fall in systolic BP",
+      "min": 0,
+      "max": 30,
+      "unit": "mmHg",
+      "bands": [
+       [
+        0,
+        10,
+        "Normal (under 10)",
+        "ok"
+       ],
+       [
+        10,
+        15,
+        "Borderline",
+        "warn"
+       ],
+       [
+        15,
+        30,
+        "Pulsus paradoxus",
+        "bad"
+       ]
+      ],
+      "value": 22,
+      "label": "Grace 22 mmHg",
+      "caption": "A fall of **more than 15 mmHg** on inspiration is pulsus paradoxus."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Grace's **SLE** is a recognised risk factor for tamponade, alongside malignancy, recent cardiac surgery, trauma and anticoagulation."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Grace's illness is acute. If inflammation became chronic and fibrotic, she could develop **constrictive pericarditis** instead."
+    },
+    {
+     "type": "compare",
+     "title": "Tamponade vs constrictive pericarditis",
+     "head": [
+      "Feature",
+      "Tamponade",
+      "Constrictive"
+     ],
+     "rows": [
+      [
+       "Time course",
+       "Minutes to days: **emergency**",
+       "Months to years"
+      ],
+      [
+       "Key sign",
+       "**Beck's triad**, pulsus paradoxus",
+       "**Pericardial knock**, ascites"
+      ],
+      [
+       "JVP",
+       "Raised, absent Y descent",
+       "Raised, positive hepatojugular reflux"
+      ],
+      [
+       "Mimics",
+       "Shock",
+       "Right heart failure / HFpEF"
+      ],
+      [
+       "Treatment",
+       "Urgent pericardiocentesis",
+       "Diuretics ± pericardiectomy"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Hypotension + raised JVP has three classic causes: **tamponade**, tension pneumothorax and massive PE. Muffled heart sounds and equal breath sounds point to tamponade."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect ECG questions (PR depression is most specific; widespread saddle ST elevation) and echo as the test that confirms effusion or tamponade.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Grace arrives with positional chest pain. Which test confirms pericarditis?",
+     "o": [
+      "CT pulmonary angiogram",
+      "ECG",
+      "Troponin",
+      "Transoesophageal echo"
+     ],
+     "a": 1,
+     "r": "The **ECG** is the gold standard for pericarditis. Echo is the gold standard for **effusion and tamponade**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "ecg",
+      "title": "Grace's ECG on arrival",
+      "layout": "12lead",
+      "rhythm": "sinus_tachy",
+      "rate": 104,
+      "leads": {
+       "I": "st_elev",
+       "II": "st_elev",
+       "III": "st_elev",
+       "aVL": "st_elev",
+       "aVF": "st_elev",
+       "V2": "st_elev",
+       "V3": "st_elev",
+       "V4": "st_elev",
+       "V5": "st_elev",
+       "V6": "st_elev",
+       "aVR": "st_dep"
+      },
+      "caption": "Widespread saddle-shaped ST elevation, not in one coronary territory. Look for **PR depression**, the most specific sign."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Grace's ECG shows **PR depression** and widespread saddle ST elevation. Her troponin is mildly up and CRP raised; she still needs a TTE."
+    },
+    {
+     "type": "labs",
+     "title": "Grace's bloods",
+     "rows": [
+      [
+       "Troponin T",
+       "32 ng/L",
+       "<14",
+       "H"
+      ],
+      [
+       "CRP",
+       "68 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "White cell count",
+       "11.8 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "74 µmol/L",
+       "45–90",
+       ""
+      ],
+      [
+       "Urea",
+       "4.8 mmol/L",
+       "2.5–7.8",
+       ""
+      ]
+     ],
+     "text": "A mildly raised troponin reflects myopericardial inflammation. Normal urea rules out uraemic pericarditis."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Grace's **ECG** confirmed pericarditis. When she deteriorates, **echo** is what confirms the effusion and tamponade."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 3 bedside echo: large circumferential **pericardial effusion**.",
+      "Right ventricle **collapses in diastole**.",
+      "ECG: small QRS complexes that alternate in height beat to beat."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Grace's tamponade is diagnosed on **echo**. Her CXR has a globular heart and her ECG shows **electrical alternans**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Grace's chest X-ray, day 3",
+      "findings": [
+       {
+        "type": "cardiomegaly"
+       }
+      ],
+      "caption": "Enlarged, globular cardiac silhouette with clear lungs: the **'water bottle' sign** of a large effusion."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Do not label widespread ST elevation as a STEMI. A STEMI follows **one coronary territory** with reciprocal depression; pericarditis is **diffuse** with PR depression."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect NSAID plus colchicine for acute pericarditis, colchicine alone with peptic ulcer, and urgent sub-xiphoid pericardiocentesis for tamponade.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Day 1: no peptic ulcer history.",
+      "Started **ibuprofen** plus **colchicine**, with a PPI and rest."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Grace gets the first-line regimen: **NSAID plus colchicine** with rest. With a peptic ulcer, she would get colchicine alone."
+    },
+    {
+     "type": "ask",
+     "q": "If Grace had an active peptic ulcer, what would replace ibuprofen plus colchicine?",
+     "o": [
+      "Aspirin and clopidogrel",
+      "Colchicine monotherapy",
+      "High-dose naproxen",
+      "Pericardiocentesis"
+     ],
+     "a": 1,
+     "r": "NSAIDs are avoided in **peptic ulcer disease**, so **colchicine alone** is the second-line option."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "On day 3 Grace is in tamponade: she needs **urgent pericardiocentesis**, sub-xiphoid and ultrasound-guided."
+    },
+    {
+     "type": "flow",
+     "title": "Cardiac tamponade",
+     "nodes": [
+      "Beck's triad or pulsus paradoxus",
+      "Bedside echo confirms effusion with RV diastolic collapse",
+      "Urgent **pericardiocentesis**: sub-xiphoid, under ultrasound",
+      "Needle just left of xiphoid, aimed at the left shoulder",
+      "Send fluid; treat the cause"
+     ],
+     "caption": "Sub-xiphoid has the lowest pneumothorax risk when done blind."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Grace before and after drainage",
+      "x": [
+       "Day 3 08:00",
+       "10:00",
+       "12:00 (drained)",
+       "14:00",
+       "Day 4"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Systolic BP (mmHg)",
+        "values": [
+         108,
+         94,
+         84,
+         118,
+         124
+        ]
+       },
+       {
+        "name": "Heart rate (bpm)",
+        "values": [
+         112,
+         124,
+         132,
+         96,
+         84
+        ]
+       }
+      ],
+      "caption": "Removing 450 mL of fluid restores filling: BP rises and the heart rate settles at once."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "After drainage, a small residual effusion is just **monitored**. Constriction would need **diuretics** and possibly **pericardiectomy**."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Grace's care tracks the key definitions: **Beck's triad**, **pulsus paradoxus** over 15 mmHg, and **NSAID + colchicine** first line."
+    },
+    {
+     "type": "compare",
+     "title": "Special causes, special treatment",
+     "head": [
+      "Cause",
+      "Treatment"
+     ],
+     "rows": [
+      [
+       "Viral/idiopathic pericarditis",
+       "NSAID + colchicine"
+      ],
+      [
+       "Peptic ulcer disease",
+       "Colchicine alone"
+      ],
+      [
+       "Tamponade",
+       "Urgent pericardiocentesis"
+      ],
+      [
+       "Malignant (e.g. melanoma) tamponade",
+       "Percutaneous balloon pericardiotomy"
+      ],
+      [
+       "Uraemic pericarditis (CKD)",
+       "Urgent haemodialysis"
+      ],
+      [
+       "Constrictive pericarditis",
+       "Diuretics ± pericardiectomy"
+      ]
+     ]
+    },
+    {
+     "type": "trap",
+     "text": "Diuretics or GTN in tamponade drop preload and can precipitate arrest. The fix is **drainage**, not offloading."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanisms: why the pain is positional, why tamponade causes shock and pulsus paradoxus, and why electrical alternans occurs.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Grace's inflamed pericardial layers rub and irritate pain fibres, so her pain changes with **position** and **breathing**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Grace's fluid built up **faster than the pericardium could stretch**, so pressure rose until it matched the filling pressures."
+    },
+    {
+     "type": "flow",
+     "title": "From effusion to tamponade",
+     "nodes": [
+      "Fluid collects in the pericardial sac",
+      "Stiff pericardium cannot stretch quickly",
+      "Intrapericardial pressure rises to equal chamber pressure",
+      "Right heart cannot fill in diastole",
+      "Stroke volume and BP fall: shock"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why did Grace's systolic BP fall on inspiration?",
+     "o": [
+      "Aortic valve narrowing",
+      "Inspiration fills the RV, which bulges the septum into the LV",
+      "Left ventricular hypertrophy",
+      "Vasodilation from inflammation"
+     ],
+     "a": 1,
+     "r": "In a fixed-volume sac, extra RV filling on inspiration pushes the **septum** into the LV, cutting LV output: **pulsus paradoxus**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Constrictive pericarditis is the same 'restricted filling' problem but from a **rigid fibrotic shell**, developing slowly."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Grace's small, alternating QRS complexes came from her heart **swinging** in the fluid, changing its electrical axis each beat."
+    },
+    {
+     "type": "pearl",
+     "text": "Small volume, fast = tamponade (e.g. 150 mL of blood after surgery). Large volume, slow = may be tolerated because the pericardium stretches."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most important cause of acute pericarditis?",
+   "o": [
+    "Malignancy",
+    "Myocardial infarction",
+    "Tuberculosis",
+    "Viral infection"
+   ],
+   "a": 3,
+   "r": "**Viral** (Coxsackie, echovirus, EBV, CMV, HIV, VZV) or idiopathic."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What are the components of Beck's triad?",
+   "o": [
+    "Fever, rub, chest pain",
+    "Hypertension, bradycardia, irregular breathing",
+    "Raised JVP, hypotension, muffled heart sounds",
+    "Tachycardia, hypoxia, haemoptysis"
+   ],
+   "a": 2,
+   "r": "**Raised JVP, hypotension, muffled heart sounds**: tamponade."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What defines pulsus paradoxus?",
+   "o": [
+    "Alternating strong and weak beats",
+    "Pulse rate above 100",
+    "Systolic BP fall >15 mmHg on inspiration",
+    "Systolic BP rise on inspiration"
+   ],
+   "a": 2,
+   "r": "A drop in systolic BP of **more than 15 mmHg** on inspiration."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which sign suggests constrictive pericarditis?",
+   "o": [
+    "Opening snap",
+    "Pericardial knock",
+    "Pulsus alternans",
+    "Slow-rising pulse"
+   ],
+   "a": 1,
+   "r": "An early diastolic **pericardial knock**, with raised JVP and ascites."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is Dressler's syndrome?",
+   "o": [
+    "Pericarditis weeks after MI",
+    "Pericarditis in renal failure",
+    "Tamponade after trauma",
+    "Viral myocarditis"
+   ],
+   "a": 0,
+   "r": "Autoimmune pericarditis **weeks after MI**; can lead to constriction."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the most specific ECG finding in acute pericarditis?",
+   "o": [
+    "PR depression",
+    "Q waves",
+    "Saddle ST elevation",
+    "T wave inversion"
+   ],
+   "a": 0,
+   "r": "**PR depression** is the most specific; saddle ST elevation is common."
+  },
+  {
+   "d": "investigation",
+   "q": "What CXR sign suggests a large pericardial effusion?",
+   "o": [
+    "Bat's wing shadowing",
+    "Boot-shaped heart",
+    "Egg on a string",
+    "Water bottle heart"
+   ],
+   "a": 3,
+   "r": "The **'water bottle'** globular cardiac silhouette."
+  },
+  {
+   "d": "management",
+   "q": "First-line treatment for acute pericarditis?",
+   "o": [
+    "Colchicine alone",
+    "NSAID + colchicine",
+    "Oral prednisolone",
+    "Pericardiocentesis"
+   ],
+   "a": 1,
+   "r": "**NSAID (ibuprofen/naproxen) + colchicine** with rest."
+  },
+  {
+   "d": "management",
+   "q": "Preferred approach for pericardiocentesis?",
+   "o": [
+    "Apical",
+    "Left parasternal",
+    "Right parasternal",
+    "Sub-xiphoid"
+   ],
+   "a": 3,
+   "r": "**Sub-xiphoid**, ultrasound-guided: lowest pneumothorax risk."
+  },
+  {
+   "d": "science",
+   "q": "What causes electrical alternans?",
+   "o": [
+    "Alternating bundle branch block",
+    "Electrolyte imbalance",
+    "Heart swinging in a large effusion",
+    "Myocardial ischaemia"
+   ],
+   "a": 2,
+   "r": "The heart **swings** in the fluid, changing its axis beat to beat."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What are the symptoms and signs of acute pericarditis?",
+    "tip": "Exam thinking: the position of the patient gives it away.",
+    "points": [
+     {
+      "p": "Sharp retrosternal chest pain",
+      "k": [
+       [
+        "sharp",
+        "retrosternal",
+        "chest pain"
+       ]
+      ],
+      "why": "Pleuritic in nature."
+     },
+     {
+      "p": "Worse lying flat, inspiring or coughing; relieved sitting forward",
+      "k": [
+       [
+        "sitting forward",
+        "sit forward",
+        "leaning forward",
+        "lean forward"
+       ]
+      ],
+      "why": "The single best discriminator."
+     },
+     {
+      "p": "Flu-like prodrome and fever",
+      "k": [
+       [
+        "flu",
+        "viral",
+        "fever"
+       ]
+      ],
+      "why": "Viral cause is most common."
+     },
+     {
+      "p": "Pericardial friction rub",
+      "k": [
+       [
+        "rub"
+       ]
+      ],
+      "why": "Scratchy, at the left sternal edge."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the causes and associations of pericarditis?",
+    "tip": "Exam thinking: the background in the stem names the cause.",
+    "points": [
+     {
+      "p": "Viral: Coxsackie, echovirus, EBV, CMV, HIV, VZV; or idiopathic",
+      "k": [
+       [
+        "viral",
+        "virus",
+        "coxsackie",
+        "idiopathic"
+       ]
+      ],
+      "why": "Most common."
+     },
+     {
+      "p": "Autoimmune, e.g. SLE; Behçet's",
+      "k": [
+       [
+        "sle",
+        "lupus",
+        "autoimmun",
+        "behcet",
+        "behçet"
+       ]
+      ],
+      "why": "Serositis in lupus."
+     },
+     {
+      "p": "Malignancy",
+      "k": [
+       [
+        "malignan",
+        "cancer",
+        "tumour"
+       ]
+      ],
+      "why": "Also a cause of tamponade."
+     },
+     {
+      "p": "Dressler's syndrome weeks after MI",
+      "k": [
+       [
+        "dressler"
+       ]
+      ],
+      "why": "Can cause constriction."
+     },
+     {
+      "p": "Uraemic pericarditis in CKD",
+      "k": [
+       [
+        "uraem",
+        "urem",
+        "ckd",
+        "renal"
+       ]
+      ],
+      "why": "Treated with dialysis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does cardiac tamponade present?",
+    "tip": "Exam thinking: Beck's triad plus pulsus paradoxus.",
+    "points": [
+     {
+      "p": "Beck's triad: raised JVP, hypotension, muffled heart sounds",
+      "k": [
+       [
+        "jvp"
+       ],
+       [
+        "hypotension",
+        "low bp",
+        "low blood pressure"
+       ],
+       [
+        "muffled",
+        "quiet"
+       ]
+      ],
+      "why": "All three point to tamponade."
+     },
+     {
+      "p": "Pulsus paradoxus: systolic drop >15 mmHg on inspiration",
+      "k": [
+       [
+        "paradox"
+       ]
+      ],
+      "why": "Measured with a manual cuff."
+     },
+     {
+      "p": "Marked tachycardia, altered mental state",
+      "k": [
+       [
+        "tachycard"
+       ],
+       [
+        "confus",
+        "mental",
+        "drowsy"
+       ]
+      ],
+      "why": "Shock."
+     },
+     {
+      "p": "Kussmaul's sign and absent Y descent",
+      "k": [
+       [
+        "kussmaul",
+        "y descent"
+       ]
+      ],
+      "why": "JVP rises on inspiration."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors for tamponade?",
+    "tip": "Exam thinking: what put fluid or blood in the sac?",
+    "points": [
+     {
+      "p": "SLE",
+      "k": [
+       [
+        "sle",
+        "lupus"
+       ]
+      ],
+      "why": "Fatigue, arthralgia, malar rash, oral ulcers."
+     },
+     {
+      "p": "Malignancy",
+      "k": [
+       [
+        "malignan",
+        "cancer",
+        "melanoma"
+       ]
+      ],
+      "why": "Balloon pericardiotomy for neoplastic tamponade."
+     },
+     {
+      "p": "Recent cardiac surgery or pacemaker; trauma",
+      "k": [
+       [
+        "surgery",
+        "pacemaker",
+        "trauma",
+        "stab"
+       ]
+      ],
+      "why": "Haemopericardium."
+     },
+     {
+      "p": "Bleeding on anticoagulation",
+      "k": [
+       [
+        "anticoag",
+        "warfarin",
+        "bleed"
+       ]
+      ],
+      "why": "Spontaneous haemopericardium."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does constrictive pericarditis present?",
+    "tip": "Exam thinking: right heart failure with a knock.",
+    "points": [
+     {
+      "p": "Rigid thickened pericardium limiting diastolic filling",
+      "k": [
+       [
+        "rigid",
+        "thick",
+        "fibro",
+        "calcif",
+        "filling"
+       ]
+      ],
+      "why": "Behaves like HFpEF."
+     },
+     {
+      "p": "Early diastolic pericardial knock",
+      "k": [
+       [
+        "knock"
+       ]
+      ],
+      "why": "Not an opening snap."
+     },
+     {
+      "p": "Raised JVP, positive hepatojugular reflux, ascites, right HF signs",
+      "k": [
+       [
+        "jvp",
+        "hepatojugular",
+        "ascites",
+        "oedema"
+       ]
+      ],
+      "why": "Chronic course."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which tests confirm pericarditis and tamponade, and what do they show?",
+    "tip": "Exam thinking: ECG for pericarditis, echo for fluid.",
+    "points": [
+     {
+      "p": "ECG is the gold standard for pericarditis",
+      "k": [
+       [
+        "ecg"
+       ]
+      ],
+      "why": "Every case also gets a TTE."
+     },
+     {
+      "p": "PR depression (most specific)",
+      "k": [
+       [
+        "pr depression",
+        "pr segment",
+        "depressed pr"
+       ]
+      ],
+      "why": "Learn this as the most specific."
+     },
+     {
+      "p": "Widespread saddle-shaped ST elevation and Spodick's sign",
+      "k": [
+       [
+        "saddle",
+        "widespread",
+        "spodick"
+       ]
+      ],
+      "why": "Not in one coronary territory."
+     },
+     {
+      "p": "Mildly raised troponin and CRP",
+      "k": [
+       [
+        "troponin",
+        "crp"
+       ]
+      ],
+      "why": "Myopericardial inflammation."
+     },
+     {
+      "p": "Echo is the gold standard for effusion and tamponade",
+      "k": [
+       [
+        "echo"
+       ]
+      ],
+      "why": "Shows RV diastolic collapse."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What do CXR and ECG show with a large effusion?",
+    "tip": "Exam thinking: water bottle and alternans.",
+    "points": [
+     {
+      "p": "CXR: enlarged globular 'water bottle' heart",
+      "k": [
+       [
+        "water bottle",
+        "globular",
+        "enlarged"
+       ]
+      ],
+      "why": "Lungs usually clear."
+     },
+     {
+      "p": "ECG: electrical alternans with small QRS complexes",
+      "k": [
+       [
+        "alternans"
+       ]
+      ],
+      "why": "Heart swinging in fluid."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is acute pericarditis treated?",
+    "tip": "Exam thinking: check for peptic ulcer before an NSAID.",
+    "points": [
+     {
+      "p": "NSAID (ibuprofen or naproxen) plus colchicine",
+      "k": [
+       [
+        "nsaid",
+        "ibuprofen",
+        "naproxen"
+       ],
+       [
+        "colchicine"
+       ]
+      ],
+      "why": "First-line and gold standard."
+     },
+     {
+      "p": "Bed rest",
+      "k": [
+       [
+        "rest"
+       ]
+      ],
+      "why": "Limit exercise until symptoms resolve."
+     },
+     {
+      "p": "Avoid NSAIDs in peptic ulcer disease: colchicine monotherapy",
+      "k": [
+       [
+        "ulcer",
+        "monotherapy",
+        "alone"
+       ]
+      ],
+      "why": "Second-line."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is tamponade managed, and what about special causes?",
+    "tip": "Exam thinking: drain it, and know the exceptions.",
+    "points": [
+     {
+      "p": "Urgent pericardiocentesis",
+      "k": [
+       [
+        "pericardiocentesis",
+        "drain"
+       ]
+      ],
+      "why": "Do not delay for imaging if peri-arrest."
+     },
+     {
+      "p": "Sub-xiphoid approach under ultrasound guidance",
+      "k": [
+       [
+        "sub-xiphoid",
+        "subxiphoid",
+        "xiphoid"
+       ]
+      ],
+      "why": "Aim to the left shoulder; lowest pneumothorax risk."
+     },
+     {
+      "p": "Neoplastic tamponade: percutaneous balloon pericardiotomy",
+      "k": [
+       [
+        "balloon",
+        "pericardiotomy"
+       ]
+      ],
+      "why": "e.g. melanoma."
+     },
+     {
+      "p": "CKD pericarditis: urgent haemodialysis",
+      "k": [
+       [
+        "dialysis"
+       ]
+      ],
+      "why": "Uraemic pericarditis."
+     },
+     {
+      "p": "Constrictive: diuretics and pericardiectomy",
+      "k": [
+       [
+        "pericardiectomy"
+       ]
+      ],
+      "why": "Small effusions are just monitored."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does an effusion cause tamponade and pulsus paradoxus?",
+    "tip": "Exam thinking: speed of accumulation matters.",
+    "points": [
+     {
+      "p": "Fluid accumulates faster than the pericardium can stretch",
+      "k": [
+       [
+        "faster",
+        "rapid",
+        "stretch"
+       ]
+      ],
+      "why": "Small fast bleeds can be lethal."
+     },
+     {
+      "p": "Intrapericardial pressure equals or exceeds chamber pressure",
+      "k": [
+       [
+        "pressure"
+       ]
+      ],
+      "why": "Right heart collapses first."
+     },
+     {
+      "p": "Impaired filling reduces cardiac output",
+      "k": [
+       [
+        "filling",
+        "output",
+        "stroke"
+       ]
+      ],
+      "why": "Shock."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why is the pain positional, and why does electrical alternans occur?",
+    "tip": "Exam thinking: link the anatomy to the sign.",
+    "points": [
+     {
+      "p": "Inflamed visceral and parietal layers irritate pain fibres",
+      "k": [
+       [
+        "inflam",
+        "irritat"
+       ],
+       [
+        "fibre",
+        "fiber",
+        "nerve",
+        "layer"
+       ]
+      ],
+      "why": "Pleuritic and positional."
+     },
+     {
+      "p": "Alternans: the heart swings in a large effusion, changing axis beat to beat",
+      "k": [
+       [
+        "swing"
+       ]
+      ],
+      "why": "Low-voltage alternating QRS."
+     },
+     {
+      "p": "Constriction: fibrosis and calcification form a rigid shell over time",
+      "k": [
+       [
+        "fibro",
+        "calcif",
+        "rigid"
+       ]
+      ],
+      "why": "Chronic version of restricted filling."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Pericardium": "The fibrous two-layered sac around the heart.",
+  "Pericarditis": "Inflammation of the pericardium.",
+  "Pericardial effusion": "Fluid collecting in the pericardial sac.",
+  "Cardiac tamponade": "Fluid in the pericardium compressing the heart so it cannot fill; a medical emergency.",
+  "Tamponade": "Compression of the heart by pericardial fluid.",
+  "Constrictive pericarditis": "A thick, rigid pericardium that limits diastolic filling, developing over months to years.",
+  "Friction rub": "Scratchy sound heard as inflamed pericardial layers rub together.",
+  "Pericardial friction rub": "Scratchy, high-pitched sound from inflamed pericardial layers rubbing together.",
+  "Beck's triad": "Raised JVP, hypotension and muffled heart sounds in cardiac tamponade.",
+  "Pulsus paradoxus": "A fall in systolic BP of more than 15 mmHg on inspiration.",
+  "Kussmaul's sign": "A paradoxical rise in JVP on inspiration.",
+  "JVP": "Jugular venous pressure: height of the venous pulsation in the neck, reflecting right atrial pressure.",
+  "Y descent": "The fall in the JVP waveform as the tricuspid valve opens; absent in tamponade.",
+  "Pericardial knock": "An early diastolic sound in constrictive pericarditis as filling stops abruptly.",
+  "Hepatojugular reflux": "A sustained rise in JVP when pressing on the liver.",
+  "PR depression": "Depression of the PR segment on ECG; the most specific sign of pericarditis.",
+  "Saddle-shaped ST elevation": "Concave ST elevation across many leads, typical of pericarditis.",
+  "Spodick's sign": "A downsloping TP segment on the ECG in acute pericarditis.",
+  "Electrical alternans": "QRS height alternating beat to beat as the heart swings in a large effusion.",
+  "Water bottle sign": "A large, globular heart shadow on chest X-ray from a big pericardial effusion.",
+  "Echocardiography": "Ultrasound of the heart; confirms effusion and tamponade.",
+  "TTE": "Transthoracic echocardiography: heart ultrasound through the chest wall.",
+  "Pericardiocentesis": "Draining pericardial fluid with a needle, ideally sub-xiphoid under ultrasound.",
+  "Sub-xiphoid": "Just below the xiphisternum; the preferred route for pericardiocentesis.",
+  "Pericardiectomy": "Surgical removal of the pericardium for constrictive pericarditis.",
+  "Balloon pericardiotomy": "A balloon catheter makes a window in the pericardium, used for malignant effusions.",
+  "Colchicine": "Anti-inflammatory drug that reduces pericarditis symptoms and recurrence.",
+  "NSAID": "Non-steroidal anti-inflammatory drug, such as ibuprofen or naproxen.",
+  "Dressler's syndrome": "Autoimmune pericarditis occurring weeks after a myocardial infarction.",
+  "Uraemic pericarditis": "Pericarditis caused by high urea in kidney failure; treated with dialysis.",
+  "SLE": "Systemic lupus erythematosus: autoimmune disease that can cause serositis, including pericarditis.",
+  "Behçet's syndrome": "Vasculitis with mouth and genital ulcers; a cause of pericarditis.",
+  "Coxsackie": "An enterovirus that commonly causes viral pericarditis and myocarditis.",
+  "Haemopericardium": "Blood in the pericardial sac, e.g. after trauma or cardiac surgery.",
+  "HFpEF": "Heart failure with preserved ejection fraction: the ventricle pumps but fills poorly.",
+  "Muffled heart sounds": "Quiet heart sounds because fluid around the heart dampens them."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 67 year old man with lung cancer has 3 weeks of increasing breathlessness and chest discomfort. His temperature is 36.9°C, pulse rate 96 bpm, BP 132/80 mmHg and there is no fall in systolic BP on inspiration. His JVP is raised and his heart sounds are quiet. His lungs are clear. Chest X-ray shows an enlarged globular heart.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cardiac tamponade",
+    "Constrictive pericarditis",
+    "Dilated cardiomyopathy",
+    "Pericardial effusion",
+    "Pleural effusion"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: decide effusion vs tamponade vs constriction."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "lung cancer",
+      "3 weeks of increasing breathlessness",
+      "BP 132/80 mmHg",
+      "no fall in systolic BP on inspiration",
+      "heart sounds are quiet",
+      "enlarged globular heart"
+     ],
+     "x": "Malignancy, progressive breathlessness, raised JVP, muffled sounds, water bottle heart, but **normal BP** and no pulsus paradoxus."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **pericardial effusion** that has not yet caused tamponade."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Tamponade needs hypotension and pulsus paradoxus; his BP is normal."
+      ],
+      [
+       1,
+       "Constriction is chronic with a knock and ascites."
+      ],
+      [
+       2,
+       "Dilated cardiomyopathy gives a displaced apex, S3 and pulmonary oedema."
+      ],
+      [
+       4,
+       "A pleural effusion is in the chest, not the cardiac silhouette; lungs are clear."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pericardial effusion.** Add hypotension and it becomes tamponade."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 23 year old man has 2 days of sharp central chest pain that is worse lying down and when he breathes in, and better leaning forward. He had a sore throat last week. His temperature is 37.8°C, pulse rate 98 bpm and BP 124/72 mmHg. A scratchy sound is heard at the left sternal edge.",
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "12-lead ECG",
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "D-dimer",
+    "Exercise tolerance test"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial investigation for suspected pericarditis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "worse lying down",
+      "better leaning forward",
+      "sore throat last week",
+      "scratchy sound"
+     ],
+     "x": "Positional pleuritic pain, viral prodrome, friction rub: acute pericarditis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "A **12-lead ECG**: the gold standard test for pericarditis (PR depression, saddle ST elevation)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "CXR is usually normal unless there is a big effusion."
+      ],
+      [
+       2,
+       "CTPA is for PE; the pain is positional, not sudden with hypoxia."
+      ],
+      [
+       3,
+       "D-dimer is for low-probability PE."
+      ],
+      [
+       4,
+       "An exercise test in acute inflammation is unsafe and unhelpful."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. ECG.** Then TTE in every suspected pericarditis."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 59 year old man is 2 hours after coronary artery bypass surgery. He becomes hypotensive with a raised JVP and quiet heart sounds. His pulse rate is 134 bpm, BP 76/50 mmHg. Bedside echo shows a pericardial collection with right ventricular diastolic collapse. Chest drain output has suddenly stopped.",
+   "q": "Which is the preferred approach to drain the fluid if done blind?",
+   "o": [
+    "Apical approach",
+    "Left parasternal approach",
+    "Right parasternal approach",
+    "Sub-xiphoid approach",
+    "Thoracoscopic approach"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The question asks for the approach for pericardiocentesis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "2 hours after coronary artery bypass surgery",
+      "raised JVP and quiet heart sounds",
+      "right ventricular diastolic collapse",
+      "BP 76/50 mmHg"
+     ],
+     "x": "Beck's triad after cardiac surgery with echo collapse: tamponade."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Sub-xiphoid** pericardiocentesis, ideally under ultrasound guidance."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Apical carries a higher risk of pneumothorax and ventricular puncture."
+      ],
+      [
+       1,
+       "Parasternal risks pneumothorax and the internal mammary artery."
+      ],
+      [
+       2,
+       "Right parasternal is not a standard approach."
+      ],
+      [
+       4,
+       "Thoracoscopy is not an emergency drainage route in shock."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Sub-xiphoid**: needle left of the xiphoid, aim at the left shoulder."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 40 year old woman is stabbed in the chest. Within 20 minutes she is hypotensive with distended neck veins and quiet heart sounds. Pericardiocentesis removes only 120 mL of blood and her BP rises from 70/40 to 110/70 mmHg.",
+   "q": "Which is the most likely reason such a small volume caused shock?",
+   "o": [
+    "Blood is more viscous than serous fluid",
+    "Fluid accumulated faster than the pericardium could stretch",
+    "Left ventricular contractility failed",
+    "Pericardial fluid caused coronary compression",
+    "Vasodilation from blood loss"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: why did a small, fast bleed cause tamponade?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Within 20 minutes",
+      "only 120 mL",
+      "BP rises from 70/40 to 110/70 mmHg"
+     ],
+     "x": "Rapid bleed, small volume, instant improvement on drainage."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The pericardium **cannot stretch quickly**, so pressure rises sharply and blocks filling."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Viscosity does not determine pericardial pressure."
+      ],
+      [
+       2,
+       "Contractility was fine; she improved instantly on drainage."
+      ],
+      [
+       3,
+       "The problem is filling, not coronary flow."
+      ],
+      [
+       4,
+       "120 mL of blood loss would not cause shock by itself."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Speed, not volume, causes tamponade."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 26 year old man has 3 days of sharp central chest pain that is worse when lying flat and better sitting forward. He had a flu-like illness last week. His temperature is 37.9°C, pulse rate 102 bpm, BP 126/74 mmHg and oxygen saturation 98% breathing air. A scratchy sound is heard at the left sternal edge. ECG (see item resources).",
+   "labs": [
+    [
+     "Troponin T",
+     "24 ng/L",
+     "<14",
+     "H"
+    ],
+    [
+     "CRP",
+     "54 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": {
+    "kind": "ecg",
+    "title": "12-lead ECG",
+    "layout": "12lead",
+    "rhythm": "sinus_tachy",
+    "rate": 102,
+    "leads": {
+     "I": "st_elev",
+     "II": "st_elev",
+     "aVL": "st_elev",
+     "aVF": "st_elev",
+     "V3": "st_elev",
+     "V4": "st_elev",
+     "V5": "st_elev",
+     "V6": "st_elev",
+     "aVR": "st_dep"
+    },
+    "caption": "Widespread saddle-shaped ST elevation with PR depression."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute aortic dissection",
+    "Acute coronary syndrome",
+    "Acute pericarditis",
+    "Costochondritis",
+    "Pulmonary embolism"
+   ],
+   "a": 2,
+   "e": "Positional chest pain eased by sitting forward, a friction rub, a viral prodrome and widespread saddle ST elevation is acute pericarditis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of chest pain: use the position and the ECG."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "better sitting forward",
+      "flu-like illness last week",
+      "scratchy sound",
+      "worse when lying flat"
+     ],
+     "x": "Positional pain + rub + viral prodrome + **widespread** ST elevation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute pericarditis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dissection is tearing pain to the back with BP difference."
+      ],
+      [
+       1,
+       "ACS ST elevation follows one territory with reciprocal changes."
+      ],
+      [
+       3,
+       "Costochondritis is reproducible on palpation with a normal ECG."
+      ],
+      [
+       4,
+       "PE gives hypoxia and a sinus tachycardia, not saddle ST elevation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Sitting forward + rub = pericarditis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old man is brought in after a stab wound to the left chest. His pulse rate is 136 bpm, BP 72/48 mmHg, respiratory rate 28 breaths per minute and oxygen saturation 96% breathing air. His neck veins are distended and heart sounds are very quiet. Breath sounds are equal bilaterally and the trachea is central.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute myocardial infarction",
+    "Aortic dissection",
+    "Cardiac tamponade",
+    "Massive pulmonary embolism",
+    "Tension pneumothorax"
+   ],
+   "a": 2,
+   "e": "Beck's triad (raised JVP, hypotension, muffled heart sounds) after penetrating trauma is cardiac tamponade. Equal breath sounds and a central trachea argue against tension pneumothorax.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of shock with raised JVP."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "stab wound",
+      "BP 72/48 mmHg",
+      "neck veins are distended",
+      "heart sounds are very quiet",
+      "Breath sounds are equal bilaterally"
+     ],
+     "x": "Beck's triad after trauma; chest exam normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Cardiac tamponade.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "MI would not follow a stab wound or muffle the heart sounds."
+      ],
+      [
+       1,
+       "Dissection gives tearing pain and unequal pulses."
+      ],
+      [
+       3,
+       "Massive PE gives hypoxia; saturations are 96%."
+      ],
+      [
+       4,
+       "Tension gives absent breath sounds and tracheal deviation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C.** Beck's triad = tamponade."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 62 year old woman with metastatic breast cancer is breathless and light-headed. Her pulse rate is 124 bpm, BP 86/60 mmHg and respiratory rate 26 breaths per minute. Her JVP is raised to the earlobes and heart sounds are muffled. Echo shows a large pericardial effusion.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely additional finding on examination?",
+   "o": [
+    "Bounding pulse",
+    "Collapsing pulse",
+    "Pulsus alternans",
+    "Pulsus paradoxus",
+    "Slow-rising pulse"
+   ],
+   "a": 3,
+   "e": "In cardiac tamponade, systolic BP falls by more than 15 mmHg on inspiration (pulsus paradoxus). Pulsus alternans is severe LV failure.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Finding on examination in tamponade."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "metastatic breast cancer",
+      "BP 86/60 mmHg",
+      "JVP is raised",
+      "heart sounds are muffled",
+      "large pericardial effusion"
+     ],
+     "x": "Malignant effusion with Beck's triad: tamponade."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pulsus paradoxus.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A bounding pulse is CO2 retention or high output states."
+      ],
+      [
+       1,
+       "Collapsing pulse is aortic regurgitation."
+      ],
+      [
+       2,
+       "Pulsus alternans is severe LV systolic failure."
+      ],
+      [
+       4,
+       "Slow-rising pulse is aortic stenosis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Tamponade = pulsus paradoxus (>15 mmHg)."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man had cardiac surgery 3 years ago. He has 8 months of increasing ankle swelling, abdominal distension and fatigue. His pulse rate is 92 bpm, BP 112/74 mmHg. His JVP is raised, there is a positive hepatojugular reflux, ascites and an early diastolic extra sound. Lateral chest X-ray shows pericardial calcification.",
+   "labs": [
+    [
+     "Albumin",
+     "36 g/L",
+     "35–50",
+     ""
+    ],
+    [
+     "Urine protein:creatinine ratio",
+     "12 mg/mmol",
+     "<30",
+     ""
+    ],
+    [
+     "ALT",
+     "48 U/L",
+     "<40",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Cardiac tamponade",
+    "Constrictive pericarditis",
+    "Dilated cardiomyopathy",
+    "Liver cirrhosis",
+    "Nephrotic syndrome"
+   ],
+   "a": 1,
+   "e": "Slowly progressive right heart failure signs with a pericardial knock and pericardial calcification after cardiac surgery is constrictive pericarditis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of chronic right heart failure signs."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "8 months",
+      "positive hepatojugular reflux",
+      "early diastolic extra sound",
+      "pericardial calcification",
+      "cardiac surgery 3 years ago"
+     ],
+     "x": "Chronic, knock, calcified pericardium, raised JVP."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Constrictive pericarditis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Tamponade is acute with hypotension."
+      ],
+      [
+       2,
+       "DCM gives a displaced apex, S3 and pulmonary oedema, not a knock."
+      ],
+      [
+       3,
+       "Cirrhosis does not raise the JVP."
+      ],
+      [
+       4,
+       "Nephrotic syndrome gives proteinuria and a normal JVP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Raised JVP + knock + calcified pericardium = constriction."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old man had an anterior myocardial infarction 3 weeks ago. He now has fever, malaise and sharp chest pain that is worse on inspiration and eased sitting forward. A friction rub is heard. His pulse rate is 96 bpm and BP 128/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Dressler's syndrome",
+    "Left ventricular aneurysm",
+    "Papillary muscle rupture",
+    "Pulmonary embolism",
+    "Ventricular free wall rupture"
+   ],
+   "a": 0,
+   "e": "Pericarditis with fever weeks after MI is Dressler's syndrome, an autoimmune pericarditis. Papillary rupture is 2–10 days and gives a new murmur.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis of a post-MI complication."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 weeks ago",
+      "fever, malaise",
+      "eased sitting forward",
+      "friction rub"
+     ],
+     "x": "Weeks after MI + pericarditic pain + rub + fever."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Dressler's syndrome.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "An LV aneurysm gives persistent ST elevation and heart failure, not a rub with fever."
+      ],
+      [
+       2,
+       "Papillary rupture is 2–10 days with acute MR."
+      ],
+      [
+       3,
+       "PE gives hypoxia and no rub."
+      ],
+      [
+       4,
+       "Free wall rupture is sudden tamponade within days."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Weeks after MI + pericarditis = Dressler's."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old woman has 4 months of fatigue, joint pains, mouth ulcers and a rash over her cheeks that is worse in the sun. She now has breathlessness and quiet heart sounds. Echo shows a moderate pericardial effusion. Her pulse rate is 98 bpm and BP 118/74 mmHg.",
+   "labs": [
+    [
+     "Anti-dsDNA",
+     "Positive",
+     "Negative",
+     "H"
+    ],
+    [
+     "Complement C3",
+     "0.48 g/L",
+     "0.75–1.65",
+     "L"
+    ],
+    [
+     "CRP",
+     "12 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely underlying cause of her effusion?",
+   "o": [
+    "Hypothyroidism",
+    "Rheumatoid arthritis",
+    "Sarcoidosis",
+    "Systemic lupus erythematosus",
+    "Tuberculosis"
+   ],
+   "a": 3,
+   "e": "Arthralgia, oral ulcers, a photosensitive malar rash and serositis in a young woman is SLE, a recognised risk factor for pericardial effusion and tamponade.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Cause of a pericardial effusion: read the background."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "joint pains, mouth ulcers",
+      "rash over her cheeks that is worse in the sun",
+      "moderate pericardial effusion",
+      "27 year old woman"
+     ],
+     "x": "Young woman with malar rash, oral ulcers, arthralgia: lupus serositis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**SLE.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Hypothyroid effusions come with weight gain and cold intolerance."
+      ],
+      [
+       1,
+       "RA gives symmetrical small-joint synovitis but not a malar rash or oral ulcers."
+      ],
+      [
+       2,
+       "Sarcoid gives hilar nodes and lupus pernio (not lupus)."
+      ],
+      [
+       4,
+       "TB gives sweats, weight loss and cough."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Malar rash + ulcers + serositis = SLE."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 30 year old man has acute pericarditis after a viral illness. His pulse rate is 92 bpm and BP 124/76 mmHg. His 12-lead ECG shows several abnormalities.",
+   "labs": [],
+   "visual": null,
+   "q": "Which ECG finding is most specific for acute pericarditis?",
+   "o": [
+    "Electrical alternans",
+    "PR depression",
+    "Q waves",
+    "Saddle-shaped ST elevation",
+    "T wave inversion"
+   ],
+   "a": 1,
+   "e": "PR depression is the most specific ECG finding of acute pericarditis. Saddle ST elevation is common but less specific.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "The question asks for the MOST SPECIFIC finding, not the most common."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute pericarditis",
+      "viral illness"
+     ],
+     "x": "Pericarditis ECG: saddle ST elevation, PR depression, Spodick's sign."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**PR depression.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Electrical alternans is a large effusion."
+      ],
+      [
+       2,
+       "Q waves suggest established infarction."
+      ],
+      [
+       3,
+       "Saddle ST elevation is common but less specific (early repolarisation looks similar)."
+      ],
+      [
+       4,
+       "T inversion appears late and is non-specific."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Most specific = PR depression."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 70 year old woman on apixaban becomes breathless and dizzy. Her pulse rate is 128 bpm, BP 84/58 mmHg and oxygen saturation 95% breathing air. Her JVP is raised and heart sounds are quiet. The ECG shows small QRS complexes that alternate in height.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "102 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Lactate",
+     "3.8 mmol/L",
+     "<2.0",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+   "o": [
+    "Cardiac MRI",
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "Serum troponin",
+    "Transthoracic echocardiography"
+   ],
+   "a": 4,
+   "e": "Echocardiography is the gold standard for pericardial effusion and tamponade, showing fluid and right heart diastolic collapse at the bedside.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirm suspected tamponade."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "apixaban",
+      "BP 84/58 mmHg",
+      "JVP is raised",
+      "alternate in height"
+     ],
+     "x": "Anticoagulated, Beck's triad, electrical alternans: haemopericardium with tamponade."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Bedside echocardiography.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "MRI is slow and unsafe in a shocked patient."
+      ],
+      [
+       1,
+       "CXR may show a water bottle heart but cannot confirm tamponade."
+      ],
+      [
+       2,
+       "CTPA is for PE and delays treatment."
+      ],
+      [
+       3,
+       "Troponin does not show fluid."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Echo** confirms tamponade."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old man has acute viral pericarditis. He has no past medical history and takes no medications. His temperature is 37.6°C, pulse rate 94 bpm and BP 122/78 mmHg. Echo shows no effusion.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Aspirin and ticagrelor",
+    "Colchicine alone",
+    "Ibuprofen and colchicine",
+    "Oral prednisolone",
+    "Pericardiocentesis"
+   ],
+   "a": 2,
+   "e": "First-line treatment for acute pericarditis is an NSAID plus colchicine with rest. Colchicine alone is for those who cannot take NSAIDs.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of uncomplicated pericarditis."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute viral pericarditis",
+      "no past medical history",
+      "no effusion"
+     ],
+     "x": "No contraindication to NSAIDs; nothing to drain."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**NSAID + colchicine.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dual antiplatelets are for ACS."
+      ],
+      [
+       1,
+       "Colchicine alone is second-line (e.g. peptic ulcer)."
+      ],
+      [
+       3,
+       "Steroids are not first-line and raise recurrence."
+      ],
+      [
+       4,
+       "There is no effusion to drain."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Ibuprofen + colchicine.**"
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 52 year old woman has acute pericarditis. She had a bleeding duodenal ulcer 2 months ago and is still taking omeprazole. Her pulse rate is 90 bpm and BP 130/82 mmHg. Echo shows a trivial effusion.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Aspirin and ticagrelor",
+    "Colchicine alone",
+    "Ibuprofen and colchicine",
+    "Naproxen alone",
+    "Pericardiocentesis"
+   ],
+   "a": 1,
+   "e": "NSAIDs should be avoided in peptic ulcer disease, so colchicine monotherapy is the second-line option.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: check for a reason to avoid NSAIDs."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bleeding duodenal ulcer",
+      "acute pericarditis",
+      "trivial effusion"
+     ],
+     "x": "Recent bleeding peptic ulcer: no NSAID."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Colchicine monotherapy.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Antiplatelets would risk more bleeding and are for ACS."
+      ],
+      [
+       2,
+       "Ibuprofen is an NSAID."
+      ],
+      [
+       3,
+       "Naproxen is an NSAID."
+      ],
+      [
+       4,
+       "A trivial effusion is just monitored."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Peptic ulcer = colchicine alone."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 45 year old man is 5 days after a permanent pacemaker insertion. He becomes confused and breathless. His pulse rate is 138 bpm, BP 78/52 mmHg, and systolic BP falls 20 mmHg on inspiration. His JVP is raised and heart sounds are muffled. Bedside echo shows a large effusion with right ventricular collapse.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous furosemide",
+    "Intravenous glyceryl trinitrate",
+    "Pericardiectomy",
+    "Thrombolysis",
+    "Urgent pericardiocentesis"
+   ],
+   "a": 4,
+   "e": "Cardiac tamponade needs urgent pericardiocentesis, preferably sub-xiphoid under ultrasound. Diuretics and nitrates reduce preload and worsen shock.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of tamponade."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "pacemaker insertion",
+      "BP 78/52 mmHg",
+      "falls 20 mmHg on inspiration",
+      "right ventricular collapse"
+     ],
+     "x": "Post-procedure tamponade with pulsus paradoxus and echo confirmation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Urgent pericardiocentesis.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Furosemide reduces preload and worsens tamponade."
+      ],
+      [
+       1,
+       "GTN lowers preload and BP further."
+      ],
+      [
+       2,
+       "Pericardiectomy is for constrictive pericarditis."
+      ],
+      [
+       3,
+       "Thrombolysis could worsen bleeding into the pericardium."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E.** Tamponade = drain it now."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 66 year old woman with lung cancer has a large pericardial effusion. Her ECG shows sinus tachycardia with low-voltage QRS complexes whose height alternates from beat to beat.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of the alternating QRS height?",
+   "o": [
+    "Alternating bundle branch block",
+    "Beat-to-beat swinging of the heart within the effusion",
+    "Hyperkalaemia from tumour lysis",
+    "Myocardial infiltration by tumour",
+    "Phrenic nerve irritation"
+   ],
+   "a": 1,
+   "e": "Electrical alternans reflects the heart swinging within a large effusion, changing its electrical axis from beat to beat.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of an ECG sign."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "large pericardial effusion",
+      "low-voltage QRS complexes",
+      "alternates from beat to beat"
+     ],
+     "x": "Big effusion, low voltage, alternans."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The heart **swings** in the fluid, so the axis changes each beat."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Alternating BBB changes QRS shape and width, not just height."
+      ],
+      [
+       2,
+       "Hyperkalaemia gives peaked T waves and broad QRS."
+      ],
+      [
+       3,
+       "Infiltration would not alternate beat to beat."
+      ],
+      [
+       4,
+       "Phrenic irritation causes hiccups, not ECG change."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B.** Alternans = swinging heart."
+    }
+   ]
+  }
+ ]
+}

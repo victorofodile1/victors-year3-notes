@@ -1,0 +1,734 @@
+{
+ "id": "polymyalgia-rheumatica",
+ "patient": {
+  "name": "Brenda Whitfield",
+  "age": 71,
+  "sex": "F",
+  "setting": "GP surgery",
+  "complaint": "Six weeks of painful, stiff shoulders and hips; struggles to get dressed in the morning",
+  "background": [
+   "Retired school secretary in Bexleyheath; lives with her husband",
+   "Hypertension on amlodipine",
+   "Previous wrist fracture after a fall at 66",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with a patient over 50 who has bilateral shoulder and hip girdle stiffness, a raised ESR, normal CK and normal power, with polymyositis, hypothyroidism and osteoarthritis as distractors. GCA features (headache, jaw claudication) are the classic follow-on.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Brenda, 71, has **6 weeks** of aching shoulders and hips.",
+      "Stiff for **over an hour** every morning.",
+      "Needs her husband to help her **put on a cardigan**.",
+      "Feels feverish, tired and has **lost her appetite**."
+     ],
+     "vitals": {
+      "T": "37.6°C",
+      "HR": "86 bpm",
+      "BP": "142/84 mmHg",
+      "RR": "16 /min"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Proximal pain and stiffness in **both shoulders and hips**: think PMR, and immediately think of its partner, **giant cell arteritis**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Brenda is **71**. PMR under 50 is so unusual that a younger patient should make you look for something else."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Age and PMR",
+      "min": 30,
+      "max": 90,
+      "unit": "years",
+      "bands": [[30, 50, "Under 50: think again", "bad"], [50, 90, "Over 50: PMR age group", "ok"]],
+      "value": 71,
+      "label": "Brenda 71",
+      "caption": "Being **over 50** is a key diagnostic feature of PMR (and of GCA)."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Cannot lift her arms above shoulder height **because of pain**.",
+      "Formal power testing: **5/5** in all muscle groups.",
+      "No small-joint swelling; no rash.",
+      "No headache, jaw pain or visual symptoms."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Brenda cannot raise her arms, yet power is 5/5. What does this tell you?",
+     "o": ["It is a primary myopathy", "It is a peripheral neuropathy", "Movement is limited by pain, not weakness", "She has a rotator cuff tear"],
+     "a": 2,
+     "r": "In PMR, active movement is reduced by **pain and stiffness**, but **formal power is normal**. True weakness points to myositis or a neurological cause."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Brenda fits every line: bilateral girdle stiffness, **morning stiffness over 45 minutes**, constitutional upset, and **normal power**."
+    },
+    {
+     "type": "compare",
+     "title": "PMR vs its mimics",
+     "head": ["Feature", "PMR", "Polymyositis", "Hypothyroid myopathy"],
+     "rows": [
+      ["Main symptom", "Pain and stiffness", "Weakness", "Weakness, fatigue"],
+      ["Power on testing", "Normal", "Reduced", "Reduced or normal"],
+      ["CK", "Normal", "Markedly raised", "Raised"],
+      ["ESR/CRP", "Markedly raised", "Often raised", "Normal"],
+      ["Steroid response", "Dramatic within days", "Slow", "None (needs levothyroxine)"]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Brenda faces two risks: **GCA** (which can blind her) and **osteoporosis** from the steroids she will need, on top of her previous wrist fracture."
+    },
+    {
+     "type": "flow",
+     "title": "Suspected PMR: what to check",
+     "nodes": ["Over 50 with bilateral shoulder/hip stiffness", "Morning stiffness over 45 min", "Normal power, normal CK", "Raised ESR and CRP", "Ask about headache, jaw claudication, vision"],
+     "caption": "The last box is the safety step: GCA symptoms change the dose and the urgency."
+    },
+    {
+     "type": "trap",
+     "text": "Do not pick **polymyositis** because the muscles hurt. Polymyositis causes **weakness** with a **high CK**; PMR causes **pain and stiffness** with **normal power and normal CK**."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial investigation?' (ESR and CRP), 'most likely result' questions where CK is normal, and temporal artery biopsy when GCA features appear.",
+   "steps": [
+    {
+     "type": "labs",
+     "title": "Brenda's bloods",
+     "rows": [
+      ["ESR", "72 mm/h", "1–20", "H"],
+      ["CRP", "48 mg/L", "<5", "H"],
+      ["Haemoglobin", "112 g/L", "120–150", "L"],
+      ["Creatine kinase", "64 U/L", "25–200", ""],
+      ["TSH", "1.8 mU/L", "0.4–4.0", ""],
+      ["Adjusted calcium", "2.36 mmol/L", "2.20–2.60", ""]
+     ],
+     "text": "**Markedly raised ESR and CRP**, mild anaemia, and a **normal CK and TSH** that exclude myositis and hypothyroidism."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "No single test proves PMR: Brenda's diagnosis is **clinical**, backed by her raised **ESR and CRP**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Brenda's ESR",
+      "min": 0,
+      "max": 100,
+      "unit": "mm/h",
+      "bands": [[0, 20, "Normal for her age", "ok"], [20, 40, "Mildly raised", "warn"], [40, 100, "Markedly raised", "bad"]],
+      "value": 72,
+      "label": "Brenda 72",
+      "caption": "PMR typically gives a **markedly** raised ESR. A normal ESR makes PMR much less likely."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Which result would most argue against PMR in Brenda?",
+     "o": ["CK of 2400 U/L", "CRP of 48 mg/L", "ESR of 72 mm/h", "Haemoglobin of 112 g/L"],
+     "a": 0,
+     "r": "A **markedly raised CK** means muscle damage: think **polymyositis** or statin myopathy. In PMR the **CK is normal**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Brenda's work-up adds a **bone profile, protein electrophoresis** (myeloma mimics PMR) and a **DEXA** scan: she is over 65 with a past fragility fracture and starting steroids."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "If Brenda's picture were unclear, **ultrasound** would show shoulder bursitis; if she develops GCA symptoms, she needs a **temporal artery biopsy**."
+    },
+    {
+     "type": "pearl",
+     "text": "Investigation lead-ins: **'initial'** in PMR = **ESR and CRP**. Once headache or jaw claudication appear, the **diagnostic** test is **temporal artery biopsy**, but steroids are never delayed for it."
+    },
+    {
+     "type": "trap",
+     "text": "Do not order a **muscle biopsy** or **EMG** for PMR. They are for myositis; PMR muscle is normal because the inflammation is around the joints."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' (oral prednisolone, typically 15 mg daily), bone protection on long-term steroids (calcium, vitamin D, bisphosphonate), and GCA features demanding immediate high-dose steroids.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which is the most appropriate first-line treatment for Brenda?",
+     "o": ["Methotrexate", "Naproxen", "Oral prednisolone 15 mg daily", "Physiotherapy alone"],
+     "a": 2,
+     "r": "**Low-dose oral prednisolone** (typically 15 mg daily) is first-line. NSAIDs are not enough; methotrexate is only a steroid-sparing add-on."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Brenda starts **oral prednisolone**. A **dramatic improvement within days** supports PMR; no response would make her GP stop and rethink."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Brenda's first week on prednisolone",
+      "x": ["Day 0", "Day 2", "Day 4", "Day 7"],
+      "unit": "",
+      "series": [
+       { "name": "Morning stiffness (min)", "values": [80, 30, 10, 5] },
+       { "name": "Pain score (0–10)", "values": [8, 4, 2, 1] }
+      ],
+      "caption": "A **rapid, dramatic response** within days is typical of PMR and supports the diagnosis."
+     }
+    },
+    {
+     "type": "flow",
+     "title": "PMR treatment plan",
+     "nodes": ["Oral prednisolone (low dose)", "Review at 1 week: dramatic response?", "No → stop steroids, reconsider diagnosis", "Yes → slow taper over 1 to 2 years", "Bone protection from the start", "Safety-net: headache, jaw pain, vision"]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Brenda gets **calcium and vitamin D**, and because she is over 65 with a past fracture, an **alendronate** too."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "These shape Brenda's plan: a **DEXA-based osteoporosis assessment** on long-term steroids, and BSR guidance on PMR and GCA."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Four months later Brenda rings: **new right temple headache**.",
+      "Her **jaw aches when she chews**.",
+      "This morning her right eye went **blurry** for a few minutes."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "What should happen now?",
+     "o": ["Book a routine optician review", "Continue the current dose and review in a week", "Give high-dose steroids immediately", "Wait for a temporal artery biopsy before treating"],
+     "a": 2,
+     "r": "Headache, jaw claudication and visual symptoms mean **GCA**: **high-dose steroids now** to prevent permanent visual loss. Biopsy follows, never delays treatment."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Brenda's GCA symptoms are an emergency: **immediate high-dose steroids** and same-day specialist review."
+    },
+    {
+     "type": "trap",
+     "text": "Never hold steroids in suspected GCA while waiting for a **temporal artery biopsy**. The biopsy stays positive for days after steroids start; the optic nerve does not wait."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why power and CK are normal, why PMR and GCA are linked, why GCA causes sudden visual loss, and why steroids weaken bone.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Brenda's pain comes from **bursitis and tenosynovitis** around the shoulders, not the muscle itself, so her power and CK are normal."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Brenda's later GCA is no coincidence: PMR is thought to be part of the **same vasculitis** spectrum."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Brenda's dramatic week-one response reflects a **corticosteroid-sensitive** inflammatory pathway shared by PMR and GCA."
+    },
+    {
+     "type": "flow",
+     "title": "Why GCA blinds",
+     "nodes": ["Granulomatous inflammation of temporal/ophthalmic arteries", "Arterial wall thickens, lumen narrows", "Blood flow to the optic nerve occluded", "Anterior ischaemic optic neuropathy", "Sudden, often irreversible visual loss"]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Brenda's brief blurring was a warning: the next step can be **anterior ischaemic optic neuropathy** and permanent blindness."
+    },
+    {
+     "type": "ask",
+     "q": "Why does Brenda need alendronate while on prednisolone?",
+     "o": ["Steroids block vitamin D absorption completely", "Steroids cause hyperparathyroidism", "Steroids suppress osteoblasts and increase bone resorption", "Steroids directly cause hypercalcaemia"],
+     "a": 2,
+     "r": "Corticosteroids **suppress osteoblast activity** and **increase resorption**. A bisphosphonate blocks osteoclasts to protect bone."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "That is why Brenda takes **calcium, vitamin D and a bisphosphonate** for as long as she is on steroids."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Brenda's prednisolone taper",
+      "x": ["Week 0", "Week 3", "Week 6", "Month 6", "Month 12", "Month 18"],
+      "unit": "mg/day",
+      "series": [ { "name": "Prednisolone dose", "values": [15, 12.5, 10, 7.5, 5, 2.5] } ],
+      "caption": "A slow taper over 1 to 2 years: months of steroid exposure explain the need for bone protection."
+     }
+    }
+   ]
+  }
+ },
+ "mcq": [
+  { "d": "diagnosis", "q": "Which age group does polymyalgia rheumatica typically affect?", "o": ["Under 20", "20 to 40", "40 to 50", "Over 50"], "a": 3, "r": "PMR is typically seen **over 50**; this is a key diagnostic feature." },
+  { "d": "diagnosis", "q": "Which condition is strongly associated with PMR?", "o": ["Ankylosing spondylitis", "Giant cell arteritis", "Rheumatoid arthritis", "Systemic sclerosis"], "a": 1, "r": "**Giant cell arteritis** shares the same inflammatory pathway." },
+  { "d": "diagnosis", "q": "What is found on formal power testing in PMR?", "o": ["Distal weakness", "Fatigable weakness", "Normal power", "Proximal weakness"], "a": 2, "r": "Movement is limited by pain, but **power is normal**." },
+  { "d": "diagnosis", "q": "How long does morning stiffness typically last in PMR?", "o": ["Under 5 minutes", "About 15 minutes", "Over 45 minutes", "Only in the evening"], "a": 2, "r": "**Morning stiffness over 45 minutes** in shoulders and hips." },
+  { "d": "investigation", "q": "What creatine kinase level is expected in PMR?", "o": ["Markedly raised", "Mildly raised", "Normal", "Undetectable"], "a": 2, "r": "**CK is normal**: an important negative that excludes myositis." },
+  { "d": "investigation", "q": "Which first-line blood tests support PMR?", "o": ["Anti-CCP and RF", "CK and LDH", "ESR and CRP", "TSH and free T4"], "a": 2, "r": "**ESR and CRP**, both typically markedly raised." },
+  { "d": "investigation", "q": "Which investigation confirms suspected GCA in a patient with PMR?", "o": ["CT head", "Lumbar puncture", "Muscle biopsy", "Temporal artery biopsy"], "a": 3, "r": "**Temporal artery biopsy**, done without delaying steroids." },
+  { "d": "management", "q": "What is first-line treatment for PMR?", "o": ["Hydroxychloroquine", "Naproxen", "Oral prednisolone", "Paracetamol"], "a": 2, "r": "**Oral prednisolone**, then a gradual taper." },
+  { "d": "management", "q": "What should you do if PMR does not respond dramatically to steroids?", "o": ["Add methotrexate", "Double the dose", "Reconsider the diagnosis", "Switch to IV steroids"], "a": 2, "r": "Failure to respond: **stop steroids and reconsider** an alternative diagnosis." },
+  { "d": "science", "q": "What causes the pain and stiffness of PMR?", "o": ["Muscle fibre necrosis", "Nerve root compression", "Synovitis, bursitis and tenosynovitis", "Tendon rupture"], "a": 2, "r": "**Periarticular inflammation**, not muscle disease, so CK and power are normal." }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is polymyalgia rheumatica and who gets it?",
+    "tip": "Exam thinking: age over 50 and the GCA link are the two things every stem leans on.",
+    "points": [
+     { "p": "Inflammatory disorder causing proximal muscle pain and stiffness", "k": [["proximal", "girdle"], ["pain", "stiff", "ache"]], "why": "Pain and stiffness, not weakness." },
+     { "p": "Shoulders and hips", "k": [["shoulder"], ["hip"]], "why": "Usually bilateral." },
+     { "p": "Over 50", "k": [["50", "fifty"]], "why": "Very important diagnostic feature." },
+     { "p": "Strongly associated with giant cell arteritis", "k": [["giant cell", "gca", "temporal arteritis"]], "why": "Ask about headache, jaw claudication and vision every time." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the classic presentation of PMR.",
+    "tip": "Exam thinking: the stem often hides it in function ('cannot comb her hair', 'needs help dressing').",
+    "points": [
+     { "p": "Bilateral shoulder pain and stiffness with reduced active movement", "k": [["bilateral", "both"], ["shoulder"]], "why": "Reduced active movement is due to pain." },
+     { "p": "Hip pain and polyarthralgia", "k": [["hip", "polyarthralgia"]], "why": "Pelvic girdle too." },
+     { "p": "Morning stiffness over 45 minutes", "k": [["morning", "stiff"], ["45", "forty-five", "forty five"]], "why": "The cut-off is 45 minutes." },
+     { "p": "Difficulty dressing or lifting arms", "k": [["dress", "lift", "comb", "arms"]], "why": "Functional clue in stems." },
+     { "p": "Low-grade fever, anorexia, fatigue", "k": [["fever", "anorexia", "appetite", "fatigue", "tired", "weight"]], "why": "Systemic features are common." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which findings separate PMR from polymyositis?",
+    "tip": "Exam thinking: 'normal power' and 'normal CK' are the two decisive negatives.",
+    "points": [
+     { "p": "Normal muscle strength on formal power testing", "k": [["power", "strength"], ["normal", "preserved"]], "why": "Polymyositis gives true proximal weakness." },
+     { "p": "Creatine kinase not raised", "k": [["ck", "creatine kinase"]], "why": "Polymyositis gives a markedly raised CK." },
+     { "p": "Pain and stiffness rather than weakness", "k": [["pain", "stiff"]], "why": "Weakness is the polymyositis word." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of PMR?",
+    "tip": "Exam thinking: one comes from the disease, one from the treatment.",
+    "points": [
+     { "p": "Giant cell arteritis", "k": [["giant cell", "gca", "temporal arteritis"]], "why": "Can cause anterior ischaemic optic neuropathy and blindness." },
+     { "p": "Steroid-related osteoporosis", "k": [["osteoporo", "fracture", "bone"]], "why": "Long-term prednisolone." }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which symptoms in a patient with PMR suggest giant cell arteritis?",
+    "tip": "Exam thinking: these turn a GP question into an emergency.",
+    "points": [
+     { "p": "New headache (often temporal)", "k": [["headache", "temple", "temporal"]], "why": "Scalp tenderness too." },
+     { "p": "Jaw claudication", "k": [["jaw"]], "why": "Pain on chewing; highly specific." },
+     { "p": "Visual symptoms", "k": [["vision", "visual", "blur", "sight", "blind"]], "why": "Risk of anterior ischaemic optic neuropathy." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is PMR diagnosed and what are the first-line tests?",
+    "tip": "Exam thinking: there is no single diagnostic test; the 'gold standard' is clinical.",
+    "points": [
+     { "p": "Clinical diagnosis with raised inflammatory markers", "k": [["clinical"]], "why": "No biopsy or antibody confirms PMR." },
+     { "p": "ESR and CRP, both typically markedly raised", "k": [["esr", "crp", "inflammatory marker"]], "why": "A normal ESR makes PMR unlikely." },
+     { "p": "FBC may show anaemia", "k": [["anaemia", "anemia", "fbc", "haemoglobin"]], "why": "Normocytic anaemia of inflammation." },
+     { "p": "Bone profile and protein electrophoresis", "k": [["bone profile", "electrophoresis", "calcium"]], "why": "Excludes myeloma and bone disease mimics." }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What further tests are used in PMR, and when?",
+    "tip": "Exam thinking: DEXA for steroid bone risk; temporal artery biopsy only for GCA features.",
+    "points": [
+     { "p": "DEXA if major osteoporosis risk factors (e.g. over 65 F / 75 M, previous fragility fracture, long-term steroids)", "k": [["dexa", "dxa", "bone density"]], "why": "Guides bisphosphonate use." },
+     { "p": "Screen early for visual symptoms (GCA)", "k": [["visual", "vision", "eye"]], "why": "Anterior ischaemic optic neuropathy risk." },
+     { "p": "Ultrasound of shoulders/hips if unclear: bursitis and tenosynovitis", "k": [["ultrasound", "uss"]], "why": "Second-line." },
+     { "p": "Temporal artery biopsy if GCA features", "k": [["temporal artery biopsy", "biopsy"]], "why": "Never delays steroids." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "Outline the management of PMR, including bone protection.",
+    "tip": "Exam thinking: the response to steroids is part of the diagnosis.",
+    "points": [
+     { "p": "Oral prednisolone (low dose, typically 15 mg)", "k": [["prednisolone", "steroid", "corticosteroid", "glucocorticoid"]], "why": "NSAIDs are not enough." },
+     { "p": "Gradual steroid taper", "k": [["taper", "reduce", "wean"]], "why": "Usually over 1 to 2 years." },
+     { "p": "Rapid improvement within days supports the diagnosis", "k": [["days", "rapid", "dramatic"]], "why": "Classic in PMR." },
+     { "p": "No dramatic response: stop steroids and reconsider the diagnosis", "k": [["reconsider", "alternative", "rethink", "another diagnosis"]], "why": "Think malignancy, myeloma, RA." },
+     { "p": "Calcium and vitamin D; bisphosphonate (alendronate) if high fracture risk", "k": [["calcium", "vitamin d", "bisphosphonate", "alendronate"]], "why": "Bone protection on long-term steroids." }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "A patient with PMR develops headache and jaw claudication. What do you do?",
+    "tip": "Exam thinking: treat first, biopsy second.",
+    "points": [
+     { "p": "Suspect giant cell arteritis", "k": [["giant cell", "gca", "temporal arteritis"]], "why": "Same spectrum as PMR." },
+     { "p": "Immediate high-dose steroids", "k": [["high-dose", "high dose", "60", "methylprednisolone"], ["steroid", "prednisolone", "methylpred", "corticosteroid", "glucocorticoid"]], "why": "Prevents visual loss." },
+     { "p": "Then temporal artery biopsy", "k": [["biopsy"]], "why": "Do not delay treatment for it." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why are power and CK normal in PMR, and why does it respond so well to steroids?",
+    "tip": "Exam thinking: periarticular inflammation, not muscle disease.",
+    "points": [
+     { "p": "Pain from synovitis and periarticular inflammation (bursitis, tenosynovitis)", "k": [["bursitis", "tenosynovitis", "synovitis", "periarticular"]], "why": "Muscle fibres themselves are not damaged." },
+     { "p": "So CK and muscle strength are normal", "k": [["ck", "creatine kinase", "strength", "power"]], "why": "Unlike myositis." },
+     { "p": "Corticosteroid-sensitive inflammatory pathway shared with GCA", "k": [["steroid", "corticosteroid"]], "why": "Explains the dramatic low-dose response." },
+     { "p": "Thought to be a form of vasculitis of the same arteries as GCA", "k": [["vasculitis", "arteries"]], "why": "Hence the strong association." }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why can GCA cause sudden blindness, and why do steroids weaken bone?",
+    "tip": "Exam thinking: mechanism questions often ask for the 'most likely cause' of a complication.",
+    "points": [
+     { "p": "Granulomatous inflammation occludes arteries supplying the optic nerve", "k": [["occlu", "block", "ischaem"], ["optic", "ophthalmic"]], "why": "Temporal/ophthalmic arteries." },
+     { "p": "Anterior ischaemic optic neuropathy: sudden, often irreversible visual loss", "k": [["ischaemic optic neuropathy", "aion"]], "why": "Hence urgent steroids." },
+     { "p": "Steroids suppress osteoblasts", "k": [["osteoblast"]], "why": "Less bone formation." },
+     { "p": "Steroids increase bone resorption", "k": [["resorption", "osteoclast"]], "why": "Bisphosphonates counter this." }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "PMR": "Polymyalgia rheumatica: inflammatory pain and stiffness of the shoulder and hip girdles in people over 50.",
+  "Polymyalgia rheumatica": "Inflammatory condition of older adults causing proximal pain and morning stiffness with a raised ESR.",
+  "GCA": "Giant cell arteritis: granulomatous vasculitis of large and medium arteries, especially temporal arteries.",
+  "Giant cell arteritis": "Granulomatous inflammation of large and medium arteries that can cause sudden blindness.",
+  "Temporal arteritis": "Another name for giant cell arteritis affecting the temporal arteries.",
+  "Jaw claudication": "Jaw pain on chewing due to reduced blood flow to the jaw muscles; specific for GCA.",
+  "Anterior ischaemic optic neuropathy": "Infarction of the front of the optic nerve, causing sudden painless visual loss.",
+  "Granulomatous": "Inflammation with clusters of macrophages and giant cells.",
+  "Vasculitis": "Inflammation of blood vessel walls.",
+  "Proximal": "Nearer the trunk; for muscles, the shoulder and hip girdles.",
+  "Polyarthralgia": "Pain in many joints without obvious swelling.",
+  "Myopathy": "Disease of the muscle itself, causing true weakness.",
+  "Polymyositis": "Inflammatory myopathy with proximal weakness and a markedly raised CK.",
+  "CK": "Creatine kinase, an enzyme released from damaged muscle; normal in PMR.",
+  "Creatine kinase": "Muscle enzyme that rises when muscle fibres are damaged.",
+  "ESR": "Erythrocyte sedimentation rate; a non-specific inflammatory marker, typically markedly raised in PMR.",
+  "CRP": "C-reactive protein, an acute-phase inflammatory marker made by the liver.",
+  "Bursitis": "Inflammation of a bursa, a fluid-filled sac that cushions tendons near joints.",
+  "Tenosynovitis": "Inflammation of the sheath around a tendon.",
+  "Synovitis": "Inflammation of the synovial lining of a joint.",
+  "Periarticular": "Around a joint rather than inside it.",
+  "Protein electrophoresis": "Blood test separating proteins; detects the paraprotein of myeloma, a PMR mimic.",
+  "Bone profile": "Calcium, phosphate, albumin and ALP blood tests.",
+  "DEXA": "Dual-energy X-ray absorptiometry scan measuring bone mineral density.",
+  "Fragility fracture": "A fracture from a fall from standing height or less.",
+  "Prednisolone": "Oral corticosteroid; first-line for PMR at low dose.",
+  "Corticosteroids": "Steroid hormones and drugs that suppress inflammation and the immune response.",
+  "Taper": "Gradual dose reduction to avoid relapse and adrenal insufficiency.",
+  "Colecalciferol": "Vitamin D3 supplement used for bone protection.",
+  "Bisphosphonate": "Drug that inhibits osteoclasts to reduce bone resorption, e.g. alendronate.",
+  "Alendronate": "Weekly oral bisphosphonate taken upright on an empty stomach.",
+  "Osteoblast": "Bone-forming cell; suppressed by corticosteroids.",
+  "Osteoclast": "Bone-resorbing cell; the target of bisphosphonates.",
+  "Osteoporosis": "Low bone mass and weak bone structure raising fracture risk.",
+  "Temporal artery biopsy": "Removal of a segment of temporal artery to confirm giant cell arteritis.",
+  "BSR": "British Society for Rheumatology, which publishes PMR and GCA guidance.",
+  "Methylprednisolone": "Corticosteroid given intravenously at high dose, e.g. for GCA with visual loss."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 69 year old woman has a 2 month history of pain and stiffness in both shoulders and hips. She is stiff for 90 minutes each morning and needs help to get out of the bath. She feels tired and has lost weight. Muscle power is 5/5 throughout. There is no joint swelling.",
+   "labs": [["ESR", "64 mm/h", "1–20", "H"], ["Creatine kinase", "88 U/L", "25–200", ""]],
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Giant cell arteritis", "Hypothyroidism", "Osteoarthritis", "Polymyalgia rheumatica", "Polymyositis"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "A diagnosis of proximal pain in an older woman: weakness or stiffness?" },
+    { "t": "Pick out the clues", "clues": ["69 year old woman", "both shoulders and hips", "stiff for 90 minutes each morning", "Muscle power is 5/5", "no joint swelling"], "x": "Over 50, girdle stiffness over 45 min, normal power; ESR high and CK normal." },
+    { "t": "Make your own answer before looking", "x": "**Polymyalgia rheumatica.**" },
+    { "t": "Rule out the others", "elim": [[0, "GCA needs headache, jaw claudication or visual symptoms; none are given."], [1, "Hypothyroidism gives a normal ESR and often a raised CK."], [2, "OA causes pain worse with use, brief stiffness and a normal ESR."], [4, "Polymyositis causes weakness with a markedly raised CK."]] },
+    { "t": "Commit", "x": "**D. Polymyalgia rheumatica.** Over 50 + girdle stiffness + high ESR + normal CK and power." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 74 year old man has 6 weeks of bilateral shoulder pain and morning stiffness lasting an hour. He has difficulty lifting his arms to shave. Power is normal when tested formally. He has no headache or visual symptoms. His GP suspects polymyalgia rheumatica.",
+   "q": "Which investigation best supports the diagnosis?",
+   "o": ["Anti-CCP antibodies", "Creatine kinase", "ESR and CRP", "Muscle biopsy", "Nerve conduction studies"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "Which test supports PMR? Remember the diagnosis is clinical." },
+    { "t": "Pick out the clues", "clues": ["74 year old man", "bilateral shoulder pain", "morning stiffness lasting an hour", "Power is normal", "no headache or visual symptoms"], "x": "Classic PMR; no GCA features." },
+    { "t": "Make your own answer before looking", "x": "Raised **ESR and CRP** support a clinical diagnosis of PMR." },
+    { "t": "Rule out the others", "elim": [[0, "Anti-CCP is for rheumatoid arthritis."], [1, "CK is normal in PMR; it helps exclude myositis but does not support PMR."], [3, "Muscle biopsy is for myositis; PMR muscle is normal."], [4, "Nerve conduction studies assess neuropathy, and power is normal."]] },
+    { "t": "Commit", "x": "**C. ESR and CRP.** PMR = clinical diagnosis + markedly raised inflammatory markers." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 72 year old woman with suspected polymyalgia rheumatica started oral prednisolone 15 mg daily 10 days ago. Her shoulder and hip stiffness are unchanged and she still needs help to dress. She has no headache, jaw pain or visual symptoms.",
+   "labs": [["ESR", "58 mm/h", "1–20", "H"]],
+   "q": "Which is the next most appropriate step in management?",
+   "o": ["Add methotrexate", "Continue the same dose for another month", "Increase prednisolone to 60 mg daily", "Reconsider the diagnosis", "Switch to intravenous methylprednisolone"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "'Next step' after a trial of steroids." },
+    { "t": "Pick out the clues", "clues": ["started oral prednisolone 15 mg daily 10 days ago", "stiffness are unchanged", "no headache, jaw pain or visual symptoms"], "x": "No response after 10 days, and no GCA features to justify a high dose." },
+    { "t": "Make your own answer before looking", "x": "PMR responds **dramatically within days**. No response: **reconsider the diagnosis** (e.g. myeloma, RA, malignancy)." },
+    { "t": "Rule out the others", "elim": [[0, "Methotrexate is a steroid-sparing agent for confirmed, relapsing PMR."], [1, "Waiting longer ignores that the lack of response is itself a clue."], [2, "60 mg is a GCA dose; there are no GCA features."], [4, "IV methylprednisolone is for GCA with visual loss."]] },
+    { "t": "Commit", "x": "**D. Reconsider the diagnosis.** No dramatic steroid response = probably not PMR." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 76 year old woman with polymyalgia rheumatica develops a right temporal headache and pain in her jaw when chewing. The next morning she suddenly loses vision in her right eye. Fundoscopy shows a pale, swollen optic disc.",
+   "q": "Which is the most likely mechanism of her visual loss?",
+   "o": ["Central retinal vein thrombosis", "Granulomatous occlusion of arteries supplying the optic nerve", "Raised intracranial pressure", "Retinal detachment", "Vitreous haemorrhage"],
+   "a": 1,
+   "steps": [
+    { "t": "Read the question line first", "x": "A mechanism question: why has she lost vision?" },
+    { "t": "Pick out the clues", "clues": ["polymyalgia rheumatica", "right temporal headache", "pain in her jaw when chewing", "suddenly loses vision", "pale, swollen optic disc"], "x": "PMR plus GCA features, then sudden monocular loss with a pale swollen disc." },
+    { "t": "Make your own answer before looking", "x": "GCA inflames the arteries supplying the optic nerve: **anterior ischaemic optic neuropathy**." },
+    { "t": "Rule out the others", "elim": [[0, "Retinal vein occlusion gives a 'stormy sunset' of haemorrhages, not a pale disc."], [2, "Raised ICP causes bilateral papilloedema without sudden monocular loss."], [3, "Detachment gives flashes, floaters and a curtain; the disc is normal."], [4, "Vitreous haemorrhage obscures the fundal view."]] },
+    { "t": "Commit", "x": "**B. Granulomatous occlusion of arteries supplying the optic nerve.** Hence immediate high-dose steroids." }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old woman has 5 weeks of pain and stiffness in her shoulders and thighs. She is stiff for over an hour after waking and cannot lift her arms to brush her hair. Her temperature is 37.5°C, pulse rate 84 bpm and BP 138/82 mmHg. Muscle power is normal on formal testing.",
+   "labs": [["ESR", "68 mm/h", "1–20", "H"], ["CRP", "41 mg/L", "<5", "H"], ["Creatine kinase", "72 U/L", "25–200", ""], ["TSH", "2.1 mU/L", "0.4–4.0", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Fibromyalgia", "Hypothyroidism", "Osteoarthritis", "Polymyalgia rheumatica", "Polymyositis"],
+   "a": 3,
+   "e": "Over 50, girdle pain and prolonged morning stiffness, raised ESR/CRP, normal CK and normal power: PMR. Polymyositis needs weakness and a high CK.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: proximal pain in an older woman." },
+    { "t": "Pick out the clues", "clues": ["72 year old woman", "shoulders and thighs", "stiff for over an hour after waking", "Muscle power is normal"], "x": "Plus ESR 68, CRP 41, normal CK and TSH." },
+    { "t": "Make your own answer before looking", "x": "**Polymyalgia rheumatica.**" },
+    { "t": "Rule out the others", "elim": [[0, "Fibromyalgia has normal inflammatory markers."], [1, "TSH is normal."], [2, "OA does not raise ESR/CRP or cause prolonged stiffness."], [4, "Polymyositis gives weakness and a high CK; both are normal."]] },
+    { "t": "Commit", "x": "**D. Polymyalgia rheumatica.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man has 2 months of aching and stiffness in both shoulders and hips, worst in the morning for about an hour. He struggles to put on his coat. His ESR is 62 mm/h and his GP suspects polymyalgia rheumatica.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on examination?",
+   "o": ["Heliotrope rash", "Normal power on formal testing", "Proximal muscle wasting", "Reduced tendon reflexes", "Symmetrical swelling of the small joints of the hands"],
+   "a": 1,
+   "e": "In PMR, active movement is limited by pain but formal power is normal. Heliotrope rash is dermatomyositis; small-joint synovitis is RA.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Examination finding in suspected PMR." },
+    { "t": "Pick out the clues", "clues": ["both shoulders and hips", "struggles to put on his coat", "ESR is 62 mm/h"], "x": "Functional difficulty that looks like weakness." },
+    { "t": "Make your own answer before looking", "x": "Pain limits movement, but **power is normal**." },
+    { "t": "Rule out the others", "elim": [[0, "Heliotrope rash is dermatomyositis."], [2, "Wasting suggests chronic myopathy or neuropathy."], [3, "Reflexes are normal in PMR."], [4, "Symmetrical small-joint swelling is rheumatoid arthritis."]] },
+    { "t": "Commit", "x": "**B. Normal power on formal testing.** Pain, not weakness." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old woman has had polymyalgia rheumatica for 6 months, treated with prednisolone 7.5 mg daily. She now has a 4 day history of right-sided headache, tenderness when combing her hair and pain in her jaw on chewing. Her temperature is 37.4°C, pulse rate 88 bpm and BP 146/86 mmHg.",
+   "labs": [["ESR", "84 mm/h", "1–20", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Cluster headache", "Giant cell arteritis", "Migraine", "Subarachnoid haemorrhage", "Trigeminal neuralgia"],
+   "a": 1,
+   "e": "New headache, scalp tenderness and jaw claudication with a high ESR in a patient with PMR is giant cell arteritis, the complication PMR is strongly associated with.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of a new headache in a PMR patient." },
+    { "t": "Pick out the clues", "clues": ["polymyalgia rheumatica", "right-sided headache", "tenderness when combing her hair", "pain in her jaw on chewing"], "x": "Scalp tenderness and **jaw claudication**; ESR 84." },
+    { "t": "Make your own answer before looking", "x": "**Giant cell arteritis** complicating PMR." },
+    { "t": "Rule out the others", "elim": [[0, "Cluster headache is orbital with tearing, in younger men."], [2, "Migraine starts younger and causes no jaw claudication or high ESR."], [3, "SAH is sudden thunderclap headache."], [4, "Trigeminal neuralgia is brief electric shocks, not claudication."]] },
+    { "t": "Commit", "x": "**B. Giant cell arteritis.** Now give high-dose steroids immediately." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old woman has 6 weeks of bilateral shoulder and hip girdle pain with morning stiffness lasting 2 hours. She can get out of a chair but it is painful. Her ESR is 70 mm/h and her GP suspects polymyalgia rheumatica.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely additional finding on investigation?",
+   "o": ["Anti-Jo-1 antibodies", "Elevated creatine kinase", "Normal creatine kinase", "Normal CRP", "Positive anti-CCP antibodies"],
+   "a": 2,
+   "e": "CK is not raised in PMR, an important negative that distinguishes it from myositis. CRP is typically raised alongside the ESR.",
+   "steps": [
+    { "t": "Read the question line first", "x": "An expected result in PMR." },
+    { "t": "Pick out the clues", "clues": ["bilateral shoulder and hip girdle pain", "morning stiffness lasting 2 hours", "ESR is 70 mm/h"], "x": "Classic PMR." },
+    { "t": "Make your own answer before looking", "x": "**Normal CK.**" },
+    { "t": "Rule out the others", "elim": [[0, "Anti-Jo-1 is an antisynthetase/myositis antibody."], [1, "A raised CK means muscle damage, as in polymyositis."], [3, "CRP is typically markedly raised in PMR."], [4, "Anti-CCP is specific for rheumatoid arthritis."]] },
+    { "t": "Commit", "x": "**C. Normal creatine kinase.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 73 year old woman has had polymyalgia rheumatica for 18 months, treated with prednisolone. She did not take any bone protection. She has sudden severe thoracic back pain after lifting a shopping bag. Neurological examination is normal.",
+   "labs": [["Adjusted calcium", "2.34 mmol/L", "2.20–2.60", ""], ["ALP", "88 IU/L", "30–130", ""], ["Serum protein electrophoresis", "No paraprotein", "", ""]],
+   "visual": null,
+   "q": "Which is the most likely cause of her back pain?",
+   "o": ["Metastatic bone disease", "Multiple myeloma", "Osteomalacia", "Paget's disease of bone", "Steroid-induced osteoporotic vertebral fracture"],
+   "a": 4,
+   "e": "Long-term steroids without bone protection cause osteoporosis, and minimal trauma has caused a vertebral fracture. Normal calcium, ALP and electrophoresis argue against the others.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Cause of acute back pain in a long-term steroid user." },
+    { "t": "Pick out the clues", "clues": ["18 months", "treated with prednisolone", "did not take any bone protection", "after lifting a shopping bag"], "x": "Steroid exposure, no protection, minimal trauma." },
+    { "t": "Make your own answer before looking", "x": "**Steroid-induced osteoporotic vertebral fracture.**" },
+    { "t": "Rule out the others", "elim": [[0, "Metastases often raise calcium or ALP."], [1, "Electrophoresis shows no paraprotein."], [2, "Osteomalacia gives a raised ALP and low calcium/phosphate."], [3, "Paget's gives a markedly raised ALP."]] },
+    { "t": "Commit", "x": "**E. Steroid-induced osteoporotic vertebral fracture.** Why PMR patients need bone protection." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old man has 4 weeks of aching in both upper arms and buttocks with morning stiffness lasting 90 minutes. He has lost his appetite and feels feverish. His temperature is 37.6°C, pulse rate 90 bpm and BP 134/80 mmHg. He has pain on active shoulder abduction but full passive range and normal power.",
+   "labs": [["ESR", "58 mm/h", "1–20", "H"], ["Haemoglobin", "118 g/L", "130–170", "L"], ["Creatine kinase", "95 U/L", "25–200", ""]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Adhesive capsulitis", "Bilateral rotator cuff tears", "Multiple myeloma", "Polymyalgia rheumatica", "Rheumatoid arthritis"],
+   "a": 3,
+   "e": "Bilateral girdle aching, prolonged morning stiffness, systemic upset, high ESR, mild anaemia and normal CK and power in a man over 50: PMR.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis of bilateral proximal pain with systemic upset." },
+    { "t": "Pick out the clues", "clues": ["66 year old man", "both upper arms and buttocks", "morning stiffness lasting 90 minutes", "lost his appetite and feels feverish", "full passive range and normal power"], "x": "Girdle stiffness, constitutional upset, ESR 58, normal CK." },
+    { "t": "Make your own answer before looking", "x": "**Polymyalgia rheumatica.**" },
+    { "t": "Rule out the others", "elim": [[0, "Adhesive capsulitis is usually one shoulder with loss of passive movement."], [1, "Cuff tears give weakness and normal inflammatory markers."], [2, "Myeloma causes bone pain, hypercalcaemia or renal impairment; no girdle stiffness pattern."], [4, "RA affects the small joints of the hands and feet with synovitis."]] },
+    { "t": "Commit", "x": "**D. Polymyalgia rheumatica.**" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 71 year old woman has 6 weeks of bilateral shoulder and hip stiffness, worst for over an hour each morning. Her temperature is 37.2°C, pulse rate 80 bpm and BP 140/82 mmHg. Power is normal. She has no headache, jaw pain or visual symptoms.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": ["Anti-nuclear antibodies", "Creatine kinase", "Electromyography", "ESR and CRP", "Shoulder X-ray"],
+   "a": 3,
+   "e": "First-line tests in suspected PMR are ESR and CRP, which are typically markedly raised. CK is checked to exclude myositis but does not support PMR.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Initial' investigation for suspected PMR." },
+    { "t": "Pick out the clues", "clues": ["71 year old woman", "bilateral shoulder and hip stiffness", "Power is normal", "no headache, jaw pain or visual symptoms"], "x": "Classic PMR, no GCA features." },
+    { "t": "Make your own answer before looking", "x": "**ESR and CRP.**" },
+    { "t": "Rule out the others", "elim": [[0, "ANA is for connective tissue disease such as lupus."], [1, "CK is expected to be normal; it excludes myositis rather than supporting PMR."], [2, "EMG is for myopathy or neuropathy; power is normal."], [4, "X-rays show OA, not PMR."]] },
+    { "t": "Commit", "x": "**D. ESR and CRP.**" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 75 year old man with polymyalgia rheumatica develops a new left temporal headache and jaw pain on chewing. He has been started on high-dose prednisolone the same day. The left temporal artery is thickened and tender.",
+   "labs": [["ESR", "92 mm/h", "1–20", "H"], ["CRP", "76 mg/L", "<5", "H"]],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": ["Carotid duplex ultrasound", "CT head", "Lumbar puncture", "MRI brain", "Temporal artery biopsy"],
+   "a": 4,
+   "e": "Suspected GCA complicating PMR is confirmed by temporal artery biopsy, done after steroids have started. CT head and LP are for other headache causes.",
+   "steps": [
+    { "t": "Read the question line first", "x": "'Diagnostic' test for suspected GCA." },
+    { "t": "Pick out the clues", "clues": ["polymyalgia rheumatica", "new left temporal headache", "jaw pain on chewing", "started on high-dose prednisolone", "thickened and tender"], "x": "GCA features; steroids already started, as they should be." },
+    { "t": "Make your own answer before looking", "x": "**Temporal artery biopsy.**" },
+    { "t": "Rule out the others", "elim": [[0, "Carotid duplex assesses carotid stenosis, not temporal arteritis."], [1, "CT head excludes bleeds and masses, not GCA."], [2, "Lumbar puncture is for meningitis or SAH."], [3, "MRI brain does not confirm GCA."]] },
+    { "t": "Commit", "x": "**E. Temporal artery biopsy.** Steroids first, biopsy after." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old woman has bilateral shoulder and hip girdle stiffness for 8 weeks with morning stiffness lasting 2 hours. Power is normal. Her ESR is 66 mm/h, CRP 38 mg/L and CK normal. She has no headache, jaw claudication or visual symptoms.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Hydroxychloroquine", "Naproxen", "Oral prednisolone 15 mg daily", "Oral prednisolone 60 mg daily", "Physiotherapy"],
+   "a": 2,
+   "e": "PMR without GCA features is treated with low-dose oral prednisolone, typically 15 mg daily. 60 mg is a GCA dose.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management of PMR." },
+    { "t": "Pick out the clues", "clues": ["bilateral shoulder and hip girdle stiffness", "Power is normal", "no headache, jaw claudication or visual symptoms"], "x": "Uncomplicated PMR." },
+    { "t": "Make your own answer before looking", "x": "**Low-dose oral prednisolone (15 mg).**" },
+    { "t": "Rule out the others", "elim": [[0, "Hydroxychloroquine is not effective in PMR."], [1, "NSAIDs are insufficient alone."], [3, "60 mg is for GCA; there are no GCA features."], [4, "Physiotherapy helps later but is not first-line."]] },
+    { "t": "Commit", "x": "**C. Oral prednisolone 15 mg daily.** Expect a dramatic response within days." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 74 year old woman with polymyalgia rheumatica has been on prednisolone for 3 months and is expected to need it for at least another year. She already takes calcium and vitamin D supplements. She had a wrist fracture after a fall from standing 2 years ago.",
+   "labs": [["Adjusted calcium", "2.40 mmol/L", "2.20–2.60", ""], ["25-hydroxyvitamin D", "68 nmol/L", ">50", ""], ["eGFR", "72 mL/min/1.73m²", ">60", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate additional management to protect her bones?",
+   "o": ["Alendronate", "Calcitonin", "Denosumab", "Hormone replacement therapy", "Raloxifene"],
+   "a": 0,
+   "e": "On long-term steroids with a high fracture risk (over 65, prior fragility fracture), a bisphosphonate such as alendronate is added to calcium and vitamin D.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Bone protection on long-term steroids." },
+    { "t": "Pick out the clues", "clues": ["74 year old woman", "on prednisolone for 3 months", "at least another year", "already takes calcium and vitamin D", "wrist fracture after a fall from standing"], "x": "Over 65, long-term steroids, previous fragility fracture: high risk." },
+    { "t": "Make your own answer before looking", "x": "Add a **bisphosphonate: alendronate**." },
+    { "t": "Rule out the others", "elim": [[1, "Calcitonin is not used for osteoporosis prevention now."], [2, "Denosumab is an alternative if bisphosphonates are unsuitable."], [3, "HRT is not first-line bone protection at 74."], [4, "Raloxifene is not first-line and raises VTE risk."]] },
+    { "t": "Commit", "x": "**A. Alendronate.** Calcium + vitamin D + bisphosphonate on long-term steroids." }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 78 year old woman with polymyalgia rheumatica on prednisolone 10 mg daily phones her GP. She has a new right-sided headache, jaw pain when eating and two episodes of blurred vision in her right eye today. Her temperature is 37.3°C, pulse rate 86 bpm and BP 150/88 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Aspirin 300 mg", "CT head", "High-dose corticosteroids immediately", "Increase prednisolone to 15 mg daily", "Temporal artery biopsy before treatment"],
+   "a": 2,
+   "e": "Headache, jaw claudication and visual symptoms mean GCA: give high-dose steroids immediately to prevent blindness. Biopsy must not delay treatment.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management: this is an emergency question." },
+    { "t": "Pick out the clues", "clues": ["polymyalgia rheumatica", "new right-sided headache", "jaw pain when eating", "blurred vision in her right eye"], "x": "GCA with visual symptoms: risk of permanent loss." },
+    { "t": "Make your own answer before looking", "x": "**Immediate high-dose steroids.**" },
+    { "t": "Rule out the others", "elim": [[0, "Aspirin alone does not treat the arteritis."], [1, "CT head delays treatment and does not diagnose GCA."], [3, "15 mg is a PMR dose; GCA needs high-dose steroids."], [4, "Biopsy follows steroids; it must never delay them."]] },
+    { "t": "Commit", "x": "**C. High-dose corticosteroids immediately.**" }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 69 year old man with polymyalgia rheumatica cannot lift his arms above his head because of shoulder pain, yet power is 5/5 on formal testing. His pulse rate is 78 bpm and BP 132/78 mmHg. Ultrasound of both shoulders shows subdeltoid fluid.",
+   "labs": [["Creatine kinase", "70 U/L", "25–200", ""], ["ESR", "60 mm/h", "1–20", "H"]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his shoulder pain?",
+   "o": ["Autoimmune destruction of muscle fibres", "Bursitis and tenosynovitis around the joints", "Demyelination of peripheral nerves", "Neuromuscular junction antibodies", "Steroid-induced myopathy"],
+   "a": 1,
+   "e": "PMR pain arises from periarticular inflammation (bursitis, tenosynovitis), not muscle disease, so CK and power are normal.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Mechanism of pain in PMR." },
+    { "t": "Pick out the clues", "clues": ["power is 5/5", "subdeltoid fluid"], "x": "Normal power, normal CK and subdeltoid bursitis on ultrasound." },
+    { "t": "Make your own answer before looking", "x": "**Periarticular inflammation: bursitis and tenosynovitis.**" },
+    { "t": "Rule out the others", "elim": [[0, "Muscle fibre destruction would raise CK and cause weakness."], [2, "Demyelination causes weakness and sensory change."], [3, "NMJ antibodies cause fatigable weakness."], [4, "Steroid myopathy causes weakness with normal CK, but power is normal."]] },
+    { "t": "Commit", "x": "**B. Bursitis and tenosynovitis around the joints.**" }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,458 @@
+{
+  "id": "obesity",
+  "patient": {
+    "name": "Chantelle Williams",
+    "age": 36,
+    "sex": "F",
+    "setting": "GP surgery, then Tier 3 weight management clinic",
+    "complaint": "Breathless climbing stairs and exhausted during the day; wants help losing weight",
+    "background": ["Type 2 diabetes diagnosed 3 years ago, on metformin", "Hypertension, on ramipril", "Heartburn most evenings", "Hopes to have a baby in the next few years; care worker in Croydon"]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' where obesity is the clue to a complication (OSA, GORD/Barrett's, NAFLD, pre-diabetes), or a BMI to classify, or a child whose obesity has an underlying cause.",
+      "steps": [
+        { "type": "story", "points": ["Chantelle, 36: **weight 118 kg, height 1.68 m**.", "Breathless on stairs; struggles to walk far.", "Partner says she **snores loudly and stops breathing** at night.", "Heartburn most evenings, worse lying down."], "vitals": { "HR": "88 bpm", "BP": "146/92 mmHg", "SpO2": "96% on air" } },
+        { "type": "ask", "q": "Chantelle weighs 118 kg and is 1.68 m tall. How is her weight classified?", "o": ["Overweight", "Obesity", "Severe obesity", "Healthy weight"], "a": 2, "r": "BMI = 118 ÷ 1.68² = **41.8 kg/m²**: **severe obesity** (≥40)." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Body mass index", "min": 15, "max": 55, "unit": "kg/m²", "bands": [[18.5, 25, "healthy", "ok"], [25, 30, "overweight", "warn"], [30, 40, "obesity", "bad"], [40, 55, "severe obesity", "bad"]], "value": 41.8, "label": "Chantelle 41.8", "caption": "Overweight **25 to 29.9**, obesity **≥30**, severe obesity **≥40**." } },
+        { "type": "notes", "src": 0, "lead": "Chantelle's BMI of **41.8** puts her in the **severe obesity** band." },
+        { "type": "notes", "src": 1, "lead": "For Chantelle it is diet, inactivity and family genetics. In a **child**, always look for an underlying cause." },
+        { "type": "notes", "src": 2, "lead": "Chantelle's **breathlessness and reduced mobility** are typical; many people have no symptoms at all." },
+        { "type": "notes", "src": 3, "lead": "Chantelle already has **T2DM** and **hypertension**; her snoring suggests **OSA** and her heartburn **GORD**." },
+        { "type": "flow", "title": "Obesity: the complications to hunt for", "nodes": ["Excess visceral fat", "Insulin resistance → pre-diabetes → T2DM", "Hypertension, dyslipidaemia → CVD", "Fat in the airway → OSA", "Raised abdominal pressure → GORD → Barrett's", "Fat in the liver → NAFLD"] },
+        { "type": "compare", "title": "Childhood obesity: is there an underlying cause?", "head": ["Cause", "Clue in the stem"], "rows": [["Simple (dietary) obesity", "Normal or **tall** stature, normal development"], ["Hypothyroidism", "**Short**, tired, constipated, slow growth"], ["Cushing's syndrome", "**Short**, striae, hypertension, moon face"], ["Prader-Willi syndrome", "Neonatal hypotonia, **hyperphagia**, learning difficulty"], ["Down syndrome", "Characteristic facies, learning disability"]] },
+        { "type": "pearl", "text": "A **short** obese child has an endocrine or genetic cause until proven otherwise; simple obesity usually makes children **taller**." }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' for BMI (percentile in children), waist circumference for cardiovascular risk, baseline HbA1c and lipids, and a 75 g OGTT at 24 to 28 weeks in pregnancy with BMI ≥30.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Chantelle's diagnosis is her **BMI** plus clinical assessment; a child would need a **BMI percentile** for age and sex." },
+        { "type": "visual", "visual": { "kind": "scale", "title": "Waist circumference (women)", "min": 60, "max": 130, "unit": "cm", "bands": [[60, 80, "lower risk", "ok"], [80, 88, "increased risk", "warn"], [88, 130, "high risk", "bad"]], "value": 112, "label": "Chantelle 112 cm", "caption": "CV risk rises above **80 cm in women** (94 cm in men): Chantelle carries a lot of **visceral** fat." } },
+        { "type": "labs", "title": "Chantelle's baseline bloods", "rows": [["HbA1c", "62 mmol/mol", "<42", "H"], ["Total cholesterol", "5.9 mmol/L", "<5.0", "H"], ["Triglycerides", "2.8 mmol/L", "<1.7", "H"], ["HDL cholesterol", "0.9 mmol/L", ">1.2", "L"], ["ALT", "68 U/L", "<40", "H"], ["TSH", "2.2 mU/L", "0.3–4.2", ""]], "text": "Poor glycaemic control, dyslipidaemia and a raised ALT that suggests **NAFLD**." },
+        { "type": "notes", "src": 1, "lead": "Chantelle's **112 cm waist** and abnormal **HbA1c, lipids and LFTs** confirm a high cardiovascular and metabolic risk." },
+        { "type": "story", "points": ["Liver ultrasound: bright, fatty liver.", "Epworth score 15; sleep study confirms **moderate OSA**.", "She asks what happens to screening if she becomes pregnant."] },
+        { "type": "notes", "src": 2, "lead": "Chantelle is screened for **CVD, T2DM, OSA and NAFLD**. In pregnancy, BMI ≥30 means a **75 g OGTT at 24 to 28 weeks**." },
+        { "type": "ask", "q": "If Chantelle becomes pregnant with BMI ≥30, which test screens for gestational diabetes?", "o": ["HbA1c at booking", "Random glucose at 36 weeks", "Urine dipstick each visit", "75 g OGTT at 24–28 weeks"], "a": 3, "r": "BMI ≥30 is a risk factor, so she has a **75 g 2-hour OGTT at 24 to 28 weeks**." },
+        { "type": "trap", "text": "Adult BMI cut-offs do **not** apply to children. Use the **BMI percentile** for age and sex." }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' as a BMI ladder: lifestyle for all, orlistat or GLP-1 mimetic by BMI and comorbidity, Tier 3 referral, then bariatric surgery (first-line if BMI >50). Know the GLP-1 stopping rule.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Chantelle starts with **lifestyle**: calorie deficit, more activity and behavioural support. Children get **family-based** programmes." },
+        { "type": "flow", "title": "The BMI ladder", "nodes": ["Lifestyle and behavioural programme for all", "BMI ≥30 (≥27 with comorbidity) → consider drugs", "Orlistat: BMI >28 with comorbidity", "GLP-1 mimetic: BMI >35 (>30 with comorbidity)", "BMI >35 + comorbidity or >40 → Tier 3", "Bariatric surgery; first-line if BMI >50"] },
+        { "type": "notes", "src": 2, "lead": "BMI 41.8 with T2DM: Chantelle is referred to the **Tier 3 Specialist Weight Management Service**." },
+        { "type": "ask", "q": "Tier 3 starts semaglutide. What side effect must Chantelle report immediately?", "o": ["Ankle swelling", "Dry cough", "Gum overgrowth", "Severe upper abdominal pain"], "a": 3, "r": "Severe upper abdominal pain suggests **pancreatitis**, the key GLP-1 mimetic side effect." },
+        { "type": "notes", "src": 1, "lead": "With BMI >35 and T2DM, Chantelle qualifies for a **GLP-1 mimetic**; it stops if she loses **<5%** after 12 weeks at maximum dose." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Chantelle's weight on semaglutide", "x": ["Start", "4 wk", "8 wk", "12 wk at max dose"], "unit": "kg", "series": [{ "name": "Weight", "values": [118, 116.5, 115.4, 114.2] }], "caption": "She lost 3.8 kg (**3.2%**): under the **5%** threshold, so semaglutide is stopped." } },
+        { "type": "story", "points": ["Semaglutide stopped; Tier 3 discusses surgery.", "Her T2DM is **3 years old** (under 10 years).", "She is listed for a **gastric bypass**."] },
+        { "type": "pearl", "text": "Bariatric surgery: BMI >35 with **recent-onset T2DM** (<10 years) or BMI >40 without comorbidity; **first-line if BMI >50**." },
+        { "type": "notes", "src": 3, "lead": "Long-term Chantelle needs **relapse prevention**, and before any pregnancy, **folic acid**; if BMI stays >35, **aspirin** from 12 weeks." },
+        { "type": "notes", "src": "guidelines", "lead": "Chantelle's pathway follows **NICE CG189** and NICE bariatric surgery guidance." },
+        { "type": "trap", "text": "Do not jump to drugs or surgery without **lifestyle first**: every SBA ladder starts with diet, activity and behavioural support." }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied mechanism questions: how orlistat and GLP-1 mimetics work, why visceral fat causes insulin resistance, why obesity causes OSA and GORD, and why bariatric surgery improves diabetes before much weight is lost.",
+      "steps": [
+        { "type": "notes", "src": 0, "lead": "Chantelle's weight gain is years of **positive energy balance**: more energy in than out, so fat stores expand." },
+        { "type": "notes", "src": 1, "lead": "Chantelle's **visceral** fat releases less **adiponectin** and more **TNF-alpha and IL-6**, making her **insulin resistant**." },
+        { "type": "flow", "title": "Visceral fat to type 2 diabetes", "nodes": ["Expanded visceral adipose tissue", "Low adiponectin, leptin resistance", "Raised TNF-alpha and IL-6", "Insulin resistance in muscle and liver", "Beta-cell strain → T2DM"] },
+        { "type": "notes", "src": 3, "lead": "Fat around Chantelle's **upper airway** narrows it in sleep (OSA); raised **intra-abdominal pressure** pushes acid up (GORD)." },
+        { "type": "notes", "src": 2, "lead": "Semaglutide mimics the **incretin GLP-1**; orlistat blocks **lipases** so dietary fat passes unabsorbed." },
+        { "type": "compare", "title": "Two weight-loss drugs", "head": ["Drug", "Mechanism", "Classic side effect"], "rows": [["Orlistat", "Inhibits pancreatic/gastric **lipase**: less fat absorbed", "Oily, loose stools (steatorrhoea)"], ["GLP-1 mimetic (semaglutide)", "More glucose-dependent insulin, less glucagon, slower gastric emptying, less appetite", "Nausea; **pancreatitis**"]] },
+        { "type": "notes", "src": 4, "lead": "After her bypass, Chantelle's glucose may improve within days: **GLP-1 and PYY** rise independent of weight loss." },
+        { "type": "visual", "visual": { "kind": "trend", "title": "Chantelle after gastric bypass", "x": ["Pre-op", "1 month", "6 months", "12 months"], "unit": "", "series": [{ "name": "HbA1c (mmol/mol)", "values": [62, 52, 44, 40] }, { "name": "BMI (kg/m²)", "values": [41.8, 38.5, 33.0, 29.8] }], "caption": "HbA1c falls early, faster than BMI, reflecting the **gut hormone** effect." } }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which BMI defines severe obesity?", "o": ["≥25 kg/m²", "≥30 kg/m²", "≥35 kg/m²", "≥40 kg/m²"], "a": 3, "r": "Overweight 25 to 29.9, obesity ≥30, **severe obesity ≥40 kg/m²**." },
+    { "d": "diagnosis", "q": "Obesity increases the risk of Barrett's oesophagus via which condition?", "o": ["Achalasia", "Coeliac disease", "GORD", "Peptic ulcer"], "a": 2, "r": "Obesity causes **GORD**, which can lead to Barrett's oesophagus." },
+    { "d": "diagnosis", "q": "Which syndrome causes childhood obesity with hyperphagia and neonatal hypotonia?", "o": ["Down syndrome", "Klinefelter syndrome", "Prader-Willi syndrome", "Turner syndrome"], "a": 2, "r": "**Prader-Willi**; Down, hypothyroidism and Cushing's are other listed causes." },
+    { "d": "investigation", "q": "Above which waist circumference is CV risk increased in men?", "o": ["80 cm", "88 cm", "94 cm", "102 cm"], "a": 2, "r": "**94 cm in men, 80 cm in women**." },
+    { "d": "investigation", "q": "How is obesity diagnosed in a child?", "o": ["Adult BMI cut-offs", "BMI percentile for age and sex", "Skinfold thickness", "Waist circumference alone"], "a": 1, "r": "**BMI percentile** adjusted for age and gender." },
+    { "d": "investigation", "q": "Which test screens for gestational diabetes in a woman with BMI ≥30?", "o": ["75 g OGTT at 24–28 weeks", "Fasting glucose at booking", "HbA1c at 36 weeks", "Urine glucose at booking"], "a": 0, "r": "**75 g 2-hour OGTT at 24 to 28 weeks**." },
+    { "d": "management", "q": "When should a GLP-1 mimetic be stopped?", "o": ["<5% weight loss after 12 weeks at maximum dose", "<10% weight loss after 4 weeks", "Any nausea", "When BMI falls below 35"], "a": 0, "r": "Stop if **<5%** of initial weight is lost after **12 weeks at maximum dose** (or 6 months)." },
+    { "d": "management", "q": "At what BMI is bariatric surgery a first-line option?", "o": [">35 kg/m²", ">40 kg/m²", ">45 kg/m²", ">50 kg/m²"], "a": 3, "r": "**BMI >50**: surgery can be first-line." },
+    { "d": "management", "q": "Which serious side effect of GLP-1 mimetics presents with upper abdominal pain?", "o": ["Cholangitis", "Pancreatitis", "Peptic ulcer", "Small bowel obstruction"], "a": 1, "r": "**Pancreatitis**: stop the drug and assess." },
+    { "d": "science", "q": "How does orlistat work?", "o": ["GLP-1 receptor agonism", "Inhibits pancreatic and gastric lipase", "Inhibits SGLT2", "Suppresses appetite centrally"], "a": 1, "r": "**Lipase inhibition** reduces fat digestion and absorption." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 48 year old man has a 6 month history of burning retrosternal pain after meals that is worse when lying flat. He has an acid taste in his mouth at night. He has no weight loss, dysphagia or vomiting. His BMI is 37 kg/m². His pulse rate is 76 bpm and BP 138/86 mmHg.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Achalasia", "Gastro-oesophageal reflux disease", "Oesophageal carcinoma", "Peptic ulcer disease", "Stable angina"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of retrosternal pain in an obese man: think about what obesity predisposes to." },
+        { "t": "Pick out the clues", "clues": ["worse when lying flat", "acid taste in his mouth at night", "no weight loss, dysphagia or vomiting", "BMI is 37"], "x": "Classic reflux symptoms; no red flags; **obesity** raises intra-abdominal pressure." },
+        { "t": "Make your own answer before looking", "x": "**GORD**, driven by obesity." },
+        { "t": "Rule out the others", "elim": [[0, "Achalasia gives dysphagia to solids and liquids, and regurgitation."], [2, "Cancer gives progressive dysphagia and weight loss."], [3, "Peptic ulcer pain is epigastric and linked to food timing, not lying flat."], [4, "Angina is exertional, not postprandial and positional."]] },
+        { "t": "Commit", "x": "**B. GORD.** Rule: obesity is a risk factor for GORD and, through it, Barrett's." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 9 year old girl is brought to the GP by her mother, who is worried about her weight. She is tall for her age and developing normally. She eats large portions and plays video games most evenings. Her weight is 52 kg and her height is 1.42 m.",
+      "q": "Which is the most appropriate way to confirm that she is obese?",
+      "o": ["Adult BMI category", "BMI percentile adjusted for age and sex", "Skinfold thickness", "Waist circumference against adult cut-offs", "Weight-for-age centile alone"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "How to **diagnose** obesity in a child." },
+        { "t": "Pick out the clues", "clues": ["9 year old girl", "tall for her age", "developing normally"], "x": "A child, so adult cut-offs do not apply; tall stature suggests **simple** obesity." },
+        { "t": "Make your own answer before looking", "x": "**BMI percentile** for age and sex." },
+        { "t": "Rule out the others", "elim": [[0, "Adult BMI bands are not valid in children."], [2, "Skinfold thickness is not the standard test."], [3, "Adult waist cut-offs (80/94 cm) do not apply."], [4, "Weight alone ignores height."]] },
+        { "t": "Commit", "x": "**B. BMI percentile adjusted for age and sex.** Rule: adults = BMI; children = BMI percentile." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 50 year old woman has a BMI of 29 kg/m² and hypertension. She has followed a structured diet and activity programme for 6 months without losing weight. She does not have diabetes. Her pulse rate is 78 bpm and BP 136/84 mmHg on ramipril.",
+      "q": "Which is the most appropriate next step in management?",
+      "o": ["Bariatric surgery", "Liraglutide", "Orlistat", "Referral to Tier 3 weight management", "Repeat lifestyle programme"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step after lifestyle failure: where is she on the BMI ladder?" },
+        { "t": "Pick out the clues", "clues": ["BMI of 29", "hypertension", "6 months without losing weight", "does not have diabetes"], "x": "BMI >28 **with a comorbidity**, after lifestyle has failed." },
+        { "t": "Make your own answer before looking", "x": "**Orlistat**." },
+        { "t": "Rule out the others", "elim": [[0, "Surgery needs BMI >35 with comorbidity or >40."], [1, "GLP-1 mimetics are for BMI >35, or >30 with comorbidities."], [3, "Tier 3 is for BMI >35 with comorbidities or >40."], [4, "She has already tried lifestyle properly."]] },
+        { "t": "Commit", "x": "**C. Orlistat.** Rule: BMI >28 + comorbidity + lifestyle failed = orlistat." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 45 year old woman with type 2 diabetes and a BMI of 44 kg/m² has a Roux-en-Y gastric bypass. One week after surgery her fasting glucose has fallen markedly and her insulin dose is reduced, although she has lost only 3 kg.",
+      "q": "Which is the most likely mechanism of the early improvement in her glycaemic control?",
+      "o": ["Increased GLP-1 and PYY secretion", "Increased glucagon secretion", "Increased leptin sensitivity alone", "Malabsorption of carbohydrate", "Reduced hepatic insulin clearance"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism: why glucose improves before much weight loss." },
+        { "t": "Pick out the clues", "clues": ["One week after surgery", "lost only 3 kg", "Roux-en-Y gastric bypass"], "x": "The effect is too early to be weight loss." },
+        { "t": "Make your own answer before looking", "x": "Altered gut hormones: **raised GLP-1 and PYY**." },
+        { "t": "Rule out the others", "elim": [[1, "Glucagon would raise glucose."], [2, "Leptin changes follow fat loss."], [3, "Bypass does not cause major carbohydrate malabsorption."], [4, "Not the recognised mechanism."]] },
+        { "t": "Commit", "x": "**A. Increased GLP-1 and PYY.** Rule: bariatric surgery improves glucose independent of weight loss via gut hormones." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 52 year old man is brought by his wife, who says he snores loudly and stops breathing for several seconds at night. He falls asleep while watching television and nearly fell asleep driving. His BMI is 39 kg/m² and his collar size is 19 inches. His pulse rate is 84 bpm and BP 152/94 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Central sleep apnoea", "Hypothyroidism", "Narcolepsy", "Obesity hypoventilation syndrome", "Obstructive sleep apnoea"],
+      "a": 4,
+      "e": "Snoring, witnessed apnoeas and daytime sleepiness in an obese man with a large neck is obstructive sleep apnoea, caused by fat deposition in the upper airway.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis in a sleepy obese man." },
+        { "t": "Pick out the clues", "clues": ["snores loudly and stops breathing", "falls asleep while watching television", "BMI is 39", "collar size is 19 inches"], "x": "Witnessed apnoeas, daytime somnolence, obesity, large neck." },
+        { "t": "Make your own answer before looking", "x": "**Obstructive sleep apnoea**, an obesity complication." },
+        { "t": "Rule out the others", "elim": [[0, "Central apnoea is from heart failure or opioids, without snoring."], [1, "Hypothyroidism has other features such as cold intolerance."], [2, "Narcolepsy has cataplexy and no apnoeas."], [3, "Obesity hypoventilation needs daytime hypercapnia, not given."]] },
+        { "t": "Commit", "x": "**E. Obstructive sleep apnoea.** Rule: obesity + snoring + witnessed apnoeas + sleepiness = OSA." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 40 year old woman attends a health check. She weighs 112 kg and is 1.65 m tall. She has no symptoms and no medical history. Her pulse rate is 80 bpm and BP 134/82 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate classification of her weight?",
+      "o": ["Healthy weight", "Obesity", "Overweight", "Severe obesity", "Underweight"],
+      "a": 3,
+      "e": "BMI = 112 ÷ 1.65² = 41.1 kg/m², which is severe obesity (≥40). Obesity is ≥30 and overweight 25 to 29.9.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A classification: calculate the BMI." },
+        { "t": "Pick out the clues", "clues": ["weighs 112 kg", "1.65 m tall"], "x": "1.65² = 2.72; 112 ÷ 2.72 = **41.1 kg/m²**." },
+        { "t": "Make your own answer before looking", "x": "≥40 = **severe obesity**." },
+        { "t": "Rule out the others", "elim": [[0, "Healthy is 18.5 to 24.9."], [1, "Obesity is 30 to 39.9; she is above 40."], [2, "Overweight is 25 to 29.9."], [4, "Underweight is below 18.5."]] },
+        { "t": "Commit", "x": "**D. Severe obesity.** Rule: 25 overweight, 30 obesity, 40 severe obesity." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 46 year old man with a BMI of 36 kg/m² and type 2 diabetes has abnormal liver function tests at his diabetes review. He drinks 4 units of alcohol a week. He has no symptoms. His pulse rate is 76 bpm and BP 140/88 mmHg. Ultrasound shows a diffusely bright, echogenic liver.",
+      "labs": [["ALT", "84 U/L", "<40", "H"], ["AST", "52 U/L", "<40", "H"], ["Hepatitis B surface antigen", "Negative", "", ""], ["Hepatitis C antibody", "Negative", "", ""], ["Ferritin", "240 µg/L", "30–400", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Alcohol-related liver disease", "Autoimmune hepatitis", "Haemochromatosis", "Non-alcoholic fatty liver disease", "Primary biliary cholangitis"],
+      "a": 3,
+      "e": "Obesity and type 2 diabetes with raised ALT, minimal alcohol, negative viral serology, normal ferritin and a bright liver on ultrasound is NAFLD, a complication of obesity.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of abnormal LFTs in an obese diabetic." },
+        { "t": "Pick out the clues", "clues": ["BMI of 36", "type 2 diabetes", "4 units of alcohol a week", "diffusely bright, echogenic liver"], "x": "Metabolic risk, little alcohol, fatty liver on ultrasound; ALT > AST." },
+        { "t": "Make your own answer before looking", "x": "**NAFLD**." },
+        { "t": "Rule out the others", "elim": [[0, "4 units a week is far too little."], [1, "Autoimmune hepatitis affects young women with very high ALT and autoantibodies."], [2, "Ferritin is normal."], [4, "PBC is cholestatic (high ALP) in middle-aged women."]] },
+        { "t": "Commit", "x": "**D. Non-alcoholic fatty liver disease.** Rule: obesity + T2DM + raised ALT + no alcohol = NAFLD." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 58 year old man with a BMI of 38 kg/m² has had heartburn most days for 15 years. He has taken over-the-counter antacids but never seen a doctor. He has no dysphagia or weight loss. His pulse rate is 72 bpm and BP 136/84 mmHg. Upper GI endoscopy shows salmon-pink mucosa extending 4 cm above the gastro-oesophageal junction.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Barrett's oesophagus", "Candida oesophagitis", "Eosinophilic oesophagitis", "Hiatus hernia", "Oesophageal adenocarcinoma"],
+      "a": 0,
+      "e": "Long-standing reflux in an obese man with salmon-pink columnar mucosa above the GOJ is Barrett's oesophagus. Obesity causes GORD and, through it, Barrett's.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis from the endoscopy appearance." },
+        { "t": "Pick out the clues", "clues": ["BMI of 38", "heartburn most days for 15 years", "no dysphagia or weight loss", "salmon-pink mucosa"], "x": "Obesity → chronic GORD → columnar metaplasia." },
+        { "t": "Make your own answer before looking", "x": "**Barrett's oesophagus**." },
+        { "t": "Rule out the others", "elim": [[1, "Candida gives white plaques, usually when immunosuppressed."], [2, "Eosinophilic oesophagitis gives rings and food bolus obstruction in young atopic men."], [3, "A hiatus hernia is a herniated stomach, not pink mucosa above the GOJ."], [4, "Cancer gives a mass with dysphagia and weight loss."]] },
+        { "t": "Commit", "x": "**A. Barrett's oesophagus.** Rule: obesity → GORD → Barrett's (salmon-pink mucosa)." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "An 8 year old boy is referred with obesity. He was floppy and fed poorly as a baby, but now has an insatiable appetite and takes food from bins. He has learning difficulties, small hands and feet, and is short for his age. His pulse rate is 90 bpm and BP 104/66 mmHg.",
+      "labs": [["TSH", "2.0 mU/L", "0.3–4.2", ""], ["Overnight dexamethasone suppression cortisol", "28 nmol/L", "<50", ""]],
+      "visual": null,
+      "q": "Which is the most likely underlying cause of his obesity?",
+      "o": ["Cushing's syndrome", "Down syndrome", "Hypothyroidism", "Prader-Willi syndrome", "Simple dietary obesity"],
+      "a": 3,
+      "e": "Neonatal hypotonia and poor feeding followed by hyperphagia, learning difficulty, short stature and small hands and feet is Prader-Willi syndrome. Normal TSH and cortisol suppression exclude hypothyroidism and Cushing's.",
+      "steps": [
+        { "t": "Read the question line first", "x": "The cause of childhood obesity: is it simple or secondary?" },
+        { "t": "Pick out the clues", "clues": ["floppy and fed poorly as a baby", "insatiable appetite", "learning difficulties, small hands and feet", "short for his age"], "x": "Short stature means secondary; hypotonia then **hyperphagia** is classic." },
+        { "t": "Make your own answer before looking", "x": "**Prader-Willi syndrome**." },
+        { "t": "Rule out the others", "elim": [[0, "Cortisol suppresses normally."], [1, "Down syndrome has characteristic facies, not this hyperphagia pattern."], [2, "TSH is normal."], [4, "Simple obesity makes children tall, without these features."]] },
+        { "t": "Commit", "x": "**D. Prader-Willi syndrome.** Rule: short obese child = look for a cause; hypotonia + hyperphagia = Prader-Willi." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 44 year old woman with a BMI of 34 kg/m² and a waist circumference of 104 cm has routine bloods. She has no thirst or polyuria. She has velvety dark skin in her axillae. Her pulse rate is 78 bpm and BP 138/86 mmHg.",
+      "labs": [["HbA1c", "45 mmol/mol", "<42", "H"], ["Fasting glucose", "6.4 mmol/L", "3.5–6.0", "H"], ["Triglycerides", "2.3 mmol/L", "<1.7", "H"]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Latent autoimmune diabetes in adults", "Normal glucose tolerance", "Pre-diabetes", "Type 1 diabetes", "Type 2 diabetes"],
+      "a": 2,
+      "e": "HbA1c 42 to 47 mmol/mol (and fasting glucose 6.1 to 6.9) is pre-diabetes, a direct complication of obesity-driven insulin resistance; acanthosis nigricans supports insulin resistance. T2DM needs HbA1c ≥48.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis from glucose tests: place the numbers against the cut-offs." },
+        { "t": "Pick out the clues", "clues": ["BMI of 34", "waist circumference of 104 cm", "velvety dark skin in her axillae", "no thirst or polyuria"], "x": "Central obesity and **acanthosis nigricans** = insulin resistance; HbA1c 45." },
+        { "t": "Make your own answer before looking", "x": "HbA1c 42 to 47 = **pre-diabetes**." },
+        { "t": "Rule out the others", "elim": [[0, "LADA is autoimmune and progresses to insulin need; not suggested."], [1, "HbA1c and fasting glucose are both raised."], [3, "Type 1 presents with weight loss and ketones."], [4, "T2DM needs HbA1c ≥48 mmol/mol."]] },
+        { "t": "Commit", "x": "**C. Pre-diabetes.** Rule: obesity → insulin resistance → pre-diabetes (HbA1c 42–47) → T2DM." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 31 year old woman attends her booking appointment at 10 weeks of gestation in her first pregnancy. Her BMI is 34 kg/m². She has no history of diabetes. Her pulse rate is 82 bpm and BP 124/76 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate investigation to screen for gestational diabetes?",
+      "o": ["75 g oral glucose tolerance test at 24–28 weeks", "Fasting glucose at booking only", "HbA1c at 36 weeks", "Random glucose at 20 weeks", "Urine dipstick for glucose at each visit"],
+      "a": 0,
+      "e": "BMI ≥30 is a risk factor for gestational diabetes, so she is offered a 75 g 2-hour OGTT at 24 to 28 weeks. Urine glucose and HbA1c are not reliable screening tests in pregnancy.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A screening test for gestational diabetes in an obese pregnant woman." },
+        { "t": "Pick out the clues", "clues": ["10 weeks of gestation", "BMI is 34", "no history of diabetes"], "x": "BMI ≥30 = risk factor; no prior GDM." },
+        { "t": "Make your own answer before looking", "x": "**75 g OGTT at 24 to 28 weeks**." },
+        { "t": "Rule out the others", "elim": [[1, "A single fasting glucose at booking misses later GDM."], [2, "HbA1c is unreliable in pregnancy and 36 weeks is too late."], [3, "Random glucose is not the screening test."], [4, "Glycosuria is common and unreliable in pregnancy."]] },
+        { "t": "Commit", "x": "**A. 75 g OGTT at 24–28 weeks.** Rule: BMI ≥30 in pregnancy = OGTT at 24–28 weeks." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 47 year old man has a BMI of 29 kg/m². He is a non-smoker with no medical history. His GP wants to assess whether his fat distribution places him at increased cardiovascular risk. His pulse rate is 74 bpm and BP 132/84 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate measurement?",
+      "o": ["Bioelectrical impedance", "DEXA body composition scan", "Neck circumference", "Skinfold thickness", "Waist circumference"],
+      "a": 4,
+      "e": "Waist circumference measures central (visceral) fat; above 94 cm in men (80 cm in women) indicates increased cardiovascular risk. The other tests are not used in routine practice.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A measurement of **fat distribution** for CV risk." },
+        { "t": "Pick out the clues", "clues": ["BMI of 29", "fat distribution", "increased cardiovascular risk"], "x": "BMI alone does not show where the fat is." },
+        { "t": "Make your own answer before looking", "x": "**Waist circumference** (>94 cm men)." },
+        { "t": "Rule out the others", "elim": [[0, "Impedance estimates total fat, not distribution."], [1, "DEXA is a research or specialist tool."], [2, "Neck size relates to OSA risk."], [3, "Skinfolds measure subcutaneous, not visceral, fat."]] },
+        { "t": "Commit", "x": "**E. Waist circumference.** Rule: >94 cm men, >80 cm women = increased CV risk." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 34 year old man has a BMI of 31 kg/m². He has no hypertension, diabetes or other weight-related conditions. He has never tried a structured weight loss programme. His pulse rate is 70 bpm and BP 128/80 mmHg.",
+      "labs": [["HbA1c", "38 mmol/mol", "<42", ""], ["Total cholesterol", "4.8 mmol/L", "<5.0", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Bariatric surgery referral", "Behavioural weight management programme", "Orlistat", "Semaglutide", "Tier 3 specialist weight management referral"],
+      "a": 1,
+      "e": "Lifestyle is first-line for all; adults without weight-related conditions are referred to a behavioural weight management programme. Drugs and surgery come later.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management: start at the bottom of the ladder." },
+        { "t": "Pick out the clues", "clues": ["BMI of 31", "no hypertension, diabetes or other weight-related conditions", "never tried a structured weight loss programme"], "x": "Obese, no comorbidity, no previous lifestyle attempt." },
+        { "t": "Make your own answer before looking", "x": "**Behavioural weight management programme**." },
+        { "t": "Rule out the others", "elim": [[0, "Surgery needs BMI >40, or >35 with comorbidity."], [2, "Orlistat follows lifestyle failure."], [3, "GLP-1 mimetics need BMI >35 or >30 with comorbidities."], [4, "Tier 3 is for BMI >35 with comorbidity or >40."]] },
+        { "t": "Commit", "x": "**B. Behavioural weight management programme.** Rule: lifestyle first, always." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 49 year old woman with a BMI of 38 kg/m² and type 2 diabetes started semaglutide in a specialist weight management service. She has now been on the maximum dose for 12 weeks. She tolerates it well. Her pulse rate is 76 bpm and BP 134/82 mmHg.",
+      "labs": [["Weight at start", "104 kg", "", ""], ["Weight now", "101 kg", "", ""]],
+      "visual": null,
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Add orlistat", "Continue semaglutide for another 12 weeks", "Increase semaglutide above the licensed dose", "Stop semaglutide", "Switch to liraglutide"],
+      "a": 3,
+      "e": "She has lost 3 kg (2.9%), less than 5% of initial body weight after 12 weeks at maximum dose, so the GLP-1 mimetic is stopped.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A review decision on a GLP-1 mimetic." },
+        { "t": "Pick out the clues", "clues": ["maximum dose for 12 weeks", "tolerates it well", "semaglutide"], "x": "104 to 101 kg = **2.9%** loss." },
+        { "t": "Make your own answer before looking", "x": "<5% after 12 weeks at max dose = **stop**." },
+        { "t": "Rule out the others", "elim": [[0, "Adding orlistat is not the rule-based next step."], [1, "The stopping rule has been met."], [2, "Never exceed the licensed dose."], [4, "Switching within the class is not recommended for non-response."]] },
+        { "t": "Commit", "x": "**D. Stop semaglutide.** Rule: <5% weight loss after 12 weeks at maximum dose = stop." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 42 year old man has a BMI of 53 kg/m². He has hypertension and obstructive sleep apnoea. He is motivated and fit for anaesthesia. He has no psychiatric or eating disorder. His pulse rate is 88 bpm and BP 148/92 mmHg.",
+      "labs": [["HbA1c", "46 mmol/mol", "<42", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate management?",
+      "o": ["Bariatric surgery", "Behavioural weight management programme alone", "Liraglutide", "Orlistat", "Very low calorie diet for 12 months"],
+      "a": 0,
+      "e": "With a BMI above 50, bariatric surgery can be offered as a first-line option, via the specialist service. Drugs and lifestyle alone are unlikely to be enough.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Management for a very high BMI." },
+        { "t": "Pick out the clues", "clues": ["BMI of 53", "hypertension and obstructive sleep apnoea", "fit for anaesthesia"], "x": "BMI >50 with comorbidities, fit for surgery." },
+        { "t": "Make your own answer before looking", "x": "**Bariatric surgery** first-line." },
+        { "t": "Rule out the others", "elim": [[1, "Lifestyle continues but alone is inadequate at BMI >50."], [2, "Drugs can bridge but surgery is first-line here."], [3, "Orlistat gives modest loss only."], [4, "Prolonged very low calorie diets are not recommended."]] },
+        { "t": "Commit", "x": "**A. Bariatric surgery.** Rule: BMI >50 = surgery can be first-line." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 39 year old woman with a BMI of 33 kg/m² and hypertension starts a new weight-loss drug. Two weeks later she reports oily, loose, foul-smelling stools and faecal urgency, especially after fatty meals. Her pulse rate is 72 bpm and BP 132/80 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely mechanism of action of her new drug?",
+      "o": ["Activation of the GLP-1 receptor", "Central serotonin agonism", "Inhibition of pancreatic and gastric lipase", "Inhibition of SGLT2 in the proximal tubule", "Stimulation of PYY release"],
+      "a": 2,
+      "e": "Oily stools after fatty meals mean dietary fat is not being absorbed: orlistat inhibits pancreatic and gastric lipases, reducing triglyceride hydrolysis and fat absorption.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A drug mechanism explained by the side effect." },
+        { "t": "Pick out the clues", "clues": ["oily, loose, foul-smelling stools", "especially after fatty meals"], "x": "**Steatorrhoea**: undigested fat." },
+        { "t": "Make your own answer before looking", "x": "Orlistat: **lipase inhibition**." },
+        { "t": "Rule out the others", "elim": [[0, "GLP-1 mimetics cause nausea, not steatorrhoea."], [1, "Not a current weight-loss drug mechanism in the notes."], [3, "SGLT2 inhibitors cause glycosuria and thrush."], [4, "PYY rises after bariatric surgery; no drug does this here."]] },
+        { "t": "Commit", "x": "**C. Inhibition of pancreatic and gastric lipase.** Rule: oily stools = orlistat = lipase inhibitor." }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      { "d": "diagnosis", "q": "How is obesity defined and classified by BMI?", "tip": "Exam thinking: be ready to calculate weight ÷ height².", "points": [
+        { "p": "Overweight 25 to 29.9 kg/m²", "k": [["overweight"], ["25"]], "why": "BMI = kg ÷ m²." },
+        { "p": "Obesity ≥30 kg/m²", "k": [["30"]], "why": "Drug therapy is considered from here." },
+        { "p": "Severe obesity ≥40 kg/m²", "k": [["40"]], "why": "Tier 3 and surgery thresholds start around here." }
+      ] },
+      { "d": "diagnosis", "q": "What causes obesity in adults, and which underlying conditions cause it in children?", "tip": "Exam thinking: a short obese child has a cause.", "points": [
+        { "p": "Poor diet, physical inactivity, genetics", "k": [["diet", "inactivity", "activity", "genetic"]], "why": "Positive energy balance." },
+        { "p": "Down syndrome", "k": [["down"]], "why": "Listed paediatric cause." },
+        { "p": "Hypothyroidism", "k": [["hypothyroid", "thyroid"]], "why": "Short, tired, constipated." },
+        { "p": "Cushing's syndrome", "k": [["cushing"]], "why": "Short, striae, hypertension." },
+        { "p": "Prader-Willi syndrome", "k": [["prader", "willi"]], "why": "Neonatal hypotonia then hyperphagia." }
+      ] },
+      { "d": "diagnosis", "q": "How does obesity present, and what are its complications?", "tip": "Exam thinking: obesity in the stem is often the clue to the complication being asked.", "points": [
+        { "p": "Often asymptomatic; may present with breathlessness or reduced mobility", "k": [["asymptomatic", "breathless", "mobility"]], "why": "Most are found incidentally." },
+        { "p": "GORD and, via this, Barrett's oesophagus", "k": [["gord", "reflux"], ["barrett"]], "why": "Raised intra-abdominal pressure." },
+        { "p": "Pre-diabetes and type 2 diabetes", "k": [["diabet", "t2dm", "pre-diabetes", "prediabetes"]], "why": "Via insulin resistance." },
+        { "p": "Hypertension, dyslipidaemia, cardiovascular disease", "k": [["hypertension", "cardiovascular", "cvd", "dyslipid", "cholesterol"]], "why": "Waist circumference tracks this risk." },
+        { "p": "OSA and NAFLD", "k": [["osa", "sleep apnoea", "sleep apnea"], ["nafld", "fatty liver", "masld"]], "why": "Upper airway fat; liver fat." }
+      ] },
+      { "d": "diagnosis", "q": "Which features tell you a child's obesity is NOT simple dietary obesity?", "tip": "Exam thinking: height is the key discriminator.", "points": [
+        { "p": "Short stature or slow growth", "k": [["short", "stature", "growth"]], "why": "Simple obesity usually makes children tall." },
+        { "p": "Learning difficulty or dysmorphic features", "k": [["learning", "dysmorph", "syndrome"]], "why": "Points to Prader-Willi or Down syndrome." },
+        { "p": "Hypotonia then hyperphagia", "k": [["hypotonia", "floppy", "hyperphagia", "appetite"]], "why": "Classic Prader-Willi pattern." }
+      ] },
+      { "d": "investigation", "q": "How is obesity diagnosed and what baseline assessment is done?", "tip": "Exam thinking: adults vs children, and the waist numbers.", "points": [
+        { "p": "Adults: BMI plus clinical assessment", "k": [["bmi"]], "why": "Gold standard in adults." },
+        { "p": "Children: BMI percentile for age and sex", "k": [["percentile", "centile"]], "why": "Adult cut-offs do not apply." },
+        { "p": "Waist circumference: >94 cm men, >80 cm women", "k": [["waist"], ["94", "80"]], "why": "Measures visceral fat and CV risk." },
+        { "p": "Baseline HbA1c, lipids, LFTs and BP", "k": [["hba1c"], ["lipid", "cholesterol"]], "why": "Screens for T2DM, dyslipidaemia and NAFLD." }
+      ] },
+      { "d": "investigation", "q": "Which complications are screened for, and what is done in pregnancy?", "tip": "Exam thinking: the OGTT timing is a favourite number.", "points": [
+        { "p": "Screen for CVD, T2DM, OSA and NAFLD", "k": [["cvd", "cardiovascular", "osa", "nafld", "diabet"]], "why": "Ongoing complication screening." },
+        { "p": "BMI ≥30 in pregnancy: 75 g 2-hour OGTT at 24 to 28 weeks", "k": [["ogtt", "glucose tolerance"], ["24", "28"]], "why": "Screens for gestational diabetes." }
+      ] },
+      { "d": "management", "q": "What is the first-line management of obesity in adults and children?", "tip": "Exam thinking: lifestyle is always the first rung.", "points": [
+        { "p": "Lifestyle for all: calorie deficit, activity, behavioural support", "k": [["lifestyle", "diet", "calorie", "exercise", "activity"]], "why": "First-line in every group." },
+        { "p": "Children: family-involved lifestyle interventions", "k": [["family", "parent"]], "why": "The whole family changes habits." },
+        { "p": "Adults without comorbidity: behavioural weight management programme", "k": [["behavioural", "behavioral", "programme", "program"]], "why": "Before any drug." }
+      ] },
+      { "d": "management", "q": "When are orlistat, GLP-1 mimetics and bariatric surgery used, and when is a GLP-1 stopped?", "tip": "Exam thinking: match the BMI and comorbidities to the rung.", "points": [
+        { "p": "Drugs considered for BMI ≥30, or ≥27 with comorbidity", "k": [["27", "30"]], "why": "After lifestyle." },
+        { "p": "Orlistat: BMI >28 with comorbidities after lifestyle failure", "k": [["orlistat"]], "why": "Lipase inhibitor." },
+        { "p": "GLP-1 mimetic: BMI >35, or >30 with comorbidity; stop if <5% loss after 12 weeks at max dose", "k": [["glp", "semaglutide", "liraglutide", "tirzepatide"], ["5%", "5 percent", "five percent", "12 weeks"]], "why": "Side effect: pancreatitis." },
+        { "p": "Tier 3 for BMI >35 with comorbidity or >40", "k": [["tier 3", "tier three", "specialist"]], "why": "Gateway to surgery." },
+        { "p": "Bariatric surgery: BMI >35 with recent T2DM or >40; first-line if >50", "k": [["bariatric", "surgery", "bypass", "sleeve"], ["50"]], "why": "Recent-onset T2DM = under 10 years." }
+      ] },
+      { "d": "management", "q": "What long-term and pregnancy-related care do obese patients need?", "tip": "Exam thinking: obesity changes antenatal prescribing.", "points": [
+        { "p": "Monitoring and relapse prevention", "k": [["relapse", "monitor", "follow"]], "why": "Weight regain is common." },
+        { "p": "Folic acid from before conception to end of 1st trimester", "k": [["folic", "folate"]], "why": "Higher neural tube defect risk." },
+        { "p": "Low-dose aspirin from 12 weeks if BMI >35", "k": [["aspirin"]], "why": "Pre-eclampsia prevention." },
+        { "p": "LMWH 28 weeks to 6 weeks postpartum if BMI >30 plus other VTE risk factors", "k": [["lmwh", "heparin", "enoxaparin", "dalteparin", "tinzaparin"]], "why": "Example: Factor V Leiden and 15 pack-years." }
+      ] },
+      { "d": "science", "q": "Why does obesity cause insulin resistance, OSA and GORD?", "tip": "Exam thinking: name the adipokines.", "points": [
+        { "p": "Positive energy balance expands adipose tissue", "k": [["energy balance", "intake", "expenditure"]], "why": "Intake persistently exceeds expenditure." },
+        { "p": "Visceral fat: low adiponectin, leptin resistance, raised TNF-alpha/IL-6", "k": [["adiponectin", "leptin", "tnf", "il-6", "il6", "adipokine"]], "why": "Drives insulin resistance." },
+        { "p": "Upper airway fat → OSA", "k": [["airway"]], "why": "Collapses in sleep." },
+        { "p": "Raised intra-abdominal pressure → GORD", "k": [["abdominal pressure", "intra-abdominal", "intraabdominal", "mechanical"]], "why": "Pushes acid up." }
+      ] },
+      { "d": "science", "q": "How do GLP-1 mimetics, orlistat and bariatric surgery work?", "tip": "Exam thinking: link each drug to its side effect.", "points": [
+        { "p": "GLP-1: glucose-dependent insulin release, less glucagon", "k": [["insulin"], ["glucagon"]], "why": "Incretin mimetic, low hypoglycaemia risk alone." },
+        { "p": "GLP-1: slows gastric emptying, reduces appetite centrally", "k": [["gastric emptying", "appetite", "satiety"]], "why": "Hence nausea." },
+        { "p": "Orlistat: inhibits pancreatic/gastric lipase", "k": [["lipase"]], "why": "Oily stools." },
+        { "p": "Bariatric surgery raises GLP-1 and PYY", "k": [["pyy", "peptide yy"]], "why": "Improves glucose independent of weight loss." }
+      ] }
+    ]
+  },
+  "glossary": {
+    "BMI": "Body mass index: weight in kg divided by height in metres squared.",
+    "BMI percentile": "Where a child's BMI sits compared with children of the same age and sex.",
+    "Waist circumference": "Measure of central fat; above 94 cm in men or 80 cm in women means raised CV risk.",
+    "Visceral adiposity": "Fat stored around the abdominal organs, the most metabolically harmful type.",
+    "Positive energy balance": "Energy intake persistently exceeding energy expenditure, so fat stores grow.",
+    "Adipokines": "Hormones and signals released by fat tissue, such as adiponectin and leptin.",
+    "Adiponectin": "Fat-derived hormone that improves insulin sensitivity; low in obesity.",
+    "Leptin": "Fat-derived satiety hormone; obese people become resistant to its effect.",
+    "TNF-alpha": "Inflammatory cytokine released by visceral fat that worsens insulin resistance.",
+    "IL-6": "Interleukin-6; inflammatory cytokine from fat tissue that contributes to insulin resistance.",
+    "Insulin resistance": "Reduced response of tissues to insulin, so more insulin is needed to control glucose.",
+    "Acanthosis nigricans": "Velvety dark skin in skin folds; a sign of insulin resistance.",
+    "Pre-diabetes": "Glucose above normal but below the diabetes cut-off (HbA1c 42 to 47 mmol/mol).",
+    "GORD": "Gastro-oesophageal reflux disease: stomach acid refluxing into the oesophagus.",
+    "Barrett's oesophagus": "Columnar metaplasia of the lower oesophagus from chronic reflux; pre-malignant.",
+    "OSA": "Obstructive sleep apnoea: repeated upper airway collapse during sleep.",
+    "Epworth score": "Questionnaire scoring daytime sleepiness; used when OSA is suspected.",
+    "NAFLD": "Non-alcoholic fatty liver disease: fat build-up in the liver without heavy drinking.",
+    "Dyslipidaemia": "Abnormal blood lipids, such as high triglycerides and low HDL.",
+    "Prader-Willi syndrome": "Genetic syndrome with neonatal hypotonia, then hyperphagia, obesity and learning difficulty.",
+    "Hyperphagia": "Excessive, insatiable hunger and eating.",
+    "Cushing's syndrome": "Excess cortisol causing central obesity, striae and hypertension.",
+    "OGTT": "Oral glucose tolerance test: glucose measured 2 hours after a 75 g glucose drink.",
+    "Gestational diabetes": "Diabetes first appearing in pregnancy.",
+    "Tier 3": "Specialist multidisciplinary weight management service.",
+    "Behavioural weight management programme": "Structured group or individual programme supporting diet, activity and habit change.",
+    "Orlistat": "Lipase inhibitor that reduces fat absorption; causes oily stools.",
+    "Lipase": "Enzyme that breaks down dietary triglycerides so fat can be absorbed.",
+    "Steatorrhoea": "Pale, oily, foul-smelling stools from unabsorbed fat.",
+    "GLP-1": "Glucagon-like peptide-1, a gut incretin hormone that boosts insulin and reduces appetite.",
+    "GLP-1 mimetic": "Injected GLP-1 receptor agonist (e.g. semaglutide) used for weight loss and diabetes.",
+    "Semaglutide": "Weekly GLP-1 mimetic for weight loss; stop if under 5% loss at 12 weeks on maximum dose.",
+    "Liraglutide": "Daily GLP-1 mimetic used for weight loss and type 2 diabetes.",
+    "Tirzepatide": "Dual GIP and GLP-1 agonist injection used for weight loss.",
+    "Incretin": "Gut hormone released after eating that boosts glucose-dependent insulin secretion.",
+    "PYY": "Peptide YY: gut hormone that reduces appetite; rises after bariatric surgery.",
+    "Pancreatitis": "Inflammation of the pancreas with severe upper abdominal pain; a GLP-1 mimetic side effect.",
+    "Bariatric surgery": "Weight-loss surgery such as gastric bypass or sleeve gastrectomy.",
+    "Roux-en-Y gastric bypass": "Bariatric operation creating a small stomach pouch joined directly to the small bowel.",
+    "LMWH": "Low molecular weight heparin, an injected anticoagulant used to prevent VTE.",
+    "Factor V Leiden": "Inherited mutation making blood more likely to clot.",
+    "Folic acid": "B vitamin taken before and in early pregnancy to reduce neural tube defects."
+  }
+}

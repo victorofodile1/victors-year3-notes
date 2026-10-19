@@ -1,0 +1,2344 @@
+{
+ "id": "sickle-cell-disease",
+ "patient": {
+  "name": "Kofi Asante",
+  "age": 19,
+  "sex": "M",
+  "setting": "Emergency Department, then haematology ward",
+  "complaint": "Severe pain in his lower back and both thighs for 8 hours",
+  "background": [
+   "Sickle cell disease (HbSS), picked up on newborn screening",
+   "Parents from Ghana, both have sickle cell trait",
+   "First-year engineering student; exams all week, drinking little",
+   "Takes folic acid; three crisis admissions in the last 12 months"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' in a patient with known sickle cell disease: the Hb, reticulocyte count and spleen decide which crisis (vaso-occlusive, acute chest, aplastic or sequestration). Also 'most likely causative organism' questions (Salmonella osteomyelitis, Strep. pneumoniae sepsis).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kofi, 19, **HbSS**, sat exams all week and barely drank.",
+      "Walked home in the **cold** November rain.",
+      "Woke with **severe pain** in his lower back and both thighs.",
+      "Says it feels like his usual crisis, but worse."
+     ],
+     "vitals": {
+      "T": "37.4°C",
+      "HR": "108 bpm",
+      "BP": "128/76 mmHg",
+      "RR": "18 /min",
+      "SpO2": "97% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kofi has two copies of the HbS gene. **Dehydration** and **cold** are classic triggers that make his red cells sickle."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kofi's parents are from **Ghana** and both carry sickle trait: sub-Saharan African ancestry and family history."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Sclerae mildly **yellow** (his normal, he says).",
+      "No joint swelling, no focal bone tenderness.",
+      "Chest clear; abdomen soft; **spleen not palpable**.",
+      "Hb **84 g/L**, the same as his usual baseline."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Pain, a normal examination and Hb at his baseline. What is the most likely cause of Kofi's pain?",
+     "o": [
+      "Acute chest syndrome",
+      "Aplastic crisis",
+      "Splenic sequestration crisis",
+      "Vaso-occlusive crisis"
+     ],
+     "a": 3,
+     "r": "Pain with **no examination findings and no real Hb drop** after cold and dehydration is a **vaso-occlusive crisis**. Aplastic and sequestration crises both cause an acute fall in Hb."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kofi's yellow sclerae and baseline Hb of 84 are his **chronic haemolysis**. Today's pain with a normal exam is a **vaso-occlusive crisis**."
+    },
+    {
+     "type": "pearl",
+     "text": "In a toddler under 3, the first sign of sickle cell disease is often **dactylitis**: painful, swollen hands and feet (hand-foot syndrome)."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 2 on the ward: new **chest pain** and a cough.",
+      "Fever **38.6°C**; breathing fast.",
+      "**Crackles and bronchial breathing** at both lung bases."
+     ],
+     "vitals": {
+      "T": "38.6°C",
+      "HR": "122 bpm",
+      "BP": "118/70 mmHg",
+      "RR": "28 /min",
+      "SpO2": "91% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Fever, chest pain, tachypnoea and basal crackles in Kofi on day 2: **acute chest syndrome**. The other crises here are the ones to tell apart by Hb, reticulocytes and spleen."
+    },
+    {
+     "type": "compare",
+     "title": "Which crisis? Hb, reticulocytes and spleen",
+     "head": [
+      "Crisis",
+      "Hb",
+      "Reticulocytes",
+      "Spleen",
+      "Clue"
+     ],
+     "rows": [
+      [
+       "Vaso-occlusive",
+       "Baseline",
+       "Baseline (raised)",
+       "Not enlarged",
+       "Pain, normal exam"
+      ],
+      [
+       "Aplastic",
+       "Sudden fall",
+       "**Low**",
+       "Not enlarged",
+       "Parvovirus B19"
+      ],
+      [
+       "Splenic sequestration",
+       "Sudden fall",
+       "**High**",
+       "**Enlarged**",
+       "Child, shock"
+      ],
+      [
+       "Acute chest syndrome",
+       "May fall",
+       "Raised",
+       "Not enlarged",
+       "Fever, chest pain, infiltrate"
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Reticulocyte count",
+      "min": 0,
+      "max": 20,
+      "unit": "%",
+      "bands": [
+       [
+        0,
+        0.5,
+        "low: aplastic crisis",
+        "bad"
+       ],
+       [
+        0.5,
+        2.5,
+        "normal range",
+        "ok"
+       ],
+       [
+        2.5,
+        20,
+        "high: haemolysis / sequestration",
+        "warn"
+       ]
+      ],
+      "value": 9,
+      "label": "Kofi 9%",
+      "caption": "A sickle patient normally runs a **high** reticulocyte count. A **low** count with a falling Hb means the marrow has stopped: **aplastic crisis** (parvovirus B19)."
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "abdomen",
+      "title": "Where to feel in a sequestration crisis",
+      "regions": [
+       "LUQ"
+      ],
+      "caption": "**Splenic sequestration** (children): a rapidly enlarging spleen in the LUQ, pallor and shock. Kofi's spleen is not palpable, as expected after years of splenic infarction."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Kofi's future risks: **Salmonella** osteomyelitis, cholecystitis, **stroke** (especially in children) and avascular necrosis of the hip."
+    },
+    {
+     "type": "trap",
+     "text": "A big spleen in an adult with HbSS is unusual: repeated infarction has shrunk it (**autosplenectomy**). Sequestration is a **childhood** crisis."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (haemoglobin electrophoresis), first-line bloods (FBC, reticulocytes, haemolysis screen), and MRI for early avascular necrosis. A painful crisis itself is a clinical diagnosis.",
+   "steps": [
+    {
+     "type": "labs",
+     "title": "Kofi's bloods on arrival",
+     "rows": [
+      [
+       "Haemoglobin",
+       "84 g/L",
+       "130–180",
+       "L"
+      ],
+      [
+       "MCV",
+       "88 fL",
+       "80–100",
+       ""
+      ],
+      [
+       "Reticulocytes",
+       "9%",
+       "0.5–2.5",
+       "H"
+      ],
+      [
+       "WCC",
+       "13.2 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Platelets",
+       "420 ×10⁹/L",
+       "150–400",
+       "H"
+      ],
+      [
+       "Bilirubin",
+       "52 µmol/L",
+       "<21",
+       "H"
+      ],
+      [
+       "LDH",
+       "480 U/L",
+       "<250",
+       "H"
+      ],
+      [
+       "CRP",
+       "18 mg/L",
+       "<5",
+       "H"
+      ]
+     ],
+     "text": "Normocytic anaemia, high reticulocytes, raised bilirubin and LDH: his usual **chronic haemolysis**. The Hb matches his baseline."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "These are Kofi's first-line bloods. They support but do not make the diagnosis: his **vaso-occlusive crisis** was diagnosed clinically."
+    },
+    {
+     "type": "ask",
+     "q": "Which test confirmed Kofi's sickle cell disease after his newborn screen?",
+     "o": [
+      "Blood film",
+      "Haemoglobin electrophoresis",
+      "Reticulocyte count",
+      "Sickle solubility test"
+     ],
+     "a": 1,
+     "r": "**Haemoglobin electrophoresis** detects and quantifies HbS (and HbF, HbA). It separates disease (HbSS) from trait (HbAS)."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Electrophoresis showed Kofi's red cells contain **HbS** with no HbA: HbSS."
+    },
+    {
+     "type": "trap",
+     "text": "A **sickle solubility test** is positive in both trait and disease, so it cannot confirm sickle cell disease. Electrophoresis can."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 2 with fever, chest pain and SpO2 91%.",
+      "Chest X-ray, ABG, blood cultures, sputum culture.",
+      "Atypical screen (urinary antigens) because antibiotics need atypical cover."
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Arterial blood gas (on air)",
+     "rows": [
+      [
+       "pH",
+       "7.46",
+       "7.35–7.45",
+       "H"
+      ],
+      [
+       "pO2",
+       "7.9 kPa",
+       "10.0–13.0",
+       "L"
+      ],
+      [
+       "pCO2",
+       "4.3 kPa",
+       "4.7–6.0",
+       "L"
+      ],
+      [
+       "HCO3⁻",
+       "24 mmol/L",
+       "22–26",
+       ""
+      ],
+      [
+       "Lactate",
+       "1.6 mmol/L",
+       "<2.0",
+       ""
+      ]
+     ],
+     "text": "Low pO2 with a low pCO2: **type 1 respiratory failure** from acute chest syndrome."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Kofi's chest X-ray on day 2",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "both",
+        "zone": "lower"
+       }
+      ],
+      "caption": "New **bilateral lower zone infiltrates**: with fever and chest pain in a sickle patient, this is acute chest syndrome."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Three months later: aching **right groin** pain on walking.",
+      "Pain on internal rotation of the right hip.",
+      "Plain X-ray of the hip: **normal**."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "A normal X-ray does not exclude early **avascular necrosis** of Kofi's femoral head. MRI shows it first."
+    },
+    {
+     "type": "pearl",
+     "text": "A plain X-ray only shows avascular necrosis late (collapse of the femoral head). **MRI** is the sensitive early test."
+    },
+    {
+     "type": "pearl",
+     "text": "**HbA1c** is unreliable in sickle cell disease and trait: red cell lifespan and abnormal haemoglobin distort it. Use glucose instead."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' for a painful crisis (early strong opioid, fluids, oxygen if hypoxic), the step-up for acute chest syndrome (exchange transfusion), and long-term prevention (hydroxycarbamide, penicillin, vaccines, folic acid).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "ED, day 1: pain **9/10**, crying, cannot get comfortable.",
+      "Aim: effective analgesia within **30 minutes** of arrival.",
+      "He is dry: dry mouth, concentrated urine."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which is the most appropriate analgesia for Kofi now?",
+     "o": [
+      "IM pethidine",
+      "IV morphine",
+      "Oral codeine and review in 4 hours",
+      "Oral paracetamol alone"
+     ],
+     "a": 1,
+     "r": "Severe crisis pain needs an **early strong opioid**, e.g. **IV morphine**. Pethidine is avoided; weak analgesia alone delays control."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kofi gets **IV morphine**, IV fluids and close pain scores. His SpO2 is 97%, so no oxygen yet. Pain control is **early and aggressive**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "An acute crisis means **urgent admission**: Kofi goes to the haematology ward."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 2: acute chest syndrome. SpO2 91% on air.",
+      "High-flow oxygen, analgesia, IV antibiotics with **atypical cover**.",
+      "Simple transfusion given."
+     ]
+    },
+    {
+     "type": "flow",
+     "title": "Acute chest syndrome: step up",
+     "nodes": [
+      "High-flow oxygen + analgesia",
+      "IV antibiotics with atypical cover",
+      "Simple transfusion",
+      "Still hypoxic (SpO2 <90%) or worsening?",
+      "Exchange transfusion",
+      "HDU / ICU if failing"
+     ],
+     "caption": "Exchange transfusion lowers HbS without overloading the circulation."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Overnight Kofi's SpO2 falls to **88%** despite oxygen and a simple transfusion: he needs an **exchange transfusion**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "SpO2 in acute chest syndrome",
+      "min": 80,
+      "max": 100,
+      "unit": "%",
+      "bands": [
+       [
+        80,
+        90,
+        "<90%: exchange transfusion",
+        "bad"
+       ],
+       [
+        90,
+        94,
+        "low: escalate oxygen",
+        "warn"
+       ],
+       [
+        94,
+        100,
+        "target",
+        "ok"
+       ]
+      ],
+      "value": 88,
+      "label": "Kofi 88%",
+      "caption": "Persistent hypoxia **below 90%** with respiratory distress despite simple transfusion is the trigger for exchange."
+     }
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kofi's response to exchange transfusion",
+      "x": [
+       "Day 2 am",
+       "Day 2 pm",
+       "Day 3",
+       "Day 5"
+      ],
+      "unit": "%",
+      "series": [
+       {
+        "name": "SpO2",
+        "values": [
+         91,
+         88,
+         94,
+         98
+        ]
+       },
+       {
+        "name": "HbS",
+        "values": [
+         90,
+         82,
+         30,
+         32
+        ]
+       }
+      ],
+      "caption": "Simple transfusion barely moved his HbS. **Exchange** cut HbS to about 30% and his oxygen saturation recovered."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "The NICE guidance on acute painful episodes sets the standard for Kofi's day 1 care: fast, strong, regularly reviewed analgesia."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Haematology clinic, 6 weeks later.",
+      "This was his **fourth** crisis admission in 12 months, plus acute chest syndrome.",
+      "Plan: start long-term prevention."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Four crises in 12 months (more than 3) and an episode of acute chest syndrome: Kofi starts **daily oral hydroxycarbamide**."
+    },
+    {
+     "type": "pearl",
+     "text": "Hydroxycarbamide needs regular **FBC monitoring** (it suppresses the marrow) and reliable contraception, as it is teratogenic."
+    },
+    {
+     "type": "trap",
+     "text": "Do not forget the infection plan: **penicillin** prophylaxis in children, **pneumococcal** vaccine every 5 years, annual **flu** vaccine and **folic acid**."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied science: the mode of inheritance (autosomal recessive), why HbS sickles, why patients get encapsulated infections (functional asplenia), why haemolysis causes jaundice and gallstones, and how hydroxycarbamide works (raises HbF).",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "From one base change to a crisis",
+     "nodes": [
+      "Point mutation in the beta-globin gene",
+      "Glutamate replaced by valine: HbS",
+      "HbS polymerises when deoxygenated",
+      "Rigid sickle-shaped red cells",
+      "Vaso-occlusion + early haemolysis"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kofi's cold, dehydrated, hypoxic night was the perfect setting for his **HbS to polymerise** and his cells to sickle."
+    },
+    {
+     "type": "ask",
+     "q": "Kofi's parents both have sickle cell trait. What is the chance their next child has sickle cell disease?",
+     "o": [
+      "0%",
+      "25%",
+      "50%",
+      "100%"
+     ],
+     "a": 1,
+     "r": "**Autosomal recessive**: two carriers have a 1 in 4 (25%) chance of an affected child and 1 in 2 of a carrier."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kofi's back and thigh pain was **bone marrow ischaemia**. Over years, the same process can damage his hips, brain and kidneys."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kofi's yellow sclerae and his high bilirubin: **unconjugated** bilirubin from chronic haemolysis, which also forms **pigment gallstones**."
+    },
+    {
+     "type": "flow",
+     "title": "Why encapsulated organisms",
+     "nodes": [
+      "Repeated splenic infarction",
+      "Functional asplenia (Howell-Jolly bodies on film)",
+      "Poor clearance of encapsulated bacteria",
+      "Strep. pneumoniae, H. influenzae, N. meningitidis",
+      "Penicillin prophylaxis + vaccines"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kofi's spleen no longer works, so a fever in him is treated as possible **pneumococcal sepsis** until proven otherwise."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Kofi's new **hydroxycarbamide** works by raising his HbF, which gets in the way of HbS polymerising."
+    },
+    {
+     "type": "pearl",
+     "text": "**HbF** (two alpha and two gamma chains) has no beta chains, so it cannot sickle. This is why babies are protected for the first months of life."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the mode of inheritance of sickle cell disease?",
+   "o": [
+    "Autosomal dominant",
+    "Autosomal recessive",
+    "X-linked dominant",
+    "X-linked recessive"
+   ],
+   "a": 1,
+   "r": "Autosomal recessive: two abnormal beta-globin genes give HbSS."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which virus classically causes an aplastic crisis?",
+   "o": [
+    "Cytomegalovirus",
+    "Epstein-Barr virus",
+    "Parvovirus B19",
+    "Varicella zoster virus"
+   ],
+   "a": 2,
+   "r": "Parvovirus B19 infects red cell precursors: sudden Hb fall with a low reticulocyte count."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which feature separates splenic sequestration from aplastic crisis?",
+   "o": [
+    "Fall in haemoglobin",
+    "High reticulocyte count",
+    "Pallor",
+    "Tachycardia"
+   ],
+   "a": 1,
+   "r": "Both cause a sudden Hb drop, but sequestration has high reticulocytes and a big spleen; aplastic has low reticulocytes."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism classically causes osteomyelitis in sickle cell disease?",
+   "o": [
+    "Escherichia coli",
+    "Pseudomonas aeruginosa",
+    "Salmonella species",
+    "Streptococcus pyogenes"
+   ],
+   "a": 2,
+   "r": "Salmonella is the classic sickle cell osteomyelitis organism."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard diagnostic test for sickle cell disease?",
+   "o": [
+    "Blood film",
+    "Haemoglobin electrophoresis",
+    "Reticulocyte count",
+    "Sickle solubility test"
+   ],
+   "a": 1,
+   "r": "Haemoglobin electrophoresis detects HbS and separates disease from trait."
+  },
+  {
+   "d": "investigation",
+   "q": "Which imaging detects early avascular necrosis of the hip?",
+   "o": [
+    "CT",
+    "MRI",
+    "Plain X-ray",
+    "Ultrasound"
+   ],
+   "a": 1,
+   "r": "MRI detects avascular necrosis early, before X-ray changes."
+  },
+  {
+   "d": "management",
+   "q": "When is an exchange transfusion indicated in acute chest syndrome?",
+   "o": [
+    "At diagnosis in every case",
+    "If SpO2 stays below 90% despite treatment",
+    "If CRP is above 100 mg/L",
+    "Only if Hb is above 100 g/L"
+   ],
+   "a": 1,
+   "r": "Persistent hypoxia (SpO2 <90%) with respiratory distress or worsening features after initial treatment."
+  },
+  {
+   "d": "management",
+   "q": "Which drug is started for more than 3 painful crises in 12 months?",
+   "o": [
+    "Allopurinol",
+    "Hydroxycarbamide",
+    "Prednisolone",
+    "Warfarin"
+   ],
+   "a": 1,
+   "r": "Daily oral hydroxycarbamide raises HbF and reduces sickling."
+  },
+  {
+   "d": "science",
+   "q": "Why are sickle cell patients prone to Streptococcus pneumoniae infection?",
+   "o": [
+    "Complement deficiency",
+    "Functional asplenia",
+    "Hypogammaglobulinaemia",
+    "Neutropenia"
+   ],
+   "a": 1,
+   "r": "Repeated splenic infarction causes functional asplenia, so encapsulated organisms are not cleared."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is sickle cell disease, who gets it and what triggers sickling?",
+    "tip": "Exam thinking: the stem gives you ancestry and a trigger; you name the disease and the crisis.",
+    "points": [
+     {
+      "p": "Autosomal recessive haemoglobinopathy with abnormal haemoglobin, HbS",
+      "k": [
+       [
+        "recessive"
+       ],
+       [
+        "hbs",
+        "haemoglobin s",
+        "hemoglobin s"
+       ]
+      ],
+      "why": "A 'mode of inheritance' question is answered 'autosomal recessive'."
+     },
+     {
+      "p": "Ancestry: sub-Saharan Africa, Caribbean, Middle East, Mediterranean, South Asia",
+      "k": [
+       [
+        "africa",
+        "caribbean",
+        "middle east",
+        "mediterranean",
+        "asia"
+       ]
+      ],
+      "why": "Family history matters: both parents are usually carriers."
+     },
+     {
+      "p": "Triggers: infection, dehydration, hypoxia, cold, acidosis",
+      "k": [
+       [
+        "infection",
+        "dehydrat",
+        "hypoxi",
+        "cold",
+        "acidosis"
+       ]
+      ],
+      "why": "Always treat the trigger, especially infection."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features of chronic haemolysis in sickle cell disease?",
+    "tip": "Exam thinking: a well patient with mild jaundice and a high reticulocyte count is at baseline.",
+    "points": [
+     {
+      "p": "Baseline anaemia, jaundice, pigment gallstones",
+      "k": [
+       [
+        "jaundice",
+        "yellow",
+        "bilirubin"
+       ],
+       [
+        "gallstone"
+       ]
+      ],
+      "why": "Pigment gallstones in a young patient should make you think haemolysis."
+     },
+     {
+      "p": "Normocytic anaemia with raised reticulocytes",
+      "k": [
+       [
+        "normocytic"
+       ],
+       [
+        "reticulocyt",
+        "retic"
+       ]
+      ],
+      "why": "Microcytosis points away to iron deficiency or thalassaemia."
+     },
+     {
+      "p": "Howell-Jolly bodies suggest hyposplenism",
+      "k": [
+       [
+        "howell",
+        "jolly"
+       ]
+      ],
+      "why": "They are leftover nuclear fragments the spleen would normally remove."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does a vaso-occlusive crisis present, and how does it present in a toddler?",
+    "tip": "Exam thinking: pain with a normal examination and no Hb drop is a vaso-occlusive crisis.",
+    "points": [
+     {
+      "p": "Sickled cells block blood flow: ischaemia, necrosis, severe pain",
+      "k": [
+       [
+        "pain",
+        "ischaemi",
+        "ischemi"
+       ]
+      ],
+      "why": "It is the most common presentation in children."
+     },
+     {
+      "p": "No examination abnormalities and no significant Hb drop",
+      "k": [
+       [
+        "normal exam",
+        "no exam",
+        "no sign",
+        "no examination",
+        "examination normal"
+       ],
+       [
+        "hb",
+        "haemoglobin",
+        "hemoglobin"
+       ]
+      ],
+      "why": "A real Hb fall points to aplastic or sequestration crisis instead."
+     },
+     {
+      "p": "Under 3: dactylitis, painful swollen hands and feet",
+      "k": [
+       [
+        "dactylitis",
+        "hand-foot",
+        "hand foot",
+        "hands and feet"
+       ]
+      ],
+      "why": "Often the first presentation of the disease."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features of acute chest syndrome?",
+    "tip": "Exam thinking: fever, chest pain, hypoxia and a new infiltrate in a sickle patient, not just 'pneumonia'.",
+    "points": [
+     {
+      "p": "Fever, chest pain, shortness of breath, tachypnoea, cough, wheeze",
+      "k": [
+       [
+        "fever",
+        "pyrex"
+       ],
+       [
+        "chest pain"
+       ]
+      ],
+      "why": "Often develops on day 2 or 3 of a painful crisis."
+     },
+     {
+      "p": "Consolidation from the lung bases: bronchial breathing, crackles",
+      "k": [
+       [
+        "consolidat",
+        "crackle",
+        "bronchial"
+       ]
+      ],
+      "why": "Basal signs; often bilateral."
+     },
+     {
+      "p": "CXR: new pulmonary infiltrates",
+      "k": [
+       [
+        "infiltrat",
+        "x-ray",
+        "cxr",
+        "consolidat"
+       ]
+      ],
+      "why": "A new infiltrate is needed to call it acute chest syndrome."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How do you tell an aplastic crisis from a splenic sequestration crisis?",
+    "tip": "Exam thinking: both drop the Hb; the reticulocytes and the spleen decide.",
+    "points": [
+     {
+      "p": "Aplastic: parvovirus B19, sudden Hb fall, low reticulocytes",
+      "k": [
+       [
+        "parvo",
+        "b19"
+       ],
+       [
+        "low retic",
+        "reticulocytopenia",
+        "reduced retic",
+        "retics low",
+        "reticulocytes low"
+       ]
+      ],
+      "why": "Parvovirus stops red cell production for a few days, which a short-lived sickle cell cannot afford."
+     },
+     {
+      "p": "Aplastic: no splenomegaly",
+      "k": [
+       [
+        "no splenomegaly",
+        "spleen not",
+        "no spleen",
+        "normal spleen"
+       ]
+      ],
+      "why": "Severe anaemia with tachycardia and tachypnoea."
+     },
+     {
+      "p": "Sequestration: children, blood trapped in an enlarging spleen, shock",
+      "k": [
+       [
+        "sequestrat",
+        "trapped",
+        "pool"
+       ],
+       [
+        "spleen",
+        "splenomegaly"
+       ]
+      ],
+      "why": "Can kill quickly; parents are taught to feel the spleen."
+     },
+     {
+      "p": "Sequestration: high reticulocytes",
+      "k": [
+       [
+        "high retic",
+        "raised retic",
+        "increased retic",
+        "reticulocytosis",
+        "retics high"
+       ]
+      ],
+      "why": "The marrow is still working hard, unlike in aplastic crisis."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which infections and complications does sickle cell disease cause?",
+    "tip": "Exam thinking: 'most likely organism' in sickle cell is Salmonella for bone and encapsulated bacteria for sepsis.",
+    "points": [
+     {
+      "p": "Encapsulated organisms: Strep. pneumoniae, H. influenzae, N. meningitidis",
+      "k": [
+       [
+        "pneumon",
+        "haemophilus",
+        "influenzae",
+        "meningitidis",
+        "encapsulated"
+       ]
+      ],
+      "why": "Pseudomonas aeruginosa is also listed."
+     },
+     {
+      "p": "Osteomyelitis, classically Salmonella",
+      "k": [
+       [
+        "osteomyelitis"
+       ],
+       [
+        "salmonella"
+       ]
+      ],
+      "why": "Staph aureus is still common, but Salmonella is the classic exam answer."
+     },
+     {
+      "p": "Stroke, especially in children",
+      "k": [
+       [
+        "stroke"
+       ]
+      ],
+      "why": "Sudden weakness in a child with sickle cell disease is a stroke until proven otherwise."
+     },
+     {
+      "p": "Avascular necrosis and cholecystitis",
+      "k": [
+       [
+        "avascular",
+        "avn",
+        "osteonecrosis",
+        "cholecystitis"
+       ]
+      ],
+      "why": "AVN usually affects the femoral head."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which tests do you do first, which confirms the diagnosis, and when is MRI used?",
+    "tip": "Exam thinking: confirming the disease is electrophoresis; a painful crisis is clinical.",
+    "points": [
+     {
+      "p": "Gold standard: haemoglobin electrophoresis, detecting HbS",
+      "k": [
+       [
+        "electrophoresis"
+       ]
+      ],
+      "why": "The solubility test cannot tell trait from disease."
+     },
+     {
+      "p": "First-line: FBC, reticulocyte count, haemolysis screen",
+      "k": [
+       [
+        "fbc",
+        "full blood"
+       ],
+       [
+        "retic"
+       ]
+      ],
+      "why": "A low reticulocyte count with a falling Hb is aplastic crisis."
+     },
+     {
+      "p": "Vaso-occlusive crises are diagnosed clinically",
+      "k": [
+       [
+        "clinical"
+       ]
+      ],
+      "why": "Do not delay analgesia waiting for bloods."
+     },
+     {
+      "p": "MRI detects early avascular necrosis",
+      "k": [
+       [
+        "mri"
+       ]
+      ],
+      "why": "Plain X-ray is normal early."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you manage a vaso-occlusive crisis and acute chest syndrome?",
+    "tip": "Exam thinking: early strong analgesia first; for chest syndrome, escalate to exchange transfusion if still hypoxic.",
+    "points": [
+     {
+      "p": "VOC: early, aggressive analgesia, e.g. IV morphine",
+      "k": [
+       [
+        "morphine",
+        "opioid",
+        "analges"
+       ]
+      ],
+      "why": "NICE aims for analgesia within 30 minutes of arrival."
+     },
+     {
+      "p": "VOC: IV fluids/hydration, oxygen if hypoxic, treat the trigger",
+      "k": [
+       [
+        "fluid",
+        "hydrat"
+       ]
+      ],
+      "why": "Antibiotics if infection is suspected; transfuse if Hb is low."
+     },
+     {
+      "p": "Admit urgently for acute crises",
+      "k": [
+       [
+        "admit",
+        "admission"
+       ]
+      ],
+      "why": "Acute crises are managed in hospital."
+     },
+     {
+      "p": "ACS: high-flow oxygen, analgesia, antibiotics with atypical cover, simple transfusion",
+      "k": [
+       [
+        "oxygen",
+        "o2"
+       ],
+       [
+        "antibiotic"
+       ]
+      ],
+      "why": "Atypical cover means adding a macrolide such as clarithromycin."
+     },
+     {
+      "p": "ACS still hypoxic (SpO2 <90%) or worsening: exchange transfusion",
+      "k": [
+       [
+        "exchange"
+       ]
+      ],
+      "why": "Exchange is also used for stroke, multi-organ failure or a rapid Hb drop."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the long-term and preventive management of sickle cell disease?",
+    "tip": "Exam thinking: frequent crises mean hydroxycarbamide; asplenia means penicillin and vaccines.",
+    "points": [
+     {
+      "p": "Daily oral hydroxycarbamide if more than 3 painful crises in 12 months",
+      "k": [
+       [
+        "hydroxycarbamide",
+        "hydroxyurea"
+       ]
+      ],
+      "why": "Also used long term after acute chest syndrome."
+     },
+     {
+      "p": "Phenoxymethylpenicillin prophylaxis for young children",
+      "k": [
+       [
+        "penicillin"
+       ]
+      ],
+      "why": "Because of functional asplenia."
+     },
+     {
+      "p": "Pneumococcal vaccine every 5 years and annual influenza vaccine",
+      "k": [
+       [
+        "pneumococc",
+        "pneumovax"
+       ],
+       [
+        "influenza",
+        "flu"
+       ]
+      ],
+      "why": "Plus routine childhood vaccines."
+     },
+     {
+      "p": "Folic acid and specialist follow-up",
+      "k": [
+       [
+        "folic",
+        "folate"
+       ]
+      ],
+      "why": "Chronic haemolysis uses up folate."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why do red cells sickle, and why does this cause pain and organ damage?",
+    "tip": "Exam thinking: name the gene, the haemoglobin and what makes it polymerise.",
+    "points": [
+     {
+      "p": "Point mutation in the beta-globin gene gives HbS",
+      "k": [
+       [
+        "point mutation",
+        "mutation"
+       ],
+       [
+        "beta",
+        "β"
+       ]
+      ],
+      "why": "Glutamate to valine at position 6."
+     },
+     {
+      "p": "HbS polymerises with hypoxia, dehydration, acidosis or cold",
+      "k": [
+       [
+        "polymeris",
+        "polymeriz"
+       ]
+      ],
+      "why": "Deoxygenated HbS forms long rigid fibres."
+     },
+     {
+      "p": "Rigid sickle cells: high viscosity, vaso-occlusion, early haemolysis",
+      "k": [
+       [
+        "viscosity",
+        "occlu",
+        "block"
+       ]
+      ],
+      "why": "Haemolysis gives unconjugated bilirubin, jaundice and pigment stones."
+     },
+     {
+      "p": "Ischaemia and infarction: pain, then AVN, stroke, CKD",
+      "k": [
+       [
+        "ischaemi",
+        "ischemi",
+        "infarct"
+       ]
+      ],
+      "why": "Organ damage builds up over years."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why are patients at risk of encapsulated infections, and how does hydroxycarbamide work?",
+    "tip": "Exam thinking: 'mechanism' questions want functional asplenia and raised HbF.",
+    "points": [
+     {
+      "p": "Repeated splenic infarction causes functional asplenia",
+      "k": [
+       [
+        "aspleni",
+        "hyposplen",
+        "spleen"
+       ]
+      ],
+      "why": "Howell-Jolly bodies on the film show it."
+     },
+     {
+      "p": "Hydroxycarbamide raises fetal haemoglobin (HbF)",
+      "k": [
+       [
+        "hbf",
+        "fetal",
+        "foetal"
+       ]
+      ],
+      "why": "HbF blocks HbS polymerisation, so sickling is less frequent and severe."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "HbS": "Sickle haemoglobin, made by a point mutation in the beta-globin gene; it polymerises when deoxygenated.",
+  "HbSS": "Two copies of the sickle gene: sickle cell anaemia, the commonest and most severe form.",
+  "HbF": "Fetal haemoglobin (two alpha, two gamma chains); it does not sickle and blocks HbS polymerisation.",
+  "HbA": "Normal adult haemoglobin, made of two alpha and two beta chains.",
+  "sickle cell trait": "Carrying one sickle gene (HbAS); usually no symptoms.",
+  "haemoglobinopathy": "An inherited disorder of the structure or amount of haemoglobin, such as sickle cell disease or thalassaemia.",
+  "autosomal recessive": "Inheritance needing two faulty copies of a gene; two carrier parents have a 1 in 4 chance of an affected child.",
+  "vaso-occlusive crisis": "Sickled cells block small vessels, causing ischaemia and severe pain; the commonest presentation.",
+  "VOC": "Vaso-occlusive crisis: painful sickling episode from blocked small vessels.",
+  "dactylitis": "Painful swelling of the hands and feet from bone infarction, typical in sickle toddlers under 3.",
+  "acute chest syndrome": "Fever, chest pain, hypoxia and a new lung infiltrate in sickle cell disease; a medical emergency.",
+  "aplastic crisis": "Sudden stop in red cell production, usually from parvovirus B19, with a low reticulocyte count.",
+  "parvovirus B19": "Virus that infects red cell precursors and causes slapped cheek in children and aplastic crisis in sickle cell.",
+  "splenic sequestration": "Red cells pool in the spleen, which enlarges fast, causing acute anaemia and shock in children.",
+  "reticulocytes": "Young red cells; a high count shows the marrow is replacing lost cells.",
+  "reticulocyte count": "Blood test of young red cells; low in aplastic crisis, high in haemolysis and sequestration.",
+  "functional asplenia": "A spleen that is present but no longer works, after repeated infarction.",
+  "hyposplenism": "Reduced spleen function, raising the risk of infection with encapsulated bacteria.",
+  "autosplenectomy": "Shrinking and loss of the spleen through repeated infarction in sickle cell disease.",
+  "Howell-Jolly bodies": "Small nuclear remnants in red cells, seen on the film when the spleen is not working.",
+  "encapsulated organisms": "Bacteria with a polysaccharide capsule that the spleen normally clears, e.g. Strep. pneumoniae.",
+  "haemolysis": "Early breakdown of red cells, giving anaemia, jaundice and raised bilirubin and LDH.",
+  "haemolysis screen": "Tests for red cell breakdown: bilirubin, LDH, haptoglobin, reticulocytes and blood film.",
+  "unconjugated hyperbilirubinaemia": "Raised bilirubin that the liver has not yet processed, typical of haemolysis.",
+  "pigment gallstones": "Gallstones made of bilirubin, formed when chronic haemolysis floods the bile with pigment.",
+  "LDH": "Lactate dehydrogenase, an enzyme released from broken red cells; raised in haemolysis.",
+  "haemoglobin electrophoresis": "Separates haemoglobin types by charge; gold-standard test that detects HbS.",
+  "sickle solubility test": "Quick screening test for HbS; positive in both trait and disease.",
+  "avascular necrosis": "Bone death from lost blood supply, often of the femoral head; MRI finds it early.",
+  "AVN": "Avascular necrosis: bone death from lost blood supply.",
+  "osteomyelitis": "Infection of bone; in sickle cell disease classically Salmonella.",
+  "Salmonella": "Gram-negative bacterium, the classic cause of osteomyelitis in sickle cell disease.",
+  "cholecystitis": "Inflammation of the gallbladder, here from stones or sludging and ischaemia.",
+  "exchange transfusion": "Removing the patient's blood while giving donor blood, lowering HbS without fluid overload.",
+  "simple transfusion": "Giving donor red cells without removing any of the patient's blood.",
+  "hydroxycarbamide": "Daily oral drug (hydroxyurea) that raises HbF and reduces sickling crises.",
+  "phenoxymethylpenicillin": "Oral penicillin V, given as daily prophylaxis to young children with sickle cell disease.",
+  "atypical cover": "Antibiotics, such as a macrolide, that also treat Mycoplasma, Chlamydia and Legionella.",
+  "pneumococcal polysaccharide vaccine": "PPV23 vaccine against Strep. pneumoniae, repeated every 5 years in sickle cell disease.",
+  "polymerisation": "HbS molecules joining into long rigid fibres when deoxygenated, which distorts the cell.",
+  "HbA1c": "Glycated haemoglobin; unreliable in sickle cell disease and trait.",
+  "type 1 respiratory failure": "Low oxygen (pO2 below 8 kPa) with a normal or low carbon dioxide."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 4 year old boy with sickle cell disease is brought to the Emergency Department with a 6 hour history of fever and drowsiness. His mother says he stopped taking his daily antibiotic two months ago. His temperature is 39.8°C, pulse rate 168 bpm and BP 74/40 mmHg. He has neck stiffness and photophobia.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Escherichia coli",
+    "Listeria monocytogenes",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 4,
+   "e": "Functional asplenia leaves sickle cell patients open to encapsulated organisms, and Strep. pneumoniae is the commonest cause of fatal sepsis and meningitis in them, which is why children take penicillin prophylaxis.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An organism question: think about what is special about this patient's immunity."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sickle cell disease",
+      "stopped taking his daily antibiotic",
+      "neck stiffness"
+     ],
+     "x": "Sickle cell means **functional asplenia**. The missed daily antibiotic is his **penicillin prophylaxis**. Fever, shock and neck stiffness: sepsis with meningitis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Asplenia + stopped penicillin = **encapsulated organism**, most likely **Strep. pneumoniae**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "E. coli is a neonatal meningitis organism, not the asplenic risk."
+      ],
+      [
+       1,
+       "Listeria affects neonates, the elderly, pregnancy and the immunosuppressed."
+      ],
+      [
+       2,
+       "Pseudomonas is listed in sickle cell but is not the classic sepsis/meningitis cause."
+      ],
+      [
+       3,
+       "S. aureus causes skin, bone and line infections; asplenic sepsis with meningitis is classically pneumococcal."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Streptococcus pneumoniae.** Rule: sickle cell = functional asplenia = encapsulated organisms, pneumococcus first."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 7 year old girl with sickle cell disease has been tired and breathless for 2 days. Her younger brother had a bright red rash on his cheeks last week. She is very pale. Her pulse rate is 140 bpm and BP 96/58 mmHg. Her spleen is not palpable. Her baseline haemoglobin is 80 g/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial investigation?",
+   "o": [
+    "Abdominal ultrasound",
+    "Bone marrow aspirate",
+    "Full blood count and reticulocyte count",
+    "Haemoglobin electrophoresis",
+    "MRI of the spine"
+   ],
+   "a": 2,
+   "e": "Suspected aplastic crisis is confirmed by a fall in Hb with a very low reticulocyte count, so FBC and reticulocytes come first. Electrophoresis confirms the disease, which is already known.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An initial investigation: the simple, fast test that answers the clinical question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "brother had a bright red rash on his cheeks",
+      "very pale",
+      "spleen is not palpable"
+     ],
+     "x": "Slapped cheek in a sibling = **parvovirus B19**. Pallor and tachycardia with no spleen: **aplastic crisis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "You need the Hb and the **reticulocyte count**: low reticulocytes confirm aplastic crisis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Ultrasound looks at the spleen; it is not palpable and imaging does not show marrow failure."
+      ],
+      [
+       1,
+       "Marrow is invasive and unnecessary; the reticulocyte count shows marrow failure."
+      ],
+      [
+       3,
+       "Electrophoresis diagnoses sickle cell disease, which she already has."
+      ],
+      [
+       4,
+       "MRI is for avascular necrosis or cord problems, not anaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. FBC and reticulocyte count.** Rule: falling Hb in sickle cell: check reticulocytes; low = aplastic."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 14 month old girl has just been diagnosed with sickle cell disease (HbSS) after newborn screening and confirmatory testing. She is well. Her parents ask what can be done to protect her from serious infections. Her vaccinations are up to date.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate long-term medication?",
+   "o": [
+    "Ciprofloxacin",
+    "Co-trimoxazole",
+    "Doxycycline",
+    "Phenoxymethylpenicillin",
+    "Rifampicin"
+   ],
+   "a": 3,
+   "e": "Young children with sickle cell disease take daily phenoxymethylpenicillin (penicillin V) to prevent pneumococcal sepsis caused by functional asplenia, alongside vaccines and folic acid.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Long-term prevention in a well child: think about what they are at risk of."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sickle cell disease (HbSS)",
+      "protect her from serious infections"
+     ],
+     "x": "Functional asplenia develops early, so the risk is **encapsulated bacteria**, especially pneumococcus."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Daily oral **phenoxymethylpenicillin** prophylaxis."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Ciprofloxacin is not used for long-term prophylaxis in children."
+      ],
+      [
+       1,
+       "Co-trimoxazole is PCP prophylaxis in HIV and immunosuppression."
+      ],
+      [
+       2,
+       "Doxycycline is avoided in young children (teeth) and is not used here."
+      ],
+      [
+       4,
+       "Rifampicin is for meningococcal contacts, a short course only."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Phenoxymethylpenicillin.** Rule: sickle cell child = penicillin V + vaccines + folic acid."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 26 year old man with sickle cell disease has had five admissions with painful crises in the last year. He is started on a daily oral medication. At follow-up, his haemoglobin electrophoresis shows a rise in one type of haemoglobin, and he has had no further crises.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism of action of this medication?",
+   "o": [
+    "Chelates excess iron",
+    "Increases fetal haemoglobin production",
+    "Inhibits platelet aggregation",
+    "Inhibits xanthine oxidase",
+    "Stimulates erythropoietin release"
+   ],
+   "a": 1,
+   "e": "Hydroxycarbamide raises HbF, which interferes with HbS polymerisation, reducing the frequency and severity of sickling crises.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: first name the drug, then its action."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "five admissions with painful crises in the last year",
+      "daily oral medication",
+      "rise in one type of haemoglobin"
+     ],
+     "x": "More than 3 crises in 12 months = **hydroxycarbamide**. The haemoglobin that rises is **HbF**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Hydroxycarbamide **increases fetal haemoglobin**, which blocks HbS polymerising."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Iron chelation (desferrioxamine) treats transfusion iron overload."
+      ],
+      [
+       2,
+       "Antiplatelet action is aspirin or clopidogrel."
+      ],
+      [
+       3,
+       "Xanthine oxidase inhibition is allopurinol, for gout."
+      ],
+      [
+       4,
+       "Erythropoietin is a renal anaemia treatment, not crisis prevention."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Increases fetal haemoglobin production.** Rule: hydroxycarbamide = more HbF = less sickling."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "An 18 month old boy who moved to the UK from Nigeria two months ago is brought to the GP because he cries when anyone touches his hands or feet. For 2 days his fingers and the backs of both feet have been swollen and tender. He had a cold last week. His temperature is 37.9°C. His parents both carry a haemoglobin variant.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Dactylitis",
+    "Juvenile idiopathic arthritis",
+    "Osteomyelitis",
+    "Rickets",
+    "Septic arthritis"
+   ],
+   "a": 0,
+   "e": "Painful swelling of the hands and feet in a toddler under 3 with carrier parents is dactylitis, a vaso-occlusive crisis of sickle cell disease. Osteomyelitis and septic arthritis would usually affect one site.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis: match the pattern."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "18 month old",
+      "moved to the UK from Nigeria",
+      "swollen and tender",
+      "both carry a haemoglobin variant"
+     ],
+     "x": "Toddler, West African family, both parents carriers, swollen **hands and feet** on both sides after a cold."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Sickle cell disease presenting as **dactylitis** (hand-foot syndrome)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "JIA is rare at 18 months, slower in onset, and does not fit carrier parents."
+      ],
+      [
+       2,
+       "Osteomyelitis is usually one bone, with high fever."
+      ],
+      [
+       3,
+       "Rickets causes bowed legs and wide wrists, not acute painful swelling."
+      ],
+      [
+       4,
+       "Septic arthritis is one hot joint with high fever, not all four extremities."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Dactylitis.** Rule: toddler + swollen painful hands and feet + carrier parents = sickle dactylitis."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "An 8 year old girl with sickle cell disease has had increasing tiredness and breathlessness for 3 days. Her brother had a 'slapped cheek' rash a week ago. She is pale. Her pulse rate is 136 bpm, BP 94/56 mmHg and respiratory rate 28 breaths per minute. Her spleen is not palpable.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "41 g/L",
+     "baseline 82",
+     "L"
+    ],
+    [
+     "Reticulocytes",
+     "0.1%",
+     "0.5–2.5",
+     "L"
+    ],
+    [
+     "Bilirubin",
+     "24 µmol/L",
+     "<21",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute chest syndrome",
+    "Aplastic crisis",
+    "Haemolytic crisis",
+    "Splenic sequestration crisis",
+    "Vaso-occlusive crisis"
+   ],
+   "a": 1,
+   "e": "Parvovirus B19 contact, a sudden Hb fall with a very low reticulocyte count and no splenomegaly is an aplastic crisis. Sequestration has a big spleen and high reticulocytes.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis: which sickle crisis?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "'slapped cheek' rash",
+      "She is pale",
+      "Her spleen is not palpable"
+     ],
+     "x": "Slapped cheek = **parvovirus B19**. Hb dropped from baseline; reticulocytes **0.1%**; no spleen."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Sudden anaemia + low reticulocytes + parvovirus = **aplastic crisis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No chest pain, fever or infiltrate."
+      ],
+      [
+       2,
+       "Haemolysis would push reticulocytes and bilirubin up, not reticulocytes down."
+      ],
+      [
+       3,
+       "Sequestration has a large spleen and high reticulocytes."
+      ],
+      [
+       4,
+       "A vaso-occlusive crisis causes pain without a real Hb drop."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Aplastic crisis.** Rule: Hb down + reticulocytes down + parvovirus = aplastic."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 3 year old boy with sickle cell disease becomes suddenly pale, lethargic and floppy. He complains of tummy pain. His pulse rate is 172 bpm, BP 68/38 mmHg and capillary refill 4 seconds. There is a firm mass in the left upper quadrant extending to the umbilicus, which was not present at his clinic visit last month.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "38 g/L",
+     "baseline 80",
+     "L"
+    ],
+    [
+     "Reticulocytes",
+     "16%",
+     "0.5–2.5",
+     "H"
+    ],
+    [
+     "Platelets",
+     "92 ×10⁹/L",
+     "150–400",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute chest syndrome",
+    "Aplastic crisis",
+    "Intussusception",
+    "Splenic sequestration crisis",
+    "Vaso-occlusive crisis"
+   ],
+   "a": 3,
+   "e": "A sudden Hb fall with shock, high reticulocytes and a rapidly enlarging spleen in a young child is splenic sequestration. Aplastic crisis has low reticulocytes and no splenomegaly.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis: which crisis, in a shocked child?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 year old",
+      "suddenly pale",
+      "BP 68/38 mmHg",
+      "firm mass in the left upper quadrant"
+     ],
+     "x": "Young child, shock, new big **spleen**, Hb crashed, reticulocytes **high**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Blood trapped in the spleen: **splenic sequestration crisis**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No chest signs, fever or hypoxia."
+      ],
+      [
+       1,
+       "Aplastic crisis has low reticulocytes and no splenomegaly."
+      ],
+      [
+       2,
+       "Intussusception gives a sausage-shaped mass, colicky pain and redcurrant jelly stools, not severe anaemia."
+      ],
+      [
+       4,
+       "A vaso-occlusive crisis does not drop the Hb or enlarge the spleen."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Splenic sequestration crisis.** Rule: Hb down + reticulocytes up + big spleen + shock = sequestration."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 22 year old woman with sickle cell disease was admitted yesterday with a painful crisis in her back and legs. Today she has new right-sided chest pain and a cough. Her temperature is 38.4°C, pulse rate 118 bpm, BP 116/72 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 89% breathing air. There are crackles at both bases. A chest X-ray is shown (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "consolidation",
+      "side": "both",
+      "zone": "lower"
+     }
+    ],
+    "caption": "New bilateral lower zone infiltrates."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute chest syndrome",
+    "Aplastic crisis",
+    "Pneumothorax",
+    "Pulmonary embolism",
+    "Splenic sequestration crisis"
+   ],
+   "a": 0,
+   "e": "Fever, chest pain, hypoxia and new bilateral basal infiltrates during a sickle crisis is acute chest syndrome. PE causes hypoxia but not fever with bilateral consolidation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis in a sickle patient who has become breathless."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "admitted yesterday with a painful crisis",
+      "new right-sided chest pain",
+      "38.4°C",
+      "89% breathing air",
+      "crackles at both bases"
+     ],
+     "x": "Day 2 of a crisis, fever, chest pain, hypoxia, basal crackles, new **infiltrates** on CXR."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Acute chest syndrome.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Aplastic crisis is anaemia with low reticulocytes, not chest signs."
+      ],
+      [
+       2,
+       "A pneumothorax shows a visible lung edge, not consolidation, and no fever."
+      ],
+      [
+       3,
+       "PE gives a clear chest X-ray usually, without fever and bilateral crackles."
+      ],
+      [
+       4,
+       "Sequestration is a childhood crisis with a big spleen and shock."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute chest syndrome.** Rule: sickle + fever + chest pain + hypoxia + new infiltrate = ACS."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 12 year old boy with sickle cell disease has a 5 day history of worsening pain and swelling above his left knee and a high fever. He recently returned from a family holiday in Ghana where he had diarrhoea. His temperature is 39.1°C. An X-ray shows a lytic lesion with periosteal reaction in the distal left femur, consistent with osteomyelitis.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Escherichia coli",
+    "Mycobacterium tuberculosis",
+    "Pseudomonas aeruginosa",
+    "Salmonella species",
+    "Streptococcus pyogenes"
+   ],
+   "a": 3,
+   "e": "Salmonella is the classic cause of osteomyelitis in sickle cell disease, as gut organisms seed infarcted bone.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "An organism question: sickle cell + bone infection has one classic answer."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sickle cell disease",
+      "diarrhoea",
+      "consistent with osteomyelitis"
+     ],
+     "x": "Sickle cell **osteomyelitis** after a diarrhoeal illness."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Salmonella** species."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "E. coli is a urinary and neonatal organism."
+      ],
+      [
+       1,
+       "TB osteomyelitis (Pott's disease) is chronic, usually spinal, not a 5 day fever."
+      ],
+      [
+       2,
+       "Pseudomonas bone infection follows puncture wounds through trainers."
+      ],
+      [
+       4,
+       "Strep. pyogenes is a less common cause and not the sickle classic."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Salmonella species.** Rule: sickle cell + osteomyelitis = Salmonella."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old woman of Caribbean heritage has had several hospital admissions since childhood with severe episodes of bone pain. She had a cholecystectomy for gallstones at age 17. Her sclerae are mildly yellow. Her spleen is not palpable.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "86 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "MCV",
+     "89 fL",
+     "80–100",
+     ""
+    ],
+    [
+     "Reticulocytes",
+     "11%",
+     "0.5–2.5",
+     "H"
+    ],
+    [
+     "Bilirubin",
+     "48 µmol/L",
+     "<21",
+     "H"
+    ],
+    [
+     "Blood film",
+     "Howell-Jolly bodies",
+     "",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Beta thalassaemia trait",
+    "Glucose-6-phosphate dehydrogenase deficiency",
+    "Hereditary spherocytosis",
+    "Iron deficiency anaemia",
+    "Sickle cell disease"
+   ],
+   "a": 4,
+   "e": "Recurrent painful crises, chronic haemolysis with gallstones, normocytic anaemia, reticulocytosis and Howell-Jolly bodies (hyposplenism) is sickle cell disease. Spherocytosis has a large spleen, not an absent one.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnosis: haemolytic anaemia with something extra."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Caribbean heritage",
+      "severe episodes of bone pain",
+      "gallstones at age 17",
+      "spleen is not palpable"
+     ],
+     "x": "Ancestry + painful crises + pigment gallstones + jaundice + **Howell-Jolly bodies** (no spleen)."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Sickle cell disease.**"
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Thalassaemia trait is microcytic and causes no crises."
+      ],
+      [
+       1,
+       "G6PD causes episodic haemolysis after drugs or fava beans, not bone pain crises."
+      ],
+      [
+       2,
+       "Spherocytosis has splenomegaly and spherocytes, not hyposplenism."
+      ],
+      [
+       3,
+       "Iron deficiency is microcytic with low reticulocytes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Sickle cell disease.** Rule: pain crises + haemolysis + Howell-Jolly bodies = sickle cell."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 2 year old girl whose parents both have sickle cell trait is seen in clinic. She was born abroad and had no newborn screening. She has had one episode of painful swollen hands. A blood film shows a few sickled red cells and target cells. The team want to confirm the diagnosis.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Blood film repeated in 4 weeks",
+    "Direct antiglobulin test",
+    "Haemoglobin electrophoresis",
+    "Osmotic fragility test",
+    "Reticulocyte count"
+   ],
+   "a": 2,
+   "e": "Haemoglobin electrophoresis is the gold standard: it detects HbS and separates sickle cell disease from trait. A film suggests the diagnosis but does not confirm it.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnostic (confirmatory) test: the gold standard."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "both have sickle cell trait",
+      "painful swollen hands",
+      "confirm the diagnosis"
+     ],
+     "x": "Carrier parents and dactylitis: suspected **sickle cell disease**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Haemoglobin electrophoresis** detects HbS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "A repeat film still cannot confirm the haemoglobin type."
+      ],
+      [
+       1,
+       "The DAT tests for autoimmune haemolysis."
+      ],
+      [
+       3,
+       "Osmotic fragility is the old test for hereditary spherocytosis."
+      ],
+      [
+       4,
+       "Reticulocytes show marrow activity, not the type of haemoglobin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Haemoglobin electrophoresis.** Rule: confirm sickle cell = electrophoresis showing HbS."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 31 year old man with sickle cell disease has had a dull ache in his right groin for 6 weeks, worse on walking. Internal rotation of the right hip is painful and reduced. His temperature is 36.9°C. A plain X-ray of the pelvis and right hip is normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next investigation?",
+   "o": [
+    "Bone densitometry (DEXA)",
+    "CT of the pelvis",
+    "Isotope bone scan",
+    "MRI of the hips",
+    "Ultrasound of the hip"
+   ],
+   "a": 3,
+   "e": "MRI detects early avascular necrosis of the femoral head before the plain X-ray changes. It is the sensitive test once the X-ray is normal.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A next investigation after a normal first-line test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "sickle cell disease",
+      "right groin",
+      "Internal rotation of the right hip is painful",
+      "plain X-ray of the pelvis and right hip is normal"
+     ],
+     "x": "Groin pain, painful hip rotation, afebrile, normal X-ray: early **avascular necrosis** of the femoral head."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**MRI** detects AVN early."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "DEXA measures bone density for osteoporosis."
+      ],
+      [
+       1,
+       "CT shows later bony collapse but is less sensitive early and uses radiation."
+      ],
+      [
+       2,
+       "A bone scan is less specific than MRI."
+      ],
+      [
+       4,
+       "Ultrasound shows an effusion only, not marrow ischaemia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. MRI of the hips.** Rule: sickle cell + hip pain + normal X-ray = MRI for early AVN."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 20 year old man with sickle cell disease comes to the Emergency Department with severe pain in his lower back and both legs for 6 hours, which he scores 9/10. He has been working outside in the cold. His temperature is 37.2°C, pulse rate 104 bpm, BP 132/80 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air. Examination is otherwise normal.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Exchange transfusion",
+    "IV morphine and IV fluids",
+    "Oral hydroxycarbamide",
+    "Oral paracetamol and discharge",
+    "Simple blood transfusion"
+   ],
+   "a": 1,
+   "e": "A vaso-occlusive crisis needs early, aggressive analgesia with a strong opioid and hydration. Transfusion is for a low Hb or complications; hydroxycarbamide is long-term prevention.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management: what you do now."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "severe pain in his lower back and both legs",
+      "9/10",
+      "in the cold",
+      "97% breathing air",
+      "Examination is otherwise normal"
+     ],
+     "x": "Cold trigger, severe pain, normal exam, not hypoxic: **vaso-occlusive crisis**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Strong opioid (IV morphine) + IV fluids**; no oxygen needed at 97%."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Exchange is for acute chest syndrome failing treatment, stroke or multi-organ failure."
+      ],
+      [
+       2,
+       "Hydroxycarbamide prevents future crises; it does not treat this one."
+      ],
+      [
+       3,
+       "Paracetamol alone is inadequate for 9/10 crisis pain, and he needs admission."
+      ],
+      [
+       4,
+       "His Hb is not low on these facts; transfusion does not treat simple pain."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. IV morphine and IV fluids.** Rule: painful crisis = early strong analgesia + fluids + treat the trigger."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 17 year old girl with sickle cell disease has acute chest syndrome. She has received high-flow oxygen, analgesia, IV antibiotics with atypical cover and a simple transfusion. Twelve hours later she is more breathless and using accessory muscles. Her pulse rate is 128 bpm, BP 112/68 mmHg, respiratory rate 34 breaths per minute and oxygen saturation 88% on 15 L/min oxygen.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "92 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "HbS",
+     "78%",
+     "",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the next most appropriate step in management?",
+   "o": [
+    "Exchange transfusion",
+    "IV furosemide",
+    "IV vancomycin",
+    "Oral hydroxycarbamide",
+    "Thrombolysis with alteplase"
+   ],
+   "a": 0,
+   "e": "Persistent hypoxia below 90% with worsening respiratory distress despite a simple transfusion is the indication for exchange transfusion, which lowers HbS without fluid overload.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Next step: she has already had first-line treatment."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "acute chest syndrome",
+      "a simple transfusion",
+      "more breathless and using accessory muscles",
+      "88%"
+     ],
+     "x": "ACS, still hypoxic (**SpO2 88%**, below 90%) and worsening after simple transfusion."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Step up to **exchange transfusion**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Furosemide treats fluid overload; the problem is sickling in the lungs."
+      ],
+      [
+       2,
+       "Changing antibiotics does not address the sickling, and nothing suggests MRSA."
+      ],
+      [
+       3,
+       "Hydroxycarbamide is long-term prevention, too slow for an emergency."
+      ],
+      [
+       4,
+       "There is no evidence of massive PE; thrombolysis is not the treatment for ACS."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Exchange transfusion.** Rule: ACS + SpO2 <90% despite simple transfusion = exchange."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 23 year old woman with sickle cell disease is seen in haematology clinic. She has had four hospital admissions with painful crises in the last 12 months and one episode of acute chest syndrome. She takes folic acid. She has had all her recommended vaccines. Her Hb is at her baseline of 84 g/L.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate medication to reduce the frequency of her crises?",
+   "o": [
+    "Aspirin",
+    "Desferrioxamine",
+    "Folic acid",
+    "Hydroxycarbamide",
+    "Prednisolone"
+   ],
+   "a": 3,
+   "e": "More than 3 painful crises in 12 months, and acute chest syndrome, are indications for daily oral hydroxycarbamide, which raises HbF and reduces sickling. Folic acid supports red cell production but does not prevent crises.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Long-term prevention of crises."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "four hospital admissions with painful crises in the last 12 months",
+      "one episode of acute chest syndrome",
+      "She takes folic acid"
+     ],
+     "x": "**More than 3** crises a year plus ACS."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Daily oral **hydroxycarbamide**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspirin is an antiplatelet; it does not reduce sickling."
+      ],
+      [
+       1,
+       "Desferrioxamine treats iron overload after many transfusions."
+      ],
+      [
+       2,
+       "She already takes folic acid; it does not prevent crises."
+      ],
+      [
+       4,
+       "Steroids do not prevent crises and can trigger rebound pain."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Hydroxycarbamide.** Rule: >3 crises in 12 months = hydroxycarbamide (raises HbF)."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A couple attend a genetics clinic before starting a family. Both are well. Their haemoglobin electrophoresis shows that each of them has about 60% HbA and 40% HbS. The woman's brother has sickle cell disease and has frequent painful crises. They ask how the condition is passed on.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the mode of inheritance?",
+   "o": [
+    "Autosomal dominant",
+    "Autosomal recessive",
+    "Mitochondrial",
+    "X-linked dominant",
+    "X-linked recessive"
+   ],
+   "a": 1,
+   "e": "Sickle cell disease is autosomal recessive: both parents are carriers (HbAS), and each child has a 1 in 4 chance of sickle cell disease and a 1 in 2 chance of being a carrier.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mode of inheritance question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Both are well",
+      "60% HbA and 40% HbS",
+      "brother has sickle cell disease"
+     ],
+     "x": "Two well carriers (trait, HbAS) with an affected sibling: one faulty copy does no harm, two do."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Autosomal recessive** (beta-globin gene on chromosome 11)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Dominant would make each carrier affected."
+      ],
+      [
+       2,
+       "Mitochondrial passes only from the mother."
+      ],
+      [
+       3,
+       "X-linked dominant does not fit; the beta-globin gene is on chromosome 11, an autosome."
+      ],
+      [
+       4,
+       "X-linked recessive mainly affects males; women with sickle cell disease are common."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Autosomal recessive.** Rule: two well carriers, 1 in 4 chance of an affected child."
+    }
+   ]
+  }
+ ]
+}

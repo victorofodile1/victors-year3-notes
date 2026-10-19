@@ -1,0 +1,750 @@
+{
+  "id": "bladder-cancer",
+  "patient": {
+    "name": "Terence Mahoney",
+    "age": 68,
+    "sex": "M",
+    "setting": "GP surgery, then urology haematuria clinic",
+    "complaint": "Passing red urine with small clots, no pain, for 2 weeks",
+    "background": [
+      "Smoker for 45 years, 40 pack-years",
+      "Worked 30 years in a rubber tyre factory in Dagenham",
+      "Hypertension on amlodipine",
+      "No previous urinary problems"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with painless visible haematuria in an older smoker or dye/rubber worker; histology questions turn on schistosomiasis or long-term catheters (squamous cell) versus everything else (transitional cell).",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Terence, 68, has seen **red urine** on and off for 2 weeks.",
+            "Small clots at times, but **no pain** at all.",
+            "No fever, no loin pain, no burning.",
+            "He wonders if it was the beetroot."
+          ],
+          "vitals": { "T": "36.8°C", "HR": "78 bpm", "BP": "146/84 mmHg", "RR": "14 /min", "SpO2": "97% on air" }
+        },
+        {
+          "type": "ask",
+          "q": "Painless visible haematuria in a 68 year old smoker. What must you assume until proven otherwise?",
+          "o": ["Benign prostatic hyperplasia", "Bladder cancer", "Kidney stone", "Urinary tract infection"],
+          "a": 1,
+          "r": "**Painless haematuria** in an older smoker is bladder cancer until proven otherwise. Stones hurt; UTIs burn."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Terence has the signature: **painless haematuria**. Frequency or urgency can come too; a pelvic mass or weight loss means advanced disease."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Terence has the two classic risk factors: **smoking** and **aromatic amines** from 30 years in the rubber industry."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "abdomen",
+            "title": "Where the problem is",
+            "regions": ["suprapubic"],
+            "caption": "Bladder tumours sit behind the pubic bone; early ones cause no pain or mass."
+          }
+        },
+        {
+          "type": "story",
+          "points": [
+            "Abdomen soft, non-tender; no masses; bladder not palpable.",
+            "Prostate small, smooth and benign on rectal examination.",
+            "No weight loss, no bone pain."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Smoking and dye or rubber chemicals cause **transitional cell (urothelial) carcinoma**, Terence's most likely type."
+        },
+        {
+          "type": "compare",
+          "title": "Which histology?",
+          "head": ["Feature", "Transitional cell carcinoma", "Squamous cell carcinoma"],
+          "rows": [
+            ["Frequency", "**Most common** (around 90%)", "Uncommon in the UK"],
+            ["Causes", "Smoking, aromatic amines, cyclophosphamide", "**Schistosomiasis**, long-term catheter"],
+            ["Mechanism", "Carcinogens in urine damage urothelium", "Chronic inflammation, squamous metaplasia"],
+            ["Typical stem", "Older smoker, painless haematuria", "Egyptian farmer or paraplegic with catheter"]
+          ]
+        },
+        {
+          "type": "compare",
+          "title": "Haematuria: bladder cancer vs the mimics",
+          "head": ["Condition", "Pain?", "Key clue"],
+          "rows": [
+            ["Bladder cancer", "**Painless**", "Older smoker, dye or rubber work"],
+            ["Renal cell carcinoma", "Flank pain possible", "Flank mass, haematuria, loin pain"],
+            ["Ureteric stone", "Severe colicky loin to groin", "Restless patient"],
+            ["UTI", "Dysuria", "Nitrites and leucocytes"],
+            ["BPH", "No", "Hesitancy, weak stream, poor emptying"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Terence's outlook depends most on **stage at diagnosis**. Left alone, it can spread, block the ureters and cause renal failure."
+        },
+        {
+          "type": "trap",
+          "text": "Do not blame haematuria on a patient's anticoagulant or a 'probable UTI' without a negative culture. Unexplained visible haematuria still needs a **2-week-wait** referral."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (flexible cystoscopy with biopsy) or which test images the upper tracts and stages the disease (CT urogram).",
+      "steps": [
+        {
+          "type": "labs",
+          "title": "Terence's GP tests",
+          "rows": [
+            ["Urine dipstick blood", "3+", "Negative", "H"],
+            ["Nitrites", "Negative", "Negative", ""],
+            ["Leucocytes", "Negative", "Negative", ""],
+            ["Urine culture", "No growth", "No growth", ""],
+            ["Haemoglobin", "128 g/L", "130–180", "L"],
+            ["Creatinine", "94 µmol/L", "60–110", ""]
+          ],
+          "text": "Heavy blood with **no infection**: the haematuria is unexplained."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Terence's dipstick and culture confirm **haematuria without infection**. The notes add the 2-week-wait rule for **non-visible** haematuria at **≥60**."
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "NICE NG12 also sends anyone **≥45** with unexplained **visible** haematuria (like Terence) on a 2-week-wait urology referral."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Age and the 2-week-wait (NICE NG12)",
+            "min": 30,
+            "max": 90,
+            "unit": "years",
+            "bands": [[30, 45, "Under 45: assess further", "ok"], [45, 60, "≥45: visible haematuria → 2WW", "warn"], [60, 90, "≥60: also non-visible + dysuria or raised WCC", "bad"]],
+            "value": 68,
+            "label": "Terence 68",
+            "caption": "Terence qualifies on both counts; he is referred the same day."
+          }
+        },
+        {
+          "type": "ask",
+          "q": "Terence is seen in haematuria clinic. Which test confirms the diagnosis?",
+          "o": ["CT urogram", "Flexible cystoscopy with biopsy", "Renal ultrasound", "Urine cytology"],
+          "a": 1,
+          "r": "**Cystoscopy with biopsy** sees the tumour and gets tissue. CT urogram stages and checks the upper tracts."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Terence's cystoscopy shows a frond-like tumour on the left lateral wall; **biopsy** gives the histology and depth."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "A **CT urogram** checks Terence's kidneys and ureters for other urothelial tumours and stages the bladder lesion."
+        },
+        {
+          "type": "flow",
+          "title": "Haematuria work-up",
+          "nodes": [
+            "Haematuria: dipstick and urine culture",
+            "Unexplained and meets NICE criteria → 2-week-wait",
+            "Flexible cystoscopy ± biopsy (diagnosis)",
+            "CT urogram (upper tracts and staging)",
+            "TURBT gives definitive histology and depth"
+          ]
+        },
+        {
+          "type": "pearl",
+          "text": "Cystoscopy = **diagnosis** (the bladder). CT urogram = **upper tracts and staging**. The exam tests which is which."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate management?' where the stage decides: TURBT plus intravesical mitomycin for non-muscle-invasive, BCG for high-risk non-invasive or CIS, radical cystectomy for muscle-invasive.",
+      "steps": [
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Depth of invasion (T stage)",
+            "min": 0,
+            "max": 4,
+            "unit": "T stage",
+            "bands": [[0, 1.99, "Ta/CIS/T1: non-muscle-invasive", "ok"], [2, 4, "T2+: muscle-invasive", "bad"]],
+            "value": 1,
+            "label": "Terence T1",
+            "caption": "Terence's tumour reaches the submucosa but not detrusor muscle: **non-muscle-invasive**."
+          }
+        },
+        {
+          "type": "ask",
+          "q": "Terence has a T1 tumour. What is the first-line treatment?",
+          "o": ["Intravesical BCG alone", "Radical cystectomy", "Systemic cisplatin chemotherapy", "TURBT then intravesical mitomycin C"],
+          "a": 3,
+          "r": "Non-muscle-invasive disease: **TURBT** removes it, then a dose of **mitomycin C** into the bladder lowers recurrence."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Terence has a **TURBT** and a single instillation of **mitomycin C**."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Histology: **high-grade** T1 urothelial carcinoma with nearby **CIS**.",
+            "This is **high-risk** non-muscle-invasive disease.",
+            "Muscle in the specimen is clear."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "High grade and CIS make Terence **high risk**, so he has a course of **intravesical BCG**."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "If Terence's tumour had reached detrusor (**T2**), he would need a **radical cystectomy** with pelvic lymph node dissection."
+        },
+        {
+          "type": "flow",
+          "title": "Stage decides treatment",
+          "nodes": [
+            "TURBT: removes and stages the tumour",
+            "Non-muscle-invasive → intravesical mitomycin C",
+            "High-risk non-invasive or CIS → intravesical BCG",
+            "Muscle-invasive (T2+) → radical cystectomy ± node dissection",
+            "Metastatic → cisplatin-based chemotherapy ± immunotherapy"
+          ]
+        },
+        {
+          "type": "story",
+          "points": [
+            "Two weeks after TURBT, Terence cannot pass urine.",
+            "Suprapubic pain; urine at the catheter tip is dark with clots.",
+            "Bladder palpable to the umbilicus."
+          ],
+          "vitals": { "HR": "104 bpm", "BP": "152/90 mmHg" }
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "This is **clot retention**: a 3-way catheter to wash the clots out, then continuous **bladder irrigation**."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Terence's haemoglobin during clot retention",
+            "x": ["Clinic", "Admission", "Day 1", "Day 2", "Day 3"],
+            "unit": "g/L",
+            "series": [ { "name": "Haemoglobin", "values": [128, 112, 104, 106, 110] } ],
+            "caption": "Bleeding settles with irrigation; Hb stabilises by day 2."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Had Terence's disease spread, **cisplatin-based chemotherapy** (with immunotherapy) would be used."
+        },
+        {
+          "type": "trap",
+          "text": "**BCG** here is a bladder immunotherapy, not a TB vaccine given to the arm. It is for high-risk **non-muscle-invasive** disease, never for muscle-invasive tumours."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions on why smoking and dyes cause transitional cell carcinoma, why schistosomiasis causes squamous cell carcinoma, or why the whole urinary tract is imaged.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Terence's bladder is lined by **urothelium**, and the chemicals from smoke and rubber sit in his urine against it."
+        },
+        {
+          "type": "flow",
+          "title": "From cigarette to tumour",
+          "nodes": [
+            "Inhaled or absorbed aromatic amines",
+            "Liver metabolises them; kidneys excrete them",
+            "Urine stored in bladder: long contact with urothelium",
+            "DNA damage in urothelial cells",
+            "Transitional cell carcinoma"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Terence's tumour is not squamous because he has no **S. haematobium** infection or long-term catheter driving squamous metaplasia."
+        },
+        {
+          "type": "ask",
+          "q": "Why does chronic schistosomiasis lead to squamous cell carcinoma?",
+          "o": ["Direct viral oncogene insertion", "Eggs block the ureters", "Inflammation drives squamous metaplasia", "Toxins are excreted in urine"],
+          "a": 2,
+          "r": "**Chronic inflammation** turns urothelium into squamous epithelium (metaplasia), which can become malignant."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Terence's T1 tumour stopped above **detrusor**, so his bladder could be kept."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Every part of Terence's urothelium was bathed in the same carcinogens: a **field change**, so he has a CT urogram and regular check cystoscopies."
+        },
+        {
+          "type": "pearl",
+          "text": "**Field change** explains why bladder cancer recurs so often and why the whole tract (renal pelvis to urethra) is imaged."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "What is the most common histological type of bladder cancer?", "o": ["Adenocarcinoma", "Small cell carcinoma", "Squamous cell carcinoma", "Transitional cell carcinoma"], "a": 3, "r": "**Transitional cell (urothelial) carcinoma** is by far the most common." },
+    { "d": "diagnosis", "q": "Which infection predisposes to squamous cell carcinoma of the bladder?", "o": ["Chlamydia trachomatis", "E. coli", "HPV", "Schistosoma haematobium"], "a": 3, "r": "Chronic **schistosomiasis** causes squamous metaplasia." },
+    { "d": "diagnosis", "q": "What is the most important risk factor for bladder cancer?", "o": ["Alcohol", "Obesity", "Recurrent UTI", "Smoking"], "a": 3, "r": "**Smoking** is the most important risk factor." },
+    { "d": "diagnosis", "q": "What is the single most important prognostic factor in bladder cancer?", "o": ["Age at diagnosis", "Size of the tumour", "Smoking history", "Stage at diagnosis"], "a": 3, "r": "**Stage at diagnosis**, especially muscle invasion." },
+    { "d": "investigation", "q": "What is the gold-standard diagnostic investigation?", "o": ["CT urogram", "Cystoscopy with biopsy", "Renal ultrasound", "Urine cytology"], "a": 1, "r": "**Cystoscopy with biopsy** is the gold standard and most sensitive." },
+    { "d": "investigation", "q": "Which imaging rules out upper urinary tract disease?", "o": ["CT urogram", "Plain KUB X-ray", "MRI pelvis", "PET-CT"], "a": 0, "r": "**CT urogram** images the kidneys and ureters and stages the tumour." },
+    { "d": "management", "q": "What is the first-line treatment of non-muscle-invasive bladder cancer?", "o": ["Radical cystectomy", "Radiotherapy", "Systemic chemotherapy", "TURBT"], "a": 3, "r": "**TURBT**, then intravesical chemotherapy such as mitomycin C." },
+    { "d": "management", "q": "Which treatment is given for high-risk non-muscle-invasive disease?", "o": ["Intravesical BCG", "Oral cyclophosphamide", "Radical nephrectomy", "Tamsulosin"], "a": 0, "r": "**Intravesical BCG** immunotherapy." },
+    { "d": "management", "q": "What is the gold-standard treatment for muscle-invasive bladder cancer?", "o": ["Intravesical mitomycin C", "Radical cystectomy", "Repeat TURBT", "Watchful waiting"], "a": 1, "r": "**Radical cystectomy** ± pelvic lymph node dissection." },
+    { "d": "science", "q": "Why is the whole urothelium imaged in bladder cancer?", "o": ["Bladder tumours spread up the ureters", "CT cannot see the bladder", "Field change affects the entire urothelium", "Kidney function must be checked"], "a": 2, "r": "Carcinogens bathe the whole tract: **field change**." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 64 year old man has had three episodes of passing blood-stained urine over a month. He has no pain, dysuria or fever. He worked for 25 years in a factory making fabric dyes and smokes 20 cigarettes a day. Abdominal and rectal examination are normal. His pulse rate is 76 bpm and BP 140/86 mmHg.",
+      "labs": [
+        ["Urine dipstick blood", "3+", "Negative", "H"],
+        ["Nitrites", "Negative", "Negative", ""],
+        ["Urine culture", "No growth", "No growth", ""]
+      ],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Benign prostatic hyperplasia", "Renal cell carcinoma", "Squamous cell carcinoma of the bladder", "Transitional cell carcinoma of the bladder", "Ureteric calculus"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "A diagnosis of haematuria: is it painful or painless, and what is the exposure?" },
+        { "t": "Pick out the clues", "clues": ["blood-stained urine", "no pain, dysuria or fever", "fabric dyes", "smokes 20 cigarettes a day"], "x": "**Painless** haematuria, aromatic amine exposure and smoking; culture negative." },
+        { "t": "Make your own answer before looking", "x": "Smoking + dyes = **transitional cell carcinoma** of the bladder." },
+        { "t": "Rule out the others", "elim": [[0, "BPH gives outflow symptoms, and the prostate is normal."], [1, "RCC may give a flank mass or loin pain; dyes point to urothelium."], [2, "Squamous cell needs schistosomiasis or a long-term catheter."], [4, "A stone causes severe colicky pain."]] },
+        { "t": "Commit", "x": "**D. Transitional cell carcinoma of the bladder.** Painless haematuria + smoker + dyes." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 71 year old woman is referred on the 2-week-wait pathway with painless visible haematuria. She is a former smoker. Urine culture is negative and renal function is normal.",
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["CT urogram", "Flexible cystoscopy with biopsy", "MRI pelvis", "Renal ultrasound", "Urine cytology"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "'Diagnostic investigation' = the gold standard that confirms the cancer." },
+        { "t": "Pick out the clues", "clues": ["2-week-wait", "painless visible haematuria", "former smoker"], "x": "Suspected **bladder cancer**." },
+        { "t": "Make your own answer before looking", "x": "**Flexible cystoscopy with biopsy** sees the lesion and gets tissue." },
+        { "t": "Rule out the others", "elim": [[0, "CT urogram images the upper tracts and stages; it does not give histology."], [2, "MRI pelvis is for local staging later."], [3, "Ultrasound can miss small bladder tumours."], [4, "Cytology is less sensitive and gives no depth."]] },
+        { "t": "Commit", "x": "**B. Flexible cystoscopy with biopsy.** Gold standard and most sensitive." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 66 year old man has a TURBT for a bladder tumour. Histology shows high-grade transitional cell carcinoma invading the detrusor muscle. CT shows no distant metastases. He is fit for major surgery.",
+      "q": "Which is the most appropriate definitive management?",
+      "o": ["Intravesical BCG", "Intravesical mitomycin C", "Palliative radiotherapy", "Radical cystectomy with pelvic lymph node dissection", "Repeat TURBT in 6 weeks"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "'Definitive management': match it to the depth of invasion." },
+        { "t": "Pick out the clues", "clues": ["invading the detrusor muscle", "no distant metastases", "fit for major surgery"], "x": "**Muscle-invasive** (T2+), not metastatic, fit." },
+        { "t": "Make your own answer before looking", "x": "Gold standard: **radical cystectomy** ± pelvic node dissection." },
+        { "t": "Rule out the others", "elim": [[0, "BCG is for high-risk non-muscle-invasive disease."], [1, "Mitomycin is adjuvant after TURBT for non-invasive tumours."], [2, "He is not palliative; there are no metastases."], [4, "Repeat TURBT cannot cure muscle-invasive disease."]] },
+        { "t": "Commit", "x": "**D. Radical cystectomy.** Detrusor invaded = bladder comes out." }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 70 year old retired rubber factory worker is diagnosed with transitional cell carcinoma of the bladder. He asks why his job could have caused it, since he never touched chemicals with his bladder.",
+      "q": "Which is the most likely mechanism?",
+      "o": ["Aromatic amine metabolites excreted in urine damage the urothelium", "Chronic inflammation causes squamous metaplasia", "Inhaled particles spread by blood to the bladder wall", "Oncogenic virus infects the bladder", "Repeated catheter trauma"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism: how does an occupational exposure reach the bladder?" },
+        { "t": "Pick out the clues", "clues": ["rubber factory worker", "transitional cell carcinoma"], "x": "Aromatic amines and **TCC**." },
+        { "t": "Make your own answer before looking", "x": "The chemicals are metabolised and **excreted in urine**, acting as direct carcinogens on urothelium." },
+        { "t": "Rule out the others", "elim": [[1, "That explains squamous cell carcinoma in schistosomiasis."], [2, "The carcinogen acts from the urine, not as particles in the wall."], [3, "No virus is linked to the rubber industry."], [4, "Catheters cause squamous cell carcinoma, and he has none."]] },
+        { "t": "Commit", "x": "**A. Aromatic amine metabolites in urine.** Urine stored in the bladder = prolonged contact." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 72 year old man has noticed red urine on several occasions over 3 weeks. He has no pain when passing urine and no loin pain. He has smoked 30 cigarettes a day for 50 years. Abdominal examination is normal and his prostate is mildly enlarged and smooth. His temperature is 36.7°C, pulse rate 80 bpm and BP 150/88 mmHg.",
+      "labs": [
+        ["Urine dipstick blood", "3+", "Negative", "H"],
+        ["Nitrites", "Negative", "Negative", ""],
+        ["Leucocytes", "Negative", "Negative", ""]
+      ],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Benign prostatic hyperplasia", "Bladder cancer", "Cystitis", "Prostate cancer", "Ureteric calculus"],
+      "a": 1,
+      "e": "Painless visible haematuria in a heavy smoker is bladder cancer until proven otherwise. BPH can bleed but does not explain the risk profile and needs exclusion of cancer first.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of haematuria: painless or painful?" },
+        { "t": "Pick out the clues", "clues": ["red urine", "no pain when passing urine", "smoked 30 cigarettes a day for 50 years"], "x": "**Painless** visible haematuria, heavy smoker, no infection." },
+        { "t": "Make your own answer before looking", "x": "**Bladder cancer**." },
+        { "t": "Rule out the others", "elim": [[0, "A mildly enlarged prostate is common at 72 and does not explain unexplained haematuria."], [2, "Dipstick shows no nitrites or leucocytes and he has no dysuria."], [3, "Prostate cancer rarely presents with haematuria; the prostate is smooth."], [4, "Stones cause severe colicky pain."]] },
+        { "t": "Commit", "x": "**B. Bladder cancer.** Painless haematuria + smoker." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 52 year old man who grew up farming beside the Nile in Egypt has painless haematuria and frequency. As a teenager he had repeated episodes of blood in his urine after swimming in irrigation canals. Cystoscopy shows a bladder mass, which is biopsied.",
+      "visual": null,
+      "q": "Which is the most likely histological type?",
+      "o": ["Adenocarcinoma", "Small cell carcinoma", "Squamous cell carcinoma", "Transitional cell carcinoma", "Urothelial papilloma"],
+      "a": 2,
+      "e": "Chronic Schistosoma haematobium infection causes squamous metaplasia and squamous cell carcinoma of the bladder. Transitional cell is the most common type overall but not in this setting.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Histology: look for the exposure that changes the cell type." },
+        { "t": "Pick out the clues", "clues": ["farming beside the Nile", "swimming in irrigation canals", "blood in his urine"], "x": "Childhood **schistosomiasis** (S. haematobium)." },
+        { "t": "Make your own answer before looking", "x": "Schistosomiasis → squamous metaplasia → **squamous cell carcinoma**." },
+        { "t": "Rule out the others", "elim": [[0, "Adenocarcinoma is linked to urachal remnants."], [1, "Small cell carcinoma is very rare in the bladder."], [3, "TCC is the default, but schistosomiasis points to squamous."], [4, "A papilloma is benign and not linked to schistosomiasis."]] },
+        { "t": "Commit", "x": "**C. Squamous cell carcinoma.** Schistosomiasis or long-term catheter = squamous." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 45 year old man with paraplegia after a spinal injury 20 years ago has used a long-term indwelling urethral catheter since. He now has blood in his catheter bag and suprapubic discomfort. His temperature is 36.9°C, pulse rate 84 bpm and BP 118/72 mmHg. Cystoscopy shows a solid bladder mass.",
+      "visual": null,
+      "q": "Which is the most likely histological type of the bladder mass?",
+      "o": ["Adenocarcinoma", "Leiomyosarcoma", "Lymphoma", "Squamous cell carcinoma", "Transitional cell carcinoma"],
+      "a": 3,
+      "e": "Long-term catheter irritation drives squamous metaplasia and squamous cell carcinoma.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Histology of a bladder tumour: what is the exposure?" },
+        { "t": "Pick out the clues", "clues": ["long-term indwelling urethral catheter", "solid bladder mass"], "x": "Twenty years of **catheter irritation**." },
+        { "t": "Make your own answer before looking", "x": "Chronic irritation → squamous metaplasia → **squamous cell carcinoma**." },
+        { "t": "Rule out the others", "elim": [[0, "Adenocarcinoma is linked to urachal remnants, not catheters."], [1, "Sarcomas of the bladder are very rare."], [2, "Bladder lymphoma is very rare."], [4, "TCC is commonest overall, but catheter use points to squamous."]] },
+        { "t": "Commit", "x": "**D. Squamous cell carcinoma.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 67 year old woman has painless visible haematuria. Cystoscopy and biopsy show transitional cell carcinoma of the bladder. She worked in a hair salon for 10 years, drinks 6 units of alcohol a week, has type 2 diabetes and has smoked 25 cigarettes a day since she was 18.",
+      "visual": null,
+      "q": "Which is the most important risk factor for her cancer?",
+      "o": ["Alcohol", "Female sex", "Hair salon work", "Smoking", "Type 2 diabetes"],
+      "a": 3,
+      "e": "Smoking is the most important risk factor for bladder (transitional cell) cancer. Hair dyes contain aromatic amines but carry far less risk than nearly 50 years of heavy smoking.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Most important risk factor': pick the strongest, not just a possible one." },
+        { "t": "Pick out the clues", "clues": ["transitional cell carcinoma", "smoked 25 cigarettes a day since she was 18"], "x": "Heavy, long smoking history and TCC." },
+        { "t": "Make your own answer before looking", "x": "**Smoking**." },
+        { "t": "Rule out the others", "elim": [[0, "Alcohol is not a major bladder cancer risk."], [1, "Men are affected more often than women."], [2, "Occupational dyes matter but rank below heavy smoking."], [4, "Diabetes is not a listed risk factor."]] },
+        { "t": "Commit", "x": "**D. Smoking.** The most important risk factor, and the one to stop." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 74 year old man with known muscle-invasive bladder cancer that has not yet been treated has reduced urine output and nausea. Ultrasound shows bilateral hydronephrosis with a large mass at the bladder base. His pulse rate is 92 bpm and BP 162/94 mmHg.",
+      "labs": [
+        ["Creatinine", "412 µmol/L", "60–110", "H"],
+        ["Urea", "28.4 mmol/L", "2.5–7.8", "H"],
+        ["Potassium", "5.8 mmol/L", "3.5–5.3", "H"]
+      ],
+      "visual": null,
+      "q": "Which is the most likely cause of his kidney injury?",
+      "o": ["Contrast nephropathy", "Glomerulonephritis", "Hypovolaemia", "Obstructive uropathy", "Renal metastases"],
+      "a": 3,
+      "e": "A tumour at the bladder base blocking both ureteric orifices causes bilateral hydronephrosis: obstructive uropathy, a recognised complication leading to renal failure.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Cause of AKI in a patient with bladder cancer." },
+        { "t": "Pick out the clues", "clues": ["bilateral hydronephrosis", "large mass at the bladder base"], "x": "The tumour is blocking **both ureters**." },
+        { "t": "Make your own answer before looking", "x": "Post-renal AKI: **obstructive uropathy**." },
+        { "t": "Rule out the others", "elim": [[0, "No contrast has been given."], [1, "Glomerulonephritis would not cause hydronephrosis."], [2, "He is hypertensive, not volume depleted."], [4, "Renal metastases are rare and do not cause bilateral hydronephrosis."]] },
+        { "t": "Commit", "x": "**D. Obstructive uropathy.** Hydronephrosis = look below the kidneys." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 69 year old man had a TURBT for bladder cancer 10 days ago. He has had heavy red urine for a day and now cannot pass urine. He has severe lower abdominal pain. There is a tender, dull mass rising from the pelvis. His pulse rate is 108 bpm and BP 158/92 mmHg.",
+      "labs": [["Haemoglobin", "104 g/L", "130–180", "L"]],
+      "visual": { "kind": "abdomen", "title": "Where the mass is", "regions": ["suprapubic", "umbilical"], "caption": "Tender, dull mass rising from the pelvis." },
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Bladder perforation", "Clot retention", "Paralytic ileus", "Ureteric obstruction", "Urinary tract infection"],
+      "a": 1,
+      "e": "Heavy haematuria from bladder cancer followed by inability to void and a palpable bladder is clot retention, managed with a 3-way catheter and bladder irrigation.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of acute retention after haematuria." },
+        { "t": "Pick out the clues", "clues": ["heavy red urine", "cannot pass urine", "tender, dull mass rising from the pelvis"], "x": "Bleeding, then **retention**, with a full bladder (see the suprapubic region)." },
+        { "t": "Make your own answer before looking", "x": "Clots blocking the bladder outlet: **clot retention**." },
+        { "t": "Rule out the others", "elim": [[0, "Perforation gives peritonism and an empty bladder, not a dull pelvic mass."], [2, "Ileus causes distension and vomiting, not retention."], [3, "Ureteric obstruction causes loin pain, not a full bladder."], [4, "Infection does not explain heavy bleeding and retention."]] },
+        { "t": "Commit", "x": "**B. Clot retention.** Next step: 3-way catheter and irrigation." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 65 year old man has painless visible haematuria. He smokes. Urine culture is negative. He has been referred to the urology haematuria clinic. His pulse rate is 74 bpm and BP 138/80 mmHg.",
+      "labs": [
+        ["Urine dipstick blood", "3+", "Negative", "H"],
+        ["eGFR", "82 mL/min/1.73m²", ">60", ""]
+      ],
+      "visual": null,
+      "q": "Which is the most appropriate investigation to confirm the diagnosis?",
+      "o": ["CT urogram", "Cystoscopy with biopsy", "Prostate-specific antigen", "Renal ultrasound", "Urine cytology"],
+      "a": 1,
+      "e": "Cystoscopy with biopsy is the gold standard and most sensitive test for bladder cancer. CT urogram images the upper tracts and stages.",
+      "steps": [
+        { "t": "Read the question line first", "x": "'Confirm the diagnosis' = gold standard." },
+        { "t": "Pick out the clues", "clues": ["painless visible haematuria", "He smokes", "Urine culture is negative"], "x": "Suspected **bladder cancer**." },
+        { "t": "Make your own answer before looking", "x": "**Cystoscopy with biopsy**." },
+        { "t": "Rule out the others", "elim": [[0, "CT urogram images the upper tracts and stages; no histology."], [2, "PSA is for prostate cancer."], [3, "Ultrasound can miss flat or small tumours."], [4, "Cytology misses many low-grade tumours."]] },
+        { "t": "Commit", "x": "**B. Cystoscopy with biopsy.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 70 year old woman has a bladder tumour found on flexible cystoscopy and biopsied. She is a heavy smoker. The urologist now wants to look for tumours in the kidneys and ureters and to stage the disease.",
+      "visual": null,
+      "q": "Which is the most appropriate investigation?",
+      "o": ["CT urogram", "Isotope bone scan", "MAG3 renogram", "Plain KUB X-ray", "Repeat flexible cystoscopy"],
+      "a": 0,
+      "e": "CT urogram rules out upper urinary tract disease and is the most sensitive imaging for staging, because a field change puts the whole urothelium at risk.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Imaging the upper tracts and staging." },
+        { "t": "Pick out the clues", "clues": ["tumours in the kidneys and ureters", "stage the disease"], "x": "The **upper tracts** and staging." },
+        { "t": "Make your own answer before looking", "x": "**CT urogram**." },
+        { "t": "Rule out the others", "elim": [[1, "Bone scan is only for suspected bone metastases."], [2, "MAG3 measures drainage and split function, not tumours."], [3, "A plain X-ray shows stones, not urothelial tumours."], [4, "Cystoscopy cannot see the kidneys or ureters."]] },
+        { "t": "Commit", "x": "**A. CT urogram.** Field change = image the whole tract." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 63 year old man has a 2 cm papillary bladder tumour on flexible cystoscopy. Biopsy shows low-grade transitional cell carcinoma confined to the mucosa. CT urogram shows no upper tract disease. His pulse rate is 70 bpm and BP 134/82 mmHg.",
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Intravesical BCG", "Radical cystectomy", "Radiotherapy", "Systemic cisplatin chemotherapy", "TURBT followed by intravesical mitomycin C"],
+      "a": 4,
+      "e": "Non-muscle-invasive disease is treated by TURBT (gold standard) followed by adjuvant intravesical chemotherapy such as mitomycin C. BCG is for high-risk non-invasive disease.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management: stage first." },
+        { "t": "Pick out the clues", "clues": ["low-grade", "confined to the mucosa", "no upper tract disease"], "x": "Low-risk **non-muscle-invasive** tumour." },
+        { "t": "Make your own answer before looking", "x": "**TURBT** then a dose of intravesical **mitomycin C**." },
+        { "t": "Rule out the others", "elim": [[0, "BCG is for high-risk disease (high grade or CIS)."], [1, "Cystectomy is for muscle-invasive disease."], [2, "Radiotherapy is an alternative for muscle-invasive disease."], [3, "Systemic chemo is for metastatic disease."]] },
+        { "t": "Commit", "x": "**E. TURBT then mitomycin C.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 68 year old man had a TURBT 4 weeks ago. Histology shows high-grade T1 transitional cell carcinoma with associated carcinoma in situ. Detrusor muscle in the specimen is free of tumour. CT shows no spread.",
+      "visual": null,
+      "q": "Which is the most appropriate next step in management?",
+      "o": ["Active surveillance only", "Intravesical BCG", "Oral cyclophosphamide", "Palliative radiotherapy", "Systemic cisplatin chemotherapy"],
+      "a": 1,
+      "e": "High-grade T1 with CIS is high-risk non-muscle-invasive disease, treated with intravesical BCG immunotherapy.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step after TURBT: what does the histology risk say?" },
+        { "t": "Pick out the clues", "clues": ["high-grade T1", "carcinoma in situ", "free of tumour"], "x": "**High-risk** non-muscle-invasive." },
+        { "t": "Make your own answer before looking", "x": "**Intravesical BCG**." },
+        { "t": "Rule out the others", "elim": [[0, "High-grade CIS will progress without treatment."], [2, "Cyclophosphamide is a bladder cancer risk factor, not a treatment here."], [3, "No metastases, so not palliative."], [4, "Systemic chemo is for metastatic disease."]] },
+        { "t": "Commit", "x": "**B. Intravesical BCG.** High grade or CIS = BCG." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 76 year old man with bladder cancer has heavy haematuria with clots and cannot pass urine. He has suprapubic pain and a palpable bladder. His temperature is 36.8°C, pulse rate 102 bpm and BP 150/86 mmHg.",
+      "labs": [["Haemoglobin", "98 g/L", "130–180", "L"]],
+      "visual": null,
+      "q": "Which is the most appropriate initial management?",
+      "o": ["Intravenous tranexamic acid alone", "Oral tamsulosin", "Suprapubic catheter", "Three-way urethral catheter and bladder irrigation", "Urgent radical cystectomy"],
+      "a": 3,
+      "e": "Clot retention is managed with urgent catheterisation using a 3-way catheter, washout and continuous bladder irrigation.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial emergency management." },
+        { "t": "Pick out the clues", "clues": ["heavy haematuria with clots", "cannot pass urine", "palpable bladder"], "x": "**Clot retention**." },
+        { "t": "Make your own answer before looking", "x": "**3-way catheter and bladder irrigation**." },
+        { "t": "Rule out the others", "elim": [[0, "Tranexamic acid alone will not relieve the retention."], [1, "Tamsulosin is for BPH and acts too slowly."], [2, "A suprapubic catheter cannot wash out clots and may seed tumour."], [4, "Surgery is not the emergency step."]] },
+        { "t": "Commit", "x": "**D. 3-way catheter and irrigation.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 66 year old man has a transitional cell carcinoma of the bladder treated by TURBT. He has smoked for 50 years. Two years later a tumour of the same type is found in his left renal pelvis.",
+      "visual": null,
+      "q": "Which is the most likely explanation for the second tumour?",
+      "o": ["Field change of the urothelium", "Haematogenous metastasis", "Lymphatic spread", "Seeding at the time of TURBT", "Unrelated second cancer of a different type"],
+      "a": 0,
+      "e": "Carcinogens excreted in urine bathe the whole urothelium (renal pelvis to urethra), so new primary tumours arise anywhere: the field change effect, which is why the whole tract is imaged.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism: why a new urothelial tumour higher up?" },
+        { "t": "Pick out the clues", "clues": ["smoked for 50 years", "tumour of the same type", "renal pelvis"], "x": "Same carcinogen, same tissue, elsewhere in the tract." },
+        { "t": "Make your own answer before looking", "x": "**Field change**: the whole urothelium is at risk." },
+        { "t": "Rule out the others", "elim": [[1, "Blood-borne spread goes to lung, liver and bone, not the renal pelvis lining."], [2, "Lymph spread is to pelvic nodes."], [3, "TURBT does not seed the kidney, which is upstream."], [4, "It is the same type, from the same exposure."]] },
+        { "t": "Commit", "x": "**A. Field change.** Why the CT urogram and surveillance matter." }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is the classic presentation of bladder cancer?",
+        "tip": "Exam thinking: pain or no pain is the key discriminator.",
+        "points": [
+          { "p": "Painless haematuria (visible or on urinalysis)", "k": [["painless"], ["haematuria", "hematuria", "blood"]], "why": "Bladder cancer until proven otherwise in an older smoker." },
+          { "p": "LUTS: frequency, urgency, dysuria", "k": [["frequency", "urgency", "dysuria", "luts"]], "why": "Especially with CIS." },
+          { "p": "Advanced: pelvic mass, weight loss, pelvic pain", "k": [["mass", "weight", "pelvic pain"]], "why": "Signs of late disease." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the risk factors for bladder cancer?",
+        "tip": "Exam thinking: the job in the stem is a clue.",
+        "points": [
+          { "p": "Smoking (most important)", "k": [["smok", "cigarette", "tobacco"]], "why": "Linked to transitional cell carcinoma." },
+          { "p": "Aromatic amines or aniline dyes (rubber, fabric, dye industry)", "k": [["amine", "aniline", "dye", "rubber", "fabric"]], "why": "Excreted in urine as carcinogens." },
+          { "p": "Cyclophosphamide", "k": [["cyclophosphamide"]], "why": "A drug cause." },
+          { "p": "Schistosomiasis and long-term catheters (squamous cell)", "k": [["schisto", "catheter", "bilharzia"]], "why": "These change the histology." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the histological types and what causes each?",
+        "tip": "Exam thinking: default to TCC unless the stem gives schistosomiasis or a catheter.",
+        "points": [
+          { "p": "Transitional cell (urothelial) carcinoma: most common", "k": [["transitional", "urothelial", "tcc"]], "why": "Smoking and amines." },
+          { "p": "Squamous cell carcinoma: schistosomiasis, long-term catheter", "k": [["squamous", "scc"]], "why": "Via squamous metaplasia." },
+          { "p": "Carcinoma in situ: high-grade, flat, non-muscle-invasive", "k": [["cis", "in situ"]], "why": "High risk, treated with BCG." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What is the main prognostic factor and what are the complications?",
+        "tip": "Exam thinking: hydronephrosis in bladder cancer means obstruction.",
+        "points": [
+          { "p": "Stage at diagnosis is the most important prognostic factor", "k": [["stage", "staging"]], "why": "Especially whether detrusor muscle is invaded." },
+          { "p": "Metastasis", "k": [["metasta", "spread"]], "why": "Lymph nodes, then distant." },
+          { "p": "Obstructive uropathy and renal failure", "k": [["obstruct", "hydronephrosis", "renal failure", "kidney failure", "aki"]], "why": "Tumour blocking the ureteric orifices." },
+          { "p": "Clot retention", "k": [["clot"]], "why": "Heavy bleeding blocking the outlet." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What are the first-line, gold-standard and staging investigations?",
+        "tip": "Exam thinking: cystoscopy = bladder diagnosis; CT urogram = upper tracts.",
+        "points": [
+          { "p": "Urinalysis or microscopy to confirm haematuria (and exclude infection)", "k": [["urinalysis", "dipstick", "microscopy", "urine"]], "why": "First-line." },
+          { "p": "Flexible cystoscopy with biopsy: gold standard", "k": [["cystoscop"]], "why": "Most sensitive, and gives histology." },
+          { "p": "CT urogram: upper tracts and staging", "k": [["ct urogram", "ctu", "urogram"]], "why": "Field change puts the whole tract at risk." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "Who needs a 2-week-wait referral for suspected bladder cancer?",
+        "tip": "Exam thinking: two ages, two types of haematuria.",
+        "points": [
+          { "p": "Aged ≥45 with unexplained visible haematuria (NICE NG12)", "k": [["45"], ["visible", "macroscopic", "frank"]], "why": "Or visible haematuria persisting after a treated UTI." },
+          { "p": "Aged ≥60 with non-visible haematuria plus dysuria or raised WCC", "k": [["60"], ["non-visible", "microscopic", "dysuria", "wcc", "white cell"]], "why": "The criterion in the notes." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is bladder cancer treated by stage?",
+        "tip": "Exam thinking: detrusor invaded or not decides everything.",
+        "points": [
+          { "p": "Non-muscle-invasive: TURBT then intravesical mitomycin C", "k": [["turbt", "transurethral"], ["mitomycin", "intravesical chemo"]], "why": "TURBT is the gold standard here." },
+          { "p": "High-risk non-muscle-invasive or CIS: intravesical BCG", "k": [["bcg"]], "why": "Immunotherapy into the bladder." },
+          { "p": "Muscle-invasive (T2+): radical cystectomy ± pelvic node dissection", "k": [["cystectomy"]], "why": "Radiotherapy or chemo are alternatives or adjuncts." },
+          { "p": "Metastatic: cisplatin-based chemotherapy ± immunotherapy", "k": [["cisplatin", "chemo"]], "why": "Palliative intent." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How do you manage clot retention?",
+        "tip": "Exam thinking: relieve the blockage first.",
+        "points": [
+          { "p": "Urgent urethral catheterisation (3-way catheter)", "k": [["catheter"]], "why": "A large 3-way catheter allows washout." },
+          { "p": "Bladder washout and continuous irrigation", "k": [["irrigat", "washout", "wash out"]], "why": "Stops new clots forming." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why do smoking and dyes cause transitional cell carcinoma, and schistosomiasis squamous cell?",
+        "tip": "Exam thinking: urine-borne carcinogen vs chronic inflammation.",
+        "points": [
+          { "p": "Aromatic amine metabolites excreted in urine act as direct carcinogens on urothelium", "k": [["urine", "excret"], ["carcinogen", "amine"]], "why": "Urine stored in the bladder = long contact." },
+          { "p": "S. haematobium causes chronic inflammation and squamous metaplasia", "k": [["inflam", "metaplasia"]], "why": "Catheters do the same." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does staging decide treatment, and why is the whole urothelium imaged?",
+        "tip": "Exam thinking: detrusor and field change.",
+        "points": [
+          { "p": "Mucosa or submucosa only = non-muscle-invasive: bladder-preserving treatment", "k": [["mucosa", "submucosa", "non-muscle", "superficial"]], "why": "TURBT ± intravesical therapy." },
+          { "p": "Detrusor invaded = muscle-invasive: radical treatment", "k": [["detrusor", "muscle-invasive", "muscle invasive"]], "why": "Cystectomy." },
+          { "p": "Field change: whole urothelium at risk, so CT urogram", "k": [["field"]], "why": "Renal pelvis, ureters, bladder and urethra." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "Haematuria": "Blood in the urine, either visible or found only on testing.",
+    "Visible haematuria": "Blood that can be seen in the urine; also called macroscopic or frank haematuria.",
+    "Non-visible haematuria": "Blood found only on dipstick or microscopy.",
+    "Urothelium": "Transitional epithelium lining the renal pelvis, ureters, bladder and urethra.",
+    "Transitional cell carcinoma": "Cancer of the urothelium; the most common bladder cancer.",
+    "TCC": "Transitional cell carcinoma, the most common bladder cancer.",
+    "Urothelial carcinoma": "Another name for transitional cell carcinoma.",
+    "Squamous cell carcinoma": "Cancer of squamous cells; in the bladder linked to schistosomiasis and long-term catheters.",
+    "Squamous metaplasia": "Replacement of normal lining by squamous epithelium after chronic irritation.",
+    "Carcinoma in situ": "High-grade cancer cells confined to the lining, not yet invasive.",
+    "CIS": "Carcinoma in situ: flat, high-grade, non-invasive cancer of the lining.",
+    "Schistosomiasis": "Parasitic fluke infection from fresh water; S. haematobium lives in bladder veins.",
+    "S. haematobium": "Schistosoma haematobium, the fluke that infects the bladder and causes squamous cell carcinoma.",
+    "Aromatic amines": "Chemicals in dyes, rubber and smoke that are excreted in urine and damage urothelium.",
+    "Aniline dyes": "Industrial dyes containing aromatic amines; linked to bladder cancer.",
+    "Cyclophosphamide": "Chemotherapy drug whose metabolite (acrolein) irritates the bladder and raises cancer risk.",
+    "LUTS": "Lower urinary tract symptoms such as frequency, urgency and poor stream.",
+    "Cystoscopy": "Looking inside the bladder with a camera through the urethra.",
+    "Flexible cystoscopy": "Cystoscopy with a bendable scope under local anaesthetic; the gold-standard diagnostic test.",
+    "CT urogram": "CT with contrast timed to show the kidneys, ureters and bladder lining.",
+    "Urine cytology": "Microscopy of urine for cancer cells; insensitive for low-grade tumours.",
+    "2-week-wait": "NHS urgent suspected-cancer referral, seen within two weeks.",
+    "NG12": "NICE guideline on recognising and referring suspected cancer.",
+    "TURBT": "Transurethral resection of bladder tumour: removing it through a scope to treat and stage.",
+    "Mitomycin C": "Chemotherapy instilled into the bladder after TURBT to reduce recurrence.",
+    "Intravesical": "Given directly into the bladder through a catheter.",
+    "BCG": "Live attenuated mycobacterium instilled into the bladder as immunotherapy for high-risk tumours.",
+    "Detrusor": "The smooth muscle wall of the bladder; invasion makes a tumour muscle-invasive.",
+    "Muscle-invasive": "Bladder cancer that has grown into detrusor muscle (T2 or above).",
+    "Non-muscle-invasive": "Bladder cancer confined to the mucosa or submucosa (Ta, T1, CIS).",
+    "Radical cystectomy": "Surgical removal of the whole bladder, with urinary diversion.",
+    "Pelvic lymph node dissection": "Removal of pelvic nodes during cystectomy for staging and control.",
+    "Cisplatin": "Platinum chemotherapy used for advanced or metastatic bladder cancer.",
+    "Clot retention": "Inability to pass urine because blood clots block the bladder outlet.",
+    "Three-way catheter": "Catheter with an extra channel so fluid can run in to irrigate the bladder.",
+    "Bladder irrigation": "Continuous washing of the bladder with saline to clear clots.",
+    "Obstructive uropathy": "Kidney damage from blocked urine flow.",
+    "Hydronephrosis": "Swelling of the kidney's collecting system from blocked drainage.",
+    "Field change": "Carcinogen damage across a whole lining, so new tumours can arise anywhere in it.",
+    "TNM": "Staging system: tumour depth, nodes and metastases."
+  }
+}

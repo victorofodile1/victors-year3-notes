@@ -1,0 +1,708 @@
+{
+ "id": "fibrotic-lung-disease",
+ "patient": {
+  "name": "Terence Doyle",
+  "age": 72,
+  "sex": "M",
+  "setting": "GP surgery, then respiratory clinic",
+  "complaint": "Breathless walking uphill and a dry cough for 18 months",
+  "background": [
+   "Ex-smoker, 30 pack-years, stopped at 55",
+   "Paroxysmal AF on bisoprolol and apixaban",
+   "Retired taxi driver in Bromley; no dust or bird exposure",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with an older man, progressive exertional breathlessness, a dry cough, clubbing and fine bibasal 'velcro' crackles; or 'most likely cause' with a drug (amiodarone, methotrexate, bleomycin, nitrofurantoin), a job or a hobby in the stem.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Terence, 72, ex-smoker.",
+      "Breathless walking uphill, now on the flat too.",
+      "**Dry**, irritating cough; no sputum.",
+      "Came on **gradually** over 18 months.",
+      "Tired; no fevers, no weight loss."
+     ],
+     "vitals": {
+      "T": "36.7°C",
+      "HR": "78 bpm",
+      "BP": "136/82 mmHg",
+      "RR": "18 /min",
+      "SpO2": "94% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Terence is the typical **IPF** patient: an older man (median age 70) who used to smoke."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Terence's stiff lungs fit **interstitial fibrosis**: lower compliance and poorer gas exchange. With no drug, job or autoimmune cause, think **IPF**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "**Finger clubbing**.",
+      "**Fine end-inspiratory 'velcro' crackles** at both bases.",
+      "Crackles do not change with coughing.",
+      "No joint swelling, no rash, no tight skin."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Every IPF feature is here: gradual exertional dyspnoea, dry cough, clubbing and **fine bibasal end-inspiratory crackles**."
+    },
+    {
+     "type": "compare",
+     "title": "Crackles and cough: fibrosis vs its mimics",
+     "head": ["Feature", "Pulmonary fibrosis", "Bronchiectasis", "Heart failure"],
+     "rows": [
+      ["Cough", "**Dry**", "Copious purulent sputum", "Frothy, worse lying flat"],
+      ["Crackles", "Fine, end-inspiratory 'velcro'", "Coarse, change with cough", "Fine bibasal, with raised JVP"],
+      ["Clubbing", "**Yes**", "Yes (advanced)", "No"],
+      ["Spirometry", "**Restrictive**", "Obstructive", "Often near normal"]
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Terence's fibrosis is at the lung bases. Which cause typically gives upper lobe fibrosis instead?",
+     "o": ["Asbestosis", "Idiopathic pulmonary fibrosis", "Rheumatoid arthritis", "Silicosis"],
+     "a": 3,
+     "r": "**Silicosis** is in CHARTS (upper lobe). Asbestosis, IPF and RA all cause **lower** lobe fibrosis."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Terence's **basal** fibrosis fits the lower-lobe list (IPF). Upper lobe fibrosis would point you to **CHARTS** causes."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Before calling it idiopathic, check Terence's drugs, job, hobbies and joints. His cardiologist is considering **amiodarone**, a classic cause."
+    },
+    {
+     "type": "trap",
+     "text": "Fine bibasal crackles alone do not mean heart failure. **Clubbing** plus a **dry cough** and no raised JVP or oedema means fibrosis."
+    },
+    {
+     "type": "pearl",
+     "text": "Farmer with fever, myalgia and dry cough hours after handling **mouldy hay** = **extrinsic allergic alveolitis** (type III hypersensitivity)."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'most likely finding on spirometry' (restrictive: FEV1/FVC above 0.7, both reduced, low TLCO) and 'most appropriate investigation to establish the diagnosis' (HRCT). Echo assesses cor pulmonale.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Terence's GP starts with a **chest X-ray** and **spirometry**, plus an autoimmune screen and routine bloods."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Terence's chest X-ray",
+      "findings": [
+       { "type": "fibrosis", "side": "both", "zone": "lower" }
+      ],
+      "caption": "Bilateral reticular shadowing at both bases, with small lung volumes."
+     }
+    },
+    {
+     "type": "labs",
+     "title": "Pulmonary function tests",
+     "rows": [
+      ["FEV1", "1.95 L (68% predicted)", ">80%", "L"],
+      ["FVC", "2.30 L (62% predicted)", ">80%", "L"],
+      ["FEV1/FVC", "0.85", ">0.7", ""],
+      ["TLC", "64% predicted", ">80%", "L"],
+      ["TLCO", "45% predicted", ">80%", "L"]
+     ],
+     "text": "Both volumes fall, so the ratio is preserved: a **restrictive** pattern with low gas transfer."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Terence's FEV1/FVC ratio",
+      "min": 0.4,
+      "max": 1.0,
+      "unit": "",
+      "bands": [
+       [0.4, 0.7, "Obstructive", "bad"],
+       [0.7, 1.0, "Above 0.7: restrictive if volumes low", "ok"]
+      ],
+      "value": 0.85,
+      "label": "Terence 0.85",
+      "caption": "A normal or high ratio with low FEV1 and FVC is restriction, not obstruction."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Which test will confirm and classify Terence's lung disease?",
+     "o": ["Bronchoscopy with BAL", "Echocardiogram", "High-resolution CT chest", "Repeat spirometry"],
+     "a": 2,
+     "r": "**HRCT** is the gold standard: it shows the pattern and extent. BAL is only for uncertain cases."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Terence's HRCT shows **basal, peripheral honeycombing**: a typical UIP pattern, which fits IPF without needing a biopsy."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Terence's echo is checked for **right heart strain**, because cor pulmonale is the complication of advanced fibrosis."
+    },
+    {
+     "type": "trap",
+     "text": "A FEV1/FVC of 0.85 is not 'normal spirometry' when FEV1 and FVC are both below 80%. Read all three numbers."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'most appropriate management': pirfenidone or nintedanib to slow IPF, pulmonary rehab, long-term plus ambulatory oxygen when hypoxic, removing the cause (drug, antigen), and transplant only in a selected subset.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which drug can slow Terence's IPF?",
+     "o": ["Azathioprine", "Methotrexate", "Nintedanib", "Oral prednisolone"],
+     "a": 2,
+     "r": "**Nintedanib** (or **pirfenidone**) slows progression. Methotrexate can itself cause fibrosis."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Terence is referred for **pulmonary rehabilitation** and started on **nintedanib** to slow the fall in his lung function."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Terence's care is shared with a respiratory specialist, with oxygen if he becomes hypoxic and support for him and his wife."
+    },
+    {
+     "type": "ask",
+     "q": "Terence's cardiologist wants to start amiodarone for his AF. What should be done first?",
+     "o": ["Baseline chest X-ray", "Bronchoscopy", "Serum ACE", "Sputum culture"],
+     "a": 0,
+     "r": "A **chest X-ray before amiodarone** checks for pre-existing lung disease. Terence's fibrosis makes amiodarone a poor choice."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Terence's FVC (% predicted)",
+      "x": ["Diagnosis", "6 months", "12 months", "18 months", "24 months"],
+      "unit": "% predicted",
+      "series": [
+       { "name": "FVC on nintedanib", "values": [62, 60, 59, 57, 56] },
+       { "name": "Expected without treatment", "values": [62, 58, 54, 50, 46] }
+      ],
+      "caption": "Antifibrotics slow the decline; they do not reverse fibrosis."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "If Terence becomes more breathless and hypoxic, it means progression, and he needs **urgent assessment**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Two years on: breathless dressing himself.",
+      "Resting SpO2 87%; drops further walking.",
+      "Ankles swollen; JVP raised."
+     ],
+     "vitals": {
+      "HR": "96 bpm",
+      "RR": "24 /min",
+      "SpO2": "87% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "At 74 with right heart strain, Terence is not a transplant candidate. He gets **long-term plus ambulatory oxygen**, and low-dose opiates for breathlessness."
+    },
+    {
+     "type": "flow",
+     "title": "IPF management pathway",
+     "nodes": [
+      "Confirm on HRCT; remove any cause",
+      "Pulmonary rehabilitation",
+      "Pirfenidone or nintedanib to slow progression",
+      "Hypoxic → long-term + ambulatory oxygen",
+      "Selected patients → lung transplant",
+      "End stage → palliative symptom control"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Terence's workup used both guideline points: the **restrictive** definition (ratio above 0.7, both reduced) and the **CHARTS** list to place basal fibrosis."
+    },
+    {
+     "type": "trap",
+     "text": "Oral steroids are **not** a treatment for IPF. They help some secondary causes (e.g. hypersensitivity pneumonitis), not idiopathic disease."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: why fibrosis gives a restrictive pattern with a low TLCO, why the ratio is preserved, how drugs cause fibrosis, or why it leads to cor pulmonale.",
+   "steps": [
+    {
+     "type": "flow",
+     "title": "How fibrosis forms",
+     "nodes": [
+      "Repeated alveolar epithelial injury",
+      "Aberrant wound healing",
+      "Fibroblast proliferation",
+      "Excess collagen and matrix laid down",
+      "Normal parenchyma replaced by scar"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "In Terence's lungs, repeated small injuries heal badly, and **collagen** replaces the alveoli."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Terence's stiff interstitium explains his numbers: low compliance gives **restriction**, a thick barrier gives a low **TLCO**, and both volumes fall together."
+    },
+    {
+     "type": "ask",
+     "q": "Why is Terence's FEV1/FVC ratio preserved at 0.85?",
+     "o": ["Airways are narrowed", "Both FEV1 and FVC fall together", "FEV1 rises", "TLCO is low"],
+     "a": 1,
+     "r": "Stiff lungs shrink **both** volumes; the airways are open, and elastic recoil even empties them faster."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "The honeycombing on Terence's HRCT is **end-stage** fibrosis: cysts with thick fibrotic walls where alveoli used to be."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Had Terence been given amiodarone, it could have injured his alveolar cells directly or by **hypersensitivity**, adding drug-induced fibrosis."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Terence's swollen ankles came from chronic hypoxia: **pulmonary hypertension** strained his right ventricle, causing **cor pulmonale**."
+    },
+    {
+     "type": "flow",
+     "title": "Fibrosis to right heart failure",
+     "nodes": [
+      "Chronic hypoxaemia",
+      "Pulmonary vascular remodelling",
+      "Pulmonary hypertension",
+      "Right ventricular strain",
+      "Cor pulmonale: raised JVP, oedema"
+     ]
+    }
+   ]
+  }
+ },
+ "mcq": [
+  { "d": "diagnosis", "q": "What is the median age at presentation of IPF?", "o": ["30 years", "50 years", "70 years", "90 years"], "a": 2, "r": "Median age **70**; more common in men and smokers." },
+  { "d": "diagnosis", "q": "Which crackles are typical of pulmonary fibrosis?", "o": ["Coarse, clear with cough", "Expiratory wheeze", "Fine end-inspiratory 'velcro'", "Pleural rub"], "a": 2, "r": "**Fine end-inspiratory (velcro) crackles**, bibasal in IPF." },
+  { "d": "diagnosis", "q": "Which is a cause of upper lobe fibrosis (CHARTS)?", "o": ["Asbestosis", "Methotrexate", "Rheumatoid arthritis", "Tuberculosis"], "a": 3, "r": "**TB** is the T in CHARTS. The others cause lower lobe fibrosis." },
+  { "d": "diagnosis", "q": "Which drug is a classic cause of pulmonary fibrosis?", "o": ["Amiodarone", "Amlodipine", "Bisoprolol", "Metformin"], "a": 0, "r": "**Amiodarone**, methotrexate, bleomycin and nitrofurantoin." },
+  { "d": "investigation", "q": "What is the gold-standard investigation for fibrotic lung disease?", "o": ["Bronchoscopy", "Chest X-ray", "HRCT", "Spirometry"], "a": 2, "r": "**HRCT** shows the pattern (e.g. basal honeycombing in IPF)." },
+  { "d": "investigation", "q": "Which spirometry pattern fits pulmonary fibrosis?", "o": ["FEV1/FVC 0.55, FVC normal", "FEV1/FVC 0.85, FVC 60%", "FEV1/FVC 0.65, FVC 60%", "All values normal"], "a": 1, "r": "**Restrictive**: ratio above 0.7 with FEV1 and FVC below 80%, and low TLCO." },
+  { "d": "investigation", "q": "How is extrinsic allergic alveolitis confirmed according to the notes?", "o": ["Serum ACE", "Serum precipitins", "Skin prick test", "Sweat test"], "a": 1, "r": "**Serum precipitins** to Aspergillus and mould antigens." },
+  { "d": "management", "q": "Which are the first-line disease-modifying drugs for IPF?", "o": ["Azathioprine and prednisolone", "Methotrexate and steroids", "Pirfenidone and nintedanib", "Salbutamol and tiotropium"], "a": 2, "r": "**Pirfenidone and nintedanib** slow progression." },
+  { "d": "management", "q": "What is first line for end-stage fibrosis with hypoxia?", "o": ["Long-term plus ambulatory oxygen", "Lung transplant for all", "Nebulised salbutamol", "Oral prednisolone"], "a": 0, "r": "**Long-term oxygen therapy plus ambulatory oxygen**." },
+  { "d": "science", "q": "Why is TLCO reduced in pulmonary fibrosis?", "o": ["Air trapping", "Bronchospasm", "Increased diffusion distance", "Low haemoglobin"], "a": 2, "r": "A thickened interstitium **increases the diffusion distance** for gas exchange." }
+ ],
+ "blurt": {
+  "prompts": [
+   { "d": "diagnosis", "q": "What is fibrotic lung disease, and who typically gets IPF?", "tip": "Exam thinking: older male ex-smoker with gradual breathlessness = IPF until a cause is found.", "points": [
+     { "p": "Interstitial lung fibrosis that reduces compliance and impairs gas exchange", "k": [["interstitial", "fibros", "scar"]], "why": "Stiff lungs = restrictive spirometry." },
+     { "p": "IPF is the most common, with a poor prognosis", "k": [["ipf", "idiopathic"]], "why": "Median survival is only a few years." },
+     { "p": "Median age 70", "k": [["70", "seventy", "elderly", "older"]], "why": "A young patient points to a secondary cause such as sarcoid or CTD." },
+     { "p": "More common in men and smokers", "k": [["men", "male"], ["smok"]], "why": "Classic stem: ex-smoker man in his 70s." }
+   ] },
+   { "d": "diagnosis", "q": "What are the symptoms and signs of IPF?", "tip": "Exam thinking: dry cough plus clubbing plus velcro crackles.", "points": [
+     { "p": "Progressive exertional dyspnoea, gradual onset", "k": [["breathless", "dyspnoea", "sob", "short of breath"]], "why": "Over months to years, not days." },
+     { "p": "Dry, non-productive cough", "k": [["dry", "non-productive", "nonproductive"]], "why": "Copious sputum points to bronchiectasis." },
+     { "p": "Finger clubbing", "k": [["clubb"]], "why": "Not a feature of COPD or heart failure." },
+     { "p": "Fine bibasal end-inspiratory 'velcro' crackles", "k": [["velcro", "fine", "end-inspiratory", "end inspiratory"]], "why": "Coarse crackles that change with coughing are bronchiectasis." }
+   ] },
+   { "d": "diagnosis", "q": "Which drugs cause pulmonary fibrosis, and what must you do before starting amiodarone?", "tip": "Exam thinking: always scan the drug history in a fibrosis stem.", "points": [
+     { "p": "Amiodarone", "k": [["amiodarone"]], "why": "Antiarrhythmic." },
+     { "p": "Methotrexate", "k": [["methotrexate"]], "why": "First-line DMARD in RA (RA itself also causes ILD)." },
+     { "p": "Bleomycin", "k": [["bleomycin"]], "why": "Testicular cancer chemotherapy." },
+     { "p": "Nitrofurantoin", "k": [["nitrofurantoin"]], "why": "Long-term UTI prophylaxis." },
+     { "p": "Chest X-ray before starting amiodarone", "k": [["x-ray", "xray", "cxr", "radiograph"]], "why": "Checks for pre-existing lung disease." }
+   ] },
+   { "d": "diagnosis", "q": "Which causes give upper lobe fibrosis (CHARTS), and which give lower lobe?", "tip": "Exam thinking: the zone on the X-ray narrows the cause.", "points": [
+     { "p": "Coal worker's pneumoconiosis", "k": [["coal"]], "why": "C in CHARTS." },
+     { "p": "Histiocytosis / hypersensitivity pneumonitis", "k": [["histiocyt", "hypersensitivity", "alveolitis", "eaa"]], "why": "H in CHARTS." },
+     { "p": "Ankylosing spondylitis and radiation", "k": [["ankylos", "radiation", "radiotherapy"]], "why": "A and R in CHARTS." },
+     { "p": "TB and silicosis/sarcoidosis", "k": [["tb", "tuberculosis", "silic", "sarcoid"]], "why": "T and S in CHARTS." },
+     { "p": "Lower lobe: IPF, RA, asbestosis, SLE, scleroderma, drugs", "k": [["ipf", "idiopathic", "rheumatoid", "asbestos", "scleroderma", "sle"]], "why": "Most fibrosis is basal." }
+   ] },
+   { "d": "diagnosis", "q": "What is extrinsic allergic alveolitis and how does it present?", "tip": "Exam thinking: the hobby or job (farmer, birds) is the clue.", "points": [
+     { "p": "Hypersensitivity pneumonitis, a type III hypersensitivity reaction", "k": [["type iii", "type 3", "hypersensitivity"]], "why": "Partly type IV too." },
+     { "p": "Example: farmer's lung from fungal spores in mouldy hay", "k": [["farmer", "hay", "spore", "mould", "bird", "pigeon"]], "why": "Bird fancier's lung is the other classic." },
+     { "p": "Acute: fever, myalgia, dry cough, dyspnoea, bilateral airspace shadowing", "k": [["fever", "myalgia", "flu"]], "why": "Hours after exposure." },
+     { "p": "Chronic: upper-lobe-predominant fibrosis", "k": [["upper"]], "why": "It is in CHARTS." },
+     { "p": "Confirmed with serum precipitins", "k": [["precipitin"]], "why": "To Aspergillus and mould antigens." }
+   ] },
+   { "d": "investigation", "q": "What are the first-line investigations, and what does spirometry show?", "tip": "Exam thinking: ratio above 0.7 but both volumes below 80% = restrictive.", "points": [
+     { "p": "Chest X-ray: bilateral reticular/reticulonodular shadowing, honeycombing", "k": [["x-ray", "xray", "cxr"], ["reticul", "honeycomb", "shadow"]], "why": "Small lung volumes too." },
+     { "p": "Restrictive: FEV1/FVC above 0.7", "k": [["restrict"], ["0.7", "preserved", "normal", "high"]], "why": "Often around 0.85." },
+     { "p": "FEV1 and FVC below 80% predicted", "k": [["80"]], "why": "Both fall together." },
+     { "p": "Low TLC and reduced TLCO", "k": [["tlco", "dlco", "transfer", "diffusing"]], "why": "Low gas transfer reflects the thick barrier." },
+     { "p": "Autoimmune screen and routine bloods", "k": [["autoimmune", "ana", "rheumatoid factor", "antibod"]], "why": "Looks for CTD-associated ILD." }
+   ] },
+   { "d": "investigation", "q": "What is the gold standard, what does it show in IPF, and how is cor pulmonale assessed?", "tip": "Exam thinking: HRCT to diagnose, echo for the right heart.", "points": [
+     { "p": "HRCT is the gold standard", "k": [["hrct", "high resolution", "high-resolution", "ct"]], "why": "Classifies extent and pattern." },
+     { "p": "IPF: honeycombing and ground glass, peripheral and basal", "k": [["honeycomb"]], "why": "Typical UIP pattern." },
+     { "p": "Bronchoscopy with BAL in uncertain cases", "k": [["bal", "bronchoscop", "lavage"]], "why": "Not needed for typical UIP." },
+     { "p": "Echocardiogram for right heart strain (cor pulmonale)", "k": [["echo"]], "why": "Pulmonary hypertension complicates advanced disease." }
+   ] },
+   { "d": "management", "q": "How is IPF treated, from diagnosis to end stage?", "tip": "Exam thinking: antifibrotics slow, they do not cure.", "points": [
+     { "p": "Pulmonary rehabilitation", "k": [["rehab"]], "why": "Non-pharmacological first line." },
+     { "p": "Pirfenidone or nintedanib to slow progression", "k": [["pirfenidone", "nintedanib"]], "why": "First-line disease-modifying drugs." },
+     { "p": "Long-term oxygen plus ambulatory oxygen if hypoxic", "k": [["oxygen", "ltot", "o2"]], "why": "First line at end stage." },
+     { "p": "Lung transplant in a selected subset", "k": [["transplant"]], "why": "Not for most elderly patients." },
+     { "p": "Low-dose opiates or benzodiazepines for symptoms", "k": [["opiate", "opioid", "morphine", "benzodiazepine", "palliat"]], "why": "Relieve breathlessness at end of life." }
+   ] },
+   { "d": "management", "q": "How do you manage secondary fibrosis and prevent drug-induced disease?", "tip": "Exam thinking: remove the cause first.", "points": [
+     { "p": "Treat the underlying cause: remove the exposure or treat autoimmune disease", "k": [["remove", "avoid", "stop", "treat"]], "why": "E.g. rehome the birds, stop the drug." },
+     { "p": "CXR before starting amiodarone or nitrofurantoin", "k": [["x-ray", "xray", "cxr"]], "why": "Screens for pre-existing lung disease." },
+     { "p": "Refer to a respiratory specialist", "k": [["refer", "specialist", "respiratory"]], "why": "Antifibrotics are specialist-initiated." }
+   ] },
+   { "d": "science", "q": "Why does fibrosis cause restriction, a low TLCO and a preserved ratio?", "tip": "Exam thinking: compliance, diffusion distance, proportional fall.", "points": [
+     { "p": "Repeated epithelial injury and aberrant healing with excess collagen", "k": [["collagen", "fibroblast", "matrix", "wound", "injury"]], "why": "Scar replaces alveoli." },
+     { "p": "Stiff interstitium lowers compliance: restrictive", "k": [["complian", "stiff"]], "why": "Lungs cannot expand." },
+     { "p": "Thick barrier increases diffusion distance: low TLCO", "k": [["diffusion", "distance", "thick"]], "why": "Fick's law." },
+     { "p": "FEV1 and FVC fall proportionately, so the ratio is preserved", "k": [["proportion", "both", "together"]], "why": "Airways themselves are open." }
+   ] },
+   { "d": "science", "q": "Why does fibrosis lead to cor pulmonale, and how do drugs cause it?", "tip": "Exam thinking: hypoxia → pulmonary hypertension → right heart.", "points": [
+     { "p": "Chronic hypoxaemia causes pulmonary vascular remodelling", "k": [["hypox"], ["remodel", "vasoconstrict"]], "why": "Hypoxic vasoconstriction becomes fixed." },
+     { "p": "Pulmonary hypertension then right heart failure (cor pulmonale)", "k": [["pulmonary hypertension", "cor pulmonale", "right heart", "right ventric"]], "why": "Raised JVP, ankle oedema, loud P2." },
+     { "p": "Drugs: direct cytotoxic injury to alveolar epithelium and/or hypersensitivity", "k": [["cytotox", "toxic", "hypersensitivity", "immune"]], "why": "Amiodarone, methotrexate, bleomycin, nitrofurantoin." }
+   ] }
+  ]
+ },
+ "glossary": {
+  "IPF": "Idiopathic pulmonary fibrosis: progressive scarring of the lung with no identifiable cause.",
+  "ILD": "Interstitial lung disease: disorders that inflame or scar the lung interstitium.",
+  "Interstitium": "The tissue between the alveoli and capillaries where gas exchange happens.",
+  "Velcro crackles": "Fine, end-inspiratory crackles like pulling apart velcro; typical of pulmonary fibrosis.",
+  "Clubbing": "Bulbous fingertips with loss of the nail-bed angle; seen in fibrosis, bronchiectasis and lung cancer.",
+  "Compliance": "How easily the lungs stretch; low in fibrosis.",
+  "Restrictive pattern": "Spirometry with FEV1/FVC above 0.7 but FEV1 and FVC both below 80% predicted.",
+  "FEV1/FVC": "Fraction of vital capacity breathed out in one second; preserved or high in restriction.",
+  "TLCO": "Transfer factor for carbon monoxide: how well gas crosses into the blood; low in fibrosis.",
+  "TLC": "Total lung capacity; reduced in restrictive lung disease.",
+  "HRCT": "High-resolution CT: thin-slice CT that shows the pattern of interstitial lung disease.",
+  "Honeycombing": "Clustered cystic airspaces with thick fibrotic walls on HRCT: end-stage fibrosis.",
+  "Ground-glass": "Hazy increased lung density on CT through which vessels are still visible.",
+  "UIP": "Usual interstitial pneumonia: the basal, peripheral honeycombing CT pattern typical of IPF.",
+  "BAL": "Bronchoalveolar lavage: washing a lung segment through a bronchoscope and analysing the fluid.",
+  "Reticular shadowing": "A net-like pattern of lines on X-ray from thickened interstitium.",
+  "CHARTS": "Mnemonic for upper lobe fibrosis: coal, histiocytosis/HP, ankylosing spondylitis, radiation, TB, silicosis/sarcoid.",
+  "Extrinsic allergic alveolitis": "Hypersensitivity pneumonitis: immune reaction to inhaled organic antigens such as mouldy hay or bird proteins.",
+  "Hypersensitivity pneumonitis": "Another name for extrinsic allergic alveolitis.",
+  "Farmer's lung": "Hypersensitivity pneumonitis from fungal spores in mouldy hay.",
+  "Serum precipitins": "Blood antibodies against specific inhaled antigens; support hypersensitivity pneumonitis.",
+  "Type III hypersensitivity": "Immune-complex-mediated reaction, causing inflammation where complexes deposit.",
+  "Pirfenidone": "Oral antifibrotic drug that slows IPF progression.",
+  "Nintedanib": "Oral tyrosine kinase inhibitor that slows IPF progression.",
+  "Antifibrotic": "Drug that slows the laying down of scar tissue.",
+  "Pulmonary rehabilitation": "Supervised exercise and education programme to improve breathlessness and function.",
+  "Ambulatory oxygen": "Portable oxygen used while walking or active.",
+  "LTOT": "Long-term oxygen therapy: oxygen for at least 15 hours a day for chronic hypoxaemia.",
+  "Cor pulmonale": "Right heart failure caused by lung disease and pulmonary hypertension.",
+  "Pulmonary hypertension": "Raised pressure in the pulmonary arteries.",
+  "Amiodarone": "Antiarrhythmic drug that can cause pulmonary fibrosis, thyroid and liver problems.",
+  "Bleomycin": "Chemotherapy drug, used in testicular cancer, that causes pulmonary fibrosis.",
+  "Methotrexate": "Antifolate DMARD used in RA; can cause pneumonitis and fibrosis.",
+  "Nitrofurantoin": "Antibiotic for urinary infection; long-term use can cause pulmonary fibrosis.",
+  "DMARD": "Disease-modifying antirheumatic drug.",
+  "Asbestosis": "Lower-lobe pulmonary fibrosis from inhaled asbestos fibres.",
+  "Silicosis": "Upper-lobe fibrosis from inhaled silica dust; raises TB risk.",
+  "Pneumoconiosis": "Lung disease from inhaled mineral dust (coal, silica, asbestos).",
+  "Ankylosing spondylitis": "Inflammatory spinal arthritis in young men; can cause apical fibrosis."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man has an 18 month history of gradually worsening breathlessness on exertion and a dry cough. He is an ex-smoker. He takes no regular medicines and worked in an office. His fingers are clubbed and there are fine bibasal end-inspiratory crackles. His JVP is not raised and there is no ankle oedema.",
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asbestosis", "Bronchiectasis", "Chronic heart failure", "Idiopathic pulmonary fibrosis", "Sarcoidosis"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "A diagnosis question: decide fibrosis vs its mimics, then look for a cause." },
+    { "t": "Pick out the clues", "clues": ["74 year old man", "gradually worsening breathlessness", "dry cough", "ex-smoker", "takes no regular medicines and worked in an office", "fingers are clubbed", "fine bibasal end-inspiratory crackles", "JVP is not raised"], "x": "Older male ex-smoker, gradual, dry cough, clubbing, velcro crackles; no drug or job cause." },
+    { "t": "Make your own answer before looking", "x": "No identifiable cause: **idiopathic pulmonary fibrosis**." },
+    { "t": "Rule out the others", "elim": [[0, "Asbestosis needs an asbestos job (builder, shipyard)."], [1, "Bronchiectasis gives copious sputum and coarse crackles."], [2, "No raised JVP or oedema; heart failure does not club."], [4, "Sarcoid is younger, with BHL and upper zone change."]] },
+    { "t": "Commit", "x": "**D. Idiopathic pulmonary fibrosis.** Rule: old ex-smoker man + dry cough + clubbing + velcro crackles + no cause = IPF." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old man has progressive breathlessness and a dry cough. He has fine bibasal crackles and clubbing. His temperature is 36.6°C, pulse rate 80 bpm, BP 134/78 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 94% breathing air. His chest X-ray shows bilateral basal reticular shadowing.",
+   "labs": [["FEV1/FVC", "0.84", ">0.7", ""], ["FVC", "64% predicted", ">80%", "L"], ["TLCO", "48% predicted", ">80%", "L"]],
+   "q": "Which is the most appropriate investigation to establish the diagnosis?",
+   "o": ["Bronchoscopy with bronchoalveolar lavage", "Echocardiogram", "High-resolution CT chest", "Repeat spirometry in 3 months", "Serum autoantibody screen"],
+   "a": 2,
+   "steps": [
+    { "t": "Read the question line first", "x": "'Establish the diagnosis' = the gold-standard test." },
+    { "t": "Pick out the clues", "clues": ["fine bibasal crackles and clubbing", "bilateral basal reticular shadowing"], "x": "Labs: ratio 0.84 with low FVC and TLCO = restrictive. Fibrosis suspected; now confirm and classify." },
+    { "t": "Make your own answer before looking", "x": "**HRCT chest** shows the pattern (e.g. basal honeycombing)." },
+    { "t": "Rule out the others", "elim": [[0, "BAL is only for uncertain cases after HRCT."], [1, "Echo assesses cor pulmonale, not the lung diagnosis."], [3, "Repeating spirometry delays diagnosis."], [4, "Autoantibodies look for a cause but do not confirm fibrosis."]] },
+    { "t": "Commit", "x": "**C. High-resolution CT chest.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 71 year old woman has idiopathic pulmonary fibrosis confirmed by HRCT showing basal subpleural honeycombing. She has no autoimmune disease and takes no drugs that cause fibrosis. Her FVC is 70% of predicted. She has been referred for pulmonary rehabilitation and asks if any medicine can help.",
+   "q": "Which is the most appropriate drug treatment?",
+   "o": ["Azathioprine", "Methotrexate", "Oral prednisolone", "Pirfenidone", "Prednisolone plus azathioprine"],
+   "a": 3,
+   "steps": [
+    { "t": "Read the question line first", "x": "Drug treatment for confirmed IPF." },
+    { "t": "Pick out the clues", "clues": ["idiopathic pulmonary fibrosis", "basal subpleural honeycombing", "no autoimmune disease", "FVC is 70% of predicted"], "x": "Typical IPF; no secondary cause to treat." },
+    { "t": "Make your own answer before looking", "x": "**Pirfenidone** or nintedanib to slow progression." },
+    { "t": "Rule out the others", "elim": [[0, "Azathioprine is not an IPF treatment."], [1, "Methotrexate can cause pulmonary fibrosis."], [2, "Steroids do not help IPF."], [4, "Steroid plus immunosuppressant combinations harm IPF patients."]] },
+    { "t": "Commit", "x": "**D. Pirfenidone.** Rule: IPF drug = pirfenidone or nintedanib." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 76 year old man has advanced idiopathic pulmonary fibrosis. Over the last 3 months he has developed swollen ankles. His oxygen saturation is 86% breathing air. His JVP is raised, there is a loud pulmonary component of the second heart sound and pitting oedema to his knees. Echocardiography shows a dilated right ventricle and a normal left ventricle.",
+   "q": "Which is the most likely mechanism of his ankle swelling?",
+   "o": ["Fluid overload from renal failure", "Left ventricular systolic failure", "Mitral stenosis", "Pericardial constriction", "Vascular remodelling from chronic hypoxaemia causing pulmonary hypertension"],
+   "a": 4,
+   "steps": [
+    { "t": "Read the question line first", "x": "Mechanism of oedema in advanced fibrosis." },
+    { "t": "Pick out the clues", "clues": ["advanced idiopathic pulmonary fibrosis", "86% breathing air", "loud pulmonary component", "dilated right ventricle and a normal left ventricle"], "x": "Hypoxia, pulmonary hypertension (loud P2), right heart only." },
+    { "t": "Make your own answer before looking", "x": "**Cor pulmonale**: hypoxaemia → vascular remodelling → pulmonary hypertension → RV failure." },
+    { "t": "Rule out the others", "elim": [[0, "No renal failure given."], [1, "The left ventricle is normal."], [2, "Mitral stenosis gives a mid-diastolic murmur and AF, not lung fibrosis."], [3, "Constriction gives a small, non-dilated heart."]] },
+    { "t": "Commit", "x": "**E. Vascular remodelling causing pulmonary hypertension.** Rule: fibrosis + right heart failure = cor pulmonale." }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 68 year old woman has 9 months of increasing breathlessness and a dry cough. She has taken nitrofurantoin every night for 3 years to prevent recurrent urinary infections. She has never smoked. Her temperature is 36.8°C, pulse rate 84 bpm, BP 128/76 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 93% breathing air. There are fine bibasal crackles.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Heart failure", "Idiopathic pulmonary fibrosis", "Nitrofurantoin-induced pulmonary fibrosis", "Recurrent aspiration", "Sarcoidosis"],
+   "a": 2,
+   "e": "Long-term nitrofurantoin is a classic cause of lower-lobe pulmonary fibrosis. IPF is a diagnosis of exclusion, so it is not 'idiopathic' when a causative drug is present.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis: fibrosis, then check for a cause." },
+    { "t": "Pick out the clues", "clues": ["dry cough", "nitrofurantoin every night for 3 years", "never smoked", "fine bibasal crackles"], "x": "Fibrosis picture in a woman on long-term nitrofurantoin." },
+    { "t": "Make your own answer before looking", "x": "**Drug-induced fibrosis** from nitrofurantoin." },
+    { "t": "Rule out the others", "elim": [[0, "No raised JVP, orthopnoea or oedema."], [1, "IPF is idiopathic: it needs no identifiable cause."], [3, "Aspiration gives recurrent pneumonias, not a gradual dry cough."], [4, "Sarcoid is younger, with BHL and upper zone change."]] },
+    { "t": "Commit", "x": "**C. Nitrofurantoin-induced pulmonary fibrosis.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 32 year old man has 2 months of breathlessness on exertion and a dry cough. He finished chemotherapy for a testicular germ cell tumour 4 months ago. His oxygen saturation is 93% breathing air. There are fine bibasal end-inspiratory crackles. His chest X-ray shows bilateral basal reticular shadowing.",
+   "labs": [["TLCO", "52% predicted", ">80%", "L"], ["FEV1/FVC", "0.86", ">0.7", ""]],
+   "visual": null,
+   "q": "Which drug is the most likely cause of his lung disease?",
+   "o": ["Bleomycin", "Cisplatin", "Etoposide", "Ondansetron", "Paracetamol"],
+   "a": 0,
+   "e": "Bleomycin, used for testicular cancer, causes pulmonary fibrosis. Cisplatin is nephrotoxic and ototoxic; etoposide mainly causes myelosuppression.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Most likely cause: a drug." },
+    { "t": "Pick out the clues", "clues": ["dry cough", "testicular germ cell tumour", "fine bibasal end-inspiratory crackles", "bilateral basal reticular shadowing"], "x": "Fibrosis after testicular cancer chemotherapy; restrictive with low TLCO." },
+    { "t": "Make your own answer before looking", "x": "**Bleomycin** lung." },
+    { "t": "Rule out the others", "elim": [[1, "Cisplatin causes kidney damage and hearing loss."], [2, "Etoposide causes myelosuppression."], [3, "Ondansetron does not cause fibrosis."], [4, "Paracetamol does not cause fibrosis."]] },
+    { "t": "Commit", "x": "**A. Bleomycin.** Rule: testicular cancer chemo + fibrosis = bleomycin." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 73 year old man has progressive breathlessness and a dry cough over 2 years. He has finger clubbing and fine bibasal crackles. HRCT shows peripheral, basal honeycombing. He has pulmonary function tests.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely result of his pulmonary function tests?",
+   "o": ["FEV1/FVC 0.52, FVC 90% predicted, TLCO reduced", "FEV1/FVC 0.65, FVC 85% predicted, TLCO normal", "FEV1/FVC 0.78, FEV1 and FVC normal, TLCO normal", "FEV1/FVC 0.86, FVC 58% predicted, TLCO raised", "FEV1/FVC 0.86, FVC 58% predicted, TLCO reduced"],
+   "a": 4,
+   "e": "Fibrosis is restrictive: ratio above 0.7 with a low FVC, and a reduced TLCO from the thickened barrier. A raised TLCO suggests pulmonary haemorrhage, not fibrosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "A finding question: restrictive or obstructive, and the TLCO." },
+    { "t": "Pick out the clues", "clues": ["finger clubbing and fine bibasal crackles", "peripheral, basal honeycombing"], "x": "IPF." },
+    { "t": "Make your own answer before looking", "x": "Ratio above 0.7, FVC below 80%, **TLCO reduced**." },
+    { "t": "Rule out the others", "elim": [[0, "A low ratio is obstruction (COPD)."], [1, "Mild obstruction with normal TLCO is asthma-like."], [2, "Normal results do not fit honeycombing."], [3, "TLCO is reduced, not raised, in fibrosis."]] },
+    { "t": "Commit", "x": "**E.** Rule: fibrosis = restrictive + low TLCO." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 70 year old man has 18 months of worsening breathlessness and a dry, non-productive cough. He is a retired accountant and an ex-smoker. His temperature is 36.9°C, pulse rate 76 bpm, BP 140/84 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 94% breathing air. His fingers are clubbed.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on auscultation of his chest?",
+   "o": ["Bronchial breathing at the right base", "Coarse crackles that clear with coughing", "Fine bibasal end-inspiratory crackles", "Polyphonic expiratory wheeze", "Stony dullness and absent breath sounds"],
+   "a": 2,
+   "e": "IPF gives fine, end-inspiratory 'velcro' crackles at both bases. Coarse crackles that change with coughing are bronchiectasis; bronchial breathing is consolidation.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Make the diagnosis, then pick its sign." },
+    { "t": "Pick out the clues", "clues": ["70 year old man", "dry, non-productive cough", "ex-smoker", "fingers are clubbed"], "x": "Older ex-smoker, dry cough, clubbing: IPF." },
+    { "t": "Make your own answer before looking", "x": "**Fine bibasal end-inspiratory (velcro) crackles**." },
+    { "t": "Rule out the others", "elim": [[0, "Bronchial breathing is consolidation."], [1, "Coarse crackles that change are bronchiectasis."], [3, "Polyphonic wheeze is asthma or COPD."], [4, "Stony dullness is a pleural effusion."]] },
+    { "t": "Commit", "x": "**C. Fine bibasal end-inspiratory crackles.**" }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 48 year old man has had worsening breathlessness for a year. He has had low back pain and morning stiffness since his twenties and an episode of anterior uveitis. His temperature is 36.7°C, pulse rate 74 bpm, BP 126/80 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 95% breathing air. Chest X-ray (see item resources).",
+   "labs": [],
+   "visual": { "kind": "cxr", "title": "Chest X-ray", "findings": [{ "type": "fibrosis", "side": "both", "zone": "upper" }], "caption": "Bilateral upper zone fibrosis." },
+   "q": "Which is the most likely cause of his lung fibrosis?",
+   "o": ["Amiodarone", "Ankylosing spondylitis", "Asbestosis", "Idiopathic pulmonary fibrosis", "Rheumatoid arthritis"],
+   "a": 1,
+   "e": "Upper lobe fibrosis with inflammatory back pain and uveitis in a man is ankylosing spondylitis (the A in CHARTS). Asbestosis, IPF, RA and amiodarone cause lower lobe fibrosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Cause of fibrosis: check the zone first." },
+    { "t": "Pick out the clues", "clues": ["low back pain and morning stiffness since his twenties", "anterior uveitis", "see item resources"], "x": "Inflammatory back pain + uveitis = AS; the X-ray shows **upper** zone fibrosis." },
+    { "t": "Make your own answer before looking", "x": "Upper lobe = CHARTS: **ankylosing spondylitis**." },
+    { "t": "Rule out the others", "elim": [[0, "Amiodarone gives lower zone fibrosis, and he is not on it."], [2, "Asbestosis is lower lobe with pleural plaques."], [3, "IPF is basal and in older patients."], [4, "RA causes lower lobe fibrosis."]] },
+    { "t": "Commit", "x": "**B. Ankylosing spondylitis.** Rule: upper zone fibrosis = CHARTS." }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old dairy farmer has had three episodes of fever, aching muscles, a dry cough and breathlessness, each starting about 6 hours after forking mouldy hay in his barn. Each settles within 2 days. His temperature is 38.1°C, pulse rate 102 bpm, BP 124/78 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 92% breathing air.",
+   "labs": [["Chest X-ray", "Bilateral airspace opacification", "", ""], ["Serum precipitins", "Positive to fungal antigens", "Negative", "H"]],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": ["Asthma", "Extrinsic allergic alveolitis", "Idiopathic pulmonary fibrosis", "Mycoplasma pneumonia", "Sarcoidosis"],
+   "a": 1,
+   "e": "Recurrent fever, myalgia and dry cough hours after mouldy hay exposure, with positive precipitins, is farmer's lung, a type III hypersensitivity (extrinsic allergic alveolitis). Pneumonia would not recur with each exposure.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Diagnosis; the job and the timing are the key." },
+    { "t": "Pick out the clues", "clues": ["dairy farmer", "about 6 hours after forking mouldy hay", "Each settles within 2 days", "fever, aching muscles, a dry cough"], "x": "Repeated flu-like episodes hours after organic dust; precipitins positive." },
+    { "t": "Make your own answer before looking", "x": "**Farmer's lung**: extrinsic allergic alveolitis." },
+    { "t": "Rule out the others", "elim": [[0, "Asthma gives immediate wheeze without fever."], [2, "IPF is gradual, older, without fevers."], [3, "Pneumonia does not recur with each exposure and settle in 2 days."], [4, "Sarcoid gives BHL, not exposure-linked episodes."]] },
+    { "t": "Commit", "x": "**B. Extrinsic allergic alveolitis.** Rule: hours after organic dust + fever = EAA." }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 75 year old man with idiopathic pulmonary fibrosis has 2 months of increasing ankle swelling. His temperature is 36.8°C, pulse rate 98 bpm, BP 122/76 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 87% breathing air. His JVP is raised, P2 is loud and there is pitting oedema to mid-shin.",
+   "labs": [["NT-proBNP", "1450 ng/L", "<400", "H"], ["ECG", "Right axis deviation", "", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to assess the cause of his ankle swelling?",
+   "o": ["Bronchoscopy", "Chest X-ray", "Echocardiogram", "Repeat spirometry", "Serum precipitins"],
+   "a": 2,
+   "e": "Hypoxia, raised JVP, loud P2 and oedema in advanced fibrosis suggest cor pulmonale; an echocardiogram assesses right heart strain and pulmonary pressure.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Which test for the complication." },
+    { "t": "Pick out the clues", "clues": ["idiopathic pulmonary fibrosis", "87% breathing air", "JVP is raised, P2 is loud", "pitting oedema"], "x": "Right heart failure from pulmonary hypertension: cor pulmonale." },
+    { "t": "Make your own answer before looking", "x": "**Echocardiogram** for right heart strain." },
+    { "t": "Rule out the others", "elim": [[0, "Bronchoscopy does not assess the heart."], [1, "CXR will not measure right heart function."], [3, "Spirometry tracks the lungs, not the cause of oedema."], [4, "Precipitins are for hypersensitivity pneumonitis."]] },
+    { "t": "Commit", "x": "**C. Echocardiogram.**" }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 72 year old man has 2 years of progressive exertional breathlessness, a dry cough and clubbing. He is an ex-smoker with no relevant occupational or drug exposures. Fine bibasal end-inspiratory crackles are heard. He has a high-resolution CT scan of the chest.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on HRCT?",
+   "o": ["Basal, subpleural honeycombing", "Bilateral hilar lymphadenopathy", "Calcified pleural plaques", "Tree-in-bud nodules", "Upper lobe cavitation"],
+   "a": 0,
+   "e": "IPF shows honeycombing with ground-glass change, peripheral and basal predominant (UIP pattern). Pleural plaques suggest asbestos exposure; BHL suggests sarcoidosis.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Make the diagnosis, then the HRCT finding." },
+    { "t": "Pick out the clues", "clues": ["ex-smoker with no relevant occupational or drug exposures", "Fine bibasal end-inspiratory crackles", "clubbing"], "x": "IPF." },
+    { "t": "Make your own answer before looking", "x": "**Basal, peripheral honeycombing** (UIP)." },
+    { "t": "Rule out the others", "elim": [[1, "BHL is sarcoidosis."], [2, "Pleural plaques mean asbestos exposure."], [3, "Tree-in-bud is small airways infection."], [4, "Upper lobe cavitation suggests TB."]] },
+    { "t": "Commit", "x": "**A. Basal, subpleural honeycombing.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old woman has IPF and has been taking nintedanib for 6 months. She gets breathless walking to the shops. Her resting oxygen saturation is 95% breathing air and does not fall on a 6 minute walk test. She has not had any rehabilitation.",
+   "labs": [["PaO2 (air)", "10.1 kPa", "10.5–13.5", "L"]],
+   "visual": null,
+   "q": "Which is the most appropriate next step in management?",
+   "o": ["Inhaled salbutamol", "Long-term oxygen therapy", "Lung transplantation", "Oral prednisolone", "Pulmonary rehabilitation"],
+   "a": 4,
+   "e": "Pulmonary rehabilitation is the first-line non-drug treatment for IPF. She does not desaturate, so oxygen is not indicated; steroids do not help IPF.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Next step for breathlessness in IPF already on an antifibrotic." },
+    { "t": "Pick out the clues", "clues": ["taking nintedanib for 6 months", "95% breathing air", "does not fall on a 6 minute walk test", "not had any rehabilitation"], "x": "Already on the drug; not hypoxic enough for oxygen; no rehab yet." },
+    { "t": "Make your own answer before looking", "x": "**Pulmonary rehabilitation**." },
+    { "t": "Rule out the others", "elim": [[0, "Fibrosis is not an airway disease."], [1, "LTOT needs a much lower PaO2 (below 7.3 kPa)."], [2, "Transplant is for selected end-stage patients."], [3, "Steroids do not help IPF."]] },
+    { "t": "Commit", "x": "**E. Pulmonary rehabilitation.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "An 81 year old man has end-stage IPF. He is breathless at rest and on minimal exertion. He has ischaemic heart disease and chronic kidney disease. His oxygen saturation is 86% breathing air.",
+   "labs": [["PaO2 (air, on two occasions)", "6.9 kPa", "10.5–13.5", "L"], ["PaCO2", "4.8 kPa", "4.7–6.0", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": ["High-dose oral prednisolone", "Long-term oxygen therapy with ambulatory oxygen", "Lung transplantation", "Non-invasive ventilation", "Stop nintedanib and start pirfenidone"],
+   "a": 1,
+   "e": "In end-stage fibrosis with chronic hypoxaemia, long-term plus ambulatory oxygen is first line. His age and comorbidities exclude transplant.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Management of end-stage hypoxic fibrosis." },
+    { "t": "Pick out the clues", "clues": ["81 year old", "end-stage IPF", "ischaemic heart disease and chronic kidney disease", "86% breathing air"], "x": "Labs: PaO2 6.9 kPa twice, normal PaCO2: chronic type 1 respiratory failure." },
+    { "t": "Make your own answer before looking", "x": "**LTOT plus ambulatory oxygen**." },
+    { "t": "Rule out the others", "elim": [[0, "Steroids do not help IPF."], [2, "Too old and comorbid for transplant."], [3, "NIV is for hypercapnia; his CO2 is normal."], [4, "Switching antifibrotic will not treat hypoxia."]] },
+    { "t": "Commit", "x": "**B. Long-term oxygen with ambulatory oxygen.**" }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 58 year old man has had a year of breathlessness and a dry cough. He has kept racing pigeons in a loft at home for 30 years. HRCT shows upper zone fibrosis with ground-glass change. Serum precipitins to avian proteins are positive. His oxygen saturation is 94% breathing air.",
+   "labs": [["Avian precipitins", "Positive", "Negative", "H"], ["FEV1/FVC", "0.83", ">0.7", ""]],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": ["Avoid exposure to the pigeons", "Inhaled corticosteroid", "Nintedanib", "Oral antibiotics", "Salbutamol inhaler"],
+   "a": 0,
+   "e": "In hypersensitivity pneumonitis, removing the antigen is central; without it, any treatment fails. Antifibrotics are not the first step here.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Initial management of a secondary fibrosis." },
+    { "t": "Pick out the clues", "clues": ["racing pigeons", "upper zone fibrosis", "Serum precipitins to avian proteins are positive"], "x": "Chronic bird fancier's lung (hypersensitivity pneumonitis)." },
+    { "t": "Make your own answer before looking", "x": "**Remove the trigger**: avoid the pigeons." },
+    { "t": "Rule out the others", "elim": [[1, "Inhaled steroids are not a treatment for hypersensitivity pneumonitis."], [2, "Antifibrotics do not remove the cause."], [3, "This is not infection."], [4, "Not an airway disease."]] },
+    { "t": "Commit", "x": "**A. Avoid exposure.** Rule: secondary fibrosis = treat the cause first." }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 74 year old man has idiopathic pulmonary fibrosis. His haemoglobin is normal. His oxygen saturation is 95% at rest but falls to 85% after climbing one flight of stairs. Pulmonary function tests show a restrictive pattern.",
+   "labs": [["TLCO", "41% predicted", ">80%", "L"], ["Haemoglobin", "142 g/L", "130–180", ""]],
+   "visual": null,
+   "q": "Which is the most likely mechanism of his reduced TLCO?",
+   "o": ["Air trapping from small airway narrowing", "Anaemia reducing oxygen carriage", "Destruction of alveolar walls in emphysema", "Increased diffusion distance across a thickened interstitium", "Pulmonary emboli blocking perfusion"],
+   "a": 3,
+   "e": "Fibrosis thickens the interstitium, increasing the diffusion distance between alveolus and capillary, so gas transfer falls, especially on exertion when transit time is short.",
+   "steps": [
+    { "t": "Read the question line first", "x": "Mechanism of low gas transfer in fibrosis." },
+    { "t": "Pick out the clues", "clues": ["idiopathic pulmonary fibrosis", "haemoglobin is normal", "falls to 85% after climbing", "restrictive pattern"], "x": "Fibrosis; anaemia excluded; desaturation on exertion." },
+    { "t": "Make your own answer before looking", "x": "Thick barrier = **increased diffusion distance**." },
+    { "t": "Rule out the others", "elim": [[0, "Air trapping is obstructive disease."], [1, "His haemoglobin is normal."], [2, "Emphysema is obstructive, not restrictive."], [4, "Nothing suggests PE."]] },
+    { "t": "Commit", "x": "**D. Increased diffusion distance.**" }
+   ]
+  }
+ ]
+}

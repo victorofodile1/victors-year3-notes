@@ -1,0 +1,1934 @@
+{
+ "id": "covid-19",
+ "patient": {
+  "name": "Kwame Asante",
+  "age": 67,
+  "sex": "M",
+  "setting": "Emergency Department, then respiratory ward",
+  "complaint": "Fever, dry cough and worsening breathlessness for 8 days; cannot smell his food",
+  "background": [
+   "Obesity (BMI 34) and type 2 diabetes",
+   "Hypertension on ramipril",
+   "Retired bus driver from Tottenham",
+   "His granddaughter tested positive for Covid-19 last week"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely diagnosis?' with fever, dry cough, anosmia, hypoxia, lymphopenia and bilateral infiltrates, often with a contact history; or complication questions (ARDS, PE).",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Kwame, 67: fever and **dry cough** for 8 days.",
+      "Aching muscles, exhausted.",
+      "He **cannot smell** his coffee.",
+      "Now breathless walking to the bathroom."
+     ],
+     "vitals": {
+      "T": "38.6°C",
+      "HR": "104 bpm",
+      "BP": "138/82 mmHg",
+      "RR": "26 /min",
+      "SpO2": "89% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "His granddaughter's positive test points to **SARS-CoV-2**, caught by droplets and aerosols at a family meal."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's **age and obesity** put him at risk of severe disease; immunosuppression or HIV would add more."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Fever, dry cough, myalgia, breathlessness and **anosmia** with hypoxia and tachypnoea: viral pneumonia, the severe end."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Fine **bibasal crackles**.",
+      "Breathless finishing sentences.",
+      "Calves soft, no swelling.",
+      "No sputum, no pleuritic pain."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Which single feature most points to Covid-19 over other viral illnesses?",
+     "o": [
+      "Dry cough",
+      "Fever",
+      "Loss of smell",
+      "Myalgia"
+     ],
+     "a": 2,
+     "r": "Fever, cough and myalgia occur in flu too. **Anosmia** is the distinctive Covid-19 clue."
+    },
+    {
+     "type": "compare",
+     "title": "Covid-19 vs influenza vs bacterial pneumonia",
+     "head": [
+      "Feature",
+      "Covid-19",
+      "Influenza",
+      "Bacterial pneumonia"
+     ],
+     "rows": [
+      [
+       "Onset",
+       "Gradual, worsens around day 7–10",
+       "Abrupt, severe myalgia",
+       "Often acute"
+      ],
+      [
+       "Clue",
+       "**Anosmia**, contact",
+       "Winter outbreak, myalgia",
+       "Productive cough, rigors"
+      ],
+      [
+       "Bloods",
+       "**Lymphopenia**, raised CRP",
+       "Often normal or mild",
+       "Neutrophilia, high CRP"
+      ],
+      [
+       "CXR",
+       "**Bilateral** infiltrates",
+       "Usually normal",
+       "Lobar consolidation"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame's falling sats make **ARDS** the main fear; immobility and inflammation also raise his **PE** risk."
+    },
+    {
+     "type": "trap",
+     "text": "Do not assume a normal-feeling patient is fine: Covid-19 can cause **silent hypoxia**. Always check the saturation."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (PCR) and 'most likely finding' questions on bloods (raised CRP, lymphopenia) and imaging (bilateral infiltrates).",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Which test confirms Kwame's diagnosis?",
+     "o": [
+      "Chest X-ray",
+      "Lateral flow antigen test",
+      "SARS-CoV-2 PCR swab",
+      "Serum antibodies"
+     ],
+     "a": 2,
+     "r": "**PCR** is the gold standard. Lateral flow is quicker but less sensitive; antibodies show past infection."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Kwame's nose and throat swab goes for **SARS-CoV-2 PCR**; it returns positive within hours."
+    },
+    {
+     "type": "labs",
+     "title": "Admission bloods",
+     "rows": [
+      [
+       "CRP",
+       "98 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "White cell count",
+       "6.8 ×10⁹/L",
+       "4.0–11.0",
+       ""
+      ],
+      [
+       "Lymphocytes",
+       "0.6 ×10⁹/L",
+       "1.0–4.0",
+       "L"
+      ],
+      [
+       "D-dimer",
+       "1.4 mg/L FEU",
+       "<0.5",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "88 µmol/L",
+       "60–110",
+       ""
+      ],
+      [
+       "Glucose",
+       "12.6 mmol/L",
+       "4.0–7.8",
+       "H"
+      ]
+     ],
+     "text": "A normal total white count with **lymphopenia** and raised CRP is the classic Covid pattern."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's **CRP 98** and **lymphocytes 0.6** fit; a raised D-dimer is common in Covid and does not itself mean PE."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Chest X-ray on admission",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "both",
+        "zone": "lower"
+       },
+       {
+        "type": "consolidation",
+        "side": "both",
+        "zone": "middle"
+       }
+      ],
+      "caption": "**Bilateral** patchy peripheral infiltrates, mid and lower zones: typical of COVID-19 pneumonitis, unlike one lobe in bacterial pneumonia."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Kwame's film shows **bilateral infiltrates**; CT would show ground-glass change if the X-ray was unclear."
+    },
+    {
+     "type": "trap",
+     "text": "A negative **lateral flow** test does not exclude Covid-19 in a typical admission. Send a **PCR**."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate management?' with severity as the decider: supportive for mild, dexamethasone plus remdesivir if on oxygen, tocilizumab if ventilated, early antivirals for high-risk outpatients.",
+   "steps": [
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Oxygen saturation on air",
+      "min": 80,
+      "max": 100,
+      "unit": "%",
+      "bands": [
+       [
+        80,
+        92,
+        "Needs oxygen: dexamethasone + remdesivir",
+        "bad"
+       ],
+       [
+        92,
+        94,
+        "Below target",
+        "warn"
+       ],
+       [
+        94,
+        100,
+        "Target range",
+        "ok"
+       ]
+      ],
+      "value": 89,
+      "label": "Kwame 89%",
+      "caption": "Kwame needs **supplemental oxygen**: that is the trigger for dexamethasone and remdesivir."
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Kwame needs 4 L/min oxygen to keep sats above 94%. What do you add?",
+     "o": [
+      "Amoxicillin alone",
+      "Dexamethasone 6 mg and remdesivir",
+      "Paracetamol and fluids only",
+      "Tocilizumab alone"
+     ],
+     "a": 1,
+     "r": "Needing **supplemental oxygen** triggers dexamethasone 6 mg daily with remdesivir. Tocilizumab is for those needing ventilation."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame starts **dexamethasone 6 mg daily** with **remdesivir** because he needs oxygen."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Kwame is **admitted** for oxygen and gets **LMWH** prophylaxis; if he needed ventilation, **tocilizumab** would be added."
+    },
+    {
+     "type": "flow",
+     "title": "Covid-19 treatment ladder",
+     "nodes": [
+      "Mild: paracetamol and fluids at home",
+      "High-risk outpatient: Paxlovid and/or remdesivir early",
+      "Needs oxygen: dexamethasone 6 mg + remdesivir",
+      "Hospitalised: LMWH prophylaxis",
+      "Needs ventilation: tocilizumab"
+     ],
+     "caption": "Each step is triggered by severity."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "His granddaughter, with mild disease, needs only **paracetamol and fluids**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Had Kwame been **HIV-positive** with mild early disease, he would get **Paxlovid** or remdesivir early to prevent progression."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Kwame's response to treatment",
+      "x": [
+       "Day 0",
+       "Day 2",
+       "Day 4",
+       "Day 7"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "CRP (mg/L)",
+        "values": [
+         98,
+         76,
+         41,
+         12
+        ]
+       },
+       {
+        "name": "Oxygen needed (L/min)",
+        "values": [
+         4,
+         3,
+         1,
+         0
+        ]
+       }
+      ],
+      "caption": "Dexamethasone dampens the inflammatory response: CRP and oxygen need fall together."
+     }
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Kwame's care follows the **NHS/NICE Covid-19 rapid guideline** for suspected or confirmed pneumonia."
+    },
+    {
+     "type": "trap",
+     "text": "Dexamethasone is **not** for mild disease without oxygen need. It helps only once the patient is hypoxic."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied questions: the receptor (ACE2), why severe disease is inflammatory (hence steroids and tocilizumab), why anticoagulate, and how the antivirals work.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "The virus's **spike protein** latched onto **ACE2** on Kwame's airway cells, which is why it targets the respiratory tract."
+    },
+    {
+     "type": "flow",
+     "title": "From infection to ARDS",
+     "nodes": [
+      "Spike protein binds ACE2",
+      "Viral replication in epithelium",
+      "Excessive cytokine response",
+      "Diffuse alveolar damage",
+      "ARDS and hypoxia"
+     ],
+     "caption": "Late severe disease is driven by the host, not the virus."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Kwame's lungs are damaged mostly by his **own inflammatory response**, so **dexamethasone** helps."
+    },
+    {
+     "type": "ask",
+     "q": "Why does tocilizumab help in severe Covid-19?",
+     "o": [
+      "It blocks ACE2",
+      "It blocks the IL-6 receptor",
+      "It inhibits viral protease",
+      "It inhibits viral RNA polymerase"
+     ],
+     "a": 1,
+     "r": "Tocilizumab is an **anti-IL-6 receptor** antibody that damps the cytokine storm. Remdesivir hits viral RNA polymerase."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Endothelial injury and inflammation make Kwame **hypercoagulable**, so he gets LMWH to prevent VTE."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "**Nirmatrelvir** blocks the viral protease; **ritonavir** slows its metabolism to boost levels. Remdesivir stops viral RNA replication."
+    },
+    {
+     "type": "pearl",
+     "text": "Antivirals work **early** (viral phase); steroids and tocilizumab work **late** (inflammatory phase)."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which virus causes Covid-19?",
+   "o": [
+    "Influenza A",
+    "MERS-CoV",
+    "RSV",
+    "SARS-CoV-2"
+   ],
+   "a": 3,
+   "r": "Covid-19 is caused by **SARS-CoV-2**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which symptom is most distinctive of Covid-19?",
+   "o": [
+    "Anosmia",
+    "Fever",
+    "Headache",
+    "Myalgia"
+   ],
+   "a": 0,
+   "r": "**Loss of smell** is the distinctive feature."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which group is at particularly high risk of severe complications?",
+   "o": [
+    "HIV-positive patients",
+    "Young adults",
+    "People with hay fever",
+    "Vaccinated healthcare workers"
+   ],
+   "a": 0,
+   "r": "**HIV-positive status** confers a high risk."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What is the major complication of severe Covid-19 pneumonia?",
+   "o": [
+    "ARDS",
+    "Bronchiectasis",
+    "Empyema",
+    "Lung abscess"
+   ],
+   "a": 0,
+   "r": "**ARDS**; also PE and multi-organ failure."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard test?",
+   "o": [
+    "Chest X-ray",
+    "Lateral flow test",
+    "PCR for SARS-CoV-2",
+    "Serology"
+   ],
+   "a": 2,
+   "r": "**PCR** is the gold standard."
+  },
+  {
+   "d": "investigation",
+   "q": "Which blood findings are typical?",
+   "o": [
+    "Eosinophilia and low CRP",
+    "Lymphopenia and raised CRP",
+    "Neutropenia and low CRP",
+    "Thrombocytosis and normal CRP"
+   ],
+   "a": 1,
+   "r": "**Raised CRP and lymphopenia**."
+  },
+  {
+   "d": "management",
+   "q": "What is given to patients needing supplemental oxygen?",
+   "o": [
+    "Dexamethasone and remdesivir",
+    "Oseltamivir",
+    "Paxlovid alone",
+    "Tocilizumab alone"
+   ],
+   "a": 0,
+   "r": "**Dexamethasone 6 mg** plus **remdesivir**."
+  },
+  {
+   "d": "management",
+   "q": "Which drug is used for patients requiring ventilation?",
+   "o": [
+    "Hydroxychloroquine",
+    "Ivermectin",
+    "Oseltamivir",
+    "Tocilizumab"
+   ],
+   "a": 3,
+   "r": "**Tocilizumab** if ventilated."
+  },
+  {
+   "d": "management",
+   "q": "What is Paxlovid?",
+   "o": [
+    "Dexamethasone and remdesivir",
+    "Lopinavir and ritonavir",
+    "Nirmatrelvir and ritonavir",
+    "Oseltamivir and zanamivir"
+   ],
+   "a": 2,
+   "r": "**Nirmatrelvir plus ritonavir**."
+  },
+  {
+   "d": "science",
+   "q": "Which receptor does SARS-CoV-2 use to enter cells?",
+   "o": [
+    "ACE2",
+    "CD4",
+    "Sialic acid",
+    "TLR4"
+   ],
+   "a": 0,
+   "r": "Spike protein binds **ACE2**."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 54 year old woman has had fever, dry cough and muscle aches for 6 days. For 3 days she has been unable to smell or taste her food. Her husband had similar symptoms last week. Her temperature is 38.3°C, pulse rate 98 bpm, BP 128/80 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 93% breathing air. There are fine bibasal crackles.",
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Covid-19",
+    "Influenza",
+    "Legionella pneumonia",
+    "Pneumococcal pneumonia",
+    "Pneumocystis pneumonia"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question: which respiratory infection?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry cough",
+      "unable to smell or taste",
+      "Her husband had similar symptoms",
+      "93% breathing air",
+      "fine bibasal crackles"
+     ],
+     "x": "Dry cough, fever, myalgia, **anosmia**, contact, hypoxia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Covid-19."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       3,
+       "Usually productive cough, rigors and focal signs; anosmia is not a feature."
+      ],
+      [
+       1,
+       "Abrupt onset with myalgia, but anosmia points to Covid-19."
+      ],
+      [
+       2,
+       "Linked to water systems, with hyponatraemia and diarrhoea."
+      ],
+      [
+       4,
+       "Needs immunosuppression (e.g. HIV with low CD4)."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Covid-19.** Rule: fever + dry cough + **anosmia** + contact = Covid-19."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 61 year old man has fever, dry cough and loss of smell for 5 days. His temperature is 38.1°C, pulse rate 96 bpm, BP 132/84 mmHg and oxygen saturation 94% breathing air. A lateral flow test at home was negative.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Chest X-ray",
+    "Repeat lateral flow test",
+    "SARS-CoV-2 PCR on a nasopharyngeal swab",
+    "Serum SARS-CoV-2 antibodies",
+    "Sputum culture"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A diagnostic (confirmatory) test question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "loss of smell",
+      "lateral flow test at home was negative"
+     ],
+     "x": "Typical Covid; negative lateral flow does not exclude."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PCR."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Supports but does not confirm the diagnosis."
+      ],
+      [
+       1,
+       "Less sensitive; PCR is the gold standard."
+      ],
+      [
+       3,
+       "Shows past infection or vaccination."
+      ],
+      [
+       4,
+       "For bacteria, not SARS-CoV-2."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. SARS-CoV-2 PCR on a nasopharyngeal swab.** Rule: gold standard = **PCR** for SARS-CoV-2."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 38 year old man with HIV has had a sore throat, dry cough and fever for 2 days. A PCR test is positive for SARS-CoV-2. His temperature is 37.9°C, pulse rate 88 bpm, BP 124/78 mmHg and oxygen saturation 98% breathing air. His chest is clear.",
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Dexamethasone 6 mg daily",
+    "Nirmatrelvir with ritonavir",
+    "Oseltamivir",
+    "Paracetamol and fluids only",
+    "Tocilizumab"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: decide severity and risk."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "with HIV",
+      "for 2 days",
+      "98% breathing air"
+     ],
+     "x": "Mild early disease in a **high-risk** patient."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Early antiviral: Paxlovid."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Only if needing oxygen; his sats are 98%."
+      ],
+      [
+       2,
+       "An influenza drug."
+      ],
+      [
+       3,
+       "Right for low-risk mild disease, but he is **HIV-positive** (high risk)."
+      ],
+      [
+       4,
+       "Only if ventilated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Nirmatrelvir with ritonavir.** Rule: high-risk + mild early = **Paxlovid** and/or remdesivir."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 70 year old woman with Covid-19 is prescribed nirmatrelvir with ritonavir. A pharmacist explains that ritonavir has little direct antiviral effect at this dose.",
+   "q": "Which is the most likely reason ritonavir is included?",
+   "o": [
+    "It binds ACE2 to block viral entry",
+    "It blocks the IL-6 receptor",
+    "It inhibits the metabolism of nirmatrelvir",
+    "It inhibits viral RNA polymerase",
+    "It reduces cytokine production as a steroid"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A drug mechanism question about the booster."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "nirmatrelvir with ritonavir",
+      "little direct antiviral effect"
+     ],
+     "x": "Ritonavir is a **CYP3A4 inhibitor** booster."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "It boosts nirmatrelvir levels by inhibiting its metabolism."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No drug here blocks ACE2."
+      ],
+      [
+       1,
+       "That is tocilizumab."
+      ],
+      [
+       3,
+       "That is remdesivir."
+      ],
+      [
+       4,
+       "That is dexamethasone."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. It inhibits the metabolism of nirmatrelvir.** Rule: nirmatrelvir = protease inhibitor; ritonavir = **booster**."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 59 year old man has had fever, dry cough and fatigue for 7 days and has lost his sense of smell. His temperature is 38.4°C, pulse rate 102 bpm, BP 134/82 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 91% breathing air.",
+   "labs": [
+    [
+     "CRP",
+     "112 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "White cell count",
+     "6.1 ×10⁹/L",
+     "4.0–11.0",
+     ""
+    ],
+    [
+     "Lymphocytes",
+     "0.5 ×10⁹/L",
+     "1.0–4.0",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Acute bronchitis",
+    "Covid-19",
+    "Influenza",
+    "Pneumococcal pneumonia",
+    "Pulmonary embolism"
+   ],
+   "a": 1,
+   "e": "Fever, dry cough, anosmia and hypoxia with lymphopenia and raised CRP is Covid-19; bacterial pneumonia gives a neutrophilia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis: which infection fits?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry cough",
+      "lost his sense of smell",
+      "91% breathing air"
+     ],
+     "x": "Anosmia, hypoxia, lymphopenia, high CRP."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Covid-19."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No hypoxia or systemic illness in bronchitis."
+      ],
+      [
+       2,
+       "No anosmia in flu; anosmia and lymphopenia favour Covid-19."
+      ],
+      [
+       3,
+       "Neutrophilia and lobar consolidation would be expected."
+      ],
+      [
+       4,
+       "No fever, anosmia or bilateral infiltrates."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Covid-19.** Rule: anosmia + lymphopenia + hypoxia = Covid-19."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 64 year old woman with confirmed Covid-19 has been unwell for 6 days with fever and dry cough. Her temperature is 38.2°C, pulse rate 96 bpm and oxygen saturation 93% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on her full blood count?",
+   "o": [
+    "Basophilia",
+    "Eosinophilia",
+    "Erythrocytosis",
+    "Leukaemoid neutrophilia",
+    "Lymphopenia"
+   ],
+   "a": 4,
+   "e": "Lymphopenia with a raised CRP is typical of Covid-19; neutrophilia points to bacterial infection.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' question: recall the classic blood result."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "confirmed Covid-19",
+      "dry cough"
+     ],
+     "x": "Covid-19 blood picture."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Lymphopenia (with raised CRP)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Seen in allergy, parasites, some drugs."
+      ],
+      [
+       0,
+       "Seen in myeloproliferative disease, not Covid."
+      ],
+      [
+       2,
+       "Chronic hypoxia or primary disease, not acute infection."
+      ],
+      [
+       3,
+       "A very high neutrophil count suggests bacterial sepsis."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Lymphopenia.** Rule: Covid-19 bloods = **lymphopenia and raised CRP**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 72 year old man has had fever, dry cough and breathlessness for 9 days after his wife had Covid-19. His temperature is 38.0°C, pulse rate 104 bpm, BP 130/76 mmHg and oxygen saturation 90% breathing air. His chest X-ray is shown (see item resources).",
+   "labs": [],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "consolidation",
+      "side": "both",
+      "zone": "lower"
+     },
+     {
+      "type": "consolidation",
+      "side": "both",
+      "zone": "middle"
+     }
+    ],
+    "caption": "Bilateral peripheral mid and lower zone infiltrates."
+   },
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Covid-19 pneumonia",
+    "Heart failure",
+    "Lobar pneumococcal pneumonia",
+    "Pulmonary fibrosis",
+    "Tuberculosis"
+   ],
+   "a": 0,
+   "e": "Bilateral infiltrates in a hypoxic febrile contact of a Covid-19 case is Covid-19 pneumonia; pneumococcus gives lobar consolidation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Image-based diagnosis: read the CXR in context."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "after his wife had Covid-19",
+      "90% breathing air"
+     ],
+     "x": "Contact, hypoxia, **bilateral** infiltrates."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Covid-19 pneumonia."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No orthopnoea or oedema; fever and contact favour infection."
+      ],
+      [
+       2,
+       "Gives single-lobe consolidation, not bilateral peripheral changes."
+      ],
+      [
+       3,
+       "Chronic, not a 9-day febrile illness."
+      ],
+      [
+       4,
+       "Upper zone cavitation over weeks, with weight loss."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Covid-19 pneumonia.** Rule: bilateral infiltrates + contact + hypoxia = Covid-19 pneumonia."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old woman is in intensive care on day 10 of Covid-19. Despite high-flow oxygen her saturation has fallen to 84%. Her pulse rate is 118 bpm, BP 104/66 mmHg and respiratory rate 34 breaths per minute. Chest X-ray shows dense bilateral opacities. Echocardiogram shows normal left ventricular function.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely complication?",
+   "o": [
+    "Acute respiratory distress syndrome",
+    "Bacterial empyema",
+    "Cardiogenic pulmonary oedema",
+    "Pneumothorax",
+    "Pulmonary embolism"
+   ],
+   "a": 0,
+   "e": "Refractory hypoxia with bilateral opacities and normal LV function in severe Covid-19 is ARDS.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Complication question: severe hypoxia with bilateral opacities."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "day 10 of Covid-19",
+      "fallen to 84%",
+      "dense bilateral opacities",
+      "normal left ventricular function"
+     ],
+     "x": "Bilateral opacities, refractory hypoxia, not cardiac."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "ARDS."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Gives a localised collection, not bilateral white-out."
+      ],
+      [
+       2,
+       "LV function is normal."
+      ],
+      [
+       3,
+       "Unilateral, with absent breath sounds."
+      ],
+      [
+       4,
+       "Does not cause dense bilateral opacities."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Acute respiratory distress syndrome.** Rule: severe Covid + bilateral opacities + normal heart = **ARDS**."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man admitted with Covid-19 pneumonia 5 days ago suddenly develops pleuritic left-sided chest pain and worsening breathlessness. His pulse rate is 124 bpm, BP 112/70 mmHg and oxygen saturation 88% on 2 L/min oxygen. His left calf is swollen.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely complication?",
+   "o": [
+    "ARDS",
+    "Myocarditis",
+    "Pneumothorax",
+    "Pulmonary embolism",
+    "Secondary bacterial pneumonia"
+   ],
+   "a": 3,
+   "e": "Sudden pleuritic pain, hypoxia, tachycardia and a swollen calf in hospitalised Covid-19 is PE, from the hypercoagulable state.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Complication: sudden deterioration in a hospitalised Covid patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Covid-19 pneumonia",
+      "suddenly develops pleuritic",
+      "left calf is swollen"
+     ],
+     "x": "Sudden pleuritic pain, tachycardia, hypoxia, swollen calf."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PE."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Develops gradually, without pleuritic pain or calf swelling."
+      ],
+      [
+       1,
+       "Chest pain with troponin rise and arrhythmias, not calf swelling."
+      ],
+      [
+       2,
+       "No calf swelling; reduced breath sounds."
+      ],
+      [
+       4,
+       "Gradual, with purulent sputum and fever."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Pulmonary embolism.** Rule: Covid is **hypercoagulable**: sudden pleuritic pain + calf swelling = PE."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 29 year old man has Covid-19 with fever and cough. He is HIV-positive, has not been taking antiretroviral therapy and his CD4 count is low. He also has hay fever, well-controlled asthma and a penicillin allergy. His temperature is 38.2°C, pulse rate 94 bpm and BP 120/74 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which feature most increases his risk of severe complications?",
+   "o": [
+    "Asthma, well controlled",
+    "Hay fever",
+    "HIV infection",
+    "Male sex",
+    "Penicillin allergy"
+   ],
+   "a": 2,
+   "e": "HIV-positive status, especially untreated with a low CD4 count, confers a high risk of severe Covid-19 complications.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Risk factor question: pick the strongest one in the stem."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "HIV-positive",
+      "not been taking antiretroviral therapy",
+      "CD4 count is low"
+     ],
+     "x": "Untreated HIV with low CD4 = immunosuppression."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "HIV infection."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Not a risk factor for severe disease."
+      ],
+      [
+       3,
+       "A weak factor compared with immunosuppression."
+      ],
+      [
+       4,
+       "Irrelevant to Covid severity."
+      ],
+      [
+       0,
+       "Well-controlled asthma is a weak factor compared with untreated HIV."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. HIV infection.** Rule: **HIV-positive** status confers high risk of severe Covid-19."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 47 year old woman has had fever, dry cough and anosmia for 4 days. Her temperature is 38.0°C, pulse rate 92 bpm, BP 126/78 mmHg and oxygen saturation 95% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Chest X-ray",
+    "CT pulmonary angiogram",
+    "SARS-CoV-2 PCR",
+    "Serum antibody test",
+    "Sputum Gram stain"
+   ],
+   "a": 2,
+   "e": "PCR for SARS-CoV-2 is the gold-standard diagnostic test.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Confirmatory test question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "fever, dry cough and anosmia"
+     ],
+     "x": "Suspected Covid-19."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PCR for SARS-CoV-2."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Supports severity assessment; does not confirm."
+      ],
+      [
+       1,
+       "For PE."
+      ],
+      [
+       3,
+       "Shows past exposure."
+      ],
+      [
+       4,
+       "For bacterial pneumonia."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. SARS-CoV-2 PCR.** Rule: gold standard = **PCR**."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 69 year old man with PCR-confirmed Covid-19 is admitted with worsening breathlessness. His temperature is 38.5°C, pulse rate 106 bpm, BP 128/74 mmHg and oxygen saturation 90% breathing air.",
+   "labs": [
+    [
+     "CRP",
+     "88 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Lymphocytes",
+     "0.7 ×10⁹/L",
+     "1.0–4.0",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on chest X-ray?",
+   "o": [
+    "Bilateral hilar lymphadenopathy",
+    "Bilateral peripheral infiltrates",
+    "Right upper lobe cavity",
+    "Single lobar consolidation with air bronchograms",
+    "Unilateral large effusion"
+   ],
+   "a": 1,
+   "e": "Covid-19 pneumonia typically shows bilateral, often peripheral, infiltrates; lobar consolidation suggests bacterial pneumonia.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A 'most likely finding' on imaging."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "PCR-confirmed Covid-19",
+      "90% breathing air"
+     ],
+     "x": "Covid-19 pneumonia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bilateral infiltrates."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Sarcoidosis."
+      ],
+      [
+       2,
+       "TB or Staph. aureus or Klebsiella."
+      ],
+      [
+       3,
+       "Bacterial pneumonia."
+      ],
+      [
+       4,
+       "Malignancy, empyema or heart failure."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bilateral peripheral infiltrates.** Rule: Covid CXR/CT = **bilateral infiltrates**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old woman has had fever, dry cough and anosmia for 3 days. PCR is positive for SARS-CoV-2. She has no medical history. Her temperature is 37.9°C, pulse rate 84 bpm, BP 118/72 mmHg and oxygen saturation 98% breathing air.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Admission for remdesivir",
+    "Dexamethasone 6 mg daily",
+    "Oral amoxicillin",
+    "Paracetamol and oral fluids at home",
+    "Tocilizumab"
+   ],
+   "a": 3,
+   "e": "Mild Covid-19 in a low-risk patient needs supportive care only; dexamethasone helps only those needing oxygen.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: assess severity first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "no medical history",
+      "98% breathing air"
+     ],
+     "x": "Mild, low-risk disease."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Supportive care: paracetamol and fluids."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She is low risk and not hypoxic."
+      ],
+      [
+       1,
+       "Only if needing oxygen."
+      ],
+      [
+       2,
+       "No bacterial infection."
+      ],
+      [
+       4,
+       "Only if ventilated."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Paracetamol and oral fluids at home.** Rule: mild Covid = **paracetamol and hydration**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 71 year old man with Covid-19 pneumonia needs 4 L/min oxygen to keep his saturation above 94%. His temperature is 38.3°C, pulse rate 100 bpm and BP 136/80 mmHg. He is not ventilated.",
+   "labs": [
+    [
+     "CRP",
+     "104 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Lymphocytes",
+     "0.6 ×10⁹/L",
+     "1.0–4.0",
+     "L"
+    ],
+    [
+     "eGFR",
+     "70 mL/min/1.73m²",
+     ">60",
+     ""
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate treatment?",
+   "o": [
+    "Dexamethasone 6 mg daily and remdesivir",
+    "Hydroxychloroquine",
+    "Oseltamivir",
+    "Paracetamol and fluids only",
+    "Tocilizumab alone"
+   ],
+   "a": 0,
+   "e": "Patients needing supplemental oxygen get dexamethasone 6 mg daily with remdesivir; tocilizumab is added if ventilation is required.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: oxygen need is the trigger."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "needs 4 L/min oxygen",
+      "not ventilated"
+     ],
+     "x": "Needs supplemental oxygen, not ventilated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Dexamethasone 6 mg plus remdesivir."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Ineffective; not recommended."
+      ],
+      [
+       2,
+       "For influenza."
+      ],
+      [
+       3,
+       "Insufficient: he needs oxygen."
+      ],
+      [
+       4,
+       "Ventilated patients; and not alone."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Dexamethasone 6 mg daily and remdesivir.** Rule: on oxygen = **dexamethasone 6 mg + remdesivir**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 63 year old woman with severe Covid-19 is intubated and ventilated in intensive care. She is already receiving dexamethasone and prophylactic LMWH. Her pulse rate is 112 bpm and BP 108/64 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate additional treatment?",
+   "o": [
+    "Azithromycin",
+    "Ivermectin",
+    "Oseltamivir",
+    "Paxlovid",
+    "Tocilizumab"
+   ],
+   "a": 4,
+   "e": "Patients requiring ventilation get tocilizumab; Paxlovid is for early mild disease in high-risk patients.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management: escalate for the most severe disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "intubated and ventilated",
+      "already receiving dexamethasone"
+     ],
+     "x": "Ventilated severe Covid."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Tocilizumab."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No benefit in viral Covid-19."
+      ],
+      [
+       1,
+       "Not effective."
+      ],
+      [
+       2,
+       "Influenza only."
+      ],
+      [
+       3,
+       "For mild early disease in high-risk outpatients."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Tocilizumab.** Rule: requiring ventilation = **tocilizumab**."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 45 year old man has Covid-19 with anosmia and a dry cough. A student asks how the virus enters his respiratory epithelial cells.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism?",
+   "o": [
+    "Gp120 binding to CD4",
+    "Haemagglutinin binding to sialic acid",
+    "Neuraminidase cleaving sialic acid",
+    "Spike protein binding to ACE2",
+    "Toxin binding to ganglioside receptors"
+   ],
+   "a": 3,
+   "e": "SARS-CoV-2 enters via its spike protein binding ACE2 on respiratory epithelium; haemagglutinin–sialic acid binding is influenza.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism: match the virus to its receptor."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Covid-19",
+      "respiratory epithelial cells"
+     ],
+     "x": "SARS-CoV-2 entry."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Spike binds ACE2."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "HIV entry."
+      ],
+      [
+       1,
+       "Influenza entry."
+      ],
+      [
+       2,
+       "Influenza release, not entry."
+      ],
+      [
+       4,
+       "Cholera-type toxins."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Spike protein binding to ACE2.** Rule: SARS-CoV-2 = **spike + ACE2**; influenza = haemagglutinin + sialic acid."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "What is Covid-19 and how is it spread?",
+    "tip": "Exam thinking: name the virus.",
+    "points": [
+     {
+      "p": "Respiratory infection caused by SARS-CoV-2",
+      "k": [
+       [
+        "sars-cov-2",
+        "sars cov 2",
+        "coronavirus"
+       ]
+      ],
+      "why": "A coronavirus."
+     },
+     {
+      "p": "Spread by droplets and aerosols",
+      "k": [
+       [
+        "droplet",
+        "aerosol",
+        "airborne"
+       ]
+      ],
+      "why": "Contact history in the stem."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Who is at risk of severe Covid-19?",
+    "tip": "Exam thinking: HIV is the one the notes stress.",
+    "points": [
+     {
+      "p": "Older age",
+      "k": [
+       [
+        "older",
+        "elderly",
+        "age"
+       ]
+      ],
+      "why": "Strongest population risk."
+     },
+     {
+      "p": "Chronic lung disease, obesity",
+      "k": [
+       [
+        "lung",
+        "obes"
+       ]
+      ],
+      "why": "Comorbidities."
+     },
+     {
+      "p": "Immunosuppression, especially HIV-positive status",
+      "k": [
+       [
+        "hiv",
+        "immunosupp",
+        "immunocomp"
+       ]
+      ],
+      "why": "High risk of severe complications."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Describe the presentation of Covid-19, mild to severe.",
+    "tip": "Exam thinking: anosmia is the distinguishing clue.",
+    "points": [
+     {
+      "p": "Mild URTI symptoms up to severe viral pneumonia and respiratory failure",
+      "k": [
+       [
+        "urti",
+        "mild",
+        "pneumonia",
+        "respiratory failure"
+       ]
+      ],
+      "why": "A spectrum."
+     },
+     {
+      "p": "Fever, dry cough, myalgia, fatigue",
+      "k": [
+       [
+        "fever",
+        "dry cough",
+        "myalgia",
+        "fatigue"
+       ]
+      ],
+      "why": "Shared with flu."
+     },
+     {
+      "p": "Loss of smell (anosmia)",
+      "k": [
+       [
+        "anosmia",
+        "smell"
+       ]
+      ],
+      "why": "The distinctive symptom."
+     },
+     {
+      "p": "Signs: hypoxia, tachypnoea, crackles",
+      "k": [
+       [
+        "hypox",
+        "tachypn",
+        "crackle",
+        "low sat"
+       ]
+      ],
+      "why": "Hypoxia can be silent."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of Covid-19?",
+    "tip": "Exam thinking: ARDS and PE are the exam favourites.",
+    "points": [
+     {
+      "p": "ARDS",
+      "k": [
+       [
+        "ards",
+        "respiratory distress"
+       ]
+      ],
+      "why": "Bilateral opacities, refractory hypoxia."
+     },
+     {
+      "p": "Pulmonary embolism",
+      "k": [
+       [
+        "pe",
+        "embol",
+        "vte"
+       ]
+      ],
+      "why": "Hypercoagulable state."
+     },
+     {
+      "p": "Multi-organ failure",
+      "k": [
+       [
+        "multi-organ",
+        "multiorgan",
+        "multi organ",
+        "organ failure"
+       ]
+      ],
+      "why": "Severe disease."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How is Covid-19 diagnosed, and what do bloods and imaging show?",
+    "tip": "Exam thinking: PCR, lymphopenia, bilateral infiltrates.",
+    "points": [
+     {
+      "p": "PCR for SARS-CoV-2 (gold standard)",
+      "k": [
+       [
+        "pcr"
+       ]
+      ],
+      "why": "Lateral flow is less sensitive."
+     },
+     {
+      "p": "Raised CRP and lymphopenia",
+      "k": [
+       [
+        "crp",
+        "lymphopen",
+        "low lymph"
+       ]
+      ],
+      "why": "Neutrophilia suggests bacteria."
+     },
+     {
+      "p": "CXR or CT: bilateral infiltrates",
+      "k": [
+       [
+        "bilateral"
+       ]
+      ],
+      "why": "Not lobar."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is Covid-19 managed by severity?",
+    "tip": "Exam thinking: oxygen need and ventilation are the triggers.",
+    "points": [
+     {
+      "p": "Mild: paracetamol and hydration",
+      "k": [
+       [
+        "paracetamol",
+        "fluid",
+        "hydrat",
+        "supportive"
+       ]
+      ],
+      "why": "No steroids."
+     },
+     {
+      "p": "Needs oxygen: dexamethasone 6 mg daily plus remdesivir",
+      "k": [
+       [
+        "dexamethasone",
+        "dex"
+       ],
+       [
+        "remdesivir"
+       ]
+      ],
+      "why": "Classic SBA."
+     },
+     {
+      "p": "Needs ventilation: tocilizumab",
+      "k": [
+       [
+        "tocilizumab"
+       ]
+      ],
+      "why": "IL-6 receptor blocker."
+     },
+     {
+      "p": "Hospitalised: oxygen and LMWH anticoagulation; admit if severe hypoxia",
+      "k": [
+       [
+        "lmwh",
+        "anticoag",
+        "heparin",
+        "enoxaparin"
+       ]
+      ],
+      "why": "VTE prophylaxis."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you treat a high-risk patient (e.g. HIV-positive) with early mild Covid-19?",
+    "tip": "Exam thinking: early antivirals.",
+    "points": [
+     {
+      "p": "Early antiviral treatment",
+      "k": [
+       [
+        "antiviral",
+        "early"
+       ]
+      ],
+      "why": "Prevents progression."
+     },
+     {
+      "p": "Paxlovid (nirmatrelvir plus ritonavir) and/or remdesivir",
+      "k": [
+       [
+        "paxlovid",
+        "nirmatrelvir",
+        "remdesivir"
+       ]
+      ],
+      "why": "Know Paxlovid's two parts."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "How does SARS-CoV-2 enter cells, and why does severe disease cause ARDS?",
+    "tip": "Exam thinking: ACE2, then cytokines.",
+    "points": [
+     {
+      "p": "Spike protein binds ACE2 on respiratory epithelium",
+      "k": [
+       [
+        "ace2",
+        "ace 2",
+        "ace-2"
+       ]
+      ],
+      "why": "Explains tropism."
+     },
+     {
+      "p": "Excessive cytokine (host inflammatory) response",
+      "k": [
+       [
+        "cytokine",
+        "inflammat",
+        "immune"
+       ]
+      ],
+      "why": "Host-driven."
+     },
+     {
+      "p": "Diffuse alveolar damage leads to ARDS; hence dexamethasone and tocilizumab",
+      "k": [
+       [
+        "alveolar",
+        "ards",
+        "dexamethasone",
+        "tocilizumab"
+       ]
+      ],
+      "why": "Immunomodulation rationale."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why anticoagulate, and how do the antivirals work?",
+    "tip": "Exam thinking: hypercoagulability; protease and RNA replication.",
+    "points": [
+     {
+      "p": "Endothelial injury and inflammation cause a hypercoagulable state, raising VTE risk",
+      "k": [
+       [
+        "hypercoag",
+        "endotheli",
+        "vte",
+        "clot"
+       ]
+      ],
+      "why": "Hence LMWH."
+     },
+     {
+      "p": "Remdesivir and nirmatrelvir inhibit viral RNA replication",
+      "k": [
+       [
+        "rna",
+        "replication",
+        "polymerase"
+       ]
+      ],
+      "why": "Act early."
+     },
+     {
+      "p": "Nirmatrelvir inhibits viral protease; ritonavir boosts levels by blocking its metabolism",
+      "k": [
+       [
+        "protease"
+       ],
+       [
+        "ritonavir",
+        "boost",
+        "metabol"
+       ]
+      ],
+      "why": "Ritonavir is a booster."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Covid-19": "Illness caused by the SARS-CoV-2 coronavirus, ranging from a cold to severe pneumonia.",
+  "SARS-CoV-2": "The coronavirus that causes Covid-19.",
+  "aerosols": "Tiny airborne particles that can carry virus over longer distances than droplets.",
+  "anosmia": "Loss of the sense of smell; a distinctive Covid-19 symptom.",
+  "myalgia": "Muscle aches.",
+  "hypoxia": "Low oxygen levels in the blood or tissues.",
+  "silent hypoxia": "Low oxygen saturation in a patient who does not feel very breathless.",
+  "tachypnoea": "Fast breathing rate.",
+  "ARDS": "Acute respiratory distress syndrome: inflammatory lung injury with bilateral opacities and severe hypoxia, not due to heart failure.",
+  "lymphopenia": "A low lymphocyte count; typical in Covid-19.",
+  "CRP": "C-reactive protein; a blood marker of inflammation.",
+  "D-dimer": "Fibrin breakdown product; raised in clotting and often in Covid-19.",
+  "PCR": "Polymerase chain reaction: detects viral genetic material; gold standard for Covid-19.",
+  "lateral flow": "Rapid antigen test; quick but less sensitive than PCR.",
+  "bilateral infiltrates": "Shadowing in both lungs on imaging, typical of Covid-19 pneumonia.",
+  "ground-glass": "Hazy CT lung change through which vessels are still seen.",
+  "dexamethasone": "Corticosteroid given at 6 mg daily to Covid-19 patients needing oxygen.",
+  "remdesivir": "IV antiviral that inhibits viral RNA replication.",
+  "tocilizumab": "Antibody against the IL-6 receptor, used in ventilated Covid-19 patients.",
+  "IL-6": "Interleukin-6, an inflammatory cytokine central to the cytokine storm.",
+  "Paxlovid": "Oral nirmatrelvir plus ritonavir for early Covid-19 in high-risk patients.",
+  "nirmatrelvir": "Antiviral that inhibits the SARS-CoV-2 main protease.",
+  "ritonavir": "Booster that inhibits nirmatrelvir's metabolism (CYP3A4) to raise its levels.",
+  "protease": "Viral enzyme that cuts long proteins into working parts; blocked by nirmatrelvir.",
+  "ACE2": "Angiotensin-converting enzyme 2: the cell receptor SARS-CoV-2 uses to enter.",
+  "spike protein": "Surface protein of SARS-CoV-2 that binds ACE2.",
+  "tropism": "The preference of a virus for particular cells or tissues.",
+  "cytokine storm": "An excessive inflammatory response that damages the body's own tissues.",
+  "hypercoagulable": "More prone than normal to forming blood clots.",
+  "VTE": "Venous thromboembolism: DVT or pulmonary embolism.",
+  "LMWH": "Low molecular weight heparin, e.g. enoxaparin; injectable anticoagulant.",
+  "PE": "Pulmonary embolism: a clot blocking a lung artery.",
+  "HIV": "Human immunodeficiency virus, which weakens the immune system.",
+  "multi-organ failure": "Failure of two or more organ systems in severe illness."
+ }
+}

@@ -1,0 +1,722 @@
+{
+  "id": "extradural-haemorrhage",
+  "patient": {
+    "name": "Callum Reilly",
+    "age": 21,
+    "sex": "M",
+    "setting": "Emergency Department",
+    "complaint": "Knocked out by a cricket ball to the left temple, now drowsy and vomiting",
+    "background": [
+      "University cricketer, otherwise fit and well",
+      "No regular medication, no anticoagulants",
+      "Knocked out for about 1 minute, then chatting normally for 2 hours",
+      "Brought in by teammates from a match in Battersea Park"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with a young person hit on the temple, a brief loss of consciousness, a lucid interval and then deterioration with an ipsilateral fixed dilated pupil; chronic subdural in an older person on anticoagulants is the classic distractor.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Callum, 21, hit on the **left temple** by a cricket ball.",
+            "Out cold for about a minute.",
+            "Then **fine for 2 hours**: joking, walking, drinking water.",
+            "Now a worsening headache, vomited twice, getting sleepy."
+          ],
+          "vitals": {
+            "HR": "78 bpm",
+            "BP": "134/78 mmHg",
+            "RR": "16 /min",
+            "SpO2": "98% on air",
+            "GCS": "13 (E3 V4 M6)"
+          }
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "A blow to Callum's **temple** is the classic way to fracture the temporal bone and tear the **middle meningeal artery**."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Callum's story has all three parts: knocked out, a **lucid interval**, then deterioration as the clot grows."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Callum's GCS since the injury",
+            "x": ["Impact", "5 min", "1 h", "2 h", "2.5 h", "3 h"],
+            "unit": "GCS",
+            "series": [
+              { "name": "GCS", "values": [5, 15, 15, 14, 13, 9] }
+            ],
+            "caption": "Knocked out, back to 15 (the lucid interval), then falling as the haematoma expands."
+          }
+        },
+        {
+          "type": "story",
+          "points": [
+            "Left pupil now **larger** and sluggish.",
+            "**Right arm and leg** weaker than the left.",
+            "Boggy swelling over the left temple."
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Callum has raised ICP (headache, vomiting, drowsiness) plus **lateralising signs**: a left pupil change with right-sided weakness."
+        },
+        {
+          "type": "ask",
+          "q": "Callum's bleed is on the left. Which pupil will dilate as he herniates?",
+          "o": ["Both pupils equally", "Left pupil", "Neither pupil", "Right pupil"],
+          "a": 1,
+          "r": "The **ipsilateral** (same side, left) pupil dilates because the uncus compresses the left CN III. Weakness is **contralateral** (right)."
+        },
+        {
+          "type": "compare",
+          "title": "Extradural vs subdural vs subarachnoid",
+          "head": ["Feature", "Extradural", "Subdural", "Subarachnoid"],
+          "rows": [
+            ["Vessel", "**Middle meningeal artery**", "Bridging veins", "Berry aneurysm (usually)"],
+            ["Typical patient", "Young, blow to temple", "Elderly, falls, anticoagulants", "Thunderclap headache"],
+            ["Course", "**Lucid interval**, rapid decline", "Fluctuating, days to weeks", "Sudden"],
+            ["CT shape", "**Biconvex, stops at sutures**", "Crescent, crosses sutures", "Blood in basal cisterns"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "If Callum's BP climbs, pulse slows and breathing becomes irregular (**Cushing's triad**), he is about to **herniate**."
+        },
+        {
+          "type": "trap",
+          "text": "A patient who is **chatting normally** after a head injury is not necessarily safe. The lucid interval is exactly when extradural haemorrhage is missed."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate investigation?' (urgent non-contrast CT head) or 'Which is the most likely finding on CT?' (a biconvex hyperdense collection that does not cross suture lines).",
+      "steps": [
+        {
+          "type": "ask",
+          "q": "Which investigation does Callum need now?",
+          "o": ["CT angiogram", "MRI brain", "Non-contrast CT head", "Skull X-ray"],
+          "a": 2,
+          "r": "An **urgent non-contrast CT head** is the gold standard: fast, and fresh blood shows up bright."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Callum's GCS",
+            "min": 3,
+            "max": 15,
+            "unit": "",
+            "bands": [
+              [3, 8, "8 or less: secure the airway", "bad"],
+              [8, 13, "below 13: CT within 1 hour", "warn"],
+              [13, 15, "13 to 15", "ok"]
+            ],
+            "value": 9,
+            "label": "Callum 9",
+            "caption": "Any GCS below 13 after head injury meets NICE criteria for CT head within 1 hour."
+          }
+        },
+        {
+          "type": "flow",
+          "title": "NICE head injury: CT within 1 hour if any of",
+          "nodes": [
+            "GCS below 13 on first assessment",
+            "GCS below 15 at 2 hours",
+            "Suspected open, depressed or basal skull fracture",
+            "Post-traumatic seizure or focal neurological deficit",
+            "More than one episode of vomiting"
+          ],
+          "caption": "Callum has three of these: GCS drop, focal deficit and repeated vomiting."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Callum's CT shows a **lentiform, hyperdense** collection over the left temporal lobe that stops at the sutures, with a temporal bone fracture."
+        },
+        {
+          "type": "labs",
+          "title": "Callum's bloods (taken with the CT)",
+          "rows": [
+            ["Haemoglobin", "146 g/L", "130–170", ""],
+            ["Platelets", "256 ×10⁹/L", "150–400", ""],
+            ["INR", "1.0", "0.8–1.2", ""],
+            ["Glucose", "6.2 mmol/L", "4.0–7.8", ""],
+            ["Group and save", "Sent", "", ""]
+          ],
+          "text": "Normal clotting and glucose: the cause of Callum's drowsiness is the **haematoma**, not a metabolic problem."
+        },
+        {
+          "type": "trap",
+          "text": "Never pick **lumbar puncture** with raised ICP and a mass lesion: it can trigger herniation. And skull X-ray does not show the bleed."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the next most appropriate step?': refer to neurosurgery and resuscitate (ABCDE, airway if GCS falls), then definitive craniotomy or burr hole evacuation.",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "CT confirms a large left extradural haematoma.",
+            "GCS now 7; snoring respirations.",
+            "BP 168/92 mmHg, pulse 58 bpm."
+          ],
+          "vitals": {
+            "GCS": "7 (E1 V2 M4)",
+            "HR": "58 bpm",
+            "BP": "168/92 mmHg",
+            "RR": "10 /min, irregular"
+          }
+        },
+        {
+          "type": "ask",
+          "q": "What is the first step for Callum after the CT?",
+          "o": ["Admit for hourly neuro observations", "IV mannitol and repeat CT tomorrow", "Lumbar puncture", "Refer to neurosurgery"],
+          "a": 3,
+          "r": "The notes' first step is **referral to neurosurgery**, while resuscitating with ABCDE."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Callum is referred to neurosurgery, **intubated** for a GCS of 7, given oxygen with the head elevated, and watched closely for rising ICP."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Callum's Cushing's response",
+            "x": ["Arrival", "2 h", "2.5 h", "3 h"],
+            "unit": "",
+            "series": [
+              { "name": "Systolic BP (mmHg)", "values": [134, 142, 156, 168] },
+              { "name": "Heart rate (bpm)", "values": [78, 72, 64, 58] }
+            ],
+            "caption": "Rising BP with a falling pulse is the brainstem under pressure: theatre cannot wait."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Callum goes straight to theatre for an emergency **craniotomy**: the clot is evacuated and the middle meningeal artery **ligated**."
+        },
+        {
+          "type": "flow",
+          "title": "Callum's emergency pathway",
+          "nodes": [
+            "Suspect from history: blow to temple, lucid interval",
+            "ABCDE; intubate if GCS 8 or less",
+            "Urgent non-contrast CT head",
+            "Refer to neurosurgery",
+            "Craniotomy or burr hole evacuation, ligate artery"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": "guidelines",
+          "lead": "Callum's CT timing and neurosurgical referral follow **NICE NG232** head injury guidance."
+        },
+        {
+          "type": "trap",
+          "text": "Do not treat Cushing's triad as a BP or heart rate problem: **no atropine, no antihypertensives**. The cure is decompressing the brain."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why the middle meningeal artery tears, why the clot is lentiform, why there is a lucid interval, and why the pupil on the same side blows.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "The ball struck Callum at the **pterion**, the thinnest part of the skull, where the middle meningeal artery runs in its groove."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Callum's **arterial** bleed peeled the dura off the skull but stopped at the **sutures**, where dura is stuck down: hence the lens shape."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "During Callum's 2 good hours the clot was growing silently, until it reached the **critical volume** where ICP rose."
+        },
+        {
+          "type": "flow",
+          "title": "From clot to blown pupil",
+          "nodes": [
+            "Expanding left extradural clot",
+            "Raised ICP, midline shift",
+            "Left uncus herniates through the tentorial notch",
+            "Compresses left CN III parasympathetic fibres",
+            "Left fixed dilated pupil"
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Callum's enlarging left pupil came from the **uncus** pressing on his left **oculomotor nerve**, whose outer parasympathetic fibres are hit first."
+        },
+        {
+          "type": "ask",
+          "q": "Why are the parasympathetic fibres of CN III affected first?",
+          "o": ["They are the largest fibres", "They lie on the outside of the nerve", "They run in the cavernous sinus", "They are unmyelinated"],
+          "a": 1,
+          "r": "Pupillomotor fibres run **superficially** on CN III, so external compression hits them first: a dilated pupil before ptosis or eye deviation."
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Callum's rising BP and falling pulse were his **brainstem** being compressed: a late, pre-herniation sign."
+        },
+        {
+          "type": "pearl",
+          "text": "Remember the **pterion**: where frontal, parietal, temporal and sphenoid bones meet. Thin bone over the middle meningeal artery equals extradural haemorrhage."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "Which artery is most commonly torn in extradural haemorrhage?", "o": ["Anterior cerebral artery", "Bridging veins", "Middle cerebral artery", "Middle meningeal artery"], "a": 3, "r": "The **middle meningeal artery**." },
+    { "d": "diagnosis", "q": "Which bone fracture is usually associated?", "o": ["Frontal", "Occipital", "Parietal", "Temporal"], "a": 3, "r": "A **temporal bone fracture**." },
+    { "d": "diagnosis", "q": "What is the classic clinical course?", "o": ["Gradual confusion over weeks", "LOC, lucid interval, then deterioration", "Sudden thunderclap headache", "Unconscious from impact with no recovery"], "a": 1, "r": "**LOC, lucid interval, deterioration.**" },
+    { "d": "diagnosis", "q": "Which pupillary sign is classic?", "o": ["Bilateral pinpoint pupils", "Contralateral fixed dilated pupil", "Ipsilateral fixed dilated pupil", "Ipsilateral miosis"], "a": 2, "r": "**Ipsilateral fixed dilated pupil** with contralateral weakness." },
+    { "d": "diagnosis", "q": "What is Cushing's triad?", "o": ["Fever, neck stiffness, photophobia", "Hypertension, bradycardia, irregular respirations", "Hypotension, tachycardia, tachypnoea", "Hypotension, bradycardia, warm peripheries"], "a": 1, "r": "**Hypertension, bradycardia, irregular breathing**: impending herniation." },
+    { "d": "investigation", "q": "What is the gold-standard investigation?", "o": ["Lumbar puncture", "MRI brain", "Non-contrast CT head", "Skull X-ray"], "a": 2, "r": "**Urgent non-contrast CT head.**" },
+    { "d": "investigation", "q": "What does extradural haemorrhage look like on CT?", "o": ["Biconvex, does not cross sutures", "Blood in the basal cisterns", "Crescent, crosses sutures", "Ring-enhancing lesion"], "a": 0, "r": "**Lentiform (biconvex)**, hyperdense, limited by sutures." },
+    { "d": "management", "q": "What is the first step in management?", "o": ["Lumbar puncture", "Mannitol and observe", "Referral to neurosurgery", "Repeat CT in 24 hours"], "a": 2, "r": "**Refer to neurosurgery**, with ABCDE resuscitation." },
+    { "d": "management", "q": "What is the definitive treatment?", "o": ["Endovascular coiling", "IV dexamethasone", "Lumbar drain", "Neurosurgical evacuation (craniotomy or burr hole)"], "a": 3, "r": "**Urgent neurosurgical evacuation** plus ligation of the bleeding artery." },
+    { "d": "science", "q": "Which nerve is compressed to cause the fixed dilated pupil?", "o": ["Abducens (CN VI)", "Oculomotor (CN III)", "Optic (CN II)", "Trochlear (CN IV)"], "a": 1, "r": "**CN III**, by uncal herniation." }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is an extradural haemorrhage and what usually causes it?",
+        "tip": "Exam thinking: the layer, the vessel, the bone, the injury.",
+        "points": [
+          { "p": "Bleeding between the inner skull and the dura mater", "k": [["skull", "bone"], ["dura"]], "why": "Subdural is beneath the dura." },
+          { "p": "Rupture of the middle meningeal artery", "k": [["middle meningeal"]], "why": "An arterial bleed, so it expands fast." },
+          { "p": "Associated with a temporal bone fracture", "k": [["temporal"], ["fracture"]], "why": "Over 95% are unilateral supratentorial arterial bleeds." },
+          { "p": "Classically after sports injury or trauma to the temple", "k": [["temple", "sport", "trauma", "blow"]], "why": "Usually a young patient." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Describe the classic clinical course in order.",
+        "tip": "Exam thinking: the lucid interval is the giveaway.",
+        "points": [
+          { "p": "Initial loss of consciousness at injury", "k": [["loss of consciousness", "loc", "knocked out", "unconscious"]], "why": "Often brief." },
+          { "p": "Lucid interval: temporary improvement", "k": [["lucid"]], "why": "Patient seems fine; the clot is growing." },
+          { "p": "Then neurological deterioration as the haematoma expands and ICP rises", "k": [["deteriorat", "decline", "worsen", "drowsy"]], "why": "Can be rapid." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What signs appear as the haematoma expands?",
+        "tip": "Exam thinking: same-side pupil, opposite-side weakness.",
+        "points": [
+          { "p": "Raised ICP: headache, vomiting, reduced consciousness", "k": [["headache", "vomit", "consciousness", "gcs"]], "why": "Repeated vomiting is a CT trigger." },
+          { "p": "Ipsilateral fixed dilated pupil", "k": [["ipsilateral", "same side"], ["pupil"]], "why": "Uncal herniation compresses CN III." },
+          { "p": "Contralateral weakness", "k": [["contralateral", "opposite"], ["weak", "hemiparesis", "power"]], "why": "Lateralising sign." },
+          { "p": "Reduced GCS with lateralising signs", "k": [["gcs", "lateralis", "focal"]], "why": "Track GCS repeatedly." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "What are the complications, and what heralds herniation?",
+        "tip": "Exam thinking: name the triad and what it means.",
+        "points": [
+          { "p": "Brain herniation", "k": [["herniat", "coning"]], "why": "The key complication." },
+          { "p": "Cushing's triad: hypertension, bradycardia, irregular respirations", "k": [["hypertension", "high bp"], ["bradycardia", "slow pulse", "low heart rate"]], "why": "Brainstem compression: neurosurgical emergency." },
+          { "p": "Seizures, permanent neurological deficit, death", "k": [["seizure", "deficit", "death", "fit"]], "why": "Outcome depends on speed of evacuation." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How do you tell extradural from subdural haemorrhage clinically?",
+        "tip": "Exam thinking: age, vessel, time course.",
+        "points": [
+          { "p": "Extradural: young, blow to temple, arterial (middle meningeal)", "k": [["young", "temple", "arter"]], "why": "Rapid course." },
+          { "p": "Subdural: elderly, falls, anticoagulants, bridging veins", "k": [["elderly", "older", "anticoag", "bridging", "vein"]], "why": "Fluctuating confusion over days to weeks." },
+          { "p": "Extradural has a lucid interval then rapid decline", "k": [["lucid"]], "why": "The classic SBA discriminator." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What is the gold-standard investigation and what does it show?",
+        "tip": "Exam thinking: shape and sutures.",
+        "points": [
+          { "p": "Urgent non-contrast CT head", "k": [["ct"], ["non-contrast", "noncontrast", "urgent", "plain"]], "why": "Within 1 hour if GCS below 13." },
+          { "p": "Lentiform (biconvex) hyperdense extra-axial collection", "k": [["lentiform", "biconvex", "lens", "convex"]], "why": "Lemon shape." },
+          { "p": "Does not cross suture lines", "k": [["suture"]], "why": "Subdural crosses sutures but is limited by dural reflections." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How is extradural haemorrhage managed as an emergency?",
+        "tip": "Exam thinking: the notes give an order; the first step is the answer.",
+        "points": [
+          { "p": "Refer to neurosurgery first", "k": [["neurosurg"]], "why": "First step in the notes." },
+          { "p": "ABCDE approach", "k": [["abcde", "abc", "resus"]], "why": "Resuscitate in parallel." },
+          { "p": "Intubate to protect the airway if consciousness reduced", "k": [["intubat", "airway"]], "why": "GCS 8 or less." },
+          { "p": "Elevate the head and give oxygen", "k": [["elevat", "head up", "30"], ["oxygen", "o2"]], "why": "Helps venous drainage and ICP." },
+          { "p": "Monitor for rising ICP", "k": [["monitor", "observ"]], "why": "Watch the pupils and Cushing's triad." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is the definitive treatment?",
+        "tip": "Exam thinking: name the operation and the extra step.",
+        "points": [
+          { "p": "Urgent neurosurgical evacuation of the haematoma", "k": [["evacuat", "drain", "remov"]], "why": "Time critical." },
+          { "p": "Emergency craniotomy or burr hole decompression", "k": [["craniotomy", "burr"]], "why": "Burr holes if no neurosurgeon is immediately available." },
+          { "p": "Ligation of the bleeding artery", "k": [["ligat", "tie"]], "why": "Prevents re-accumulation." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why does a blow to the temple cause this bleed, and why is it lentiform?",
+        "tip": "Exam thinking: pterion, pressure, sutures.",
+        "points": [
+          { "p": "Middle meningeal artery runs in a groove on the inner temporal bone near the pterion", "k": [["pterion", "groove"]], "why": "Thin bone, vulnerable artery." },
+          { "p": "Temporal fracture lacerates the artery", "k": [["fracture"], ["lacerat", "tear", "rupture"]], "why": "Direct blow to the temple." },
+          { "p": "High-pressure arterial bleed between skull and dura", "k": [["arter", "high pressure"]], "why": "Accumulates rapidly." },
+          { "p": "Dura is tightly adherent at suture lines, confining the clot into a biconvex shape", "k": [["suture"], ["adher", "stuck", "attached"]], "why": "Hence it does not cross sutures." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Explain the lucid interval, the fixed dilated pupil and Cushing's triad.",
+        "tip": "Exam thinking: volume, uncus, brainstem.",
+        "points": [
+          { "p": "Lucid interval: time for the haematoma to reach a critical volume before ICP rises", "k": [["volume", "critical", "time"]], "why": "Compensation until it fails." },
+          { "p": "Uncus herniates through the tentorial notch", "k": [["uncus", "uncal", "tentori"]], "why": "Uncal (transtentorial) herniation." },
+          { "p": "Compresses the oculomotor nerve (CN III) parasympathetic fibres", "k": [["oculomotor", "cn iii", "cn3", "third nerve"]], "why": "Ipsilateral fixed dilated pupil." },
+          { "p": "Cushing's triad reflects brainstem compression: a late sign", "k": [["brainstem", "brain stem"]], "why": "Impending herniation." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "extradural haemorrhage": "Bleeding between the skull and the dura, usually from the middle meningeal artery.",
+    "dura mater": "The tough outer membrane covering the brain, stuck to the skull at the sutures.",
+    "dura": "The tough outer membrane covering the brain.",
+    "middle meningeal artery": "Branch of the maxillary artery running inside the temporal bone; tears with temporal fractures.",
+    "pterion": "H-shaped junction of four skull bones at the temple, where the skull is thinnest.",
+    "temporal bone": "Skull bone at the side of the head around the ear and temple.",
+    "lucid interval": "A period of apparent recovery after head injury before deterioration.",
+    "ICP": "Intracranial pressure: the pressure inside the skull.",
+    "GCS": "Glasgow Coma Scale, 3 to 15, scoring eye, verbal and motor responses.",
+    "lentiform": "Lens-shaped, or biconvex.",
+    "biconvex": "Bulging outwards on both sides, like a lens or lemon.",
+    "hyperdense": "Brighter than brain on CT; fresh blood is hyperdense.",
+    "extra-axial": "Outside the brain tissue itself, such as extradural or subdural.",
+    "suture lines": "Fibrous joints between skull bones where the dura is firmly attached.",
+    "subdural haemorrhage": "Bleeding beneath the dura from torn bridging veins, crescent-shaped on CT.",
+    "bridging veins": "Veins crossing from the brain surface to the dural sinuses; tear in subdural haemorrhage.",
+    "supratentorial": "Above the tentorium cerebelli, so involving the cerebral hemispheres.",
+    "tentorium": "Fold of dura separating the cerebrum from the cerebellum.",
+    "tentorial notch": "The gap in the tentorium through which the brainstem passes.",
+    "uncus": "The innermost part of the temporal lobe; herniates first when ICP rises.",
+    "uncal herniation": "The uncus pushes through the tentorial notch, compressing CN III and the brainstem.",
+    "herniation": "Brain tissue forced from one compartment to another by high pressure; often fatal.",
+    "oculomotor nerve": "CN III: moves most eye muscles, lifts the lid and constricts the pupil.",
+    "CN III": "The oculomotor nerve.",
+    "ipsilateral": "On the same side.",
+    "contralateral": "On the opposite side.",
+    "lateralising signs": "Findings that point to one side of the brain, such as one-sided weakness.",
+    "Cushing's triad": "Hypertension, bradycardia and irregular breathing from brainstem compression; a late sign.",
+    "bradycardia": "Heart rate below 60 bpm.",
+    "craniotomy": "Surgery removing a piece of skull to reach the brain or a clot.",
+    "burr hole": "A small hole drilled in the skull to drain a clot in an emergency.",
+    "ligation": "Tying off a blood vessel.",
+    "ABCDE": "Airway, Breathing, Circulation, Disability, Exposure: the structured emergency assessment.",
+    "intubation": "Passing a tube into the trachea to protect the airway and ventilate.",
+    "non-contrast CT": "CT scan without injected dye; the first test for bleeding in the head.",
+    "NG232": "NICE guideline on head injury assessment and early management.",
+    "mannitol": "Osmotic diuretic that temporarily lowers ICP.",
+    "midline shift": "Displacement of brain structures across the midline by a mass on one side."
+  },
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "A 24 year old man was hit on the right side of his head by a hockey stick. He lost consciousness for 2 minutes, then recovered and talked normally for 3 hours. He now has a severe headache, has vomited and is drowsy. His right pupil is dilated and his left arm is weak. His pulse rate is 64 bpm and BP 162/90 mmHg.",
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Chronic subdural haematoma", "Concussion", "Extradural haemorrhage", "Subarachnoid haemorrhage", "Traumatic intracerebral haemorrhage"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis after a head injury: decide which bleed from the time course." },
+        { "t": "Pick out the clues", "clues": ["24 year old man", "right side of his head", "lost consciousness for 2 minutes", "talked normally for 3 hours", "right pupil is dilated", "left arm is weak"], "x": "Young, blow to the side of the head, **LOC, lucid interval, deterioration**, ipsilateral pupil, contralateral weakness." },
+        { "t": "Make your own answer before looking", "x": "**Extradural haemorrhage.**" },
+        { "t": "Rule out the others", "elim": [[0, "Chronic subdural is elderly, often anticoagulated, over weeks."], [1, "Concussion does not cause a blown pupil and hemiparesis."], [3, "SAH is a thunderclap headache, usually from an aneurysm, without a lucid interval."], [4, "Intracerebral haemorrhage gives deficits from the start, not after a lucid interval."]] },
+        { "t": "Commit", "x": "**C. Extradural haemorrhage.** Lucid interval + blown ipsilateral pupil." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 30 year old woman fell from a horse and struck her left temple. She had a brief loss of consciousness and is now drowsy. Urgent non-contrast CT head shows a hyperdense extra-axial collection over the left temporal lobe with a left temporal bone fracture.",
+      "q": "Which CT feature most reliably distinguishes this from an acute subdural haematoma?",
+      "o": ["Associated midline shift", "Hyperdense appearance", "Location over the cerebral convexity", "Presence of a scalp haematoma", "Stops at the suture lines"],
+      "a": 4,
+      "steps": [
+        { "t": "Read the question line first", "x": "It asks for the CT feature separating extradural from subdural." },
+        { "t": "Pick out the clues", "clues": ["struck her left temple", "hyperdense extra-axial collection", "temporal bone fracture"], "x": "Temple blow and temporal fracture: **extradural**. Both bleeds are hyperdense and extra-axial." },
+        { "t": "Make your own answer before looking", "x": "Extradural is biconvex and **does not cross sutures**; subdural crosses sutures." },
+        { "t": "Rule out the others", "elim": [[0, "Both can cause midline shift."], [1, "Both acute bleeds are hyperdense."], [2, "Both lie over the convexity."], [3, "A scalp haematoma occurs with either."]] },
+        { "t": "Commit", "x": "**E. Stops at the suture lines.** Dura is stuck down at sutures." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 19 year old man has an extradural haemorrhage confirmed on CT after a fight. He is in a district general hospital emergency department. His GCS is 12 and falling. His airway is being protected and he is receiving oxygen.",
+      "q": "Which is the next most appropriate step in management?",
+      "o": ["Immediate referral to neurosurgery", "IV dexamethasone", "Lumbar puncture", "Repeat CT in 24 hours", "Transfer to the stroke unit"],
+      "a": 0,
+      "steps": [
+        { "t": "Read the question line first", "x": "Next step once the bleed is confirmed." },
+        { "t": "Pick out the clues", "clues": ["extradural haemorrhage confirmed on CT", "GCS is 12 and falling", "airway is being protected"], "x": "Confirmed bleed, deteriorating, ABC under way." },
+        { "t": "Make your own answer before looking", "x": "**Neurosurgical referral** for evacuation." },
+        { "t": "Rule out the others", "elim": [[1, "Steroids do not help traumatic bleeds."], [2, "LP with a mass lesion risks herniation."], [3, "Waiting 24 hours while the GCS falls is fatal."], [4, "This is a traumatic surgical bleed, not a stroke."]] },
+        { "t": "Commit", "x": "**A. Immediate referral to neurosurgery.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 26 year old man has an extradural haemorrhage after a blow to the temple. His CT shows a lens-shaped (biconvex) collection that ends abruptly at the coronal and lambdoid sutures.",
+      "q": "Which is the most likely explanation for the shape of the collection?",
+      "o": ["Arachnoid granulations limit spread", "Blood clots before it can spread", "Bridging veins tether the dura", "Dura is tightly adherent to the skull at suture lines", "The falx cerebri divides the collection"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism for the CT shape." },
+        { "t": "Pick out the clues", "clues": ["blow to the temple", "lens-shaped (biconvex)", "ends abruptly at the coronal and lambdoid sutures"], "x": "Arterial bleed that **stops at sutures**." },
+        { "t": "Make your own answer before looking", "x": "High-pressure blood strips the dura off the bone but cannot pass the sutures, where **dura is firmly attached**." },
+        { "t": "Rule out the others", "elim": [[0, "Arachnoid granulations drain CSF; they do not shape the clot."], [1, "Clotting does not produce a sutural boundary."], [2, "Bridging veins are the source of subdural bleeds."], [4, "The falx limits subdural spread across the midline, not at sutures."]] },
+        { "t": "Commit", "x": "**D. Dura adherent at suture lines.**" }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 19 year old man was hit on the left temple by a cricket ball. He was unconscious for 1 minute, then felt well and walked home. Four hours later he has a worsening headache, vomiting and drowsiness. His left pupil is dilated. His pulse rate is 60 bpm, BP 158/88 mmHg and GCS 10.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Concussion", "Diffuse axonal injury", "Extradural haemorrhage", "Subarachnoid haemorrhage", "Subdural haemorrhage"],
+      "a": 2,
+      "e": "A temple blow, brief loss of consciousness, lucid interval and then deterioration with an ipsilateral dilated pupil is extradural haemorrhage.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which bleed after head injury?" },
+        { "t": "Pick out the clues", "clues": ["left temple", "unconscious for 1 minute, then felt well", "Four hours later", "left pupil is dilated"], "x": "Temple, **lucid interval**, then deterioration with an ipsilateral pupil." },
+        { "t": "Make your own answer before looking", "x": "**Extradural haemorrhage.**" },
+        { "t": "Rule out the others", "elim": [[0, "Concussion does not cause a dilated pupil or falling GCS."], [1, "DAI causes coma from the moment of injury, no lucid interval."], [3, "SAH presents with sudden thunderclap headache."], [4, "Subdural is usually elderly, with a slower, fluctuating course."]] },
+        { "t": "Commit", "x": "**C. Extradural haemorrhage.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 22 year old woman is struck on the side of the head during a hockey match. CT head shows a fracture of the squamous temporal bone and an underlying biconvex haematoma.",
+      "labs": [["Haemoglobin", "132 g/L", "115–165", ""], ["INR", "1.0", "0.8–1.2", ""], ["Platelets", "288 ×10⁹/L", "150–400", ""]],
+      "visual": null,
+      "q": "Which vessel is most likely to have been damaged?",
+      "o": ["Anterior cerebral artery", "Bridging veins", "Middle cerebral artery", "Middle meningeal artery", "Superficial temporal artery"],
+      "a": 3,
+      "e": "The middle meningeal artery runs in a groove on the inner temporal bone near the pterion and is lacerated by temporal fractures, causing extradural haemorrhage.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which vessel bled?" },
+        { "t": "Pick out the clues", "clues": ["side of the head", "squamous temporal bone", "biconvex haematoma"], "x": "Temporal fracture with a biconvex (extradural) clot." },
+        { "t": "Make your own answer before looking", "x": "**Middle meningeal artery.**" },
+        { "t": "Rule out the others", "elim": [[0, "ACA bleeds are intracerebral or aneurysmal, not extradural."], [1, "Bridging veins cause subdural haematoma."], [2, "MCA is inside the brain, causing stroke or intracerebral bleeds."], [4, "The superficial temporal artery is outside the skull and causes a scalp haematoma."]] },
+        { "t": "Commit", "x": "**D. Middle meningeal artery.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 27 year old man has a right-sided extradural haemorrhage after an assault. Over the last 30 minutes his GCS has fallen from 14 to 9 and he has developed left-sided weakness. His pulse rate is 62 bpm and BP 166/94 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely finding on examination of his pupils?",
+      "o": ["Bilateral pinpoint pupils", "Left fixed dilated pupil", "Left Horner's syndrome", "Right fixed dilated pupil", "Right ptosis with a small pupil"],
+      "a": 3,
+      "e": "Uncal herniation from a right-sided haematoma compresses the right oculomotor nerve, giving an ipsilateral (right) fixed dilated pupil with contralateral (left) weakness.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which pupil finding with a right-sided bleed?" },
+        { "t": "Pick out the clues", "clues": ["right-sided extradural haemorrhage", "GCS has fallen from 14 to 9", "left-sided weakness"], "x": "Right clot, herniating; weakness is **contralateral**." },
+        { "t": "Make your own answer before looking", "x": "**Right (ipsilateral) fixed dilated pupil.**" },
+        { "t": "Rule out the others", "elim": [[0, "Pinpoint pupils suggest pontine lesions or opioids."], [1, "The pupil is on the side of the clot, not the weak side."], [2, "Horner's is a small pupil from sympathetic damage."], [4, "Ptosis with miosis is Horner's, not CN III compression."]] },
+        { "t": "Commit", "x": "**D. Right fixed dilated pupil.** Pupil same side, weakness opposite." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 33 year old man with an extradural haemorrhage is awaiting transfer to theatre. He becomes less responsive. His temperature is 36.9°C, pulse rate 44 bpm, BP 196/104 mmHg and respiratory rate 8 breaths per minute with an irregular pattern.",
+      "labs": [["Glucose", "6.8 mmol/L", "4.0–7.8", ""], ["Sodium", "139 mmol/L", "135–145", ""]],
+      "visual": null,
+      "q": "Which is the most likely explanation for his observations?",
+      "o": ["Autonomic dysreflexia", "Brainstem compression from raised intracranial pressure", "Hypovolaemic shock", "Neurogenic shock", "Opioid toxicity"],
+      "a": 1,
+      "e": "Hypertension, bradycardia and irregular respirations are Cushing's triad: a late sign of brainstem compression and impending herniation.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Explain a set of observations." },
+        { "t": "Pick out the clues", "clues": ["extradural haemorrhage", "pulse rate 44 bpm", "BP 196/104 mmHg", "irregular pattern"], "x": "High BP, slow pulse, irregular breathing: **Cushing's triad**." },
+        { "t": "Make your own answer before looking", "x": "**Brainstem compression** from rising ICP: impending herniation." },
+        { "t": "Rule out the others", "elim": [[0, "Autonomic dysreflexia needs a high spinal cord injury."], [2, "Hypovolaemia gives hypotension and tachycardia."], [3, "Neurogenic shock gives hypotension with bradycardia."], [4, "Opioids give pinpoint pupils and low BP, not hypertension."]] },
+        { "t": "Commit", "x": "**B. Brainstem compression from raised ICP.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 34 year old woman fell from a horse and hit the side of her head. Her GCS was recorded by paramedics and then in the emergency department (see item resources). She now has a worsening headache and has vomited three times.",
+      "labs": [],
+      "visual": {
+        "kind": "trend",
+        "title": "GCS after the fall",
+        "x": ["At scene", "30 min", "1 h", "2 h", "3 h"],
+        "unit": "GCS",
+        "series": [
+          { "name": "GCS", "values": [8, 15, 15, 13, 10] }
+        ],
+        "caption": "GCS falls, recovers fully, then falls again."
+      },
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Chronic subdural haematoma", "Concussion", "Extradural haemorrhage", "Post-traumatic seizure", "Subarachnoid haemorrhage"],
+      "a": 2,
+      "e": "Loss of consciousness, a lucid interval with full recovery of GCS, then deterioration with headache and vomiting is the classic course of extradural haemorrhage.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis from the GCS pattern." },
+        { "t": "Pick out the clues", "clues": ["hit the side of her head", "see item resources", "vomited three times"], "x": "GCS 8, then **15 (lucid)**, then falling, with raised ICP symptoms." },
+        { "t": "Make your own answer before looking", "x": "**Extradural haemorrhage.**" },
+        { "t": "Rule out the others", "elim": [[0, "Chronic subdural evolves over weeks in older people."], [1, "Concussion does not cause a second fall in GCS."], [3, "A post-ictal dip recovers; it does not progressively worsen with vomiting."], [4, "SAH has a thunderclap onset without a lucid interval."]] },
+        { "t": "Commit", "x": "**C. Extradural haemorrhage.** Down, up, down." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 20 year old rugby player was kicked on the left temple. He had a brief loss of consciousness and now has a boggy swelling above his left ear. CT head shows a left biconvex extradural haematoma.",
+      "labs": [],
+      "visual": null,
+      "q": "Which associated injury is most likely to be seen on the CT bone windows?",
+      "o": ["Frontal sinus fracture", "Mandibular fracture", "Nasal bone fracture", "Occipital bone fracture", "Temporal bone fracture"],
+      "a": 4,
+      "e": "Extradural haemorrhage is usually associated with a temporal bone fracture, which lacerates the middle meningeal artery.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Which fracture goes with this bleed?" },
+        { "t": "Pick out the clues", "clues": ["left temple", "above his left ear", "biconvex extradural haematoma"], "x": "Temple blow, extradural clot." },
+        { "t": "Make your own answer before looking", "x": "**Temporal bone fracture.**" },
+        { "t": "Rule out the others", "elim": [[0, "Frontal sinus fractures follow blows to the forehead."], [1, "Jaw fractures do not cause intracranial bleeding."], [2, "Nasal fractures are facial and do not involve the middle meningeal artery."], [3, "Occipital fractures are at the back, far from the middle meningeal artery."]] },
+        { "t": "Commit", "x": "**E. Temporal bone fracture.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 25 year old man was hit on the temple with a bat 2 hours ago. He was briefly unconscious, then lucid, and now has a GCS of 12, a headache and has vomited twice. His pulse rate is 70 bpm and BP 140/82 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation?",
+      "o": ["CT angiogram of the head", "Lumbar puncture", "MRI brain", "Non-contrast CT head", "Skull X-ray"],
+      "a": 3,
+      "e": "Urgent non-contrast CT head is the gold standard for suspected extradural haemorrhage; a GCS below 13 requires CT within 1 hour.",
+      "steps": [
+        { "t": "Read the question line first", "x": "First test after a head injury with deterioration." },
+        { "t": "Pick out the clues", "clues": ["hit on the temple", "then lucid", "GCS of 12", "vomited twice"], "x": "Suspected extradural; GCS below 13 and repeated vomiting are NICE CT criteria." },
+        { "t": "Make your own answer before looking", "x": "**Urgent non-contrast CT head.**" },
+        { "t": "Rule out the others", "elim": [[0, "CT angiography is for vascular lesions such as aneurysms."], [1, "LP risks herniation with a mass lesion."], [2, "MRI is slow and impractical in an unstable patient."], [4, "Skull X-ray does not show the haematoma."]] },
+        { "t": "Commit", "x": "**D. Non-contrast CT head.**" }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 28 year old woman has a head injury after a cycling collision with a blow to the right temple. She had a lucid interval and is now drowsy. Urgent non-contrast CT head is performed.",
+      "labs": [["Haemoglobin", "128 g/L", "115–165", ""], ["INR", "1.1", "0.8–1.2", ""]],
+      "visual": null,
+      "q": "Which is the most likely finding on CT?",
+      "o": ["Biconvex hyperdense collection that does not cross sutures", "Blood in the basal cisterns", "Crescent-shaped collection crossing suture lines", "Hypodense wedge in the middle cerebral artery territory", "Ring-enhancing lesion with oedema"],
+      "a": 0,
+      "e": "Extradural haemorrhage appears as a lentiform (biconvex) hyperdense extra-axial collection that does not cross suture lines.",
+      "steps": [
+        { "t": "Read the question line first", "x": "What will the CT show?" },
+        { "t": "Pick out the clues", "clues": ["blow to the right temple", "lucid interval", "now drowsy"], "x": "Classic extradural history." },
+        { "t": "Make your own answer before looking", "x": "**Biconvex, hyperdense, stops at sutures.**" },
+        { "t": "Rule out the others", "elim": [[1, "Basal cistern blood is subarachnoid haemorrhage."], [2, "A crescent crossing sutures is subdural."], [3, "A hypodense wedge is an established ischaemic stroke."], [4, "Ring enhancement suggests abscess or tumour, and needs contrast."]] },
+        { "t": "Commit", "x": "**A. Biconvex hyperdense collection not crossing sutures.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 23 year old man has a large left temporal extradural haemorrhage with midline shift on CT. Neurosurgery have accepted him. He is intubated and ventilated.",
+      "labs": [["Haemoglobin", "141 g/L", "130–170", ""], ["INR", "1.0", "0.8–1.2", ""], ["Platelets", "230 ×10⁹/L", "150–400", ""]],
+      "visual": null,
+      "q": "Which is the most appropriate definitive management?",
+      "o": ["Conservative management with repeat CT", "Craniotomy and evacuation of the haematoma", "Endovascular coiling", "IV dexamethasone", "Lumbar drain insertion"],
+      "a": 1,
+      "e": "Definitive management is urgent neurosurgical evacuation by craniotomy (or burr hole decompression) with ligation of the bleeding artery.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Definitive treatment once neurosurgery has accepted." },
+        { "t": "Pick out the clues", "clues": ["large left temporal extradural haemorrhage", "midline shift", "Neurosurgery have accepted him"], "x": "A large clot with mass effect." },
+        { "t": "Make your own answer before looking", "x": "**Craniotomy and evacuation**, ligating the middle meningeal artery." },
+        { "t": "Rule out the others", "elim": [[0, "Conservative care is only for small clots with no mass effect."], [2, "Coiling treats aneurysms in SAH."], [3, "Steroids do not help traumatic haematomas."], [4, "A lumbar drain with a mass lesion risks herniation."]] },
+        { "t": "Commit", "x": "**B. Craniotomy and evacuation.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 21 year old man with a suspected extradural haemorrhage arrives in the emergency department. He has snoring respirations and responds only to pain. His GCS is 7. His pulse rate is 66 bpm, BP 150/88 mmHg and oxygen saturation 93% breathing air.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate immediate management?",
+      "o": ["Give IV morphine for pain", "Insert a nasopharyngeal airway", "Intubate and ventilate", "Lie the patient flat", "Observe GCS hourly"],
+      "a": 2,
+      "e": "With reduced consciousness (GCS 8 or less) the airway must be protected by intubation as part of the ABCDE approach, while neurosurgery is contacted.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Immediate management in an obtunded head injury." },
+        { "t": "Pick out the clues", "clues": ["snoring respirations", "responds only to pain", "GCS is 7", "oxygen saturation 93%"], "x": "Airway at risk, GCS 7." },
+        { "t": "Make your own answer before looking", "x": "**Intubate** to protect the airway." },
+        { "t": "Rule out the others", "elim": [[0, "Opioids depress breathing and cloud neurological assessment."], [1, "A nasopharyngeal airway risks entering the skull if there is a base of skull fracture, and does not protect the airway."], [3, "Lying flat raises ICP; elevate the head."], [4, "Observation alone ignores an unprotected airway."]] },
+        { "t": "Commit", "x": "**C. Intubate and ventilate.** GCS 8 or less = airway." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 26 year old woman with an extradural haemorrhage is intubated and awaiting theatre. Her pulse rate falls to 50 bpm and BP rises to 184/100 mmHg. Neurosurgery are preparing for evacuation in 15 minutes.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate immediate measure while awaiting surgery?",
+      "o": ["Elevate the head of the bed to 30°", "Give IV atropine", "Give IV labetalol", "Lie flat with legs raised", "Perform a lumbar puncture"],
+      "a": 0,
+      "e": "Elevating the head helps venous drainage and lowers ICP. Cushing's response must not be treated with atropine or antihypertensives; the cure is surgical decompression.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A holding measure for rising ICP." },
+        { "t": "Pick out the clues", "clues": ["awaiting theatre", "pulse rate falls to 50 bpm", "BP rises to 184/100 mmHg"], "x": "**Cushing's response**: ICP rising." },
+        { "t": "Make your own answer before looking", "x": "**Elevate the head** and hurry theatre." },
+        { "t": "Rule out the others", "elim": [[1, "Bradycardia is a response to ICP; atropine does not treat the cause."], [2, "Lowering BP reduces cerebral perfusion pressure."], [3, "Lying flat with legs up increases ICP."], [4, "LP with a mass lesion causes herniation."]] },
+        { "t": "Commit", "x": "**A. Elevate the head of the bed.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 24 year old man with a left extradural haemorrhage develops a fixed, dilated left pupil. Eye movements are initially normal and there is no ptosis.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely mechanism of the pupil change?",
+      "o": ["Compression of the oculomotor nerve by uncal herniation", "Compression of the optic chiasm", "Damage to the cervical sympathetic chain", "Direct trauma to the globe", "Haemorrhage into the pons"],
+      "a": 0,
+      "e": "The expanding haematoma pushes the uncus through the tentorial notch, compressing the ipsilateral oculomotor nerve; its superficial parasympathetic fibres are affected first, so the pupil dilates before ptosis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A mechanism: why is the pupil fixed and dilated?" },
+        { "t": "Pick out the clues", "clues": ["left extradural haemorrhage", "fixed, dilated left pupil", "no ptosis"], "x": "Ipsilateral dilated pupil, other CN III functions spared so far: **external compression** of CN III." },
+        { "t": "Make your own answer before looking", "x": "**Uncal herniation compressing CN III.**" },
+        { "t": "Rule out the others", "elim": [[1, "Chiasm compression gives bitemporal hemianopia."], [2, "Sympathetic damage gives a small pupil (Horner's)."], [3, "No eye trauma is described; the cause is the expanding clot."], [4, "Pontine haemorrhage gives pinpoint pupils."]] },
+        { "t": "Commit", "x": "**A. Uncal herniation compressing CN III.**" }
+      ]
+    }
+  ]
+}

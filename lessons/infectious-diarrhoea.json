@@ -1,0 +1,2126 @@
+{
+ "id": "infectious-diarrhoea",
+ "patient": {
+  "name": "Doreen Fitzgerald",
+  "age": 76,
+  "sex": "F",
+  "setting": "Acute medical ward, day 5 of admission",
+  "complaint": "New watery diarrhoea, abdominal cramps and fever while on antibiotics",
+  "background": [
+   "Admitted with community-acquired pneumonia, on IV co-amoxiclav",
+   "Takes omeprazole for reflux",
+   "Type 2 diabetes on metformin",
+   "Lives alone in Lewisham; no recent travel"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely causative organism?' where the food, the incubation time, travel or recent antibiotics give it away; bloody versus watery stool and systemic signs narrow it further.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Doreen, 76, day 5 of **IV co-amoxiclav** for pneumonia.",
+      "Overnight: **7 watery stools**, foul-smelling, no blood.",
+      "Crampy lower abdominal pain; feels shivery.",
+      "Also on **omeprazole**; no travel, no odd food."
+     ],
+     "vitals": {
+      "T": "38.6°C",
+      "HR": "104 bpm",
+      "BP": "118/70 mmHg",
+      "RR": "18 /min",
+      "SpO2": "95% on air"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Doreen has acute diarrhoea from a GI infection; the job is to work out **which organism**, because that decides the test and the drug."
+    },
+    {
+     "type": "ask",
+     "q": "Which organism is most likely causing Doreen's diarrhoea?",
+     "o": [
+      "Campylobacter jejuni",
+      "Clostridioides difficile",
+      "Giardia lamblia",
+      "Staphylococcus aureus"
+     ],
+     "a": 1,
+     "r": "Hospital inpatient, over 65, on a broad-spectrum antibiotic and a PPI: **C. difficile** until proven otherwise."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Doreen ticks three **C. difficile** risk factors: age over 65, a penicillin antibiotic and a PPI. Typhoid is on the same card for contrast: think travel and relative bradycardia."
+    },
+    {
+     "type": "compare",
+     "title": "Match the organism to the clue",
+     "head": [
+      "Organism",
+      "Classic source / setting",
+      "Onset after exposure",
+      "Stool"
+     ],
+     "rows": [
+      [
+       "Staph aureus",
+       "Unrefrigerated meat, dairy",
+       "**1–6 h**",
+       "Profuse vomiting, non-bloody"
+      ],
+      [
+       "Salmonella",
+       "Undercooked poultry",
+       "**12–48 h**",
+       "Nausea, vomiting, diarrhoea"
+      ],
+      [
+       "Campylobacter",
+       "Undercooked meat, unpasteurised milk",
+       "**48–72 h** (up to 4 days)",
+       "**Bloody**, flu-like prodrome"
+      ],
+      [
+       "Giardia",
+       "Travel, untreated water",
+       "Days to weeks",
+       "Watery, bloating, greasy"
+      ],
+      [
+       "S. typhi",
+       "South Asia, sub-Saharan Africa",
+       "Stepwise fever",
+       "Constipation then diarrhoea"
+      ],
+      [
+       "C. difficile",
+       "Hospital, recent antibiotics",
+       "During or after antibiotics",
+       "Watery, foul"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Not Doreen's picture, but the exam loves these two: **Campylobacter** (bloody, 2 to 3 days, GBS) and **Staph aureus** (vomiting within hours)."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "Incubation time points to the organism",
+      "min": 0,
+      "max": 96,
+      "unit": "hours",
+      "bands": [
+       [
+        0,
+        6,
+        "Staph aureus",
+        "bad"
+       ],
+       [
+        12,
+        48,
+        "Salmonella",
+        "warn"
+       ],
+       [
+        48,
+        96,
+        "Campylobacter",
+        "ok"
+       ]
+      ],
+      "value": 3,
+      "label": "Vomiting 3 h after a buffet",
+      "caption": "Hours means preformed toxin (**Staph aureus**); 2 to 3 days with blood means **Campylobacter**."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Doreen has not travelled, so **Giardia** is unlikely; she has not eaten undercooked chicken, so **Salmonella** is too."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 7: abdomen **distended** and diffusely tender.",
+      "Bowel sounds reduced; stools still frequent.",
+      "Team worries about a colonic complication."
+     ],
+     "vitals": {
+      "T": "38.9°C",
+      "HR": "118 bpm",
+      "BP": "102/64 mmHg"
+     }
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Doreen's distension and tachycardia raise the fear of **toxic megacolon**; flexible sigmoidoscopy in C. difficile may show **pseudomembranes**."
+    },
+    {
+     "type": "trap",
+     "text": "Relative bradycardia, rose spots and constipation then diarrhoea after travel is **typhoid**, not C. difficile. A fast pulse with fever is the expected response; a slow one is the clue."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect 'Which is the most appropriate initial / diagnostic investigation?': stool sample for most diarrhoea, but **blood culture** for typhoid. Watch for 'no investigation needed' in mild self-limiting cases.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Doreen is over 65, febrile and in hospital. Does she need tests?",
+     "o": [
+      "No, it is a clinical diagnosis",
+      "Yes, bloods and a stool sample",
+      "Only an abdominal X-ray",
+      "Only blood cultures"
+     ],
+     "a": 1,
+     "r": "Most diarrhoea needs no tests, but she is **severe, hospital-acquired and frail**: send bloods and a stool sample."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Clinical assessment comes first; Doreen's fever and frequent stools make her **severe**, so U&Es and FBC are justified."
+    },
+    {
+     "type": "labs",
+     "title": "Doreen's bloods, day 5",
+     "rows": [
+      [
+       "White cell count",
+       "18.4 x10^9/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "CRP",
+       "164 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "Sodium",
+       "134 mmol/L",
+       "135–145",
+       "L"
+      ],
+      [
+       "Potassium",
+       "3.1 mmol/L",
+       "3.5–5.3",
+       "L"
+      ],
+      [
+       "Creatinine",
+       "142 µmol/L",
+       "45–90",
+       "H"
+      ],
+      [
+       "Urea",
+       "11.2 mmol/L",
+       "2.5–7.8",
+       "H"
+      ]
+     ],
+     "text": "High white count and a rising creatinine from dehydration; low potassium from stool losses."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "White cell count in C. difficile",
+      "min": 0,
+      "max": 30,
+      "unit": "x10^9/L",
+      "bands": [
+       [
+        4,
+        11,
+        "normal",
+        "ok"
+       ],
+       [
+        11,
+        15,
+        "raised",
+        "warn"
+       ],
+       [
+        15,
+        30,
+        "severe C. diff marker",
+        "bad"
+       ]
+      ],
+      "value": 18.4,
+      "label": "Doreen 18.4",
+      "caption": "A white count above **15** (UK standard practice) marks severe C. difficile infection."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Doreen's stool goes for **microscopy, culture and PCR**, which includes testing for C. difficile toxin."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "**Stool culture** is the gold standard for bacterial diarrhoea; if Doreen had returned from South Asia with a stepwise fever, you would send **blood cultures** for typhoid."
+    },
+    {
+     "type": "trap",
+     "text": "Typhoid is a bloodstream infection: the diagnostic test is **blood culture**, not stool culture. Stool culture is the default for the rest."
+    },
+    {
+     "type": "pearl",
+     "text": "Campylobacter grows at **42°C** and is a Gram-negative curved rod: a lab clue the papers use."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?': oral rehydration for most, **oral vancomycin** for C. difficile, **fidaxomicin** for relapse, **metronidazole** for Giardia. Antibiotics are the exception, not the rule.",
+   "steps": [
+    {
+     "type": "ask",
+     "q": "Stool PCR confirms C. difficile toxin. Which drug first?",
+     "o": [
+      "IV co-amoxiclav continued",
+      "Loperamide",
+      "Oral metronidazole",
+      "Oral vancomycin"
+     ],
+     "a": 3,
+     "r": "**Oral vancomycin** is first-line for C. difficile; stop the culprit antibiotic if possible. Loperamide risks toxic megacolon."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Doreen gets **oral vancomycin** plus fluids and potassium; because she is septic, **IV metronidazole** is added."
+    },
+    {
+     "type": "flow",
+     "title": "C. difficile pathway",
+     "nodes": [
+      "Isolate in a side room, soap-and-water hand washing",
+      "Stop or review the culprit antibiotic and PPI",
+      "Fluids and electrolytes",
+      "Oral vancomycin (add IV metronidazole if septic)",
+      "Relapse within 12 weeks: oral fidaxomicin"
+     ],
+     "caption": "Review the drugs that caused it as well as treating the infection."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Response to oral vancomycin",
+      "x": [
+       "Day 0",
+       "Day 2",
+       "Day 4",
+       "Day 6",
+       "Day 10"
+      ],
+      "unit": "",
+      "series": [
+       {
+        "name": "Stools per day",
+        "values": [
+         8,
+         7,
+         4,
+         2,
+         1
+        ]
+       },
+       {
+        "name": "White cell count",
+        "values": [
+         18.4,
+         16.0,
+         12.1,
+         9.5,
+         7.8
+        ]
+       }
+      ],
+      "caption": "Stool frequency and white count fall together as treatment works."
+     }
+    },
+    {
+     "type": "story",
+     "points": [
+      "Week 9 at home: diarrhoea returns.",
+      "Stool again positive for C. difficile toxin.",
+      "GP calls the hospital team for advice."
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Doreen has relapsed **within 12 weeks**, so she needs **oral fidaxomicin**. Metronidazole for Giardia is on the same card."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "On the ward Doreen stayed in a side room; staff used gloves, aprons and soap and water."
+    },
+    {
+     "type": "trap",
+     "text": "Alcohol gel does not kill **C. difficile spores**: wash hands with soap and water. Avoid antimotility drugs such as loperamide in C. difficile or bloody diarrhoea."
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Doreen's care follows national gastroenteritis guidance; C. difficile and food poisoning outbreaks are reported to public health."
+    },
+    {
+     "type": "pearl",
+     "text": "For most adults with infectious diarrhoea the answer is **ORS**, then **IV 0.9% saline** if severely dry. Antibiotics only for specific organisms or severe bacterial infection."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why typhoid is systemic, why Campylobacter causes Guillain-Barré, why Staph aureus acts in hours, how C. difficile toxins make pseudomembranes.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Doreen's antibiotics wiped out her normal colonic flora, letting C. difficile overgrow and release **toxins A and B**."
+    },
+    {
+     "type": "flow",
+     "title": "From antibiotics to pseudomembranes",
+     "nodes": [
+      "Antibiotics kill normal gut flora",
+      "C. difficile spores germinate and overgrow",
+      "Toxins A and B released",
+      "Epithelial cytoskeleton disrupted, cells die",
+      "Fluid secretion and pseudomembranes"
+     ],
+     "caption": "Spores survive alcohol and spread on hands and surfaces."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Contrast Doreen's colonic illness with typhoid: S. typhi gets in through **M cells in Peyer's patches** and spreads in the blood."
+    },
+    {
+     "type": "ask",
+     "q": "A man develops leg weakness 2 weeks after bloody diarrhoea. What links the two?",
+     "o": [
+      "Direct nerve invasion by bacteria",
+      "Molecular mimicry",
+      "Preformed enterotoxin",
+      "Vitamin B12 malabsorption"
+     ],
+     "a": 1,
+     "r": "Antibodies to **Campylobacter** lipooligosaccharide cross-react with nerve **gangliosides**: Guillain-Barré syndrome."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Campylobacter's link with **Guillain-Barré** is a favourite applied science question."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Staph aureus acts in **1 to 6 hours** because the toxin is already made in the food; nothing has to grow in the gut."
+    },
+    {
+     "type": "pearl",
+     "text": "Short incubation = **preformed toxin** (Staph aureus, also Bacillus cereus). Longer incubation = organisms must multiply first (Salmonella, Campylobacter)."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "Which sign accompanies the fever in typhoid?",
+   "o": [
+    "Kernig sign",
+    "Relative bradycardia",
+    "Rovsing sign",
+    "Tachycardia out of proportion"
+   ],
+   "a": 1,
+   "r": "**Faget sign**: pulse slower than expected for the fever."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which neurological complication follows Campylobacter jejuni?",
+   "o": [
+    "Bell's palsy",
+    "Guillain-Barré syndrome",
+    "Meningitis",
+    "Myasthenia gravis"
+   ],
+   "a": 1,
+   "r": "Molecular mimicry with nerve gangliosides."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Vomiting 2 hours after a picnic suggests which organism?",
+   "o": [
+    "Campylobacter jejuni",
+    "Giardia lamblia",
+    "Salmonella",
+    "Staphylococcus aureus"
+   ],
+   "a": 3,
+   "r": "**1–6 h** incubation from preformed toxin."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which food is classically linked to Salmonella?",
+   "o": [
+    "Reheated rice",
+    "Shellfish",
+    "Undercooked poultry",
+    "Unwashed salad"
+   ],
+   "a": 2,
+   "r": "Salmonella: poultry, incubation **12–48 h**."
+  },
+  {
+   "d": "diagnosis",
+   "q": "What are pseudomembranes in C. difficile colitis?",
+   "o": [
+    "Deep fissuring ulcers",
+    "Raised yellow plaques 2–10mm",
+    "Skip lesions",
+    "Thumb-printing on X-ray"
+   ],
+   "a": 1,
+   "r": "Thumb-printing is toxic megacolon on imaging."
+  },
+  {
+   "d": "investigation",
+   "q": "Which test diagnoses typhoid fever?",
+   "o": [
+    "Blood culture",
+    "Colonoscopy",
+    "Stool culture",
+    "Widal test"
+   ],
+   "a": 0,
+   "r": "S. typhi is systemic; **blood culture** is the test."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold standard test for infectious diarrhoea?",
+   "o": [
+    "Abdominal X-ray",
+    "FBC",
+    "Stool culture",
+    "U&Es"
+   ],
+   "a": 2,
+   "r": "Stool culture; most mild cases need no test."
+  },
+  {
+   "d": "management",
+   "q": "First-line treatment for a first episode of C. difficile?",
+   "o": [
+    "Oral fidaxomicin",
+    "Oral metronidazole",
+    "Oral vancomycin",
+    "IV vancomycin"
+   ],
+   "a": 2,
+   "r": "Fidaxomicin is for relapse within 12 weeks; IV vancomycin does not reach the colon."
+  },
+  {
+   "d": "management",
+   "q": "Which drug treats giardiasis?",
+   "o": [
+    "Ciprofloxacin",
+    "Clarithromycin",
+    "Metronidazole",
+    "Vancomycin"
+   ],
+   "a": 2,
+   "r": "Giardia: **metronidazole**."
+  },
+  {
+   "d": "science",
+   "q": "Why does Staph aureus food poisoning start within hours?",
+   "o": [
+    "It invades Peyer's patches",
+    "Molecular mimicry",
+    "Preformed heat-stable enterotoxin",
+    "Rapid bacterial multiplication"
+   ],
+   "a": 2,
+   "r": "The toxin is already in the food."
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "Name the organism from the clue: food, incubation time and stool type for Staph aureus, Salmonella and Campylobacter.",
+    "tip": "Exam thinking: the hours between food and symptoms usually answer the question.",
+    "points": [
+     {
+      "p": "Staph aureus: unrefrigerated meat/dairy, 1–6 hours, profuse vomiting, non-bloody",
+      "k": [
+       [
+        "staph",
+        "aureus"
+       ],
+       [
+        "1",
+        "6",
+        "hour"
+       ]
+      ],
+      "why": "Hours = preformed toxin."
+     },
+     {
+      "p": "Salmonella: undercooked poultry, 12–48 hours, nausea and vomiting",
+      "k": [
+       [
+        "salmonella"
+       ],
+       [
+        "poultry",
+        "chicken"
+       ]
+      ],
+      "why": "Typhoid is a different, systemic Salmonella."
+     },
+     {
+      "p": "Campylobacter: undercooked meat or unpasteurised milk, 48–72 hours, bloody diarrhoea",
+      "k": [
+       [
+        "campylobacter",
+        "campy"
+       ],
+       [
+        "blood",
+        "bloody"
+       ]
+      ],
+      "why": "Look for the flu-like prodrome."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the risk factors for C. difficile infection?",
+    "tip": "Exam thinking: the drug chart is the stem's biggest clue.",
+    "points": [
+     {
+      "p": "Antibiotics: penicillins, clindamycin, cephalosporins, ciprofloxacin",
+      "k": [
+       [
+        "antibiotic",
+        "clindamycin",
+        "cephalosporin",
+        "penicillin",
+        "co-amoxiclav",
+        "ciprofloxacin"
+       ]
+      ],
+      "why": "Clindamycin is the classic."
+     },
+     {
+      "p": "PPIs",
+      "k": [
+       [
+        "ppi",
+        "proton pump",
+        "omeprazole",
+        "lansoprazole"
+       ]
+      ],
+      "why": "Stopping the PPI is part of management."
+     },
+     {
+      "p": "Age over 65",
+      "k": [
+       [
+        "65",
+        "elderly",
+        "older"
+       ]
+      ],
+      "why": "Care home and hospital patients."
+     },
+     {
+      "p": "Immunosuppression",
+      "k": [
+       [
+        "immunosupp",
+        "immunocomp"
+       ]
+      ],
+      "why": "Also recent hospital stay."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does typhoid fever present?",
+    "tip": "Exam thinking: fever plus a slow pulse after South Asia.",
+    "points": [
+     {
+      "p": "Prolonged stepwise fever",
+      "k": [
+       [
+        "fever"
+       ],
+       [
+        "step",
+        "prolonged",
+        "rising"
+       ]
+      ],
+      "why": "Rising each day over a week or more."
+     },
+     {
+      "p": "Relative bradycardia (Faget sign)",
+      "k": [
+       [
+        "bradycardia",
+        "faget",
+        "slow pulse"
+       ]
+      ],
+      "why": "Pulse lower than expected for the temperature."
+     },
+     {
+      "p": "Rose spots and splenomegaly",
+      "k": [
+       [
+        "rose spot",
+        "spleen",
+        "splenomegaly"
+       ]
+      ],
+      "why": "Faint pink macules on the trunk."
+     },
+     {
+      "p": "Constipation followed by diarrhoea, abdominal pain",
+      "k": [
+       [
+        "constipation"
+       ]
+      ],
+      "why": "Unlike most enteric infections."
+     },
+     {
+      "p": "Travel to South Asia or sub-Saharan Africa",
+      "k": [
+       [
+        "asia",
+        "africa",
+        "travel",
+        "india",
+        "pakistan",
+        "bangladesh"
+       ]
+      ],
+      "why": "Faeco-oral spread in poor sanitation."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "How does giardiasis present and why is it easy to miss?",
+    "tip": "Exam thinking: travel, bloating, greasy stools, negative culture.",
+    "points": [
+     {
+      "p": "Profuse watery diarrhoea and bloating",
+      "k": [
+       [
+        "watery"
+       ],
+       [
+        "bloat",
+        "flatulence",
+        "wind"
+       ]
+      ],
+      "why": "Non-bloody."
+     },
+     {
+      "p": "Travel to area of poor sanitation, untreated water",
+      "k": [
+       [
+        "travel",
+        "water"
+       ]
+      ],
+      "why": "Stream water, trekking."
+     },
+     {
+      "p": "Causes malabsorption",
+      "k": [
+       [
+        "malabsorption",
+        "steatorrhoea",
+        "greasy",
+        "weight loss"
+       ]
+      ],
+      "why": "Overlaps with the malabsorption topic."
+     },
+     {
+      "p": "Stool cultures/microscopy may be negative early",
+      "k": [
+       [
+        "negative"
+       ]
+      ],
+      "why": "A negative culture does not exclude it."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the complications of C. difficile and of Campylobacter?",
+    "tip": "Exam thinking: pseudomembranes versus thumb-printing; GBS weeks later.",
+    "points": [
+     {
+      "p": "Pseudomembranous colitis: raised yellow plaques 2–10mm",
+      "k": [
+       [
+        "pseudomembran",
+        "yellow plaque"
+       ]
+      ],
+      "why": "Seen on sigmoidoscopy."
+     },
+     {
+      "p": "Toxic megacolon: dilated colon, thumb-printing on imaging",
+      "k": [
+       [
+        "megacolon"
+       ]
+      ],
+      "why": "Avoid antimotility drugs."
+     },
+     {
+      "p": "Campylobacter: Guillain-Barré syndrome",
+      "k": [
+       [
+        "guillain",
+        "gbs"
+       ]
+      ],
+      "why": "Ascending areflexic weakness 1 to 3 weeks later."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "Which investigations are used in infectious diarrhoea, and when is none needed?",
+    "tip": "Exam thinking: mild and well = no test; typhoid = blood culture.",
+    "points": [
+     {
+      "p": "Most cases: clinical diagnosis, no investigation",
+      "k": [
+       [
+        "clinical"
+       ]
+      ],
+      "why": "Unless severe, bloody, persistent or immunocompromised."
+     },
+     {
+      "p": "U&Es and FBC for dehydration",
+      "k": [
+       [
+        "u&e",
+        "ue",
+        "urea",
+        "electrolyte",
+        "renal"
+       ]
+      ],
+      "why": "Low potassium and AKI are common."
+     },
+     {
+      "p": "Stool microscopy, culture and PCR; culture is the gold standard",
+      "k": [
+       [
+        "stool"
+       ],
+       [
+        "culture",
+        "pcr",
+        "microscopy"
+       ]
+      ],
+      "why": "Includes C. difficile toxin."
+     },
+     {
+      "p": "Typhoid: blood culture",
+      "k": [
+       [
+        "blood culture"
+       ]
+      ],
+      "why": "Not stool."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the general management of infectious diarrhoea?",
+    "tip": "Exam thinking: fluids first; antibiotics are the exception.",
+    "points": [
+     {
+      "p": "Oral rehydration solution first-line",
+      "k": [
+       [
+        "ors",
+        "oral rehydration"
+       ]
+      ],
+      "why": "If able to drink."
+     },
+     {
+      "p": "IV 0.9% saline if severe dehydration",
+      "k": [
+       [
+        "iv",
+        "intravenous"
+       ],
+       [
+        "saline",
+        "fluid",
+        "0.9"
+       ]
+      ],
+      "why": "Or unable to keep fluids down."
+     },
+     {
+      "p": "Antibiotics only for specific organisms or severe bacterial infection",
+      "k": [
+       [
+        "antibiotic"
+       ]
+      ],
+      "why": "Staph aureus needs only supportive care."
+     },
+     {
+      "p": "Infection control: hand hygiene and isolation",
+      "k": [
+       [
+        "hand",
+        "isolat",
+        "hygiene"
+       ]
+      ],
+      "why": "Soap and water for C. difficile spores."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How is C. difficile treated, first episode and relapse?",
+    "tip": "Exam thinking: vancomycin, then fidaxomicin; metronidazole IV only if septic.",
+    "points": [
+     {
+      "p": "First-line oral vancomycin plus fluids and electrolytes",
+      "k": [
+       [
+        "vancomycin",
+        "vanc"
+       ]
+      ],
+      "why": "Oral, so it reaches the colon."
+     },
+     {
+      "p": "If septic add IV metronidazole",
+      "k": [
+       [
+        "metronidazole"
+       ]
+      ],
+      "why": "Notes: IV metronidazole for sepsis."
+     },
+     {
+      "p": "Relapse within 12 weeks: oral fidaxomicin",
+      "k": [
+       [
+        "fidaxomicin"
+       ]
+      ],
+      "why": "Second-line."
+     },
+     {
+      "p": "Review and stop the culprit antibiotic and PPI",
+      "k": [
+       [
+        "stop",
+        "review"
+       ]
+      ],
+      "why": "Removes the trigger."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What is the treatment of giardiasis and of Staph aureus food poisoning?",
+    "tip": "Exam thinking: a parasite needs a drug; a toxin does not.",
+    "points": [
+     {
+      "p": "Giardiasis: metronidazole",
+      "k": [
+       [
+        "metronidazole"
+       ]
+      ],
+      "why": "Classic one-liner."
+     },
+     {
+      "p": "Staph aureus: supportive, hydration and electrolytes",
+      "k": [
+       [
+        "supportive",
+        "fluid",
+        "hydrat",
+        "ors"
+       ]
+      ],
+      "why": "Self-limiting toxin illness."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Explain the mechanisms: typhoid's systemic illness, Campylobacter's GBS, Staph aureus's speed, C. difficile damage.",
+    "tip": "Exam thinking: each organism has one mechanism to learn.",
+    "points": [
+     {
+      "p": "Typhoid: invades M cells in Peyer's patches, spreads via reticuloendothelial system",
+      "k": [
+       [
+        "m cell",
+        "peyer"
+       ]
+      ],
+      "why": "Explains fever, bradycardia and splenomegaly."
+     },
+     {
+      "p": "Campylobacter: molecular mimicry, lipooligosaccharide antibodies hit nerve gangliosides",
+      "k": [
+       [
+        "mimicry",
+        "ganglioside",
+        "cross-react",
+        "cross react"
+       ]
+      ],
+      "why": "Peripheral nerve myelin."
+     },
+     {
+      "p": "Staph aureus: preformed heat-stable enterotoxin",
+      "k": [
+       [
+        "preformed",
+        "pre-formed"
+       ]
+      ],
+      "why": "Reheating does not destroy it."
+     },
+     {
+      "p": "C. difficile: toxins A and B disrupt epithelial cytoskeleton, causing pseudomembranes",
+      "k": [
+       [
+        "toxin"
+       ],
+       [
+        "cytoskeleton",
+        "pseudomembran",
+        "cell death"
+       ]
+      ],
+      "why": "Also fluid secretion."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "C. difficile": "Clostridioides difficile, a spore-forming bacterium causing antibiotic-associated colitis.",
+  "Clostridioides difficile": "Spore-forming gut bacterium that overgrows after antibiotics and releases toxins A and B.",
+  "Campylobacter": "Gram-negative curved rod from undercooked meat or unpasteurised milk; commonest bacterial cause of bloody diarrhoea in the UK.",
+  "Salmonella": "Gram-negative bacterium from undercooked poultry and eggs; typhi causes typhoid fever.",
+  "Salmonella typhi": "The Salmonella serotype causing typhoid fever, a systemic illness spread faeco-orally.",
+  "typhoid": "Systemic infection with Salmonella typhi: stepwise fever, relative bradycardia, rose spots, splenomegaly.",
+  "Giardia": "Protozoan parasite from contaminated water causing watery diarrhoea, bloating and malabsorption.",
+  "Staph aureus": "Staphylococcus aureus; its preformed toxin in food causes vomiting within 1 to 6 hours.",
+  "relative bradycardia": "A pulse slower than expected for the height of the fever.",
+  "Faget sign": "Relative bradycardia with fever; classic in typhoid.",
+  "rose spots": "Faint pink macules on the trunk in typhoid fever.",
+  "splenomegaly": "Enlarged spleen.",
+  "pseudomembranous colitis": "Colitis with raised yellow plaques of fibrin and debris, caused by C. difficile toxins.",
+  "pseudomembranes": "Raised yellow plaques of fibrin, mucus and dead cells on the colonic mucosa.",
+  "toxic megacolon": "Acute, life-threatening dilation of the colon with systemic toxicity.",
+  "thumb-printing": "Thickened, oedematous colonic wall folds seen on imaging in severe colitis.",
+  "Guillain-Barré syndrome": "Immune-mediated ascending paralysis with lost reflexes, often after Campylobacter.",
+  "GBS": "Guillain-Barré syndrome: post-infectious ascending areflexic weakness.",
+  "molecular mimicry": "Antibodies against a microbe cross-react with similar-looking host molecules.",
+  "gangliosides": "Glycolipids on nerve cell membranes and myelin, targeted in Guillain-Barré syndrome.",
+  "lipooligosaccharide": "Sugar-lipid molecule on the Campylobacter surface that resembles nerve gangliosides.",
+  "enterotoxin": "A toxin that acts on the intestine to cause secretion, vomiting or diarrhoea.",
+  "preformed toxin": "Toxin made in the food before eating, so symptoms start within hours.",
+  "incubation period": "Time between exposure and the first symptoms.",
+  "M cells": "Specialised epithelial cells over Peyer's patches that sample gut contents; S. typhi enters through them.",
+  "Peyer's patches": "Lymphoid tissue clusters in the ileal wall.",
+  "reticuloendothelial system": "Phagocytic cells in liver, spleen, bone marrow and lymph nodes.",
+  "ORS": "Oral rehydration solution: glucose and salts that drive water absorption in the gut.",
+  "PPI": "Proton pump inhibitor such as omeprazole; raises C. difficile risk.",
+  "PPIs": "Proton pump inhibitors such as omeprazole; they raise C. difficile risk.",
+  "vancomycin": "Glycopeptide antibiotic; given orally for C. difficile because it stays in the gut.",
+  "fidaxomicin": "Narrow-spectrum oral antibiotic for C. difficile relapse.",
+  "metronidazole": "Antibiotic for anaerobes and protozoa; treats Giardia and is added IV in septic C. difficile.",
+  "clindamycin": "Antibiotic classically linked to C. difficile infection.",
+  "loperamide": "Antimotility drug; avoided in C. difficile and bloody diarrhoea.",
+  "PCR": "Polymerase chain reaction: detects pathogen DNA or RNA in a sample.",
+  "proctoscopy": "Looking at the anal canal and rectum with a short rigid scope.",
+  "sigmoidoscopy": "Camera examination of the rectum and sigmoid colon.",
+  "steatorrhoea": "Pale, greasy, foul-smelling stools from undigested fat.",
+  "malabsorption": "Impaired absorption of nutrients from the gut.",
+  "faeco-oral": "Spread when traces of faeces reach the mouth via hands, food or water.",
+  "notifiable": "Must be reported to public health by law, such as food poisoning and typhoid.",
+  "U&Es": "Urea and electrolytes: blood tests of kidney function, sodium and potassium."
+ },
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 38 year old man has profuse bloody diarrhoea with crampy abdominal pain and fever. Three days ago he ate chicken at a barbecue. He had aching muscles and a headache the day before the diarrhoea started.",
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Campylobacter jejuni",
+    "Clostridioides difficile",
+    "Giardia lamblia",
+    "Salmonella enteritidis",
+    "Staphylococcus aureus"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for an organism: use the food, the timing and the stool type."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bloody diarrhoea",
+      "Three days ago",
+      "chicken at a barbecue",
+      "aching muscles and a headache"
+     ],
+     "x": "Bloody stool, onset at about 3 days, undercooked meat and a **flu-like prodrome** all fit one organism."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bloody diarrhoea 2 to 3 days after poorly cooked chicken with a prodrome: **Campylobacter**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "No antibiotics or hospital stay."
+      ],
+      [
+       2,
+       "Watery, bloating, travel; not bloody."
+      ],
+      [
+       3,
+       "Poultry too, but onset is 12–48 h with nausea and vomiting; the prodrome and blood favour Campylobacter."
+      ],
+      [
+       4,
+       "Vomiting within 1–6 hours, non-bloody."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Campylobacter jejuni.** Rule: bloody + 2 to 3 days + undercooked meat + prodrome = Campylobacter."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 29 year old woman has had a fever for 10 days that rises a little each day. She returned from Bangladesh 2 weeks ago. She has abdominal pain and constipation. Her temperature is 39.4°C and pulse rate 76 bpm. There are faint pink macules on her trunk and her spleen is palpable.",
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Abdominal ultrasound",
+    "Blood culture",
+    "Stool culture",
+    "Stool microscopy for ova, cysts and parasites",
+    "Thick and thin blood films"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the diagnostic test, so first name the disease."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rises a little each day",
+      "returned from Bangladesh",
+      "constipation",
+      "temperature is 39.4°C and pulse rate 76 bpm",
+      "faint pink macules",
+      "spleen is palpable"
+     ],
+     "x": "Stepwise fever, South Asia, **relative bradycardia**, rose spots and splenomegaly."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "This is **typhoid**, a systemic infection, so the diagnostic test is **blood culture**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "May show splenomegaly but cannot name the organism."
+      ],
+      [
+       2,
+       "The gold standard for most diarrhoea, but typhoid is diagnosed on blood culture."
+      ],
+      [
+       3,
+       "For Giardia and parasites, not S. typhi."
+      ],
+      [
+       4,
+       "Malaria must be excluded in a febrile traveller, but this picture is typhoid."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Blood culture.** Rule: typhoid lives in the blood, so **blood culture**."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 81 year old woman in a care home has 6 watery stools a day. She finished a course of clindamycin 1 week ago. Stool testing is positive for C. difficile toxin. She is drinking well. Her temperature is 37.6°C, pulse rate 92 bpm and BP 128/76 mmHg.",
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Loperamide",
+    "Oral fidaxomicin",
+    "Oral metronidazole",
+    "Oral rehydration solution only",
+    "Oral vancomycin"
+   ],
+   "a": 4,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of a confirmed first episode of C. difficile."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "care home",
+      "clindamycin 1 week ago",
+      "positive for C. difficile toxin",
+      "drinking well"
+     ],
+     "x": "Confirmed C. difficile after clindamycin; not septic; first episode."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "First-line for C. difficile: **oral vancomycin** with fluids and isolation."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Antimotility drugs risk toxic megacolon."
+      ],
+      [
+       1,
+       "Second-line, for relapse within 12 weeks."
+      ],
+      [
+       2,
+       "Used for Giardia; the notes give oral vancomycin first-line for C. difficile."
+      ],
+      [
+       3,
+       "Supportive care alone is for Staph aureus or viral illness, not proven C. difficile."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Oral vancomycin.** Rule: C. difficile first episode = oral vancomycin; relapse = fidaxomicin."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 34 year old man has diarrhoea, abdominal pain and vomiting. Two weeks ago he had bloody diarrhoea after eating undercooked chicken. He now has tingling in his feet and weakness in both legs that is spreading upwards. Knee and ankle reflexes are absent.",
+   "q": "Which is the most likely mechanism of his weakness?",
+   "o": [
+    "Antibodies cross-reacting with nerve gangliosides",
+    "Direct bacterial invasion of peripheral nerves",
+    "Hypokalaemia from diarrhoeal losses",
+    "Preformed neurotoxin in the food",
+    "Spinal cord compression"
+   ],
+   "a": 0,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "A mechanism question: name the illness first, then explain it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bloody diarrhoea",
+      "undercooked chicken",
+      "weakness in both legs that is spreading upwards",
+      "reflexes are absent"
+     ],
+     "x": "Campylobacter, then ascending areflexic weakness 2 weeks later: **Guillain-Barré syndrome**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "GBS after Campylobacter is **molecular mimicry**: antibodies to lipooligosaccharide hit myelin gangliosides."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Campylobacter does not invade nerves; the damage is immune."
+      ],
+      [
+       2,
+       "Causes weakness but not areflexic ascending weakness 2 weeks later."
+      ],
+      [
+       3,
+       "That is botulism (descending) or Staph aureus (GI only)."
+      ],
+      [
+       4,
+       "Would give brisk reflexes and a sensory level."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Antibodies cross-reacting with nerve gangliosides.** Rule: Campylobacter then GBS = molecular mimicry."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 24 year old man has had profuse vomiting and watery diarrhoea for 3 hours. He ate chicken sandwiches and cream cakes at a wedding buffet 2 hours before symptoms began; the food had been left out in the sun. Several other guests are unwell. His temperature is 37.1°C, pulse rate 102 bpm and BP 116/72 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Campylobacter jejuni",
+    "Clostridioides difficile",
+    "Giardia lamblia",
+    "Salmonella enteritidis",
+    "Staphylococcus aureus"
+   ],
+   "a": 4,
+   "e": "Vomiting within 1–6 hours of unrefrigerated food is Staph aureus preformed enterotoxin. Salmonella takes 12–48 hours.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: the time from food to symptoms decides it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "profuse vomiting",
+      "2 hours before symptoms began",
+      "left out in the sun",
+      "Several other guests"
+     ],
+     "x": "Vomiting-dominant illness within hours of unrefrigerated food, many people affected."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Onset in **1–6 hours** means a preformed toxin: **Staph aureus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "48–72 hours and bloody."
+      ],
+      [
+       1,
+       "Linked to antibiotics, not a buffet."
+      ],
+      [
+       2,
+       "Days to weeks, after travel."
+      ],
+      [
+       3,
+       "12–48 hours; too soon here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Staphylococcus aureus.** Rule: hours = Staph aureus toxin."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 74 year old man has had 8 watery stools a day for 3 days. He is in hospital on day 6 of IV ceftriaxone for a urinary tract infection and takes lansoprazole. He has lower abdominal cramps. His temperature is 38.3°C, pulse rate 106 bpm and BP 112/68 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Campylobacter jejuni",
+    "Clostridioides difficile",
+    "Norovirus",
+    "Salmonella enteritidis",
+    "Shigella sonnei"
+   ],
+   "a": 1,
+   "e": "Cephalosporin, PPI and age over 65 are the C. difficile triad of risk factors. Norovirus causes outbreaks but is not antibiotic related.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: the setting and the drug chart matter most."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "74 year old",
+      "in hospital on day 6 of IV ceftriaxone",
+      "lansoprazole",
+      "8 watery stools a day"
+     ],
+     "x": "Over 65, inpatient, cephalosporin and PPI: classic risk factors."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**C. difficile**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Community, undercooked meat, bloody."
+      ],
+      [
+       2,
+       "Outbreaks with vomiting, lasts 1–3 days, no antibiotic link."
+      ],
+      [
+       3,
+       "Undercooked poultry."
+      ],
+      [
+       4,
+       "Bloody dysentery from faeco-oral spread, not antibiotic linked."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Clostridioides difficile.** Rule: antibiotics + PPI + over 65 = C. difficile."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 31 year old woman has had a fever for 9 days, rising in steps. She returned from visiting family in Lahore 12 days ago. She has a dull headache, abdominal pain and had constipation that has now turned to diarrhoea. Her temperature is 39.6°C, pulse rate 72 bpm and BP 110/70 mmHg. Her spleen is palpable.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Amoebic dysentery",
+    "Campylobacter enteritis",
+    "Giardiasis",
+    "Malaria",
+    "Typhoid fever"
+   ],
+   "a": 4,
+   "e": "Stepwise fever, relative bradycardia (Faget sign), splenomegaly and constipation then diarrhoea after South Asia is typhoid.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis in a returning traveller with fever."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "rising in steps",
+      "Lahore",
+      "constipation that has now turned to diarrhoea",
+      "temperature is 39.6°C, pulse rate 72 bpm",
+      "spleen is palpable"
+     ],
+     "x": "Stepwise fever, South Asia, constipation then diarrhoea, **relative bradycardia**, splenomegaly."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Typhoid fever** (Salmonella typhi)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Bloody diarrhoea, liver abscess; no stepwise fever."
+      ],
+      [
+       1,
+       "Bloody diarrhoea within days of meat; not a 9-day stepwise fever."
+      ],
+      [
+       2,
+       "Bloating and watery stools, no high fever."
+      ],
+      [
+       3,
+       "Must be excluded, but cyclical fever with tachycardia; relative bradycardia points to typhoid."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Typhoid fever.** Rule: fever with a slow pulse after South Asia = typhoid."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 27 year old woman has had watery diarrhoea, bloating and flatulence for 3 weeks since trekking in Nepal, where she drank stream water. Her stools are pale and greasy. She has lost 3 kg. Stool cultures at her GP were negative. Her temperature is 36.9°C.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Campylobacter jejuni",
+    "Entamoeba histolytica",
+    "Giardia lamblia",
+    "Salmonella typhi",
+    "Staphylococcus aureus"
+   ],
+   "a": 2,
+   "e": "Giardia gives watery diarrhoea, bloating and malabsorption after untreated water, with negative early stool cultures. Amoebiasis is bloody.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism: chronic watery diarrhoea after travel."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "3 weeks",
+      "drank stream water",
+      "bloating and flatulence",
+      "pale and greasy",
+      "Stool cultures at her GP were negative"
+     ],
+     "x": "Persistent watery, greasy stools with bloating after untreated water; negative culture."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Giardia**: causes malabsorption and is missed on routine culture."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Acute and bloody."
+      ],
+      [
+       1,
+       "Bloody dysentery."
+      ],
+      [
+       3,
+       "High stepwise fever, systemic illness."
+      ],
+      [
+       4,
+       "Hours, vomiting, self-limiting."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Giardia lamblia.** Rule: travel + bloating + greasy stools + negative culture = Giardia."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old man has had bloody diarrhoea and abdominal cramps for 2 days. He had a flu-like illness the day before. Three days ago he ate a rare burger and drank unpasteurised milk at a farm. His temperature is 38.4°C, pulse rate 98 bpm and BP 124/78 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Bacillus cereus",
+    "Campylobacter jejuni",
+    "Clostridioides difficile",
+    "Giardia lamblia",
+    "Staphylococcus aureus"
+   ],
+   "a": 1,
+   "e": "Campylobacter: undercooked meat or unpasteurised milk, 48–72 hour incubation, flu-like prodrome and bloody diarrhoea.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question with food and timing."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bloody diarrhoea",
+      "flu-like illness the day before",
+      "Three days ago",
+      "unpasteurised milk"
+     ],
+     "x": "Bloody, 3 days after undercooked meat and unpasteurised milk, prodrome."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Campylobacter jejuni**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Reheated rice; hours."
+      ],
+      [
+       2,
+       "No antibiotics."
+      ],
+      [
+       3,
+       "Watery, travel, weeks."
+      ],
+      [
+       4,
+       "Vomiting within hours, non-bloody."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Campylobacter jejuni.** Rule: bloody + prodrome + 2 to 4 days = Campylobacter."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 79 year old woman has had worsening watery diarrhoea for 5 days after a course of co-amoxiclav. Stool is positive for C. difficile toxin. Flexible sigmoidoscopy is performed.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely finding on sigmoidoscopy?",
+   "o": [
+    "Cobblestone mucosa with skip lesions",
+    "Continuous inflammation with pseudopolyps",
+    "Dark brown pigmented mucosa",
+    "Normal mucosa",
+    "Raised yellow plaques"
+   ],
+   "a": 4,
+   "e": "C. difficile toxins create pseudomembranes: raised yellow plaques 2–10mm. Cobblestoning is Crohn's.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Finding on sigmoidoscopy in confirmed C. difficile."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "co-amoxiclav",
+      "positive for C. difficile toxin",
+      "Flexible sigmoidoscopy"
+     ],
+     "x": "C. difficile colitis complicated by pseudomembrane formation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Pseudomembranous colitis**: raised yellow plaques 2–10mm."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Crohn's disease."
+      ],
+      [
+       1,
+       "Ulcerative colitis."
+      ],
+      [
+       2,
+       "Melanosis coli from laxatives."
+      ],
+      [
+       3,
+       "Seen in many infections, but proven toxin-positive colitis classically shows pseudomembranes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Raised yellow plaques.** Rule: C. difficile on scope = yellow plaques (pseudomembranes)."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 52 year old man has had bloody diarrhoea 8 times a day for 4 days with abdominal pain. He ate undercooked chicken at a barbecue. His temperature is 38.5°C, pulse rate 110 bpm and BP 104/66 mmHg.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "142 g/L",
+     "130–180",
+     ""
+    ],
+    [
+     "White cell count",
+     "15.2 x10^9/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "Urea",
+     "9.8 mmol/L",
+     "2.5–7.8",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "118 µmol/L",
+     "60–110",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate investigation to identify the cause?",
+   "o": [
+    "Abdominal X-ray",
+    "Blood culture",
+    "Colonoscopy",
+    "Faecal calprotectin",
+    "Stool microscopy, culture and PCR"
+   ],
+   "a": 4,
+   "e": "Bloody, severe diarrhoea needs a stool sample for microscopy, culture and PCR. Blood culture is for typhoid.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Investigation to identify the organism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "bloody diarrhoea 8 times a day",
+      "undercooked chicken",
+      "temperature is 38.5°C, pulse rate 110 bpm"
+     ],
+     "x": "Severe, bloody diarrhoea: this is when testing is indicated."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Send stool for **microscopy, culture and PCR**; stool culture is the gold standard."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Only if toxic megacolon is suspected."
+      ],
+      [
+       1,
+       "For typhoid; this is enteric food poisoning."
+      ],
+      [
+       2,
+       "Invasive, not first for acute infection."
+      ],
+      [
+       3,
+       "Separates IBD from IBS, not organisms."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Stool microscopy, culture and PCR.** Rule: severe or bloody diarrhoea = send stool."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 23 year old woman has had diarrhoea and vomiting for 24 hours after eating takeaway food. She is managing to drink. Her temperature is 37.4°C, pulse rate 88 bpm and BP 118/74 mmHg. Her abdomen is soft with mild generalised tenderness. She is otherwise well and not immunocompromised.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate next step?",
+   "o": [
+    "Abdominal ultrasound",
+    "Blood cultures",
+    "Clinical diagnosis with no investigations",
+    "Stool culture",
+    "U&Es and FBC"
+   ],
+   "a": 2,
+   "e": "Mild, short-lived diarrhoea in a well person needs no tests. Stool culture is reserved for severe, bloody, persistent or immunocompromised cases.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Next step' in mild acute diarrhoea: is any test needed?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "24 hours",
+      "managing to drink",
+      "pulse rate 88 bpm",
+      "not immunocompromised"
+     ],
+     "x": "Short history, drinking, normal observations, no blood, not immunocompromised."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Most cases are a **clinical diagnosis**; no test needed unless severe, bloody, persistent or immunocompromised."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "No surgical sign."
+      ],
+      [
+       1,
+       "Not febrile or septic."
+      ],
+      [
+       3,
+       "Gold standard, but only when severe, bloody, persistent or immunocompromised."
+      ],
+      [
+       4,
+       "For severe dehydration, which she does not have."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Clinical diagnosis with no investigations.** Rule: mild and well = clinical diagnosis."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 69 year old man has diarrhoea 6 times a day. He finished a 10 day course of oral vancomycin for C. difficile infection 5 weeks ago and had recovered. Stool is again positive for C. difficile toxin. His temperature is 37.5°C, pulse rate 90 bpm and BP 134/80 mmHg.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Faecal microbiota transplant",
+    "IV metronidazole",
+    "Loperamide",
+    "Oral fidaxomicin",
+    "Oral vancomycin repeated"
+   ],
+   "a": 3,
+   "e": "C. difficile relapse within 12 weeks of the first episode is treated with oral fidaxomicin. FMT is for repeated recurrences.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Management of a recurrence."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "oral vancomycin",
+      "5 weeks ago",
+      "again positive for C. difficile toxin"
+     ],
+     "x": "Relapse **within 12 weeks** of the first episode."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Second-line: **oral fidaxomicin**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Reserved for multiple recurrences."
+      ],
+      [
+       1,
+       "An add-on if septic; he is not."
+      ],
+      [
+       2,
+       "Risks toxic megacolon."
+      ],
+      [
+       4,
+       "Used for a first episode; the relapse drug is fidaxomicin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Oral fidaxomicin.** Rule: relapse within 12 weeks = fidaxomicin."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 33 year old man has had watery diarrhoea and bloating for 4 weeks after a trip to India. Stool microscopy shows Giardia lamblia cysts. He is otherwise well.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "128 g/L",
+     "130–180",
+     "L"
+    ],
+    [
+     "Albumin",
+     "33 g/L",
+     "35–50",
+     "L"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate management?",
+   "o": [
+    "Ciprofloxacin",
+    "Metronidazole",
+    "No treatment needed",
+    "Oral vancomycin",
+    "Pancreatic enzyme replacement"
+   ],
+   "a": 1,
+   "e": "Giardiasis is treated with metronidazole. Vancomycin is for C. difficile.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Treatment of a named organism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "Giardia lamblia cysts",
+      "4 weeks"
+     ],
+     "x": "Proven persistent giardiasis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Metronidazole**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Used for some bacterial infections, not Giardia."
+      ],
+      [
+       2,
+       "Symptomatic for 4 weeks with malabsorption; treat it."
+      ],
+      [
+       3,
+       "For C. difficile."
+      ],
+      [
+       4,
+       "For pancreatic insufficiency."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Metronidazole.** Rule: Giardia = metronidazole."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 41 year old woman has had watery diarrhoea and vomiting for 2 days after a family meal. She feels thirsty and dizzy on standing. Her temperature is 37.3°C, pulse rate 96 bpm and BP 112/70 mmHg. She can keep fluids down. Her mucous membranes are dry.",
+   "labs": [
+    [
+     "Sodium",
+     "136 mmol/L",
+     "135–145",
+     ""
+    ],
+    [
+     "Potassium",
+     "3.6 mmol/L",
+     "3.5–5.3",
+     ""
+    ],
+    [
+     "Urea",
+     "8.4 mmol/L",
+     "2.5–7.8",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Ciprofloxacin",
+    "IV 0.9% sodium chloride",
+    "Loperamide",
+    "Oral metronidazole",
+    "Oral rehydration solution"
+   ],
+   "a": 4,
+   "e": "ORS is first-line; IV 0.9% saline is for severe dehydration. Most infectious diarrhoea needs no antibiotic.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of mild to moderate dehydration."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "can keep fluids down",
+      "pulse rate 96 bpm and BP 112/70 mmHg",
+      "thirsty and dizzy"
+     ],
+     "x": "Mild to moderate dehydration in someone tolerating oral fluids."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "**Oral rehydration solution** first-line."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Antibiotics only for specific organisms or severe bacterial infection."
+      ],
+      [
+       1,
+       "For severe dehydration or if unable to drink."
+      ],
+      [
+       2,
+       "Not the first step; avoid if bloody."
+      ],
+      [
+       3,
+       "For Giardia or septic C. difficile."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Oral rehydration solution.** Rule: can drink = ORS; cannot or severe = IV saline."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 26 year old man returns from Nepal with 10 days of stepwise fever, abdominal pain and a palpable spleen. Blood cultures grow Salmonella typhi.",
+   "labs": [],
+   "visual": null,
+   "q": "Which is the most likely mechanism by which this organism causes systemic illness?",
+   "o": [
+    "Invasion through M cells in Peyer's patches",
+    "Molecular mimicry with gangliosides",
+    "Preformed heat-stable enterotoxin",
+    "Toxins A and B disrupting the colonic cytoskeleton",
+    "Villous atrophy from gluten sensitivity"
+   ],
+   "a": 0,
+   "e": "S. typhi invades via M cells over Peyer's patches and disseminates through the reticuloendothelial system, explaining fever and splenomegaly.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism of systemic spread."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "stepwise fever",
+      "palpable spleen",
+      "Salmonella typhi"
+     ],
+     "x": "Typhoid is systemic, with splenomegaly."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "S. typhi crosses via **M cells in Peyer's patches** and spreads through the reticuloendothelial system."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Campylobacter and Guillain-Barré."
+      ],
+      [
+       2,
+       "Staph aureus."
+      ],
+      [
+       3,
+       "C. difficile."
+      ],
+      [
+       4,
+       "Coeliac disease."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Invasion through M cells in Peyer's patches.** Rule: typhoid = M cells, Peyer's patches, reticuloendothelial spread."
+    }
+   ]
+  }
+ ]
+}

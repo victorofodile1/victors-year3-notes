@@ -1,0 +1,3031 @@
+{
+ "id": "pneumonia",
+ "patient": {
+  "name": "Desmond Okafor",
+  "age": 71,
+  "sex": "M",
+  "setting": "Emergency Department",
+  "complaint": "Fever, productive cough and breathlessness for 3 days",
+  "background": [
+   "COPD (ex-smoker, 40 pack-years), on tiotropium and salbutamol inhalers",
+   "Hypercholesterolaemia on simvastatin 40 mg at night",
+   "Lives with his wife in Lewisham, independent",
+   "No known drug allergies"
+  ]
+ },
+ "domains": {
+  "diagnosis": {
+   "exam": "Expect 'Which is the most likely causative organism?' with one signature clue in the stem (rust-coloured sputum, redcurrant jelly sputum, recent holiday with hyponatraemia, birds, HIV with exertional desaturation), or 'Which is the most likely diagnosis?' for a complication such as empyema.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "Desmond, 71, COPD. 3 days of fever and rigors.",
+      "Cough now productive of **rust-coloured sputum**.",
+      "Sharp **left-sided pleuritic** chest pain.",
+      "Unwell at home; no hospital stay this year.",
+      "Wife spots a **cold sore** on his upper lip."
+     ],
+     "vitals": {
+      "T": "39.2°C",
+      "HR": "114 bpm",
+      "BP": "96/58 mmHg",
+      "RR": "31 /min",
+      "SpO2": "89% on air",
+      "GCS": "15"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "Desmond became unwell at home and has not been admitted recently. How should his pneumonia be classified?",
+     "o": [
+      "Aspiration pneumonia",
+      "Community-acquired pneumonia",
+      "Hospital-acquired pneumonia",
+      "Ventilator-associated pneumonia"
+     ],
+     "a": 1,
+     "r": "It began outside hospital, so it is **CAP**. HAP needs onset ≥48h after admission and VAP ≥48h after intubation."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond is **CAP**, so think **Strep. pneumoniae** first. An inpatient ≥48h (HAP) would shift you to S. aureus, Pseudomonas, Klebsiella and H. influenzae."
+    },
+    {
+     "type": "flow",
+     "title": "Classify by where and when it started",
+     "nodes": [
+      "Outside hospital or within 48h of admission → CAP",
+      "Most common: Strep. pneumoniae",
+      "≥48h after admission → HAP",
+      "S. aureus, Pseudomonas, Klebsiella, H. influenzae",
+      "≥48h after intubation → VAP",
+      "Multi-drug resistant: Pseudomonas, MSSA/MRSA, Gram-negatives"
+     ],
+     "caption": "The timing rule (48 hours) is what turns a CAP question into a HAP or VAP question."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Left base: **dull** to percussion, **bronchial breathing**, coarse focal crackles.",
+      "Looks unwell, febrile.",
+      "Sputum not foul-smelling.",
+      "No stroke, alcohol excess or vomiting."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Rust-coloured sputum, high fever, focal left basal crackles and a cold sore. Which organism is most likely?",
+     "o": [
+      "Haemophilus influenzae",
+      "Klebsiella pneumoniae",
+      "Legionella pneumophila",
+      "Mycoplasma pneumoniae",
+      "Streptococcus pneumoniae"
+     ],
+     "a": 4,
+     "r": "**Rust-coloured sputum** with lobar signs and **herpes labialis** is classic **Strep. pneumoniae**. His COPD makes H. influenzae tempting, but nothing else in the story points to it."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Every organism has a signature clue. Desmond has the full Strep. pneumoniae set: high fever, focal crackles, rust-coloured sputum and herpes labialis."
+    },
+    {
+     "type": "compare",
+     "title": "Organism clue-spotter",
+     "head": [
+      "Organism",
+      "Who / trigger",
+      "Signature clue"
+     ],
+     "rows": [
+      [
+       "Strep. pneumoniae",
+       "Most common CAP",
+       "Rust-coloured sputum, lobar, herpes labialis"
+      ],
+      [
+       "H. influenzae",
+       "COPD",
+       "Gram-negative coccobacillus"
+      ],
+      [
+       "S. aureus",
+       "Post-influenza",
+       "Gram-positive cocci, cavitating lesions"
+      ],
+      [
+       "Klebsiella",
+       "Homeless, diabetes, alcohol",
+       "Redcurrant jelly sputum, Gram-negative rod"
+      ],
+      [
+       "Mycoplasma",
+       "Young, 'walking'",
+       "Dry cough, AIHA, deranged LFTs, erythema multiforme"
+      ],
+      [
+       "Legionella",
+       "Travel / holiday",
+       "Confusion, myalgia, hyponatraemia, bi-basal changes"
+      ],
+      [
+       "Chlamydia psittaci",
+       "Contact with birds",
+       "Flu-like illness"
+      ],
+      [
+       "PCP",
+       "HIV, CD4 <200",
+       "Exertional desaturation, dry cough, ground-glass on CT"
+      ]
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Contrast: upper-zone cavitation",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "right",
+        "zone": "upper"
+       },
+       {
+        "type": "cavity",
+        "side": "right",
+        "zone": "upper"
+       }
+      ],
+      "caption": "Right upper zone consolidation with a cavity. Think **Klebsiella** (alcohol, redcurrant jelly sputum) or **TB**; post-influenza **S. aureus** gives cavitating lesions too. Desmond's film looks nothing like this."
+     },
+     "text": "Not every pneumonia is a dense lower lobe. **Upper-zone** shadowing with **cavitation** points away from Strep. pneumoniae."
+    },
+    {
+     "type": "trap",
+     "text": "**COPD → H. influenzae** is an association, not the default. If the stem gives rust-coloured sputum or herpes labialis, the answer is still **Strep. pneumoniae**, the commonest cause overall."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "No aspiration risk factors, no foul sputum and **left**-sided signs: aspiration is unlikely. Atypicals would give a dry cough and milder signs."
+    },
+    {
+     "type": "pearl",
+     "text": "Aspiration pneumonia vignette: **MCA stroke** with dysphagia, **foul-smelling sputum**, crackles in dependent zones and **right lower lobe** consolidation. Anaerobes are involved and **lung abscess** is the complication to name."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond's urea is **9.8 mmol/L** (>7): a poor prognostic marker. If his fever returns on antibiotics, think **empyema**."
+    },
+    {
+     "type": "pearl",
+     "text": "Empyema in a stem: a patient on antibiotics for pneumonia whose fever **comes back and swings**, with a **dull base and reduced breath sounds**. Pleural fluid **pH <7.2** confirms it."
+    }
+   ]
+  },
+  "investigation": {
+   "exam": "Expect a vignette where you must calculate CURB-65 from the observations and urea, or 'Which is the most appropriate diagnostic investigation?' with the organism-specific test (urinary antigen for Legionella/Strep. pneumoniae, BAL for PCP, pleural aspirate for empyema).",
+   "steps": [
+    {
+     "type": "labs",
+     "title": "Desmond's admission bloods",
+     "rows": [
+      [
+       "WCC",
+       "19.4 ×10⁹/L",
+       "4.0–11.0",
+       "H"
+      ],
+      [
+       "Neutrophils",
+       "16.8 ×10⁹/L",
+       "2.0–7.5",
+       "H"
+      ],
+      [
+       "CRP",
+       "286 mg/L",
+       "<5",
+       "H"
+      ],
+      [
+       "Sodium",
+       "136 mmol/L",
+       "135–145",
+       ""
+      ],
+      [
+       "Urea",
+       "9.8 mmol/L",
+       "2.5–7.8",
+       "H"
+      ],
+      [
+       "Creatinine",
+       "132 µmol/L",
+       "60–110",
+       "H"
+      ],
+      [
+       "Lactate",
+       "2.6 mmol/L",
+       "<2.0",
+       "H"
+      ]
+     ],
+     "text": "A neutrophilia and very high CRP fit a bacterial pneumonia. His AMTS is **8/10**."
+    },
+    {
+     "type": "ask",
+     "q": "Desmond: AMTS 8/10, urea 9.8 mmol/L, RR 31/min, BP 96/58 mmHg, age 71. What is his CURB-65 score?",
+     "o": [
+      "2",
+      "3",
+      "4",
+      "5"
+     ],
+     "a": 2,
+     "r": "Urea >7 (1), RR ≥30 (1), diastolic ≤60 (1), age ≥65 (1) = **4**. AMTS 8 does not score, because confusion is AMTS **≤7**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "scale",
+      "title": "CURB-65 score",
+      "min": 0,
+      "max": 5,
+      "unit": "points",
+      "bands": [
+       [
+        0,
+        1.5,
+        "0–1 low: community",
+        "ok"
+       ],
+       [
+        1.5,
+        2.5,
+        "2 moderate: consider admission",
+        "warn"
+       ],
+       [
+        2.5,
+        5,
+        "≥3 severe: urgent admission",
+        "bad"
+       ]
+      ],
+      "value": 4,
+      "label": "Desmond 4",
+      "caption": "Desmond scores 4 (urea, RR, diastolic BP, age): severe, urgent admission and IV antibiotics."
+     }
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "His U&Es give the urea for the score. SpO2 89% (<92%) means an **ABG**. A score of **4** is severe: urgent admission."
+    },
+    {
+     "type": "flow",
+     "title": "CURB-65 to decision",
+     "nodes": [
+      "Confusion (AMTS ≤7), Urea >7, RR ≥30, BP <90/≤60, Age ≥65",
+      "1 point each",
+      "0–1: low severity → community",
+      "2: moderate → consider admission",
+      "≥3: severe → urgent hospital admission"
+     ],
+     "caption": "Two classic slips: an AMTS of 8 is not confusion (must be **≤7**), and a systolic of 96 does not score but a diastolic of 58 does."
+    },
+    {
+     "type": "labs",
+     "title": "Arterial blood gas (on air)",
+     "rows": [
+      [
+       "pH",
+       "7.37",
+       "7.35–7.45",
+       ""
+      ],
+      [
+       "pO2",
+       "7.6 kPa",
+       "10.0–13.0",
+       "L"
+      ],
+      [
+       "pCO2",
+       "5.6 kPa",
+       "4.7–6.0",
+       ""
+      ],
+      [
+       "HCO3⁻",
+       "24 mmol/L",
+       "22–26",
+       ""
+      ],
+      [
+       "Lactate",
+       "2.6 mmol/L",
+       "<2.0",
+       "H"
+      ]
+     ],
+     "text": "Low pO2 with a normal pCO2: **type 1 respiratory failure**. Because he has COPD, oxygen is given in a controlled way and the gas is repeated."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "The key first-line test is Desmond's chest X-ray, which shows the consolidation."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Desmond's chest X-ray on admission",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "left",
+        "zone": "lower"
+       }
+      ],
+      "caption": "Dense **left lower zone consolidation** with air bronchograms and slight blunting of the left costophrenic angle. No cavity."
+     },
+     "text": "The chest X-ray shows dense **left lower lobe consolidation** with air bronchograms. There is a small blunting of the left costophrenic angle. No cavities are seen."
+    },
+    {
+     "type": "ask",
+     "q": "The team want to confirm Strep. pneumoniae quickly. Which test is most appropriate?",
+     "o": [
+      "Blood serology",
+      "Bronchoscopy with BAL",
+      "Pleural aspirate",
+      "Urinary antigen test"
+     ],
+     "a": 3,
+     "r": "Strep. pneumoniae is diagnosed with a **urinary antigen test**. Serology is for Mycoplasma and BAL for PCP."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Each organism has its own confirmatory test. For Desmond: pneumococcal **urinary antigen**. Travel plus low sodium would add the Legionella antigen."
+    },
+    {
+     "type": "compare",
+     "title": "Which test confirms what",
+     "head": [
+      "Suspected",
+      "Test",
+      "Detail"
+     ],
+     "rows": [
+      [
+       "Strep. pneumoniae",
+       "Urinary antigen test",
+       "Quick, bedside"
+      ],
+      [
+       "Legionella",
+       "Urinary antigen EIA",
+       "Holiday + hyponatraemia"
+      ],
+      [
+       "Mycoplasma",
+       "Blood serology",
+       "Gold standard"
+      ],
+      [
+       "PCP",
+       "Bronchoscopy with BAL",
+       "Methenamine silver stain"
+      ],
+      [
+       "Empyema",
+       "Pleural aspirate",
+       "pH <7.2"
+      ],
+      [
+       "VAP",
+       "Endotracheal aspirate culture",
+       "Before antibiotics"
+      ]
+     ]
+    },
+    {
+     "type": "labs",
+     "title": "Microbiology",
+     "rows": [
+      [
+       "Pneumococcal urinary antigen",
+       "Positive",
+       "Negative",
+       "H"
+      ],
+      [
+       "Legionella urinary antigen",
+       "Negative",
+       "Negative",
+       ""
+      ],
+      [
+       "Blood culture",
+       "Gram-positive diplococci",
+       "No growth",
+       "H"
+      ]
+     ],
+     "text": "Confirmed **Strep. pneumoniae** CAP."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Not Desmond's case: he caught it at home. In HAP, take blood cultures and lower respiratory samples **before** antibiotics; in VAP, culture an **endotracheal aspirate**."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Day 5: settled, then **swinging fevers** return.",
+      "Left base now **stony dull**, reduced breath sounds.",
+      "Ultrasound: pleural collection.",
+      "Pleural aspirate sent."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Repeat chest X-ray, day 5",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "left",
+        "zone": "lower"
+       },
+       {
+        "type": "effusion",
+        "side": "left",
+        "zone": "lower"
+       }
+      ],
+      "caption": "A **left pleural effusion** with a meniscus now sits over the consolidation. With a swinging fever this is an empyema until the pleural pH says otherwise."
+     },
+     "text": "New fever on antibiotics plus a dull base: re-image and **tap the fluid**."
+    },
+    {
+     "type": "labs",
+     "title": "Pleural aspirate",
+     "rows": [
+      [
+       "Appearance",
+       "Turbid",
+       "Clear, straw",
+       "H"
+      ],
+      [
+       "pH",
+       "6.98",
+       ">7.2",
+       "L"
+      ],
+      [
+       "Glucose",
+       "1.6 mmol/L",
+       ">3.3",
+       "L"
+      ],
+      [
+       "LDH",
+       "1450 U/L",
+       "<200",
+       "H"
+      ],
+      [
+       "Gram stain",
+       "Gram-positive cocci",
+       "No organisms",
+       "H"
+      ]
+     ],
+     "text": "Pleural pH **<7.2** = **empyema**."
+    }
+   ]
+  },
+  "management": {
+   "exam": "Expect 'Which is the most appropriate initial management?' where the CURB-65 score in the stem picks the antibiotic, plus HAP/VAP regimens and the statin-clarithromycin interaction as a drug-safety question.",
+   "steps": [
+    {
+     "type": "story",
+     "points": [
+      "RR 31, SpO2 89% on air, BP 96/58 mmHg.",
+      "Lactate 2.6 mmol/L.",
+      "**Septic** from severe CAP (CURB-65 = 4)."
+     ],
+     "vitals": {
+      "RR": "31 /min",
+      "SpO2": "89% on air",
+      "BP": "96/58 mmHg",
+      "HR": "114 bpm"
+     }
+    },
+    {
+     "type": "ask",
+     "q": "What comes first for Desmond?",
+     "o": [
+      "ABC assessment and oxygen",
+      "Chest X-ray",
+      "Repeat CURB-65 score",
+      "Sputum culture"
+     ],
+     "a": 0,
+     "r": "In an acutely unwell patient, **ABC** comes before investigation. Tests follow once he is being stabilised."
+    },
+    {
+     "type": "flow",
+     "title": "Sepsis Six (within the first hour)",
+     "nodes": [
+      "Give oxygen to target saturations",
+      "Take blood cultures",
+      "Give IV antibiotics",
+      "Give IV fluids",
+      "Measure lactate",
+      "Monitor urine output"
+     ],
+     "caption": "Desmond has COPD, so oxygen is titrated to his target range rather than given at maximum flow."
+    },
+    {
+     "type": "ask",
+     "q": "Desmond's CURB-65 is 4 and he is septic. Which antibiotic regimen is most appropriate?",
+     "o": [
+      "IV co-amoxiclav + clarithromycin",
+      "IV piperacillin-tazobactam",
+      "Oral amoxicillin",
+      "Oral amoxicillin + clarithromycin"
+     ],
+     "a": 0,
+     "r": "CURB-65 **≥3** or septic → **IV co-amoxiclav + clarithromycin** in a high-dependency setting. Pip-taz is for HAP/VAP."
+    },
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Score 4 and septic: **IV co-amoxiclav + clarithromycin** in HDU plus the Sepsis 6. A score of 0–1 would mean amoxicillin at home, 48h review."
+    },
+    {
+     "type": "flow",
+     "title": "CAP antibiotics by CURB-65",
+     "nodes": [
+      "ABC first",
+      "0–1 → home, oral amoxicillin 7 days, 48h review",
+      "Penicillin allergy → doxycycline or clarithromycin",
+      "2 → amoxicillin + clarithromycin, respiratory ward",
+      "≥3 or septic → IV co-amoxiclav + clarithromycin, HDU"
+     ]
+    },
+    {
+     "type": "notes",
+     "src": "guidelines",
+     "lead": "Desmond's care follows CURB-65 for severity, NICE and BTS guidance for antibiotics, and the Sepsis Six because he is septic."
+    },
+    {
+     "type": "story",
+     "points": [
+      "Pharmacist reviews the drug chart.",
+      "Regulars: **simvastatin 40 mg** nocte, tiotropium, salbutamol.",
+      "Flags an interaction with the new **clarithromycin**."
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "What should happen to Desmond's simvastatin while he is on clarithromycin?",
+     "o": [
+      "Continue at the same dose",
+      "Double the dose",
+      "Switch to a higher-potency statin",
+      "Withhold it during the course"
+     ],
+     "a": 3,
+     "r": "Clarithromycin **raises plasma statin levels**, so the statin is held to avoid **myopathy**."
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Three actions: hold simvastatin on clarithromycin, give **oral steroids** for his COPD (even without wheeze), book a **CXR at 6 weeks**."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "A new pneumonia ≥48h into his stay needs HAP cover. If intubated (VAP): **pip-taz**, plus vancomycin if MRSA is a concern."
+    },
+    {
+     "type": "compare",
+     "title": "Antibiotic by setting",
+     "head": [
+      "Type",
+      "First choice",
+      "Escalate"
+     ],
+     "rows": [
+      [
+       "CAP, CURB 0–1",
+       "Oral amoxicillin (doxycycline/clarithromycin if allergic)",
+       "Review at 48h"
+      ],
+      [
+       "CAP, CURB 2",
+       "Amoxicillin + clarithromycin",
+       "Admit to respiratory ward"
+      ],
+      [
+       "CAP, CURB ≥3",
+       "IV co-amoxiclav + clarithromycin",
+       "HDU, Sepsis 6"
+      ],
+      [
+       "HAP",
+       "IV pip-taz or co-amoxiclav",
+       "Meropenem if severe"
+      ],
+      [
+       "VAP",
+       "Piperacillin-tazobactam",
+       "Add vancomycin for MRSA"
+      ]
+     ]
+    },
+    {
+     "type": "story",
+     "points": [
+      "Empyema drained with a **chest drain**; antibiotics continued.",
+      "Day 12: afebrile on air, home.",
+      "**Repeat CXR booked at 6 weeks**."
+     ]
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "trend",
+      "title": "Desmond's CRP with treatment",
+      "x": [
+       "Day 1",
+       "Day 3",
+       "Day 5",
+       "Day 7",
+       "Day 9",
+       "Day 12"
+      ],
+      "unit": "mg/L",
+      "series": [
+       {
+        "name": "CRP",
+        "values": [
+         286,
+         170,
+         240,
+         150,
+         60,
+         18
+        ]
+       }
+      ],
+      "caption": "CRP falls, then **rises on day 5** with the swinging fever: the empyema. It settles only after **drainage**. A rising CRP on treatment means look for a complication."
+     }
+    },
+    {
+     "type": "trap",
+     "text": "Do not reach for pip-taz in CAP: it belongs to **HAP/VAP**. In CAP, let the **CURB-65 score** choose the regimen."
+    }
+   ]
+  },
+  "science": {
+   "exam": "Expect applied mechanism questions: why aspiration hits the right lower lobe, why the pleural pH falls in empyema, why PCP gives ground-glass change, or the organism from a Gram stain description.",
+   "steps": [
+    {
+     "type": "notes",
+     "src": 0,
+     "lead": "Desmond's left lower lobe alveoli are filled with inflammatory exudate. Air cannot reach the blood there, which is why his pO2 was 7.6 kPa."
+    },
+    {
+     "type": "flow",
+     "title": "From bacteria to hypoxaemia",
+     "nodes": [
+      "Bacteria reach the alveoli",
+      "Neutrophils and fluid pour in",
+      "Inflammatory exudate fills alveolar spaces",
+      "Consolidation (seen on CXR)",
+      "Perfused but unventilated alveoli",
+      "Hypoxaemia: type 1 respiratory failure"
+     ]
+    },
+    {
+     "type": "ask",
+     "q": "Why is Desmond's pO2 low while his pCO2 is normal?",
+     "o": [
+      "Alveolar hypoventilation",
+      "Low inspired oxygen",
+      "Shunt through consolidated alveoli",
+      "Thickened alveolar membrane from fibrosis"
+     ],
+     "a": 2,
+     "r": "Blood passes **consolidated, unventilated alveoli** (shunt). Healthy lung can still clear CO2 by breathing faster, but cannot fully correct the oxygen."
+    },
+    {
+     "type": "notes",
+     "src": 1,
+     "lead": "Desmond's **Strep. pneumoniae** gave a dense lobar consolidation with a strong neutrophil response, hence the rust-coloured sputum. A Mycoplasma infection would have looked patchier and left him much less unwell."
+    },
+    {
+     "type": "compare",
+     "title": "Typical vs atypical",
+     "head": [
+      "Feature",
+      "Strep. pneumoniae (typical)",
+      "Mycoplasma (atypical)"
+     ],
+     "rows": [
+      [
+       "CXR",
+       "Lobar consolidation",
+       "Diffuse interstitial infiltrates"
+      ],
+      [
+       "Cough",
+       "Productive, rust-coloured",
+       "Dry"
+      ],
+      [
+       "Systemic response",
+       "Marked, robust neutrophils",
+       "Mild: 'walking pneumonia'"
+      ],
+      [
+       "Cell wall",
+       "Typical bacterial wall",
+       "No typical cell wall"
+      ]
+     ]
+    },
+    {
+     "type": "notes",
+     "src": 2,
+     "lead": "Desmond's consolidation was on the left, which is one reason aspiration was unlikely. Aspirated material usually falls into the **right lower lobe**."
+    },
+    {
+     "type": "pearl",
+     "text": "The **right main bronchus is wider and more vertical** than the left, so aspirated material falls into the right side. Expect mixed **anaerobic** flora and a risk of **lung abscess**."
+    },
+    {
+     "type": "visual",
+     "visual": {
+      "kind": "cxr",
+      "title": "Contrast: PCP",
+      "findings": [
+       {
+        "type": "consolidation",
+        "side": "both",
+        "zone": "middle"
+       },
+       {
+        "type": "hilar",
+        "side": "both",
+        "zone": "middle"
+       }
+      ],
+      "caption": "**Bilateral perihilar** interstitial haziness in a patient with HIV (CD4 <200): PCP. CT would show **ground-glass opacities**. Compare Desmond's single dense lobe."
+     },
+     "text": "Diffuse, both-sided, centred on the hila: the pattern of alveoli filled evenly with organisms and exudate."
+    },
+    {
+     "type": "notes",
+     "src": 3,
+     "lead": "Desmond's lobar pattern is the opposite of PCP. In PCP the alveoli fill diffusely with organisms and exudate in an immunocompromised host, giving **ground-glass** change instead of a dense lobe."
+    },
+    {
+     "type": "notes",
+     "src": 4,
+     "lead": "Desmond's score of 4 showed physiological stress (RR, BP), renal impairment (urea) and age. Together these predict death, which is why he went to a high-dependency setting."
+    },
+    {
+     "type": "ask",
+     "q": "Which CURB-65 item reflects renal impairment?",
+     "o": [
+      "Age ≥65",
+      "BP <90/≤60",
+      "Respiratory rate ≥30",
+      "Urea >7 mmol/L"
+     ],
+     "a": 3,
+     "r": "A raised **urea** reflects renal impairment and poor perfusion. The others are physiological stress and frailty."
+    },
+    {
+     "type": "notes",
+     "src": 5,
+     "lead": "Desmond's small parapneumonic effusion became **secondarily infected**. Bacteria in the pleural space used up glucose and produced acid, which is why his pleural pH fell to 6.98."
+    },
+    {
+     "type": "flow",
+     "title": "Why pleural pH falls in empyema",
+     "nodes": [
+      "Parapneumonic effusion forms",
+      "Secondary bacterial infection",
+      "Bacterial metabolism and anaerobic glycolysis",
+      "Glucose falls, lactate and CO2 rise",
+      "Pleural pH <7.2 = empyema"
+     ]
+    },
+    {
+     "type": "pearl",
+     "text": "Why hold the statin: clarithromycin **inhibits hepatic CYP3A4**, the enzyme that breaks down simvastatin, so statin levels rise and myopathy risk goes up."
+    }
+   ]
+  }
+ },
+ "mcq": [
+  {
+   "d": "diagnosis",
+   "q": "What is the most common organism causing community-acquired pneumonia?",
+   "o": [
+    "Haemophilus influenzae",
+    "Klebsiella pneumoniae",
+    "Mycoplasma pneumoniae",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 3,
+   "r": "Strep. pneumoniae is the most common cause of CAP."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Which organism is most associated with 'redcurrant jelly' sputum and alcoholism?",
+   "o": [
+    "Klebsiella pneumoniae",
+    "Legionella pneumophila",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 0,
+   "r": "Klebsiella: Gram-negative rod, homeless/diabetics/alcoholism, redcurrant jelly sputum."
+  },
+  {
+   "d": "diagnosis",
+   "q": "Recent holiday, confusion, myalgia and hyponatraemia suggest which organism?",
+   "o": [
+    "Chlamydia psittaci",
+    "Legionella pneumophila",
+    "Mycoplasma pneumoniae",
+    "Pneumocystis jirovecii"
+   ],
+   "a": 1,
+   "r": "Legionella: travel, flu-like symptoms, confusion, high fevers and hyponatraemia."
+  },
+  {
+   "d": "investigation",
+   "q": "Which CURB-65 score prompts urgent hospital admission?",
+   "o": [
+    "0 or more",
+    "1 or more",
+    "2 or more",
+    "3 or more"
+   ],
+   "a": 3,
+   "r": "≥3 is severe and needs urgent hospital admission; 2 is moderate (consider admission)."
+  },
+  {
+   "d": "investigation",
+   "q": "What is the gold-standard investigation for PCP?",
+   "o": [
+    "Blood serology",
+    "Bronchoscopy with BAL",
+    "Sputum culture",
+    "Urinary antigen test"
+   ],
+   "a": 1,
+   "r": "Bronchoscopy with BAL, best stained with methenamine silver."
+  },
+  {
+   "d": "investigation",
+   "q": "In pneumonia, below which SpO2 is an ABG required?",
+   "o": [
+    "88%",
+    "90%",
+    "92%",
+    "94%"
+   ],
+   "a": 2,
+   "r": "ABG is required if SpO2 is below 92%."
+  },
+  {
+   "d": "management",
+   "q": "What is the first-line antibiotic for CAP with a CURB-65 score of 0–1?",
+   "o": [
+    "Amoxicillin",
+    "Co-amoxiclav",
+    "Piperacillin-tazobactam",
+    "Vancomycin"
+   ],
+   "a": 0,
+   "r": "Amoxicillin for 7 days at home, with a 48h review."
+  },
+  {
+   "d": "management",
+   "q": "Why are statins held when clarithromycin is started?",
+   "o": [
+    "Clarithromycin lowers statin levels",
+    "Clarithromycin raises statin levels, risking myopathy",
+    "Statins cause QT prolongation",
+    "Statins reduce antibiotic absorption"
+   ],
+   "a": 1,
+   "r": "Clarithromycin raises plasma statin levels, increasing myopathy risk."
+  },
+  {
+   "d": "management",
+   "q": "When should the chest X-ray be repeated after pneumonia?",
+   "o": [
+    "48 hours after starting antibiotics",
+    "1 week after discharge",
+    "6 weeks after clinical resolution",
+    "6 months after clinical resolution"
+   ],
+   "a": 2,
+   "r": "Repeat CXR 6 weeks after clinical resolution."
+  },
+  {
+   "d": "science",
+   "q": "Why does aspiration pneumonia favour the right lower lobe?",
+   "o": [
+    "The left lung has more lobes",
+    "The right lung receives more blood flow",
+    "The right main bronchus is wider and more vertical",
+    "The right upper lobe is most dependent"
+   ],
+   "a": 2,
+   "r": "The right main bronchus is more vertical and wider than the left."
+  }
+ ],
+ "technique": [
+  {
+   "d": "diagnosis",
+   "stem": "A 54 year old man has a 4 day history of high fever, headache, muscle aches and a cough. He returned from a hotel holiday in Spain one week ago. His wife says he has become muddled today. His temperature is 39.8°C, pulse rate 104 bpm, BP 118/72 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 93% breathing air. There are crackles at both lung bases.",
+   "labs": [
+    [
+     "Sodium",
+     "126 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "CRP",
+     "212 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Chest X-ray",
+     "Bi-basal consolidation",
+     "",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Chlamydia psittaci",
+    "Klebsiella pneumoniae",
+    "Legionella pneumophila",
+    "Mycoplasma pneumoniae",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 2,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks for the **organism**, so you are hunting for the one signature clue that points to a single bug."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "hotel holiday in Spain",
+      "muscle aches",
+      "muddled",
+      "39.8°C",
+      "both lung bases"
+     ],
+     "x": "Travel/holiday, flu-like illness with myalgia, confusion, high fever and bi-basal changes. The lab clue is the **sodium of 126**: hyponatraemia."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Holiday + confusion + hyponatraemia = **Legionella**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "C. psittaci needs contact with birds, which is not in the stem."
+      ],
+      [
+       1,
+       "Klebsiella fits alcohol excess, diabetes or homelessness and redcurrant jelly sputum."
+      ],
+      [
+       3,
+       "Mycoplasma gives a dry cough and mild signs in a younger patient, with haemolysis or erythema multiforme, not hyponatraemia."
+      ],
+      [
+       4,
+       "Strep. pneumoniae gives lobar consolidation with rust-coloured sputum; the travel and hyponatraemia point elsewhere."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Legionella pneumophila.** Rule: holiday + confusion + low sodium = Legionella; confirm with the urinary antigen."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 34 year old man with HIV has a 3 week history of a dry cough and increasing breathlessness on walking. He stopped his antiretroviral therapy six months ago. His temperature is 37.9°C, pulse rate 98 bpm, BP 122/78 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 95% breathing air at rest, falling to 86% after walking for one minute.",
+   "labs": [
+    [
+     "CD4 count",
+     "110 cells/µL",
+     "500–1500",
+     "L"
+    ],
+    [
+     "Chest X-ray",
+     "Bilateral perihilar interstitial shadowing",
+     "",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Blood serology",
+    "Bronchoscopy with bronchoalveolar lavage",
+    "CT pulmonary angiogram",
+    "Sputum culture",
+    "Urinary antigen test"
+   ],
+   "a": 1,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Diagnostic investigation' means the test that **confirms** it: the gold standard, not the first test."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "HIV",
+      "dry cough",
+      "breathlessness on walking",
+      "falling to 86% after walking"
+     ],
+     "x": "Exertional dyspnoea, a non-productive cough and exercise desaturation in HIV, with CD4 <200 and perihilar changes, is PCP."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "PCP gold standard = **bronchoscopy with BAL**, stained with methenamine silver."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Blood serology is the gold standard for Mycoplasma, not PCP."
+      ],
+      [
+       2,
+       "CTPA looks for pulmonary embolism; the chest X-ray and HIV history point to infection."
+      ],
+      [
+       3,
+       "Pneumocystis is not grown on routine sputum culture, and the cough is dry anyway."
+      ],
+      [
+       4,
+       "Urinary antigen tests are for Legionella and Strep. pneumoniae."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Bronchoscopy with BAL.** Rule: HIV + CD4 <200 + exercise desaturation = PCP → BAL with silver stain."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 68 year old woman has a 3 day history of productive cough and fever. She has no drug allergies. Her abbreviated mental test score is 10/10. Her temperature is 38.4°C, pulse rate 96 bpm, BP 128/76 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 94% breathing air.",
+   "labs": [
+    [
+     "Urea",
+     "8.4 mmol/L",
+     "2.5–7.8",
+     "H"
+    ],
+    [
+     "CRP",
+     "164 mg/L",
+     "<5",
+     "H"
+    ],
+    [
+     "Chest X-ray",
+     "Right lower lobe consolidation",
+     "",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous co-amoxiclav and clarithromycin",
+    "Intravenous piperacillin-tazobactam",
+    "Oral amoxicillin",
+    "Oral amoxicillin and clarithromycin",
+    "Oral doxycycline"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Initial management of CAP: you need the **CURB-65 score** to choose the regimen."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "68 year old",
+      "abbreviated mental test score is 10/10",
+      "BP 128/76 mmHg",
+      "respiratory rate 24",
+      "no drug allergies"
+     ],
+     "x": "Confusion 0 (AMTS 10), urea 8.4 = 1, RR 24 = 0, BP 128/76 = 0, age 68 = 1. Score = **2**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "CURB-65 of 2 → **amoxicillin + clarithromycin** and admission to the respiratory ward."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "IV co-amoxiclav + clarithromycin is for a score of ≥3 or sepsis."
+      ],
+      [
+       1,
+       "Pip-taz is for HAP/VAP, not CAP."
+      ],
+      [
+       2,
+       "Amoxicillin alone is for a score of 0–1."
+      ],
+      [
+       4,
+       "Doxycycline is the alternative for low-severity CAP in penicillin allergy; she has no allergies."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Oral amoxicillin and clarithromycin.** Rule: always calculate CURB-65 first; 2 = add clarithromycin."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 76 year old man has been on the stroke unit for five days after a left middle cerebral artery infarct. He has dysphagia. He develops a fever and a cough productive of foul-smelling sputum. His temperature is 38.6°C, pulse rate 102 bpm, BP 134/80 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 93% breathing air. There are crackles at the right base. A chest X-ray shows right lower lobe consolidation.",
+   "labs": [],
+   "q": "Which is the most likely explanation for the site of the consolidation?",
+   "o": [
+    "Greater blood flow to the right lung",
+    "Left main bronchus is shorter and wider",
+    "Right lung has more lobes than the left",
+    "Right main bronchus is wider and more vertical",
+    "Upper lobes are the most dependent zones"
+   ],
+   "a": 3,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "It asks **why** the consolidation is in this site: an anatomy and mechanism question."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "left middle cerebral artery infarct",
+      "dysphagia",
+      "foul-smelling sputum",
+      "right lower lobe consolidation"
+     ],
+     "x": "MCA stroke + dysphagia + foul sputum = aspiration pneumonia, which classically affects the right lower lobe."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "The **right main bronchus is wider and more vertical**, so aspirated material falls into it."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Blood flow does not decide where inhaled material goes."
+      ],
+      [
+       1,
+       "The reverse is true: the left main bronchus is longer, narrower and more angled."
+      ],
+      [
+       2,
+       "Having three lobes does not explain why aspirate goes to the right."
+      ],
+      [
+       4,
+       "Aspiration affects dependent zones, which are the lower lobes when upright, not the upper lobes."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D.** Rule: aspiration → right lower lobe because the right main bronchus is wider and more vertical."
+    }
+   ]
+  }
+ ],
+ "practice": [
+  {
+   "d": "diagnosis",
+   "stem": "A 58 year old man who is homeless and drinks heavily has a 5 day history of fever and a cough productive of thick, dark red, jelly-like sputum. His temperature is 38.9°C, pulse rate 110 bpm, BP 104/66 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 91% breathing air. There is bronchial breathing in the right upper zone. A chest X-ray is shown (see item resources).",
+   "labs": [],
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Haemophilus influenzae",
+    "Klebsiella pneumoniae",
+    "Legionella pneumophila",
+    "Mycoplasma pneumoniae",
+    "Staphylococcus aureus"
+   ],
+   "a": 1,
+   "e": "Redcurrant jelly sputum in a homeless man with alcohol excess, with upper-zone consolidation, is Klebsiella, a Gram-negative rod. S. aureus is the post-influenza organism with cavitating lesions, and H. influenzae is linked with COPD.",
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "consolidation",
+      "side": "right",
+      "zone": "upper"
+     },
+     {
+      "type": "cavity",
+      "side": "right",
+      "zone": "upper"
+     }
+    ],
+    "caption": "Right upper zone consolidation with cavitation."
+   },
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: hunt for the one signature clue."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "homeless and drinks heavily",
+      "dark red, jelly-like sputum",
+      "right upper zone"
+     ],
+     "x": "Alcohol + homelessness + **redcurrant jelly** sputum + upper-zone cavitating consolidation."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Redcurrant jelly sputum = **Klebsiella**, a Gram-negative rod."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "H. influenzae is the COPD organism; no jelly sputum."
+      ],
+      [
+       2,
+       "Legionella needs travel, confusion and low sodium."
+      ],
+      [
+       3,
+       "Mycoplasma: young, dry cough, mild signs."
+      ],
+      [
+       4,
+       "S. aureus follows influenza; no flu history here."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Klebsiella pneumoniae.** Rule: alcohol/homeless + redcurrant jelly sputum = Klebsiella."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 19 year old university student has a 2 week history of a dry cough, headache and tiredness. She has a rash of target-shaped lesions on her hands. Her temperature is 37.8°C, pulse rate 88 bpm, BP 116/72 mmHg, respiratory rate 18 breaths per minute and oxygen saturation 97% breathing air. There are a few scattered crackles only.",
+   "labs": [
+    [
+     "Haemoglobin",
+     "98 g/L",
+     "115–165",
+     "L"
+    ],
+    [
+     "Bilirubin",
+     "38 µmol/L",
+     "<21",
+     "H"
+    ],
+    [
+     "ALT",
+     "84 U/L",
+     "<40",
+     "H"
+    ],
+    [
+     "Chest X-ray",
+     "Diffuse bilateral infiltrates",
+     "",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Chlamydia psittaci",
+    "Legionella pneumophila",
+    "Mycoplasma pneumoniae",
+    "Pneumocystis jirovecii",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 2,
+   "e": "Dry cough, mild chest signs and diffuse infiltrates with haemolytic anaemia, deranged LFTs and erythema multiforme is Mycoplasma. Legionella also deranges LFTs, but it needs a travel history and typically causes hyponatraemia and confusion.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: match the extra-pulmonary clues."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "19 year old university student",
+      "dry cough",
+      "target-shaped lesions",
+      "scattered crackles only"
+     ],
+     "x": "Young, dry cough, mild signs, **erythema multiforme**. Labs: low Hb, high bilirubin (haemolysis), raised ALT."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Atypical 'walking pneumonia' with AIHA and deranged LFTs = **Mycoplasma**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "C. psittaci needs bird contact."
+      ],
+      [
+       1,
+       "Legionella needs travel, confusion and hyponatraemia."
+      ],
+      [
+       3,
+       "PCP needs HIV with CD4 <200."
+      ],
+      [
+       4,
+       "Strep. pneumoniae gives a productive cough and lobar signs."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Mycoplasma pneumoniae.** Rule: dry cough + target rash + haemolysis = Mycoplasma; confirm with serology."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 66 year old woman was started on oral amoxicillin for community-acquired pneumonia eight days ago. She improved at first but now has fevers that come and go each day. Her temperature is 38.7°C, pulse rate 106 bpm, BP 118/70 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 94% breathing air. There is dullness to percussion and reduced breath sounds at the right base.",
+   "labs": [
+    [
+     "Pleural fluid pH",
+     "7.05",
+     ">7.2",
+     "L"
+    ],
+    [
+     "Pleural fluid appearance",
+     "Turbid",
+     "Clear, straw",
+     ""
+    ]
+   ],
+   "q": "Which is the most likely diagnosis?",
+   "o": [
+    "Empyema",
+    "Lung abscess",
+    "Pulmonary embolism",
+    "Simple parapneumonic effusion",
+    "Tuberculosis"
+   ],
+   "a": 0,
+   "e": "A swinging fever despite antibiotics, a dull base with reduced breath sounds and pleural pH below 7.2 is empyema. A simple parapneumonic effusion is not infected and its pH stays above 7.2. A lung abscess is a collection inside the lung, so there would be no pleural fluid.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Diagnosis question, but on a patient already treated for pneumonia: think complication."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "improved at first",
+      "fevers that come and go each day",
+      "dullness to percussion and reduced breath sounds"
+     ],
+     "x": "Swinging fever despite antibiotics, a dull base and **pleural pH 7.05**, turbid fluid."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Infected pleural collection = **empyema**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "A lung abscess sits inside the lung, not in the pleural fluid."
+      ],
+      [
+       2,
+       "PE gives sudden breathlessness, not a turbid low-pH effusion."
+      ],
+      [
+       3,
+       "A simple parapneumonic effusion is not infected; pH stays >7.2."
+      ],
+      [
+       4,
+       "TB is a chronic illness; this followed an acute CAP."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A. Empyema.** Rule: swinging fever on antibiotics + dull base + pleural pH <7.2 = empyema."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 45 year old woman had influenza ten days ago. She now has a high fever, a productive cough and breathlessness. Her temperature is 39.5°C, pulse rate 124 bpm, BP 94/58 mmHg, respiratory rate 30 breaths per minute and oxygen saturation 88% breathing air. A chest X-ray (see item resources) shows multiple cavitating lesions in both lungs. Sputum Gram stain shows Gram-positive cocci in clusters.",
+   "labs": [],
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Haemophilus influenzae",
+    "Klebsiella pneumoniae",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 3,
+   "e": "Post-influenza pneumonia with cavitating lesions and Gram-positive cocci is S. aureus (clusters). Strep. pneumoniae is also Gram-positive, but it forms pairs (diplococci) and gives lobar consolidation without cavities. H. influenzae and Klebsiella are Gram-negative.",
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "cavity",
+      "side": "both",
+      "zone": "middle"
+     },
+     {
+      "type": "cavity",
+      "side": "both",
+      "zone": "upper"
+     }
+    ],
+    "caption": "Multiple cavitating lesions in both lungs."
+   },
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question: the Gram stain and the history decide it."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "had influenza ten days ago",
+      "multiple cavitating lesions",
+      "Gram-positive cocci in clusters"
+     ],
+     "x": "Post-influenza, cavitating lesions, Gram-positive cocci **in clusters**. Also septic."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Post-flu cavitating pneumonia = **S. aureus**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "H. influenzae is a Gram-negative coccobacillus."
+      ],
+      [
+       1,
+       "Klebsiella is a Gram-negative rod."
+      ],
+      [
+       2,
+       "Pseudomonas is Gram-negative and a HAP/VAP organism."
+      ],
+      [
+       4,
+       "Strep. pneumoniae forms diplococci and lobar consolidation, not cavities."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. Staphylococcus aureus.** Rule: after influenza + cavities + cocci in clusters = S. aureus."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 41 year old man has a 3 week history of a dry cough, low-grade fever and breathlessness that is worse on climbing stairs. He was diagnosed with HIV two years ago but does not attend clinic. His temperature is 37.8°C, pulse rate 96 bpm, BP 118/74 mmHg, respiratory rate 22 breaths per minute and oxygen saturation 95% breathing air, falling to 87% on walking. His chest X-ray is shown (see item resources).",
+   "labs": [
+    [
+     "CD4 count",
+     "90 cells/µL",
+     "500–1500",
+     "L"
+    ],
+    [
+     "CRP",
+     "38 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": {
+    "kind": "cxr",
+    "title": "Chest X-ray",
+    "findings": [
+     {
+      "type": "consolidation",
+      "side": "both",
+      "zone": "middle"
+     },
+     {
+      "type": "hilar",
+      "side": "both",
+      "zone": "middle"
+     }
+    ],
+    "caption": "Bilateral perihilar interstitial shadowing."
+   },
+   "q": "Which is the most likely causative organism?",
+   "o": [
+    "Aspergillus fumigatus",
+    "Pneumocystis jirovecii",
+    "Pseudomonas aeruginosa",
+    "Staphylococcus aureus",
+    "Streptococcus pneumoniae"
+   ],
+   "a": 1,
+   "e": "HIV with CD4 <200, exertional dyspnoea, a non-productive cough, exercise desaturation and bilateral perihilar changes is Pneumocystis (PCP). Confirm with bronchoscopy and BAL (methenamine silver stain). Strep. pneumoniae would give a productive cough and a single lobar consolidation.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Organism question in an immunocompromised patient."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "dry cough",
+      "worse on climbing stairs",
+      "does not attend clinic",
+      "falling to 87% on walking"
+     ],
+     "x": "Untreated HIV, CD4 90, exertional dyspnoea, **exercise desaturation**, perihilar shadowing."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "HIV + CD4 <200 + exercise desaturation = **PCP**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Aspergillus is not in this picture: no cavity or mould exposure."
+      ],
+      [
+       2,
+       "Pseudomonas is a HAP/VAP organism."
+      ],
+      [
+       3,
+       "S. aureus follows influenza and cavitates."
+      ],
+      [
+       4,
+       "Strep. pneumoniae gives a productive cough and one lobar consolidation."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**B. Pneumocystis jirovecii.** Rule: HIV + exercise desaturation + perihilar change = PCP; confirm with BAL."
+    }
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "stem": "A 79 year old man is on the stroke unit four days after a right middle cerebral artery infarct. He has an unsafe swallow and has been coughing during meals. He now has a fever and a cough productive of foul-smelling sputum. His temperature is 38.4°C, pulse rate 104 bpm, BP 138/82 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 92% breathing air.",
+   "labs": [
+    [
+     "WCC",
+     "15.8 ×10⁹/L",
+     "4.0–11.0",
+     "H"
+    ],
+    [
+     "CRP",
+     "148 mg/L",
+     "<5",
+     "H"
+    ]
+   ],
+   "visual": null,
+   "q": "Which is the most likely finding on chest X-ray?",
+   "o": [
+    "Bilateral perihilar interstitial shadowing",
+    "Left upper lobe consolidation",
+    "Right lower lobe consolidation",
+    "Right upper lobe cavitation",
+    "Widespread bilateral fibrosis"
+   ],
+   "a": 2,
+   "e": "MCA stroke with dysphagia and foul-smelling sputum is aspiration pneumonia. Aspirated material falls into the dependent right lower lobe because the right main bronchus is wider and more vertical. Perihilar shadowing fits PCP and upper-lobe cavitation fits Klebsiella or TB.",
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "CXR finding question: name the pneumonia type first, then where it lands."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "right middle cerebral artery infarct",
+      "unsafe swallow",
+      "coughing during meals",
+      "foul-smelling sputum"
+     ],
+     "x": "MCA stroke, dysphagia, foul sputum = **aspiration pneumonia**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Aspirate falls down the wider, more vertical right bronchus: **right lower lobe consolidation**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Perihilar shadowing is PCP."
+      ],
+      [
+       1,
+       "Aspiration favours the right, dependent lower lobe."
+      ],
+      [
+       3,
+       "Upper-lobe cavitation suggests Klebsiella or TB."
+      ],
+      [
+       4,
+       "Fibrosis is chronic, not an acute infection."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. Right lower lobe consolidation.** Rule: stroke + dysphagia + foul sputum = aspiration = RLL."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 79 year old woman is brought in from home with 2 days of cough and fever. Her abbreviated mental test score is 6/10. Her temperature is 38.2°C, pulse rate 100 bpm, BP 104/62 mmHg, respiratory rate 26 breaths per minute and oxygen saturation 94% breathing air.",
+   "labs": [
+    [
+     "Urea",
+     "8.1 mmol/L",
+     "2.5–7.8",
+     "H"
+    ],
+    [
+     "Creatinine",
+     "98 µmol/L",
+     "45–90",
+     "H"
+    ]
+   ],
+   "q": "Which is her CURB-65 score?",
+   "o": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ],
+   "a": 3,
+   "e": "Confusion (AMTS 6, so ≤7) = 1, urea 8.1 (>7) = 1, RR 26 = 0, BP 104/62 = 0 (systolic ≥90 and diastolic >60), age 79 = 1. Total 3: severe, so she needs urgent admission. The usual slip is scoring the BP.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Score question: work through C-U-R-B-65 one item at a time."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "abbreviated mental test score is 6/10",
+      "BP 104/62 mmHg",
+      "respiratory rate 26",
+      "79 year old"
+     ],
+     "x": "AMTS 6 (≤7) = 1. Urea 8.1 = 1. RR 26 = 0. BP 104/62 = 0. Age 79 = 1."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Total **3**: severe, urgent admission."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "She scores on confusion, urea and age."
+      ],
+      [
+       1,
+       "You have missed two items."
+      ],
+      [
+       2,
+       "You missed one, or scored the BP: 104/62 does not score."
+      ],
+      [
+       4,
+       "Neither RR 26 nor BP 104/62 reaches the cut-off."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**D. 3.** Rule: diastolic must be ≤60 and RR ≥30 to score."
+    }
+   ]
+  },
+  {
+   "d": "investigation",
+   "stem": "A 61 year old man returned from a cruise ten days ago. He has a 3 day history of fever, headache, muscle aches and a cough, and is now confused. His temperature is 39.4°C, pulse rate 108 bpm, BP 112/70 mmHg, respiratory rate 24 breaths per minute and oxygen saturation 93% breathing air.",
+   "labs": [
+    [
+     "Sodium",
+     "128 mmol/L",
+     "135–145",
+     "L"
+    ],
+    [
+     "Chest X-ray",
+     "Bi-basal consolidation",
+     "",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate diagnostic investigation?",
+   "o": [
+    "Blood cultures",
+    "Blood serology",
+    "Bronchoscopy with bronchoalveolar lavage",
+    "Sputum Gram stain",
+    "Urinary antigen test"
+   ],
+   "a": 4,
+   "e": "Travel, confusion, myalgia and hyponatraemia point to Legionella, which is confirmed with the urinary antigen (EIA). Blood serology is the gold standard for Mycoplasma, and BAL is for PCP.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "'Diagnostic investigation' = the test that confirms the suspected organism."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "returned from a cruise",
+      "muscle aches",
+      "now confused"
+     ],
+     "x": "Travel, myalgia, confusion and **sodium 128**: Legionella."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Legionella is confirmed with the **urinary antigen** (EIA)."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Blood cultures rarely grow Legionella."
+      ],
+      [
+       1,
+       "Serology is the gold standard for Mycoplasma."
+      ],
+      [
+       2,
+       "BAL is the gold standard for PCP."
+      ],
+      [
+       3,
+       "Legionella does not show well on a routine Gram stain."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Urinary antigen test.** Rule: holiday + confusion + low sodium = Legionella urinary antigen."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 34 year old woman has a 3 day history of productive cough and fever. She had anaphylaxis to penicillin as a child. Her abbreviated mental test score is 10/10. Her temperature is 38.1°C, pulse rate 92 bpm, BP 122/78 mmHg, respiratory rate 20 breaths per minute and oxygen saturation 96% breathing air. There are crackles at the left base.",
+   "labs": [
+    [
+     "Urea",
+     "4.6 mmol/L",
+     "2.5–7.8",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate initial management?",
+   "o": [
+    "Intravenous co-amoxiclav and clarithromycin",
+    "Oral amoxicillin",
+    "Oral amoxicillin and clarithromycin",
+    "Oral co-amoxiclav",
+    "Oral doxycycline"
+   ],
+   "a": 4,
+   "e": "CURB-65 is 0, so she can be treated at home. She is allergic to penicillin, so doxycycline replaces amoxicillin for 7 days, with a 48h review. Co-amoxiclav also contains a penicillin.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "CAP management: score CURB-65, then check allergies."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "anaphylaxis to penicillin",
+      "abbreviated mental test score is 10/10",
+      "respiratory rate 20",
+      "34 year old"
+     ],
+     "x": "AMTS 10, urea 4.6, RR 20, BP normal, age 34: **CURB-65 = 0**. Penicillin anaphylaxis."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Low severity + penicillin allergy = home with **doxycycline** (or clarithromycin), 48h review."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "IV therapy is for CURB-65 ≥3 or sepsis."
+      ],
+      [
+       1,
+       "Amoxicillin is a penicillin: anaphylaxis."
+      ],
+      [
+       2,
+       "Contains amoxicillin, and is for a score of 2."
+      ],
+      [
+       3,
+       "Co-amoxiclav also contains a penicillin."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Oral doxycycline.** Rule: CURB 0–1 + penicillin allergy = doxycycline or clarithromycin."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 70 year old man has been intubated and ventilated on the intensive care unit for five days after emergency abdominal surgery. He develops a fever, purulent endotracheal secretions, a rising oxygen requirement and a new infiltrate on chest X-ray. His MRSA screen on admission was negative. An endotracheal aspirate has been sent for culture.",
+   "labs": [],
+   "q": "Which is the most appropriate initial antibiotic?",
+   "o": [
+    "Intravenous amoxicillin",
+    "Intravenous ceftriaxone",
+    "Intravenous piperacillin-tazobactam",
+    "Intravenous vancomycin",
+    "Oral clarithromycin"
+   ],
+   "a": 2,
+   "e": "Ventilator-associated pneumonia is treated first-line with piperacillin-tazobactam, which covers Pseudomonas. Vancomycin is added for MRSA cover only if needed, and his MRSA screen was negative.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Antibiotic question: classify the pneumonia first."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "intubated and ventilated",
+      "for five days",
+      "purulent endotracheal secretions",
+      "MRSA screen on admission was negative"
+     ],
+     "x": "≥48h after intubation with fever, secretions, more O2 and a new infiltrate = **VAP**. MRSA negative."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "VAP first-line = **piperacillin-tazobactam**."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Amoxicillin does not cover Pseudomonas or MDR Gram-negatives."
+      ],
+      [
+       1,
+       "Ceftriaxone is not first-line VAP cover."
+      ],
+      [
+       3,
+       "Vancomycin is only added for MRSA; screen negative."
+      ],
+      [
+       4,
+       "Oral clarithromycin is part of CAP regimens."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**C. IV piperacillin-tazobactam.** Rule: VAP = pip-taz; add vancomycin only for MRSA."
+    }
+   ]
+  },
+  {
+   "d": "management",
+   "stem": "A 64 year old man is admitted with community-acquired pneumonia and a CURB-65 score of 2. He is started on amoxicillin and clarithromycin. His regular medications are atorvastatin 80 mg, ramipril 5 mg and amlodipine 5 mg. His BP is 132/80 mmHg.",
+   "labs": [
+    [
+     "Creatinine",
+     "94 µmol/L",
+     "60–110",
+     ""
+    ],
+    [
+     "Creatine kinase",
+     "140 U/L",
+     "40–320",
+     ""
+    ]
+   ],
+   "q": "Which is the most appropriate change to his regular medication?",
+   "o": [
+    "Continue all medications unchanged",
+    "Increase the atorvastatin dose",
+    "Stop amlodipine",
+    "Stop ramipril",
+    "Withhold atorvastatin"
+   ],
+   "a": 4,
+   "e": "Clarithromycin raises plasma statin levels and increases the risk of myopathy, so the statin is held during the course. His BP and renal function are normal, so there is no reason to stop his antihypertensives.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Drug-safety question: which regular drug clashes with the new antibiotic?"
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "started on amoxicillin and clarithromycin",
+      "atorvastatin 80 mg",
+      "132/80 mmHg"
+     ],
+     "x": "Clarithromycin + a statin. BP and creatinine are normal."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Clarithromycin raises statin levels: **withhold the statin** to avoid myopathy."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       0,
+       "Leaves him at risk of statin myopathy."
+      ],
+      [
+       1,
+       "Raising the dose increases myopathy risk."
+      ],
+      [
+       2,
+       "BP is normal; no reason to stop amlodipine."
+      ],
+      [
+       3,
+       "Renal function and BP are normal; ramipril can continue."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**E. Withhold atorvastatin.** Rule: clarithromycin started = hold the statin."
+    }
+   ]
+  },
+  {
+   "d": "science",
+   "stem": "A 72 year old man is being treated with intravenous antibiotics for left lower lobe pneumonia. He improved at first, but on day 6 he develops a recurrent swinging fever and dullness with reduced breath sounds at the left base. His temperature is 38.9°C, pulse rate 104 bpm and BP 124/76 mmHg. A pleural aspirate is turbid.",
+   "labs": [
+    [
+     "Pleural fluid pH",
+     "6.95",
+     ">7.2",
+     "L"
+    ],
+    [
+     "Pleural fluid glucose",
+     "1.2 mmol/L",
+     ">3.3",
+     "L"
+    ],
+    [
+     "Pleural fluid LDH",
+     "1820 U/L",
+     "<200",
+     "H"
+    ]
+   ],
+   "q": "Which is the most likely explanation for the low pleural fluid pH?",
+   "o": [
+    "Anaerobic glycolysis and bacterial metabolism in the pleural space",
+    "Hypoventilation causing respiratory acidosis",
+    "Leakage of gastric acid into the pleura",
+    "Lymphatic obstruction by tumour",
+    "Raised plasma lactate from sepsis"
+   ],
+   "a": 0,
+   "e": "When a parapneumonic effusion becomes infected (empyema), bacteria and neutrophils in the pleural space use up glucose through anaerobic glycolysis and produce acid, so the pH falls below 7.2. Sepsis can raise plasma lactate, but that would not lower the pleural pH this far on its own.",
+   "visual": null,
+   "steps": [
+    {
+     "t": "Read the question line first",
+     "x": "Mechanism question: explain the low pleural pH."
+    },
+    {
+     "t": "Pick out the clues",
+     "clues": [
+      "improved at first",
+      "recurrent swinging fever",
+      "A pleural aspirate is turbid"
+     ],
+     "x": "Pneumonia, swinging fever, turbid fluid, pH 6.95, low glucose, high LDH: **empyema**."
+    },
+    {
+     "t": "Make your own answer before looking",
+     "x": "Bacteria and neutrophils burn glucose by **anaerobic glycolysis**, making acid."
+    },
+    {
+     "t": "Rule out the others",
+     "elim": [
+      [
+       1,
+       "Hypoventilation changes blood pH, not a local pleural pH."
+      ],
+      [
+       2,
+       "Gastric acid in the pleura needs oesophageal rupture."
+      ],
+      [
+       3,
+       "Tumour gives a malignant effusion, not acute infection."
+      ],
+      [
+       4,
+       "Plasma lactate does not acidify the pleural fluid this far."
+      ]
+     ]
+    },
+    {
+     "t": "Commit",
+     "x": "**A.** Rule: infected effusion → bacterial metabolism → pH <7.2 = empyema, drain it."
+    }
+   ]
+  }
+ ],
+ "blurt": {
+  "prompts": [
+   {
+    "d": "diagnosis",
+    "q": "How do you classify pneumonia by where and when it started, and what organisms does each type suggest?",
+    "tip": "Exam thinking: the 48 hour rule decides CAP vs HAP, and the type decides the organism and the antibiotic.",
+    "points": [
+     {
+      "p": "CAP: acquired outside hospital or within 48 h of admission; commonest organism Strep. pneumoniae",
+      "k": [
+       [
+        "cap",
+        "community"
+       ],
+       [
+        "strep",
+        "pneumococc",
+        "pneumoniae"
+       ]
+      ],
+      "why": "Strep. pneumoniae is the answer to 'most likely organism' in almost any CAP stem without a specific clue."
+     },
+     {
+      "p": "HAP: starts 48 h or more after admission",
+      "k": [
+       [
+        "hap",
+        "hospital"
+       ],
+       [
+        "48"
+       ]
+      ],
+      "why": "A post-operative ward patient febrile on day 5 has HAP, not CAP, even if the CXR looks the same."
+     },
+     {
+      "p": "HAP organisms: S. aureus, Pseudomonas, Klebsiella, H. influenzae",
+      "k": [
+       [
+        "aureus",
+        "staph",
+        "pseudomonas",
+        "klebsiella",
+        "gram negative",
+        "gram-negative"
+       ]
+      ],
+      "why": "HAP shifts the cover toward Gram-negatives and Staph, which is why amoxicillin alone is not enough."
+     },
+     {
+      "p": "VAP: 48 h or more after intubation, with fever, rising O2 needs, purulent secretions and a new infiltrate",
+      "k": [
+       [
+        "vap",
+        "ventilat",
+        "intubat"
+       ]
+      ],
+      "why": "VAP organisms are often multi-drug resistant: Pseudomonas and MSSA/MRSA."
+     },
+     {
+      "p": "Aspiration pneumonia: inhaled gastric contents or oral bacteria, involving anaerobes",
+      "k": [
+       [
+        "aspirat"
+       ]
+      ],
+      "why": "Look for stroke, alcohol, reduced consciousness, vomiting or recent NG feeding in the stem."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the classic symptoms and examination findings of lobar pneumonia?",
+    "tip": "Exam thinking: the stem pairs a fever and productive cough with focal signs over one area.",
+    "points": [
+     {
+      "p": "Fever with a productive cough and breathlessness",
+      "k": [
+       [
+        "fever",
+        "pyrex",
+        "temperature"
+       ],
+       [
+        "cough",
+        "sputum"
+       ]
+      ],
+      "why": "Pleuritic chest pain is common too and does not by itself point to a PE."
+     },
+     {
+      "p": "Focal coarse crackles over the affected area",
+      "k": [
+       [
+        "crackle",
+        "crepitation"
+       ]
+      ],
+      "why": "Focal crackles favour pneumonia; bibasal fine crackles suggest fibrosis or heart failure."
+     },
+     {
+      "p": "Bronchial breathing over consolidation",
+      "k": [
+       [
+        "bronchial breath",
+        "bronchial breathing"
+       ]
+      ],
+      "why": "Consolidated lung transmits sound well, so breath sounds become harsh and bronchial."
+     },
+     {
+      "p": "Dull percussion over the consolidated area",
+      "k": [
+       [
+        "dull"
+       ]
+      ],
+      "why": "Stony dullness with reduced breath sounds suggests an effusion or empyema instead."
+     },
+     {
+      "p": "Tachycardia, tachypnoea and low saturations in more severe cases",
+      "k": [
+       [
+        "tachy",
+        "respiratory rate",
+        "rr",
+        "sats",
+        "saturation",
+        "hypox",
+        "spo2"
+       ]
+      ],
+      "why": "RR of 30 or more scores a CURB-65 point."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which clue in a stem points to each typical bacterial organism?",
+    "tip": "Exam thinking: one detail (sputum colour, background, CXR pattern) usually names the bug.",
+    "points": [
+     {
+      "p": "Strep. pneumoniae: high fever, rust-coloured sputum, lobar consolidation, herpes labialis",
+      "k": [
+       [
+        "strep",
+        "pneumococc"
+       ],
+       [
+        "rust",
+        "herpes",
+        "labialis",
+        "cold sore",
+        "lobar"
+       ]
+      ],
+      "why": "It is also the commonest cause in children."
+     },
+     {
+      "p": "H. influenzae: patient with COPD",
+      "k": [
+       [
+        "influenzae",
+        "haemophilus",
+        "hib"
+       ],
+       [
+        "copd"
+       ]
+      ],
+      "why": "It is a Gram-negative coccobacillus."
+     },
+     {
+      "p": "S. aureus: after influenza, cavitating lesions",
+      "k": [
+       [
+        "aureus",
+        "staph"
+       ],
+       [
+        "influenza",
+        "flu",
+        "cavit"
+       ]
+      ],
+      "why": "Gram-positive cocci in clusters; think MRSA in hospital."
+     },
+     {
+      "p": "Klebsiella: redcurrant jelly sputum in alcoholism, diabetes or homelessness",
+      "k": [
+       [
+        "klebsiella"
+       ],
+       [
+        "redcurrant",
+        "red currant",
+        "jelly",
+        "alcohol"
+       ]
+      ],
+      "why": "Gram-negative rod that also cavitates, usually in the upper lobes."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "Which clue in a stem points to each atypical organism, including PCP?",
+    "tip": "Exam thinking: atypicals give systemic or extrapulmonary clues with fewer chest signs than the CXR suggests.",
+    "points": [
+     {
+      "p": "Mycoplasma: dry cough, mild chest signs, diffuse infiltrates, haemolytic anaemia, erythema multiforme",
+      "k": [
+       [
+        "mycoplasma"
+       ],
+       [
+        "haemoly",
+        "hemoly",
+        "anaemia",
+        "anemia",
+        "erythema",
+        "target",
+        "dry cough",
+        "rash"
+       ]
+      ],
+      "why": "Cold agglutinins cause the autoimmune haemolytic anaemia; LFTs can be deranged too."
+     },
+     {
+      "p": "Legionella: travel or holiday, confusion, myalgia, high fever, hyponatraemia",
+      "k": [
+       [
+        "legionella"
+       ],
+       [
+        "travel",
+        "holiday",
+        "hotel",
+        "hyponat",
+        "sodium",
+        "air con"
+       ]
+      ],
+      "why": "Low sodium plus confusion after a hotel stay is the classic pairing."
+     },
+     {
+      "p": "Chlamydia psittaci: flu-like illness after contact with birds",
+      "k": [
+       [
+        "psittac"
+       ],
+       [
+        "bird",
+        "parrot",
+        "pigeon"
+       ]
+      ],
+      "why": "Ask about pet birds when the stem gives an odd occupational or hobby clue."
+     },
+     {
+      "p": "PCP: HIV with CD4 below 200, exertional breathlessness, dry cough, exercise desaturation",
+      "k": [
+       [
+        "pcp",
+        "pneumocystis",
+        "pjp"
+       ],
+       [
+        "hiv",
+        "cd4",
+        "desat",
+        "exertion"
+       ]
+      ],
+      "why": "The chest can sound clear while saturations fall on walking."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the features of aspiration pneumonia and empyema, and which complications do you watch for?",
+    "tip": "Exam thinking: 'not getting better on antibiotics' is the cue to think complication.",
+    "points": [
+     {
+      "p": "Aspiration: risk factor (stroke, alcohol, reduced consciousness), foul-smelling sputum, right lower lobe consolidation",
+      "k": [
+       [
+        "aspirat"
+       ],
+       [
+        "foul",
+        "right lower",
+        "stroke",
+        "alcohol",
+        "anaerob"
+       ]
+      ],
+      "why": "An MCA stroke with an unsafe swallow is a common precipitant."
+     },
+     {
+      "p": "Lung abscess can complicate aspiration",
+      "k": [
+       [
+        "abscess"
+       ]
+      ],
+      "why": "Shown as a cavity with an air-fluid level."
+     },
+     {
+      "p": "Empyema: swinging or recurrent fever despite antibiotics",
+      "k": [
+       [
+        "empyema"
+       ],
+       [
+        "swing",
+        "recurrent",
+        "persist",
+        "despite"
+       ]
+      ],
+      "why": "Persistent fever after several days of correct antibiotics should prompt a pleural ultrasound and tap."
+     },
+     {
+      "p": "Empyema signs: dull base with reduced breath sounds; pleural fluid pH below 7.2",
+      "k": [
+       [
+        "dull",
+        "reduced breath",
+        "decreased breath"
+       ],
+       [
+        "7.2",
+        "ph"
+       ]
+      ],
+      "why": "pH below 7.2 means a chest drain is needed."
+     }
+    ]
+   },
+   {
+    "d": "diagnosis",
+    "q": "What are the CURB-65 criteria and what does each score mean?",
+    "tip": "Exam thinking: calculate the score from the stem, then the score decides home, ward or high dependency.",
+    "points": [
+     {
+      "p": "Confusion (AMTS 7 or less)",
+      "k": [
+       [
+        "confus",
+        "amts"
+       ]
+      ],
+      "why": "An AMTS of 8 or more scores no point."
+     },
+     {
+      "p": "Urea above 7 mmol/L",
+      "k": [
+       [
+        "urea"
+       ],
+       [
+        "7",
+        "seven"
+       ]
+      ],
+      "why": "Urea above 7 is also a poor prognostic marker in its own right."
+     },
+     {
+      "p": "Respiratory rate 30 or more",
+      "k": [
+       [
+        "respiratory rate",
+        "rr",
+        "resp rate"
+       ],
+       [
+        "30",
+        "thirty"
+       ]
+      ],
+      "why": "A rate of 29 does not score."
+     },
+     {
+      "p": "BP systolic below 90 or diastolic 60 or less",
+      "k": [
+       [
+        "bp",
+        "blood pressure",
+        "systolic",
+        "diastolic"
+       ],
+       [
+        "90",
+        "60"
+       ]
+      ],
+      "why": "Either limb is enough for the point."
+     },
+     {
+      "p": "Age 65 or more",
+      "k": [
+       [
+        "age",
+        "65"
+       ]
+      ],
+      "why": "Exactly 65 scores."
+     },
+     {
+      "p": "0 to 1 low (home), 2 moderate (consider admission), 3 or more severe (urgent admission)",
+      "k": [
+       [
+        "0",
+        "1",
+        "low"
+       ],
+       [
+        "2",
+        "moderate"
+       ],
+       [
+        "3",
+        "severe"
+       ]
+      ],
+      "why": "CRB-65 (no urea) is used in the community."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "What is the first-line investigation for pneumonia, and what bloods and gases do you need?",
+    "tip": "Exam thinking: CXR confirms consolidation; bloods give you the urea for CURB-65.",
+    "points": [
+     {
+      "p": "Chest X-ray showing consolidation",
+      "k": [
+       [
+        "cxr",
+        "x-ray",
+        "xray",
+        "chest film",
+        "radiograph"
+       ],
+       [
+        "consolidat",
+        "opacit",
+        "shadow"
+       ]
+      ],
+      "why": "Air bronchograms within an opacity point to consolidation."
+     },
+     {
+      "p": "U&Es to get the urea for CURB-65",
+      "k": [
+       [
+        "u&e",
+        "u+e",
+        "urea",
+        "renal",
+        "electrolyte"
+       ]
+      ],
+      "why": "Sodium matters too: low sodium is a Legionella clue."
+     },
+     {
+      "p": "ABG if SpO2 is below 92%",
+      "k": [
+       [
+        "abg",
+        "arterial blood gas",
+        "blood gas"
+       ],
+       [
+        "92"
+       ]
+      ],
+      "why": "It shows type 1 or type 2 respiratory failure."
+     },
+     {
+      "p": "HAP: blood cultures and lower respiratory samples before antibiotics; VAP: endotracheal aspirate culture",
+      "k": [
+       [
+        "culture"
+       ]
+      ],
+      "why": "Take cultures first, but never delay antibiotics in sepsis."
+     }
+    ]
+   },
+   {
+    "d": "investigation",
+    "q": "How do you confirm the specific organisms and investigate a suspected empyema?",
+    "tip": "Exam thinking: each organism has its own named test; the exam asks the gold standard.",
+    "points": [
+     {
+      "p": "Legionella: urinary antigen",
+      "k": [
+       [
+        "legionella"
+       ],
+       [
+        "urin"
+       ]
+      ],
+      "why": "It mainly detects serogroup 1."
+     },
+     {
+      "p": "Strep. pneumoniae: urinary antigen test",
+      "k": [
+       [
+        "strep",
+        "pneumococc"
+       ],
+       [
+        "urin"
+       ]
+      ],
+      "why": "Useful in moderate and severe CAP."
+     },
+     {
+      "p": "Mycoplasma: serology",
+      "k": [
+       [
+        "mycoplasma"
+       ],
+       [
+        "serolog",
+        "antibod",
+        "blood test"
+       ]
+      ],
+      "why": "Cold agglutinins support it but are not specific."
+     },
+     {
+      "p": "PCP: bronchoscopy with BAL, methenamine silver stain",
+      "k": [
+       [
+        "pcp",
+        "pneumocystis",
+        "pjp"
+       ],
+       [
+        "bal",
+        "lavage",
+        "bronchoscop",
+        "silver"
+       ]
+      ],
+      "why": "CT shows ground-glass opacities while the CXR may look nearly normal."
+     },
+     {
+      "p": "Empyema: pleural aspirate (pH below 7.2)",
+      "k": [
+       [
+        "pleural"
+       ],
+       [
+        "aspirat",
+        "tap",
+        "fluid",
+        "thoracocentesis"
+       ]
+      ],
+      "why": "Ultrasound-guided pleural aspiration is the first step."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "What are the first-line antibiotics for CAP by CURB-65 severity?",
+    "tip": "Exam thinking: score first, then match the antibiotic and the setting to it.",
+    "points": [
+     {
+      "p": "ABC first in the acutely unwell patient, Sepsis 6 if septic",
+      "k": [
+       [
+        "abc",
+        "airway",
+        "a to e",
+        "a-e",
+        "sepsis"
+       ]
+      ],
+      "why": "Oxygen to target sats comes before investigations."
+     },
+     {
+      "p": "CURB-65 0 to 1: oral amoxicillin at home for 7 days, review at 48 h",
+      "k": [
+       [
+        "amoxicillin",
+        "amoxycillin"
+       ]
+      ],
+      "why": "Penicillin allergy: doxycycline or clarithromycin."
+     },
+     {
+      "p": "CURB-65 2: amoxicillin plus clarithromycin, admit to the ward",
+      "k": [
+       [
+        "clarithromycin",
+        "macrolide"
+       ]
+      ],
+      "why": "The macrolide covers atypical organisms."
+     },
+     {
+      "p": "CURB-65 3 or more or septic: IV co-amoxiclav plus clarithromycin in high dependency",
+      "k": [
+       [
+        "co-amoxiclav",
+        "coamoxiclav",
+        "augmentin"
+       ]
+      ],
+      "why": "IV route and HDU/ITU review for severe CAP."
+     }
+    ]
+   },
+   {
+    "d": "management",
+    "q": "How do you treat HAP, VAP and aspiration pneumonia, and what follow-up does everyone need?",
+    "tip": "Exam thinking: hospital organisms need broader Gram-negative and Pseudomonas cover.",
+    "points": [
+     {
+      "p": "HAP: IV piperacillin-tazobactam or co-amoxiclav (meropenem if severe)",
+      "k": [
+       [
+        "tazocin",
+        "piperacillin",
+        "tazobactam",
+        "meropenem"
+       ]
+      ],
+      "why": "Non-severe low-risk HAP can have oral co-amoxiclav."
+     },
+     {
+      "p": "VAP: piperacillin-tazobactam, add vancomycin for MRSA",
+      "k": [
+       [
+        "vancomycin",
+        "mrsa"
+       ]
+      ],
+      "why": "Vancomycin covers MRSA; Tazocin does not."
+     },
+     {
+      "p": "Aspiration pneumonia: co-amoxiclav",
+      "k": [
+       [
+        "co-amoxiclav",
+        "coamoxiclav",
+        "augmentin"
+       ],
+       [
+        "aspirat"
+       ]
+      ],
+      "why": "It covers anaerobes from the mouth."
+     },
+     {
+      "p": "Hold statins while on clarithromycin",
+      "k": [
+       [
+        "statin"
+       ]
+      ],
+      "why": "Clarithromycin raises statin levels , raising myopathy risk."
+     },
+     {
+      "p": "Repeat CXR at 6 weeks after clinical resolution",
+      "k": [
+       [
+        "6 week",
+        "six week",
+        "repeat cxr",
+        "repeat x-ray",
+        "follow-up cxr"
+       ]
+      ],
+      "why": "This excludes an underlying lung cancer."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does pneumonia impair gas exchange, and why does it look different by organism?",
+    "tip": "Exam thinking: link the pathology in the alveoli to the sign or X-ray pattern.",
+    "points": [
+     {
+      "p": "Inflammatory exudate fills the alveoli, causing consolidation and impaired gas exchange",
+      "k": [
+       [
+        "exudate",
+        "fluid",
+        "pus"
+       ],
+       [
+        "alveol",
+        "air space",
+        "airspace"
+       ]
+      ],
+      "why": "Perfused but unventilated alveoli cause V/Q mismatch and hypoxia."
+     },
+     {
+      "p": "Strep. pneumoniae causes lobar consolidation with a strong neutrophil response",
+      "k": [
+       [
+        "lobar"
+       ],
+       [
+        "neutrophil",
+        "rust"
+       ]
+      ],
+      "why": "The rust colour comes from blood in the exudate."
+     },
+     {
+      "p": "Atypicals cause a diffuse interstitial pattern with a milder response",
+      "k": [
+       [
+        "interstitial",
+        "diffuse"
+       ]
+      ],
+      "why": "Hence 'walking pneumonia' with Mycoplasma."
+     },
+     {
+      "p": "PCP fills alveoli diffusely, giving ground-glass changes",
+      "k": [
+       [
+        "ground glass",
+        "ground-glass"
+       ]
+      ],
+      "why": "It is an interstitial pneumonitis in the immunocompromised."
+     }
+    ]
+   },
+   {
+    "d": "science",
+    "q": "Why does aspiration hit the right lower lobe, and why does pleural pH fall in empyema?",
+    "tip": "Exam thinking: anatomy explains the lobe; bacterial metabolism explains the pH.",
+    "points": [
+     {
+      "p": "The right main bronchus is wider and more vertical than the left",
+      "k": [
+       [
+        "right"
+       ],
+       [
+        "vertical",
+        "wider",
+        "straight",
+        "steep"
+       ]
+      ],
+      "why": "Lying flat, the posterior segments of the upper lobe and apical lower lobe are hit instead."
+     },
+     {
+      "p": "Aspiration affects dependent zones with mixed anaerobic flora",
+      "k": [
+       [
+        "dependent",
+        "gravity"
+       ],
+       [
+        "anaerob",
+        "mixed"
+       ]
+      ],
+      "why": "Which is why foul-smelling sputum is a clue."
+     },
+     {
+      "p": "Empyema: a parapneumonic effusion becomes infected",
+      "k": [
+       [
+        "parapneumonic",
+        "effusion"
+       ],
+       [
+        "infect"
+       ]
+      ],
+      "why": "Simple parapneumonic effusions often resolve with antibiotics alone."
+     },
+     {
+      "p": "Pleural pH falls below 7.2 from bacterial metabolism and anaerobic glycolysis",
+      "k": [
+       [
+        "glycoly",
+        "metabol",
+        "lactate",
+        "acid"
+       ]
+      ],
+      "why": "Low glucose and high LDH in the fluid also support empyema."
+     }
+    ]
+   }
+  ]
+ },
+ "glossary": {
+  "Consolidation": "Lung where the air spaces have filled with fluid, pus or cells, so it looks solid and white on X-ray.",
+  "Lobar pneumonia": "Pneumonia filling one whole lobe of a lung, classically caused by Streptococcus pneumoniae.",
+  "Air bronchogram": "Dark, air-filled airways visible inside a white consolidated area on X-ray, showing the alveoli around them are filled.",
+  "Bronchial breathing": "Harsh, hollow breath sounds heard over consolidated lung, because solid lung carries airway sounds to the chest wall.",
+  "Crackles": "Short popping sounds on inspiration as fluid-filled small airways and alveoli open.",
+  "Dullness": "A flat, non-resonant percussion note over lung that is solid or has fluid around it.",
+  "Pleuritic": "Sharp chest pain that is worse on breathing in or coughing, from inflamed pleura.",
+  "CAP": "Community-acquired pneumonia: starting outside hospital or within 48 hours of admission.",
+  "HAP": "Hospital-acquired pneumonia: starting 48 hours or more after admission to hospital.",
+  "VAP": "Ventilator-associated pneumonia: starting 48 hours or more after a patient is intubated.",
+  "Aspiration pneumonia": "Pneumonia from inhaling stomach contents or mouth bacteria, often with anaerobes, usually after stroke, alcohol or reduced consciousness.",
+  "Atypical pneumonia": "Pneumonia from organisms without a typical bacterial cell wall, such as Mycoplasma or Legionella, often with systemic features.",
+  "CURB-65": "Severity score for community pneumonia: Confusion, Urea above 7, Respiratory rate 30 or more, low BP, Age 65 or more.",
+  "CRB-65": "CURB-65 without the urea, used in the community where blood results are not available.",
+  "AMTS": "Abbreviated mental test score, a 10-point confusion test; 7 or less counts as confused in CURB-65.",
+  "Urea": "A waste product measured in U&Es; above 7 mmol/L suggests dehydration or kidney strain and worse prognosis.",
+  "Empyema": "Pus in the pleural space, usually from an infected effusion next to a pneumonia.",
+  "Parapneumonic effusion": "A collection of fluid in the pleural space next to a pneumonia.",
+  "Lung abscess": "A pus-filled cavity inside the lung, often after aspiration, seen as a cavity with a fluid level.",
+  "Cavitation": "A hollow, air-filled space forming inside an area of lung destroyed by infection, typical of S. aureus or Klebsiella.",
+  "Swinging fever": "A temperature that repeatedly spikes and falls, suggesting a collection of pus such as an empyema or abscess.",
+  "Pleural aspirate": "Fluid drawn from the pleural space with a needle so it can be tested for pH, glucose and organisms.",
+  "Chest drain": "A tube placed through the chest wall to drain fluid, pus or air from the pleural space.",
+  "Rust-coloured sputum": "Brownish blood-tinged sputum typical of Streptococcus pneumoniae lobar pneumonia.",
+  "Redcurrant jelly": "Thick, dark red, blood-stained sputum typical of Klebsiella pneumonia.",
+  "Herpes labialis": "Cold sores on the lips, which can flare during Streptococcus pneumoniae pneumonia.",
+  "Coccobacillus": "A bacterium shaped between a sphere and a rod, such as Haemophilus influenzae.",
+  "Gram-negative": "Bacteria with a thin cell wall and outer membrane that stain pink, such as Klebsiella and Pseudomonas.",
+  "Gram-positive": "Bacteria with a thick cell wall that stain purple, such as Staphylococcus aureus and Streptococcus.",
+  "Anaerobes": "Bacteria that grow without oxygen, common in the mouth and important in aspiration pneumonia.",
+  "MRSA": "Meticillin-resistant Staphylococcus aureus, a resistant Staph that needs vancomycin or similar cover.",
+  "MSSA": "Meticillin-sensitive Staphylococcus aureus, the ordinary antibiotic-sensitive form of Staph aureus.",
+  "Erythema multiforme": "A rash of target-shaped lesions that can occur with Mycoplasma infection.",
+  "Autoimmune haemolytic anaemia": "Breakdown of red cells by the body's own antibodies, linked to Mycoplasma through cold agglutinins.",
+  "Cold agglutinins": "Antibodies that clump red cells at low temperatures, produced in Mycoplasma infection.",
+  "Hyponatraemia": "Low blood sodium (below 135 mmol/L), a classic clue to Legionella pneumonia.",
+  "Walking pneumonia": "A mild atypical pneumonia, usually Mycoplasma, where the patient feels unwell but stays up and about.",
+  "Psittacosis": "Pneumonia caused by Chlamydia psittaci, caught from infected birds such as parrots.",
+  "PCP": "Pneumocystis pneumonia, a fungal pneumonia in people with HIV and a CD4 count below 200.",
+  "CD4": "White cells that HIV destroys; a count below 200 per microlitre puts patients at risk of PCP.",
+  "Ground-glass": "A hazy grey lung appearance on CT where vessels are still visible, typical of PCP.",
+  "Interstitial": "Affecting the tissue between the alveoli rather than filling the air spaces themselves.",
+  "Perihilar": "Around the hila, where the main bronchi and vessels enter each lung.",
+  "Bronchoscopy": "A camera passed down the airways to look inside and take samples.",
+  "BAL": "Bronchoalveolar lavage: saline washed into the lung at bronchoscopy and sucked back for testing.",
+  "Methenamine silver": "A silver stain that shows Pneumocystis organisms clearly under the microscope.",
+  "Urinary antigen": "A urine test detecting bacterial proteins, used for Legionella and Strep pneumoniae.",
+  "Serology": "Blood tests that detect antibodies against an organism, used to confirm Mycoplasma.",
+  "Endotracheal aspirate": "Secretions sucked from the breathing tube of a ventilated patient and sent for culture.",
+  "ABG": "Arterial blood gas, measuring oxygen, carbon dioxide and pH; needed if saturations are below 92%.",
+  "Sepsis 6": "Six steps within an hour for sepsis: oxygen, cultures, IV antibiotics, fluids, lactate and urine output.",
+  "Co-amoxiclav": "Amoxicillin combined with clavulanic acid, giving broader cover including anaerobes and some resistant bacteria.",
+  "Clarithromycin": "A macrolide antibiotic that covers atypical organisms and raises statin levels.",
+  "Piperacillin-tazobactam": "A broad IV penicillin combination (Tazocin) covering Pseudomonas, used for hospital-acquired and ventilator pneumonia.",
+  "Vancomycin": "An IV antibiotic added to cover MRSA.",
+  "Myopathy": "Muscle damage causing pain and weakness, a risk when statin levels rise.",
+  "Dependent zones": "The lowest parts of the lung in the patient's position, where inhaled material settles by gravity.",
+  "Anaerobic glycolysis": "Breaking down glucose without oxygen, producing acid; in empyema it lowers the pleural fluid pH."
+ }
+}

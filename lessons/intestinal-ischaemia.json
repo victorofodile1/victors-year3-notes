@@ -1,0 +1,673 @@
+{
+  "id": "intestinal-ischaemia",
+  "patient": {
+    "name": "Margaret O'Sullivan",
+    "age": 79,
+    "sex": "F",
+    "setting": "Emergency Department",
+    "complaint": "Sudden, severe central abdominal pain for 4 hours",
+    "background": [
+      "Atrial fibrillation; stopped apixaban 2 months ago after a fall",
+      "Hypertension, type 2 diabetes, peripheral vascular disease",
+      "Ex-smoker of 40 pack-years",
+      "Lives alone in Kilburn; daughter visits daily"
+    ]
+  },
+  "domains": {
+    "diagnosis": {
+      "exam": "Expect 'Which is the most likely diagnosis?' with severe abdominal pain out of proportion to a soft abdomen in a patient with AF, or the variants: post-prandial pain with weight loss (chronic) and bloody diarrhoea after hypotension (ischaemic colitis).",
+      "steps": [
+        {
+          "type": "story",
+          "points": [
+            "Margaret, 79, **AF**, stopped her anticoagulant after a fall.",
+            "Sudden, severe central abdominal pain at lunchtime.",
+            "She is writhing and crying out; vomited twice.",
+            "Opened her bowels once since, with some dark blood."
+          ],
+          "vitals": { "T": "37.2°C", "HR": "128 bpm", "BP": "142/86 mmHg", "RR": "22 /min", "SpO2": "95% on air" }
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "ecg",
+            "title": "Margaret's rhythm strip",
+            "layout": "strip",
+            "rhythm": "af",
+            "rate": 128,
+            "caption": "Irregularly irregular, no P waves: fast AF, the embolic source."
+          },
+          "text": "AF plus sudden abdominal pain should make you think of an embolus to the gut."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Margaret's bowel has lost its blood supply. The exam tests all three forms: **acute**, **chronic** and **ischaemic colitis**."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Margaret's risks stack up: **age, AF off anticoagulation**, peripheral vascular disease and smoking."
+        },
+        {
+          "type": "story",
+          "points": [
+            "Abdomen **soft**, only mildly tender; no guarding.",
+            "Yet she rates her pain 10 out of 10.",
+            "Bowel sounds present; no hernias, no pulsatile mass."
+          ]
+        },
+        {
+          "type": "ask",
+          "q": "Severe pain, a soft abdomen and AF. What is the most likely diagnosis?",
+          "o": ["Acute mesenteric ischaemia", "Acute pancreatitis", "Biliary colic", "Perforated peptic ulcer"],
+          "a": 0,
+          "r": "**Pain out of proportion to examination** in a patient with AF is acute mesenteric ischaemia until proven otherwise."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Margaret has the **acute** form. Post-prandial pain with weight loss would be chronic; crampy left-sided bloody diarrhoea would be ischaemic colitis."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "**Pain out of proportion** is the phrase to spot. In ischaemic colitis, look for **thumbprinting** on the abdominal X-ray."
+        },
+        {
+          "type": "compare",
+          "title": "Three forms of intestinal ischaemia",
+          "head": ["Feature", "Acute mesenteric", "Chronic mesenteric", "Ischaemic colitis"],
+          "rows": [
+            ["Pain", "**Sudden, severe, out of proportion**", "**Post-prandial** 'abdominal angina'", "Crampy, left-sided"],
+            ["Other", "AF, vomiting, bloody stool", "Weight loss, food fear", "**Bloody diarrhoea**"],
+            ["Cause", "Embolus or thrombosis", "Atherosclerosis", "Hypoperfusion of watershed"],
+            ["Treatment", "Heparin, laparotomy", "Angioplasty", "Supportive, antibiotics"]
+          ]
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Margaret's bloody stool hints at **infarction**. If she develops guarding, peritonitis or shock, the bowel is dying."
+        }
+      ]
+    },
+    "investigation": {
+      "exam": "Expect 'Which is the most appropriate diagnostic investigation?' (CT mesenteric angiography) or a blood gas question: metabolic acidosis with a raised lactate.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "A **venous blood gas with lactate** is quick and shows Margaret's bowel is starved of oxygen."
+        },
+        {
+          "type": "labs",
+          "title": "Margaret's venous blood gas and bloods",
+          "rows": [
+            ["pH", "7.26", "7.35–7.45", "L"],
+            ["Bicarbonate", "16 mmol/L", "22–26", "L"],
+            ["pCO2", "4.2 kPa", "4.7–6.0", "L"],
+            ["Lactate", "5.8 mmol/L", "<2.0", "H"],
+            ["White cell count", "19.2 ×10⁹/L", "4.0–11.0", "H"],
+            ["Amylase", "140 U/L", "<100", "H"]
+          ],
+          "text": "Metabolic acidosis with partial respiratory compensation and a high lactate. A mild amylase rise does not mean pancreatitis."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "scale",
+            "title": "Margaret's lactate",
+            "min": 0,
+            "max": 10,
+            "unit": "mmol/L",
+            "bands": [[0, 2, "normal", "ok"], [2, 4, "raised", "warn"], [4, 10, "high: ongoing ischaemia", "bad"]],
+            "value": 5.8,
+            "label": "Margaret 5.8",
+            "caption": "A high lactate with a soft abdomen fits ongoing gut ischaemia. A normal lactate does not fully exclude it early on."
+          }
+        },
+        {
+          "type": "ask",
+          "q": "Which test will confirm Margaret's diagnosis?",
+          "o": ["Abdominal X-ray", "Colonoscopy", "CT mesenteric angiography", "Erect chest X-ray"],
+          "a": 2,
+          "r": "**CT mesenteric angiography** (arterial phase) shows the occluded vessel. Plain films are often normal early."
+        },
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Margaret's CT angiogram shows a **cut-off in the proximal superior mesenteric artery** with poorly enhancing small bowel loops."
+        },
+        {
+          "type": "flow",
+          "title": "Working up suspected mesenteric ischaemia",
+          "nodes": ["Pain out of proportion + AF or vascular risk", "ABCDE, urgent surgical review", "VBG or ABG: acidosis, raised lactate", "CT mesenteric angiography", "Occlusion confirmed → heparin and theatre"],
+          "caption": "Do not wait for peritonitis: by then the bowel has infarcted."
+        },
+        {
+          "type": "trap",
+          "text": "A **normal abdominal X-ray** does not exclude acute mesenteric ischaemia. Thumbprinting is a sign of **ischaemic colitis**, and appears late."
+        }
+      ]
+    },
+    "management": {
+      "exam": "Expect 'Which is the most appropriate initial management?' (NBM, IV fluids, IV antibiotics, IV heparin) or definitive treatment: laparotomy with resection for acute, angioplasty for chronic, supportive care for ischaemic colitis.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Margaret is made **NBM**, given IV fluids, **broad-spectrum IV antibiotics** and an **IV heparin** infusion while theatre is arranged."
+        },
+        {
+          "type": "ask",
+          "q": "Margaret develops guarding and rebound. What is the definitive treatment?",
+          "o": ["Conservative IV antibiotics", "Emergency laparotomy with resection of non-viable bowel", "Percutaneous angioplasty", "Thrombolysis alone"],
+          "a": 1,
+          "r": "Peritonitis means **infarcted bowel**: it must be resected at **laparotomy**. Angioplasty is for chronic disease."
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "At laparotomy, Margaret has an SMA **embolectomy** and 60 cm of dead small bowel resected; a **relook laparotomy** is planned for tomorrow."
+        },
+        {
+          "type": "flow",
+          "title": "Which treatment?",
+          "nodes": ["Acute, bowel still viable → heparin, embolectomy", "Acute with peritonitis or sepsis → laparotomy, resect, relook", "Chronic → angioplasty plus risk factor control", "Ischaemic colitis → supportive care, antibiotics", "Severe ischaemic colitis → surgery"],
+          "caption": "The form and the presence of peritonitis decide the branch."
+        },
+        {
+          "type": "visual",
+          "visual": {
+            "kind": "trend",
+            "title": "Margaret's lactate around surgery",
+            "x": ["Arrival", "Pre-op", "Post-op", "Day 1", "Day 2"],
+            "unit": "mmol/L",
+            "series": [{ "name": "Lactate", "values": [5.8, 6.9, 3.1, 1.8, 1.2] }],
+            "caption": "Lactate keeps rising until dead bowel is removed, then falls. A rise again would prompt an earlier relook."
+          }
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "Had Margaret instead had **ischaemic colitis** after a fall in BP, she would have **supportive care and antibiotics**, with surgery only if severe."
+        },
+        {
+          "type": "pearl",
+          "text": "Long term, Margaret needs **anticoagulation** for her AF restarted. The embolus came from her left atrium."
+        }
+      ]
+    },
+    "science": {
+      "exam": "Expect applied questions: why pain is out of proportion early, why the splenic flexure is a watershed, or why lactate rises.",
+      "steps": [
+        {
+          "type": "notes",
+          "src": 0,
+          "lead": "Margaret's gut demand outstripped supply when an **embolus** from her fibrillating atrium blocked her SMA."
+        },
+        {
+          "type": "flow",
+          "title": "From AF to dead bowel",
+          "nodes": ["AF: clot forms in the left atrial appendage", "Embolus lodges in the superior mesenteric artery", "Bowel wall ischaemia: severe visceral pain", "Anaerobic metabolism: lactate rises", "Transmural infarction, peritonitis, perforation, sepsis"]
+        },
+        {
+          "type": "notes",
+          "src": 1,
+          "lead": "Margaret's abdomen stayed soft at first because the pain was **visceral**: the parietal peritoneum was not inflamed until the wall infarcted."
+        },
+        {
+          "type": "notes",
+          "src": 3,
+          "lead": "Margaret's oxygen-starved bowel switched to **anaerobic glycolysis**, so lactate built up and her pH fell."
+        },
+        {
+          "type": "ask",
+          "q": "Why is the splenic flexure the classic site of ischaemic colitis?",
+          "o": ["It has the thinnest wall", "It is the most mobile part of the colon", "It lies at the border of SMA and IMA territories", "It drains to the systemic veins"],
+          "a": 2,
+          "r": "A **watershed** area fed by the furthest branches of two arteries (SMA and IMA) is the first to suffer in hypoperfusion."
+        },
+        {
+          "type": "notes",
+          "src": 2,
+          "lead": "The **splenic flexure** and **rectosigmoid junction** are watershed zones, so they fail first when blood pressure drops."
+        },
+        {
+          "type": "notes",
+          "src": 4,
+          "lead": "Margaret's main risks now are **perforation**, sepsis and, after a large resection, **short bowel syndrome**."
+        }
+      ]
+    }
+  },
+  "mcq": [
+    { "d": "diagnosis", "q": "What is the classic description of pain in acute mesenteric ischaemia?", "o": ["Colicky loin to groin pain", "Out of proportion to examination findings", "Radiating to the back", "Relieved by eating"], "a": 1, "r": "Severe pain with a **soft abdomen** early on." },
+    { "d": "diagnosis", "q": "Which arrhythmia is the classic risk factor for mesenteric embolus?", "o": ["Atrial fibrillation", "First-degree heart block", "Sinus bradycardia", "Ventricular ectopics"], "a": 0, "r": "**AF** causes left atrial thrombus that can embolise to the SMA." },
+    { "d": "diagnosis", "q": "Post-prandial pain, food fear and weight loss suggest which form?", "o": ["Acute mesenteric ischaemia", "Chronic mesenteric ischaemia", "Ischaemic colitis", "Mesenteric venous thrombosis"], "a": 1, "r": "**Chronic mesenteric ischaemia**: 'abdominal angina'." },
+    { "d": "diagnosis", "q": "Which part of the colon is most commonly affected by ischaemic colitis?", "o": ["Caecum", "Hepatic flexure", "Sigmoid", "Splenic flexure"], "a": 3, "r": "The **splenic flexure** is a watershed between SMA and IMA." },
+    { "d": "investigation", "q": "What is the gold standard investigation for mesenteric ischaemia?", "o": ["Abdominal X-ray", "Colonoscopy", "CT mesenteric angiography", "Ultrasound"], "a": 2, "r": "**CT mesenteric angiography** shows occlusion of the vessels." },
+    { "d": "investigation", "q": "Which blood result is a sensitive marker of ongoing bowel ischaemia?", "o": ["Raised amylase", "Raised bilirubin", "Raised lactate", "Raised troponin"], "a": 2, "r": "**Lactate** from anaerobic metabolism, with a metabolic acidosis." },
+    { "d": "investigation", "q": "Which abdominal X-ray sign is seen in ischaemic colitis?", "o": ["Coffee-bean sign", "Double bubble", "Rigler's sign", "Thumbprinting"], "a": 3, "r": "**Thumbprinting** from bowel wall oedema." },
+    { "d": "management", "q": "Which anticoagulant is given in the initial management of acute mesenteric ischaemia?", "o": ["IV heparin", "Oral apixaban", "Oral warfarin", "Subcutaneous fondaparinux"], "a": 0, "r": "**IV heparin**, alongside NBM, IV fluids and antibiotics." },
+    { "d": "management", "q": "What is the definitive treatment of chronic mesenteric ischaemia?", "o": ["Laparotomy and resection", "Long-term antibiotics", "Percutaneous transluminal angioplasty", "Proton pump inhibitor"], "a": 2, "r": "**Angioplasty** plus risk factor modification; surgery for severe disease." },
+    { "d": "science", "q": "Why does lactate rise in bowel ischaemia?", "o": ["Anaerobic glycolysis in hypoxic tissue", "Bacterial fermentation only", "Liver failure", "Reduced renal excretion"], "a": 0, "r": "Hypoxic bowel switches to **anaerobic glycolysis**." }
+  ],
+  "technique": [
+    {
+      "d": "diagnosis",
+      "stem": "An 81 year old man with atrial fibrillation has sudden, severe central abdominal pain for 3 hours. He is in agony, but his abdomen is soft with only mild tenderness and no guarding. He stopped warfarin last month. His temperature is 37.1°C, pulse rate 124 bpm irregular and BP 150/90 mmHg.",
+      "labs": [["Lactate", "4.9 mmol/L", "<2.0", "H"]],
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute appendicitis", "Acute cholecystitis", "Acute mesenteric ischaemia", "Gastroenteritis", "Renal colic"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of severe abdominal pain in an older man." },
+        { "t": "Pick out the clues", "clues": ["atrial fibrillation", "sudden, severe central abdominal pain", "abdomen is soft with only mild tenderness", "stopped warfarin"], "x": "AF off anticoagulation, sudden pain, soft abdomen, raised lactate." },
+        { "t": "Make your own answer before looking", "x": "**Acute mesenteric ischaemia**: pain out of proportion to examination." },
+        { "t": "Rule out the others", "elim": [[0, "Appendicitis gives RIF peritonism, not a soft abdomen with severe pain."], [1, "Cholecystitis is RUQ with Murphy's sign."], [3, "Gastroenteritis does not give this severity, AF link or lactate."], [4, "Renal colic is loin to groin, with haematuria."]] },
+        { "t": "Commit", "x": "**C. Acute mesenteric ischaemia.** Rule: AF + pain out of proportion + lactate." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 74 year old woman with atrial fibrillation and peripheral vascular disease has 5 hours of severe abdominal pain with a soft abdomen. Her pulse rate is 118 bpm and BP 136/82 mmHg. A venous blood gas shows a metabolic acidosis with a raised lactate. She has been resuscitated and reviewed by the surgeons.",
+      "labs": [["pH", "7.28", "7.35–7.45", "L"], ["Lactate", "5.2 mmol/L", "<2.0", "H"]],
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["Abdominal X-ray", "Colonoscopy", "CT mesenteric angiography", "Erect chest X-ray", "Ultrasound abdomen"],
+      "a": 2,
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnostic (gold standard) investigation." },
+        { "t": "Pick out the clues", "clues": ["atrial fibrillation", "severe abdominal pain with a soft abdomen", "metabolic acidosis with a raised lactate"], "x": "Suspected acute mesenteric ischaemia; the gas is already done." },
+        { "t": "Make your own answer before looking", "x": "**CT mesenteric angiography**." },
+        { "t": "Rule out the others", "elim": [[0, "AXR is often normal early."], [1, "Colonoscopy does not image the vessels and is risky."], [3, "Erect CXR is for perforation."], [4, "USS is poor for bowel and mesenteric vessels."]] },
+        { "t": "Commit", "x": "**C. CT mesenteric angiography.** Gold standard: shows the occlusion." }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 70 year old woman developed crampy left-sided abdominal pain and bloody diarrhoea 1 day after an episode of hypotension during a severe gastroenteritis. Her abdomen is mildly tender on the left with no guarding. Her temperature is 37.6°C, pulse rate 96 bpm and BP 122/74 mmHg. CT shows thickened bowel wall at the splenic flexure.",
+      "labs": [["Lactate", "1.6 mmol/L", "<2.0", ""]],
+      "q": "Which is the most appropriate management?",
+      "o": ["Emergency subtotal colectomy", "High-dose IV steroids", "Infliximab", "Supportive care with IV fluids and antibiotics", "Urgent mesenteric angioplasty"],
+      "a": 3,
+      "steps": [
+        { "t": "Read the question line first", "x": "Management: which form of ischaemia, and how severe?" },
+        { "t": "Pick out the clues", "clues": ["crampy left-sided abdominal pain and bloody diarrhoea", "episode of hypotension", "no guarding", "splenic flexure"], "x": "Ischaemic colitis at the watershed, without peritonitis; lactate is normal." },
+        { "t": "Make your own answer before looking", "x": "**Supportive care and antibiotics**; surgery only if severe." },
+        { "t": "Rule out the others", "elim": [[0, "Colectomy is for severe disease with peritonitis or gangrene."], [1, "Steroids are for ulcerative colitis."], [2, "Infliximab is for IBD."], [4, "Angioplasty is for chronic mesenteric ischaemia."]] },
+        { "t": "Commit", "x": "**D. Supportive care with fluids and antibiotics.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 77 year old man develops ischaemic colitis after a period of hypotension following cardiac surgery. Colonoscopy shows ischaemic mucosa limited to the splenic flexure. His pulse rate is 92 bpm and BP 118/70 mmHg.",
+      "q": "Which is the most likely reason this segment is affected?",
+      "o": ["Highest density of mucosal glands", "Lies at the junction of the SMA and IMA territories", "Most mobile part of the colon", "Receives only portal venous drainage", "Thinnest muscular wall"],
+      "a": 1,
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism: why this site?" },
+        { "t": "Pick out the clues", "clues": ["period of hypotension", "splenic flexure"], "x": "Global hypoperfusion hits the weakest-supplied segment." },
+        { "t": "Make your own answer before looking", "x": "**Watershed** between SMA and IMA territories." },
+        { "t": "Rule out the others", "elim": [[0, "Gland density does not determine ischaemia."], [2, "Mobility relates to volvulus, not ischaemia."], [3, "All of the colon drains to the portal system; venous drainage does not explain it."], [4, "Wall thickness is not the reason."]] },
+        { "t": "Commit", "x": "**B. SMA/IMA junction.** Watersheds: splenic flexure and rectosigmoid." }
+      ]
+    }
+  ],
+  "practice": [
+    {
+      "d": "diagnosis",
+      "stem": "A 76 year old man has 4 hours of sudden, severe central abdominal pain. He is distressed and has vomited, but his abdomen is soft with mild diffuse tenderness. His temperature is 37.0°C, pulse rate 122 bpm, BP 146/88 mmHg and respiratory rate 22 breaths per minute. ECG (see item resources).",
+      "labs": [["Lactate", "5.1 mmol/L", "<2.0", "H"], ["Bicarbonate", "17 mmol/L", "22–26", "L"]],
+      "visual": { "kind": "ecg", "title": "Rhythm strip", "layout": "strip", "rhythm": "af", "rate": 122, "caption": "Irregularly irregular rhythm with no P waves." },
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Acute mesenteric ischaemia", "Acute pancreatitis", "Biliary colic", "Diverticulitis", "Ruptured abdominal aortic aneurysm"],
+      "a": 0,
+      "e": "Severe pain out of proportion to a soft abdomen, AF on the ECG and a raised lactate is acute mesenteric ischaemia. A ruptured AAA gives shock and back pain.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis with an ECG to interpret." },
+        { "t": "Pick out the clues", "clues": ["sudden, severe central abdominal pain", "abdomen is soft with mild diffuse tenderness", "ECG (see item resources)"], "x": "Pain out of proportion; ECG shows AF; lactate high." },
+        { "t": "Make your own answer before looking", "x": "**Acute mesenteric ischaemia** from an embolus." },
+        { "t": "Rule out the others", "elim": [[1, "Pancreatitis radiates to the back with a high amylase."], [2, "Biliary colic is RUQ and does not raise lactate."], [3, "Diverticulitis gives LIF pain and fever."], [4, "AAA rupture gives back pain, a pulsatile mass and hypotension."]] },
+        { "t": "Commit", "x": "**A. Acute mesenteric ischaemia.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 68 year old woman has a 6 month history of central abdominal pain starting about 30 minutes after meals and lasting 1 to 2 hours. She now avoids eating and has lost 9 kg. She has peripheral vascular disease and smokes. Her pulse rate is 78 bpm and BP 158/92 mmHg. An abdominal bruit is heard.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Biliary colic", "Chronic mesenteric ischaemia", "Chronic pancreatitis", "Gastric carcinoma", "Peptic ulcer disease"],
+      "a": 1,
+      "e": "Post-prandial 'abdominal angina', food fear (sitophobia) and weight loss in an arteriopath is chronic mesenteric ischaemia. Gastric cancer is the key differential and would be excluded by endoscopy.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of chronic post-prandial pain." },
+        { "t": "Pick out the clues", "clues": ["30 minutes after meals", "avoids eating and has lost 9 kg", "peripheral vascular disease and smokes", "abdominal bruit"], "x": "Abdominal angina, sitophobia, atherosclerosis." },
+        { "t": "Make your own answer before looking", "x": "**Chronic mesenteric ischaemia**." },
+        { "t": "Rule out the others", "elim": [[0, "Biliary colic is RUQ, episodic, after fatty meals, without a bruit."], [2, "Chronic pancreatitis follows alcohol, with steatorrhoea."], [3, "Possible, but the vascular history and bruit point to ischaemia."], [4, "Ulcer pain does not cause food fear with a bruit."]] },
+        { "t": "Commit", "x": "**B. Chronic mesenteric ischaemia.** Pain after meals + weight loss + arteriopath." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 73 year old woman was admitted with dehydration and hypotension from a urinary tract infection. Two days later she develops crampy left-sided abdominal pain followed by bloody diarrhoea. Her temperature is 37.5°C, pulse rate 98 bpm and BP 116/70 mmHg. She is tender in the left upper quadrant without guarding.",
+      "labs": [["CRP", "62 mg/L", "<5", "H"], ["Haemoglobin", "118 g/L", "115–165", ""]],
+      "visual": null,
+      "q": "Which is the most likely diagnosis?",
+      "o": ["Crohn's colitis", "Diverticulitis", "Infective colitis", "Ischaemic colitis", "Ulcerative colitis"],
+      "a": 3,
+      "e": "Crampy left-sided pain and bloody diarrhoea after a hypotensive episode in an older patient is ischaemic colitis. Infective colitis needs an infective exposure and is not linked to hypotension.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Diagnosis of bloody diarrhoea in an older inpatient." },
+        { "t": "Pick out the clues", "clues": ["dehydration and hypotension", "crampy left-sided abdominal pain followed by bloody diarrhoea", "left upper quadrant"], "x": "Hypoperfusion, then splenic flexure symptoms." },
+        { "t": "Make your own answer before looking", "x": "**Ischaemic colitis**." },
+        { "t": "Rule out the others", "elim": [[0, "Crohn's is chronic, often in younger patients, with perianal disease."], [1, "Diverticulitis gives LIF pain and fever, usually without bloody diarrhoea."], [2, "No infective contacts; the link is the hypotension."], [4, "UC is chronic, starts in the rectum, younger patients."]] },
+        { "t": "Commit", "x": "**D. Ischaemic colitis.** Hypotension + crampy left pain + blood." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "An 80 year old man develops ischaemic colitis after a cardiac arrest with a prolonged period of low blood pressure. His pulse rate is 94 bpm and BP 112/68 mmHg. Colonoscopy is planned to assess the extent.",
+      "labs": [],
+      "visual": null,
+      "q": "Which part of the colon is most likely to be affected?",
+      "o": ["Ascending colon", "Caecum", "Hepatic flexure", "Rectum", "Splenic flexure"],
+      "a": 4,
+      "e": "The splenic flexure is the classic watershed area between SMA and IMA territories and is most commonly affected by ischaemic colitis. The rectum has a rich dual blood supply and is usually spared.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Most likely site of ischaemic colitis." },
+        { "t": "Pick out the clues", "clues": ["ischaemic colitis", "prolonged period of low blood pressure"], "x": "Global hypoperfusion: watershed areas suffer first." },
+        { "t": "Make your own answer before looking", "x": "**Splenic flexure**." },
+        { "t": "Rule out the others", "elim": [[0, "Ascending colon is well supplied by the SMA."], [1, "The caecum can be affected in shock but is not the classic site."], [2, "Hepatic flexure is within the SMA territory."], [3, "The rectum has a rich collateral supply."]] },
+        { "t": "Commit", "x": "**E. Splenic flexure.** The watershed." }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 75 year old woman has 3 days of crampy left-sided abdominal pain and bloody diarrhoea after an episode of severe dehydration. Her pulse rate is 100 bpm and BP 118/72 mmHg. An abdominal X-ray is taken.",
+      "labs": [["CRP", "74 mg/L", "<5", "H"]],
+      "visual": null,
+      "q": "Which is the most likely finding on her abdominal X-ray?",
+      "o": ["Coffee-bean sign", "Double bubble sign", "Lead-pipe colon", "Rigler's sign", "Thumbprinting"],
+      "a": 4,
+      "e": "Thumbprinting is caused by oedema of the bowel wall in ischaemic colitis. Lead-pipe colon is chronic ulcerative colitis; coffee-bean is sigmoid volvulus.",
+      "steps": [
+        { "t": "Read the question line first", "x": "A finding question on AXR." },
+        { "t": "Pick out the clues", "clues": ["crampy left-sided abdominal pain and bloody diarrhoea", "severe dehydration"], "x": "Ischaemic colitis." },
+        { "t": "Make your own answer before looking", "x": "**Thumbprinting** from mucosal oedema." },
+        { "t": "Rule out the others", "elim": [[0, "Coffee-bean is sigmoid volvulus."], [1, "Double bubble is duodenal atresia."], [2, "Lead-pipe is chronic UC."], [3, "Rigler's sign is free gas outlining both bowel walls in perforation."]] },
+        { "t": "Commit", "x": "**E. Thumbprinting.**" }
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "stem": "A 69 year old man had an anterior myocardial infarction 1 week ago and developed new-onset atrial fibrillation. Today he has sudden, severe abdominal pain with forceful bowel evacuation containing blood. He had no previous abdominal symptoms. His pulse rate is 132 bpm irregular and BP 138/84 mmHg. His abdomen is soft.",
+      "labs": [["Lactate", "4.6 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely cause of his abdominal pain?",
+      "o": ["Inferior mesenteric artery thrombosis", "Mesenteric venous thrombosis", "Non-occlusive mesenteric ischaemia", "Superior mesenteric artery embolus", "Superior mesenteric artery thrombosis"],
+      "a": 3,
+      "e": "Sudden onset with new AF after MI and no prior abdominal angina points to an embolus to the SMA. Thrombosis usually follows a history of chronic post-prandial pain.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Cause: embolus, thrombosis, venous, or low flow?" },
+        { "t": "Pick out the clues", "clues": ["myocardial infarction 1 week ago", "new-onset atrial fibrillation", "sudden, severe abdominal pain", "no previous abdominal symptoms"], "x": "Two embolic sources (mural thrombus, AF) and a sudden onset." },
+        { "t": "Make your own answer before looking", "x": "**SMA embolus**." },
+        { "t": "Rule out the others", "elim": [[0, "IMA occlusion gives colonic, left-sided symptoms, rarely this severe."], [1, "Venous thrombosis is gradual, with hypercoagulability."], [2, "NOMI follows shock or vasopressors; his BP is normal."], [4, "Thrombosis occurs on chronic atheroma, usually after abdominal angina."]] },
+        { "t": "Commit", "x": "**D. SMA embolus.** Sudden + AF = embolus." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "An 82 year old woman with atrial fibrillation has 3 hours of severe central abdominal pain. Her abdomen is soft and minimally tender. Her temperature is 37.2°C, pulse rate 116 bpm, BP 140/84 mmHg and oxygen saturation 96% breathing air. Surgical review has been requested.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate initial investigation to support the diagnosis?",
+      "o": ["Abdominal X-ray", "Colonoscopy", "Erect chest X-ray", "Serum amylase", "Venous blood gas with lactate"],
+      "a": 4,
+      "e": "A blood gas with lactate is the first-line bedside test, showing metabolic acidosis and a raised lactate from anaerobic metabolism. CT angiography then confirms the diagnosis.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial investigation to support suspected mesenteric ischaemia." },
+        { "t": "Pick out the clues", "clues": ["atrial fibrillation", "severe central abdominal pain", "soft and minimally tender"], "x": "Pain out of proportion in AF." },
+        { "t": "Make your own answer before looking", "x": "**VBG or ABG with lactate**." },
+        { "t": "Rule out the others", "elim": [[0, "AXR is often normal early."], [1, "Colonoscopy is not a first-line test here."], [2, "Erect CXR looks for perforation."], [3, "Amylase looks for pancreatitis and may be mildly raised in ischaemia too."]] },
+        { "t": "Commit", "x": "**E. Venous blood gas with lactate.** Then CT angiography." }
+      ]
+    },
+    {
+      "d": "investigation",
+      "stem": "A 71 year old man with atrial fibrillation has severe abdominal pain out of proportion to examination. His pulse rate is 120 bpm and BP 134/80 mmHg. His blood gas shows a lactate of 6.0 mmol/L.",
+      "labs": [["pH", "7.24", "7.35–7.45", "L"], ["Lactate", "6.0 mmol/L", "<2.0", "H"], ["eGFR", "64 mL/min/1.73 m²", ">90", "L"]],
+      "visual": null,
+      "q": "Which is the most appropriate diagnostic investigation?",
+      "o": ["Abdominal ultrasound", "CT mesenteric angiography", "Diagnostic laparoscopy", "Erect chest X-ray", "MRI abdomen"],
+      "a": 1,
+      "e": "CT mesenteric angiography is the gold standard, showing proximal occlusion or vasoconstriction of the mesenteric vessels. Mild renal impairment should not delay it.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Gold-standard test." },
+        { "t": "Pick out the clues", "clues": ["atrial fibrillation", "out of proportion to examination", "lactate of 6.0 mmol/L"], "x": "Suspected acute mesenteric ischaemia." },
+        { "t": "Make your own answer before looking", "x": "**CT mesenteric angiography**." },
+        { "t": "Rule out the others", "elim": [[0, "USS is limited by bowel gas."], [2, "Laparoscopy is invasive and may miss early ischaemia."], [3, "Erect CXR is for perforation."], [4, "MRI is too slow in an emergency."]] },
+        { "t": "Commit", "x": "**B. CT mesenteric angiography.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 78 year old woman with atrial fibrillation has acute mesenteric ischaemia confirmed on CT angiography. She is nil by mouth with IV fluids and broad-spectrum IV antibiotics. Her pulse rate is 118 bpm and BP 132/78 mmHg. The surgical team is preparing theatre.",
+      "labs": [],
+      "visual": null,
+      "q": "Which additional drug is most appropriate now?",
+      "o": ["IV unfractionated heparin", "Oral apixaban", "Oral aspirin", "Subcutaneous insulin", "Tranexamic acid"],
+      "a": 0,
+      "e": "IV heparin anticoagulation is part of the initial management, to stop clot propagation. Oral drugs cannot be given while nil by mouth and act too slowly.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Initial management: what is missing?" },
+        { "t": "Pick out the clues", "clues": ["acute mesenteric ischaemia confirmed", "nil by mouth with IV fluids and broad-spectrum IV antibiotics"], "x": "NBM, fluids and antibiotics done; anticoagulation is missing." },
+        { "t": "Make your own answer before looking", "x": "**IV heparin**." },
+        { "t": "Rule out the others", "elim": [[1, "She is NBM; oral anticoagulants are for later."], [2, "Aspirin is oral and not the acute treatment."], [3, "No indication."], [4, "Tranexamic acid promotes clotting."]] },
+        { "t": "Commit", "x": "**A. IV unfractionated heparin.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 74 year old man with acute mesenteric ischaemia confirmed on CT now has guarding, rebound tenderness and rising lactate. His temperature is 38.3°C, pulse rate 134 bpm, BP 92/56 mmHg and respiratory rate 28 breaths per minute. He has received IV heparin, fluids and antibiotics.",
+      "labs": [["Lactate", "8.2 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which is the most appropriate definitive management?",
+      "o": ["Conservative IV antibiotics", "CT-guided drainage", "Emergency laparotomy with resection of non-viable bowel", "Percutaneous transluminal angioplasty", "Thrombolysis alone"],
+      "a": 2,
+      "e": "Peritonitis and sepsis mean infarcted bowel, which needs immediate laparotomy with resection, often with a relook the next day. Angioplasty is for chronic disease.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Definitive management with peritonitis." },
+        { "t": "Pick out the clues", "clues": ["guarding, rebound tenderness and rising lactate", "BP 92/56 mmHg"], "x": "Transmural infarction, sepsis." },
+        { "t": "Make your own answer before looking", "x": "**Emergency laparotomy and resection**, then relook." },
+        { "t": "Rule out the others", "elim": [[0, "Dead bowel will not recover with antibiotics."], [1, "There is no collection to drain."], [3, "Angioplasty is for chronic disease."], [4, "Thrombolysis cannot revive infarcted bowel."]] },
+        { "t": "Commit", "x": "**C. Emergency laparotomy with resection.**" }
+      ]
+    },
+    {
+      "d": "management",
+      "stem": "A 66 year old woman with chronic mesenteric ischaemia has post-prandial pain and 8 kg weight loss. CT angiography shows a tight stenosis of the superior mesenteric artery origin. She smokes and has hypertension. Her pulse rate is 76 bpm and BP 156/90 mmHg.",
+      "labs": [],
+      "visual": null,
+      "q": "Which is the most appropriate definitive management?",
+      "o": ["Coeliac plexus block", "Emergency laparotomy", "Long-term proton pump inhibitor", "Percutaneous transluminal angioplasty with risk factor modification", "Surgical bypass as first-line"],
+      "a": 3,
+      "e": "Chronic mesenteric ischaemia is treated with percutaneous transluminal angioplasty plus risk factor modification; open surgery is reserved for severe disease.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Definitive management of the chronic form." },
+        { "t": "Pick out the clues", "clues": ["chronic mesenteric ischaemia", "tight stenosis of the superior mesenteric artery", "smokes and has hypertension"], "x": "Atherosclerotic stenosis, stable patient." },
+        { "t": "Make your own answer before looking", "x": "**Angioplasty** plus stopping smoking, BP and lipid control." },
+        { "t": "Rule out the others", "elim": [[0, "A nerve block treats pain, not ischaemia."], [1, "She has no acute infarction."], [2, "A PPI treats acid, not ischaemia."], [4, "Surgery is reserved for severe disease."]] },
+        { "t": "Commit", "x": "**D. Angioplasty with risk factor modification.**" }
+      ]
+    },
+    {
+      "d": "science",
+      "stem": "A 79 year old man with acute mesenteric ischaemia has a venous blood gas showing pH 7.25 and a markedly raised lactate. His pulse rate is 126 bpm and BP 128/76 mmHg.",
+      "labs": [["pH", "7.25", "7.35–7.45", "L"], ["Lactate", "6.4 mmol/L", "<2.0", "H"]],
+      "visual": null,
+      "q": "Which is the most likely mechanism of the raised lactate?",
+      "o": ["Anaerobic glycolysis in hypoxic bowel tissue", "Bacterial lactate production in the lumen only", "Impaired hepatic clearance from liver failure", "Reduced renal excretion", "Thiamine deficiency"],
+      "a": 0,
+      "e": "Ischaemic bowel switches to anaerobic glycolysis, producing lactate and a metabolic acidosis. This is why lactate is a sensitive marker of ongoing ischaemia.",
+      "steps": [
+        { "t": "Read the question line first", "x": "Mechanism of the lactate rise." },
+        { "t": "Pick out the clues", "clues": ["acute mesenteric ischaemia", "markedly raised lactate"], "x": "Oxygen-starved tissue." },
+        { "t": "Make your own answer before looking", "x": "**Anaerobic glycolysis**." },
+        { "t": "Rule out the others", "elim": [[1, "Bacteria contribute little; tissue hypoxia is the driver."], [2, "No liver failure is described."], [3, "Lactate is cleared mainly by the liver, not excreted by the kidney."], [4, "No history of alcohol or malnutrition."]] },
+        { "t": "Commit", "x": "**A. Anaerobic glycolysis.**" }
+      ]
+    }
+  ],
+  "blurt": {
+    "prompts": [
+      {
+        "d": "diagnosis",
+        "q": "What is intestinal ischaemia, what are its three forms and its causes?",
+        "tip": "Exam thinking: name the form first, then the mechanism.",
+        "points": [
+          { "p": "Reduced blood supply to the bowel", "k": [["blood"], ["reduc", "insufficien", "poor", "lack"]], "why": "Demand outstrips supply." },
+          { "p": "Acute mesenteric, chronic mesenteric, ischaemic colitis", "k": [["acute"], ["chronic"], ["colitis"]], "why": "Each presents and is treated differently." },
+          { "p": "Causes: arterial embolus, arterial thrombosis, venous thrombosis, hypoperfusion or shock", "k": [["embol"], ["thromb"], ["hypoperfusion", "shock", "low flow"]], "why": "Embolus from AF is the classic exam cause." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "Who gets intestinal ischaemia? List the risk factors.",
+        "tip": "Exam thinking: AF in the history is the giveaway.",
+        "points": [
+          { "p": "Atrial fibrillation", "k": [["af", "atrial fib"]], "why": "Especially off anticoagulation." },
+          { "p": "Advancing age, PVD, valvular lesions", "k": [["age", "elderly", "old", "pvd", "peripheral vascular", "valv"]], "why": "Atherosclerotic and embolic sources." },
+          { "p": "Recent MI and low cardiac output states", "k": [["mi", "myocardial", "cardiac output", "heart failure"]], "why": "Mural thrombus and low flow." },
+          { "p": "Hypercoagulable conditions", "k": [["hypercoag", "thrombophilia", "clotting"]], "why": "Linked to venous thrombosis." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does each form of intestinal ischaemia present?",
+        "tip": "Exam thinking: sudden vs after meals vs bloody diarrhoea.",
+        "points": [
+          { "p": "Acute: sudden severe pain out of proportion to examination, with AF", "k": [["out of proportion", "soft", "disproportion"]], "why": "The classic phrase." },
+          { "p": "Chronic: post-prandial 'abdominal angina', weight loss, food fear", "k": [["post-prandial", "postprandial", "after eating", "after meals", "angina"], ["weight"]], "why": "Sitophobia drives the weight loss." },
+          { "p": "Ischaemic colitis: crampy left-sided pain and bloody diarrhoea", "k": [["bloody", "blood"], ["diarrh"]], "why": "Splenic flexure most commonly affected." }
+        ]
+      },
+      {
+        "d": "diagnosis",
+        "q": "How does ischaemic colitis progress, and what are the late signs of mesenteric infarction?",
+        "tip": "Exam thinking: peritonism means the bowel is dying.",
+        "points": [
+          { "p": "Hyperactive phase: severe pain, frequent loose bloody stools", "k": [["hyperactive"]], "why": "First phase." },
+          { "p": "Paralytic phase: diffuse constant pain, distended abdomen", "k": [["paralytic"]], "why": "Bowel stops moving." },
+          { "p": "Shock phase", "k": [["shock"]], "why": "Fluid loss and sepsis." },
+          { "p": "Infarction: sudden bowel evacuation with blood, new AF; late guarding, peritonitis, shock", "k": [["guarding", "peritonitis", "peritonism"]], "why": "Late signs mean transmural infarction." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What are the first-line and gold-standard investigations, and what do they show?",
+        "tip": "Exam thinking: the blood gas supports, the CT angiogram confirms.",
+        "points": [
+          { "p": "ABG or VBG with lactate first-line", "k": [["abg", "vbg", "blood gas"], ["lactate"]], "why": "Sensitive indicator of ongoing ischaemia." },
+          { "p": "Metabolic acidosis: pH <7.35, HCO3 <22, with raised lactate", "k": [["acidosis", "ph", "bicarb", "hco3"]], "why": "Low pCO2 reflects respiratory compensation." },
+          { "p": "Gold standard: CT mesenteric angiography", "k": [["ct"], ["angio"]], "why": "Arterial phase CT." },
+          { "p": "Shows proximal vessel occlusion or vasoconstriction of the arcades", "k": [["occlu", "cut-off", "block", "vasoconstrict"]], "why": "Also shows bowel viability." }
+        ]
+      },
+      {
+        "d": "investigation",
+        "q": "What does an abdominal X-ray show in ischaemic colitis?",
+        "tip": "Exam thinking: a named sign question.",
+        "points": [
+          { "p": "Thumbprinting", "k": [["thumbprint", "thumb print", "thumb-print"]], "why": "A normal AXR does not exclude acute mesenteric ischaemia." },
+          { "p": "Caused by bowel wall (mucosal) oedema", "k": [["oedema", "edema", "swelling", "thicken"]], "why": "Submucosal haemorrhage and oedema." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "What is the initial and definitive management of acute mesenteric ischaemia?",
+        "tip": "Exam thinking: heparin, then theatre; peritonitis means resection.",
+        "points": [
+          { "p": "Urgent surgical review, ABCDE, NBM, IV fluids", "k": [["nbm", "nil by mouth", "fluid", "abcde"]], "why": "Resuscitate in parallel." },
+          { "p": "Broad-spectrum IV antibiotics and IV heparin", "k": [["heparin", "anticoag"]], "why": "Antibiotics for bacterial translocation." },
+          { "p": "Immediate laparotomy with resection of non-viable bowel", "k": [["laparotomy"], ["resect", "remov"]], "why": "Especially with peritonitis or sepsis." },
+          { "p": "Second-look laparotomy the next day", "k": [["relook", "re-look", "second look", "second-look"]], "why": "Checks remaining bowel viability." },
+          { "p": "Embolectomy if necrosis has not yet occurred", "k": [["embolectomy"]], "why": "Restores flow to viable bowel." }
+        ]
+      },
+      {
+        "d": "management",
+        "q": "How are chronic mesenteric ischaemia and ischaemic colitis managed?",
+        "tip": "Exam thinking: chronic = angioplasty; colitis = supportive.",
+        "points": [
+          { "p": "Chronic: percutaneous transluminal angioplasty plus risk factor modification", "k": [["angioplasty", "pta", "stent", "revascular"]], "why": "Surgery reserved for severe disease." },
+          { "p": "Ischaemic colitis: supportive care and antibiotics", "k": [["supportive", "conservative", "fluid"], ["antibiotic"]], "why": "Surgery only for severe cases." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why is pain out of proportion early, and why does lactate rise?",
+        "tip": "Exam thinking: visceral pain before parietal signs.",
+        "points": [
+          { "p": "Early visceral ischaemic pain before peritoneal signs develop", "k": [["visceral"]], "why": "The abdomen is soft at first." },
+          { "p": "Peritoneal signs only after transmural infarction and peritonitis", "k": [["transmural", "infarct", "full thickness"]], "why": "By then bowel is dead." },
+          { "p": "Lactate rises from anaerobic glycolysis in hypoxic bowel", "k": [["anaerob"]], "why": "Causes metabolic acidosis." }
+        ]
+      },
+      {
+        "d": "science",
+        "q": "Why are watershed areas vulnerable, and what follows prolonged ischaemia?",
+        "tip": "Exam thinking: two arteries meeting at their furthest branches.",
+        "points": [
+          { "p": "Splenic flexure and rectosigmoid junction are watershed areas", "k": [["splenic"], ["rectosigmoid", "watershed"]], "why": "Supplied by the most distal branches of SMA and IMA." },
+          { "p": "SMA and IMA territories meet there", "k": [["sma", "superior mesenteric"], ["ima", "inferior mesenteric"]], "why": "Most vulnerable to hypoperfusion." },
+          { "p": "Reperfusion injury and infarction cause necrosis, perforation and sepsis", "k": [["necros", "perforat", "sepsis", "reperfusion"]], "why": "Life-threatening." },
+          { "p": "Short bowel syndrome after extensive resection, and death", "k": [["short bowel"]], "why": "A long-term complication." }
+        ]
+      }
+    ]
+  },
+  "glossary": {
+    "mesenteric ischaemia": "Reduced blood flow through the mesenteric arteries to the bowel.",
+    "acute mesenteric ischaemia": "Sudden loss of bowel blood supply, usually from an embolus or thrombosis.",
+    "chronic mesenteric ischaemia": "Gradual narrowing of gut arteries causing pain after meals and weight loss.",
+    "ischaemic colitis": "Ischaemia of the colon causing crampy pain and bloody diarrhoea, often at the splenic flexure.",
+    "abdominal angina": "Pain after eating caused by gut arteries too narrow to meet digestive demand.",
+    "sitophobia": "Fear of eating because food brings on pain.",
+    "post-prandial": "After eating.",
+    "SMA": "Superior mesenteric artery: supplies the midgut from the duodenum to the distal transverse colon.",
+    "IMA": "Inferior mesenteric artery: supplies the hindgut from the distal transverse colon to the upper rectum.",
+    "superior mesenteric artery": "The artery supplying the small bowel and right colon; the usual site of embolus.",
+    "watershed": "An area at the edge of two arterial territories, most vulnerable when flow falls.",
+    "splenic flexure": "The bend of the colon near the spleen; a watershed between SMA and IMA.",
+    "rectosigmoid junction": "Where the sigmoid colon meets the rectum; a second watershed zone.",
+    "thumbprinting": "Rounded indentations of the bowel wall on X-ray caused by mucosal oedema.",
+    "embolus": "A clot or other material carried in the blood that blocks a distant artery.",
+    "embolectomy": "Surgical removal of an embolus from an artery.",
+    "thrombosis": "Formation of a clot inside a blood vessel.",
+    "AF": "Atrial fibrillation: an irregular heart rhythm that lets clots form in the left atrium.",
+    "atrial fibrillation": "An irregularly irregular heart rhythm; a major source of emboli.",
+    "PVD": "Peripheral vascular disease: atherosclerotic narrowing of limb arteries.",
+    "hypercoagulable": "Having blood that clots more easily than normal.",
+    "lactate": "A product of anaerobic metabolism; high levels signal tissue hypoxia.",
+    "anaerobic glycolysis": "Breaking down glucose without oxygen, producing lactate.",
+    "metabolic acidosis": "Low blood pH with low bicarbonate, from acid build-up such as lactate.",
+    "VBG": "Venous blood gas: a quick test of pH, bicarbonate and lactate.",
+    "ABG": "Arterial blood gas: measures pH, oxygen, carbon dioxide, bicarbonate and lactate.",
+    "CT angiography": "CT with timed IV contrast to show arteries; the gold standard here.",
+    "laparotomy": "Open surgery through a large abdominal incision.",
+    "relook laparotomy": "A planned second operation to check the bowel left behind is still alive.",
+    "percutaneous transluminal angioplasty": "Widening a narrowed artery with a balloon passed through the skin into the vessel.",
+    "transmural": "Through the full thickness of the bowel wall.",
+    "infarction": "Tissue death from loss of blood supply.",
+    "necrosis": "Death of tissue.",
+    "reperfusion injury": "Damage caused when blood flow returns to ischaemic tissue.",
+    "short bowel syndrome": "Malabsorption after removal of a large length of small bowel.",
+    "heparin": "An anticoagulant given IV to stop clots growing.",
+    "peritonitis": "Inflammation of the peritoneum, causing guarding and rigidity.",
+    "visceral pain": "Dull, poorly localised pain from the organs themselves.",
+    "NBM": "Nil by mouth."
+  }
+}
