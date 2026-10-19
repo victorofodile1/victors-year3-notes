@@ -1,0 +1,330 @@
+{
+  "id": "peritonitis",
+  "visuals": [
+    {
+      "d": "diagnosis",
+      "after": 0,
+      "type": "visual",
+      "title": "Common sources",
+      "visual": {
+        "kind": "tree",
+        "root": "Peritonitis",
+        "children": [
+          {
+            "label": "Perforation",
+            "items": [
+              "Peptic ulcer",
+              "Perforated bowel obstruction"
+            ]
+          },
+          {
+            "label": "Infection",
+            "items": [
+              "Appendicitis",
+              "Diverticulitis"
+            ]
+          },
+          {
+            "label": "Ischaemia",
+            "items": [
+              "Bowel ischaemia"
+            ]
+          },
+          {
+            "label": "No perforation",
+            "items": [
+              "SBP in ascites"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "d": "diagnosis",
+      "after": 1,
+      "type": "visual",
+      "title": "From bad to worse",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "t": "Early",
+            "x": "Severe pain, lies still, worse on movement"
+          },
+          {
+            "t": "Then",
+            "x": "Guarding, rebound, rigid board-like abdomen"
+          },
+          {
+            "t": "Systemic",
+            "x": "Fever, tachycardia, raised markers"
+          },
+          {
+            "t": "Late",
+            "x": "Hypotension, septic shock"
+          }
+        ]
+      }
+    },
+    {
+      "d": "diagnosis",
+      "after": 2,
+      "type": "compare",
+      "title": "Free air on X-ray",
+      "head": [
+        "",
+        "Normal bowel",
+        "Rigler's sign"
+      ],
+      "rows": [
+        [
+          "Air inside lumen",
+          "Yes",
+          "Yes"
+        ],
+        [
+          "Air outside wall",
+          "No",
+          "Yes"
+        ],
+        [
+          "Wall seen",
+          "Only inner edge",
+          "Both sides outlined"
+        ]
+      ]
+    },
+    {
+      "d": "diagnosis",
+      "after": 3,
+      "type": "visual",
+      "title": "Diagnosing SBP",
+      "visual": {
+        "kind": "scale",
+        "title": "Ascitic neutrophil count",
+        "min": 0,
+        "max": 600,
+        "unit": "cells/µl",
+        "bands": [
+          [
+            0,
+            250,
+            "not SBP",
+            "ok"
+          ],
+          [
+            250,
+            600,
+            "SBP",
+            "bad"
+          ]
+        ],
+        "value": 400,
+        "label": "400 cells/µl",
+        "caption": "Over 250 neutrophils/µl on paracentesis confirms SBP; E. coli is the commonest organism."
+      }
+    },
+    {
+      "d": "investigation",
+      "after": 1,
+      "type": "visual",
+      "title": "Erect chest X-ray",
+      "visual": {
+        "kind": "cxr",
+        "findings": [
+          {
+            "type": "free_air",
+            "side": "both"
+          }
+        ],
+        "caption": "Free air under the diaphragm when perforation is suspected."
+      }
+    },
+    {
+      "d": "investigation",
+      "after": 0,
+      "type": "flow",
+      "title": "Finding the cause",
+      "nodes": [
+        "ABCDE, surgical review, bloods",
+        "Erect CXR if perforation suspected",
+        "CT abdomen/pelvis",
+        "Cause identified"
+      ]
+    },
+    {
+      "d": "management",
+      "after": 0,
+      "type": "flow",
+      "title": "Resuscitate then fix the source",
+      "nodes": [
+        "NBM, IV fluids, oxygen",
+        "Broad-spectrum IV antibiotics",
+        "Analgesia, NG tube if needed",
+        "Source control: surgery, drainage, repair"
+      ]
+    },
+    {
+      "d": "management",
+      "after": 3,
+      "type": "visual",
+      "title": "Signs of septic shock",
+      "visual": {
+        "kind": "keyfacts",
+        "facts": [
+          {
+            "big": "Low BP",
+            "label": "Hypotension"
+          },
+          {
+            "big": "Sepsis",
+            "label": "Infection with organ dysfunction"
+          },
+          {
+            "big": "Low urine",
+            "label": "Reduced urine output"
+          },
+          {
+            "big": "Lactate up",
+            "label": "Rising lactate"
+          }
+        ]
+      }
+    },
+    {
+      "d": "management",
+      "after": 2,
+      "type": "compare",
+      "title": "Surgical vs spontaneous",
+      "head": [
+        "",
+        "Perforation or infection",
+        "SBP"
+      ],
+      "rows": [
+        [
+          "Cause",
+          "Perforation or abdominal infection",
+          "Ascites, no perforation"
+        ],
+        [
+          "Diagnosis",
+          "Clinical plus CT",
+          "Paracentesis, neutrophils >250"
+        ],
+        [
+          "After treatment",
+          "Source control, often surgery",
+          "Ciprofloxacin prophylaxis"
+        ]
+      ]
+    },
+    {
+      "d": "science",
+      "after": 0,
+      "type": "flow",
+      "title": "Perforation to peritonitis",
+      "nodes": [
+        "Hollow viscus perforates",
+        "GI contents released",
+        "Bacterial contamination or chemical irritation",
+        "Peritoneal inflammation"
+      ]
+    },
+    {
+      "d": "science",
+      "after": 1,
+      "type": "visual",
+      "title": "Local to generalised",
+      "visual": {
+        "kind": "cycle",
+        "centre": "Not contained",
+        "steps": [
+          "Localised peritonitis",
+          "Spreads across peritoneum",
+          "Fluid shifts (third-spacing)",
+          "Systemic inflammatory response",
+          "Septic shock"
+        ]
+      }
+    },
+    {
+      "d": "science",
+      "after": 2,
+      "type": "compare",
+      "title": "Two signs, two mechanisms",
+      "head": [
+        "",
+        "Guarding",
+        "Rebound tenderness"
+      ],
+      "rows": [
+        [
+          "What happens",
+          "Abdominal wall muscles tense",
+          "Pain when pressure is released"
+        ],
+        [
+          "Why",
+          "Reflex contraction",
+          "Parietal peritoneum irritated"
+        ]
+      ]
+    },
+    {
+      "d": "science",
+      "after": 3,
+      "type": "visual",
+      "title": "SBP without a hole",
+      "visual": {
+        "kind": "organ",
+        "organs": [
+          "liver",
+          "bowel",
+          "blood"
+        ]
+      },
+      "text": "Cirrhosis causes ascites; bacteria reach it by translocation across the gut wall or through the blood."
+    }
+  ],
+  "glossary": {
+    "peritoneal lining": "The thin membrane lining the abdominal cavity and covering the organs.",
+    "intra-abdominal infection": "Infection inside the abdominal cavity, such as an abscess or appendicitis.",
+    "perforated duodenal ulcer": "An ulcer in the first part of the small bowel that has burst through the wall.",
+    "bowel obstruction": "A blockage stopping bowel contents passing along.",
+    "bowel ischaemia": "Lack of blood supply to the bowel.",
+    "appendicitis": "Inflammation of the appendix.",
+    "inflammatory markers": "Blood tests such as WCC and CRP that rise with inflammation.",
+    "distension": "Swelling of the abdomen.",
+    "tachycardia": "Heart rate above 100 beats per minute.",
+    "hypotension": "Low blood pressure.",
+    "instrumentation": "Passing instruments into the body, such as an endoscope, which can perforate the bowel.",
+    "AXR": "Abdominal X-ray.",
+    "luminal": "On the inside of the hollow bowel.",
+    "spontaneous bacterial peritonitis": "Infection of ascitic fluid with no perforation or surgical cause, seen in cirrhosis.",
+    "neutrophil": "The commonest white blood cell, which fights bacterial infection.",
+    "cells/µl": "Cells per microlitre, the unit for counting cells in a fluid sample.",
+    "ascitic fluid culture": "Growing the ascitic fluid in the lab to identify the bacteria.",
+    "CT": "Computed tomography: a cross-sectional X-ray scan.",
+    "gold standard": "The best available test for confirming the diagnosis.",
+    "surgical review": "Assessment by the surgical team.",
+    "free air under diaphragm": "Gas escaped from the bowel collecting under the diaphragm on an upright film.",
+    "IV fluids": "Fluids given through a vein.",
+    "broad-spectrum IV antibiotics": "Antibiotics covering many bacteria, given through a vein.",
+    "analgesia": "Pain relief.",
+    "drainage": "Letting out pus or fluid, often with a tube.",
+    "prophylaxis": "Treatment given to prevent a problem coming back.",
+    "sepsis": "Life-threatening organ dysfunction from the body's response to infection.",
+    "urine output": "How much urine is passed; falls as the kidneys are poorly perfused.",
+    "resuscitation": "Urgent treatment to restore breathing, circulation and blood pressure.",
+    "hollow viscus": "A hollow organ such as the stomach or bowel.",
+    "chemical irritation": "Inflammation caused by acid or bile rather than bacteria.",
+    "bacterial contamination": "Bacteria entering a normally sterile space.",
+    "localised peritonitis": "Peritoneal inflammation limited to one area, such as around the appendix.",
+    "generalised peritonitis": "Inflammation spread across the whole peritoneum.",
+    "systemic inflammatory response": "Body-wide inflammation with fever, fast heart rate and leaky vessels.",
+    "reflex contraction": "Automatic tightening of a muscle without conscious control.",
+    "haematogenous spread": "Spread of infection through the bloodstream.",
+    "gut wall": "The layers of the bowel wall between the lumen and the peritoneal cavity."
+  }
+}

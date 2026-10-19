@@ -746,6 +746,237 @@ ol.gnotes li::before{content:counter(g);transform:none;width:18px;height:18px;to
 .gq-n{flex:none;width:22px;height:22px;border-radius:50%;background:var(--accent);color:#fff;font-size:11.5px;font-weight:700;display:flex;align-items:center;justify-content:center}
 .gtest .rq .a{margin-left:30px}
 .gtest .rq .tap{margin-left:30px}
+
+/* ---------- v8: walkthrough ---------- */
+.showcase{position:fixed;inset:0;z-index:95;background:var(--bg);display:flex;flex-direction:column;animation:fade .25s ease}
+.sc-top{display:flex;align-items:center;gap:12px;max-width:760px;width:100%;margin:0 auto;padding:14px 16px 0}
+.sc-dots{flex:1;display:flex;gap:5px}
+.sc-dots i{flex:1;height:4px;border-radius:2px;background:var(--border)}
+.sc-dots i.done{background:color-mix(in srgb,var(--accent) 45%,var(--border))}
+.sc-dots i.on{background:var(--accent)}
+.sc-stage{flex:1;overflow-y:auto}
+.sc-scene{max-width:760px;margin:0 auto;padding:20px 16px 24px;animation:slideIn .4s cubic-bezier(.2,.8,.2,1)}
+.sc-step{font-size:12.5px;color:var(--ink-faint);font-weight:600}
+.sc-scene h2{font-family:var(--serif);font-size:28px;margin:4px 0 8px;line-height:1.15}
+.sc-scene > p{font-size:15.5px;color:var(--ink-soft);margin:0 0 18px;max-width:620px}
+.sc-art{border:1px solid var(--border);border-radius:14px;background:var(--panel-2);padding:18px;min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.sc-art > div{width:100%;max-width:520px}
+.sc-nav{display:flex;gap:8px;max-width:760px;width:100%;margin:0 auto;padding:12px 16px calc(14px + env(safe-area-inset-bottom));border-top:1px solid var(--border)}
+.sc-nav [data-x=next]{margin-left:auto;min-width:110px;height:42px}
+.sc-nav .btn{height:42px}
+/* shared entrance: anything with --d appears after its delay when the scene plays */
+.sc-scene [style*="--d"]{opacity:0}
+.sc-scene.play [style*="--d"]{animation:rise .5s cubic-bezier(.2,.8,.2,1) var(--d) forwards}
+/* 1 cloud */
+.sc-cloud{text-align:center}
+.sc-cloud svg{width:150px;margin:0 auto}
+.sc-c1{fill:var(--accent-soft);stroke:var(--accent);stroke-width:3}
+.sc-tick{fill:none;stroke:var(--ok);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:60;stroke-dashoffset:60}
+.sc-scene.play .sc-tick{animation:draw .8s .4s ease forwards}
+.sc-devs{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.sc-dev{border:1px solid var(--border);background:var(--panel);border-radius:8px;padding:6px 12px;font-size:13px;opacity:0}
+.sc-scene.play .sc-dev{animation:rise .5s forwards}
+.sc-scene.play .sc-dev:nth-child(1){animation-delay:.9s}.sc-scene.play .sc-dev:nth-child(2){animation-delay:1.1s}.sc-scene.play .sc-dev:nth-child(3){animation-delay:1.3s}
+/* 2 home */
+.sc-home{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.sc-due{grid-column:span 3;display:flex;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:10px 12px}
+.sc-due:nth-child(2){grid-column:span 3}
+.sc-due b{font-family:var(--serif);font-size:28px;color:var(--accent);min-width:34px}
+.sc-tile{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 10px;font-weight:650;font-size:13.5px;text-align:center}
+/* 3 why */
+.sc-why{display:grid;gap:10px}
+.sc-w{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px 14px}
+.sc-w b{display:block;font-size:15px;margin-bottom:4px}
+.sc-w span,.sc-w small{font-size:13.5px;color:var(--ink-soft)}
+.sc-flow{display:flex;flex-wrap:wrap;gap:6px}
+.sc-flow i{font-style:normal;font-size:12.5px;font-weight:650;border:1px solid var(--border);border-radius:6px;padding:4px 9px}
+.sc-scene.play .sc-flow i{animation:litUp .5s var(--d) forwards}
+@keyframes litUp{to{opacity:1;background:var(--accent);color:#fff;border-color:var(--accent)}}
+.sc-bars div{display:grid;grid-template-columns:96px 1fr 38px;align-items:center;gap:8px;font-size:12.5px;margin:4px 0}
+.sc-bars i{height:9px;border-radius:5px;background:var(--accent);width:0;opacity:1 !important}
+.sc-scene.play .sc-bars i{animation:grow .8s var(--d) cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes grow{to{width:var(--w)}}
+/* 4 lesson */
+.sc-lesson{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px}
+.sc-pt{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.sc-pt span{width:30px;height:30px;border-radius:50%;background:var(--panel-2);border:1px solid var(--border);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sc-pt small{color:var(--ink-faint);font-size:12px}
+.sc-bul{padding:6px 0 6px 16px;border-bottom:1px solid var(--border);font-size:14px;position:relative}
+.sc-bul::before{content:"";position:absolute;left:2px;top:13px;width:6px;height:6px;border-radius:50%;background:var(--dx)}
+.sc-vit{display:flex;gap:6px;margin:8px 0}
+.sc-vit i{font-style:normal;font-size:12px;border:1px solid var(--border);border-radius:5px;padding:2px 7px}
+.sc-ask b{display:block;font-size:13.5px;margin:6px 0}
+.sc-o{border:1px solid var(--border);border-radius:7px;padding:6px 10px;font-size:13px;margin-bottom:5px}
+.sc-scene.play .sc-o.ok{animation:okPop .5s 3.1s forwards}
+@keyframes okPop{to{background:var(--ok-soft);border-color:var(--ok);color:var(--ok);font-weight:650}}
+/* 5 SBA */
+.sc-sba{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px}
+.sc-track{display:flex;gap:4px;margin-bottom:10px}
+.sc-track span{flex:1;text-align:center;font-size:11.5px;font-weight:700;border-radius:5px;padding:4px 0;background:var(--panel-2);color:var(--ink-faint);opacity:1 !important}
+.sc-scene.play .sc-track span{animation:litUp .4s var(--d) forwards}
+.sc-sba p{font-size:14px;margin:0 0 10px}
+.sc-sba em{font-style:normal;opacity:1 !important}
+.sc-scene.play .sc-sba em{animation:clueOn .4s var(--d) forwards}
+@keyframes clueOn{to{color:var(--clue);font-weight:700}}
+.sc-op{display:flex;gap:8px;align-items:center;border:1px solid var(--border);border-radius:7px;padding:6px 10px;font-size:13px;margin-bottom:5px;opacity:1 !important}
+.sc-op b{width:18px;font-size:12px;color:var(--ink-soft)}
+.sc-op small{margin-left:auto;color:var(--bad);font-size:11.5px;opacity:0}
+.sc-scene.play .sc-op.x{animation:strike .4s var(--d) forwards}
+.sc-scene.play .sc-op.x small{animation:rise .3s var(--d) forwards}
+.sc-scene.play .sc-op.ok{animation:okPop .5s 3.4s forwards}
+@keyframes strike{to{color:var(--ink-faint);text-decoration:line-through;background:var(--panel-2)}}
+/* 6 blurt */
+.sc-blurt{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px}
+.sc-type{border:1px solid var(--border);border-radius:8px;padding:10px;min-height:44px;font-size:14px}
+.sc-caret{display:inline-block;width:2px;height:16px;background:var(--ink);vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sc-res{display:flex;flex-direction:column;gap:4px;margin:10px 0;font-size:13.5px;font-weight:600}
+.sc-res .ok{color:var(--ok)} .sc-res .bad{color:var(--bad)}
+.sc-line div{display:grid;grid-template-columns:1fr 70px;gap:8px;align-items:center;margin:4px 0;font-size:12.5px}
+.sc-line i{height:9px;border-radius:5px;background:var(--dx);width:0;justify-self:start}
+.sc-scene.play .sc-line i{animation:grow .7s var(--d) forwards}
+/* 7 bank */
+.sc-bank{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.sc-bk{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:10px;display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.sc-bk svg{width:34px;height:34px;flex:none}
+.sc-bk .bg{fill:none;stroke:var(--panel-2);stroke-width:5}
+.sc-bk .fg{fill:none;stroke:var(--ok);stroke-width:5;stroke-linecap:round;stroke-dasharray:94.2;stroke-dashoffset:94.2;transform:rotate(-90deg);transform-origin:50% 50%}
+.sc-scene.play .sc-bk .fg{animation:ring 1.2s .6s ease forwards}
+@keyframes ring{to{stroke-dashoffset:calc(94.2 - 94.2 * var(--p) / 100)}}
+/* 8 corrections */
+.sc-corr{position:relative;min-height:220px}
+.sc-card{position:absolute;left:0;top:0;width:62%;background:var(--panel);border:1px solid var(--border);border-left:4px solid var(--bad);border-radius:8px;padding:10px;font-size:13px}
+.sc-card small{display:block;color:var(--bad);margin-top:4px}
+.sc-scene.play .sc-card{animation:file 1.4s .6s cubic-bezier(.5,0,.3,1) forwards}
+@keyframes file{to{transform:translate(55%,120px) scale(.35);opacity:0}}
+.sc-folder{position:absolute;right:0;bottom:0;width:60%;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:10px}
+.sc-folder b{display:block;font-family:var(--serif);margin-bottom:6px}
+.sc-folder i{display:block;font-style:normal;font-size:12.5px;padding:3px 0;border-bottom:1px dashed var(--border)}
+.sc-scene.play .sc-folder i.hit{animation:okPop .5s 2s forwards}
+.sc-prog{display:grid;gap:10px}
+.sc-pr{display:grid;grid-template-columns:90px 1fr 34px;gap:10px;align-items:center;font-size:13.5px;background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:8px 10px}
+.sc-pr .bar{margin:0;height:8px}
+.sc-pr .bar i{width:0;opacity:1 !important}
+.sc-scene.play .sc-pr .bar i{animation:grow .8s var(--d) forwards}
+/* 9 notes */
+.sc-notes{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:14px;position:relative}
+.sc-notes b{font-family:var(--serif);font-size:16px}
+.sc-notes u{text-decoration:none;border-bottom:1.5px dotted var(--accent)}
+.sc-tip{background:var(--ink);color:var(--panel);border-radius:8px;padding:8px 10px;font-size:13px;opacity:0;margin-top:6px}
+.sc-scene.play .sc-tip{animation:rise .4s 1s forwards}
+.sc-ready{display:flex;flex-direction:column;gap:10px;align-items:center}
+@media (max-width:520px){.sc-scene h2{font-size:23px}.sc-bank{grid-template-columns:repeat(2,1fr)}.sc-art{padding:12px}}
+
+/* ---------- v9: more drawings ---------- */
+.organ{max-width:300px;margin:0 auto}
+.organ .silh{fill:var(--panel);stroke:var(--border-strong);stroke-width:1.5;stroke-linejoin:round}
+.organ .org{fill:var(--c,var(--accent));stroke:var(--c,var(--accent));opacity:0;animation:orgIn .6s forwards}
+.organ .org *{fill-opacity:.55}
+@keyframes orgIn{0%{opacity:0;transform:scale(.6);transform-origin:center}70%{opacity:1}100%{opacity:1}}
+.organ .olbl{opacity:0;animation:rise .4s forwards}
+.organ .olbl text{font:600 12px Inter,sans-serif;fill:var(--ink)}
+.cycle{max-width:420px;margin:0 auto}
+.cycle .carc{fill:none;stroke:var(--c,var(--accent));stroke-width:2.5;opacity:0;animation:rise .4s forwards}
+.cycle .cam{fill:var(--c,var(--accent))}
+.cycle .ccen{font:700 13px Inter,sans-serif;fill:var(--ink-soft)}
+.cnode{opacity:0;animation:rise .4s forwards;height:44px;display:flex;align-items:center;justify-content:center;text-align:center;font:600 11.5px/1.25 Inter,sans-serif;color:var(--ink);background:var(--panel);border:1.5px solid var(--c,var(--accent));border-radius:8px;padding:2px 5px;box-sizing:border-box}
+.tree{display:flex;flex-direction:column;align-items:center;gap:14px}
+.troot{background:var(--c,var(--accent));color:#fff;font-weight:700;border-radius:8px;padding:8px 14px;font-size:14px;text-align:center;position:relative}
+.troot::after{content:"";position:absolute;left:50%;top:100%;height:14px;border-left:2px solid var(--border-strong)}
+.tkids{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;width:100%;border-top:2px solid var(--border-strong);padding-top:12px}
+.tkid{background:var(--panel);border:1px solid var(--border);border-top:3px solid var(--c,var(--accent));border-radius:8px;padding:8px 10px}
+.tk-h{font-weight:700;font-size:13.5px;margin-bottom:4px}
+.tk-i{font-size:13px;color:var(--ink-soft);padding:2px 0}
+.tline{position:relative;padding-left:4px}
+.te{display:grid;grid-template-columns:88px 18px 1fr;align-items:start;gap:6px;padding:6px 0;font-size:14px}
+.te-t{font-weight:700;color:var(--c,var(--accent));text-align:right;font-size:13px;padding-top:1px}
+.te-d{width:12px;height:12px;border-radius:50%;background:var(--c,var(--accent));margin-top:4px;position:relative}
+.te:not(:last-child) .te-d::after{content:"";position:absolute;left:5px;top:12px;height:calc(100% + 20px);border-left:2px solid var(--border)}
+.kfacts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.kf{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center}
+.kf b{display:block;font-family:var(--serif);font-size:24px;color:var(--c,var(--accent));line-height:1.1}
+.kf span{font-size:12.5px;color:var(--ink-soft)}
+
+/* ---------- v9: step-through notes, editing, progress ---------- */
+.nb-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.nb-head .btn{margin-left:auto;height:30px;font-size:12.5px}
+.nb-head small{color:var(--ink-faint);font-size:12px;font-weight:600}
+.ed-h{width:100%;height:40px;border:1px solid var(--border);border-radius:8px;padding:0 10px;font:600 15px Inter,sans-serif;background:var(--panel);color:var(--ink);margin:8px 0}
+.ed-list{display:flex;flex-direction:column;gap:6px;margin-bottom:8px}
+.ed-row{display:flex;gap:6px;align-items:flex-start}
+.ed-row textarea{flex:1;border:1px solid var(--border);border-radius:8px;padding:7px 9px;font:14px/1.45 Inter,sans-serif;background:var(--panel);color:var(--ink);resize:vertical}
+.ed-row .icon-btn{flex:none;height:34px;width:34px;font-size:18px}
+.ed-act{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.bandbar{display:flex;height:10px;border-radius:5px;overflow:hidden;margin-top:12px;background:var(--panel-2)}
+.bandbar i{display:block;height:100%}
+.bandkey{display:flex;flex-wrap:wrap;gap:12px;font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+.bandkey i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+.b-weak{background:var(--bad);stroke:var(--bad)} .b-developing{background:var(--warn);stroke:var(--warn)} .b-secure{background:var(--ix);stroke:var(--ix)} .b-strong{background:var(--ok);stroke:var(--ok)} .b-not-started{background:var(--border);stroke:var(--border)}
+.bandtag{font-weight:700;background:none !important}
+.bandtag.b-weak{color:var(--bad)} .bandtag.b-developing{color:var(--warn)} .bandtag.b-secure{color:var(--ix)} .bandtag.b-strong{color:var(--ok)} .bandtag.b-not-started{color:var(--ink-faint)}
+.plist{margin-top:12px}
+.prow{background:var(--panel);border:1px solid var(--border);border-radius:10px;margin-bottom:8px}
+.prow summary{display:flex;align-items:center;gap:12px;padding:10px 12px;cursor:pointer;list-style:none}
+.prow summary::-webkit-details-marker{display:none}
+.pring{width:46px;height:46px;flex:none}
+.pring .bg{fill:none;stroke:var(--panel-2);stroke-width:4}
+.pring .fg{fill:none;stroke-width:4;stroke-linecap:round;transform:rotate(-90deg);transform-origin:50% 50%;background:none !important}
+.pring text{font:700 10px Inter,sans-serif;fill:var(--ink);text-anchor:middle;dominant-baseline:central}
+.pmeta{flex:1;min-width:0}
+.pmeta b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pmeta small{font-size:12px;color:var(--ink-faint)}
+.pdoms{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;margin-top:5px}
+.pdoms i{height:5px;border-radius:3px;background:var(--panel-2);overflow:hidden;display:block}
+.pdoms i b{display:block;height:100%;background:var(--c)}
+.pdoms .d-diagnosis{--c:var(--dx)} .pdoms .d-investigation{--c:var(--ix)} .pdoms .d-management{--c:var(--mx)} .pdoms .d-science{--c:var(--sci)}
+.pdetail{padding:0 12px 12px;border-top:1px solid var(--border)}
+.pd{display:grid;grid-template-columns:110px 40px 1fr;gap:8px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--border)}
+.pd b{color:var(--c);font-size:13.5px}
+.pd .pdn{font-family:var(--serif);font-weight:700;font-size:18px}
+.pd small{color:var(--ink-soft);font-size:12.5px}
+.ptips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.ptips .btn{height:34px;font-size:13px}
+
+/* ---------- v10: visual or plain notes ---------- */
+.card-head{flex-wrap:wrap}
+.nchoose{display:inline-flex;border:1px solid var(--border);border-radius:6px;overflow:hidden;flex:none}
+.nchoose button{border:0;background:var(--panel);font-size:12px;font-weight:600;padding:4px 9px;cursor:pointer;color:var(--ink-soft)}
+.nchoose button + button{border-left:1px solid var(--border)}
+.nchoose button:hover{background:var(--panel-2);color:var(--ink)}
+@media (max-width:560px){.ccat{display:none}}
+.plain-bar{display:flex;align-items:center;gap:10px;justify-content:space-between;margin:6px 0 2px;font-size:13px;color:var(--ink-soft)}
+.plain-bar .btn{height:32px;font-size:12.5px}
+.sc-choice{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sc-ch{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:12px;text-align:center}
+.sc-ch b{font-family:var(--serif);font-size:18px}
+.sc-ch small{display:block;color:var(--ink-soft);font-size:12.5px;margin-top:6px}
+.sc-mini{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.sc-mini i{display:block;height:12px;border-radius:4px;background:var(--panel-2);border-left:3px solid var(--dx)}
+.sc-mini i.pic{height:44px;background:color-mix(in srgb,var(--dx) 18%,var(--panel));border:0}
+.sc-mini.plain i{height:8px;border-left:0;background:var(--border)}
+
+/* ---------- v11: corrections notebook ---------- */
+.nb-btn{gap:6px;margin-left:auto}
+.nb-btn span{font-size:12.5px;font-weight:600}
+@media (max-width:420px){.nb-btn span{display:none}}
+.nbrow{width:100%;text-align:left;cursor:pointer}
+.nbrow:hover{border-color:var(--border-strong)}
+.nbgo{flex:none;font-size:13px;font-weight:600;color:var(--accent)}
+.nbdoms{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.nbdoms i{font-style:normal;font-size:11.5px;font-weight:600;color:var(--c);background:color-mix(in srgb,var(--c) 10%,var(--panel));border-radius:5px;padding:1px 7px}
+.nbdoms .d-diagnosis{--c:var(--dx)} .nbdoms .d-investigation{--c:var(--ix)} .nbdoms .d-management{--c:var(--mx)} .nbdoms .d-science{--c:var(--sci)}
+.nb-hero h2{font-size:24px}
+.nbcards{display:grid;gap:10px}
+@media (min-width:760px){.gsec .nbcards{grid-template-columns:1fr 1fr}}
+.ccard.nb{border-left:4px solid var(--c,var(--accent));border-radius:10px}
+.nbp-d{--c:var(--accent)} .nbp-d.d-diagnosis{--c:var(--dx)} .nbp-d.d-investigation{--c:var(--ix)} .nbp-d.d-management{--c:var(--mx)} .nbp-d.d-science{--c:var(--sci)}
+.nbp-d > b{display:block;color:var(--c);font-size:13px;margin:8px 0 6px}
+.nbp-list{max-height:55vh;overflow-y:auto}
+.cc-key{font-size:15px;font-weight:650;color:var(--c,var(--accent));margin:4px 0}
+.cc-you{font-size:12.5px;color:var(--ink-faint);margin:2px 0 6px}
+.tag.src.ext{background:color-mix(in srgb,var(--accent) 12%,var(--panel));color:var(--accent-ink)}
+.ed-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.cc-act .cc-due{font-size:12.5px;color:var(--ink-soft);align-self:center;margin-right:4px}
 </style>
 </head>
 <body>
@@ -763,8 +994,10 @@ ol.gnotes li::before{content:counter(g);transform:none;width:18px;height:18px;to
       <button data-mode="notes" role="tab">Notes</button>
       <button data-mode="learn" role="tab">Learn</button>
       <button data-mode="blurt" role="tab">Blurt</button>
+      <button data-mode="bank" role="tab">Bank</button>
       <button data-mode="practice" role="tab">Practice</button>
       <button data-mode="corr" role="tab">Corrections</button>
+      <button data-mode="progress" role="tab">Progress</button>
     </div>
     <div class="controls" id="controls">
       <div class="search">
@@ -780,6 +1013,8 @@ ol.gnotes li::before{content:counter(g);transform:none;width:18px;height:18px;to
 <div class="wrap">
   <div id="homeView" class="hidden"></div>
   <div id="blurtView" class="hidden"></div>
+  <div id="bankView" class="hidden"></div>
+  <div id="progressView" class="hidden"></div>
   <div id="learnHero" class="learn-hero hidden"></div>
   <div class="count-line" id="countLine"></div>
   <div id="cardList"></div>
@@ -826,7 +1061,7 @@ const store = {
   get(k, fallback=null){ try{ const v = localStorage.getItem(k); return v == null ? fallback : JSON.parse(v); }catch(e){ return fallback; } },
   set(k, v, quiet){
     try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){}
-    if(!quiet && /^y3\.(progress|corr|ticks|arena|srs)\./.test(k) && window.__cloudTouch) window.__cloudTouch();
+    if(!quiet && /^y3\.(progress|corr|ticks|arena|srs|notes|nread|ev)\./.test(k) && window.__cloudTouch) window.__cloudTouch();
   },
   del(k){ try{ localStorage.removeItem(k); }catch(e){} },
 };
@@ -844,7 +1079,7 @@ const SUPABASE_URL = 'https://flqiptnqmlrvipgfnppd.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_AqiML1jmcDOOAf75a0GbXg_phNDsKpT';
 const USER_DOMAIN = 'year3notes.app'; // usernames become username@year3notes.app behind the scenes; no emails are sent
 const SB = (SUPABASE_URL && SUPABASE_ANON_KEY && window.supabase) ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
-const USER_KEYS = ['progress', 'corr', 'ticks', 'arena', 'srs'];
+const USER_KEYS = ['progress', 'corr', 'ticks', 'arena', 'srs', 'notes', 'nread', 'ev'];
 const emailFor = u => `${u}@${USER_DOMAIN}`;
 function cloudMsg(err){
   const m = String((err && err.message) || err || '');
@@ -1008,6 +1243,8 @@ async function loadReady(){
     const g = await fetch('lessons/glossary.json', {cache:'no-cache'});
     if(g.ok) setGlossary(await g.json());
   }catch(e){}
+  await loadBankIndex();
+  await loadNotesVisIndex();
 }
 let GLOSS = {}, GLOSS_RE = null;
 function setGlossary(obj){
@@ -1117,7 +1354,8 @@ function buildCard(d){
   card.dataset.id = d.id;
   const head = document.createElement('div');
   head.className = 'card-head';
-  head.innerHTML = `<span class="chev"></span><span class="cname">${escapeHtml(d.name)}</span><span class="ccat">${escapeHtml(d.category)}</span>`;
+  head.innerHTML = `<span class="chev"></span><span class="cname">${escapeHtml(d.name)}</span><span class="ccat">${escapeHtml(d.category)}</span>
+    <span class="nchoose" role="group" aria-label="How to read these notes"><button data-ns="visual" title="Step through with diagrams">Visual</button><button data-ns="plain" title="All the notes on one page">Plain</button></span>`;
   const body = document.createElement('div');
   body.className = 'card-body';
   const inner = document.createElement('div');
@@ -1139,7 +1377,13 @@ function buildCard(d){
     card.classList.toggle('open', willOpen);
     body.style.maxHeight = willOpen ? body.scrollHeight + 'px' : '0px';
   }
-  head.addEventListener('click', () => toggle());
+  head.addEventListener('click', e => {
+    const b = e.target.closest('[data-ns]');
+    const style = b ? b.dataset.ns : store.get('y3.nstyle', 'visual');
+    if(b) store.set('y3.nstyle', style);
+    if(style === 'visual'){ if(card.classList.contains('open')) toggle(false); location.hash = 'notes/' + d.id; }
+    else toggle();
+  });
   card._toggle = toggle;
   card._rebuild = () => { built = false; if(card.classList.contains('open')){ card.classList.remove('open'); toggle(true); } };
   return card;
@@ -1181,29 +1425,37 @@ for(const d of sorted){
 }
 
 // ---------- mode ----------
-const MODES = ['home', 'notes', 'learn', 'blurt', 'practice', 'corr'];
+const MODES = ['home', 'notes', 'learn', 'blurt', 'bank', 'practice', 'corr', 'progress'];
 let mode = 'home'; // always open on the home screen so due reviews are the first thing seen
 function setMode(m, save=true){
+  if(m !== 'corr') corrCond = null;
   mode = m;
   if(save) store.set('y3.mode', m);
   document.querySelectorAll('#modeSeg button').forEach(b => b.classList.toggle('on', b.dataset.mode === m));
   cardList.classList.toggle('hidden', m !== 'notes');
-  $('#expandBtn').classList.toggle('hidden', m !== 'notes');
+  $('#expandBtn').classList.add('hidden');
   learnList.classList.toggle('hidden', m !== 'learn');
   $('#learnHero').classList.toggle('hidden', m !== 'learn');
   $('#practiceView').classList.toggle('hidden', m !== 'practice');
   $('#homeView').classList.toggle('hidden', m !== 'home');
   $('#blurtView').classList.toggle('hidden', m !== 'blurt');
+  $('#bankView').classList.toggle('hidden', m !== 'bank');
+  $('#progressView').classList.toggle('hidden', m !== 'progress');
+  if(m === 'progress') renderProgressView();
+  if(m === 'bank') renderBankView();
   $('#controls').classList.toggle('hidden', m === 'home');
   if(m === 'home') renderHome();
   if(m === 'blurt') renderBlurtView();
   $('#corrView').classList.toggle('hidden', m !== 'corr');
   countLine.classList.toggle('hidden', m !== 'notes' && m !== 'learn');
+  $('#controls').classList.toggle('hidden', m === 'home');
   if(m === 'learn') refreshLearn();
   applyFilter();
 }
 function refreshViews(){
+  if(mode === 'progress') renderProgressView();
   if(mode === 'home') renderHome();
+  if(mode === 'bank') renderBankView();
   if(mode === 'blurt') renderBlurtView();
   if(mode === 'learn') refreshLearn();
   if(mode === 'practice') renderPracticeView();
@@ -1254,6 +1506,8 @@ function applyFilter(){
   if(mode === 'practice') renderPracticeView();
   if(mode === 'corr') renderCorrView();
   if(mode === 'blurt') renderBlurtView();
+  if(mode === 'bank') renderBankView();
+  if(mode === 'progress') renderProgressView();
   countLine.textContent = shown === DATA.length ? `Showing all ${DATA.length} conditions` : `Showing ${shown} of ${DATA.length} conditions`;
   emptyMsg.hidden = shown !== 0;
 }
@@ -1264,6 +1518,8 @@ $('#expandBtn').addEventListener('click', () => {
   for(const el of cardEls.values()) if(!el.hidden) el._toggle(anyClosed);
 });
 document.addEventListener('click', e => {
+  const v = e.target.closest('[data-visual]');
+  if(v){ e.stopPropagation(); store.set('y3.nstyle', 'visual'); location.hash = 'notes/' + v.dataset.visual; return; }
   const b = e.target.closest('[data-learn]');
   if(b){ e.stopPropagation(); location.hash = 'learn/' + b.dataset.learn; }
 });
@@ -1291,7 +1547,9 @@ function accountModal({welcome=false, onDone}={}){
       <h2>Signed in as ${escapeHtml(u)}</h2>
       <p>${SB ? 'Your progress is saved to your account, so it is there on any device you log in on' : 'Your progress is saved on this device'}${n ? ` (${n} lesson${n>1?'s':''} started)` : ''}.</p>
       ${SB ? `<p style="font-size:13px;margin-top:-6px">${Cloud.lastSync ? 'Last saved online ' + fmtIvl(Date.now() - Cloud.lastSync).replace(/^1 min$/, 'just now') + (Cloud.lastSync > Date.now() - 6e4 ? '' : ' ago') : 'Saving online automatically.'}</p>` : ''}
+      <button class="link-btn" data-x="tour" style="text-align:left;width:auto">Take the app tour again</button>
       <div class="row"><button class="btn" data-x="close">Close</button><button class="btn primary" data-x="out">Log out</button></div>`, {onClose:onDone});
+    m.el.querySelector('[data-x=tour]').onclick = () => { m.close(); setTimeout(openShowcase, 150); };
     m.el.querySelector('[data-x=close]').onclick = m.close;
     m.el.querySelector('[data-x=out]').onclick = async () => { await Auth.logOut(); m.close(); afterAuthChange(); toast('Logged out'); };
     return;
@@ -1326,6 +1584,7 @@ function accountModal({welcome=false, onDone}={}){
       else await Auth.logIn($('#au', el).value, $('#ap', el).value);
       m.close(); afterAuthChange();
       toast(tab === 'up' ? 'Account created. Progress will be saved.' : 'Welcome back, ' + Auth.user());
+      if(tab === 'up') setTimeout(openShowcase, 350);
     }catch(err){
       $('#aerr', el).textContent = err.message || 'Something went wrong.';
       go.disabled = false;
@@ -1388,15 +1647,15 @@ function startTour(){
   show();
 }
 function tourOffer(){
-  if(store.get('y3.tourSeen.v3')) return;
+  if(store.get('y3.showcase.v2') || store.get('y3.tourSeen.v5')) return;
   const m = modal(`
-    <h2>New: Learn mode</h2>
-    <p>You can now learn each condition through a patient case, step by step, with quizzes and exam-style questions. Your notes are still here exactly as before.</p>
-    <p style="margin-bottom:0">Would you like a quick tour?</p>
+    <h2>What is new</h2>
+    <p>Notes now come in two styles, visual or plain, plus a question bank, a Blurt arena with spaced repetition, and a confidence score for every condition. A short animated walkthrough shows you each one. You can skip at any point.</p>
+    <p style="margin-bottom:0">Would you like to see it?</p>
     <div class="row"><button class="btn" data-x="no">No thanks</button><button class="btn primary" data-x="yes">Yes, show me</button></div>`, {dismissable:false});
-  store.set('y3.tourSeen.v3', true);
+  store.set('y3.tourSeen.v5', true);
   m.el.querySelector('[data-x=no]').onclick = m.close;
-  m.el.querySelector('[data-x=yes]').onclick = () => { m.close(); setTimeout(startTour, 150); };
+  m.el.querySelector('[data-x=yes]').onclick = () => { m.close(); setTimeout(openShowcase, 150); };
 }
 function welcome(){
   if(location.hash.startsWith('#learn/')) return;
@@ -1480,6 +1739,7 @@ function stepScreen(d, st, key, N, pt){
     scr.render = el => {
       el.innerHTML = `${head}<div class="box case d-${d} in"><div class="case-lbl">Your call</div><p style="font-weight:650">${renderInline(st.q)}</p>${optionsHtml(st.o)}<div class="fb"></div></div>`;
       wireChoice(el, st.a, key, 'answers', pick => `<b>${pick === st.a ? 'Correct' : 'Not quite'}</b>${richText(st.r)}`, (pick, fresh) => {
+        if(fresh) Ev.add(P.id, d, 'ask', pick === st.a ? 1 : 0);
         if(fresh && pick !== st.a) addCorr({cond:P.id, d, src:'Case decision', ref:'a' + key, q:st.q, your:plainOpt(st.o[pick]), right:plainOpt(st.o[st.a]), why:st.r});
       });
     };
@@ -1656,11 +1916,13 @@ function wireChoice(el, a, key, storeName, feedback, after){
 
 function mcqScreen(q, i, n){
   return {chap:'mcq', gate: () => P.state.mcq[i] != null, render: el => {
+    P.ctx = {cond:P.id, d:q.d, q:q.q};
     el.innerHTML = `<div class="dom-badge d-${q.d}">Quick quiz &middot; ${DOM_LABEL[q.d]}</div><div class="qcount">Question ${i+1} of ${n} &middot; score ${mcqScore()}/${n}</div>
       <h2 class="s-h">${renderInline(q.q)}</h2>${optionsHtml(q.o)}<div class="fb"></div>`;
     wireChoice(el, q.a, i, 'mcq', pick => `<b>${pick === q.a ? 'Correct' : 'Answer: ' + escapeHtml(plainOpt(q.o[q.a]))}</b>${richText(q.r)}`, (pick, fresh) => {
       if(!fresh) return;
       P.state.mcqScore = mcqScore(); P.save();
+      Ev.add(P.id, q.d, 'mcq', pick === q.a ? 1 : 0);
       if(pick !== q.a){
         addCorr({cond:P.id, d:q.d, src:'Quick quiz', ref:'m' + i, q:q.q, your:plainOpt(q.o[pick]), right:plainOpt(q.o[q.a]), why:q.r, o:q.o, a:q.a, pick});
         srsReview(qKey(P.id, 'm' + i), 1, {kind:'q', cond:P.id, ref:'m' + i, q:q.q});
@@ -1729,6 +1991,7 @@ function techScreen(q, i){
   const allClues = q.steps.flatMap(s => s.clues || []);
   const scr = {chap:'technique'};
   scr.render = el => {
+    P.ctx = {cond:P.id, d:q.d, q:q.q};
     el.innerHTML = `<div class="dom-badge d-${q.d}">Exam technique &middot; ${DOM_LABEL[q.d]}</div>
       <div class="qcount">Worked question ${i+1} of 4 &middot; tap your answer, then press <b>Next step</b></div>
       <div class="box">${stemView(q, allClues)}<div class="qline">${richText(q.q)}</div>${optionsHtml(q.o)}</div>
@@ -1737,6 +2000,7 @@ function techScreen(q, i){
     const m = methodPlayer($('.method', el), q, el, () => {
       if(!m.remaining()){
         const sel = btns.findIndex(b => b.classList.contains('sel'));
+        if(sel >= 0) Ev.add(P.id, q.d, 'tech', sel === q.a ? 1 : 0);
         if(sel >= 0 && sel !== q.a){
           btns[sel].classList.add('wrong');
           addCorr({cond:P.id, d:q.d, src:'Exam technique', ref:'t' + i, q:q.q, stem:q.stem, your:plainOpt(q.o[sel]), right:plainOpt(q.o[q.a]), why:(q.steps[q.steps.length - 1] || {}).x, o:q.o, a:q.a, pick:sel});
@@ -1757,6 +2021,7 @@ function questionScreen({q, key, storeName, chap, badge, count, cond, ref, src, 
   scr.render = el => {
     scr.inner = null;
     cond = cond || P.id;
+    P.ctx = {cond, d:q.d, q:q.q};
     const allClues = (q.steps || []).flatMap(s => s.clues || []);
     el.innerHTML = `<div class="dom-badge d-${q.d}">${badge}</div><div class="qcount">${count}</div>
       <div class="box">${stemView(q, allClues)}<div class="qline">${richText(q.q)}</div>${optionsHtml(q.o)}<div class="fb"></div></div><div class="method"></div>`;
@@ -1771,9 +2036,10 @@ function questionScreen({q, key, storeName, chap, badge, count, cond, ref, src, 
       if(fresh){
         if(!ok) addCorr({cond, d:q.d, src, ref, q:q.q, stem:q.stem, your:plainOpt(q.o[pick]), right:plainOpt(q.o[q.a]), why:q.e || q.r, o:q.o, a:q.a, pick});
         if(storeName === 'arena') Arena.record(`${cond}|${ref}`, ok);
+        Ev.add(cond, q.d, src === 'Question bank' ? 'bank' : src === 'Practice' ? 'sba' : 'arena', ok ? 1 : 0);
         const sk = qKey(cond, ref);
-        if(!ok) srsReview(sk, 1, {kind:'q', cond, ref, q:q.q});
-        else if(SRS.get(sk)){ const c = srsReview(sk, 3, {kind:'q', cond, ref, q:q.q}); if(c.S >= 21) Corr.patch(`${cond}|${ref}`, {fixed:true}); }
+        if(!ok) srsReview(sk, 1, {kind:'q', cond, ref, q:q.q, d:q.d});
+        else if(SRS.get(sk)){ const c = srsReview(sk, 3, {kind:'q', cond, ref, q:q.q, d:q.d}); if(c.S >= 21) Corr.patch(`${cond}|${ref}`, {fixed:true}); }
         const rb = SRS.get(sk);
         if(rb) $('.fb', el).insertAdjacentHTML('beforeend', `<div class="retry-note">${ok ? 'Back in your retry list' : 'Added to your retry list'}: comes back <b>${fmtDue(rb.due)}</b>.</div>`);
       }
@@ -1832,7 +2098,7 @@ function summaryScreen(el, L, N){
       <button class="btn ghost" style="height:44px" data-x="restart">Start this lesson again</button>
     </div>
     ${Auth.user() ? '' : `<div class="exam-box" style="margin-top:14px"><b>Progress</b>Your progress is saved on this device. <a href="#" data-x="acct" style="color:var(--accent)">Create an account</a> to keep it under your name.</div>`}`;
-  $('[data-x=notes]', el).onclick = () => { closePlayer(); setMode('notes'); const c = cardEls.get(N.id); if(c){ $('#search').value=''; catSelect.value=''; applyFilter(); c._toggle(true); setTimeout(() => c.scrollIntoView({block:'start', behavior:'smooth'}), 100); } };
+  $('[data-x=notes]', el).onclick = () => { location.hash = 'notes/' + N.id; };
   $('[data-x=list]', el).onclick = () => { closePlayer(); setMode('learn'); };
   $('[data-x=restart]', el).onclick = () => { P.state = freshState(); P.save(); P.go(0); };
   const ac = $('[data-x=acct]', el); if(ac) ac.onclick = e => { e.preventDefault(); accountModal(); };
@@ -1858,7 +2124,8 @@ function mountPlayer(cfg){
   const root = h(`<div class="player" role="dialog" aria-label="${escapeHtml(cfg.title)}">
     <div class="p-top"><div class="p-top-inner">
       <div class="p-row"><button class="icon-btn" data-x="close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
-        <div class="p-title"><b>${escapeHtml(cfg.title)}</b><small>${escapeHtml(cfg.sub || '')}</small></div></div>
+        <div class="p-title"><b>${escapeHtml(cfg.title)}</b><small>${escapeHtml(cfg.sub || '')}</small></div>
+        <button class="icon-btn nb-btn" data-x="notebook" title="Corrections notebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/></svg><span>Notebook</span></button></div>
       <div class="chapters"></div>
     </div><div class="p-progress"><i></i></div></div>
     <div class="p-body"><div class="p-body-inner"><div class="stage">Loading&hellip;</div></div></div>
@@ -1867,6 +2134,7 @@ function mountPlayer(cfg){
   document.body.appendChild(root);
   document.body.style.overflow = 'hidden';
   $('[data-x=close]', root).onclick = () => { location.hash = ''; closePlayer(); };
+  $('[data-x=notebook]', root).onclick = openNotebookPanel;
   return root;
 }
 function startPlayer(root, cfg){
@@ -1886,6 +2154,9 @@ function startPlayer(root, cfg){
     },
     go(n, dir=1){
       n = Math.max(0, Math.min(P.screens.length - 1, n));
+      const was = P.screens[P.state.pos];
+      if(was && was.leave && P.state.pos !== n && P._started) was.leave();
+      P._started = true;
       P.state.pos = n;
       P.state.maxPos = Math.max(P.state.maxPos || 0, n);
       P.save();
@@ -1898,6 +2169,7 @@ function startPlayer(root, cfg){
       inner.appendChild(stage);
       VIS_SLOTS.length = 0;
       stopDictation();
+      P.ctx = null;
       s.render(stage);
       mountVisuals(stage);
       glossify(stage);
@@ -1953,7 +2225,9 @@ function closePlayer(silent){
 }
 function route(){
   const m = location.hash.match(/^#learn\/(.+)$/);
+  const nm = location.hash.match(/^#notes\/(.+)$/);
   if(m) openPlayer(decodeURIComponent(m[1]));
+  else if(nm) openNotes(decodeURIComponent(nm[1]));
   else if($('.player') && !$('.player.arena')){ closePlayer(); cardEls.forEach(c => c._rebuild()); }
 }
 window.addEventListener('hashchange', route);
@@ -1962,14 +2236,16 @@ window.addEventListener('hashchange', route);
 function shuffle(a){ for(let i = a.length - 1; i > 0; i--){ const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
 async function openArena(cfg0){
   const {ids, count, dom, onlyWrong, items} = cfg0;
-  const root = mountPlayer({title:'Practice arena', sub:`${ids.length} condition${ids.length === 1 ? '' : 's'} · mixed order`});
+  const root = mountPlayer({title:cfg0.title || 'Practice arena', sub:`${ids.length} condition${ids.length === 1 ? '' : 's'} · mixed order`});
   root.classList.add('arena');
   let pool = [];
   if(items){
     for(const it of items){
       try{
-        const L = await loadLesson(it.cond);
+        if(it.q){ pool.push({q:it.q, cond:it.cond, ref:it.ref}); continue; }
         const n = +it.ref.slice(1), t = it.ref[0];
+        if(t === 'q'){ const B = await loadBank(it.cond); if(B.questions[n]) pool.push({q:B.questions[n], cond:it.cond, ref:it.ref}); continue; }
+        const L = await loadLesson(it.cond);
         let q = t === 'p' ? L.practice[n] : t === 't' ? L.technique[n] : t === 'm' ? L.mcq[n] : null;
         if(q && t === 'm') q = {...q, stem:'', e:q.r};
         if(q) pool.push({q, cond:it.cond, ref:it.ref});
@@ -1991,9 +2267,9 @@ async function openArena(cfg0){
   shuffle(pool);
   if(count && !items) pool = pool.slice(0, count);
   if(!pool.length){ $('.stage', root).innerHTML = '<div class="box">No questions match those settings yet. Try including all domains, or untick "only ones I got wrong".</div>'; return; }
-  const screens = pool.map((x, i) => questionScreen({q:x.q, key:i, storeName:'arena', chap:'arena', badge:`Mixed practice &middot; ${DOM_LABEL[x.q.d]}`, count:`Question ${i + 1} of ${pool.length}`, cond:x.cond, ref:x.ref, src:'Practice arena', reveal:BY_ID[x.cond].name}));
+  const screens = pool.map((x, i) => questionScreen({q:x.q, key:i, storeName:'arena', chap:'arena', badge:`Mixed practice &middot; ${DOM_LABEL[x.q.d]}`, count:`Question ${i + 1} of ${pool.length}`, cond:x.cond, ref:x.ref, src:x.ref[0] === 'q' ? 'Question bank' : (cfg0.src || 'Practice arena'), reveal:BY_ID[x.cond].name}));
   screens.push({chap:'results', render: el => arenaResults(el, pool, ids, cfg0)});
-  startPlayer(root, {id:null, screens, state:{pos:0, maxPos:0, arena:{}}, chaps:[{k:'arena', t:'Questions', c:'var(--accent)'}, {k:'results', t:'Results', c:'var(--ok)'}], onFinish: () => setMode('practice')});
+  startPlayer(root, {id:null, screens, state:{pos:0, maxPos:0, arena:{}}, chaps:[{k:'arena', t:'Questions', c:'var(--accent)'}, {k:'results', t:'Results', c:'var(--ok)'}], onFinish: () => setMode(cfg0.src === 'Question bank' ? 'bank' : 'practice')});
 }
 function arenaResults(el, pool, ids, cfg){
   const ans = P.state.arena;
@@ -2074,83 +2350,147 @@ function renderPracticeView(){
   };
 }
 
-// ---------- corrections view ----------
-let corrDom = '', corrShowFixed = false;
+// ---------- corrections notebook ----------
+// Every wrong answer is filed automatically by condition and domain. Students can also add their own
+// corrections at any time, including ones from other question banks such as Passmedicine or Quesmed.
+const CORR_SOURCES = ['My note', 'Passmedicine', 'Quesmed', 'Other question bank', 'Teaching / lecture'];
+let corrDom = '', corrShowFixed = false, corrCond = null;
+function corrDueFor(id){ return SRS.due('q|' + id + '|').length; }
 function renderCorrView(){
   const view = $('#corrView');
+  if(corrCond && BY_ID[corrCond]) return renderCorrNotebook(view, corrCond);
   const term = $('#search').value.trim().toLowerCase(), cat = catSelect.value;
-  const all = Corr.all();
-  let list = all.filter(c => BY_ID[c.cond] && (corrShowFixed || !c.fixed) && (!cat || BY_ID[c.cond].category === cat));
-  if(term) list = list.filter(c => [c.q, c.stem, c.your, c.right, c.why, c.note, BY_ID[c.cond].name].join(' ').toLowerCase().includes(term));
-  const counts = Object.fromEntries(DOMAINS.map(d => [d, list.filter(c => c.d === d).length]));
-  if(corrDom) list = list.filter(c => c.d === corrDom);
-  const groups = [];
-  list.forEach(c => { let g = groups.find(x => x.id === c.cond); if(!g){ g = {id:c.cond, items:[]}; groups.push(g); } g.items.push(c); });
+  const all = Corr.all().filter(c => BY_ID[c.cond]);
+  const open = all.filter(c => !c.fixed);
+  const byCond = {};
+  all.forEach(c => { (byCond[c.cond] = byCond[c.cond] || []).push(c); });
+  const dueAll = SRS.due('q|').length;
+  let ids = Object.keys(byCond).filter(id => (!cat || BY_ID[id].category === cat) && (!term || (BY_ID[id].name + ' ' + byCond[id].map(c => [c.q, c.right, c.why, c.note].join(' ')).join(' ')).toLowerCase().includes(term)));
+  ids.sort((a, b) => (corrDueFor(b) - corrDueFor(a)) || (byCond[b].filter(c => !c.fixed).length - byCond[a].filter(c => !c.fixed).length) || BY_ID[a].name.localeCompare(BY_ID[b].name));
   view.innerHTML = `
     <div class="learn-hero">
-      <h2>Corrections</h2>
-      <p>Everything you get wrong is saved here automatically, sorted by condition and then domain. Wrong exam questions come back as retries on a spaced-repetition schedule until you know them.</p>
-      ${(() => { const n = SRS.due('q|').length; return `<div class="due-card ${n ? '' : 'calm'}" style="margin-top:12px"><div class="dc-n">${n}</div><div class="dc-t"><b>Exam questions to retry</b><small>${n ? 'Due now, picked from your mistakes' : 'Nothing due right now'}</small></div>${n ? '<button class="btn primary" id="cfRetry">Retry now</button>' : ''}</div>`; })()}
+      <h2>Corrections notebook</h2>
+      <p>Everything you get wrong is filed here automatically, by condition and then by domain, so you have a clean set of correction notes to read before the exam. Add your own at any time, including corrections from Passmedicine, Quesmed or any other question bank. Wrong exam questions also come back as retries when they are due.</p>
+      <div class="stats">
+        <div class="stat"><b>${open.length}</b><small>open corrections</small></div>
+        <div class="stat"><b>${ids.length}</b><small>conditions</small></div>
+        <div class="stat"><b>${dueAll}</b><small>retries due</small></div>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button class="btn primary big" id="cfAdd">Add a correction</button>
+        ${dueAll ? `<button class="btn big" id="cfRetry">Retry ${dueAll} due</button>` : ''}
+      </div>
+    </div>
+    <div class="blist">${ids.length ? ids.map(id => {
+      const cs = byCond[id], op = cs.filter(c => !c.fixed), due = corrDueFor(id);
+      const per = DOMAINS.map(d => [d, op.filter(c => c.d === d).length]).filter(x => x[1]);
+      return `<button class="lrow nbrow" data-nb="${id}"><span class="meta"><b>${escapeHtml(BY_ID[id].name)}</b>
+        <small>${op.length} open${cs.length > op.length ? ` &middot; ${cs.length - op.length} fixed` : ''}${due ? ` &middot; <span class="due-tag">${due} due</span>` : ''}</small>
+        <span class="nbdoms">${per.map(([d, n]) => `<i class="d-${d}">${DOM_LABEL[d]} ${n}</i>`).join('')}</span></span><span class="nbgo">Open</span></button>`;
+    }).join('') : `<div class="empty">${all.length ? 'Nothing matches your search.' : 'No corrections yet. Wrong answers in lessons, blurts, the bank and the arena appear here, and you can add your own.'}</div>`}</div>`;
+  $('#cfAdd').onclick = () => addNoteModal({});
+  const rt = $('#cfRetry'); if(rt) rt.onclick = retryDueQuestions;
+  view.querySelectorAll('[data-nb]').forEach(b => b.onclick = () => { corrCond = b.dataset.nb; corrDom = ''; renderCorrView(); window.scrollTo(0, 0); });
+}
+function renderCorrNotebook(view, id){
+  const N = BY_ID[id];
+  const all = Corr.all().filter(c => c.cond === id);
+  const list = all.filter(c => (corrShowFixed || !c.fixed) && (!corrDom || c.d === corrDom));
+  const due = corrDueFor(id);
+  const counts = Object.fromEntries(DOMAINS.map(d => [d, all.filter(c => !c.fixed && c.d === d).length]));
+  view.innerHTML = `
+    <button class="link-btn" id="nbBack" style="text-align:left;width:auto">&larr; All conditions</button>
+    <div class="learn-hero nb-hero"><div class="case-lbl">Corrections notebook</div><h2>${escapeHtml(N.name)}</h2>
+      <p>${all.filter(c => !c.fixed).length} open correction${all.filter(c => !c.fixed).length === 1 ? '' : 's'}, filed by domain. Read these before the exam so the same mistakes do not happen twice.</p>
       <div class="chipbar">
-        <button class="fchip ${corrDom ? '' : 'on'}" data-dom="">All <b>${Object.values(counts).reduce((a, b) => a + b, 0)}</b></button>
+        <button class="fchip ${corrDom ? '' : 'on'}" data-dom="">All</button>
         ${DOMAINS.map(d => `<button class="fchip d-${d} ${corrDom === d ? 'on' : ''}" data-dom="${d}"><i></i>${DOM_LABEL[d]} <b>${counts[d]}</b></button>`).join('')}
       </div>
       <div style="display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;align-items:center">
-        <label class="chk"><input type="checkbox" id="cfFixed" ${corrShowFixed ? 'checked' : ''}> Show fixed ones</label>
-        <button class="btn" id="cfAdd" style="margin-left:auto">Add a note</button>
+        <button class="btn primary" id="nbAdd">Add a correction</button>
+        ${due ? `<button class="btn" id="nbRetry">Retry ${due} due</button>` : ''}
+        <button class="btn ghost" id="nbNotes">Read the notes</button>
+        <label class="chk" style="margin-left:auto"><input type="checkbox" id="cfFixed" ${corrShowFixed ? 'checked' : ''}> Show fixed</label>
       </div>
     </div>
-    ${groups.length ? groups.map(g => `<details class="cgroup" open><summary><b>${escapeHtml(BY_ID[g.id].name)}</b><small>${g.items.length} item${g.items.length === 1 ? '' : 's'}</small></summary>
-      ${DOMAINS.filter(d => g.items.some(c => c.d === d)).map(d => `<div class="cdom d-${d}"><div class="section-title" style="--c:var(--${{diagnosis:'dx',investigation:'ix',management:'mx',science:'sci'}[d]})">${DOM_LABEL[d]}</div>
-        ${g.items.filter(c => c.d === d).map(corrCard).join('')}</div>`).join('')}
-      <button class="btn ghost" data-open="${g.id}" style="margin-top:4px">${READY.has(g.id) ? 'Open the lesson' : 'Open the notes'}</button></details>`).join('')
-    : `<div class="empty">${all.length ? 'Nothing matches. Try another filter.' : 'No corrections yet. Wrong answers in lessons, blurts and the arena will appear here.'}</div>`}`;
-  glossify(view);
+    ${DOMAINS.filter(d => list.some(c => c.d === d)).map(d => `<section class="gsec d-${d}"><div class="ghead"><span class="gbadge">${DOM_LABEL[d]}</span><span class="gtag">${list.filter(c => c.d === d).length}</span></div>
+      <div class="nbcards">${list.filter(c => c.d === d).map(corrCard).join('')}</div></section>`).join('') || `<div class="empty">${all.length ? 'Nothing here with these filters.' : 'No corrections for this condition yet.'}</div>`}`;
+  $('#nbBack').onclick = () => { corrCond = null; renderCorrView(); };
+  $('#nbAdd').onclick = () => addNoteModal({cond:id, d:corrDom || 'diagnosis'});
+  $('#nbNotes').onclick = () => { location.hash = 'notes/' + id; };
+  const r = $('#nbRetry'); if(r) r.onclick = () => openArena({items:SRS.due('q|' + id + '|').map(([, c]) => ({cond:c.cond, ref:c.ref})), ids:[id], title:N.name + ' retries'});
   view.querySelectorAll('.fchip').forEach(b => b.onclick = () => { corrDom = b.dataset.dom; renderCorrView(); });
   $('#cfFixed').onchange = e => { corrShowFixed = e.target.checked; renderCorrView(); };
-  $('#cfAdd').onclick = addNoteModal;
-  const rt = $('#cfRetry'); if(rt) rt.onclick = retryDueQuestions;
-  view.querySelectorAll('[data-retry]').forEach(b => b.onclick = () => { const [cond, ref] = b.dataset.retry.split('|'); openArena({items:[{cond, ref}], ids:[cond]}); });
-  view.querySelectorAll('[data-open]').forEach(b => b.onclick = () => {
-    const id = b.dataset.open;
-    if(READY.has(id)) location.hash = 'learn/' + id;
-    else { setMode('notes'); const c = cardEls.get(id); c._toggle(true); c.scrollIntoView({block:'start'}); }
-  });
-  view.querySelectorAll('.ccard').forEach(card => {
+  wireCorrCards(view, renderCorrView);
+  glossify(view);
+}
+function wireCorrCards(root, rerender){
+  root.querySelectorAll('.ccard').forEach(card => {
     const key = card.dataset.key;
     const note = $('textarea', card);
     if(note) note.oninput = () => Corr.patch(key, {note:note.value});
-    $('[data-x=fix]', card).onclick = () => { const c = Corr.all().find(x => x.key === key); Corr.patch(key, {fixed:!c.fixed}); renderCorrView(); };
-    $('[data-x=del]', card).onclick = () => { if(confirm('Delete this correction?')){ Corr.remove(key); renderCorrView(); } };
+    const fx = $('[data-x=fix]', card); if(fx) fx.onclick = () => { const c = Corr.all().find(x => x.key === key); Corr.patch(key, {fixed:!c.fixed}); rerender(); };
+    const dl = $('[data-x=del]', card); if(dl) dl.onclick = () => { if(confirm('Delete this correction?')){ Corr.remove(key); rerender(); } };
+    const rt = $('[data-retry]', card); if(rt) rt.onclick = () => { const [cond, ref] = rt.dataset.retry.split('|'); openArena({items:[{cond, ref}], ids:[cond]}); };
   });
 }
 function corrCard(c){
-  return `<div class="ccard ${c.fixed ? 'fixed' : ''}" data-key="${escapeHtml(c.key)}">
-    <div class="cc-top"><span class="tag src">${escapeHtml(c.src)}</span>${c.times > 1 ? `<span class="tag">Wrong ${c.times} times</span>` : ''}${c.fixed ? '<span class="tag fixed">Fixed</span>' : ''}<small>${fmtDate(c.at)}</small></div>
+  const r = c.ref && /^[ptmq]\d/.test(c.ref) ? SRS.get(qKey(c.cond, c.ref)) : null;
+  const ext = CORR_SOURCES.includes(c.src) && c.src !== 'My note';
+  return `<div class="ccard nb ${c.fixed ? 'fixed' : ''}" data-key="${escapeHtml(c.key)}">
+    <div class="cc-top"><span class="tag src ${ext ? 'ext' : ''}">${escapeHtml(c.src)}</span>${c.times > 1 ? `<span class="tag">Wrong ${c.times} times</span>` : ''}${c.fixed ? '<span class="tag fixed">Fixed</span>' : ''}<small>${fmtDate(c.at)}</small></div>
     ${c.q ? `<div class="cc-q">${richText(c.q)}</div>` : ''}
-    ${c.stem || c.o ? `<details class="cc-stem"><summary>Show the question</summary>${c.stem ? `<div>${richText(c.stem)}</div>` : ''}${c.o ? `<ol class="cc-opts">${c.o.map((t, k) => `<li class="${k === c.a ? 'ok' : k === c.pick ? 'bad' : ''}">${richText(t)}</li>`).join('')}</ol>` : ''}</details>` : ''}
-    ${c.your ? `<div class="cc-row bad"><span>You said</span>${richText(c.your)}</div>` : ''}
-    ${c.right ? `<div class="cc-row ok"><span>Answer</span>${richText(c.right)}</div>` : ''}
+    ${c.right ? `<div class="cc-key">${richText(c.right)}</div>` : ''}
     ${c.why ? `<div class="cc-why">${richText(c.why)}</div>` : ''}
+    ${c.your ? `<div class="cc-you">You said: ${richText(c.your)}</div>` : ''}
+    ${c.stem || c.o ? `<details class="cc-stem"><summary>Show the question</summary>${c.stem ? `<div>${richText(c.stem)}</div>` : ''}${c.o ? `<ol class="cc-opts">${c.o.map((t, k) => `<li class="${k === c.a ? 'ok' : k === c.pick ? 'bad' : ''}">${richText(t)}</li>`).join('')}</ol>` : ''}</details>` : ''}
     <textarea rows="2" placeholder="Your note (saved automatically)">${escapeHtml(c.note || '')}</textarea>
-    ${(() => { const r = c.ref && /^[ptm]\d/.test(c.ref) ? SRS.get(qKey(c.cond, c.ref)) : null; return r ? `<div class="cc-due">Next retry <b>${fmtDue(r.due)}</b> <button class="btn" data-retry="${escapeHtml(c.cond + '|' + c.ref)}">Retry now</button></div>` : ''; })()}
-    <div class="cc-act"><button class="btn" data-x="fix">${c.fixed ? 'Mark not fixed' : 'Mark fixed'}</button><button class="btn ghost" data-x="del">Delete</button></div>
+    <div class="cc-act">${r ? `<span class="cc-due">Retry <b>${fmtDue(r.due)}</b></span><button class="btn" data-retry="${escapeHtml(c.cond + '|' + c.ref)}">Retry now</button>` : ''}<button class="btn" data-x="fix">${c.fixed ? 'Not fixed' : 'Mark fixed'}</button><button class="btn ghost" data-x="del">Delete</button></div>
   </div>`;
 }
-function addNoteModal(){
-  const m = modal(`<h2>Add a note</h2><p>Save something you want to remember, filed under a condition and domain.</p>
-    <div class="field"><label>Condition</label><select id="nc" style="width:100%">${sorted.map(d => `<option value="${d.id}">${escapeHtml(d.name)}</option>`).join('')}</select></div>
-    <div class="field"><label>Domain</label><select id="nd" style="width:100%">${DOMAINS.map(d => `<option value="${d}">${DOM_LABEL[d]}</option>`).join('')}</select></div>
-    <div class="field"><label>Topic</label><input id="nq" placeholder="e.g. Potassium in DKA"></div>
-    <div class="field"><label>Note</label><textarea id="nn" rows="3" class="blurt-in" placeholder="What you want to remember"></textarea></div>
-    <div class="row"><button class="btn" data-x="c">Cancel</button><button class="btn primary" data-x="s">Save note</button></div>`);
+// add a correction: from the notebook, or from the notebook button while practising
+function addNoteModal(pre){
+  pre = pre || {};
+  const m = modal(`<h2>Add a correction</h2><p>Save something you got wrong or want to remember. It is filed under the condition and domain you choose.</p>
+    <div class="field"><label>Condition</label><select id="nc" style="width:100%">${sorted.map(d => `<option value="${d.id}" ${d.id === pre.cond ? 'selected' : ''}>${escapeHtml(d.name)}</option>`).join('')}</select></div>
+    <div class="ed-2"><div class="field"><label>Domain</label><select id="nd" style="width:100%">${DOMAINS.map(d => `<option value="${d}" ${d === pre.d ? 'selected' : ''}>${DOM_LABEL[d]}</option>`).join('')}</select></div>
+      <div class="field"><label>Where from</label><select id="ns" style="width:100%">${CORR_SOURCES.map(x => `<option ${x === (pre.src || 'My note') ? 'selected' : ''}>${x}</option>`).join('')}</select></div></div>
+    <div class="field"><label>Question or topic</label><input id="nq" value="${escapeHtml(pre.q || '')}" placeholder="e.g. First-line investigation for suspected PE"></div>
+    <div class="field"><label>The correct answer or key point</label><textarea id="nr" rows="2" class="blurt-in" placeholder="What you need to remember"></textarea></div>
+    <div class="field"><label>Why (optional)</label><textarea id="nn" rows="2" class="blurt-in" placeholder="The reason, or how to spot it next time"></textarea></div>
+    <div class="field"><label>What I put (optional)</label><input id="ny" placeholder="Your wrong answer"></div>
+    <div class="row"><button class="btn" data-x="c">Cancel</button><button class="btn primary" data-x="s">Save correction</button></div>`);
   $('[data-x=c]', m.el).onclick = m.close;
   $('[data-x=s]', m.el).onclick = () => {
-    const text = $('#nn', m.el).value.trim();
-    if(!text) return;
-    Corr.add({key:`${$('#nc', m.el).value}|note${Date.now()}`, cond:$('#nc', m.el).value, d:$('#nd', m.el).value, src:'My note', q:$('#nq', m.el).value.trim(), why:text});
-    m.close(); renderCorrView();
+    const right = $('#nr', m.el).value.trim();
+    if(!right){ toast('Add the correct answer or key point'); return; }
+    const cond = $('#nc', m.el).value;
+    Corr.add({key:`${cond}|note${Date.now()}`, cond, d:$('#nd', m.el).value, src:$('#ns', m.el).value, q:$('#nq', m.el).value.trim(), right, why:$('#nn', m.el).value.trim(), your:$('#ny', m.el).value.trim()});
+    m.close(); toast('Saved to your corrections notebook');
+    if(mode === 'corr') renderCorrView();
+    if(pre.after) pre.after();
   };
+}
+// the notebook button inside lessons, the bank and the arenas
+function openNotebookPanel(){
+  const ctx = (P && P.ctx) || {};
+  const cond = ctx.cond || (P && P.id) || null;
+  const s = P && P.screens[P.state.pos];
+  const d = ctx.d || (s && DOMAINS.includes(s.chap) ? s.chap : 'diagnosis');
+  const list = cond ? Corr.all().filter(c => c.cond === cond && !c.fixed) : [];
+  const bg = h(`<div class="modal-bg nbpanel"><div class="modal" role="dialog" aria-modal="true" style="max-width:560px">
+    <h2>Corrections notebook</h2>
+    <p>${cond ? `${escapeHtml(BY_ID[cond].name)}: ${list.length} open correction${list.length === 1 ? '' : 's'}.` : 'Add a correction to any condition.'}</p>
+    <div class="row" style="margin:0 0 12px"><button class="btn primary" data-x="add">Add a correction</button><button class="btn" data-x="close">Back to the question</button></div>
+    <div class="nbcards nbp-list">${list.length ? DOMAINS.filter(x => list.some(c => c.d === x)).map(x => `<div class="nbp-d d-${x}"><b>${DOM_LABEL[x]}</b>${list.filter(c => c.d === x).map(corrCard).join('')}</div>`).join('') : '<div class="empty" style="padding:16px 0">No corrections for this condition yet.</div>'}</div>
+  </div></div>`);
+  document.body.appendChild(bg);
+  const close = () => bg.remove();
+  bg.addEventListener('click', e => { if(e.target === bg) close(); });
+  $('[data-x=close]', bg).onclick = close;
+  $('[data-x=add]', bg).onclick = () => { close(); addNoteModal({cond, d, q:ctx.q || ''}); };
+  wireCorrCards(bg, () => { close(); openNotebookPanel(); });
+  glossify(bg);
 }
 
 // ---------- visuals (drawn from a small description in the lesson file) ----------
@@ -2169,7 +2509,7 @@ function mountVisuals(root){
   });
 }
 function renderVisual(v){
-  const fn = {ecg:visECG, cxr:visCXR, scale:visScale, trend:visTrend, abdomen:visAbdomen, coronary:visCoronary}[v.kind];
+  const fn = {ecg:visECG, cxr:visCXR, scale:visScale, trend:visTrend, abdomen:visAbdomen, coronary:visCoronary, organ:visOrgan, cycle:visCycle, tree:visTree, timeline:visTimeline, keyfacts:visKeyfacts}[v.kind];
   if(!fn) return h('<div></div>');
   const box = h(`<div class="vis vis-${v.kind}">${v.title ? `<div class="case-lbl">${escapeHtml(v.title)}</div>` : ''}<div class="vis-body"></div>${v.caption ? `<div class="vis-cap hidden">${renderInline(v.caption)}</div>` : ''}<div class="vis-ctrl"></div></div>`);
   fn(v, $('.vis-body', box), $('.vis-ctrl', box), box);
@@ -2493,7 +2833,7 @@ function blurtScreens(L){
       ${B.history.length ? `<div class="case-lbl" style="margin-top:10px">Your rounds so far</div>${roundBars(B)}` : ''}</div>`;
   }});
   bl.prompts.forEach((q, i) => S.push({chap:'blurt', gateText:'Check your answer first', gate: () => !!blurtState().checked[i], render: el => blurtPrompt(el, L, q, i)}));
-  S.push({chap:'blurt', label:'Results', render: el => blurtResults(el, L)});
+  S.push({chap:'blurt', label:'Results', leave: () => blurtToArena(L), render: el => blurtResults(el, L)});
   return S;
 }
 function roundBars(B, current){
@@ -2502,6 +2842,7 @@ function roundBars(B, current){
   return `<div class="rounds">${rows.map((r, k) => { const pct = Math.round(100 * r.score / Math.max(1, r.total)); return `<div class="rb"><span>Round ${r.round}</span><div class="bar"><i style="width:${pct}%"></i></div><b>${r.score}/${r.total}</b></div>`; }).join('')}</div>`;
 }
 function blurtPrompt(el, L, q, i){
+  P.ctx = {cond:P.id, d:q.d, q:q.q};
   const B = blurtState();
   const done = !!B.checked[i];
   const prevMiss = lastMissed(B);
@@ -2534,12 +2875,10 @@ function blurtPrompt(el, L, q, i){
     const hitRows = q.points.map((pt, j) => marks[j] ? row(pt, j) : '').join('');
     $('.bres', el).innerHTML = `<div class="bres-head"><b>${got} of ${marks.length}</b> recalled<div class="bar"><i style="width:${Math.round(100 * got / marks.length)}%"></i></div></div>
       ${missedRows ? `<h3 class="bsub">Missed</h3>${missedRows}` : ''}
-      ${hitRows ? `<h3 class="bsub">Recalled</h3>${hitRows}` : ''}${rateBar(blurtKey(P.id, q))}`;
+      ${hitRows ? `<h3 class="bsub">Recalled</h3>${hitRows}` : ''}`;
     $('.bres', el).querySelectorAll('.own').forEach(b => b.onclick = () => {
       const key = i + ':' + b.dataset.j;
       B.own[key] = !B.own[key]; P.save();
-      const m = q.points.map((pt, j) => pointHit(B.ans[i], pt.k) || !!B.own[i + ':' + j]);
-      srsRerate(blurtKey(P.id, q), gradeFor(m.filter(Boolean).length / m.length));
       showResults(false);
     });
   };
@@ -2549,7 +2888,7 @@ function blurtPrompt(el, L, q, i){
     if(!ta.value.trim() && !confirm('Your answer is empty. Check anyway?')) return;
     stopDictation();
     B.ans[i] = ta.value; B.checked[i] = true; P.save();
-    { const m = q.points.map(pt => pointHit(B.ans[i], pt.k)); srsReview(blurtKey(P.id, q), gradeFor(m.filter(Boolean).length / m.length), {kind:'blurt', cond:P.id, q:q.q}); }
+    { const m = q.points.map(pt => pointHit(B.ans[i], pt.k)); Ev.add(P.id, q.d, 'blurt', m.filter(Boolean).length / m.length); }
     q.points.forEach((pt, j) => {
       const key = `${P.id}|b${i}:${j}`;
       if(pointHit(B.ans[i], pt.k)){ if(Corr.all().some(c => c.key === key)) Corr.patch(key, {fixed:true}); }
@@ -2560,6 +2899,21 @@ function blurtPrompt(el, L, q, i){
     P && P.updateNav();
     setTimeout(() => $('.bres', el).scrollIntoView({block:'start', behavior:'smooth'}), 120);
   };
+}
+// when a lesson blurt is finished, its questions join the Blurt arena (first review the next day)
+function blurtToArena(L){
+  const B = blurtState();
+  const marks = blurtMarks(B, L);
+  let added = 0;
+  L.blurt.prompts.forEach((q, i) => {
+    const key = blurtKey(P.id, q);
+    if(SRS.get(key)) return;
+    const frac = marks[i].filter(Boolean).length / marks[i].length;
+    const g = gradeFor(frac);
+    SRS.put(key, {...fsrsNext(null, g), due:Date.now() + DAY, kind:'blurt', cond:P.id, q:q.q, d:q.d, prev:null, g});
+    added++;
+  });
+  if(added) toast(`${added} questions added to your Blurt arena. First review tomorrow.`);
 }
 function blurtResults(el, L){
   const B = blurtState();
@@ -2581,7 +2935,8 @@ function blurtResults(el, L){
         return `<div class="mdom d-${d}"><h4 class="bdom">${DOM_LABEL[d]}</h4>${qs.map(([q, i]) => `<div class="mq"><div class="mq-q">${richText(q.q)}</div>${q.points.map((pt, j) => marks[i][j] ? '' : `<div class="brow miss"><span class="bmark">&#10007;</span><div class="bbody"><div class="bp">${richText(pt.p)}</div><div class="bmeta"><button class="why-btn" aria-expanded="false">Why it matters</button></div><div class="why-x hidden">${richText(pt.why)}</div></div></div>`).join('')}</div>`).join('')}</div>`;
       }).join('')}</div>` : ''}
     <div class="box in" style="animation-delay:.25s"><div class="case-lbl">Your rounds</div>${roundBars(B, cur)}</div>
-    <button class="btn primary" style="width:100%;height:44px;margin-top:4px" data-x="again">Start round ${B.round + 1}</button>`;
+    <button class="btn primary" style="width:100%;height:44px;margin-top:4px" data-x="again">Start round ${B.round + 1}</button>
+    <div class="exam-box" style="margin-top:10px">Do as many rounds as you like. When you are happy, press <b>Next</b>: these questions go into your <b>Blurt arena</b>, first review tomorrow, then spaced out automatically.</div>`;
   animateRings(el);
   $('[data-x=again]', el).onclick = () => {
     B.history.push(cur);
@@ -2653,10 +3008,7 @@ const RATE_NAMES = ['Again', 'Hard', 'Good', 'Easy'];
 function rateBar(key){
   const c = SRS.get(key);
   if(!c) return '';
-  const base = c.prev && c.prev.reps ? c.prev : null;
-  const iv = [1, 2, 3, 4].map(g => fsrsNext(base, g, c.last).due - c.last);
-  return `<div class="rate" data-key="${escapeHtml(key)}"><div class="rate-h">Next review <b>${fmtDue(c.due)}</b><small>Change it if this rating feels wrong</small></div>
-    <div class="rate-b">${RATE_NAMES.map((n, k) => `<button class="r${k + 1} ${c.g === k + 1 ? 'on' : ''}" data-g="${k + 1}"><b>${n}</b><small>${fmtIvl(iv[k])}</small></button>`).join('')}</div></div>`;
+  return `<div class="rate"><div class="rate-h">Next review <b>${fmtDue(c.due)}</b><small>Scheduled automatically from how much you recalled.</small></div></div>`;
 }
 document.addEventListener('click', e => {
   const b = e.target.closest && e.target.closest('.rate button');
@@ -2705,6 +3057,7 @@ function srsBlurtScreen(it, idx, n){
   const scr = {chap:'blurt', gateText:'Check your answer first', gate: () => !!P.state.checked[idx]};
   scr.render = el => {
     const st = P.state, q = it.q, key = blurtKey(it.cond, q);
+    P.ctx = {cond:it.cond, d:q.d, q:q.q};
     st.own[idx] = st.own[idx] || {};
     const card = SRS.get(key);
     const done = !!st.checked[idx];
@@ -2738,7 +3091,8 @@ function srsBlurtScreen(it, idx, n){
       st.ans[idx] = ta.value; st.checked[idx] = true;
       const marks = q.points.map(pt => pointHit(st.ans[idx], pt.k));
       const g = gradeFor(marks.filter(Boolean).length / marks.length);
-      srsReview(key, g, {kind:'blurt', cond:it.cond, q:q.q});
+      srsReview(key, g, {kind:'blurt', cond:it.cond, q:q.q, d:q.d});
+      Ev.add(it.cond, q.d, 'blurt', marks.filter(Boolean).length / marks.length);
       blurtToCorrections(it.cond, q, it.i, st.ans[idx], marks);
       st.grade = st.grade || {}; st.grade[idx] = g;
       ta.readOnly = true; cb.remove(); if(mic) mic.remove();
@@ -2816,6 +3170,8 @@ const TILE_ICONS = {
   blurt:'<path d="M12 3a6 6 0 00-6 6c0 2.2 1.2 3.4 2 4.4.6.8 1 1.6 1 2.6h6c0-1 .4-1.8 1-2.6.8-1 2-2.2 2-4.4a6 6 0 00-6-6z"/><path d="M9.5 20h5M10.5 22h3"/><path d="M12 7v3l2 1"/>',
   practice:'<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5"/>',
   corr:'<path d="M4 20h4L19 9l-4-4L4 16v4z"/><path d="M13.5 6.5l4 4"/>',
+  bank:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/>',
+  progress:'<path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/>',
 };
 const ticon = k => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${TILE_ICONS[k]}</svg>`;
 function renderHome(){
@@ -2833,7 +3189,9 @@ function renderHome(){
     {m:'notes', c:'#1d4e89', t:'Notes', d:'Every condition, set out by diagnosis, investigation, management and science.', s:'Read and search'},
     {m:'learn', c:'#2b6e63', t:'Learn', d:'Follow a patient through each condition, step by step, with exam questions.', s:`${ids.length} lesson${ids.length === 1 ? '' : 's'} ready${inProg.length ? ` &middot; ${inProg.length} in progress` : ''}`},
     {m:'blurt', c:'#4b4f9c', t:'Blurt arena', d:'Quick-fire recall, brought back by spaced repetition before you forget.', s:bDue.length ? `<span class="due-tag">${bDue.length} due</span>` : 'Nothing due'},
+    {m:'bank', c:'#2f6f9f', t:'Question bank', d:'Exam questions for every condition that together examine every point in your notes.', s:`${Object.values(BANK).reduce((a, b) => a + b.n, 0).toLocaleString()} questions`},
     {m:'practice', c:'#9a5b20', t:'Practice arena', d:'Mixed exam questions from the conditions you have done, plus your progress table.', s:`${Object.keys(Ticks.all()).length} ticked`},
+    {m:'progress', c:'#5b45c9', t:'My progress', d:'A confidence score for every condition, from everything you do, and what to do next.', s:(() => { const n = sorted.filter(d => confidence(d.id).last).length; return n ? `${n} conditions started` : 'Start anything to see it'; })()},
     {m:'corr', c:'#b4372e', t:'Corrections', d:'Everything you got wrong, by condition and domain, with retries when due.', s:`${corrOpen} to review${qDue.length ? ` &middot; <span class="due-tag">${qDue.length} due</span>` : ''}`},
   ];
   view.innerHTML = `
@@ -2868,16 +3226,520 @@ function gSection(title, key, items){
 function cardBodyHtml(d){
   let html = '';
   if(READY.has(d.id)) html += `<div class="learn-strip"><span>Learn this with a patient case, blurts and exam questions</span><button class="btn primary" data-learn="${d.id}">${lessonCta(d.id)}</button></div>`;
-  html += gSection('Diagnosis', 'diagnosis', d.diagnosis);
-  html += gSection('Investigation', 'investigation', d.investigation);
-  html += gSection('Management', 'management', d.management);
-  html += gSection('Science', 'science', d.science);
+  html += `<div class="plain-bar"><span>Plain notes</span><button class="btn" data-visual="${d.id}">Switch to visual step-through</button></div>`;
+  html += gSection('Diagnosis', 'diagnosis', notesFor(d.id, 'diagnosis'));
+  html += gSection('Investigation', 'investigation', notesFor(d.id, 'investigation'));
+  html += gSection('Management', 'management', notesFor(d.id, 'management'));
+  html += gSection('Science', 'science', notesFor(d.id, 'science'));
   if(d.guidelines && d.guidelines.length) html += `<div class="gkey"><b>Guidelines and scoring systems</b><ul>${d.guidelines.map(g => `<li>${pointHtml(g)}</li>`).join('')}</ul></div>`;
   if(d.recall && d.recall.length){
     html += `<div class="gtest"><h3>Test yourself</h3><div class="gq-grid">${d.recall.map((r, i) => `<div class="rq"><div class="q"><span class="gq-n">${i + 1}</span>${escapeHtml(r.q)}</div><div class="a hidden-ans">${escapeHtml(r.a)}</div><span class="tap">Tap to reveal</span></div>`).join('')}</div></div>`;
   }
-  if(d.image_notes) html += `<div class="imgnote">From the original handwritten notes: ${escapeHtml(d.image_notes)}</div>`;
   return html;
+}
+
+
+// ---------- question bank ----------
+let BANK = {};
+const bankCache = {};
+async function loadBankIndex(){ try{ const r = await fetch('bank/index.json', {cache:'no-cache'}); if(r.ok) BANK = await r.json(); }catch(e){} }
+async function loadBank(id){
+  if(bankCache[id]) return bankCache[id];
+  const r = await fetch(`bank/${id}.json`, {cache:'no-cache'});
+  if(!r.ok) throw new Error('No bank');
+  return bankCache[id] = await r.json();
+}
+let bankOpts = {count:20, dom:'', mode:'new', scope:'all'};
+function bankStats(id){
+  const ar = Arena.all();
+  let tried = 0, right = 0, wrongNow = 0;
+  Object.entries(ar).forEach(([k, r]) => { if(k.startsWith(id + '|q')){ tried++; if(r.last) right++; else wrongNow++; } });
+  return {tried, right, wrongNow};
+}
+function renderBankView(){
+  const view = $('#bankView');
+  const term = $('#search').value.trim().toLowerCase(), cat = catSelect.value;
+  const ids = Object.keys(BANK);
+  const total = ids.reduce((a, id) => a + BANK[id].n, 0);
+  let tried = 0, right = 0;
+  ids.forEach(id => { const s = bankStats(id); tried += s.tried; right += s.right; });
+  const due = SRS.due('q|').filter(([, c]) => /^q\d/.test(c.ref || '')).length;
+  const rows = sorted.filter(d => (!cat || d.category === cat) && (!term || (d.name + ' ' + d.category).toLowerCase().includes(term)))
+    .sort((x, y) => (!!BANK[y.id] - !!BANK[x.id]) || x.name.localeCompare(y.name));
+  view.innerHTML = `
+    <div class="learn-hero">
+      <h2>Question bank</h2>
+      <p>Exam-style questions for every condition, written so that together they examine every point in your notes. Wrong answers go to Corrections and come back when they are due.</p>
+      <div class="stats">
+        <div class="stat"><b>${total.toLocaleString()}</b><small>questions</small></div>
+        <div class="stat"><b>${tried.toLocaleString()}</b><small>answered</small></div>
+        <div class="stat"><b>${tried ? Math.round(100 * right / tried) + '%' : '–'}</b><small>right (latest try)</small></div>
+      </div>
+      <div class="arena-opts">
+        <label>Conditions<select id="bkScope"><option value="all">All conditions shown below</option><option value="ticked">Only ones I ticked as done</option></select></label>
+        <label>Questions<select id="bkCount"><option value="10">10</option><option value="20">20</option><option value="40">40</option><option value="0">All</option></select></label>
+        <label>Domain<select id="bkDom"><option value="">All domains</option>${DOMAINS.map(d => `<option value="${d}">${DOM_LABEL[d]}</option>`).join('')}</select></label>
+        <label>Show<select id="bkMode"><option value="new">New questions first</option><option value="wrong">Only ones I got wrong</option><option value="any">Any, mixed</option></select></label>
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button class="btn primary big" id="bkGo">Start questions</button>
+        ${due ? `<button class="btn big" id="bkDue">Retry ${due} due</button>` : ''}
+      </div>
+    </div>
+    <div class="blist">${rows.map(d => {
+      const b = BANK[d.id];
+      if(!b) return `<div class="lrow" style="opacity:.6"><div class="meta"><b>${escapeHtml(d.name)}</b><small>${escapeHtml(d.category)}</small></div><span class="soon">Coming soon</span></div>`;
+      const st = bankStats(d.id);
+      return `<div class="lrow"><div class="meta"><b>${escapeHtml(d.name)}</b>
+        <small>${b.n} questions &middot; ${st.tried} answered${st.tried ? ` &middot; ${Math.round(100 * st.right / st.tried)}% right` : ''} &middot; examines ${b.cover}% of the notes</small>
+        <div class="bar"><i style="width:${Math.round(100 * st.tried / b.n)}%"></i></div></div>
+        <button class="btn" data-bk="${d.id}">Practise</button></div>`;
+    }).join('')}</div>`;
+  $('#bkScope').value = bankOpts.scope; $('#bkCount').value = String(bankOpts.count); $('#bkDom').value = bankOpts.dom; $('#bkMode').value = bankOpts.mode;
+  $('#bkScope').onchange = e => bankOpts.scope = e.target.value;
+  $('#bkCount').onchange = e => bankOpts.count = +e.target.value;
+  $('#bkDom').onchange = e => bankOpts.dom = e.target.value;
+  $('#bkMode').onchange = e => bankOpts.mode = e.target.value;
+  $('#bkGo').onclick = () => {
+    let ids = rows.map(d => d.id).filter(id => BANK[id]);
+    if(bankOpts.scope === 'ticked'){ const t = Ticks.all(); ids = ids.filter(id => t[id]); }
+    if(!ids.length){ toast(bankOpts.scope === 'ticked' ? 'Tick some conditions in Practice first' : 'No conditions match'); return; }
+    startBank(ids);
+  };
+  const bd = $('#bkDue'); if(bd) bd.onclick = retryDueQuestions;
+  view.querySelectorAll('[data-bk]').forEach(b => b.onclick = () => startBank([b.dataset.bk], BY_ID[b.dataset.bk].name));
+  glossify(view);
+}
+async function startBank(ids, title){
+  const ar = Arena.all();
+  let pool = [];
+  for(const id of ids){
+    let B; try{ B = await loadBank(id); }catch(e){ continue; }
+    B.questions.forEach((q, i) => pool.push({q, cond:id, ref:'q' + i, r:ar[`${id}|q${i}`]}));
+  }
+  if(bankOpts.dom) pool = pool.filter(x => x.q.d === bankOpts.dom);
+  if(bankOpts.mode === 'wrong') pool = pool.filter(x => x.r && x.r.last === false);
+  shuffle(pool);
+  if(bankOpts.mode === 'new') pool.sort((a, b) => (a.r ? (a.r.last ? 2 : 1) : 0) - (b.r ? (b.r.last ? 2 : 1) : 0));
+  if(bankOpts.count) pool = pool.slice(0, bankOpts.count);
+  if(!pool.length){ toast(bankOpts.mode === 'wrong' ? 'Nothing wrong to redo yet' : 'No questions match'); return; }
+  openArena({items:pool, ids:[...new Set(pool.map(x => x.cond))], title:title || 'Question bank', src:'Question bank'});
+}
+
+// ---------- animated walkthrough of the whole app ----------
+const SHOW = [
+  {t:'Your account is ready', x:'Everything you do is saved to your account as you go: lessons, blurts, corrections, scores and your review schedule. Log in on any device and it is all there.', art:() => `
+    <div class="sc-cloud"><svg viewBox="0 0 120 80"><path class="sc-c1" d="M30 62h58a18 18 0 000-36 26 26 0 00-50-4A20 20 0 0030 62z"/><path class="sc-tick" d="M46 44l10 10 20-22"/></svg>
+    <div class="sc-devs"><span class="sc-dev">Laptop</span><span class="sc-dev">Phone</span><span class="sc-dev">Tablet</span></div></div>`},
+  {t:'Home shows what is due', x:'Every time you open the app, Home tells you which blurts and exam questions are due today, so you never have to plan your revision.', art:() => `
+    <div class="sc-home"><div class="sc-due"><b class="sc-count" data-n="12">0</b><span>Blurts due</span></div><div class="sc-due"><b class="sc-count" data-n="5">0</b><span>Questions to retry</span></div>
+    ${['Notes', 'Learn', 'Blurt', 'Bank', 'Practice', 'Corrections'].map((n, k) => `<div class="sc-tile" style="--d:${0.5 + k * 0.12}s">${n}</div>`).join('')}</div>`},
+  {t:'Why Learn is a better way to revise', x:'Reading notes is passive. Learn makes you use them on a patient, in the order the exam thinks, and then tests you the way you will actually be examined.', art:() => `
+    <div class="sc-why">
+      <div class="sc-w" style="--d:.2s"><b>Learn through a patient</b><span>Every note point appears at the moment you need it for a real case.</span></div>
+      <div class="sc-w" style="--d:.5s"><b>In the order the exam thinks</b><div class="sc-flow">${['Diagnosis', 'Investigation', 'Management', 'Science'].map((d, k) => `<i style="--d:${0.8 + k * 0.35}s">${d}</i>`).join('')}</div></div>
+      <div class="sc-w" style="--d:.8s"><b>Tested like the real paper</b><div class="sc-bars">${[['Diagnosis', 51], ['Management', 27], ['Investigation', 16], ['Science', 6]].map(([n, v], k) => `<div><span>${n}</span><i style="--w:${v}%;--d:${1.2 + k * 0.2}s"></i><b>${v}%</b></div>`).join('')}</div><small>The question mix matches 482 real past-paper questions.</small></div>
+    </div>`},
+  {t:'Inside a lesson', x:'You meet a patient, follow what happens to them in short bullets, make decisions, and see your notes appear exactly when they matter. Pictures like ECGs and X-rays are drawn for you.', art:() => `
+    <div class="sc-lesson"><div class="sc-pt"><span>CA</span><b>Chloe, 21</b><small>Emergency Department</small></div>
+      ${['Vomiting and abdominal pain for 24 h', 'Type 1 diabetes, missed insulin', 'Deep, rapid breathing'].map((t, k) => `<div class="sc-bul" style="--d:${0.3 + k * 0.4}s">${t}</div>`).join('')}
+      <div class="sc-vit" style="--d:1.6s"><i>HR 126</i><i>BP 86/54</i><i>RR 30</i></div>
+      <div class="sc-ask" style="--d:2.2s"><b>Your call: what do you check first?</b><div class="sc-o">Chest X-ray</div><div class="sc-o ok">Capillary glucose and ketones</div><div class="sc-o">CT abdomen</div></div></div>`},
+  {t:'Crack exam questions step by step', x:'For every exam question you can watch the method: read the question line, spot the clues, predict the answer, cross out the distractors with reasons, then commit. Get one wrong and it walks you through it.', art:() => `
+    <div class="sc-sba"><div class="sc-track">${['Read', 'Clues', 'Predict', 'Eliminate', 'Commit'].map((n, k) => `<span style="--d:${0.3 + k * 0.6}s">${n}</span>`).join('')}</div>
+      <p>A 16 year old boy has <em style="--d:.9s">increasing thirst</em>, has <em style="--d:1.1s">lost 4 kg</em> and is breathing <em style="--d:1.3s">deep and rapid</em>.</p>
+      ${['Appendicitis', 'Diabetic ketoacidosis', 'Diabetic ketosis', 'HHS'].map((o, k) => `<div class="sc-op ${k === 1 ? 'ok' : 'x'}" style="--d:${2.1 + k * 0.3}s"><b>${'ABCD'[k]}</b>${o}${k === 1 ? '' : '<small>ruled out</small>'}</div>`).join('')}</div>`},
+  {t:'Blurt, then spaced repetition times it', x:'Type or say everything you remember. You see what you missed and why it matters in the exam. Then FSRS, the scheduler Anki uses, brings each question back just before you would forget it, and the gaps keep growing.', art:() => `
+    <div class="sc-blurt"><div class="sc-type"><span class="sc-typed"></span><i class="sc-caret"></i></div>
+      <div class="sc-res" style="--d:2.4s"><span class="ok">&#10003; Glucose above 11</span><span class="ok">&#10003; Ketones above 3</span><span class="bad">&#10007; pH below 7.3</span></div>
+      <div class="sc-line" style="--d:3s">${[['4 days', 14], ['15 days', 30], ['2 months', 55], ['5 months', 100]].map(([n, w], k) => `<div style="--w:${w}%;--d:${3.2 + k * 0.35}s"><i></i><span>${n}</span></div>`).join('')}</div></div>`},
+  {t:'A question bank that examines everything', x:'Every condition has its own bank of exam questions, written so that together they test every part of your notes. Pick conditions, a domain, or only the ones you got wrong.', art:() => `
+    <div class="sc-bank">${['Pneumonia', 'DKA', 'ACS', 'Stroke', 'Sepsis', 'Asthma', 'PE', 'AKI', 'Cirrhosis'].map((n, k) => `<div class="sc-bk" style="--d:${0.15 + k * 0.1}s"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="bg"/><circle cx="18" cy="18" r="15" class="fg" style="--p:${70 + (k * 7) % 30}"/></svg><span>${n}</span></div>`).join('')}</div>`},
+  {t:'Your corrections notebook', x:'Every wrong answer is filed for you automatically, by condition and then by domain, with the right answer and why. Tap the Notebook button while practising to see your corrections or add one, including corrections from Passmedicine, Quesmed or any other question bank. Open a condition for a clean set of correction notes to read before the exam.', art:() => `
+    <div class="sc-corr"><div class="sc-card">Q: Which is the most appropriate initial investigation?<small>You said: CT abdomen</small></div>
+      <div class="sc-folder"><b>Corrections</b>${['Diagnosis', 'Investigation', 'Management', 'Science'].map((d, k) => `<i class="${k === 1 ? 'hit' : ''}">${d}</i>`).join('')}</div></div>`},
+  {t:'Notes you step through, and make your own', x:'Notes open one domain at a time: Diagnosis, Investigation, Management, Science, then Test yourself. Each Next reveals the next point, with diagrams in between. Edit any section your way and it is saved to your account. Underlined words show a definition when you hover or tap.', art:() => `
+    <div class="sc-notes"><b>How does it usually present?</b><p>Deep, sighing <u>Kussmaul breathing</u> with a fruity smell.</p><div class="sc-tip">Kussmaul breathing: deep, laboured breathing that blows off CO2 to compensate for acidosis.</div></div>`},
+  {t:'Visual or plain: your choice', x:'Every condition now has two ways to read the notes. Visual steps through each domain with diagrams, body maps and flows. Plain is the notes as they were, all on one page. The reason is simple: some people learn better with visual aids, and for many people words alone do not really help. Pick whichever works for you, for each condition.', art:() => `
+    <div class="sc-choice"><div class="sc-ch" style="--d:.2s"><b>Visual</b><div class="sc-mini"><i style="--d:.5s"></i><i style="--d:.7s"></i><i class="pic" style="--d:.9s"></i></div><small>Step by step, with diagrams</small></div>
+      <div class="sc-ch" style="--d:.4s"><b>Plain</b><div class="sc-mini plain"><i style="--d:.6s"></i><i style="--d:.65s"></i><i style="--d:.7s"></i><i style="--d:.75s"></i></div><small>All the notes on one page</small></div></div>`},
+  {t:'See how confident you are', x:'My progress gives every condition a confidence score from your answers, your blurt recall, how well you are predicted to remember it today and how much you have covered, weighted like the real exam. It tells you what to do next.', art:() => `
+    <div class="sc-prog">${[['Pneumonia', 82, 'strong'], ['DKA', 64, 'secure'], ['Stroke', 47, 'developing'], ['Sepsis', 28, 'weak']].map(([n, v, b], k) => `<div class="sc-pr" style="--d:${0.2 + k * 0.25}s"><b>${n}</b><div class="bar"><i class="b-${b}" style="--w:${v}%;--d:${0.5 + k * 0.25}s"></i></div><span>${v}</span></div>`).join('')}</div>`},
+  {t:'You are ready', x:'A good first step is a short lesson. You can replay this walkthrough any time from your account.', art:() => `
+    <div class="sc-ready"><button class="btn primary big" data-x="first">Start a short lesson</button><button class="btn big" data-x="home">Go to Home</button></div>`},
+];
+function openShowcase(){
+  store.set('y3.showcase.v2', true, true);
+  let i = 0, timers = [];
+  const root = h(`<div class="showcase" role="dialog" aria-label="How the app works">
+    <div class="sc-top"><div class="sc-dots"></div><button class="btn ghost" data-x="skip">Skip</button></div>
+    <div class="sc-stage"></div>
+    <div class="sc-nav"><button class="btn" data-x="back">Back</button><button class="btn ghost" data-x="replay">Replay</button><button class="btn primary" data-x="next">Next</button></div></div>`);
+  document.body.appendChild(root);
+  document.body.style.overflow = 'hidden';
+  const close = () => { timers.forEach(clearTimeout); root.remove(); document.body.style.overflow = ''; document.removeEventListener('keydown', key); refreshViews(); };
+  const key = e => { if(e.key === 'Escape') close(); if(e.key === 'ArrowRight') go(i + 1); if(e.key === 'ArrowLeft') go(i - 1); };
+  document.addEventListener('keydown', key);
+  function go(n){
+    if(n >= SHOW.length){ close(); return; }
+    i = Math.max(0, n);
+    timers.forEach(clearTimeout); timers = [];
+    const s = SHOW[i];
+    $('.sc-stage', root).innerHTML = `<div class="sc-scene"><div class="sc-step">${i + 1} of ${SHOW.length}</div><h2>${s.t}</h2><p>${s.x}</p><div class="sc-art">${s.art()}</div></div>`;
+    $('.sc-dots', root).innerHTML = SHOW.map((_, k) => `<i class="${k === i ? 'on' : k < i ? 'done' : ''}"></i>`).join('');
+    $('[data-x=back]', root).disabled = i === 0;
+    $('[data-x=next]', root).textContent = i === SHOW.length - 1 ? 'Finish' : 'Next';
+    const scene = $('.sc-scene', root);
+    requestAnimationFrame(() => requestAnimationFrame(() => scene.classList.add('play')));
+    scene.querySelectorAll('.sc-count').forEach(c => { const n = +c.dataset.n; for(let k = 1; k <= n; k++) timers.push(setTimeout(() => c.textContent = k, 300 + k * 60)); });
+    const typed = $('.sc-typed', scene);
+    if(typed){ const text = 'glucose above 11, ketones above 3...'; for(let k = 1; k <= text.length; k++) timers.push(setTimeout(() => typed.textContent = text.slice(0, k), 300 + k * 50)); }
+    const f = $('[data-x=first]', scene); if(f) f.onclick = () => { close(); location.hash = 'learn/' + (READY.has('bell-s-palsy') ? 'bell-s-palsy' : [...READY][0]); };
+    const hm = $('[data-x=home]', scene); if(hm) hm.onclick = () => { close(); setMode('home'); };
+  }
+  $('[data-x=skip]', root).onclick = close;
+  $('[data-x=next]', root).onclick = () => go(i + 1);
+  $('[data-x=back]', root).onclick = () => go(i - 1);
+  $('[data-x=replay]', root).onclick = () => go(i);
+  go(0);
+}
+
+
+// ---------- more drawings: body map, cycles, trees, timelines, key facts ----------
+const ORGANS = {
+  brain:{p:'<ellipse cx="100" cy="34" rx="20" ry="16"/>', l:[100, 10, 'Brain']},
+  eyes:{p:'<circle cx="92" cy="42" r="3.2"/><circle cx="108" cy="42" r="3.2"/>', l:[140, 40, 'Eyes']},
+  thyroid:{p:'<path d="M92 74q8 6 16 0q-1 7-8 8q-7-1-8-8z"/>', l:[140, 76, 'Thyroid']},
+  lungs:{p:'<path d="M78 92q-16 6-18 40q0 14 6 18l18-6V96z"/><path d="M122 92q16 6 18 40q0 14-6 18l-18-6V96z"/>', l:[160, 118, 'Lungs']},
+  heart:{p:'<path d="M104 112q12-8 16 4q2 14-16 26q-12-8-14-18q0-14 14-12z"/>', l:[160, 134, 'Heart']},
+  aorta:{p:'<path d="M101 104v100" stroke-width="5" fill="none"/>', l:[160, 190, 'Aorta']},
+  liver:{p:'<path d="M66 150q10-6 40-2q6 6-4 14q-20 8-34 6q-8-8-2-18z"/>', l:[34, 154, 'Liver']},
+  gallbladder:{p:'<ellipse cx="88" cy="168" rx="5" ry="7"/>', l:[34, 174, 'Gallbladder']},
+  stomach:{p:'<path d="M112 148q18-4 22 10q2 14-14 16q-10-2-10-12z"/>', l:[166, 156, 'Stomach']},
+  spleen:{p:'<ellipse cx="138" cy="160" rx="6" ry="10"/>', l:[166, 166, 'Spleen']},
+  pancreas:{p:'<path d="M90 178q20-6 40-2q-2 6-10 7q-16 2-30-5z"/>', l:[166, 180, 'Pancreas']},
+  kidneys:{p:'<ellipse cx="80" cy="186" rx="7" ry="11"/><ellipse cx="122" cy="186" rx="7" ry="11"/>', l:[34, 192, 'Kidneys']},
+  bowel:{p:'<path d="M72 200q28-10 56 0v26q-28 10-56 0z"/>', l:[166, 214, 'Bowel']},
+  bladder:{p:'<ellipse cx="100" cy="244" rx="11" ry="8"/>', l:[150, 246, 'Bladder']},
+  pelvic:{p:'<ellipse cx="100" cy="258" rx="8" ry="5"/>', l:[150, 262, 'Prostate / uterus']},
+  testes:{p:'<circle cx="95" cy="276" r="4"/><circle cx="105" cy="276" r="4"/>', l:[150, 280, 'Testes']},
+  spine:{p:'<path d="M100 60v200" stroke-width="4" stroke-dasharray="4 3" fill="none"/>', l:[34, 228, 'Spine']},
+  joints:{p:'<circle cx="62" cy="96" r="5"/><circle cx="138" cy="96" r="5"/><circle cx="84" cy="262" r="5"/><circle cx="116" cy="262" r="5"/><circle cx="82" cy="320" r="5"/><circle cx="118" cy="320" r="5"/>', l:[34, 322, 'Joints']},
+  skin:{p:'<path d="M100 8a26 26 0 010 52a26 26 0 010-52zM70 70h60q14 4 16 30v120q-4 30-16 40v100H70V260q-12-10-16-40V100q2-26 16-30z" fill="none" stroke-width="3"/>', l:[34, 60, 'Skin']},
+  blood:{p:'<path d="M70 110q-10 40 0 80M130 110q10 40 0 80M86 270v90M114 270v90" stroke-width="3" fill="none"/>', l:[34, 120, 'Blood / vessels']},
+  lymph:{p:'<circle cx="84" cy="70" r="3"/><circle cx="116" cy="70" r="3"/><circle cx="74" cy="104" r="3"/><circle cx="126" cy="104" r="3"/><circle cx="82" cy="254" r="3"/><circle cx="118" cy="254" r="3"/>', l:[34, 104, 'Lymph nodes']},
+  sinuses:{p:'<ellipse cx="94" cy="48" rx="4" ry="3"/><ellipse cx="106" cy="48" rx="4" ry="3"/>', l:[140, 54, 'Sinuses']},
+  throat:{p:'<rect x="96" y="58" width="8" height="12" rx="3"/>', l:[140, 64, 'Throat']},
+  ears:{p:'<ellipse cx="73" cy="38" rx="4" ry="7"/><ellipse cx="127" cy="38" rx="4" ry="7"/>', l:[140, 30, 'Ears']},
+  oesophagus:{p:'<path d="M101 64v86" stroke-width="4" fill="none"/>', l:[34, 132, 'Oesophagus']},
+  breast:{p:'<circle cx="84" cy="116" r="9"/><circle cx="116" cy="116" r="9"/>', l:[34, 112, 'Breast']},
+  nerves:{p:'<path d="M100 60v190M100 120l-36 40M100 120l36 40M100 250l-16 110M100 250l16 110" stroke-width="2" fill="none"/>', l:[34, 300, 'Nerves']},
+};
+function visOrgan(v, body){
+  const on = new Set(v.organs || []);
+  const base = `<g class="silh"><circle cx="100" cy="34" r="25"/><path d="M90 58h20v10q30 3 38 22l16 98q1 9-8 9l-17-82v104l8 136h-27l-10-120h-20l-10 120H53l8-136V115l-17 82q-9 0-8-9l16-98q8-19 38-22z"/></g>`;
+  const parts = Object.entries(ORGANS).filter(([k]) => on.has(k)).map(([k, o], j) => `<g class="org" style="animation-delay:${0.2 + j * 0.25}s">${o.p}</g>
+    <g class="olbl" style="animation-delay:${0.4 + j * 0.25}s"><text x="${o.l[0]}" y="${o.l[1]}" text-anchor="${o.l[0] < 100 ? 'end' : 'start'}">${escapeHtml(o.l[2])}</text></g>`).join('');
+  body.innerHTML = `<svg viewBox="-30 0 260 370" class="organ">${base}${parts}</svg>`;
+}
+function visCycle(v, body){
+  const n = (v.steps || []).length, R = 98, cx = 160, cy = 130;
+  const pos = (k, r) => [cx + r * Math.sin(2 * Math.PI * k / n), cy - r * Math.cos(2 * Math.PI * k / n)];
+  let arcs = '', nodes = '';
+  for(let k = 0; k < n; k++){
+    const [x1, y1] = pos(k + 0.28, R), [x2, y2] = pos(k + 0.72, R);
+    arcs += `<path class="carc" style="animation-delay:${0.3 + k * 0.5}s" d="M${x1.toFixed(1)} ${y1.toFixed(1)}A${R} ${R} 0 0 1 ${x2.toFixed(1)} ${y2.toFixed(1)}" marker-end="url(#cy-ar)"/>`;
+    const [x, y] = pos(k, R);
+    nodes += `<foreignObject x="${(x - 58).toFixed(0)}" y="${(y - 22).toFixed(0)}" width="116" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="cnode" style="animation-delay:${0.1 + k * 0.5}s">${escapeHtml(v.steps[k])}</div></foreignObject>`;
+  }
+  body.innerHTML = `<svg viewBox="0 0 320 260" class="cycle"><defs><marker id="cy-ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="cam"/></marker></defs>
+    ${v.centre ? `<text x="${cx}" y="${cy + 5}" text-anchor="middle" class="ccen">${escapeHtml(v.centre)}</text>` : ''}${arcs}${nodes}</svg>`;
+}
+function visTree(v, body){
+  const kids = v.children || [];
+  body.innerHTML = `<div class="tree"><div class="troot in">${escapeHtml(v.root || '')}</div>
+    <div class="tkids">${kids.map((c, k) => `<div class="tkid in" style="animation-delay:${0.3 + k * 0.25}s"><div class="tk-h">${escapeHtml(c.label)}</div>${(c.items || []).map((it, j) => `<div class="tk-i in" style="animation-delay:${0.5 + k * 0.25 + j * 0.12}s">${richText(it)}</div>`).join('')}</div>`).join('')}</div></div>`;
+}
+function visTimeline(v, body){
+  const ev = v.events || [];
+  body.innerHTML = `<div class="tline">${ev.map((e, k) => `<div class="te in" style="animation-delay:${0.2 + k * 0.3}s"><span class="te-t">${escapeHtml(e.t)}</span><span class="te-d"></span><span class="te-x">${richText(e.x)}</span></div>`).join('')}</div>`;
+}
+function visKeyfacts(v, body){
+  const f = v.facts || [];
+  body.innerHTML = `<div class="kfacts">${f.map((x, k) => `<div class="kf in" style="animation-delay:${0.15 + k * 0.15}s"><b>${escapeHtml(x.big)}</b><span>${richText(x.label)}</span></div>`).join('')}</div>`;
+}
+
+// ---------- student edits to the notes (saved to their account) ----------
+const Edits = {
+  key(){ return 'y3.notes.' + (Auth.user() || 'guest'); },
+  all(){ return store.get(Edits.key(), {}); },
+  sub(id, d, k){ const e = Edits.all(); return e[id] && e[id][d] && e[id][d][k] || null; },
+  save(id, d, k, val){ const e = Edits.all(); ((e[id] = e[id] || {})[d] = e[id][d] || {})[k] = val; store.set(Edits.key(), e); },
+  reset(id, d, k){ const e = Edits.all(); if(e[id] && e[id][d]){ delete e[id][d][k]; store.set(Edits.key(), e); } },
+  count(id){ const e = Edits.all()[id] || {}; return Object.values(e).reduce((a, x) => a + Object.keys(x).length, 0); },
+};
+function notesFor(id, d){
+  const N = BY_ID[id];
+  return (N[d] || []).map((s, k) => { const e = Edits.sub(id, d, k); return e ? {...s, h:e.h, points:e.points, edited:true} : s; });
+}
+// how far through each condition's notes the student has read
+const NRead = {
+  key(){ return 'y3.nread.' + (Auth.user() || 'guest'); },
+  all(){ return store.get(NRead.key(), {}); },
+  get(id){ return NRead.all()[id] || null; },
+  set(id, v){ const a = NRead.all(); a[id] = {...v, updated:Date.now()}; store.set(NRead.key(), a); },
+};
+const nvCache = {};
+let NOTESVIS = new Set();
+async function loadNotesVisIndex(){ try{ const r = await fetch('notesvis/index.json', {cache:'no-cache'}); if(r.ok) NOTESVIS = new Set(await r.json()); }catch(e){} }
+async function loadNotesVis(id){
+  if(nvCache[id]) return nvCache[id];
+  if(!NOTESVIS.has(id)) return null;
+  const r = await fetch(`notesvis/${id}.json`, {cache:'no-cache'});
+  return r.ok ? (nvCache[id] = await r.json()) : null;
+}
+
+// ---------- notes as a step-through: Diagnosis > Investigation > Management > Science > Test yourself ----------
+const NOTE_CHAPS = [
+  {k:'diagnosis', t:'Diagnosis', c:'var(--dx)'}, {k:'investigation', t:'Investigation', c:'var(--ix)'},
+  {k:'management', t:'Management', c:'var(--mx)'}, {k:'science', t:'Science', c:'var(--sci)'}, {k:'test', t:'Test yourself', c:'var(--ok)'},
+];
+async function openNotes(id){
+  const N = BY_ID[id];
+  if(!N){ location.hash = ''; return; }
+  const root = mountPlayer({title:N.name, sub:'Notes · ' + N.category});
+  const V = await loadNotesVis(id);
+  const screens = [];
+  DOMAINS.forEach((d, di) => {
+    const subs = notesFor(id, d);
+    if(!subs.length) return;
+    screens.push({chap:d, label:'Overview', render: el => noteIntro(el, id, d, di)});
+    subs.forEach((s, k) => {
+      screens.push(noteSubScreen(id, d, k));
+      ((V && V.visuals) || []).filter(v => v.d === d && v.after === k).forEach(v => screens.push(noteVisScreen(d, v)));
+    });
+    if(d === 'management' && (N.guidelines || []).length) screens.push({chap:d, label:'Guidelines', render: el => {
+      el.innerHTML = `<div class="dom-badge d-${d}">Management</div><h2 class="s-h">Guidelines and scoring systems</h2>
+        <div class="gkey in">${N.guidelines.map((g, k) => `<div class="nb-pt shown d-${d}" style="animation-delay:${0.1 * k}s"><span class="nb-n">${k + 1}</span><div>${pointHtml(g)}</div></div>`).join('')}</div>`;
+    }});
+  });
+  if((N.recall || []).length) screens.push({chap:'test', render: el => {
+    el.innerHTML = `<div class="dom-badge" style="--c:var(--ok)">Test yourself</div><h2 class="s-h">Can you answer these?</h2>
+      <p style="color:var(--ink-soft);margin:-4px 0 12px">Say your answer, then tap to check it.</p>
+      <div class="gtest"><div class="gq-grid">${N.recall.map((r, i) => `<div class="rq in" style="animation-delay:${0.05 * i}s"><div class="q"><span class="gq-n">${i + 1}</span>${escapeHtml(r.q)}</div><div class="a hidden-ans">${escapeHtml(r.a)}</div><span class="tap">Tap to reveal</span></div>`).join('')}</div></div>
+      ${READY.has(id) ? `<div class="learn-strip" style="margin-top:14px"><span>Ready to use it on a patient and exam questions?</span><button class="btn primary" data-learn="${id}">${lessonCta(id)}</button></div>` : ''}`;
+    el.querySelectorAll('.rq').forEach(q => q.onclick = () => { $('.a', q).classList.remove('hidden-ans'); $('.tap', q).style.display = 'none'; });
+  }});
+  const chaps = NOTE_CHAPS.filter(c => screens.some(s => s.chap === c.k));
+  const st = Object.assign({pos:0, maxPos:0}, NRead.get(id) || {});
+  startPlayer(root, {id, notes:N, screens, state:st, chaps, save: s => {
+    // per-domain share read, used for progress and confidence
+    const seen = {};
+    chaps.forEach(c => { const idx = screens.map((x, i) => x.chap === c.k ? i : -1).filter(i => i >= 0); seen[c.k] = idx.length ? idx.filter(i => i <= s.maxPos).length / idx.length : 0; });
+    NRead.set(id, {pos:s.pos, maxPos:s.maxPos, total:screens.length, seen});
+  }, onFinish: () => setMode('notes')});
+}
+function goPlain(id){
+  store.set('y3.nstyle', 'plain');
+  location.hash = '';
+  setTimeout(() => { setMode('notes'); const c = cardEls.get(id); if(c){ c._toggle(true); setTimeout(() => c.scrollIntoView({block:'start'}), 80); } }, 50);
+}
+function noteIntro(el, id, d, di){
+  const subs = notesFor(id, d);
+  const lbl = DOM_LABEL[d];
+  const what = {diagnosis:'What it is, who gets it, and how it presents', investigation:'How you prove it, and what the tests show', management:'How you treat it, step by step', science:'Why it happens: the mechanisms behind it'}[d];
+  el.innerHTML = `<div class="dom-badge d-${d}">Part ${di + 1}</div><h2 class="s-h">${lbl}</h2>
+    <div class="gspec in d-${d}" style="--c:var(--${{diagnosis:'dx', investigation:'ix', management:'mx', science:'sci'}[d]})"><b>${what}.</b></div>
+    <div class="box in d-${d}" style="animation-delay:.1s"><div class="case-lbl">In this part</div><ul class="cover-list">${subs.map((s, k) => `<li class="in" style="animation-delay:${0.15 + 0.07 * k}s">${escapeHtml(s.h)}${s.edited ? ' <span class="tag">edited</span>' : ''}</li>`).join('')}</ul></div>
+    <button class="link-btn" data-x="plain" style="text-align:left;width:auto">Prefer plain notes? Read them all on one page</button>`;
+  $('[data-x=plain]', el).onclick = () => goPlain(id);
+}
+function noteSubScreen(id, d, k){
+  const scr = {chap:d};
+  scr.render = el => {
+    const sub = notesFor(id, d)[k];
+    el.innerHTML = `<div class="dom-badge d-${d}">${DOM_LABEL[d]}</div>
+      <h2 class="s-h">${escapeHtml(sub.h)}</h2>
+      <div class="box in d-${d}"><div class="nb-head"><small class="nb-count"></small>${sub.edited ? '<span class="tag">Your edit</span>' : ''}<button class="btn ghost" data-x="edit">Edit</button></div>
+        <div class="nb-list">${sub.points.map((p, j) => `<div class="nb-pt" data-k="${j}"><span class="nb-n">${j + 1}</span><div>${pointHtml(p)}</div></div>`).join('')}</div>
+        <div class="nb-foot"><button class="btn ghost" data-x="all">Show all</button></div></div>`;
+    const pts = [...el.querySelectorAll('.nb-pt')];
+    let shown = 1;
+    const paint = () => {
+      pts.forEach((p, j) => { p.classList.toggle('shown', j < shown); p.classList.toggle('now', j === shown - 1 && shown < pts.length); });
+      const c = $('.nb-count', el); if(c) c.textContent = `${shown} of ${pts.length}`;
+      const a = $('[data-x=all]', el); if(a) a.style.visibility = shown >= pts.length ? 'hidden' : '';
+      P && P.updateNav();
+    };
+    const adv = () => { if(shown < pts.length){ shown++; paint(); const c = pts[shown - 1]; setTimeout(() => c.scrollIntoView({block:'nearest', behavior:'smooth'}), 60); } };
+    $('[data-x=all]', el).onclick = () => { shown = pts.length; paint(); };
+    $('[data-x=edit]', el).onclick = () => noteEditor(el, id, d, k, () => { scr.render(el); glossify(el); });
+    scr.inner = {remaining: () => shown < pts.length, advance: adv};
+    setTimeout(paint, 0);
+  };
+  return scr;
+}
+function noteEditor(el, id, d, k, done){
+  const orig = BY_ID[id][d][k];
+  const cur = notesFor(id, d)[k];
+  scrInnerOff();
+  const box = $('.box', el);
+  box.innerHTML = `<div class="case-lbl">Edit these notes your way. Your version is saved to your account.</div>
+    <input class="ed-h" value="${escapeHtml(cur.h)}" aria-label="Heading">
+    <div class="ed-list">${cur.points.map(p => edRow(p)).join('')}</div>
+    <button class="btn ghost" data-x="add">+ Add a point</button>
+    <div class="ed-act"><button class="btn primary" data-x="save">Save</button><button class="btn" data-x="cancel">Cancel</button>${cur.edited ? '<button class="btn ghost" data-x="reset">Back to the original</button>' : ''}</div>
+    <div class="small-print" style="text-align:left">Tip: write **two stars** around words to make them stand out.</div>`;
+  const list = $('.ed-list', box);
+  const wire = () => list.querySelectorAll('[data-x=del]').forEach(b => b.onclick = () => b.closest('.ed-row').remove());
+  wire();
+  $('[data-x=add]', box).onclick = () => { list.insertAdjacentHTML('beforeend', edRow('')); wire(); list.lastElementChild.querySelector('textarea').focus(); };
+  $('[data-x=cancel]', box).onclick = done;
+  $('[data-x=save]', box).onclick = () => {
+    const points = [...list.querySelectorAll('textarea')].map(t => t.value.trim()).filter(Boolean);
+    if(!points.length){ toast('Add at least one point'); return; }
+    Edits.save(id, d, k, {h:$('.ed-h', box).value.trim() || orig.h, points, at:Date.now()});
+    toast('Saved to your notes');
+    done();
+  };
+  const rs = $('[data-x=reset]', box); if(rs) rs.onclick = () => { Edits.reset(id, d, k); toast('Back to the original'); done(); };
+}
+function edRow(p){ return `<div class="ed-row"><textarea rows="2">${escapeHtml(p)}</textarea><button class="icon-btn" data-x="del" aria-label="Remove point">&times;</button></div>`; }
+function scrInnerOff(){ const s = P && P.screens[P.state.pos]; if(s) s.inner = null; P && P.updateNav(); }
+function noteVisScreen(d, v){
+  return {chap:d, render: el => {
+    let body = '';
+    if(v.type === 'visual') body = visSlot(v.visual);
+    else if(v.type === 'flow') body = `<div class="flow">${v.nodes.map((n, k) => `${k ? `<div class="farr lit" data-k="${k}">${ARROW}</div>` : ''}<div class="fnode lit in" style="animation-delay:${0.25 * k}s">${richText(n)}</div>`).join('')}</div>`;
+    else if(v.type === 'compare') body = `<div class="cmp-wrap"><table class="cmp"><thead><tr>${v.head.map(x => `<th>${richText(x)}</th>`).join('')}</tr></thead><tbody>${v.rows.map((r, k) => `<tr class="in" style="animation-delay:${0.1 + 0.08 * k}s">${r.map(c => `<td>${richText(c)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+    el.innerHTML = `<div class="dom-badge d-${d}">${DOM_LABEL[d]} &middot; picture it</div><h2 class="s-h">${escapeHtml(v.title)}</h2>
+      <div class="box in d-${d}">${body}${v.text ? `<p style="margin-top:10px;color:var(--ink-soft)">${richText(v.text)}</p>` : ''}</div>`;
+    // captions on drawn visuals are shown straight away in notes
+    setTimeout(() => el.querySelectorAll('.vis-ctrl .btn').forEach(b => b.click()), 50);
+  }};
+}
+
+// ---------- learning evidence, used to score confidence ----------
+const Ev = {
+  key(){ return 'y3.ev.' + (Auth.user() || 'guest'); },
+  all(){ return store.get(Ev.key(), {}); },
+  add(cond, d, src, score){
+    if(!cond || !d) return;
+    const a = Ev.all();
+    const list = a[cond] = a[cond] || [];
+    list.push([Date.now(), d, src, Math.round(score * 100) / 100]);
+    if(list.length > 400) list.splice(0, list.length - 400);
+    store.set(Ev.key(), a);
+  },
+};
+// Confidence (0-100) per condition, from everything the student has done:
+//   accuracy  - every answer (exam questions, bank, quiz, case decisions, blurt recall), weighted by how
+//               exam-like it is and faded by age (half-life 30 days), shrunk towards 40% until there is
+//               enough evidence (Bayesian prior worth 2 answers)
+//   memory    - FSRS predicted recall today for this condition's blurt and retry cards; without cards,
+//               fades with time since last study (half-life 14 days)
+//   exposure  - share of the notes and lesson actually worked through, per domain
+//   evidence  - how much there is to go on (more answers, more trust)
+// Domains are combined in the real exam's mix (diagnosis 51%, management 27%, investigation 16%, science 6%),
+// and open corrections take a little off.
+const EV_W = {sba:1, bank:1, arena:1, tech:0.6, blurt:0.8, mcq:0.5, ask:0.4};
+const EXAM_MIX = {diagnosis:0.51, management:0.27, investigation:0.16, science:0.06};
+function confidence(id){
+  const now = Date.now();
+  const N = BY_ID[id];
+  const ev = Ev.all()[id] || [];
+  const nr = NRead.get(id);
+  const lessonFrac = READY.has(id) ? lessonPct(id) / 100 : 0;
+  const cards = Object.entries(SRS.all()).filter(([k]) => k.split('|')[1] === id).map(([, c]) => c);
+  const last = Math.max(0, ...ev.map(e => e[0]), (nr && nr.updated) || 0, ((Progress.lesson(id) || {}).updated) || 0);
+  const memAll = cards.length ? cards.reduce((a, c) => a + fsrsRecall(c, now), 0) / cards.length : (last ? Math.pow(0.5, (now - last) / DAY / 14) : 0);
+  const out = {domains:{}, last, cards:cards.length, answers:ev.length};
+  let total = 0, wsum = 0;
+  DOMAINS.forEach(d => {
+    if(!(N[d] || []).length) return;
+    let sw = 0, ss = 0, n = 0;
+    ev.forEach(([t, dd, src, s]) => { if(dd !== d) return; const w = (EV_W[src] || 0.5) * Math.pow(0.5, (now - t) / DAY / 30); sw += w; ss += w * s; n++; });
+    const acc = (ss + 2 * 0.4) / (sw + 2);
+    const exposure = Math.max(nr && nr.seen ? (nr.seen[d] || 0) : 0, lessonFrac);
+    const dCards = cards.filter(c => c.d === d);
+    const mem = dCards.length ? dCards.reduce((a, c) => a + fsrsRecall(c, now), 0) / dCards.length : memAll;
+    const trust = 1 - Math.exp(-sw / 6);
+    const score = (n || exposure) ? 100 * (0.15 * exposure + 0.55 * (n ? acc : 0.25 * exposure) + 0.30 * mem) * (0.6 + 0.4 * trust) : 0;
+    out.domains[d] = {score:Math.round(score), acc:n ? Math.round(100 * acc) : null, n, exposure:Math.round(100 * exposure), mem:Math.round(100 * mem)};
+    total += EXAM_MIX[d] * score; wsum += EXAM_MIX[d];
+  });
+  const openCorr = Corr.all().filter(c => c.cond === id && !c.fixed).length;
+  out.corrections = openCorr;
+  out.score = Math.max(0, Math.round((wsum ? total / wsum : 0) - Math.min(12, 2 * openCorr)));
+  out.band = !last ? 'Not started' : out.score < 40 ? 'Weak' : out.score < 60 ? 'Developing' : out.score < 80 ? 'Secure' : 'Strong';
+  // what to do next
+  const tips = [];
+  const due = cards.filter(c => c.due <= now).length;
+  if(!last) tips.push(['Read the notes', 'notes']);
+  if(READY.has(id) && lessonFrac < 1) tips.push([lessonFrac ? 'Finish the lesson' : 'Do the lesson', 'learn']);
+  if(due) tips.push([`Review ${due} due card${due === 1 ? '' : 's'}`, 'due']);
+  const weakest = Object.entries(out.domains).filter(([, v]) => v.n).sort((a, b) => a[1].score - b[1].score)[0];
+  if(weakest && weakest[1].score < 70) tips.push([`Practise ${DOM_LABEL[weakest[0]].toLowerCase()} questions`, 'bank:' + weakest[0]]);
+  if(openCorr) tips.push([`Go over ${openCorr} correction${openCorr === 1 ? '' : 's'}`, 'corr']);
+  if(!tips.length) tips.push(['Mixed questions to keep it fresh', 'bank:']);
+  out.tips = tips;
+  return out;
+}
+function doTip(id, act){
+  if(act === 'notes') location.hash = 'notes/' + id;
+  else if(act === 'learn') location.hash = 'learn/' + id;
+  else if(act === 'corr'){ setMode('corr'); $('#search').value = BY_ID[id].name; applyFilter(); }
+  else if(act === 'due'){
+    const now = Date.now();
+    const keys = Object.entries(SRS.all()).filter(([k, c]) => k.split('|')[1] === id && c.due <= now);
+    if(keys.some(([k]) => k[0] === 'b')) blurtItems({cond:id}).then(items => items.length && openBlurtSession(items, BY_ID[id].name));
+    else retryDueQuestions();
+  }
+  else if(act.startsWith('bank:')){ bankOpts.dom = act.slice(5); if(BANK[id]) startBank([id], BY_ID[id].name); else openArena({ids:[id], count:20, dom:bankOpts.dom}); }
+}
+let progFilter = 'studied';
+function renderProgressView(){
+  const view = $('#progressView');
+  const term = $('#search').value.trim().toLowerCase(), cat = catSelect.value;
+  const all = sorted.map(d => [d, confidence(d.id)]);
+  const studied = all.filter(([, c]) => c.last);
+  const bands = ['Weak', 'Developing', 'Secure', 'Strong'];
+  const bandN = Object.fromEntries(bands.map(b => [b, studied.filter(([, c]) => c.band === b).length]));
+  const avg = studied.length ? Math.round(studied.reduce((a, [, c]) => a + c.score, 0) / studied.length) : 0;
+  let rows = all.filter(([d]) => (!cat || d.category === cat) && (!term || d.name.toLowerCase().includes(term)));
+  if(progFilter === 'studied') rows = rows.filter(([, c]) => c.last);
+  if(progFilter === 'weak') rows = rows.filter(([, c]) => c.last).sort((a, b) => a[1].score - b[1].score);
+  if(progFilter === 'all') rows.sort((a, b) => (b[1].last ? 1 : 0) - (a[1].last ? 1 : 0) || b[1].score - a[1].score);
+  if(progFilter === 'studied') rows.sort((a, b) => b[1].last - a[1].last);
+  const C = 2 * Math.PI * 15;
+  view.innerHTML = `
+    <div class="learn-hero">
+      <h2>My progress</h2>
+      <p>A confidence score for every condition, worked out from everything you do: your answers in lessons, the bank and the arenas, your blurt recall, how well you are predicted to remember it today, how much of it you have covered, and your open corrections. Diagnosis counts most, just like the exam.</p>
+      <div class="stats">
+        <div class="stat"><b>${studied.length}</b><small>of ${DATA.length} started</small></div>
+        <div class="stat"><b>${avg}${studied.length ? '' : ''}</b><small>average confidence</small></div>
+        <div class="stat"><b>${bandN.Strong + bandN.Secure}</b><small>secure or strong</small></div>
+      </div>
+      <div class="bandbar">${bands.map(b => `<i class="b-${b.toLowerCase()}" style="flex:${bandN[b] || 0.0001}" title="${b}: ${bandN[b]}"></i>`).join('')}</div>
+      <div class="bandkey">${bands.map(b => `<span><i class="b-${b.toLowerCase()}"></i>${b} ${bandN[b]}</span>`).join('')}</div>
+      <div class="chipbar">${[['studied', 'Started'], ['weak', 'Weakest first'], ['all', 'All conditions']].map(([k, t]) => `<button class="fchip ${progFilter === k ? 'on' : ''}" data-pf="${k}">${t}</button>`).join('')}</div>
+    </div>
+    <div class="plist">${rows.length ? rows.map(([d, c]) => `
+      <details class="prow">
+        <summary>
+          <svg class="pring" viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" class="bg"/><circle cx="18" cy="18" r="15" class="fg b-${c.band.toLowerCase().replace(' ', '-')}" stroke-dasharray="${C}" stroke-dashoffset="${C * (1 - c.score / 100)}"/><text x="18" y="18">${c.last ? c.score : '–'}</text></svg>
+          <span class="pmeta"><b>${escapeHtml(d.name)}</b><small><span class="bandtag b-${c.band.toLowerCase().replace(' ', '-')}">${c.band}</span>${c.last ? ' &middot; last studied ' + fmtDate(c.last) : ''}</small>
+            <span class="pdoms">${DOMAINS.filter(x => c.domains[x]).map(x => `<i class="d-${x}" title="${DOM_LABEL[x]} ${c.domains[x].score}"><b style="width:${c.domains[x].score}%"></b></i>`).join('')}</span></span>
+        </summary>
+        <div class="pdetail">
+          ${DOMAINS.filter(x => c.domains[x]).map(x => { const v = c.domains[x]; return `<div class="pd d-${x}"><b>${DOM_LABEL[x]}</b><span class="pdn">${v.score}</span>
+            <small>${v.acc != null ? `${v.acc}% right over ${v.n} answer${v.n === 1 ? '' : 's'}` : 'No answers yet'} &middot; covered ${v.exposure}% &middot; memory ${v.mem}%</small></div>`; }).join('')}
+          <div class="ptips">${c.tips.map(([t, a]) => `<button class="btn" data-tip="${d.id}|${a}">${t}</button>`).join('')}</div>
+        </div>
+      </details>`).join('') : '<div class="empty">Nothing here yet. Start with the notes or a lesson and your confidence scores will appear.</div>'}</div>`;
+  view.querySelectorAll('[data-pf]').forEach(b => b.onclick = () => { progFilter = b.dataset.pf; renderProgressView(); });
+  view.querySelectorAll('[data-tip]').forEach(b => b.onclick = () => { const [id, ...a] = b.dataset.tip.split('|'); doTip(id, a.join('|')); });
 }
 
 // ---------- start ----------

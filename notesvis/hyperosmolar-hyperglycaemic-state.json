@@ -1,0 +1,346 @@
+{
+ "id": "hyperosmolar-hyperglycaemic-state",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "visual",
+   "title": "The diagnostic triad",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": ">30 mmol/L",
+      "label": "Glucose"
+     },
+     {
+      "big": ">320 mmol/kg",
+      "label": "Serum osmolality"
+     },
+     {
+      "big": "Dry",
+      "label": "Volume depletion"
+     },
+     {
+      "big": "pH >7.3",
+      "label": "No significant acidosis (HCO3 >15)"
+     }
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 1,
+   "type": "visual",
+   "title": "Common triggers",
+   "visual": {
+    "kind": "tree",
+    "root": "HHS in Type 2 diabetes",
+    "children": [
+     {
+      "label": "Infection",
+      "items": [
+       "Pneumonia, UTI"
+      ]
+     },
+     {
+      "label": "Dehydration",
+      "items": [
+       "Poor intake"
+      ]
+     },
+     {
+      "label": "Drugs",
+      "items": [
+       "Steroids",
+       "Diuretics"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 2,
+   "type": "visual",
+   "title": "Where HHS shows itself",
+   "text": "Brain (confusion, low GCS), kidneys (polyuria), circulation (hypotension, tachycardia).",
+   "visual": {
+    "kind": "organ",
+    "organs": [
+     "brain",
+     "kidneys",
+     "heart",
+     "blood",
+     "pancreas"
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "compare",
+   "title": "HHS vs DKA",
+   "head": [
+    "",
+    "HHS",
+    "DKA"
+   ],
+   "rows": [
+    [
+     "Typical patient",
+     "Type 2 diabetes",
+     "Type 1 diabetes"
+    ],
+    [
+     "Glucose",
+     "Very high (>30)",
+     "High (>11)"
+    ],
+    [
+     "Ketones and acidosis",
+     "Minimal; pH >7.3",
+     "Present; pH <7.3"
+    ],
+    [
+     "Osmolality",
+     "Very high (>320)",
+     "Variable"
+    ],
+    [
+     "Insulin deficiency",
+     "Relative",
+     "Near-absolute"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 4,
+   "type": "visual",
+   "title": "Complications",
+   "visual": {
+    "kind": "tree",
+    "root": "HHS complications",
+    "children": [
+     {
+      "label": "Over-rapid correction",
+      "items": [
+       "Cerebral oedema"
+      ]
+     },
+     {
+      "label": "Thrombosis",
+      "items": [
+       "Stroke",
+       "MI",
+       "VTE"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 0,
+   "type": "visual",
+   "title": "Estimating osmolality",
+   "visual": {
+    "kind": "scale",
+    "title": "Serum osmolality",
+    "min": 270,
+    "max": 400,
+    "unit": "mmol/kg",
+    "bands": [
+     [
+      275,
+      295,
+      "normal",
+      "ok"
+     ],
+     [
+      295,
+      320,
+      "raised",
+      "warn"
+     ],
+     [
+      320,
+      400,
+      "HHS range",
+      "bad"
+     ]
+    ],
+    "value": 360,
+    "label": "e.g. 360",
+    "caption": "Estimate: (2 x Na) + glucose + urea."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 1,
+   "type": "compare",
+   "title": "First-line bloods",
+   "head": [
+    "Test",
+    "Why"
+   ],
+   "rows": [
+    [
+     "Capillary/blood glucose",
+     "Very high (>30)"
+    ],
+    [
+     "U&Es",
+     "Sodium, urea, potassium for osmolality and kidneys"
+    ],
+    [
+     "VBG/ABG",
+     "pH and bicarbonate: rule out acidosis"
+    ],
+    [
+     "FBC/CRP",
+     "Infective trigger"
+    ]
+   ]
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "flow",
+   "title": "Order of treatment",
+   "nodes": [
+    "IV 0.9% saline, 1 L over 1-2 h",
+    "Osmolality falls with fluids",
+    "Low-dose IV insulin once resuscitated",
+    "Correct potassium alongside",
+    "Treat the precipitant"
+   ]
+  },
+  {
+   "d": "management",
+   "after": 2,
+   "type": "visual",
+   "title": "Slow and steady",
+   "visual": {
+    "kind": "trend",
+    "title": "Gradual correction",
+    "x": [
+     "0 h",
+     "6 h",
+     "12 h",
+     "24 h"
+    ],
+    "unit": "mmol/kg",
+    "series": [
+     {
+      "name": "Osmolality",
+      "values": [
+       360,
+       345,
+       330,
+       310
+      ]
+     }
+    ],
+    "caption": "Lower it gradually: rapid falls risk cerebral oedema."
+   }
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "flow",
+   "title": "Why no ketones",
+   "nodes": [
+    "Relative insulin deficiency",
+    "Enough insulin to block lipolysis",
+    "No ketogenesis",
+    "But too little to control glucose",
+    "Severe hyperglycaemia without acidosis"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "visual",
+   "title": "The dehydration spiral",
+   "visual": {
+    "kind": "cycle",
+    "centre": "Self-reinforcing",
+    "steps": [
+     "Marked hyperglycaemia",
+     "Osmotic diuresis",
+     "Profound dehydration",
+     "Hypovolaemia, pre-renal impairment",
+     "Less glucose excreted"
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "flow",
+   "title": "How cerebral oedema happens",
+   "nodes": [
+    "High serum osmolality",
+    "Water drawn out of brain cells",
+    "Rapid fluids or insulin",
+    "Rapid shift of water back in",
+    "Cerebral oedema"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 3,
+   "type": "flow",
+   "title": "Why clots form",
+   "nodes": [
+    "Hyperosmolar, dehydrated blood",
+    "Hyperviscosity",
+    "Thrombosis",
+    "Stroke, MI or VTE"
+   ]
+  }
+ ],
+ "glossary": {
+  "Type 2": "Type 2 diabetes: insulin resistance with relative insulin deficiency, usually in adults.",
+  "Extreme hyperglycaemia": "Very high blood glucose, typically over 30 mmol/L in HHS.",
+  "Severe dehydration": "Major loss of body water, often several litres in HHS.",
+  "Diagnostic triad": "Three findings that together make the diagnosis.",
+  "mmol/kg": "Unit of osmolality: millimoles of dissolved particles per kilogram of water.",
+  "HCO3": "Bicarbonate, the main blood buffer; low levels mean metabolic acidosis.",
+  "Infection": "Invasion by germs; the commonest trigger of HHS.",
+  "Steroids": "Corticosteroid drugs that raise blood glucose.",
+  "Diuretics": "Drugs that increase urine output, worsening dehydration.",
+  "Altered consciousness": "Reduced alertness, from drowsiness to coma.",
+  "Hypotension": "Low blood pressure.",
+  "Tachycardia": "A heart rate over 100 beats per minute.",
+  "Drowsiness": "Abnormal sleepiness.",
+  "Seizures": "Fits caused by abnormal electrical activity in the brain.",
+  "Clinical": "Based on symptoms and examination.",
+  "Biochemical": "Based on blood test chemistry.",
+  "Gradual": "Slowly, over many hours.",
+  "Rapid correction": "Bringing glucose or osmolality down too fast.",
+  "Infusion": "A drug or fluid given steadily into a vein over time.",
+  "Stroke": "Brain damage from a blocked or burst blood vessel.",
+  "MI": "Myocardial infarction: a heart attack.",
+  "Capillary glucose": "A finger-prick blood glucose reading.",
+  "Na": "Sodium.",
+  "Glucose": "Blood sugar.",
+  "Urea": "A waste product cleared by the kidneys; rises with dehydration.",
+  "FBC": "Full blood count: haemoglobin, white cells and platelets.",
+  "Electrolytes": "Salts in the blood such as sodium and potassium.",
+  "Acid-base status": "Whether the blood is too acidic, too alkaline or normal.",
+  "Infective trigger": "An infection that set off the illness.",
+  "IV fluids": "Fluids given directly into a vein.",
+  "Fluid-resuscitated": "Given enough IV fluid to restore circulating volume.",
+  "Low-dose IV insulin": "A small, steady insulin infusion, used in HHS only after fluids.",
+  "Potassium": "An electrolyte that falls when insulin drives it into cells; must be monitored.",
+  "Absolute insulin deficiency": "Almost no insulin at all, as in Type 1 diabetes and DKA.",
+  "Osmotic equilibrium": "Balance of dissolved particles either side of a membrane, so water stops moving.",
+  "Osmotic shift": "Movement of water across cell membranes towards the more concentrated side.",
+  "Hyperosmolar": "Having too many dissolved particles in the blood.",
+  "Diabetes": "A condition of high blood glucose from lack of insulin or insulin resistance.",
+  "Profound": "Very severe."
+ }
+}

@@ -1,0 +1,101 @@
+{
+  "id": "unstable-angina",
+  "visuals": [
+    { "d": "diagnosis", "after": 0, "type": "visual", "title": "Where unstable angina sits in ACS",
+      "visual": { "kind": "tree", "root": "Acute coronary syndrome",
+        "children": [
+          { "label": "Unstable angina", "items": ["Partial thrombus", "No necrosis", "Troponin normal"] },
+          { "label": "NSTEMI", "items": ["Partial occlusion", "Some necrosis", "Troponin raised"] },
+          { "label": "STEMI", "items": ["Complete occlusion", "Full-thickness necrosis", "ST elevation"] }
+        ] } },
+    { "d": "diagnosis", "after": 2, "type": "visual", "title": "The pattern to spot",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "At rest", "label": "Central chest pain without exertion" },
+        { "big": "Crescendo", "label": "New onset or getting worse" },
+        { "big": "No relief", "label": "Not eased by rest or GTN" },
+        { "big": "Normal", "label": "Troponin" }
+      ] } },
+    { "d": "investigation", "after": 0, "type": "compare", "title": "Troponin and ECG separate the three",
+      "head": ["", "Unstable angina", "NSTEMI", "STEMI"],
+      "rows": [
+        ["Troponin", "Normal", "Raised", "Raised"],
+        ["ECG", "ST depression, T inversion or normal", "ST depression or T inversion", "ST elevation"]
+      ] },
+    { "d": "investigation", "after": 1, "type": "visual", "title": "ECG within 10 minutes",
+      "visual": { "kind": "ecg", "title": "12-lead ECG during pain", "layout": "12lead", "rhythm": "sinus", "rate": 88,
+        "leads": { "V4": "st_dep", "V5": "st_dep", "V6": "st_dep", "I": "t_inv", "aVL": "t_inv" },
+        "caption": "ST depression and T wave inversion are possible, but the ECG can be normal. Troponin stays normal." } },
+    { "d": "investigation", "after": 2, "type": "visual", "title": "GRACE decides the route",
+      "visual": { "kind": "tree", "root": "GRACE score",
+        "children": [
+          { "label": "High risk", "items": ["Early coronary angiography", "PCI within 24-72 hours"] },
+          { "label": "Low risk", "items": ["Conservative management"] }
+        ] } },
+    { "d": "management", "after": 0, "type": "flow", "title": "Immediate treatment",
+      "nodes": ["Aspirin 300 mg + clopidogrel or ticagrelor", "Fondaparinux (or LMWH)", "GTN + morphine for pain", "Oxygen only if SpO2 <94%"] },
+    { "d": "management", "after": 2, "type": "visual", "title": "Secondary prevention numbers",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "Lifelong", "label": "Aspirin" },
+        { "big": "12 months", "label": "Second antiplatelet" },
+        { "big": "High dose", "label": "Statin, plus beta-blocker and ACEi" },
+        { "big": "DVLA", "label": "Inform; stop driving until assessed" }
+      ] } },
+    { "d": "science", "after": 0, "type": "flow", "title": "What happens in the artery",
+      "nodes": ["Plaque ruptures or erodes", "Platelets aggregate", "Partial, non-occlusive thrombus", "Coronary flow drops", "Chest pain at rest"] },
+    { "d": "science", "after": 1, "type": "visual", "title": "Why troponin stays normal",
+      "visual": { "kind": "tree", "root": "Reduced coronary flow",
+        "children": [
+          { "label": "Too small or too brief", "items": ["No necrosis", "Troponin normal", "Unstable angina"] },
+          { "label": "Enough to kill muscle", "items": ["Some necrosis", "Troponin raised", "NSTEMI"] }
+        ] } },
+    { "d": "science", "after": 2, "type": "flow", "title": "Why it is high-risk",
+      "nodes": ["Unstable plaque", "Thrombus propagates", "Complete occlusion", "Full MI", "Arrhythmias, heart failure, cardiogenic shock"] },
+    { "d": "science", "after": 3, "type": "visual", "title": "Two pathways, two drug types",
+      "visual": { "kind": "tree", "root": "Stop the thrombus growing",
+        "children": [
+          { "label": "Platelets: dual antiplatelet", "items": ["Aspirin", "P2Y12 inhibitor (clopidogrel, ticagrelor)", "Less platelet aggregation"] },
+          { "label": "Clotting cascade: anticoagulant", "items": ["Fondaparinux", "Blocks factor Xa", "Less thrombus propagation"] }
+        ] } }
+  ],
+  "glossary": {
+    "Partial thrombosis": "A clot that narrows but does not completely block the artery.",
+    "Coronary blood flow": "Blood flow through the arteries supplying the heart muscle.",
+    "Myocardial necrosis": "Death of heart muscle cells.",
+    "Ischaemic heart disease": "Heart disease caused by narrowed coronary arteries reducing blood supply to the heart.",
+    "Central chest pain": "Pain in the middle of the chest, behind the breastbone.",
+    "New onset": "Symptoms that have only just started.",
+    "SOB": "Shortness of breath.",
+    "Tachycardia": "Heart rate above 100 beats per minute.",
+    "Heart failure": "The heart cannot pump enough blood to meet the body's needs.",
+    "Radiation": "Pain spreading from where it starts to another area, such as arm or jaw.",
+    "Palpitations": "An unpleasant awareness of your own heartbeat.",
+    "ECG": "Electrocardiogram: a recording of the heart's electrical activity.",
+    "Risk stratification": "Sorting patients by how likely they are to have a bad outcome, to guide treatment.",
+    "Early invasive management": "Doing coronary angiography and treating blockages within days rather than with drugs alone.",
+    "Conservative management": "Treating with medicines and monitoring rather than a procedure.",
+    "Aspirin": "An antiplatelet drug that stops platelets clumping on a plaque.",
+    "Antiplatelet": "A drug that stops platelets sticking together to form clots.",
+    "Dual antiplatelet therapy": "Aspirin plus a second antiplatelet drug, usually for 12 months after ACS.",
+    "Anticoagulation": "Drugs that slow the clotting cascade so clots do not grow.",
+    "Hypoxic": "Low oxygen in the blood.",
+    "SpO2": "Oxygen saturation measured by a finger probe.",
+    "MI": "Myocardial infarction: heart muscle death from a blocked coronary artery.",
+    "Arrhythmia": "An abnormal heart rhythm.",
+    "Beta-blocker": "Drug that slows the heart and lowers its oxygen needs.",
+    "ACE inhibitor": "Drug that blocks angiotensin II formation, lowering BP and protecting the heart.",
+    "ACEi": "Short for ACE inhibitor.",
+    "Statin": "A drug that lowers LDL cholesterol and stabilises plaques.",
+    "Atherosclerotic plaque": "A fatty, fibrous build-up in an artery wall that narrows it.",
+    "Plaque erosion": "Loss of the lining cells over a plaque, which can trigger a clot without a full rupture.",
+    "Platelet aggregation": "Platelets sticking together to start a clot.",
+    "Non-occlusive": "Not completely blocking the vessel.",
+    "Propagate": "For a clot, to keep growing along the vessel.",
+    "Occlusion": "Complete blockage of a vessel.",
+    "Coagulation cascade": "The chain of clotting factors that ends in fibrin, which forms a stable clot.",
+    "Transient": "Lasting only a short time.",
+    "Licence": "A driving licence; Group 1 for cars and motorbikes, Group 2 for lorries and buses.",
+    "Complementary": "Working in different ways that add to each other.",
+    "LMWH": "Low molecular weight heparin, an injected anticoagulant such as enoxaparin.",
+    "P2Y12 inhibitor": "An antiplatelet that blocks the platelet ADP receptor, such as clopidogrel or ticagrelor."
+  }
+}

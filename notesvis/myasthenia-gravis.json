@@ -1,0 +1,276 @@
+{
+ "id": "myasthenia-gravis",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 1,
+   "type": "visual",
+   "title": "Which muscles tire",
+   "visual": {
+    "kind": "organ",
+    "organs": [
+     "eyes",
+     "throat",
+     "lungs",
+     "joints"
+    ]
+   },
+   "text": "Ocular (ptosis, diplopia), bulbar and facial, proximal limbs, and in crisis the breathing muscles."
+  },
+  {
+   "d": "diagnosis",
+   "after": 1,
+   "type": "visual",
+   "title": "Through the day",
+   "visual": {
+    "kind": "trend",
+    "title": "Muscle strength",
+    "x": [
+     "Morning",
+     "Midday",
+     "Evening",
+     "After rest"
+    ],
+    "unit": "% strength",
+    "series": [
+     {
+      "name": "Strength",
+      "values": [
+       90,
+       70,
+       45,
+       85
+      ]
+     }
+    ],
+    "caption": "Fatigable: worse with use and late in the day, better after rest."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "visual",
+   "title": "Drugs that make it worse",
+   "visual": {
+    "kind": "tree",
+    "root": "Worsen myasthenia",
+    "children": [
+     {
+      "label": "Cardiac",
+      "items": [
+       "Beta-blockers"
+      ]
+     },
+     {
+      "label": "Antibiotics",
+      "items": [
+       "Aminoglycosides",
+       "Macrolides"
+      ]
+     },
+     {
+      "label": "Others",
+      "items": [
+       "Antimalarials",
+       "Lithium"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 0,
+   "type": "flow",
+   "title": "Working it up",
+   "nodes": [
+    "AChR antibodies (and anti-MuSK)",
+    "Repetitive nerve stimulation: decrement",
+    "CT chest for thymoma",
+    "FVC to monitor breathing in crisis"
+   ]
+  },
+  {
+   "d": "investigation",
+   "after": 0,
+   "type": "visual",
+   "title": "Repetitive nerve stimulation",
+   "visual": {
+    "kind": "trend",
+    "title": "Muscle response to repeated stimuli",
+    "x": [
+     "1st",
+     "2nd",
+     "3rd",
+     "4th",
+     "5th"
+    ],
+    "unit": "% of first",
+    "series": [
+     {
+      "name": "Normal",
+      "values": [
+       100,
+       100,
+       99,
+       100,
+       100
+      ]
+     },
+     {
+      "name": "Myasthenia",
+      "values": [
+       100,
+       88,
+       78,
+       72,
+       70
+      ]
+     }
+    ],
+    "caption": "Decremental response: each response smaller than the last."
+   }
+  },
+  {
+   "d": "management",
+   "after": 3,
+   "type": "visual",
+   "title": "Treatment by stage",
+   "visual": {
+    "kind": "tree",
+    "root": "Myasthenia gravis",
+    "children": [
+     {
+      "label": "First line",
+      "items": [
+       "Pyridostigmine"
+      ]
+     },
+     {
+      "label": "Persistent",
+      "items": [
+       "Prednisolone",
+       "Azathioprine"
+      ]
+     },
+     {
+      "label": "Definitive",
+      "items": [
+       "Thymectomy (esp. thymoma)"
+      ]
+     },
+     {
+      "label": "Crisis",
+      "items": [
+       "Admit, ventilate if needed",
+       "IVIG or plasmapheresis"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "flow",
+   "title": "How the antibodies block the signal",
+   "nodes": [
+    "Thymus drives IgG autoantibodies",
+    "Antibodies bind nicotinic AChR at NMJ",
+    "Receptor internalisation",
+    "Complement destroys postsynaptic membrane",
+    "Fewer working receptors: weakness"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "visual",
+   "title": "Why it is fatigable",
+   "visual": {
+    "kind": "cycle",
+    "centre": "Fewer receptors",
+    "steps": [
+     "Repeated nerve firing",
+     "ACh released per impulse falls",
+     "Too few receptors bound",
+     "Muscle fibres fail to fire",
+     "Rest lets ACh recover"
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "compare",
+   "title": "AChR vs MuSK antibodies",
+   "head": [
+    "",
+    "AChR antibodies",
+    "MuSK antibodies"
+   ],
+   "rows": [
+    [
+     "Target",
+     "Acetylcholine receptor",
+     "Muscle-specific kinase"
+    ],
+    [
+     "Mechanism",
+     "Internalisation and complement damage",
+     "Stops receptor clustering"
+    ],
+    [
+     "Severity",
+     "Usual form",
+     "More severe bulbar/respiratory"
+    ]
+   ]
+  },
+  {
+   "d": "science",
+   "after": 4,
+   "type": "flow",
+   "title": "How pyridostigmine helps",
+   "nodes": [
+    "Blocks acetylcholinesterase",
+    "ACh broken down more slowly",
+    "ACh stays longer in the cleft",
+    "More chances to bind remaining receptors",
+    "Stronger contraction"
+   ]
+  }
+ ],
+ "glossary": {
+  "Autoimmune": "When the immune system attacks the body's own tissues.",
+  "IgG": "The main antibody class in blood; can cross the placenta and causes type II reactions.",
+  "Autoantibodies": "Antibodies made against the body's own proteins.",
+  "Postsynaptic": "On the receiving side of a synapse, here the muscle membrane.",
+  "Acetylcholine": "Chemical messenger released by nerves to make skeletal muscle contract.",
+  "Neuromuscular transmission": "Passage of a signal from a nerve ending to a muscle fibre.",
+  "Ocular": "Relating to the eyes and the muscles that move them.",
+  "Proximal": "Closest to the trunk, such as shoulder and hip muscles.",
+  "Dyspnoea": "Shortness of breath.",
+  "Beta-blockers": "Drugs blocking adrenaline's beta receptors, used for heart conditions; can worsen myasthenia.",
+  "Antimalarials": "Drugs used to treat or prevent malaria, such as quinine or chloroquine.",
+  "Lithium": "Mood stabiliser used in bipolar disorder; can worsen myasthenic weakness.",
+  "Depolarising neuromuscular blockers": "Paralysing drugs used in anaesthesia that work by persistently stimulating acetylcholine receptors.",
+  "Hypothyroidism": "Underactive thyroid gland.",
+  "Anti-MuSK": "Antibodies against muscle-specific kinase, a protein that clusters acetylcholine receptors.",
+  "CT chest": "Computed tomography scan of the chest, used to look for a thymoma.",
+  "Forced vital capacity": "The most air a person can breathe out forcefully after a full breath in.",
+  "Acetylcholinesterase inhibitor": "Drug that stops the enzyme that breaks down acetylcholine, so more remains at the junction.",
+  "Immunosuppressant": "A drug that dampens the immune system.",
+  "Intubation": "Passing a tube into the windpipe to protect the airway and allow ventilation.",
+  "Ventilation": "Mechanical support of breathing with a machine.",
+  "IV immunoglobulin": "Pooled donor antibodies given into a vein that dampen the autoimmune attack.",
+  "Hypersensitivity": "An excessive or harmful immune reaction.",
+  "Postsynaptic membrane": "The muscle membrane under the nerve ending, packed with acetylcholine receptors.",
+  "Synaptic cleft": "The tiny gap between the nerve ending and the muscle across which acetylcholine diffuses.",
+  "Fatigability": "Weakness that gets worse with repeated use and recovers with rest.",
+  "Receptor clustering": "Gathering of acetylcholine receptors into dense patches opposite the nerve ending.",
+  "Thymic hyperplasia": "Enlargement of the thymus with extra lymphoid tissue, common in myasthenia.",
+  "Receptor density": "How many receptors are packed into an area of membrane.",
+  "Antibody screen": "Blood test looking for specific antibodies."
+ }
+}

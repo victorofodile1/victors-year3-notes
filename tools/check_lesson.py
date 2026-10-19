@@ -18,6 +18,9 @@ LEADS = {"I", "II", "III", "aVR", "aVL", "aVF", "V1", "V2", "V3", "V4", "V5", "V
 LEAD_PATTERNS = {"normal", "st_elev", "st_dep", "t_inv", "q_wave", "peaked_t", "flat_t"}
 CXR_TYPES = {"consolidation", "effusion", "pneumothorax", "mass", "cavity", "cardiomegaly", "hilar",
              "free_air", "fibrosis", "pulm_oedema"}
+ORGAN_KEYS = {"brain", "eyes", "thyroid", "lungs", "heart", "aorta", "liver", "gallbladder", "stomach", "spleen",
+              "pancreas", "kidneys", "bowel", "bladder", "pelvic", "testes", "spine", "joints", "skin", "blood", "lymph",
+              "sinuses", "throat", "ears", "oesophagus", "breast", "nerves"}
 REGIONS = {"RUQ", "epigastric", "LUQ", "R_flank", "umbilical", "L_flank", "RIF", "suprapubic", "LIF"}
 
 
@@ -65,6 +68,26 @@ def check_visual(v, w, errs):
     elif k == "coronary":
         if v.get("artery") not in ("RCA", "LAD", "Cx", "LMS"):
             errs.append(f"{w}: coronary artery must be RCA, LAD, Cx or LMS")
+    elif k == "organ":
+        o = v.get("organs") or []
+        if not o or any(x not in ORGAN_KEYS for x in o):
+            errs.append(f"{w}: organ needs organs from {sorted(ORGAN_KEYS)}")
+    elif k == "cycle":
+        st = v.get("steps") or []
+        if not 3 <= len(st) <= 6 or any(not is_str(x) or len(x) > 40 for x in st):
+            errs.append(f"{w}: cycle needs 3 to 6 short steps (max 40 characters)")
+    elif k == "tree":
+        ch = v.get("children") or []
+        if not is_str(v.get("root")) or not 2 <= len(ch) <= 5 or any(not is_str(c.get("label")) for c in ch):
+            errs.append(f"{w}: tree needs root and 2 to 5 children with labels")
+    elif k == "timeline":
+        ev = v.get("events") or []
+        if not 2 <= len(ev) <= 8 or any(not is_str(e.get("t")) or not is_str(e.get("x")) for e in ev):
+            errs.append(f"{w}: timeline needs 2 to 8 events with t and x")
+    elif k == "keyfacts":
+        f = v.get("facts") or []
+        if not 2 <= len(f) <= 6 or any(not is_str(x.get("big")) or not is_str(x.get("label")) or len(x["big"]) > 14 for x in f):
+            errs.append(f"{w}: keyfacts needs 2 to 6 facts with a short big value (max 14 characters) and label")
     else:
         errs.append(f"{w}: unknown visual kind {k!r}")
 

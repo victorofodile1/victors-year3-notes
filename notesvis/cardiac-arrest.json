@@ -1,0 +1,112 @@
+{
+  "id": "cardiac-arrest",
+  "visuals": [
+    { "d": "diagnosis", "after": 0, "type": "visual", "title": "What stops when the heart stops",
+      "text": "No cardiac output means no blood to the brain or the heart muscle itself.",
+      "visual": { "kind": "organ", "organs": ["heart", "brain"] } },
+    { "d": "diagnosis", "after": 2, "type": "visual", "title": "Recognise it in seconds",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "Collapsed", "label": "Unresponsive" },
+        { "big": "No breathing", "label": "Or only agonal gasps" },
+        { "big": "No pulse", "label": "Start CPR now" }
+      ] } },
+    { "d": "diagnosis", "after": 3, "type": "visual", "title": "The four arrest rhythms",
+      "visual": { "kind": "tree", "root": "Cardiac arrest rhythm", "children": [
+        { "label": "Shockable", "items": ["VF (most common)", "Pulseless VT"] },
+        { "label": "Non-shockable", "items": ["PEA", "Asystole"] }
+      ] } },
+    { "d": "diagnosis", "after": 3, "type": "visual", "title": "Ventricular fibrillation",
+      "visual": { "kind": "ecg", "title": "Rhythm strip", "layout": "strip", "rhythm": "vf",
+        "caption": "Chaotic waveform, no QRS complexes: shock it." } },
+    { "d": "diagnosis", "after": 3, "type": "visual", "title": "Asystole",
+      "visual": { "kind": "ecg", "title": "Rhythm strip", "layout": "strip", "rhythm": "asystole",
+        "caption": "Flat line: do not shock; CPR and adrenaline." } },
+    { "d": "investigation", "after": 0, "type": "compare", "title": "4Hs and 4Ts",
+      "head": ["4Hs", "4Ts"],
+      "rows": [
+        ["Hypoxia", "Tension pneumothorax (needle decompression)"],
+        ["Hypovolaemia", "Toxins"],
+        ["Hypo/hyperkalaemia, metabolic", "Tamponade (cardiac)"],
+        ["Hypothermia", "Thrombosis: PE (thrombolysis) or MI"]
+      ] },
+    { "d": "management", "after": 0, "type": "visual", "title": "CPR numbers",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "30:2", "label": "Compressions to breaths" },
+        { "big": "100-120", "label": "Compressions per minute" },
+        { "big": "5-6 cm", "label": "Compression depth" },
+        { "big": "999", "label": "Call for help first" }
+      ] } },
+    { "d": "management", "after": 1, "type": "flow", "title": "ALS loop",
+      "nodes": ["CPR 30:2, attach defibrillator", "Assess rhythm", "Shockable: 200 J shock", "Non-shockable: no shock", "Resume CPR 2 min, reassess"] },
+    { "d": "management", "after": 1, "type": "visual", "title": "When the drugs go in",
+      "visual": { "kind": "timeline", "events": [
+        { "t": "Non-shockable", "x": "Adrenaline 1 mg IV straight away" },
+        { "t": "After 3rd shock", "x": "Adrenaline 1 mg + amiodarone 300 mg" },
+        { "t": "Every 3-5 min", "x": "Repeat adrenaline 1 mg" },
+        { "t": "After 5th shock", "x": "Amiodarone 150 mg if still VF/pVT" }
+      ] } },
+    { "d": "management", "after": 2, "type": "visual", "title": "Special situations",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "IO", "label": "If no IV: humerus or tibia" },
+        { "big": "15 degrees", "label": "Left tilt if pregnant >20 weeks" },
+        { "big": "60-90 min", "label": "CPR may continue after thrombolysis for PE" },
+        { "big": "2nd ICS", "label": "Wide-bore cannula for tension" }
+      ] } },
+    { "d": "science", "after": 0, "type": "flow", "title": "Why minutes matter",
+      "nodes": ["Cardiac output stops", "No cerebral or coronary perfusion", "Brain hypoxia", "Irreversible hypoxic brain injury within minutes"] },
+    { "d": "science", "after": 1, "type": "flow", "title": "How a shock resets VF",
+      "nodes": ["Chaotic ventricular activity", "Shock depolarises critical mass of myocardium", "Chaos wiped out", "SA node takes over", "Organised rhythm"] },
+    { "d": "science", "after": 2, "type": "flow", "title": "Why PEA is not shocked",
+      "nodes": ["Organised electrical rhythm", "No effective contraction or pulse", "Usually a 4H/4T cause", "Shock will not help", "Find and fix the cause"] },
+    { "d": "science", "after": 3, "type": "compare", "title": "The two arrest drugs",
+      "head": ["", "Adrenaline", "Amiodarone"],
+      "rows": [
+        ["Acts on", "Alpha-1 receptors", "Class III antiarrhythmic"],
+        ["Effect", "Peripheral vasoconstriction", "Longer action potential and refractory period"],
+        ["Goal", "Blood to heart and brain, ROSC", "Stabilise shock-refractory VF/pVT"],
+        ["Rhythms", "All", "Shockable only"]
+      ] }
+  ],
+  "glossary": {
+    "Cessation": "Stopping.",
+    "Cardiac output": "The volume of blood the heart pumps each minute.",
+    "Circulation": "Movement of blood around the body.",
+    "Myocardial infarction": "A heart attack: death of heart muscle from a blocked coronary artery.",
+    "Electrolyte imbalance": "Abnormal blood levels of salts such as potassium, calcium or magnesium.",
+    "Drug overdose": "Taking more of a drug than the body can safely handle.",
+    "Unresponsive": "Not reacting to voice or pain.",
+    "Palpable pulse": "A pulse that can be felt with the fingers.",
+    "QRS": "The ECG complex from ventricular depolarisation; broad in VT.",
+    "SVT": "Supraventricular tachycardia: a fast rhythm starting above the ventricles.",
+    "Hypoxia": "Low oxygen levels in the tissues.",
+    "Hypokalaemia": "Low potassium in the blood.",
+    "Metabolic disturbance": "Abnormal body chemistry, such as abnormal calcium, glucose or acidosis.",
+    "Toxins": "Poisons or drugs taken in overdose.",
+    "Thrombosis": "A blood clot blocking a vessel, here a PE or coronary artery.",
+    "PE": "Pulmonary embolism: a clot blocking the arteries of the lungs.",
+    "ALS algorithm": "The Resuscitation Council step-by-step guide to advanced resuscitation.",
+    "Defibrillator": "A machine that reads the heart rhythm and delivers an electric shock.",
+    "Unsynchronised shock": "A shock given at any point in the cycle, used in VF and pulseless VT.",
+    "J": "Joules: the unit of energy for a defibrillator shock.",
+    "IV": "Intravenous: into a vein.",
+    "Proximal humerus": "The top end of the upper arm bone, near the shoulder.",
+    "Proximal tibia": "The top end of the shin bone, just below the knee.",
+    "Distal tibia": "The lower end of the shin bone, near the ankle.",
+    "Wide-bore cannula": "A large-diameter plastic tube inserted through the skin.",
+    "2nd intercostal space": "The gap between the 2nd and 3rd ribs, used for needle decompression.",
+    "ICU": "Intensive care unit.",
+    "Cerebral perfusion": "Blood flow to the brain.",
+    "Coronary perfusion": "Blood flow through the coronary arteries to the heart muscle.",
+    "Myocardium": "Heart muscle.",
+    "Depolarise": "Make the cell membrane's charge less negative so the cell fires.",
+    "Ischaemic heart disease": "Narrowing of the coronary arteries reducing blood supply to the heart muscle.",
+    "Pacemaker": "The part of the heart that sets its rhythm, normally the SA node.",
+    "Mechanical contraction": "The physical squeezing of the heart muscle that pumps blood.",
+    "Peripheral vasoconstriction": "Narrowing of blood vessels in the limbs and skin, pushing blood to the core organs.",
+    "Antiarrhythmic": "A drug that treats or prevents abnormal heart rhythms.",
+    "Action potential": "The electrical impulse that travels across a heart cell when it fires.",
+    "Shock-refractory": "Still present despite repeated shocks.",
+    "Resuscitation": "Emergency treatment to restart the heart and breathing.",
+    "Compression-to-ventilation ratio": "The number of chest compressions given for each set of rescue breaths."
+  }
+}

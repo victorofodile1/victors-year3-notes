@@ -1,0 +1,381 @@
+{
+ "id": "chronic-obstructive-pulmonary-disease",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "visual",
+   "title": "Two overlapping processes",
+   "visual": {
+    "kind": "tree",
+    "root": "COPD",
+    "children": [
+     {
+      "label": "Chronic bronchitis",
+      "items": [
+       "Airway inflammation",
+       "Mucus hypersecretion",
+       "Productive cough"
+      ]
+     },
+     {
+      "label": "Emphysema",
+      "items": [
+       "Alveolar wall destruction",
+       "Loss of elastic recoil",
+       "Gas trapping"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "compare",
+   "title": "Reading the ABG",
+   "head": [
+    "",
+    "Stable CO2 retainer",
+    "Type 2 respiratory failure"
+   ],
+   "rows": [
+    [
+     "pH",
+     "Normal (compensated)",
+     "Low (acidosis)"
+    ],
+    [
+     "PaCO2",
+     "Raised",
+     "Raised"
+    ],
+    [
+     "HCO3-",
+     "Raised (kidneys)",
+     "Raised or normal"
+    ],
+    [
+     "Patient",
+     "Stable",
+     "Drowsy: emergency"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 4,
+   "type": "visual",
+   "title": "Complications",
+   "visual": {
+    "kind": "organ",
+    "organs": [
+     "lungs",
+     "heart",
+     "blood"
+    ]
+   },
+   "text": "Lungs: infection, pneumothorax, respiratory failure. Heart: cor pulmonale, RV hypertrophy. Blood: polycythaemia."
+  },
+  {
+   "d": "investigation",
+   "after": 1,
+   "type": "visual",
+   "title": "Chest X-ray signs",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": "Flat",
+      "label": "Hemi-diaphragms"
+     },
+     {
+      "big": "More ribs",
+      "label": "Visible: hyperinflation"
+     },
+     {
+      "big": "Dark",
+      "label": "Hyperlucent lung fields"
+     },
+     {
+      "big": "Bullae",
+      "label": "Can mimic pneumothorax"
+     }
+    ]
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 2,
+   "type": "visual",
+   "title": "ECG in chronic hypoxia",
+   "visual": {
+    "kind": "ecg",
+    "layout": "12lead",
+    "rhythm": "sinus",
+    "rate": 96,
+    "leads": {
+     "V1": "t_inv",
+     "V2": "t_inv",
+     "V3": "t_inv"
+    },
+    "caption": "RV strain in V1 to V3. Also look for P pulmonale (tall inferior P waves) and right axis deviation."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 3,
+   "type": "visual",
+   "title": "Severity by FEV1",
+   "visual": {
+    "kind": "scale",
+    "min": 0,
+    "max": 100,
+    "unit": "% predicted FEV1",
+    "bands": [
+     [
+      0,
+      30,
+      "4 very severe",
+      "bad"
+     ],
+     [
+      30,
+      50,
+      "3 severe",
+      "bad"
+     ],
+     [
+      50,
+      80,
+      "2 moderate",
+      "warn"
+     ],
+     [
+      80,
+      100,
+      "1 mild",
+      "ok"
+     ]
+    ],
+    "value": 45,
+    "label": "Example: FEV1 45%",
+    "caption": "All need FEV1/FVC below 0.7 after a bronchodilator."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 3,
+   "type": "compare",
+   "title": "GOLD groups",
+   "head": [
+    "",
+    "Fewer symptoms",
+    "More symptoms"
+   ],
+   "rows": [
+    [
+     "0 to 1 exacerbations a year",
+     "A",
+     "B"
+    ],
+    [
+     "2 or more a year",
+     "C",
+     "D"
+    ]
+   ]
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "flow",
+   "title": "Inhaler ladder",
+   "nodes": [
+    "SABA or SAMA as needed",
+    "Asthmatic features?",
+    "No: LABA + LAMA",
+    "Yes: LABA + ICS",
+    "Still exacerbating: triple therapy"
+   ]
+  },
+  {
+   "d": "management",
+   "after": 3,
+   "type": "visual",
+   "title": "Long-term oxygen: when",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": "PaO2 <7.3",
+      "label": "kPa: offer LTOT"
+     },
+     {
+      "big": "7.3 to 8",
+      "label": "kPa plus oedema, polycythaemia or pulmonary hypertension"
+     },
+     {
+      "big": "Non-smoker",
+      "label": "Must have stopped smoking"
+     },
+     {
+      "big": "88 to 92%",
+      "label": "Target sats, 28% Venturi"
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 4,
+   "type": "visual",
+   "title": "When to start NIV",
+   "visual": {
+    "kind": "scale",
+    "min": 7.1,
+    "max": 7.5,
+    "unit": "pH",
+    "bands": [
+     [
+      7.1,
+      7.25,
+      "severe acidosis",
+      "bad"
+     ],
+     [
+      7.25,
+      7.35,
+      "NIV (BiPAP)",
+      "warn"
+     ],
+     [
+      7.35,
+      7.45,
+      "normal",
+      "ok"
+     ]
+    ],
+    "value": 7.29,
+    "label": "Example 7.29, PaCO2 raised",
+    "caption": "Respiratory acidosis with a raised PaCO2 despite medical treatment."
+   }
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "flow",
+   "title": "How smoking destroys alveoli",
+   "nodes": [
+    "Cigarette smoke",
+    "Neutrophils and macrophages",
+    "Proteases (neutrophil elastase)",
+    "Overwhelm alpha-1 antitrypsin",
+    "Alveolar septa destroyed"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "flow",
+   "title": "Why the lungs over-inflate",
+   "nodes": [
+    "Loss of elastic recoil",
+    "Airways collapse on expiration",
+    "Gas trapping",
+    "Hyperinflation",
+    "Flat diaphragms on CXR"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 3,
+   "type": "flow",
+   "title": "Cor pulmonale",
+   "nodes": [
+    "Chronic hypoxia",
+    "Pulmonary vasoconstriction",
+    "Vascular remodelling",
+    "Pulmonary hypertension",
+    "RV hypertrophy, right heart failure"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 5,
+   "type": "visual",
+   "title": "Why oxygen is given carefully",
+   "visual": {
+    "kind": "cycle",
+    "centre": "Target sats 88 to 92%",
+    "steps": [
+     "Too much oxygen",
+     "Hypoxic drive removed",
+     "Ventilation falls",
+     "CO2 rises, acidosis",
+     "Drowsy, worse failure"
+    ]
+   }
+  }
+ ],
+ "glossary": {
+  "Persistent airflow limitation": "Narrowing of the airways that does not fully reverse with a bronchodilator.",
+  "Occupational exposure": "Breathing in dusts, fumes or chemicals at work, such as in mining or welding.",
+  "Dyspnoea on exertion": "Breathlessness brought on by physical activity.",
+  "Sputum": "Mucus coughed up from the lungs.",
+  "Purulent sputum": "Yellow or green sputum containing pus, suggesting infection.",
+  "Prolonged expiratory phase": "Breathing out taking longer than normal because air leaves narrowed airways slowly.",
+  "Wheeze": "A whistling sound, mainly on breathing out, from narrowed airways.",
+  "Accessory muscle use": "Using neck and shoulder muscles to help breathe, a sign of respiratory distress.",
+  "Acute exacerbation": "A sudden worsening of COPD symptoms beyond usual day-to-day variation.",
+  "ABG": "Arterial blood gas: measures pH, oxygen, carbon dioxide and bicarbonate in arterial blood.",
+  "HCO3-": "Bicarbonate, the main buffer in blood; the kidneys retain it to correct an acidosis.",
+  "Hypoventilation": "Breathing too little to clear carbon dioxide, so CO2 rises in the blood.",
+  "Renal compensation": "The kidneys keeping more bicarbonate to bring a low pH back towards normal over days.",
+  "Respiratory acidosis": "A low blood pH caused by CO2 building up from inadequate breathing.",
+  "Tension pneumothorax": "Air trapped in the pleural space under pressure, pushing the heart across and stopping blood return: an emergency.",
+  "Hypoxia": "Low oxygen levels in the tissues.",
+  "Right ventricular hypertrophy": "Thickening of the right ventricle wall from pumping against high lung pressures.",
+  "Pulmonary function testing": "Breathing tests including spirometry, lung volumes and gas transfer.",
+  "Hemi-diaphragm": "The left or right half of the diaphragm as seen on a chest X-ray.",
+  "Hyperlucent": "Appearing darker than normal on X-ray because there is more air and less tissue.",
+  "ECG": "Electrocardiogram: a recording of the heart's electrical activity.",
+  "Inferior leads": "ECG leads II, III and aVF, which look at the bottom of the heart.",
+  "Low-voltage QRS": "Small QRS complexes on the ECG, here because over-inflated lungs insulate the heart.",
+  "R/S transition": "The chest lead where the R wave becomes bigger than the S wave, normally around V3 to V4.",
+  "RBBB": "Right bundle branch block: delayed conduction in the right ventricle, giving a wide QRS with RSR' in V1.",
+  "Diurnal variation": "Change in a measurement across the day, such as peak flow lower in the morning.",
+  "Eosinophil count": "The number of eosinophils in the blood; raised levels suggest steroid-responsive disease.",
+  "Long-term oxygen therapy": "Oxygen used at home for at least 15 hours a day to improve survival in chronic hypoxia.",
+  "Ipratropium bromide": "A short-acting antimuscarinic bronchodilator (SAMA).",
+  "Tiotropium": "A long-acting antimuscarinic bronchodilator (LAMA) taken once daily.",
+  "Salmeterol": "A long-acting beta-2 agonist bronchodilator (LABA).",
+  "Budesonide": "An inhaled corticosteroid.",
+  "Formoterol": "A long-acting beta-2 agonist that also works quickly.",
+  "Beclomethasone": "An inhaled corticosteroid.",
+  "Pneumonia": "Infection of the lung tissue; inhaled steroids increase the risk in COPD.",
+  "PaCO2": "Partial pressure of carbon dioxide in arterial blood; normal is about 4.7 to 6.0 kPa.",
+  "PaO2": "Partial pressure of oxygen in arterial blood; normal is about 10 to 13 kPa.",
+  "Upper lobe emphysema": "Emphysema mainly in the top of the lungs, typical of smoking and suitable for volume reduction surgery.",
+  "Pneumococcal vaccine": "A vaccine against Streptococcus pneumoniae, given once in COPD.",
+  "Prophylaxis": "Treatment given to prevent a disease or episode rather than to treat it.",
+  "Prolonged QT": "A long QT interval on ECG, which raises the risk of dangerous arrhythmias; macrolides can lengthen it.",
+  "LFTs": "Liver function tests.",
+  "Peripheral oedema": "Swelling of the ankles and legs from fluid build-up.",
+  "Nocturnal hypoxaemia": "Low blood oxygen during sleep.",
+  "Prednisolone": "An oral corticosteroid, given for 5 days in an exacerbation.",
+  "Amoxicillin": "A penicillin antibiotic, first-line for infective exacerbations.",
+  "Doxycycline": "A tetracycline antibiotic, an option if allergic to penicillin.",
+  "Clarithromycin": "A macrolide antibiotic, an option if allergic to penicillin.",
+  "Non-invasive ventilation": "Breathing support through a tight-fitting face mask rather than a tube in the airway.",
+  "Macrophages": "Immune cells that engulf debris and release inflammatory signals and proteases.",
+  "Proteases": "Enzymes that break down proteins, including the elastin of lung tissue.",
+  "Antiprotease": "A molecule that blocks protease enzymes and protects the lung from damage.",
+  "Alveolar septa": "The thin walls between alveoli where gas exchange happens.",
+  "Gas trapping": "Air left stuck in the lungs at the end of breathing out because airways close early.",
+  "Pulmonary vasoconstriction": "Narrowing of the lung blood vessels, which raises pressure in the pulmonary arteries.",
+  "Vascular remodelling": "Thickening of blood vessel walls over time, making the narrowing permanent.",
+  "Hypercapnia": "A raised level of carbon dioxide in the blood.",
+  "Bicarbonate reabsorption": "The kidneys taking bicarbonate back into the blood instead of excreting it."
+ }
+}

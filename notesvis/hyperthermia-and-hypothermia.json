@@ -1,0 +1,362 @@
+{
+ "id": "hyperthermia-and-hypothermia",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "visual",
+   "title": "Core temperature bands",
+   "visual": {
+    "kind": "scale",
+    "title": "Core temperature",
+    "min": 24,
+    "max": 44,
+    "unit": "°C",
+    "bands": [
+     [
+      24,
+      28,
+      "severe hypothermia",
+      "bad"
+     ],
+     [
+      28,
+      35,
+      "hypothermia",
+      "warn"
+     ],
+     [
+      36,
+      37.5,
+      "normal",
+      "ok"
+     ],
+     [
+      40,
+      44,
+      "heat stroke",
+      "bad"
+     ]
+    ],
+    "value": 37,
+    "label": "Normal ~37°C",
+    "caption": "Below 35°C is hypothermia, below 28°C severe; above 40°C with CNS dysfunction is heat stroke."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 2,
+   "type": "compare",
+   "title": "Cold vs hot: how they present",
+   "head": [
+    "",
+    "Hypothermia",
+    "Hyperthermia"
+   ],
+   "rows": [
+    [
+     "Skin",
+     "Cold",
+     "Hot (dry in heat stroke)"
+    ],
+    [
+     "Heart rate",
+     "Bradycardia",
+     "Tachycardia"
+    ],
+    [
+     "Breathing",
+     "Slow respirations",
+     "Fast"
+    ],
+    [
+     "Early sign",
+     "Shivering",
+     "Confusion, high temperature"
+    ],
+    [
+     "Severe",
+     "Reduced consciousness, arrhythmias",
+     "Seizures, multi-organ failure"
+    ],
+    [
+     "Who",
+     "Elderly",
+     "Young, active, exertion"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "visual",
+   "title": "Hypothermia ECG",
+   "visual": {
+    "kind": "ecg",
+    "title": "Lead II rhythm strip",
+    "layout": "strip",
+    "rhythm": "sinus_brady",
+    "rate": 40,
+    "caption": "Slow rate and long QT; look for the J (Osborn) wave after the QRS."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 4,
+   "type": "visual",
+   "title": "Hot without a heatwave? Think drugs",
+   "visual": {
+    "kind": "tree",
+    "root": "Hyperthermia without heat exposure",
+    "children": [
+     {
+      "label": "Serotonin syndrome",
+      "items": [
+       "Confusion",
+       "Tremor",
+       "Brisk reflexes",
+       "Dilated pupils"
+      ]
+     },
+     {
+      "label": "MDMA toxicity",
+      "items": [
+       "Same picture",
+       "Ask about recreational drugs"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 1,
+   "type": "visual",
+   "title": "Tests to send",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": "Core probe",
+      "label": "Gold standard temperature"
+     },
+     {
+      "big": "U&Es",
+      "label": "Both conditions"
+     },
+     {
+      "big": "Glucose",
+      "label": "Both conditions"
+     },
+     {
+      "big": "CK",
+      "label": "Hyperthermia: rhabdomyolysis?"
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 0,
+   "type": "visual",
+   "title": "Treatment ladder",
+   "visual": {
+    "kind": "tree",
+    "root": "First-line treatment",
+    "children": [
+     {
+      "label": "Mild hypothermia",
+      "items": [
+       "Passive external rewarming",
+       "Blankets"
+      ]
+     },
+     {
+      "label": "Severe hypothermia",
+      "items": [
+       "Warmed IV fluids",
+       "Forced-air warming blankets"
+      ]
+     },
+     {
+      "label": "Heat stroke",
+      "items": [
+       "Rapid active cooling",
+       "Ice packs: groin, axillae, neck",
+       "Cold water immersion or spray, fans",
+       "Oral or IV rehydration"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "visual",
+   "title": "Below 28°C and unstable",
+   "visual": {
+    "kind": "timeline",
+    "events": [
+     {
+      "t": "<28°C",
+      "x": "Impaired consciousness, bradycardia, hypotension"
+     },
+     {
+      "t": "First choice",
+      "x": "ECMO: circulatory support and internal rewarming"
+     },
+     {
+      "t": "No ECMO",
+      "x": "Peritoneal lavage with warmed saline"
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 2,
+   "type": "visual",
+   "title": "Hypothermic arrest numbers",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": "3 shocks",
+      "label": "Maximum before rewarming"
+     },
+     {
+      "big": "30°C",
+      "label": "Rewarm to this, then shock again"
+     },
+     {
+      "big": "<28°C",
+      "label": "Severe: think ECMO"
+     }
+    ],
+    "caption": "Cold myocardium resists defibrillation, so rewarm first."
+   }
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "visual",
+   "title": "The hypothalamic thermostat",
+   "visual": {
+    "kind": "tree",
+    "root": "Hypothalamus",
+    "children": [
+     {
+      "label": "Makes heat",
+      "items": [
+       "Shivering",
+       "Metabolism"
+      ]
+     },
+     {
+      "label": "Loses heat",
+      "items": [
+       "Sweating",
+       "Vasodilation"
+      ]
+     }
+    ],
+    "caption": "Hypothermia or hyperthermia happens when this balance fails."
+   }
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "flow",
+   "title": "Why the cold heart fails",
+   "nodes": [
+    "Cold core",
+    "Slower metabolism and enzymes",
+    "Slowed cardiac conduction",
+    "Bradycardia, long QT, J waves",
+    "VF that resists defibrillation"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "flow",
+   "title": "How heat stroke becomes organ failure",
+   "nodes": [
+    "Heat load",
+    "Thermoregulation fails, sweating stops",
+    "Core temperature >40°C",
+    "Protein denaturation",
+    "Rhabdomyolysis",
+    "Multi-organ dysfunction"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 3,
+   "type": "flow",
+   "title": "Rewarming shock",
+   "nodes": [
+    "Rapid rewarming",
+    "Peripheral vasodilation",
+    "No matching rise in cardiac output",
+    "BP falls",
+    "Distributive shock"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 4,
+   "type": "flow",
+   "title": "Serotonin syndrome heat",
+   "nodes": [
+    "Excess serotonergic activity",
+    "More muscle activity",
+    "More metabolic heat",
+    "Hyperthermia"
+   ],
+   "text": "Heat comes from inside the body, not the environment."
+  }
+ ],
+ "glossary": {
+  "Fever": "Raised temperature from the hypothalamus resetting its set point, usually in infection; thermoregulation still works, unlike hyperthermia.",
+  "Frailty": "Reduced physical reserve in older people, so small stresses such as cold or infection cause big decline.",
+  "Exertion": "Hard physical effort, which generates a lot of body heat.",
+  "Seizures": "Episodes of abnormal, excessive electrical brain activity, often causing jerking and loss of awareness.",
+  "Arrhythmias": "Abnormal heart rhythms.",
+  "Respirations": "Breaths; slow respirations means a low breathing rate.",
+  "CNS": "Central nervous system: the brain and spinal cord.",
+  "CNS dysfunction": "Brain not working properly, such as confusion, seizures or reduced consciousness.",
+  "Heat dissipation": "Getting rid of body heat, mainly by sweating and widening skin blood vessels.",
+  "Thirst perception": "Feeling thirsty; it weakens with age, so older people drink less and dehydrate.",
+  "ECG": "Electrocardiogram: a recording of the heart's electrical activity from skin electrodes.",
+  "Long QT": "A prolonged interval from start of the QRS to end of the T wave, raising risk of dangerous arrhythmias.",
+  "Brisk reflexes": "Exaggerated tendon reflexes, a sign of increased nerve excitability, e.g. in serotonin syndrome.",
+  "Tremor": "Involuntary rhythmic shaking of a body part.",
+  "Dilated pupils": "Pupils wider than normal, seen with serotonergic or stimulant drugs such as MDMA.",
+  "U&Es": "Urea and electrolytes: a blood test of kidney function, sodium and potassium.",
+  "Glucose": "Blood sugar; low or high levels can cause confusion and must be checked.",
+  "Warmed IV fluids": "Fluids heated to about body temperature and given into a vein to rewarm and support circulation.",
+  "Perioperative": "Around the time of surgery: before, during and after an operation.",
+  "Axillae": "The armpits; large vessels there make ice packs effective for cooling.",
+  "Cold water immersion": "Placing the body in cold water: the fastest way to cool a heat stroke patient.",
+  "Rehydration": "Replacing lost body water, by mouth or through a drip.",
+  "Impaired consciousness": "Reduced alertness, from drowsiness to coma.",
+  "Hypotension": "Low blood pressure.",
+  "Saline": "Salt water solution (0.9% sodium chloride) used for drips and washouts.",
+  "Supportive care": "Treatment that keeps the body going (fluids, oxygen, monitoring) while the cause is fixed.",
+  "Cardiac monitoring": "Continuous ECG display to catch arrhythmias early.",
+  "Cardiac arrest": "The heart stops pumping effectively, so there is no output and no pulse.",
+  "Shocks": "Electrical defibrillation shocks given to restore a normal rhythm in VF or pulseless VT.",
+  "Cardiac conduction": "The spread of electrical impulses through the heart that triggers each beat.",
+  "Repolarisation": "The recovery of heart muscle cells' electrical charge after each beat, shown by the T wave.",
+  "Enzyme function": "How well the body's protein catalysts work; they slow down in the cold and break down in heat.",
+  "Protein denaturation": "Heat unfolding proteins so they stop working, killing cells.",
+  "Multi-organ dysfunction": "Failure of two or more organ systems at the same time.",
+  "Cardiac output": "Volume of blood the heart pumps per minute (heart rate times stroke volume).",
+  "Peripheral vasodilation": "Widening of blood vessels in the skin and limbs, which drops blood pressure.",
+  "Serotonergic": "Relating to serotonin, a brain and gut chemical messenger; serotonergic drugs include SSRIs and MDMA.",
+  "Metabolic heat production": "Heat made by the body's chemical reactions and muscle activity.",
+  "Refractory": "Not responding to treatment."
+ }
+}

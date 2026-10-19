@@ -1,0 +1,411 @@
+{
+ "id": "anaemia",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "visual",
+   "title": "Classify by MCV first",
+   "visual": {
+    "kind": "tree",
+    "root": "Anaemia (low Hb)",
+    "children": [
+     {
+      "label": "Microcytic: MCV <80",
+      "items": [
+       "Iron deficiency (most common)",
+       "Sideroblastic anaemia"
+      ]
+     },
+     {
+      "label": "Normocytic: MCV 80-100",
+      "items": [
+       "Anaemia of chronic disease",
+       "Acute blood loss",
+       "CKD"
+      ]
+     },
+     {
+      "label": "Macrocytic: MCV >100",
+      "items": [
+       "B12 deficiency",
+       "Folate deficiency",
+       "Hypothyroidism (non-megaloblastic)"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 2,
+   "type": "compare",
+   "title": "Iron deficiency vs chronic disease",
+   "head": [
+    "",
+    "Iron deficiency",
+    "Anaemia of chronic disease"
+   ],
+   "rows": [
+    [
+     "MCV",
+     "Low (<80)",
+     "Normal"
+    ],
+    [
+     "Ferritin",
+     "Low",
+     "Normal or high"
+    ],
+    [
+     "Transferrin saturation",
+     "Low",
+     "Low"
+    ],
+    [
+     "TIBC",
+     "High",
+     "Low or normal"
+    ],
+    [
+     "Serum iron",
+     "Low",
+     "Low"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "compare",
+   "title": "Warm vs cold AIHA",
+   "head": [
+    "",
+    "Warm AIHA",
+    "Cold AIHA"
+   ],
+   "rows": [
+    [
+     "Antibody",
+     "IgG",
+     "IgM"
+    ],
+    [
+     "Active at",
+     "Body temperature",
+     "0-10°C"
+    ],
+    [
+     "Linked to",
+     "Lymphoproliferative cancer, inflammation, drugs",
+     "Mycoplasma, lymphoma"
+    ],
+    [
+     "Haemolysis",
+     "Extravascular (spleen)",
+     "More intravascular (complement)"
+    ],
+    [
+     "Treatment",
+     "Prednisolone, ± rituximab, splenectomy",
+     "Plasmapheresis if severe"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "compare",
+   "title": "TTP vs HUS",
+   "head": [
+    "",
+    "TTP (pentad)",
+    "HUS (triad)"
+   ],
+   "rows": [
+    [
+     "Haemolytic anaemia",
+     "Yes (MAHA)",
+     "Yes"
+    ],
+    [
+     "Thrombocytopenia",
+     "Yes",
+     "Yes"
+    ],
+    [
+     "Kidneys",
+     "AKI",
+     "Creatinine 2x baseline"
+    ],
+    [
+     "Neurology",
+     "Yes",
+     "No"
+    ],
+    [
+     "Fever",
+     "Yes",
+     "No"
+    ]
+   ]
+  },
+  {
+   "d": "investigation",
+   "after": 0,
+   "type": "visual",
+   "title": "Ferritin cut-off",
+   "visual": {
+    "kind": "scale",
+    "title": "Serum ferritin",
+    "min": 0,
+    "max": 100,
+    "unit": "µg/L",
+    "bands": [
+     [
+      0,
+      30,
+      "iron deficiency",
+      "bad"
+     ],
+     [
+      30,
+      100,
+      "above cut-off",
+      "ok"
+     ]
+    ],
+    "value": 12,
+    "label": "Example 12",
+    "caption": "Ferritin below 30 µg/L diagnoses iron deficiency anaemia."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 2,
+   "type": "flow",
+   "title": "Iron deficiency over 60",
+   "nodes": [
+    "Iron deficiency anaemia, age over 60",
+    "FIT test",
+    "FIT positive",
+    "Suspected cancer pathway (colorectal)"
+   ]
+  },
+  {
+   "d": "management",
+   "after": 0,
+   "type": "flow",
+   "title": "Iron deficiency ladder",
+   "nodes": [
+    "Find and treat the cause",
+    "Daily oral ferrous fumarate",
+    "Side effects: alternate days + bulk laxative",
+    "Still failing: IV iron"
+   ]
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "visual",
+   "title": "Numbers for iron and blood",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": ">6 weeks",
+      "label": "To surgery: oral iron"
+     },
+     {
+      "big": "<6 weeks",
+      "label": "To surgery: IV iron"
+     },
+     {
+      "big": "1 g x2",
+      "label": "Ferric carboxymaltose, one week apart"
+     },
+     {
+      "big": "Hb >70",
+      "label": "Target when transfusing 1 unit"
+     }
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "flow",
+   "title": "Why iron deficiency makes small pale cells",
+   "nodes": [
+    "Too little iron",
+    "Less haem synthesis",
+    "Precursors under-haemoglobinised",
+    "Microcytic, hypochromic red cells"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "flow",
+   "title": "Haemolysis: from broken cell to yellow skin",
+   "nodes": [
+    "Premature red cell destruction",
+    "Haem released, LDH rises",
+    "Unconjugated bilirubin: jaundice",
+    "Marrow compensates: reticulocytosis",
+    "MCV rises slightly"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "flow",
+   "title": "G6PD deficiency under stress",
+   "nodes": [
+    "Low G6PD",
+    "Less NADPH",
+    "Glutathione not regenerated",
+    "Oxidant trigger: fava beans, drugs, infection",
+    "Heinz bodies form",
+    "Spleen bites them out: bite cells, haemolysis"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 3,
+   "type": "visual",
+   "title": "Where AIHA red cells die",
+   "visual": {
+    "kind": "organ",
+    "organs": [
+     "spleen",
+     "blood"
+    ]
+   },
+   "text": "Warm (IgG): splenic macrophages eat coated cells, making spherocytes. Cold (IgM): complement lyses cells inside vessels."
+  },
+  {
+   "d": "science",
+   "after": 4,
+   "type": "flow",
+   "title": "How schistocytes are made",
+   "nodes": [
+    "Fibrin/platelet microthrombi (TTP, HUS, DIC)",
+    "Small vessels partly blocked",
+    "Red cells sheared passing through",
+    "Fragmented cells: schistocytes"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 5,
+   "type": "visual",
+   "title": "Why aplasia hits every line",
+   "visual": {
+    "kind": "tree",
+    "root": "Pluripotent stem cell damage",
+    "children": [
+     {
+      "label": "Red cells",
+      "items": [
+       "Anaemia"
+      ]
+     },
+     {
+      "label": "White cells",
+      "items": [
+       "Leucopenia"
+      ]
+     },
+     {
+      "label": "Platelets",
+      "items": [
+       "Thrombocytopenia"
+      ]
+     }
+    ]
+   },
+   "text": "All three fall together: pancytopenia, not isolated anaemia."
+  }
+ ],
+ "glossary": {
+  "Haemoglobin": "The iron-containing protein in red cells that carries oxygen.",
+  "Hb": "Haemoglobin, measured in g/L on a full blood count.",
+  "Oxygen-carrying capacity": "How much oxygen the blood can carry, set mainly by haemoglobin level.",
+  "Malabsorption": "Poor absorption of nutrients from the gut, for example in coeliac disease.",
+  "Pallor": "Unusual paleness of the skin or inner eyelids.",
+  "Conjunctival pallor": "Pale lining of the lower eyelid, a bedside sign of anaemia.",
+  "Palpitations": "An unpleasant awareness of your own heartbeat.",
+  "Tachycardia": "A heart rate over 100 beats per minute.",
+  "Developmental delay": "A child reaching milestones such as walking or talking later than expected.",
+  "Serum iron": "The amount of iron circulating in the blood, bound to transferrin.",
+  "CKD": "Chronic kidney disease; less erythropoietin is made, causing normocytic anaemia.",
+  "B12": "Vitamin B12 (cobalamin), needed for DNA synthesis in red cell precursors and for healthy nerves.",
+  "Folate": "A B vitamin needed for DNA synthesis; deficiency causes macrocytic anaemia.",
+  "Jaundice": "Yellowing of skin and eyes from raised bilirubin.",
+  "Splenomegaly": "An enlarged spleen.",
+  "Prosthetic heart valve": "An artificial heart valve; mechanical ones can shear red cells.",
+  "Lymphoproliferative malignancy": "A cancer of lymphocytes, such as CLL or lymphoma.",
+  "Autoantibodies": "Antibodies that attack the body's own tissues.",
+  "IgG": "The main antibody class in the blood; it causes warm AIHA.",
+  "IgM": "A large antibody class that fixes complement well; it causes cold AIHA.",
+  "Ciprofloxacin": "A quinolone antibiotic that can trigger haemolysis.",
+  "Cephalosporin": "A class of beta-lactam antibiotics, such as ceftriaxone.",
+  "Methyldopa": "An older blood pressure drug, used in pregnancy, that can cause warm AIHA.",
+  "NSAIDs": "Non-steroidal anti-inflammatory drugs such as ibuprofen.",
+  "Parietal cells": "Stomach cells that make acid and intrinsic factor.",
+  "Terminal ileum": "The last part of the small intestine, where B12 is absorbed.",
+  "Peripheral neuropathy": "Damage to nerves in the limbs, causing numbness, tingling or weakness.",
+  "Hashimoto's disease": "Autoimmune thyroiditis, the commonest cause of hypothyroidism.",
+  "Type 1 diabetes": "Autoimmune destruction of insulin-making pancreatic cells.",
+  "X-linked recessive": "Inherited on the X chromosome; mostly affects males, females are usually carriers.",
+  "Oxidative stress": "Damage from reactive oxygen chemicals that outstrips the cell's antioxidant defences.",
+  "Fava beans": "Broad beans; they contain oxidants that trigger haemolysis in G6PD deficiency.",
+  "Nitrofurantoin": "An antibiotic for urinary infections; an oxidant trigger in G6PD deficiency.",
+  "Primaquine": "An antimalarial drug that can trigger haemolysis in G6PD deficiency.",
+  "Sulphonylureas": "Diabetes tablets such as gliclazide; sulpha-type drugs that can trigger G6PD haemolysis.",
+  "Sulpha-drugs": "Sulphonamide-containing drugs such as co-trimoxazole; oxidant triggers in G6PD deficiency.",
+  "Megaloblastic": "Large, immature red cell precursors from faulty DNA synthesis, as in B12 or folate deficiency.",
+  "Non-megaloblastic macrocytic anaemia": "Large red cells without megaloblasts, for example from hypothyroidism, alcohol or liver disease.",
+  "Hypothyroidism": "An underactive thyroid with too little thyroid hormone.",
+  "Proximal myopathy": "Weakness of the muscles near the trunk, such as the hips and shoulders.",
+  "Thrombocytopenia": "A low platelet count.",
+  "Fibrin": "The protein mesh that forms the framework of a blood clot.",
+  "Focal neurology": "Neurological signs affecting one area, such as weakness of one limb.",
+  "Haematopoietic stem cells": "Bone marrow stem cells that make all blood cell types.",
+  "Slapped cheek": "Bright red cheek rash of parvovirus B19 infection (fifth disease).",
+  "SLE": "Systemic lupus erythematosus, an autoimmune disease affecting many organs.",
+  "Erythropoiesis": "Production of red blood cells in the bone marrow.",
+  "Ineffective erythropoiesis": "Red cell precursors are made but die in the marrow before maturing.",
+  "Lead poisoning": "Toxicity from lead exposure; it blocks haem synthesis and can cause sideroblastic anaemia.",
+  "Isoniazid": "A tuberculosis drug that depletes pyridoxine and can cause sideroblastic anaemia.",
+  "Pyridoxine": "Vitamin B6, needed for the first step of haem synthesis.",
+  "Autosomal dominant": "Inherited so one faulty copy of a gene is enough to cause disease.",
+  "AKI": "Acute kidney injury: a sudden fall in kidney function.",
+  "Creatinine": "A muscle waste product cleared by the kidneys; a rise shows falling kidney function.",
+  "Pentad": "A group of five classic features.",
+  "Triad": "A group of three classic features.",
+  "Bone marrow aspiration": "Sucking a liquid marrow sample through a needle, usually from the hip bone, to look at cells.",
+  "Bone marrow biopsy": "Taking a core of marrow tissue to see its structure and cellularity.",
+  "Colorectal cancer": "Cancer of the colon or rectum; can bleed slowly and cause iron deficiency.",
+  "Suspected cancer pathway": "An urgent NHS referral route to be seen within two weeks.",
+  "Bulk-forming laxatives": "Fibre laxatives such as ispaghula that soften stool by holding water.",
+  "IV iron": "Iron given into a vein, which raises iron stores faster than tablets.",
+  "Prednisolone": "An oral corticosteroid that suppresses the immune system.",
+  "Immunosuppressives": "Drugs that dampen the immune system, such as azathioprine.",
+  "Haemodynamic instability": "Low blood pressure, fast pulse or poor perfusion showing the circulation is failing.",
+  "Blood transfusion": "Giving donated red cells into a vein.",
+  "Haem": "The iron-containing ring in haemoglobin that binds oxygen.",
+  "Haem synthesis": "The chain of reactions that builds haem; it needs iron.",
+  "Erythroid precursors": "Immature cells in the marrow that develop into red cells.",
+  "Haemoglobinisation": "Filling a developing red cell with haemoglobin.",
+  "Extravascular haemolysis": "Red cell destruction outside blood vessels, mainly by spleen and liver macrophages.",
+  "Intravascular haemolysis": "Red cells bursting inside blood vessels, releasing haemoglobin into the plasma.",
+  "Complement": "A group of blood proteins that can punch holes in coated cells.",
+  "Macrophages": "Large immune cells that engulf and digest cells and debris.",
+  "Microthrombi": "Tiny clots in small vessels.",
+  "Denatured haemoglobin": "Haemoglobin damaged by oxidation so it clumps together.",
+  "Pluripotent": "Able to become many different cell types.",
+  "Leucopenia": "A low white cell count."
+ }
+}

@@ -1,0 +1,446 @@
+{
+ "id": "pneumonia",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "visual",
+   "title": "Where it was caught",
+   "visual": {
+    "kind": "tree",
+    "root": "Pneumonia",
+    "children": [
+     {
+      "label": "CAP",
+      "items": [
+       "Outside hospital / <48 h",
+       "Strep. pneumoniae"
+      ]
+     },
+     {
+      "label": "HAP",
+      "items": [
+       "≥48 h after admission",
+       "S. aureus, Pseudomonas, Klebsiella"
+      ]
+     },
+     {
+      "label": "VAP",
+      "items": [
+       "≥48 h after intubation",
+       "Pseudomonas, MSSA/MRSA"
+      ]
+     },
+     {
+      "label": "Aspiration",
+      "items": [
+       "Gastric/oral contents",
+       "Anaerobes"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 1,
+   "type": "visual",
+   "title": "Aspiration: right lower lobe",
+   "visual": {
+    "kind": "cxr",
+    "findings": [
+     {
+      "type": "consolidation",
+      "side": "right",
+      "zone": "lower"
+     }
+    ],
+    "caption": "Dependent right lower zone consolidation, with foul-smelling sputum."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 2,
+   "type": "compare",
+   "title": "Bug by clue",
+   "head": [
+    "Organism",
+    "Signature clue"
+   ],
+   "rows": [
+    [
+     "Strep. pneumoniae",
+     "Rust-coloured sputum, herpes labialis"
+    ],
+    [
+     "H. influenzae",
+     "COPD"
+    ],
+    [
+     "S. aureus",
+     "Post-influenza, cavitating lesions"
+    ],
+    [
+     "Klebsiella",
+     "Alcohol, redcurrant jelly sputum"
+    ],
+    [
+     "Mycoplasma",
+     "Dry cough, haemolysis, erythema multiforme"
+    ],
+    [
+     "Legionella",
+     "Travel, confusion, low sodium"
+    ],
+    [
+     "C. psittaci",
+     "Birds"
+    ],
+    [
+     "PCP",
+     "HIV, CD4 <200, exercise desaturation"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 2,
+   "type": "visual",
+   "title": "Staph. aureus: cavitation",
+   "visual": {
+    "kind": "cxr",
+    "findings": [
+     {
+      "type": "cavity",
+      "side": "right",
+      "zone": "upper"
+     },
+     {
+      "type": "cavity",
+      "side": "left",
+      "zone": "middle"
+     }
+    ],
+    "caption": "Cavitating lesions after influenza suggest S. aureus."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "visual",
+   "title": "Complicated by empyema",
+   "visual": {
+    "kind": "cxr",
+    "findings": [
+     {
+      "type": "effusion",
+      "side": "left",
+      "zone": "lower"
+     }
+    ],
+    "caption": "Basal dullness, reduced breath sounds and swinging fever despite antibiotics: tap it, pH <7.2 means empyema."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 0,
+   "type": "visual",
+   "title": "CURB-65",
+   "visual": {
+    "kind": "scale",
+    "min": 0,
+    "max": 5,
+    "unit": "points",
+    "bands": [
+     [
+      0,
+      1.5,
+      "0-1 home",
+      "ok"
+     ],
+     [
+      1.5,
+      2.5,
+      "2 consider admit",
+      "warn"
+     ],
+     [
+      2.5,
+      5,
+      "≥3 urgent admit",
+      "bad"
+     ]
+    ],
+    "value": 3,
+    "label": "Example: 3",
+    "caption": "Confusion, Urea >7, RR ≥30, BP <90/≤60, Age ≥65: one point each."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 2,
+   "type": "compare",
+   "title": "Confirming the organism",
+   "head": [
+    "Organism",
+    "Gold-standard test"
+   ],
+   "rows": [
+    [
+     "PCP",
+     "Bronchoscopy + BAL, methenamine silver"
+    ],
+    [
+     "Mycoplasma",
+     "Blood serology"
+    ],
+    [
+     "Legionella",
+     "Urinary antigen (EIA)"
+    ],
+    [
+     "Strep. pneumoniae",
+     "Urinary antigen"
+    ],
+    [
+     "Empyema",
+     "Pleural aspirate"
+    ]
+   ]
+  },
+  {
+   "d": "management",
+   "after": 0,
+   "type": "visual",
+   "title": "CAP antibiotics by CURB-65",
+   "visual": {
+    "kind": "tree",
+    "root": "CURB-65",
+    "children": [
+     {
+      "label": "0-1",
+      "items": [
+       "Home, oral amoxicillin 7 days",
+       "Review at 48 h"
+      ]
+     },
+     {
+      "label": "2",
+      "items": [
+       "Amoxicillin + clarithromycin",
+       "Respiratory ward"
+      ]
+     },
+     {
+      "label": "≥3 or septic",
+      "items": [
+       "IV co-amoxiclav + clarithromycin",
+       "HDU, Sepsis 6"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "compare",
+   "title": "HAP vs VAP antibiotics",
+   "head": [
+    "",
+    "HAP",
+    "VAP"
+   ],
+   "rows": [
+    [
+     "First-line",
+     "IV pip-taz or co-amoxiclav",
+     "Pip-taz"
+    ],
+    [
+     "Severe",
+     "Meropenem",
+     "Add vancomycin for MRSA"
+    ],
+    [
+     "Non-severe",
+     "Oral co-amoxiclav",
+     "-"
+    ]
+   ]
+  },
+  {
+   "d": "management",
+   "after": 2,
+   "type": "visual",
+   "title": "Follow-up numbers",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": "48 h",
+      "label": "Review community CAP"
+     },
+     {
+      "big": "7 days",
+      "label": "Low-severity antibiotic course"
+     },
+     {
+      "big": "6 weeks",
+      "label": "Repeat CXR after resolution"
+     },
+     {
+      "big": "Hold statin",
+      "label": "While on clarithromycin"
+     }
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "flow",
+   "title": "Why gas exchange fails",
+   "nodes": [
+    "Organism reaches alveoli",
+    "Inflammation",
+    "Exudate fills air spaces",
+    "Consolidation",
+    "Impaired gas exchange, hypoxia"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "compare",
+   "title": "Typical vs atypical pattern",
+   "head": [
+    "",
+    "Strep. pneumoniae",
+    "Mycoplasma (atypical)"
+   ],
+   "rows": [
+    [
+     "CXR",
+     "Lobar consolidation",
+     "Diffuse interstitial"
+    ],
+    [
+     "Response",
+     "Strong neutrophilic",
+     "Milder systemic"
+    ],
+    [
+     "Sputum",
+     "Rust-coloured",
+     "Dry cough"
+    ],
+    [
+     "Nickname",
+     "-",
+     "Walking pneumonia"
+    ]
+   ]
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "flow",
+   "title": "Why the right lower lobe",
+   "nodes": [
+    "Reduced consciousness or swallow",
+    "Aspirates oral/gastric contents",
+    "Right main bronchus wider, more vertical",
+    "Lands in dependent right lower lobe",
+    "Mixed anaerobic infection"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 5,
+   "type": "flow",
+   "title": "How empyema forms",
+   "nodes": [
+    "Pneumonia",
+    "Parapneumonic effusion",
+    "Bacteria invade pleural fluid",
+    "Bacterial metabolism, anaerobic glycolysis",
+    "pH falls <7.2: empyema"
+   ]
+  }
+ ],
+ "glossary": {
+  "Inflammation": "The body's protective response to injury or infection: redness, swelling, heat and pain.",
+  "Strep. pneumoniae": "Pneumococcus: Gram-positive diplococcus, the commonest cause of community-acquired pneumonia.",
+  "S. aureus": "Staphylococcus aureus: Gram-positive coccus causing skin, bone, blood and post-flu lung infections.",
+  "Pseudomonas": "Gram-negative rod that causes hospital and ventilator infections and resists many antibiotics.",
+  "Klebsiella": "Gram-negative rod causing severe pneumonia in alcohol misuse and diabetes.",
+  "H. influenzae": "Haemophilus influenzae: Gram-negative coccobacillus linked with COPD exacerbations.",
+  "Intubation": "Passing a breathing tube into the trachea, usually to ventilate a patient.",
+  "Pyrexia": "Fever.",
+  "Purulent": "Containing pus.",
+  "Infiltrate": "Hazy shadowing on chest X-ray from fluid, cells or inflammation in the lung.",
+  "Multi-drug resistant": "An organism resistant to several classes of antibiotics.",
+  "Gastric contents": "Food, fluid and acid from the stomach.",
+  "Malnutrition": "Poor nutritional state from too little or the wrong food.",
+  "NG feeding": "Feeding through a nasogastric tube passed through the nose into the stomach.",
+  "Sputum": "Mucus coughed up from the lower airways.",
+  "CXR": "Chest X-ray.",
+  "MCA stroke": "Stroke in the middle cerebral artery territory, which can impair swallowing.",
+  "Cell wall": "The rigid outer layer of bacteria; atypical organisms lack a typical one, so beta-lactams do not work.",
+  "Productive cough": "A cough that brings up sputum.",
+  "Focal crackles": "Crackles heard in one area of the chest.",
+  "COPD": "Chronic obstructive pulmonary disease: long-term airflow limitation, usually from smoking.",
+  "Influenza": "Flu, a viral respiratory infection.",
+  "Cocci": "Round-shaped bacteria.",
+  "Gram-negative rod": "Rod-shaped bacterium staining pink on Gram stain.",
+  "Mycoplasma": "Mycoplasma pneumoniae: an atypical bacterium with no cell wall, common in young adults.",
+  "LFTs": "Liver function tests.",
+  "Legionella": "Legionella pneumophila: atypical bacterium spread through water systems such as air conditioning.",
+  "Myalgia": "Muscle aches.",
+  "Bi-basal": "Affecting the bases of both lungs.",
+  "Chlamydia psittaci": "Atypical bacterium caught from birds, causing psittacosis.",
+  "HIV": "Human immunodeficiency virus, which destroys CD4 T cells and causes immunodeficiency.",
+  "Exertional dyspnoea": "Breathlessness on exertion.",
+  "Non-productive cough": "A dry cough without sputum.",
+  "Desaturation": "A fall in oxygen saturation.",
+  "Bilateral": "Affecting both sides.",
+  "CT": "Computed tomography: a cross-sectional X-ray scan.",
+  "Pleural fluid": "Fluid collecting between the lung and chest wall.",
+  "Decreased breath sounds": "Quieter breath sounds, heard over fluid, collapse or air.",
+  "Prognostic marker": "A finding that predicts how a patient will do.",
+  "Confusion": "New disorientation or reduced mental clarity.",
+  "RR": "Respiratory rate, breaths per minute.",
+  "Systolic": "The higher blood pressure reading, during heart contraction.",
+  "Diastolic": "The lower blood pressure reading, during heart relaxation.",
+  "U&Es": "Urea and electrolytes: blood test of kidney function and salts.",
+  "SpO2": "Oxygen saturation measured by a pulse oximeter.",
+  "EIA": "Enzyme immunoassay: a lab test detecting an antigen or antibody.",
+  "Blood cultures": "Blood samples incubated to grow and identify bacteria.",
+  "ABC": "Airway, Breathing, Circulation: the order to assess and treat an unwell patient.",
+  "Amoxicillin": "Oral penicillin antibiotic, first-line for low-severity CAP.",
+  "Doxycycline": "Tetracycline antibiotic, an alternative in penicillin allergy.",
+  "Penicillin allergic": "Having had a hypersensitivity reaction to penicillin antibiotics.",
+  "Septic": "Having sepsis: life-threatening organ dysfunction caused by the response to infection.",
+  "High-dependency setting": "A unit with closer monitoring than a ward but less than ICU (HDU).",
+  "Meropenem": "Broad-spectrum carbapenem antibiotic kept for severe or resistant infections.",
+  "3rd-gen cephalosporin": "Broad-spectrum beta-lactam antibiotic such as ceftriaxone.",
+  "MRSA cover": "Adding an antibiotic active against methicillin-resistant Staph. aureus.",
+  "Statins": "Cholesterol-lowering drugs; levels rise with clarithromycin.",
+  "Plasma levels": "Concentration of a drug in the blood.",
+  "Corticosteroids": "Anti-inflammatory steroid drugs such as prednisolone.",
+  "COPD exacerbation": "A flare of COPD with worse breathlessness, cough and sputum.",
+  "Lung parenchyma": "The functional gas-exchanging tissue of the lung.",
+  "Exudate": "Protein- and cell-rich fluid leaking from inflamed vessels.",
+  "Alveoli": "Tiny air sacs where gas exchange happens.",
+  "Gas exchange": "Movement of oxygen into and carbon dioxide out of the blood in the alveoli.",
+  "Neutrophilic": "Driven by neutrophils, the white cells that fight bacteria.",
+  "Right main bronchus": "The airway to the right lung; wider and more vertical than the left.",
+  "Flora": "The mix of microbes normally living at a body site.",
+  "Pneumonitis": "Inflammation of lung tissue.",
+  "Immunocompromised": "Having a weakened immune system.",
+  "Decompensation": "Failure of the body's compensatory mechanisms, so the illness becomes unstable.",
+  "Renal impairment": "Reduced kidney function.",
+  "Frailty": "Reduced physiological reserve making a person vulnerable to illness."
+ }
+}
