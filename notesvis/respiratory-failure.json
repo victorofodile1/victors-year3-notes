@@ -1,0 +1,90 @@
+{
+  "id": "respiratory-failure",
+  "visuals": [
+    { "d": "diagnosis", "after": 1, "type": "compare", "title": "Type 1 vs type 2",
+      "head": ["", "Type 1", "Type 2"],
+      "rows": [
+        ["PaO2", "<8 kPa", "<8 kPa"],
+        ["PaCO2", "Normal or low", ">6 kPa"],
+        ["Problem", "Oxygenation failure", "Ventilation failure"],
+        ["Causes", "Pneumonia, pulmonary oedema, PE, ARDS", "COPD, opioid overdose, neuromuscular disease"]
+      ] },
+    { "d": "diagnosis", "after": 1, "type": "visual", "title": "Numbers to know",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "PaO2 <8", "label": "kPa: respiratory failure" },
+        { "big": "PaCO2 >6", "label": "kPa: makes it type 2" }
+      ] } },
+    { "d": "diagnosis", "after": 2, "type": "visual", "title": "Hypoxia vs CO2 retention signs",
+      "visual": { "kind": "tree", "root": "Clinical features",
+        "children": [
+          { "label": "Low oxygen", "items": ["Breathlessness, tachypnoea", "Cyanosis", "Confusion"] },
+          { "label": "High CO2", "items": ["Asterixis (flap)", "Drowsiness", "Altered mental state"] }
+        ] } },
+    { "d": "investigation", "after": 1, "type": "flow", "title": "Confirm, then find the cause",
+      "nodes": ["ABG: PaO2, PaCO2, pH", "Classify type 1 or 2", "Chest X-ray and bloods", "ECG, CT if PE suspected"] },
+    { "d": "management", "after": 0, "type": "compare", "title": "Oxygen targets",
+      "head": ["Patient", "Target SpO2"],
+      "rows": [
+        ["Most patients", "94-98%"],
+        ["COPD or risk of CO2 retention", "88-92%"]
+      ] },
+    { "d": "management", "after": 1, "type": "visual", "title": "When to start NIV",
+      "visual": { "kind": "scale", "title": "Arterial pH in type 2 failure", "min": 7.1, "max": 7.45, "unit": "",
+        "bands": [[7.1, 7.25, "consider intubation", "bad"], [7.25, 7.35, "NIV", "warn"], [7.35, 7.45, "normal", "ok"]],
+        "value": 7.29, "label": "pH 7.29: NIV",
+        "caption": "NIV is for acidotic type 2 failure with pH 7.25-7.35." } },
+    { "d": "management", "after": 2, "type": "flow", "title": "Escalation",
+      "nodes": ["Controlled oxygen", "Treat the cause", "NIV if type 2 with acidosis", "Not improving: intubation and ventilation", "Repeat ABGs throughout"] },
+    { "d": "science", "after": 0, "type": "flow", "title": "Why type 1 keeps CO2 normal",
+      "nodes": ["Fluid or consolidation in alveoli", "V/Q mismatch, poor diffusion", "Oxygen transfer fails", "CO2 diffuses more easily: still cleared", "Low O2, normal CO2"] },
+    { "d": "science", "after": 1, "type": "visual", "title": "Causes of hypoventilation",
+      "visual": { "kind": "tree", "root": "Alveolar hypoventilation",
+        "children": [
+          { "label": "Low drive", "items": ["Opioid overdose"] },
+          { "label": "Weak muscles", "items": ["Motor neurone disease"] },
+          { "label": "Airway resistance, dead space", "items": ["COPD"] }
+        ] } },
+    { "d": "science", "after": 2, "type": "flow", "title": "Why too much oxygen harms CO2 retainers",
+      "nodes": ["Chronic CO2 retainer relies on hypoxic drive", "High-flow oxygen given", "Drive to breathe falls", "Ventilation drops", "CO2 rises further"] },
+    { "d": "science", "after": 3, "type": "compare", "title": "How BiPAP works",
+      "head": ["Pressure", "Effect"],
+      "rows": [
+        ["Inspiratory (IPAP)", "Bigger tidal volume, more CO2 blown off"],
+        ["Expiratory (EPAP)", "Keeps alveoli open"]
+      ] },
+    { "d": "science", "after": 4, "type": "flow", "title": "Why the hands flap",
+      "nodes": ["CO2 retention", "Metabolic encephalopathy", "Reticular activating system and motor pathways affected", "Asterixis"] }
+  ],
+  "glossary": {
+    "oxygenation": "Getting enough oxygen into the blood.",
+    "ventilation": "Moving air in and out of the lungs, which clears carbon dioxide.",
+    "pneumonia": "Infection of the lung air spaces causing consolidation.",
+    "drug overdose": "Taking more of a drug than the body can safely handle, such as opioids slowing breathing.",
+    "opioids": "Strong painkillers like morphine that also suppress the drive to breathe.",
+    "neuromuscular disease": "A disease of the nerves or muscles, which can weaken breathing muscles.",
+    "hypoxia": "Too little oxygen reaching the tissues.",
+    "confusion": "Muddled thinking or disorientation, here from low oxygen or high CO2.",
+    "drowsiness": "Abnormal sleepiness, a sign of rising CO2.",
+    "altered mental state": "Any change in alertness, behaviour or thinking.",
+    "acidosis": "Too much acid in the blood, a pH below 7.35.",
+    "gold standard": "The most accurate, definitive test.",
+    "ECG": "Electrocardiogram: a recording of the heart's electrical activity.",
+    "CT": "Computed tomography: a detailed cross-sectional X-ray scan.",
+    "target saturations": "The oxygen saturation range you aim to keep a patient in, adjusting oxygen to stay there.",
+    "SpO2": "Oxygen saturation measured by a pulse oximeter on the finger.",
+    "CO2 retention": "Build-up of carbon dioxide in the blood because it is not breathed off.",
+    "diuretics": "Drugs like furosemide that make the kidneys remove extra fluid.",
+    "anticoagulation": "Treatment with blood-thinning drugs to stop clots growing.",
+    "acute exacerbation": "A sudden worsening of a long-term condition.",
+    "mechanical ventilation": "A machine breathing for the patient through a tube in the windpipe.",
+    "refractory": "Not responding to treatment.",
+    "diffusion impairment": "Gas crossing poorly from the alveoli into the blood, for example through fluid or scarring.",
+    "consolidation": "Lung air spaces filled with fluid, pus or cells instead of air.",
+    "alveoli": "The tiny air sacs where gas exchange happens.",
+    "respiratory drive": "The brain's signal to breathe, mainly triggered by rising CO2.",
+    "airway resistance": "How hard it is for air to flow through the airways; raised when they narrow.",
+    "inspiratory positive pressure": "Extra pressure pushed in on each breath in, making breaths bigger.",
+    "expiratory positive pressure": "Pressure kept on during breathing out to stop the alveoli collapsing.",
+    "high-flow oxygen": "Oxygen given at high concentration, such as 15 L/min through a non-rebreather mask."
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "id": "hypoglycaemia",
+  "visuals": [
+    { "d": "diagnosis", "after": 0, "type": "visual", "title": "Glucose cut-offs",
+      "visual": { "kind": "scale", "title": "Blood glucose", "min": 1, "max": 8, "unit": "mmol/L",
+        "bands": [[1, 3.0, "severe symptoms likely", "bad"], [3.0, 4.0, "hypoglycaemia", "warn"], [4.0, 8, "safe", "ok"]],
+        "value": 2.8, "label": "2.8 mmol/L", "caption": "Clinically significant below 4.0 mmol/L; severe symptoms often below 3.0." } },
+    { "d": "diagnosis", "after": 1, "type": "visual", "title": "Who gets it",
+      "visual": { "kind": "tree", "root": "Causes and risks",
+        "children": [
+          { "label": "Diabetes drugs", "items": ["Insulin", "Sulphonylurea (gliclazide)", "Missed meals"] },
+          { "label": "Tumour", "items": ["Insulinoma"] },
+          { "label": "Lost warning", "items": ["Autonomic neuropathy", "Impaired awareness"] },
+          { "label": "Neonates", "items": ["Prematurity (<37 weeks)"] }
+        ] } },
+    { "d": "diagnosis", "after": 2, "type": "compare", "title": "Two groups of symptoms",
+      "head": ["", "Autonomic", "Neuroglycopenic"],
+      "rows": [
+        ["Cause", "Adrenaline surge", "Brain short of glucose"],
+        ["Features", "Sweating, tremor, palpitations, anxiety", "Confusion, drowsiness, slurred speech, seizures, coma"],
+        ["When", "Usually first: the warning", "Later, more dangerous"]
+      ] },
+    { "d": "diagnosis", "after": 3, "type": "flow", "title": "Whipple's triad",
+      "nodes": ["Symptoms of hypoglycaemia", "Low plasma glucose at the time", "Symptoms resolve with glucose"] },
+    { "d": "investigation", "after": 1, "type": "visual", "title": "Reading the C-peptide",
+      "visual": { "kind": "tree", "root": "Low glucose + high insulin",
+        "children": [
+          { "label": "C-peptide raised", "items": ["Endogenous insulin", "Insulinoma", "Sulphonylurea"] },
+          { "label": "C-peptide not raised", "items": ["Exogenous insulin", "Injected insulin or overdose"] }
+        ] } },
+    { "d": "investigation", "after": 1, "type": "visual", "title": "Testing for insulinoma",
+      "visual": { "kind": "timeline", "events": [
+        { "t": "Start", "x": "Supervised fast begins" },
+        { "t": "Up to 72 h", "x": "Glucose checked as it drops" },
+        { "t": "At hypo", "x": "Insulin, pro-insulin, ketones taken" }
+      ] } },
+    { "d": "management", "after": 1, "type": "flow", "title": "Treat by level of consciousness",
+      "nodes": ["Can swallow: oral fast-acting glucose", "Can't self-treat: buccal Glucogel", "Unconscious/seizing: IV glucose over 10 min", "No IV access: IM glucagon", "Then longer-acting carbohydrate"] },
+    { "d": "management", "after": 1, "type": "visual", "title": "IV glucose doses",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "200ml 10%", "label": "IV glucose over 10 minutes" },
+        { "big": "100ml 20%", "label": "Alternative IV glucose" },
+        { "big": "IM glucagon", "label": "If no IV access" }
+      ] } },
+    { "d": "management", "after": 2, "type": "visual", "title": "DVLA: stop driving if",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": ">1 awake", "label": "More than one severe episode while awake" },
+        { "big": "1 driving", "label": "One severe episode while driving" }
+      ] } },
+    { "d": "science", "after": 0, "type": "visual", "title": "The organ that suffers first",
+      "text": "The brain depends on glucose as its main fuel, so it fails first when supply drops.",
+      "visual": { "kind": "organ", "organs": ["brain", "pancreas", "liver", "blood"] } },
+    { "d": "science", "after": 1, "type": "flow", "title": "Why the warning comes first",
+      "nodes": ["Glucose falls", "Sympathetic counter-regulation", "Adrenaline released", "Sweating, tremor, palpitations", "Warning before brain symptoms"] },
+    { "d": "science", "after": 2, "type": "visual", "title": "Losing the warning",
+      "visual": { "kind": "cycle", "centre": "Impaired awareness",
+        "steps": ["Repeated hypos", "Blunted autonomic response", "No early warning symptoms", "Severe unheralded hypo"] } },
+    { "d": "science", "after": 3, "type": "flow", "title": "How insulin and sulphonylureas drop glucose",
+      "nodes": ["Sulphonylurea stimulates beta cells", "More insulin (or injected insulin)", "Glucose driven into cells", "Liver output suppressed", "Hypo if dose too big or food missed"] }
+  ],
+  "glossary": {
+    "mmol/L": "Millimoles per litre, the unit used for blood glucose concentration in the UK.",
+    "tremor": "Involuntary shaking, here caused by adrenaline release.",
+    "palpitations": "An unpleasant awareness of your own heartbeat, often fast or pounding.",
+    "drowsiness": "Abnormal sleepiness, a sign that brain function is falling.",
+    "seizures": "Bursts of abnormal electrical brain activity causing fits or altered awareness.",
+    "slurred speech": "Unclear, poorly articulated speech from impaired brain function.",
+    "tachycardia": "Heart rate above 100 beats per minute.",
+    "pancreatic neuroendocrine tumour": "A tumour of hormone-producing pancreatic cells; an insulinoma is the commonest functional one.",
+    "functional tumour": "A tumour that secretes an active hormone and causes symptoms from that hormone.",
+    "finger-prick": "A bedside capillary blood glucose test using a drop of blood from the fingertip.",
+    "laboratory blood glucose": "A venous blood sample sent to the lab to confirm the bedside glucose reading.",
+    "serum": "The fluid part of blood left after clotting, used for many lab tests.",
+    "pre-proinsulin": "The first precursor molecule made in beta cells, later trimmed to proinsulin and then insulin.",
+    "hormonal profile": "A set of hormone levels (insulin, pro-insulin, C-peptide, ketones) taken at the moment of hypoglycaemia.",
+    "ketones": "Acids made from fat breakdown; low during insulin-driven hypoglycaemia because insulin blocks their production.",
+    "oral fast-acting glucose": "Quickly absorbed sugar by mouth, such as glucose tablets or a sugary drink.",
+    "glucose tablets": "Chewable tablets of pure glucose used to treat a hypo quickly.",
+    "IV": "Intravenous: given directly into a vein.",
+    "IV glucose": "Glucose solution given into a vein, used when the patient cannot take sugar by mouth.",
+    "stat": "Given immediately, as a single dose.",
+    "10% glucose": "A glucose solution containing 10 g of glucose per 100 ml.",
+    "20% glucose": "A more concentrated glucose solution, 20 g per 100 ml, so a smaller volume is needed.",
+    "longer-acting carbohydrate": "Slowly absorbed starchy food such as toast or biscuits, given after a hypo to stop glucose falling again.",
+    "neonatal unit": "The hospital ward that cares for sick or premature newborn babies.",
+    "neonates": "Newborn babies in their first 28 days of life.",
+    "medication review": "A structured check of all a patient's drugs and doses to find the cause of problems.",
+    "adrenaline": "A stress hormone from the adrenal glands that raises glucose and triggers sweating, tremor and palpitations.",
+    "sympathetic": "The fight-or-flight part of the autonomic nervous system.",
+    "neuropathy": "Damage to nerves, causing loss of their normal function.",
+    "unheralded": "Happening without any warning symptoms beforehand.",
+    "primary energy source": "The main fuel a tissue uses; for the brain this is glucose.",
+    "mistimed": "Given at the wrong time relative to food, so insulin peaks when there is no glucose coming in.",
+    "missed meals": "Skipping food while on insulin or sulphonylureas, a common trigger for hypos.",
+    "reduced consciousness": "Lowered alertness, from drowsy to unrousable, measured by the GCS."
+  }
+}

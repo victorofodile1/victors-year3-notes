@@ -1,0 +1,424 @@
+{
+ "id": "acute-coronary-syndrome",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "compare",
+   "title": "The ACS spectrum",
+   "head": [
+    "",
+    "Unstable angina",
+    "NSTEMI",
+    "STEMI"
+   ],
+   "rows": [
+    [
+     "Troponin",
+     "Normal",
+     "Raised",
+     "Raised"
+    ],
+    [
+     "ECG",
+     "Ischaemic changes or normal",
+     "ST depression / T inversion or normal",
+     "ST elevation"
+    ],
+    [
+     "Infarction",
+     "None",
+     "Partial thickness",
+     "Full thickness"
+    ],
+    [
+     "Urgency",
+     "Risk-stratify",
+     "GRACE score",
+     "Urgent reperfusion"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 4,
+   "type": "visual",
+   "title": "Proximal RCA: the dangerous inferior MI",
+   "visual": {
+    "kind": "coronary",
+    "artery": "RCA",
+    "caption": "Bradycardia, risk of complete heart block and 3-fold higher 30-day mortality: urgent PCI."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 5,
+   "type": "compare",
+   "title": "ACS or a mimic?",
+   "head": [
+    "",
+    "ACS",
+    "Costochondritis",
+    "Vasospasm"
+   ],
+   "rows": [
+    [
+     "Clue",
+     "Crushing central pain, sweating",
+     "Tender on palpation, worse on inspiration",
+     "Exertional pain, cocaine use"
+    ],
+    [
+     "Treat",
+     "ACS pathway",
+     "NSAIDs / paracetamol",
+     "Stop trigger"
+    ]
+   ]
+  },
+  {
+   "d": "investigation",
+   "after": 0,
+   "type": "visual",
+   "title": "Troponin rises after hours",
+   "visual": {
+    "kind": "trend",
+    "x": [
+     "0 h",
+     "1 h",
+     "3 h",
+     "6 h",
+     "12 h",
+     "24 h"
+    ],
+    "unit": "ng/L",
+    "series": [
+     {
+      "name": "Troponin",
+      "values": [
+       5,
+       6,
+       40,
+       300,
+       900,
+       1200
+      ]
+     }
+    ],
+    "caption": "Illustrative curve: no rise for 2-3 hours, so repeat troponin to see a rising trend."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 1,
+   "type": "visual",
+   "title": "Inferior STEMI",
+   "visual": {
+    "kind": "ecg",
+    "layout": "12lead",
+    "rhythm": "sinus",
+    "rate": 72,
+    "leads": {
+     "II": "st_elev",
+     "III": "st_elev",
+     "aVF": "st_elev",
+     "I": "st_dep",
+     "aVL": "st_dep"
+    },
+    "caption": "ST elevation II, III, aVF with reciprocal depression in I and aVL: RCA."
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 1,
+   "type": "compare",
+   "title": "Leads to artery",
+   "head": [
+    "Territory",
+    "ST elevation",
+    "Artery"
+   ],
+   "rows": [
+    [
+     "Inferior",
+     "II, III, aVF",
+     "RCA"
+    ],
+    [
+     "Anterior",
+     "V1-V3",
+     "LAD"
+    ],
+    [
+     "Anterolateral",
+     "V1-V3 plus V5/6",
+     "LAD"
+    ],
+    [
+     "Lateral",
+     "I, aVL",
+     "Circumflex"
+    ],
+    [
+     "Posterior",
+     "V7-V9 (depression V1-V3)",
+     "Circumflex/RCA"
+    ]
+   ]
+  },
+  {
+   "d": "investigation",
+   "after": 2,
+   "type": "visual",
+   "title": "GRACE score: NSTEMI route",
+   "visual": {
+    "kind": "scale",
+    "min": 0,
+    "max": 10,
+    "unit": "%",
+    "bands": [
+     [
+      0,
+      3,
+      "≤3%: medical, 2nd antiplatelet",
+      "ok"
+     ],
+     [
+      3,
+      10,
+      ">3%: angiography within 72 h",
+      "bad"
+     ]
+    ],
+    "value": 5,
+    "label": "Example 5%",
+    "caption": "Above 3% means coronary angiography within 72 hours."
+   }
+  },
+  {
+   "d": "management",
+   "after": 0,
+   "type": "visual",
+   "title": "Immediate drugs",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": "300 mg",
+      "label": "Aspirin PO, straight away"
+     },
+     {
+      "big": "<94%",
+      "label": "Only then give oxygen"
+     },
+     {
+      "big": "<90 mmHg",
+      "label": "Systolic: avoid GTN"
+     },
+     {
+      "big": "60 mg",
+      "label": "Prasugrel if going for PCI"
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "visual",
+   "title": "STEMI reperfusion clock",
+   "visual": {
+    "kind": "timeline",
+    "events": [
+     {
+      "t": "0 min",
+      "x": "ECG within 10 min, aspirin 300 mg"
+     },
+     {
+      "t": "≤120 min",
+      "x": "Primary PCI if deliverable in time"
+     },
+     {
+      "t": "<12 h",
+      "x": "Onset window for primary PCI"
+     },
+     {
+      "t": "If not",
+      "x": "Fibrinolysis: fondaparinux + alteplase"
+     },
+     {
+      "t": "60-90 min",
+      "x": "Repeat ECG; PCI if ST still raised"
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 2,
+   "type": "visual",
+   "title": "Secondary prevention",
+   "visual": {
+    "kind": "tree",
+    "root": "After MI",
+    "children": [
+     {
+      "label": "Lifelong",
+      "items": [
+       "Aspirin 75 mg",
+       "Atorvastatin 80 mg",
+       "Ramipril (within 24 h)",
+       "Bisoprolol"
+      ]
+     },
+     {
+      "label": "12 months",
+      "items": [
+       "Ticagrelor or prasugrel"
+      ]
+     },
+     {
+      "label": "If EF <40%",
+      "items": [
+       "Eplerenone"
+      ]
+     },
+     {
+      "label": "Driving",
+      "items": [
+       "No driving 1 week after angioplasty"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "flow",
+   "title": "How the artery blocks",
+   "nodes": [
+    "Atherosclerotic plaque",
+    "Plaque ruptures",
+    "Thrombogenic core exposed",
+    "Platelets aggregate",
+    "Thrombus cuts coronary flow"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "compare",
+   "title": "Why ST elevation or not",
+   "head": [
+    "",
+    "Complete occlusion",
+    "Partial occlusion"
+   ],
+   "rows": [
+    [
+     "Injury",
+     "Transmural",
+     "Subendocardial"
+    ],
+    [
+     "ECG",
+     "ST elevation",
+     "ST depression / T inversion"
+    ],
+    [
+     "Diagnosis",
+     "STEMI",
+     "NSTEMI / unstable angina"
+    ]
+   ]
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "flow",
+   "title": "Why troponin is delayed",
+   "nodes": [
+    "Coronary occlusion",
+    "Ischaemia",
+    "Irreversible myocyte damage",
+    "Troponin leaks out",
+    "Detectable at 2-3 h"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 4,
+   "type": "visual",
+   "title": "The killer rhythm",
+   "visual": {
+    "kind": "ecg",
+    "layout": "strip",
+    "rhythm": "vf",
+    "caption": "VF from electrically unstable ischaemic or reperfused myocardium: the commonest cause of death in ACS."
+   }
+  }
+ ],
+ "glossary": {
+  "Superimposed thrombus": "A blood clot forming on top of a ruptured plaque.",
+  "ST elevation": "Raised ST segment on ECG, showing full-thickness myocardial injury.",
+  "ST depression": "Lowered ST segment on ECG, usually showing subendocardial ischaemia.",
+  "T-wave inversion": "Upside-down T wave on ECG, a sign of ischaemia.",
+  "Infarction": "Tissue death caused by loss of its blood supply.",
+  "Reperfusion": "Restoring blood flow through a blocked artery.",
+  "Hypertension": "Persistently high blood pressure.",
+  "Hyperlipidaemia": "Raised blood cholesterol or other fats.",
+  "Palpitations": "An unpleasant awareness of one's own heartbeat.",
+  "Syncope": "Brief loss of consciousness from reduced blood flow to the brain.",
+  "Atypical presentation": "Presenting without the classic features, e.g. MI with breathlessness or nausea but no chest pain.",
+  "Left bundle branch block": "Delayed conduction down the left bundle, producing broad QRS complexes; new LBBB can mean acute MI.",
+  "STEMI-equivalent": "An ECG finding managed exactly like STEMI with urgent reperfusion.",
+  "Crackles": "Fine clicking sounds on auscultation as fluid-filled airways open.",
+  "Auscultation": "Listening to the body with a stethoscope.",
+  "Prognostic": "Telling you about the likely outcome.",
+  "Acute heart failure": "Sudden failure of the heart to pump enough, causing breathlessness and pulmonary oedema.",
+  "Echo": "Echocardiogram: ultrasound scan of the heart.",
+  "Bradycardia": "Heart rate below 60 beats per minute.",
+  "30-day mortality": "The proportion of patients who die within 30 days.",
+  "Palpation": "Examining by touch.",
+  "NSAIDs": "Non-steroidal anti-inflammatory drugs, such as ibuprofen and naproxen.",
+  "Cocaine": "Stimulant drug that causes coronary vasospasm and raises MI risk.",
+  "Serial troponins": "Repeated troponin measurements over hours to detect a rise or fall.",
+  "Biomarker": "A measurable substance in the blood that indicates disease.",
+  "Reinfarction": "A further MI after a recent one.",
+  "Inferior MI": "Infarction of the bottom wall of the left ventricle, usually from the RCA.",
+  "Anterior MI": "Infarction of the front wall of the left ventricle, from the LAD.",
+  "Anterolateral": "Involving both the front and side walls of the left ventricle.",
+  "Posterior MI": "Infarction of the back wall of the heart, seen as ST depression in V1-V3 and elevation in V7-V9.",
+  "FBC": "Full blood count.",
+  "U&Es": "Urea and electrolytes: blood test of kidney function and salts like sodium and potassium.",
+  "CXR": "Chest X-ray.",
+  "Risk-stratify": "Sort patients by how likely they are to have a bad outcome, to guide treatment.",
+  "Aspirin": "Antiplatelet drug that irreversibly blocks COX, reducing thromboxane and platelet clumping.",
+  "PO": "By mouth (per os).",
+  "Nitrates": "Drugs like GTN that dilate veins and coronary arteries to relieve angina.",
+  "Antiemetic": "A drug that prevents or treats nausea and vomiting.",
+  "Antiplatelet": "A drug that stops platelets clumping together.",
+  "Anticoagulated": "Already taking a drug that reduces clotting, such as warfarin or a DOAC.",
+  "Apixaban": "Oral anticoagulant (DOAC) that blocks factor Xa.",
+  "Warfarin": "Oral anticoagulant blocking vitamin K-dependent clotting factors.",
+  "Radial artery": "The wrist artery, the preferred access route for PCI.",
+  "Haemodynamic instability": "Unstable blood pressure or circulation, such as hypotension or shock.",
+  "ACE inhibitor": "Drug that blocks angiotensin II production, lowering BP and reducing cardiac remodelling.",
+  "Beta-blocker": "Drug that slows the heart and lowers its oxygen demand.",
+  "Statin": "Cholesterol-lowering drug that stabilises plaques.",
+  "Secondary prevention": "Treatment to stop a further event in someone who has already had one.",
+  "LV dysfunction": "Impaired pumping of the left ventricle.",
+  "Angioplasty": "Opening a narrowed artery with a balloon, usually with a stent.",
+  "Thrombogenic": "Likely to cause blood clots.",
+  "Platelet aggregation": "Platelets sticking together to form a plug.",
+  "Coagulation cascade": "The chain of clotting factor reactions that ends in a fibrin clot.",
+  "Cardiomyocytes": "Heart muscle cells.",
+  "Myocardium": "Heart muscle.",
+  "Myocardial oxygen demand": "How much oxygen the heart muscle needs, raised by fast rate and high BP.",
+  "Thrombus propagation": "Growth of an existing clot.",
+  "Necrosis": "Death of cells or tissue.",
+  "Diabetes": "Condition of raised blood glucose from lack of or resistance to insulin.",
+  "Ischaemic": "Starved of blood and oxygen."
+ }
+}

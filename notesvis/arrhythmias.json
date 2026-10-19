@@ -1,0 +1,360 @@
+{
+ "id": "arrhythmias",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "visual",
+   "title": "The family of arrhythmias",
+   "visual": {
+    "kind": "tree",
+    "root": "Arrhythmias",
+    "children": [
+     {
+      "label": "Narrow-complex tachy (>100)",
+      "items": [
+       "SVT",
+       "AF",
+       "Atrial flutter"
+      ]
+     },
+     {
+      "label": "Broad-complex tachy (>100)",
+      "items": [
+       "VT",
+       "VF",
+       "Torsades de pointes"
+      ]
+     },
+     {
+      "label": "Brady (<60)",
+      "items": [
+       "Heart block",
+       "Sick sinus syndrome"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 2,
+   "type": "visual",
+   "title": "Atrial fibrillation",
+   "visual": {
+    "kind": "ecg",
+    "title": "Lead II rhythm strip",
+    "layout": "strip",
+    "rhythm": "af",
+    "rate": 130,
+    "caption": "No P waves, irregularly irregular narrow QRS complexes."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 2,
+   "type": "visual",
+   "title": "Ventricular tachycardia",
+   "visual": {
+    "kind": "ecg",
+    "title": "Lead II rhythm strip",
+    "layout": "strip",
+    "rhythm": "vt",
+    "rate": 150,
+    "caption": "Regular broad QRS (about 160 ms) at around 150 bpm."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "compare",
+   "title": "Telling the heart blocks apart",
+   "head": [
+    "",
+    "PR interval",
+    "Dropped QRS?"
+   ],
+   "rows": [
+    [
+     "First degree",
+     "Long, constant",
+     "Never"
+    ],
+    [
+     "Mobitz I (Wenckebach)",
+     "Gets longer each beat",
+     "Yes, after PR lengthening"
+    ],
+    [
+     "Mobitz II",
+     "Constant",
+     "Yes, intermittently"
+    ],
+    [
+     "Third degree (complete)",
+     "No relationship P to QRS",
+     "P and QRS independent"
+    ]
+   ]
+  },
+  {
+   "d": "diagnosis",
+   "after": 4,
+   "type": "visual",
+   "title": "Adverse features: shock now",
+   "text": "Any one of these in a tachyarrhythmia means synchronised DC cardioversion.",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": "Shock",
+      "label": "e.g. BP 70/50"
+     },
+     {
+      "big": "Syncope",
+      "label": "Collapse or blackout"
+     },
+     {
+      "big": "Ischaemia",
+      "label": "Chest pain, myocardial ischaemia"
+     },
+     {
+      "big": "HF",
+      "label": "Heart failure"
+     },
+     {
+      "big": ">3 s",
+      "label": "Ventricular pause: asystole risk"
+     }
+    ]
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 3,
+   "type": "visual",
+   "title": "CHA2DS2-VASc in AF",
+   "visual": {
+    "kind": "scale",
+    "title": "CHA2DS2-VASc score",
+    "min": 0,
+    "max": 9,
+    "unit": "",
+    "bands": [
+     [
+      0,
+      1,
+      "0: no anticoagulation",
+      "ok"
+     ],
+     [
+      1,
+      2,
+      "1: anticoagulate men",
+      "warn"
+     ],
+     [
+      2,
+      9,
+      "2 or more: anticoagulate",
+      "bad"
+     ]
+    ],
+    "caption": "Anticoagulate at 1 or more in men, 2 or more in women. Check bleeding risk with ORBIT.",
+    "value": 2,
+    "label": "Woman, 65-74: score 2"
+   }
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "compare",
+   "title": "First and second-line drugs by rhythm",
+   "head": [
+    "",
+    "First-line",
+    "Second-line"
+   ],
+   "rows": [
+    [
+     "SVT",
+     "Vagal manoeuvres",
+     "IV adenosine 6 mg (verapamil if asthmatic)"
+    ],
+    [
+     "AF",
+     "Rate control: bisoprolol or diltiazem/verapamil",
+     "Digoxin"
+    ],
+    [
+     "Bradycardia",
+     "IV atropine 500 mcg (max 3 mg)",
+     "Isoprenaline/adrenaline, then pacing"
+    ],
+    [
+     "Stable VT",
+     "Amiodarone 300 mg IV",
+     "DC cardioversion if unstable"
+    ],
+    [
+     "Torsades",
+     "IV magnesium sulphate 2 g",
+     ""
+    ]
+   ]
+  },
+  {
+   "d": "management",
+   "after": 4,
+   "type": "flow",
+   "title": "Tachyarrhythmia in an emergency",
+   "nodes": [
+    "Tachyarrhythmia",
+    "Any adverse feature?",
+    "Yes: synchronised DC cardioversion, up to 3 shocks",
+    "Then amiodarone 300 mg IV over 20-60 min",
+    "No: drug for the rhythm"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "visual",
+   "title": "A re-entry circuit",
+   "visual": {
+    "kind": "cycle",
+    "centre": "Re-entry",
+    "steps": [
+     "Impulse goes down normal path",
+     "Returns up accessory path",
+     "Re-excites atria",
+     "Comes back down again",
+     "Self-sustaining tachycardia"
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "flow",
+   "title": "Why AF is irregularly irregular",
+   "nodes": [
+    "Chaotic re-entrant atrial activity",
+    "No coordinated atrial contraction",
+    "No P waves",
+    "AV node conducts unpredictably",
+    "Irregularly irregular pulse"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 3,
+   "type": "flow",
+   "title": "From long QT to torsades",
+   "nodes": [
+    "Drugs, e.g. macrolides, SSRIs",
+    "Delayed repolarisation (long QT)",
+    "Early afterdepolarisations",
+    "Torsades de pointes",
+    "Magnesium stabilises membrane"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 4,
+   "type": "flow",
+   "title": "Heart block gets worse in steps",
+   "nodes": [
+    "Impaired AV node conduction",
+    "PR prolongation (1st degree)",
+    "Dropped beats (2nd degree)",
+    "Complete AV dissociation (3rd degree)"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 5,
+   "type": "flow",
+   "title": "Why AF causes stroke",
+   "nodes": [
+    "Left atrium fibrillates",
+    "Blood stasis in left atrial appendage",
+    "Thrombus forms",
+    "Embolises to the brain",
+    "Stroke: so anticoagulate"
+   ]
+  }
+ ],
+ "glossary": {
+  "Palpitations": "An unpleasant awareness of your own heartbeat.",
+  "Syncope": "A brief loss of consciousness from reduced blood flow to the brain.",
+  "Ischaemic heart disease": "Heart disease from narrowed coronary arteries reducing blood supply to the heart muscle.",
+  "Electrolyte imbalance": "Abnormal blood levels of salts such as potassium, magnesium or calcium.",
+  "Structural heart disease": "Abnormal heart anatomy, such as valve disease or cardiomyopathy.",
+  "JVP": "Jugular venous pressure: the height of the pulse seen in the neck veins, reflecting right atrial pressure.",
+  "A wave": "The JVP wave caused by right atrial contraction; absent in AF.",
+  "P wave": "The ECG wave produced by atrial depolarisation.",
+  "QRS complex": "The ECG wave produced by ventricular depolarisation.",
+  "Narrow-complex": "QRS under 120 ms, meaning the impulse came through the normal conduction system.",
+  "Broad-complex": "QRS over 120 ms, usually because the rhythm starts in the ventricles or conduction is abnormal.",
+  "Paroxysmal": "Coming and going in sudden episodes.",
+  "Isoelectric line": "The flat baseline of the ECG between waves.",
+  "Polymorphic": "Changing in shape from beat to beat.",
+  "First-degree heart block": "A PR interval over 200 ms with every P wave still followed by a QRS.",
+  "Mobitz I": "Second-degree heart block where the PR lengthens until a QRS is dropped; also called Wenckebach.",
+  "Shock": "Inadequate blood flow to the organs, usually with low blood pressure.",
+  "Myocardial ischaemia": "Heart muscle not getting enough oxygen.",
+  "Asystole": "No electrical activity in the heart: a flat line on the ECG.",
+  "Rheumatic fever": "An immune reaction after streptococcal throat infection that can damage the heart valves.",
+  "Macrolide": "An antibiotic class, such as clarithromycin and azithromycin, that can prolong the QT interval.",
+  "Clarithromycin": "A macrolide antibiotic that prolongs the QT interval.",
+  "Azithromycin": "A macrolide antibiotic that can prolong the QT interval.",
+  "SSRIs": "Selective serotonin reuptake inhibitors: antidepressants such as citalopram; some prolong the QT interval.",
+  "Citalopram": "An SSRI antidepressant known to prolong the QT interval.",
+  "Anti-epileptic": "A drug used to prevent seizures.",
+  "Hypothermia": "Core body temperature below 35 degrees C.",
+  "QT interval": "Time from the start of the Q wave to the end of the T wave: ventricular depolarisation plus repolarisation.",
+  "Morphology": "The shape of the ECG waves.",
+  "Notched": "Having a small dip or split in the wave, as in the M-shaped R wave of LBBB.",
+  "RSR'": "A QRS with two upward peaks (M shape) in V1, typical of RBBB.",
+  "Dominant S wave": "A QRS that is mainly downward, as in V1 in LBBB.",
+  "ST depression": "The ST segment sitting below the baseline on the ECG.",
+  "Echocardiogram": "An ultrasound scan of the heart showing its structure and pumping function.",
+  "Bloods": "Blood tests, here including electrolytes, thyroid function and full blood count.",
+  "CCF": "Congestive cardiac failure.",
+  "TE": "Thromboembolism: a clot that has travelled and blocked a vessel.",
+  "Anaemia": "Low haemoglobin in the blood.",
+  "Hb": "Haemoglobin, the oxygen-carrying protein in red blood cells.",
+  "eGFR": "Estimated glomerular filtration rate: a measure of kidney function.",
+  "Anticoagulation": "Using drugs that thin the blood to prevent clots.",
+  "Rate control": "Slowing the ventricular rate in AF without trying to restore sinus rhythm.",
+  "Rhythm control": "Trying to restore and keep normal sinus rhythm, with drugs or cardioversion.",
+  "Beta-blocker": "A drug blocking adrenaline at beta receptors, slowing the heart; avoid in asthma.",
+  "Non-dihydropyridine CCB": "A calcium channel blocker such as verapamil or diltiazem that slows the heart rate.",
+  "Diltiazem": "A rate-limiting calcium channel blocker.",
+  "Carotid sinus massage": "Pressing over the carotid sinus in the neck to stimulate the vagus nerve and slow the heart.",
+  "Sinus bradycardia": "Normal sinus rhythm but under 60 bpm.",
+  "Adrenaline": "A hormone and drug that increases heart rate and contractility.",
+  "Temporary pacing": "Short-term electrical stimulation of the heart while waiting for a permanent fix.",
+  "Transcutaneous pacing": "Pacing through pads on the chest skin.",
+  "Transvenous pacing": "Pacing through a wire passed through a vein into the heart.",
+  "Permanent pacemaker": "An implanted device that sends electrical impulses to keep the heart beating at a safe rate.",
+  "Refractory": "Not responding to treatment.",
+  "Accessory pathway": "An extra electrical connection between atria and ventricles that bypasses the AV node.",
+  "Sotalol": "A beta-blocker with extra anti-arrhythmic action; prolongs the QT interval.",
+  "Secondary prevention": "Treatment to stop a disease event happening again after it has already occurred.",
+  "Magnesium sulphate": "IV magnesium used to treat torsades de pointes by stabilising the cardiac membrane.",
+  "Ischaemic stroke": "Stroke caused by a blocked artery to the brain.",
+  "Aspirin": "An antiplatelet drug that stops platelets clumping.",
+  "Automaticity": "The ability of heart cells to fire impulses on their own.",
+  "Ectopic pacemaker": "A group of heart cells outside the sinus node that starts firing impulses.",
+  "AV node": "The atrioventricular node: the electrical gateway delaying impulses between atria and ventricles.",
+  "Repolarisation": "Heart cells resetting their electrical charge after each beat.",
+  "Cardiac output": "The volume of blood the heart pumps per minute.",
+  "Defibrillation": "An unsynchronised electric shock to stop VF or pulseless VT.",
+  "AV dissociation": "Atria and ventricles beating independently of each other.",
+  "Thrombus": "A blood clot formed inside a vessel or heart chamber.",
+  "Embolise": "When a clot breaks off and travels to block a vessel elsewhere.",
+  "Stasis": "Slow or still blood flow, which encourages clotting."
+ }
+}

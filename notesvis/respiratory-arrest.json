@@ -1,0 +1,107 @@
+{
+  "id": "respiratory-arrest",
+  "visuals": [
+    { "d": "diagnosis", "after": 0, "type": "compare", "title": "Respiratory vs cardiac arrest",
+      "head": ["", "Respiratory arrest", "Cardiac arrest"],
+      "rows": [
+        ["Breathing", "Absent", "Absent or agonal"],
+        ["Pulse", "May still be present", "No pulse"],
+        ["If untreated", "Progresses to cardiac arrest", "Death"]
+      ] },
+    { "d": "diagnosis", "after": 1, "type": "visual", "title": "Where breathing can fail",
+      "text": "The brainstem drives breathing, the airway carries it, the lungs exchange gas.",
+      "visual": { "kind": "organ", "organs": ["brain", "throat", "lungs"] } },
+    { "d": "diagnosis", "after": 2, "type": "compare", "title": "Two classic scenarios",
+      "head": ["", "Opioid overdose", "Oesophageal intubation"],
+      "rows": [
+        ["Key sign", "Pinpoint pupils", "Distended abdomen"],
+        ["Breathing", "Slow or absent", "No air entry at both lung bases"],
+        ["SpO2", "Low", "Low"],
+        ["Fix", "Ventilate + naloxone", "Re-site tube, confirm with capnography"]
+      ] },
+    { "d": "diagnosis", "after": 3, "type": "visual", "title": "Causes",
+      "visual": { "kind": "tree", "root": "Respiratory arrest", "children": [
+        { "label": "Airway obstruction", "items": ["Choking, foreign body", "Tongue obstruction"] },
+        { "label": "CNS depression", "items": ["Opioids, sedatives, alcohol", "Brainstem stroke, head injury"] },
+        { "label": "Respiratory failure", "items": ["Severe asthma", "COPD exacerbation"] },
+        { "label": "Other", "items": ["Trauma", "Sedation or anaesthesia"] }
+      ] } },
+    { "d": "investigation", "after": 0, "type": "flow", "title": "Is the tube in the trachea?",
+      "nodes": ["Tube inserted", "Attach capnography", "CO2 trace seen: tube in trachea", "No CO2 trace: oesophageal, re-site"] },
+    { "d": "investigation", "after": 1, "type": "visual", "title": "What the ABG shows",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "Low PaO2", "label": "Hypoxaemia: poor oxygenation" },
+        { "big": "High PaCO2", "label": "Hypercapnia: poor ventilation" },
+        { "big": "Low pH", "label": "Respiratory acidosis" }
+      ] } },
+    { "d": "management", "after": 0, "type": "flow", "title": "Airway and breathing first",
+      "nodes": ["Call for help", "Head tilt-chin lift (jaw thrust if C-spine risk)", "Remove visible obstruction", "Oropharyngeal airway", "Bag-valve mask + high-flow O2", "Check pulse"] },
+    { "d": "management", "after": 1, "type": "visual", "title": "Treat the cause",
+      "visual": { "kind": "tree", "root": "Specific cause", "children": [
+        { "label": "Opioid overdose", "items": ["Naloxone", "Plus ventilatory support"] },
+        { "label": "After anaesthesia", "items": ["Oropharyngeal airway adjunct"] }
+      ] } },
+    { "d": "science", "after": 0, "type": "visual", "title": "Respiratory then cardiac arrest",
+      "visual": { "kind": "timeline", "events": [
+        { "t": "Breathing stops", "x": "Pulse still present" },
+        { "t": "Minutes", "x": "Hypoxaemia and hypercapnia build" },
+        { "t": "Then", "x": "Myocardial hypoxia: bradyarrhythmia" },
+        { "t": "Finally", "x": "Cardiac arrest (classic in children)" }
+      ] } },
+    { "d": "science", "after": 1, "type": "flow", "title": "How opioids stop breathing",
+      "nodes": ["Opioid", "Mu-opioid receptor agonism", "Brainstem respiratory centres depressed", "Weaker response to rising CO2", "Apnoea"] },
+    { "d": "science", "after": 2, "type": "flow", "title": "Why the airway closes under anaesthesia",
+      "nodes": ["Sedation or anaesthesia", "Pharyngeal and laryngeal muscles relax", "Tongue and soft tissues fall back", "Airway obstruction", "Needs airway adjunct"] },
+    { "d": "science", "after": 3, "type": "compare", "title": "Why CO2 proves placement",
+      "head": ["", "Trachea", "Oesophagus"],
+      "rows": [
+        ["Connected to", "Ventilated lungs", "Stomach"],
+        ["End-tidal CO2", "Reliably detected", "Not reliably detected"],
+        ["Chest", "Air entry both sides", "Absent air entry, distended abdomen"]
+      ] },
+    { "d": "science", "after": 4, "type": "flow", "title": "Why delay is dangerous",
+      "nodes": ["Prolonged apnoea", "Cerebral hypoxia", "Brain injury", "Worse outcome even if ROSC"] }
+  ],
+  "glossary": {
+    "Oxygen saturation": "The percentage of haemoglobin carrying oxygen, measured by pulse oximetry.",
+    "SpO2": "Oxygen saturation measured by a finger pulse oximeter.",
+    "Opioid overdose": "Taking too much of an opioid drug such as heroin or morphine, depressing breathing.",
+    "Opioid": "A drug like morphine, heroin or codeine acting on opioid receptors to relieve pain.",
+    "ET tube": "Endotracheal tube: a tube passed through the mouth into the trachea to ventilate the lungs.",
+    "Intubation": "Passing a tube into the trachea to secure the airway.",
+    "Oesophagus": "The food pipe from throat to stomach.",
+    "Trachea": "The windpipe carrying air to the lungs.",
+    "Air entry": "Breath sounds heard with a stethoscope, showing air is reaching that part of the lung.",
+    "Lung bases": "The bottom parts of the lungs.",
+    "Distended abdomen": "A swollen, bloated tummy; here from air pumped into the stomach.",
+    "Airway obstruction": "Blockage of the air passages.",
+    "Foreign body": "An object that should not be there, such as food or a toy in the airway.",
+    "CNS depression": "Reduced activity of the brain and spinal cord, slowing breathing and consciousness.",
+    "Sedatives": "Drugs that calm and make drowsy, such as benzodiazepines.",
+    "Respiratory failure": "Lungs unable to keep blood oxygen up or carbon dioxide down.",
+    "COPD exacerbation": "A flare of chronic obstructive pulmonary disease with worse breathlessness and cough.",
+    "Brainstem stroke": "A stroke in the brainstem, which contains the breathing centres.",
+    "Anaesthesia": "Drug-induced loss of sensation or consciousness for procedures.",
+    "Gastric reflux": "Stomach contents coming back up the oesophagus.",
+    "Non-fasted": "Has eaten recently, so the stomach is full and aspiration risk is high.",
+    "Ventilation": "Moving air in and out of the lungs.",
+    "Oxygenation": "Getting oxygen into the blood.",
+    "Imaging": "Scans such as X-ray or CT.",
+    "Airway adjunct": "A device that helps keep the airway open, such as an oropharyngeal airway.",
+    "Mouth-to-mask": "Rescue breaths given through a pocket mask over the patient's mouth and nose.",
+    "Smooth muscle tone": "The background tension in muscle that keeps the airway open.",
+    "General anaesthesia": "Drug-induced unconsciousness for surgery.",
+    "Myocardial hypoxia": "Heart muscle short of oxygen.",
+    "Respiratory depression": "Slow, shallow breathing.",
+    "Agonism": "A drug binding to and switching on a receptor.",
+    "Brainstem respiratory centres": "Areas in the medulla and pons that set the rate and depth of breathing.",
+    "Ventilatory response": "The body breathing harder in response to a rise in carbon dioxide.",
+    "Pharyngeal": "Relating to the pharynx, the throat behind the mouth and nose.",
+    "Laryngeal": "Relating to the larynx, the voice box.",
+    "PaO2": "Partial pressure of oxygen in arterial blood.",
+    "PaCO2": "Partial pressure of carbon dioxide in arterial blood.",
+    "ROSC": "Return of spontaneous circulation: the heart beating on its own again.",
+    "Resuscitation": "Emergency treatment to restore breathing and circulation.",
+    "Altered GCS": "A drop in consciousness level on the Glasgow Coma Scale."
+  }
+}

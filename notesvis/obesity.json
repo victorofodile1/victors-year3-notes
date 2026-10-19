@@ -1,0 +1,340 @@
+{
+ "id": "obesity",
+ "visuals": [
+  {
+   "d": "diagnosis",
+   "after": 0,
+   "type": "visual",
+   "title": "BMI bands",
+   "visual": {
+    "kind": "scale",
+    "title": "BMI",
+    "min": 18.5,
+    "max": 50,
+    "unit": "kg/m²",
+    "bands": [
+     [
+      18.5,
+      25,
+      "healthy",
+      "ok"
+     ],
+     [
+      25,
+      30,
+      "overweight",
+      "warn"
+     ],
+     [
+      30,
+      40,
+      "obesity",
+      "bad"
+     ],
+     [
+      40,
+      50,
+      "severe obesity",
+      "bad"
+     ]
+    ],
+    "value": 32,
+    "label": "BMI 32",
+    "caption": "Overweight 25-29.9; obesity ≥30; severe ≥40."
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "visual",
+   "title": "What it damages",
+   "visual": {
+    "kind": "organ",
+    "organs": [
+     "oesophagus",
+     "liver",
+     "pancreas",
+     "heart",
+     "throat",
+     "blood"
+    ]
+   }
+  },
+  {
+   "d": "diagnosis",
+   "after": 3,
+   "type": "visual",
+   "title": "Complications",
+   "visual": {
+    "kind": "tree",
+    "root": "Obesity",
+    "children": [
+     {
+      "label": "Metabolic",
+      "items": [
+       "Pre-diabetes, T2DM",
+       "Dyslipidaemia",
+       "NAFLD"
+      ]
+     },
+     {
+      "label": "Cardiovascular",
+      "items": [
+       "Hypertension",
+       "CVD"
+      ]
+     },
+     {
+      "label": "Mechanical",
+      "items": [
+       "GORD → Barrett's",
+       "OSA"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "d": "investigation",
+   "after": 1,
+   "type": "visual",
+   "title": "Numbers to learn",
+   "visual": {
+    "kind": "keyfacts",
+    "facts": [
+     {
+      "big": ">94 cm",
+      "label": "Waist, men: raised CV risk"
+     },
+     {
+      "big": ">80 cm",
+      "label": "Waist, women: raised CV risk"
+     },
+     {
+      "big": "Percentile",
+      "label": "Children: BMI for age and gender"
+     },
+     {
+      "big": "24-28 wk",
+      "label": "75g OGTT in pregnancy if BMI ≥30"
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 2,
+   "type": "compare",
+   "title": "Which treatment at which BMI",
+   "head": [
+    "",
+    "Threshold"
+   ],
+   "rows": [
+    [
+     "Lifestyle, behavioural programme",
+     "Everyone"
+    ],
+    [
+     "Drug therapy considered",
+     "≥30, or ≥27 with comorbidities"
+    ],
+    [
+     "Orlistat",
+     "≥28 with comorbidities"
+    ],
+    [
+     "GLP-1 mimetic",
+     "≥35, or ≥30 with comorbidities"
+    ],
+    [
+     "Tier 3 service",
+     "≥35 with comorbidities, or ≥40"
+    ],
+    [
+     "Bariatric surgery first-line",
+     "≥50"
+    ]
+   ]
+  },
+  {
+   "d": "management",
+   "after": 1,
+   "type": "visual",
+   "title": "GLP-1 stopping rule",
+   "visual": {
+    "kind": "timeline",
+    "events": [
+     {
+      "t": "Start",
+      "x": "Titrate up to max dose"
+     },
+     {
+      "t": "12 weeks at max",
+      "x": "Review weight lost"
+     },
+     {
+      "t": "<5% lost",
+      "x": "Stop the GLP-1 mimetic"
+     }
+    ]
+   }
+  },
+  {
+   "d": "management",
+   "after": 3,
+   "type": "visual",
+   "title": "Pregnancy with high BMI",
+   "visual": {
+    "kind": "timeline",
+    "events": [
+     {
+      "t": "1 month before",
+      "x": "Folic acid 400mcg if BMI >25"
+     },
+     {
+      "t": "12 weeks",
+      "x": "Low-dose aspirin starts if BMI >35"
+     },
+     {
+      "t": "End of 1st trimester",
+      "x": "Folic acid stops"
+     },
+     {
+      "t": "24-28 weeks",
+      "x": "OGTT if BMI ≥30"
+     },
+     {
+      "t": "28 weeks to 6 wk postpartum",
+      "x": "LMWH if high VTE risk"
+     }
+    ]
+   }
+  },
+  {
+   "d": "science",
+   "after": 0,
+   "type": "flow",
+   "title": "Positive energy balance",
+   "nodes": [
+    "Intake exceeds expenditure",
+    "Surplus stored as triglyceride",
+    "Adipose tissue expands",
+    "Obesity"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 1,
+   "type": "flow",
+   "title": "Fat to insulin resistance",
+   "nodes": [
+    "Visceral adiposity",
+    "Adipokine dysregulation",
+    "Less adiponectin, leptin resistance",
+    "More TNF-alpha and IL-6",
+    "Insulin resistance"
+   ]
+  },
+  {
+   "d": "science",
+   "after": 2,
+   "type": "compare",
+   "title": "How the drugs work",
+   "head": [
+    "",
+    "GLP-1 mimetic",
+    "Orlistat"
+   ],
+   "rows": [
+    [
+     "Target",
+     "GLP-1 receptor (incretin)",
+     "Pancreatic and gastric lipase"
+    ],
+    [
+     "Effect",
+     "More insulin, less glucagon, slow gastric emptying, less appetite",
+     "Less fat broken down and absorbed"
+    ],
+    [
+     "Side effect",
+     "Pancreatitis",
+     "Fatty stools"
+    ]
+   ]
+  },
+  {
+   "d": "science",
+   "after": 3,
+   "type": "compare",
+   "title": "Mechanical complications",
+   "head": [
+    "",
+    "GORD",
+    "OSA"
+   ],
+   "rows": [
+    [
+     "Cause",
+     "Raised intra-abdominal pressure",
+     "Fat around the upper airway"
+    ],
+    [
+     "Effect",
+     "Acid pushed into oesophagus",
+     "Airway collapses in sleep"
+    ]
+   ]
+  },
+  {
+   "d": "science",
+   "after": 4,
+   "type": "flow",
+   "title": "Why surgery helps diabetes",
+   "nodes": [
+    "Bariatric surgery",
+    "More GLP-1 and PYY",
+    "Better insulin secretion and satiety",
+    "Improved glycaemic control"
+   ]
+  }
+ ],
+ "glossary": {
+  "Obesity": "Excess body fat that harms health, defined as BMI 30 or more.",
+  "Overweight": "BMI 25 to 29.9.",
+  "kg/m²": "Units of BMI: weight in kilograms divided by height in metres squared.",
+  "Down syndrome": "Trisomy 21, a chromosomal condition with learning disability and higher obesity risk.",
+  "Hypothyroidism": "Underactive thyroid, which slows metabolism and causes weight gain.",
+  "Comorbidity": "Another illness present at the same time, such as diabetes or hypertension.",
+  "T2DM": "Type 2 diabetes mellitus.",
+  "CVD": "Cardiovascular disease: heart attack, stroke and vessel disease.",
+  "Adipose tissue": "Body fat tissue, which stores energy and releases hormones.",
+  "HbA1c": "Glycated haemoglobin, showing average blood glucose over about 3 months.",
+  "LFTs": "Liver function tests, used here to look for fatty liver.",
+  "Lipid profile": "Blood test of cholesterol fractions and triglycerides.",
+  "Triglyceride": "The main storage form of fat: glycerol plus three fatty acids.",
+  "Hydrolysis": "Breaking a molecule apart using water, as lipase does to triglycerides.",
+  "Glucagon": "Pancreatic hormone that raises blood glucose; suppressed by GLP-1.",
+  "Gastric emptying": "The rate food leaves the stomach for the small intestine.",
+  "Glucose-dependent insulin secretion": "Insulin released only when glucose is high, so GLP-1 drugs rarely cause hypoglycaemia alone.",
+  "Appetite centre": "Areas of the hypothalamus that control hunger and fullness.",
+  "Intra-abdominal pressure": "Pressure inside the abdomen, raised by central fat.",
+  "Gut hormones": "Hormones released by the gut after eating that affect insulin and appetite, such as GLP-1 and PYY.",
+  "Satiety": "The feeling of fullness that stops eating.",
+  "Calorie deficit": "Eating fewer calories than the body uses, leading to weight loss.",
+  "Relapse prevention": "Strategies to stop weight being regained after it is lost.",
+  "Pre-conception": "The time before becoming pregnant.",
+  "First trimester": "Weeks 1 to 12 of pregnancy.",
+  "Gestation": "The length of pregnancy, counted in weeks.",
+  "Postpartum": "The period after giving birth.",
+  "Low-dose aspirin": "75 to 150mg aspirin daily, used in pregnancy to lower pre-eclampsia risk.",
+  "Pre-eclampsia": "Pregnancy hypertension with organ damage such as proteinuria; obesity raises the risk.",
+  "Pack-years": "Packs smoked per day times years smoked, a measure of smoking exposure.",
+  "Heterozygous": "Carrying one copy of a gene variant, inherited from one parent.",
+  "VTE": "Venous thromboembolism: DVT or pulmonary embolism.",
+  "Pharmacological therapy": "Treatment with drugs.",
+  "Specialist weight management service": "A multidisciplinary NHS service for complex obesity, including assessment for surgery.",
+  "Titrate": "Increase a drug dose step by step to the target dose."
+ }
+}

@@ -1,0 +1,73 @@
+{
+  "id": "notifiable-diseases",
+  "visuals": [
+    { "d": "diagnosis", "after": 1, "type": "visual", "title": "Notifiable diseases by type",
+      "visual": { "kind": "tree", "root": "Notifiable diseases",
+        "children": [
+          { "label": "Rash", "items": ["Measles", "Rubella"] },
+          { "label": "GI", "items": ["Cholera", "Food poisoning"] },
+          { "label": "Neurological", "items": ["Meningitis"] },
+          { "label": "Blood-borne", "items": ["Hepatitis B"] }
+        ] } },
+    { "d": "diagnosis", "after": 1, "type": "compare", "title": "Urgent vs routine",
+      "head": ["", "Urgently notifiable", "Routinely notifiable"],
+      "rows": [
+        ["Examples", "Meningococcal meningitis, measles, cholera, rabies", "TB, hepatitis B, food poisoning"],
+        ["When", "Immediately", "Within 3 days"]
+      ] },
+    { "d": "diagnosis", "after": 2, "type": "visual", "title": "Not legally notifiable",
+      "visual": { "kind": "tree", "root": "Do NOT notify",
+        "children": [
+          { "label": "Monitored only", "items": ["HIV"] },
+          { "label": "Recently removed", "items": ["Ophthalmia neonatorum"] },
+          { "label": "STIs", "items": ["Syphilis", "Herpes simplex"] }
+        ] } },
+    { "d": "investigation", "after": 0, "type": "flow", "title": "Notify first, confirm later",
+      "nodes": ["Clinical suspicion", "Notify UKHSA", "Blood cultures, PCR, serology", "Imaging if relevant"] },
+    { "d": "management", "after": 0, "type": "visual", "title": "Notification deadlines",
+      "visual": { "kind": "timeline", "events": [
+        { "t": "Suspicion", "x": "Suspecting doctor is legally responsible" },
+        { "t": "Immediately", "x": "Urgently notifiable: e.g. measles, meningococcal" },
+        { "t": "Within 3 days", "x": "Routine: e.g. TB, hepatitis B" }
+      ] } },
+    { "d": "management", "after": 1, "type": "flow", "title": "After notifying",
+      "nodes": ["Treat with antibiotics/antivirals", "Isolate if needed", "Trace close contacts", "Vaccinate or give prophylaxis to contacts"] },
+    { "d": "science", "after": 0, "type": "flow", "title": "Why notification matters",
+      "nodes": ["Early notification on suspicion", "Public health acts before lab results", "Contact tracing and prophylaxis", "Outbreak controlled"] },
+    { "d": "science", "after": 1, "type": "visual", "title": "What earns notifiable status",
+      "visual": { "kind": "tree", "root": "Chosen for",
+        "children": [
+          { "label": "Transmissibility", "items": ["Spreads easily"] },
+          { "label": "Severity", "items": ["Serious illness or death"] },
+          { "label": "Early intervention helps", "items": ["PEP for meningococcal contacts", "MMR catch-up for measles contacts"] }
+        ] } },
+    { "d": "science", "after": 2, "type": "compare", "title": "Why timeframes differ",
+      "head": ["", "Immediate", "3-day window"],
+      "rows": [
+        ["Incubation", "Short", "Longer"],
+        ["Transmissibility", "High", "Lower immediate outbreak risk"],
+        ["Examples", "Meningococcal disease, measles", "TB, hepatitis B"]
+      ] }
+  ],
+  "glossary": {
+    "Public health authorities": "Organisations responsible for protecting the health of the whole population, such as UKHSA.",
+    "Encephalitis": "Inflammation of the brain tissue, usually from a viral infection.",
+    "Acute meningitis": "Sudden inflammation of the membranes around the brain and spinal cord.",
+    "Acute infective hepatitis": "Sudden liver inflammation caused by an infection, usually a virus.",
+    "Meningococcal meningitis": "Meningitis caused by Neisseria meningitidis.",
+    "Herpes simplex": "A virus causing cold sores and genital ulcers.",
+    "Syphilis": "A sexually transmitted infection caused by Treponema pallidum.",
+    "HIV": "Human immunodeficiency virus, which destroys CD4 T cells.",
+    "Clinical diagnosis": "A diagnosis made from history and examination before test results.",
+    "Formal notification": "Officially reporting a suspected case to public health using the set form.",
+    "Lab confirmation": "Proof of the infection by a laboratory test.",
+    "Antivirals": "Drugs that stop a virus replicating.",
+    "Infection control": "Measures such as isolation, hand hygiene and PPE to stop spread.",
+    "Close contacts": "People who spent enough time near the patient to be at risk of catching the infection.",
+    "Catch-up vaccination": "Giving missed vaccine doses to people who were not fully immunised.",
+    "Legislation": "Laws passed by government; here the Health Protection Regulations.",
+    "Outbreak control": "Actions taken to stop an outbreak spreading further.",
+    "Severity": "How serious an illness is.",
+    "Notification timeframe": "The deadline within which a suspected case must be reported."
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "id": "peripheral-vascular-disease",
+  "visuals": [
+    { "d": "diagnosis", "after": 0, "type": "flow", "title": "What PVD is",
+      "nodes": ["Atherosclerosis in leg arteries", "Narrowed lumen", "Reduced flow", "Limb ischaemia"] },
+    { "d": "diagnosis", "after": 1, "type": "visual", "title": "Risk factors",
+      "visual": { "kind": "tree", "root": "PVD risk factors", "children": [
+        { "label": "Most important", "items": ["Smoking"] },
+        { "label": "Others", "items": ["Diabetes", "Hypertension", "Hyperlipidaemia"] }
+      ] } },
+    { "d": "diagnosis", "after": 2, "type": "compare", "title": "Level of disease, site of pain",
+      "head": ["Diseased vessel", "Claudication felt in"],
+      "rows": [
+        ["Iliac vessels", "Buttock"],
+        ["Superficial femoral artery", "Calf"]
+      ] },
+    { "d": "diagnosis", "after": 4, "type": "visual", "title": "The disease gets worse",
+      "visual": { "kind": "timeline", "events": [
+        { "t": "Early", "x": "Intermittent claudication, relieved by rest" },
+        { "t": ">2 weeks", "x": "Ischaemic rest pain, worse at night" },
+        { "t": "Critical", "x": "Relieved by dangling leg, arterial ulcers" },
+        { "t": "End stage", "x": "Gangrene" }
+      ] } },
+    { "d": "diagnosis", "after": 4, "type": "compare", "title": "Claudication vs critical limb ischaemia",
+      "head": ["", "Claudication", "Critical limb ischaemia"],
+      "rows": [
+        ["Pain", "On walking a set distance", "At rest, often at night"],
+        ["Relieved by", "Rest", "Dangling the leg, not analgesia"],
+        ["Tissue", "Intact", "Ulcers, gangrene"],
+        ["Threat", "Quality of life", "The limb"]
+      ] },
+    { "d": "investigation", "after": 0, "type": "visual", "title": "Reading the ABPI",
+      "visual": { "kind": "scale", "min": 0.3, "max": 1.5, "unit": "",
+        "bands": [[0.3, 0.5, "severe PAD", "bad"], [0.5, 0.8, "PAD", "warn"], [0.8, 0.9, "mild PAD", "warn"], [1.0, 1.2, "normal", "ok"], [1.23, 1.5, "calcified (diabetes)", "bad"]],
+        "value": 0.85, "label": "Mild PAD 0.85", "caption": "Below 0.9 means PAD; above 1.23 is falsely high from calcified arteries." } },
+    { "d": "investigation", "after": 1, "type": "flow", "title": "Imaging ladder",
+      "nodes": ["ABPI", "Duplex ultrasound", "Contrast MR angiography", "CT angiography before intervention"] },
+    { "d": "management", "after": 0, "type": "visual", "title": "First-line numbers",
+      "visual": { "kind": "keyfacts", "facts": [
+        { "big": "2 h/week", "label": "Supervised exercise" },
+        { "big": "3 months", "label": "Exercise programme length" },
+        { "big": "75mg OD", "label": "Clopidogrel" },
+        { "big": "80mg", "label": "Atorvastatin" }
+      ] } },
+    { "d": "management", "after": 2, "type": "compare", "title": "Bypass or angioplasty?",
+      "head": ["", "Open bypass graft", "Angioplasty ± stent"],
+      "rows": [
+        ["Patient", "Low surgical risk", "High surgical risk"],
+        ["Lesion", "Long-segment or multifocal", "Short-segment stenosis"],
+        ["Approach", "Open surgical", "Endovascular"]
+      ] },
+    { "d": "management", "after": 3, "type": "flow", "title": "Escalation",
+      "nodes": ["Exercise, clopidogrel, statin", "Angioplasty ± stent", "Bypass surgery", "Below-knee amputation if irreversible and infected"] },
+    { "d": "science", "after": 0, "type": "visual", "title": "Why walking hurts",
+      "visual": { "kind": "cycle", "centre": "Supply fixed by plaque", "steps": ["Walk: muscle O2 demand rises", "Narrowed artery cannot meet it", "Ischaemic cramp", "Rest: demand falls, pain eases"] } },
+    { "d": "science", "after": 1, "type": "flow", "title": "Rest pain to gangrene",
+      "nodes": ["Severe narrowing", "Flow inadequate even at rest", "Continuous ischaemic pain", "Ulcers", "Gangrene"] },
+    { "d": "science", "after": 2, "type": "flow", "title": "Why diabetics fool the ABPI",
+      "nodes": ["Diabetes", "Arterial wall calcification", "Vessel non-compressible", "Cuff cannot occlude", "ABPI falsely >1.23"] },
+    { "d": "science", "after": 3, "type": "visual", "title": "How each treatment helps",
+      "visual": { "kind": "tree", "root": "Medical therapy", "children": [
+        { "label": "Clopidogrel", "items": ["Reduces CV risk", "Prevents platelet clots"] },
+        { "label": "Statin", "items": ["Slows atherosclerosis"] },
+        { "label": "Supervised exercise", "items": ["Collateral vessels form", "Longer claudication distance"] }
+      ] } }
+  ],
+  "glossary": {
+    "Atherosclerotic": "Caused by fatty plaques building up in artery walls.",
+    "Peripheral arteries": "Arteries outside the heart and brain, mainly those of the legs.",
+    "Femoral artery": "Main artery of the thigh.",
+    "Limb ischaemia": "Inadequate blood supply to an arm or leg.",
+    "Hyperlipidaemia": "Raised levels of fats such as cholesterol in the blood.",
+    "Hypertension": "Persistently raised blood pressure.",
+    "Chronic limb ischaemia": "Long-standing reduced blood supply to a limb, usually from atherosclerosis.",
+    "Pulselessness": "No palpable pulse distal to a blockage.",
+    "Pallor": "Unusual paleness of the skin from reduced blood flow.",
+    "Paraesthesia": "Pins and needles or tingling from nerve dysfunction.",
+    "Paralysis": "Loss of the ability to move a muscle.",
+    "Analgesia": "Pain relief.",
+    "Dangling": "Hanging the leg over the bed edge so gravity improves blood flow to the foot.",
+    "PAD": "Peripheral arterial disease: atherosclerotic narrowing of the limb arteries.",
+    "Contrast-enhanced": "Imaging using an injected dye to make vessels show up clearly.",
+    "Lipids": "Blood fats such as cholesterol and triglycerides, checked to assess cardiovascular risk.",
+    "Cardiovascular risk": "Chance of heart attack or stroke over a set period.",
+    "OD": "Once daily.",
+    "Smoking cessation": "Stopping smoking.",
+    "Antiplatelets": "Drugs that stop platelets clumping, e.g. clopidogrel or aspirin.",
+    "Statins": "Cholesterol-lowering drugs that also stabilise plaques.",
+    "Percutaneous transluminal angioplasty": "Inflating a balloon inside a narrowed artery via a needle puncture to widen it.",
+    "Conservative management": "Treatment without surgery or procedures, e.g. exercise and medicines.",
+    "QoL": "Quality of life.",
+    "Revascularisation": "Any procedure that restores blood flow to an ischaemic tissue.",
+    "Multifocal": "Occurring at several separate sites.",
+    "Long-segment lesion": "A narrowing that extends over a long length of artery.",
+    "Superimposed infection": "Infection developing on top of already damaged tissue.",
+    "Claudication distance": "How far a patient can walk before claudication pain starts.",
+    "Exertional": "Brought on by physical effort.",
+    "Oxygen demand": "How much oxygen a tissue needs; rises sharply in working muscle.",
+    "Lumen": "The hollow inside of a vessel where blood flows.",
+    "CV": "Cardiovascular."
+  }
+}

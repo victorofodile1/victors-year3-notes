@@ -1,0 +1,341 @@
+{
+  "id": "diabetic-ketoacidosis",
+  "visuals": [
+    {
+      "d": "diagnosis",
+      "after": 1,
+      "type": "visual",
+      "title": "Where DKA shows itself",
+      "text": "Pancreas fails to make insulin; kidneys lose water and electrolytes; lungs blow off CO2; brain gets confused.",
+      "visual": {
+        "kind": "organ",
+        "organs": [
+          "pancreas",
+          "kidneys",
+          "lungs",
+          "brain",
+          "blood"
+        ]
+      }
+    },
+    {
+      "d": "diagnosis",
+      "after": 2,
+      "type": "visual",
+      "title": "Severity by pH",
+      "visual": {
+        "kind": "scale",
+        "title": "Venous pH",
+        "min": 6.9,
+        "max": 7.5,
+        "unit": "",
+        "bands": [
+          [
+            6.9,
+            7.1,
+            "severe (HCO3 <5)",
+            "bad"
+          ],
+          [
+            7.1,
+            7.2,
+            "moderate (HCO3 <10)",
+            "bad"
+          ],
+          [
+            7.2,
+            7.3,
+            "mild (HCO3 <15)",
+            "warn"
+          ],
+          [
+            7.35,
+            7.45,
+            "normal",
+            "ok"
+          ]
+        ],
+        "caption": "All grades need blood ketones >3 mmol/L and urine ketones >2+.",
+        "value": 7.15,
+        "label": "pH 7.15 = moderate"
+      }
+    },
+    {
+      "d": "diagnosis",
+      "after": 3,
+      "type": "compare",
+      "title": "Potassium problems on the ECG",
+      "head": [
+        "",
+        "Hypokalaemia",
+        "Hyperkalaemia"
+      ],
+      "rows": [
+        [
+          "How common",
+          "Most common complication",
+          "Can also occur"
+        ],
+        [
+          "T waves",
+          "Small",
+          "Tall, tented"
+        ],
+        [
+          "Other ECG sign",
+          "Prolonged PR",
+          "Widened QRS"
+        ]
+      ]
+    },
+    {
+      "d": "investigation",
+      "after": 0,
+      "type": "visual",
+      "title": "The diagnostic triad",
+      "visual": {
+        "kind": "keyfacts",
+        "facts": [
+          {
+            "big": ">11 mmol/L",
+            "label": "Glucose"
+          },
+          {
+            "big": ">3 mmol/L",
+            "label": "Blood ketones"
+          },
+          {
+            "big": "pH <7.3",
+            "label": "Acidosis (low bicarbonate)"
+          }
+        ]
+      }
+    },
+    {
+      "d": "investigation",
+      "after": 2,
+      "type": "compare",
+      "title": "Diagnosis vs resolution",
+      "head": [
+        "",
+        "Diagnose DKA",
+        "DKA resolved"
+      ],
+      "rows": [
+        [
+          "pH",
+          "<7.3",
+          ">7.3"
+        ],
+        [
+          "Ketones",
+          ">3 mmol/L",
+          "<0.6 mmol/L"
+        ],
+        [
+          "Bicarbonate",
+          "Low (<15)",
+          ">15.0 mmol/L"
+        ]
+      ]
+    },
+    {
+      "d": "management",
+      "after": 1,
+      "type": "flow",
+      "title": "Order of treatment",
+      "nodes": [
+        "IV 0.9% NaCl first",
+        "Fixed-rate insulin 0.1 units/kg/h",
+        "Potassium once level known",
+        "Add 10% glucose when glucose <14",
+        "SC insulin once resolved and eating"
+      ]
+    },
+    {
+      "d": "management",
+      "after": 0,
+      "type": "visual",
+      "title": "First fluids",
+      "visual": {
+        "kind": "timeline",
+        "events": [
+          {
+            "t": "Stat",
+            "x": "500ml bolus if hypotensive"
+          },
+          {
+            "t": "0-1 h",
+            "x": "1L 0.9% NaCl if stable"
+          },
+          {
+            "t": "1-3 h",
+            "x": "Further 1L over 2 hours"
+          },
+          {
+            "t": "Then",
+            "x": "1L + 40 mmol KCl over 4 hours"
+          }
+        ]
+      }
+    },
+    {
+      "d": "management",
+      "after": 3,
+      "type": "visual",
+      "title": "Why the glucose is added",
+      "visual": {
+        "kind": "trend",
+        "title": "During treatment",
+        "x": [
+          "0 h",
+          "2 h",
+          "4 h",
+          "8 h",
+          "12 h"
+        ],
+        "unit": "mmol/L",
+        "series": [
+          {
+            "name": "Glucose",
+            "values": [
+              28,
+              20,
+              14,
+              11,
+              9
+            ]
+          },
+          {
+            "name": "Ketones",
+            "values": [
+              5.5,
+              4.2,
+              2.8,
+              1.2,
+              0.5
+            ]
+          }
+        ],
+        "caption": "Glucose falls first; insulin continues with 10% glucose until ketones are <0.6."
+      }
+    },
+    {
+      "d": "science",
+      "after": 0,
+      "type": "flow",
+      "title": "Why ketones build up",
+      "nodes": [
+        "Insulin deficiency",
+        "Unrestrained lipolysis",
+        "Free fatty acids to liver",
+        "Ketone bodies made",
+        "Raised anion gap metabolic acidosis"
+      ]
+    },
+    {
+      "d": "science",
+      "after": 1,
+      "type": "flow",
+      "title": "Why patients are dry",
+      "nodes": [
+        "No insulin: glucose cannot enter cells",
+        "Hyperglycaemia",
+        "Osmotic diuresis",
+        "Dehydration and electrolyte loss",
+        "Total body K low, serum K normal/high"
+      ]
+    },
+    {
+      "d": "science",
+      "after": 2,
+      "type": "visual",
+      "title": "Kussmaul breathing loop",
+      "visual": {
+        "kind": "cycle",
+        "centre": "Respiratory compensation",
+        "steps": [
+          "Ketones lower pH",
+          "Brainstem senses acid",
+          "Deep, fast breaths",
+          "CO2 blown off",
+          "pH rises towards normal"
+        ]
+      }
+    },
+    {
+      "d": "science",
+      "after": 3,
+      "type": "flow",
+      "title": "Why treatment drops potassium",
+      "nodes": [
+        "IV insulin given",
+        "Na/K-ATPase activity up",
+        "K moves into cells",
+        "Serum K falls fast",
+        "Replace K, monitor hourly"
+      ]
+    },
+    {
+      "d": "science",
+      "after": 4,
+      "type": "flow",
+      "title": "Cerebral oedema on treatment",
+      "nodes": [
+        "Rapid fluid and insulin correction",
+        "Rapid osmotic shifts",
+        "Water moves into brain cells",
+        "Headache, seizures, bradycardia",
+        "Slow the IV fluids"
+      ]
+    }
+  ],
+  "glossary": {
+    "Type 1": "Type 1 diabetes: autoimmune destruction of pancreatic beta cells, so the body makes little or no insulin.",
+    "Hyperglycaemia": "Blood glucose that is higher than normal.",
+    "Hypoglycaemia": "Blood glucose that is too low, causing sweating, confusion and, if severe, seizures or coma.",
+    "Insulin deficiency": "Too little insulin, so cells cannot take up glucose and fat breakdown is no longer switched off.",
+    "Acetone": "A ketone body breathed out in DKA, giving the breath a fruity or pear-drop smell.",
+    "Dehydration": "Loss of body water greater than intake, causing thirst, dry mucosa, tachycardia and low blood pressure.",
+    "Haemodynamically unstable": "Circulation is failing: low blood pressure, fast heart rate or poor organ perfusion.",
+    "Electrolytes": "Charged salts in the blood, such as sodium, potassium and chloride, that control fluid balance and nerve and muscle function.",
+    "Ketone bodies": "Acidic fuels (acetoacetate, beta-hydroxybutyrate, acetone) the liver makes from fatty acids when insulin is lacking.",
+    "Free fatty acids": "Fatty acids released from stored fat by lipolysis; the liver turns them into ketones.",
+    "Respiratory compensation": "Changing breathing to correct a pH problem; in metabolic acidosis, breathing deeper to blow off CO2.",
+    "Osmotic shifts": "Movement of water across cell membranes when the concentration of dissolved particles changes on one side.",
+    "Endocrinologist": "A specialist doctor in hormone conditions such as diabetes.",
+    "SC": "Subcutaneous: given by injection into the fat just under the skin.",
+    "Subcutaneous": "Into the fat layer just under the skin, the usual route for regular insulin injections.",
+    "IV": "Intravenous: given directly into a vein.",
+    "Dextrose": "Another name for glucose, given in IV fluids to prevent hypoglycaemia.",
+    "Infusion": "A drug or fluid given continuously into a vein over a set time.",
+    "Fixed-rate": "A set insulin dose per hour based on body weight, not adjusted to each glucose reading.",
+    "Long-acting insulin": "Background (basal) insulin that works for about 24 hours; continued during DKA treatment.",
+    "Short-acting insulin": "Mealtime insulin that acts quickly for a few hours; stopped while the IV insulin runs.",
+    "Seizures": "Fits caused by abnormal electrical activity in the brain.",
+    "Paediatric": "Relating to children.",
+    "Altered mental status": "Any change in alertness, behaviour or thinking, from confusion to coma.",
+    "Serum": "The liquid part of blood after clotting; serum levels are what blood tests measure.",
+    "Total body potassium": "All the potassium in the body, mostly inside cells, which can be low even when blood potassium looks normal.",
+    "ECG": "Electrocardiogram: a recording of the heart's electrical activity from electrodes on the skin.",
+    "T waves": "The part of the ECG showing ventricular repolarisation; shape changes with potassium level.",
+    "Electrolyte loss": "Salts such as sodium and potassium lost in the urine along with water.",
+    "Urine ketones": "Ketones detected on a urine dipstick, graded from + to ++++.",
+    "Ketosis": "Raised ketones in the body without acidosis.",
+    "Acidosis": "Too much acid in the blood, so the pH falls below normal (below 7.35).",
+    "Nausea": "The feeling of needing to vomit.",
+    "Refractory": "Not responding to standard treatment.",
+    "Resolution": "Recovery from DKA, defined as pH >7.3, ketones <0.6 mmol/L and bicarbonate >15 mmol/L.",
+    "Capillary blood gas": "Blood gas test on a small sample from a finger or heel prick.",
+    "Capillary blood ketones": "Ketone level measured from a finger-prick blood sample with a bedside meter.",
+    "Gold standard": "The best available test for confirming a diagnosis.",
+    "Monitoring": "Repeated checking of observations and blood results, hourly in DKA, to guide treatment.",
+    "NaCl": "Sodium chloride: salt; 0.9% NaCl is normal saline, the first fluid used in DKA.",
+    "KCl": "Potassium chloride, added to IV fluids to replace potassium.",
+    "mmol/L": "Millimoles per litre: the unit for concentrations of glucose, ketones and electrolytes in blood.",
+    "Saline": "Salt solution given IV; normal saline is 0.9% sodium chloride.",
+    "Underlying precipitant": "The trigger that started the DKA, such as infection or missed insulin, which must also be treated.",
+    "Neurology": "Function of the brain and nerves, such as consciousness, speech and movement.",
+    "CO2": "Carbon dioxide; breathing it off removes acid and raises blood pH."
+  }
+}
