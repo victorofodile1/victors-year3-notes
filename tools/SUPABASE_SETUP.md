@@ -75,3 +75,23 @@ The anon key is safe to be public. Row level security is what keeps the data pri
   **Authentication**, then **Users**, find `theirusername@year3notes.app`, and use the menu to set
   a new password or delete the user.
 - Free tier limits are far beyond what this needs (50,000 monthly active users, 500 MB database).
+
+## Turning on comments (one-off, if your project was set up before comments existed)
+
+Comments on questions need one extra table. Open **SQL Editor**, then **New query**, paste all of
+`supabase/schema.sql` and press **Run** again. It is safe to re-run: your students' progress is not touched.
+
+What it adds:
+
+- `year3_comments`: one row per comment. Every student (and guests) can read comments; only
+  logged-in students can post, and only the author can delete their own. Comments cannot be edited.
+- Students choose to post with their username or anonymously. Nobody can read who wrote an
+  anonymous comment, because the column that links a comment to an account is hidden from the app.
+- Rude comments are refused automatically by a fixed word list (no AI), checked inside the database
+  so it cannot be bypassed. Letter swaps (`sh1t`, `a$$`), spaced-out letters and repeated letters are
+  caught. The list is checked against every note and question so medical words are never blocked.
+  To change the list, edit it in both `supabase/schema.sql` (`year3_is_rude`) and `index.html`
+  (`RUDE_ANY` / `RUDE_WHOLE`), then re-run the SQL.
+- Each student can post at most 30 comments an hour.
+
+Personal notes ("My notes") need nothing extra: they are saved in each student's existing progress row.
