@@ -193,6 +193,7 @@ mark.hl{background:linear-gradient(transparent 55%,var(--hl-bg) 55%);color:inher
 .p-nav-inner{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:10px}
 .p-nav .pos{flex:1;text-align:center;font-size:12.5px;color:var(--ink-soft)}
 .p-nav .btn{height:42px;min-width:96px;font-size:14px;font-weight:600}
+.p-nav .btn.skip{min-width:0;padding:0 12px;color:var(--ink-soft)}
 
 .stage{animation:slideIn .35s cubic-bezier(.2,.8,.2,1)}
 .stage.back{animation:slideBack .35s cubic-bezier(.2,.8,.2,1)}
@@ -285,6 +286,10 @@ tr.ab td.v{color:var(--bad)}
 .call.trap{background:var(--bad-soft)}
 .call.trap svg{color:var(--bad)}
 .call b{display:block;font-size:12px;text-transform:uppercase;letter-spacing:.06em;margin-bottom:2px}
+.call.sci{background:color-mix(in srgb,var(--sci) 10%,var(--panel));color:var(--ink)}
+.call.sci svg{color:var(--sci)}
+.sci-tag{display:inline-block;margin-left:6px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--sci)}
+.sci-hint{font-size:13px;color:var(--ink-soft);margin:-4px 0 10px}
 
 .exam-box{border:1px dashed var(--border-strong);border-radius:10px;padding:10px 12px;font-size:14px;background:var(--panel)}
 .exam-box b{font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--ink-soft);display:block;margin-bottom:2px}
@@ -1033,6 +1038,10 @@ const DATA = JSON.parse(document.getElementById('data-json').textContent);
 const BY_ID = Object.fromEntries(DATA.map(d => [d.id, d]));
 const DOMAINS = ['diagnosis', 'investigation', 'management', 'science'];
 const DOM_LABEL = {diagnosis:'Diagnosis', investigation:'Investigation', management:'Management', science:'Science'};
+// science is ~6% of the real papers, so learn mode tells students to keep it to key words
+const SCI_TAG = '<span class="sci-tag">Key words only</span>';
+const SCI_WARN = `<div class="call sci in"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.3 3.9L1.8 18a2 2 0 001.7 3h17a2 2 0 001.7-3L13.7 3.9a2 2 0 00-3.4 0z"/></svg><div><b>Science is a tiny part of the exam</b>Only about 1 in 16 exam questions is science. Do not learn the mechanisms in depth: just remember the <b>key words</b> (the highlighted terms) so you recognise the right option.</div></div>`;
+const sciHint = d => d === 'science' ? '<p class="sci-hint">Science: you only need to recognise the key word, not explain the whole mechanism.</p>' : '';
 const LETTERS = 'ABCDE';
 const $ = (sel, el=document) => el.querySelector(sel);
 
@@ -1474,9 +1483,10 @@ function refreshLearn(){
       <span class="d-diagnosis" style="--c:var(--dx)"><i></i>Diagnosis</span>
       <span style="--c:var(--ix)"><i></i>Investigation</span>
       <span style="--c:var(--mx)"><i></i>Management</span>
-      <span style="--c:var(--sci)"><i></i>Science</span>
+      <span style="--c:var(--sci)"><i></i>Science (key words only)</span>
       <span><i></i>Quick quiz</span><span><i></i>Blurt rounds</span><span><i></i>Exam technique</span><span><i></i>12 practice questions</span>
     </div>
+    <p style="margin-top:8px;font-size:13px">You can <b>skip</b> any screen or question with the Skip button, or jump to any section from the bar at the top. Science is only about 6% of the exam, so for that part just remember the key words.</p>
     <div class="stats">
       <div class="stat"><b>${ids.length}</b><small>lessons ready</small></div>
       <div class="stat"><b>${started}</b><small>started</small></div>
@@ -1700,8 +1710,8 @@ function buildScreens(L, N){
       </div>
       <div class="box in" style="animation-delay:.15s"><div class="case-lbl">How this lesson works</div>
         <p>You will look after ${escapeHtml(pt.name.split(' ')[0])} the way the exam thinks, one domain at a time. Every point from your notes comes up along the way.</p>
-        <div class="dflow">${DOMAINS.map((d,k) => `<div class="in" style="--c:var(--${['dx','ix','mx','sci'][k]});animation-delay:${0.3+k*0.15}s">${DOM_LABEL[d]}<small>${['What is it?','Prove it','Treat it','Why?'][k]}</small></div>`).join('')}</div>
-        <p style="margin-top:10px;color:var(--ink-soft);font-size:13.5px">Then: quick quiz, blurt rounds on a new patient, how to crack exam questions, and 12 practice questions.</p>
+        <div class="dflow">${DOMAINS.map((d,k) => `<div class="in" style="--c:var(--${['dx','ix','mx','sci'][k]});animation-delay:${0.3+k*0.15}s">${DOM_LABEL[d]}<small>${['What is it?','Prove it','Treat it','Key words'][k]}</small></div>`).join('')}</div>
+        <p style="margin-top:10px;color:var(--ink-soft);font-size:13.5px">Then: quick quiz, blurt rounds on a new patient, how to crack exam questions, and 12 practice questions. Press <b>Skip</b> at the bottom to move past anything you already know.</p>
       </div>`;
   }});
   DOMAINS.forEach((d, di) => {
@@ -1709,10 +1719,14 @@ function buildScreens(L, N){
     S.push({chap:d, render: el => {
       el.innerHTML = `
         <div class="dom-badge d-${d}">Part ${di+1} of 4</div>
-        <h2 class="s-h">${DOM_LABEL[d]}</h2>
+        <h2 class="s-h">${DOM_LABEL[d]}${d === 'science' ? SCI_TAG : ''}</h2>
+        ${d === 'science' ? SCI_WARN : ''}
         <div class="exam-box in"><b>How it comes up in the exam</b>${renderInline(D.exam)}</div>
+        ${d === 'science' ? '<button class="btn" style="width:100%;margin-top:10px;height:42px" data-x="skipsci">Skip science and go to the quiz</button>' : ''}
         <div class="box in d-${d}" style="animation-delay:.12s"><div class="case-lbl">What you will cover</div>
           <ul class="cover-list">${(N[d]||[]).map((s,k) => `<li class="in" style="animation-delay:${0.2+0.06*k}s">${escapeHtml(s.h)}</li>`).join('')}</ul></div>`;
+      const ss = $('[data-x=skipsci]', el);
+      if(ss) ss.onclick = () => P.go(P.screens.findIndex((x, i) => i > P.state.pos && x.chap !== 'science'));
     }});
     D.steps.forEach((st, si) => S.push(stepScreen(d, st, `${d}:${si}`, N, pt)));
   });
@@ -1727,7 +1741,7 @@ function buildScreens(L, N){
 
 function stepScreen(d, st, key, N, pt){
   const first = pt.name.split(' ')[0];
-  const head = `<div class="dom-badge d-${d}">${DOM_LABEL[d]}</div>`;
+  const head = `<div class="dom-badge d-${d}">${DOM_LABEL[d]}${d === 'science' ? ' &middot; key words only' : ''}</div>`;
   const scr = {chap:d};
   if(st.type === 'story'){
     const pts = st.points || splitSentences(st.text);
@@ -1918,7 +1932,7 @@ function mcqScreen(q, i, n){
   return {chap:'mcq', gate: () => P.state.mcq[i] != null, render: el => {
     P.ctx = {cond:P.id, d:q.d, q:q.q};
     el.innerHTML = `<div class="dom-badge d-${q.d}">Quick quiz &middot; ${DOM_LABEL[q.d]}</div><div class="qcount">Question ${i+1} of ${n} &middot; score ${mcqScore()}/${n}</div>
-      <h2 class="s-h">${renderInline(q.q)}</h2>${optionsHtml(q.o)}<div class="fb"></div>`;
+      <h2 class="s-h">${renderInline(q.q)}</h2>${sciHint(q.d)}${optionsHtml(q.o)}<div class="fb"></div>`;
     wireChoice(el, q.a, i, 'mcq', pick => `<b>${pick === q.a ? 'Correct' : 'Answer: ' + escapeHtml(plainOpt(q.o[q.a]))}</b>${richText(q.r)}`, (pick, fresh) => {
       if(!fresh) return;
       P.state.mcqScore = mcqScore(); P.save();
@@ -2129,7 +2143,7 @@ function mountPlayer(cfg){
       <div class="chapters"></div>
     </div><div class="p-progress"><i></i></div></div>
     <div class="p-body"><div class="p-body-inner"><div class="stage">Loading&hellip;</div></div></div>
-    <div class="p-nav"><div class="p-nav-inner"><button class="btn" data-x="back">Back</button><div class="pos"></div><button class="btn primary" data-x="next">Next</button></div></div>
+    <div class="p-nav"><div class="p-nav-inner"><button class="btn" data-x="back">Back</button><div class="pos"></div><button class="btn ghost skip hidden" data-x="skip">Skip</button><button class="btn primary" data-x="next">Next</button></div></div>
   </div>`);
   document.body.appendChild(root);
   document.body.style.overflow = 'hidden';
@@ -2151,6 +2165,7 @@ function startPlayer(root, cfg){
       nb.disabled = blocked && !inner;
       nb.textContent = inner ? 'Next step' : P.state.pos === P.screens.length - 1 ? 'Finish' : blocked ? (s.gateText || 'Pick an answer') : 'Next';
       $('[data-x=back]', root).disabled = P.state.pos === 0;
+      $('[data-x=skip]', root).classList.toggle('hidden', !cfg.skip || P.state.pos >= P.screens.length - 2);
     },
     go(n, dir=1){
       n = Math.max(0, Math.min(P.screens.length - 1, n));
@@ -2196,6 +2211,8 @@ function startPlayer(root, cfg){
     P.go(P.state.pos + 1, 1);
   };
   $('[data-x=back]', root).onclick = () => P.go(P.state.pos - 1, -1);
+  // skip the whole screen: unanswered questions just stay unanswered
+  $('[data-x=skip]', root).onclick = () => P.go(P.state.pos + 1, 1);
   root.addEventListener('keydown', e => {
     if(e.target.matches('input,textarea')) return;
     if(e.key === 'ArrowRight') $('[data-x=next]', root).click();
@@ -2214,7 +2231,7 @@ async function openPlayer(id){
   catch(e){ $('.stage', root).textContent = 'This lesson is not ready yet.'; return; }
   const screens = buildScreens(L, N);
   const state = Object.assign(freshState(), Progress.lesson(id) || {});
-  startPlayer(root, {id, lesson:L, notes:N, screens, state, chaps:CHAPS, save: st => Progress.saveLesson(id, st), onFinish: () => setMode('learn')});
+  startPlayer(root, {id, lesson:L, notes:N, screens, state, chaps:CHAPS, skip:true, save: st => Progress.saveLesson(id, st), onFinish: () => setMode('learn')});
 }
 function closePlayer(silent){
   const p = $('.player');
@@ -2848,7 +2865,7 @@ function blurtPrompt(el, L, q, i){
   const prevMiss = lastMissed(B);
   el.innerHTML = `<div class="dom-badge d-${q.d}">Blurt &middot; ${DOM_LABEL[q.d]} &middot; round ${B.round}</div>
     <div class="qcount">Question ${i + 1} of ${L.blurt.prompts.length}</div>
-    <h2 class="s-h">${renderInline(q.q)}</h2>
+    <h2 class="s-h">${renderInline(q.q)}</h2>${sciHint(q.d)}
     <details class="tip"><summary>How to think about it</summary><div>${renderInline(q.tip)}</div></details>
     <div class="blurt-wrap"><textarea class="blurt-in" rows="6" placeholder="${SpeechRec ? 'Type or tap the microphone and say' : 'Type'} everything you remember&hellip;" ${done ? 'readonly' : ''}>${escapeHtml(B.ans[i] || '')}</textarea>
     ${done || !SpeechRec ? '' : `<button class="mic" data-x="mic" aria-label="Answer out loud"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3"/></svg></button>`}</div>
