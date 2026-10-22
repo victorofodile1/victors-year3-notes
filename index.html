@@ -1651,8 +1651,8 @@ function accountModal({welcome=false, onDone}={}){
       <div class="err" id="aerr"></div>
       <button class="btn primary" style="width:100%;height:44px;font-size:15px" id="ago">Create account</button>
     </form>
-    <button class="link-btn" data-x="skip">${welcome ? 'Continue without an account' : 'Cancel'}</button>
-    <div class="small-print">${SB ? 'Works on any device. No email needed.' : 'Accounts are saved on this device for now.'}</div>`, {onClose:onDone});
+    ${welcome ? '' : '<button class="link-btn" data-x="skip">Cancel</button>'}
+    <div class="small-print">${SB ? 'Works on any device. No email needed.' : 'Accounts are saved on this device for now.'}</div>`, {onClose:onDone, dismissable:!welcome});
   const el = m.el;
   let tab = 'up';
   el.querySelectorAll('.tabs2 button').forEach(b => b.onclick = () => {
@@ -1662,7 +1662,7 @@ function accountModal({welcome=false, onDone}={}){
     $('#ap', el).autocomplete = tab === 'up' ? 'new-password' : 'current-password';
     $('#aerr', el).textContent = '';
   });
-  el.querySelector('[data-x=skip]').onclick = () => { sess.set('y3.skipAccount', '1'); m.close(); };
+  if(!welcome) el.querySelector('[data-x=skip]').onclick = m.close;
   $('form', el).onsubmit = async e => {
     e.preventDefault();
     const go = $('#ago', el); go.disabled = true;
@@ -1746,7 +1746,7 @@ function tourOffer(){
 }
 function welcome(){
   if(location.hash.startsWith('#learn/')) return;
-  if(!Auth.user() && !sess.get('y3.skipAccount')) accountModal({welcome:true, onDone: () => setTimeout(tourOffer, 200)});
+  if(!Auth.user()) accountModal({welcome:true, onDone: () => setTimeout(tourOffer, 200)});
   else tourOffer();
 }
 
